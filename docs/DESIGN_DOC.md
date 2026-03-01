@@ -45,7 +45,7 @@ bmf-tech/
 │   └── pages/               # 固定ページ（about, support, privacy-policy）
 ├── assets/
 │   ├── css/
-│   │   └── style.css
+│   │   └── custom.css       # sleyt のカスタマイズ・上書き用
 │   ├── js/                  # 必要に応じて（Mermaid 等は gohan が自動注入）
 │   └── images/
 │       └── profile.png
@@ -163,19 +163,30 @@ description: "Kenta Takeuchi のプロフィールページ"
 
 ### 5.3 パフォーマンス（Core Web Vitals）
 
-- 静的 HTML ＋ 最小限の CSS/JS → LCP・FID・CLS を最小化
+- 静的 HTML ＋ sleyt（CSS-only、JS 依存なし）→ LCP・FID・CLS を最小化
+- sleyt は CDN 配信済みの minify 済み CSS を使用（`unpkg.com/sleyt@latest`）
 - 画像は `loading="lazy"` を付与
 - フォントは system-font-stack を優先し Web フォントを極力使わない
-- CSS は 1 ファイルにまとめ minify する
+- サイト固有のカスタマイズは `custom.css` 1 ファイルにまとめ minify する
 
 ---
 
 ## 6. テンプレート設計指針
 
+### CSS フレームワーク
+
+[**sleyt**](https://github.com/bmf-san/sleyt)（自作）を採用する。
+
+- JavaScript 依存なし（CSS-only）
+- ガラスモーフィズムデザイン
+- ダークモード対応（CSS Custom Properties ベース）
+- レスポンシブ・モバイルファースト
+- CDN: `https://unpkg.com/sleyt@latest/dist/css/index.css`
+- サイト固有の上書きは `assets/css/custom.css` で管理
+
 ### 共通
 
-- レスポンシブデザイン（モバイルファースト）
-- ライト / ダークテーマ切り替え（CSS Custom Properties で実装）
+- sleyt のコンポーネントクラス（`.card`, `.btn`, `.badge`, `.pagination` 等）を活用
 - コードブロックは gohan の chroma によりサーバーサイドでシンタックスハイライト
 - Mermaid ブロックは gohan が自動でスクリプト注入
 
@@ -187,6 +198,9 @@ description: "Kenta Takeuchi のプロフィールページ"
 <title>{{block "title" .}}{{.Config.Site.Title}}{{end}}</title>
 <meta name="description" content="{{block "description" .}}{{.Config.Site.Description}}{{end}}">
 <link rel="canonical" href="{{block "canonical" .}}{{.Config.Site.BaseURL}}/{{end}}">
+<!-- sleyt CSS framework -->
+<link rel="stylesheet" href="https://unpkg.com/sleyt@latest/dist/css/index.css">
+<link rel="stylesheet" href="{{.Config.Site.BaseURL}}/assets/css/custom.css">
 <!-- OGP -->
 <meta property="og:type" content="{{block "og_type" .}}website{{end}}">
 <meta property="og:title" content="{{block "og_title" .}}{{.Config.Site.Title}}{{end}}">
