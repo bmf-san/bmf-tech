@@ -22,6 +22,10 @@
 | `/atom.xml` | gohan 自動生成 | Atom フィード |
 
 > **スラッグ方針**: 意味のある英語ハイフン区切り slug を使用する。
+> - 単語は `-` 区切り、すべて小文字
+> - 例: `go-http-server`, `docker-compose-tips`
+> - 既存の日本語スラッグは gobel API から全記事を取得し、記事ごとに英語 slug を設定してマイグレーションスクリプトで変換する
+> - 旧 URL → 新 URL の 301 リダイレクトは Cloudflare Pages の `_redirects` で永続管理する
 
 ### ナビゲーション
 
