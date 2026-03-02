@@ -15,3 +15,8 @@
 - [ ] Phase 10: Cloudflare Pages 本番デプロイ
 - [ ] Phase 11: DNS 移管（ConoHa → Cloudflare）
 - [ ] Phase 12: ConoHa VPS 停止
+## gohan 対応待ち（移行前提）
+
+- [ ] pages ルーティング改善（`/pages/about/` → `/about/`）
+- [ ] アーカイブページ生成対応（`/archive/{year}/`）
+- [ ] gohan リリース（`go install ...@latest` を CI で使えるようにする）
