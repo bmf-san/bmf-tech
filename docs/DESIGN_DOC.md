@@ -14,7 +14,7 @@
 | `/posts/{slug}/` | `article.html` | 記事詳細 |
 | `/categories/{name}/` | `category.html` | カテゴリー別記事一覧 |
 | `/tags/{name}/` | `tag.html` | タグ別記事一覧 |
-| `/archive/{year}/` | `archive.html` | 年別アーカイブ |
+| `/archives/{year}/{month}/` | `archive.html` | 年月別アーカイブ（gohan の実装が `archives/{year}/{month}/`） |
 | `/about/` | （ページ → 静的 HTML） | プロフィール |
 | `/support/` | （ページ → 静的 HTML） | サポートページ |
 | `/privacy-policy/` | （ページ → 静的 HTML） | プライバシーポリシー |
@@ -250,5 +250,6 @@ description: "Kenta Takeuchi のプロフィールページ"
 | 広告 | Google AdSense を継続運用。テンプレートに広告スロットを設ける |
 | OGP 画像 | 記事サムネイル画像の自動生成またはデフォルト画像の設定 |
 | `pages/` のルーティング | `/about/` 等の短い URL にしたい（SEO・UX 上望ましい）。gohan の現行仕様では `/pages/{slug}/` になるため、gohan 側でルーティング改善が必要 → gohan の feature として別途対応予定 |
-| アーカイブページ | `/archive/{year}/` の年別アーカイブは SEO 上有効（継続的な投稿の権威性シグナル）。gohan 側でアーカイブ生成対応が必要 → gohan の feature として別途対応予定 |
+| アーカイブページ | `/archives/{year}/{month}/` の年月別アーカイブは SEO 上有効。gohan 実装済みだが URL 設計は年月別なので `/archive/{year}/`（年単位）にしたい場合は gohan 側改修が必要 |
+| feed.xml / atom.xml の i18n 対応 | gohan の feed.go が未対応。現状 `/posts/{slug}/` にハードコードされており、`/ja/posts/{slug}/` が正しく出力されない → gohan のバグ修正が必要 |
 | カテゴリー英語化 | 既存カテゴリーは日本語（例: アーキテクチャ）。移行時に英語名（例: Architecture）に統一するか、日本語のまま維持するか要検討 |

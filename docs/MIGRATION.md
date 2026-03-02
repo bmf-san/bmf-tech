@@ -141,6 +141,8 @@ author: bmf-san
 - カテゴリーは 1 記事につき 1 つ（gobel の制約）
 - `_redirects` の旧 URL は `url.PathEscape()` でパーセントエンコードする（Cloudflare Pages はリクエストパスを URLエンコード済みで受け取るため、生の日本語では一致しない）
 
+> **注意**: gohan は `tags.yaml` / `categories.yaml` に定義されていないタグ・カテゴリーを持つ記事があるとビルドエラーになる。Phase 2 で記事を移行する前に、Taxonomy ファイル（`tags.yaml` / `categories.yaml`）の整備が必要。
+
 ---
 
 ## Phase 3: 英語スラッグ変換マップ
