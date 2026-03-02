@@ -454,6 +454,6 @@ curl -I "https://bmf-tech.com/posts/GoでHTTPサーバーを書く"
 |---|---|
 | サーバーサイド移行（gobel API・VPS） | Phase 11・12 に計画策定済み |
 | Pagefind 等サイト内検索 | Phase 6 テンプレート開発時に評価 |
-| Google AdSense / Analytics の設定 | ID を config.yaml で管理、テンプレートに組み込み |
+| Google AdSense / Analytics の設定 | ドメイン同一のためアカウント変更不要。ID を config.yaml (`ga_id` / `adsense_id`) に設定し `head.html` にスクリプトを追加（Phase 6 テンプレート開発時に対応）。URL 変更によりページ単位のGA履歴は断絶するが許容範囲 |
 | カテゴリー名の英語化タイミング | Phase 4 完了後に一括置換 |
 | 画像アセットの収容先（Cloudflare Images vs リポジトリ） | Phase 5B 実施時に決定 |
