@@ -252,4 +252,6 @@ description: "Kenta Takeuchi のプロフィールページ"
 | `pages/` のルーティング | `/about/` 等の短い URL にしたい（SEO・UX 上望ましい）。gohan の現行仕様では `/pages/{slug}/` になるため、gohan 側でルーティング改善が必要 → gohan の feature として別途対応予定 |
 | アーカイブページ | `/archives/{year}/{month}/` の年月別アーカイブは SEO 上有効。gohan 実装済みだが URL 設計は年月別なので `/archive/{year}/`（年単位）にしたい場合は gohan 側改修が必要 |
 | feed.xml / atom.xml の i18n 対応 | gohan の feed.go が未対応。現状 `/posts/{slug}/` にハードコードされており、`/ja/posts/{slug}/` が正しく出力されない → gohan のバグ修正が必要 |
+| `draft: true` のフィルタリング | gohan は現状 `draft: true` の記事もビルドに含める。移行後に下書きを管理したい場合は gohan 側の修正が必要 |
+| タグ・カテゴリーページの多言語混在 | `/tags/{name}/` / `/categories/{name}/` は en + ja の記事が混在して出力される（gohan の現仕様）。テンプレートでロケールラベルを表示するなど UX 面での対処が必要 |
 | カテゴリー英語化 | 既存カテゴリーは日本語（例: アーキテクチャ）。移行時に英語名（例: Architecture）に統一するか、日本語のまま維持するか要検討 |
