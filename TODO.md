@@ -18,6 +18,8 @@
 ## gohan 対応待ち（移行前提）
 
 - [ ] feed.go の i18n 対応（`atom.xml` / `feed.xml` の URL が `/posts/{slug}/` にハードコードされており `/ja/posts/{slug}/` が正しく出力されない）
+- [ ] `draft: true` フィルタリング未実装（`draft: true` の記事もビルドに含まれる。移行後の下書き管理に影響）
+- [ ] `OutputGenerator` インターフェイスの `GenerateSitemap` / `GenerateFeed` メソッドが死んでいる（i18n 非対応の旧実装が残存。インターフェイス整理が必要）
 - [ ] pages ルーティング改善（`/pages/about/` → `/about/`）
 - [ ] アーカイブ URL 設計確認（現状 `/archives/{year}/{month}/`。年単位 `/archive/{year}/` にしたい場合は gohan 側改修が必要）
 - [ ] gohan リリース（`go install ...@latest` を CI で使えるようにする）
