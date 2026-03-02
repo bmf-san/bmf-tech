@@ -1,0 +1,42 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: stable
+          cache: false
+
+      # TODO: switch to `go install github.com/bmf-san/gohan/cmd/gohan@latest`
+      # once bmf-san/gohan PR #66 (i18n ContentDir path fix) is merged into main.
+      - name: Install gohan
+        run: |
+          git clone --depth=1 --branch fix/i18n-absolute-content-dir \
+            https://github.com/bmf-san/gohan.git /tmp/gohan
+          cd /tmp/gohan && go install ./cmd/gohan/...
+
+      - name: Build site
+        run: gohan build
+
+      - name: Copy _redirects
+        run: cp _redirects public/
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy public --project-name=bmf-tech
