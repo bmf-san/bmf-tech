@@ -41,10 +41,10 @@ draft: false
 なので、データ構造を以下のように変更をして、ミドルウェアのサポートを実装した。
 
 Before
-![Based on trie tree](https://user-images.githubusercontent.com/13291041/70862745-7148e180-1f83-11ea-85d3-2cd8fb4db0d3.png "Based on trie tree")
+![Based on trie tree](/assets/images/posts/post-259/70862745-7148e180-1f83-11ea-85d3-2cd8fb4db0d3.png "Based on trie tree")
 
 After
-![after](https://user-images.githubusercontent.com/13291041/117675761-d4c25780-b1e7-11eb-9ec7-e78ac0ce142b.png)
+![after](/assets/images/posts/post-259/117675761-d4c25780-b1e7-11eb-9ec7-e78ac0ce142b.png)
 
 
 # ベンチマーク

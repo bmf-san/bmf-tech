@@ -134,7 +134,7 @@ func main() {
     - 追加する位置を特定する→追加位置の一つ手前のポインタと追加するノードのポインタを調整
     - 追加する位置を特定する時は、ループ内で次のノードのポインタを参照して次のノードの値が指定した値とマッチするか判定する
 - ノート
-![singly_linked_list](https://user-images.githubusercontent.com/13291041/67028620-a0d79b00-f146-11e9-8d47-a5d0d933d15d.jpg)
+![singly_linked_list](/assets/images/posts/post-201/67028620-a0d79b00-f146-11e9-8d47-a5d0d933d15d.jpg)
 
 # 参考
 - [Naim Ibrahim - Golang singly linked list](https://www.naimibrahim.me/2019/06/08/golang-singly-linked-list/) 
