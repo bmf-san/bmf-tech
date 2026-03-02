@@ -47,12 +47,12 @@
 ## セットアップ
 
 ```bash
-# gohan をインストール
-go install github.com/bmf-san/gohan/cmd/gohan@latest
-
 # リポジトリをクローン
 git clone git@github.com:bmf-san/bmf-tech.git
 cd bmf-tech
+
+# gohan をインストール
+make install
 ```
 
 ## 開発
@@ -130,21 +130,13 @@ translation_key: hello
 
 ## ツール
 
-### tools/migrate
+`tools/` 以下に移行時に使用した一時的なツールコードがある。
 
-旧ブログ (MySQL) の SQL ダンプから Markdown ファイルと `_redirects` を生成するツール。
-
-```bash
-make migrate
-```
-
-### tools/download_images
-
-記事内の外部画像 URL をローカルにダウンロードし、Markdown の URL を書き換えるツール。
-
-```bash
-make dl-images
-```
+| ディレクトリ | 用途 |
+|---|---|
+| `tools/migrate/` | 旧ブログ MySQL ダンプ → Markdown 変換 |
+| `tools/download_images/` | 外部画像 URL → ローカルファイル置換 |
+| `tools/slug_map_generator/` | 日本語タイトルから英語スラッグを生成 |
 
 ## ライセンス
 

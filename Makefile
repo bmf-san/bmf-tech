@@ -1,4 +1,4 @@
-.PHONY: help build serve clean new-ja new-en migrate dl-images
+.PHONY: help install build serve clean new-ja new-en
 
 TITLE   ?= untitled
 SLUG    ?= untitled
@@ -6,6 +6,13 @@ SLUG    ?= untitled
 help: ## ヘルプを表示
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | \
 		awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-15s\033[0m %s\n", $$1, $$2}'
+
+install: ## 依存ツールをインストール (gohan)
+	# TODO: switch to @latest once bmf-san/gohan PR #66 is merged
+	git clone --depth=1 --branch fix/i18n-absolute-content-dir \
+		https://github.com/bmf-san/gohan.git /tmp/gohan-install
+	cd /tmp/gohan-install && go install ./cmd/gohan/...
+	rm -rf /tmp/gohan-install
 
 build: ## サイトをビルド
 	gohan build
@@ -33,15 +40,3 @@ new-en: ## 英語記事を作成  例: make new-en TITLE="Title" SLUG=slug
 	@printf -- '---\ntitle: "$(TITLE)"\nslug: $(SLUG)\ndate: %s\nauthor: bmf-san\ncategories:\n  - \ntags:\n  - \ndescription: ""\ntranslation_key: $(SLUG)\ndraft: true\n---\n' \
 		$$(date +%Y-%m-%d) > content/en/posts/$(SLUG).md
 	@echo "created: content/en/posts/$(SLUG).md"
-
-migrate: ## SQLダンプからMarkdown記事と_redirectsを生成
-	go run tools/migrate/main.go \
-		-sql bmf-tech_2026-03-01.sql \
-		-csv tools/slug_map.csv \
-		-out content/ja/posts \
-		-redir _redirects
-
-dl-images: ## 記事内の外部画像をローカルにダウンロードしてURLを書き換え
-	go run tools/download_images/main.go \
-		-content content/ja/posts \
-		-assets assets/images/posts
