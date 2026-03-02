@@ -1,0 +1,32 @@
+site:
+  title: "bmf-tech"
+  description: "bmf-san's personal tech blog"
+  base_url: "https://bmf-tech.com"
+  language: "en"
+  github_repo: "https://github.com/bmf-san/bmf-tech"
+  github_branch: "main"
+
+build:
+  content_dir: "content"
+  output_dir: "public"
+  assets_dir: "assets"
+  parallelism: 4
+  per_page: 20
+  exclude_files: []
+
+theme:
+  name: "default"
+  dir: "themes/default"
+
+syntax_highlight:
+  theme: "github"
+  line_numbers: false
+
+ogp:
+  enabled: false
+
+i18n:
+  default_locale: "en"
+  locales:
+    - "en"
+    - "ja"
