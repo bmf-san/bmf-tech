@@ -1,0 +1,37 @@
+{{template "head" .}}
+<body>
+{{template "header" .}}
+<main class="site-wrapper">
+  {{range .Articles}}
+  <article>
+    <header class="article-header">
+      <h1>{{.FrontMatter.Title}}</h1>
+      <div class="article-meta">
+        <time datetime="{{formatDate "2006-01-02" .FrontMatter.Date}}">{{formatDate "2006-01-02" .FrontMatter.Date}}</time>
+        {{if .FrontMatter.Author}}<span>{{.FrontMatter.Author}}</span>{{end}}
+        {{if .FrontMatter.Categories}}
+        <span>
+          {{range $i, $c := .FrontMatter.Categories}}{{if $i}}, {{end}}<a href="{{categoryURL $c}}">{{$c}}</a>{{end}}
+        </span>
+        {{end}}
+        {{if .Translations}}
+        <span class="lang-switch">
+          {{range $i, $t := .Translations}}{{if $i}}<span class="sep">|</span>{{end}}<a href="{{$t.URL}}" lang="{{$t.Locale}}">{{$t.Locale}}</a>{{end}}
+        </span>
+        {{end}}
+      </div>
+      {{if .FrontMatter.Tags}}
+      <div class="tags" style="margin-top:0.75rem;">
+        {{range .FrontMatter.Tags}}<a class="tag" href="{{tagURL .}}">#{{.}}</a>{{end}}
+      </div>
+      {{end}}
+    </header>
+    <div class="article-content">
+      {{.HTMLContent}}
+    </div>
+  </article>
+  {{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>
