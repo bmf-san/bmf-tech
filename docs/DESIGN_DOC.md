@@ -235,6 +235,10 @@ description: "Kenta Takeuchi のプロフィールページ"
 - `@type: BlogPosting` の JSON-LD を出力
 - コードブロックをコピーボタン付きで表示（JS で実装）
 
+### robots.txt
+
+`assets/robots.txt` に配置する。gohan のビルド時に `assets/` の内容が `public/` ルートに直接コピーされるため、`public/robots.txt` に自動配置される。CI での手動コピーは不要。
+
 ---
 
 ## 7. 課題・検討事項

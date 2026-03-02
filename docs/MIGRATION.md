@@ -260,7 +260,8 @@ PROCESS:
      - 200 OK  → assets/images/posts/{slug}/{filename} に保存
      - 4xx/5xx → エラーログに記録（URL はそのまま残す）
   3. ダウンロード成功した URL を相対パスに置換
-     - 例: https://qiita-image-store.s3.amazonaws.com/... → /assets/images/posts/go-http-server/image.png
+     - 例: https://qiita-image-store.s3.amazonaws.com/... → /images/posts/go-http-server/image.png
+     - （gohan の build.go が `assets/` を `public/` ルートに直接コピーするため、`/images/...` パスで配信可能）
 
 OUTPUT:
   - assets/images/posts/**  （ダウンロードした画像ファイル）
@@ -361,10 +362,9 @@ jobs:
           cd /tmp/gohan && go build -o /usr/local/bin/gohan ./cmd/gohan
       - name: Build site
         run: gohan build
-      - name: Copy static root files
-        run: |
-          cp _redirects public/_redirects
-          cp assets/robots.txt public/robots.txt
+      - name: Copy _redirects
+        # gohan は assets/ を public/ に自動コピーする。_redirects はルートに置くため手動コピーが必要
+        run: cp _redirects public/_redirects
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
