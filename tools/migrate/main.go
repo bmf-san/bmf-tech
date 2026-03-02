@@ -84,7 +84,7 @@ func main() {
 		}
 
 		catName := catMap[p.categoryID]
-		tags := tagPostMap[p.id]     // []string of tag names
+		tags := tagPostMap[p.id] // []string of tag names
 		tagNames := expandNames(tags, tagMap)
 
 		fm := buildFrontMatter(p, slug, catName, tagNames)
@@ -163,8 +163,8 @@ func loadSlugMap(path string) (map[string]string, error) {
 
 // parseDump reads categories, tags, tag_post associations, and posts from a MySQL dump.
 func parseDump(path string) (
-	catMap map[string]string,   // category_id → name
-	tagMap map[string]string,   // tag_id → name
+	catMap map[string]string, // category_id → name
+	tagMap map[string]string, // tag_id → name
 	tagPostMap map[string][]string, // post_id → []tag_id
 	posts []post,
 	err error,
