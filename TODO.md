@@ -29,4 +29,4 @@
 - [x] 日付ゼロ記事が `archives/0001/01/` を生成（PR #61）
 - [x] `ValidateArticleTaxonomies` がビルドから呼ばれない（PR #62）
 - [x] アーカイブ URL 設計確認 → `/archives/{year}/{month}/` で確定
-- [ ] gohan リリース（PR マージ後に `v0.1.0` タグを切る）
+- [x] gohan リリース（[v0.1.0](https://github.com/bmf-san/gohan/releases/tag/v0.1.0)）
