@@ -19,7 +19,7 @@ draft: false
 # 前提
 今回想定する登場するクラスは4つです。
 
-![people_class.png](https://qiita-image-store.s3.amazonaws.com/0/124495/7680ef3c-3c9f-6365-8622-364ed30936b3.png)
+![people_class.png](/assets/images/posts/post-73/7680ef3c-3c9f-6365-8622-364ed30936b3.png)
 
 Party PeopleがRich Peopleを継承するという構造はちょっとわかりづらいかもしれませんが、イメージが伝われば良しとします。
 
@@ -52,7 +52,7 @@ landは土地です。
 単一テーブル継承は、オブジェクトの継承関係を１つのテーブルで表現します。
 テーブルにはサブクラスを判断するためのカラム（type）を持たせます。
 
-![single_table_inheritance_table.png](https://qiita-image-store.s3.amazonaws.com/0/124495/733b241d-ed09-6e1f-958c-b664f2d4133c.png)
+![single_table_inheritance_table.png](/assets/images/posts/post-73/733b241d-ed09-6e1f-958c-b664f2d4133c.png)
 
 RailsでSTIの実装がサポートされているようです。
 
@@ -60,14 +60,14 @@ RailsでSTIの実装がサポートされているようです。
 クラステーブル継承は、オブジェクトの継承関係をクラスごとに１テーブルを用意することで表現します。
 スーパークラスのテーブルにはスーパークラスの持つカラムを、サブクラスのテーブルにはサブクラスの持つカラムのみを持たせます。
 
-![class_table_inheritance.png](https://qiita-image-store.s3.amazonaws.com/0/124495/33047bc2-d4a3-700c-0995-8738c9897a23.png)
+![class_table_inheritance.png](/assets/images/posts/post-73/33047bc2-d4a3-700c-0995-8738c9897a23.png)
 
 
 # Concrete Class Inheritance　（具象クラス継承）
 具象テーブル継承は、オブジェクトの継承関係を具象クラスだけ対応したテーブルを用意することで表現します。
 各テーブルにはスーパークラスが持つカラムを共通属性として持たせます。
 
-![concrete_table_inheritance.png](https://qiita-image-store.s3.amazonaws.com/0/124495/bec91e44-0b28-7bcc-6666-026dd5a10f2a.png)
+![concrete_table_inheritance.png](/assets/images/posts/post-73/bec91e44-0b28-7bcc-6666-026dd5a10f2a.png)
 
 # 所感
 どのパターンを実装するかはテーブル設計のメリット・デメリットとアプリケーション側のロジックのコストの検討次第でしょうか。
