@@ -41,8 +41,11 @@ bmf-tech | 記事 | カテゴリ | タグ | アーカイブ | プロフィール
 bmf-tech/
 ├── config.yaml              # gohan 設定
 ├── content/
-│   ├── posts/               # 記事 Markdown ファイル
-│   └── pages/               # 固定ページ（about, support, privacy-policy）
+│   ├── en/                  # 英語コンテンツ（デフォルトロケール）
+│   │   └── posts/           # 記事 Markdown ファイル
+│   └── ja/                  # 日本語コンテンツ
+│       └── posts/           # 日本語記事 Markdown ファイル
+├── pages/                   # 固定ページ（about, support, privacy-policy）
 ├── assets/
 │   ├── css/
 │   │   └── custom.css       # sleyt のカスタマイズ・上書き用
@@ -59,11 +62,12 @@ bmf-tech/
 │           ├── archive.html
 │           └── _partials/
 │               ├── head.html       # <head> 共通テンプレート（OGP/SEO）
-│               ├── header.html     # グローバルナビ
+│               ├── header.html     # グローバルナビ + 言語切替
 │               ├── footer.html     # フッター
 │               └── article-card.html  # 記事サムネイルカード
 └── docs/
-    └── DESIGN_DOC.md
+    ├── DESIGN_DOC.md
+    └── migration.md
 ```
 
 ---
@@ -75,7 +79,10 @@ site:
   title: "bmf-tech.com"
   description: "シニアプラットフォームエンジニア Kenta Takeuchi の技術ブログ。Go・アーキテクチャ・インフラ・開発プロセスを中心に発信。"
   base_url: https://bmf-tech.com
-  language: ja
+  language: en
+  # GitHubで編集を提案する リンクの生成に使用
+  github_repo: "https://github.com/bmf-san/bmf-tech"
+  github_branch: "main"
 
 build:
   content_dir: content
@@ -96,6 +103,10 @@ theme:
     footer_text: "© 2026 Kenta Takeuchi"
     adsense_id: ""          # Google AdSense クライアント ID
     ga_id: ""               # Google Analytics 測定 ID
+
+i18n:
+  locales: [en, ja]
+  default_locale: en        # en は URL プレフィックスなし、ja は /ja/ プレフィックス
 ```
 
 ---
@@ -106,17 +117,18 @@ theme:
 
 ```yaml
 ---
-title: "記事タイトル"
+title: "記事タイトル（英語）"
 date: 2024-01-15
 draft: false
 slug: "article-slug-in-english"   # URL に使用。英語ハイフン区切り
 description: "meta description（SEO 用、120〜160 文字目安）"
 author: "bmf-san"
+translation_key: "article-slug-in-english"  # 日英対応付けに使用
 tags:
   - Go
   - HTTP
 categories:
-  - アーキテクチャ
+  - Architecture
 ---
 ```
 
@@ -229,7 +241,8 @@ description: "Kenta Takeuchi のプロフィールページ"
 | 項目 | 内容 |
 |---|---|
 | 検索機能 | Pagefind などのクライアントサイド全文検索の採用を検討 |
-| ページネーション | 記事が 300+ 件あるため `index.html` の無限スクロール or ページ分割が必要。gohan の現行テンプレート仕様では自動ページネーションなし → JavaScript での無限スクロールか、カテゴリー・タグ・アーカイブへの誘導で対応 |
+| ページネーション | 記事が 700+ 件あるため `index.html` のページ分割が必要。gohan はページネーションをサポート済み（`build.per_page` で設定）。カテゴリー・タグ・アーカイブページも同様 |
 | 広告 | Google AdSense を継続運用。テンプレートに広告スロットを設ける |
 | OGP 画像 | 記事サムネイル画像の自動生成またはデフォルト画像の設定 |
-| `content/pages/` のルーティング | gohan の現行仕様では `pages` 型のコンテンツは `/pages/{slug}/` に配置される。`/about/` 等の短い URL にするには生成後のファイル移動、または templates への組み込みが必要 |
+| `pages/` のルーティング | gohan の現行仕様では `pages` 型のコンテンツは `/pages/{slug}/` に配置される。`/about/` 等の短い URL にするには生成後のファイル移動、または templates への組み込みが必要 |
+| カテゴリー英語化 | 既存カテゴリーは日本語（例: アーキテクチャ）。移行時に英語名（例: Architecture）に統一するか、日本語のまま維持するか要検討 |
