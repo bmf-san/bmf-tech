@@ -5,16 +5,20 @@
 ## gobel → gohan 移行
 
 - [x] Phase 0: 設計ドキュメント・移行計画策定
-- [ ] Phase 1: bmf-tech リポジトリ初期化・gohan プロジェクトセットアップ
-- [ ] Phase 2: テーマ・テンプレート開発
-- [ ] Phase 3: 英語スラッグ変換マップ作成（700+ 記事）
-- [ ] Phase 4: コンテンツデータ移行スクリプト作成
-- [ ] Phase 5: 日本語記事の Markdown 移行（`content/ja/`）
-- [ ] Phase 6: 画像アセット移行
-- [ ] Phase 7: リダイレクトマップ作成・検証
-- [ ] Phase 8: 英語版記事の作成（高優先記事から）
-- [ ] Phase 9: CI/CD パイプライン構築
+- [x] Phase 1: bmf-tech リポジトリ初期化・gohan プロジェクトセットアップ（PR #2）
+- [x] Phase 2: テーマ・テンプレート開発（PR #3）
+- [x] Phase 3: 英語スラッグ変換マップ作成（584 記事）（PR #4）
+- [x] Phase 4: コンテンツデータ移行スクリプト作成（PR #5）
+- [x] Phase 5: 日本語記事の Markdown 移行（`content/ja/`）（PR #6）
+- [x] Phase 6: 画像アセット移行（PR #7）
+- [x] Phase 7: リダイレクトマップ作成・検証（PR #8）
+- [x] Phase 8: 英語版記事スケルトン + canonical/hreflang SEO 対応（PR #9）
+- [x] Phase 9: CI/CD パイプライン構築 + about/privacy-policy ページ + README/Makefile（PR #10）
 - [ ] Phase 10: Cloudflare Pages 本番デプロイ
+  - [ ] GitHub Secrets 設定（`CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`）
+  - [ ] Cloudflare Pages プロジェクト `bmf-tech` 作成
+  - [ ] PR #2〜#10 を順番にマージして main へ
+  - [ ] 初回デプロイ確認
 - [ ] Phase 11: DNS 移管（ConoHa → Cloudflare）
 - [ ] Phase 12: ConoHa VPS 停止
 
@@ -30,3 +34,4 @@
 - [x] `ValidateArticleTaxonomies` がビルドから呼ばれない（PR #62）
 - [x] アーカイブ URL 設計確認 → `/archives/{year}/{month}/` で確定
 - [x] gohan リリース（[v0.1.0](https://github.com/bmf-san/gohan/releases/tag/v0.1.0)）
+- [ ] `cfg.Build.ContentDir` が相対パスのまま processor に渡され i18n ロケール検出が失敗するバグ（[PR #66](https://github.com/bmf-san/gohan/pull/66)）→ マージ後に `make install` を `go install ...@latest` に変更
