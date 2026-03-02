@@ -67,7 +67,7 @@ bmf-tech/
 │               └── article-card.html  # 記事サムネイルカード
 └── docs/
     ├── DESIGN_DOC.md
-    └── migration.md
+    └── MIGRATION.md
 ```
 
 ---
@@ -89,6 +89,7 @@ build:
   output_dir: public
   assets_dir: assets
   parallelism: 4
+  per_page: 20
 
 theme:
   name: default
@@ -244,5 +245,6 @@ description: "Kenta Takeuchi のプロフィールページ"
 | ページネーション | 記事が 700+ 件あるため `index.html` のページ分割が必要。gohan はページネーションをサポート済み（`build.per_page` で設定）。カテゴリー・タグ・アーカイブページも同様 |
 | 広告 | Google AdSense を継続運用。テンプレートに広告スロットを設ける |
 | OGP 画像 | 記事サムネイル画像の自動生成またはデフォルト画像の設定 |
-| `pages/` のルーティング | gohan の現行仕様では `pages` 型のコンテンツは `/pages/{slug}/` に配置される。`/about/` 等の短い URL にするには生成後のファイル移動、または templates への組み込みが必要 |
+| `pages/` のルーティング | `/about/` 等の短い URL にしたい（SEO・UX 上望ましい）。gohan の現行仕様では `/pages/{slug}/` になるため、gohan 側でルーティング改善が必要 → gohan の feature として別途対応予定 |
+| アーカイブページ | `/archive/{year}/` の年別アーカイブは SEO 上有効（継続的な投稿の権威性シグナル）。gohan 側でアーカイブ生成対応が必要 → gohan の feature として別途対応予定 |
 | カテゴリー英語化 | 既存カテゴリーは日本語（例: アーキテクチャ）。移行時に英語名（例: Architecture）に統一するか、日本語のまま維持するか要検討 |
