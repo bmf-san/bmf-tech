@@ -170,7 +170,7 @@ description: "Kenta Takeuchi のプロフィールページ"
 |---|---|
 | 英語スラッグ | 日本語タイトルの URL エンコードを避け、意味のある英語スラッグを設定 |
 | カテゴリー・タグの活用 | トピッククラスタリングを意識したカテゴリー設計。カテゴリー数は現行を維持し追加・整理は段階的に実施 |
-| アーカイブページ | `/archive/{year}/` で年別コンテンツを集約し時系列インデックスを提供 |
+| アーカイブページ | `/archives/{year}/{month}/` で年月別コンテンツを集約し時系列インデックスを提供（gohan の実装に準拠） |
 | 内部リンク | 記事内で関連記事へのリンクを手動で記述（テンプレートに「関連記事」セクションを追加することも検討） |
 | 画像 alt テキスト | Markdown の画像記法で alt を必ず記述 |
 
@@ -249,9 +249,14 @@ description: "Kenta Takeuchi のプロフィールページ"
 | ページネーション | 記事が 700+ 件あるため `index.html` のページ分割が必要。gohan はページネーションをサポート済み（`build.per_page` で設定）。カテゴリー・タグ・アーカイブページも同様 |
 | 広告 | Google AdSense を継続運用。テンプレートに広告スロットを設ける |
 | OGP 画像 | 記事サムネイル画像の自動生成またはデフォルト画像の設定 |
-| `pages/` のルーティング | `/about/` 等の短い URL にしたい（SEO・UX 上望ましい）。gohan の現行仕様では `/pages/{slug}/` になるため、gohan 側でルーティング改善が必要 → gohan の feature として別途対応予定 |
+| `pages/` のルーティング・URL 乖離 | `generator/html.go` の `buildJobs()` が全記事を `posts/{slug}/` に書き出しており、`computeOutputPath()` の結果を無視する。`content/pages/about.md` は URL フィールドが `/pages/about/` に計算されるが実ファイルは `public/posts/about/` に置かれる → gohan 側の修正が必要 |
 | アーカイブページ | `/archives/{year}/{month}/` の年月別アーカイブは SEO 上有効。gohan 実装済みだが URL 設計は年月別なので `/archive/{year}/`（年単位）にしたい場合は gohan 側改修が必要 |
 | feed.xml / atom.xml の i18n 対応 | gohan の feed.go が未対応。現状 `/posts/{slug}/` にハードコードされており、`/ja/posts/{slug}/` が正しく出力されない → gohan のバグ修正が必要 |
-| `draft: true` のフィルタリング | gohan は現状 `draft: true` の記事もビルドに含める。移行後に下書きを管理したい場合は gohan 側の修正が必要 |
+| `draft: true` のフィルタリング | gohan は現状 `draft: true` の記事もビルドに含める（`parser/frontmatter.go` の `ParseAll` でフィルタリングなし）。移行後に下書きを管理したい場合は gohan 側の修正が必要 |
 | タグ・カテゴリーページの多言語混在 | `/tags/{name}/` / `/categories/{name}/` は en + ja の記事が混在して出力される（gohan の現仕様）。テンプレートでロケールラベルを表示するなど UX 面での対処が必要 |
 | カテゴリー英語化 | 既存カテゴリーは日本語（例: アーキテクチャ）。移行時に英語名（例: Architecture）に統一するか、日本語のまま維持するか要検討 |
+| 記事一覧のソート未実装 | `buildJobs()` が index / tag / category / archive 各ページに渡す記事スライスをソートしない。ファイルシステムのウォーク順（辞書順）で出力されるため、最新記事が先頭に来ない → gohan 側の修正が必要 |
+| `FrontMatter.Template` 未使用 | front matter に `template: custom.html` を指定しても generator が常に `"article.html"` を使用する。カスタムレイアウトが必要な場合は gohan 側の修正が必要 |
+| 日付ゼロ記事の誤ったアーカイブ出力 | `date` が未設定の記事は Go の zero time 扱いになり `public/archives/0001/01/index.html` が生成される。date 必須バリデーションまたは日付ゼロのスキップが必要 → gohan 側の修正が必要 |
+| `ValidateArticleTaxonomies` がビルドで未呼び出し | `processor/taxonomy.go` に実装済みだが `cmd/gohan/build.go` から呼び出されておらず、不正なタグ・カテゴリー参照がサイレントにスルーされる → gohan 側の修正が必要 |
+| `build.exclude_files` 設定が機能しない | `model.BuildConfig.ExcludeFiles` フィールドは定義済みだが `parser/frontmatter.go` の `ParseAll` が参照せず除外指定が無効 → gohan 側の修正が必要 |
