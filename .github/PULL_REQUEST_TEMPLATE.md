@@ -1,13 +1,13 @@
-## Summary
+## 概要
 
-<!-- Describe the change and why it was made. -->
+<!-- 変更内容とその理由を記述してください。 -->
 
-## Related Issue
+## 関連Issue
 
-<!-- Link to the issue this PR addresses (if any). -->
+<!-- このPRが対応するIssueへのリンクを記載してください（あれば）。 -->
 
-## Checklist
+## チェックリスト
 
-- [ ] `gohan build` passes without errors
-- [ ] New content includes correct Front Matter (title, date, slug, tags, categories)
-- [ ] Reviewed diff for unintended changes
+- [ ] `gohan build` がエラーなく通る
+- [ ] 新規コンテンツに正しいFront Matter（title, date, slug, tags, categories）が含まれている
+- [ ] 意図しない変更がないかdiffを確認した

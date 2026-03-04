@@ -1,16 +1,16 @@
 ---
-name: New article
-about: Draft a new blog article
+name: 新規記事
+about: 新しいブログ記事の下書き
 labels: content
 ---
 
-## Title
+## タイトル
 
-## Outline
+## アウトライン
 
-<!-- Key points to cover. -->
+<!-- カバーする主要なポイントを記述してください。 -->
 
-## Target audience
+## 対象読者
 
-## References
+## 参考資料
 
