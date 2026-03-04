@@ -21,7 +21,7 @@ jobs:
           cache: false
 
       - name: Install gohan
-        run: go install github.com/bmf-san/gohan/cmd/gohan@latest
+        run: go install github.com/bmf-san/gohan/cmd/gohan@v0.1.2
 
       - name: Build site
         run: gohan build
