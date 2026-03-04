@@ -379,36 +379,36 @@ OUTPUT:
 ## Phase 9: CI/CD パイプライン
 
 ```yaml
-# .github/workflows/deploy.yml（概要）
+# .github/workflows/deploy.yml
+name: Deploy to Cloudflare Pages
 on:
   push:
     branches: [main]
-
+  workflow_dispatch:
 jobs:
   deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
     steps:
       - uses: actions/checkout@v4
-      - name: Setup Go
-        uses: actions/setup-go@v5
+      - uses: actions/setup-go@v5
         with:
-          go-version: '1.24'
-      - name: Build gohan binary
-        # gohan リリース後は go install github.com/bmf-san/gohan/cmd/gohan@latest に変更予定
-        run: |
-          git clone https://github.com/bmf-san/gohan.git /tmp/gohan
-          cd /tmp/gohan && go build -o /usr/local/bin/gohan ./cmd/gohan
+          go-version: stable
+          cache: false
+      - name: Install gohan
+        run: go install github.com/bmf-san/gohan/cmd/gohan@v0.1.2
       - name: Build site
         run: gohan build
       - name: Copy _redirects
-        # gohan は assets/ を public/ に自動コピーする。_redirects はルートに置くため手動コピーが必要
-        run: cp _redirects public/_redirects
+        run: cp _redirects public/
       - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
+        uses: cloudflare/wrangler-action@v3
         with:
-          projectName: bmf-tech
-          directory: public
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy public --project-name=bmf-tech
 ```
 
 ---
