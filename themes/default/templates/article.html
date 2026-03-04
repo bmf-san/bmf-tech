@@ -1,5 +1,5 @@
 {{template "head" .}}
-{{define "htmllang"}}{{range .Articles}}{{.Locale}}{{end}}{{end}}
+{{define "htmllang"}}{{with index .Articles 0}}{{.Locale}}{{else}}{{$.Config.Site.Language}}{{end}}{{end}}
 {{define "seo"}}{{range .Articles}}
 <link rel="canonical" href="{{$.Config.Site.BaseURL}}{{.URL}}">
 <link rel="alternate" hreflang="{{.Locale}}" href="{{$.Config.Site.BaseURL}}{{.URL}}">
