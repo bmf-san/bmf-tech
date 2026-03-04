@@ -1,23 +1,23 @@
 ---
-name: Bug report
-about: Something is broken on the site
+name: バグ報告
+about: サイトで問題が発生している
 labels: bug
 ---
 
-## Description
+## 説明
 
-<!-- A clear description of the bug. -->
+<!-- バグの内容を明確に記述してください。 -->
 
-## Steps to reproduce
+## 再現手順
 
 1.
 2.
 3.
 
-## Expected behaviour
+## 期待する動作
 
-## Actual behaviour
+## 実際の動作
 
-## Environment
+## 環境
 
-- Browser / OS:
+- ブラウザ / OS:
