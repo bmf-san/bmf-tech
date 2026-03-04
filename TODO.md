@@ -34,4 +34,4 @@
 - [x] `ValidateArticleTaxonomies` がビルドから呼ばれない（PR #62）
 - [x] アーカイブ URL 設計確認 → `/archives/{year}/{month}/` で確定
 - [x] gohan リリース（[v0.1.0](https://github.com/bmf-san/gohan/releases/tag/v0.1.0)）
-- [ ] `cfg.Build.ContentDir` が相対パスのまま processor に渡され i18n ロケール検出が失敗するバグ（[PR #66](https://github.com/bmf-san/gohan/pull/66)）→ マージ後に `make install` を `go install ...@latest` に変更
+- [x] `cfg.Build.ContentDir` が相対パスのまま processor に渡され i18n ロケール検出が失敗するバグ（[PR #66](https://github.com/bmf-san/gohan/pull/66)）→ マージ済み・[v0.1.1](https://github.com/bmf-san/gohan/releases/tag/v0.1.1) リリース済み・`make install` を `go install @latest` に変更済み

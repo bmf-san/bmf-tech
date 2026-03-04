@@ -8,11 +8,7 @@ help: ## ヘルプを表示
 		awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-15s\033[0m %s\n", $$1, $$2}'
 
 install: ## 依存ツールをインストール (gohan)
-	# TODO: switch to @latest once bmf-san/gohan PR #66 is merged
-	git clone --depth=1 --branch fix/i18n-absolute-content-dir \
-		https://github.com/bmf-san/gohan.git /tmp/gohan-install
-	cd /tmp/gohan-install && go install ./cmd/gohan/...
-	rm -rf /tmp/gohan-install
+	go install github.com/bmf-san/gohan/cmd/gohan@latest
 
 build: ## サイトをビルド
 	gohan build
