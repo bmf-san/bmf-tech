@@ -1,13 +1,14 @@
 {{/* _partials.html — shared template blocks loaded with every page */}}
 
 {{define "head"}}<!DOCTYPE html>
-<html lang="{{.Config.Site.Language}}">
+<html lang="{{block "htmllang" .}}{{.Config.Site.Language}}{{end}}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{block "title" .}}{{.Config.Site.Title}}{{end}}</title>
 <meta name="description" content="{{block "description" .}}{{.Config.Site.Description}}{{end}}">
 <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="{{.Config.Site.Title}}">
+{{block "seo" .}}{{end}}
 <style>
 :root {
   --text: #1a1a1a;
