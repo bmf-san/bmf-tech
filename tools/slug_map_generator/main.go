@@ -27,6 +27,7 @@ import (
 	"os/exec"
 	"regexp"
 	"strings"
+	"time"
 	"unicode"
 )
 
@@ -39,6 +40,7 @@ func main() {
 	outPath := flag.String("out", "../../tools/slug_map.csv", "output CSV path")
 	useAI := flag.Bool("ai", false, "use GitHub Models GPT-4o-mini via `gh auth token` (no API key needed)")
 	openAIKey := flag.String("openai-key", "", "use OpenAI API with this key instead of GitHub Models")
+	resume := flag.Bool("resume", false, "load existing -out CSV and skip records that already have AI slugs")
 	flag.Parse()
 
 	records, err := parsePosts(*sqlPath)
@@ -47,9 +49,16 @@ func main() {
 	}
 	fmt.Printf("parsed %d post records\n", len(records))
 
+	// Load previously generated slugs if resuming.
+	if *resume {
+		if err := loadExistingSlugs(*outPath, records); err != nil {
+			log.Printf("warning: could not load existing CSV: %v", err)
+		}
+	}
+
 	if *openAIKey != "" {
 		fmt.Println("generating slugs with OpenAI GPT-4o-mini...")
-		if err := assignAISlugs(records, *openAIKey, "https://api.openai.com/v1/chat/completions"); err != nil {
+		if err := assignAISlugs(records, *openAIKey, "https://api.openai.com/v1/chat/completions", *outPath); err != nil {
 			log.Fatalf("ai slug generation: %v", err)
 		}
 	} else if *useAI {
@@ -58,7 +67,7 @@ func main() {
 			log.Fatalf("gh auth token: %v\nRun `gh auth login` first.", err)
 		}
 		fmt.Println("generating slugs with GitHub Models GPT-4o-mini...")
-		if err := assignAISlugs(records, token, "https://models.inference.ai.azure.com/chat/completions"); err != nil {
+		if err := assignAISlugs(records, token, "https://models.inference.ai.azure.com/chat/completions", *outPath); err != nil {
 			log.Fatalf("ai slug generation: %v", err)
 		}
 	}
@@ -76,6 +85,38 @@ func ghAuthToken() (string, error) {
 		return "", err
 	}
 	return strings.TrimSpace(string(out)), nil
+}
+
+// loadExistingSlugs reads an existing CSV and pre-fills record.slug for any
+// records that already have a non-generated slug (not matching "post-<id>").
+func loadExistingSlugs(path string, records []postRecord) error {
+	f, err := os.Open(path)
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+
+	r := csv.NewReader(f)
+	rows, err := r.ReadAll()
+	if err != nil {
+		return err
+	}
+	// Build id->slug map (skip header).
+	existing := make(map[string]string, len(rows))
+	for _, row := range rows[1:] {
+		if len(row) >= 4 {
+			existing[row[0]] = row[3]
+		}
+	}
+	skipped := 0
+	for i := range records {
+		if s, ok := existing[records[i].id]; ok && s != "" && s != "post-"+records[i].id {
+			records[i].slug = s
+			skipped++
+		}
+	}
+	fmt.Printf("resume: loaded %d existing slugs, will regenerate %d\n", skipped, len(records)-skipped)
+	return nil
 }
 
 func parsePosts(path string) ([]postRecord, error) {
@@ -302,8 +343,13 @@ func generateSlug(id, title string) string {
 
 // assignAISlugs calls the given OpenAI-compatible endpoint in batches to generate meaningful
 // English slugs and writes them into each record's slug field.
-func assignAISlugs(records []postRecord, token, endpoint string) error {
+// It respects GitHub Models' rate limit of 15 req/min with automatic retry.
+// outPath is written after each successful batch so progress is preserved on failure.
+func assignAISlugs(records []postRecord, token, endpoint, outPath string) error {
 	const batchSize = 20
+	// GitHub Models: 15 req/min → wait ≥4s between requests; use 5s to be safe.
+	const batchDelay = 5 * time.Second
+
 	for i := 0; i < len(records); i += batchSize {
 		end := i + batchSize
 		if end > len(records) {
@@ -311,21 +357,53 @@ func assignAISlugs(records []postRecord, token, endpoint string) error {
 		}
 		batch := records[i:end]
 
-		titles := make([]string, len(batch))
+		// Collect indices that still need slugs.
+		var pending []int
+		titles := make([]string, 0, len(batch))
 		for j, r := range batch {
-			titles[j] = r.title
+			if r.slug == "" {
+				pending = append(pending, j)
+				titles = append(titles, r.title)
+			}
+		}
+		if len(pending) == 0 {
+			fmt.Printf("  skipped %d-%d (already have slugs)\n", i+1, end)
+			continue
 		}
 
-		slugs, err := callOpenAI(titles, token, endpoint)
+		var slugs []string
+		var err error
+		for attempt := 1; attempt <= 5; attempt++ {
+			slugs, err = callOpenAI(titles, token, endpoint)
+			if err == nil {
+				break
+			}
+			if strings.Contains(err.Error(), "Rate limit") || strings.Contains(err.Error(), "rate limit") {
+				wait := time.Duration(attempt) * 15 * time.Second
+				fmt.Printf("  rate limit hit, waiting %s (attempt %d/5)...\n", wait, attempt)
+				time.Sleep(wait)
+				continue
+			}
+			return fmt.Errorf("batch %d-%d: %w", i, end, err)
+		}
 		if err != nil {
 			return fmt.Errorf("batch %d-%d: %w", i, end, err)
 		}
-		for j := range batch {
-			if j < len(slugs) && slugs[j] != "" {
-				records[i+j].slug = slugs[j]
+
+		for k, j := range pending {
+			if k < len(slugs) && slugs[k] != "" {
+				records[i+j].slug = slugs[k]
 			}
 		}
 		fmt.Printf("  processed %d/%d\n", end, len(records))
+		// Write partial results so progress survives a crash or rate-limit failure.
+		if err := writeCSV(outPath, records); err != nil {
+			return fmt.Errorf("write partial csv: %w", err)
+		}
+
+		if end < len(records) {
+			time.Sleep(batchDelay)
+		}
 	}
 	return nil
 }

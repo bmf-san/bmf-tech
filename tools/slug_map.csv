@@ -40,7 +40,7 @@ id,category_id,title_ja,slug,created_at,reviewed
 50,3,macにanyenvをインストールする,installing-anyenv-on-mac,2017-10-01 16:08:40,false
 51,3,Nginxをリバースプロキシとして設定する,nginx-reverse-proxy-configuration,2017-10-01 16:10:44,false
 52,3,php7をインストールした時にmysqlドライバーがなかった,mysql-driver-php7-installation-issue,2017-10-01 16:11:47,false
-53,2,PHPで学ぶデザインパターン - Adapter ~APIを変更する~,php-adapter-api-change,2017-10-01 16:13:11,false
+53,2,PHPで学ぶデザインパターン - Adapter ~APIを変更する~,php-design-patterns-adapter,2017-10-01 16:13:11,false
 54,2,PHPで学ぶデザインパターン - Singleton ~いくつ作るかを制限~,php-design-patterns-singleton,2017-10-01 16:13:57,false
 55,2,PHPで学ぶデザインパターン - Template Method ~処理の穴埋め~,php-design-patterns-template-method,2017-10-01 16:14:48,false
 56,2,PHPで学ぶデザインパターン - オブジェクト指向の基礎,php-design-patterns-object-oriented-basics,2017-10-01 16:17:16,false
@@ -161,7 +161,7 @@ id,category_id,title_ja,slug,created_at,reviewed
 204,1,bmfと今年買ってよかったモノ,bmf-best-purchases-of-the-year,2017-12-25 10:21:40,false
 207,1,今年買ってよかったモノ,best-things-of-2018,2018-12-29 02:45:29,false
 208,1,2018年の振り返りと2019年の目標,2018-review-2019-goals,2018-12-31 10:31:22,false
-209,2,GolangのHTTPサーバーのコードリーディング,golang-http-server-code-reading-2019,2019-11-03 11:03:15,false
+209,2,GolangのHTTPサーバーのコードリーディング,golang-http-server-code-reading,2019-11-03 11:03:15,false
 210,12,アルゴリズムとデータ構造 - スタック,algorithms-data-structures-stack,2019-11-17 15:26:59,false
 211,12,アルゴリズムとデータ構造 - キュー,algorithms-data-structures-queue,2019-11-17 15:30:27,false
 212,1,2019年の全PHPカンファレンスをコンプリートした,complete-2019-php-conferences,2019-12-03 16:05:09,false
@@ -203,7 +203,7 @@ id,category_id,title_ja,slug,created_at,reviewed
 253,2,golang-migrateを使ってspannerのDBマイグレーションをする,db-migration-with-golang-migrate-spanner,2021-03-17 21:39:16,false
 254,3,TerraformとAnsibleを使ってKubernetes環境構築,kubernetes-setup-with-terraform-ansible,2021-04-06 23:53:10,false
 256,3,Docker CLIでDocker Composeが使えるようになった,docker-cli-supports-docker-compose,2021-05-06 15:44:05,false
-257,2,Gitでcommitを分割する方法,git-split-commit,2021-06-01 21:46:02,false
+257,2,Gitでcommitを分割する方法,split-commits-with-git,2021-06-01 21:46:02,false
 258,3,フから始まるシステム障害関連用語,system-failure-terms-starting-with-f,2021-06-05 01:30:47,false
 259,2,自作ルーティングをアップデートした,update-custom-routing,2021-06-18 19:01:00,false
 260,3,AWSのARNを覚える,remember-aws-arn,2021-06-23 00:06:43,false
