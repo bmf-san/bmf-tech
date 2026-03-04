@@ -1,0 +1,38 @@
+---
+title: "Ansibleでローカルのファイルをリモートにコピーする"
+slug: "copy-local-file-to-remote-ansible"
+date: 2017-09-26
+author: bmf-san
+categories:
+  - "インフラストラクチャ"
+tags:
+  - "Ansible"
+draft: false
+---
+
+# 概要
+Ansibleでローカルにあるファイル（ディレクトリの中身）をリモートにコピーするタスクです。
+
+# Playbook
+
+```
+---
+- hosts: vps
+  become: yes
+  user: root
+  tasks:
+  - name: Copy a directory
+    copy:
+     src: /path/to/directory/
+     dest: /usr/local/bin/
+     mode: u+x
+```
+
+ディレクトリの中身をリモートの`/usr/local/bin`以下に全てコピーするタスクです。パーミッションも指定しています。
+
+# 所感
+ドキュメント通りで特にハマるようなポイントはなさそうです。
+
+# 参考
++ [copy - Copies files to remote locations.](http://docs.ansible.com/ansible/copy_module.html)
+
