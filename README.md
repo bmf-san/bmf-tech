@@ -1,1 +1,143 @@
 # bmf-tech
+
+[bmf-tech.com](https://bmf-tech.com) のソースリポジトリ。
+[gohan](https://github.com/bmf-san/gohan) 製の静的サイトで、Cloudflare Pages でホスティングしている。
+
+## 技術スタック
+
+| レイヤー | 使用技術 |
+|---|---|
+| 静的サイトジェネレーター | [gohan](https://github.com/bmf-san/gohan) |
+| ホスティング | Cloudflare Pages |
+| CI/CD | GitHub Actions |
+| 言語 | Go (ツール類), HTML/CSS (テーマ) |
+
+## ディレクトリ構成
+
+```
+.
+├── .github/workflows/deploy.yml  # Cloudflare Pages デプロイワークフロー
+├── assets/
+│   └── images/posts/             # 記事内画像 (外部→ローカル移行済み)
+├── content/
+│   ├── en/
+│   │   ├── posts/                # 英語記事
+│   │   ├── about.md              # About ページ
+│   │   └── privacy-policy.md     # プライバシーポリシー
+│   └── ja/
+│       └── posts/                # 日本語記事 (旧ブログ移行済み 504記事)
+├── docs/
+│   ├── DESIGN_DOC.md             # 設計ドキュメント
+│   └── MIGRATION.md              # 移行手順
+├── public/                       # ビルド出力 (.gitignore済み)
+├── taxonomies/
+│   ├── categories.yaml           # カテゴリ一覧
+│   └── tags.yaml                 # タグ一覧
+├── themes/default/
+│   └── templates/                # HTMLテンプレート
+├── tools/
+│   ├── migrate/                  # SQLダンプ→Markdown変換ツール
+│   ├── download_images/          # 外部画像ダウンロードツール
+│   ├── slug_map_generator/       # 英語スラッグ生成ツール
+│   └── slug_map.csv              # 記事ID→スラッグ対応表
+├── _redirects                    # Cloudflare Pages リダイレクトルール
+└── config.yaml                   # gohan 設定
+```
+
+## セットアップ
+
+```bash
+# リポジトリをクローン
+git clone git@github.com:bmf-san/bmf-tech.git
+cd bmf-tech
+
+# gohan をインストール
+make install
+```
+
+## 開発
+
+```bash
+# サイトをビルド
+make build
+
+# ローカルサーバーを起動 (http://localhost:1313)
+make serve
+
+# 新しい日本語記事を作成
+make new-ja TITLE="記事タイトル" SLUG=article-slug
+
+# 新しい英語記事を作成
+make new-en TITLE="Article Title" SLUG=article-slug
+```
+
+## 記事の書き方
+
+日本語記事は `content/ja/posts/`、英語記事は `content/en/posts/` に Markdown ファイルを置く。
+
+フロントマターのフォーマット:
+
+```yaml
+---
+title: "記事タイトル"
+slug: article-slug
+date: 2026-01-15
+author: bmf-san
+categories:
+  - カテゴリ名
+tags:
+  - タグ1
+  - タグ2
+description: "記事の説明"
+translation_key: article-slug  # 翻訳記事がある場合に設定
+draft: false
+---
+```
+
+## 翻訳記事の紐付け
+
+`translation_key` を同じ値にすることで JA/EN 記事がリンクされる。
+`hreflang` タグは自動生成される。
+
+```yaml
+# content/ja/posts/hello.md
+translation_key: hello
+
+# content/en/posts/hello.md
+translation_key: hello
+```
+
+## URL 構造
+
+| コンテンツ | URL |
+|---|---|
+| 英語記事 | `/posts/{slug}/` |
+| 日本語記事 | `/ja/posts/{slug}/` |
+| About | `/about/` |
+| プライバシーポリシー | `/privacy-policy/` |
+| タグ一覧 | `/tags/` |
+| カテゴリ一覧 | `/categories/` |
+
+## デプロイ
+
+`main` ブランチへの push で自動デプロイ。
+
+**GitHub Secrets に設定が必要**:
+- `CLOUDFLARE_API_TOKEN` — Cloudflare API トークン (Pages:Edit 権限)
+- `CLOUDFLARE_ACCOUNT_ID` — Cloudflare アカウント ID
+
+手動デプロイ: GitHub Actions の `workflow_dispatch` からトリガー可能。
+
+## ツール
+
+`tools/` 以下に移行時に使用した一時的なツールコードがある。
+
+| ディレクトリ | 用途 |
+|---|---|
+| `tools/migrate/` | 旧ブログ MySQL ダンプ → Markdown 変換 |
+| `tools/download_images/` | 外部画像 URL → ローカルファイル置換 |
+| `tools/slug_map_generator/` | 日本語タイトルから英語スラッグを生成 |
+
+## ライセンス
+
+コンテンツ (content/) は著作権保持。ソースコード (themes/, tools/) は MIT ライセンス。
