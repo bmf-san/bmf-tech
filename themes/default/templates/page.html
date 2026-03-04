@@ -1,0 +1,18 @@
+{{template "head" .}}
+<body>
+{{template "header" .}}
+<main class="site-wrapper">
+  {{range .Articles}}
+  <article>
+    <header class="article-header">
+      <h1>{{.FrontMatter.Title}}</h1>
+    </header>
+    <div class="article-content">
+      {{.HTMLContent}}
+    </div>
+  </article>
+  {{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>

@@ -1,6 +1,7 @@
 *.sql
 .DS_Store
 public/
+.gohan/
 *.log
 tools/migrate/migrate
 tools/download_images/download_images
