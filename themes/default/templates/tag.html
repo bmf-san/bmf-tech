@@ -1,20 +1,25 @@
 {{template "head" .}}
-<body>
+{{define "extra-style"}}<style>
+.article-list { list-style: none; padding: 0; margin: 0; }
+.article-list li { border-bottom: 1px solid var(--color-slate-200); }
+.article-list li:last-child { border-bottom: none; }
+</style>{{end}}
+<body class="bg-body">
 {{template "header" .}}
-<main class="site-wrapper">
-  <p class="section-heading">Tag</p>
+<main class="container mx-auto px-4 py-4">
+  <p class="text-xs text-secondary mb-4">Tag</p>
   {{if .Articles}}
   <ul class="article-list">
     {{range .Articles}}
-    <li>
-      <span class="article-date">{{formatDate "2006-01-02" .FrontMatter.Date}}</span>
-      <a href="{{.URL}}">{{.FrontMatter.Title}}</a>
+    <li class="flex items-baseline gap-4 py-3">
+      <span class="text-xs text-secondary">{{formatDate "2006-01-02" .FrontMatter.Date}}</span>
+      <a href="{{.URL}}" class="font-medium">{{.FrontMatter.Title}}</a>
     </li>
     {{end}}
   </ul>
   {{template "pagination" .}}
   {{else}}
-  <p style="color:var(--muted);">No articles found.</p>
+  <p class="text-secondary">No articles found.</p>
   {{end}}
 </main>
 {{template "footer" .}}
