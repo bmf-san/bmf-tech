@@ -40,33 +40,33 @@ Cloud Functionsのコンソールにて、関数を作成しておく。
 ## Slack Appを作成
 [Create an app](https://api.slack.com/apps?new_app=1)にて、**From scratch**を押下する。
 
-<img width="721" alt="スクリーンショット 2022-09-04 17 29 50" src="https://user-images.githubusercontent.com/13291041/188304723-637b0b8a-6253-45db-86c9-17b33131444b.png">
+<img width="721" alt="スクリーンショット 2022-09-04 17 29 50" src="/assets/images/posts/cloud-functions-slack-app-slash-command/188304723-637b0b8a-6253-45db-86c9-17b33131444b.png">
 
 **App Name**を入力する。
 
 **Pick a workspace to develop your app in:** にてワークスペースを選択して、
 **Create App**を押下する。
 
-<img width="714" alt="スクリーンショット 2022-09-04 17 32 07" src="https://user-images.githubusercontent.com/13291041/188304790-225cfb1c-2a31-4627-8f57-35b856b4aed8.png">
+<img width="714" alt="スクリーンショット 2022-09-04 17 32 07" src="/assets/images/posts/cloud-functions-slack-app-slash-command/188304790-225cfb1c-2a31-4627-8f57-35b856b4aed8.png">
 
 ## Slash Commandを設定
 設定画面（ex. https://api.slack.com/app/****) にて、Slash Commandsを選択する。
 
-<img width="720" alt="スクリーンショット 2022-09-04 17 33 21" src="https://user-images.githubusercontent.com/13291041/188304841-db000433-2a20-4e4a-b303-9a2fac7e3e7b.png">
+<img width="720" alt="スクリーンショット 2022-09-04 17 33 21" src="/assets/images/posts/cloud-functions-slack-app-slash-command/188304841-db000433-2a20-4e4a-b303-9a2fac7e3e7b.png">
 
 **Create New Command**を押下し、**Command**、**Short Description**、**Usage Hint**、**Escape channels, users, and links sent to your app**を任意で入力する。
 
 **Request URL**は先程メモしたトリガーURLを入力する。
 トリガーURLは**https://REGION-NAME-PROJECT-ID.cloudfunctions.net/FUNCTION_NAME**という形式になっている。
 
-<img width="568" alt="スクリーンショット 2022-09-04 17 35 59" src="https://user-images.githubusercontent.com/13291041/188304929-a17ccbf4-3194-490e-ad65-12c77c5f324a.png">
+<img width="568" alt="スクリーンショット 2022-09-04 17 35 59" src="/assets/images/posts/cloud-functions-slack-app-slash-command/188304929-a17ccbf4-3194-490e-ad65-12c77c5f324a.png">
 
 入力できたら**Save**を押下する。
 
 ## Slack Appをインストールする
 設定画面（ex. https://api.slack.com/apps/****） にて、**Install App**を押下する。
 
-<img width="738" alt="スクリーンショット 2022-09-04 17 37 16" src="https://user-images.githubusercontent.com/13291041/188304972-f35057c1-7392-429e-90f0-b1ec02e096b0.png">
+<img width="738" alt="スクリーンショット 2022-09-04 17 37 16" src="/assets/images/posts/cloud-functions-slack-app-slash-command/188304972-f35057c1-7392-429e-90f0-b1ec02e096b0.png">
 
 **Install to workspace**を押下して、任意のワークスペースにAppwoインストールする。
 
@@ -93,7 +93,7 @@ Cloud Functionsにデプロイする関数を実装する。
 ex. 
 **/hello Bob**
 
-<img width="489" alt="スクリーンショット 2022-09-04 17 47 11" src="https://user-images.githubusercontent.com/13291041/188305315-5fe063c2-971b-4b18-978a-719596c2bd87.png">
+<img width="489" alt="スクリーンショット 2022-09-04 17 47 11" src="/assets/images/posts/cloud-functions-slack-app-slash-command/188305315-5fe063c2-971b-4b18-978a-719596c2bd87.png">
 
 # 所感
 Slack Appを作る部分をコード化できると嬉しい。
