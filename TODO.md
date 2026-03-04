@@ -36,4 +36,5 @@
 - [x] gohan リリース（[v0.1.0](https://github.com/bmf-san/gohan/releases/tag/v0.1.0)）
 - [x] `cfg.Build.ContentDir` が相対パスのまま processor に渡され i18n ロケール検出が失敗するバグ（[PR #66](https://github.com/bmf-san/gohan/pull/66)）→ マージ済み・[v0.1.1](https://github.com/bmf-san/gohan/releases/tag/v0.1.1) リリース済み・`make install` を `go install @latest` に変更済み
 - [x] 出力パス重複チェック追加（[PR #67](https://github.com/bmf-san/gohan/pull/67)）→ マージ済み・[v0.1.2](https://github.com/bmf-san/gohan/releases/tag/v0.1.2) リリース済み
-- [x] `go.mod` の Go バージョン要件を 1.24.0 に修正（1.25.3 が誤って設定されていた）→ [v0.1.3](https://github.com/bmf-san/gohan/releases/tag/v0.1.3) リリース済み・`go install @v0.1.3` にピン留め済み
+- [x] `go.mod` の Go バージョン要件を 1.24.0 に修正（1.25.3 が誤って設定されていた）→ [v0.1.3](https://github.com/bmf-san/gohan/releases/tag/v0.1.3) リリース済み
+- [x] go directive を 1.26.0 に更新 → [v0.1.4](https://github.com/bmf-san/gohan/releases/tag/v0.1.4) リリース済み・`go install @v0.1.4` にピン留め済み
