@@ -1,4 +1,4 @@
-.PHONY: help install build serve clean new-ja new-en
+.PHONY: help install install-e2e build serve clean test-e2e new-ja new-en
 
 TITLE   ?= untitled
 SLUG    ?= untitled
@@ -10,6 +10,9 @@ help: ## ヘルプを表示
 install: ## 依存ツールをインストール (gohan)
 	go install github.com/bmf-san/gohan/cmd/gohan@v0.1.3
 
+install-e2e: ## Playwright依存をインストール
+	cd e2e && npm ci && npx playwright install chromium
+
 build: ## サイトをビルド
 	gohan build
 
@@ -18,6 +21,12 @@ serve: ## ローカルサーバーを起動 (http://localhost:1313)
 
 clean: ## ビルド出力を削除
 	rm -rf public/*
+
+test-e2e: ## E2Eテストを実行 (事前にビルドして http-server で配信)
+	gohan build && cd e2e && npx playwright test
+
+test-e2e-ui: ## E2EテストをPlaywright UI モードで実行
+	gohan build && cd e2e && npx playwright test --ui
 
 new-ja: ## 日本語記事を作成  例: make new-ja TITLE="タイトル" SLUG=slug
 	@mkdir -p content/ja/posts
