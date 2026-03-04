@@ -285,6 +285,26 @@ func skipField(s string, pos int) int {
 }
 
 func writeCSV(path string, records []postRecord) error {
+	// Resolve slugs and detect duplicates before writing.
+	resolved := make([]string, len(records))
+	seen := make(map[string]string, len(records)) // slug -> id
+	var dups []string
+	for i, r := range records {
+		slug := r.slug
+		if slug == "" {
+			slug = generateSlug(r.id, r.title)
+		}
+		resolved[i] = slug
+		if prev, ok := seen[slug]; ok {
+			dups = append(dups, fmt.Sprintf("  slug %q: id=%s and id=%s", slug, prev, r.id))
+		} else {
+			seen[slug] = r.id
+		}
+	}
+	if len(dups) > 0 {
+		return fmt.Errorf("duplicate slugs detected:\n%s", strings.Join(dups, "\n"))
+	}
+
 	f, err := os.Create(path)
 	if err != nil {
 		return err
@@ -293,12 +313,8 @@ func writeCSV(path string, records []postRecord) error {
 	w := csv.NewWriter(f)
 	defer w.Flush()
 	_ = w.Write([]string{"id", "category_id", "title_ja", "slug", "created_at", "reviewed"})
-	for _, r := range records {
-		slug := r.slug
-		if slug == "" {
-			slug = generateSlug(r.id, r.title)
-		}
-		_ = w.Write([]string{r.id, r.categoryID, r.title, slug, r.createdAt, "false"})
+	for i, r := range records {
+		_ = w.Write([]string{r.id, r.categoryID, r.title, resolved[i], r.createdAt, "false"})
 	}
 	return nil
 }
