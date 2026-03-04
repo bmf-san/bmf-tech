@@ -17,6 +17,9 @@ build:
 theme:
   name: "default"
   dir: "themes/default"
+  params:
+    # DNS移管が完了したらこの行を削除してリビルドする
+    noindex: "true"
 
 syntax_highlight:
   theme: "github"

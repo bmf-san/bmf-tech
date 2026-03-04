@@ -7,6 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{block "title" .}}{{.Config.Site.Title}}{{end}}</title>
 <meta name="description" content="{{block "description" .}}{{.Config.Site.Description}}{{end}}">
+{{- if index .Config.Theme.Params "noindex"}}
+<meta name="robots" content="noindex, nofollow">
+{{- end}}
 <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="{{.Config.Site.Title}}">
 {{block "seo" .}}{{end}}
 <style>
