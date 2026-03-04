@@ -3,13 +3,14 @@
 //
 // Usage:
 //
-//	go run main.go [-sql PATH] [-out PATH] [-ai]
+//	go run main.go [-sql PATH] [-out PATH] [-ai] [-openai-key KEY]
 //
 // Defaults:
 //
-//	-sql  ../../bmf-tech_2026-03-01.sql
-//	-out  ../../tools/slug_map.csv
-//	-ai   false (set true to use OpenAI GPT-4o-mini; requires OPENAI_API_KEY env)
+//	-sql        ../../bmf-tech_2026-03-01.sql
+//	-out        ../../tools/slug_map.csv
+//	-ai         false  — when set, uses GitHub Models API (GPT-4o-mini) via `gh auth token`
+//	-openai-key ""     — when set, uses OpenAI API instead of GitHub Models
 package main
 
 import (
@@ -23,6 +24,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"os/exec"
 	"regexp"
 	"strings"
 	"unicode"
@@ -35,7 +37,8 @@ type postRecord struct {
 func main() {
 	sqlPath := flag.String("sql", "../../bmf-tech_2026-03-01.sql", "MySQL dump path")
 	outPath := flag.String("out", "../../tools/slug_map.csv", "output CSV path")
-	useAI := flag.Bool("ai", false, "use OpenAI GPT-4o-mini to generate meaningful English slugs (requires OPENAI_API_KEY)")
+	useAI := flag.Bool("ai", false, "use GitHub Models GPT-4o-mini via `gh auth token` (no API key needed)")
+	openAIKey := flag.String("openai-key", "", "use OpenAI API with this key instead of GitHub Models")
 	flag.Parse()
 
 	records, err := parsePosts(*sqlPath)
@@ -44,13 +47,18 @@ func main() {
 	}
 	fmt.Printf("parsed %d post records\n", len(records))
 
-	if *useAI {
-		apiKey := os.Getenv("OPENAI_API_KEY")
-		if apiKey == "" {
-			log.Fatal("OPENAI_API_KEY is not set")
-		}
+	if *openAIKey != "" {
 		fmt.Println("generating slugs with OpenAI GPT-4o-mini...")
-		if err := assignAISlugs(records, apiKey); err != nil {
+		if err := assignAISlugs(records, *openAIKey, "https://api.openai.com/v1/chat/completions"); err != nil {
+			log.Fatalf("ai slug generation: %v", err)
+		}
+	} else if *useAI {
+		token, err := ghAuthToken()
+		if err != nil {
+			log.Fatalf("gh auth token: %v\nRun `gh auth login` first.", err)
+		}
+		fmt.Println("generating slugs with GitHub Models GPT-4o-mini...")
+		if err := assignAISlugs(records, token, "https://models.inference.ai.azure.com/chat/completions"); err != nil {
 			log.Fatalf("ai slug generation: %v", err)
 		}
 	}
@@ -59,6 +67,15 @@ func main() {
 		log.Fatalf("write csv: %v", err)
 	}
 	fmt.Printf("wrote %s\n", *outPath)
+}
+
+// ghAuthToken returns the current GitHub token via `gh auth token`.
+func ghAuthToken() (string, error) {
+	out, err := exec.Command("gh", "auth", "token").Output()
+	if err != nil {
+		return "", err
+	}
+	return strings.TrimSpace(string(out)), nil
 }
 
 func parsePosts(path string) ([]postRecord, error) {
@@ -283,9 +300,9 @@ func generateSlug(id, title string) string {
 	return strings.Join(deduped, "-")
 }
 
-// assignAISlugs calls OpenAI GPT-4o-mini in batches to generate meaningful
+// assignAISlugs calls the given OpenAI-compatible endpoint in batches to generate meaningful
 // English slugs and writes them into each record's slug field.
-func assignAISlugs(records []postRecord, apiKey string) error {
+func assignAISlugs(records []postRecord, token, endpoint string) error {
 	const batchSize = 20
 	for i := 0; i < len(records); i += batchSize {
 		end := i + batchSize
@@ -299,7 +316,7 @@ func assignAISlugs(records []postRecord, apiKey string) error {
 			titles[j] = r.title
 		}
 
-		slugs, err := callOpenAI(titles, apiKey)
+		slugs, err := callOpenAI(titles, token, endpoint)
 		if err != nil {
 			return fmt.Errorf("batch %d-%d: %w", i, end, err)
 		}
@@ -362,7 +379,7 @@ Rules:
 - Keep well-known tech names as-is (laravel, react, es6, ansible, docker, golang, etc.).
 - Return ONLY the slugs, one per line — no numbers, no explanations.`
 
-func callOpenAI(titles []string, apiKey string) ([]string, error) {
+func callOpenAI(titles []string, token, endpoint string) ([]string, error) {
 	var sb strings.Builder
 	for _, t := range titles {
 		sb.WriteString(t)
@@ -382,12 +399,12 @@ func callOpenAI(titles []string, apiKey string) ([]string, error) {
 		return nil, err
 	}
 
-	req, err := http.NewRequest(http.MethodPost, "https://api.openai.com/v1/chat/completions", bytes.NewReader(body))
+	req, err := http.NewRequest(http.MethodPost, endpoint, bytes.NewReader(body))
 	if err != nil {
 		return nil, err
 	}
 	req.Header.Set("Content-Type", "application/json")
-	req.Header.Set("Authorization", "Bearer "+apiKey)
+	req.Header.Set("Authorization", "Bearer "+token)
 
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
