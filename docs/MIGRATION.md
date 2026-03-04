@@ -398,7 +398,7 @@ jobs:
           go-version: stable
           cache: false
       - name: Install gohan
-        run: go install github.com/bmf-san/gohan/cmd/gohan@v0.1.2
+        run: go install github.com/bmf-san/gohan/cmd/gohan@v0.1.3
       - name: Build site
         run: gohan build
       - name: Copy _redirects
