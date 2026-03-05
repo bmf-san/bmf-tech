@@ -245,6 +245,7 @@ description: "Kenta Takeuchi のプロフィールページ"
 
 | 項目 | 内容 |
 |---|---|
+| sitemap.xml のタクソノミー・アーカイブ URL 欠落 | `GenerateSitemap()` が記事スライスのみ受け取るため、個別タグページ `/tags/{name}/`、カテゴリーページ `/categories/{name}/`、アーカイブページ `/archives/{year}/{month}/` が sitemap に含まれない。記事 URL（584件）は収録済みのため DNS 移行ブロッカーではないが、gohan 側に `extraURLs []string` 引数を追加して対応予定 |
 | 検索機能 | Pagefind などのクライアントサイド全文検索の採用を検討 |
 | ページネーション | 記事が 700+ 件あるため `index.html` のページ分割が必要。gohan はページネーションをサポート済み（`build.per_page` で設定）。カテゴリー・タグ・アーカイブページも同様 |
 | 広告 | Google AdSense を継続運用。テンプレートに広告スロットを設ける |
