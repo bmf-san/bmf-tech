@@ -40,6 +40,11 @@
     <div class="article-content">
       {{.HTMLContent}}
     </div>
+    {{if $.Config.Site.GitHubRepo}}
+    <footer class="article-footer">
+      <a href="{{$.Config.Site.GitHubRepo}}/blob/{{$.Config.Site.GitHubBranch}}/content/{{.ContentPath}}" target="_blank" rel="noopener">Edit on GitHub</a>
+    </footer>
+    {{end}}
   </article>
   {{end}}
 </main>
