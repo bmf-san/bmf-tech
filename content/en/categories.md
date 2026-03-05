@@ -7,8 +7,6 @@ template: page.html
 draft: false
 ---
 
-## Categories
-
 - [OS](/categories/OS/)
 - [Tools](/categories/Tools/)
 - [アプリケーション](/categories/アプリケーション/)

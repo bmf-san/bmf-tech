@@ -7,6 +7,8 @@ template: page.html
 draft: false
 ---
 
+![Profile](/profile.png)
+
 ## Kenta Takeuchi
 
 Senior Platform Engineer.
