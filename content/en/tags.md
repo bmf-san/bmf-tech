@@ -7,8 +7,6 @@ template: page.html
 draft: false
 ---
 
-## Tags
-
 ### Go
 
 - [Go](/tags/Go/)
