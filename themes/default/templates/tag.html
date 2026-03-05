@@ -1,3 +1,4 @@
+{{define "htmllang"}}{{if .CurrentLocale}}{{.CurrentLocale}}{{else}}{{.Config.Site.Language}}{{end}}{{end}}
 {{template "head" .}}
 {{define "extra-style"}}<style>
 .article-list { list-style: none; padding: 0; margin: 0; }
@@ -12,7 +13,7 @@
   <ul class="article-list">
     {{range .Articles}}
     <li class="flex items-baseline gap-4 py-3">
-      <span class="text-xs text-secondary">{{formatDate "2006-01-02" .FrontMatter.Date}}</span>
+      <span class="article-date text-xs text-secondary whitespace-nowrap">{{formatDate "2006-01-02" .FrontMatter.Date}}</span>
       <a href="{{.URL}}" class="font-medium">{{.FrontMatter.Title}}</a>
     </li>
     {{end}}

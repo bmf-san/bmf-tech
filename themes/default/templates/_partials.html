@@ -9,8 +9,19 @@
 <meta name="description" content="{{block "description" .}}{{.Config.Site.Description}}{{end}}">
 <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="{{.Config.Site.Title}}">
 {{block "seo" .}}{{end}}
-<link rel="stylesheet" href="https://unpkg.com/sleyt@latest/dist/css/index.css">
 {{block "extra-style" .}}{{end}}
+{{- with index .Config.Theme.Params "ga_id"}}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{.}}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{.}}');
+</script>
+{{- end}}
+{{- with index .Config.Theme.Params "adsense_id"}}
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{.}}" crossorigin="anonymous"></script>
+{{- end}}
 </head>
 {{end}}
 
@@ -20,9 +31,15 @@
     <nav class="flex items-center justify-between">
       <a href="/" class="font-bold text-slate-50">{{.Config.Site.Title}}</a>
       <div class="nav-links flex gap-4">
+        {{if eq .CurrentLocale "ja"}}
+        <a href="/" class="text-slate-300 text-sm">English</a>
+        <a href="/ja/tags/" class="text-slate-300 text-sm">Tags</a>
+        <a href="/ja/categories/" class="text-slate-300 text-sm">Categories</a>
+        {{else}}
         <a href="/ja/" class="text-slate-300 text-sm">日本語</a>
         <a href="/tags/" class="text-slate-300 text-sm">Tags</a>
         <a href="/categories/" class="text-slate-300 text-sm">Categories</a>
+        {{end}}
         <a href="/profile/" class="text-slate-300 text-sm">Profile</a>
         <a href="/about/" class="text-slate-300 text-sm">About</a>
         <a href="/atom.xml" class="text-slate-300 text-sm">Feed</a>

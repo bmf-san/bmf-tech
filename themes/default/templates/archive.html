@@ -12,7 +12,8 @@
   <ul class="article-list">
     {{range .Articles}}
     <li class="flex items-baseline gap-4 py-3">
-      <span class="text-xs text-secondary">{{formatDate "2006-01-02" .FrontMatter.Date}}</span>
+      <span class="article-date text-xs text-secondary whitespace-nowrap">{{formatDate "2006-01-02" .FrontMatter.Date}}</span>
+      {{if .Locale}}<span class="badge {{if eq .Locale "ja"}}badge-danger{{else}}badge-info{{end}}">{{.Locale}}</span>{{end}}
       <a href="{{.URL}}" class="font-medium">{{.FrontMatter.Title}}</a>
     </li>
     {{end}}

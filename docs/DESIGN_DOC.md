@@ -14,12 +14,13 @@
 | `/posts/{slug}/` | `article.html` | 記事詳細 |
 | `/categories/{name}/` | `category.html` | カテゴリー別記事一覧 |
 | `/tags/{name}/` | `tag.html` | タグ別記事一覧 |
-| `/archives/{year}/{month}/` | `archive.html` | 年月別アーカイブ（gohan の実装が `archives/{year}/{month}/`） |
-| `/about/` | （ページ → 静的 HTML） | プロフィール |
-| `/support/` | （ページ → 静的 HTML） | サポートページ |
-| `/privacy-policy/` | （ページ → 静的 HTML） | プライバシーポリシー |
+| `/archives/{year}/{month}/` | `archive.html` | 年月別アーカイブ |
+| `/about/` | `page.html` | プロフィール |
+| `/privacy-policy/` | `page.html` | プライバシーポリシー |
 | `/sitemap.xml` | gohan 自動生成 | XML サイトマップ |
 | `/atom.xml` | gohan 自動生成 | Atom フィード |
+
+> `/support/` は当初設計に含まれていたが v1 では未実装。
 
 > **スラッグ方針**: 意味のある英語ハイフン区切り slug を使用する。
 > - 単語は `-` 区切り、すべて小文字
@@ -30,8 +31,12 @@
 ### ナビゲーション
 
 ```
-bmf-tech | 記事 | カテゴリ | タグ | アーカイブ | プロフィール
+bmf-tech | 日本語 | Tags | Categories | About | Feed
 ```
+
+ヘッダー: `themes/default/templates/_partials.html` の `{{define "header"}}` ブロック。
+
+フッター: About / Privacy Policy / Contact リンク + copyright。
 
 ---
 
@@ -40,31 +45,35 @@ bmf-tech | 記事 | カテゴリ | タグ | アーカイブ | プロフィール
 ```
 bmf-tech/
 ├── config.yaml              # gohan 設定
+├── _redirects               # Cloudflare Pages リダイレクトルール（CI で public/ へコピー）
 ├── content/
 │   ├── en/                  # 英語コンテンツ（デフォルトロケール）
-│   │   └── posts/           # 記事 Markdown ファイル
-│   └── ja/                  # 日本語コンテンツ
-│       └── posts/           # 日本語記事 Markdown ファイル
-├── pages/                   # 固定ページ（about, support, privacy-policy）
+│   │   ├── posts/           # 英語記事 Markdown ファイル
+│   │   ├── about.md         # About ページ
+│   │   ├── privacy-policy.md
+│   │   ├── categories.md    # /categories/ インデックスページ（http-server 用）
+│   │   └── tags.md          # /tags/ インデックスページ
+│   └── ja/
+│       └── posts/           # 日本語記事 Markdown ファイル（584件）
 ├── assets/
-│   ├── css/
-│   │   └── custom.css       # sleyt のカスタマイズ・上書き用
-│   ├── js/                  # 必要に応じて（Mermaid 等は gohan が自動注入）
-│   └── images/
-│       └── profile.png
+│   ├── images/
+│   │   └── posts/{slug}/    # Phase 6 で移行した記事内画像
+│   └── robots.txt           # gohan build 時に public/ へ自動コピー
 ├── themes/
 │   └── default/
 │       └── templates/
+│           ├── _partials.html   # head / header / footer / pagination 共通ブロック（CSS インライン）
 │           ├── index.html
 │           ├── article.html
+│           ├── page.html        # about / privacy-policy 等の固定ページ
 │           ├── tag.html
 │           ├── category.html
-│           ├── archive.html
-│           └── _partials/
-│               ├── head.html       # <head> 共通テンプレート（OGP/SEO）
-│               ├── header.html     # グローバルナビ + 言語切替
-│               ├── footer.html     # フッター
-│               └── article-card.html  # 記事サムネイルカード
+│           └── archive.html
+├── taxonomies/
+│   ├── tags.yaml
+│   └── categories.yaml
+├── tools/
+│   └── gen_redirects.py     # _redirects 再生成スクリプト
 └── docs/
     ├── DESIGN_DOC.md
     └── MIGRATION.md
@@ -74,27 +83,31 @@ bmf-tech/
 
 ## 3. config.yaml スキーマ
 
+実際の `config.yaml` は以下の構造（現在値）：
+
 ```yaml
 site:
-  title: "bmf-tech.com"
-  description: "シニアプラットフォームエンジニア Kenta Takeuchi の技術ブログ。Go・アーキテクチャ・インフラ・開発プロセスを中心に発信。"
-  base_url: https://bmf-tech.com
-  language: en
-  # GitHubで編集を提案する リンクの生成に使用
+  title: "bmf-tech"
+  description: "bmf-san's personal tech blog"
+  base_url: "https://bmf-tech.com"
+  language: "en"
   github_repo: "https://github.com/bmf-san/bmf-tech"
   github_branch: "main"
 
 build:
-  content_dir: content
-  output_dir: public
-  assets_dir: assets
+  content_dir: "content"
+  output_dir: "public"
+  assets_dir: "assets"
   parallelism: 4
   per_page: 20
+  exclude_files: []
 
 theme:
-  name: default
-  dir: themes/default
+  name: "default"
+  dir: "themes/default"
   params:
+    # DNS 移管完了後にこの行を削除してリビルドする
+    noindex: "true"
     author: "Kenta Takeuchi"
     github: "bmf-san"
     twitter: "bmf_san"
@@ -102,23 +115,35 @@ theme:
     zenn: "bmf_san"
     speaker_deck: "bmf_san"
     footer_text: "© 2026 Kenta Takeuchi"
-    adsense_id: ""          # Google AdSense クライアント ID
-    ga_id: ""               # Google Analytics 測定 ID
+    adsense_id: "ca-pub-5146230866088201"
+    adsense_slot: "7900864416"
+    ga_id: "G-784B55NW88"
+
+syntax_highlight:
+  theme: "github"
+  line_numbers: false
+
+ogp:
+  enabled: false            # OGP 画像生成は未対応（gohan 側未実装）
 
 i18n:
-  locales: [en, ja]
-  default_locale: en        # en は URL プレフィックスなし、ja は /ja/ プレフィックス
+  default_locale: "en"
+  locales:
+    - "en"
+    - "ja"
 ```
+
+> DNS 移管後（Phase 11）に必ず `noindex: "true"` を削除してリビルドすること。
 
 ---
 
 ## 4. Front Matter スキーマ
 
-### 記事（content/posts/）
+### 記事（content/ja/posts/ および content/en/posts/）
 
 ```yaml
 ---
-title: "記事タイトル（英語）"
+title: "記事タイトル"
 date: 2024-01-15
 draft: false
 slug: "article-slug-in-english"   # URL に使用。英語ハイフン区切り
@@ -129,16 +154,20 @@ tags:
   - Go
   - HTTP
 categories:
-  - Architecture
+  - アーキテクチャ
 ---
 ```
 
-### ページ（content/pages/）
+### 固定ページ（content/en/）
 
 ```yaml
 ---
-title: "プロフィール"
+title: "About"
 slug: "about"
+date: 2024-01-01
+author: "bmf-san"
+template: page.html
+draft: false
 description: "Kenta Takeuchi のプロフィールページ"
 ---
 ```
@@ -151,18 +180,20 @@ description: "Kenta Takeuchi のプロフィールページ"
 
 ### 5.1 テクニカル SEO
 
-| 施策 | 実装方法 |
+| 施策 | 実装状況 |
 |---|---|
-| `<title>` タグ最適化 | `{記事タイトル} — bmf-tech.com` 形式 |
+| `<title>` タグ最適化 | `{記事タイトル} — {site.title}` 形式（`article.html` の `{{define "title"}}`） |
 | `<meta name="description">` | Front Matter の `description` フィールドを使用 |
-| OGP タグ | `head.html` パーシャルに `og:title / og:description / og:url / og:image` を実装 |
-| Twitter Card | `twitter:card / twitter:site / twitter:creator` を `head.html` に実装 |
-| Canonical URL | `<link rel="canonical">` を全ページに設定。`{{.Config.Site.BaseURL}}/posts/{{slug}}/` |
-| JSON-LD (Article) | `article.html` に `@type: BlogPosting` の構造化データを埋め込む |
-| JSON-LD (BreadcrumbList) | 記事・カテゴリー・タグページにパンくずリストを実装 |
-| sitemap.xml | gohan が自動生成 |
-| robots.txt | `/assets/robots.txt` に配置。全クロール許可 + sitemap 参照 |
+| OGP タグ | `og:title / og:description / og:url / og:site_name` を `_partials.html` の `{{define "head"}}` に実装済み。`og:image` は未設定（gohan の `ogp.enabled: false`） |
+| Twitter Card | `twitter:card / twitter:site / twitter:creator` を実装済み |
+| Canonical URL | `<link rel="canonical">` を `article.html` に実装済み |
+| hreflang | 日英ペア記事に `hreflang="ja"` / `hreflang="en"` / `hreflang="x-default"` を出力（gohan が `translation_key` で自動処理） |
+| JSON-LD (Article) | **未実装**（検討事項参照） |
+| JSON-LD (BreadcrumbList) | **未実装** |
+| sitemap.xml | gohan が自動生成。記事・固定ページの URL を収録（タグ・カテゴリー・アーカイブ個別ページは含まれない） |
+| robots.txt | `assets/robots.txt` に配置済み。`Allow: /` + sitemap 参照 |
 | Atom フィード | gohan が自動生成 (`/atom.xml`) |
+| noindex | DNS 移管前は `theme.params.noindex: "true"` で全ページに `<meta name="robots" content="noindex, nofollow">` を付与 |
 
 ### 5.2 コンテンツ SEO
 
@@ -170,74 +201,78 @@ description: "Kenta Takeuchi のプロフィールページ"
 |---|---|
 | 英語スラッグ | 日本語タイトルの URL エンコードを避け、意味のある英語スラッグを設定 |
 | カテゴリー・タグの活用 | トピッククラスタリングを意識したカテゴリー設計。カテゴリー数は現行を維持し追加・整理は段階的に実施 |
-| アーカイブページ | `/archives/{year}/{month}/` で年月別コンテンツを集約し時系列インデックスを提供（gohan の実装に準拠） |
-| 内部リンク | 記事内で関連記事へのリンクを手動で記述（テンプレートに「関連記事」セクションを追加することも検討） |
+| アーカイブページ | `/archives/{year}/{month}/` で年月別コンテンツを集約（gohan 実装済み） |
+| 内部リンク | 記事内で関連記事へのリンクを手動で記述 |
+| GitHub ソースリンク | 各記事フッターに `Edit on GitHub` リンクを表示（`ContentPath` + `Config.Site.GitHubRepo` で生成） |
 | 画像 alt テキスト | Markdown の画像記法で alt を必ず記述 |
 
 ### 5.3 パフォーマンス（Core Web Vitals）
 
-- 静的 HTML ＋ sleyt（CSS-only、JS 依存なし）→ LCP・FID・CLS を最小化
-- sleyt は CDN 配信済みの minify 済み CSS を使用（`unpkg.com/sleyt@latest`）
+- 静的 HTML + CSS のみ（JS 依存なし）→ LCP・FID・CLS を最小化
+- CSS はインライン（`_partials.html` の `<style>` タグ）。外部 CSS 依存なし
+- システムフォントスタック使用（Web フォント不使用）
 - 画像は `loading="lazy"` を付与
-- フォントは system-font-stack を優先し Web フォントを極力使わない
-- サイト固有のカスタマイズは `custom.css` 1 ファイルにまとめ minify する
 
 ---
 
 ## 6. テンプレート設計指針
 
-### CSS フレームワーク
+### CSS
 
-[**sleyt**](https://github.com/bmf-san/sleyt)（自作）を採用する。
-
-- JavaScript 依存なし（CSS-only）
-- ガラスモーフィズムデザイン
-- ダークモード対応（CSS Custom Properties ベース）
-- レスポンシブ・モバイルファースト
-- CDN: `https://unpkg.com/sleyt@latest/dist/css/index.css`
-- サイト固有の上書きは `assets/css/custom.css` で管理
-
-### 共通
-
-- sleyt のコンポーネントクラス（`.card`, `.btn`, `.badge`, `.pagination` 等）を活用
-- コードブロックは gohan の chroma によりサーバーサイドでシンタックスハイライト
-- Mermaid ブロックは gohan が自動でスクリプト注入
-
-### `head.html`（パーシャル）
+[sleyt](https://github.com/bmf-san/sleyt)（bmf-san 製ミニマル CSS フレームワーク）を CDN 経由で読み込む。独自 `<style>` タグは使用しない。
 
 ```html
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{block "title" .}}{{.Config.Site.Title}}{{end}}</title>
-<meta name="description" content="{{block "description" .}}{{.Config.Site.Description}}{{end}}">
-<link rel="canonical" href="{{block "canonical" .}}{{.Config.Site.BaseURL}}/{{end}}">
-<!-- sleyt CSS framework -->
 <link rel="stylesheet" href="https://unpkg.com/sleyt@latest/dist/css/index.css">
-<link rel="stylesheet" href="{{.Config.Site.BaseURL}}/assets/css/custom.css">
-<!-- OGP -->
-<meta property="og:type" content="{{block "og_type" .}}website{{end}}">
-<meta property="og:title" content="{{block "og_title" .}}{{.Config.Site.Title}}{{end}}">
-<meta property="og:description" content="{{block "og_description" .}}{{.Config.Site.Description}}{{end}}">
-<meta property="og:url" content="{{block "og_url" .}}{{.Config.Site.BaseURL}}{{end}}">
-<meta property="og:site_name" content="{{.Config.Site.Title}}">
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@{{.Config.Theme.Params.twitter}}">
-<meta name="twitter:creator" content="@{{.Config.Theme.Params.twitter}}">
-<!-- Feed -->
-<link rel="alternate" type="application/atom+xml" title="{{.Config.Site.Title}}" href="{{.Config.Site.BaseURL}}/atom.xml">
+<link rel="stylesheet" href="/assets/css/custom.css">
 ```
 
-### `article.html`
+- **`sleyt`**: CSS リセット・デザイントークン変数（`--color-slate-*` / `--text-primary` 等）・レイアウトユーティリティ（`container`, `flex`, `grid`, `gap-*`, `px-*` 等）・タイポグラフィ（`text-sm`, `font-bold` など）・ダークモード対応を提供
+- **`assets/css/custom.css`**: sleyt ユーティリティクラスを付与できない要素（Markdown レンダリング後の `.article-content` 内 `pre/code/blockquote/table/img/h1-h6` 等）と、サイト固有クラス（`.article-row`, `.tag-badge`, `.site-main`, `.nav-brand`, `.footer-link` 等）を定義
+- インライン `style=""` は Google AdSense 必須属性 (`<ins style="display:block">`) のみ許容
 
-- Front Matter の `description` を `<meta name="description">` に設定
-- 公開日・著者・カテゴリー・タグを表示
-- `@type: BlogPosting` の JSON-LD を出力
-- コードブロックをコピーボタン付きで表示（JS で実装）
+> `assets/css/custom.css` は gohan のビルド時に `assets/` の内容が `public/assets/css/custom.css` へ自動コピーされる。
+
+### テンプレート一覧
+
+| ファイル | 用途 |
+|---|---|
+| `_partials.html` | `head` / `header` / `footer` / `pagination` の共通ブロック。CSS もここに集約 |
+| `index.html` | トップページ（記事一覧、ページネーション） |
+| `article.html` | 記事詳細。canonical / hreflang / GitHub ソースリンクを出力 |
+| `page.html` | 固定ページ（about, privacy-policy）。`{{define "htmllang"}}` で locale を設定 |
+| `tag.html` | タグ別記事一覧 |
+| `category.html` | カテゴリー別記事一覧 |
+| `archive.html` | 年月別アーカイブ |
+
+### `_partials.html` — `{{define "head"}}` の主要要素
+
+```html
+<html lang="{{block "htmllang" .}}{{.Config.Site.Language}}{{end}}">
+<head>
+<title>{{block "title" .}}{{.Config.Site.Title}}{{end}}</title>
+<meta name="description" content="...">
+{{- if index .Config.Theme.Params "noindex"}}
+<meta name="robots" content="noindex, nofollow">
+{{- end}}
+<link rel="alternate" type="application/atom+xml" href="/atom.xml" ...>
+{{block "seo" .}}{{end}}
+<style>/* インライン CSS */</style>
+```
+
+### `article.html` — 記事フッターの GitHub リンク
+
+```html
+{{if $.Config.Site.GitHubRepo}}
+<footer class="article-footer">
+  <a href="{{$.Config.Site.GitHubRepo}}/blob/{{$.Config.Site.GitHubBranch}}/content/{{.ContentPath}}"
+     target="_blank" rel="noopener">Edit on GitHub</a>
+</footer>
+{{end}}
+```
 
 ### robots.txt
 
-`assets/robots.txt` に配置する。gohan のビルド時に `assets/` の内容が `public/` ルートに直接コピーされるため、`public/robots.txt` に自動配置される。CI での手動コピーは不要。
+`assets/robots.txt` に配置。gohan のビルド時に `assets/` の内容が `public/` ルートに直接コピーされるため、CI での手動コピーは不要。
 
 ---
 
@@ -245,18 +280,12 @@ description: "Kenta Takeuchi のプロフィールページ"
 
 | 項目 | 内容 |
 |---|---|
+| sitemap.xml のタクソノミー・アーカイブ URL 欠落 | `GenerateSitemap()` が記事スライスのみ受け取るため、個別タグ・カテゴリー・アーカイブページが含まれない。記事 URL（584件）は収録済みのため DNS 移行ブロッカーではないが、gohan 側 enhancement として対応予定 |
+| JSON-LD | `article.html` に `@type: BlogPosting`、各ページに BreadcrumbList を未実装。移行後に追加予定 |
 | 検索機能 | Pagefind などのクライアントサイド全文検索の採用を検討 |
-| ページネーション | 記事が 700+ 件あるため `index.html` のページ分割が必要。gohan はページネーションをサポート済み（`build.per_page` で設定）。カテゴリー・タグ・アーカイブページも同様 |
-| 広告 | Google AdSense を継続運用。テンプレートに広告スロットを設ける |
-| OGP 画像 | 記事サムネイル画像の自動生成またはデフォルト画像の設定 |
-| `pages/` のルーティング・URL 乖離 | `generator/html.go` の `buildJobs()` が全記事を `posts/{slug}/` に書き出しており、`computeOutputPath()` の結果を無視する。`content/pages/about.md` は URL フィールドが `/pages/about/` に計算されるが実ファイルは `public/posts/about/` に置かれる → gohan 側の修正が必要 |
-| アーカイブページ | `/archives/{year}/{month}/` の年月別アーカイブは SEO 上有効。gohan 実装済みだが URL 設計は年月別なので `/archive/{year}/`（年単位）にしたい場合は gohan 側改修が必要 |
-| feed.xml / atom.xml の i18n 対応 | gohan の feed.go が未対応。現状 `/posts/{slug}/` にハードコードされており、`/ja/posts/{slug}/` が正しく出力されない → gohan のバグ修正が必要 |
-| `draft: true` のフィルタリング | gohan は現状 `draft: true` の記事もビルドに含める（`parser/frontmatter.go` の `ParseAll` でフィルタリングなし）。移行後に下書きを管理したい場合は gohan 側の修正が必要 |
+| 広告 | Google AdSense 実装済み。`_partials.html` の head に AdSense スクリプト、`article.html` の記事コンテンツ直下に fluid 広告ユニット（slot: `7900864416`）を配置 |
+| Google Analytics | GA4 実装済み。`_partials.html` の head に gtag.js スクリプトを配置（ID: `G-784B55NW88`） |
+| OGP 画像 | 記事サムネイル画像の自動生成またはデフォルト画像の設定（gohan の `ogp.enabled` が実装され次第対応） |
 | タグ・カテゴリーページの多言語混在 | `/tags/{name}/` / `/categories/{name}/` は en + ja の記事が混在して出力される（gohan の現仕様）。テンプレートでロケールラベルを表示するなど UX 面での対処が必要 |
-| カテゴリー英語化 | 既存カテゴリーは日本語（例: アーキテクチャ）。移行時に英語名（例: Architecture）に統一するか、日本語のまま維持するか要検討 |
-| 記事一覧のソート未実装 | `buildJobs()` が index / tag / category / archive 各ページに渡す記事スライスをソートしない。ファイルシステムのウォーク順（辞書順）で出力されるため、最新記事が先頭に来ない → gohan 側の修正が必要 |
-| `FrontMatter.Template` 未使用 | front matter に `template: custom.html` を指定しても generator が常に `"article.html"` を使用する。カスタムレイアウトが必要な場合は gohan 側の修正が必要 |
-| 日付ゼロ記事の誤ったアーカイブ出力 | `date` が未設定の記事は Go の zero time 扱いになり `public/archives/0001/01/index.html` が生成される。date 必須バリデーションまたは日付ゼロのスキップが必要 → gohan 側の修正が必要 |
-| `ValidateArticleTaxonomies` がビルドで未呼び出し | `processor/taxonomy.go` に実装済みだが `cmd/gohan/build.go` から呼び出されておらず、不正なタグ・カテゴリー参照がサイレントにスルーされる → gohan 側の修正が必要 |
-| `build.exclude_files` 設定が機能しない | `model.BuildConfig.ExcludeFiles` フィールドは定義済みだが `parser/frontmatter.go` の `ParseAll` が参照せず除外指定が無効 → gohan 側の修正が必要 |
+| カテゴリー英語化 | 既存カテゴリーは日本語（例: アーキテクチャ）。英語名（例: Architecture）への統一は段階的に実施予定 |
+| `site.title` / `site.description` の最終化 | 現在 `"bmf-tech"` / `"bmf-san's personal tech blog"` はプレースホルダー。DNS 移管前に正式値に更新する |

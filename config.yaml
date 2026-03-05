@@ -17,6 +17,19 @@ build:
 theme:
   name: "default"
   dir: "themes/default"
+  params:
+    # DNS移管が完了したらこの行を削除してリビルドする
+    noindex: "true"
+    author: "Kenta Takeuchi"
+    github: "bmf-san"
+    twitter: "bmf_san"
+    linkedin: "bmf-san"
+    zenn: "bmf_san"
+    speaker_deck: "bmf_san"
+    footer_text: "© 2026 Kenta Takeuchi"
+    adsense_id: "ca-pub-5146230866088201"
+    adsense_slot: "7900864416"
+    ga_id: "G-784B55NW88"
 
 syntax_highlight:
   theme: "github"
