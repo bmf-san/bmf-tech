@@ -1,13 +1,25 @@
 import { test, expect } from '@playwright/test';
 
-// ── OGP / meta tags ───────────────────────────────────────────────────────────
-// Note: og:title / og:url / og:description are NOT yet implemented in the
-// theme templates. These tests cover what IS currently generated.
-//
-// TODO: implement OGP meta tags in _partials.html seo block, then add:
-//   test('og:title is present', ...)
-//   test('og:url is present', ...)
-//   test('og:description is present', ...)
+// ── Page <title> ──────────────────────────────────────────────────────────────
+
+test.describe('page <title> tag', () => {
+  test('index / shows site title only', async ({ page }) => {
+    await page.goto('/');
+    await expect(page).toHaveTitle('bmf-tech');
+  });
+
+  test('article page shows "Article Title | Site Title"', async ({ page }) => {
+    await page.goto('/posts/hello-world/');
+    await expect(page).toHaveTitle('Hello, World | bmf-tech');
+  });
+
+  test('about page shows "About | Site Title"', async ({ page }) => {
+    await page.goto('/about/');
+    await expect(page).toHaveTitle('About | bmf-tech');
+  });
+});
+
+// ── meta description ──────────────────────────────────────────────────────────
 
 test.describe('meta description on key pages', () => {
   const PAGES = ['/', '/ja/', '/posts/hello-world/', '/about/'];
@@ -22,14 +34,88 @@ test.describe('meta description on key pages', () => {
   }
 });
 
-// ── canonical / hreflang on article pages ────────────────────────────────────
-// The article.html template defines a "seo" block with canonical + hreflang.
-// These links should be present on individual article pages.
+// ── OGP meta tags — article pages ────────────────────────────────────────────
 
-test.describe('canonical link on EN article /posts/hello-world/', () => {
+test.describe('OGP on EN article /posts/hello-world/', () => {
   const URL = '/posts/hello-world/';
 
-  test('canonical link is present and contains the article URL', async ({ page }) => {
+  test('og:title equals article title', async ({ page }) => {
+    await page.goto(URL);
+    const ogTitle = page.locator('meta[property="og:title"]');
+    await expect(ogTitle).toHaveCount(1);
+    expect(await ogTitle.getAttribute('content')).toBe('Hello, World');
+  });
+
+  test('og:type is "article"', async ({ page }) => {
+    await page.goto(URL);
+    const ogType = page.locator('meta[property="og:type"]');
+    await expect(ogType).toHaveCount(1);
+    expect(await ogType.getAttribute('content')).toBe('article');
+  });
+
+  test('og:url contains article URL', async ({ page }) => {
+    await page.goto(URL);
+    const ogUrl = page.locator('meta[property="og:url"]');
+    await expect(ogUrl).toHaveCount(1);
+    expect(await ogUrl.getAttribute('content')).toContain('/posts/hello-world/');
+  });
+
+  test('og:description is non-empty', async ({ page }) => {
+    await page.goto(URL);
+    const ogDesc = page.locator('meta[property="og:description"]');
+    await expect(ogDesc).toHaveCount(1);
+    const content = await ogDesc.getAttribute('content');
+    expect(content?.trim().length).toBeGreaterThan(0);
+  });
+});
+
+test.describe('OGP on JA article', () => {
+  const URL = '/ja/posts/2018-review-2019-goals/';
+
+  test('og:title equals article title', async ({ page }) => {
+    await page.goto(URL);
+    const ogTitle = page.locator('meta[property="og:title"]');
+    await expect(ogTitle).toHaveCount(1);
+    const content = await ogTitle.getAttribute('content');
+    expect(content?.trim().length).toBeGreaterThan(0);
+  });
+
+  test('og:url contains /ja/posts/', async ({ page }) => {
+    await page.goto(URL);
+    const ogUrl = page.locator('meta[property="og:url"]');
+    await expect(ogUrl).toHaveCount(1);
+    expect(await ogUrl.getAttribute('content')).toContain('/ja/posts/');
+  });
+});
+
+// ── OGP meta tags — listing pages ────────────────────────────────────────────
+
+test.describe('OGP on listing pages', () => {
+  const LISTING_PAGES = ['/', '/ja/'];
+
+  for (const path of LISTING_PAGES) {
+    test(`og:type is "website" on ${path}`, async ({ page }) => {
+      await page.goto(path);
+      const ogType = page.locator('meta[property="og:type"]');
+      await expect(ogType).toHaveCount(1);
+      expect(await ogType.getAttribute('content')).toBe('website');
+    });
+
+    test(`og:title equals site title on ${path}`, async ({ page }) => {
+      await page.goto(path);
+      const ogTitle = page.locator('meta[property="og:title"]');
+      await expect(ogTitle).toHaveCount(1);
+      expect(await ogTitle.getAttribute('content')).toBe('bmf-tech');
+    });
+  }
+});
+
+// ── canonical / hreflang on article pages ────────────────────────────────────
+
+test.describe('canonical on EN article /posts/hello-world/', () => {
+  const URL = '/posts/hello-world/';
+
+  test('exactly one canonical link pointing to article URL', async ({ page }) => {
     await page.goto(URL);
     const canonical = page.locator('link[rel="canonical"]');
     await expect(canonical).toHaveCount(1);
@@ -40,32 +126,41 @@ test.describe('canonical link on EN article /posts/hello-world/', () => {
 
   test('hreflang="en" link is present', async ({ page }) => {
     await page.goto(URL);
-    const hreflang = page.locator('link[rel="alternate"][hreflang="en"]');
-    expect(await hreflang.count()).toBeGreaterThanOrEqual(1);
+    expect(await page.locator('link[rel="alternate"][hreflang="en"]').count()).toBeGreaterThanOrEqual(1);
   });
 
   test('hreflang="x-default" link is present', async ({ page }) => {
     await page.goto(URL);
-    const hreflang = page.locator('link[rel="alternate"][hreflang="x-default"]');
-    expect(await hreflang.count()).toBeGreaterThanOrEqual(1);
+    expect(await page.locator('link[rel="alternate"][hreflang="x-default"]').count()).toBeGreaterThanOrEqual(1);
   });
 });
 
-test.describe('canonical link on JA article', () => {
+test.describe('canonical on JA article', () => {
   const URL = '/ja/posts/2018-review-2019-goals/';
 
-  test('canonical link is present and contains the article URL', async ({ page }) => {
+  test('exactly one canonical link pointing to article URL', async ({ page }) => {
     await page.goto(URL);
     const canonical = page.locator('link[rel="canonical"]');
-    expect(await canonical.count()).toBeGreaterThanOrEqual(1);
+    await expect(canonical).toHaveCount(1);
     const href = await canonical.first().getAttribute('href');
     expect(href).toContain('/ja/posts/2018-review-2019-goals/');
   });
 
   test('hreflang="ja" link is present', async ({ page }) => {
     await page.goto(URL);
-    const hreflang = page.locator('link[rel="alternate"][hreflang="ja"]');
-    expect(await hreflang.count()).toBeGreaterThanOrEqual(1);
+    expect(await page.locator('link[rel="alternate"][hreflang="ja"]').count()).toBeGreaterThanOrEqual(1);
   });
 });
 
+// ── listing pages must have NO article-level canonical ────────────────────────
+
+test.describe('listing pages have no canonical link', () => {
+  const LISTING_PAGES = ['/', '/ja/', '/ja/page/2/'];
+
+  for (const path of LISTING_PAGES) {
+    test(`no canonical link on listing page ${path}`, async ({ page }) => {
+      await page.goto(path);
+      await expect(page.locator('link[rel="canonical"]')).toHaveCount(0);
+    });
+  }
+});
