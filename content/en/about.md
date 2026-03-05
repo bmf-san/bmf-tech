@@ -128,3 +128,11 @@ All slides are available on [Speaker Deck](https://speakerdeck.com/bmf_san).
 |---|---|
 | フリーランスHub | スキルアップやキャッチアップにつながる！注目の IT ブログ・メディアまとめ その 2 |
 | レバテックフリーランス | 市場価値を高めたいエンジニアに読んでほしい技術ブログ特集 |
+
+---
+
+## Contact
+
+For inquiries about the blog or work, please use the form below. Note that I cannot guarantee a reply.
+
+[Contact Form](https://docs.google.com/forms/d/e/1FAIpQLSeYThU8Mq7GXa-bLzr2i71AhaKVhT_-gLfeQFYZ04tFZ3OO3A/viewform)

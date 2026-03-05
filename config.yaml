@@ -20,6 +20,15 @@ theme:
   params:
     # DNS移管が完了したらこの行を削除してリビルドする
     noindex: "true"
+    author: "Kenta Takeuchi"
+    github: "bmf-san"
+    twitter: "bmf_san"
+    linkedin: "bmf-san"
+    zenn: "bmf_san"
+    speaker_deck: "bmf_san"
+    footer_text: "© 2026 Kenta Takeuchi"
+    adsense_id: ""
+    ga_id: ""
 
 syntax_highlight:
   theme: "github"
