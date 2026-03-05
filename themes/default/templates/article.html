@@ -40,6 +40,15 @@
     <div class="article-content">
       {{.HTMLContent}}
     </div>
+    {{- with index $.Config.Theme.Params "adsense_id"}}
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-format="fluid"
+         data-ad-layout-key="-gw-3+1f-3d+2z"
+         data-ad-client="{{.}}"
+         data-ad-slot="{{index $.Config.Theme.Params "adsense_slot"}}"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    {{- end}}
     {{if $.Config.Site.GitHubRepo}}
     <footer class="article-footer">
       <a href="{{$.Config.Site.GitHubRepo}}/blob/{{$.Config.Site.GitHubBranch}}/content/{{.ContentPath}}" target="_blank" rel="noopener">Edit on GitHub</a>

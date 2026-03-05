@@ -198,6 +198,18 @@ p { margin: 0.75rem 0; }
   .article-date { font-size: 0.75rem; }
 }
 </style>
+{{- with index .Config.Theme.Params "ga_id"}}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{.}}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{.}}');
+</script>
+{{- end}}
+{{- with index .Config.Theme.Params "adsense_id"}}
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{.}}" crossorigin="anonymous"></script>
+{{- end}}
 </head>
 {{end}}
 
