@@ -10,13 +10,13 @@
 {{- range .Translations}}{{if eq .Locale "en"}}{{$xdefault = .URL}}{{end}}{{end}}
 <link rel="alternate" hreflang="x-default" href="{{$.Config.Site.BaseURL}}{{$xdefault}}">
 {{end}}{{end}}
-<body>
+<body class="bg-body">
 {{template "header" .}}
-<main class="site-wrapper">
+<main class="site-main">
   {{range .Articles}}
   <article>
-    <header class="article-header">
-      <h1>{{.FrontMatter.Title}}</h1>
+    <header class="mb-8">
+      <h1 class="text-2xl font-bold mb-2">{{.FrontMatter.Title}}</h1>
       <div class="article-meta">
         <time datetime="{{formatDate "2006-01-02" .FrontMatter.Date}}">{{formatDate "2006-01-02" .FrontMatter.Date}}</time>
         {{if .FrontMatter.Author}}<span>{{.FrontMatter.Author}}</span>{{end}}
@@ -32,8 +32,8 @@
         {{end}}
       </div>
       {{if .FrontMatter.Tags}}
-      <div class="tags" style="margin-top:0.75rem;">
-        {{range .FrontMatter.Tags}}<a class="tag" href="{{tagURL .}}">#{{.}}</a>{{end}}
+      <div class="flex flex-wrap gap-1 mt-3">
+        {{range .FrontMatter.Tags}}<a class="tag-badge" href="{{tagURL .}}">#{{.}}</a>{{end}}
       </div>
       {{end}}
     </header>

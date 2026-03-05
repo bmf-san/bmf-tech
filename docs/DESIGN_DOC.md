@@ -219,12 +219,18 @@ description: "Kenta Takeuchi のプロフィールページ"
 
 ### CSS
 
-外部 CSS フレームワーク（sleyt）は採用せず、`themes/default/templates/_partials.html` 内の `<style>` タグにインライン CSS を管理する。
+[sleyt](https://github.com/bmf-san/sleyt)（bmf-san 製ミニマル CSS フレームワーク）を CDN 経由で読み込む。独自 `<style>` タグは使用しない。
 
-- CSS カスタムプロパティ（`--text`, `--muted`, `--link`, `--border`, `--code-bg`, `--max-width`）でデザイントークンを管理
-- 外部依存なし（CDN 不使用）→ ページロード最速化
+```html
+<link rel="stylesheet" href="https://unpkg.com/sleyt@latest/dist/css/index.css">
+<link rel="stylesheet" href="/assets/css/custom.css">
+```
 
-> `assets/css/custom.css` は設計当初の想定だったが、インライン CSS に一本化したため不要。
+- **`sleyt`**: CSS リセット・デザイントークン変数（`--color-slate-*` / `--text-primary` 等）・レイアウトユーティリティ（`container`, `flex`, `grid`, `gap-*`, `px-*` 等）・タイポグラフィ（`text-sm`, `font-bold` など）・ダークモード対応を提供
+- **`assets/css/custom.css`**: sleyt ユーティリティクラスを付与できない要素（Markdown レンダリング後の `.article-content` 内 `pre/code/blockquote/table/img/h1-h6` 等）と、サイト固有クラス（`.article-row`, `.tag-badge`, `.site-main`, `.nav-brand`, `.footer-link` 等）を定義
+- インライン `style=""` は Google AdSense 必須属性 (`<ins style="display:block">`) のみ許容
+
+> `assets/css/custom.css` は gohan のビルド時に `assets/` の内容が `public/assets/css/custom.css` へ自動コピーされる。
 
 ### テンプレート一覧
 

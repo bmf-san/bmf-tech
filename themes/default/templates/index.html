@@ -1,11 +1,11 @@
 {{template "head" .}}
-<body>
+<body class="bg-body">
 {{template "header" .}}
-<main class="site-wrapper">
+<main class="site-main">
   {{if .Articles}}
   <ul class="article-list">
     {{range .Articles}}
-    <li>
+    <li class="article-row">
       <span class="article-date">{{formatDate "2006-01-02" .FrontMatter.Date}}</span>
       <a href="{{.URL}}">{{.FrontMatter.Title}}</a>
     </li>
@@ -13,7 +13,7 @@
   </ul>
   {{template "pagination" .}}
   {{else}}
-  <p style="color:var(--muted);">No articles found.</p>
+  <p class="text-secondary">No articles found.</p>
   {{end}}
 </main>
 {{template "footer" .}}
