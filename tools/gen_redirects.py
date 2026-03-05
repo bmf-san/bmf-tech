@@ -74,6 +74,9 @@ lines.append("/privacy_policy  /privacy-policy/  301")
 lines.append("/sitemap  /sitemap.xml  301")
 lines.append("/feed  /atom.xml  301")
 lines.append("/posts/search  /  301")
+lines.append("/profile  /about/  301")
+lines.append("/categories  /categories/  301")
+lines.append("/tags  /tags/  301")
 
 content = "\n".join(lines) + "\n"
 out = f"{base}/_redirects"
