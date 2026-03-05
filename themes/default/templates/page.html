@@ -1,12 +1,19 @@
 {{template "head" .}}
-{{define "htmllang"}}{{with index .Articles 0}}{{.Locale}}{{else}}{{$.Config.Site.Language}}{{end}}{{end}}
+{{define "extra-style"}}<style>
+.article-content { line-height: 1.85; }
+.article-content img { max-width: 100%; height: auto; border-radius: 4px; }
+.article-content pre { overflow-x: auto; }
+.article-content table { width: 100%; border-collapse: collapse; overflow-x: auto; display: block; }
+.article-content th, .article-content td { border: 1px solid var(--color-slate-200); padding: 0.45rem 0.75rem; text-align: left; }
+.article-content blockquote { border-left: 3px solid var(--color-slate-300); margin: 1rem 0; padding: 0.4rem 1rem; }
+</style>{{end}}
 <body class="bg-body">
 {{template "header" .}}
-<main class="container mx-auto px-6 py-10 max-w-2xl">
+<main class="container mx-auto px-4 py-4">
   {{range .Articles}}
   <article>
     <header class="mb-8">
-      <h1 class="text-2xl font-bold mb-2">{{.FrontMatter.Title}}</h1>
+      <h1 class="text-2xl font-bold">{{.FrontMatter.Title}}</h1>
     </header>
     <div class="article-content">
       {{.HTMLContent}}

@@ -5,19 +5,26 @@
 <link rel="alternate" hreflang="{{.Locale}}" href="{{$.Config.Site.BaseURL}}{{.URL}}">
 {{range .Translations}}<link rel="alternate" hreflang="{{.Locale}}" href="{{$.Config.Site.BaseURL}}{{.URL}}">
 {{end}}
-{{- /* x-default: use the EN translation if available, otherwise self */}}
 {{- $xdefault := .URL}}
 {{- range .Translations}}{{if eq .Locale "en"}}{{$xdefault = .URL}}{{end}}{{end}}
 <link rel="alternate" hreflang="x-default" href="{{$.Config.Site.BaseURL}}{{$xdefault}}">
 {{end}}{{end}}
+{{define "extra-style"}}<style>
+.article-content { line-height: 1.85; }
+.article-content img { max-width: 100%; height: auto; border-radius: 4px; }
+.article-content pre { overflow-x: auto; }
+.article-content table { width: 100%; border-collapse: collapse; overflow-x: auto; display: block; }
+.article-content th, .article-content td { border: 1px solid var(--color-slate-200); padding: 0.45rem 0.75rem; text-align: left; }
+.article-content blockquote { border-left: 3px solid var(--color-slate-300); margin: 1rem 0; padding: 0.4rem 1rem; }
+</style>{{end}}
 <body class="bg-body">
 {{template "header" .}}
-<main class="container mx-auto px-6 py-10 max-w-2xl">
+<main class="container mx-auto px-4 py-4">
   {{range .Articles}}
   <article>
     <header class="mb-8">
       <h1 class="text-2xl font-bold mb-2">{{.FrontMatter.Title}}</h1>
-      <div class="article-meta flex flex-wrap gap-2 items-center text-sm text-secondary mt-2">
+      <div class="article-meta flex flex-wrap gap-4 items-center text-secondary text-sm">
         <time datetime="{{formatDate "2006-01-02" .FrontMatter.Date}}">{{formatDate "2006-01-02" .FrontMatter.Date}}</time>
         {{if .FrontMatter.Author}}<span>{{.FrontMatter.Author}}</span>{{end}}
         {{if .FrontMatter.Categories}}
@@ -26,7 +33,9 @@
         </span>
         {{end}}
         {{if .Translations}}
-        <span>{{range $i, $t := .Translations}}{{if $i}} | {{end}}<a href="{{$t.URL}}" lang="{{$t.Locale}}">{{$t.Locale}}</a>{{end}}</span>
+        <span class="text-sm">
+          {{range $i, $t := .Translations}}{{if $i}} | {{end}}<a href="{{$t.URL}}" lang="{{$t.Locale}}">{{$t.Locale}}</a>{{end}}
+        </span>
         {{end}}
       </div>
       {{if .FrontMatter.Tags}}
@@ -35,23 +44,9 @@
       </div>
       {{end}}
     </header>
-    <div class="article-content leading-relaxed">
+    <div class="article-content">
       {{.HTMLContent}}
     </div>
-    {{- with index $.Config.Theme.Params "adsense_id"}}
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-format="fluid"
-         data-ad-layout-key="-gw-3+1f-3d+2z"
-         data-ad-client="{{.}}"
-         data-ad-slot="{{index $.Config.Theme.Params "adsense_slot"}}"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    {{- end}}
-    {{if $.Config.Site.GitHubRepo}}
-    <footer class="mt-8 pt-5 border-t text-sm">
-      <a href="{{$.Config.Site.GitHubRepo}}/blob/{{$.Config.Site.GitHubBranch}}/content/{{.ContentPath}}" target="_blank" rel="noopener">Edit on GitHub</a>
-    </footer>
-    {{end}}
   </article>
   {{end}}
 </main>

@@ -7,12 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{block "title" .}}{{.Config.Site.Title}}{{end}}</title>
 <meta name="description" content="{{block "description" .}}{{.Config.Site.Description}}{{end}}">
-{{- if index .Config.Theme.Params "noindex"}}
-<meta name="robots" content="noindex, nofollow">
-{{- end}}
 <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="{{.Config.Site.Title}}">
-<link rel="stylesheet" href="https://unpkg.com/sleyt@latest/dist/css/index.css">
 {{block "seo" .}}{{end}}
+{{block "extra-style" .}}{{end}}
 {{- with index .Config.Theme.Params "ga_id"}}
 <script async src="https://www.googletagmanager.com/gtag/js?id={{.}}"></script>
 <script>
@@ -29,44 +26,46 @@
 {{end}}
 
 {{define "header"}}
-<nav class="navbar site-header">
-  <a class="navbar-brand" href="/">{{.Config.Site.Title}}</a>
-  <div class="nav-links navbar-nav">
-    {{if eq .CurrentLocale "ja"}}
-    <a class="navbar-item" href="/">English</a>
-    <a class="navbar-item" href="/ja/tags/">Tags</a>
-    <a class="navbar-item" href="/ja/categories/">Categories</a>
-    {{else}}
-    <a class="navbar-item" href="/ja/">日本語</a>
-    <a class="navbar-item" href="/tags/">Tags</a>
-    <a class="navbar-item" href="/categories/">Categories</a>
-    {{end}}
-    <a class="navbar-item" href="/about/">About</a>
-    <a class="navbar-item" href="/atom.xml">Feed</a>
+<header class="site-header bg-slate-900 py-4 mb-8">
+  <div class="container mx-auto px-4">
+    <nav class="flex items-center justify-between">
+      <a href="/" class="font-bold text-slate-50">{{.Config.Site.Title}}</a>
+      <div class="nav-links flex gap-4">
+        {{if eq .CurrentLocale "ja"}}
+        <a href="/" class="text-slate-300 text-sm">English</a>
+        <a href="/ja/tags/" class="text-slate-300 text-sm">Tags</a>
+        <a href="/ja/categories/" class="text-slate-300 text-sm">Categories</a>
+        {{else}}
+        <a href="/ja/" class="text-slate-300 text-sm">日本語</a>
+        <a href="/tags/" class="text-slate-300 text-sm">Tags</a>
+        <a href="/categories/" class="text-slate-300 text-sm">Categories</a>
+        {{end}}
+        <a href="/profile/" class="text-slate-300 text-sm">Profile</a>
+        <a href="/about/" class="text-slate-300 text-sm">About</a>
+        <a href="/atom.xml" class="text-slate-300 text-sm">Feed</a>
+      </div>
+    </nav>
   </div>
-</nav>
+</header>
 {{end}}
 
 {{define "footer"}}
-<footer class="bg-surface border-t mt-16 py-6 text-center site-footer">
-  <div class="flex justify-center gap-4 mb-2 text-sm">
-    <a href="/about/">About</a>
-    <a href="/privacy-policy/">Privacy Policy</a>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeYThU8Mq7GXa-bLzr2i71AhaKVhT_-gLfeQFYZ04tFZ3OO3A/viewform" target="_blank" rel="noopener">Contact</a>
+<footer class="site-footer bg-slate-100 py-6 mt-12">
+  <div class="container mx-auto px-4 text-center">
+    <p class="text-secondary text-sm">&copy; {{.Config.Site.Title}}</p>
   </div>
-  <p class="text-sm text-secondary">{{with index .Config.Theme.Params "footer_text"}}{{.}}{{else}}&copy; {{$.Config.Site.Title}}{{end}}</p>
 </footer>
 {{end}}
 
 {{define "pagination"}}
 {{if .Pagination}}
-<nav class="flex justify-between items-center mt-10 text-sm" aria-label="pagination">
+<nav class="flex justify-between items-center mt-8" aria-label="pagination">
   <span>
-    {{if .Pagination.PrevURL}}<a href="{{.Pagination.PrevURL}}">&larr; Newer</a>{{else}}&nbsp;{{end}}
+    {{if .Pagination.PrevURL}}<a href="{{.Pagination.PrevURL}}" class="text-sm">&larr; Newer</a>{{else}}&nbsp;{{end}}
   </span>
-  <span class="pagination-info text-secondary">{{.Pagination.CurrentPage}} / {{.Pagination.TotalPages}}</span>
+  <span class="text-secondary text-sm pagination-info">{{.Pagination.CurrentPage}} / {{.Pagination.TotalPages}}</span>
   <span>
-    {{if .Pagination.NextURL}}<a href="{{.Pagination.NextURL}}">Older &rarr;</a>{{else}}&nbsp;{{end}}
+    {{if .Pagination.NextURL}}<a href="{{.Pagination.NextURL}}" class="text-sm">Older &rarr;</a>{{else}}&nbsp;{{end}}
   </span>
 </nav>
 {{end}}
