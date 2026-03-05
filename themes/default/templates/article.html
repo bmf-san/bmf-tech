@@ -12,12 +12,12 @@
 {{end}}{{end}}
 <body class="bg-body">
 {{template "header" .}}
-<main class="site-main">
+<main class="container mx-auto px-6 py-10 max-w-2xl">
   {{range .Articles}}
   <article>
     <header class="mb-8">
       <h1 class="text-2xl font-bold mb-2">{{.FrontMatter.Title}}</h1>
-      <div class="article-meta">
+      <div class="article-meta flex flex-wrap gap-2 items-center text-sm text-secondary mt-2">
         <time datetime="{{formatDate "2006-01-02" .FrontMatter.Date}}">{{formatDate "2006-01-02" .FrontMatter.Date}}</time>
         {{if .FrontMatter.Author}}<span>{{.FrontMatter.Author}}</span>{{end}}
         {{if .FrontMatter.Categories}}
@@ -26,18 +26,16 @@
         </span>
         {{end}}
         {{if .Translations}}
-        <span class="lang-switch">
-          {{range $i, $t := .Translations}}{{if $i}}<span class="sep">|</span>{{end}}<a href="{{$t.URL}}" lang="{{$t.Locale}}">{{$t.Locale}}</a>{{end}}
-        </span>
+        <span>{{range $i, $t := .Translations}}{{if $i}} | {{end}}<a href="{{$t.URL}}" lang="{{$t.Locale}}">{{$t.Locale}}</a>{{end}}</span>
         {{end}}
       </div>
       {{if .FrontMatter.Tags}}
       <div class="flex flex-wrap gap-1 mt-3">
-        {{range .FrontMatter.Tags}}<a class="tag-badge" href="{{tagURL .}}">#{{.}}</a>{{end}}
+        {{range .FrontMatter.Tags}}<a class="badge badge-secondary" href="{{tagURL .}}">#{{.}}</a>{{end}}
       </div>
       {{end}}
     </header>
-    <div class="article-content">
+    <div class="article-content leading-relaxed">
       {{.HTMLContent}}
     </div>
     {{- with index $.Config.Theme.Params "adsense_id"}}
@@ -50,7 +48,7 @@
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     {{- end}}
     {{if $.Config.Site.GitHubRepo}}
-    <footer class="article-footer">
+    <footer class="mt-8 pt-5 border-t text-sm">
       <a href="{{$.Config.Site.GitHubRepo}}/blob/{{$.Config.Site.GitHubBranch}}/content/{{.ContentPath}}" target="_blank" rel="noopener">Edit on GitHub</a>
     </footer>
     {{end}}

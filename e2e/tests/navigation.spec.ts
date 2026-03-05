@@ -66,14 +66,14 @@ test.describe('Categories index /categories/', () => {
   });
 });
 
-test.describe('Category page /categories/OS/', () => {
+test.describe('Category page /ja/categories/OS/', () => {
   test('loads and has article list', async ({ page }) => {
-    await page.goto('/categories/OS/');
+    await page.goto('/ja/categories/OS/');
     await expect(page.locator('ul.article-list li').first()).toBeVisible();
   });
 
   test('article links are present', async ({ page }) => {
-    await page.goto('/categories/OS/');
+    await page.goto('/ja/categories/OS/');
     const links = page.locator('ul.article-list li a');
     expect(await links.count()).toBeGreaterThan(0);
   });

@@ -12,7 +12,6 @@
 {{- end}}
 <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="{{.Config.Site.Title}}">
 <link rel="stylesheet" href="https://unpkg.com/sleyt@latest/dist/css/index.css">
-<link rel="stylesheet" href="/assets/css/custom.css">
 {{block "seo" .}}{{end}}
 {{- with index .Config.Theme.Params "ga_id"}}
 <script async src="https://www.googletagmanager.com/gtag/js?id={{.}}"></script>
@@ -30,30 +29,32 @@
 {{end}}
 
 {{define "header"}}
-<header class="site-header bg-slate-900 py-4">
-  <div class="container mx-auto flex justify-between items-center px-6">
-    <a class="nav-brand" href="/">{{.Config.Site.Title}}</a>
-    <nav class="nav-links flex gap-6">
-      <a class="nav-link" href="/ja/">日本語</a>
-      <a class="nav-link" href="/tags/">Tags</a>
-      <a class="nav-link" href="/categories/">Categories</a>
-      <a class="nav-link" href="/about/">About</a>
-      <a class="nav-link" href="/atom.xml">Feed</a>
-    </nav>
+<nav class="navbar site-header">
+  <a class="navbar-brand" href="/">{{.Config.Site.Title}}</a>
+  <div class="nav-links navbar-nav">
+    {{if eq .CurrentLocale "ja"}}
+    <a class="navbar-item" href="/">English</a>
+    <a class="navbar-item" href="/ja/tags/">Tags</a>
+    <a class="navbar-item" href="/ja/categories/">Categories</a>
+    {{else}}
+    <a class="navbar-item" href="/ja/">日本語</a>
+    <a class="navbar-item" href="/tags/">Tags</a>
+    <a class="navbar-item" href="/categories/">Categories</a>
+    {{end}}
+    <a class="navbar-item" href="/about/">About</a>
+    <a class="navbar-item" href="/atom.xml">Feed</a>
   </div>
-</header>
+</nav>
 {{end}}
 
 {{define "footer"}}
-<footer class="site-footer bg-slate-100 border-t mt-16 py-6 text-center">
-  <div class="container mx-auto px-6">
-    <nav class="flex justify-center gap-6 mb-2">
-      <a class="footer-link" href="/about/">About</a>
-      <a class="footer-link" href="/privacy-policy/">Privacy Policy</a>
-      <a class="footer-link" href="https://docs.google.com/forms/d/e/1FAIpQLSeYThU8Mq7GXa-bLzr2i71AhaKVhT_-gLfeQFYZ04tFZ3OO3A/viewform" target="_blank" rel="noopener">Contact</a>
-    </nav>
-    <p class="text-sm text-secondary">{{with index .Config.Theme.Params "footer_text"}}{{.}}{{else}}&copy; {{$.Config.Site.Title}}{{end}}</p>
+<footer class="bg-surface border-t mt-16 py-6 text-center site-footer">
+  <div class="flex justify-center gap-4 mb-2 text-sm">
+    <a href="/about/">About</a>
+    <a href="/privacy-policy/">Privacy Policy</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeYThU8Mq7GXa-bLzr2i71AhaKVhT_-gLfeQFYZ04tFZ3OO3A/viewform" target="_blank" rel="noopener">Contact</a>
   </div>
+  <p class="text-sm text-secondary">{{with index .Config.Theme.Params "footer_text"}}{{.}}{{else}}&copy; {{$.Config.Site.Title}}{{end}}</p>
 </footer>
 {{end}}
 
@@ -61,11 +62,11 @@
 {{if .Pagination}}
 <nav class="flex justify-between items-center mt-10 text-sm" aria-label="pagination">
   <span>
-    {{if .Pagination.PrevURL}}<a class="footer-link" href="{{.Pagination.PrevURL}}">&larr; Newer</a>{{else}}&nbsp;{{end}}
+    {{if .Pagination.PrevURL}}<a href="{{.Pagination.PrevURL}}">&larr; Newer</a>{{else}}&nbsp;{{end}}
   </span>
   <span class="pagination-info text-secondary">{{.Pagination.CurrentPage}} / {{.Pagination.TotalPages}}</span>
   <span>
-    {{if .Pagination.NextURL}}<a class="footer-link" href="{{.Pagination.NextURL}}">Older &rarr;</a>{{else}}&nbsp;{{end}}
+    {{if .Pagination.NextURL}}<a href="{{.Pagination.NextURL}}">Older &rarr;</a>{{else}}&nbsp;{{end}}
   </span>
 </nav>
 {{end}}

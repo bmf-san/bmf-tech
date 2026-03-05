@@ -1,14 +1,15 @@
+{{define "htmllang"}}{{if .CurrentLocale}}{{.CurrentLocale}}{{else}}{{.Config.Site.Language}}{{end}}{{end}}
 {{template "head" .}}
 <body class="bg-body">
 {{template "header" .}}
-<main class="site-main">
-  <p class="section-heading">Tag</p>
+<main class="container mx-auto px-6 py-10 max-w-2xl">
+  <p class="text-xs uppercase text-secondary mb-4">Tag</p>
   {{if .Articles}}
   <ul class="article-list">
     {{range .Articles}}
-    <li class="article-row">
-      <span class="article-date">{{formatDate "2006-01-02" .FrontMatter.Date}}</span>
-      {{if .Locale}}<span class="locale-badge locale-{{.Locale}}">{{.Locale}}</span>{{end}}
+    <li class="flex items-baseline gap-4 py-3 border-b">
+      <span class="article-date text-xs text-secondary whitespace-nowrap">{{formatDate "2006-01-02" .FrontMatter.Date}}</span>
+      {{if .Locale}}<span class="badge {{if eq .Locale "ja"}}badge-danger{{else}}badge-info{{end}}">{{.Locale}}</span>{{end}}
       <a href="{{.URL}}">{{.FrontMatter.Title}}</a>
     </li>
     {{end}}

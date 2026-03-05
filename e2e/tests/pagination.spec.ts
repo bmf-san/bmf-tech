@@ -45,34 +45,34 @@ test.describe('JA root pagination', () => {
 
 // ── Tag pagination (/tags/Golang/ has 3 pages) ────────────────────────────────
 
-test.describe('Tag pagination /tags/Golang/', () => {
+test.describe('Tag pagination /ja/tags/Golang/', () => {
   test('page 1 shows pagination-info "1 / 3"', async ({ page }) => {
-    await page.goto('/tags/Golang/');
+    await page.goto('/ja/tags/Golang/');
     await expect(page.locator('.pagination-info')).toContainText('1 / 3');
   });
 
   test('page 2 loads with articles', async ({ page }) => {
-    await page.goto('/tags/Golang/page/2/');
+    await page.goto('/ja/tags/Golang/page/2/');
     await expect(page.locator('ul.article-list li').first()).toBeVisible();
     await expect(page.locator('.pagination-info')).toContainText('2 / 3');
   });
 
   test('page 3 (last) loads with articles', async ({ page }) => {
-    await page.goto('/tags/Golang/page/3/');
+    await page.goto('/ja/tags/Golang/page/3/');
     await expect(page.locator('ul.article-list li').first()).toBeVisible();
     await expect(page.locator('.pagination-info')).toContainText('3 / 3');
   });
 
   test('page 4 (beyond last) returns 404', async ({ page }) => {
-    const res = await page.goto('/tags/Golang/page/4/');
+    const res = await page.goto('/ja/tags/Golang/page/4/');
     expect(res?.status()).toBe(404);
   });
 });
 
 // ── Category pagination (/categories/アーキテクチャ/ has 5 pages) ──────────────
 
-test.describe('Category pagination /categories/アーキテクチャ/', () => {
-  const BASE = '/categories/アーキテクチャ/';
+test.describe('Category pagination /ja/categories/アーキテクチャ/', () => {
+  const BASE = '/ja/categories/アーキテクチャ/';
 
   test('page 1 shows pagination-info "1 / 5"', async ({ page }) => {
     await page.goto(BASE);
