@@ -29,10 +29,10 @@ draft: false
 
 ### Architecture
 
-- [Clean Architecture](/tags/Clean Architecture/)
+- [Clean Architecture](/tags/Clean%20Architecture/)
 - [DDD](/tags/DDD/)
 - [CQRS](/tags/CQRS/)
-- [Architecture Decision Record](/tags/Architecture Decision Record/)
+- [Architecture Decision Record](/tags/Architecture%20Decision%20Record/)
 - [BFF](/tags/BFF/)
 - [Sagaパターン](/tags/Sagaパターン/)
 - [アーキテクチャ](/tags/アーキテクチャ/)
@@ -45,8 +45,8 @@ draft: false
 - [Terraform](/tags/Terraform/)
 - [Linux](/tags/Linux/)
 - [Nginx](/tags/Nginx/)
-- [Google Cloud Platform](/tags/Google Cloud Platform/)
-- [AWS](/tags/Amazon Web Service/)
+- [Google Cloud Platform](/tags/Google%20Cloud%20Platform/)
+- [AWS](/tags/Amazon%20Web%20Service/)
 - [コンテナ](/tags/コンテナ/)
 
 ### Database
@@ -113,4 +113,4 @@ draft: false
 
 - [AI](/tags/AI/)
 - [ChatGPT](/tags/ChatGPT/)
-- [LLM as judge](/tags/LLM as judge/)
+- [LLM as judge](/tags/LLM%20as%20judge/)
