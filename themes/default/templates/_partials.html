@@ -9,202 +9,23 @@
 <meta name="description" content="{{block "description" .}}{{.Config.Site.Description}}{{end}}">
 <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="{{.Config.Site.Title}}">
 {{block "seo" .}}{{end}}
-<style>
-:root {
-  --text: #1a1a1a;
-  --muted: #666;
-  --link: #0066cc;
-  --border: #e0e0e0;
-  --code-bg: #f6f8fa;
-  --max-width: 740px;
-}
-*, *::before, *::after { box-sizing: border-box; }
-body {
-  font-family: system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.75;
-  color: var(--text);
-  margin: 0;
-  padding: 0;
-  background: #fff;
-}
-.site-wrapper {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-a { color: var(--link); }
-a:hover { opacity: 0.8; }
-
-/* Header */
-.site-header {
-  border-bottom: 1px solid var(--border);
-  padding: 1rem 0;
-  margin-bottom: 2.5rem;
-}
-.site-header nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-.site-title {
-  font-weight: 700;
-  font-size: 1rem;
-  text-decoration: none;
-  color: var(--text);
-  letter-spacing: -0.01em;
-}
-.nav-links { display: flex; gap: 1.25rem; }
-.nav-links a {
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 0.875rem;
-}
-.nav-links a:hover { color: var(--text); }
-
-/* Footer */
-.site-footer {
-  border-top: 1px solid var(--border);
-  padding: 1.5rem 0;
-  margin-top: 3rem;
-  font-size: 0.8rem;
-  color: var(--muted);
-  text-align: center;
-}
-
-/* Typography */
-h1 { font-size: 1.6rem; line-height: 1.3; margin: 0 0 0.5rem; }
-h2 { font-size: 1.25rem; margin-top: 2rem; }
-h3 { font-size: 1.05rem; margin-top: 1.5rem; }
-p { margin: 0.75rem 0; }
-
-/* Article list */
-.article-list { list-style: none; padding: 0; margin: 0; }
-.article-list li {
-  padding: 0.65rem 0;
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  align-items: baseline;
-  gap: 1.25rem;
-}
-.article-list li:last-child { border-bottom: none; }
-.article-date {
-  font-size: 0.78rem;
-  color: var(--muted);
-  white-space: nowrap;
-  flex-shrink: 0;
-  font-variant-numeric: tabular-nums;
-}
-.article-list a { text-decoration: none; color: var(--text); font-weight: 500; }
-.article-list a:hover { color: var(--link); }
-
-/* Article page */
-.article-header { margin-bottom: 2rem; }
-.article-meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.4rem; display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; align-items: center; }
-.article-content { line-height: 1.85; }
-.article-content img { max-width: 100%; height: auto; border-radius: 3px; }
-.article-content pre {
-  background: var(--code-bg);
-  border: 1px solid var(--border);
-  padding: 1rem 1.25rem;
-  border-radius: 5px;
-  overflow-x: auto;
-  font-size: 0.875rem;
-  line-height: 1.6;
-}
-.article-content code {
-  background: var(--code-bg);
-  padding: 0.15em 0.35em;
-  border-radius: 3px;
-  font-size: 0.86em;
-  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-}
-.article-content pre code { background: none; padding: 0; font-size: inherit; }
-.article-content blockquote {
-  border-left: 3px solid var(--border);
-  margin: 1rem 0;
-  padding: 0.4rem 1rem;
-  color: var(--muted);
-}
-.article-content blockquote p { margin: 0; }
-.article-content table {
-  border-collapse: collapse;
-  width: 100%;
-  margin: 1.25rem 0;
-  font-size: 0.9rem;
-  overflow-x: auto;
-  display: block;
-}
-.article-content th, .article-content td {
-  border: 1px solid var(--border);
-  padding: 0.45rem 0.75rem;
-  text-align: left;
-}
-.article-content th { background: var(--code-bg); font-weight: 600; }
-.article-content hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
-
-/* Tags */
-.tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
-.tag {
-  font-size: 0.73rem;
-  background: var(--code-bg);
-  border: 1px solid var(--border);
-  padding: 0.15em 0.55em;
-  border-radius: 3px;
-  text-decoration: none;
-  color: var(--muted);
-}
-.tag:hover { color: var(--link); border-color: var(--link); }
-
-/* Taxonomy index listing */
-.taxonomy-list { list-style: none; padding: 0; margin: 0; }
-.taxonomy-list li { padding: 0.55rem 0; border-bottom: 1px solid var(--border); }
-.taxonomy-list li:last-child { border-bottom: none; }
-.taxonomy-list a { text-decoration: none; color: var(--text); }
-.taxonomy-list a:hover { color: var(--link); }
-.taxonomy-count { font-size: 0.78rem; color: var(--muted); margin-left: 0.4rem; }
-
-/* Pagination */
-.pagination {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 2.5rem;
-  font-size: 0.875rem;
-}
-.pagination a { text-decoration: none; }
-.pagination-info { color: var(--muted); }
-
-/* Language switch */
-.lang-switch { font-size: 0.78rem; color: var(--muted); }
-.lang-switch a { color: var(--muted); text-decoration: none; margin: 0 0.25rem; }
-.lang-switch a:hover { color: var(--link); }
-.lang-switch .sep { margin: 0 0.1rem; }
-
-/* Section heading */
-.section-heading { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 1rem; }
-
-/* Responsive */
-@media (max-width: 480px) {
-  .article-list li { flex-direction: column; gap: 0.15rem; }
-  .article-date { font-size: 0.75rem; }
-}
-</style>
+<link rel="stylesheet" href="https://unpkg.com/sleyt@latest/dist/css/index.css">
+{{block "extra-style" .}}{{end}}
 </head>
 {{end}}
 
 {{define "header"}}
-<header class="site-header">
-  <div class="site-wrapper">
-    <nav>
-      <a class="site-title" href="/">{{.Config.Site.Title}}</a>
-      <div class="nav-links">
-        <a href="/ja/">日本語</a>
-        <a href="/tags/">Tags</a>
-        <a href="/categories/">Categories</a>
-        <a href="/about/">About</a>
-        <a href="/atom.xml">Feed</a>
+<header class="site-header bg-slate-900 py-4 mb-8">
+  <div class="container mx-auto px-4">
+    <nav class="flex items-center justify-between">
+      <a href="/" class="font-bold text-slate-50">{{.Config.Site.Title}}</a>
+      <div class="nav-links flex gap-4">
+        <a href="/ja/" class="text-slate-300 text-sm">日本語</a>
+        <a href="/tags/" class="text-slate-300 text-sm">Tags</a>
+        <a href="/categories/" class="text-slate-300 text-sm">Categories</a>
+        <a href="/profile/" class="text-slate-300 text-sm">Profile</a>
+        <a href="/about/" class="text-slate-300 text-sm">About</a>
+        <a href="/atom.xml" class="text-slate-300 text-sm">Feed</a>
       </div>
     </nav>
   </div>
@@ -212,22 +33,22 @@ p { margin: 0.75rem 0; }
 {{end}}
 
 {{define "footer"}}
-<footer class="site-footer">
-  <div class="site-wrapper">
-    &copy; {{.Config.Site.Title}}
+<footer class="site-footer bg-slate-100 py-6 mt-12">
+  <div class="container mx-auto px-4 text-center">
+    <p class="text-secondary text-sm">&copy; {{.Config.Site.Title}}</p>
   </div>
 </footer>
 {{end}}
 
 {{define "pagination"}}
 {{if .Pagination}}
-<nav class="pagination" aria-label="pagination">
+<nav class="flex justify-between items-center mt-8" aria-label="pagination">
   <span>
-    {{if .Pagination.PrevURL}}<a href="{{.Pagination.PrevURL}}">&larr; Newer</a>{{else}}&nbsp;{{end}}
+    {{if .Pagination.PrevURL}}<a href="{{.Pagination.PrevURL}}" class="text-sm">&larr; Newer</a>{{else}}&nbsp;{{end}}
   </span>
-  <span class="pagination-info">{{.Pagination.CurrentPage}} / {{.Pagination.TotalPages}}</span>
+  <span class="text-secondary text-sm pagination-info">{{.Pagination.CurrentPage}} / {{.Pagination.TotalPages}}</span>
   <span>
-    {{if .Pagination.NextURL}}<a href="{{.Pagination.NextURL}}">Older &rarr;</a>{{else}}&nbsp;{{end}}
+    {{if .Pagination.NextURL}}<a href="{{.Pagination.NextURL}}" class="text-sm">Older &rarr;</a>{{else}}&nbsp;{{end}}
   </span>
 </nav>
 {{end}}
