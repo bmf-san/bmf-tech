@@ -81,27 +81,20 @@ test.describe('Category page /categories/OS/', () => {
 
 // ── Static pages ─────────────────────────────────────────────────────────────
 
-test.describe('Profile page /profile/', () => {
+test.describe('About page /about/', () => {
   test('loads successfully', async ({ page }) => {
-    const res = await page.goto('/profile/');
+    const res = await page.goto('/about/');
     expect(res?.status()).toBe(200);
   });
 
   test('has article-content', async ({ page }) => {
-    await page.goto('/profile/');
+    await page.goto('/about/');
     await expect(page.locator('.article-content')).toBeVisible();
   });
 
   test('contains profile information', async ({ page }) => {
-    await page.goto('/profile/');
-    await expect(page.locator('.article-content')).toContainText('Kenta Takeuchi');
-  });
-});
-
-test.describe('About page /about/', () => {
-  test('loads and has article content', async ({ page }) => {
     await page.goto('/about/');
-    await expect(page.locator('.article-content')).toBeVisible();
+    await expect(page.locator('.article-content')).toContainText('Kenta Takeuchi');
   });
 });
 

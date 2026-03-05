@@ -30,10 +30,10 @@
 {{end}}
 
 {{define "header"}}
-<header class="bg-slate-900 py-4">
+<header class="site-header bg-slate-900 py-4">
   <div class="container mx-auto flex justify-between items-center px-6">
     <a class="nav-brand" href="/">{{.Config.Site.Title}}</a>
-    <nav class="flex gap-6">
+    <nav class="nav-links flex gap-6">
       <a class="nav-link" href="/ja/">日本語</a>
       <a class="nav-link" href="/tags/">Tags</a>
       <a class="nav-link" href="/categories/">Categories</a>
@@ -45,7 +45,7 @@
 {{end}}
 
 {{define "footer"}}
-<footer class="bg-slate-100 border-t mt-16 py-6 text-center">
+<footer class="site-footer bg-slate-100 border-t mt-16 py-6 text-center">
   <div class="container mx-auto px-6">
     <nav class="flex justify-center gap-6 mb-2">
       <a class="footer-link" href="/about/">About</a>
@@ -63,7 +63,7 @@
   <span>
     {{if .Pagination.PrevURL}}<a class="footer-link" href="{{.Pagination.PrevURL}}">&larr; Newer</a>{{else}}&nbsp;{{end}}
   </span>
-  <span class="text-secondary">{{.Pagination.CurrentPage}} / {{.Pagination.TotalPages}}</span>
+  <span class="pagination-info text-secondary">{{.Pagination.CurrentPage}} / {{.Pagination.TotalPages}}</span>
   <span>
     {{if .Pagination.NextURL}}<a class="footer-link" href="{{.Pagination.NextURL}}">Older &rarr;</a>{{else}}&nbsp;{{end}}
   </span>

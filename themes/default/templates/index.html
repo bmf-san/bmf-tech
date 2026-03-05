@@ -1,4 +1,4 @@
-{{define "htmllang"}}{{$.Config.Site.Language}}{{end}}
+{{define "htmllang"}}{{with index .Articles 0}}{{.Locale}}{{else}}{{$.Config.Site.Language}}{{end}}{{end}}
 {{template "head" .}}
 <body class="bg-body">
 {{template "header" .}}
