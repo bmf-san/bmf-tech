@@ -115,8 +115,9 @@ theme:
     zenn: "bmf_san"
     speaker_deck: "bmf_san"
     footer_text: "© 2026 Kenta Takeuchi"
-    adsense_id: ""          # Google AdSense クライアント ID（未設定）
-    ga_id: ""               # Google Analytics 測定 ID（未設定）
+    adsense_id: "ca-pub-5146230866088201"
+    adsense_slot: "7900864416"
+    ga_id: "G-784B55NW88"
 
 syntax_highlight:
   theme: "github"
@@ -276,8 +277,8 @@ description: "Kenta Takeuchi のプロフィールページ"
 | sitemap.xml のタクソノミー・アーカイブ URL 欠落 | `GenerateSitemap()` が記事スライスのみ受け取るため、個別タグ・カテゴリー・アーカイブページが含まれない。記事 URL（584件）は収録済みのため DNS 移行ブロッカーではないが、gohan 側 enhancement として対応予定 |
 | JSON-LD | `article.html` に `@type: BlogPosting`、各ページに BreadcrumbList を未実装。移行後に追加予定 |
 | 検索機能 | Pagefind などのクライアントサイド全文検索の採用を検討 |
-| 広告 | Google AdSense を継続運用予定。`config.yaml` の `adsense_id` に設定後、テンプレートに広告スロットを追加する |
-| Google Analytics | `config.yaml` の `ga_id` に設定後、`{{define "head"}}` に GA スクリプトを追加する |
+| 広告 | Google AdSense 実装済み。`_partials.html` の head に AdSense スクリプト、`article.html` の記事コンテンツ直下に fluid 広告ユニット（slot: `7900864416`）を配置 |
+| Google Analytics | GA4 実装済み。`_partials.html` の head に gtag.js スクリプトを配置（ID: `G-784B55NW88`） |
 | OGP 画像 | 記事サムネイル画像の自動生成またはデフォルト画像の設定（gohan の `ogp.enabled` が実装され次第対応） |
 | タグ・カテゴリーページの多言語混在 | `/tags/{name}/` / `/categories/{name}/` は en + ja の記事が混在して出力される（gohan の現仕様）。テンプレートでロケールラベルを表示するなど UX 面での対処が必要 |
 | カテゴリー英語化 | 既存カテゴリーは日本語（例: アーキテクチャ）。英語名（例: Architecture）への統一は段階的に実施予定 |
