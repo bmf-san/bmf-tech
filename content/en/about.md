@@ -7,11 +7,124 @@ template: page.html
 draft: false
 ---
 
-## bmf-san
+## Kenta Takeuchi
 
-Software engineer. Writing primarily about backend development, infrastructure, and software design.
+Senior Platform Engineer.
 
-- GitHub: [bmf-san](https://github.com/bmf-san)
-- Blog: [bmf-tech.com](https://bmf-tech.com)
+Started my career as a freelance web developer, then gained experience launching new businesses at a startup and handling diverse projects at a software agency. Later joined a crowdfunding company as a software engineer, working on foundational systems including notification infrastructure and authentication/authorization platforms. Currently at an HR tech company as a Senior Platform Engineer, working on product platform development.
 
-This blog is built with [gohan](https://github.com/bmf-san/gohan), a minimal static site generator written in Go, and hosted on Cloudflare Pages.
+My goal is to continuously improve the long-term value of the organizations and software I'm involved with. I'm particularly interested in system architecture. Hobbies include OSS development, the gym, and houseplants.
+
+| | |
+|---|---|
+| Email | bmf.infomation@gmail.com |
+| GitHub | [bmf-san](https://github.com/bmf-san) |
+| Twitter | [@bmf_san](https://twitter.com/bmf_san) |
+| LinkedIn | [bmf-san](https://www.linkedin.com/in/bmf-san) |
+| Zenn | [bmf_san](https://zenn.dev/bmf_san) |
+| Speaker Deck | [bmf_san](https://speakerdeck.com/bmf_san) |
+
+---
+
+## Experience
+
+### Technical & Architecture
+
+- Distributed systems and microservices architecture design
+- Platform and foundational systems development
+- Cloud infrastructure construction and operation
+- System performance optimization
+- Large-scale backend development with Go and PHP
+- Frontend development with React and Vue.js
+
+### Team & Organization Management
+
+- Development team formation and technical organization management
+- Team building and project management
+- Scrum adoption and operation
+- Recruiting and onboarding support
+- Technical culture and strategy
+
+### Community & Output
+
+- OSS development
+- Conference speaking
+- Technical book writing (Zenn)
+- Personal blog (bmf-tech.com)
+- Career support and technical mentoring
+
+---
+
+## Work History
+
+**SmartHR / Senior Platform Engineer** — Jun 2024–present
+
+Platform development and operations in the HR tech space, system architecture design and re-architecting, performance optimization.
+
+**Makuake / Senior Software Engineer & Lead Engineer** — Dec 2018–May 2024
+
+Lead engineer of the platform team, solving scalability challenges as the business scaled. Led design and development of foundational systems including authentication, authorization, and notification infrastructure.
+
+**Innovator Japan / Product Manager & Engineer** — May 2017–Sep 2018
+
+New service development (planning and prototyping) for job-related services, CMS/EC package development, contract website development.
+
+**Startup / Web Engineer** — May 2016–Mar 2017
+
+Feature development and UI implementation for a job service, service growth through analytics.
+
+**Freelance / Web Developer** — Jun 2015–May 2016
+
+Contract web development across diverse clients and projects.
+
+---
+
+## OSS
+
+| Project | Description |
+|---|---|
+| [ggc](https://github.com/bmf-san/ggc) | Git client tool |
+| [gobel-api](https://github.com/bmf-san/gobel-api) | Headless CMS written in Go |
+| [goblin](https://github.com/bmf-san/goblin) | HTTP router written in Go |
+| [gondola](https://github.com/bmf-san/gondola) | Reverse proxy written in Go |
+| [gohan](https://github.com/bmf-san/gohan) | Static site generator written in Go |
+| [go-clean-architecture-web-application-boilerplate](https://github.com/bmf-san/go-clean-architecture-web-application-boilerplate) | Clean Architecture boilerplate in Go |
+| [resume-manager](https://github.com/bmf-san/resume-manager) | Resume and CV management tool |
+
+---
+
+## Books
+
+**[net/http で つくる HTTP ルーター自作入門](https://zenn.dev/books/3f41c5cd34ec3f)** (2022)
+
+A book on implementing an HTTP router using only Go's standard library, based on the experience of developing [goblin](https://github.com/bmf-san/goblin).
+
+---
+
+## Talks
+
+All slides are available on [Speaker Deck](https://speakerdeck.com/bmf_san).
+
+| Conference | Title |
+|---|---|
+| Architecture Conference 2025 | [完璧を求めない意思決定 — アクセス制御基盤における制約との向き合い方](https://speakerdeck.com/bmf_san/wan-bi-woqiu-menaiyi-si-jue-ding-akusesuzhi-yu-ji-pan-niokeruzhi-yue-tonoxiang-kihe-ifang) |
+| Go Conference 2024 | [自作 HTTP ルーターから新しい ServeMux へ](https://speakerdeck.com/bmf_san/zi-zuo-httprutakaraxin-siiservemuxhe) |
+| PHPerKaigi 2024 | [古くなってしまった PHP フレームワークと PHP のバージョンアップ戦略](https://speakerdeck.com/bmf_san/gu-kunatutesimatutaphphuremuwakutophpnohasiyonatuhuzhan-lue) |
+| Go Conference 2021 Autumn | [net/http でつくる HTTP ルーター自作入門](https://speakerdeck.com/bmf_san/httpdetukuruhttprutazi-zuo-ru-men) |
+
+---
+
+## Volunteer
+
+- Technical reviewer for *Software Architecture: The Hard Parts* (Japanese edition)
+- Technical reviewer for *The Staff Engineer's Path* (Japanese edition)
+- Technical reviewer for *Decision-Making for Software Architects* (Japanese edition)
+
+---
+
+## Media
+
+| Media | |
+|---|---|
+| フリーランスHub | スキルアップやキャッチアップにつながる！注目の IT ブログ・メディアまとめ その 2 |
+| レバテックフリーランス | 市場価値を高めたいエンジニアに読んでほしい技術ブログ特集 |
