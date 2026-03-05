@@ -1,4 +1,5 @@
 {{template "head" .}}
+{{define "htmllang"}}{{with index .Articles 0}}{{.Locale}}{{else}}{{$.Config.Site.Language}}{{end}}{{end}}
 <body>
 {{template "header" .}}
 <main class="site-wrapper">
