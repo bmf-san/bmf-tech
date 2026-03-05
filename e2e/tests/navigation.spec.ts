@@ -44,6 +44,21 @@ test.describe('Tag page /tags/Go/', () => {
   });
 });
 
+test.describe('Tags index /ja/tags/', () => {
+  test('loads a proper HTML page (not a directory listing)', async ({ page }) => {
+    await page.goto('/ja/tags/');
+    // page.html renders an .article-content wrapper
+    await expect(page.locator('.article-content')).toBeVisible();
+    await expect(page.locator('body')).not.toContainText('Index of /');
+  });
+
+  test('contains tag links', async ({ page }) => {
+    await page.goto('/ja/tags/');
+    const links = page.locator('.article-content a');
+    expect(await links.count()).toBeGreaterThan(0);
+  });
+});
+
 // ── Categories ───────────────────────────────────────────────────────────────
 
 // Same as tags: created as a page-type content file (content/en/categories.md)
@@ -63,6 +78,20 @@ test.describe('Categories index /categories/', () => {
   test('OS category link is present', async ({ page }) => {
     await page.goto('/categories/');
     await expect(page.locator('.article-content').getByRole('link', { name: 'OS' })).toBeVisible();
+  });
+});
+
+test.describe('Categories index /ja/categories/', () => {
+  test('loads a proper HTML page (not a directory listing)', async ({ page }) => {
+    await page.goto('/ja/categories/');
+    await expect(page.locator('.article-content')).toBeVisible();
+    await expect(page.locator('body')).not.toContainText('Index of /');
+  });
+
+  test('contains category links', async ({ page }) => {
+    await page.goto('/ja/categories/');
+    const links = page.locator('.article-content a');
+    expect(await links.count()).toBeGreaterThan(0);
   });
 });
 
