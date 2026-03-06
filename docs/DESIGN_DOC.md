@@ -196,7 +196,7 @@ description: "Kenta Takeuchi のプロフィールページ"
 | hreflang | 日英ペア記事に `hreflang="ja"` / `hreflang="en"` / `hreflang="x-default"` を出力（gohan が `translation_key` で自動処理） |
 | JSON-LD (Article) | **未実装**（検討事項参照） |
 | JSON-LD (BreadcrumbList) | **未実装** |
-| sitemap.xml | gohan が自動生成。記事・固定ページの URL を収録（タグ・カテゴリー・アーカイブ個別ページは含まれない） |
+| sitemap.xml | gohan が自動生成。記事・固定ページの URL + ロケール別インデックスページ（`/`・`/ja/`）を収録（タグ・カテゴリー・アーカイブ個別ページは含まれない） |
 | robots.txt | `assets/robots.txt` に配置済み。`Allow: /` + sitemap 参照 |
 | Atom フィード | gohan が自動生成 (`/atom.xml`) |
 | noindex | DNS 移管前は `theme.params.noindex: "true"` で全ページに `<meta name="robots" content="noindex, nofollow">` を付与 |
@@ -286,7 +286,7 @@ description: "Kenta Takeuchi のプロフィールページ"
 
 | 項目 | 内容 |
 |---|---|
-| sitemap.xml のタクソノミー・アーカイブ URL 欠落 | `GenerateSitemap()` が記事スライスのみ受け取るため、個別タグ・カテゴリー・アーカイブページが含まれない。記事 URL（584件）は収録済みのため DNS 移行ブロッカーではないが、gohan 側 enhancement として対応予定 |
+| sitemap.xml のタクソノミー・アーカイブ URL 欠落 | 個別タグ・カテゴリー・アーカイブページが含まれない（ロケール別インデックスページ `/` / `/ja/` は v0.1.7 で対応済み）。gohan 側 enhancement として対応予定 |
 | JSON-LD | `article.html` に `@type: BlogPosting`、各ページに BreadcrumbList を未実装。移行後に追加予定 |
 | 検索機能 | Pagefind などのクライアントサイド全文検索の採用を検討 |
 | 広告 | Google AdSense 実装済み。`_partials.html` の head に AdSense スクリプト、`article.html` の記事コンテンツ直下に fluid 広告ユニット（slot: `7900864416`）を配置 |
