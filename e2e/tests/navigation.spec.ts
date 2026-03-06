@@ -127,6 +127,29 @@ test.describe('About page /about/', () => {
   });
 });
 
+test.describe('About page /ja/about/', () => {
+  test('loads successfully', async ({ page }) => {
+    const res = await page.goto('/ja/about/');
+    expect(res?.status()).toBe(200);
+  });
+
+  test('has article-content', async ({ page }) => {
+    await page.goto('/ja/about/');
+    await expect(page.locator('.article-content')).toBeVisible();
+  });
+
+  test('contains Japanese profile text', async ({ page }) => {
+    await page.goto('/ja/about/');
+    await expect(page.locator('.article-content')).toContainText('シニアプラットフォームエンジニア');
+  });
+
+  test('JA nav About link points to /ja/about/', async ({ page }) => {
+    await page.goto('/ja/');
+    const href = await page.locator('.nav-links').getByRole('link', { name: 'About' }).getAttribute('href');
+    expect(href).toBe('/ja/about/');
+  });
+});
+
 // ── Archives ─────────────────────────────────────────────────────────────────
 
 test.describe('Archive page /archives/2024/03/', () => {
