@@ -75,3 +75,10 @@ test('sitemap.xml is served and contains URLs', async ({ request }) => {
   expect(body).toContain('<urlset');
   expect(body).toContain('bmf-tech.com');
 });
+
+test('sitemap.xml contains EN and JA homepage URLs', async ({ request }) => {
+  const res = await request.get('/sitemap.xml');
+  const body = await res.text();
+  expect(body).toContain('https://bmf-tech.com/</loc>');
+  expect(body).toContain('https://bmf-tech.com/ja/</loc>');
+});
