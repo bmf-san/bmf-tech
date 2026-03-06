@@ -1,6 +1,5 @@
 {{template "head" .}}
 {{define "extra-style"}}<style>
-.article-content { line-height: 1.85; }
 .article-content img { max-width: 100%; height: auto; border-radius: 4px; }
 .article-content pre { overflow-x: auto; }
 .article-content table { width: 100%; border-collapse: collapse; overflow-x: auto; display: block; }
@@ -9,14 +8,16 @@
 </style>{{end}}
 <body class="bg-body">
 {{template "header" .}}
-<main class="container mx-auto px-4 py-4">
+<main class="container mx-auto px-4 py-10">
   {{range .Articles}}
-  <article>
-    <header class="mb-8">
-      <h1 class="text-2xl font-bold">{{.FrontMatter.Title}}</h1>
-    </header>
-    <div class="article-content">
-      {{.HTMLContent}}
+  <article class="card mb-8">
+    <div class="card-body">
+      <header class="mb-8">
+        <h1 class="text-2xl font-bold">{{.FrontMatter.Title}}</h1>
+      </header>
+      <div class="article-content leading-relaxed">
+        {{.HTMLContent}}
+      </div>
     </div>
   </article>
   {{end}}

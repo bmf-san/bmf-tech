@@ -60,8 +60,8 @@
       <div class="nav-links flex gap-4">
         {{if eq .CurrentLocale "ja"}}
         <a href="/" class="text-slate-300 text-sm">English</a>
-        <a href="/ja/tags/" class="text-slate-300 text-sm">Tags</a>
-        <a href="/ja/categories/" class="text-slate-300 text-sm">Categories</a>
+        <a href="/ja/tags/" class="text-slate-300 text-sm">タグ</a>
+        <a href="/ja/categories/" class="text-slate-300 text-sm">カテゴリ</a>
         {{else}}
         <a href="/ja/" class="text-slate-300 text-sm">日本語</a>
         <a href="/tags/" class="text-slate-300 text-sm">Tags</a>
@@ -78,7 +78,8 @@
 {{define "footer"}}
 <footer class="site-footer bg-slate-100 py-6 mt-12">
   <div class="container mx-auto px-4 text-center">
-    <p class="text-secondary text-sm">&copy; {{.Config.Site.Title}}</p>
+    <p class="text-secondary text-sm mb-2">&copy; {{.Config.Site.Title}}</p>
+    <p><a href="/sitemap.xml" class="text-secondary text-xs">Sitemap</a></p>
   </div>
 </footer>
 {{end}}

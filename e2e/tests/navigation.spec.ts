@@ -141,3 +141,60 @@ test.describe('Archive page /archives/2024/03/', () => {
     expect(firstDate).toMatch(/^2024-03/);
   });
 });
+
+// ── JA nav labels ─────────────────────────────────────────────────────────────
+
+test.describe('Nav: JA locale shows Japanese labels', () => {
+  test('nav shows タグ and カテゴリ on /ja/', async ({ page }) => {
+    await page.goto('/ja/');
+    await expect(page.locator('.nav-links').getByRole('link', { name: 'タグ' })).toBeVisible();
+    await expect(page.locator('.nav-links').getByRole('link', { name: 'カテゴリ' })).toBeVisible();
+  });
+
+  test('タグ link points to /ja/tags/', async ({ page }) => {
+    await page.goto('/ja/');
+    const href = await page.locator('.nav-links').getByRole('link', { name: 'タグ' }).getAttribute('href');
+    expect(href).toBe('/ja/tags/');
+  });
+
+  test('EN nav does not show タグ/カテゴリ', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.locator('.nav-links').getByRole('link', { name: 'Tags' })).toBeVisible();
+    await expect(page.locator('.nav-links').getByRole('link', { name: 'タグ' })).toHaveCount(0);
+  });
+});
+
+// ── JA tag URL on article ────────────────────────────────────────────────────
+
+test.describe('JA article tag links use /ja/tags/ prefix', () => {
+  test('tag badge href starts with /ja/tags/', async ({ page }) => {
+    await page.goto('/ja/posts/cto-thinking-strategy-leadership/');
+    const tagHref = await page.locator('.badge-secondary').first().getAttribute('href');
+    expect(tagHref).toMatch(/^\/ja\/tags\//);
+  });
+
+  test('/ja/tags/CTO/ returns 200', async ({ page }) => {
+    const res = await page.goto('/ja/tags/CTO/');
+    expect(res?.status()).toBe(200);
+  });
+});
+
+// ── Sitemap in footer ────────────────────────────────────────────────────────
+
+test.describe('Footer sitemap link', () => {
+  test('EN footer has sitemap link', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.locator('footer').getByRole('link', { name: 'Sitemap' })).toBeVisible();
+  });
+
+  test('sitemap link points to /sitemap.xml', async ({ page }) => {
+    await page.goto('/');
+    const href = await page.locator('footer').getByRole('link', { name: 'Sitemap' }).getAttribute('href');
+    expect(href).toBe('/sitemap.xml');
+  });
+
+  test('JA footer also has sitemap link', async ({ page }) => {
+    await page.goto('/ja/');
+    await expect(page.locator('footer').getByRole('link', { name: 'Sitemap' })).toBeVisible();
+  });
+});

@@ -1,25 +1,24 @@
 {{template "head" .}}
-{{define "extra-style"}}<style>
-.article-list { list-style: none; padding: 0; margin: 0; }
-.article-list li { border-bottom: 1px solid var(--color-slate-200); }
-.article-list li:last-child { border-bottom: none; }
-</style>{{end}}
 <body class="bg-body">
 {{template "header" .}}
-<main class="container mx-auto px-4 py-4">
-  <p class="text-xs text-secondary mb-4">Tag</p>
+<main class="container mx-auto px-4 py-10">
+  <p class="text-xs text-secondary mb-6">Tag</p>
   {{if .Articles}}
-  <ul class="article-list">
-    {{range .Articles}}
-    <li class="flex items-baseline gap-4 py-3">
-      <span class="article-date text-xs text-secondary whitespace-nowrap">{{formatDate "2006-01-02" .FrontMatter.Date}}</span>
-      <a href="{{.URL}}" class="font-medium">{{.FrontMatter.Title}}</a>
-    </li>
-    {{end}}
-  </ul>
+  <div class="card mb-8">
+    <div class="card-body">
+      <ul class="article-list">
+        {{range .Articles}}
+        <li class="flex items-baseline gap-4 py-3 border-b border-slate-200">
+          <span class="article-date text-xs text-secondary whitespace-nowrap">{{formatDate "2006-01-02" .FrontMatter.Date}}</span>
+          <a href="{{.URL}}" class="font-medium">{{.FrontMatter.Title}}</a>
+        </li>
+        {{end}}
+      </ul>
+    </div>
+  </div>
   {{template "pagination" .}}
   {{else}}
-  <p class="text-secondary">No articles found.</p>
+  <p class="text-secondary mt-4">No articles found.</p>
   {{end}}
 </main>
 {{template "footer" .}}
