@@ -67,6 +67,13 @@ test.describe('OGP on EN article /posts/hello-world/', () => {
     const content = await ogDesc.getAttribute('content');
     expect(content?.trim().length).toBeGreaterThan(0);
   });
+
+  test('og:image points to /ogp/hello-world.png', async ({ page }) => {
+    await page.goto(URL);
+    const ogImage = page.locator('meta[property="og:image"]');
+    await expect(ogImage).toHaveCount(1);
+    expect(await ogImage.getAttribute('content')).toContain('/ogp/hello-world.png');
+  });
 });
 
 test.describe('OGP on JA article', () => {
@@ -85,6 +92,13 @@ test.describe('OGP on JA article', () => {
     const ogUrl = page.locator('meta[property="og:url"]');
     await expect(ogUrl).toHaveCount(1);
     expect(await ogUrl.getAttribute('content')).toContain('/ja/posts/');
+  });
+
+  test('og:image points to /ogp/{slug}.png', async ({ page }) => {
+    await page.goto(URL);
+    const ogImage = page.locator('meta[property="og:image"]');
+    await expect(ogImage).toHaveCount(1);
+    expect(await ogImage.getAttribute('content')).toContain('/ogp/2018-review-2019-goals.png');
   });
 });
 
@@ -106,6 +120,13 @@ test.describe('OGP on listing pages', () => {
       const ogTitle = page.locator('meta[property="og:title"]');
       await expect(ogTitle).toHaveCount(1);
       expect(await ogTitle.getAttribute('content')).toBe('bmf-tech');
+    });
+
+    test(`og:image points to default OGP image on ${path}`, async ({ page }) => {
+      await page.goto(path);
+      const ogImage = page.locator('meta[property="og:image"]');
+      await expect(ogImage).toHaveCount(1);
+      expect(await ogImage.getAttribute('content')).toContain('/assets/images/ogp-default.png');
     });
   }
 });

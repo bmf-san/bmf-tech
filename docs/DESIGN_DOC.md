@@ -124,7 +124,13 @@ syntax_highlight:
   line_numbers: false
 
 ogp:
-  enabled: false            # OGP 画像生成は未対応（gohan 側未実装）
+  enabled: true
+  background_color: "#ffffff"
+  text_color: "#111111"
+  font_file: "assets/fonts/NotoSansJP-Bold.ttf"  # OFL ライセンス（フリー、商用可）
+  logo_file: ""
+  width: 1200
+  height: 630
 
 i18n:
   default_locale: "en"
@@ -184,7 +190,7 @@ description: "Kenta Takeuchi のプロフィールページ"
 |---|---|
 | `<title>` タグ最適化 | `{記事タイトル} — {site.title}` 形式（`article.html` の `{{define "title"}}`） |
 | `<meta name="description">` | Front Matter の `description` フィールドを使用 |
-| OGP タグ | `og:title / og:description / og:url / og:site_name` を `_partials.html` の `{{define "head"}}` に実装済み。`og:image` は未設定（gohan の `ogp.enabled: false`） |
+| OGP タグ | `og:title / og:type / og:url / og:description / og:image` を `_partials.html` の `{{define "head"}}` に実装済み。記事ページは `ogp/{slug}.png`（ビルド時自動生成）、一覧ページは `assets/images/ogp-default.png` を使用 |
 | Twitter Card | `twitter:card / twitter:site / twitter:creator` を実装済み |
 | Canonical URL | `<link rel="canonical">` を `article.html` に実装済み |
 | hreflang | 日英ペア記事に `hreflang="ja"` / `hreflang="en"` / `hreflang="x-default"` を出力（gohan が `translation_key` で自動処理） |
@@ -285,7 +291,7 @@ description: "Kenta Takeuchi のプロフィールページ"
 | 検索機能 | Pagefind などのクライアントサイド全文検索の採用を検討 |
 | 広告 | Google AdSense 実装済み。`_partials.html` の head に AdSense スクリプト、`article.html` の記事コンテンツ直下に fluid 広告ユニット（slot: `7900864416`）を配置 |
 | Google Analytics | GA4 実装済み。`_partials.html` の head に gtag.js スクリプトを配置（ID: `G-784B55NW88`） |
-| OGP 画像 | 記事サムネイル画像の自動生成またはデフォルト画像の設定（gohan の `ogp.enabled` が実装され次第対応） |
+| OGP 画像カスタマイズ | デフォルト画像（`assets/images/ogp-default.png`）はシンプルなテキストのみ。ブランドロゴや背景画像を使ったデザイン改善が可能 |
 | タグ・カテゴリーページの多言語混在 | `/tags/{name}/` / `/categories/{name}/` は en + ja の記事が混在して出力される（gohan の現仕様）。テンプレートでロケールラベルを表示するなど UX 面での対処が必要 |
 | カテゴリー英語化 | 既存カテゴリーは日本語（例: アーキテクチャ）。英語名（例: Architecture）への統一は段階的に実施予定 |
 | `site.title` / `site.description` の最終化 | 現在 `"bmf-tech"` / `"bmf-san's personal tech blog"` はプレースホルダー。DNS 移管前に正式値に更新する |

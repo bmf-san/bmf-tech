@@ -122,6 +122,15 @@ translation_key: hello
 
 `main` ブランチへの push で自動デプロイ。
 
+**CI フロー（`.github/workflows/deploy.yml`）:**
+
+1. GitHub Actions (ubuntu ランナー) が `gohan build` を実行し `public/` を生成
+2. `_redirects` を `public/` へコピー
+3. `wrangler pages deploy public` で `public/` を Cloudflare Pages へダイレクトアップロード
+
+> Cloudflare Pages 側ではビルドを行わない。ビルドは GitHub Actions ランナー上で完結する。  
+> `assets/fonts/` など `gohan build` に必要なファイルはリポジトリに含める必要がある。
+
 **GitHub Secrets に設定が必要**:
 - `CLOUDFLARE_API_TOKEN` — Cloudflare API トークン (Pages:Edit 権限)
 - `CLOUDFLARE_ACCOUNT_ID` — Cloudflare アカウント ID

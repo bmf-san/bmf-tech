@@ -17,6 +17,7 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="{{.Config.Site.BaseURL}}{{$article.URL}}">
 <meta property="og:description" content="{{if $article.FrontMatter.Description}}{{$article.FrontMatter.Description}}{{else}}{{.Config.Site.Description}}{{end}}">
+<meta property="og:image" content="{{.Config.Site.BaseURL}}/ogp/{{$article.FrontMatter.Slug}}.png">
 {{if $article.URL -}}
 <link rel="canonical" href="{{.Config.Site.BaseURL}}{{$article.URL}}">
 {{if $article.Locale -}}
@@ -33,6 +34,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{.Config.Site.BaseURL}}">
 <meta property="og:description" content="{{.Config.Site.Description}}">
+<meta property="og:image" content="{{.Config.Site.BaseURL}}/assets/images/ogp-default.png">
 {{- end}}
 {{block "extra-style" .}}{{end}}
 {{- with index .Config.Theme.Params "ga_id"}}

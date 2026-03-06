@@ -36,7 +36,13 @@ syntax_highlight:
   line_numbers: false
 
 ogp:
-  enabled: false
+  enabled: true
+  background_color: "#ffffff"
+  text_color: "#111111"
+  font_file: "assets/fonts/NotoSansJP-Bold.ttf"
+  logo_file: ""
+  width: 1200
+  height: 630
 
 i18n:
   default_locale: "en"
