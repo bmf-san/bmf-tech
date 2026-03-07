@@ -3,6 +3,7 @@
 public/
 .gohan/
 *.log
+tools/translate/translate
 tools/migrate/migrate
 tools/download_images/download_images
 tools/slug_map_generator/slug_map_generator

@@ -1,4 +1,4 @@
-.PHONY: help install install-e2e build serve clean test-e2e new-ja new-en
+.PHONY: help install install-e2e build serve clean test-e2e new-ja new-en translate translate-dry-run
 
 TITLE   ?= untitled
 SLUG    ?= untitled
@@ -48,3 +48,9 @@ new-en: ## 英語記事を作成  例: make new-en TITLE="Title" SLUG=slug
 	@printf -- '---\ntitle: "$(TITLE)"\nslug: $(SLUG)\ndate: %s\nauthor: bmf-san\ncategories:\n  - \ntags:\n  - \ndescription: ""\ntranslation_key: $(SLUG)\ndraft: true\n---\n' \
 		$$(date +%Y-%m-%d) > content/en/posts/$(SLUG).md
 	@echo "created: content/en/posts/$(SLUG).md"
+
+translate: ## JA記事を一括英語翻訳 (GITHUB_TOKEN or OPENAI_API_KEY が必要)
+	cd tools/translate && GOTOOLCHAIN=auto go run . -delay 1000
+
+translate-dry-run: ## 翻訳対象の確認 (API不要)
+	cd tools/translate && GOTOOLCHAIN=auto go run . -dry-run
