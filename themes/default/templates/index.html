@@ -1,25 +1,32 @@
 {{template "head" .}}
-{{define "extra-style"}}<style>
-.article-list { list-style: none; padding: 0; margin: 0; }
-.article-list li { border-bottom: 1px solid var(--color-slate-200); }
-.article-list li:last-child { border-bottom: none; }
-</style>{{end}}
 <body class="bg-body">
 {{template "header" .}}
-<main class="container mx-auto px-4 py-4">
+<main class="container mx-auto px-4 py-10">
   {{if .Articles}}
-  <ul class="article-list">
-    {{range .Articles}}
-    <li class="flex items-baseline gap-4 py-3">
-      <span class="article-date text-xs text-secondary whitespace-nowrap">{{formatDate "2006-01-02" .FrontMatter.Date}}</span>
-      {{if .Locale}}<span class="badge {{if eq .Locale "ja"}}badge-danger{{else}}badge-info{{end}}">{{.Locale}}</span>{{end}}
-      <a href="{{.URL}}" class="font-medium">{{.FrontMatter.Title}}</a>
-    </li>
-    {{end}}
-  </ul>
+  <div class="card mb-8">
+    <div class="card-body">
+      <ul class="article-list">
+        {{range .Articles}}
+        {{- $lp := "" -}}{{- if eq .Locale "ja"}}{{- $lp = "/ja" -}}{{end}}
+        <li class="py-3 border-b border-slate-200">
+          <div class="flex items-baseline gap-3 mb-1">
+            <span class="article-date text-xs text-secondary whitespace-nowrap">{{formatDate "2006-01-02" .FrontMatter.Date}}</span>
+            <a href="{{.URL}}" class="font-medium">{{.FrontMatter.Title}}</a>
+          </div>
+          {{if or .FrontMatter.Categories .FrontMatter.Tags}}
+          <div class="flex flex-wrap gap-2 mt-1 pl-0">
+            {{range .FrontMatter.Categories}}<a href="{{$lp}}/categories/{{.}}/" class="text-xs text-secondary">{{.}}</a>{{end}}
+            {{range .FrontMatter.Tags}}<a href="{{$lp}}/tags/{{.}}/" class="badge badge-secondary text-xs">#{{.}}</a>{{end}}
+          </div>
+          {{end}}
+        </li>
+        {{end}}
+      </ul>
+    </div>
+  </div>
   {{template "pagination" .}}
   {{else}}
-  <p class="text-secondary">No articles found.</p>
+  <p class="text-secondary mt-4">No articles found.</p>
   {{end}}
 </main>
 {{template "footer" .}}
