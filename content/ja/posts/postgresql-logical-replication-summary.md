@@ -1,14 +1,15 @@
 ---
-title: "PostgreSQL 論理レプリケーションの仕様まとめ"
-slug: "postgresql-logical-replication-summary"
-date: 2025-05-23
+title: PostgreSQL 論理レプリケーションの仕様まとめ
+slug: postgresql-logical-replication-summary
+date: 2025-05-23T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "PostgreSQL"
-draft: false
+  - PostgreSQL
+translation_key: postgresql-logical-replication-summary
 ---
+
 
 # 概要
 

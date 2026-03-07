@@ -1,15 +1,16 @@
 ---
-title: "OpenAPIを使ったスキーマ駆動開発"
-slug: "openapi-schema-driven-development"
-date: 2024-01-19
+title: OpenAPIを使ったスキーマ駆動開発
+slug: openapi-schema-driven-development
+date: 2024-01-19T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "OpenAPI"
-  - "スキーマ駆動"
-draft: false
+  - OpenAPI
+  - スキーマ駆動
+translation_key: openapi-schema-driven-development
 ---
+
 
 # OpenAPI Specificationとは
 言語依存のない形でHTTP APIの仕様を定義するためのフォーマット。YAMLまたはJSONで記述する。

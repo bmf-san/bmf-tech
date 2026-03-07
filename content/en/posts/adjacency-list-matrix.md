@@ -4,22 +4,22 @@ slug: adjacency-list-matrix
 date: 2023-07-29T00:00:00Z
 author: bmf-san
 categories:
-  - Algorithms and Data Structures
+  - Algorithms
+  - Data Structures
 tags:
   - Graph
   - Adjacency Matrix
   - Adjacency List
-description: An overview of adjacency lists and adjacency matrices, which are data structures used to represent graphs.
 translation_key: adjacency-list-matrix
 ---
 
 # Overview
-This post summarizes adjacency lists and adjacency matrices, which are data structures used to represent graphs.
+This post summarizes the data structures for representing graphs: adjacency lists and adjacency matrices.
 
 Both adjacency lists and adjacency matrices can be used for directed and undirected graphs.
 
 # Adjacency List
-An adjacency list is a data structure where each vertex (node) maintains a list of its adjacent vertices.
+A data structure that holds a list of adjacent vertices for each vertex (node).
 
 ```sh
 // Example of an undirected graph
@@ -36,15 +36,15 @@ D: [B, C]
 ```
 
 ## Time Complexity
-- Space complexity: O(V+E) (V: number of vertices, E: number of edges)
-- Finding adjacent vertices of a specific vertex: O(1)
-- Checking the existence of a specific edge: O(degree) (degree: number of adjacent edges)
-- Enumerating all adjacent vertices for all vertices: O(V+E)
+Space complexity: O(V+E) (where V is the number of vertices and E is the number of edges)
+Finding adjacent vertices for a specific vertex: O(1)
+Determining the existence of a specific edge: O(degree) (where degree is the number of adjacent edges)
+Enumerating all adjacent vertices for all vertices: O(V+E)
 
-Adjacency lists are efficient for graphs with fewer edges.
+The adjacency list is an efficient data structure for graphs with a small number of edges.
 
 ## Implementation
-The source code is available at [adjacency_list](https://github.com/bmf-san/road-to-algorithm-master/tree/master/data_structures/graph/adjacency_list).
+The source code can be found at [adjacency_list](https://github.com/bmf-san/road-to-algorithm-master/tree/master/data_structures/graph/adjacency_list).
 
 ```go
 // See: https://www.youtube.com/watch?v=JDP1OVgoa0Q
@@ -77,7 +77,7 @@ func (g *graph) addVertex(k int) {
 func (g *graph) addEdge(from, to int) {
 	// get vertex
 	fromVertex := g.getVertex(from)
-	toVertex := g.getVertex(to)
+toVertex := g.getVertex(to)
 
 	// check error
 	if fromVertex == nil || toVertex == nil {
@@ -140,12 +140,12 @@ func main() {
 }
 ```
 
-Adding edges is a bit complex in this implementation.
+Adding edges can be complex.
 
 # Adjacency Matrix
-An adjacency matrix is a data structure that represents connections between vertices (nodes) as a 2D matrix.
+A data structure that represents the connection relationships between vertices (nodes) as a two-dimensional matrix.
 
-The presence of an edge between vertices is represented using values of 0 or 1.
+The presence or absence of edges between vertices is represented using values of 0 or 1.
 
 ```sh
 // Example of an undirected graph
@@ -163,15 +163,15 @@ D  0  1  1  0
 ```
 
 ## Time Complexity
-- Space complexity: O(V^2)
-- Finding adjacent vertices of a specific vertex: O(V)
-- Checking the existence of a specific edge: O(1)
-- Enumerating all adjacent vertices for all vertices: O(V^2)
+Space complexity: O(V^2)
+Finding adjacent vertices for a specific vertex: O(V)
+Determining the existence of a specific edge: O(1)
+Enumerating all adjacent vertices for all vertices: O(V^2)
 
-Adjacency matrices are efficient for graphs with many edges or when frequent edge existence checks are required.
+The adjacency matrix is an efficient data structure for graphs with many edges or when frequent edge existence checks are required.
 
 ## Implementation
-The source code is available at [adjacency_matrix](https://github.com/bmf-san/road-to-algorithm-master/tree/master/data_structures/graph/adjacency_matrix).
+The source code can be found at [adjacency_matrix](https://github.com/bmf-san/road-to-algorithm-master/tree/master/data_structures/graph/adjacency_matrix).
 
 ```go
 package main
@@ -224,9 +224,9 @@ func main() {
 }
 ```
 
-The conditions for adding edges might seem slightly tricky in this implementation.
+The conditions for adding edges may be a bit complicated.
 
 # References
-- [mathwords.net - Data structures for representing graphs (Adjacency Matrix and Adjacency List)](https://mathwords.net/gurahu)
+- [mathwords.net - Data Structures for Graphs (Adjacency Matrix and Adjacency List)](https://mathwords.net/gurahu)
 - [Graph data structure and graph representation (Part 1 of 2)](https://www.youtube.com/watch?v=JDP1OVgoa0Q)
 - [Graph data structure and graph representation in Golang (Part 2 of 2)](https://www.youtube.com/watch?v=bSZ57h7GN2w)

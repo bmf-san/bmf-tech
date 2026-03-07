@@ -1,16 +1,17 @@
 ---
-title: "StreamYardでKeynoteの発表者ディスプレイを表示しながら配信する方法"
-slug: "streamyard-keynote-presenter-display"
-date: 2021-11-03
+title: StreamYardでKeynoteの発表者ディスプレイを表示しながら配信する方法
+slug: streamyard-keynote-presenter-display
+date: 2021-11-03T00:00:00Z
 author: bmf-san
 categories:
-  - "ツール"
+  - ツール
 tags:
-  - "Keynote"
-  - "StreamYard"
-  - "Tips"
-draft: false
+  - Keynote
+  - StreamYard
+  - Tips
+translation_key: streamyard-keynote-presenter-display
 ---
+
 
 # 概要
 StreamYardを使ってプレゼンする機会があったのでやり方をメモしておく。

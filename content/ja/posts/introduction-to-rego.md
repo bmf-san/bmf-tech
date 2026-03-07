@@ -1,15 +1,16 @@
 ---
-title: "Rego入門"
-slug: "introduction-to-rego"
-date: 2025-07-31
+title: Rego入門
+slug: introduction-to-rego
+date: 2025-07-31T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Open Policy Agent"
-  - "Rego"
-draft: false
+  - Open Policy Agent
+  - Rego
+translation_key: introduction-to-rego
 ---
+
 
 ## 目次
 

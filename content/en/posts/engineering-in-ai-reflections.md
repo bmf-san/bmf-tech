@@ -1,32 +1,31 @@
 ---
-title: Rethinking Engineering in the Age of AI
+title: Considering Engineering in the Age of AI
 slug: engineering-in-ai-reflections
 date: 2026-02-25T00:00:00Z
 author: bmf-san
 categories:
   - Architecture
 tags:
-  - LLM as judge
-  - Prompt as code
+  - LLM as Judge
+  - Prompt as Code
   - Prompt Ops
-  - Context engineering
-  - Prompt engineering
+  - Context Engineering
+  - Prompt Engineering
   - Continuous AI
-description: Exploring the transformation of engineering practices in the era of large language models (LLMs) and organizational AI adoption.
 translation_key: engineering-in-ai-reflections
 ---
 
-As the use of large language models (LLMs) expands from individuals to organizations, the need to manage prompts with the same rigor as traditional source code becomes increasingly important.
+As the utilization of large language models (LLMs) expands from individuals to organizations, the need to manage prompts with the same rigor as traditional source code is increasing.
 
-This article discusses three organizational practices—prompt codification, quantitative evaluation using a Golden Dataset, and establishing security governance frameworks—as well as the evolving role of engineers.
+This article discusses three organizational practices: codifying prompts, quantitative evaluation using a Golden Dataset, and establishing a security governance framework, along with the transformation of the engineer's role.
 
-It organizes thoughts on transforming AI from a "personal convenience tool" to a "reliable organizational asset."
+We will organize thoughts on transforming AI from a "personal convenience tool" to a "trusted asset for organizations."
 
-## Prompt as Code: The Three Pillars of Organizational Practices
+## Prompt as Code: Three Pillars of Organizational Practice
 
-### 1. Codifying and Centrally Managing Prompts
+### 1. Codifying Prompts and Central Management
 
-Prompts are "instruction sets for AI" and represent critical assets that determine system behavior. These should be managed in Git, just like source code, rather than in Excel or document tools.
+Prompts are "sets of instructions for AI" and are critical assets that determine system behavior. They need to be managed in Git, just like source code, rather than in Excel or document tools.
 
 **Implementation Pattern:**
 
@@ -35,145 +34,144 @@ Prompts are "instruction sets for AI" and represent critical assets that determi
 version: 1.2.0
 description: Response generation for customer support
 template: |
-  You are a customer support representative for {{company_name}}.
+  You are the customer support representative for {{company_name}}.
   Please respond to the following inquiry in a {{tone}} manner.
 
   Inquiry: {{user_question}}
 
-  Please keep the response within {{max_length}} characters.
+  Please keep your response within {{max_length}} characters.
 
 variables:
-  company_name: "Company XYZ"
+  company_name: "Company XX"
   tone: "polite and friendly"
   max_length: 200
 ```
 
-Defining prompts in formats like YAML or JSON and enabling external variable injection provides the following benefits:
+By defining prompts in YAML or JSON format and allowing variables to be injected from external sources, the following benefits can be achieved:
 
-- **Reusability**: Use the same prompt in multiple places
-- **Testability**: Conduct automated tests by changing variables
-- **Change History**: Track changes via Git
-- **Review**: Ensure quality through pull requests
+- **Reusability**: Use of the same prompt in multiple places
+- **Testability**: Automated testing with variable changes
+- **Change History**: Change tracking via Git
+- **Review**: Quality control through pull requests
 
-### 2. Quantitative Evaluation Using a Golden Dataset
+### 2. Quantitative Evaluation Using Golden Dataset
 
-A system is needed to determine whether "AI output has improved or degraded" based on data rather than subjective judgment.
+A system is needed to determine whether "AI output has improved/deteriorated" based on data rather than subjective judgment.
 
-**Definition of a Golden Dataset:**
-A test dataset that includes real-world inquiries from production, typical use cases, and edge cases (boundary conditions).
+**Definition of Golden Dataset:**
+A test dataset that includes inquiries that actually occurred in the production environment, typical use cases, and edge cases (boundary conditions).
 
-| Input Example       | Expected Output                  | Evaluation Criteria       |
-|---------------------|----------------------------------|---------------------------|
-| "I want to return this." | Explanation of return policy + steps | Accuracy, tone            |
-| "When will my delivery arrive?" | Instructions to check delivery status | Conciseness               |
-| "This is a complaint!" | Apology + escalation          | Appropriate response      |
+| Input Example | Expected Output | Evaluation Criteria |
+|---------------|----------------|---------------------|
+| "I want to return this" | Explanation of return policy + procedure | Accuracy, Tone |
+| "When will it be delivered?" | How to check delivery status | Conciseness |
+| "This is a complaint!" | Apology + escalation | Appropriate response |
 
-Whenever prompts are updated, tests must be run against the Golden Dataset to ensure no performance regressions occur. Integrating this into CI/CD (Continuous Integration/Continuous Delivery) pipelines prevents quality degradation.
+Whenever a prompt is changed, it is essential to run tests with the Golden Dataset to confirm that there is no performance regression. By incorporating this into the CI/CD (Continuous Integration/Continuous Delivery) pipeline, we can prevent quality degradation.
 
-**LLM-as-a-Judge (AI-based Evaluation):**
-Manually checking hundreds of outputs is impractical. Therefore, using a more advanced LLM as an evaluator has become a mainstream approach.
+**LLM-as-a-Judge (AI Evaluation):**
+It is not realistic for humans to manually check hundreds of outputs. Therefore, using a more powerful LLM as an evaluator has become mainstream.
 
-Example evaluation prompt:
-
+Example of an evaluation prompt:
 ```
-Compare the following two responses and evaluate which one is better.
+Compare the following two responses and evaluate which is superior.
 
 Evaluation Criteria:
-- Accuracy: Is it factually correct?
+- Accuracy: Is it based on facts?
 - Tone: Is the language appropriate?
-- Conciseness: Is it free of redundancy?
+- Conciseness: Is it not verbose?
 
 Response A: {{response_a}}
 Response B: {{response_b}}
 
-Select the better response and explain your reasoning.
+Choose the superior one and explain why.
 ```
 
-### 3. Establishing Security and Governance Frameworks
+### 3. Establishing Security and Governance Framework
 
-Organizational frameworks are required to address the unique security risks of AI systems.
+An organizational framework is needed to address the unique security risks of AI systems.
 
 **Key Risks:**
 
-| Risk                  | Description                                  | Countermeasures                    |
-|-----------------------|----------------------------------------------|------------------------------------|
-| **Prompt Injection**  | Overwriting AI instructions with malicious input | Input validation, context isolation |
-| **Data Leakage**      | Mishandling of PII in inputs/outputs         | Automatic PII detection and masking |
-| **Inappropriate Output** | Generation of discriminatory or harmful content | Implementation of guardrail models |
+| Risk | Description | Countermeasures |
+|------|-------------|-----------------|
+| **Prompt Injection** | Overwriting AI instructions with malicious input | Input validation, context separation |
+| **Personal Information Leakage** | Improper handling of PII in input/output | Automatic PII detection and masking |
+| **Inappropriate Output** | Generation of discriminatory or harmful content | Introduction of guardrail models |
 
 **Organizational Measures:**
 
-1. **Establish an AI Governance Committee**: A cross-functional approval process involving IT, legal, risk management, and business units
-2. **Define Accountability**: Appoint an "AI System Owner" for each AI use case
-3. **Maintain Audit Logs**: Record and ensure traceability of all AI communications
+1. **Establishment of AI Governance Committee**: A cross-functional approval process involving IT, legal, risk management, and business units.
+2. **Clarification of Responsibilities**: Appointment of "AI System Owners" for each AI use case.
+3. **Retention of Audit Logs**: Ensuring records of all AI communications and traceability.
 
 **Formalizing Knowledge: AGENTS.md and SKILL.md**
 
-A system for documenting organizational standard processes and enabling AI agents to learn from them.
+This is a mechanism to document organizational standard processes and teach AI agents.
 
-- **AGENTS.md**: The "constitution" of the project. Defines agent roles, available tools, and decision-making criteria
-- **SKILL.md**: Specific workflows, such as "PR review procedures" or "incident response flows"
+- **AGENTS.md**: The "constitution" of the project. Defines the roles of agents, available tools, and criteria for judgment.
+- **SKILL.md**: Specific workflows. Describes procedures like "PR review process" and "incident response flow."
 
-This prevents reliance on individual expertise and streamlines onboarding for new team members.
+This prevents individual dependency and streamlines onboarding for new members.
 
-## The Evolving Role of Engineers: Three Paradigm Shifts
+## Transformation of the Engineer's Role: Three Paradigm Shifts
 
-### From Writing Code → Designing Environments
+### From Code Writer to Environment Designer
 
-Traditional engineering focused on "writing precise instructions (code)." Engineering in the AI era focuses on "designing environments where AI can function effectively."
+Traditional engineering was about "writing precise instructions (code)." Engineering in the AI era is about "designing an environment where AI can function effectively."
 
-Prompts, data, tools, memory, and evaluation criteria—all these are components of the "environment":
+Prompts, data, tools, memory, and evaluation criteria—all of these are components of the "environment":
 
-- **Prompts**: Clarify instructions for AI
-- **Data (RAG)**: Organize reference information for AI
-- **Tools (MCP)**: Define external functions accessible to AI
-- **Memory**: Design the information AI should retain (short-term/working/long-term memory)
-- **Evaluation Criteria**: Define metrics for assessing AI output quality (Golden Dataset)
+- **Prompts**: Clarifying instructions to AI
+- **Data (RAG)**: Organizing information sources for AI to reference
+- **Tools (MCP)**: Defining external functions available to AI
+- **Memory**: Designing the information AI should retain (short-term/work/long-term memory)
+- **Evaluation Criteria**: Measurement standards for AI output quality (Golden Dataset)
 
-The engineer's role is to combine these elements effectively to build an "environment" where AI can consistently create value. Coding skills remain important but are only a subset of the overall responsibilities.
+The engineer's role is to appropriately combine these elements to build an "environment" where AI can stably create value. Coding skills remain important, but they are just a subset of the whole.
 
-### From Individual Skill → Organizational Process Design
+### From Individual Technical Skills to Organizational Process Design Skills
 
-While individual ability to write excellent prompts is important, the essence lies in building systems that enable the entire team to maintain a consistent level of quality.
+While the ability of individuals to write excellent prompts is important, what is more essential is the ability to build a system where the entire team can maintain a certain level of quality.
 
-In traditional software development, processes like code reviews, testing, and CI/CD have been used to prevent reliance on individual expertise and ensure quality. A similar approach is needed for AI development:
+In traditional software development, processes such as code reviews, testing, and CI/CD have been used to prevent individual dependency and ensure quality. A similar approach is necessary in AI development:
 
-- Git management and change tracking for prompts
-- Automated regression testing with a Golden Dataset
-- Formalizing organizational knowledge with AGENTS.md and SKILL.md
-- Standardizing security checks (PII detection, injection prevention)
+- Ensuring Git management of prompts and traceability of change history
+- Automating regression testing with the Golden Dataset
+- Formalizing organizational knowledge through AGENTS.md and SKILL.md
+- Standardizing security checks (PII detection, injection countermeasures)
 
-### From Striving for Perfection → Driving Continuous Improvement
+### From Seeking Perfection to Continuous Improvement
 
-Traditional code is deterministic, always returning the same output for the same input. However, AI is probabilistic, and perfect initial settings do not exist.
+Traditional code is deterministic. The same input always returns the same output. However, AI is probabilistic, and there is no perfect initial setting.
 
-What matters is the ability to rapidly iterate through monitoring, evaluation, and improvement cycles:
+What is important is the ability to rapidly cycle through monitoring, evaluation, and improvement:
 
 1. **Monitoring**: Real-time monitoring of AI output quality (drift detection)
 2. **Evaluation**: Regular performance measurement using the Golden Dataset
 3. **Improvement**: Adjusting prompts and retesting when issues are detected
 
-Organizations that can execute this "Build-Measure-Learn" loop on a weekly or daily basis will gain a competitive edge.
+Organizations that can execute this "Build-Measure-Learn" loop weekly or daily will gain a competitive advantage.
 
-Moreover, AI systems cannot be managed by engineers alone. Collaboration with legal, compliance, domain experts, and product managers is essential. Beyond technical accuracy, engineers are also responsible for organizational consensus-building and selecting tools accessible to non-engineers (e.g., no-code editing environments like PromptLayer).
+Moreover, AI systems cannot be completed solely by engineers. Collaboration with legal, compliance, domain experts, and product managers is essential. Ensuring not only technical accuracy but also organizational consensus and selecting tools accessible to non-engineers (such as no-code editing environments like PromptLayer) also becomes an important responsibility for engineers.
 
-## A Platform Engineering Perspective
+## Perspective of Platform Engineering
 
-Practices such as prompt code management and evaluation using a Golden Dataset align closely with the principles of platform engineering.
+Practices such as prompt code management and evaluation using Golden Dataset have a high affinity with the concept of platform engineering.
 
-Instead of reinventing the wheel, verified prompt templates can be centrally provided as a "Golden Path" for engineers to use via self-service when needed. This reduces time spent on individual trial-and-error and improves the overall developer experience (DX) across the organization.
+Instead of each person reinventing the wheel, a mechanism should be established to centrally provide verified prompt templates as a "Golden Path" (recommended path), allowing engineers to self-service when needed. This reduces the time spent on individual trial and error and enhances the overall developer experience (DX) of the organization.
 
-## Conclusion: The Paradigm Shift in Engineering
+## Conclusion: Shift in Engineering Paradigms
 
-Engineering in the AI era is transforming from "writing code" to "designing environments where AI can function effectively."
+Engineering in the AI era is transforming from "code writers" to "designers of environments where AI functions effectively."
 
 **Three Key Transformations:**
 
-1. **Prompts are the new code**: Rigorous management and testing are essential
-2. **Evaluation must be data-driven, not subjective**: Golden Dataset and LLM-as-a-Judge
-3. **From individual skills to organizational systems**: Formalizing knowledge with AGENTS.md/SKILL.md
+1. **Prompts are the new code**: Strict management and testing are essential.
+2. **Evaluation is based on data, not intuition**: Golden Dataset and LLM-as-a-Judge.
+3. **From individual skills to organizational systems**: Formalization through AGENTS.md/SKILL.md.
 
-**The Evolution Path for Engineers:**
-- **AI Users** → **AI Trainers** → **AI Co-Designers**
+**Evolution Path of Engineers:**
+- **Users of AI** → **Nurturers of AI** → **Designers collaborating with AI**
 
-By establishing the right organizational frameworks and equipping engineers with the necessary skills, organizations can transform LLMs from experimental tools into assets that continuously generate business value.
+By establishing the appropriate organizational framework and enabling individual engineers to acquire necessary skills, it becomes possible to transform LLMs from mere experimental tools into assets that continuously generate business value.

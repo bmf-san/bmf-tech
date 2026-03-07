@@ -1,15 +1,16 @@
 ---
-title: "PHPカンファレンス北海道2019に参加してきた"
-slug: "php-conference-hokkaido-2019-participation"
-date: 2019-10-06
+title: PHPカンファレンス北海道2019に参加してきた
+slug: php-conference-hokkaido-2019-participation
+date: 2019-10-06T00:00:00Z
 author: bmf-san
 categories:
-  - "ポエム"
+  - ポエム
 tags:
-  - "PHP"
-  - "PHPカンファレンス"
-draft: false
+  - PHP
+  - PHPカンファレンス
+translation_key: php-conference-hokkaido-2019-participation
 ---
+
 
 # PHPカンファレンス北海道2019に参加してきた
 2ヶ月ぶりのPHPカンファレンスに参加してきました。（前回は[PHPカンファレンス福岡2019に参加・登壇してきました](https://bmf-tech.com/posts/PHPカンファレンス福岡2019に参加・登壇してきました)）

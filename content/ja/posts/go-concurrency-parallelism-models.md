@@ -1,14 +1,15 @@
 ---
-title: "Goの並行・並列処理モデルとgoroutineスケジューリング"
-slug: "go-concurrency-parallelism-models"
-date: 2025-06-14
+title: Goの並行・並列処理モデルとgoroutineスケジューリング
+slug: go-concurrency-parallelism-models
+date: 2025-06-14T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-draft: false
+  - Golang
+translation_key: go-concurrency-parallelism-models
 ---
+
 
 # 概要
 Go言語は、軽量なgoroutineとランタイム機構により並行処理（concurrency）を強力にサポートし、Go 1.5以降はデフォルトでGOMAXPROCSが利用可能CPUコア数に設定されるため、適切に設定することでマルチコアを活かした並列実行（parallelism）も可能とする。本記事では、goroutineのスケジューリングやCPUバウンド処理でのマルチコア活用の仕組み、OSプロセス・スレッド・goroutineの関係を整理する。

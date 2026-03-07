@@ -1,15 +1,16 @@
 ---
-title: "権限管理基盤についての事例"
-slug: "permission-management-case-study"
-date: 2024-09-08
+title: 権限管理基盤についての事例
+slug: permission-management-case-study
+date: 2024-09-08T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "権限管理"
-  - "設計"
-draft: false
+  - 権限管理
+  - 設計
+translation_key: permission-management-case-study
 ---
+
 
 権限管理基盤については開発事例を調べてみた。
 

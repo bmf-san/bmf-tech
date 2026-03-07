@@ -1,5 +1,5 @@
 ---
-title: Wrote a Shell Script to Simplify Git Commands
+title: Created a Shell Script to Simplify Git Commands
 slug: create-shell-script-git-commands
 date: 2017-09-26T00:00:00Z
 author: bmf-san
@@ -8,22 +8,21 @@ categories:
 tags:
   - Git
   - Shell Script
-description: Improved a previous attempt at creating Git alias commands by using `select` for better usability.
 translation_key: create-shell-script-git-commands
 ---
 
 # Overview
-I previously created [shortcut Git commands in .bashrc](http://qiita.com/bmf_san/items/d41bc8d5c5677c69a1e4), but it was incomplete, so I made improvements.
+I created git alias commands in [.bashrc](http://qiita.com/bmf_san/items/d41bc8d5c5677c69a1e4), but since it was incomplete, I improved it.
 
-While the previous aliases made Git commands somewhat more convenient, the need to type the branch name every time I ran a Git command was a point that needed improvement. I resolved this issue by using `select`.
+While the previous alias made using git commands somewhat comfortable, I thought it was necessary to improve the requirement of typing the branch name every time I executed a git command, so I solved it using `select`.
 
 # Source
-I initially thought I could simply use `select` to loop through the output of `git branch`, but it also included file names and other unnecessary data, so I had to process it. I found an article doing something similar and used it as a reference.
+I thought it would be good to loop through the values of `git branch` with `select`, but since it also retrieves file names in addition to branch names, it needed some processing. I referred to an article that was doing something similar.
 
 The commands I created are:
 
 + Checkout a local branch
-+ Fetch a remote branch to the local environment
++ Bring a remote branch to local
 + Delete a local branch
 
 ```sh
@@ -65,7 +64,7 @@ alias g-c-b-r=gitCreateAndCheckoutRemoteBranch
 
 # delete a local branch
 function gitDeleteLocalBranch() {
-        branches=`git branch | grep -v -e"^\*" | tr -d ' '`
+        branches=`git branch | grep -v -e"^\*" | tr -d ' '` 
 
         PS3="Select branch > "
         echo 'Branch list:'
@@ -80,10 +79,10 @@ function gitDeleteLocalBranch() {
 alias g-b-d=gitDeleteLocalBranch
 ```
 
-I wanted to change the color of the options displayed by `select`, but I couldn't figure it out, so I left it for later.
+I wanted to change the color of the options output by `select`, but I didn't know how, so I postponed it.
 
 # Thoughts
-The source code for this script is available on [GitHub - bmf-san/my-scripts](https://github.com/bmf-san/my-scripts).
+This source is available at [github - bmf-san/my-scripts](https://github.com/bmf-san/my-scripts).
 
 # References
-* [A tool to make Git branch switching (checkout) easier](http://qiita.com/amichang/items/5f7e715801771214430e)
+* [A tool to simplify switching git branches (checkout)](http://qiita.com/amichang/items/5f7e715801771214430e)

@@ -1,15 +1,16 @@
 ---
-title: "初めてのGo言語 第2版 ―他言語プログラマーのためのイディオマティックGo実践ガイド"
-slug: "idiomatic-go-practice-guide"
-date: 2025-10-26
+title: 初めてのGo言語 第2版 ―他言語プログラマーのためのイディオマティックGo実践ガイド
+slug: idiomatic-go-practice-guide
+date: 2025-10-26T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "本"
-draft: false
+  - Golang
+  - 本
+translation_key: idiomatic-go-practice-guide
 ---
+
 
 [初めてのGo言語 第2版 ―他言語プログラマーのためのイディオマティックGo実践ガイド](https://amzn.to/3J2NzmR)を読んだ。
 

@@ -1,17 +1,18 @@
 ---
-title: "Letsencryptの証明書自動更新スクリプト"
-slug: "letsencrypt-auto-renewal-script"
-date: 2017-10-01
+title: Letsencryptの証明書自動更新スクリプト
+slug: letsencrypt-auto-renewal-script
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "cron"
-  - "Let's Encrypt"
-  - "shellscript"
-  - "Slack"
-draft: false
+  - cron
+  - Let's Encrypt
+  - shellscript
+  - Slack
+translation_key: letsencrypt-auto-renewal-script
 ---
+
 
 # 概要
 letsencryptの証明書を自動更新するスクリプトの紹介です。

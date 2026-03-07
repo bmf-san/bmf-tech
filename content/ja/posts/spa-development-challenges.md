@@ -1,15 +1,16 @@
 ---
-title: "SPAを構築したときにハマったこと"
-slug: "spa-development-challenges"
-date: 2018-06-06
+title: SPAを構築したときにハマったこと
+slug: spa-development-challenges
+date: 2018-06-06T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Nginx"
-  - "SPA"
-draft: false
+  - Nginx
+  - SPA
+translation_key: spa-development-challenges
 ---
+
 
 # 概要
 以前、[LaravelにSPAを組み込む時に考えたディレクトリ構成とnginxのconfファイル](https://bmf-tech.com/posts/Laravel%E3%81%ABSPA%E3%82%92%E7%B5%84%E3%81%BF%E8%BE%BC%E3%82%80%E6%99%82%E3%81%AB%E8%80%83%E3%81%88%E3%81%9F%E3%83%86%E3%82%99%E3%82%A3%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E6%A7%8B%E6%88%90%E3%81%A8nginx%E3%81%AEconf%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB)というタイトルの記事を書いたが、そこで記載したnginxのconfが不十分だったため、改めて問題点を整理、解決した。

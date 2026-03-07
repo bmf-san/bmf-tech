@@ -1,16 +1,17 @@
 ---
-title: "Road to ISUcon"
-slug: "road-to-isucon"
-date: 2023-06-07
+title: Road to ISUcon
+slug: road-to-isucon
+date: 2023-06-07T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "パフォーマンスチューニング"
-  - "ISUCON"
-  - "ISUCON8"
-draft: false
+  - パフォーマンスチューニング
+  - ISUCON
+  - ISUCON8
+translation_key: road-to-isucon
 ---
+
 
 # 概要
 ISUcon出場に向けて準備したことを記す。

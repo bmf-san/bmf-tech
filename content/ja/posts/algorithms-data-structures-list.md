@@ -1,15 +1,16 @@
 ---
-title: "アルゴリズムとデータ構造 - リスト"
-slug: "algorithms-data-structures-list"
-date: 2019-10-18
+title: アルゴリズムとデータ構造 - リスト
+slug: algorithms-data-structures-list
+date: 2019-10-18T00:00:00Z
 author: bmf-san
 categories:
-  - "アルゴリズムとデータ構造"
+  - アルゴリズムとデータ構造
 tags:
-  - "連結リスト"
-  - "片方向リスト"
-draft: false
+  - 連結リスト
+  - 片方向リスト
+translation_key: algorithms-data-structures-list
 ---
+
 
 # 概要
 [アルゴリズム図鑑](https://www.shoeisha.co.jp/book/detail/9784798149776)を参考に、アルゴリズムとデータ構造を学ぶ。

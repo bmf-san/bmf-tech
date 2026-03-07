@@ -1,5 +1,5 @@
 ---
-title: 'Capacity Planning: Analyzing, Forecasting, and Allocating Resources Effectively'
+title: Capacity Planning - Maximizing Resources through Site Analysis, Forecasting, and Placement
 slug: capacity-planning-resource-optimization
 date: 2024-03-30T00:00:00Z
 author: bmf-san
@@ -8,12 +8,11 @@ categories:
 tags:
   - Capacity Planning
   - Books
-description: Learn the fundamentals of capacity planning to optimize resource usage.
 translation_key: capacity-planning-resource-optimization
 ---
 
-[Capacity Planning: Analyzing, Forecasting, and Allocating Resources Effectively](https://amzn.to/4duNKBu) is a book I recently read.
+[Capacity Planning - Maximizing Resources through Site Analysis, Forecasting, and Placement](https://amzn.to/4duNKBu) was read.
 
-Although it's an older book, it provides fundamental insights into capacity planning.
+Although it is an old book, it provides fundamental insights into the concepts of capacity planning.
 
-While it assumes an on-premises environment, I believe some of its concepts can also be applied to cloud environments.
+While it assumes an on-premises environment, I believe there are transferable ideas applicable to the cloud as well.

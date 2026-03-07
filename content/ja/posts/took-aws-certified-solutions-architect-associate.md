@@ -1,14 +1,15 @@
 ---
-title: "AWS認定ソリューションアーキテクトアソシエイトを受験した"
-slug: "took-aws-certified-solutions-architect-associate"
-date: 2021-07-17
+title: AWS認定ソリューションアーキテクトアソシエイトを受験した
+slug: took-aws-certified-solutions-architect-associate
+date: 2021-07-17T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Amazon Web Service"
-draft: false
+  - Amazon Web Service
+translation_key: took-aws-certified-solutions-architect-associate
 ---
+
 
 # 概要
 AWS認定ソリューションアーキテクトアソシエイトを受験して合格したので取り組んだことなどを記録しておく。

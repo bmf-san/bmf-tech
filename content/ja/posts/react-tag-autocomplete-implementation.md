@@ -1,14 +1,15 @@
 ---
-title: "React Tag Autocompleteを使ってサジェスト付きタグ機能を実装する"
-slug: "react-tag-autocomplete-implementation"
-date: 2017-10-01
+title: React Tag Autocompleteを使ってサジェスト付きタグ機能を実装する
+slug: react-tag-autocomplete-implementation
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "React"
-draft: false
+  - React
+translation_key: react-tag-autocomplete-implementation
 ---
+
 
 タグ機能をフルスクラッチで開発しようと思っていたのですが、便利なReact Componentが沢山見つかったのでそちらを利用してみました。
 

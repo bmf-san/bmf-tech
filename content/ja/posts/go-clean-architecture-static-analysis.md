@@ -1,15 +1,16 @@
 ---
-title: "GoでClean Architectureのレイヤーを静的解析する"
-slug: "go-clean-architecture-static-analysis"
-date: 2022-09-04
+title: GoでClean Architectureのレイヤーを静的解析する
+slug: go-clean-architecture-static-analysis
+date: 2022-09-04T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "Clean Architecture"
-draft: false
+  - Golang
+  - Clean Architecture
+translation_key: go-clean-architecture-static-analysis
 ---
+
 
 # 概要
 GoでClean Architectureのレイヤーを静的解析する方法についてのメモ。

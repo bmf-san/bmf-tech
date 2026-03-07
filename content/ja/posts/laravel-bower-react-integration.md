@@ -1,15 +1,16 @@
 ---
-title: "LaravelにbowerでReactを導入してみる"
-slug: "laravel-bower-react-integration"
-date: 2017-10-01
+title: LaravelにbowerでReactを導入してみる
+slug: laravel-bower-react-integration
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Laravel"
-  - "React"
-draft: false
+  - Laravel
+  - React
+translation_key: laravel-bower-react-integration
 ---
+
 
 先日、Laravel5.3ではフロントエンドフレームワークとしてVue.jsをデフォルトとして採用するのが決定したようです。
 

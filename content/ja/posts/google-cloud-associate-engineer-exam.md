@@ -1,14 +1,15 @@
 ---
-title: "Google Cloud認定アソシエイトクラウドエンジニアを受験した"
-slug: "google-cloud-associate-engineer-exam"
-date: 2023-06-07
+title: Google Cloud認定アソシエイトクラウドエンジニアを受験した
+slug: google-cloud-associate-engineer-exam
+date: 2023-06-07T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Google Cloud Platform"
-draft: false
+  - Google Cloud Platform
+translation_key: google-cloud-associate-engineer-exam
 ---
+
 
 # 概要
 Google Cloud認定アソシエイトクラウドエンジニアを受験して合格したので、再受験するときや別の試験を受けるときのために勉強した過程を振り返っておく。

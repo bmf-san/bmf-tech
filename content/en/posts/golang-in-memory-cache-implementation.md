@@ -1,5 +1,5 @@
 ---
-title: Implementing an In-Memory Cache in Golang
+title: Implementing In-Memory Cache in Golang
 slug: golang-in-memory-cache-implementation
 date: 2020-09-29T00:00:00Z
 author: bmf-san
@@ -8,23 +8,20 @@ categories:
 tags:
   - Golang
   - Cache
-description: A lightweight and simple in-memory cache implementation in Golang.
 translation_key: golang-in-memory-cache-implementation
 ---
 
 # Overview
-There are several good in-memory cache libraries for Golang, but I needed something lightweight and simple, so I decided to implement one myself.
+There are some good libraries for in-memory caching in Golang, but since I needed something lightweight and simple, I decided to implement my own.
 
 # Implementation
 ## Requirements
-- Should be able to store multiple data entries.
-- Should store data in memory with an expiration time. Data should be discarded from memory once expired.
-- Should handle concurrent access and updates to the cache, with proper locking mechanisms.
+- Can hold multiple data items.
+- Can hold data in memory with an expiration time. The data should be discarded from memory once the expiration time is reached.
+- Consider simultaneous access and updates to the cache, with awareness of data locking.
 
 ## Initial Design
-*Note: The code is available at [github.com - bmf-san/go-snippets/architecture_design/cache/cache.go](https://github.com/bmf-san/go-snippets/blob/master/architecture_design/cache/cache.go).*
-
-This is the initial implementation based on my first idea:
+*The initial implementation was done based on my first thoughts.*
 
 ```golang
 package main
@@ -95,12 +92,10 @@ func main() {
 }
 ```
 
-I initially thought `sync.Map` was convenient because it eliminates the need to handle locking manually. However, due to its data structure and functionality, it did not meet the requirements, so I decided against using it.
+I thought `sync.Map` was convenient because I didn't have to worry about locking, but it was rejected because it did not meet the requirements in terms of data structure and functionality.
 
 ## Release Version
-*Note: The code is available at [github.com - bmf-san/go-snippets/architecture_design/cache/cache_with_goroutine.go](https://github.com/bmf-san/go-snippets/blob/master/architecture_design/cache/cache_with_goroutine.go).*
-
-This is the version that meets the requirements:
+*The version that meets the requirements is available at [github.com - bmf-san/go-snippets/architecture_design/cache/cache_with_goroutine.go](https://github.com/bmf-san/go-snippets/blob/master/architecture_design/cache/cache_with_goroutine.go).* 
 
 ```golang
 package main
@@ -199,12 +194,12 @@ func main() {
 }
 ```
 
-Although `sync.Map` is convenient, it became challenging to check and delete expired cache data without specifying cache keys. Therefore, I decided to use a `map` to store the cache data.
+I wanted to use `sync.Map` because it is convenient, but it was difficult to check and delete expired cache data without specifying the cache key. Therefore, I decided to use `map` to hold the cache data.
 
-The expiration check is performed at intervals using a `ticker`. In the above implementation, the interval is set to one second. However, this means that cached data can still be accessed for up to one second after its expiration time, effectively making the expiration time equal to the specified time plus the interval.
+The expiration check is done using a `ticker` to check at intervals. In the above implementation, the interval is set to one second. In this implementation, access to the cache can occur until one second after the cache expiration, so the actual cache expiration is the time specified in `expires` plus the interval.
 
 # Thoughts
-This was a good opportunity to get started with concurrency and locking in Golang.
+This was a good opportunity to learn about concurrency and locking in Golang.
 
 # References
 - [github.com - patrickmn/go-cache](https://github.com/patrickmn/go-cache)

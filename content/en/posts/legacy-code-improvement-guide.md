@@ -8,15 +8,14 @@ categories:
 tags:
   - Legacy Code
   - Books
-description: A book recommendation for developers dealing with legacy code and aiming to improve maintainability.
 translation_key: legacy-code-improvement-guide
 ---
 
-[Legacy Code Improvement Guide: Refactoring for Maintenance Development](https://amzn.to/4adL0FR) is a must-read book for anyone working with legacy code.
+[Legacy Code Improvement Guide: Refactoring for Maintenance Development](https://amzn.to/4adL0FR) is a book I read.
 
-If you're dealing with legacy code, this is a book you should consider reading.
+It's a must-read for anyone facing legacy code.
 
-As a prerequisite, it seems to require a certain level of ability to write tests to some extent.
+As a prerequisite, I feel that a certain level of ability to write tests is required.
 
-  - A seam is a place in the code where you can change the program's behavior without directly editing that location.
-  - Every seam has an enabling point, where you can decide which behavior to use.
+  - A seam is a place where you can change the behavior of the program even if you cannot directly edit that location.
+  - Every seam has an enabling point. At the enabling point, you can decide which behavior to use.

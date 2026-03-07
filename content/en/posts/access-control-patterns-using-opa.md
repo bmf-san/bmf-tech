@@ -7,140 +7,137 @@ categories:
   - Architecture
 tags:
   - Open Policy Agent
-  - Access Control
-description: An overview of access control patterns using Open Policy Agent (OPA), their characteristics, suitable use cases, and implementation considerations.
+  - Access Management
 translation_key: access-control-patterns-using-opa
 ---
 
 # Overview
-Open Policy Agent (OPA) is a powerful mechanism that enables decoupled access control using policies. By writing rules in a declarative language called Rego, applications can leverage policy evaluation in a simple format.
+Open Policy Agent (OPA) is a powerful mechanism that enables policy-based access control in a loosely coupled manner. Rules are written in a declarative language called Rego, allowing applications to utilize policy evaluation in a simple format.
 
-In this article, we will organize representative patterns of access control using OPA, compare their characteristics, suitable use cases, and implementation complexity.
+In this article, we will organize representative patterns of access control using OPA, comparing their characteristics, suitable use cases, and implementation burdens.
 
-Below is a revised and expanded table based on the four access control approaches you mentioned. The original three categories have been reorganized into four, separating the **SQL Generation Approach** and the **AST Approach**. Additionally, the perspective of responsibility separation has been updated.
+Below is a revised and expanded table based on the four access control approaches you mentioned. The original three classifications have been reorganized into four, separating the **SQL Generation Approach** and the **AST Approach**. Additionally, we have updated it from the perspective of responsibility separation.
 
-# List of Access Control Patterns
-| Pattern Name                                | Role of Rego                                | Role of Application                        | Characteristics                                              |
-|--------------------------------------------|---------------------------------------------|--------------------------------------------|-------------------------------------------------------------|
-| **① Allow/Deny Decision (Naive Approach)** | Evaluates a boolean value for allow/deny    | Controls processing based on the result    | Lightweight and fast evaluation. Faithful to Rego's original model |
-| **② SQL Generation Approach**              | Generates complete SQL (template/embedded)  | Executes SQL received from Rego as-is      | Flexible but introduces SQL dependency in Rego. Policies mix with application dependencies |
-| **③ Condition Extraction (Structured Conditions) Approach** | Returns filter conditions (structured) for SQL | Generates and executes queries like SQL/ES based on conditions | Clear separation of condition logic and data processing, scalable |
-| **④ AST Approach (Partial Evaluation)**    | Returns conditions as an AST                | Converts AST to SQL or uses it for other evaluations | Highly reusable and flexible but complex to implement and understand |
+# Access Control Patterns
+| Pattern Name                                   | Role of Rego                                 | Role of Application                           | Features                                                   |
+| ---------------------------------------------- | -------------------------------------------- | ---------------------------------------------- | ---------------------------------------------------------- |
+| **① Allow/Deny Judgment (Naive Approach)**    | Evaluates the truth value of allow/deny     | Controls the processing based on the result  | Lightweight and fast evaluation. Faithful to Rego's original model |
+| **② SQL Generation Approach**                  | Generates complete SQL (template/embedded)  | Executes the SQL received from Rego as is    | Flexible but introduces SQL dependency in Rego. Application dependencies mix into policies |
+| **③ Condition Extraction (Structured Condition) Approach** | Returns filter conditions for SQL (structure) | Generates and executes queries like SQL/ES based on conditions | Clearly separates condition logic and data processing, scalable |
+| **④ AST Approach (Partial Evaluation)**       | Returns condition expressions as AST         | Converts AST to SQL or uses it for other evaluations | Highly reusable and flexible, but complex implementation and high understanding cost |
 
-# Responsibility Separation in Each Pattern
-| Pattern Name                                | Responsibility of Rego                      | Responsibility of Application              | Balance of Responsibility Separation                         |
-|--------------------------------------------|---------------------------------------------|---------------------------------------------|-------------------------------------------------------------|
-| **① Allow/Deny Decision (Naive Approach)** | Only determines allow or deny               | Executes processing based on the result     | ✔ Fully separated. Rego only returns "Yes/No"              |
-| **② SQL Generation Approach**              | Outputs complete SQL (includes logic + format) | Executes as-is                              | ❌ Mixed responsibilities. Rego requires SQL syntax knowledge |
-| **③ Condition Extraction (Structured Conditions) Approach** | Generates allow conditions (e.g., `department_id IN [1,2]`) | Constructs and executes SQL based on conditions | ✔ Clear separation of condition logic and data processing    |
-| **④ AST Approach (Partial Evaluation)**    | Returns policy conditions as abstract syntax (AST) | Interprets and converts AST to SQL, etc.    | △ Separated but requires AST understanding and conversion implementation on the application side |
+# Responsibility Separation Perspective on Each Pattern
+| Pattern Name                                   | Responsibility of Rego                       | Responsibility of Application                 | Balance of Responsibility Separation                       |
+| ---------------------------------------------- | -------------------------------------------- | ---------------------------------------------- | ---------------------------------------------------------- |
+| **① Allow/Deny Judgment (Naive Approach)**    | Only determines whether to allow or deny    | Executes processing based on the allow result | ✔ Completely separated. Rego returns only "Yes/No"      |
+| **② SQL Generation Approach**                  | Outputs complete SQL (including logic and format) | Executes it as is                             | ❌ Responsibilities are mixed. Rego needs SQL syntax knowledge |
+| **③ Condition Extraction (Structured Condition) Approach** | Generates allow conditions (e.g., `department_id IN [1,2]`) | Constructs and executes SQL based on conditions | ✔ Condition logic and data processing are neatly separated |
+| **④ AST Approach (Partial Evaluation)**       | Returns policy condition expressions as abstract syntax (AST) | Interprets and transforms AST for SQL application | △ Separation exists, but application-side AST understanding and transformation implementation are needed |
 
 ## Notes: Policy Management and Responsibility Attribution
-- **Naive or Condition Extraction Types** tend to have abstract Rego content close to business logic, making them **easier for product teams to manage**.
-- **SQL Generation or AST Types** involve complex implementation and transformation processes, making **common management by platform teams** more practical.
+- **Naive or Condition Extraction Types** tend to have abstract content in Rego that is closer to business logic, making it **easier for product teams to manage**.
+- **SQL Generation or AST Types** become complex due to implementation dependencies and transformation processes, making **common management by infrastructure teams more practical**.
 
-# Linking User Settings with OPA
-In applications requiring dynamic access control*, how user-configured permission information is supplied to OPA becomes a critical design point.
+# User Configuration and OPA Integration
+In applications requiring dynamic access control*, how to supply user-defined permission information to OPA becomes a crucial design point.
 
-*Defined as dynamic when access control involves both policies and arbitrary configuration information, as opposed to static where policies alone suffice.
+*When access control is completed solely by policies, it is defined as static; when it involves handling policies and arbitrary configuration information, it is defined as dynamic.
 
-OPA is a stateless policy engine, requiring explicit external data supply during evaluation. Below are the main approaches and their characteristics:
+OPA is a stateless policy engine that requires necessary data to be explicitly supplied from external sources during evaluation. Below are the main approaches and their characteristics.
 
 ## Comparison of Data Supply Approaches
-This table compares approaches for supplying data (not evaluation targets but supplementary information for policy evaluation) to OPA.
+A comparison of approaches to passing data necessary for policy evaluation (not the evaluation target, but supplementary information for policy evaluation) to OPA.
 
-| Approach                | Feasibility | Advantages                     | Disadvantages                                 |
-|-------------------------|-------------|--------------------------------|----------------------------------------------|
-| DB Storage → OPA Evaluation | ◎         | Standard, flexible, reusable   | Slightly complex implementation              |
-| Static Data Embedded in OPA | △         | Simple implementation          | Maintenance overhead                          |
-| External Reference by OPA   | △         | Dynamically retrievable        | Issues with latency and reliability, not recommended for operations |
+| Approach                | Feasibility | Advantages                      | Disadvantages                                   |
+| ----------------------- | ----------- | ------------------------------- | ------------------------------------------------ |
+| DB Storage → OPA Evaluation | ◎           | Standard, flexible, and reusable | Implementation is somewhat complex               |
+| Static Data Embedded in OPA | △           | Simple implementation            | Requires effort for updates                       |
+| External Reference from OPA | △           | Can be dynamically retrieved     | Issues with latency and reliability, not recommended for operation |
 
-For use cases requiring dynamic permission settings, the DB storage approach is the most practical for the following reasons:
+In use cases requiring dynamic permission settings, the DB storage approach is the most practical for the following reasons:
 
-- Permission settings are configured via UI and may be frequently updated.
-- Configuration information often has complex structures, such as roles or departments, requiring persistence.
-- Ensures consistency, reusability, and version control across processes.
+- Permission settings are made via the UI and may be frequently updated.
+- Configuration information has a complex structure, such as roles and departments, and needs to be persisted.
+- Consistency, reusability, and version management with other processes are easier.
 
 ```
-User: Sets access permissions for Department A and Department B
+User: Configured to allow access to Department A and Department B
 ↓ (Save)
-DB: Saves to `user_role_policies` table
-↓ (At evaluation)
-App or PDP: Retrieves settings and passes them as `input.data` to OPA
+DB: Saved in the user_role_policies table
+↓ (During evaluation)
+App or PDP: Retrieves settings and passes them to OPA as input.data
 ↓
-OPA: Evaluates using Rego rules
+OPA: Evaluates with Rego rules
 ```
 
-By clearly separating responsibilities into user settings → DB storage → OPA integration, it is possible to achieve a flexible and maintainable access control design.
+By clearly separating the flow of responsibilities from user settings → DB storage → OPA integration, a flexible and maintainable access control design can be achieved.
 
 # Revisiting Policy Design
-While writing this article, I realized that the DB storage → OPA evaluation approach might have inefficiencies.
+However, while writing this article, I realized that the DB storage → OPA evaluation approach might be wasteful.
 
-Separating the stored configuration values and policies in the DB might be unnecessary. If they are combined and maintained as policies, the logic in the access control flow could be simplified.
+Separating the stored configuration values and policies in the DB is likely unnecessary; if the data is consolidated into the policy, the logic in the access control flow becomes simpler.
 
-## Assumptions
-- In RBAC, there are roles and constraint information (data stored in the DB representing access control conditions associated with roles).
-- Assuming a SQL filtering approach (where OPA returns conditions for SQL generation due to large data volumes).
-  - cf. [Considerations on Pagination Impact and Solutions in OPA](https://bmf-tech.com/posts/OPA%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E3%83%9A%E3%83%BC%E3%82%B8%E3%83%8D%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%B8%E3%81%AE%E5%BD%B1%E9%9F%BF%E3%81%A8%E8%A7%A3%E6%B1%BA%E7%AD%96%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%A4%9C%E8%A8%8E)
+## Premise
+- In RBAC, there are roles and constraint information (data stored in the DB representing the conditions for access control that roles possess).
+- Assuming a large amount of data, we will base our approach on SQL filtering (having OPA return conditions for SQL generation).
+  - cf. [Considerations on the Impact of Pagination in OPA and Solutions](https://bmf-tech.com/posts/OPA%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E3%83%9A%E3%83%BC%E3%82%B8%E3%83%8D%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%B8%E3%81%AE%E5%BD%B1%E9%9F%BF%E3%81%A8%E8%A7%A3%E6%B1%BA%E7%AD%96%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%A4%9C%E8%A8%8E)
 
-### Coexisting Roles + Constraint Information and Policies
+### When Balancing Role + Constraint Information and Policies
 ```mermaid
 sequenceDiagram
     participant User as User
     participant App as Application
     participant RoleDB as Storage
     participant OPA as OPA
-    participant SQL as SQL Logic
+    participant SQL as SQL Construction Logic
 
     User->>App: API Request
-    App->>RoleDB: Retrieve Role + Constraint Info
+    App->>RoleDB: Retrieve Role + Constraint Information
     App->>OPA: Evaluate Policy
-    OPA-->>App: Evaluation Result
+    OPA-->>App: Return Evaluation Result
     App->>SQL: Generate SQL based on Evaluation Result
     App->>RoleDB: Retrieve Data
-    RoleDB-->>App: Return Results
+    RoleDB-->>App: Return Result
     App-->>User: Return Response
 ```
 
-- Constraint information is **specific to the application format**, making it unusable as-is in OPA. Constraint information essentially acts as a policy.
-- The role of Rego policies is limited (e.g., determining allow/deny or returning data for SQL conditions).
+- Constraint information is held in **application-specific formats**, making it unusable directly in OPA. Constraint information effectively serves the role of policies.
+- The role of Rego policies is limited (while making allow/deny judgments, it also returns data that could serve as SQL conditions).
 - As constraints increase, the SQL generation logic on the application side becomes bloated and complex.
 
-Since SQL can be generated directly from constraint information, in such cases, OPA may not provide sufficient cost-benefit to justify its added complexity.
+Generating SQL from constraint information is sufficient, so in such cases, OPA may not provide cost benefits that outweigh the complexity injection.
 
-### Shifting Constraint Information to Policies for a Pure Role-Policy Relationship
+### If We Align Constraint Information with Policies, Establishing a Pure Relationship Between Roles and Policies
 ```mermaid
 sequenceDiagram
     participant User as User
     participant App as Application
     participant RoleDB as Storage
     participant OPA as OPA
-    participant SQL as SQL Logic
+    participant SQL as SQL Construction Logic
 
     User->>App: API Request
-    App->>RoleDB: Retrieve Role-linked Policies
+    App->>RoleDB: Retrieve Policies Linked to Roles
     App->>OPA: Evaluate Policies
     OPA-->>App: Return Evaluation Result
     App->>SQL: Generate SQL from Evaluation Result
     App->>RoleDB: Retrieve Data
-    RoleDB-->>App: Return Results
+    RoleDB-->>App: Return Result
     App-->>User: Return Response
 ```
 
-Although the sequence appears similar, the key difference is that policies are extracted as a separate data model from roles, making responsibility separation easier.
+While it may seem that only a part of the sequence has changed, it allows us to separate the data model of policies from roles, making responsibility separation easier.
 
-In this approach, the application only handles SQL generation logic, while OPA focuses solely on returning conditions for access control. While the SQL filtering approach has slightly higher coupling, it can still leverage OPA's benefits.
+In other words, the application only holds the SQL generation logic, while OPA can focus on returning conditions for access control. Compared to the basic access control format of passing data to OPA for evaluation, the SQL filtering approach has slightly higher coupling but can leverage the benefits of OPA.
 
 # Conclusion
-Designing the overall architecture based on the permission model and the policy data model is crucial.
+It is crucial to design the overall architecture based on the permission model and the data model of policies.
 
-# Miscellaneous
-OPA may not be the best fit for access control use cases based on user settings (where user settings are used as input).
+# Aside
+OPA may not be ideally suited for use cases of access control based on user settings (where user settings are used as input).
 
-The data expected in OPA's input seems to be information about the access control target, rather than rules for access control.
+The data expected in OPA's input seems to be information about the access control targets, rather than rules for access control.
 
-In such an approach, the policy (rego) file and externally stored configuration information become coupled, requiring changes to both the policy and the settings.
+In such approaches, the policy (rego) files and externally stored configuration information become coupled, necessitating changes to both policies and settings.
 
-Whether this is acceptable depends on the requirements, trade-offs, and what you aim to solve. However, if the optimal use of OPA lies in static access control, this approach may not fully leverage its benefits.
-
-This might be a consideration for policy-based architectures in general.
+Whether this is acceptable depends on requirements, trade-offs, and what needs to be resolved, but it seems that the optimal use of OPA would be in a form of static access control.

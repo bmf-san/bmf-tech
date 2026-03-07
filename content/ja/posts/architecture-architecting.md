@@ -1,18 +1,19 @@
 ---
-title: "アーキテクチャ・アーキテクト・アーキテクティングについて"
-slug: "architecture-architecting"
-date: 2025-07-14
+title: アーキテクチャ・アーキテクト・アーキテクティングについて
+slug: architecture-architecting
+date: 2025-07-14T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "システム設計"
-  - "設計"
-  - "アーキテクチャ"
-  - "アーキテクト"
-  - "アーキテクティング"
-draft: false
+  - システム設計
+  - 設計
+  - アーキテクチャ
+  - アーキテクト
+  - アーキテクティング
+translation_key: architecture-architecting
 ---
+
 
 
 

@@ -1,15 +1,16 @@
 ---
-title: "研鑽Rubyプログラミング 実践的なコードのための原則とトレードオフ"
-slug: "ruby-programming-principles-tradeoffs"
-date: 2024-10-28
+title: 研鑽Rubyプログラミング 実践的なコードのための原則とトレードオフ
+slug: ruby-programming-principles-tradeoffs
+date: 2024-10-28T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Ruby"
-  - "本"
-draft: false
+  - Ruby
+  - 本
+translation_key: ruby-programming-principles-tradeoffs
 ---
+
 
 [研鑽Rubyプログラミング 実践的なコードのための原則とトレードオフ](https://amzn.to/3YlKRfO)を読んだ。
 

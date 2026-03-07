@@ -1,18 +1,19 @@
 ---
-title: "Sagaパターンについて調べたことをメモ"
-slug: "saga-pattern-research-notes"
-date: 2023-09-17
+title: Sagaパターンについて調べたことをメモ
+slug: saga-pattern-research-notes
+date: 2023-09-17T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "マイクロサービス"
-  - "Sagaパターン"
-  - "TCCパターン"
-  - "分散トランザクション"
-  - "2phase commit"
-draft: false
+  - マイクロサービス
+  - Sagaパターン
+  - TCCパターン
+  - 分散トランザクション
+  - 2phase commit
+translation_key: saga-pattern-research-notes
 ---
+
 
 # 概要
 Sagaパターンについて調べたことをメモ。

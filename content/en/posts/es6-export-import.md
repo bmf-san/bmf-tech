@@ -1,5 +1,5 @@
 ---
-title: About ES6 Export and Import
+title: Understanding ES6 Export and Import
 slug: es6-export-import
 date: 2017-09-26T00:00:00Z
 author: bmf-san
@@ -8,27 +8,26 @@ categories:
 tags:
   - JavaScript
   - ES6
-description: Exploring the usage of export and import in ES6.
 translation_key: es6-export-import
 ---
 
-I researched the parts of ES6 export and import that I hadn't fully understood.
+I realized that I didn't fully grasp the export and import in ES6, so I did some research.
 
-## How to Use `export`
-> The `export` statement is used to export functions, objects, or primitives from a given file (or module). Source: [MDN - Export](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/export)
+## How to Use Export
+> The export statement is used to export functions, objects, or primitives from a specified file (or module). Source: [MDN - Export](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/export)
 
-Here, "export" can be thought of as defining something.
+Here, export is close to the meaning of defining something.
 
-There are two ways to export.
+There are two types of exports.
 
-### Named Export
+### Named Exports
 
 ```js
-export { hogeFunction }; // Export a declared function
-export const hoge = 1; // Export a constant. `let` or `var` can also be used.
+export { hogeFunction }; // Exporting a declared function
+export const hoge = 1; // Exporting a constant; let and var are also allowed.
 ```
 
-You can also export using `from`.
+You can also export using from.
 
 ```js
 export * from 'Hoge'; // Wildcard
@@ -36,7 +35,7 @@ export { hoge, moge, huge } from 'hogemogehuge'; // Multiple exports
 export { importHoge as hoge, importMoge as moge } from 'hogemoge'; // Alias
 ```
 
-### Default Export
+### Default Exports
 
 ```js
 export default function() {}
@@ -44,28 +43,28 @@ export default function() {}
 export default class() {}
 ```
 
-`default` means "**if nothing specific is specified during import, this class or function will be called**." If you want to call a class or function other than the default during import, specify the class or file name in `{}`.
+default means that "**if nothing is specified during import, that class or function will be called**." If you want to call a class or function other than default during import, you specify the class or file name in {}.
 
-## How to Use `import`
-> The `import` statement is used to import functions, objects, or primitives that have been exported from an external module or another script. Source: [MDN - Import](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/import)
+## How to Use Import
+> The import statement is used to import functions, objects, or primitives that have been exported from external modules or other scripts. Source: [MDN - Import](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/import)
 
-There are also two ways to import.
+There are also two types of imports.
 
-### Named Import
+### Named Imports
 
 ```js
 import * as hoge from "Hoge"; // Wildcard
-import {hoge} from "Hoge"; // Import only one specified item
-import {hoge, moge} from "HogeMoge"; // Import multiple items
+import {hoge} from "Hoge"; // Importing only the specified one
+import {hoge, moge} from "HogeMoge"; // Multiple imports
 import {hogeHoge as aliasHoge} from "HogeHoge"; // *1
 import {hogeHoge as aliasHoge, mogeMoge as aliasMoge} from "MogeMoge"; // *2
-import "Hoge"; // Import all modules
+import "Hoge"; // Importing the entire module
 
-// *1 Import all modules and specify some members.
-// *2 Specify member names to import.
+// *1 Importing the entire module and specifying some members.
+// *2 Specifying member names to import.
 ```
 
-Strictly speaking, scope-related topics are involved, but please refer to the reference sites for more details.
+Strictly speaking, this involves scope, but please refer to the reference site for that.
 
 ### Default Import
 
@@ -74,12 +73,12 @@ import hoge from "Hoge"; // The default member is called.
 ```
 
 ### Note
-**It will cause an error if you try to import a default-specified member with a named import.**
+**Importing a default member with a named import will result in an error.**
 
 ## Thoughts
-I feel like I still have a lot to catch up on with modern JavaScript, so I need to study more... (´・ω・`)
+I feel like I still need to catch up on modern JavaScript, so I need to study more.. (´・ω・`)
 
 ## References
 * [MDN - Export](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/export)
 * [MDN - Import](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/import)
-* [【Q&A】ReactJSのComponentをimport,exportする](http://qiita.com/HIGAX/items/28f3bec814928b7395da)
+* [Q&A: Importing and Exporting ReactJS Components](http://qiita.com/HIGAX/items/28f3bec814928b7395da)

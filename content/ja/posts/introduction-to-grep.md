@@ -1,15 +1,16 @@
 ---
-title: "grep入門"
-slug: "introduction-to-grep"
-date: 2019-01-22
+title: grep入門
+slug: introduction-to-grep
+date: 2019-01-22T00:00:00Z
 author: bmf-san
 categories:
-  - "OS"
+  - OS
 tags:
-  - "Linux"
-  - "grep"
-draft: false
+  - Linux
+  - grep
+translation_key: introduction-to-grep
 ---
+
 
 # 概要
 grep雰囲気で使っているマンだったのでとざっくり調べてみた。l

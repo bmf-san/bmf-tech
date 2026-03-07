@@ -1,14 +1,15 @@
 ---
-title: "Gitでコミットを分割する方法"
-slug: "split-commits-with-git"
-date: 2021-10-05
+title: Gitでコミットを分割する方法
+slug: split-commits-with-git
+date: 2021-10-05T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Git"
-draft: false
+  - Git
+translation_key: split-commits-with-git
 ---
+
 
 Gitでコミットを分割する方法のメモ。たまにやりたくなる。　
 

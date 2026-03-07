@@ -1,16 +1,17 @@
 ---
-title: "Vagrant上のMySQLで\"MySQL Daemon failed to start"
-slug: "vagrant-mysql-daemon-start-failure"
-date: 2017-10-01
+title: Vagrant上のMySQLで"MySQL Daemon failed to start
+slug: vagrant-mysql-daemon-start-failure
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "MySQL"
-  - "Vagrant"
-  - "Tips"
-draft: false
+  - MySQL
+  - Vagrant
+  - Tips
+translation_key: vagrant-mysql-daemon-start-failure
 ---
+
 
 LaravelでマイグレーションやSQLファイルのインポートを繰り返したり、中断したりと無茶をやっていたらMySQLがおかしくなりました。
 

@@ -1,14 +1,15 @@
 ---
-title: "スライディングウィンドウの実装"
-slug: "sliding-window-implementation"
-date: 2023-08-17
+title: スライディングウィンドウの実装
+slug: sliding-window-implementation
+date: 2023-08-17T00:00:00Z
 author: bmf-san
 categories:
-  - "アルゴリズムとデータ構造"
+  - アルゴリズムとデータ構造
 tags:
-  - "スライディングウィンドウ"
-draft: false
+  - スライディングウィンドウ
+translation_key: sliding-window-implementation
 ---
+
 
 # スライディングウィンドウとは
 配列のサブアレイを”ウィンドウ（サブセット）”をずらすしていくように探索するアルゴリズム。

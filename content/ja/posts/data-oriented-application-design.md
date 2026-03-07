@@ -1,15 +1,16 @@
 ---
-title: "データ指向アプリケーションデザイン"
-slug: "data-oriented-application-design"
-date: 2023-02-27
+title: データ指向アプリケーションデザイン
+slug: data-oriented-application-design
+date: 2023-02-27T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "システム設計"
-  - "本"
-draft: false
+  - システム設計
+  - 本
+translation_key: data-oriented-application-design
 ---
+
 
 [データ指向アプリケーションデザイン](https://amzn.to/3UC7RGD)を読んだ。
 

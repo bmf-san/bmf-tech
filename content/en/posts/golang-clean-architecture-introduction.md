@@ -1,5 +1,5 @@
 ---
-title: Getting Started with Clean Architecture in Golang
+title: Introduction to Clean Architecture with Golang
 slug: golang-clean-architecture-introduction
 date: 2019-08-18T00:00:00Z
 author: bmf-san
@@ -9,60 +9,59 @@ tags:
   - Clean Architecture
   - Golang
   - DIP
-description: An introduction to implementing Clean Architecture in Golang, including concepts, examples, and personal insights.
 translation_key: golang-clean-architecture-introduction
 ---
 
 # Overview
-I tried implementing Clean Architecture in Golang and decided to organize my thoughts here.
+I attempted to implement Clean Architecture in Golang, so I will organize my thoughts here.
 
-The content largely follows the slides I created.
+The content generally follows the slides.
 
-**There may be parts I haven't fully understood, along with my interpretations and thoughts, so some parts might not be entirely accurate.**
+**There may be parts that I do not fully understand, and I may have written my own interpretations and thoughts, so some parts may not be correct.**
 
 # Slides
-Since I had the opportunity to give a lightning talk, here are the slides I used:
+I had the opportunity to give a lightning talk, so I will attach the slides.
 
 [Dive to clean architecture with golang](https://speakerdeck.com/bmf_san/dive-to-clean-architecture-with-golang)
 
-# Source Code
-Here is the source code:
+# Source
+Here is the source code.
 
 [bmf-san/go-clean-architecture-web-application-boilerplate](https://github.com/bmf-san/go-clean-architecture-web-application-boilerplate)
 
-The implementation using the MVC pattern is also tagged and preserved:
+The implementation using the MVC pattern is also tagged and preserved.
 
 [1.0.0 - MVC](https://github.com/bmf-san/go-clean-architecture-web-application-boilerplate/releases/tag/1.0.0)
 
 # Background
-I have a CMS application called [github - bmf-san/Rubel](https://github.com/bmf-san/Rubel), which is no longer maintained but is used to run this blog.
+There is a CMS application called [github - bmf-san/Rubel](https://github.com/bmf-san/Rubel) that I am currently not maintaining, which operates this blog.
 
-To replace this application, I chose Go as the language and decided to adopt Clean Architecture to rethink the architecture.
+To replace this application, I chose Go as the language and decided to review the architecture, adopting Clean Architecture as the policy.
 
-The reason I considered adopting Clean Architecture is that I believe it is the optimal pattern for an application architecture that can be maintained for a long time without depending on libraries or other technologies.
+The reason for considering Clean Architecture is that I believe an architecture pattern that does not depend on libraries or other technologies is the optimal solution for applications that I can maintain for a long time as an individual.
 
-Rubel uses frameworks like Laravel and React, but since it was implemented heavily relying on these frameworks, I felt it was a waste of time to keep up with the frequent updates of these relatively modern and fast-evolving frameworks.
+Rubel uses frameworks like Laravel and React, but since it is implemented in a way that heavily relies on the frameworks, I felt that I was wasting time trying to keep up with the relatively modern and rapidly changing versions of those frameworks.
 
-Ideally, I wanted to focus on adding and improving CMS features. However, for an application I plan to maintain for a long time, spending time on non-essential development seemed unreasonable.
+Originally, I should be focusing on adding and improving CMS features, but I couldn't rationalize spending time on non-essential parts of development for an application I want to operate for a long time in the future.
 
-By minimizing dependencies on frameworks, libraries, and other technologies, and leveraging Go's standard library as much as possible, I thought I could create a highly maintainable application.
+I thought that if I could minimize dependencies on frameworks, libraries, and other technologies while sufficiently utilizing Go's standard library, I could create a highly maintainable application.
 
-While I have a mindset that "scratch development is king," this application is not one that requires immediate adaptation to business requirements like service development. Since the development also includes a learning aspect, I think this approach is somewhat reasonable.
+While I have a strong desire to start from scratch, I recognize that this is not an application that requires immediate responses to business requirements like service development, and there are learning elements involved in the development purpose, so it seems somewhat reasonable.
 
-Although I feel I am taking a strategy close to optimal for personal development, I understand there will be aspects I won't see until the operational phase.
+I feel that I am taking an optimal strategy for individual development, but there are certainly aspects that will only become clear after entering the operational phase.
 
-The replacement for Rubel, currently under development, is here:
+The ongoing development of the Rubel replacement can be found here.
 
 [github - bmf-san/Gobel](https://github.com/bmf-san/Gobel)
 
 # Table of Contents
 - What is Clean Architecture?
-- Implementing Clean Architecture (implementation details are not deeply covered)
-- Reflections
+- Implementation of Clean Architecture (not detailed on implementation methods)
+- Thoughts
 
 # What is Clean Architecture?
-## History of System Architectures
-Before the idea of Clean Architecture emerged, several architectural ideas existed:
+## History of System Architecture
+Before the concept of Clean Architecture emerged, several architectural ideas existed in the past.
 
 - Hexagonal Architecture (Ports and Adapters)
 - Onion Architecture
@@ -71,7 +70,7 @@ Before the idea of Clean Architecture emerged, several architectural ideas exist
 - BCE
 - etc...
 
-These ideas share the common goal of "separation of concerns," aiming for:
+These ideas share the common goal of "separation of concerns," which includes:
 
 - Independence from frameworks
 - Testability
@@ -79,67 +78,67 @@ These ideas share the common goal of "separation of concerns," aiming for:
 - Independence from databases
 - Independence from other technologies
 
-In essence, they pursue decoupling from dependencies and enhancing testability.
+They pursue the elimination of dependencies on everything and testability.
 
 ## Clean Architecture
-The famous diagram often associated with Clean Architecture originates from this source:
+The well-known diagram when researching Clean Architecture refers to this original source.
 
 [cleancoder.com - The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 
-Here is an explanation of each layer:
+I will explain each layer.
 
 ### Entities
 - Entities encapsulate the most important business rules.
-  - e.g., Objects with methods or a set of data structures and functions.
+  - e.g., objects with methods or a series of data structures and functions.
 
 ### Use Cases
 - Use cases contain specific business rules of the application.
 
 ### Interface Adapters
-- Interface adapters transform data for entities and use cases.
+- Interface adapters are adapters that perform data transformation for entities and use cases.
 
 ### Frameworks and Drivers
-- Frameworks and drivers consist of tools like frameworks and databases.
+- Frameworks and drivers consist of tools such as frameworks and databases.
 
 ## Rules Between Layers
-The constraints between the layers are as follows:
+Regarding the constraints between the layers mentioned above:
 
-- There are four layers, but you can add or remove layers as needed.
+- There are four layers, but they are not limited to that. You can increase or decrease layers as needed.
 - Inner layers do not know about outer layers.
-    - → Dependencies should flow from outer to inner layers.
+    - → The direction of dependencies should flow from the outside to the inside.
 
-# Implementing Clean Architecture
+# Implementation of Clean Architecture
 
 ## Directory Structure
-The source code introduced earlier is repeated here:
+This is the same as the source introduced at the beginning, but I will reiterate it.
 
 [bmf-san/go-clean-architecture-web-application-boilerplate](https://github.com/bmf-san/go-clean-architecture-web-application-boilerplate)
 
 ```
 ./app/
 ├── database
-│   ├── migrations
-│   │   └── schema.sql
-│   └── seeds
-│       └── faker.sql
+│   ├── migrations
+│   │   └── schema.sql
+│   └── seeds
+│       └── faker.sql
 ├── domain
-│   ├── post.go
-│   └── user.go
+│   ├── post.go
+│   └── user.go
 ├── go_clean_architecture_web_application_boilerplate
 ├── infrastructure
-│   ├── env.go
-│   ├── logger.go
-│   ├── router.go
-│   └── sqlhandler.go
+│   ├── env.go
+│   ├── logger.go
+│   ├── router.go
+│   └── sqlhandler.go
 ├── interfaces
-│   ├── post_controller.go
-│   ├── post_repository.go
-│   ├── sqlhandler.go
-│   ├── user_controller.go
-│   └── user_repository.go
+│   ├── post_controller.go
+│   ├── post_repository.go
+│   ├── sqlhandler.go
+│   ├── user_controller.go
+│   └── user_repository.go
 ├── log
-│   ├── access.log
-│   └── error.log
+│   ├── access.log
+│   └── error.log
 ├── main.go
 └── usecases
     ├── logger.go
@@ -160,17 +159,22 @@ The correspondence between layers and directories is as follows:
 | Usecases             | usecases       |
 | Entities             | domain         |
 
+
 ## DIP
-Before implementing Clean Architecture, you need to understand the Dependency Inversion Principle (DIP).
+Before implementing Clean Architecture, it is necessary to understand the rule of DIP (Dependency Inversion Principle).
 
-DIP is one of the SOLID principles and is a rule about module dependencies, stating that abstractions should not depend on details.
+It is one of the SOLID principles and is a rule about the constraints between modules that states that abstractions should not depend on details.
 
-While I won't go into detail about this rule, in the context of Clean Architecture, this rule is followed by using interfaces to maintain dependency direction from outer to inner layers, adhering to the constraints between layers.
+I will omit the details of this rule, but in the context of Clean Architecture, this rule is maintained by using interfaces to keep the direction of dependencies flowing from the outside to the inside, while also adhering to the constraints between layers.
 
-When implementing each layer's rules straightforwardly, situations may arise where dependencies point from inner to outer layers. In such cases, defining interfaces and depending on abstractions ensures the dependency direction is maintained. This is a key aspect of implementation.
+If you implement strictly according to the rules of each layer, it can lead to a situation where the direction of dependencies flows from the inside to the outside.
+
+In such cases, defining interfaces and depending on abstractions is crucial to maintaining the direction of dependencies.
 
 ## Accept Interfaces, Return Structs
-Golang has a concept of "accept interfaces, return structs," which aligns well with implementing DIP.
+In Golang, there is a concept of "accepting interfaces and returning structs."
+
+I think this is a concept that is compatible with the implementation of DIP.
 
 ```golang
 package examples
@@ -194,13 +198,15 @@ func NewFooController(logger Logger) *FooController {
 }
 ```
 
-This is a common implementation pattern in Golang. By depending on interfaces, you can write code that is resilient to changes and easier to test.
+This is a basic implementation pattern often seen in Golang.
+
+By depending on interfaces, you can write code that is resilient to changes and easy to test (or so it should be).
 
 ## DIP in Golang
 
-Here is an example of DIP in Golang.
+An example of DIP in Golang.
 
-### Code Without DIP
+Code that does not follow DIP.
 
 ```golang
 package examples
@@ -225,7 +231,7 @@ func (ur *FooRepository) Find() {
 }
 ```
 
-### Code Considering DIP
+Code considering DIP.
 
 ```golang
 package examples
@@ -245,12 +251,12 @@ type sqlHandler struct{}
 func NewSQLHandler() SQLHandler {
 	// do something ...
 
-	// sqlHandler struct implments SQLHandler interface.
+	// sqlHandler struct implements SQLHandler interface.
 	return &sqlHandler{}
 }
 
 // Execute is a function for executing sql.
-// A sqlHanlder struct implments a SQLHandler interface by defining Execute().
+// A sqlHandler struct implements a SQLHandler interface by defining Execute().
 func (s *sqlHandler) Execute() {
 	// do something...
 }
@@ -267,9 +273,9 @@ func (ur *FooRepository) Find() {
 }
 ```
 
-By introducing an interface, the dependency relationship changes, effectively reversing the dependency direction.
+By inserting an interface, the dependency relationship changes, resulting in the direction of dependencies being inverted.
 
-Before:
+Before
 
 ```
 SQLHandler
@@ -277,7 +283,7 @@ SQLHandler
 FooRepository
 ```
 
-After:
+After
 
 ```
 SQLHandler
@@ -287,45 +293,45 @@ SQLHandler Interface
 FooRepository
 ```
 
-In the Clean Architecture example, the code in `infrastructure` and `interfaces` corresponds to this.
+In the practical example of Clean Architecture, the code in infrastructure and interfaces corresponds to this.
 [bmf-san/go-clean-architecture-web-application-boilerplate](https://github.com/bmf-san/go-clean-architecture-web-application-boilerplate)
 
 ## Code Reading
-When tackling Clean Architecture, I found it easier to start with code reading or copying rather than jumping straight into implementation.
+When actually tackling Clean Architecture, I think it is easier to understand the implementation by starting with code reading or copying rather than jumping straight into implementation.
 
-When reading code, I personally found it helpful to read from the outer layers inward:
+When reading code, I found it easier to read from the outside in.
 
 main.go
   ↓
-router.go (Infrastructure)
+router.go・・・Infrastructure
 　↓
-user_controller.go (Interfaces)
+user_controller.go・・・Interfaces
 　↓
-user_interactor.go (Use Cases)
+user_interactor.go・・・Use Cases
 　↓
-user_repository.go (Use Cases)
+user_repository.go・・・Use Cases
 　↓
-user.go (Domain)
+user.go・・・Domain
 
-# Reflections
-- Since I am relatively new to Golang, I had to repeatedly revisit language features like interfaces and structs.
-- When faced with questions like "Where should I write this?", I felt it would be beneficial to have an architect lead and make decisions.
-    - When adopting Clean Architecture, having someone in the team to act as an architect seems essential.
-        - Though this might not be limited to Clean Architecture...
-- I felt that Clean Architecture is more of a mindset than an implementation pattern, and I realized the need to study various architectural patterns more broadly.
-- It seems to be more suited for monolithic applications.
-    - For microservices, simpler and more disposable architectural patterns with lower learning costs might be preferred.
+# Thoughts
+- Since my experience with Golang is shallow, I had to relearn the language specifications such as interfaces and structs several times.
+- I think it is better for an architect to lead and decide on the parts where there is confusion like "Where should this go?"
+    - I felt that there should be at least one person in the team who plays the role of an architect when adopting Clean Architecture.
+        - I think this is not limited to Clean Architecture...
+- I believe that Clean Architecture is more of a way of thinking than an implementation pattern, so I felt the need to study a wide range of architectural patterns.
+- I felt that there is a premise of fighting with monoliths.
+    - If it were microservices, I think more easily discardable architectural patterns with lower learning costs would be preferred.
 - A framework is just a tool, not a way of life.
-    - A quote from the original text of "Clean Architecture: A Craftsman's Guide to Software Structure and Design."
-    - What a great phrase.
+    - A phrase from the original text of "Learning Software Structure and Design from Clean Architecture Experts."
+    - What a great saying.
 
 # References
 - [github - manuelkiessling/go-cleanarchitecture](https://github.com/manuelkiessling/go-cleanarchitecture)
 - [github - rymccue/golang-standard-lib-rest-api](https://github.com/rymccue/golang-standard-lib-rest-api)
 - [github - hirotakan/go-cleanarchitecture-sample](https://github.com/hirotakan/go-cleanarchitecture-sample)
-- [Recruit Technologies - Go言語とDependency Injection](https://recruit-tech.co.jp/blog/2017/12/11/go_dependency_injection/)
-- [Clean ArchitectureでAPI Serverを構築してみる](https://qiita.com/hirotakan/items/698c1f5773a3cca6193e)
+- [Recruit Technologies - Go Language and Dependency Injection](https://recruit-tech.co.jp/blog/2017/12/11/go_dependency_injection/)
+- [Building an API Server with Clean Architecture](https://qiita.com/hirotakan/items/698c1f5773a3cca6193e)
 - [github - ponzu-cms/ponzu](https://github.com/ponzu-cms/ponzu)
-- [クリーンアーキテクチャの書籍を読んだのでAPIサーバを実装してみた](https://qiita.com/yoshinori_hisakawa/items/f934178d4bd476c8da32)
-- [Go × Clean Architectureのサンプル実装](http://nakawatch.hatenablog.com/entry/2018/07/11/181453)
+- [Implemented an API Server after reading a book on Clean Architecture](https://qiita.com/yoshinori_hisakawa/items/f934178d4bd476c8da32)
+- [Sample Implementation of Go × Clean Architecture](http://nakawatch.hatenablog.com/entry/2018/07/11/181453)
 - [Uncle Bob – Payroll Case Study (A full implementation)](http://cleancodejava.com/uncle-bob-payroll-case-study-full-implementation/)

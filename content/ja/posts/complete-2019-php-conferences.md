@@ -1,15 +1,16 @@
 ---
-title: "2019年の全PHPカンファレンスをコンプリートした"
-slug: "complete-2019-php-conferences"
-date: 2019-12-03
+title: 2019年の全PHPカンファレンスをコンプリートした
+slug: complete-2019-php-conferences
+date: 2019-12-03T00:00:00Z
 author: bmf-san
 categories:
-  - "ポエム"
+  - ポエム
 tags:
-  - "PHP"
-  - "PHPカンファレンス"
-draft: false
+  - PHP
+  - PHPカンファレンス
+translation_key: complete-2019-php-conferences
 ---
+
 
 # 概要
 2019年に日本国内で開催された全ての公式PHPカンファレンスにしたので参加記録をまとめる。

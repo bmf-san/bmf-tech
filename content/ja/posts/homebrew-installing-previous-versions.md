@@ -1,15 +1,16 @@
 ---
-title: "homebrewで過去バージョンをインストールする"
-slug: "homebrew-installing-previous-versions"
-date: 2022-10-30
+title: homebrewで過去バージョンをインストールする
+slug: homebrew-installing-previous-versions
+date: 2022-10-30T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "homebrew"
-  - "vim"
-draft: false
+  - homebrew
+  - vim
+translation_key: homebrew-installing-previous-versions
 ---
+
 
 # 概要
 Homebrewでインストールするパッケージで過去のバージョンを指定してインストールしたいときがたまにある。

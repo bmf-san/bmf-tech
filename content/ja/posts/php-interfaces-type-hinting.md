@@ -1,16 +1,17 @@
 ---
-title: "PHPのインターフェースとタイプヒンティング"
-slug: "php-interfaces-type-hinting"
-date: 2018-12-08
+title: PHPのインターフェースとタイプヒンティング
+slug: php-interfaces-type-hinting
+date: 2018-12-08T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "PHP"
-  - "インターフェース"
-  - "タイプヒンティング"
-draft: false
+  - PHP
+  - インターフェース
+  - タイプヒンティング
+translation_key: php-interfaces-type-hinting
 ---
+
 
 # 概要
 この記事は[PHP Advent Calendar 2018](https://qiita.com/advent-calendar/2018/php)の記事です。（ちょっと早めに投稿しています）

@@ -1,14 +1,15 @@
 ---
-title: "Laravelのデバッグツールlaravel-debugbarをつかってみる"
-slug: "laravel-debugging-tool-usage"
-date: 2016-06-26
+title: Laravelのデバッグツールlaravel-debugbarをつかってみる
+slug: laravel-debugging-tool-usage
+date: 2016-06-26T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Laravel"
-draft: false
+  - Laravel
+translation_key: laravel-debugging-tool-usage
 ---
+
 
 Laravelのlaravel-debugbarというデバックツールについて紹介します。
 

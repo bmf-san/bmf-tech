@@ -1,16 +1,17 @@
 ---
-title: "URLルーティング自作入門\u3000エピソード２"
-slug: "url-routing-introduction-episode-2"
-date: 2019-12-15
+title: URLルーティング自作入門　エピソード２
+slug: url-routing-introduction-episode-2
+date: 2019-12-15T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "HTTP"
-  - "URLルーティング"
-  - "router"
-draft: false
+  - HTTP
+  - URLルーティング
+  - router
+translation_key: url-routing-introduction-episode-2
 ---
+
 
 # 概要
 この記事は[URLルーティング自作入門　エピソード１](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E8%87%AA%E4%BD%9C%E5%85%A5%E9%96%80%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%EF%BC%91)の続きで、[Makuake Development Team Advent Calendar 2019](https://adventar.org/calendars/4716)の15日目となります。

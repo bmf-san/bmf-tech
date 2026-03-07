@@ -1,23 +1,24 @@
 ---
-title: "コンテナで始めるモニタリング基盤構築"
-slug: "container-monitoring-infrastructure"
-date: 2021-12-18
+title: コンテナで始めるモニタリング基盤構築
+slug: container-monitoring-infrastructure
+date: 2021-12-18T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Docker"
-  - "Docker Compose"
-  - "Elasticsearch"
-  - "Grafana"
-  - "Kibana"
-  - "Prometheus"
-  - "cadvisor"
-  - "efk"
-  - "fluentd"
-  - "node-exporter"
-draft: false
+  - Docker
+  - Docker Compose
+  - Elasticsearch
+  - Grafana
+  - Kibana
+  - Prometheus
+  - cadvisor
+  - efk
+  - fluentd
+  - node-exporter
+translation_key: container-monitoring-infrastructure
 ---
+
 
 この記事は[Makuake Advent Calendar 2021](https://adventar.org/calendars/6822)の17日目の記事です。
 

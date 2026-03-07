@@ -1,15 +1,16 @@
 ---
-title: "Markdownで履歴書・職務経歴書を管理するテンプレートを作成した"
-slug: "markdown-resume-template"
-date: 2025-07-16
+title: Markdownで履歴書・職務経歴書を管理するテンプレートを作成した
+slug: markdown-resume-template
+date: 2025-07-16T00:00:00Z
 author: bmf-san
 categories:
-  - "キャリア"
+  - キャリア
 tags:
-  - "レジュメ"
-  - "転職"
-draft: false
+  - レジュメ
+  - 転職
+translation_key: markdown-resume-template
 ---
+
 
 ## はじめに
 

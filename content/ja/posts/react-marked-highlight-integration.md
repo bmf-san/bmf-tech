@@ -1,18 +1,19 @@
 ---
-title: "React＋marked＋highlight"
-slug: "react-marked-highlight-integration"
-date: 2017-10-01
+title: React＋marked＋highlight
+slug: react-marked-highlight-integration
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "ES6"
-  - "React"
-  - "highlightjs"
-  - "markdown"
-  - "marked"
-draft: false
+  - ES6
+  - React
+  - highlightjs
+  - markdown
+  - marked
+translation_key: react-marked-highlight-integration
 ---
+
 
 wysiwygエディタではなく、マークダウンエディタをReactでつくってみました。
 

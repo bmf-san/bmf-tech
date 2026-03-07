@@ -1,14 +1,15 @@
 ---
-title: "ubuntu初期設定メモ"
-slug: "ubuntu-initial-setup-notes"
-date: 2019-02-15
+title: ubuntu初期設定メモ
+slug: ubuntu-initial-setup-notes
+date: 2019-02-15T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Ubuntu"
-draft: false
+  - Ubuntu
+translation_key: ubuntu-initial-setup-notes
 ---
+
 
 # 概要
 ちょいちょい忘れてるのでメモ。

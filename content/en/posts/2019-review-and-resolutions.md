@@ -1,58 +1,56 @@
 ---
-title: Reflection on 2019 and Resolutions for Next Year
+title: Reflection on 2019 and Goals for Next Year
 slug: 2019-review-and-resolutions
 date: 2019-12-21T00:00:00Z
 author: bmf-san
 categories:
-  - Poem
+  - Poetry
 tags:
-  - Reflection
-  - Resolutions
-description: A look back at 2019 and setting goals for the upcoming year.
+  - Reflection and Goals
 translation_key: 2019-review-and-resolutions
 ---
 
-# Reflection on 2019 and Resolutions for Next Year
-
-With just about a week left in the year, I thought I’d reflect on 2019 and set some resolutions for the next year in a poetic way.
+# Reflection on 2019 and Goals for Next Year
+With just a little over a week left in the year, I want to reflect on this year and set my goals for next year in a poetic way.
 
 # Reflection on This Year
-For the past three years, both personally and professionally, I’ve been fortunate to have great opportunities and experiences. This year, in particular, was a really good one. Let me summarize it briefly in bullet points since writing it all out would be too tedious.
+For the past three years, I've been fortunate to have good opportunities and experiences both personally and professionally. I believe this year was particularly good.
+Since it's a bit tedious, I'll summarize it in bullet points.
 
-## Public Side
-I’d like to pick out specific events, but there are too many, so I’ll just summarize.
+## Public Aspects
+I want to pick out individual matters to write about, but there are too many, so I'll just summarize.
 
-- Experienced a lead engineer-like role.
-  - To put it simply, I learned how important teamwork is and how much it impacts outcomes. I used to focus more on individual contributions, but now I’ve started thinking from a team perspective, which has broadened my view. 
-  - I still struggle with whether I’m just indulging in self-satisfaction, so I want to address that.
-- Gained experience.
-  - I was in an environment where I could try things I hadn’t experienced technically, so I feel like I gained some experience in that sense. However, I think I leaned more towards defensive tasks rather than challenging ones. Next year, I want to reverse that ratio.
+- I was able to experience a role similar to that of a lead engineer.
+  - This is a very simple way to put it, but I learned how important teamwork is and how it can greatly influence outcomes. Until now, I often focused on individuals, but thinking from a team perspective has broadened my horizons, and I believe it was a valuable experience.
+  - I have a conflict about whether I am just satisfying myself, so I want to resolve that.
+- I gained experience.
+  - I was in an environment where I could try things I hadn't experienced technically, so I feel like I gained some experience in that sense. I think the proportion of defensive tasks was larger than challenging ones. I want to reverse that ratio next year.
 - The company went public.
-  - I’m glad I got to experience a phase that’s not easy to come by.
-  - Beyond just the milestone of going public, the company is growing, and the organization is evolving flexibly. This seems to offer interesting opportunities for technical experiences as well.
+  - I'm glad to have experienced a phase that seems hard to come by.
+  - Beyond just the milestone of going public, there seems to be a flow where the organization is flexibly changing with the company's growth, so I see opportunities for interesting experiences in the technical field as well.
 
-## Private Side
+## Private Aspects
 
-- Completed all PHP conferences in Japan.
-  - This was something I wanted to do at least once. cf. [2019年の全PHPカンファレンスをコンプリートした](https://bmf-tech.com/posts/2019%E5%B9%B4%E3%81%AE%E5%85%A8PHP%E3%82%AB%E3%83%B3%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9%E3%82%92%E3%82%B3%E3%83%B3%E3%83%97%E3%83%AA%E3%83%BC%E3%83%88%E3%81%97%E3%81%9F)
-- Did a lot of learning.
-  - I decided to focus more on learning this year, so I spent a lot of time clearing my reading backlog, researching various topics, and writing blog posts here and there.
-    - Since I’m naturally more output-oriented, I feel like I’ll shift back towards output next year.
-- Fully understood Golang.
-  - I spent most of my private time writing Go, so I’ve gotten fairly comfortable with it.
-  - I want to try a new language next year, but Go is fun, so I’ll keep writing it as well.
-- Got married.
-  - A new chapter of life has begun.
+- I conquered all PHP conferences nationwide.
+  - I wanted to do this at least once. cf. [I completed all PHP conferences in 2019](https://bmf-tech.com/posts/2019%E5%B9%B4%E3%81%AE%E5%85%A8PHP%E3%82%AB%E3%83%B3%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9%E3%82%92%E3%82%B3%E3%83%B3%E3%83%97%E3%83%AA%E3%83%BC%E3%83%88%E3%81%97%E3%81%9F)
+- I took in a lot of information.
+  - I planned to focus more on input this year, so I spent a lot of time digesting unread books, researching various topics, and writing blogs little by little.
+    - Originally, I am output-oriented, so I feel like I can return to focusing on output next year.
+- I completely understood Golang.
+  - I spent most of my private time writing Go, so I have a decent grasp of it...
+  - I want to try new languages next year, but since Go is fun, I will continue writing it.
+- I got married.
+  - A new chapter in my life has begun.
 
-Other technical details are quietly summarized in my daily outputs and resume, so I’ll skip the individual stories since they’re a hassle to write (though there’s probably more to say about those).
+I have been secretly summarizing various technical aspects in my daily outputs and resumes, so I will skip the individual discussions as they are tedious. (Although I have a lot to write about those...)
 
-## Resolutions for Next Year
-I want to work towards creating a better tomorrow, both personally and professionally, so that next year can also be an upward trend.
+## Goals for Next Year
+I will strive to create a better tomorrow than today in both my personal and professional life, and as a result, I want to keep moving upward next year.
 
-As for my technical resolutions for next year, I think the phrase that fits best is:
+As for my technical goals for next year,
 
-“Breaking out of the humanities.”
+I think "脱文系" (脱文系) fits perfectly.
 
-Considering the areas I want to study next year, that seems to be the direction I’m heading in.
+Considering the areas I want to learn next year, it feels like that direction.
 
 The end.

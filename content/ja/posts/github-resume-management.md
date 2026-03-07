@@ -1,16 +1,17 @@
 ---
-title: "Githubでレジュメを管理するようにした"
-slug: "github-resume-management"
-date: 2023-06-07
+title: Githubでレジュメを管理するようにした
+slug: github-resume-management
+date: 2023-06-07T00:00:00Z
 author: bmf-san
 categories:
-  - "キャリア"
+  - キャリア
 tags:
-  - "Git"
-  - "GitHub"
-  - "レジュメ"
-draft: false
+  - Git
+  - GitHub
+  - レジュメ
+translation_key: github-resume-management
 ---
+
 
 今までGoogle Driveで管理していたレジュメをGithubで管理するようにした。
 

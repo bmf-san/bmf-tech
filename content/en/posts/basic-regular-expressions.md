@@ -4,41 +4,41 @@ slug: basic-regular-expressions
 date: 2018-12-01T00:00:00Z
 author: bmf-san
 categories:
-  - Applications
+  - Application
 tags:
   - ERE
   - Regular Expressions
-description: An overview of the basics of regular expressions, focusing on commonly used syntax in ERE (Extended Regular Expressions).
 translation_key: basic-regular-expressions
 ---
 
 # Overview
-An introduction to the basics of regular expressions. This post summarizes commonly used syntax in ERE (Extended Regular Expressions).
+Basics of regular expressions.
+This summarizes commonly used notations in ERE (Extended Regular Expression).
 
 # Character Classes
-## [Characters]
-- Matches any single character within the brackets.
+## [string]
+- Matches any one character in the string.
 - Ex:
   - [きつね]
     - きつねたぬきねこ
       - き,つ,ね,き,ね
 
-## [^Characters]
-- Matches any single character not within the brackets.
+## [^string]
+- Matches any one character not in the string.
 - Ex:
   - [^きつね]
     - きつねたぬきねこ
       - た,ね,こ
 
-## [Character-Character]
-- Matches any single character within the specified range.
+## [string-string]
+- Matches any one character in the specified range.
 - Ex:
   - [あ-ん]
     - きつねたぬきcat
       - き,つ,ね,た,ぬ,き
 
 ## \d
-- Matches any decimal digit.
+- Matches decimal digits.
 - Ex:
   - \d
     - りんごが10個
@@ -52,28 +52,28 @@ An introduction to the basics of regular expressions. This post summarizes commo
       - り,ん,ご,が,個
 
 ## \w
-- Matches any alphanumeric character or underscore.
+- Matches all alphanumeric characters and underscores.
 - Ex:
   - \w
     - abc_*
       - a,b,c,_
 
 ## \W
-- Matches any character that is not alphanumeric or an underscore.
+- Matches all characters that are not alphanumeric or underscores.
 - Ex:
   - \W
     - abc_*
       - *
 
 ## \s
-- Matches any whitespace character.
+- Matches whitespace characters.
 - Ex:
   - \s
     - a b c
-      - Matches two spaces (between a and b, and b and c).
+      - Matches two whitespace characters (between a and b, between b and c).
 
 ## \S
-- Matches any non-whitespace character.
+- Matches any character that is not whitespace.
 - Ex:
   - \S
     - a b c
@@ -95,8 +95,8 @@ An introduction to the basics of regular expressions. This post summarizes commo
     - 昨日はありがとう ○
 
 # Grouping Constructs
-## (Subexpression)
-- Captures the substring that matches the subexpression.
+## (subexpression)
+- Captures the string that matches the subexpression.
 - Ex:
   - (りり){2}
     - ありりりりがとう ○
@@ -104,7 +104,8 @@ An introduction to the basics of regular expressions. This post summarizes commo
 
 # Quantifiers
 ## *
-- Matches the preceding element zero or more times (greedy).
+- Matches 0 or more occurrences of the preceding element.
+- Greedy quantifier.
 - Ex:
   - ab*
     - ab
@@ -121,7 +122,8 @@ An introduction to the basics of regular expressions. This post summarizes commo
       - a
 
 ## +
-- Matches the preceding element one or more times (greedy).
+- Matches 1 or more occurrences of the preceding element.
+- Greedy quantifier.
 - Ex:
   - ab+
     - ab
@@ -138,7 +140,8 @@ An introduction to the basics of regular expressions. This post summarizes commo
       - No match
 
 ## ?
-- Matches the preceding element zero or one time (greedy).
+- Matches 0 or 1 occurrence of the preceding element.
+- Greedy quantifier.
 - Ex:
   - ab?
     - ab
@@ -155,7 +158,8 @@ An introduction to the basics of regular expressions. This post summarizes commo
       - a
 
 ## *?
-- Matches the preceding element zero or more times (lazy).
+- Matches 0 or more occurrences of the preceding element.
+- Lazy quantifier.
 - Ex:
   - ab*?
     - ab
@@ -172,7 +176,8 @@ An introduction to the basics of regular expressions. This post summarizes commo
       - a
 
 ## +?
-- Matches the preceding element one or more times (lazy).
+- Matches 1 or more occurrences of the preceding element.
+- Lazy quantifier.
 - Ex:
   - ab+?
     - ab
@@ -189,7 +194,8 @@ An introduction to the basics of regular expressions. This post summarizes commo
       - No match
 
 ## ??
-- Matches the preceding element zero or one time (lazy).
+- Matches 0 or 1 occurrence of the preceding element.
+- Lazy quantifier.
 - Ex:
   - ab??
     - ab
@@ -206,21 +212,21 @@ An introduction to the basics of regular expressions. This post summarizes commo
       - a
 
 ## {n}
-- Matches the preceding element exactly n times.
+- Matches exactly n occurrences of the preceding element.
 - Ex:
   - b{2}
     - abba
       - bb
 
 ## {n,}
-- Matches the preceding element n or more times.
+- Matches n or more occurrences of the preceding element.
 - Ex:
   - b{2,}
     - abbba
       - bbb
 
 ## {n, m}
-- Matches the preceding element between n and m times.
+- Matches between n and m occurrences of the preceding element.
 - Ex:
   - b{2,4}
     - abbba
@@ -230,7 +236,7 @@ An introduction to the basics of regular expressions. This post summarizes commo
 
 # Alternation Constructs
 ## |
-- Matches any one of the separated alternatives.
+- Matches any one of the separated strings.
 - Ex:
   - ab|cd
     - abcd
@@ -241,5 +247,5 @@ An introduction to the basics of regular expressions. This post summarizes commo
 # References
 - [Regular Expression Language - Quick Reference](https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/regular-expression-language-quick-reference)
 - [Regular Expression Notes](http://www.kt.rim.or.jp/~kbk/regex/regex.html#BRE)
-- [Qiita - Regular Expressions for Any UNIX Command](https://qiita.com/richmikan@github/items/b6fb641e5b2b9af3522e)
+- [Qiita - Regular Expressions Usable in Any UNIX Command](https://qiita.com/richmikan@github/items/b6fb641e5b2b9af3522e)
 - [SE Academy - Regular Expressions](http://itref.fc2web.com/unix/regular-expression.html#BRE)

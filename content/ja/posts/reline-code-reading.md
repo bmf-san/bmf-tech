@@ -1,15 +1,16 @@
 ---
-title: "relineのコードリーディング"
-slug: "reline-code-reading"
-date: 2024-10-20
+title: relineのコードリーディング
+slug: reline-code-reading
+date: 2024-10-20T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "reline"
-  - "Ruby"
-draft: false
+  - reline
+  - Ruby
+translation_key: reline-code-reading
 ---
+
 
 # 概要
 relineのコードリーディングをする。

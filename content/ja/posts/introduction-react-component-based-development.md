@@ -1,15 +1,16 @@
 ---
-title: "入門 React ―コンポーネントベースのWebフロントエンド開発"
-slug: "introduction-react-component-based-development"
-date: 2016-08-04
+title: 入門 React ―コンポーネントベースのWebフロントエンド開発
+slug: introduction-react-component-based-development
+date: 2016-08-04T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "React"
-  - "本"
-draft: false
+  - React
+  - 本
+translation_key: introduction-react-component-based-development
 ---
+
 
 [入門 React ―コンポーネントベースのWebフロントエンド開発](https://amzn.to/4aaEakw)を読んだ。
 

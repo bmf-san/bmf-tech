@@ -1,18 +1,19 @@
 ---
-title: "コンテナ技術概要"
-slug: "container-technology-overview"
-date: 2023-06-05
+title: コンテナ技術概要
+slug: container-technology-overview
+date: 2023-06-05T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Docker"
-  - "libcontainer"
-  - "lxc"
-  - "lxd"
-  - "コンテナ"
-draft: false
+  - Docker
+  - libcontainer
+  - lxc
+  - lxd
+  - コンテナ
+translation_key: container-technology-overview
 ---
+
 
 # 概要
 コンテナ技術についてのまとめ。

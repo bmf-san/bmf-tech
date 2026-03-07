@@ -1,16 +1,17 @@
 ---
-title: "カスタマーサクセス"
-slug: "customer-success"
-date: 2024-04-16
+title: カスタマーサクセス
+slug: customer-success
+date: 2024-04-16T00:00:00Z
 author: bmf-san
 categories:
-  - "ビジネス"
+  - ビジネス
 tags:
-  - "本"
-  - "カスタマーサクセス"
-  - "SaaS"
-draft: false
+  - 本
+  - カスタマーサクセス
+  - SaaS
+translation_key: customer-success
 ---
+
 
 [カスタマーサクセス――サブスクリプション時代に求められる「顧客の成功」10の原則](https://amzn.to/4aAHF4B)を読んだ。
 

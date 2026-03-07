@@ -4,14 +4,14 @@ slug: blog-system-migration
 date: 2022-06-14T00:00:00Z
 author: bmf-san
 categories:
-  - Poem
+  - Poetry
 tags:
   - CMS
 translation_key: blog-system-migration
 ---
 
-To commemorate, here's a post about migrating the blog system.
+I made a commemorative post because I migrated the blog system.
 
-bmf-tech.com has undergone its third-generation update, moving from Wordpress → Laravel-based custom CMS → Go-based custom CMS.
+bmf-tech.com has successfully updated from WordPress → custom CMS built with Laravel → custom CMS built with Go, marking the third generation.
 
-I plan to write a retrospective article about this at some point.
+I plan to write a retrospective article sometime.

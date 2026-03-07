@@ -1,17 +1,18 @@
 ---
-title: "TerraformとAnsibleを使ってKubernetes環境構築"
-slug: "kubernetes-setup-with-terraform-ansible"
-date: 2021-04-06
+title: TerraformとAnsibleを使ってKubernetes環境構築
+slug: kubernetes-setup-with-terraform-ansible
+date: 2021-04-06T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Ansible"
-  - "Kubernetes"
-  - "Terraform"
-  - "kubeadm"
-draft: false
+  - Ansible
+  - Kubernetes
+  - Terraform
+  - kubeadm
+translation_key: kubernetes-setup-with-terraform-ansible
 ---
+
 
 # 概要
 TerraformとAnsibleを使ってKubernetes環境構築に取り組んだ。

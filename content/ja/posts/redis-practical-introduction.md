@@ -1,17 +1,18 @@
 ---
-title: "実践Redis入門 技術の仕組みから現場の活用まで"
-slug: "redis-practical-introduction"
-date: 2025-02-15
+title: 実践Redis入門 技術の仕組みから現場の活用まで
+slug: redis-practical-introduction
+date: 2025-02-15T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "本"
-  - "Redis"
-  - "キャッシュ"
-  - "DB"
-draft: false
+  - 本
+  - Redis
+  - キャッシュ
+  - DB
+translation_key: redis-practical-introduction
 ---
+
 
 [実践Redis入門 技術の仕組みから現場の活用まで](https://amzn.to/412eRyA)を読んだ。
 

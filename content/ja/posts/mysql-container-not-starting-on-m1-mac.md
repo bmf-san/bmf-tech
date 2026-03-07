@@ -1,18 +1,19 @@
 ---
-title: "M1 MacでMySQL8.0.17のコンテナが起動できない"
-slug: "mysql-container-not-starting-on-m1-mac"
-date: 2021-09-05
+title: M1 MacでMySQL8.0.17のコンテナが起動できない
+slug: mysql-container-not-starting-on-m1-mac
+date: 2021-09-05T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "Docker"
-  - "Docker Compose"
-  - "MySQL"
-  - "M1"
-  - "Tips"
-draft: false
+  - Docker
+  - Docker Compose
+  - MySQL
+  - M1
+  - Tips
+translation_key: mysql-container-not-starting-on-m1-mac
 ---
+
 
 M1 Macに買い替えたので手元の開発環境のためにmysqlコンテナを動かそうとしたら動かなかった。
 

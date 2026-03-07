@@ -1,15 +1,16 @@
 ---
-title: "なっとく！関数型プログラミング"
-slug: "functional-programming-introduction"
-date: 2025-08-31
+title: なっとく！関数型プログラミング
+slug: functional-programming-introduction
+date: 2025-08-31T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "関数型"
-  - "本"
-draft: false
+  - 関数型
+  - 本
+translation_key: functional-programming-introduction
 ---
+
 
 [なっとく！関数型プログラミング](https://amzn.to/3IwNOpJ)を読んだ。
 

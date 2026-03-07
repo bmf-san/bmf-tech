@@ -1,14 +1,15 @@
 ---
-title: "モニタリングシステムにおけるPull型とPush型のアプローチの違い"
-slug: "monitoring-pull-push-approaches"
-date: 2023-12-13
+title: モニタリングシステムにおけるPull型とPush型のアプローチの違い
+slug: monitoring-pull-push-approaches
+date: 2023-12-13T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "モニタリング"
-draft: false
+  - モニタリング
+translation_key: monitoring-pull-push-approaches
 ---
+
 
 # 概要
 モニタリングのシステムにおけるPull型とPush型のアプローチの違いについてまとめる。

@@ -1,5 +1,5 @@
 ---
-title: Key Points to Keep in Mind When Writing ADRs
+title: Key Points to Consider When Writing an ADR
 slug: adr-writing-key-points
 date: 2026-01-09T00:00:00Z
 author: bmf-san
@@ -9,63 +9,64 @@ tags:
   - Architecture Decision Record
   - Design
   - Architecture
-description: Learn essential tips for writing effective Architecture Decision Records (ADRs) to document critical software architecture decisions.
 translation_key: adr-writing-key-points
 ---
 
-ADR (Architecture Decision Record) is a document used to record important decisions related to software architecture.
+ADR (Architecture Decision Record) is a document used to record important decisions regarding software architecture.
 
-Even if the content of an ADR is predetermined, writing it can lead to inconsistencies depending on the person, or it may become unclear what should be written, resulting in the document losing its purpose.
+Even if the content to be written in an ADR is decided, when actually writing it, the content may vary from person to person, or one might not know what to write at all, leading to its formalization.
 
-Based on my experience, I’ve summarized four key points that are crucial.
+Based on my experience, I have summarized four important points.
 
-## 1: Focus on a Single Decision (Atomicity)
+## 1: Focus on One Decision (Atomicity)
 
-The first and most important rule is to **write only one decision per ADR**.
+The first and most important rule is to **write only one decision per ADR**. 
 
-Do not combine multiple topics into a single document, such as "Selecting a database and authentication platform." If, in the future, only the database needs to be changed, it becomes overly complex to manage whether to mark the entire document as "Superseded" or partially revise it.
+You should not combine multiple topics into a single document, such as "Choosing a Database and Authentication Infrastructure." If in the future you need to change only the database, managing whether to mark the entire document as "Superseded" or partially modify it becomes very complex.
 
-Additionally, mixing multiple decisions can lead to situations during review where opinions like "I agree with the database choice but disagree with the authentication" arise, halting consensus-building.
+Additionally, if multiple decisions are mixed, during reviews, if someone says, "I agree with the DB but disagree with the authentication," consensus can come to a halt.
 
-If you feel tempted to write "About A and B" in the title, that’s a sign to split it into two ADRs.
+If you feel the urge to write "About A and B" in the title, that is a sign to split it into two ADRs.
 
-## 2: Focus on "What to Decide" Over "What to Write" (Decision Point)
+## 2: Focus on What to Decide (Decision Point)
 
-An ADR is not a system manual. It’s a record of **decision points**.
+An ADR is not a manual for the system; it is a record of **decision points**. 
 
-The second law of software architecture, often discussed in foundational texts, states that **"Why" is more important than "How."** Implementation details (How) can be understood by looking at the code. What should be recorded in an ADR are the reasons behind choices and the options that were discarded, which cannot be inferred from the code.
+There is a saying in the second law of software architecture that states, **"The 'Why' is more important than the 'How.'"** The implementation details (How) can be seen in the code. What should be left in the ADR are the "reasons for the choices" and the "discarded options" that cannot be inferred from the code.
 
-The "Consequences" section is particularly important. It’s necessary to document not only the benefits but also the **trade-offs and risks** associated with the decision.
+The section on "Consequences" is particularly important. It is necessary to record not only the benefits but also the **drawbacks (trade-offs) and risks** that arise from that decision.
 
-For example, a decision like "Prioritizing development speed at the expense of some consistency guarantees" becomes valuable information for the future.
+Decisions like, "To prioritize development speed, we will sacrifice some consistency" will become valuable information in the future.
 
-## 3: Don’t Write Immediately—Organize and Discuss First
+## 3: Don’t Write Immediately; Go Through Outline and Discussion Processes
 
-An ADR serves as a "record of decisions" that solidifies team discussions and agreements, ensuring they aren’t changed later. Instead of jumping straight into drafting, start by discussing with the team using a whiteboard or lightweight documents to build consensus.
+An ADR is a "proof of decision" that solidifies team discussions and agreements, and should not be written immediately. It is important to first discuss with the team using a whiteboard or lightweight documents to form a consensus.
 
-When writing an ADR, begin by listing the key points in bullet form and start reviews based on an outline. This process helps improve team understanding and agreement, enhancing the quality of the ADR itself.
+Even when writing the ADR, before formalizing it, it is good to first jot down the points to be covered in bullet points and start the review from an outline base.
+
+Going through the process of divergence and convergence in discussions enhances the overall understanding and agreement within the team, improving the quality of the ADR itself.
 
 ## 4: Practice Technical Writing
 
-Since ADRs are technical documents, applying **technical writing principles** is effective.
+Since an ADR is a technical document, applying **technical writing principles** is effective.
 
 Reference: [developers.google.com - Technical Writing](https://developers.google.com/tech-writing)
 
-This principle isn’t limited to ADRs; it’s crucial for all technical documentation to ensure consistent quality regardless of the author.
+This is not limited to ADRs, but it is important to ensure that the quality of the writing remains consistent, regardless of who writes the technical document.
 
-## Notes on the Flexibility of ADR Formats
+## Caution Regarding the Flexibility of ADR Formats
 
-There are various ADR formats, but the format proposed by Nygard is highly flexible. This flexibility, especially in the "Consequences" section, can lead to uncertainty about what to write. When customizing formats for your organization or team, ensure the structure doesn’t overlook **key decision-making axes**.
+There are various formats for ADRs, but the format proposed by Nygard is highly flexible, and particularly the "Consequences" section can be confusing regarding what to write. When customizing the format to fit the organization or team, it is necessary to be aware of the **structure that does not overlook important decision-making axes**.
 
-For example, since trade-offs are central to decision-making, creating a dedicated "Trade-offs" section can prevent the evaluation of pros and cons from becoming superficial and ensures the rationale behind decisions is clearly documented.
+For example, since trade-offs are at the core of decision-making, establishing a separate section for "Trade-offs" ensures that the examination of merits and demerits does not become formalized, and the basis for judgment remains clear.
 
 ## Conclusion
 
-To ensure ADRs are not merely "records" but assets that support future decision-making, I’ve introduced four key points:
+I introduced four points to ensure that ADRs do not end up as mere "records" but become assets that support future decision-making.
 
-1. **Focus on a single decision** — Avoid complexity in management and reviews.
-2. **Record "Why"** — Document reasons and trade-offs that aren’t visible in the code.
-3. **Discuss before writing** — Go through the process of consensus-building to solidify team decisions.
-4. **Use technical writing** — Communicate facts concisely and in a structured format.
+1. **Focus on One Decision** — Avoid complexity in management and review.
+2. **Record the 'Why'** — Leave the reasons for choices and trade-offs that do not appear in the code.
+3. **Write After Discussion** — Solidify as a team decision through the consensus-building process.
+4. **Use Technical Writing** — Convey facts in a concise and structured format.
 
-Accurately documenting decisions helps build future assets and enhances team consistency and understanding.
+Accurately recording decision-making will become an asset for the future and help deepen the team's consistency and understanding.

@@ -1,16 +1,17 @@
 ---
-title: "SAML 2.0 仕様まとめ"
-slug: "saml-2-0-spec-summary"
-date: 2026-01-23
+title: SAML 2.0 仕様まとめ
+slug: saml-2-0-spec-summary
+date: 2026-01-23T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "SAML"
-  - "認証"
-  - "認可"
-draft: false
+  - SAML
+  - 認証
+  - 認可
+translation_key: saml-2-0-spec-summary
 ---
+
 
 OASIS Security Assertion Markup Language (SAML) 2.0 に基づく要点整理。
 

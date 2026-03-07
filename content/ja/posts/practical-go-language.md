@@ -1,15 +1,16 @@
 ---
-title: "実用Go言語"
-slug: "practical-go-language"
-date: 2023-08-05
+title: 実用Go言語
+slug: practical-go-language
+date: 2023-08-05T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "本"
-draft: false
+  - Golang
+  - 本
+translation_key: practical-go-language
 ---
+
 
 [実用Go言語](https://amzn.to/3KO6sr4)を読み終わったので読書メモを残す。
 

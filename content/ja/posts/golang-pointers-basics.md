@@ -1,17 +1,18 @@
 ---
-title: "Golangのポインタの基本"
-slug: "golang-pointers-basics"
-date: 2018-09-03
+title: Golangのポインタの基本
+slug: golang-pointers-basics
+date: 2018-09-03T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "ポインタ"
-  - "値渡し"
-  - "参照"
-draft: false
+  - Golang
+  - ポインタ
+  - 値渡し
+  - 参照
+translation_key: golang-pointers-basics
 ---
+
 
 # 概要
 Golangのポインタ基礎についてまとめる。

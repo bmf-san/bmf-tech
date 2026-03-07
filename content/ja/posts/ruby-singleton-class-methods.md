@@ -1,14 +1,15 @@
 ---
-title: "Rubyの特異クラス・特異メソッドについて"
-slug: "ruby-singleton-class-methods"
-date: 2024-05-15
+title: Rubyの特異クラス・特異メソッドについて
+slug: ruby-singleton-class-methods
+date: 2024-05-15T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Ruby"
-draft: false
+  - Ruby
+translation_key: ruby-singleton-class-methods
 ---
+
 
 # 概要
 Rubyの特異クラスと特異メソッドについてかく。

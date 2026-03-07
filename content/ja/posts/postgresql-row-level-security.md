@@ -1,15 +1,16 @@
 ---
-title: "PostgreSQLのRow Level Security（RLS）について"
-slug: "postgresql-row-level-security"
-date: 2025-05-23
+title: PostgreSQLのRow Level Security（RLS）について
+slug: postgresql-row-level-security
+date: 2025-05-23T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "PostgreSQL"
-  - "権限管理"
-draft: false
+  - PostgreSQL
+  - 権限管理
+translation_key: postgresql-row-level-security
 ---
+
 
 # 概要
 PostgreSQLでは、`GRANT`ベースのアクセス制御（テーブルや列レベル）に加え、**ユーザー単位で特定の行の可視性や更新可否を制御する仕組み（行レベルのアクセス制御）**として`Row Level Security`（RLS）が提供されている。

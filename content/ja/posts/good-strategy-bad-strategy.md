@@ -1,14 +1,15 @@
 ---
-title: "良い戦略、悪い戦略"
-slug: "good-strategy-bad-strategy"
-date: 2024-08-12
+title: 良い戦略、悪い戦略
+slug: good-strategy-bad-strategy
+date: 2024-08-12T00:00:00Z
 author: bmf-san
 categories:
-  - "ビジネス"
+  - ビジネス
 tags:
-  - "本"
-draft: false
+  - 本
+translation_key: good-strategy-bad-strategy
 ---
+
 
  [良い戦略、悪い戦略](https://amzn.to/4fEwDOO)を読んだ。
 

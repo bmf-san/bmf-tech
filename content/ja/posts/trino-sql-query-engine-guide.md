@@ -1,15 +1,16 @@
 ---
-title: "分散SQLクエリエンジンTrino徹底ガイド "
-slug: "trino-sql-query-engine-guide"
-date: 2024-10-24
+title: '分散SQLクエリエンジンTrino徹底ガイド '
+slug: trino-sql-query-engine-guide
+date: 2024-10-24T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "Trino"
-  - "本"
-draft: false
+  - Trino
+  - 本
+translation_key: trino-sql-query-engine-guide
 ---
+
 
 [分散SQLクエリエンジンTrino徹底ガイド](https://amzn.to/3BXhPeQ)を読んだ。
 

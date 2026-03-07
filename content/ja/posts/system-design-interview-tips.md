@@ -1,16 +1,17 @@
 ---
-title: "システム設計面接の傾向と対策"
-slug: "system-design-interview-tips"
-date: 2025-09-29
+title: システム設計面接の傾向と対策
+slug: system-design-interview-tips
+date: 2025-09-29T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "システム設計"
-  - "アーキテクチャ"
-  - "本"
-draft: false
+  - システム設計
+  - アーキテクチャ
+  - 本
+translation_key: system-design-interview-tips
 ---
+
 
 [システム設計面接の傾向と対策](https://amzn.to/3L1pQ6U)を読んだ。
 

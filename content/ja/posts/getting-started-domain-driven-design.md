@@ -1,16 +1,17 @@
 ---
-title: "ドメイン駆動設計をはじめよう―ソフトウェアの実装と事業戦略を結びつける実践技法"
-slug: "getting-started-domain-driven-design"
-date: 2026-02-20
+title: ドメイン駆動設計をはじめよう―ソフトウェアの実装と事業戦略を結びつける実践技法
+slug: getting-started-domain-driven-design
+date: 2026-02-20T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "本"
-  - "DDD"
-  - "事業戦略"
-draft: false
+  - 本
+  - DDD
+  - 事業戦略
+translation_key: getting-started-domain-driven-design
 ---
+
 
 [ドメイン駆動設計をはじめよう―ソフトウェアの実装と事業戦略を結びつける実践技法](https://amzn.to/4rE95PF)を読んだ。
 この本はDDDの戦略的設計・戦術的設計を実務に適用するための考え方と実装パターンについて書かれている本。

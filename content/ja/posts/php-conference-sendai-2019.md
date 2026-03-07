@@ -1,15 +1,16 @@
 ---
-title: "PHPカンファレンス仙台2019に参加した"
-slug: "php-conference-sendai-2019"
-date: 2019-01-27
+title: PHPカンファレンス仙台2019に参加した
+slug: php-conference-sendai-2019
+date: 2019-01-27T00:00:00Z
 author: bmf-san
 categories:
-  - "ポエム"
+  - ポエム
 tags:
-  - "PHP"
-  - "PHPカンファレンス"
-draft: false
+  - PHP
+  - PHPカンファレンス
+translation_key: php-conference-sendai-2019
 ---
+
 
 # TL; DR
 PHPカンファレンス仙台2019に参加レポート。

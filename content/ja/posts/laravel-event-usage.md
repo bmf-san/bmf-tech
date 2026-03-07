@@ -1,14 +1,15 @@
 ---
-title: "LaravelでEventを使う"
-slug: "laravel-event-usage"
-date: 2017-09-26
+title: LaravelでEventを使う
+slug: laravel-event-usage
+date: 2017-09-26T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Laravel"
-draft: false
+  - Laravel
+translation_key: laravel-event-usage
 ---
+
 
 ユーザー登録時や退会時など特定のイベントの時に発火させたいメソッドを管理したい時はイベントリスナーを使うと便利です。
 

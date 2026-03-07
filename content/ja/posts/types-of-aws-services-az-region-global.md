@@ -1,14 +1,15 @@
 ---
-title: "AWSサービスの種類ーAZ・リージョン・グローバル"
-slug: "types-of-aws-services-az-region-global"
-date: 2021-06-23
+title: AWSサービスの種類ーAZ・リージョン・グローバル
+slug: types-of-aws-services-az-region-global
+date: 2021-06-23T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Amazon Web Service"
-draft: false
+  - Amazon Web Service
+translation_key: types-of-aws-services-az-region-global
 ---
+
 
 # 概要
 AWSの代表的なサービスの分類をメモ。

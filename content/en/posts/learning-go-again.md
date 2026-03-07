@@ -11,13 +11,13 @@ translation_key: learning-go-again
 ---
 
 # Overview
-I’ve been working with Go for several years, both professionally and personally. I thought it might be effective to take this opportunity to relearn it, so I revisited various aspects of the language. Here’s a list of articles I read during this process.
+I have been working with Go for several years both professionally and personally, and I thought it would be effective to relearn it at this time, so I revisited various topics. Here’s a list of articles I read during this process.
 
 # Motivation
-I wanted to review the basics, catch up on parts of the specification I might have missed, learn about new features, and pick up tips to strengthen my foundation for improving my Go coding skills.
+I want to strengthen my coding skills in Go by reviewing the basics, catching up on parts I missed in the specifications, new features, and tips.
 
-# Understanding the Specification
-I read through articles related to understanding the Go specification, focusing on resources from go.dev.
+# Understanding Specifications
+I read various articles related to understanding specifications, mainly from go.dev.
 
 - [go.dev - The Go Programming Language Specification](https://go.dev/ref/spec)
 - [go.dev - The Go Memory Model](https://go.dev/ref/mem)
@@ -33,19 +33,19 @@ I read through articles related to understanding the Go specification, focusing 
 - [github.com - CodeReviewComments](https://github.com/golang/go/wiki/CodeReviewComments)
 
 # Generics
-I revisited the specifications of Generics, which were added in Go 1.18.
+I caught up on the specifications of Generics added in Go 1.18.
 
 - [go.dev - Tutorial: Getting started with generics](https://go.dev/doc/tutorial/generics)
 - [go.dev - When To Use Generics](https://go.dev/blog/when-generics)
 
 # Pros and Cons of Go
-I wanted to organize my thoughts on what Go excels at and where it struggles, so I read various articles on the topic. Perspectives can vary depending on the background of the author, so it was insightful to see different opinions.
+I read articles to organize my thoughts on the strengths and weaknesses of Go. Seeing various opinions is beneficial as perspectives can change based on different backgrounds.
 
-Personally, I haven’t worked with many programming languages, so I can’t provide deep insights into language design philosophies. However, I particularly appreciate Go’s simplicity—or rather, its philosophy of maintaining simplicity. When using highly functional languages that allow for various coding styles, I sometimes struggle with deciding how to write something. With Go, I feel like I can write code straightforwardly, and I enjoy working with the language.
+I haven’t been exposed to many languages, so I can’t provide deep insights into the design philosophy of languages, but I particularly appreciate Go's philosophy of maintaining simplicity (it may be more accurate to say it appears simple). When using highly functional languages that allow various styles, I sometimes struggle with how to write, but with Go, I feel I can write straightforwardly, and I find it enjoyable to code in.
 
-- [zenn.dev - Revisiting Go’s Features](https://zenn.dev/nobonobo/scraps/cec2259ac330a8)
-- [zenn.dev - Why Go Language Succeeded](https://zenn.dev/takehiro0740/articles/b5ef4fc26e9ba6)
-- [www.mobulous.com - GoLang- A Complete Details of All The Pros and Cons in Programming](https://www.mobulous.com/blog/golang-a-complete-details-of-all-the-pros-and-cons-in-programming/)
+- [zenn.dev - Revisiting the Features of Go](https://zenn.dev/nobonobo/scraps/cec2259ac330a8)
+- [zenn.dev - Reasons for Go Language's Success](https://zenn.dev/takehiro0740/articles/b5ef4fc26e9ba6)
+- [www.mobulous.com - GoLang: A Complete Details of All The Pros and Cons in Programming](https://www.mobulous.com/blog/golang-a-complete-details-of-all-the-pros-and-cons-in-programming/)
 - [www.scalefocus.com - Why You Should Go with Go for Your Next Software Project](https://www.scalefocus.com/blog/why-you-should-go-with-go-for-your-next-software-project)
 - [www.uptech.team - Best Practices: Why Use Golang For Your Project](https://www.uptech.team/blog/why-use-golang-for-your-project)
 - [https://medium.com - Why Go: The benefits of Golang](https://medium.com/@julienetienne/why-go-the-benefits-of-golang-6c39ea6cff7e)
@@ -54,15 +54,15 @@ Personally, I haven’t worked with many programming languages, so I can’t pro
 - [madappgang.com - When and Why Use Go in Software Development](https://madappgang.com/blog/why-golang/)
 
 # Books
-I picked up and read three books. There were other books I considered reading, but I selected ones that aligned with my current goals. (I know I need to properly study concurrency at some point, but I think that requires dedicated focus, so I’ll save it for another time...)
+I picked up and read about three books. There are other books I considered reading, but I selected those that seemed most aligned with my current goals. (I feel I need to focus on concurrency, but I decided to tackle that on another occasion...)
 
-- [Practical Go Programming](https://amzn.to/3QUlWO3)
+- [Practical Go](https://amzn.to/3QUlWO3)
 - [Distributed Services with Go](https://amzn.to/3qIwOEj)
-- [100 Go Language Tips: How to Handle Common Developer Mistakes (impress top gear)](https://amzn.to/3QXZt2F)
+- [Go Language 100 Tips: Solutions to Common Developer Mistakes (Impress Top Gear)](https://amzn.to/3QXZt2F)
 
-All of them are great books, but I especially recommend *Practical Go Programming*. It’s a valuable resource for someone like me who has some experience with Go but wants to organize their knowledge.
+All are good books, but I particularly recommend Practical Go. I think it’s a great book for someone like me who has some experience with Go but wants to organize their knowledge.
 
 cf. https://bmf-tech.com/posts/%e5%ae%9f%e7%94%a8Go%e8%a8%80%e8%aa%9e%e3%82%92%e8%aa%ad%e3%82%93%e3%81%a0
 
-# Final Thoughts
-I was able to store a lot of information in my mental library, which I’m sure will come in handy when the time comes. There’s still a lot I don’t fully understand, so I plan to revisit and learn more at another milestone.
+# Thoughts
+I’ve stored various things in my memory, so it should be useful when I need to retrieve them at some point. There are still many things I don’t fully understand, so I plan to relearn them at another milestone.

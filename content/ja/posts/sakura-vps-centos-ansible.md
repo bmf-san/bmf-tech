@@ -1,17 +1,18 @@
 ---
-title: "さくらVPS+CentOS7.3+Ansible"
-slug: "sakura-vps-centos-ansible"
-date: 2017-10-01
+title: さくらVPS+CentOS7.3+Ansible
+slug: sakura-vps-centos-ansible
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Ansible"
-  - "CentOS"
-  - "さくらのVPS"
-  - "Iaas"
-draft: false
+  - Ansible
+  - CentOS
+  - さくらのVPS
+  - Iaas
+translation_key: sakura-vps-centos-ansible
 ---
+
 
 # 概要
 AnsibleでさくらVPSの初期セットアップを自動化します。

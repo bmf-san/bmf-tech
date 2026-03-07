@@ -1,15 +1,16 @@
 ---
-title: "CQRSについて調べたことをメモ"
-slug: "cqrs-research-notes"
-date: 2023-09-18
+title: CQRSについて調べたことをメモ
+slug: cqrs-research-notes
+date: 2023-09-18T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "CQRS"
-  - "マイクロサービス"
-draft: false
+  - CQRS
+  - マイクロサービス
+translation_key: cqrs-research-notes
 ---
+
 
 # 概要
 CQRSについて調べたことをメモ。

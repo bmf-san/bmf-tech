@@ -1,15 +1,16 @@
 ---
-title: "GoReleaserを使ってDocker Imageをbuild&pushする"
-slug: "goreleaser-docker-image-build-push"
-date: 2024-05-29
+title: GoReleaserを使ってDocker Imageをbuild&pushする
+slug: goreleaser-docker-image-build-push
+date: 2024-05-29T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "GitHub Actions"
-draft: false
+  - Golang
+  - GitHub Actions
+translation_key: goreleaser-docker-image-build-push
 ---
+
 
 以前、[GoReleaserを使ってのGoのアプリケーションを配布する](https://bmf-tech.com/posts/GoReleaser%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%AEGo%E3%81%AE%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E9%85%8D%E5%B8%83%E3%81%99%E3%82%8B)というタイトルの記事でGoReleaserを使ったバイナリ配布の方法について書いたが、Dockerhubへのイメージプッシュもやってみたのでまとめておく。
 

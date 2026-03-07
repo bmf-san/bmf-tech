@@ -1,15 +1,16 @@
 ---
-title: "エンジニアが学ぶ物流システムの「知識」と「技術」 "
-slug: "logistics-systems-knowledge-and-skills-for-engineers"
-date: 2024-04-04
+title: 'エンジニアが学ぶ物流システムの「知識」と「技術」 '
+slug: logistics-systems-knowledge-and-skills-for-engineers
+date: 2024-04-04T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "本"
-  - "物流"
-draft: false
+  - 本
+  - 物流
+translation_key: logistics-systems-knowledge-and-skills-for-engineers
 ---
+
 
  [エンジニアが学ぶ物流システムの「知識」と「技術」](https://amzn.to/4a1WGv8)を読んだ。
 

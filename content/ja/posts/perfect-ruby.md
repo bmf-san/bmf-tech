@@ -1,15 +1,16 @@
 ---
-title: "パーフェクトRuby"
-slug: "perfect-ruby"
-date: 2024-05-04
+title: パーフェクトRuby
+slug: perfect-ruby
+date: 2024-05-04T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Ruby"
-  - "本"
-draft: false
+  - Ruby
+  - 本
+translation_key: perfect-ruby
 ---
+
 
 [パーフェクトRuby](https://amzn.to/3URxJyn)を読んだ。
 

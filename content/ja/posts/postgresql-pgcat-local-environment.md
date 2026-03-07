@@ -1,18 +1,19 @@
 ---
-title: "PostgreSQLとPgCatをローカルで素振りできる環境を作った"
-slug: "postgresql-pgcat-local-environment"
-date: 2024-09-15
+title: PostgreSQLとPgCatをローカルで素振りできる環境を作った
+slug: postgresql-pgcat-local-environment
+date: 2024-09-15T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "負荷試験"
-  - "PgCat"
-  - "PostgreSQL"
-  - "Grafana"
-  - "Prometheus"
-draft: false
+  - 負荷試験
+  - PgCat
+  - PostgreSQL
+  - Grafana
+  - Prometheus
+translation_key: postgresql-pgcat-local-environment
 ---
+
 
 PostgreSQLとPgCatをローカルで実験できる環境を作った。
 

@@ -1,18 +1,19 @@
 ---
-title: "デジタルアイデンティティのすべて―安全かつユーザー中心のアイデンティティシステムを実現するための知識"
-slug: "digital-identity-overview"
-date: 2026-02-20
+title: デジタルアイデンティティのすべて―安全かつユーザー中心のアイデンティティシステムを実現するための知識
+slug: digital-identity-overview
+date: 2026-02-20T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "本"
-  - "認証"
-  - "認可"
-  - "OIDC"
-  - "OAuth"
-draft: false
+  - 本
+  - 認証
+  - 認可
+  - OIDC
+  - OAuth
+translation_key: digital-identity-overview
 ---
+
 
 [デジタルアイデンティティのすべて―安全かつユーザー中心のアイデンティティシステムを実現するための知識](https://amzn.to/3ZOp0P7)を読んだ。
 この本はデジタルアイデンティティの概念から実装まで、体系的かつ広範に解説している本。

@@ -1,15 +1,16 @@
 ---
-title: "メタプログラミングRuby 第2版"
-slug: "metaprogramming-ruby-2nd-edition"
-date: 2025-01-06
+title: メタプログラミングRuby 第2版
+slug: metaprogramming-ruby-2nd-edition
+date: 2025-01-06T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "本"
-  - "Ruby"
-draft: false
+  - 本
+  - Ruby
+translation_key: metaprogramming-ruby-2nd-edition
 ---
+
 
 [メタプログラミングRuby 第2版](https://amzn.to/4adnBpO)を読んだ。
 

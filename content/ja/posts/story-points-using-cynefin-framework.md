@@ -1,15 +1,16 @@
 ---
-title: "クネビンフレームワークを活用したストーリーポイントの考え方"
-slug: "story-points-using-cynefin-framework"
-date: 2025-02-26
+title: クネビンフレームワークを活用したストーリーポイントの考え方
+slug: story-points-using-cynefin-framework
+date: 2025-02-26T00:00:00Z
 author: bmf-san
 categories:
-  - "開発プロセス"
+  - 開発プロセス
 tags:
-  - "アジャイル"
-  - "スクラム"
-draft: false
+  - アジャイル
+  - スクラム
+translation_key: story-points-using-cynefin-framework
 ---
+
 
 ストーリーポイントの基準を考える方法についてアイデアが浮かんだので、それについて書き残しておく。
 

@@ -1,20 +1,21 @@
 ---
-title: "システムアーキテクチャ構築の実践手法"
-slug: "practical-system-architecture"
-date: 2025-07-17
+title: システムアーキテクチャ構築の実践手法
+slug: practical-system-architecture
+date: 2025-07-17T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "アーキテクティング"
-  - "アーキテクチャ戦略"
-  - "アーキテクチャ"
-  - "アーキテクト"
-  - "設計"
-  - "システム設計"
-  - "本"
-draft: false
+  - アーキテクティング
+  - アーキテクチャ戦略
+  - アーキテクチャ
+  - アーキテクト
+  - 設計
+  - システム設計
+  - 本
+translation_key: practical-system-architecture
 ---
+
 
 [システムアーキテクチャ構築の実践手法](https://amzn.to/46f3iID)を読んだ。
 

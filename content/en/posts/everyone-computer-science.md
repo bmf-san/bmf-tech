@@ -12,6 +12,4 @@ tags:
 translation_key: everyone-computer-science
 ---
 
-I read [みんなのコンピュータサイエンス](https://amzn.to/4avmhgB).
-
-It's a perfect book to get an overall understanding of computer science.
+[Everyone's Computer Science](https://amzn.to/4avmhgB) is a great read for getting a comprehensive understanding of computer science.

@@ -1,14 +1,15 @@
 ---
-title: "GraphQLについて"
-slug: "graphql-introduction"
-date: 2023-11-09
+title: GraphQLについて
+slug: graphql-introduction
+date: 2023-11-09T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "GraphQL"
-draft: false
+  - GraphQL
+translation_key: graphql-introduction
 ---
+
 
 # 概要
 GraphQLの素振りをしていたので調べたことについてまとめておく。

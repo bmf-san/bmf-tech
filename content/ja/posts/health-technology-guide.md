@@ -1,15 +1,16 @@
 ---
-title: "健康になる技術\u3000大全"
-slug: "health-technology-guide"
-date: 2024-05-09
+title: 健康になる技術　大全
+slug: health-technology-guide
+date: 2024-05-09T00:00:00Z
 author: bmf-san
 categories:
-  - "ヘルスケア"
+  - ヘルスケア
 tags:
-  - "本"
-  - "健康"
-draft: false
+  - 本
+  - 健康
+translation_key: health-technology-guide
 ---
+
 
 [健康になる技術　大全](https://amzn.to/4brpH4E)を読んだ。
 

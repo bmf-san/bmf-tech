@@ -1,15 +1,16 @@
 ---
-title: "スタックとキューの実装"
-slug: "stack-queue-implementation"
-date: 2023-07-25
+title: スタックとキューの実装
+slug: stack-queue-implementation
+date: 2023-07-25T00:00:00Z
 author: bmf-san
 categories:
-  - "アルゴリズムとデータ構造"
+  - アルゴリズムとデータ構造
 tags:
-  - "スタック"
-  - "キュー"
-draft: false
+  - スタック
+  - キュー
+translation_key: stack-queue-implementation
 ---
+
 
 Goでスタックとキューをそれぞれ実装してみた。
 

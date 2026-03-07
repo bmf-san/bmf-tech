@@ -1,15 +1,16 @@
 ---
-title: "Ruby on Railsのコードリーディング第2回-Railsのリクエスト処理"
-slug: "ruby-on-rails-code-reading-2"
-date: 2024-09-02
+title: Ruby on Railsのコードリーディング第2回-Railsのリクエスト処理
+slug: ruby-on-rails-code-reading-2
+date: 2024-09-02T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Ruby"
-  - "Ruby on Rails"
-draft: false
+  - Ruby
+  - Ruby on Rails
+translation_key: ruby-on-rails-code-reading-2
 ---
+
 
 # 概要
 Ruby on Railsのコードリーディング作業を記録する。

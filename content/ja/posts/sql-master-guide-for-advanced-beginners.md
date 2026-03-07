@@ -1,16 +1,17 @@
 ---
-title: "達人に学ぶSQL徹底指南書 第2版 初級者で終わりたくないあなたへ"
-slug: "sql-master-guide-for-advanced-beginners"
-date: 2024-04-01
+title: 達人に学ぶSQL徹底指南書 第2版 初級者で終わりたくないあなたへ
+slug: sql-master-guide-for-advanced-beginners
+date: 2024-04-01T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "DB"
-  - "sql"
-  - "本"
-draft: false
+  - DB
+  - sql
+  - 本
+translation_key: sql-master-guide-for-advanced-beginners
 ---
+
 
 [達人に学ぶSQL徹底指南書 第2版 初級者で終わりたくないあなたへ](https://amzn.to/3PZYnSS)を読んだ。
 

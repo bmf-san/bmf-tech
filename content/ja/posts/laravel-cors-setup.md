@@ -1,15 +1,16 @@
 ---
-title: "LaravelでCORS対応"
-slug: "laravel-cors-setup"
-date: 2017-09-26
+title: LaravelでCORS対応
+slug: laravel-cors-setup
+date: 2017-09-26T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Laravel"
-  - "CORS"
-draft: false
+  - Laravel
+  - CORS
+translation_key: laravel-cors-setup
 ---
+
 
 # 概要
 LaravelでCORS(Cross-Origin Resource Sharing)に対応する方法をまとめました。

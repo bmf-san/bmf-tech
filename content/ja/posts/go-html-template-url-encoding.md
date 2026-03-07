@@ -1,15 +1,16 @@
 ---
-title: "Goのhtml／templateでURLをエンコードさせない"
-slug: "go-html-template-url-encoding"
-date: 2023-04-23
+title: Goのhtml／templateでURLをエンコードさせない
+slug: go-html-template-url-encoding
+date: 2023-04-23T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "Tips"
-draft: false
+  - Golang
+  - Tips
+translation_key: go-html-template-url-encoding
 ---
+
 
 # 概要
 html/templateを使っているときに、テンプレートに渡すURLをエンコードさせたくなかった。

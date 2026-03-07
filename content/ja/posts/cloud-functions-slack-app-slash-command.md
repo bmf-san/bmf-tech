@@ -1,18 +1,19 @@
 ---
-title: "Cloud Functionsを使ってSlack AppのSlash Commandを実装"
-slug: "cloud-functions-slack-app-slash-command"
-date: 2022-09-19
+title: Cloud Functionsを使ってSlack AppのSlash Commandを実装
+slug: cloud-functions-slack-app-slash-command
+date: 2022-09-19T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "slack-bot"
-  - "Slack"
-  - "Golang"
-  - "Google Cloud Platform"
-  - "Cloud Functions"
-draft: false
+  - slack-bot
+  - Slack
+  - Golang
+  - Google Cloud Platform
+  - Cloud Functions
+translation_key: cloud-functions-slack-app-slash-command
 ---
+
 
 # 概要
 Cloud Functionsを使ってSlack AppのSlash Commandを実装する。

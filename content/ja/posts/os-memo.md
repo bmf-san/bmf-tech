@@ -1,14 +1,15 @@
 ---
-title: "OSメモ"
-slug: "os-memo"
-date: 2018-05-11
+title: OSメモ
+slug: os-memo
+date: 2018-05-11T00:00:00Z
 author: bmf-san
 categories:
-  - "OS"
+  - OS
 tags:
-  - "os"
-draft: false
+  - os
+translation_key: os-memo
 ---
+
 
 # 概要
 OS周りの勉強をしている時に調べたこと。

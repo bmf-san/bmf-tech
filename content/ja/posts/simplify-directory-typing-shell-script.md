@@ -1,15 +1,16 @@
 ---
-title: "cdコマンドでディレクトリをタイピングするのが面倒くさくなってきたのでシェルスクリプトで楽をする"
-slug: "simplify-directory-typing-shell-script"
-date: 2017-09-26
+title: cdコマンドでディレクトリをタイピングするのが面倒くさくなってきたのでシェルスクリプトで楽をする
+slug: simplify-directory-typing-shell-script
+date: 2017-09-26T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "bash"
-  - "shellscript"
-draft: false
+  - bash
+  - shellscript
+translation_key: simplify-directory-typing-shell-script
 ---
+
 
 # 概要
 `cd hogehoge`とかパスやらディレクトリやらタイプするのが面倒になるという怠惰っぷりを発揮してきたので、シェルスクリプトを使って少し楽できるようにしました。

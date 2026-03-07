@@ -1,14 +1,15 @@
 ---
-title: "PostgreSQLのCOLLATEとglibcのバージョン差によるソート順の違い"
-slug: "postgresql-collate-glibc-version-differences"
-date: 2025-03-05
+title: PostgreSQLのCOLLATEとglibcのバージョン差によるソート順の違い
+slug: postgresql-collate-glibc-version-differences
+date: 2025-03-05T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "PostgreSQL"
-draft: false
+  - PostgreSQL
+translation_key: postgresql-collate-glibc-version-differences
 ---
+
 
 # PostgreSQLのCOLLATEとglibcのバージョン差によるソート順の違い
 同じCOLLATE設定を指定しているにもかかわらず、環境によってソート順が異なる問題に遭遇したので、その時の調査記録をメモしておく。

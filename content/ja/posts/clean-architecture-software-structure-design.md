@@ -1,16 +1,17 @@
 ---
-title: "Clean Architecture 達人に学ぶソフトウェアの構造と設計"
-slug: "clean-architecture-software-structure-design"
-date: 2018-08-01
+title: Clean Architecture 達人に学ぶソフトウェアの構造と設計
+slug: clean-architecture-software-structure-design
+date: 2018-08-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "Clean Architecture"
-  - "アーキテクチャ"
-  - "本"
-draft: false
+  - Clean Architecture
+  - アーキテクチャ
+  - 本
+translation_key: clean-architecture-software-structure-design
 ---
+
 
 [Clean Architecture 達人に学ぶソフトウェアの構造と設計](https://amzn.to/4agMQ99)を読んだ。
 

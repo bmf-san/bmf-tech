@@ -1,15 +1,16 @@
 ---
-title: "イシューからはじめよ［改訂版］――知的生産の「シンプルな本質」"
-slug: "start-with-issues-revised"
-date: 2024-11-13
+title: イシューからはじめよ［改訂版］――知的生産の「シンプルな本質」
+slug: start-with-issues-revised
+date: 2024-11-13T00:00:00Z
 author: bmf-san
 categories:
-  - "ビジネス"
+  - ビジネス
 tags:
-  - "知的生産"
-  - "本"
-draft: false
+  - 知的生産
+  - 本
+translation_key: start-with-issues-revised
 ---
+
 
 [イシューからはじめよ［改訂版］――知的生産の「シンプルな本質」](https://amzn.to/3Z4V0z5)を読んだ。
 

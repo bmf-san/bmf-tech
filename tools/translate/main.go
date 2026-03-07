@@ -45,12 +45,20 @@ type FrontMatter struct {
 
 func parseMarkdown(path string) (fm FrontMatter, body string, err error) {
 	data, err := os.ReadFile(path)
-	if err != nil { return }
+	if err != nil {
+		return
+	}
 	content := string(data)
-	if !strings.HasPrefix(content, "---") { body = content; return }
+	if !strings.HasPrefix(content, "---") {
+		body = content
+		return
+	}
 	rest := content[3:]
 	idx := strings.Index(rest, "\n---")
-	if idx == -1 { body = content; return }
+	if idx == -1 {
+		body = content
+		return
+	}
 	rawFM := strings.TrimSpace(rest[:idx])
 	body = strings.TrimPrefix(rest[idx+4:], "\n")
 	err = yaml.Unmarshal([]byte(rawFM), &fm)
@@ -58,11 +66,15 @@ func parseMarkdown(path string) (fm FrontMatter, body string, err error) {
 }
 
 func writeMarkdown(path string, fm FrontMatter, body string) error {
-	if err := os.MkdirAll(filepath.Dir(path), 0o755); err != nil { return err }
+	if err := os.MkdirAll(filepath.Dir(path), 0o755); err != nil {
+		return err
+	}
 	var buf bytes.Buffer
 	enc := yaml.NewEncoder(&buf)
 	enc.SetIndent(2)
-	if err := enc.Encode(fm); err != nil { return err }
+	if err := enc.Encode(fm); err != nil {
+		return err
+	}
 	fmStr := strings.TrimRight(buf.String(), "\n")
 	content := "---\n" + fmStr + "\n---\n\n" + body
 	return os.WriteFile(path, []byte(content), 0o644)
@@ -70,8 +82,12 @@ func writeMarkdown(path string, fm FrontMatter, body string) error {
 
 func addTranslationKey(path, key string) error {
 	fm, body, err := parseMarkdown(path)
-	if err != nil { return err }
-	if fm.TranslationKey == key { return nil }
+	if err != nil {
+		return err
+	}
+	if fm.TranslationKey == key {
+		return nil
+	}
 	fm.TranslationKey = key
 	return writeMarkdown(path, fm, body)
 }
@@ -87,32 +103,48 @@ type Taxonomy struct {
 func loadTaxonomyNames(path string) (map[string]bool, error) {
 	data, err := os.ReadFile(path)
 	if err != nil {
-		if os.IsNotExist(err) { return map[string]bool{}, nil }
+		if os.IsNotExist(err) {
+			return map[string]bool{}, nil
+		}
 		return nil, err
 	}
 	var entries []Taxonomy
-	if err := yaml.Unmarshal(data, &entries); err != nil { return nil, err }
+	if err := yaml.Unmarshal(data, &entries); err != nil {
+		return nil, err
+	}
 	set := make(map[string]bool, len(entries))
-	for _, e := range entries { set[e.Name] = true }
+	for _, e := range entries {
+		set[e.Name] = true
+	}
 	return set, nil
 }
 
 // appendTaxonomyNames appends new names to a taxonomy YAML file, keeping existing entries.
 func appendTaxonomyNames(path string, newNames []string) error {
 	data, err := os.ReadFile(path)
-	if err != nil && !os.IsNotExist(err) { return err }
+	if err != nil && !os.IsNotExist(err) {
+		return err
+	}
 	var entries []Taxonomy
 	if len(data) > 0 {
-		if err := yaml.Unmarshal(data, &entries); err != nil { return err }
+		if err := yaml.Unmarshal(data, &entries); err != nil {
+			return err
+		}
 	}
 	existing := make(map[string]bool, len(entries))
-	for _, e := range entries { existing[e.Name] = true }
+	for _, e := range entries {
+		existing[e.Name] = true
+	}
 	for _, n := range newNames {
-		if !existing[n] { entries = append(entries, Taxonomy{Name: n}) }
+		if !existing[n] {
+			entries = append(entries, Taxonomy{Name: n})
+		}
 	}
 	sort.Slice(entries, func(i, j int) bool { return entries[i].Name < entries[j].Name })
 	out, err := yaml.Marshal(entries)
-	if err != nil { return err }
+	if err != nil {
+		return err
+	}
 	return os.WriteFile(path, out, 0o644)
 }
 
@@ -122,39 +154,61 @@ func updateTaxonomies(enDir, taxDir string) error {
 	catsPath := filepath.Join(taxDir, "categories.yaml")
 
 	existingTags, err := loadTaxonomyNames(tagsPath)
-	if err != nil { return fmt.Errorf("tags.yaml: %w", err) }
+	if err != nil {
+		return fmt.Errorf("tags.yaml: %w", err)
+	}
 	existingCats, err := loadTaxonomyNames(catsPath)
-	if err != nil { return fmt.Errorf("categories.yaml: %w", err) }
+	if err != nil {
+		return fmt.Errorf("categories.yaml: %w", err)
+	}
 
 	newTags := map[string]bool{}
 	newCats := map[string]bool{}
 
 	entries, err := os.ReadDir(enDir)
-	if err != nil { return err }
+	if err != nil {
+		return err
+	}
 	for _, e := range entries {
-		if e.IsDir() || !strings.HasSuffix(e.Name(), ".md") { continue }
+		if e.IsDir() || !strings.HasSuffix(e.Name(), ".md") {
+			continue
+		}
 		fm, _, err := parseMarkdown(filepath.Join(enDir, e.Name()))
-		if err != nil { continue }
+		if err != nil {
+			continue
+		}
 		for _, t := range fm.Tags {
-			if !existingTags[t] { newTags[t] = true }
+			if !existingTags[t] {
+				newTags[t] = true
+			}
 		}
 		for _, c := range fm.Categories {
-			if !existingCats[c] { newCats[c] = true }
+			if !existingCats[c] {
+				newCats[c] = true
+			}
 		}
 	}
 
 	if len(newTags) > 0 {
 		newTagList := make([]string, 0, len(newTags))
-		for t := range newTags { newTagList = append(newTagList, t) }
+		for t := range newTags {
+			newTagList = append(newTagList, t)
+		}
 		sort.Strings(newTagList)
-		if err := appendTaxonomyNames(tagsPath, newTagList); err != nil { return fmt.Errorf("update tags: %w", err) }
+		if err := appendTaxonomyNames(tagsPath, newTagList); err != nil {
+			return fmt.Errorf("update tags: %w", err)
+		}
 		fmt.Printf("[TAXONOMY] tags.yaml: added %d new tags: %v\n", len(newTagList), newTagList)
 	}
 	if len(newCats) > 0 {
 		newCatList := make([]string, 0, len(newCats))
-		for c := range newCats { newCatList = append(newCatList, c) }
+		for c := range newCats {
+			newCatList = append(newCatList, c)
+		}
 		sort.Strings(newCatList)
-		if err := appendTaxonomyNames(catsPath, newCatList); err != nil { return fmt.Errorf("update categories: %w", err) }
+		if err := appendTaxonomyNames(catsPath, newCatList); err != nil {
+			return fmt.Errorf("update categories: %w", err)
+		}
 		fmt.Printf("[TAXONOMY] categories.yaml: added %d new categories: %v\n", len(newCatList), newCatList)
 	}
 	if len(newTags) == 0 && len(newCats) == 0 {
@@ -176,11 +230,15 @@ type aiRequest struct {
 	Temperature float64     `json:"temperature"`
 }
 
-type aiChoice struct { Message aiMessage `json:"message"` }
+type aiChoice struct {
+	Message aiMessage `json:"message"`
+}
 
 type aiResponse struct {
 	Choices []aiChoice `json:"choices"`
-	Error   *struct{ Message string `json:"message"` } `json:"error,omitempty"`
+	Error   *struct {
+		Message string `json:"message"`
+	} `json:"error,omitempty"`
 }
 
 type TranslationResult struct {
@@ -195,19 +253,37 @@ type apiConfig struct{ baseURL, token, model string }
 
 func loadAPIConfig() (apiConfig, error) {
 	cfg := apiConfig{baseURL: os.Getenv("AI_BASE_URL"), model: os.Getenv("AI_MODEL")}
+	if gk := os.Getenv("GOOGLE_API_KEY"); gk != "" {
+		cfg.token = gk
+		if cfg.baseURL == "" {
+			cfg.baseURL = "https://generativelanguage.googleapis.com/v1beta/openai"
+		}
+		if cfg.model == "" {
+			cfg.model = "gemini-2.0-flash"
+		}
+		return cfg, nil
+	}
 	if gt := os.Getenv("GITHUB_TOKEN"); gt != "" {
 		cfg.token = gt
-		if cfg.baseURL == "" { cfg.baseURL = "https://models.inference.ai.azure.com" }
-		if cfg.model == "" { cfg.model = "gpt-4o" }
+		if cfg.baseURL == "" {
+			cfg.baseURL = "https://models.inference.ai.azure.com"
+		}
+		if cfg.model == "" {
+			cfg.model = "gpt-4o"
+		}
 		return cfg, nil
 	}
 	if ak := os.Getenv("OPENAI_API_KEY"); ak != "" {
 		cfg.token = ak
-		if cfg.baseURL == "" { cfg.baseURL = "https://api.openai.com/v1" }
-		if cfg.model == "" { cfg.model = "gpt-4o" }
+		if cfg.baseURL == "" {
+			cfg.baseURL = "https://api.openai.com/v1"
+		}
+		if cfg.model == "" {
+			cfg.model = "gpt-4o"
+		}
 		return cfg, nil
 	}
-	return cfg, fmt.Errorf("set GITHUB_TOKEN or OPENAI_API_KEY")
+	return cfg, fmt.Errorf("set GOOGLE_API_KEY, GITHUB_TOKEN or OPENAI_API_KEY")
 }
 
 func buildPrompt(fm FrontMatter, body string) string {
@@ -236,27 +312,49 @@ func callAPI(cfg apiConfig, fm FrontMatter, body string) (TranslationResult, err
 		Temperature: 0.2,
 	}
 	reqJSON, err := json.Marshal(reqBody)
-	if err != nil { return TranslationResult{}, err }
+	if err != nil {
+		return TranslationResult{}, err
+	}
 	endpoint := strings.TrimRight(cfg.baseURL, "/") + "/chat/completions"
 	req, err := http.NewRequest("POST", endpoint, bytes.NewReader(reqJSON))
-	if err != nil { return TranslationResult{}, err }
+	if err != nil {
+		return TranslationResult{}, err
+	}
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("Authorization", "Bearer "+cfg.token)
 	client := &http.Client{Timeout: 120 * time.Second}
 	resp, err := client.Do(req)
-	if err != nil { return TranslationResult{}, err }
+	if err != nil {
+		return TranslationResult{}, err
+	}
 	defer resp.Body.Close()
 	raw, err := io.ReadAll(resp.Body)
-	if err != nil { return TranslationResult{}, err }
+	if err != nil {
+		return TranslationResult{}, err
+	}
+	// Gemini's OpenAI-compatible endpoint returns array on error: [{error:{...}}]
+	// Try array first, then fall back to object
 	var aiResp aiResponse
-	if err := json.Unmarshal(raw, &aiResp); err != nil {
-		return TranslationResult{}, fmt.Errorf("parse response: %w: %s", err, raw)
+	trimmed := bytes.TrimSpace(raw)
+	if len(trimmed) > 0 && trimmed[0] == '[' {
+		var arr []aiResponse
+		if err := json.Unmarshal(raw, &arr); err != nil {
+			return TranslationResult{}, fmt.Errorf("parse response: %w: %s", err, raw[:min(200, len(raw))])
+		}
+		if len(arr) == 0 {
+			return TranslationResult{}, fmt.Errorf("empty array response")
+		}
+		aiResp = arr[0]
+	} else {
+		if err := json.Unmarshal(raw, &aiResp); err != nil {
+			return TranslationResult{}, fmt.Errorf("parse response: %w: %s", err, raw[:min(200, len(raw))])
+		}
 	}
 	if aiResp.Error != nil {
 		return TranslationResult{}, fmt.Errorf("API error: %s", aiResp.Error.Message)
 	}
 	if len(aiResp.Choices) == 0 {
-		return TranslationResult{}, fmt.Errorf("empty response: %s", raw)
+		return TranslationResult{}, fmt.Errorf("empty response: %s", raw[:min(200, len(raw))])
 	}
 	c := strings.TrimSpace(aiResp.Choices[0].Message.Content)
 	if strings.HasPrefix(c, "```") {
@@ -266,7 +364,10 @@ func callAPI(cfg apiConfig, fm FrontMatter, body string) (TranslationResult, err
 		for sc.Scan() {
 			ln := sc.Text()
 			if strings.HasPrefix(ln, "```") {
-				if first { first = false; continue }
+				if first {
+					first = false
+					continue
+				}
 				break
 			}
 			out = append(out, ln)
@@ -282,7 +383,9 @@ func callAPI(cfg apiConfig, fm FrontMatter, body string) (TranslationResult, err
 
 func hasJapanese(s string) bool {
 	for _, r := range s {
-		if unicode.In(r, unicode.Hiragana, unicode.Katakana, unicode.Han) { return true }
+		if unicode.In(r, unicode.Hiragana, unicode.Katakana, unicode.Han) {
+			return true
+		}
 	}
 	return false
 }
@@ -292,14 +395,20 @@ func hasJapanese(s string) bool {
 func main() {
 	flag.Parse()
 	cfg, cfgErr := loadAPIConfig()
-	if cfgErr != nil && !*dryRun { fmt.Fprintln(os.Stderr, cfgErr); os.Exit(1) }
+	if cfgErr != nil && !*dryRun {
+		fmt.Fprintln(os.Stderr, cfgErr)
+		os.Exit(1)
+	}
 
 	var files []string
 	if *inputF != "" {
 		files = []string{*inputF}
 	} else {
 		entries, err := os.ReadDir(*jaDir)
-		if err != nil { fmt.Fprintln(os.Stderr, err); os.Exit(1) }
+		if err != nil {
+			fmt.Fprintln(os.Stderr, err)
+			os.Exit(1)
+		}
 		for _, e := range entries {
 			if !e.IsDir() && strings.HasSuffix(e.Name(), ".md") {
 				files = append(files, filepath.Join(*jaDir, e.Name()))
@@ -307,7 +416,10 @@ func main() {
 		}
 	}
 
-	if err := os.MkdirAll(*enDir, 0o755); err != nil { fmt.Fprintln(os.Stderr, err); os.Exit(1) }
+	if err := os.MkdirAll(*enDir, 0o755); err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
+	}
 
 	total := len(files)
 	skipped, translated, errors := 0, 0, 0
@@ -323,7 +435,9 @@ func main() {
 			continue
 		}
 		slug := fm.Slug
-		if slug == "" { slug = strings.TrimSuffix(filepath.Base(jaPath), ".md") }
+		if slug == "" {
+			slug = strings.TrimSuffix(filepath.Base(jaPath), ".md")
+		}
 		enPath := filepath.Join(*enDir, slug+".md")
 		if _, err := os.Stat(enPath); err == nil {
 			fmt.Printf("[SKIP] %s\n", slug)
@@ -332,7 +446,9 @@ func main() {
 		}
 		if *dryRun {
 			mark := ""
-			if hasJapanese(fm.Title) { mark = " [JA]" }
+			if hasJapanese(fm.Title) {
+				mark = " [JA]"
+			}
 			fmt.Printf("[DRY-RUN] %s%s\n", slug, mark)
 			translated++
 			continue

@@ -1,14 +1,15 @@
 ---
-title: "Rubyにおけるシングルトンパターンの実装方法"
-slug: "ruby-singleton-pattern-implementation"
-date: 2025-01-31
+title: Rubyにおけるシングルトンパターンの実装方法
+slug: ruby-singleton-pattern-implementation
+date: 2025-01-31T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Ruby"
-draft: false
+  - Ruby
+translation_key: ruby-singleton-pattern-implementation
 ---
+
 
 Rubyにおけるシングルトンパターンの実装方法についてまとめる。
 

@@ -1,17 +1,16 @@
 ---
-title: Difference Between redirect('hoge') and redirect()->to('hoge') in Laravel
+title: Differences Between redirect('hoge') and redirect()->to('hoge') in Laravel
 slug: laravel-redirect-differences
 date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - Applications
+  - Application
 tags:
   - Laravel
-description: A quick investigation into the differences between two redirect methods in Laravel.
 translation_key: laravel-redirect-differences
 ---
 
-A minor detail, but I was curious, so I decided to look into it.
+It's a trivial matter, but I was curious, so I looked into it.
 
 ```php
 public function getIndex()
@@ -20,7 +19,7 @@ public function getIndex()
 }
 ```
 
-I've been using this method without much thought, but...
+I've been using this one for some reason,
 
 ```php
 public function getIndex()
@@ -29,7 +28,7 @@ public function getIndex()
 }
 ```
 
-This one works just as well, so I decided to investigate the implementation of the `redirect` helper.
+But both work without any issues, so I investigated the implementation of the redirect helper.
 
 # Implementation of the redirect Helper
 
@@ -55,11 +54,11 @@ if (!function_exists('redirect')) {
 }
 ```
 
-It seems that if the argument is null, it will return an instance. This is also mentioned in the [documentation](https://readouble.com/laravel/5.1/ja/responses.html) lol.
+It seems that when the argument is empty, it calls the instance. It was also mentioned in the [documentation](https://readouble.com/laravel/5.1/ja/responses.html) lol.
 
-The API of the instance being called can be found [here](https://github.com/laravel/framework/blob/5.1/src/Illuminate/Routing/Redirector.php#L113).
+The API of the called instance can be found [here](https://github.com/laravel/framework/blob/5.1/src/Illuminate/Routing/Redirector.php#L113).
 
-The implementation of the `to` method is as follows:
+The implementation of the to method is as follows:
 
 ```Illuminate/Routing/Redirector.php
 /**
@@ -81,7 +80,7 @@ The implementation of the `to` method is as follows:
 # Conclusion
 `redirect('hoge')` and `redirect()->to('hoge')` are the same.
 
-If you just want a simple redirect, use `redirect('hoge')`. If you need to include flash data or redirect to a controller method, use `redirect()` to return an instance.
+If you just want a simple redirect, use `redirect('hoge')`. If you want to carry flash data or redirect to a controller method, use `redirect()` which returns an instance with an empty argument.
 
-# Personal Note
-Since I started using Laravel, I've been writing code unconsciously. This made me realize that I should take a moment to review the implementation of the code I use regularly. φ(..)
+# Note
+I thought I should check the implementation of the code I've been unconsciously writing since I started using Laravel φ(..)

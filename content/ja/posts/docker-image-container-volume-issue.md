@@ -1,15 +1,16 @@
 ---
-title: "dockerでイメージとコンテナを削除してもボリュームが消えていなかったときのメモ"
-slug: "docker-image-container-volume-issue"
-date: 2019-04-28
+title: dockerでイメージとコンテナを削除してもボリュームが消えていなかったときのメモ
+slug: docker-image-container-volume-issue
+date: 2019-04-28T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Docker"
-  - "Docker Compose"
-draft: false
+  - Docker
+  - Docker Compose
+translation_key: docker-image-container-volume-issue
 ---
+
 
 # 概要
 dockerでコンテナとイメージを削除してもvolumeが削除されていなくてちょいちょい忘れてハマるのでメモっておく。

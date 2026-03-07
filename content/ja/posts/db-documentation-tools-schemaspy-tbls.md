@@ -1,15 +1,16 @@
 ---
-title: "DBドキュメント（ER図など）を自動生成してくれるツールーschemaspy, tbls"
-slug: "db-documentation-tools-schemaspy-tbls"
-date: 2020-07-09
+title: DBドキュメント（ER図など）を自動生成してくれるツールーschemaspy, tbls
+slug: db-documentation-tools-schemaspy-tbls
+date: 2020-07-09T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "Docker"
-  - "ER"
-draft: false
+  - Docker
+  - ER
+translation_key: db-documentation-tools-schemaspy-tbls
 ---
+
 
 # 概要
 DBドキュメントを自動生成できるツールの有名所でいうと、MySQL Workbenchが筆頭に上がると思うが、それ以外にも良いOSSがないか漁ってみてちょっと触ってみたので感想を残す。

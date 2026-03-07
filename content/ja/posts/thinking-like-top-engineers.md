@@ -1,15 +1,16 @@
 ---
-title: "世界一流エンジニアの思考法"
-slug: "thinking-like-top-engineers"
-date: 2024-01-18
+title: 世界一流エンジニアの思考法
+slug: thinking-like-top-engineers
+date: 2024-01-18T00:00:00Z
 author: bmf-san
 categories:
-  - "ビジネス"
+  - ビジネス
 tags:
-  - "思考法"
-  - "本"
-draft: false
+  - 思考法
+  - 本
+translation_key: thinking-like-top-engineers
 ---
+
 
 [世界一流エンジニアの思考法](https://amzn.to/3UhEw42)をちょっと前に読んだのでメモ。
 

@@ -1,18 +1,19 @@
 ---
-title: "Atom×TidalCycles×SuperColliderでライブコーディングをはじめる"
-slug: "live-coding-atom-tidalcycles-supercollider"
-date: 2018-06-11
+title: Atom×TidalCycles×SuperColliderでライブコーディングをはじめる
+slug: live-coding-atom-tidalcycles-supercollider
+date: 2018-06-11T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Atom"
-  - "Git"
-  - "Haskell"
-  - "homebrew"
-  - "tidalcycles"
-draft: false
+  - Atom
+  - Git
+  - Haskell
+  - homebrew
+  - tidalcycles
+translation_key: live-coding-atom-tidalcycles-supercollider
 ---
+
 
 # 概要
 プログラミングで音楽をつくってみたいと思い、音響プログラミングに手を出してみた。

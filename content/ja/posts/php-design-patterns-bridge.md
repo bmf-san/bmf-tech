@@ -1,17 +1,18 @@
 ---
-title: "PHPで学ぶデザインパターン - Bridgeパターン"
-slug: "php-design-patterns-bridge"
-date: 2019-02-01
+title: PHPで学ぶデザインパターン - Bridgeパターン
+slug: php-design-patterns-bridge
+date: 2019-02-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "GoF"
-  - "PHP"
-  - "デザインパターン"
-  - "ブリッジパターン"
-draft: false
+  - GoF
+  - PHP
+  - デザインパターン
+  - ブリッジパターン
+translation_key: php-design-patterns-bridge
 ---
+
 
 # 概要
 [PHPで学ぶデザインパターン Advent Calendar 2018](https://qiita.com/advent-calendar/2018/php-design-pattern)で間に合わなかった記事。

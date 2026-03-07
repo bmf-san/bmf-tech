@@ -1,14 +1,15 @@
 ---
-title: "PostgreSQLのメモリ設定"
-slug: "postgresql-memory-settings"
-date: 2025-06-14
+title: PostgreSQLのメモリ設定
+slug: postgresql-memory-settings
+date: 2025-06-14T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "PostgreSQL"
-draft: false
+  - PostgreSQL
+translation_key: postgresql-memory-settings
 ---
+
 
 # 概要
 データベースの性能向上や安定運用には適切なメモリ設定が必要である。ディスクアクセスはメモリアクセスに比べ極めて遅く、可能な限りメモリから読み書きすることで応答性能を向上させたい一方、過度なメモリ割り当てはOOM（Out Of Memory、メモリ不足によるプロセス強制終了）リスクを高め、システム全体の停止につながる可能性がある。したがって、安定性を担保しつつ性能を確保するために、PostgreSQLのメモリ管理設定を慎重に行う必要がある。

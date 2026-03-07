@@ -1,15 +1,16 @@
 ---
-title: "PHPCompatibilityを使ってPHP8.2の互換性チェックを行う際にハマったこと"
-slug: "phpcompatibility-php82-compatibility-issues"
-date: 2024-04-14
+title: PHPCompatibilityを使ってPHP8.2の互換性チェックを行う際にハマったこと
+slug: phpcompatibility-php82-compatibility-issues
+date: 2024-04-14T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "PHP CodeSniffer"
-  - "PHPCompatibility"
-draft: false
+  - PHP CodeSniffer
+  - PHPCompatibility
+translation_key: phpcompatibility-php82-compatibility-issues
 ---
+
 
 [PHPCompatibilitiy](https://github.com/PHPCompatibility/PHPCompatibility)を使ってPHP8.2の互換性チェックを行う際にハマったことのメモ。
 

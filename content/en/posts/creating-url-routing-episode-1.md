@@ -1,74 +1,70 @@
 ---
-title: 'Creating URL Routing: Episode 1'
+title: Creating URL Routing Episode 1
 slug: creating-url-routing-episode-1
 date: 2018-12-19T00:00:00Z
 author: bmf-san
 categories:
-  - Algorithms
-  - Data Structures
+  - Algorithms and Data Structures
 tags:
   - HTTP
   - URL Routing
   - Tree Structure
   - Router
-description: Exploring the basics of URL routing and implementing a tree structure-based routing system.
 translation_key: creating-url-routing-episode-1
 ---
 
-# Creating URL Routing: Episode 1
+# Creating URL Routing Episode 1
 
 ## Overview
-Previously, I created a very basic routing system in React (cf. [Creating a custom router using React and History API](https://bmf-tech.com/posts/React%E3%81%A8History%20API%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6router%E3%82%92%E8%87%AA%E4%BD%9C%E3%81%99%E3%82%8B)), but I decided to challenge myself to create a more robust routing system. The motivation came from working with Golang recently.
+Previously, I created a very basic routing system using React (cf. [Creating a Custom Router with React and History API](https://bmf-tech.com/posts/React%E3%81%A8History%20API%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6router%E3%82%92%E8%87%AA%E4%BD%9C%E3%81%99%E3%82%8B)), but I wanted to challenge myself to create a more proper routing system. The trigger for this was my recent experience with Golang. It seems that by utilizing the standard library in Golang, applications can be implemented quite thinly, but the routing aspect often lacks power in the standard library, leading to a reliance on external libraries. Because of this, I felt that being able to create my own routing system would expand my capabilities in Golang and beyond, so I decided to take the plunge.
 
-In Golang, the standard library allows for lightweight application implementation, but the routing functionality is somewhat underpowered, often requiring reliance on external libraries. This inspired me to learn how to create my own routing system, which could expand my capabilities not only in Golang but also in other languages.
+## What Does URL Routing Do?
+It determines what processing should be executed in response to a requested URL. If necessary, it allows handling of path parameters and query parameters during the execution of the processing.
 
-## What is URL Routing?
-URL routing determines the process to execute based on the requested URL. It also handles path parameters and query parameters as needed during execution.
+## Implementation Patterns for URL Routing
+There are roughly two patterns:
 
-## URL Routing Implementation Patterns
-Broadly speaking, there are two patterns:
+- A pattern that matches URLs using regular expressions.
+- A pattern that uses a tree structure for string searching.
 
-- Using regular expressions for URL matching
-- Using tree structures for string searching
+While the impact of routing on application execution speed may not be significant, it is always better to be as fast as possible. Regardless of the language, it should be implemented with optimized algorithms for memory usage and computational complexity.
 
-Although routing may not significantly impact application execution speed, optimizing memory usage and computational complexity with efficient algorithms is always preferable, regardless of the programming language.
-
-For this implementation, I chose the tree structure pattern. While I haven't measured performance, I believe tree structure algorithms are computationally more efficient than regular expressions. Many libraries are implemented using tree structures.
+This time, I will choose the pattern implemented with a tree structure. Although I haven't measured performance, I feel that using a tree structure algorithm is likely to be more efficient than regular expressions, so I will go with that. In fact, there are many libraries implemented with tree structures.
 
 ## What is a Tree Structure?
-A tree structure is a type of data structure defined in the mathematical field of graph theory. A tree in graph theory consists of multiple nodes (also called vertices) and edges.
+A data structure that has a tree structure defined in the field of graph theory in mathematics. A tree defined in graph theory consists of multiple points (nodes or vertices) and multiple edges.
 
 ```
    ○ ・・・Root
  / | ・・・Edge
-◯  ◯ ・・・Node (Vertex)
+◯  ◯ ・・・Node
     \
   　  ◯
        \
     　   ○ ・・・Leaf
 ```
 
-There are various types of tree structures depending on node properties and tree height, but we'll omit those details here.
+There are various types of tree structures depending on the properties of the nodes and the height of the tree, but I will omit those details here.
 
 ## Examples of Tree Structures
-- Family trees
-- File systems
-- Domain names
+- Family Trees
+- File Systems
+- Domain Names
   - cf. https://www.nic.ad.jp/ja/dom/system.html
-- Syntax trees
-  - Used in compilers
-- DOM trees
-- Hierarchical tags or category structures
+- Syntax Trees
+  - Compilers, etc.
+- DOM Trees
+- Hierarchical structures for tags or categories
 
 ## Creating URL Routing
-What should be treated as a tree structure? Naturally, the list of route definitions will be treated as a tree structure.
+What will we treat as a tree structure? Of course, we will treat the list of route definitions as a tree structure.
 
-The implementation process can be summarized as follows: given route definitions and the current URL (path) as input, generate a tree structure from the route definitions, search the tree structure using the current URL (path) as the target, and return the matched data.
+To roughly explain the implementation flow, when given the route definitions and the current URL (path) as input, we will generate a tree structure from the route definitions, explore the tree structure targeting the current URL (path), and return the matched data.
 
-When working with tree structures, operations like adding or deleting nodes are sometimes implemented. However, for URL routing, these operations are unnecessary for now.
+When handling the tree structure, there may be cases where we implement processes such as adding or deleting nodes, but for URL routing, we will not implement those for now.
 
-### Defining the Data Structure
-First, define the DSL (Domain-Specific Language) for routing. Many libraries provide simple DSLs, but this time, I’ll define a slightly more complex DSL with multiple levels.
+### Deciding on the Data Structure
+We will first decide on the DSL for the routing definitions. Many libraries provide a simple DSL, but this time we will define a slightly complex DSL with multiple layers.
 
 ```:php
 $routes = [
@@ -103,11 +99,11 @@ $routes = [
 ];
 ```
 
-Instead of generating a tree structure from route definitions, I decided to define the route definitions directly as a tree structure. This approach reduces unnecessary algorithms, potentially improving performance. While this DSL may seem straightforward, I suspect there are reasons why common routing libraries don’t use this format.
+I mentioned earlier that we would generate a tree structure from the route definitions, but we will define the route definitions in a way that they are already structured as a tree. The reason for this approach is simply that writing an algorithm to generate a tree structure seems cumbersome, but conversely, it might reduce unnecessary algorithms and improve performance. I believe the route definitions are not particularly difficult to understand, but I think there must be a reason why common routing libraries do not adopt this structure.
 
-The terminal nodes (leaves) of the tree structure correspond to HTTP methods.
+The terminal nodes of the tree structure (leaves) correspond to the HTTP methods.
 
-Prepare a list of HTTP methods separately. In Golang, these are predefined in `net/http`, which is convenient. For this example, I’ll use PHP.
+In addition to the tree structure, we will prepare a list of HTTP methods. In Golang, they are already defined in net/http, which is convenient. This time, we will do it in PHP...
 
 ```php
 $methods = [
@@ -118,9 +114,9 @@ $methods = [
 ```
 
 ### Implementation
-Implement two functions: one to process the current URL (path) into an array for easier tree traversal, and another to compare the route definitions with the target route array and return the matched path data. Query parameters are not considered in this implementation.
+We will implement two functions: one to process the current URL (path) into an array for easier exploration of the tree structure, and another that takes the array and the route definitions array as arguments to return the matched path data. Note that we are not particularly considering query parameters this time.
 
-To ensure portability across languages, I’ll minimize the use of built-in functions.
+As an implementation policy, we will avoid using built-in functions as much as possible to consider portability to other languages.
 
 ```:php
 function createCurrentPathArray($routes) {
@@ -146,11 +142,11 @@ function createCurrentPathArray($routes) {
     return $currentPathArray;
 }
 
-// Search
-// Compare route definitions with the target route array and return the matched data.
-// The search ends when reaching a leaf node.
+// Exploration
+// Compare the route definitions and the target route array to return the corresponding data.
+// End exploration when reaching a leaf.
 function urlMatch($routes, $currentPathArray) {
-    // TODO Implementation in progress...
+    // TODO Implementing...
 }
 
 $currentPathArray = createCurrentPathArray($routes);
@@ -159,17 +155,15 @@ $result = urlMatch($routes, $currentPathArray);
 var_dump($result); // Should return the matched path data...
 ```
 
-This concludes Episode 1 as the implementation is still in progress.
+As this is still a work in progress, Episode 1 comes to a close here.
 
 ## Thoughts
-Starting directly with complex structures like Patricia trees or other advanced trees can be overwhelming. While I’ve looked at various implementations for reference, understanding each one is quite challenging. For now, I’ve focused on grasping the algorithm’s concept and working through it step by step. However, lacking mathematical knowledge can be tough.
-
-Although the implementation is incomplete, I feel like I’m starting to see the goal. That said, I’m not confident this will evolve into a base suitable for practical use.
+If you try to start with Patricia trees or other complex structures from the beginning, you might get burned badly. I looked at various implementations that might be helpful, but understanding each one is quite hard, so I started by grasping the image of the algorithm and working with my hands. However, it can be tough if you lack mathematical background. Although it is still in progress, I feel like I can see the goal somewhat. However, I am not confident that I can bring it to a level that can be used in actual operations.
 
 ## Postscript
-I presented this topic at the Makuake LT Party (an internal LT event).
+I gave a talk at the Makuake LT Party (internal LT competition).
 
-[speaker-deck - Creating URL Routing: Episode 1](https://speakerdeck.com/bmf_san/urlruteinguwotukuruepisodo1)
+[speaker-deck - Creating URL Routing Episode 1](https://speakerdeck.com/bmf_san/urlruteinguwotukuruepisodo1)
 
 ### References
 - [Algorithm visualization - Radix Tree](https://www.cs.usfca.edu/~galles/visualization/RadixTree.html)
@@ -177,10 +171,10 @@ I presented this topic at the Makuake LT Party (an internal LT event).
 - [WhiteDog@Blog](http://takao.blogspot.com/2012/03/patriciatrie.html)
 - [404 Blog Not Found - algorithm - Patricia Trie (Radix Trie) in JavaScript](http://blog.livedoor.jp/dankogai/archives/51766842.html)
 - [http request multiplexer and string matching](https://persol-pt.github.io/posts/tech-workshop1222/)
-- [@IT - Choosing data structures can make a big difference (3/3)](http://www.atmarkit.co.jp/ait/articles/0809/01/news163_3.html)
-- [Basic Data Structures: Traversing Tree Structures](http://www.sb.ecei.tohoku.ac.jp/lab/wp-content/uploads/2012/11/2012_d12.pdf)
-- [pixiv inside - Creating a fast URL routing system in PHP](https://devpixiv.hatenablog.com/entry/2015/12/13/145741)
-- [Doing good URL routing in PHP without frameworks](http://noranuk0.hatenablog.com/entry/2018/01/20/114933)
+- [@IT - The difference between heaven and hell depends on the choice of data structure (3/3)](http://www.atmarkit.co.jp/ait/articles/0809/01/news163_3.html)
+- [Basic Data Structures: How to Traverse Tree Structures](http://www.sb.ecei.tohoku.ac.jp/lab/wp-content/uploads/2012/11/2012_d12.pdf)
+- [pixiv inside - Trying to create a fast URL routing system in PHP](https://devpixiv.hatenablog.com/entry/2015/12/13/145741)
+- [Doing URL routing nicely in PHP without using a framework](http://noranuk0.hatenablog.com/entry/2018/01/20/114933)
 - [gist - neo-nanikaka/CommonPrefixTrieRouter.php](https://gist.github.com/neo-nanikaka/c2e2f7742b311696d50b)
 - [github.com - nissy/bon](https://github.com/nissy/bon)
 - [github.com - nissy/mux](https://github.com/nissy/mux)

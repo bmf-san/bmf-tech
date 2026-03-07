@@ -1,14 +1,15 @@
 ---
-title: "Golangでの変数定義・宣言のパターンまとめ"
-slug: "golang-variable-definition-patterns"
-date: 2018-11-13
+title: Golangでの変数定義・宣言のパターンまとめ
+slug: golang-variable-definition-patterns
+date: 2018-11-13T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-draft: false
+  - Golang
+translation_key: golang-variable-definition-patterns
 ---
+
 
 # 概要
 Golangでの変数定義・宣言のパターンをまとめる

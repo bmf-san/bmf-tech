@@ -1,15 +1,16 @@
 ---
-title: "ISUCON11に参加した"
-slug: "participated-in-isucon11"
-date: 2021-10-21
+title: ISUCON11に参加した
+slug: participated-in-isucon11
+date: 2021-10-21T00:00:00Z
 author: bmf-san
 categories:
-  - "ポエム"
+  - ポエム
 tags:
-  - "ISUCON"
-  - "ISUCON10"
-draft: false
+  - ISUCON
+  - ISUCON10
+translation_key: participated-in-isucon11
 ---
+
 
 # 今年もISUCONに参加してきた
 去年に続き、今年も同じメンバーで参加してきた。

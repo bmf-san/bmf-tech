@@ -1,17 +1,18 @@
 ---
-title: "Web APIの設計"
-slug: "web-api-design"
-date: 2024-07-28
+title: Web APIの設計
+slug: web-api-design
+date: 2024-07-28T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "API"
-  - "OpenAPI"
-  - "設計"
-  - "本"
-draft: false
+  - API
+  - OpenAPI
+  - 設計
+  - 本
+translation_key: web-api-design
 ---
+
 
 [Web APIの設計](https://amzn.to/3y7dqEG)を読んだ。
 

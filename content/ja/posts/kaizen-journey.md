@@ -1,15 +1,16 @@
 ---
-title: "カイゼン・ジャーニー"
-slug: "kaizen-journey"
-date: 2024-04-16
+title: カイゼン・ジャーニー
+slug: kaizen-journey
+date: 2024-04-16T00:00:00Z
 author: bmf-san
 categories:
-  - "開発プロセス"
+  - 開発プロセス
 tags:
-  - "アジャイル"
-  - "本"
-draft: false
+  - アジャイル
+  - 本
+translation_key: kaizen-journey
 ---
+
 
 [カイゼン・ジャーニー](https://amzn.to/44eW18J)を読んだので感想をメモする。
 

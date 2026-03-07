@@ -1,16 +1,17 @@
 ---
-title: "VagrantでCentOS6.7の開発環境を構築する"
-slug: "vagrant-centos-development-environment"
-date: 2017-10-01
+title: VagrantでCentOS6.7の開発環境を構築する
+slug: vagrant-centos-development-environment
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "apache"
-  - "CentOS"
-  - "Vagrant"
-draft: false
+  - apache
+  - CentOS
+  - Vagrant
+translation_key: vagrant-centos-development-environment
 ---
+
 
 # 概要
 最近、Boxを再構築した際に、「Vagrant開発環境のワークフローをちゃんとまとめておきたい」と思ったのでまとめてみました。

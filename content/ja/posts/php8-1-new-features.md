@@ -1,14 +1,15 @@
 ---
-title: "PHP7.4からPHP8.1までの新機能をキャッチアップ"
-slug: "php8-1-new-features"
-date: 2022-03-21
+title: PHP7.4からPHP8.1までの新機能をキャッチアップ
+slug: php8-1-new-features
+date: 2022-03-21T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "PHP"
-draft: false
+  - PHP
+translation_key: php8-1-new-features
 ---
+
 
 # 概要
 PHPの知識が7.3から止まっているので8.1までの新機能を駆け足でキャッチアップする。
