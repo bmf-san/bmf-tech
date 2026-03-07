@@ -1,14 +1,15 @@
 ---
-title: "本を読む本"
-slug: "book-reading-guide"
-date: 2025-02-15
+title: 本を読む本
+slug: book-reading-guide
+date: 2025-02-15T00:00:00Z
 author: bmf-san
 categories:
-  - "ビジネス"
+  - ビジネス
 tags:
-  - "本"
-draft: false
+  - 本
+translation_key: book-reading-guide
 ---
+
 
 [本を読む本](https://amzn.to/4jWO5QN)を読んだ。
 

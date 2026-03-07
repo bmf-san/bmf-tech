@@ -1,15 +1,16 @@
 ---
-title: "キャリアポートフォリオ作成ガイド"
-slug: "career-portfolio-creation-guide"
-date: 2026-02-18
+title: キャリアポートフォリオ作成ガイド
+slug: career-portfolio-creation-guide
+date: 2026-02-18T00:00:00Z
 author: bmf-san
 categories:
-  - "キャリア"
+  - キャリア
 tags:
-  - "転職"
-  - "レジュメ"
-draft: false
+  - 転職
+  - レジュメ
+translation_key: career-portfolio-creation-guide
 ---
+
 
 # キャリアポートフォリオを作る
 

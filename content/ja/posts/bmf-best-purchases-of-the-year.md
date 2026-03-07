@@ -1,12 +1,13 @@
 ---
-title: "bmfと今年買ってよかったモノ"
-slug: "bmf-best-purchases-of-the-year"
-date: 2017-12-25
+title: bmfと今年買ってよかったモノ
+slug: bmf-best-purchases-of-the-year
+date: 2017-12-25T00:00:00Z
 author: bmf-san
 categories:
-  - "ポエム"
-draft: false
+  - ポエム
+translation_key: bmf-best-purchases-of-the-year
 ---
+
 
 ※はてぶで公開していた記事を移管しました
 

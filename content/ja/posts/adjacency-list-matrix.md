@@ -1,16 +1,17 @@
 ---
-title: "隣接リストと隣接行列"
-slug: "adjacency-list-matrix"
-date: 2023-07-29
+title: 隣接リストと隣接行列
+slug: adjacency-list-matrix
+date: 2023-07-29T00:00:00Z
 author: bmf-san
 categories:
-  - "アルゴリズムとデータ構造"
+  - アルゴリズムとデータ構造
 tags:
-  - "グラフ"
-  - "隣接行列"
-  - "隣接リスト"
-draft: false
+  - グラフ
+  - 隣接行列
+  - 隣接リスト
+translation_key: adjacency-list-matrix
 ---
+
 
 # 概要　
 グラフを表現するためのデータ構造である隣接リストと隣接リストについてまとめる。

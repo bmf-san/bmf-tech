@@ -1,16 +1,17 @@
 ---
-title: "CAP定理とPACELC定理について"
-slug: "cap-theorem-pacelc-theorem"
-date: 2025-08-02
+title: CAP定理とPACELC定理について
+slug: cap-theorem-pacelc-theorem
+date: 2025-08-02T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "CAP"
-  - "PACELC"
-  - "分散システム"
-draft: false
+  - CAP
+  - PACELC
+  - 分散システム
+translation_key: cap-theorem-pacelc-theorem
 ---
+
 
 分散システムにおける重要な理論であるCAP定理とPACELC定理について書く。
 

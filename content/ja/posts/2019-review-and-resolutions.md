@@ -1,14 +1,15 @@
 ---
-title: "2019年の振り返りと来年の抱負"
-slug: "2019-review-and-resolutions"
-date: 2019-12-21
+title: 2019年の振り返りと来年の抱負
+slug: 2019-review-and-resolutions
+date: 2019-12-21T00:00:00Z
 author: bmf-san
 categories:
-  - "ポエム"
+  - ポエム
 tags:
-  - "振り返りと抱負"
-draft: false
+  - 振り返りと抱負
+translation_key: 2019-review-and-resolutions
 ---
+
 
 # 2019年の振り返りと来年の抱負
 今年も残すところ1週間とちょっとくらいになったので、今年の振り返りと来年の抱負をポエムっとく。

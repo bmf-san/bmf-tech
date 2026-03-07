@@ -1,14 +1,15 @@
 ---
-title: "オレオレTechnology Radarを作る"
-slug: "create-technology-radar"
-date: 2022-12-17
+title: オレオレTechnology Radarを作る
+slug: create-technology-radar
+date: 2022-12-17T00:00:00Z
 author: bmf-san
 categories:
-  - "ツール"
+  - ツール
 tags:
-  - "Technology Radar"
-draft: false
+  - Technology Radar
+translation_key: create-technology-radar
 ---
+
 
 [Makuake Advent Calendar 2022](https://adventar.org/calendars/8496)の7日目の記事です！
 

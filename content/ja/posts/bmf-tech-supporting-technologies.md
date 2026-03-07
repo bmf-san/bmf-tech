@@ -1,23 +1,24 @@
 ---
-title: "bmf-techを支える技術"
-slug: "bmf-tech-supporting-technologies"
-date: 2022-08-08
+title: bmf-techを支える技術
+slug: bmf-tech-supporting-technologies
+date: 2022-08-08T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "Docker"
-  - "Docker Compose"
-  - "VPS"
-  - "Golang"
-  - "Vue.js"
-  - "Prometheus"
-  - "Promtail"
-  - "Loki"
-  - "Grafana"
-  - "Nginx"
-draft: false
+  - Docker
+  - Docker Compose
+  - VPS
+  - Golang
+  - Vue.js
+  - Prometheus
+  - Promtail
+  - Loki
+  - Grafana
+  - Nginx
+translation_key: bmf-tech-supporting-technologies
 ---
+
 
 # bmf-techを支える技術
 このブログ（bmf-tech.com）を支える技術スタックについてかく。

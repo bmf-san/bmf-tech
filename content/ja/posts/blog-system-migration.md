@@ -1,14 +1,15 @@
 ---
-title: "ブログのシステムを移行した"
-slug: "blog-system-migration"
-date: 2022-06-14
+title: ブログのシステムを移行した
+slug: blog-system-migration
+date: 2022-06-14T00:00:00Z
 author: bmf-san
 categories:
-  - "ポエム"
+  - ポエム
 tags:
-  - "CMS"
-draft: false
+  - CMS
+translation_key: blog-system-migration
 ---
+
 
 ブログのシステムを移行したので記念投稿。
 

@@ -1,15 +1,16 @@
 ---
-title: "Open Policy Agentについて"
-slug: "about-open-policy-agent"
-date: 2025-05-13
+title: Open Policy Agentについて
+slug: about-open-policy-agent
+date: 2025-05-13T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Open Policy Agent"
-  - "権限管理"
-draft: false
+  - Open Policy Agent
+  - 権限管理
+translation_key: about-open-policy-agent
 ---
+
 
 Open Policy Agentについて詳しく知りたかったので、公式ドキュメントを参照して調べてみた。
 

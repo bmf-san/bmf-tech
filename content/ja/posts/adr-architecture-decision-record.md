@@ -1,14 +1,15 @@
 ---
-title: "ADR（Architecture Decision Record）について"
-slug: "adr-architecture-decision-record"
-date: 2022-10-10
+title: ADR（Architecture Decision Record）について
+slug: adr-architecture-decision-record
+date: 2022-10-10T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "Architecture Decision Record"
-draft: false
+  - Architecture Decision Record
+translation_key: adr-architecture-decision-record
 ---
+
 
 # 概要
 ADR（Architecture Decision Record）について調べた。

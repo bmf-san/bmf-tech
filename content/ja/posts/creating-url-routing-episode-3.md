@@ -1,18 +1,19 @@
 ---
-title: "URLルーティングをつくる\u3000エピソード3（完結編）"
-slug: "creating-url-routing-episode-3"
-date: 2019-03-17
+title: URLルーティングをつくる　エピソード3（完結編）
+slug: creating-url-routing-episode-3
+date: 2019-03-17T00:00:00Z
 author: bmf-san
 categories:
-  - "アルゴリズムとデータ構造"
+  - アルゴリズムとデータ構造
 tags:
-  - "PHP"
-  - "URLルーティング"
-  - "HTTP"
-  - "木構造"
-  - "router"
-draft: false
+  - PHP
+  - URLルーティング
+  - HTTP
+  - 木構造
+  - router
+translation_key: creating-url-routing-episode-3
 ---
+
 
 # 概要
 [URLルーティングをつくる　エピソード1](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%891) と[URLルーティングをつくる　エピソード2

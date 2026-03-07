@@ -1,15 +1,16 @@
 ---
-title: "AIを使ったコードリーディングの手順について"
-slug: "ai-code-reading-techniques"
-date: 2025-11-02
+title: AIを使ったコードリーディングの手順について
+slug: ai-code-reading-techniques
+date: 2025-11-02T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "コードリーディング"
-  - "AI"
-draft: false
+  - コードリーディング
+  - AI
+translation_key: ai-code-reading-techniques
 ---
+
 
 AIを活用したコードリーディングの手順についての雑多なメモ。
 

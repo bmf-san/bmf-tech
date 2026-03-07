@@ -1,15 +1,16 @@
 ---
-title: "buildxを使ったGoアプリケーションイメージのクロスコンパイル"
-slug: "cross-compiling-go-app-with-buildx"
-date: 2023-04-20
+title: buildxを使ったGoアプリケーションイメージのクロスコンパイル
+slug: cross-compiling-go-app-with-buildx
+date: 2023-04-20T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "Docker"
-draft: false
+  - Golang
+  - Docker
+translation_key: cross-compiling-go-app-with-buildx
 ---
+
 
 # 概要
 プライベートで開発しているアプリケーションのイメージをクロスコンパイルする必要性に駆られて（ローカルの開発環境と本番の環境でアーキテクチャが異なっていることが起因）対応したのでメモ。

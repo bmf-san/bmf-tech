@@ -1,19 +1,20 @@
 ---
 title: "DockerのOperation not permittedというエラー\bに対応する"
-slug: "docker-operation-not-permitted-error"
-date: 2019-09-27
+slug: docker-operation-not-permitted-error
+date: 2019-09-27T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Docker"
-  - "Docker Compose"
-  - "Linux"
-  - "linux capabilities"
-  - "seccomp"
-  - "Tips"
-draft: false
+  - Docker
+  - Docker Compose
+  - Linux
+  - linux capabilities
+  - seccomp
+  - Tips
+translation_key: docker-operation-not-permitted-error
 ---
+
 
 # 概要
 Docker Composeを使ってgolangのtest実行していたら、**Operation not permitted**というエラーに遭遇した。

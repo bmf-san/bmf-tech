@@ -1,15 +1,16 @@
 ---
-title: "カーソルページネーションとオフセットページネーションについて"
-slug: "cursor-pagination-offset-pagination"
-date: 2024-10-08
+title: カーソルページネーションとオフセットページネーションについて
+slug: cursor-pagination-offset-pagination
+date: 2024-10-08T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "オフセットページネーション"
-  - "カーソルページネーション"
-draft: false
+  - オフセットページネーション
+  - カーソルページネーション
+translation_key: cursor-pagination-offset-pagination
 ---
+
 
 # 概要
 オフセットページネーションとカーソルページネーションの比較についてまとめる。

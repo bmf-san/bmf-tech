@@ -1,14 +1,15 @@
 ---
-title: "2024年の振り返りと来年の抱負"
-slug: "2024-reflections-goals"
-date: 2025-01-02
+title: 2024年の振り返りと来年の抱負
+slug: 2024-reflections-goals
+date: 2025-01-02T00:00:00Z
 author: bmf-san
 categories:
-  - "ポエム"
+  - ポエム
 tags:
-  - "振り返りと抱負"
-draft: false
+  - 振り返りと抱負
+translation_key: 2024-reflections-goals
 ---
+
 
 # 2024年の振り返りと来年の抱負
 今年も1年を振り返って来年の抱負を記す。振り返りブログを書き始めて今回で7回目になる。

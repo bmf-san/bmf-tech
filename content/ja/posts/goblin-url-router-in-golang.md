@@ -1,16 +1,17 @@
 ---
-title: "GolangでgoblinというURLルーターを自作した"
-slug: "goblin-url-router-in-golang"
-date: 2020-01-26
+title: GolangでgoblinというURLルーターを自作した
+slug: goblin-url-router-in-golang
+date: 2020-01-26T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "URLルーティング"
-  - "router"
-draft: false
+  - Golang
+  - URLルーティング
+  - router
+translation_key: goblin-url-router-in-golang
 ---
+
 
 # 概要
 GolangでURLルーターを自作したので実装するまでの過程をメモしておく。

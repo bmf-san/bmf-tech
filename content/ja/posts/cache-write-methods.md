@@ -1,14 +1,15 @@
 ---
-title: "キャッシュの書き込み方式"
-slug: "cache-write-methods"
-date: 2023-06-03
+title: キャッシュの書き込み方式
+slug: cache-write-methods
+date: 2023-06-03T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "キャッシュ"
-draft: false
+  - キャッシュ
+translation_key: cache-write-methods
 ---
+
 
 # 概要
 キャッシュの書き込み方式についてまとめる。

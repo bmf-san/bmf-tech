@@ -1,17 +1,18 @@
 ---
-title: "エンジニアリングマネージャーのしごと―チームが必要とするマネージャーになる方法"
-slug: "engineering-manager-role-guide"
-date: 2026-02-20
+title: エンジニアリングマネージャーのしごと―チームが必要とするマネージャーになる方法
+slug: engineering-manager-role-guide
+date: 2026-02-20T00:00:00Z
 author: bmf-san
 categories:
-  - "マネジメント"
+  - マネジメント
 tags:
-  - "本"
-  - "チームマネジメント"
-  - "リーダーシップ"
-  - "マネージャー"
-draft: false
+  - 本
+  - チームマネジメント
+  - リーダーシップ
+  - マネージャー
+translation_key: engineering-manager-role-guide
 ---
+
 
 [エンジニアリングマネージャーのしごと―チームが必要とするマネージャーになる方法](https://amzn.to/3ZQpK6p)を読んだ。
 この本はエンジニアリングマネージャーとして実際にチームを機能させるための実践的な手法について書かれている本。

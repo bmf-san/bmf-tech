@@ -1,15 +1,16 @@
 ---
-title: "実務で役立つ バックアップの教科書 基本の考え方からツール活用・差分管理・世代管理・データ保全・リストア・リカバリー・可用性の確保まで"
-slug: "backup-guide-tools-techniques-recovery-availability"
-date: 2025-03-08
+title: 実務で役立つ バックアップの教科書 基本の考え方からツール活用・差分管理・世代管理・データ保全・リストア・リカバリー・可用性の確保まで
+slug: backup-guide-tools-techniques-recovery-availability
+date: 2025-03-08T00:00:00Z
 author: bmf-san
 categories:
-  - "運用"
+  - 運用
 tags:
-  - "本"
-  - "バックアップ"
-draft: false
+  - 本
+  - バックアップ
+translation_key: backup-guide-tools-techniques-recovery-availability
 ---
+
 
 [実務で役立つ バックアップの教科書 基本の考え方からツール活用・差分管理・世代管理・データ保全・リストア・リカバリー・可用性の確保まで](https://amzn.to/4izftCH)を読んだ。
 

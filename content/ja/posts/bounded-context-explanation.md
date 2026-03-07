@@ -1,14 +1,15 @@
 ---
-title: "境界付けられたコンテキストとは"
-slug: "bounded-context-explanation"
-date: 2025-05-19
+title: 境界付けられたコンテキストとは
+slug: bounded-context-explanation
+date: 2025-05-19T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "DDD"
-draft: false
+  - DDD
+translation_key: bounded-context-explanation
 ---
+
 
 # 概要
 

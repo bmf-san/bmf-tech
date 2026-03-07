@@ -1,15 +1,16 @@
 ---
-title: "自作HTTPルーターから新しいServeMuxへ"
-slug: "custom-http-router-to-new-servemux"
-date: 2024-04-27
+title: 自作HTTPルーターから新しいServeMuxへ
+slug: custom-http-router-to-new-servemux
+date: 2024-04-27T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "router"
-draft: false
+  - Golang
+  - router
+translation_key: custom-http-router-to-new-servemux
 ---
+
 
 # 概要
 これまで[goblin](https://github.com/bmf-san/goblin)という自作HTTPルーターを自分のアプリケーションで使っていたが、Go1.22でServeMuxの機能が拡張されてからはServeMuxを使うようになった。

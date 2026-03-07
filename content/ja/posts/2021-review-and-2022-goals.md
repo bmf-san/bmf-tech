@@ -1,14 +1,15 @@
 ---
-title: "2021年の振り返りと来年の抱負"
-slug: "2021-review-and-2022-goals"
-date: 2021-12-30
+title: 2021年の振り返りと来年の抱負
+slug: 2021-review-and-2022-goals
+date: 2021-12-30T00:00:00Z
 author: bmf-san
 categories:
-  - "ポエム"
+  - ポエム
 tags:
-  - "振り返りと抱負"
-draft: false
+  - 振り返りと抱負
+translation_key: 2021-review-and-2022-goals
 ---
+
 
 # 2021年の振り返りと来年の抱負
 去年のやつ。

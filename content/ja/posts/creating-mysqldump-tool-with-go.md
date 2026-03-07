@@ -1,17 +1,18 @@
 ---
-title: "Goでmysqldumpツールをつくる"
-slug: "creating-mysqldump-tool-with-go"
-date: 2019-02-04
+title: Goでmysqldumpツールをつくる
+slug: creating-mysqldump-tool-with-go
+date: 2019-02-04T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "MySQL"
-  - "ssh"
-  - "mysqldump"
-draft: false
+  - Golang
+  - MySQL
+  - ssh
+  - mysqldump
+translation_key: creating-mysqldump-tool-with-go
 ---
+
 
 # 概要
 このブログのDBバックアップを原始人のごとく手動でやっていたのでコマンド一発でバックアップをリモートからローカルにバックアップを取れるツールをgoでつくってみた。

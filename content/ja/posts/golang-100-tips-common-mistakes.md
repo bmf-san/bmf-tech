@@ -1,15 +1,16 @@
 ---
-title: "Go言語100Tips 開発者にありがちな間違いへの対処法"
-slug: "golang-100-tips-common-mistakes"
-date: 2023-08-27
+title: Go言語100Tips 開発者にありがちな間違いへの対処法
+slug: golang-100-tips-common-mistakes
+date: 2023-08-27T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "本"
-draft: false
+  - Golang
+  - 本
+translation_key: golang-100-tips-common-mistakes
 ---
+
 
 [Go言語100Tips 開発者にありがちな間違いへの対処法 (impress top gear)](https://amzn.to/3QXZt2F)を読んだ。
 

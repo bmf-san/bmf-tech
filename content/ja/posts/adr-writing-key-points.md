@@ -1,16 +1,17 @@
 ---
-title: "ADRを書くときに抑えておくべきポイント"
-slug: "adr-writing-key-points"
-date: 2026-01-09
+title: ADRを書くときに抑えておくべきポイント
+slug: adr-writing-key-points
+date: 2026-01-09T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "Architecture Decision Record"
-  - "設計"
-  - "アーキテクチャ"
-draft: false
+  - Architecture Decision Record
+  - 設計
+  - アーキテクチャ
+translation_key: adr-writing-key-points
 ---
+
 
 ADR（Architecture Decision Record）は、ソフトウェアアーキテクチャに関する重要な意思決定を記録するためのドキュメントである。
 

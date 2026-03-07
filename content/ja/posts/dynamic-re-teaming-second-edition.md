@@ -1,17 +1,18 @@
 ---
-title: "ダイナミックリチーミング 第2版―5つのパターンによる効果的なチーム編成"
-slug: "dynamic-re-teaming-second-edition"
-date: 2026-02-20
+title: ダイナミックリチーミング 第2版―5つのパターンによる効果的なチーム編成
+slug: dynamic-re-teaming-second-edition
+date: 2026-02-20T00:00:00Z
 author: bmf-san
 categories:
-  - "マネジメント"
+  - マネジメント
 tags:
-  - "本"
-  - "組織設計"
-  - "組織論"
-  - "マネージャー"
-draft: false
+  - 本
+  - 組織設計
+  - 組織論
+  - マネージャー
+translation_key: dynamic-re-teaming-second-edition
 ---
+
 
 [ダイナミックリチーミング 第2版―5つのパターンによる効果的なチーム編成](https://amzn.to/4c71kwS)を読んだ。
 この本はチーム構成の変化を管理・活用するための5つのパターンについて書かれている本。

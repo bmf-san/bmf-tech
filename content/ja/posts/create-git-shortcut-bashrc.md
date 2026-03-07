@@ -1,16 +1,17 @@
 ---
-title: ".bashrcにgitのショートカットコマンドをつくった"
-slug: "create-git-shortcut-bashrc"
-date: 2017-09-26
+title: .bashrcにgitのショートカットコマンドをつくった
+slug: create-git-shortcut-bashrc
+date: 2017-09-26T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "bash"
-  - "Git"
-  - "shellscript"
-draft: false
+  - bash
+  - Git
+  - shellscript
+translation_key: create-git-shortcut-bashrc
 ---
+
 
 git add hogehoge, git commit hogehoge, git push hogehoge....
 

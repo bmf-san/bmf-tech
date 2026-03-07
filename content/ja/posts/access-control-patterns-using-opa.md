@@ -1,15 +1,16 @@
 ---
-title: "OPAを利用したアクセス制御のパターン"
-slug: "access-control-patterns-using-opa"
-date: 2025-06-22
+title: OPAを利用したアクセス制御のパターン
+slug: access-control-patterns-using-opa
+date: 2025-06-22T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "Open Policy Agent"
-  - "権限管理"
-draft: false
+  - Open Policy Agent
+  - 権限管理
+translation_key: access-control-patterns-using-opa
 ---
+
 
 # 概要
 Open Policy Agent（OPA）は、ポリシーによるアクセス制御を疎結合な形で実現できる強力な仕組みである。Regoという宣言的言語でルールを記述し、アプリケーション側からはシンプルな形式でポリシー評価を利用できる。

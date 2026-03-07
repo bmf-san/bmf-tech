@@ -1,16 +1,17 @@
 ---
-title: "Dockerizeを使ってDocker Composeのコンテナの起動順を制御する"
-slug: "dockerize-control-docker-compose-start-order"
-date: 2019-09-17
+title: Dockerizeを使ってDocker Composeのコンテナの起動順を制御する
+slug: dockerize-control-docker-compose-start-order
+date: 2019-09-17T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Docker"
-  - "Docker Compose"
-  - "Dockerize"
-draft: false
+  - Docker
+  - Docker Compose
+  - Dockerize
+translation_key: dockerize-control-docker-compose-start-order
 ---
+
 
 # 概要
 Dockerizeを使ってDocker Composeで起動するコンテナの順番を制御する方法についての覚え書き。

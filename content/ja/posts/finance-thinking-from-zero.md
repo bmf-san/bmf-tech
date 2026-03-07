@@ -1,15 +1,16 @@
 ---
-title: "ゼロからわかるファイナンス思考 働く人と会社の成長戦略"
-slug: "finance-thinking-from-zero"
-date: 2022-04-27
+title: ゼロからわかるファイナンス思考 働く人と会社の成長戦略
+slug: finance-thinking-from-zero
+date: 2022-04-27T00:00:00Z
 author: bmf-san
 categories:
-  - "ビジネス"
+  - ビジネス
 tags:
-  - "会計"
-  - "本"
-draft: false
+  - 会計
+  - 本
+translation_key: finance-thinking-from-zero
 ---
+
 
 [ゼロからわかるファイナンス思考 働く人と会社の成長戦略](https://amzn.to/3QSJx0Z)を読んだ。
 

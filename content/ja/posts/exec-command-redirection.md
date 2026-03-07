@@ -1,16 +1,17 @@
 ---
-title: "execコマンドによるリダイレクト"
-slug: "exec-command-redirection"
-date: 2019-05-08
+title: execコマンドによるリダイレクト
+slug: exec-command-redirection
+date: 2019-05-08T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "bash"
-  - "shellscript"
-  - "exec"
-draft: false
+  - bash
+  - shellscript
+  - exec
+translation_key: exec-command-redirection
 ---
+
 
 # 概要
 execコマンドは現在のプロセスを実行するコマンドで置き換えるコマンドだが、引数無しで使うとリダイレクトの動的変更ができる。

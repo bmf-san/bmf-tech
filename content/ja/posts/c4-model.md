@@ -1,15 +1,16 @@
 ---
-title: "C4モデルとは"
-slug: "c4-model"
-date: 2024-08-15
+title: C4モデルとは
+slug: c4-model
+date: 2024-08-15T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "C4モデル"
-  - "アーキテクチャ"
-draft: false
+  - C4モデル
+  - アーキテクチャ
+translation_key: c4-model
 ---
+
 
 # 概要
 アーキテクチャ図を書くときにいつも粒度に迷っていたが、C4モデルという技法があることを知ったので、調べてみた。

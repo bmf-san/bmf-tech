@@ -1,14 +1,15 @@
 ---
-title: "ER図のリレーションシップの種類について"
-slug: "er-diagram-relationship-types"
-date: 2018-07-31
+title: ER図のリレーションシップの種類について
+slug: er-diagram-relationship-types
+date: 2018-07-31T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "ER"
-draft: false
+  - ER
+translation_key: er-diagram-relationship-types
 ---
+
 
 # 概要
 ER図のリレーションシップの種類についてまとめる。

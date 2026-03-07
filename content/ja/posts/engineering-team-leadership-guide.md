@@ -1,17 +1,18 @@
 ---
-title: "エンジニアリングチームのリード術―Googleに学ぶインディビジュアルコントリビューターとマネージャーのための実践ガイド"
-slug: "engineering-team-leadership-guide"
-date: 2026-02-20
+title: エンジニアリングチームのリード術―Googleに学ぶインディビジュアルコントリビューターとマネージャーのための実践ガイド
+slug: engineering-team-leadership-guide
+date: 2026-02-20T00:00:00Z
 author: bmf-san
 categories:
-  - "マネジメント"
+  - マネジメント
 tags:
-  - "本"
-  - "チームマネジメント"
-  - "リーダーシップ"
-  - "マネージャー"
-draft: false
+  - 本
+  - チームマネジメント
+  - リーダーシップ
+  - マネージャー
+translation_key: engineering-team-leadership-guide
 ---
+
 
 [エンジニアリングチームのリード術―Googleに学ぶインディビジュアルコントリビューターとマネージャーのための実践ガイド](https://amzn.to/4kMMC0j)を読んだ。
 この本はGoogleのエンジニアリング文化を参考に、ICとマネージャー双方の視点からエンジニアリングチームを効果的にリードする方法について書かれている本。

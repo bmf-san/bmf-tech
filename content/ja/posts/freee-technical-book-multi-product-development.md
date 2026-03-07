@@ -1,16 +1,17 @@
 ---
-title: "freee 技術の本 freeeにおけるマルチプロダクト開発"
-slug: "freee-technical-book-multi-product-development"
-date: 2024-11-09
+title: freee 技術の本 freeeにおけるマルチプロダクト開発
+slug: freee-technical-book-multi-product-development
+date: 2024-11-09T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "設計"
-  - "システム設計"
-  - "本"
-draft: false
+  - 設計
+  - システム設計
+  - 本
+translation_key: freee-technical-book-multi-product-development
 ---
+
 
 [freee 技術の本 freeeにおけるマルチプロダクト開発](https://techbookfest.org/product/8UNZJF7Rs5AWuqReQuZZgs?productVariantID=fZvUHjHxH4hqG6wtAaAVWN)を読んだ。
 

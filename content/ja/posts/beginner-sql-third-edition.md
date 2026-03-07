@@ -1,16 +1,17 @@
 ---
-title: "初めてのSQL 第3版"
-slug: "beginner-sql-third-edition"
-date: 2024-04-01
+title: 初めてのSQL 第3版
+slug: beginner-sql-third-edition
+date: 2024-04-01T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "DB"
-  - "sql"
-  - "本"
-draft: false
+  - DB
+  - sql
+  - 本
+translation_key: beginner-sql-third-edition
 ---
+
 
 [初めてのSQL 第3版](https://amzn.to/3VSQp1u)を読んだ。
 

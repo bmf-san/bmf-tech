@@ -1,15 +1,16 @@
 ---
-title: "Goならわかるシステムプログラミング"
-slug: "go-system-programming"
-date: 2018-11-30
+title: Goならわかるシステムプログラミング
+slug: go-system-programming
+date: 2018-11-30T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "本"
-draft: false
+  - Golang
+  - 本
+translation_key: go-system-programming
 ---
+
 
 [Goならわかるシステムプログラミング](https://amzn.to/4azsQyI)を読んだ。
 

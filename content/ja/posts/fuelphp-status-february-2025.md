@@ -1,15 +1,16 @@
 ---
-title: "FuelPHPの2025年2月現在の現況 by 生成AI"
-slug: "fuelphp-status-february-2025"
-date: 2025-02-27
+title: FuelPHPの2025年2月現在の現況 by 生成AI
+slug: fuelphp-status-february-2025
+date: 2025-02-27T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "FuelPHP"
-  - "PHP"
-draft: false
+  - FuelPHP
+  - PHP
+translation_key: fuelphp-status-february-2025
 ---
+
 
 [FuelPHPの2023年3月現在の現況](https://bmf-tech.com/posts/FuelPHP%E3%81%AE2023%E5%B9%B43%E6%9C%88%E7%8F%BE%E5%9C%A8%E3%81%AE%E7%8F%BE%E6%B3%81)という記事を書いた。
 

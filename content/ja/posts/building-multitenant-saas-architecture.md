@@ -1,15 +1,16 @@
 ---
-title: "マルチテナントSaaSアーキテクチャの構築 ―原則、ベストプラクティス、AWSアーキテクチャパターン"
-slug: "building-multitenant-saas-architecture"
-date: 2025-04-20
+title: マルチテナントSaaSアーキテクチャの構築 ―原則、ベストプラクティス、AWSアーキテクチャパターン
+slug: building-multitenant-saas-architecture
+date: 2025-04-20T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "SaaS"
-  - "アーキテクチャ"
-draft: false
+  - SaaS
+  - アーキテクチャ
+translation_key: building-multitenant-saas-architecture
 ---
+
 
 [マルチテナントSaaSアーキテクチャの構築 ―原則、ベストプラクティス、AWSアーキテクチャパターン](https://amzn.to/3EjmRE6)を読んだ。
 

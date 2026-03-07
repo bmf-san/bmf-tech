@@ -1,14 +1,15 @@
 ---
-title: "2018年の振り返りと2019年の目標"
-slug: "2018-review-2019-goals"
-date: 2018-12-31
+title: 2018年の振り返りと2019年の目標
+slug: 2018-review-2019-goals
+date: 2018-12-31T00:00:00Z
 author: bmf-san
 categories:
-  - "ポエム"
+  - ポエム
 tags:
-  - "振り返りと抱負"
-draft: false
+  - 振り返りと抱負
+translation_key: 2018-review-2019-goals
 ---
+
 
 ※はてぶで公開していた記事を移管しました
 

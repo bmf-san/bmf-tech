@@ -1,14 +1,15 @@
 ---
-title: "ADRのテンプレートファイルを生成するコマンド"
-slug: "adr-template-command"
-date: 2023-11-10
+title: ADRのテンプレートファイルを生成するコマンド
+slug: adr-template-command
+date: 2023-11-10T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Architecture Decision Record"
-draft: false
+  - Architecture Decision Record
+translation_key: adr-template-command
 ---
+
 
 ADRのテンプレートファイルを生成するだけのMakeコマンドを作成したのでメモっておく。
 

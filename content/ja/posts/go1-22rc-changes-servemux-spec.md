@@ -1,14 +1,15 @@
 ---
-title: "Go1.22rcで変更されるServeMuxの仕様"
-slug: "go1-22rc-changes-servemux-spec"
-date: 2024-01-25
+title: Go1.22rcで変更されるServeMuxの仕様
+slug: go1-22rc-changes-servemux-spec
+date: 2024-01-25T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-draft: false
+  - Golang
+translation_key: go1-22rc-changes-servemux-spec
 ---
+
 
 この記事は[Makuake Advent Calendar 2023](https://adventar.org/calendars/8992)の19日目の記事です。
 

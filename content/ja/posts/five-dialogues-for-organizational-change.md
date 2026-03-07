@@ -1,17 +1,18 @@
 ---
-title: "組織を変える5つの対話―対話を通じてアジャイルな組織文化を創る"
-slug: "five-dialogues-for-organizational-change"
-date: 2026-02-20
+title: 組織を変える5つの対話―対話を通じてアジャイルな組織文化を創る
+slug: five-dialogues-for-organizational-change
+date: 2026-02-20T00:00:00Z
 author: bmf-san
 categories:
-  - "マネジメント"
+  - マネジメント
 tags:
-  - "本"
-  - "組織設計"
-  - "組織論"
-  - "アジャイル"
-draft: false
+  - 本
+  - 組織設計
+  - 組織論
+  - アジャイル
+translation_key: five-dialogues-for-organizational-change
 ---
+
 
 [組織を変える5つの対話―対話を通じてアジャイルな組織文化を創る](https://amzn.to/4aRIaJc)を読んだ。
 この本はアジャイルな組織文化を醸成するために必要な5種類の対話のあり方について書かれている本。

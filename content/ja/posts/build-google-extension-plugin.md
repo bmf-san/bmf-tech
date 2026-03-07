@@ -1,15 +1,16 @@
 ---
-title: "Google ExtenstionのPluginをつくってみた"
-slug: "build-google-extension-plugin"
-date: 2017-09-26
+title: Google ExtenstionのPluginをつくってみた
+slug: build-google-extension-plugin
+date: 2017-09-26T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "JavaScript"
-  - "google chrome extension"
-draft: false
+  - JavaScript
+  - google chrome extension
+translation_key: build-google-extension-plugin
 ---
+
 
 英語版のGoogleで検索したい時には、ブックマークを利用してアクセスしていたのですが、プラグインで便利にできないかなーと思い、作ってみました。
 

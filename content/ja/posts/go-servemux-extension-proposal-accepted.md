@@ -1,16 +1,17 @@
 ---
-title: "GoでServeMuxの機能拡張を提案するProposalがAcceptedになった"
-slug: "go-servemux-extension-proposal-accepted"
-date: 2023-08-31
+title: GoでServeMuxの機能拡張を提案するProposalがAcceptedになった
+slug: go-servemux-extension-proposal-accepted
+date: 2023-08-31T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "router"
-  - "HTTP"
-draft: false
+  - Golang
+  - router
+  - HTTP
+translation_key: go-servemux-extension-proposal-accepted
 ---
+
 
 以前からウォッチしていた[net/http: enhanced ServeMux routing #61410](https://github.com/golang/go/issues/61410)がAcceptedになったので、それについてポエムをかく。
 

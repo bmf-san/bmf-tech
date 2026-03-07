@@ -1,15 +1,16 @@
 ---
-title: "ACIDとBASEについて"
-slug: "acid-vs-base"
-date: 2025-08-02
+title: ACIDとBASEについて
+slug: acid-vs-base
+date: 2025-08-02T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "ACID"
-  - "BASE"
-draft: false
+  - ACID
+  - BASE
+translation_key: acid-vs-base
 ---
+
 
 トランザクションモデルであるACIDとBASEについて述べる。
 

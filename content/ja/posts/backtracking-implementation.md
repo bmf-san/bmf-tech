@@ -1,14 +1,15 @@
 ---
-title: "バックトラッキングの実装"
-slug: "backtracking-implementation"
-date: 2023-06-23
+title: バックトラッキングの実装
+slug: backtracking-implementation
+date: 2023-06-23T00:00:00Z
 author: bmf-san
 categories:
-  - "アルゴリズムとデータ構造"
+  - アルゴリズムとデータ構造
 tags:
-  - "バックトラック"
-draft: false
+  - バックトラック
+translation_key: backtracking-implementation
 ---
+
 
 # バックトラッキングとは
 指定された制約を満たすような組み合わせを探索するアルゴリズム。　

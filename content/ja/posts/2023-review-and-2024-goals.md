@@ -1,14 +1,15 @@
 ---
-title: "2023年の振り返りと来年の抱負"
-slug: "2023-review-and-2024-goals"
-date: 2024-01-03
+title: 2023年の振り返りと来年の抱負
+slug: 2023-review-and-2024-goals
+date: 2024-01-03T00:00:00Z
 author: bmf-san
 categories:
-  - "ポエム"
+  - ポエム
 tags:
-  - "振り返りと抱負"
-draft: false
+  - 振り返りと抱負
+translation_key: 2023-review-and-2024-goals
 ---
+
 
 # 2023年の振り返りと来年の抱負
 今年も1年を振り返って来年の抱負を記す。

@@ -1,15 +1,16 @@
 ---
-title: "エリック・エヴァンスのドメイン駆動設計"
-slug: "eric-evans-domain-driven-design"
-date: 2016-12-09
+title: エリック・エヴァンスのドメイン駆動設計
+slug: eric-evans-domain-driven-design
+date: 2016-12-09T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "DDD"
-  - "本"
-draft: false
+  - DDD
+  - 本
+translation_key: eric-evans-domain-driven-design
 ---
+
 
 [エリック・エヴァンスのドメイン駆動設計: ソフトウェアの核心にある複雑さに立ち向かう](https://amzn.to/4bgaiEm)を読んだ。
 

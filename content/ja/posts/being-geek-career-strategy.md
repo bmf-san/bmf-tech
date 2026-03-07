@@ -1,14 +1,15 @@
 ---
-title: "Being Geek ギークであり続けるためのキャリア戦略"
-slug: "being-geek-career-strategy"
-date: 2017-12-23
+title: Being Geek ギークであり続けるためのキャリア戦略
+slug: being-geek-career-strategy
+date: 2017-12-23T00:00:00Z
 author: bmf-san
 categories:
-  - "キャリア"
+  - キャリア
 tags:
-  - "本"
-draft: false
+  - 本
+translation_key: being-geek-career-strategy
 ---
+
 
 [Being Geek ギークであり続けるためのキャリア戦略](https://amzn.to/3WBItSL)を読んだ。
 

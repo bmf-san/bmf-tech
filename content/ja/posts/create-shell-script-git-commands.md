@@ -1,15 +1,16 @@
 ---
-title: "gitコマンドを楽にするシェルスクリプトをかいた"
-slug: "create-shell-script-git-commands"
-date: 2017-09-26
+title: gitコマンドを楽にするシェルスクリプトをかいた
+slug: create-shell-script-git-commands
+date: 2017-09-26T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Git"
-  - "shellscript"
-draft: false
+  - Git
+  - shellscript
+translation_key: create-shell-script-git-commands
 ---
+
 
 # 概要
 [.bashrcにgitのショートカットコマンドをつくった](http://qiita.com/bmf_san/items/d41bc8d5c5677c69a1e4)でgitのエイリアスコマンドをつくったのですが、中途半端だったので改良しました。

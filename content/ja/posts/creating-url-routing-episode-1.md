@@ -1,17 +1,18 @@
 ---
-title: "URLルーティングをつくる\u3000エピソード1"
-slug: "creating-url-routing-episode-1"
-date: 2018-12-19
+title: URLルーティングをつくる　エピソード1
+slug: creating-url-routing-episode-1
+date: 2018-12-19T00:00:00Z
 author: bmf-san
 categories:
-  - "アルゴリズムとデータ構造"
+  - アルゴリズムとデータ構造
 tags:
-  - "HTTP"
-  - "URLルーティング"
-  - "木構造"
-  - "router"
-draft: false
+  - HTTP
+  - URLルーティング
+  - 木構造
+  - router
+translation_key: creating-url-routing-episode-1
 ---
+
 
 # URLルーティングをつくる　エピソード1
 

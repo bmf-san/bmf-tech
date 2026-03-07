@@ -1,19 +1,20 @@
 ---
-title: "Goでプロセス・goroutine・メモリを覗いてみた"
-slug: "exploring-go-process-goroutine-memory"
-date: 2025-08-09
+title: Goでプロセス・goroutine・メモリを覗いてみた
+slug: exploring-go-process-goroutine-memory
+date: 2025-08-09T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "メモリ"
-  - "ヒープ"
-  - "スタック"
-  - "プロセス"
-  - "スレッド"
-draft: false
+  - Golang
+  - メモリ
+  - ヒープ
+  - スタック
+  - プロセス
+  - スレッド
+translation_key: exploring-go-process-goroutine-memory
 ---
+
 
 # 
 

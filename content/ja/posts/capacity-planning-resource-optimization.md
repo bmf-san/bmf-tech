@@ -1,15 +1,16 @@
 ---
-title: "キャパシティプランニング ― リソースを最大限に活かすサイト分析・予測・配置"
-slug: "capacity-planning-resource-optimization"
-date: 2024-03-30
+title: キャパシティプランニング ― リソースを最大限に活かすサイト分析・予測・配置
+slug: capacity-planning-resource-optimization
+date: 2024-03-30T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "キャパシティプランニング"
-  - "本"
-draft: false
+  - キャパシティプランニング
+  - 本
+translation_key: capacity-planning-resource-optimization
 ---
+
 
 [キャパシティプランニング ― リソースを最大限に活かすサイト分析・予測・配置](https://amzn.to/4duNKBu)を読んだ。
 

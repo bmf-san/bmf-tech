@@ -1,14 +1,15 @@
 ---
-title: "キャパシティプランニングについて"
-slug: "capacity-planning"
-date: 2024-03-30
+title: キャパシティプランニングについて
+slug: capacity-planning
+date: 2024-03-30T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "キャパシティプランニング"
-draft: false
+  - キャパシティプランニング
+translation_key: capacity-planning
 ---
+
 
 # キャパシティプランニングの目的
 システムのリソース管理を目的とし、リソースを効率的に利用することを目指す。

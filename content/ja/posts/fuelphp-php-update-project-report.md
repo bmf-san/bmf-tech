@@ -1,15 +1,16 @@
 ---
-title: "FuelPHPとPHPのアップデートプロジェクトレポート"
-slug: "fuelphp-php-update-project-report"
-date: 2024-01-26
+title: FuelPHPとPHPのアップデートプロジェクトレポート
+slug: fuelphp-php-update-project-report
+date: 2024-01-26T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "PHP"
-  - "FuelPHP"
-draft: false
+  - PHP
+  - FuelPHP
+translation_key: fuelphp-php-update-project-report
 ---
+
 
 この記事は[Makuake Advent Calendar 2023](https://adventar.org/calendars/8992)の24日目の記事です。
 

@@ -1,16 +1,17 @@
 ---
-title: "goのspannerクライアントのReadOnlyTransactionでハマった"
-slug: "go-spanner-client-read-only-transaction-issue"
-date: 2021-02-08
+title: goのspannerクライアントのReadOnlyTransactionでハマった
+slug: go-spanner-client-read-only-transaction-issue
+date: 2021-02-08T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Google Cloud Platform"
-  - "Spanner"
-  - "Tips"
-draft: false
+  - Google Cloud Platform
+  - Spanner
+  - Tips
+translation_key: go-spanner-client-read-only-transaction-issue
 ---
+
 
 # 概要
 [pkg.go.dev - cloud.google.com/go/spanner](https://pkg.go.dev/cloud.google.com/go/spanner)で`ReadOnlyTransaction`を使ったときにハマったところについてメモ。

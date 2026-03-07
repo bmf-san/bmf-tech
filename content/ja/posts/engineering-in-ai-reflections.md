@@ -1,19 +1,20 @@
 ---
-title: "AI時代のエンジニアリングについて考える"
-slug: "engineering-in-ai-reflections"
-date: 2026-02-25
+title: AI時代のエンジニアリングについて考える
+slug: engineering-in-ai-reflections
+date: 2026-02-25T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "LLM as judge"
-  - "Prompt as code"
-  - "Prompt Ops"
-  - "コンテキストエンジニアリング"
-  - "プロンプトエンジニアリング"
-  - "Continuous AI"
-draft: false
+  - LLM as judge
+  - Prompt as code
+  - Prompt Ops
+  - コンテキストエンジニアリング
+  - プロンプトエンジニアリング
+  - Continuous AI
+translation_key: engineering-in-ai-reflections
 ---
+
 
 大規模言語モデル（LLM）の活用が個人から組織へと拡大する中、プロンプトを従来のソースコードと同等の厳密さで管理する必要性が高まっている。
 

@@ -1,19 +1,20 @@
 ---
-title: "AI時代のエンジニアリング：プロンプトから自律型システムへの進化"
-slug: "engineering-in-ai-evolution-to-autonomous-systems"
-date: 2026-02-25
+title: AI時代のエンジニアリング：プロンプトから自律型システムへの進化
+slug: engineering-in-ai-evolution-to-autonomous-systems
+date: 2026-02-25T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "LLM as judge"
-  - "Prompt as code"
-  - "Prompt Ops"
-  - "コンテキストエンジニアリング"
-  - "プロンプトエンジニアリング"
-  - "Continuous AI"
-draft: false
+  - LLM as judge
+  - Prompt as code
+  - Prompt Ops
+  - コンテキストエンジニアリング
+  - プロンプトエンジニアリング
+  - Continuous AI
+translation_key: engineering-in-ai-evolution-to-autonomous-systems
 ---
+
 
 ## はじめに：パラダイムシフトの全体像
 

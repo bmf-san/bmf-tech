@@ -1,15 +1,16 @@
 ---
-title: "Goでオレオレ証明書がほしいときの一手"
-slug: "go-self-signed-certificate-creation"
-date: 2024-02-16
+title: Goでオレオレ証明書がほしいときの一手
+slug: go-self-signed-certificate-creation
+date: 2024-02-16T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "Tips"
-draft: false
+  - Golang
+  - Tips
+translation_key: go-self-signed-certificate-creation
 ---
+
 
 GoでHTTPサーバーを書いているときなどオレオレ証明書がほしいときに役立つワンライナー。
 

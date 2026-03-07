@@ -1,15 +1,16 @@
 ---
-title: "API設計について学べる本"
-slug: "books-on-api-design"
-date: 2024-08-26
+title: API設計について学べる本
+slug: books-on-api-design
+date: 2024-08-26T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "API"
-  - "設計"
-draft: false
+  - API
+  - 設計
+translation_key: books-on-api-design
 ---
+
 
 最近API設計について学び直そうと思って数冊ピックアップして読書したので、読んだ本をリストアップしておく。
 

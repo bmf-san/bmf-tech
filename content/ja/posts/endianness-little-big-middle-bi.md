@@ -1,14 +1,15 @@
 ---
-title: "リトルエンディアン・ビッグエンディアン・ミドルエンディアン・バイエンディアンの違いについて"
-slug: "endianness-little-big-middle-bi"
-date: 2020-08-25
+title: リトルエンディアン・ビッグエンディアン・ミドルエンディアン・バイエンディアンの違いについて
+slug: endianness-little-big-middle-bi
+date: 2020-08-25T00:00:00Z
 author: bmf-san
 categories:
-  - "コンピューターアーキテクチャ"
+  - コンピューターアーキテクチャ
 tags:
-  - "メモリ"
-draft: false
+  - メモリ
+translation_key: endianness-little-big-middle-bi
 ---
+
 
 # 概要
 リトルエンディアンとビッグエンディアンの違いについてまとめる。

@@ -1,16 +1,17 @@
 ---
-title: "正しいものを正しくつくる"
-slug: "building-correctly"
-date: 2024-04-16
+title: 正しいものを正しくつくる
+slug: building-correctly
+date: 2024-04-16T00:00:00Z
 author: bmf-san
 categories:
-  - "開発プロセス"
+  - 開発プロセス
 tags:
-  - "本"
-  - "アジャイル"
-  - "スクラム"
-draft: false
+  - 本
+  - アジャイル
+  - スクラム
+translation_key: building-correctly
 ---
+
 
 [正しいものを正しくつくる プロダクトをつくるとはどういうことなのか、あるいはアジャイルのその先について](https://amzn.to/49ObPAs)を読んだ。
 

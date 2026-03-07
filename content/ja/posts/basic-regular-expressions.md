@@ -1,15 +1,16 @@
 ---
-title: "正規表現の基本"
-slug: "basic-regular-expressions"
-date: 2018-12-01
+title: 正規表現の基本
+slug: basic-regular-expressions
+date: 2018-12-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "ERE"
-  - "正規表現"
-draft: false
+  - ERE
+  - 正規表現
+translation_key: basic-regular-expressions
 ---
+
 
 # 概要
 正規表現の基本。

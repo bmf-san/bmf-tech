@@ -1,14 +1,15 @@
 ---
-title: "specリポジトリを作った"
-slug: "created-spec-repository"
-date: 2025-08-11
+title: specリポジトリを作った
+slug: created-spec-repository
+date: 2025-08-11T00:00:00Z
 author: bmf-san
 categories:
-  - "開発プロセス"
+  - 開発プロセス
 tags:
-  - "GitHub"
-draft: false
+  - GitHub
+translation_key: created-spec-repository
 ---
+
 
 自分で考えたオリジナルの仕様やフレームワークを整理・保存するためのリポジトリを作成した。
 

@@ -1,14 +1,15 @@
 ---
-title: "アジャイルメトリクスを読んだ"
-slug: "agile-metrics-review"
-date: 2022-12-17
+title: アジャイルメトリクスを読んだ
+slug: agile-metrics-review
+date: 2022-12-17T00:00:00Z
 author: bmf-san
 categories:
-  - "開発プロセス"
+  - 開発プロセス
 tags:
-  - "アジャイル"
-draft: false
+  - アジャイル
+translation_key: agile-metrics-review
 ---
+
 
 [Makuake Advent Calendar 2022](https://adventar.org/calendars/8496)の6日目の記事です！
 

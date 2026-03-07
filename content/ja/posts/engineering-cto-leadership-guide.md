@@ -1,18 +1,19 @@
 ---
-title: "エンジニアリング統括責任者の手引き―組織を成功に導く技術リーダーシップ"
-slug: "engineering-cto-leadership-guide"
-date: 2026-02-20
+title: エンジニアリング統括責任者の手引き―組織を成功に導く技術リーダーシップ
+slug: engineering-cto-leadership-guide
+date: 2026-02-20T00:00:00Z
 author: bmf-san
 categories:
-  - "マネジメント"
+  - マネジメント
 tags:
-  - "本"
-  - "組織論"
-  - "チームマネジメント"
-  - "リーダーシップ"
-  - "マネージャー"
-draft: false
+  - 本
+  - 組織論
+  - チームマネジメント
+  - リーダーシップ
+  - マネージャー
+translation_key: engineering-cto-leadership-guide
 ---
+
 
 [エンジニアリング統括責任者の手引き―組織を成功に導く技術リーダーシップ](https://amzn.to/46kGE0z)を読んだ。
 この本はVPエンジニアリングやCTOなど技術組織のトップとして組織を牽引するための思考法と実践について書かれている本。

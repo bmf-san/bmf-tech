@@ -1,15 +1,16 @@
 ---
-title: "ES6のExportとImportについて"
-slug: "es6-export-import"
-date: 2017-09-26
+title: ES6のExportとImportについて
+slug: es6-export-import
+date: 2017-09-26T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "JavaScript"
-  - "ES6"
-draft: false
+  - JavaScript
+  - ES6
+translation_key: es6-export-import
 ---
+
 
 ES６のexportとimportについて把握しきれていないところがあったので調べてみました。
 

@@ -1,15 +1,16 @@
 ---
-title: "クリティカルユーザージャーニーとは"
-slug: "critical-user-journey"
-date: 2024-08-15
+title: クリティカルユーザージャーニーとは
+slug: critical-user-journey
+date: 2024-08-15T00:00:00Z
 author: bmf-san
 categories:
-  - "運用"
+  - 運用
 tags:
-  - "クリティカルユーザージャーニー"
-  - "SLO"
-draft: false
+  - クリティカルユーザージャーニー
+  - SLO
+translation_key: critical-user-journey
 ---
+
 
 # 概要
 SLOの文脈でクリティカルユーザージャーニーについて知りたくなった。

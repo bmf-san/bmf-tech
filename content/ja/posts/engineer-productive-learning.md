@@ -1,15 +1,16 @@
 ---
-title: "エンジニアの知的生産術 ──効率的に学び、整理し、アウトプットする"
-slug: "engineer-productive-learning"
-date: 2019-05-14
+title: エンジニアの知的生産術 ──効率的に学び、整理し、アウトプットする
+slug: engineer-productive-learning
+date: 2019-05-14T00:00:00Z
 author: bmf-san
 categories:
-  - "ビジネス"
+  - ビジネス
 tags:
-  - "本"
-  - "知的生産術"
-draft: false
+  - 本
+  - 知的生産術
+translation_key: engineer-productive-learning
 ---
+
 
 [エンジニアの知的生産術 ──効率的に学び、整理し、アウトプットする](https://amzn.to/3UCJDuK)を読んだ。
 

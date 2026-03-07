@@ -1,17 +1,18 @@
 ---
-title: "CTOの思考法\u3000技術と組織を動かす意思決定・戦略・リーダーシップ"
-slug: "cto-thinking-strategy-leadership"
-date: 2026-02-21
+title: CTOの思考法　技術と組織を動かす意思決定・戦略・リーダーシップ
+slug: cto-thinking-strategy-leadership
+date: 2026-02-21T00:00:00Z
 author: bmf-san
 categories:
-  - "マネジメント"
+  - マネジメント
 tags:
-  - "本"
-  - "CTO"
-  - "事業戦略"
-  - "リーダーシップ"
-draft: false
+  - 本
+  - CTO
+  - 事業戦略
+  - リーダーシップ
+translation_key: cto-thinking-strategy-leadership
 ---
+
 
 [CTOの思考法　技術と組織を動かす意思決定・戦略・リーダーシップ](https://amzn.to/46RE9mB)を読んだ。
 

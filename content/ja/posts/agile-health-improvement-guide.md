@@ -1,16 +1,17 @@
 ---
-title: "「アジャイル式」健康カイゼンガイド"
-slug: "agile-health-improvement-guide"
-date: 2022-12-02
+title: 「アジャイル式」健康カイゼンガイド
+slug: agile-health-improvement-guide
+date: 2022-12-02T00:00:00Z
 author: bmf-san
 categories:
-  - "ヘルスケア"
+  - ヘルスケア
 tags:
-  - "アジャイル"
-  - "本"
-  - "健康"
-draft: false
+  - アジャイル
+  - 本
+  - 健康
+translation_key: agile-health-improvement-guide
 ---
+
 
 [「アジャイル式」健康カイゼンガイド](https://amzn.to/3y3fFZb)を読んだ。
 

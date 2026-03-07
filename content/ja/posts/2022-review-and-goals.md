@@ -1,14 +1,15 @@
 ---
-title: "2022年の振り返りと来年の抱負"
-slug: "2022-review-and-goals"
-date: 2022-12-28
+title: 2022年の振り返りと来年の抱負
+slug: 2022-review-and-goals
+date: 2022-12-28T00:00:00Z
 author: bmf-san
 categories:
-  - "ポエム"
+  - ポエム
 tags:
-  - "振り返りと抱負"
-draft: false
+  - 振り返りと抱負
+translation_key: 2022-review-and-goals
 ---
+
 
 # 2022年の振り返りと来年の抱負
 毎年恒例の振り返りと抱負について書く。

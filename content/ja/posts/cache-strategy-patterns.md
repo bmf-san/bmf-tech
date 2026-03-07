@@ -1,15 +1,16 @@
 ---
-title: "キャッシュ戦略の基本的なパターンについて"
-slug: "cache-strategy-patterns"
-date: 2025-08-03
+title: キャッシュ戦略の基本的なパターンについて
+slug: cache-strategy-patterns
+date: 2025-08-03T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "キャッシュ"
-  - "システムパフォーマンス"
-draft: false
+  - キャッシュ
+  - システムパフォーマンス
+translation_key: cache-strategy-patterns
 ---
+
 
 Webアプリケーションや分散システムでパフォーマンスを高めるために不可欠なのが「キャッシュ」の基本的な活用パターンについて書く。
 

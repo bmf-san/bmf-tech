@@ -1,12 +1,13 @@
 ---
-title: "今年買ってよかったモノ"
-slug: "best-things-of-2018"
-date: 2018-12-29
+title: 今年買ってよかったモノ
+slug: best-things-of-2018
+date: 2018-12-29T00:00:00Z
 author: bmf-san
 categories:
-  - "ポエム"
-draft: false
+  - ポエム
+translation_key: best-things-of-2018
 ---
+
 
 ※はてぶで公開していた記事を移管しました　
 
