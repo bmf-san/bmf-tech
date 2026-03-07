@@ -1,9 +1,18 @@
 {{template "head" .}}
 <body class="bg-body">
 {{template "header" .}}
-<main class="container mx-auto px-4 py-8 max-w-4xl">
+<main class="container mx-auto py-8 max-w-4xl">
   {{range .Articles}}
   <header class="mb-8">
+    <ol class="breadcrumbs mb-4">
+      <li class="breadcrumbs-item">
+        <a href="/" class="breadcrumbs-link">Home</a>
+        <span class="breadcrumbs-separator">/</span>
+      </li>
+      <li class="breadcrumbs-item active">
+        <span class="breadcrumbs-link">{{.FrontMatter.Title}}</span>
+      </li>
+    </ol>
     <h1 class="text-4xl font-bold">{{.FrontMatter.Title}}</h1>
   </header>
   <article class="prose prose-full">

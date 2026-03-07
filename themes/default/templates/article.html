@@ -1,7 +1,7 @@
 {{template "head" .}}
 <body class="bg-body">
 {{template "header" .}}
-<main class="container mx-auto px-4 py-8 max-w-4xl">
+<main class="container mx-auto py-8 max-w-4xl">
   {{range .Articles}}
   {{- $localePrefix := ""}}
   {{- if eq .Locale "ja"}}{{$localePrefix = "/ja"}}{{end}}
@@ -36,11 +36,12 @@
       <div class="flex items-center gap-3">
         <div>
           {{if .FrontMatter.Author}}<p class="font-semibold text-sm">{{.FrontMatter.Author}}</p>{{end}}
-          {{if .FrontMatter.Description}}<p class="text-xs text-secondary">{{.FrontMatter.Description}}</p>{{end}}
+          {{if .FrontMatter.Description}}<p class="text-sm text-secondary leading-relaxed">{{.FrontMatter.Description}}</p>{{end}}
         </div>
       </div>
       {{if .Translations}}
       <div class="flex items-center gap-2">
+        <span class="text-sm text-secondary">Read in:</span>
         {{range .Translations}}
         <a href="{{.URL}}" class="badge badge-light text-secondary" lang="{{.Locale}}">{{.Locale}}</a>
         {{end}}
@@ -61,6 +62,22 @@
     {{range .FrontMatter.Tags}}
     <a href="{{$localePrefix}}/tags/{{.}}/" class="badge badge-light text-secondary">{{.}}</a>
     {{end}}
+  </div>
+  {{end}}
+
+  {{/* Author Bio Card */}}
+  {{if .FrontMatter.Author}}
+  <div class="card mb-12">
+    <div class="card-body">
+      <div class="flex items-start gap-4">
+        <div>
+          <p class="font-semibold mb-1">{{.FrontMatter.Author}}</p>
+          {{if .FrontMatter.Description}}
+          <p class="text-sm text-secondary leading-relaxed">{{.FrontMatter.Description}}</p>
+          {{end}}
+        </div>
+      </div>
+    </div>
   </div>
   {{end}}
 

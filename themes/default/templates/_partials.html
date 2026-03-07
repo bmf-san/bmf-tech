@@ -81,25 +81,25 @@
 {{- if eq .CurrentLocale "ja"}}{{$homeURL = "/ja/"}}{{end}}
 {{- $targetLocale := "ja"}}
 {{- if eq .CurrentLocale "ja"}}{{$targetLocale = "en"}}{{end}}
-<nav class="navbar bg-slate-900">
-  <a href="{{$homeURL}}" class="navbar-brand text-slate-50">{{.Config.Site.Title}}</a>
+<nav class="navbar">
+  <a href="{{$homeURL}}" class="navbar-brand">{{.Config.Site.Title}}</a>
   <input type="checkbox" id="navbar-toggle" class="navbar-toggle-checkbox" />
   <label for="navbar-toggle" class="navbar-toggle-label" aria-label="Toggle navigation">
     <span></span><span></span><span></span>
   </label>
   <ul class="navbar-nav">
     {{if eq .CurrentLocale "ja"}}
-    <li><a href="/ja/tags/" class="navbar-item text-slate-300">タグ</a></li>
-    <li><a href="/ja/categories/" class="navbar-item text-slate-300">カテゴリ</a></li>
-    <li><a href="/ja/about/" class="navbar-item text-slate-300">About</a></li>
+    <li><a href="/ja/tags/" class="navbar-item">タグ</a></li>
+    <li><a href="/ja/categories/" class="navbar-item">カテゴリ</a></li>
+    <li><a href="/ja/about/" class="navbar-item">About</a></li>
     {{else}}
-    <li><a href="/tags/" class="navbar-item text-slate-300">Tags</a></li>
-    <li><a href="/categories/" class="navbar-item text-slate-300">Categories</a></li>
-    <li><a href="/about/" class="navbar-item text-slate-300">About</a></li>
+    <li><a href="/tags/" class="navbar-item">Tags</a></li>
+    <li><a href="/categories/" class="navbar-item">Categories</a></li>
+    <li><a href="/about/" class="navbar-item">About</a></li>
     {{end}}
-    <li><a href="/atom.xml" class="navbar-item text-slate-300">Feed</a></li>
-    <li><a href="{{$altURL}}" class="navbar-item locale-toggle" onclick="localStorage.setItem('pref-locale','{{$targetLocale}}')">
-      <span class="badge badge-light">{{if eq .CurrentLocale "ja"}}EN{{else}}JA{{end}}</span>
+    <li><a href="/atom.xml" class="navbar-item">Feed</a></li>
+    <li><a href="{{$altURL}}" class="navbar-item" onclick="localStorage.setItem('pref-locale','{{$targetLocale}}')">
+      <span class="badge badge-primary">{{if eq .CurrentLocale "ja"}}EN{{else}}JA{{end}}</span>
     </a></li>
   </ul>
   <label for="navbar-toggle" class="navbar-overlay" aria-hidden="true"></label>
