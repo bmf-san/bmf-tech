@@ -1,15 +1,16 @@
 ---
-title: "プログラミング言語Go"
-slug: "programming-language-go"
-date: 2017-03-12
+title: プログラミング言語Go
+slug: programming-language-go
+date: 2017-03-12T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "本"
-draft: false
+  - Golang
+  - 本
+translation_key: programming-language-go
 ---
+
 
 [プログラミング言語Go](https://amzn.to/3WrbznD)を読んだ。
 

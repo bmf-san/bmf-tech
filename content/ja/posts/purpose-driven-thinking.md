@@ -1,14 +1,15 @@
 ---
-title: "目的ドリブンの思考法"
-slug: "purpose-driven-thinking"
-date: 2025-12-29
+title: 目的ドリブンの思考法
+slug: purpose-driven-thinking
+date: 2025-12-29T00:00:00Z
 author: bmf-san
 categories:
-  - "ビジネス"
+  - ビジネス
 tags:
-  - "本"
-draft: false
+  - 本
+translation_key: purpose-driven-thinking
 ---
+
 
 [目的ドリブンの思考法](https://amzn.to/49dqSp0)を読んだ。
 

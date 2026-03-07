@@ -1,38 +1,32 @@
 ---
-title: Reactでフォローボタンをつくってみる
+title: Creating a Follow Button with React
 slug: react-follow-button-implementation
 date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - アプリケーション
+  - Application
 tags:
   - React
+description: Learn how to create a Twitter-style follow button using React.
 translation_key: react-follow-button-implementation
 ---
 
-
 ![react_follow_button.gif](https://qiita-image-store.s3.amazonaws.com/0/124495/f532fbdd-45bb-93b4-aacf-d6220f58663a.gif)
 
+# What We'll Create
+We'll create a follow button inspired by Twitter's design. The functionality is similar, but the implementation differs. The button toggles between "Follow" and "Following" text when clicked, and displays "Unfollow" text when hovered over while in the "Following" state. Feel free to adjust the CSS styling as needed.
 
-# つくるもの
-ツ◯ッターのフォローボタンを~~パクった~~リスペクトしたものをつくります。仕様はだいたい同じだと思いますが、仕組みは異なります。
-クリックでフォロー／フォロー中とテキストが切り替わる、フォロー中の時にホバーした場合は解除というテキストを出す。これだけです。
-やや装飾にこだわって全体に無駄なCSSが設定されていますが、その辺は適宜スタイルシートを調整してください。
+# Required Knowledge
+* Basic knowledge of React setup and component creation
+* Some understanding of JSX and Babel
 
+# Environment
+* React: v15.3.0
+* Babel: Compiler (also compiles JSX)
 
-# 必要な知識
-* Reactの導入方法及び簡易的なコンポーネント作成方法
-* jsxとbabelについての多少の知識と理解
+# Prepare HTML and CSS First
 
-
-# 環境
-* React・・・v15.3.0
-* babel・・・コンパイラ（jsxもコンパイルしてくれるそうです）
-
-
-# htmlとcssを先に用意
-
-**※パスは適宜調整してください！ (~~直すのめんどくさかった~~)**
+**Note: Adjust paths as needed!**
 
 ```html
 <!DOCTYPE html>
@@ -113,7 +107,6 @@ h1 {
     margin-bottom: 40px;
 }
 
-
 /*
 Follow Button
  */
@@ -136,13 +129,9 @@ Follow Button
 }
 ```
 
+The `div` with the ID `content` will contain the follow button component. The `follow-button` CSS class defines the style of the button. If you only want to check the behavior, you can skip the CSS.
 
-id名contentのdiv内にフォローボタンのコンポーネントを生成していきます。
-cssのfollow-buttonのクラスは生成するフォローボタンのスタイルです。
-（挙動だけ確認したい方はcssはスルーしても問題ないでしょう）
-
-
-# フォローボタンのコンポーネントをつくる
+# Creating the Follow Button Component
 
 ```js
 var FollowButton = React.createClass({
@@ -199,10 +188,9 @@ ReactDOM.render(
 );
 ```
 
-# 所感
-Reactチュートリアル並のコンポーネントをつくれるようになるにはまだ場数が必要なようです_(:3」∠)_
+# Thoughts
+It seems I still need more practice to create components at the level of React tutorials _(:3」∠)_
 
-# 参考
-* [React で要素のクラスを動的に付け外しするなら JedWatson さんちの classnames が便利](http://qiita.com/taka1970/items/2b220b1c249a29797a08)
-* [Reactのコード事例から学ぶ初心者向けReact入門と事例集](http://tango-ruby.hatenablog.com/entry/2016/04/30/090000)・・・段階を踏んでReactを学べます！おすすめ！
-
+# References
+* [React: Dynamically Add/Remove Element Classes with JedWatson's classnames](http://qiita.com/taka1970/items/2b220b1c249a29797a08)
+* [Beginner's Guide to React and Example Collection](http://tango-ruby.hatenablog.com/entry/2016/04/30/090000) - A great resource for learning React step by step!

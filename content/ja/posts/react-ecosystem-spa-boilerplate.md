@@ -1,19 +1,20 @@
 ---
-title: "React+react-redux+react-router+ES6+webpackで作るSPAボイラープレート"
-slug: "react-ecosystem-spa-boilerplate"
-date: 2017-10-01
+title: React+react-redux+react-router+ES6+webpackで作るSPAボイラープレート
+slug: react-ecosystem-spa-boilerplate
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "boilerplate"
-  - "ES6"
-  - "React"
-  - "react-router"
-  - "Redux"
-  - "webpack"
-draft: false
+  - boilerplate
+  - ES6
+  - React
+  - react-router
+  - Redux
+  - webpack
+translation_key: react-ecosystem-spa-boilerplate
 ---
+
 
 # 概要
 Reactで作るSPAの簡易的なボイラープレートをつくりました。

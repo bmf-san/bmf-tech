@@ -1,20 +1,41 @@
-- name: 'OS'
-- name: 'アプリケーション'
-- name: 'アルゴリズムとデータ構造'
-- name: 'アーキテクチャ'
-- name: 'インフラストラクチャ'
-- name: 'キャリア'
-- name: 'コンピューターアーキテクチャ'
-- name: 'ツール'
-- name: 'テスト'
-- name: 'データベース'
-- name: 'ネットワーク'
-- name: 'パフォーマンス'
-- name: 'ビジネス'
-- name: 'ヘルスケア'
-- name: 'ポエム'
-- name: 'マネジメント'
-- name: '数学'
-- name: '運用'
-- name: '開発プロセス'
-- name: '障害報告'
+- name: Algorithms
+- name: Algorithms and Data Structures
+- name: Application
+- name: Applications
+- name: Architecture
+- name: Business
+- name: Career
+- name: Computer Architecture
+- name: Data Structures
+- name: Database
+- name: Development Process
+- name: Healthcare
+- name: Infrastructure
+- name: Management
+- name: Networking
+- name: OS
+- name: Operating Systems
+- name: Operations
+- name: Poem
+- name: Reflection
+- name: Testing
+- name: Tools
+- name: アプリケーション
+- name: アルゴリズムとデータ構造
+- name: アーキテクチャ
+- name: インフラストラクチャ
+- name: キャリア
+- name: コンピューターアーキテクチャ
+- name: ツール
+- name: テスト
+- name: データベース
+- name: ネットワーク
+- name: パフォーマンス
+- name: ビジネス
+- name: ヘルスケア
+- name: ポエム
+- name: マネジメント
+- name: 数学
+- name: 運用
+- name: 開発プロセス
+- name: 障害報告

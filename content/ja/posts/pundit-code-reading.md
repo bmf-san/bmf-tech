@@ -1,15 +1,16 @@
 ---
-title: "punditのコードリーディング"
-slug: "pundit-code-reading"
-date: 2024-10-22
+title: punditのコードリーディング
+slug: pundit-code-reading
+date: 2024-10-22T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "pundit"
-  - "Ruby"
-draft: false
+  - pundit
+  - Ruby
+translation_key: pundit-code-reading
 ---
+
 
 # 概要
 punditのコードリーディングをする。

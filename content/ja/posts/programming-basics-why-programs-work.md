@@ -1,16 +1,17 @@
 ---
-title: "プログラムはなぜ動くのか 第3版 知っておきたいプログラミングの基礎知識"
-slug: "programming-basics-why-programs-work"
-date: 2024-05-01
+title: プログラムはなぜ動くのか 第3版 知っておきたいプログラミングの基礎知識
+slug: programming-basics-why-programs-work
+date: 2024-05-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "CPU"
-  - "メモリ"
-  - "本"
-draft: false
+  - CPU
+  - メモリ
+  - 本
+translation_key: programming-basics-why-programs-work
 ---
+
 
 [プログラムはなぜ動くのか 第3版 知っておきたいプログラミングの基礎知識](https://amzn.to/4afy0zD)を読んだ。
 

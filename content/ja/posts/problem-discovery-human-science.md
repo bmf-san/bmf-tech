@@ -1,15 +1,16 @@
 ---
-title: "ライト、ついてますか\u3000問題発見の人間学"
-slug: "problem-discovery-human-science"
-date: 2023-05-19
+title: ライト、ついてますか　問題発見の人間学
+slug: problem-discovery-human-science
+date: 2023-05-19T00:00:00Z
 author: bmf-san
 categories:
-  - "ビジネス"
+  - ビジネス
 tags:
-  - "ロジカルシンキング"
-  - "本"
-draft: false
+  - ロジカルシンキング
+  - 本
+translation_key: problem-discovery-human-science
 ---
+
 
 [ライト、ついてますか　問題発見の人間学](https://amzn.to/4dK0NiK)を読んだ。
 

@@ -1,18 +1,19 @@
 ---
-title: "プロセスとスレッドの違い"
-slug: "process-vs-thread"
-date: 2018-06-25
+title: プロセスとスレッドの違い
+slug: process-vs-thread
+date: 2018-06-25T00:00:00Z
 author: bmf-san
 categories:
-  - "OS"
+  - OS
 tags:
-  - "os"
-  - "スレッド"
-  - "プロセス"
-  - "スタック"
-  - "ヒープ"
-draft: false
+  - os
+  - スレッド
+  - プロセス
+  - スタック
+  - ヒープ
+translation_key: process-vs-thread
 ---
+
 
 # 概要
 プロセスとスレッドの違いについてまとめる

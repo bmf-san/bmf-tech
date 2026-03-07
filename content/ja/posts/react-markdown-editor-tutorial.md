@@ -1,17 +1,18 @@
 ---
-title: "Reactでマークダウンエディタをシャッとつくる"
-slug: "react-markdown-editor-tutorial"
-date: 2017-12-25
+title: Reactでマークダウンエディタをシャッとつくる
+slug: react-markdown-editor-tutorial
+date: 2017-12-25T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "ES5"
-  - "ES6"
-  - "JavaScript"
-  - "React"
-draft: false
+  - ES5
+  - ES6
+  - JavaScript
+  - React
+translation_key: react-markdown-editor-tutorial
 ---
+
 
 ※この記事は[Innovator Japan Engineers’ Blog](http://tech.innovator.jp.net/)で掲載されている記事を転載したものです。
 

@@ -1,16 +1,17 @@
 ---
-title: "プログラマ脳"
-slug: "programmer-mindset"
-date: 2023-06-26
+title: プログラマ脳
+slug: programmer-mindset
+date: 2023-06-26T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "認知科学"
-  - "本"
-  - "コードリーディング"
-draft: false
+  - 認知科学
+  - 本
+  - コードリーディング
+translation_key: programmer-mindset
 ---
+
 
 コードを読む能力も書く能力も高い人の頭の中はどうなっているのか？自分とは何が違うのか？ということはエンジニアであれば誰しも考えたことがあると思う。（たぶん）
 

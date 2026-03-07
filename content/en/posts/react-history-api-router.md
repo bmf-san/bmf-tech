@@ -1,54 +1,54 @@
 ---
-title: ReactとHistory APIを使ってrouterを自作する
+title: Creating a Custom Router with React and the History API
 slug: react-history-api-router
 date: 2018-01-03T00:00:00Z
 author: bmf-san
 categories:
-  - アプリケーション
+  - Application
 tags:
   - ES6
   - JavaScript
   - React
-  - history-api
-  - router
+  - History API
+  - Router
+description: Learn how to build a custom router using React and the History API.
 translation_key: react-history-api-router
 ---
 
+# Overview
 
-# 概要
-
-# 準備
-まずはHistory APIを理解しておきます。GO TO MDN。
+# Preparation
+First, understand the History API. GO TO MDN.
 
 - [MDN - History](https://developer.mozilla.org/ja/docs/Web/API/History)
-- [MDN - ブラウザの履歴を操作する](https://developer.mozilla.org/ja/docs/Web/Guide/DOM/Manipulating_the_browser_history)
+- [MDN - Manipulating the browser history](https://developer.mozilla.org/ja/docs/Web/Guide/DOM/Manipulating_the_browser_history)
 
-忙しい人は`pushState`と`window.popstate`だけ理解しておけばなんとかなるはず。
+If you're short on time, understanding just `pushState` and `window.popstate` should suffice.
 
-# 仕様
-このrouterでは、以下のようなURLに対応します。
+# Specifications
+This router will support the following URLs:
 
 - `/post`
 - `/post/:id`
 - `/post/:id/:title`
 
-クエリパラメータには対応しません。
+Query parameters are not supported.
 
-# 使用するパッケージ
-React周りは省略します。
+# Packages Used
+We'll skip over the React-related packages.
 
-React以外で使うパッケージは1つだけです。
+Other than React, we'll use just one package:
 
 [pillarjs/path-to-regexp](https://github.com/pillarjs/path-to-regexp)
 
-URL部分の正規表現を良しなにやってくれるパッケージです。
+This package handles regular expressions for URLs efficiently.
 
-そのうち自分で正規表現書きたいですが、今回はパッケージに頼っちゃいます。
+Someday, I want to write my own regular expressions, but for now, I'll rely on this package.
 
-# 実装
+# Implementation
 
-## ナビゲーションとページに対応するコンポーネントを作成
-ナビゲーション、ナビゲーションにそれぞれ対応するコンポーネントを用意しておきます。
+## Create Components for Navigation and Pages
+Prepare components for navigation and the pages corresponding to each navigation link.
 
 ```
 src/
@@ -59,37 +59,35 @@ src/
 └── Profile.js
 ```
 
+## Implement Routing
+Let's implement the routing.
 
-## ルーティングの実装
-ルーティングを実装していきます。
+We'll prepare two components: `Router` and `Route`.
 
-コンポーネントは、`Router`と`Route`という2つを用意します。
+`Router` is a component that switches rendering based on the URL.
 
-`Router`はURLに応じて描画切り替えを行うコンポーネントです。
+`Route` is a component that simply wraps an anchor (`a`) tag.
 
-`Route`はaタグをラップしただけのコンポーネントです。
+Additionally, we'll create a file called `routes.js` to define the routing rules.
 
-それからルーティング規約を記述するファイルとして、`routes.js`を用意します。
+`routes.js` will contain an array of objects that map paths to their corresponding components.
 
-`routes.js`はパスと、パスに対応するコンポーネントの対応をオブジェクトの配列で記述したものです。
+By now, you might have guessed the sequence of routing operations:
 
-ここまででおおよそ察しがつくかと思いますが、ルーティングの一連の処理としては、
+**Initial State (First View)**
+1. Retrieve the current URL information.
+2. Render the component that matches the current URL information.
 
-**初期状態（ファーストビュー）**
-①現在のURL情報を取得
-②現在のURL情報に一致するコンポーネントを描画
+The URL information is stored in the state.
 
-URL情報をStateとして持ちます。
+**Navigation**
+1. Retrieve the path of the clicked link.
+2. Use the History API's `pushState` to add to the history and navigate.
+3. Re-render the component.
 
-**遷移**
-①クリックされたリンクのパスを取得
-②History APIの`pushState`で履歴を追加・遷移
-③コンポーネントを再描画
+The state is updated, and the component is re-rendered.
 
-Stateが更新され、コンポーネントが再描画されます。
-
-
-各コンポーネントの実装はこんな感じです。
+The implementation of each component looks like this:
 
 `Route.js`
 
@@ -258,36 +256,35 @@ class App extends Component {
 export default App;
 ```
 
-※jsxの改行がなんか変なのは多分eslintをちゃんと設定していないからだと思います...
+*Note: The strange line breaks in the JSX code might be due to improper ESLint settings.*
 
-[You might not need React Router](https://medium.freecodecamp.org/you-might-not-need-react-router-38673620f3d)
-を結構参考にしました。
+I referred heavily to [You might not need React Router](https://medium.freecodecamp.org/you-might-not-need-react-router-38673620f3d).
 
-実装する上で厄介だった部分は、「パラメータ（:id）の情報をどうやって取得するか、保持するか」という点でしたが、`path-to-regexp`というawesomeなライブラリのおかげで、その点は克服できました。
+The most challenging part of the implementation was figuring out how to retrieve and manage parameter information (e.g., `:id`). Thanks to the awesome library `path-to-regexp`, I was able to overcome this issue.
 
 # Github
-今回のソース置いておきます。
+Here is the source code for this implementation:
 
 [bmf-san/rubel-router](https://github.com/bmf-san/rubel-router)
 
-npmにも公開しています。
+It is also published on npm:
 
 [rubel-router](https://www.npmjs.com/package/rubel-router)
 
-# 所感
-EventEmitterやObserverをつかったらもっと綺麗になる気が・・（勉強不足）
+# Thoughts
+Using EventEmitter or Observer might make the implementation cleaner... (I need to study more).
 
-# 参考
-## 参考記事
+# References
+## Articles
 - [You might not need React Router](https://medium.freecodecamp.org/you-might-not-need-react-router-38673620f3d)
 - [Building a React-based Application](https://reactjsnews.com/building-a-react-based-application)
 - [Routing in React, the uncomplicated way](https://hackernoon.com/routing-in-react-the-uncomplicated-way-b2c5ffaee997)
 - [MDN - History](https://developer.mozilla.org/ja/docs/Web/API/History)
-- [MDN - ブラウザの履歴を操作する](https://developer.mozilla.org/ja/docs/Web/Guide/DOM/Manipulating_the_browser_history)
-- [History API を使ってみる](http://www.allinthemind.biz/markup/javascript/history_api.html)
-- [JavaScriptでURLを操作するメモ](https://qiita.com/PianoScoreJP/items/fa66f357419fece0e531)
+- [MDN - Manipulating the browser history](https://developer.mozilla.org/ja/docs/Web/Guide/DOM/Manipulating_the_browser_history)
+- [Using the History API](http://www.allinthemind.biz/markup/javascript/history_api.html)
+- [Memo on manipulating URLs with JavaScript](https://qiita.com/PianoScoreJP/items/fa66f357419fece0e531)
 
-## 参考ソース
+## Source Code
 - [jsfiddle - frenzzy](https://jsfiddle.net/frenzzy/4ota5fag/2/)
 - [jsfiddle - janfoeh](http://jsfiddle.net/janfoeh/2SCbv/)
 - [jsfiddle - rgrove](http://jsfiddle.net/rgrove/WsHXm/)

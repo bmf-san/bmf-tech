@@ -1,15 +1,16 @@
 ---
-title: "PrometheusとGrafanaでリソース監視環境を整える"
-slug: "prometheus-grafana-resource-monitoring"
-date: 2018-09-15
+title: PrometheusとGrafanaでリソース監視環境を整える
+slug: prometheus-grafana-resource-monitoring
+date: 2018-09-15T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Prometheus"
-  - "Grafana"
-draft: false
+  - Prometheus
+  - Grafana
+translation_key: prometheus-grafana-resource-monitoring
 ---
+
 
 # 概要
 PrometheusとGrafanaでリソース監視の環境を構築したのでメモ。
