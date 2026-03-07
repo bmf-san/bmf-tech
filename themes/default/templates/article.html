@@ -1,46 +1,71 @@
 {{template "head" .}}
-{{define "extra-style"}}<style>
-.article-content img { max-width: 100%; height: auto; border-radius: 4px; }
-.article-content pre { overflow-x: auto; }
-.article-content table { width: 100%; border-collapse: collapse; overflow-x: auto; display: block; }
-.article-content th, .article-content td { border: 1px solid var(--color-slate-200); padding: 0.45rem 0.75rem; text-align: left; }
-.article-content blockquote { border-left: 3px solid var(--color-slate-300); margin: 1rem 0; padding: 0.4rem 1rem; }
-</style>{{end}}
 <body class="bg-body">
 {{template "header" .}}
-<main class="container mx-auto px-4 py-10">
+<main class="container mx-auto px-4 py-8 max-w-4xl">
   {{range .Articles}}
-  {{- $localePrefix := "" -}}
-  {{- if eq .Locale "ja"}}{{- $localePrefix = "/ja" -}}{{end}}
-  <article class="card mb-8">
-    <div class="card-body">
-      <header class="mb-8">
-        <h1 class="text-2xl font-bold mb-3">{{.FrontMatter.Title}}</h1>
-        <div class="article-meta flex flex-wrap gap-4 items-center text-secondary text-sm mb-4">
-          <time datetime="{{formatDate "2006-01-02" .FrontMatter.Date}}">{{formatDate "2006-01-02" .FrontMatter.Date}}</time>
-          {{if .FrontMatter.Author}}<span>{{.FrontMatter.Author}}</span>{{end}}
-          {{if .FrontMatter.Categories}}
-          <span>
-            {{range $i, $c := .FrontMatter.Categories}}{{if $i}}, {{end}}<a href="{{$localePrefix}}/categories/{{$c}}/">{{$c}}</a>{{end}}
-          </span>
-          {{end}}
-          {{if .Translations}}
-          <span>
-            {{range $i, $t := .Translations}}{{if $i}} | {{end}}<a href="{{$t.URL}}" lang="{{$t.Locale}}">{{$t.Locale}}</a>{{end}}
-          </span>
-          {{end}}
-        </div>
-        {{if .FrontMatter.Tags}}
-        <div class="flex flex-wrap gap-2">
-          {{range .FrontMatter.Tags}}<a class="badge badge-secondary" href="{{$localePrefix}}/tags/{{.}}/">#{{.}}</a>{{end}}
-        </div>
-        {{end}}
-      </header>
-      <div class="article-content leading-relaxed">
-        {{.HTMLContent}}
-      </div>
+  {{- $localePrefix := ""}}
+  {{- if eq .Locale "ja"}}{{$localePrefix = "/ja"}}{{end}}
+  {{- $listURL := "/"}}
+  {{- if eq .Locale "ja"}}{{$listURL = "/ja/"}}{{end}}
+
+  {{/* Breadcrumbs */}}
+  <ol class="breadcrumbs mb-6">
+    <li class="breadcrumbs-item">
+      <a href="{{$listURL}}" class="breadcrumbs-link">Home</a>
+      <span class="breadcrumbs-separator">/</span>
+    </li>
+    {{if .FrontMatter.Categories}}
+    <li class="breadcrumbs-item">
+      <a href="{{$localePrefix}}/categories/{{index .FrontMatter.Categories 0}}/" class="breadcrumbs-link">{{index .FrontMatter.Categories 0}}</a>
+      <span class="breadcrumbs-separator">/</span>
+    </li>
+    {{end}}
+    <li class="breadcrumbs-item active">
+      <span class="breadcrumbs-link">{{.FrontMatter.Title}}</span>
+    </li>
+  </ol>
+
+  {{/* Article Header */}}
+  <header class="mb-8">
+    <div class="flex items-center gap-2 mb-4 flex-wrap">
+      {{range .FrontMatter.Categories}}<span class="badge badge-info">{{.}}</span>{{end}}
+      <span class="text-sm text-secondary">{{formatDate "Jan 2, 2006" .FrontMatter.Date}}</span>
     </div>
+    <h1 class="text-4xl font-bold mb-6 leading-tight">{{.FrontMatter.Title}}</h1>
+    <div class="flex items-center justify-between flex-wrap gap-4">
+      <div class="flex items-center gap-3">
+        <div>
+          {{if .FrontMatter.Author}}<p class="font-semibold text-sm">{{.FrontMatter.Author}}</p>{{end}}
+          {{if .FrontMatter.Description}}<p class="text-xs text-secondary">{{.FrontMatter.Description}}</p>{{end}}
+        </div>
+      </div>
+      {{if .Translations}}
+      <div class="flex items-center gap-2">
+        {{range .Translations}}
+        <a href="{{.URL}}" class="badge badge-light text-secondary" lang="{{.Locale}}">{{.Locale}}</a>
+        {{end}}
+      </div>
+      {{end}}
+    </div>
+  </header>
+
+  {{/* Article Body */}}
+  <article class="prose prose-full mb-12">
+    {{.HTMLContent}}
   </article>
+
+  {{/* Tags */}}
+  {{if .FrontMatter.Tags}}
+  <div class="flex flex-wrap gap-2 mb-10">
+    <span class="text-sm font-medium text-secondary mr-2">Tags:</span>
+    {{range .FrontMatter.Tags}}
+    <a href="{{$localePrefix}}/tags/{{.}}/" class="badge badge-light text-secondary">{{.}}</a>
+    {{end}}
+  </div>
+  {{end}}
+
+  <hr class="border-t mb-8">
+
   {{end}}
 </main>
 {{template "footer" .}}

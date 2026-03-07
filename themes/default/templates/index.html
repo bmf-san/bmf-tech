@@ -2,32 +2,110 @@
 <body class="bg-body">
 {{template "header" .}}
 <main class="container mx-auto px-4 py-10">
-  {{if .Articles}}
-  <div class="card mb-8">
-    <div class="card-body">
-      <ul class="article-list">
-        {{range .Articles}}
-        {{- $lp := "" -}}{{- if eq .Locale "ja"}}{{- $lp = "/ja" -}}{{end}}
-        <li class="py-3 border-b border-slate-200">
-          <div class="flex items-baseline gap-3 mb-1">
-            <span class="article-date text-xs text-secondary whitespace-nowrap">{{formatDate "2006-01-02" .FrontMatter.Date}}</span>
-            <a href="{{.URL}}" class="font-medium">{{.FrontMatter.Title}}</a>
-          </div>
-          {{if or .FrontMatter.Categories .FrontMatter.Tags}}
-          <div class="flex flex-wrap gap-2 mt-1 pl-0">
-            {{range .FrontMatter.Categories}}<a href="{{$lp}}/categories/{{.}}/" class="text-xs text-secondary">{{.}}</a>{{end}}
-            {{range .FrontMatter.Tags}}<a href="{{$lp}}/tags/{{.}}/" class="badge badge-secondary text-xs">#{{.}}</a>{{end}}
-          </div>
-          {{end}}
-        </li>
-        {{end}}
-      </ul>
-    </div>
+
+  {{/* Page title */}}
+  <div class="mb-8 text-center">
+    {{if eq .CurrentLocale "ja"}}
+    <h1 class="text-4xl font-bold mb-3">記事一覧</h1>
+    <p class="text-secondary text-lg">技術記事・日々の学びをまとめています。</p>
+    {{else}}
+    <h1 class="text-4xl font-bold mb-3">Blog</h1>
+    <p class="text-secondary text-lg">Articles, guides, and notes on software engineering.</p>
+    {{end}}
   </div>
-  {{template "pagination" .}}
-  {{else}}
-  <p class="text-secondary mt-4">No articles found.</p>
+
+  {{/* Category filter */}}
+  {{if .Categories}}
+  <div class="flex gap-2 flex-wrap justify-center mb-10">
+    {{- $lp := ""}}{{if eq .CurrentLocale "ja"}}{{$lp = "/ja"}}{{end}}
+    {{range .Categories}}
+    <a href="{{$lp}}/categories/{{.Name}}/" class="badge badge-light text-secondary badge-lg">{{.Name}}</a>
+    {{end}}
+  </div>
   {{end}}
+
+  {{if .Articles}}
+  <div class="grid md:grid-cols-3 gap-8">
+
+    {{/* Main: post list */}}
+    <div class="md:col-span-2">
+      <div class="flex items-center justify-between mb-6">
+        {{if eq .CurrentLocale "ja"}}
+        <h2 class="text-xl font-bold">最新記事</h2>
+        {{else}}
+        <h2 class="text-xl font-bold">Recent Posts</h2>
+        {{end}}
+      </div>
+
+      <div class="grid gap-6">
+        {{range .Articles}}
+        {{- $lp := ""}}{{if eq .Locale "ja"}}{{$lp = "/ja"}}{{end}}
+        <a href="{{.URL}}" class="card no-underline">
+          <div class="card-body">
+            <div class="flex items-center gap-2 mb-2 flex-wrap">
+              {{range .FrontMatter.Categories}}<span class="badge badge-secondary">{{.}}</span>{{end}}
+              <span class="text-xs text-secondary">{{formatDate "2006-01-02" .FrontMatter.Date}}</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-primary">{{.FrontMatter.Title}}</h3>
+            {{if .FrontMatter.Description}}
+            <p class="text-secondary text-sm leading-relaxed line-clamp-2 mb-3">{{.FrontMatter.Description}}</p>
+            {{end}}
+            {{if .FrontMatter.Tags}}
+            <div class="flex flex-wrap gap-1">
+              {{range .FrontMatter.Tags}}<span class="badge badge-light text-secondary">#{{.}}</span>{{end}}
+            </div>
+            {{end}}
+          </div>
+        </a>
+        {{end}}
+      </div>
+
+      {{template "pagination" .}}
+    </div>
+
+    {{/* Sidebar */}}
+    <aside class="md:col-span-1">
+      {{if .Categories}}
+      {{- $lp := ""}}{{if eq .CurrentLocale "ja"}}{{$lp = "/ja"}}{{end}}
+      <div class="card mb-6">
+        <div class="card-header">
+          <h3 class="font-semibold text-base">{{if eq .CurrentLocale "ja"}}カテゴリ{{else}}Categories{{end}}</h3>
+        </div>
+        <div class="card-body-compact">
+          <div class="flex flex-col gap-2">
+            {{range .Categories}}
+            <a href="{{$lp}}/categories/{{.Name}}/" class="flex items-center justify-between no-underline text-sm text-primary">
+              <span>{{.Name}}</span>
+              <span class="badge badge-light text-secondary">&rsaquo;</span>
+            </a>
+            {{end}}
+          </div>
+        </div>
+      </div>
+      {{end}}
+
+      {{if .Tags}}
+      {{- $lp := ""}}{{if eq .CurrentLocale "ja"}}{{$lp = "/ja"}}{{end}}
+      <div class="card">
+        <div class="card-header">
+          <h3 class="font-semibold text-base">{{if eq .CurrentLocale "ja"}}タグ{{else}}Tags{{end}}</h3>
+        </div>
+        <div class="card-body-compact">
+          <div class="flex flex-wrap gap-2">
+            {{range .Tags}}
+            <a href="{{$lp}}/tags/{{.Name}}/" class="badge badge-light text-secondary">{{.Name}}</a>
+            {{end}}
+          </div>
+        </div>
+      </div>
+      {{end}}
+    </aside>
+
+  </div>
+  {{else}}
+  <p class="text-secondary text-center mt-8">{{if eq .CurrentLocale "ja"}}記事がありません。{{else}}No articles found.{{end}}</p>
+  {{end}}
+
 </main>
 {{template "footer" .}}
 </body>
