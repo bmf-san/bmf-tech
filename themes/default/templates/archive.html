@@ -2,16 +2,29 @@
 <body class="bg-body">
 {{template "header" .}}
 <main class="container mx-auto px-4 py-10">
-  <p class="text-xs text-secondary mb-6">Archive</p>
+
+  <div class="mb-8">
+    <ol class="breadcrumbs mb-4">
+      <li class="breadcrumbs-item">
+        <a href="/" class="breadcrumbs-link">Home</a>
+        <span class="breadcrumbs-separator">/</span>
+      </li>
+      <li class="breadcrumbs-item active">
+        <span class="breadcrumbs-link">Archive</span>
+      </li>
+    </ol>
+    <h1 class="text-3xl font-bold">Archive</h1>
+  </div>
+
   {{if .Articles}}
   <div class="card mb-8">
     <div class="card-body">
-      <ul class="article-list">
+      <ul>
         {{range .Articles}}
-        <li class="flex items-baseline gap-4 py-3 border-b border-slate-200">
-          <span class="article-date text-xs text-secondary whitespace-nowrap">{{formatDate "2006-01-02" .FrontMatter.Date}}</span>
-          {{if .Locale}}<span class="badge {{if eq .Locale "ja"}}badge-danger{{else}}badge-info{{end}}">{{.Locale}}</span>{{end}}
-          <a href="{{.URL}}" class="font-medium">{{.FrontMatter.Title}}</a>
+        <li class="flex items-center gap-3 py-3 border-b border-slate-200">
+          <span class="text-xs text-secondary whitespace-nowrap">{{formatDate "2006-01-02" .FrontMatter.Date}}</span>
+          {{if .Locale}}<span class="badge {{if eq .Locale "ja"}}badge-warning{{else}}badge-info{{end}} text-xs">{{.Locale}}</span>{{end}}
+          <a href="{{.URL}}" class="font-medium text-sm">{{.FrontMatter.Title}}</a>
         </li>
         {{end}}
       </ul>
@@ -20,6 +33,7 @@
   {{else}}
   <p class="text-secondary mt-4">No articles found.</p>
   {{end}}
+
 </main>
 {{template "footer" .}}
 </body>
