@@ -1,17 +1,18 @@
 ---
-title: "Golangの関数についてー関数値／コールバック関数／無名関数"
-slug: "golang-functions-callbacks-anonymous"
-date: 2018-10-04
+title: Golangの関数についてー関数値／コールバック関数／無名関数
+slug: golang-functions-callbacks-anonymous
+date: 2018-10-04T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "コールバック"
-  - "関数"
-  - "無名関数"
-draft: false
+  - Golang
+  - コールバック
+  - 関数
+  - 無名関数
+translation_key: golang-functions-callbacks-anonymous
 ---
+
 
 # 概要
 Golangの関数において、以下3つについてまとめる。

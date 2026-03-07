@@ -1,15 +1,16 @@
 ---
-title: "ISUCON10に参加してきた"
-slug: "isucon10-participation"
-date: 2020-05-21
+title: ISUCON10に参加してきた
+slug: isucon10-participation
+date: 2020-05-21T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "ISUCON"
-  - "ISUCON10"
-draft: false
+  - ISUCON
+  - ISUCON10
+translation_key: isucon10-participation
 ---
+
 
 [ISUCON10](http://isucon.net/archives/54704557.html)に参加してきた。
 ISUCON参加は2年ぶり2回目。

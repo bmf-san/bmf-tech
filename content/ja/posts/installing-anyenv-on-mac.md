@@ -1,15 +1,16 @@
 ---
-title: "macにanyenvをインストールする"
-slug: "installing-anyenv-on-mac"
-date: 2017-10-01
+title: macにanyenvをインストールする
+slug: installing-anyenv-on-mac
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "shellscript"
-  - "anyenv"
-draft: false
+  - shellscript
+  - anyenv
+translation_key: installing-anyenv-on-mac
 ---
+
 
 Macにanyenvをインストールする手順です。
 若干ハマったところがあったのでメモ。

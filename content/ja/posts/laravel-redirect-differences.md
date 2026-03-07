@@ -1,14 +1,15 @@
 ---
-title: "Laravelのredirect('hoge')とredirect()->to('hoge')の違い"
-slug: "laravel-redirect-differences"
-date: 2017-10-01
+title: Laravelのredirect('hoge')とredirect()->to('hoge')の違い
+slug: laravel-redirect-differences
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Laravel"
-draft: false
+  - Laravel
+translation_key: laravel-redirect-differences
 ---
+
 
 些細な事ですが、気になったので調べてみました。
 

@@ -1,15 +1,16 @@
 ---
-title: "大規模データ管理 ―エンタープライズアーキテクチャのベストプラクティス"
-slug: "large-scale-data-management-best-practices"
-date: 2024-06-30
+title: 大規模データ管理 ―エンタープライズアーキテクチャのベストプラクティス
+slug: large-scale-data-management-best-practices
+date: 2024-06-30T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "本"
-  - "アーキテクチャ"
-draft: false
+  - 本
+  - アーキテクチャ
+translation_key: large-scale-data-management-best-practices
 ---
+
 
 [大規模データ管理 ―エンタープライズアーキテクチャのベストプラクティス](https://amzn.to/4cmSsAj)を読んだ。
 

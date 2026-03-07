@@ -1,15 +1,16 @@
 ---
-title: "リーダーの作法―ささいなことをていねいに"
-slug: "leader-etiquette"
-date: 2026-02-20
+title: リーダーの作法―ささいなことをていねいに
+slug: leader-etiquette
+date: 2026-02-20T00:00:00Z
 author: bmf-san
 categories:
-  - "マネジメント"
+  - マネジメント
 tags:
-  - "本"
-  - "リーダーシップ"
-draft: false
+  - 本
+  - リーダーシップ
+translation_key: leader-etiquette
 ---
+
 
 [リーダーの作法―ささいなことをていねいに](https://amzn.to/4aEtHjr)を読んだ。
 この本はエンジニアリングリーダーとしての日々の小さな行動が組織文化とチームの信頼を形成するという考え方について書かれている本。

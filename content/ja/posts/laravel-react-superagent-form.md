@@ -1,17 +1,18 @@
 ---
-title: "Laravel+React+Superagentでフォームを実装"
-slug: "laravel-react-superagent-form"
-date: 2017-09-26
+title: Laravel+React+Superagentでフォームを実装
+slug: laravel-react-superagent-form
+date: 2017-09-26T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Laravel"
-  - "React"
-  - "AJAX"
-  - "superagent"
-draft: false
+  - Laravel
+  - React
+  - AJAX
+  - superagent
+translation_key: laravel-react-superagent-form
 ---
+
 
 表題の通りです。
 Laravel+React+SuperagentでAjaxなフォームを実装します。

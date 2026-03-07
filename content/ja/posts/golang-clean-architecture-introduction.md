@@ -1,16 +1,17 @@
 ---
-title: "Golangでクリーンアーキテクチャに入門する"
-slug: "golang-clean-architecture-introduction"
-date: 2019-08-18
+title: Golangでクリーンアーキテクチャに入門する
+slug: golang-clean-architecture-introduction
+date: 2019-08-18T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Clean Architecture"
-  - "Golang"
-  - "DIP"
-draft: false
+  - Clean Architecture
+  - Golang
+  - DIP
+translation_key: golang-clean-architecture-introduction
 ---
+
 
 # 概要
 GolangでClean Architectureの実装に挑戦したみたので整理しておく。

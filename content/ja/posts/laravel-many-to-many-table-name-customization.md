@@ -1,14 +1,15 @@
 ---
-title: "Laravelの多対多のリレーションでテーブル名を規則から外す時"
-slug: "laravel-many-to-many-table-name-customization"
-date: 2017-10-01
+title: Laravelの多対多のリレーションでテーブル名を規則から外す時
+slug: laravel-many-to-many-table-name-customization
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Laravel"
-draft: false
+  - Laravel
+translation_key: laravel-many-to-many-table-name-customization
 ---
+
 
 多対多のリレーションを設計するときに、ドキュメント通りやっていたと思ったらちょっとした勘違いをした話です。
 

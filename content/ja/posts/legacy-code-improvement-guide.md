@@ -1,15 +1,16 @@
 ---
-title: "レガシーコード改善ガイド: 保守開発のためのリファクタリング"
-slug: "legacy-code-improvement-guide"
-date: 2017-03-12
+title: 'レガシーコード改善ガイド: 保守開発のためのリファクタリング'
+slug: legacy-code-improvement-guide
+date: 2017-03-12T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "レガシーコード"
-  - "本"
-draft: false
+  - レガシーコード
+  - 本
+translation_key: legacy-code-improvement-guide
 ---
+
 
 [レガシーコード改善ガイド: 保守開発のためのリファクタリング](https://amzn.to/4adL0FR)を読んだ。
 

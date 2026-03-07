@@ -1,15 +1,16 @@
 ---
-title: "Laravel リポジトリパターンの実装"
-slug: "implement-laravel-repository-pattern"
-date: 2017-09-26
+title: Laravel リポジトリパターンの実装
+slug: implement-laravel-repository-pattern
+date: 2017-09-26T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Laravel"
-  - "リポジトリーパターン"
-draft: false
+  - Laravel
+  - リポジトリーパターン
+translation_key: implement-laravel-repository-pattern
 ---
+
 
 DB操作に関連するスマートな実装パターンであるリポジトリパターンについてかいてみようかと思います。
 

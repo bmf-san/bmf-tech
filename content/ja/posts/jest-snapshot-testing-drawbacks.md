@@ -1,15 +1,16 @@
 ---
-title: "Jestのスナップショットテストのデメリット"
-slug: "jest-snapshot-testing-drawbacks"
-date: 2024-07-18
+title: Jestのスナップショットテストのデメリット
+slug: jest-snapshot-testing-drawbacks
+date: 2024-07-18T00:00:00Z
 author: bmf-san
 categories:
-  - "テスト"
+  - テスト
 tags:
-  - "JavaScript"
-  - "jest"
-draft: false
+  - JavaScript
+  - jest
+translation_key: jest-snapshot-testing-drawbacks
 ---
+
 
 Jestのスナップショットテストを避けたほうが良いかもしれないデメリットについて雑メモ。
 

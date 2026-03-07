@@ -1,15 +1,16 @@
 ---
-title: "Golangでインメモリなキャッシュを実装する"
-slug: "golang-in-memory-cache-implementation"
-date: 2020-09-29
+title: Golangでインメモリなキャッシュを実装する
+slug: golang-in-memory-cache-implementation
+date: 2020-09-29T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "キャッシュ"
-draft: false
+  - Golang
+  - キャッシュ
+translation_key: golang-in-memory-cache-implementation
 ---
+
 
 # 概要
 Golangのインメモリキャッシュのライブラリは良さそうなものが存在するが、軽量でシンプルなもので十分だったので自前で実装してみた。

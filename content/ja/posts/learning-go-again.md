@@ -1,14 +1,15 @@
 ---
-title: "Goを学びなおす"
-slug: "learning-go-again"
-date: 2023-01-23
+title: Goを学びなおす
+slug: learning-go-again
+date: 2023-01-23T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-draft: false
+  - Golang
+translation_key: learning-go-again
 ---
+
 
 # 概要
 仕事でもプライベートでも何年かGoを触っているが、今一度このタイミングで学び直してみると効果的ではないかなと思って色々学び直した。

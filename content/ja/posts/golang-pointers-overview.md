@@ -1,14 +1,15 @@
 ---
-title: "Golangのポインタ概要"
-slug: "golang-pointers-overview"
-date: 2018-11-13
+title: Golangのポインタ概要
+slug: golang-pointers-overview
+date: 2018-11-13T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-draft: false
+  - Golang
+translation_key: golang-pointers-overview
 ---
+
 
 # 概要
 [Golangのポインタの基本](https://bmf-tech.com/posts/Golang%E3%81%AE%E3%83%9D%E3%82%A4%E3%83%B3%E3%82%BF%E3%81%AE%E5%9F%BA%E6%9C%AC)では参照渡しと値渡しの違いの観点からポインタについて書いたが、それ以前にポインタを扱っているうちに混乱してきたため、ポインタの概要をまとめる。

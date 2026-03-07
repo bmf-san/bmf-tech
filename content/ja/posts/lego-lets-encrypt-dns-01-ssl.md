@@ -1,15 +1,16 @@
 ---
-title: "legoでLet's encryptのSSL証明書をDNS-01方式で取得する"
-slug: "lego-lets-encrypt-dns-01-ssl"
-date: 2022-01-18
+title: legoでLet's encryptのSSL証明書をDNS-01方式で取得する
+slug: lego-lets-encrypt-dns-01-ssl
+date: 2022-01-18T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Let's Encrypt"
-  - "Tips"
-draft: false
+  - Let's Encrypt
+  - Tips
+translation_key: lego-lets-encrypt-dns-01-ssl
 ---
+
 
 Conoha VPSでAnsibleを使ってLet's EncryptのSSL証明書の取得を行おうとしていた。
 

@@ -1,16 +1,17 @@
 ---
-title: "GolangのHTTPサーバーのコードリーディング"
-slug: "golang-http-server-code-reading-2019"
-date: 2019-11-03
+title: GolangのHTTPサーバーのコードリーディング
+slug: golang-http-server-code-reading-2019
+date: 2019-11-03T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "コードリーディング"
-  - "router"
-draft: false
+  - Golang
+  - コードリーディング
+  - router
+translation_key: golang-http-server-code-reading-2019
 ---
+
 
 # 概要
 この記事は[Qiita - Go6 Advent Calendar 2019](https://qiita.com/advent-calendar/2019/go6)の20日目の記事です。

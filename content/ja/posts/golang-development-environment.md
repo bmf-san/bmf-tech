@@ -1,14 +1,15 @@
 ---
-title: "Golangの開発環境を構築"
-slug: "golang-development-environment"
-date: 2018-04-07
+title: Golangの開発環境を構築
+slug: golang-development-environment
+date: 2018-04-07T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-draft: false
+  - Golang
+translation_key: golang-development-environment
 ---
+
 
 # 概要
 Goの環境を構築します。

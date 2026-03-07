@@ -1,17 +1,18 @@
 ---
-title: "JavaScriptで始めるアルゴリズム"
-slug: "javascript-algorithms-introduction"
-date: 2018-07-13
+title: JavaScriptで始めるアルゴリズム
+slug: javascript-algorithms-introduction
+date: 2018-07-13T00:00:00Z
 author: bmf-san
 categories:
-  - "アルゴリズムとデータ構造"
+  - アルゴリズムとデータ構造
 tags:
-  - "バイナリーサーチ"
-  - "リニアサーチ"
-  - "バブルソート"
-  - "セレクションソート"
-draft: false
+  - バイナリーサーチ
+  - リニアサーチ
+  - バブルソート
+  - セレクションソート
+translation_key: javascript-algorithms-introduction
 ---
+
 
 # 概要
 JavaScriptでアルゴリズムを学ぶ。

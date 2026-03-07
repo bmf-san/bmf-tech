@@ -1,19 +1,20 @@
 ---
-title: "Golang×chromedp×slack botでslackの絵文字自動生成ボットをつくってみた"
-slug: "golang-chromedp-slack-bot"
-date: 2020-08-11
+title: Golang×chromedp×slack botでslackの絵文字自動生成ボットをつくってみた
+slug: golang-chromedp-slack-bot
+date: 2020-08-11T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "Slack"
-  - "chrome"
-  - "chromedp"
-  - "emoji"
-  - "slack-bot"
-draft: false
+  - Golang
+  - Slack
+  - chrome
+  - chromedp
+  - emoji
+  - slack-bot
+translation_key: golang-chromedp-slack-bot
 ---
+
 
 # 概要
 Golang×chromedp×slack botでslackの絵文字自動生成ボットをつくってみた。

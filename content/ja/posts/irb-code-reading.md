@@ -1,15 +1,16 @@
 ---
-title: "irbのコードリーディング"
-slug: "irb-code-reading"
-date: 2024-10-20
+title: irbのコードリーディング
+slug: irb-code-reading
+date: 2024-10-20T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "irb"
-  - "Ruby"
-draft: false
+  - irb
+  - Ruby
+translation_key: irb-code-reading
 ---
+
 
 # 概要　
 irbのコードリーディングをする。

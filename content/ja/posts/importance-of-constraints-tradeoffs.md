@@ -1,15 +1,16 @@
 ---
-title: "技術的な意思決定において制約やトレードオフを明示することの重要性"
-slug: "importance-of-constraints-tradeoffs"
-date: 2025-08-05
+title: 技術的な意思決定において制約やトレードオフを明示することの重要性
+slug: importance-of-constraints-tradeoffs
+date: 2025-08-05T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "アーキテクチャ"
-  - "システム設計"
-draft: false
+  - アーキテクチャ
+  - システム設計
+translation_key: importance-of-constraints-tradeoffs
 ---
+
 
 技術選定や設計判断を行う際には、制約やトレードオフを明示することが極めて重要である。
 

@@ -1,14 +1,15 @@
 ---
-title: "Golangのインターフェース概要"
-slug: "golang-interfaces-overview"
-date: 2018-11-15
+title: Golangのインターフェース概要
+slug: golang-interfaces-overview
+date: 2018-11-15T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-draft: false
+  - Golang
+translation_key: golang-interfaces-overview
 ---
+
 
 # 概要
 Golangのインターフェースについてまとめる。

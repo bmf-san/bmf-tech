@@ -1,16 +1,17 @@
 ---
-title: "Laravel JP Conferenceにコアスタッフ兼LTスピーカーとして参加してきました"
-slug: "laravel-jp-conference-participation"
-date: 2019-02-16
+title: Laravel JP Conferenceにコアスタッフ兼LTスピーカーとして参加してきました
+slug: laravel-jp-conference-participation
+date: 2019-02-16T00:00:00Z
 author: bmf-san
 categories:
-  - "ポエム"
+  - ポエム
 tags:
-  - "Laravel"
-  - "LT"
-  - "PHP"
-draft: false
+  - Laravel
+  - LT
+  - PHP
+translation_key: laravel-jp-conference-participation
 ---
+
 
 [Laravel JP Conference](https://conference2019.laravel.jp/)のコアスタッフとLT登壇してきました。
 

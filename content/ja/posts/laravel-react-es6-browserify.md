@@ -1,20 +1,21 @@
 ---
-title: "Laravel+React+ES6+Browserify"
-slug: "laravel-react-es6-browserify"
-date: 2017-09-26
+title: Laravel+React+ES6+Browserify
+slug: laravel-react-es6-browserify
+date: 2017-09-26T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "React"
-  - "JavaScript"
-  - "npm"
-  - "webpack"
-  - "ES6"
-  - "browerify"
-  - "ES5"
-draft: false
+  - React
+  - JavaScript
+  - npm
+  - webpack
+  - ES6
+  - browerify
+  - ES5
+translation_key: laravel-react-es6-browserify
 ---
+
 
 ちょっと前の記事で、bowerでReactの環境をセットアップするという話をしたのですが、npmでReactのパッケージ管理をしたほうがスマートだし、ES6かけるようになっといた方がこの先お得よねということで環境を再構築しました。
 

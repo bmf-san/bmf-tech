@@ -1,16 +1,17 @@
 ---
-title: "LaravelにSPAを組み込む時に考えたディレクトリ構成とnginxのconfファイル"
-slug: "laravel-spa-directory-structure-nginx-config"
-date: 2017-10-01
+title: LaravelにSPAを組み込む時に考えたディレクトリ構成とnginxのconfファイル
+slug: laravel-spa-directory-structure-nginx-config
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Laravel"
-  - "React"
-  - "Nginx"
-draft: false
+  - Laravel
+  - React
+  - Nginx
+translation_key: laravel-spa-directory-structure-nginx-config
 ---
+
 
 # 概要
 Laravelで作っているアプリケーションに管理画面だけSPAを実装しようとした時、Laravelのディレクトリ構成とnginxのconfファイルをちょっとだけいじった話です。

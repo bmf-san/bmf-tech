@@ -1,15 +1,16 @@
 ---
-title: "GolangのHTTPサーバーのコードリーディング"
-slug: "golang-http-server-code-reading"
-date: 2021-06-30
+title: GolangのHTTPサーバーのコードリーディング
+slug: golang-http-server-code-reading
+date: 2021-06-30T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "コードリーディング"
-draft: false
+  - Golang
+  - コードリーディング
+translation_key: golang-http-server-code-reading
 ---
+
 
 # 概要
 Goでrouterを作ったときにHTTPサーバーのコードの内部を読んだので、その時のメモ。

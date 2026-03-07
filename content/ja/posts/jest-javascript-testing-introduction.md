@@ -1,19 +1,20 @@
 ---
-title: "Jestで始めるJavaScriptのテスト"
-slug: "jest-javascript-testing-introduction"
-date: 2018-09-20
+title: Jestで始めるJavaScriptのテスト
+slug: jest-javascript-testing-introduction
+date: 2018-09-20T00:00:00Z
 author: bmf-san
 categories:
-  - "テスト"
+  - テスト
 tags:
-  - "ES5"
-  - "JavaScript"
-  - "babel"
-  - "babel-jest"
-  - "ESModules"
-  - "jest"
-draft: false
+  - ES5
+  - JavaScript
+  - babel
+  - babel-jest
+  - ESModules
+  - jest
+translation_key: jest-javascript-testing-introduction
 ---
+
 
 # 概要
 Jestを使ってJavaScriptのテストをかいてみる。
