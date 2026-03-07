@@ -49,27 +49,54 @@
 {{- with index .Config.Theme.Params "adsense_id"}}
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{.}}" crossorigin="anonymous"></script>
 {{- end}}
+<script>
+(function(){
+  var p=localStorage.getItem('pref-locale');
+  if(!p){
+    var l=(navigator.languages&&navigator.languages[0])||navigator.language||'';
+    if(l.toLowerCase().startsWith('ja')&&!/^\/ja(\/|$)/.test(location.pathname)){
+      localStorage.setItem('pref-locale','ja');
+      location.replace('/ja/');
+    }else{
+      localStorage.setItem('pref-locale','en');
+    }
+  }
+})();
+</script>
 </head>
 {{end}}
 
 {{define "header"}}
+{{- $article := index .Articles 0}}
+{{- $isSingle := and $article (not .Pagination)}}
+{{- $altURL := "/ja/"}}
+{{- if eq .CurrentLocale "ja"}}{{$altURL = "/"}}{{end}}
+{{- if $isSingle}}
+  {{- range $article.Translations}}
+    {{- if and (eq $.CurrentLocale "ja") (eq .Locale "en")}}{{$altURL = .URL}}{{end}}
+    {{- if and (ne $.CurrentLocale "ja") (eq .Locale "ja")}}{{$altURL = .URL}}{{end}}
+  {{- end}}
+{{- end}}
+{{- $homeURL := "/"}}
+{{- if eq .CurrentLocale "ja"}}{{$homeURL = "/ja/"}}{{end}}
+{{- $targetLocale := "ja"}}
+{{- if eq .CurrentLocale "ja"}}{{$targetLocale = "en"}}{{end}}
 <header class="site-header bg-slate-900 py-4 mb-8">
   <div class="container mx-auto px-4">
     <nav class="flex items-center justify-between">
-      <a href="/" class="font-bold text-slate-50">{{.Config.Site.Title}}</a>
-      <div class="nav-links flex gap-4">
+      <a href="{{$homeURL}}" class="font-bold text-slate-50">{{.Config.Site.Title}}</a>
+      <div class="nav-links flex gap-4 items-center">
         {{if eq .CurrentLocale "ja"}}
-        <a href="/" class="text-slate-300 text-sm">English</a>
         <a href="/ja/tags/" class="text-slate-300 text-sm">タグ</a>
         <a href="/ja/categories/" class="text-slate-300 text-sm">カテゴリ</a>
         <a href="/ja/about/" class="text-slate-300 text-sm">About</a>
         {{else}}
-        <a href="/ja/" class="text-slate-300 text-sm">日本語</a>
         <a href="/tags/" class="text-slate-300 text-sm">Tags</a>
         <a href="/categories/" class="text-slate-300 text-sm">Categories</a>
         <a href="/about/" class="text-slate-300 text-sm">About</a>
         {{end}}
         <a href="/atom.xml" class="text-slate-300 text-sm">Feed</a>
+        <a href="{{$altURL}}" class="locale-toggle text-slate-300 text-xs border border-slate-600 px-2 py-1 rounded" onclick="localStorage.setItem('pref-locale','{{$targetLocale}}')">{{if eq .CurrentLocale "ja"}}EN{{else}}JA{{end}}</a>
       </div>
     </nav>
   </div>

@@ -15,7 +15,7 @@ test.describe('English root index /', () => {
     await page.goto('/');
     const nav = page.locator('.nav-links');
     // Scope to nav to avoid duplicates from article list items
-    await expect(nav.getByRole('link', { name: '日本語' })).toBeVisible();
+    await expect(nav.locator('.locale-toggle')).toHaveText('JA');
     await expect(nav.getByRole('link', { name: 'Tags' })).toBeVisible();
     await expect(nav.getByRole('link', { name: 'Categories' })).toBeVisible();
     await expect(nav.getByRole('link', { name: 'About' })).toBeVisible();

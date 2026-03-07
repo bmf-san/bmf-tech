@@ -2,12 +2,44 @@ import { test, expect } from '@playwright/test';
 
 // ── Nav links ────────────────────────────────────────────────────────────────
 
-test.describe('Nav: 日本語 link', () => {
-  test('navigates from / to /ja/', async ({ page }) => {
+test.describe('Nav: locale toggle', () => {
+  test('EN page shows JA toggle linking to /ja/', async ({ page }) => {
     await page.goto('/');
-    await page.locator('.nav-links').getByRole('link', { name: '日本語' }).click();
+    const toggle = page.locator('.nav-links .locale-toggle');
+    await expect(toggle).toHaveText('JA');
+    const href = await toggle.getAttribute('href');
+    expect(href).toBe('/ja/');
+  });
+
+  test('JA page shows EN toggle linking to /', async ({ page }) => {
+    await page.goto('/ja/');
+    const toggle = page.locator('.nav-links .locale-toggle');
+    await expect(toggle).toHaveText('EN');
+    const href = await toggle.getAttribute('href');
+    expect(href).toBe('/');
+  });
+
+  test('clicking JA toggle navigates to /ja/', async ({ page }) => {
+    await page.goto('/');
+    await page.locator('.nav-links .locale-toggle').click();
     await expect(page).toHaveURL('/ja/');
     await expect(page.locator('html')).toHaveAttribute('lang', 'ja');
+  });
+
+  test('JA article toggle falls back to / when no EN translation', async ({ page }) => {
+    await page.goto('/ja/posts/cto-thinking-strategy-leadership/');
+    const toggle = page.locator('.nav-links .locale-toggle');
+    const href = await toggle.getAttribute('href');
+    // No EN translation → falls back to /
+    expect(href).toBe('/');
+  });
+
+  test('EN article /posts/hello-world/ toggle links to /ja/', async ({ page }) => {
+    await page.goto('/posts/hello-world/');
+    const toggle = page.locator('.nav-links .locale-toggle');
+    const href = await toggle.getAttribute('href');
+    // No JA translation for this article → falls back to /ja/
+    expect(href).toBe('/ja/');
   });
 });
 

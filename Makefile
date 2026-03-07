@@ -8,16 +8,19 @@ help: ## ヘルプを表示
 		awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-15s\033[0m %s\n", $$1, $$2}'
 
 install: ## 依存ツールをインストール (gohan)
-	go install github.com/bmf-san/gohan/cmd/gohan@v0.1.5
+	GOTOOLCHAIN=auto go install github.com/bmf-san/gohan/cmd/gohan@v0.1.8
 
 install-e2e: ## Playwright依存をインストール
 	cd e2e && npm ci && npx playwright install chromium
 
 build: ## サイトをビルド
-	gohan build
+	GOTOOLCHAIN=auto gohan build
 
-serve: ## ローカルサーバーを起動 (http://localhost:1313)
-	gohan serve
+serve: build ## ローカルサーバーを起動 (http://localhost:1313) — public/ を静的配信
+	cd public && npx http-server -p 1313 -s --cors -c-1
+
+dev: ## ライブリロード付きローカルサーバー (http://localhost:1313)
+	GOTOOLCHAIN=auto gohan serve
 
 clean: ## ビルド出力を削除
 	rm -rf public/*
