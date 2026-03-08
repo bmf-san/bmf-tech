@@ -73,6 +73,18 @@
   </div>
   {{end}}
 
+  {{/* GitHub feedback link */}}
+  {{- $contentPath := .ContentPath}}
+  {{with $.Config.Site.GitHubRepo}}
+  <div class="flex items-center gap-2 mb-8">
+    <a href="{{.}}/blob/{{$.Config.Site.GitHubBranch}}/content/{{$contentPath}}"
+       target="_blank" rel="noopener noreferrer"
+       class="badge badge-light text-secondary">
+      ✏️ View source / Discuss on GitHub
+    </a>
+  </div>
+  {{end}}
+
   <hr class="border-t mb-8">
 
   {{end}}

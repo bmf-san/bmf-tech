@@ -85,6 +85,8 @@
     <aside class="md:col-span-1">
 
       {{/* Categories */}}
+      {{- $locPfx := ""}}
+      {{- if eq .CurrentLocale "ja"}}{{$locPfx = "/ja"}}{{end}}
       {{if .Categories}}
       <div class="card mb-6">
         <div class="card-header">
@@ -93,7 +95,7 @@
         <div class="card-body-compact">
           <div class="flex flex-wrap gap-2">
             {{range .Categories}}
-            <a href="/categories/{{.Name}}/" class="badge badge-light text-secondary">{{.Name}}</a>
+            <a href="{{$locPfx}}/categories/{{.Name}}/" class="badge badge-light text-secondary">{{.Name}}</a>
             {{end}}
           </div>
         </div>
@@ -109,7 +111,7 @@
         <div class="card-body-compact">
           <div class="flex flex-wrap gap-2">
             {{range .Tags}}
-            <a href="/tags/{{.Name}}/" class="badge badge-light text-secondary">{{.Name}}</a>
+            <a href="{{$locPfx}}/tags/{{.Name}}/" class="badge badge-light text-secondary">{{.Name}}</a>
             {{end}}
           </div>
         </div>
