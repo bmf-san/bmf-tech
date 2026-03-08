@@ -1,3 +1,8 @@
+{{define "extra-style"}}<style>
+.prose table{border-collapse:collapse;font-size:var(--font-size-sm);margin-bottom:var(--spacing-4);width:100%}
+.prose table th,.prose table td{border-top:1px solid var(--border-color);padding:var(--spacing-3);vertical-align:top}
+.prose table thead th{border-bottom:2px solid var(--border-color);color:var(--text-secondary);font-size:var(--font-size-xs);font-weight:var(--font-weight-bold);letter-spacing:.05em;text-align:left;text-transform:uppercase;vertical-align:bottom}
+</style>{{end}}
 {{template "head" .}}
 <body class="bg-body">
 {{template "header" .}}
