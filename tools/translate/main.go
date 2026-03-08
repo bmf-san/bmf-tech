@@ -249,41 +249,19 @@ type TranslationResult struct {
 	Body        string   `json:"body"`
 }
 
-type apiConfig struct{ baseURL, token, model string }
+const (
+	openAIBaseURL = "https://api.openai.com/v1"
+	openAIModel   = "gpt-4o"
+)
+
+type apiConfig struct{ token, model string }
 
 func loadAPIConfig() (apiConfig, error) {
-	cfg := apiConfig{baseURL: os.Getenv("AI_BASE_URL"), model: os.Getenv("AI_MODEL")}
-	if gk := os.Getenv("GOOGLE_API_KEY"); gk != "" {
-		cfg.token = gk
-		if cfg.baseURL == "" {
-			cfg.baseURL = "https://generativelanguage.googleapis.com/v1beta/openai"
-		}
-		if cfg.model == "" {
-			cfg.model = "gemini-2.0-flash"
-		}
-		return cfg, nil
+	ak := os.Getenv("OPENAI_API_KEY")
+	if ak == "" {
+		return apiConfig{}, fmt.Errorf("OPENAI_API_KEY is not set")
 	}
-	if gt := os.Getenv("GITHUB_TOKEN"); gt != "" {
-		cfg.token = gt
-		if cfg.baseURL == "" {
-			cfg.baseURL = "https://models.inference.ai.azure.com"
-		}
-		if cfg.model == "" {
-			cfg.model = "gpt-4o"
-		}
-		return cfg, nil
-	}
-	if ak := os.Getenv("OPENAI_API_KEY"); ak != "" {
-		cfg.token = ak
-		if cfg.baseURL == "" {
-			cfg.baseURL = "https://api.openai.com/v1"
-		}
-		if cfg.model == "" {
-			cfg.model = "gpt-4o"
-		}
-		return cfg, nil
-	}
-	return cfg, fmt.Errorf("set GOOGLE_API_KEY, GITHUB_TOKEN or OPENAI_API_KEY")
+	return apiConfig{token: ak, model: openAIModel}, nil
 }
 
 func buildPrompt(fm FrontMatter, body string) string {
@@ -315,7 +293,7 @@ func callAPI(cfg apiConfig, fm FrontMatter, body string) (TranslationResult, err
 	if err != nil {
 		return TranslationResult{}, err
 	}
-	endpoint := strings.TrimRight(cfg.baseURL, "/") + "/chat/completions"
+	endpoint := openAIBaseURL + "/chat/completions"
 	req, err := http.NewRequest("POST", endpoint, bytes.NewReader(reqJSON))
 	if err != nil {
 		return TranslationResult{}, err
@@ -332,23 +310,9 @@ func callAPI(cfg apiConfig, fm FrontMatter, body string) (TranslationResult, err
 	if err != nil {
 		return TranslationResult{}, err
 	}
-	// Gemini's OpenAI-compatible endpoint returns array on error: [{error:{...}}]
-	// Try array first, then fall back to object
 	var aiResp aiResponse
-	trimmed := bytes.TrimSpace(raw)
-	if len(trimmed) > 0 && trimmed[0] == '[' {
-		var arr []aiResponse
-		if err := json.Unmarshal(raw, &arr); err != nil {
-			return TranslationResult{}, fmt.Errorf("parse response: %w: %s", err, raw[:min(200, len(raw))])
-		}
-		if len(arr) == 0 {
-			return TranslationResult{}, fmt.Errorf("empty array response")
-		}
-		aiResp = arr[0]
-	} else {
-		if err := json.Unmarshal(raw, &aiResp); err != nil {
-			return TranslationResult{}, fmt.Errorf("parse response: %w: %s", err, raw[:min(200, len(raw))])
-		}
+	if err := json.Unmarshal(raw, &aiResp); err != nil {
+		return TranslationResult{}, fmt.Errorf("parse response: %w: %s", err, raw[:min(200, len(raw))])
 	}
 	if aiResp.Error != nil {
 		return TranslationResult{}, fmt.Errorf("API error: %s", aiResp.Error.Message)
@@ -374,11 +338,43 @@ func callAPI(cfg apiConfig, fm FrontMatter, body string) (TranslationResult, err
 		}
 		c = strings.Join(out, "\n")
 	}
+	c = sanitizeJSONContent(c)
 	var res TranslationResult
 	if err := json.Unmarshal([]byte(c), &res); err != nil {
 		return TranslationResult{}, fmt.Errorf("parse result: %w: %s", err, c)
 	}
 	return res, nil
+}
+
+// sanitizeJSONContent fixes common issues in AI-generated JSON:
+// 1. Literal tab characters (0x09) inside JSON strings → \t escape
+// 2. Invalid backslash escapes (e.g., \T, \( from PHP/LaTeX) → \\T, \\(
+func sanitizeJSONContent(s string) string {
+	// Replace literal tab bytes
+	s = strings.ReplaceAll(s, "\t", `\t`)
+	// Scan byte by byte and fix invalid JSON escape sequences
+	var out strings.Builder
+	out.Grow(len(s))
+	for i := 0; i < len(s); i++ {
+		if s[i] == '\\' && i+1 < len(s) {
+			switch s[i+1] {
+			case '"', '\\', '/', 'b', 'f', 'n', 'r', 't', 'u':
+				// valid JSON escape — copy both chars
+				out.WriteByte(s[i])
+				out.WriteByte(s[i+1])
+				i++
+			default:
+				// invalid escape — double the backslash
+				out.WriteByte('\\')
+				out.WriteByte('\\')
+				out.WriteByte(s[i+1])
+				i++
+			}
+		} else {
+			out.WriteByte(s[i])
+		}
+	}
+	return out.String()
 }
 
 func hasJapanese(s string) bool {

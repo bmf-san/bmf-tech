@@ -8,7 +8,9 @@
 - name: AJAX
 - name: API
 - name: APM
+- name: AWS
 - name: Abstract Factory
+- name: Abstract Factory Pattern
 - name: Access Control
 - name: Access Management
 - name: Accounting
@@ -67,6 +69,7 @@
 - name: Cache
 - name: Callback
 - name: Capacity Planning
+- name: Career Change
 - name: CentOS
 - name: ChatGPT
 - name: Chrome
@@ -77,6 +80,7 @@
 - name: Cloud Functions
 - name: Cloud Native
 - name: Cloud SQL
+- name: Code Quality
 - name: Code Reading
 - name: Code Review
 - name: Coding
@@ -92,6 +96,7 @@
 - name: Continuous AI
 - name: Contract Testing
 - name: Count Sort
+- name: Counting Sort
 - name: Critical Thinking
 - name: Critical User Journey
 - name: Cross Join
@@ -106,11 +111,13 @@
 - name: Data Structure
 - name: Data Structures
 - name: Datadog
+- name: Debug
 - name: Debugging
 - name: Delegation
 - name: Deployment
 - name: Design
 - name: Design Docs
+- name: Design Pattern
 - name: Design Patterns
 - name: Development Productivity
 - name: DigitalOcean
@@ -139,6 +146,7 @@
 - name: Exponential Backoff
 - name: FIDO
 - name: Factory Method
+- name: Factory Method Pattern
 - name: Factory Pattern
 - name: Fargate
 - name: Finance
@@ -147,6 +155,7 @@
 - name: FuelPHP
 - name: Function
 - name: Functional
+- name: Functional Testing
 - name: Fundamentals
 - name: Game
 - name: Gateway
@@ -188,6 +197,7 @@
 - name: ISUCON
 - name: ISUCON10
 - name: ISUCON8
+- name: IT Fundamentals
 - name: IaaS
 - name: Iaas
 - name: Index
@@ -232,6 +242,7 @@
 - name: Load Testing
 - name: Lock
 - name: Locust
+- name: Log
 - name: Logical Thinking
 - name: Logistics
 - name: Logs
@@ -267,6 +278,7 @@
 - name: OS
 - name: OSS
 - name: Offset Pagination
+- name: Open Addressing Hash Table
 - name: Open Policy Agent
 - name: OpenAPI
 - name: OpenID Connect
@@ -275,6 +287,7 @@
 - name: Org Design
 - name: Organization Design
 - name: Organization Theory
+- name: Organizational Design
 - name: Organizational Theory
 - name: PACELC
 - name: PDF
@@ -300,6 +313,7 @@
 - name: Polymorphism
 - name: PostgreSQL
 - name: Postmortem
+- name: Problem Solving
 - name: Process
 - name: Processes
 - name: Production Management
@@ -322,16 +336,20 @@
 - name: REST
 - name: RPC
 - name: RSpec
+- name: Radix Conversion
 - name: Radix Tree
 - name: React
 - name: Realize
 - name: Recursion
 - name: Redis
 - name: Redux
+- name: Reference
 - name: Reflection
 - name: Reflection and Aspirations
 - name: Reflection and Goals
 - name: Reflection and Resolutions
+- name: Reflections and Aspirations
+- name: Reflections and Resolutions
 - name: Rego
 - name: Regular Expressions
 - name: Reliability
@@ -345,6 +363,7 @@
 - name: Resource List
 - name: Resources
 - name: Resume
+- name: Retrospective
 - name: Retry
 - name: Reverse Proxy
 - name: Round Robin
@@ -367,7 +386,9 @@
 - name: Saga Pattern
 - name: Sakura VPS
 - name: Sales
+- name: Scalability
 - name: Schema Driven
+- name: Schema-Driven
 - name: Scrum
 - name: Seccomp
 - name: Security
@@ -380,6 +401,7 @@
 - name: Shell Script
 - name: Sidekiq
 - name: Singleton
+- name: Singleton Pattern
 - name: Singly Linked List
 - name: Slack
 - name: Slack Bot
@@ -393,8 +415,10 @@
 - name: Stateful
 - name: Stateless
 - name: Strategy
+- name: Strategy Pattern
 - name: StreamYard
 - name: Superagent
+- name: Swiss Table
 - name: Symbolic Links
 - name: System Design
 - name: System Performance
@@ -403,11 +427,14 @@
 - name: TLS
 - name: TUI
 - name: Team Management
+- name: Team Topologies
 - name: Team Topology
 - name: Technical Writing
 - name: Technology Radar
 - name: Template Method
+- name: Template Method Pattern
 - name: Temporal Data Model
+- name: Terminal
 - name: Terraform
 - name: Test Double
 - name: Thinking Method
@@ -422,11 +449,13 @@
 - name: Trino
 - name: Two Pointer
 - name: Two-Pointer Approach
+- name: Two-Pointer Technique
 - name: Type Hinting
 - name: TypeScript
 - name: UML
 - name: UNIX
 - name: URL Routing
+- name: URL routing
 - name: UX
 - name: Ubuntu
 - name: Uni-Temporal
@@ -437,6 +466,7 @@
 - name: VirtualBox
 - name: Vue.js
 - name: Vulnerabilities
+- name: Vulnerability
 - name: Year in Review
 - name: Zabbix
 - name: anyenv
@@ -486,6 +516,7 @@
 - name: k3s
 - name: kubeadm
 - name: libcontainer
+- name: link collection
 - name: linux capabilities
 - name: logwatch
 - name: lxc
@@ -497,9 +528,11 @@
 - name: mysqldump
 - name: node-exporter
 - name: npm
+- name: operating systems
 - name: os
 - name: phpunit
 - name: process
+- name: processes
 - name: pundit
 - name: rbenv
 - name: react-router
@@ -522,10 +555,12 @@
 - name: termios
 - name: textlint
 - name: thread
+- name: threads
 - name: tidalcycles
 - name: tmux
 - name: union
 - name: unix command
+- name: unix commands
 - name: vim
 - name: vscode
 - name: webpack
