@@ -1,6 +1,7 @@
 ---
 title: React Tag Autocompleteを使ってサジェスト付きタグ機能を実装する
 slug: react-tag-autocomplete-implementation
+image: /assets/images/posts/react-tag-autocomplete/173c6de9-b87a-6200-65ed-506e181f565e.gif
 date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:

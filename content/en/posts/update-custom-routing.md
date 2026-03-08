@@ -1,6 +1,7 @@
 ---
 title: Updated My Custom Router
 slug: update-custom-routing
+image: /assets/images/posts/post-259/117675761-d4c25780-b1e7-11eb-9ec7-e78ac0ce142b.png
 date: 2021-06-18T00:00:00Z
 author: bmf-san
 categories:

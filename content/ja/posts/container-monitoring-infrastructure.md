@@ -1,6 +1,7 @@
 ---
 title: コンテナで始めるモニタリング基盤構築
 slug: container-monitoring-infrastructure
+image: /assets/images/posts/post-277/146595299-9e21d2b8-3b3d-4931-a739-ea3a8e69fa13.png
 date: 2021-12-18T00:00:00Z
 author: bmf-san
 categories:

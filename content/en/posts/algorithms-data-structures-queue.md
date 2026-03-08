@@ -1,6 +1,7 @@
 ---
 title: Algorithms and Data Structures - Queue
 slug: algorithms-data-structures-queue
+image: /assets/images/posts/post-211/69003840-2b7d0700-094c-11ea-996e-c116235a1dbe.jpg
 date: 2019-11-17T00:00:00Z
 author: bmf-san
 categories:

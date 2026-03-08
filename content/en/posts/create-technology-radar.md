@@ -1,6 +1,7 @@
 ---
 title: Creating My Own Technology Radar
 slug: create-technology-radar
+image: /assets/images/posts/technology-radar/205632529-e528abd5-9013-458e-a540-6fc1251867e9.png
 date: 2022-12-17T00:00:00Z
 author: bmf-san
 categories:

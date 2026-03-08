@@ -1,6 +1,7 @@
 ---
 title: Participated in ISUCON11
 slug: participated-in-isucon11
+image: /assets/images/posts/isucon11/130355082-819552fe-7bf3-4af2-a0b7-f8db76df5d2b.png
 date: 2021-10-21T00:00:00Z
 author: bmf-san
 categories:

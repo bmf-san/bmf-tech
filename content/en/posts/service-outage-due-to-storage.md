@@ -1,6 +1,7 @@
 ---
 title: Service Downtime Due to Insufficient Filesystem Capacity
 slug: service-outage-due-to-storage
+image: /assets/images/posts/post-316/210195173-9bc2975f-73f4-495d-bb19-71732ce593f2.png
 date: 2023-05-07T00:00:00Z
 author: bmf-san
 categories:

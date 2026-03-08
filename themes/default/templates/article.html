@@ -50,6 +50,14 @@
     </div>
   </header>
 
+  {{/* Eyecatch image */}}
+  {{- $eyecatch := index .FrontMatter.Extra "image"}}
+  {{if $eyecatch}}
+  <div class="mb-8">
+    <img src="{{$eyecatch}}" alt="{{.FrontMatter.Title}}" class="w-full rounded" style="max-height:400px;object-fit:cover">
+  </div>
+  {{end}}
+
   {{/* Article Body */}}
   <article class="prose prose-full mb-12">
     {{.HTMLContent}}

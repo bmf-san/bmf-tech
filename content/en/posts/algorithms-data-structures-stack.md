@@ -1,6 +1,7 @@
 ---
 title: Algorithms and Data Structures - Stack
 slug: algorithms-data-structures-stack
+image: /assets/images/posts/post-210/69003839-2ae47080-094c-11ea-8506-cb733abec36e.jpg
 date: 2019-11-17T00:00:00Z
 author: bmf-san
 categories:

@@ -1,6 +1,7 @@
 ---
 title: Algorithms and Data Structures - Lists
 slug: algorithms-data-structures-list
+image: /assets/images/posts/post-201/67028620-a0d79b00-f146-11e9-8d47-a5d0d933d15d.jpg
 date: 2019-10-18T00:00:00Z
 author: bmf-san
 categories:

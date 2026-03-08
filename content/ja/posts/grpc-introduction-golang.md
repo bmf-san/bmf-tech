@@ -1,6 +1,7 @@
 ---
 title: "gRPCとはーGolangでgRPCに入門するー"
 slug: "grpc-introduction-golang"
+image: /assets/images/posts/golang/147852643-0d5a6fab-1d8f-4d60-81f6-cf95091ca974.png
 date: 2020-09-08
 author: bmf-san
 categories:
