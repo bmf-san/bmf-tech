@@ -22,11 +22,11 @@
   <section class="mb-12">
     <a href="{{$featured.URL}}" class="card">
       {{- $featuredImg := index $featured.FrontMatter.Extra "image"}}
-      {{if $featuredImg}}<img src="{{$featuredImg}}" alt="{{$featured.FrontMatter.Title}}" class="w-full object-cover rounded-t" style="max-height:320px">{{end}}
+      {{if $featuredImg}}<img src="{{$featuredImg}}" alt="{{$featured.FrontMatter.Title}}" class="w-full object-cover rounded-t max-h-80">{{end}}
       <div class="card-body">
         <div class="flex items-center gap-3 mb-3 flex-wrap">
           {{range $featured.FrontMatter.Categories}}<span class="badge badge-info">{{.}}</span>{{end}}
-          <span class="text-sm text-secondary">{{formatDate "Jan 2, 2006" $featured.FrontMatter.Date}}</span>
+          <span class="text-sm text-secondary">{{formatDate "2006-01-02" $featured.FrontMatter.Date}}</span>
         </div>
         <h2 class="text-3xl font-bold mb-3 text-primary">{{$featured.FrontMatter.Title}}</h2>
         {{if $featured.FrontMatter.Description}}
@@ -59,7 +59,7 @@
         {{if gt $i 0}}
         {{- $cardImg := index $a.FrontMatter.Extra "image"}}
         <a href="{{$a.URL}}" class="card">
-          {{if $cardImg}}<img src="{{$cardImg}}" alt="{{$a.FrontMatter.Title}}" class="w-full object-cover rounded-t" style="max-height:160px">{{end}}
+          {{if $cardImg}}<img src="{{$cardImg}}" alt="{{$a.FrontMatter.Title}}" class="w-full object-cover rounded-t max-h-40">{{end}}
           <div class="card-body">
             <div class="flex items-center gap-2 mb-2 flex-wrap">
               {{range $a.FrontMatter.Categories}}<span class="badge badge-secondary">{{.}}</span>{{end}}

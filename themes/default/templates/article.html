@@ -29,7 +29,7 @@
   <header class="mb-8">
     <div class="flex items-center gap-2 mb-4 flex-wrap">
       {{range .FrontMatter.Categories}}<span class="badge badge-info">{{.}}</span>{{end}}
-      <span class="text-sm text-secondary">{{formatDate "Jan 2, 2006" .FrontMatter.Date}}</span>
+      <span class="text-sm text-secondary">{{formatDate "2006-01-02" .FrontMatter.Date}}</span>
     </div>
     <h1 class="text-4xl font-bold mb-6 leading-tight">{{.FrontMatter.Title}}</h1>
     <div class="flex items-center justify-between flex-wrap gap-4">
@@ -54,7 +54,7 @@
   {{- $eyecatch := index .FrontMatter.Extra "image"}}
   {{if $eyecatch}}
   <div class="mb-8">
-    <img src="{{$eyecatch}}" alt="{{.FrontMatter.Title}}" class="w-full rounded" style="max-height:400px;object-fit:cover">
+    <img src="{{$eyecatch}}" alt="{{.FrontMatter.Title}}" class="w-full rounded max-h-96 object-cover">
   </div>
   {{end}}
 
