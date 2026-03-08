@@ -1,5 +1,5 @@
 ---
-title: Creating a REST API with Laravel
+title: Creating a Rest API with Laravel
 slug: laravel-rest-api-creation
 date: 2017-09-26T00:00:00Z
 author: bmf-san
@@ -13,41 +13,43 @@ tags:
 translation_key: laravel-rest-api-creation
 ---
 
-I am using React as the front-end framework with Laravel, and I needed to design an API, so I decided to give it a try.
 
-# What to Do
-* Create a ResourceController to output data via an API
-* Implement authentication middleware in anticipation of API exposure
 
-# What Not to Do
-* Explanation of REST
-* Updating or deleting API data
-* Fetching and outputting data via Ajax
+We are using React as the frontend framework with Laravel, and since we needed to design an API, we decided to give it a try.
+
+# What We'll Do
+* Create a ResourceController to build a simple API that outputs data
+* Implement authentication middleware in anticipation of public API exposure
+
+# What We Won't Do
+* Explain REST
+* Update or delete API data
+* Fetch and output data using Ajax
 
 # Environment
 * Laravel 5.2
 
 # Creating a Resource Controller
-The craftsman's morning starts early...
+The artisan's morning starts early...
 `php artisan make:controller HogeController --resource`
 
-The craftsman will create a controller like this:
+When the artisan gets to work, they create a controller like this.
 
 ```php
 <?php
 
-namespace App\\Http\\Controllers;
+namespace App\Http\Controllers;
 
-use Illuminate\\Http\\Request;
+use Illuminate\Http\Request;
 
-use App\\Http\\Requests;
+use App\Http\Requests;
 
 class HogeController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \\Illuminate\\Http\\Response
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
@@ -57,7 +59,7 @@ class HogeController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \\Illuminate\\Http\\Response
+     * @return \Illuminate\Http\Response
      */
     public function create()
     {
@@ -67,8 +69,8 @@ class HogeController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \\Illuminate\\Http\\Request  $request
-     * @return \\Illuminate\\Http\\Response
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
@@ -79,7 +81,7 @@ class HogeController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \\Illuminate\\Http\\Response
+     * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
@@ -90,7 +92,7 @@ class HogeController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \\Illuminate\\Http\\Response
+     * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
@@ -100,9 +102,9 @@ class HogeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \\Illuminate\\Http\\Request  $request
+     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \\Illuminate\\Http\\Response
+     * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
@@ -113,7 +115,7 @@ class HogeController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \\Illuminate\\Http\\Response
+     * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
@@ -122,23 +124,23 @@ class HogeController extends Controller
 }
 ```
 
-Now, let's quickly create the API. We will modify the index() method.
+Let's quickly create the API. We'll modify the index() method.
 
 ```php
     /**
      * Display a listing of the resource.
      *
-     * @return \\Illuminate\\Http\\Response
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $user = \\Auth::user();
+        $user = \Auth::user();
 
-        return \\Response::json($user);
+        return \Response::json($user);
     }
 ```
 
-We simply return the user as JSON using Response _(:3」∠)_.
+Just return JSON with Response _(:3」∠)_
 
 # Routing
 
@@ -147,34 +149,34 @@ We simply return the user as JSON using Response _(:3」∠)_.
 // API
 //-------------------------------
 Route::group(['prefix' => 'api'], function () {
-    Route::resource('user', 'Resource\\UserAuthController');
+    Route::resource('user', 'Resource\UserAuthController');
 });
 ```
 
-*Note: From Laravel 5.3, routes are separated into directories like web.php and api.php. It is best to write in api.php.*
+*Note: From Laravel 5.3, routes are organized into directories like web.php and api.php. It's best to write in api.php.*
 
-When you access /api, you should see a JSON response output.
+Accessing /api should output a JSON response.
 
-# API Authentication
+# About API Authentication
 
-When you want to avoid curious individuals directly hitting the API or when you want to expose the API externally, let's implement authentication. Here, I will provide an example of how to perform authentication using middleware.
+When you want to avoid people directly hitting the API or want to expose the API externally, it's good to set up authentication. Here, we'll provide an example of using middleware for authentication.
 
 ```php:route.php
 Route::group(['middleware' => 'auth.user'], function () {
-    Route::get('/userlist', 'UserList\\UserListController@getIndex');
+    Route::get('/userlist', 'UserList\UserListController@getIndex');
 
     //-------------------------------
     // API
     //-------------------------------
     Route::group(['prefix' => 'api'], function () {
-        Route::resource('user', 'Resource\\UserAuthController');
+        Route::resource('user', 'Resource\UserAuthController');
     });
 });
 ```
 
-I will create a middleware called AuthenticateOfApi for API usage.
+We will create middleware called AuthenticateOfApi for API usage.
 
-I referred to the [Laravel Expert Training Book](https://www.amazon.co.jp/Laravel%E3%82%A8%E3%82%AD%E3%82%B9%E3%83%9A%E3%83%BC%E3%83%88%E9%A4%8A%E6%88%90%E8%AA%AD%E6%9C%AC-%E3%83%A2%E3%83%80%E3%83%B3%E3%81%AA%E9%96%8B%E7%99%BA%E3%82%92%E5%AE%9F%E7%8F%BE%E3%81%99%E3%82%8BPHP%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF%EF%BC%81-Software-Design-plus/dp/4774173134) for this.
+Some parts were referenced from [Laravel Expert Training Book](https://www.amazon.co.jp/Laravel%E3%82%A8%E3%82%AD%E3%82%B9%E3%83%91%E3%83%BC%E3%83%88%E9%A4%8A%E6%88%90%E8%AA%AD%E6%9C%AC-%E3%83%A2%E3%83%80%E3%83%B3%E3%81%AA%E9%96%8B%E7%99%BA%E3%82%92%E5%AE%9F%E7%8F%BE%E3%81%99%E3%82%8BPHP%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF%EF%BC%81-Software-Design-plus/dp/4774173134).
 
 ```php:AuthenticateOfApi.php
 <?php
@@ -200,14 +202,14 @@ class AuthenticateOfApi
      */
     public function handle($request, Closure $next)
     {
-        // For cookie authentication
-        if (check login returning boolean) {
-          // Return user information, etc...
+        // Cookie authentication
+        if (login check returning boolean) {
+          // Return user info, etc.
         }
 
-        // For API Token authentication
+        // API Token authentication
         if (check if header contains x-application-token) {
-          // Return user information, etc...
+          // Return user info, etc.
         }
 
         if (not logged in and no x-application-token) {
@@ -219,19 +221,20 @@ class AuthenticateOfApi
 }
 ```
 
-~~Including the API Token in the header when using the API internally defeats the purpose of authentication (since the token is visible to the user, anyone can use the API if they steal it).~~
+~~Including the APIToken in the header when using the API internally nullifies the purpose of authentication (since the header is visible to users, anyone can use the API if the token is stolen).~~
 
-~~Therefore, when using the API internally, it is advisable to use the same authentication method as logging in. You can check login with something like `Auth::guard('users')->check()`!~~
+~~Therefore, when using the API internally, it's better to use the same authentication method as login.
+`Auth::guard('users')->check()` for login checks!~~
 
-~~For external API usage, you can authenticate by including the token in the header and sending a POST request via JavaScript.~~
+~~For external API usage, you can authenticate by including the token in the header with JavaScript and POSTing it.~~
 
-*For more information on API authentication, please refer to other articles.*
+*Please refer to other articles for more on API authentication.*
 
 # Thoughts
-Creating and using APIs with Laravel is easy, but API design seems quite deep. It is quite enjoyable to create an API and use it myself, so I will try my best.
+Creating and using APIs with Laravel is easy, but API design seems quite deep. It's quite fun to use the API you created yourself, so I'll try to put in some effort.
 
 # References
 * [Creating an API with Authentication in Laravel 5.2](http://satobukuro.net/173/)
-* [Developing REST API with Laravel](http://dim5.net/laravel/developing-rest-api.html)
-* [Getting Information from Laravel with React.js](http://blog.comnect.jp.net/blog/98) ... Laravel + API + React!
-* [Laravel Expert Training Book](https://www.amazon.co.jp/Laravel%E3%82%A8%E3%82%AD%E3%82%B9%E3%83%9A%E3%83%BC%E3%83%88%E9%A4%8A%E6%88%90%E8%AA%AD%E6%9C%AC-%E3%83%A2%E3%83%80%E3%83%B3%E3%81%AA%E9%96%8B%E7%99%BA%E3%82%92%E5%AE%9F%E7%8F%BE%E3%81%99%E3%82%8BPHP%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF%EF%BC%81-Software-Design-plus/dp/4774173134)
+* [Developing a Rest API with Laravel](http://dim5.net/laravel/developing-rest-api.html)
+* [Getting Information from Laravel with React.js](http://blog.comnect.jp.net/blog/98) ... Laravel+API+React!
+* [Laravel Expert Training Book](https://www.amazon.co.jp/Laravel%E3%82%A8%E3%82%AD%E3%82%B9%E3%83%91%E3%83%BC%E3%83%88%E9%A4%8A%E6%88%90%E8%AA%AD%E6%9C%AC-%E3%83%A2%E3%83%80%E3%83%B3%E3%81%AA%E9%96%8B%E7%99%BA%E3%82%92%E5%AE%9F%E7%8F%BE%E3%81%99%E3%82%8BPHP%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF%EF%BC%81-Software-Design-plus/dp/4774173134)

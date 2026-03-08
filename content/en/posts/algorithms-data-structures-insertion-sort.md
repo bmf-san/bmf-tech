@@ -1,29 +1,31 @@
 ---
-title: Algorithms and Data Structures - Insertion Sort
+title: Algorithm and Data Structures - Insertion Sort
 slug: algorithms-data-structures-insertion-sort
 date: 2020-02-01T00:00:00Z
 author: bmf-san
 categories:
-  - Algorithms
-  - Data Structures
+  - Algorithm and Data Structures
 tags:
   - Insertion Sort
 translation_key: algorithms-data-structures-insertion-sort
 ---
 
+
+
 # Overview
 Referencing the [Algorithm Encyclopedia](https://www.shoeisha.co.jp/book/detail/9784798149776), we learn about algorithms and data structures.
 
-The implementation is also available at [github - bmf-san/road-to-algorithm-master](https://github.com/bmf-san/road-to-algorithm-master).
+The implementation is also available on [github - bmf-san/road-to-algorithm-master](https://github.com/bmf-san/road-to-algorithm-master).
 
 # Insertion Sort
-- Sorts the data sequence from the beginning in order.
-- Divided into sorted and unsorted subsequences.
-    - 1st time: Treat the 0th element as sorted, do nothing.
-    - 2nd time: Compare the 0th and 1st elements, swap if the order is reversed.
-    - 3rd time: Compare the data sequence from 0th to 1st, swap if necessary.
-    - 4th time: Compare the data sequence from 0th to 2nd, swap if necessary.
-    - Repeat until there are no unsorted elements left.
+- Sorts sequentially from the beginning of the data series
+- Divides into sorted and unsorted subsequences
+    - 1st pass: Treat the 0th element as sorted, do nothing
+    - 2nd pass: Compare the 0th and 1st elements, swap if in reverse order
+    - 3rd pass: Compare with the data series from 0th to 1st, swap if necessary
+    - 4th pass: Compare with the data series from 0th to 2nd, swap if necessary
+    - Repeat until there are no unsorted parts
+
 
 # Time Complexity
 - O(n²)
@@ -54,7 +56,7 @@ func main() {
 }
 ```
 
-- It processes elements in order and simply swaps them, making it straightforward.
+- Simply processes elements in order and swaps them.
 
 # References
 - [Algorithms and Data Structures](http://www-ikn.ist.hokudai.ac.jp/~arim/pub/algo/algo6.pdf)

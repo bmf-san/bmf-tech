@@ -1,7 +1,6 @@
 ---
-title: Implementing Suggestion-Based Tag Functionality Using React Tag Autocomplete
+title: Implementing a Tag Feature with Suggestions Using React Tag Autocomplete
 slug: react-tag-autocomplete-implementation
-image: /assets/images/posts/react-tag-autocomplete/173c6de9-b87a-6200-65ed-506e181f565e.gif
 date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
@@ -11,7 +10,7 @@ tags:
 translation_key: react-tag-autocomplete-implementation
 ---
 
-I was planning to develop the tag functionality from scratch, but I found many convenient React components, so I decided to use one of them.
+I was thinking of developing a tag feature from scratch, but I found many convenient React Components, so I decided to use them.
 
 # Environment
 * React
@@ -20,18 +19,18 @@ I was planning to develop the tag functionality from scratch, but I found many c
 * [React Tag Autocomplete](https://github.com/i-like-robots/react-tags)
 * npm
 
-# Installation
+# Introduction
 Install React Tag Autocomplete using npm.
 
 `npm install --save react-tag-autocomplete`
 
-There are various ways to include it, but in this environment, I will use require.
+There are various ways to include it, but in this environment, we will use require.
 
 ```hoge.js
 var ReactTags = require('react-tag-autocomplete');
 ```
 
-Now we are ready to go.
+Now we are ready.
 
 # Implementation
 
@@ -40,7 +39,7 @@ Now we are ready to go.
 <div id="react-tag-autocomplete"></div>
 ```
 
-There is usage information on [github](https://github.com/i-like-robots/react-tags), but let’s assume a case where we process the API to fetch data (using superagent here).
+There is a Usage section on [github](https://github.com/i-like-robots/react-tags), but let's consider a case where we modify it a bit to fetch data by hitting an API. (Here, we use superagent.)
 
 The API returns a JSON response like this:
 
@@ -82,6 +81,7 @@ var App = React.createClass({
   },![tags.gif](https://qiita-image-store.s3.amazonaws.com/0/124495/173c6de9-b87a-6200-65ed-506e181f565e.gif)
 ![tags.gif](https://qiita-image-store.s3.amazonaws.com/0/124495/a3372702-2a85-9b80-0b53-ede2c9c3c486.gif)
 
+
   handleAddition: function (tag) {
     var tags = this.state.tags
     tags.push(tag)
@@ -105,12 +105,12 @@ ReactDOM.render(
 );
 ```
 
-Verification of functionality (there are some unnecessary things in the frame...)
+Operation check (there are some unnecessary things shown...)
 ![tags.gif](https://qiita-image-store.s3.amazonaws.com/0/124495/c0c75e77-d212-4cd4-5e1b-c59a8a412c61.gif)
 
-I haven't set any CSS, so it looks really bad lol.
+The CSS is not set, so it looks quite plain lol
 
 Other options and CSS class names are clearly stated on [github](https://github.com/i-like-robots/react-tags).
 
-# Thoughts
-What a convenient era we live in!ヽ(´ー｀)ノ
+# Impressions
+It's such a convenient era.ヽ(´ー｀)ノ

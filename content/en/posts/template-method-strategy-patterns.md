@@ -1,5 +1,5 @@
 ---
-title: About Template Method Pattern and Strategy Pattern
+title: About Template Method and Strategy Patterns
 slug: template-method-strategy-patterns
 date: 2023-08-20T00:00:00Z
 author: bmf-san
@@ -11,11 +11,12 @@ tags:
 translation_key: template-method-strategy-patterns
 ---
 
+
 # Overview
-This post summarizes the Template Method pattern and Strategy pattern, which are behavioral patterns from GoF.
+This post summarizes the Template Method and Strategy patterns, which are behavioral patterns from the GoF.
 
 # What is the Template Method Pattern?
-A design pattern where the overarching process is defined in a superclass, while the specific flow of processing is delegated to subclasses.
+The Template Method pattern is a design pattern where the overall process is defined in a higher-level class, and the specific flow of processing is delegated to lower-level classes.
 
 ```go
 package main
@@ -56,9 +57,9 @@ func main() {
 ```
 
 # What is the Strategy Pattern?
-A design pattern that allows the selection of processing at runtime.
+The Strategy pattern is a design pattern that allows the selection of processing at runtime.
 
-Similar to the Template pattern, but the Strategy pattern is structured to switch all processing, while the Template pattern has fixed specific processes with others being variable.
+While similar to the Template pattern, the Strategy pattern is structured to switch all processing collectively, whereas the Template pattern has fixed specific processes with others being variable.
 
 ```go
 package main
@@ -99,7 +100,7 @@ func main() {
 }
 ```
 
-Both the Template Method pattern and the Strategy pattern allow for implementation using either inheritance or delegation, so there is no strict requirement to use one over the other.
+Both the Template Method and Strategy patterns allow for the use of inheritance or delegation, so there is no strict requirement to use one over the other.
 
 # References
 - [github.com - crazybber/awesome-patterns](https://github.com/crazybber/awesome-patterns)

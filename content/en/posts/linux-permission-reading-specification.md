@@ -1,55 +1,56 @@
 ---
-title: Understanding and Setting Linux Permissions
+title: How to Read and Set Linux Permissions
 slug: linux-permission-reading-specification
 date: 2018-07-18T00:00:00Z
 author: bmf-san
 categories:
-  - OS
+  - Operating Systems
 tags:
   - Linux
   - Permissions
+description: An overview of Linux permissions
 translation_key: linux-permission-reading-specification
 ---
 
 # Overview
 This post summarizes Linux permissions.
 
-# Reading Permissions
+# How to Read Permissions
 
-## File Type
+## File Types
 The first character represents the file type.
 
-- `-` File
-- `d` Directory
-- `l` Symbolic Link
+- File
+d Directory
+l Symbolic link
 
-The following three characters represent permissions for the file owner, group, and others.
+Subsequent characters, in groups of three, represent permissions for different owners of the file.
 
-- 2-4 characters: User permissions (owner)
-- 5-7 characters: Group permissions
-- 8-10 characters: Other permissions
+2~4th characters: User permissions for the file owner
+5~7th characters: Group permissions for the owning group
+8~10th characters: Other permissions
 
 ## Types of Permissions
 There are three types of permissions:
 
-- `r` Read
-- `w` Write
-- `x` Execute
+r Read
+w Write
+x Execute
 
-Be careful as the meaning changes depending on whether it is a file or a directory.
+The meaning changes depending on whether it's a file or a directory.
 
 ### For Files
-- `r` Read: Can read the contents of the file
-- `w` Write: Can edit the contents of the file
-- `x` Execute: Can execute the file as a program
+r Read: Can read the file contents
+w Write: Can edit the file contents
+x Execute: Can execute the file as a program
 
 ### For Directories
-- `r` Read: Can list files in the directory
-- `w` Write: Can create or delete files in the directory
-- `x` Execute: Can navigate into the directory
+r Read: Can display the list of files under the directory
+w Write: Can create or delete files under the directory※1
+x Execute: Can move into the directory※2
 
-*Note 1: Files in the directory can be deleted even without write permission.*
-*Note 2: If the directory does not have execute permission, you cannot navigate into it.*
+※1 Files under the directory can be deleted even without write permission
+※2 If execute permission is not granted to the directory, you cannot move into it
 
 ## Example
 
@@ -59,25 +60,24 @@ ls -l hoge.md
 -rw-r--r--  1 bmf  staff  652 Jul 18 11:45 hoge.md
 ```
 
-Permissions for hoge.md:
-- File Type: File
-- User Permissions: Read/Write
-- Group Permissions: Read
-- Other Permissions: Read
+Permissions for hoge.md
 
-# Setting Permissions
-Permissions can be set using either numeric or alphabetic methods. The `chmod` command is used to set permissions.
+File type: File
+User permissions: Read/Write
+Group permissions: Read
+Other permissions: Read
 
-## Numeric Method
-```
+# How to Set Permissions
+Permissions can be specified numerically or alphabetically. Use the chmod command to set permissions.
+
+## Specifying Numerically
 chmod mode target_filename
-```
 
-Use three digits to specify permissions. The hundreds place is for the user, the tens place is for the group, and the units place is for others.
+Use three digits to specify permissions. The hundreds place is for the user, the tens place is for the group, and the ones place is for others.
 
-- 4: `r` Read
-- 2: `w` Write
-- 1: `x` Execute
+4 r Read
+2 w Write
+1 x Execute
 
 To grant multiple permissions, specify the sum of the numbers. For example, to grant read and write permissions, specify 6; to grant all permissions, specify 7.
 
@@ -91,32 +91,30 @@ chmod 766 hoge.md
 -rwxrw-rw-  1 bmf  staff  1788 Jul 18 11:57 hoge.md
 ```
 
-## Alphabetic Method
-```
-chmod target+method+permissions target_file
-```
+## Specifying Alphabetically
+chmod target+method+content target_file
 
-Specify the target, method, and permissions using letters and symbols.
+Specify the target, method, and content using alphabets and symbols.
 
 ### Target
-- `u` User
-- `g` Group
-- `o` Others
-- `a` All
+u User
+g Group
+o Others
+a All
 
-Multiple targets can be specified. For example, to target both user and group, specify `ug`.
+Multiple targets can be specified. For example, to target both user and group, specify ug.
 
 ### Method
-- `=` Set to specified permissions
-- `+` Add specified permissions
-- `-` Remove specified permissions
+= Set specified permissions
++ Add specified permissions
+- Remove specified permissions
 
-### Permissions
-- `r` Read
-- `w` Write
-- `x` Execute
+### Content
+r Read
+w Write
+x Execute
 
-Multiple permissions can be specified. For example, to specify read and write, use `rw`.
+Multiple contents can be specified. For example, to specify read and write, specify rw.
 
 ```
 ls -l hoge.md
@@ -132,11 +130,11 @@ chmod a+rw hoge.md
 - [Checking and Changing Linux Permissions](Linuxの権限確認と変更（超初心者向け）)
 - [Linux File Management: Setting Permissions](http://proengineer.internous.co.jp/content/columnfeature/8843)
 
-# Note
+# Additional Notes
 ```
 ls -l hoge.md
 
 -rw-r--r--  1 bmf  staff  652 Jul 18 11:45 hoge.md
 ```
 
-The number `1` displayed after the permissions in the output of `ls -l` indicates the number of hard links.
+The number 1 displayed next to the permissions in the output of ls -l represents the number of hard links.

@@ -11,26 +11,28 @@ tags:
 translation_key: slog-contextual-logging
 ---
 
+
+
 # Overview
-This post summarizes contextual logging using log/slog in Go.
+Summarizing contextual logging using log/slog in Go.
 
 # What is log/slog?
-A package for structured logging added in Go 1.21.
+A package for structured logging added in Go1.21.
 
-Structured logging means outputting logs as structured data.
+Structured logging is the output of logs as structured data.
 
-Previously, to implement structured logging in Go, one had to use third-party packages or create a solution from scratch. Now, the standard package is also an option.
+Previously, to perform structured logging in Go, one had to either use third-party packages or implement it from scratch. Now, the standard package is also becoming a viable option.
 
 By default, it can output in text or JSON format.
 
-Since slog can hold context, it can also include request-based information.
+slog can hold context, allowing you to include request-based information.
 
-# Contextual Logging with slog
+# Contextual logging with slog
 Let's write code to create a Logger that includes request-based information in the logs.
 
-The following code assumes logging with a trace ID in the context.
+Below is the code that assumes logging with a trace ID in the context.
 
-By implementing the slog.Handler interface, you can create your own Handler.
+By implementing the slog.Handler interface, you can create your own Handler.[]
 
 ```go
 package main
@@ -50,7 +52,7 @@ type TraceIDHandler struct {
 	slog.Handler
 }
 
-type ctxTraceID struct {}
+type ctxTraceID struct{}
 
 var ctxTraceIDKey = ctxTraceID{}
 
@@ -86,17 +88,17 @@ func main() {
 }
 ```
 
-When the above code is executed, the following log will be output:
+When you run the above code, the following log is output:
 
 ```sh
 {"time":"2023-10-08T17:06:44.423859+09:00","level":"INFO","msg":"Log with TraceID","trace_id":"4f9a0bb6-cf8d-4eef-82ea-2385b76d3a74"}
 ```
 
-# Thoughts
-I was using my own package for structured logging, but I switched to this with the release of Go 1.21.
+# Impressions
+I was using my own package for structured logging, but with the release of Go1.21, I switched to this.
 
 # References
 - [pkg.go.dev - slog](https://pkg.go.dev/golang.org/x/exp/slog)
-- [future-architect.github.io - Go 1.21 Series Begins & How to Use slog](https://future-architect.github.io/articles/20230731a/)
+- [future-architect.github.io - Starting Go 1.21 Series & How to Use slog](https://future-architect.github.io/articles/20230731a/)
 - [gihyo.jp - Experience Go's New Structured Logger](https://gihyo.jp/article/2023/02/tukinami-go-04)
-- [zenn.dev - Notes on Trying Go's Official Structured Logger (proposed) slog](https://zenn.dev/mizutani/articles/golang-exp-slog)
+- [zenn.dev - Tried the Official Go Structured Logger (Proposed) slog](https://zenn.dev/mizutani/articles/golang-exp-slog)

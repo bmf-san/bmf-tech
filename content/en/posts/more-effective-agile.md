@@ -11,6 +11,10 @@ tags:
 translation_key: more-effective-agile
 ---
 
-[More Effective Agile](https://amzn.to/3JYYieN) is a book that summarizes practices for implementing Agile.
 
-I used it as a textbook for the [Agile Workshop](https://speakerdeck.com/bmf_san/aziyairuwakusiyotupu).
+
+[More Effective Agile](https://amzn.to/3JYYieN)を読んだ。
+
+アジャイルを実践するためのプラクティスがまとめられた本。
+
+[アジャイルワークショップ](https://speakerdeck.com/bmf_san/aziyairuwakusiyotupu)の教科書として活用させてもらった。

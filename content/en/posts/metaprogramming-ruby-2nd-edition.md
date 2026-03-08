@@ -11,10 +11,12 @@ tags:
 translation_key: metaprogramming-ruby-2nd-edition
 ---
 
+
+
 [Metaprogramming Ruby 2nd Edition](https://amzn.to/4adnBpO) was read.
 
-I thought that mastering metaprogramming would make me a wizard.
+I thought mastering metaprogramming would make me a wizard.
 
-I feel like I understand where to use it, but I have the impression that mastering it is difficult.
+I feel like I understood where to use it, but my impression is that it's difficult to master.
 
-I plan to work on [kinoppyd/reading-metaprogramming-ruby](https://github.com/kinoppyd/reading-metaprogramming-ruby) later.
+I plan to try [kinoppyd/reading-metaprogramming-ruby](https://github.com/kinoppyd/reading-metaprogramming-ruby) later.

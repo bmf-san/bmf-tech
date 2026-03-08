@@ -1,5 +1,5 @@
 ---
-title: Using textlint and reviewdog for Text Proofreading in CircleCI
+title: Proofreading Text with textlint and reviewdog on CircleCI
 slug: textlint-and-reviewdog-for-circleci-text-proofreading
 date: 2021-10-09T00:00:00Z
 author: bmf-san
@@ -9,22 +9,23 @@ tags:
   - CircleCI
   - npm
   - textlint
+description: Automating text proofreading using textlint and reviewdog on CircleCI.
 translation_key: textlint-and-reviewdog-for-circleci-text-proofreading
 ---
 
 # Overview
-I wanted to automate text proofreading when writing long texts, so I tried it out.
+I wanted to automate text proofreading when writing long documents, so I gave it a try.
 
 # Structure
-The text is managed on Github, and the directory structure is as follows:
+The text is managed on GitHub, and the directory structure is as follows:
 
 ```sh
 ├── .circleci
 │   └── config.yml
 ├── README.md
 ├── documents
-│   ├── Introduction.md
-│   └── Conclusion.md
+│   ├── はじめに.md
+│   └── おわりに.md
 ├── images
 ├── .textlintrc
 ├── package-lock.json
@@ -38,12 +39,12 @@ Initial setup.
 npm init -y
 ```
 
-Install textlint and the rules to be used with textlint.
+Install textlint and the rules used by textlint.
 ```sh
 npm install --save-dev  textlint  textlint-rule-preset-ja-spacing     textlint-rule-preset-ja-technical-writing     textlint-rule-spellcheck-tech-word textlint-rule-preset-jtf-style textlint-rule-preset-japanese
 ```
 
-# Configuring textlint Rules
+# Setting textlint Rules
 .textlintrc
 ```sh
 {
@@ -59,9 +60,9 @@ npm install --save-dev  textlint  textlint-rule-preset-ja-spacing     textlint-r
 ```
 
 # CircleCI Configuration
-Generate a token that only allows access to the `repo` on Github, and set it as an environment variable named `REVIEWDOG_GITHUB_API_TOKEN`.
+Generate a token that only allows `repo` on GitHub and set it as an environment variable named `REVIEWDOG_GITHUB_API_TOKEN`.
 
-The configuration for config.yml is as follows:
+The config.yml settings are as follows:
 ```yml
 version: 2
 jobs:
@@ -97,8 +98,8 @@ jobs:
           when: on_fail
 ```
 
-# Running CI
-When textlint catches an issue, reviewdog will comment on it.
+# Running the CI
+If textlint catches any issues, reviewdog will comment on them.
 
 ![Screenshot 2021-10-09 22 38 19](https://user-images.githubusercontent.com/13291041/136660112-ef84725e-2c4b-4dda-8476-ae30bdb029a2.png)
 
@@ -106,4 +107,4 @@ When textlint catches an issue, reviewdog will comment on it.
 - [gist.github.com - taichi/config.yml](https://gist.github.com/taichi/fef9839243c2fbd017d272c7d838dbde)
 - [github.com - reviewdog/reviewdog](https://github.com/reviewdog/reviewdog)
 - [qiita.com - Starting Text Proofreading with textlint and VS Code](https://qiita.com/takasp/items/22f7f72b691fda30aea2)
-- [budougumi0617.github.io - Commenting Document Proofreading Errors on GitHub Pull Requests with textlint/reviewdog (June 2019)](https://budougumi0617.github.io/2019/06/22/textlint-with-reviewdog-for-review/)
+- [budougumi0617.github.io - Commenting Document Proofreading Errors on GitHub Pull Requests with textlint/reviewdog June 2019 Edition](https://budougumi0617.github.io/2019/06/22/textlint-with-reviewdog-for-review/)

@@ -13,13 +13,15 @@ tags:
 translation_key: php-design-patterns-adapter
 ---
 
+
+
 # Overview
-This is an article that couldn't make it in time for the [Learning Design Patterns with PHP Advent Calendar 2018](https://qiita.com/advent-calendar/2018/php-design-pattern).
+An article that didn't make it in time for the [PHP Design Patterns Advent Calendar 2018](https://qiita.com/advent-calendar/2018/php-design-pattern).
 
 # What is the Adapter Pattern?
-A pattern that allows changing the interface without modifying the original class.
+A pattern that allows you to change the interface without modifying the original class.
 
-This is achieved by preparing an Adapter class that adjusts compatibility between different interfaces.
+It is achieved by preparing an Adapter class that adjusts compatibility between different interfaces.
 
 # Implementation
 ```php
@@ -71,7 +73,7 @@ class MiddleBirdAdapter implements Bird
         $this->middleBird = $middleBird;
     }
 
-    // Wrap MiddleBird's method
+    // Wraps the method of MiddleBird
     public function fly()
     {
         $this->middleBird->jump();
@@ -90,8 +92,9 @@ $human->eat($middleBirdAdapter); // Yummy
 ```
 
 # Thoughts
-It feels like creating a method that wraps the behavior defined in the interface. It seems necessary to carefully consider where to use it.
+It feels like creating a method that wraps behavior defined in the interface.
+You need to carefully consider where to use it.
 
 # References
-- [[Preserved Edition] Human-readable Design Pattern Explanation #2: Structural Patterns (Translation)](https://techracho.bpsinc.jp/hachi8833/2017_10_11/46069#adapter)
+- [[Definitive Edition] Design Pattern Explanation That Humans Can Read and Understand #2: Structural (Translation)](https://techracho.bpsinc.jp/hachi8833/2017_10_11/46069#adapter)
 - [Wikipedia - Adapter Pattern](https://ja.wikipedia.org/wiki/Adapter_%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3)

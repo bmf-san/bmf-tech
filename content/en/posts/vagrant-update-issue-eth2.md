@@ -10,10 +10,13 @@ tags:
   - Vagrant
   - VirtualBox
   - Tips
+description: A story about encountering network errors after updating Vagrant from an older version.
 translation_key: vagrant-update-issue-eth2
 ---
 
-I was using an older version of Vagrant (1.7.4) and decided to update it, but I ran into network-related errors.
+
+Vagrant was at the slightly old version of 1.7.4, so I decided to update it and got stuck with a network-related error.
+
 
 # Error Details
 ```
@@ -58,24 +61,29 @@ Stderr from the command:
 bash: line 10: nmcli: command not found
 ```
 
-# Response
-After researching, it seems that there was an issue with the network configuration files.
+# Solution
+After some research, it seems to be stuck on something like a network configuration file.
 
-I couldn't find a definitive solution, so I improvised.
+I couldn't find a solution, so I went with my gut.
+
 
 `cd /etc/sysconfig/network-scripts`
 
-`mv ifcfg-eth2 eth2-ifcfg` Temporarily rename it to something arbitrary.
+`mv ifcfg-eth2 eth2-ifcfg` Temporarily rename it to something random
 `vagrant reload`
 
-If there are no issues, delete the previous file and `vagrant reload` again.
-`rm -rf eth2-ifcfg`
+If there are no issues, delete the previous file and `vagrant reload`
+`rm -rf eth2-ifcfg` (edited)
 
-I believe there were only eth0 and eth1 when I was on 1.7.4, and eth2 didn't exist. Upon checking the contents of eth2, it was a duplicate of eth1, so I thought, "This isn't needed," and deleted it, which resolved the issue.
+
+In version 1.7.4, there were only eth0 and eth1, and eth2 didn't seem to exist.
+When I checked the contents of eth2, it was overlapping with eth1, so I thought "we don't need this" and deleted it, which fixed the issue.
+
 
 # Thoughts
-Even though it was an improvised solution based on hints from reference sites, I am a bit anxious about whether this approach is correct.
+Even though it was a gut feeling, I came up with this solution based on hints from reference sites, but I'm a bit worried if this is okay.
+
 
 # References
-* [[VirtualBox 4.3] When the cloned guest OS (CentOS) cannot connect to the network: Response when 'Device eth0 does not seem to be present, delaying initialization' is displayed](http://qiita.com/satomyumi/items/964182390a08b678d576)
-* [Various versions of Vagrant available](https://releases.hashicorp.com/vagrant/) - Use at your own risk.
+* [[VirtualBox 4.3] Solution when a cloned guest OS (CentOS) cannot connect to the network: Device eth0 does not seem to be present, delaying initialization](http://qiita.com/satomyumi/items/964182390a08b678d576)
+* [Various versions of Vagrant are available](https://releases.hashicorp.com/vagrant/) - Please proceed at your own risk.

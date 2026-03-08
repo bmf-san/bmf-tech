@@ -1,5 +1,5 @@
 ---
-title: Managing Resumes with Github
+title: Managing My Resume with GitHub
 slug: github-resume-management
 date: 2023-06-07T00:00:00Z
 author: bmf-san
@@ -9,28 +9,30 @@ tags:
   - Git
   - GitHub
   - Resume
+description: I switched from Google Drive to GitHub for managing my resume.
 translation_key: github-resume-management
 ---
 
-I have started managing my resume with Github instead of Google Drive.
 
-I found this to be a personally beneficial initiative, so I wanted to write an article about it.
+I switched from managing my resume on Google Drive to using GitHub.
 
-In this context, a resume refers to a text-based summary of various aspects of my career.
+This has been a personally beneficial change, so I decided to write about it.
+
+The resume here refers to a text-based summary of various aspects of my career.
 
 # Motivation
-I was uploading and managing files on Google Drive, but it was somewhat difficult to update and I often lacked the motivation to do so. I thought it would be more desirable to have a method that makes differences clear and allows for easy publication.
+I used to upload and manage files on Google Drive, but it was somewhat cumbersome to update, and I often lacked the motivation to do so. I thought it would be more desirable to have a method where differences are easily noticeable and can be shared publicly without much hassle.
 
-There are two main reasons for managing my resume.
+There are two reasons why I manage my resume in the first place.
 
-The first is "preparation for career uncertainties." I want to regularly take stock of my career, reflect on my experiences, and use it as material for self-analysis regarding what I want to pursue in my future career. I also want to have material ready to explain what I am capable of. This leads to the second reason.
+The first is "preparation for career anxiety." I want to periodically review my career, reflect on my experiences, and use it as material for self-analysis to determine what I aim for in my future career. Additionally, I want to have material ready to explain what I am capable of, which ties into the second reason.
 
-The second reason is "preparation for job changes." Given the nature of being an engineer and the state of society and the economy, I believe it is necessary to always be prepared for a job change at any time.
+The second reason is "preparation for job changes." Given the nature of being a specialist as an engineer and the state of society and the economy, I believe it's necessary to be prepared to change jobs at any time.
 
-# How am I managing it on Github?
-I created a private repository on Github to manage my resume. (I want to make it a public repository, but I have just created it and have not yet sorted out what information can be made public and what should remain private.)
+# How am I managing it on GitHub?
+I created a private repository on GitHub to manage my resume. (I am considering making it a public repository, but I haven't yet sorted out what information can be public and what should remain private.)
 
-The base is referenced from [github.com - kawamataryo/resume](https://github.com/kawamataryo/resume).
+The main reference is [github.com - kawamataryo/resume](https://github.com/kawamataryo/resume).
 
 ## Directory Structure
 It looks like this:
@@ -45,27 +47,28 @@ It looks like this:
 │   └── pdf
 ├── package-lock.json
 └── package.json
+
 ```
 
-The `certification` directory contains files related to certifications.
+`certification` contains files related to certifications.
 
-The `md` directory contains various resumes written in markdown format. I write my resumes in the following categories:
+`md` is where I write various resumes in markdown format. I categorize my resumes as follows:
 
-- Management Experience
-- Technical Stack
-- Extracurricular Activities
+- Management History
+- Tech Stack
+- Activities Outside Work
 - Career Summary
 - Work History
 
-These categories and the format of each file are largely inspired by the resumes from Job Draft. I believe they sufficiently cover the necessary information for a resume.
+I have greatly referenced the resume format from job draft sites for these categories and file formats, as I believe they sufficiently cover the necessary information for a resume.
 
-For the work history, I refer to a CSV file prepared using my own [tool](https://github.com/bmf-san/go-github-pull-request) that downloads related PRs in CSV format from Github.
+For the work history, I use a [self-made tool](https://github.com/bmf-san/go-github-pull-request) to download CSV files of PRs I am involved in on GitHub, which I use as a reference when writing.
 
-Using PRs makes the output clear and makes it easy to understand what I have done, which simplifies writing the resume. Of course, there may be outputs other than PRs, but I rely on my memory to fill in those gaps.
+With PRs, the output is clear, making it easy to understand what I have done, thus making it easier to write the resume. Of course, there are outputs other than PRs, but I rely on memory for those.
 
-The various resumes written in markdown format are converted to PDF format (md-to-pdf), and files are generated under the `pdf` directory.
+The various resumes written in markdown format are converted to PDF (md-to-pdf), and files are generated under `pdf`.
 
-The `pages` directory contains resumes in pages format. This is something I want to change to markdown format due to its inertia.
+`pages` stores resumes in pages format. This is a bit of a hassle, so I plan to change it to markdown format.
 
 ## Operation
 - Create a branch
@@ -74,7 +77,7 @@ The `pages` directory contains resumes in pages format. This is something I want
 - Generate PDF `npm run md-to-pdf`
 - Merge into main
 
-This is roughly how it goes.
+That's roughly how it goes.
 
 # Thoughts
-When doing various tasks and personal activities daily, it can become cumbersome to reflect that in my resume, but I feel that the operation has improved, making it much easier.
+When you're doing various tasks and miscellaneous personal activities daily, it becomes cumbersome to reflect them in your resume, but with improved operations, it feels much easier now.

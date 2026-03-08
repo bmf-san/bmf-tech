@@ -1,5 +1,5 @@
 ---
-title: Generative AI and Software Engineering Careers
+title: Generative AI and the Career of Software Engineers
 slug: generative-ai-software-engineer-career
 date: 2025-02-12T00:00:00Z
 author: bmf-san
@@ -7,71 +7,73 @@ categories:
   - Career
 tags:
   - Generative AI
+description: The rapid evolution of generative AI is bringing significant changes to society. As a software engineer, anticipating these technological changes is crucial.
 draft: true
 translation_key: generative-ai-software-engineer-career
 ---
 
-The recent evolution of generative AI has been remarkable, bringing about many changes in society.
+
+The rapid evolution of generative AI is bringing significant changes to society.
 
 As someone working as a software engineer, I strongly feel the need to anticipate these technological changes.
 
-I am not well-versed in the technology of generative AI itself, but from the perspective of someone utilizing it, I have some thoughts that I want to jot down for future reference, allowing me to check my own answers a few years from now.
+Although I am not well-versed in the technology of generative AI itself, I have some thoughts from the perspective of a user of generative AI, and I want to jot them down so I can verify them myself in a few years.
 
-This article reflects my personal views at the time of writing, and my thoughts may change by tomorrow.
+These are my personal views at the time of writing this article, and my thoughts might change by tomorrow.
 
-By the way, I have not borrowed any power from generative AI in writing this article.
+By the way, I did not use any generative AI to write this article.
 
-# Will Software Engineering Jobs Disappear?
-If software engineering jobs were to completely disappear, it would mean that singularity has occurred, and we could live without working (etc.).
+# Will the job of a software engineer disappear?
+If the job of a software engineer were to completely disappear, it would mean that the singularity has occurred, and we would be living in an era where we don't need to work to survive.
 
-I believe the nature of work will change, and parts of it will become automated. It could be said that this is already happening.
+I think the nature of the work will change, and parts of the job will become automated. It might already be happening.
 
-Jobs that involve working with software are unlikely to disappear.
+I don't think the work of dealing with software will disappear.
 
-While the question of whether jobs will disappear or not is a matter of survival, I believe we need to be flexible in responding to changes, even if jobs do not disappear.
+Whether it disappears or not is a matter of survival, but even if it doesn't disappear, I believe we need to be flexible in adapting to changes.
 
-I feel that the portion of coding will become more automated, significantly reducing the parts that require human intervention. There may already be areas where this has decreased that I cannot observe.
+I feel that the part of coding will become more automated, and the parts where humans need to be hands-on will significantly decrease. In areas I can't observe, this might already be happening.
 
-Coding is an important process in software engineering, but since it is only a part of it, I think that even if this part is replaced by generative AI, it will not lead to job loss.
+Coding is an important process in software engineering, but it's only a part of it, so even if this part is replaced by generative AI, I don't think it will lead to the disappearance of jobs.
 
-I do not currently feel that the ability to read and write code will become unnecessary.
+I don't feel that the ability to read and write code will become unnecessary at this point.
 
-However, I believe that the skills related to the processes before coding and soft skills are areas that are less likely to be replaced by generative AI, so improving skills in those areas will likely become increasingly important in the future.
+However, I believe that the skills and soft skills required before writing code are areas that are difficult to replace with generative AI, so improving skills in these areas will become increasingly important.
 
-In this context, I have never experienced working for a system integrator (SIer), but I have a vague feeling that the industry structure of SIers will change significantly.
+In this context, although I have never experienced working in a system integrator (SIer), I have a vague feeling that the industry structure of SIers will change significantly.
 
-# What Changes Will Generative AI Bring to Skill Development in Software Engineering?
-Recently, I have developed a habit of asking generative AI chat tools before Googling.
+# How will it change skill development in software engineering?
+Recently, I've developed a habit of asking generative AI chat tools before Googling.
 
-I think the quality of the output (answers) from generative AI chat tools varies based on the input (prompt, questions, or consultations), but even with rough inputs, they provide quite intelligent outputs.
+I think the quality of output (answers) from generative AI chat tools changes based on the input (prompts, questions, consultations), but even with rough input, they provide quite intelligent output.
 
-Generative AI has sufficient capabilities to support software engineering, such as summarizing text, creating outlines for documents, and comparing and validating technologies I want to research.
+Generative AI has sufficient capabilities to support software engineering, such as summarizing texts, creating document outlines, and comparing and verifying technologies to be researched.
 
-I will not delve deeply into whether it is necessary to learn things that can be answered by AI, but I think it is not much different from questioning the value of taking qualification exams. (I currently believe there is a need to learn.)
+Regarding whether there's a need to learn things that AI can tell you, I won't delve into it deeply here, but I think it's not much different from questioning the meaning of taking certification exams. (At this point, I believe there is a need to learn.)
 
-One change that generative AI brings to skill development in software engineering is what I call the "Knowledge Highway." In other words, the process of learning something has been optimized, making it easier to learn.
+One of the changes generative AI brings to skill development in software engineering is what I call the "highway of knowledge." In other words, the process of learning something is optimized, making it easier to learn.
 
-While it is necessary to think and verify on your own, I believe that with the help of generative AI, learning has become easier than ever before.
+While it's necessary to think and verify things on your own, I believe that with the help of generative AI, learning has become easier than ever.
 
 Moreover, generative AI not only provides ease of learning but also sometimes outputs answers (expected deliverables), contributing to efficiency.
 
-I feel that it has also become a significant driving force in the commoditization of technology.
+It seems to be a driving force that significantly advances the commoditization of technology.
 
-Those who will become software engineers in the future will likely find it easier to acquire software engineering skills than before, and those who are already software engineers will find it easier to broaden and deepen their technical expertise.
+For those who are becoming software engineers, it will likely be easier to acquire software engineering skills faster than before, and for those who are already software engineers, it will be easier to broaden and deepen their technical expertise.
 
-In such a situation, I believe the difference in the abilities of software engineers will manifest as differences in their capacity to catch up, which I think is a truth that remains unchanged before and after the advent of generative AI. It is necessary to factor in what kind of abilities catch-up capacity entails, but since it is not the main subject, I will not touch on it here.
+In such a situation, I think the difference in the abilities of software engineers will be reflected in their ability to catch up, but I believe this is an unchanging truth before and after the advent of generative AI. While it's necessary to factorize what the ability to catch up entails, it's not the main topic here, so I won't touch on it.
 
-# How Should Software Engineers Approach Generative AI?
-I believe it is necessary to learn how generative AI works and to use it to deepen understanding, but I think there are two strategies for how to utilize generative AI going forward (considering individual career strategies rather than corporate ones).
+# How should software engineers engage with generative AI?
+I think it's necessary to learn about the mechanisms of generative AI and use it to deepen understanding, but beyond that, there seem to be two strategies for how to utilize it. (Here, I'm considering it from the perspective of individual career strategies, not corporate strategies.)
 
-One is to "apply it to areas where generative AI can be utilized," and the other is to "enhance abilities in areas where generative AI cannot be utilized."
+One is "applying it to areas where generative AI can be utilized," and the other is "enhancing abilities in areas where generative AI cannot be utilized."
 
-For the former, I think it is necessary to advance what can be done to increase one's disposable time, but careful consideration is needed regarding what to target and how much resources to invest.
+For the former, I think it's necessary to proceed with what can be done to increase one's disposable time, but it's important to carefully consider what to target and how much resources to invest.
 
-Areas where generative AI can be utilized are likely to be replaced by generative AI sooner or later, and the costs invested in areas that may be replaced could become sunk costs.
+The areas where generative AI can be utilized are those that might eventually be replaced by generative AI, and the costs invested in areas that might be replaced could become sunk costs.
 
-I believe it is essential to discern the areas where generative AI can be entrusted, supported, or not utilized, and to scrutinize the areas where I invest my time more than ever before.
+I think it's necessary to carefully assess the areas to entrust to generative AI, the areas to be supported by generative AI, and the areas not to use generative AI, and scrutinize the areas to invest one's time more than ever.
 
-I tend to think that betting on the latter may provide more leverage, but there is also the possibility of being eliminated by technological innovation, so I want to think carefully about that.
+I think betting on the latter might be more leveraged, but since technological innovation can lead to obsolescence, I want to think carefully about that.
 
-Finding areas that are unlikely to be completely replaced by generative AI and considering a multiplicative skill set seems to be a solid personal career strategy.
+Finding areas that are unlikely to be completely replaced by generative AI and considering a skill set that combines them seems to be a solid individual career strategy.

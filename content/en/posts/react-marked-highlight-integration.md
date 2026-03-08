@@ -1,7 +1,6 @@
 ---
-title: React + marked + highlight
+title: React＋marked＋highlight
 slug: react-marked-highlight-integration
-image: /assets/images/posts/react-marked-highlight/a60a6293-1345-ae00-942c-e544e6e526a6.gif
 date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
@@ -9,18 +8,20 @@ categories:
 tags:
   - ES6
   - React
-  - highlight.js
+  - highlightjs
   - markdown
   - marked
 translation_key: react-marked-highlight-integration
 ---
 
-I created a Markdown editor in React instead of a WYSIWYG editor.
 
-Most of the source code is based on [React Introduction](http://yusuke-aono.hatenablog.com/entry/20150503/1430661392).
+I created a markdown editor using React instead of a WYSIWYG editor.
 
-Here’s a rough GIF sample _(:3」∠)_
+Most of the source code was referenced from [React入門](http://yusuke-aono.hatenablog.com/entry/20150503/1430661392).
+
+Here's a rough gif sample _(:3」∠)_
 ![markdown.gif](https://qiita-image-store.s3.amazonaws.com/0/124495/a60a6293-1345-ae00-942c-e544e6e526a6.gif)
+
 
 # Environment
 * React
@@ -28,13 +29,17 @@ Here’s a rough GIF sample _(:3」∠)_
 * highlight.js([highlightjs.org](https://highlightjs.org/)) - Syntax highlighting
 * bower - Used for managing all the above packages
 
+
 # Preparation
 Install marked and highlight.js using bower
 
 `bower install marked`
 `bower install highlightjs`
 
-Please install them in your environment and set the paths accordingly. Note that it’s highlightjs, not highlight. They seem to be different, and I got stuck for about an hour because of this mistake.... (cry)
+Please install each in your environment and set the paths.
+It's highlightjs, not bower install highlight.
+They seem to be different, and I got stuck for about an hour because I made this mistake... (cry)
+
 
 # Implementation
 
@@ -75,11 +80,13 @@ index.html
 </html>
 ```
 
-I set the Monokai stylesheet for the syntax highlighting color theme because I like it. I’m using a CDN for Babel this time, but it’s also okay to install it via bower.
+I like the monokai color theme for syntax highlighting, so I set the monokai stylesheet.
+Regarding babel, I'm using a CDN this time, but you can also install it with bower.
 
-Now, let’s create the React components. As mentioned at the beginning, most of it is based on [React Introduction](http://yusuke-aono.hatenablog.com/entry/20150503/1430661392), so I recommend reading that first.
+Now, let's create the React components. As mentioned at the beginning, most of it is referenced from [React入門](http://yusuke-aono.hatenablog.com/entry/20150503/1430661392), so it might be good to read through it.
 
-I just added the highlight.js configuration code to the reference source. (Not much work done, lol)
+I just added the highlight.js setting code to the reference source. (Not much work done lol)
+
 
 markdown.js
 
@@ -146,22 +153,26 @@ var Markdown = React.createClass({
 });
 
 ReactDOM.render(
-    <App />, 
+    <App />,
     document.getElementById("content")
 );
 ```
 
-The text input component, the Markdown output component, and the integrating component are divided into three parts.
+The components are divided into three: the text input component, the markdown output component, and the component that integrates them.
 
-The Markdown parsing is done using the marked function. The options for this marked function are set to use highlight.js in the componentDidUpdate section. The method for setting options is described in the highlight.js README.
+Markdown parsing is done with a function called marked.
+The options for this marked function are set to use highlight.js in componentDidUpdate.
+The method for setting options is written in the highlight.js README.
 
-`dangerouslySetInnerHTML` is a property used to sanitize data as an XSS countermeasure.
+dangerouslySetInnerHTML is a property that sanitizes data for XSS protection.
 
-# Thoughts
-This is the first time I’ve created an editor, and it’s amazing how quickly it can be done with libraries~ _(:3」∠)_
+
+# Impressions
+This was my first time creating an editor, and it can be done quickly with libraries~ _(:3」∠)_
+
 
 # ES6 Version
-Recently, I studied ES6, so I rewrote it. I wasn’t sure how to handle propsType, so I omitted it, lol.
+I recently studied ES6, so I rewrote it. I wasn't sure how to handle propsType, so I omitted it lol
 
 ```markdown.js
 /**

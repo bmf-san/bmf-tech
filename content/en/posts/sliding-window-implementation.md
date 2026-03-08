@@ -1,29 +1,30 @@
 ---
-title: Implementation of Sliding Window
+title: Implementing Sliding Window
 slug: sliding-window-implementation
 date: 2023-08-17T00:00:00Z
 author: bmf-san
 categories:
-  - Algorithms
-  - Data Structures
+  - Algorithms and Data Structures
 tags:
   - Sliding Window
 translation_key: sliding-window-implementation
 ---
+
+
 
 # What is Sliding Window
 An algorithm that explores subarrays of an array by shifting a "window (subset)".
 
 The window size can be fixed or dynamic.
 
-It is used in examples such as rate limiters.
+A practical example is its use in rate limiters.
 
 # Implementation
-The source code is as follows.
+The source code is below.
 
 [sliding_window](https://github.com/bmf-san/road-to-algorithm-master/tree/master/algorithm/sliding_window)
 
-A function that searches for subarrays with a sum greater than or equal to N from the given array.
+A function that searches for subarrays whose sum is greater than or equal to N from a given array.
 
 ```go
 package main
@@ -59,7 +60,8 @@ func main() {
 }
 ```
 
-```// Output
+```
+// Output
 [1 3 2 6]
 [3 2 6]
 [2 6 4]
@@ -69,39 +71,39 @@ func main() {
 [9]
 ```
 
-The flow of the SlidingWindow function is as follows:
+The process flow of the SlidingWindow function is as follows.
 
-1. Place the window from the start of the data to the starting position.
-2. Check if the elements within the window meet the conditions.
-3. If the conditions are met, add the subarray within the window to the results.
-4. Slide the window one step to the right.
-5. Repeat steps 3 to 5 until the window reaches the end of the data.
+1. Place the window from the start of the data to the starting position
+2. Check if the elements within the window meet the condition
+3. If the condition is met, add the subarray within the window to the result
+4. Slide the window one step to the right
+5. Repeat steps 3 to 5 until the window reaches the end of the data
 
-The image of the window shifting is as follows:
+The image of the window sliding is as follows.
 ```
-[1 3 2 6] ← The first window that meets the condition
+[1 3 2 6] ← The first window found that meets the condition
 [3 2 6] ← Further exploration within the window that meets the condition
 
 [2 6 4]  ← Shift the starting position to secure the next window
-[6 4] ← Further exploration within the window
+[6 4]   ← Further exploration within the window
 
-Repeat...
+Repeat below...
 [4 9]
 [9]
 
 [9]
 ```
 
-This can be applied to problems involving arrays.
+It can be applied to problems dealing with arrays.
 
 Although not the optimal solution, [leetcode.com - two-sum](https://leetcode.com/problems/two-sum) can also be solved using the sliding window.
 
-# Postscript
+# Additional Notes
 This video was easy to understand.
 
 [youtube.com - Solve subarray problems FASTER (using Sliding Windows)](https://www.youtube.com/watch?v=GcW4mgmgSbw)
 
-It explains both fixed and dynamic window sizes.
+There is an explanation for when the window size is fixed and when it is dynamic.
 
 # References
 - [www.techinterviewhandbook.org - Array cheatsheet for coding interviews](https://www.techinterviewhandbook.org/algorithms/array/)

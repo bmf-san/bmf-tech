@@ -10,13 +10,15 @@ tags:
 translation_key: ruby-symbols
 ---
 
+
+
 # Overview
 Writing about Ruby symbols.
 
-# What is a Symbol
-An object corresponding to any string.
+# What is a Symbol?
+An object that corresponds to an arbitrary string.
 
-Internally managed as an integer.
+Internally, it is managed as an integer.
 
 ```ruby
 :symbol
@@ -24,7 +26,7 @@ Internally managed as an integer.
 %s!symbol!
 ```
 
-Symbols are objects of the Symbol class, while strings are objects of the String class. This makes them memory efficient.
+A symbol is an object of the Symbol class, while a string is an object of the String class, making it memory efficient.
 
 Unlike strings, symbols are the same object.
 
@@ -43,19 +45,19 @@ puts 'symbol'.object_id # => 100
 Additionally, symbols are immutable objects.
 
 ```ruby
-# Cannot be modified, will raise an error
+# Cannot be modified, resulting in an error
 symbol = :Symbol
 symbol.sub(/Sym/, 'sym') # => undefined method `sub' for an instance of Symbol (NoMethodError)
 ```
 
-Some use cases include:
+Here are some use cases.
 
 ```ruby
 # Hash keys
 hash = { :key => "value" }
 puts hash[:key] # => value
 
-# Used as instance variable names passed as arguments to accessors
+# Used as instance variable names passed as accessor arguments
 class Order
   attr_reader :id
 
@@ -67,30 +69,30 @@ end
 order = Order.new(1)
 puts order.id # => 1
 
-# Used as method names passed as arguments to methods
+# Used as method names passed as method arguments
 text = "hello"
 puts text.__send__(:to_s) # => hello
 
-# C-like enum usage
+# Used like C enums
 STATUS_ACTIVE = :active
 STATUS_INACTIVE = :inactive
 
 def puts_status(status)
   case status
   when STATUS_ACTIVE
-    puts "Active"
+    puts "有効"
   when STATUS_INACTIVE
-    puts "Inactive"
+    puts "無効"
   end
 end
 
-puts_status(STATUS_ACTIVE) # => Active
-puts_status(STATUS_INACTIVE) # => Inactive
+puts_status(STATUS_ACTIVE) # => 有効
+puts_status(STATUS_INACTIVE) # => 無効
 ```
 
 # References
 - [docs.ruby-lang.org - class Symbol](https://docs.ruby-lang.org/ja/latest/class/Symbol.html)
-- [qiita.com - What is a Symbol!? 【Ruby Beginner's Guide】](https://qiita.com/yyykms123/items/6a6ae7fe8cd9263a3d1c)
+- [qiita.com - What is a Symbol!? 【Ruby Super Beginner】](https://qiita.com/yyykms123/items/6a6ae7fe8cd9263a3d1c)
 - [zenn.dev - Understanding Ruby Symbols Thoroughly](https://zenn.dev/kanoe/articles/352d78902c83e168db66)
-- [zenn.dev - Easy Understanding of the Symbol ':' for Ruby Beginners](https://zenn.dev/hiro_xre/articles/709934e347edc3)
-- [techracho.bpsinc.jp - The Reason for Symbols in Ruby (Translation)](https://techracho.bpsinc.jp/hachi8833/2022_04_28/117351)
+- [zenn.dev - Easily Understand the Symbol ":" that Confuses Ruby Beginners](https://zenn.dev/hiro_xre/articles/709934e347edc3)
+- [techracho.bpsinc.jp - Why Ruby Has Symbols (Translation)](https://techracho.bpsinc.jp/hachi8833/2022_04_28/117351)

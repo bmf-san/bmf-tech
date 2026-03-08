@@ -11,16 +11,18 @@ tags:
 translation_key: go-code-review-comments-summary
 ---
 
+
+
 # Overview
-[github.com - CodeReviewComments](https://github.com/golang/go/wiki/CodeReviewComments) summarizes the notes I want to keep from reading.
+I have summarized the points I want to note after reading [github.com - CodeReviewComments](https://github.com/golang/go/wiki/CodeReviewComments).
 
 # Comment Sentences
-- Comments should end with a period.
+- End comments with a period.
 - [golang.org - commentary](https://golang.org/doc/effective_go.html#commentary)
 
 # Copying
-- Be careful of unexpected references when copying structs from another package.
-- Use *T instead of T if the method is associated with a pointer value.
+- Be cautious of unexpected references when copying structures from other packages.
+- If a method is associated with a pointer value, use *T instead of T.
 
 # Crypt Rand
 - Do not use `math/rand` for key generation. Use `crypto/rand`'s `Reader`.
@@ -28,74 +30,73 @@ translation_key: go-code-review-comments-summary
 
 # Declaring Empty Slices
 ```go
-// Length 0 slice
+// Slice of length 0
 t := []string{}
 ```
-
 Instead, use:
 
 ```go
-// nil slice
+// Nil slice
 var t []string
 ```
+When encoding a JSON object, `nil` is converted to `null`, while `[]string{}` is converted to `[]`.
 
-When encoding a JSON object, `nil` is converted to `null`, but `[]string{}` is converted to `[]`.
-
-In interface design, it is better not to distinguish between the two, as it can lead to confusing mistakes.
+In interface design, it's better not to distinguish between the two, as it may lead to confusing errors.
 
 # Don't Panic
-- Avoid using `panic` for normal error handling; return multiple values including an `error` type instead.
+- Avoid using `panic` for regular error handling; instead, return multiple values including an `error` type.
 
 # Goroutine Lifetimes
-- Be clear about when a goroutine will finish when creating it.
-- Goroutines can cause memory leaks due to blocking on channel sends and receives.
+- Clearly define when a goroutine will end when creating it.
+- Goroutines can cause memory leaks if blocked by channel send/receive.
 - The garbage collector will not stop a goroutine even if it cannot reach a blocked channel.
 
 # Import Blank
-- Using `import _ "pkg"` allows you to utilize side effects when importing a package.
-- This method should only be used in the main package of the program or in tests.
+- Using `import _ "pkg"` allows you to utilize the side effects of importing a package.
+- This method should only be used in the main package of a program or in tests.
 
 # Import Dot
-- Using . for import treats the imported package as part of the specified package, allowing you to avoid circular references.
+- Importing with a dot treats the imported package as part of the specified package, helping to avoid circular references.
 
 ```go
 package foo_test
 
 import (
-    "bar/testutil" // also imported in foo
-    . "foo" // makes foo_test appear as part of foo
+    "bar/testutil" // Also imported in foo
+    . "foo" // Makes foo_test appear as part of foo
 )
 ```
 
 # Named Result Parameters
-- Use named return values when it is unclear what the return values mean.
+- Use named result parameters when the meaning of the return values is unclear.
 
 # Naked Returns
 - Same as Named Result Parameters.
 
 # Receiver Type
-Criteria for whether to use a pointer or value for a method receiver. If in doubt, use a pointer.
+Guidelines for choosing whether to make a method's receiver a pointer or a value.
+If unsure, use a pointer.
 
 ### Cases to Avoid Pointers
 - Avoid pointers if the receiver is a `map`, `func`, or `channel`.
-- Avoid pointers if the receiver is a `slice` and the method does not recreate the `slice`.
-- If the receiver is small and is originally a value type (e.g., `time.Time`), or if it is a struct or array without fields that change or pointers, or types like `int` or `string`, it may be better for the receiver to be a value.
-  - If a value is passed to a method, a copy is made in stack memory instead of allocating memory on the heap.
+- If the receiver is a `slice` and the method does not recreate the `slice`, avoid pointers.
+- If the receiver is small, inherently a value type (e.g., `time.Time`), or a structure or array without fields or pointers to modify, or a type like `int` or `string`, it may be better as a value.
+  - If the value is passed to a method, it will be copied to stack memory instead of allocating memory in the heap.
 
-### Cases for Pointers
-- If a method needs to change a value, the receiver should be a pointer.
-- If the receiver is a `sync.Mutex` or has fields that require synchronization, the receiver should be a pointer.
-- If the receiver is a large struct or array, it should be a pointer.
-- Will the receiver's value be changed when functions are executed concurrently or methods are called?
-  - Passing by value generates a copy of the receiver at method execution time. Therefore, changes to the receiver will not apply outside the method. If changes need to apply to the original receiver, the receiver should be a pointer.
-- If the receiver may be a struct, array, slice, or other elements that could be changed, it is better to use a pointer for easier code reading.
+### Cases to Use Pointers
+- If a method needs to modify the value, the receiver should be a pointer.
+- If the receiver is a `sync.Mutex` or a structure with fields that require synchronization, use a pointer.
+- If the receiver is a large structure or array, use a pointer.
+- If the function is executed concurrently or the method modifies the receiver's value when called:
+  - Value passing generates a copy of the receiver when the method is executed. Therefore, changes to the receiver are not applied outside the method. If changes need to be applied to the original receiver, use a pointer.
+- If the receiver might be a structure, array, slice, or other element that may be modified, using a pointer makes the code easier to read.
 
 # Useful Test Failures
-Messages to convey when a test fails:
-- What went wrong (≈ cause of error)
-- What input was there (≈ test cases)
-- What actual values were present (≈ actual)
-- What values were expected (≈ expected)
+Messages to convey when a test fails.
+- What went wrong (≒cause of error)
+- What input was given (≒test cases)
+- What the actual values were (≒actual)
+- What values were expected (≒expected)
 
 # References
 - [github.com - CodeReviewComments](https://github.com/golang/go/wiki/CodeReviewComments)

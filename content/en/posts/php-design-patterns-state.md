@@ -8,19 +8,21 @@ categories:
 tags:
   - GoF
   - PHP
-  - Design Patterns
+  - Design Pattern
   - State Pattern
 translation_key: php-design-patterns-state
 ---
 
+
+
 # Overview
-This is an article that couldn't make it in time for the [Learning Design Patterns with PHP Advent Calendar 2018](https://qiita.com/advent-calendar/2018/php-design-pattern).
+An article that didn't make it in time for the [PHP Design Patterns Advent Calendar 2018](https://qiita.com/advent-calendar/2018/php-design-pattern).
 
 # What is the State Pattern?
-A pattern that allows behavior to change by preparing states as classes.
+A pattern that allows behavior to be switched by preparing states as classes.
 
 # Implementation
-I imagined an example that toggles the state of a switch on and off. It seems better to use a singleton.
+An example assuming switching the on/off state of a switch. It might be better to use Singleton.
 
 ```php
 <?php
@@ -55,7 +57,7 @@ class Light
 {
     public function __construct()
     {
-        // Set default state class
+        // Set the default state class
         $this->state = new OffState();
     }
 
@@ -80,12 +82,12 @@ echo $light->toggle();
 echo $light->getState(); // OFF
 ```
 
-The state classes have an image of having state-specific processes.
+The state class has an image of holding state-specific processing.
 
-I think this pattern can be considered when there are multiple states and the specific processes become complex.
+It seems to be a pattern that can be considered when there are multiple states and each has complex specific processing.
 
-# Thoughts
-For some reason, this is my favorite pattern among design patterns. It feels interesting and makes me want to try using it.
+# Impressions
+For some reason, this is my favorite pattern among design patterns. It feels like it has an interesting appeal that makes you want to use it.
 
 # References
 - [State Pattern - PHP Design Patterns](https://www.ritolab.com/entry/140)

@@ -7,8 +7,12 @@ categories:
   - Architecture
 tags:
   - Architecture
-  - Books
+  - Book
 translation_key: software-architect-97-things
 ---
 
-[97 Things Every Software Architect Should Know](https://amzn.to/4dOEvfU) is a book that provides insights into 97 notable attitudes and thoughts of software architects.
+
+
+[I read 97 Things Every Software Architect Should Know](https://amzn.to/4dOEvfU).
+
+You can learn 97 notable attitudes and perspectives on software architecture.

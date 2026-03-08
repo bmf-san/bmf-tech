@@ -1,5 +1,5 @@
 ---
-title: 10 Software Principles Learned from Gorillas
+title: 10 Software Laws Learned from Gorillas
 slug: gorilla-software-principles
 date: 2019-04-17T00:00:00Z
 author: bmf-san
@@ -10,118 +10,133 @@ tags:
 translation_key: gorilla-software-principles
 ---
 
+
+
 # Overview
-Based on the rough notes I wrote previously on [Software Development Principles](https://bmf-tech.com/posts/%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2%E9%96%8B%E7%99%BA%E3%81%AE%E6%B3%95%E5%89%87), I gave a lightning talk, and I will summarize the slide content here.
+I gave a lightning talk based on a rough memo I wrote earlier about [software development laws](https://bmf-tech.com/posts/%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2%E9%96%8B%E7%99%BA%E3%81%AE%E6%B3%95%E5%89%87), so I will summarize it by supplementing the slide content.
 
-The slides are here:
-[10 Software Principles Learned from Gorillas](https://speakerdeck.com/bmf_san/koriratexue-husohutoueafalsefa-ze-10xuan)
+Slides are here ↓
+[10 Software Laws Learned from Gorillas](https://speakerdeck.com/bmf_san/koriratexue-husohutoueafalsefa-ze-10xuan)
 
-It was a bit unrealistic to learn from gorillas, so I left a script behind.
+It was a bit of a stretch to learn from gorillas, so I will leave the script here.
 
-# Software Development Principles
-Rather than being bound by principles discussed in the context of software, I consider principles from other fields that may apply to software as "Software Development Principles."
+# Software Development Laws
+These are considered "software development laws" not just limited to those spoken in the context of software, but also those from other fields that could apply to software.
 
-Many are based on empirical rules, but the sources vary, including management engineering, psychology, and various papers.
+Many are based on empirical rules, with sources ranging from management engineering to psychology, or even some paper somewhere.
 
 # Parkinson's Law (First Principle)
-**"The amount of work expands to fill the time available for its completion."**
 
-A well-known principle.
+**"Work expands to fill the time available for its completion."**
 
-Discussed by British historian and political scientist Cyril Northcote Parkinson in his book, "Parkinson's Law: The Pursuit of Progress."
+A well-known one.
 
-By the way, the second principle states, "Expenditures increase until they reach income."
+This was discussed by British historian and political scientist Cyril Northcote Parkinson in his book "Parkinson's Law: The Pursuit of Progress."
 
-In the world of computers, this law is applied to the relationship between data volume and storage capacity.
+Incidentally, the second principle is "Expenditure rises to meet income."
 
-Data volume tends to expand to the limits of storage capacity.
+In the computer world, the law is applied to the relationship between data volume and storage.
 
-It suggests that things with room to grow will continue to expand until they fill the given constraints, and there are quite a few elements in software development that have such relationships.
+Data volume expands to the limit of storage, something like that.
 
-The discussion revolves around how to confront things that keep increasing, and it seems that detailed goal setting and planning are effective...
+Things that have room to grow until they fill the given space will expand, and there are quite a few such elements in software development.
 
-# Brooks' Law
+The question is how to confront things that keep increasing, and it seems that setting detailed goals and planning are effective...
+
+# Brooks's Law
 **"Adding manpower to a late software project makes it later."**
 
-This principle was discussed by American software engineer Frederick Brooks in his book, "The Mythical Man-Month."
+This law was discussed by American software engineer Frederick Brooks in his book "The Mythical Man-Month."
 
-He is also known for the famous saying, "There is no silver bullet."
+He is also the person who coined the famous phrase "There is no silver bullet."
 
-Adding personnel to a delayed project can create bottlenecks in communication costs and information catch-up within the team, resulting in decreased productivity and further delays.
+Adding manpower to a delayed project creates bottlenecks in communication costs and information catch-up within the team, resulting in an inability to increase productivity and further delays.
 
-You might think that if the added personnel were super engineers with the power of 100 men, the delays could be avoided, but it would be good to reflect (confirm) on the reasons this law holds true as discussed in "The Mythical Man-Month."
+You might think that if the additional manpower were a super engineer with the strength of 100 people, delays could be avoided, but it would be good to reflect (confirm) on why this law holds in "The Mythical Man-Month."
 
 # Conway's Law
-**"The structure of software reflects the structure of the organization that produces it."**
 
-British programmer Melvin Conway is known for inventing coroutines and proposed this law in a paper about coroutines.
+**"The structure of software reflects the structure of the organization."**
 
-There is a strategy called the reverse Conway strategy that takes advantage of this law.
+British programmer Melvin Conway.
 
-The strategy suggests that a good software structure will reflect a good organizational structure, but for the business model, organizational structure, and software structure to be in harmony, it might be better for the software structure to take the lead (though this could be misleading or misunderstood).
+Famous for inventing coroutines, he proposed this law in a paper on coroutines.
+
+There is a reverse Conway strategy that takes advantage of this law.
+
+The strategy is that a good software structure reflects a good organizational structure, but for the business model, organizational structure, and software structure to become a trinity, it might be good for the software structure to take the lead. (This might be misleading. There might be misunderstandings.)
 
 # Heinrich's Law
-**"For every major accident, there are 29 minor accidents and 300 near misses."**
 
-This is one of the empirical rules proposed by Harvard William Heinrich, who worked for an American insurance company, regarding workplace accidents.
+**"Behind every major accident, there are 29 minor accidents and 300 anomalies."**
 
-In crisis management, when applied to the software world, it teaches us that there are likely multiple "anomalies" behind incidents and bugs, and we should strive to detect them in advance.
+This is one of the empirical rules proposed by Harvard William Heinrich, who worked at an American insurance company, regarding occupational accidents.
 
-# Linus's Law (proposed by Eric Raymond)
+In terms of crisis management, when applied to the software world, it suggests that behind incidents and bugs, there should be multiple "anomalies," and we should strive to detect them in advance.
+
+# Linus's Law (Proposed by Eric Raymond)
+
 **"Given enough eyeballs, all bugs are shallow."**
 
-This was discussed by American programmer Eric Raymond in his book, "The Cathedral and the Bazaar."
+This is a passage discussed by American programmer Eric Raymond in his book "The Cathedral and the Bazaar."
 
-In essence, if there are enough users (or contributors??) of the software, bugs are not such a serious problem, but it feels more like a mindset rather than a strict law...
+The idea is that if there are enough software users (or contributors??), bugs are not such a serious problem, but it seems more like a mindset than a law....
 
-The term "cathedral" refers to a temple building.
+A cathedral refers to the buildings of a temple.
 
 # Hofstadter's Law
+
 **"It always takes longer than you expect, even when you take into account Hofstadter's Law."**
 
-This was discussed by American scholar Douglas Hofstadter in his book, "Gödel, Escher, Bach."
+This is a passage discussed by American scholar Douglas Hofstadter in his book "Gödel, Escher, Bach."
 
 Isn't this a law that everyone has experienced?
 
-One way to counter this law is to be creative in how you plan.
+One way to resist the law is to try to devise a way to plan.
 
 # Hick's Law
-**"The time it takes to make a decision is proportional to the number of choices available."**
+
+**"The time it takes to make a decision increases with the number and complexity of choices."**
 
 This law was proposed by British psychologist William Hick.
 
-I believe this is a law that should be considered in UI design.
+It is a law that should be considered in UI.
 
-There is a formula to determine the time taken for decision-making, but I will skip the explanation here.
+There is a formula to calculate the time it takes to make a decision, but I will omit the explanation here.
 
 # Murphy's Law
+
 **"Anything that can go wrong will go wrong."**
 
-There are various theories about the origin of this law.
+There are various theories about the origin of the law.
 
-While it has a spiritual aspect, in the context of software, it connects to the idea of fail-safes.
+Although it has a spiritual aspect, in the context of software, it is connected to the concept of fail-safe.
 
 # Lehman's Law
-**"The complexity of a changing system continues to increase."**
 
-The source is this paper: [IEEE XPlore](https://ieeexplore.ieee.org/document/1456074)
+**"The complexity of a system that is evolving increases unless work is done to reduce it."**
 
-I haven't thoroughly read the paper, but I think it connects to evolutionary architecture.
+The source is this paper
+[IEEE XPlore](https://ieeexplore.ieee.org/document/1456074)
 
-Systems must accept change, but if no effort is made, complexity will increase with each change.
+I haven't properly read the paper, but I think it connects to evolutionary architecture.
 
-# BMF's Law
+Systems are things that inevitably have to accept change, but without any ingenuity, complexity increases with each change.
+
+# bmf's Law
+
 **"The first idea that comes to mind is the best practice."**
 
-I shaped an empirical rule that came to mind.
+I tried to shape an empirical rule that came to mind.
 
-Even when considering multiple patterns, the first pattern that comes to mind is often the optimal solution, right?? That's what it is.
+Even if you consider multiple patterns, sometimes the pattern you first thought of turns out to be the optimal solution, right?? That's what it is.
 
 I think there are similar proverbs or theories...
 
-In our internal LT meetings, it seems there are similar laws in the world of romance and Go, but what about in the software world?
+In internal LT meetings, it seems there are similar laws in the world of love studies or Go, but how about in the world of software...
 
-# Thoughts
-I haven't been able to read the original texts, but I would like to if I get the chance.
+# Impressions
+I haven't been able to read the original texts, so I would like to read them if I have the opportunity.
 
-I feel that being bound by principles can lead to a halt in thinking, but when faced with difficult problems, it might be good to follow these principles as objective judgment materials.
+I feel like being bound by laws leads to a kind of mental stagnation, but when faced with difficult problems, it might be good to follow the laws as objective judgment materials.
+

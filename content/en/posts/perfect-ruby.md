@@ -4,13 +4,15 @@ slug: perfect-ruby
 date: 2024-05-04T00:00:00Z
 author: bmf-san
 categories:
-  - Application
+  - Applications
 tags:
   - Ruby
   - Books
 translation_key: perfect-ruby
 ---
 
-[Perfect Ruby](https://amzn.to/3URxJyn) was read.
 
-I've only read the Perfect series for PHP and JavaScript, but it feels like a reliable addition to the Perfect series.
+
+[I read Perfect Ruby](https://amzn.to/3URxJyn).
+
+I've only read the Perfect series for PHP and JavaScript before, but it feels like the reliable Perfect series as always.

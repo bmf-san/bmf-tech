@@ -1,5 +1,5 @@
 ---
-title: 'PostgreSQL Complete Guide 4th Edition: From Installation to Features, Mechanisms, Application Development, Management, and Operations'
+title: 'PostgreSQL Complete Introduction 4th Edition: From Installation to Features, Mechanisms, App Development, and Management'
 slug: postgresql-comprehensive-guide
 date: 2024-05-04T00:00:00Z
 author: bmf-san
@@ -8,12 +8,12 @@ categories:
 tags:
   - DB
   - PostgreSQL
-  - Books
+  - Book
 translation_key: postgresql-comprehensive-guide
 ---
 
-[PostgreSQL Complete Guide 4th Edition: From Installation to Features, Mechanisms, Application Development, Management, and Operations](https://amzn.to/4abqTId) was read.
 
-For someone who had never touched PostgreSQL, it was just the right introductory book.
 
-The chapter on application examples has a relatively large number of pages, but the basic aspects of PostgreSQL are covered.
+[PostgreSQL Complete Introduction 4th Edition: From Installation to Features, Mechanisms, App Development, and Management](https://amzn.to/4abqTId) was a perfect introductory book for someone like me who had never worked with PostgreSQL.
+
+Although a considerable number of pages are dedicated to application examples, the book covers the basics of PostgreSQL.

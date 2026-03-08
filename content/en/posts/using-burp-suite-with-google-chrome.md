@@ -8,12 +8,13 @@ categories:
 tags:
   - Burp Suite
   - Security
-  - Vulnerabilities
+  - Vulnerability
+description: Steps to configure Burp Suite for use with Chrome.
 translation_key: using-burp-suite-with-google-chrome
 ---
 
 # Overview
-This post covers various settings for using Burp Suite with Chrome. I wanted to be able to use Burp in Chrome for vulnerability assessments and responses.
+This post covers various settings for using Burp Suite with Chrome. I wanted to use Burp with Chrome during vulnerability assessments and responses.
 
 # Environment
 Mac OS
@@ -23,35 +24,32 @@ Mac OS
 - [chrome extension - proxy switchsharp](https://chrome.google.com/webstore/detail/proxy-switchysharp/dpplabbmogkhghncfbfdeeokoefdjegm?hl=ja)
 
 # Steps
-## Set Up Proxy
-Set up Proxy Profiles using the [chrome extension - proxy switchsharp](https://chrome.google.com/webstore/detail/proxy-switchysharp/dpplabbmogkhghncfbfdeeokoefdjegm?hl=ja).
+## Configure the Proxy
+Set up Proxy Profiles using [chrome extension - proxy switchsharp](https://chrome.google.com/webstore/detail/proxy-switchysharp/dpplabbmogkhghncfbfdeeokoefdjegm?hl=ja).
 
-Set the Profile Name to Burp (it can be anything, but since it's for Burp's proxy settings, let's keep it as Burp).
-Choose Manual Configuration, set the HTTP Proxy to `127.0.0.1`, and configure the Port to avoid conflicts in your environment.
-Press Save to save the Profile.
+Name the profile Burp (or anything else, but since it's for Burp, name it Burp). Select Manual Configuration, set `127.0.0.1` for HTTP Proxy, and configure the Port to avoid conflicts in your environment. Save the profile.
 
-Using proxy switchsharp is convenient because it allows you to quickly change proxy settings without having to modify them each time.
+Using proxy switchsharp allows you to quickly change proxy settings via the extension, avoiding the hassle of manually changing them each time.
 
-You can change the proxy settings by selecting proxy switchsharp from the extensions in the upper right corner of Chrome and choosing the desired Profile.
+To change proxy settings, select proxy switchsharp from the extensions in the top right of Chrome and choose any Profile.
 
-When you don't need to adjust the proxy settings, select Direct Connection.
+When you don't need to fiddle with proxy settings, select Direct Connection.
 
-## Set Up Certificate
-Launch Burp.
+## Configure the Certificate
+Start Burp.
 
-Check if the Chrome proxy settings are set to the Profile you configured above. (Just saving the proxy settings with proxy switchsharp does not activate them; you need to select the Profile from the proxy switchsharp extension in the upper right corner of the Chrome browser to enable it.)
+Ensure Chrome's proxy settings are set to the Profile configured above. (Simply saving the proxy settings with proxy switchsharp doesn't activate them, so you need to select the Profile from the extensions in the top right of the Chrome browser to activate it.)
 
-If you launched Burp with the default settings, access `http://127.0.0.1:8080`.
+If Burp is started with default settings, access `http://127.0.0.1:8080`.
 
-Click on the CA Certificate in the upper right corner and download the certificate.
+Click the CA Certificate in the top right and download the certificate.
 
-Open the downloaded certificate in Keychain Access and set it to `Always Trust`.
-The certificate name should be `Port Swigger CA`.
+Open the downloaded certificate with Keychain Access and set it to `Always Trust`. The certificate name should be `Port Swigger CA`.
 
-With these steps, you should now be able to use Burp in Chrome.
+With these steps, Burp should now be usable with Chrome.
 
 # Additional Notes
-To intercept localhost in Chrome, you need to add `<-loopback>` to No Proxy For in the Profile Detail of proxy switchsharp.
+To intercept localhost with Chrome, add `<-loopback>` in proxy switchsharp's Profile Detail > No Proxy For.
 
 [Burp Interception does not work for localhost in Chrome](https://stackoverflow.com/questions/55616614/burp-interception-does-not-work-for-localhost-in-chrome)
 

@@ -14,29 +14,29 @@ translation_key: tui-application-development
 
 # Introduction
 
-Recently, I created a terminal-based typing game using Go's x/term package. In this article, I will share the features of the x/term package and insights I gained while developing TUI applications.
+Recently, I tried creating a terminal-based typing game using Go's x/term package. In this article, I will share the features of the x/term package and insights I gained during TUI application development.
 
-As a practical TUI application using x/term, I am developing a git client tool called [ggc](https://github.com/bmf-san/ggc), so feel free to give it a star.
+As a practical TUI application using x/term, I am developing a git client tool called [ggc](https://github.com/bmf-san/ggc), so please give it a star if you like it.
 
-# What is the x/term Package?
+# What is the x/term Package
 
-`x/term` is one of Go's experimental packages that provides low-level functionality for terminal operations. It was previously `golang.org/x/crypto/ssh/terminal`, but it has now become an independent package as `golang.org/x/term`.
+`x/term` is one of Go's experimental packages that provides low-level functionalities for terminal operations. It was previously `golang.org/x/crypto/ssh/terminal`, but now it is an independent package as `golang.org/x/term`.
 
 ## Main Features
 
 1. Getting terminal size
-   ```go
-   width, height, err := term.GetSize(int(os.Stdout.Fd()))
-   ```
+```go
+width, height, err := term.GetSize(int(os.Stdout.Fd()))
+```
 
-2. Obtaining low-level key input
-   ```go
-   oldState, err := term.MakeRaw(int(os.Stdin.Fd()))
-   if err != nil {
-       log.Fatal(err)
-   }
-   defer term.Restore(int(os.Stdin.Fd()), oldState)
-   ```
+2. Capturing low-level key inputs
+```go
+oldState, err := term.MakeRaw(int(os.Stdin.Fd()))
+if err != nil {
+    log.Fatal(err)
+}
+defer term.Restore(int(os.Stdin.Fd()), oldState)
+```
 
 3. Controlling echo
 4. Controlling terminal modes
@@ -50,8 +50,8 @@ Using these features, you can create interactive TUI applications with cursor po
 The core features of the typing game are as follows:
 
 - Displaying random English sentences
-- Immediate detection of key input
-- Measuring accuracy
+- Immediate key input detection
+- Accuracy measurement
 - Counting the number of mistakes
 
 ## 2. Managing Terminal State
@@ -65,7 +65,7 @@ if err != nil {
     log.Fatal(err)
 }
 
-// Restore original state on program exit
+// Restore original state upon program exit
 defer term.Restore(int(os.Stdin.Fd()), oldState)
 
 // Signal handling
@@ -80,12 +80,12 @@ go func() {
 
 ## 3. Controlling Screen Display
 
-I control the screen display using ANSI escape sequences:
+Using ANSI escape sequences to control screen display:
 
 ```go
 // Hide cursor
 fmt.Print("\033[?25l")
-defer fmt.Print("\033[?25h") // Show cursor again on exit
+defer fmt.Print("\033[?25h") // Restore display on exit
 
 // Clear screen
 fmt.Print("\033[2J")
@@ -100,7 +100,7 @@ Here are some points to ensure display stability:
 
 - Controlling buffering
 - Optimizing screen updates
-- Using goroutines for asynchronous processing
+- Asynchronous processing using goroutines
 
 # Implementation Points
 
@@ -132,7 +132,7 @@ cmd.Run()
 
 # Conclusion
 
-Developing TUI applications with x/term requires low-level control, but it offers high flexibility. The implementation example of the typing game I created demonstrates basic patterns, but by applying this, various TUI applications can be developed.
+Developing TUI applications with x/term requires low-level control, but it offers a high degree of freedom. The typing game implementation example I created demonstrates basic patterns, but you can apply these to create various TUI applications.
 
 # Reference Links
 

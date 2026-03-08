@@ -1,5 +1,5 @@
 ---
-title: Learning Software Structure and Design from Clean Architecture Experts
+title: 'Clean Architecture: Learning Software Structure and Design from the Experts'
 slug: clean-architecture-software-structure-design
 date: 2018-08-01T00:00:00Z
 author: bmf-san
@@ -8,51 +8,53 @@ categories:
 tags:
   - Clean Architecture
   - Architecture
-  - Books
+  - Book
 translation_key: clean-architecture-software-structure-design
 ---
 
-[Learning Software Structure and Design from Clean Architecture Experts](https://amzn.to/4agMQ99) has been read.
 
-If you want to learn about Clean Architecture, I think it's best to start with this book and the author's blog.
 
-- There is no clear definition of Clean Architecture discussed.
-  - It is not claimed that the common concentric circles represent Clean Architecture, nor is it stated that a layered structure is a prerequisite (though I believe that fulfilling the rules will inevitably lead to a layered structure).
-- Characteristics and rules that can be considered features of a clean architecture are discussed.
-- The purpose of software architecture is to minimize the necessary personnel for system construction and maintenance.
+[Clean Architecture 達人に学ぶソフトウェアの構造と設計](https://amzn.to/4agMQ99)を読んだ。
+
+Reading this book and the author's blog is a good starting point for learning about Clean Architecture.
+
+- There is no clear definition of Clean Architecture provided.
+  - It does not claim that the common concentric circles represent Clean Architecture, nor does it state that having a layered structure is a prerequisite (though following the rules will likely lead to a layered structure).
+- It discusses characteristics and rules considered to define a Clean Architecture.
+- The purpose of software architecture is to minimize the necessary personnel for building and maintaining the system.
 - By utilizing polymorphism, dependency inversion can be achieved.
     - This increases independent deployability and independent development capability.
 - The usefulness of immutability:
   - Easier debugging, thread safety, high cache usability, easier testing, etc.
-- Structured programming provides direct control, object-oriented programming provides indirect control, and functional programming imposes discipline on assignment.
-  - The SOLID principles are designed to create software structures that are resilient to change, easy to understand, and easy to utilize from other software:
+- Structured programming imposes discipline on direct control, object-oriented programming on indirect control, and functional programming on assignment.
+  - The SOLID principles are guidelines for creating software structures that are resilient to change, easy to understand, and easy to use by other software.
     - Single Responsibility Principle (SRP):
-      - Ensure that a module has a single responsibility so that the reasons for changes are unified.
+      - Ensure that a module has a single responsibility, with only one reason to change.
     - Open-Closed Principle (OCP):
       - Open for extension, closed for modification.
     - Liskov Substitution Principle (LSP):
-      - Ensure that subtypes can replace their supertype.
+      - Subtypes should be substitutable for their base types.
     - Interface Segregation Principle (ISP):
-      - Avoid dependencies on things that are not used.
+      - Avoid dependencies on things you do not use.
     - Dependency Inversion Principle (DIP):
-      - Ensure that high-level policy implementations do not depend on low-level details, but rather that low-level details depend on high-level policies.
+      - High-level modules should not depend on low-level modules. Both should depend on abstractions.
 - Components are units of deployment.
-- The cohesion of components relates to the trade-off between development convenience and reusability.
-- Principles regarding component cohesion:
+- Component cohesion involves a trade-off between development convenience and reusability.
+- Principles related to component cohesion:
   - Reuse-Release Equivalence Principle (REP):
-    - Only reuse what has been released.
+    - Only reuse released components.
   - Common Closure Principle (CCP):
-    - Group things that change for the same reason or timing together.
+    - Group things that change for the same reasons and at the same times.
   - Common Reuse Principle (CRP):
-    - When using a component, depend on all of its parts.
-  - The coupling of components relates to the trade-off between development convenience and logical design.
-  - Principles regarding component coupling:
+    - Depend on all the components you use.
+  - Component coupling involves a trade-off between development convenience and logical design.
+  - Principles related to component coupling:
     - Acyclic Dependencies Principle (ADP):
-      - Ensure that component dependencies do not include cyclic dependencies.
+      - Avoid cyclic dependencies in component relationships.
     - Stable Dependencies Principle (SDP):
-      - Depend on the direction of high stability (i.e., low frequency of change).
+      - Depend in the direction of stability (i.e., less frequently changed components).
     - Stable Abstractions Principle (SAP):
-      - The abstraction level of components should be on par with their stability (high stability should correspond to high abstraction, while low stability can correspond to low abstraction).
-  - The goal of the shape of software architecture is to facilitate development, deployment, operation, and maintenance, with a strategy to leave as many options open for as long as possible.
-  - For decisions about details that do not need to be made immediately, it is best to delay them as much as possible or keep them changeable at any time.
-  - Software has both "value of behavior" and "value of structure," but the latter is more valuable because it makes software more flexible (modifiable).
+      - The abstraction level of a component should match its stability (high stability with high abstraction, low stability with low abstraction).
+  - The goal of software architecture shapes is to facilitate development, deployment, operation, and maintenance, leaving as many options open for as long as possible.
+  - Delay decisions on details that do not need immediate resolution, or make them changeable at any time.
+  - Software holds both "behavioral value" and "structural value," with the latter being more valuable as it makes software flexible (modifiable).

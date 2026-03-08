@@ -11,21 +11,21 @@ translation_key: go-http-roundtripper
 ---
 
 # Overview
-This post is about Go's http.RoundTripper.
+Writing about Go's http.RoundTripper.
 
 # What is http.RoundTripper?
-An interface responsible for handling HTTP client communications.
+An interface responsible for HTTP client communication.
 
 cf. [pkg.go.dev - net/http#RoundTripper](https://pkg.go.dev/net/http#RoundTripper)
 
-It allows customization of the processing between sending a request and receiving a response in an HTTP client.
+It allows customization of the process from sending a request to receiving a response in an HTTP client.
 
-Think of it as middleware in an HTTP client.
+Think of it as middleware for the HTTP client.
 
 # Implementation Example
 The source code is also available on [github.com](https://github.com/bmf-san/go-snippets/blob/master/net/http/round_tripper.go).
 
-You can customize it simply by implementing the RoundTripper interface and passing it to http.Client.
+You can customize by implementing the RoundTripper interface and passing it to http.Client.
 
 ```go
 package main
@@ -79,22 +79,22 @@ Received response in 530.885709ms
 Status Code: 200 OK
 ```
 
-# Where to Use It?
-Use it when you want to insert some processing as middleware on the HTTP client side.
+# Where to Use?
+Use it when you want to insert some middleware-like processing on the HTTP client side.
 
-- Logging
+- Log output
 - Adding authentication headers
 - Cache management
-- Retry control for APIs, rate limiting
+- Retry control and rate limiter for APIs
 
-It seems useful when you want to set unified processing in an HTTP client.
+It seems useful when you want to set up uniform processing in an HTTP client.
 
-If you want to insert processing for specific endpoints, preparing your own middleware might offer more flexibility.
+When you want to insert processing for specific endpoints, it might be more flexible to prepare your own middleware.
 
 # References
 - [pkg.go.dev - net/http#RoundTripper](https://pkg.go.dev/net/http#RoundTripper)
 - [speakerdeck.com - http.RoundTripper Tips](https://speakerdeck.com/nao_mk2/http-dot-roundtripper-tips?slide=13)
 - [qiita.com - Go http.RoundTripper Implementation Guide](https://qiita.com/tutuming/items/6006e1d8cf94bc40f8e8)
 - [christina04.hatenablog.com - Go's RoundTripper and Transport](https://christina04.hatenablog.com/entry/2018/05/18/190000)
-- [zenn.dev - How to Add Rate Control and Retry Functionality with Go's http.RoundTripper](https://zenn.dev/fujisawa33/articles/aef6d266aa751f)
-- [blog.lufia.org - Plan 9 and Go Language Blog](https://blog.lufia.org/entry/2018/12/13/000000)
+- [zenn.dev - How to Add Rate Control and Retry Features with Go's http.RoundTripper](https://zenn.dev/fujisawa33/articles/aef6d266aa751f)
+- [blog.lufia.org - Blog on Plan 9 and Go Language](https://blog.lufia.org/entry/2018/12/13/000000)

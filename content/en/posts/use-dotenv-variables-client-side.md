@@ -12,29 +12,30 @@ tags:
 translation_key: use-dotenv-variables-client-side
 ---
 
-dotenv-webpack is a useful library when you want to use environment variables defined in a `.env` file on the client side.
+dotenv-webpack is a useful library when you want to use environment variables prepared in a `.env` file on the client side.
 
-# Installation
+# Introduction
 `npm install dotenv-webpack --save-dev`
 
-Configure it as a plugin in `webpack.config.js`.
+Set it as a plugin in `webpack.config.js`.
 
 ```
 const Dotenv = require('dotenv-webpack');
 
 module.exports = [
-  ~~~gonyogonyo~~~
+  ~~~ゴニョゴニョゴニョ~~~
   {
     plugins: [new Dotenv({
         path: 'path/to/.env',
         safe: false
       })]
   }
-  ~~~gonyogonyo~~~
+  ~~~ゴニョゴニョゴニョ~~~
 ];
+
 ```
 
-The `path` is the path to the `.env` file, and `safe` determines whether to load `.env_example` or not.
+`path` sets the path to the `.env` file, and `safe` determines whether to load `.env_example`.
 
 # Usage
 
@@ -46,7 +47,7 @@ DOMAIN=hereisyourdomain
 config.log(process.env.DOMAIN) // hereisyourdomain
 ```
 # Thoughts
-It's convenient, but is there any security issue?
+It's convenient, but is there no security issue?
 
 # References
 - [npm - dotenv-webpack](https://www.npmjs.com/package/dotenv-webpack)

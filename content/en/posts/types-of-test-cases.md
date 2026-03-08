@@ -1,5 +1,5 @@
 ---
-title: Types of Test Cases and How to Identify Them
+title: Types of Test Cases and Identification
 slug: types-of-test-cases
 date: 2018-04-11T00:00:00Z
 author: bmf-san
@@ -7,18 +7,19 @@ categories:
   - Testing
 tags:
   - Design
+description: A concise summary of basic types of test cases and how to identify them.
 translation_key: types-of-test-cases
 ---
 
 # Overview
-A brief summary of the basic types of test cases and how to identify them.
+A concise summary of the basic types of test cases and how to identify them.
 
 # Purpose of Testing
 - Discover bugs
 - Quality assurance
 - Quality improvement (refactoring)
 
-# Types of Testing
+# Types of Tests
 
 - Unit Test
     - Tests to verify the specifications of methods
@@ -32,14 +33,14 @@ A brief summary of the basic types of test cases and how to identify them.
 - Normal Cases
     - Check if the expected output is produced for the expected input
 - Abnormal Cases
-    - Determine if the system can handle unexpected input
+    - Check if the system can handle unexpected inputs
 - Equivalence Partitioning
-    - Dividing into equivalence classes... grouping test results (based on criteria such as language, presence of symbols, domain of addresses, etc.)
+    - Divide into equivalence classes... Group test results (divide by criteria, e.g., language, presence of symbols, domain of address, etc.)
     - Select representative values from each equivalence class
 - Boundary Value Analysis
-    - Use boundary values between equivalence classes as input
+    - Use values that are boundaries between equivalence classes as input
 
-Identifying test cases for unit tests and integration tests should be done considering the above perspectives, along with business factors (quality and effort).
+Identifying test cases for unit tests and integration tests should consider the above perspectives, along with business factors such as quality and effort.
 
 # Reference
-- [How to Identify Test Cases and Examples of Writing Them](http://post.simplie.jp/posts/41)
+- [How to Identify and Write Test Cases](http://post.simplie.jp/posts/41)

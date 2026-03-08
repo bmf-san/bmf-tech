@@ -1,5 +1,5 @@
 ---
-title: Path Issues When Installing Bundler with rbenv Installed via anyenv
+title: Encountered Path Issues When Installing Bundler with rbenv via anyenv
 slug: rbenv-bundler-install-path-issue
 date: 2018-12-04T00:00:00Z
 author: bmf-san
@@ -15,24 +15,24 @@ translation_key: rbenv-bundler-install-path-issue
 ---
 
 # Overview
-I encountered a path issue when installing bundler with rbenv installed via anyenv.
+ A discussion on the path issues encountered when installing bundler with rbenv installed via anyenv.
 
 # The Issue
-I am using ruby installed with rbenv via anyenv, but when I tried to install bundler by simply running:
+I installed rbenv using anyenv to use Ruby, but when I installed bundler with the command:
 
 `gem install bundler`
 
-it ended up placing bundler in `/usr/local/bin/`.
+without much thought, bundler ended up being placed under `/usr/local/bin/`.
 
-Since this is not the intended path, trying to use gems like chef installed via gem results in errors.
+Since this was not the intended path, attempts to use gems like chef would fail.
 
 # Solution
-Use the following command to specify that you want to execute the gem for the ruby installed with rbenv:
-
 `rbenv exec gem install bundler`
 
+Specify to execute the gem with the Ruby introduced by rbenv.
+
 # Thoughts
-If I had calmly checked the path, I would have realized this quickly even as a beginner with ruby...
+If I had calmly checked the path, I would have realized it quickly, even if I was not familiar with Ruby...
 
 # References
 - [github - rbenv/rbenv](https://github.com/rbenv/rbenv)

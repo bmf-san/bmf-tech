@@ -10,77 +10,62 @@ tags:
 translation_key: ubuntu-initial-setup-notes
 ---
 
+
+
 # Overview
-I often forget these steps, so I'm making a note of them.
-I will add more as needed.
+I often forget, so I'm taking notes. I'll add more if needed.
 
 # Environment
 - ConoHa
 - Ubuntu 18.04.2 LTS (Bionic Beaver)
 
 # Preparation
-## Confirm Ubuntu Installation & Root Login
-Prepare an Ubuntu server on ConoHa and confirm that you can log in as root.
+## Install Ubuntu & Verify Root Login
+Prepare an Ubuntu server on ConoHa and verify that you can log in as root.
 
-## Prepare SSH Keys on Client Side
+## Prepare SSH Keys on the Client Side
 Create a private key and a public key.
 
-```bash
-ssh-keygen -t rsa
-ssh root@<ip address>
-```
+`ssh-keygen -t rsa`
+`ssh root@<ip address>`
 
 # Setup
 ## Server Update
-Make sure to update the server.
+Make sure to update.
 
-```bash
-sudo apt update && sudo apt upgrade -y
-```
+`sudo apt update && sudo apt upgrade -y`
 
-## Create User
+## Create a User
 Create a user with sudo privileges.
 
-```bash
-adduser <username>
-usermod -aG sudo <username>
-```
+`adduser <username>`
+`usermod -aG sudo <username>`
 
-Check if the user is part of the wheel group.
-```bash
-groups <username>
-```
+Verify if the user belongs to the wheel group.
+`groups <username>`
 
-*To check the list of users*
-```bash
-cat /etc/passwd
-```
+※ Check the list of users
+`cat /etc/passwd`
 
-## Transfer Public Key to Server
-Log in with the created user.
-```bash
-su <username>
-```
+## Transfer the Public Key to the Server
+Log in as the created user.
+`su <username>`
 
 Prepare the `.ssh` directory.
-```bash
-mkdir .ssh
-touch .ssh/authorized_keys
-chmod 700 .ssh
-chmod 600 .ssh/authorized_keys
-```
+`mkdir .ssh`
+`touch .ssh/authorized_keys`
+`chmod 700 .ssh`
+`chmod 600 .ssh/authorized_keys`
 
 Paste the public key created on the client side into `./ssh/authorized_keys`.
 
 ## Configure sshd_config and Open Ports
-Change the SSH configuration.
+Change the SSH settings.
 
-```bash
-sudo vi /etc/ssh/sshd_config
-```
+`sudo vi /etc/ssh/sshd_config`
 
 ```
-Port 5005                                     // Change from default 22 to any number
+Port 5005                                     // Change from default 22 to a custom number
 PermitRootLogin no                    // Change from yes to no
 PubkeyAuthentication yes         // Change from no to yes
 PasswordAuthentication no      // Change from yes to no
@@ -88,26 +73,22 @@ UserPAM no                               // Change from yes to no
 ```
 
 Restart SSH.
-```bash
-sudo /etc/init.d/ssh restart
-```
+`sudo /etc/init.d/ssh restart`
 
-Next, open the ports.
+Continue to open ports.
 
 ```
 sudo ufw allow 5005
 sudo ufw allow 443
-sudo ufw default deny    // Default setting may be deny...
+sudo ufw default deny    // Default setting might be deny...
 sudo ufw enable
 ```
 
-Check the port settings.
-```bash
-sudo ufw status
-```
+Check port settings.
+`sudo ufw status`
 
-# Confirm SSH Connection
-Edit the `~/.ssh/config` file like this:
+# Verify SSH Connection
+Edit the `~/.ssh/config` file like this.
 
 ```
 ServerAliveInterval 300
@@ -123,7 +104,7 @@ Host conoha-demo
     IdentityFile ~/.ssh/<pubkey name>
 ```
 
-Confirm that you can connect via SSH using `ssh conoha-demo`.
+Verify SSH connection with `ssh conoha-demo`.
 
 # Thoughts
-I feel like I wrote similar notes when I first touched CentOS a long time ago.
+I feel like I wrote a similar note when I first touched CentOS.

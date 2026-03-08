@@ -13,36 +13,36 @@ translation_key: what-is-docker
 
 # What is Docker
 
-- A platform developed by Docker, Inc. for creating, distributing, and running container-based virtual environments.
-- Uses Linux container technology.
+- A platform developed by Docker Inc. for creating, distributing, and running container-based virtual environments
+- Uses Linux container technology
 
-  - Containers utilize the host machine's kernel to isolate processes and users.
+  - Containers utilize the host machine's kernel to isolate processes and users
 
-    - Lightweight and fast.
+    - Lightweight and fast
 
-- Middleware and various environment settings can be managed as code (Infrastructure as Code).
+- Middleware and various environment settings can be managed as code (=Infrastructure as Code)
 
-  - Applicable to both local and production environments.
+  - Regardless of local or production environments
 
-    - Anyone can create the same environment.
-    - Easy to redistribute and reuse environments.
+    - Anyone can create the same environment
+    - Easy redistribution and reuse of environments
 
-- The essence of Docker:
+- The essence of Docker
 
-  - Linux Container (LXC).
-  - A container management tool that simplifies customization of containers in LXC (such as creating configuration files and installing files via shell scripts).
+  - Linux Container (LXC)
+  - A container management tool to simplify customization of containers in LXC (such as creating configuration files and installing files via shell scripts)
 
-- Docker for Mac:
-
-  - Uses a virtualization tool called HyperKit, which is included by default on Mac, to launch a virtual machine, start Linux, and enable the use of Docker.
+- Docker for Mac
+ 
+  - Uses the virtualization tool HyperKit, which is included by default on Mac, to launch a virtual machine and run Linux to enable Docker
 
 # What is a Container (Linux Container)
 
-- A set of processes isolated from other parts of the system.
+- A set of processes isolated from the rest of the system
 
-  - Executed from individual images that provide all the files necessary to support the processes.
+  - Runs from a separate image that provides all the files necessary to support the processes
 
-- Shares the OS and kernel, isolating application processes from other parts of the system (runs on a single OS).
+- Shares the OS and kernel, isolating application processes from the rest of the system (runs on a single OS)
 
 # Differences Between Other Virtual Environments and Containers
 
@@ -55,7 +55,7 @@ translation_key: what-is-docker
   [Hard Disk]
   ```
 
-## Host OS Type (also defined broadly as hypervisor type using host OS)
+## Host OS Type (sometimes defined as hypervisor type using host OS in a broad sense)
 
 - Configuration
 
@@ -66,16 +66,16 @@ translation_key: what-is-docker
   [Hard Disk]
   ```
 
-- Advantages:
+- Advantages
 
-  - Easy to achieve virtualization.
-  - High freedom of OS selection.
+  - Easy to achieve virtualization
+  - High freedom in OS selection
 
-- Disadvantages:
+- Disadvantages
 
-  - High disk and memory consumption.
+  - High consumption of disk and memory
 
-## Hypervisor Type (using hard disk)
+## Hypervisor Type (using hard disk pattern)
 
 - Configuration
 
@@ -85,13 +85,13 @@ translation_key: what-is-docker
   [Hard Disk]
   ```
 
-- Advantages:
+- Advantages
 
-  - Can control hardware directly without needing the host OS, resulting in faster processing speed.
+  - Can control hardware directly without needing host OS processing, resulting in faster processing speed
 
-- Disadvantages:
+- Disadvantages
 
-  - Virtual environments cannot be easily realized (may not be able to use the host OS as is or may require dedicated physical servers).
+  - Not easy to achieve virtual environments (may not be able to use the host OS as is, or may require a dedicated physical server)
 
 ## Container Type
 
@@ -101,19 +101,19 @@ translation_key: what-is-docker
 [Hard Disk]
 ```
 
-- Advantages:
+- Advantages
 
-  - Easy to achieve virtual environments.
-  - Low disk and memory consumption.
+  - Easy to achieve virtual environments
+  - Low consumption of disk and memory
 
-- Disadvantages:
+- Disadvantages
 
-  - Can only use OS that utilizes the Linux kernel.
+  - Can only use OS that utilizes the Linux kernel
 
 # Overview of Docker Images and Containers
 
 ```
-                Docker repository (Ex. Docker Hub)
+                Docker repository(Ex. Docker Hub)
 
                          ↓ (pull)
 
@@ -125,46 +125,46 @@ Dockerfile   →     Docker Image    →    Docker Container
                                                        (run)
 ```
 
-*Difference between Host OS Type and Hypervisor Type*
-[Think IT - What is the difference between host type and hypervisor type? Overview of VMware vSphere Hypervisor](https://thinkit.co.jp/story/2012/10/17/3722) is a useful reference.
+※ Differences between Host OS Type and Hypervisor Type
+[Think IT - What are the differences between Host Type and Hypervisor Type? Overview of VMware vSphere Hypervisor](https://thinkit.co.jp/story/2012/10/17/3722) is a useful reference.
 
-- Host OS Type:
-    - Install virtualization software on the OS.
-    - Access to hardware goes through the host OS, causing overhead and preventing full performance.
-- Hypervisor Type:
-    - Installed directly on the server without needing a host OS.
-    - Can control hardware directly, making it easier to achieve performance.
+- Host OS Type
+    - Install virtualization software on the OS
+    - Access to hardware is via the host OS, causing overhead and not fully utilizing performance.
+- Hypervisor Type
+    - Install directly on the server without needing a host OS.
+    - Can directly control hardware, making it easier to achieve performance.
 
 # Basic Commands
 - `docker build`
-   - Create an image from a Dockerfile.
+   - Create an image from a Dockerfile
 
 - `docker run`
-   - Start a container from an image.
+   - Launch a container from an image
 
 - `docker commit`
-   - Create an image from a container.
+   - Create an image from a container
 
 # Additional Information
 
-- What is a Kernel?
+- What is a Kernel
 
-  - Software that plays the role of the basic functions of an OS.
+  - Software responsible for the basic functions of the OS
 
-    - It is generally difficult to use an OS with just the kernel, so it is common to use it in combination with other software.
+    - It's generally difficult to use the OS with just the kernel, so it's commonly used in combination with other software
 
   - Kernel + Software = Distribution
 
-    - CentOS and Ubuntu → Distribution of Linux kernel + software.
+    - CentOS or Ubuntu → Linux kernel + software distribution
 
 # References
 
-- [Official Docker Website](https://www.docker.com/what-docker)
-- [Introduction to Docker (Part 1) - What is Docker and what are its benefits?](https://knowledge.sakura.ad.jp/13265/)
-- [What is a Linux Container?](https://www.redhat.com/ja/topics/containers/whats-a-linux-container)
-- [What is Server Virtualization? An Easy-to-Understand Explanation of Mechanisms, Advantages, and Disadvantages](https://www.kagoya.jp/howto/rentalserver/virtualization/)
-- [Understanding LXC (Linux Containers) in 15 Minutes: Mechanisms and Basic Usage for Engineers, June 16, 2014](https://knowledge.sakura.ad.jp/2108/)
-- [Using LXC for Permission Separation and Template Customization](https://knowledge.sakura.ad.jp/2163/)
-- [Overview of Docker Images and Containers and Various Commands (may be updated periodically)](https://yoshinorin.net/2016/10/03/docker-image-and-container-command/)
-- [Let's Learn About the Internals of Linux Containers / OSC 2018 Kyoto](https://speakerdeck.com/tenforward/osc-2018-kyoto)
-- [Think IT - What is the difference between host type and hypervisor type? Overview of VMware vSphere Hypervisor](https://thinkit.co.jp/story/2012/10/17/3722)
+- [Docker Official Site](https://www.docker.com/what-docker)
+- [Introduction to Docker (Part 1) ~What is Docker and What are its Benefits~](https://knowledge.sakura.ad.jp/13265/)
+- [What is a Linux Container](https://www.redhat.com/ja/topics/containers/whats-a-linux-container)
+- [What is Server Virtualization? Explaining the Mechanism, Advantages, and Disadvantages in an Easy-to-Understand Manner](https://www.kagoya.jp/howto/rentalserver/virtualization/)
+- [Understanding LXC (Linux Containers) in 15 Minutes and Basic Usage for Engineers 2014.06.16](https://knowledge.sakura.ad.jp/2108/)
+- [Using LXC for Privilege Separation and Template Customization](https://knowledge.sakura.ad.jp/2163/)
+- [Overview of Docker Images and Containers and Various Commands (May be Updated)](https://yoshinorin.net/2016/10/03/docker-image-and-container-command/)
+- [Understanding the Inside of Linux Containers / OSC 2018 Kyoto](https://speakerdeck.com/tenforward/osc-2018-kyoto)
+- [Think IT - What are the Differences Between Host Type and Hypervisor Type? Overview of VMware vSphere Hypervisor](https://thinkit.co.jp/story/2012/10/17/3722)

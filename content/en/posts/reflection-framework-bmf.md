@@ -1,106 +1,109 @@
 ---
-title: 'bmf: A Reflection Framework to Encourage Selection and Focus'
+title: A Retrospective Framework 'bmf' to Encourage Selection and Focus
 slug: reflection-framework-bmf
 date: 2025-07-23T00:00:00Z
 author: bmf-san
 categories:
   - Development Process
 tags:
-  - Reflection
+  - Retrospective
   - KPT
+description: Introducing a new retrospective framework to enhance focus and selection.
 translation_key: reflection-framework-bmf
 ---
 
+When it comes to retrospectives, KPT (Keep / Problem / Try) is the standard, but I wanted to come up with a framework full of my own originality, so I'm writing down this idea.
+
 # bmf Framework
 
-**bmf = Build / Miss / Focus** is a reflection framework. While maintaining a three-part structure similar to KPT, it guides thinking in the order of "visualization of results," "clarification of failures," and "clarification of the next focus area."
+**bmf = Build / Miss / Focus** is a retrospective framework composed of these initials. While maintaining a three-frame structure similar to KPT, it is designed to guide thinking in the order of "visualizing achievements," "highlighting failures," and "clarifying the next focus area."
 
-| Item                                  | Description                                                                  | Intent                                                         |
+| Item                                  | Description                                                                  | Intent                                                           |
 | ------------------------------------- | ---------------------------------------------------------------------------- | -------------------------------------------------------------- |
-| **B: Build (What was achieved)**     | A section to list what was accomplished, advanced, or improved during the period. | To verbalize achievements and extract reproducible practices.  |
-| **M: Miss (What didn’t go well)**    | A section to list events that did not go as planned, obstacles, oversights, and unmet goals. | To share problem awareness and secure opportunities for prevention and improvement. |
-| **F: Focus (What to concentrate on next)** | A section to narrow down themes and actions to focus on in the next cycle.     | To increase the likelihood of execution through selection and focus, avoiding an overabundance of Try. |
+| **B: Build (Achievements)**           | A section to list what was achieved, progressed, or improved during the period. | To verbalize achievements, extract self-efficacy, and reproducible practices. |
+| **M: Miss (Failures)**                | A section to list events that did not go as planned, obstacles, oversights, and unmet goals. | To share problem recognition and ensure opportunities for prevention and improvement. |
+| **F: Focus (Next Focus)**             | A section to narrow down themes and actions to focus on in the next cycle. | To increase execution probability through selection and focus without overusing Try. |
 
-# Why bmf instead of KPT?
+# Why bmf Instead of KPT
 
-The greatest advantage of KPT is its simplicity and popularity. However, operational use often leads to the following issues:
+The biggest advantage of KPT is its simplicity and widespread use. However, when put into practice, the following issues often arise:
 
-1. **Overabundance of Try** — A large number of "things that should be done" arise, burying priorities.
-2. **Temperature difference between Keep and Problem** — Keep can become ritualistic, leading to a bias towards listing Problems.
-3. **Burden of continuous tracking** — Reflections on Try may not be conducted sufficiently.
+1. **Excessive Try** — A large number of "things that should be done" emerge, burying priorities.
+2. **Temperature Difference Between Keep and Problem** — Keep becomes superficial, leading to a bias towards listing Problems.
+3. **Burden of Continuous Tracking** — Reflection on Try is not sufficiently conducted.
 
-bmf is an improvement proposal based on the following design principles for this situation:
+bmf is an improvement proposal based on the following design principles to address this situation.
 
-- **Principle A: Place the verbalization of achievements at the forefront.** Cultivate a culture of extracting and reusing success factors.
-- **Principle B: Expose issues without censorship, but do not end with a list.** Create a safe space for exposure with the premise of selecting focus areas later.
-- **Principle C: Rephrase Try as "Focus" and shift the emphasis from quantity to quality.** Carefully select items to address in the next cycle.
+- **Principle A: Prioritize verbalizing achievements.** Cultivate a culture of extracting and reusing success factors.
+- **Principle B: List issues uncensored, but don't end with enumeration.** Create a safe space to expose issues with the premise of selecting focus areas later.
+- **Principle C: Replace Try with "Focus" and emphasize quality over quantity.** Carefully select items to be addressed in the next cycle.
 
-These three principles aim to shorten the distance from "reflection to execution" in bmf.
+These three principles aim to shorten the distance from "retrospective to execution" with bmf.
 
-# Implementation Steps
+# Implementation Procedure
 
-Conduct it in a manner similar to KPT:
+Conduct it in the same procedure as KPT.
 
-1. Review the results of the previous reflection.
-2. Conduct the current reflection.
-3. Review the results of the current reflection.
+1. Review the results of the previous retrospective.
+2. Conduct the current retrospective.
+3. Review the results of the current retrospective.
 
-Feel free to arrange methods such as setting time for writing or grouping the items listed.
+Feel free to arrange the method, such as setting time for writing or grouping the items written down.
 
 # Tips for bmf
-## Build (What was achieved)
-- Writing down "actions to replicate" and "knowledge that can be systematized" is more valuable than just the number of completed tasks or speed.
+## Build (Achievements)
+- Writing "actions to be replicated" and "knowledge that can be systematized" is more valuable than the number of completed tasks or speed.
 - Record not only individual achievements but also results born from team collaboration.
 
-## Miss (What didn’t go well)
+## Miss (Failures)
 - Separating events (What) and impacts (So What) makes analysis easier.
-- Emotional logs (e.g., frustration, blockage) can provide hints, so keep them short instead of discarding them.
+- Emotional logs (frustration, being stuck) can also be hints, so keep them short and don't discard them.
 
-## Focus (What to concentrate on next)
-- Including a list of things not to do this period increases decision-making transparency.
-- Write action units and outcome units together (e.g., "Review SLA 24h" → "Reduce median PR stagnation time by 30%").
+## Focus (Next Focus)
+- Including a "not to do this term" rejection list increases transparency in decision-making.
+- Write actions and outcomes as a set (e.g., "Review SLA 24h" → "30% reduction in PR stagnation median").
 
-# Pitfalls and Countermeasures during Implementation
+# Pitfalls and Countermeasures When Introducing
 
-| Pitfall               | Symptoms                                                | Countermeasure                                                |
-| --------------------- | ------------------------------------------------------- | ------------------------------------------------------------ |
-| Too few Builds        | Starting in a negative mode decreases morale            | Introduce a facilitation measure to read out achievement logs from the period just before.
-| Miss turns into blame game | Focus on people instead of phenomena, compromising psychological safety | Rule: Describe events and processes, not individuals.         |
-| Too many Focuses      | Not executed, becoming ritualistic                       | Set limits or determine priorities.                           |
-| Forgetting follow-up   | Missing review of previous Focus results                 | Make it mandatory to review the status of the previous items in the first 5 minutes each time.
+| Pitfall           | Symptoms                                                     | Countermeasures                                                          |
+| ------------------ | -------------------------------------------------------- | ------------------------------------------------------------- |
+| Too Few Builds    | Starts in a negative mode, lowering morale                     | Implement a facilitation measure to read out achievement logs just before.      |
+| Miss Turns into a Blame Game  | Focusing on people instead of phenomena, compromising psychological safety | Rule: Describe events and processes, not individual names.              |
+| Too Many Focuses   | Becomes superficial and not executed                                         | Set limits or determine priorities. |
+| Forgetting Follow-up       | Missing review of previous Focus results                            | Make a status review of the previous session mandatory in the first 5 minutes each time.       |
 
 # Template
 
-Below is an example template for conducting it in a text-based format.
+Below is an example template for conducting it in text form.
 
 ```
-# bmf Reflection / YYYY-MM-DD to YYYY-MM-DD
+# bmf Retrospective / YYYY-MM-DD to YYYY-MM-DD
 Participants:
 Facilitator:
 
-## Build (What was achieved)
+## Build (Achievements)
 -
 -
 
-## Miss (What didn’t go well)
+## Miss (Failures)
 -
 -
 
-## Focus (What to concentrate on next)
+## Focus (Next Focus)
 - [ ] Theme:
   - Purpose:
-  - Outcome indicators:
+  - Outcome Indicator:
   - Owner:
   - Deadline:
 
 ---
-### Follow-up on Previous Focus (if applicable)
-- Theme A: Achievement level / Impressions
-- Theme B: Achievement level / Impressions
+### Follow-up on Previous Focus (when applicable)
+- Theme A: Achievement / Impressions
+- Theme B: Achievement / Impressions
 ```
 
 # Conclusion
 
-It is best to choose the optimal framework according to the purpose, but continuously using one framework can lead to being constrained by its limitations due to familiarity and losing sight of changes.
+It's best to choose the optimal framework according to the purpose, but continuing to use one framework can lead to being bound by its constraints or losing sight of changes due to familiarity.
 
-Why not try bmf for a new stimulus?
+Why not try bmf to gain new stimulation?

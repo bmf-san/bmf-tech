@@ -11,22 +11,24 @@ tags:
 translation_key: grafana-contact-points-policies-provisioning
 ---
 
+
+
 # Overview
-Grafana has recently enabled provisioning of Contact Points, so I will try to set up provisioning.
+It has become possible to provision Contact Points in Grafana, so I tried setting up provisioning.
 
 # Environment
 - [grafana-oss 10.0.1](https://hub.docker.com/r/grafana/grafana-oss/tags)
 - Docker
 - Docker Compose
 
-# Setup Method
-This is a rough note, so I will skip the explanation of the build process using Docker Compose. Please refer to [bmf-san/gobel-example](https://github.com/bmf-san/gobel-example).
+# Configuration Method
+This is a rough note, so I will omit the explanation around building with Docker Compose. Refer to [bmf-san/gobel-example](https://github.com/bmf-san/gobel-example).
 
-Add contact-points.yml and policies.yml under `provisioning/alerting`. The file names can be arbitrary.
+Add `contact-points.yml` and `policies.yml` under `provisioning/alerting`. The file names can be arbitrary.
 
 ```
 └── provisioning
-    └── alerting
+    └──alerting
             ├── alert-rules.yml
             ├── contact-points.yml
             └── policies.yml
@@ -50,18 +52,18 @@ contactPoints:
         disableResolveMessage: false
 ```
 
-The uid can be any number you assign when provisioning.
+You can assign any uid when provisioning.
 
-recepient is the name of the Slack notification channel.
+`recepient` is the Slack notification channel name.
 
-Set the url to the webhook url. It can also be configured to use a token.
+`url` is set to the webhook url. It can also be configured to use a token.
 
 cf. [grafana.com - #provision-contact-points](https://grafana.com/docs/grafana/latest/alerting/set-up/provision-alerting-resources/file-provisioning/#provision-contact-points)
 
 ## Policies
-If you do not provision Policies, the default ones will be used, so to reflect the settings of the provisioned Contact Points and send Alert notifications, provisioning of Policies is also necessary. (I did not investigate if there are other methods.)
+Provisioning Policies is also necessary to reflect the settings of provisioned Contact Points and send Alert notifications, otherwise, the default ones will be used. (I didn't investigate if there are other ways.)
 
-Below is an example configuration when a Contact Point named Slack is created.
+Below is an example configuration when creating a Contact Point named Slack.
 
 ```yml
 apiVersion: 1
@@ -71,13 +73,15 @@ policies:
     receiver: Slack
 ```
 
-receiver specifies the name of the Contact Point.
+`receiver` specifies the Contact Points name.
 
 The configuration is minimal.
 
 cf. [grafana.com - #provision-notification-policies](https://grafana.com/docs/grafana/latest/alerting/set-up/provision-alerting-resources/file-provisioning/#provision-notification-policies)
 
-By provisioning in this way, you can set up alerts to be sent to any Contact Points.
 
-# Thoughts
-It has become easier since I used to set it up manually.
+
+By provisioning in this way, you can configure alerts to be sent to any Contact Points.
+
+# Impressions
+It has become easier since I used to configure it manually.

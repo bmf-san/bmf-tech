@@ -1,5 +1,5 @@
 ---
-title: One-liner to Unlock Password-Protected PDF
+title: One-liner to Unlock Password-Protected PDFs
 slug: unlock-password-protected-pdf
 date: 2024-03-29T00:00:00Z
 author: bmf-san
@@ -11,6 +11,8 @@ tags:
 translation_key: unlock-password-protected-pdf
 ---
 
+
+
 1. Install [QPDF](https://texwiki.texjp.org/?QPDF).
 
 `brew install qpdf`
@@ -21,4 +23,4 @@ translation_key: unlock-password-protected-pdf
 qpdf --decrypt input.pdf --password=PASSWORD output.pdf
 ```
 
-〜The End〜
+~End~

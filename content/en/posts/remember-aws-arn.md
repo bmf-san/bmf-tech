@@ -1,5 +1,5 @@
 ---
-title: Remembering AWS ARN
+title: Remembering AWS ARNs
 slug: remember-aws-arn
 date: 2021-06-23T00:00:00Z
 author: bmf-san
@@ -10,7 +10,9 @@ tags:
 translation_key: remember-aws-arn
 ---
 
-Here's a note to help remember the format of AWS Resource Names (ARN).
+
+
+AWSのリソースネーム（ARN)の形式を忘れないようにメモ。
 
 ```
 arn:partition:service:region:account-id:resource-id
@@ -20,6 +22,6 @@ arn:partition:service:region:account-id:resource-type:resource-id
 
 *Apsrairr*
 
-The last 'r' can be either `/` or `:`.
+最後のrは`/`か`:`。
 
-cf. [Amazon Resource Names (ARN)](https://docs.aws.amazon.com/ja_jp/general/latest/gr/aws-arns-and-namespaces.html)
+cf. [Amazon リソースネーム (ARN)](https://docs.aws.amazon.com/ja_jp/general/latest/gr/aws-arns-and-namespaces.html)

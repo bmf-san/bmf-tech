@@ -11,9 +11,11 @@ tags:
 translation_key: web-api-testing-techniques
 ---
 
-[Web API Testing Techniques](https://amzn.to/3VP13Vs) was read.
 
-- There was a discussion about using 5w1h to formulate questions for API design testing, and the concrete examples were clear and insightful.
-- The 10 P models mentioned as a framework for understanding testability in the field were good. They seem helpful for organizing the prerequisites before considering test strategies and plans.
-- The format examples for test planning and documentation were simple and easy to understand. I want to refer to them when I want to organize strategies and plans.
-- I learned about the STRIDE model for threat discovery and the threat tree framework for the first time. I want to utilize them when considering security.
+
+[Web API Testing Techniques](https://amzn.to/3VP13Vs) was an insightful read.
+
+- The discussion on using 5W1H to formulate questions in API design testing was clear and thought-provoking.
+- The 10 P model, presented as a framework for understanding testability in the field, was excellent. It seems useful for organizing the prerequisites for test strategy and planning.
+- The example test plan format discussed for organizing and documenting test plans was simple and easy to grasp. I want to refer to it when organizing strategies and plans.
+- I learned about the STRIDE model for threat discovery and the threat tree framework for the first time. I hope to utilize these when considering security.

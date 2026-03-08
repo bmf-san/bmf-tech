@@ -7,14 +7,16 @@ categories:
   - Application
 tags:
   - Ruby
-  - Books
+  - Book
 translation_key: ruby-code-recipes
 ---
 
-[Ruby Code Recipe Collection](https://amzn.to/4dVe5Yo) is a great read.
 
-It's a perfect book for beginners to understand what can be done with Ruby and common patterns.
 
-If you're starting to learn Ruby, I think reading this book is worthwhile.
+[I read the Ruby Code Recipe Collection](https://amzn.to/4dVe5Yo).
+
+This book is perfect for Ruby beginners to learn what can be done with Ruby and common patterns.
+
+If you are about to learn Ruby, I think reading this book is definitely worthwhile.
 
 It's written clearly and concisely, making it easy to read.

@@ -1,5 +1,5 @@
 ---
-title: Mistakes in Software Architecture - Development and Evaluation of Non-Functional Requirements
+title: 'Common Mistakes in Software Architecture: Developing and Evaluating Non-Functional Requirements'
 slug: software-architecture-mistakes
 date: 2024-05-24T00:00:00Z
 author: bmf-san
@@ -8,22 +8,24 @@ categories:
 tags:
   - Architecture
   - System Design
-  - Books
+  - Book
 translation_key: software-architecture-mistakes
 ---
 
-[Mistakes in Software Architecture - Development and Evaluation of Non-Functional Requirements](https://amzn.to/3Vdsk4O) is a book I read.
 
-Although it was first published in 2010 and is quite an old book, it discusses software architecture in a very approachable way that still resonates today.
 
-Since I was still a student during that era, I don't fully grasp the historical context, but I have the impression that the role of architects has changed quite a bit over the past decade.
+[I read "Common Mistakes in Software Architecture: Developing and Evaluating Non-Functional Requirements"](https://amzn.to/3Vdsk4O).
 
-This book reads more like an essay than a technical manual, so if you're only interested in the technical aspects, it might be best to start from Chapter 6.
+Although it's a relatively old book first published in 2010, it discusses software architecture in a very approachable manner that is still relevant today.
 
-The identity of the robot featured in the story is revealed towards the end, and that part was quite interesting.
+I was still a student during that era, so I don't know the historical context, but I got the impression that the role of an architect has changed quite a bit over the past decade.
 
-The book cover is completely O'Reilly, but the publisher is Technical Review Press. (I realized this after purchasing it)
+It's more of an essay than a technical book, so if you're only interested in the technical aspects, it's best to start reading from Chapter 6 onwards.
 
-The author, Tom Engelberg, appears to be a fictional character, and the actual authors seem to be the translators.
+The identity of the robot that appears in the book's story is revealed towards the end, and that part was interesting.
 
-I read that in an Amazon review, but I don't know the source...
+The book cover looks entirely like an O'Reilly book, but the publisher is actually Gijutsu-Hyoron Co., Ltd. (I realized this after buying it.)
+
+The author, Tom Engelberg, seems to be a fictional character, and the actual authors are apparently the translators.
+
+This was mentioned in an Amazon review, but I couldn't verify the source...

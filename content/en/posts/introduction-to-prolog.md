@@ -11,8 +11,10 @@ tags:
 translation_key: introduction-to-prolog
 ---
 
+
+
 [Introduction to Prolog](https://amzn.to/45HIIQb) was read.
 
-I read it to gain background information while learning Rego.
+I decided to read it to gain background information while learning Rego.
 
-I couldn't fully grasp the deep philosophy of Prolog, but I was able to understand the essence of it being a declarative language.
+Although I couldn't fully grasp the deep philosophy of Prolog, I was able to capture the essence of declarative languages.

@@ -11,13 +11,14 @@ tags:
 translation_key: stack-queue-implementation
 ---
 
-I implemented a stack and a queue in Go.
 
-I have implemented both using slices and linked lists.
+I tried implementing stack and queue in Go.
 
-Personally, I think the implementation using slices is easier.
+I implemented both patterns using slices and linked lists.
 
-The time complexity for the stack's push and pop, and the queue's enqueue and dequeue can be implemented in O(1), but some parts have been lazy and ended up being O(N).
+Personally, I find the pattern using slices easier to implement.
+
+The time complexity for stack's push, pop, and queue's enqueue, dequeue can be implemented as O(1), but some parts are lazily implemented as O(N).
 
 # Stack
 Source code: [stack](https://github.com/bmf-san/road-to-algorithm-master/tree/master/data_structures/stack)
@@ -110,7 +111,7 @@ func main() {
 }
 ```
 
-I have the impression that there is nothing particularly difficult with a simple linked list.
+It seems like a simple linked list without any particularly difficult parts.
 
 ## Slice
 ```go
@@ -199,7 +200,7 @@ func main() {
 }
 ```
 
-You can implement it using slice operations. The way to add elements to the front of a slice might require some getting used to.
+You can implement it with slice operations. It might take some getting used to the way of adding elements to the beginning of a slice.
 
 # Queue
 Source code: [queue](https://github.com/bmf-san/road-to-algorithm-master/tree/master/data_structures/queue)
@@ -305,9 +306,9 @@ func main() {
 }
 ```
 
-The enqueue operation depends on the length of the queue, resulting in O(N).
+The enqueue operation depends on the length of the queue, making it O(N).
 
-If you implement it with a tail pointer or keep the length in the data structure (queue), it can be O(1), which is preferable.
+If you implement it by having the tail of the queue or the length of the queue in the data structure (queue), it becomes O(1), which is more desirable.
 
 ## Slice
 ```go
@@ -392,7 +393,7 @@ func main() {
 }
 ```
 
-This is a simple slice operation. If there is no need for a linked list, this might be better, but you should be careful about the memory efficiency of slices (allocations and copies).
+Simple slice operations. If there's no need for a linked list, this might be better, but be cautious about the memory efficiency of slices (allocation and copying).
 
 # Thoughts
-When implementing both in parallel, there are times when I get confused about which is LIFO and which is FIFO.
+Implementing both in parallel can sometimes confuse which is LIFO and which is FIFO, haha.

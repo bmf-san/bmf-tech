@@ -1,5 +1,5 @@
 ---
-title: Design Patterns in PHP - Bridge Pattern
+title: Learning Design Patterns with PHP - Bridge Pattern
 slug: php-design-patterns-bridge
 date: 2019-02-01T00:00:00Z
 author: bmf-san
@@ -8,16 +8,16 @@ categories:
 tags:
   - GoF
   - PHP
-  - Design Patterns
+  - Design Pattern
   - Bridge Pattern
 translation_key: php-design-patterns-bridge
 ---
 
 # Overview
-This is an article that couldn't make it in time for the [Design Patterns in PHP Advent Calendar 2018](https://qiita.com/advent-calendar/2018/php-design-pattern).
+An article that didn't make it in time for the [PHP Design Patterns Advent Calendar 2018](https://qiita.com/advent-calendar/2018/php-design-pattern).
 
 # What is the Bridge Pattern?
-A pattern that prepares a superclass for functional extension and subclasses for implementation extension, acting as a bridge for functionality.
+A pattern that prepares a superclass for functional extensions and a subclass for implementation extensions, acting as a bridge for functionality.
 
 # Implementation
 
@@ -83,7 +83,7 @@ class TypeCConverter implements Converter
 $lightingConveter = new LightningConverter();
 $typeCConverter = new TypeCConverter();
 
-// Either converter can be used → implementation can be switched
+// Either converter can be used → Implementation can be switched
 $iphoneConnector = new IphoneConnector($lightingConveter);
 $androidConnector = new AndroidConnector($typeCConverter);
 
@@ -92,7 +92,7 @@ $androidConnector->connect(); // connect by using type-c
 ```
 
 # Thoughts
-I feel that this might not be a simple use of interfaces, which suggests my understanding is still shallow.
+I feel like this is just a simple use of interfaces, which might indicate my understanding is still shallow.
 
 # References
-- [[Preserved Edition] Human-readable Design Pattern Explanation #2: Structural Patterns (Translation)](https://techracho.bpsinc.jp/hachi8833/2017_10_11/46069#bridge
+- [[Definitive Edition] Design Patterns Explained in a Way Humans Can Understand #2: Structural Patterns (Translation)](https://techracho.bpsinc.jp/hachi8833/2017_10_11/46069#bridge

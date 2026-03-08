@@ -8,23 +8,24 @@ categories:
 tags:
   - Design
   - Architecture
-  - Links
+  - Link Collection
 translation_key: architecture-design-organization-design-resources
 ---
 
-I searched for articles on software architecture and organizational design, and I will list what I've read. I plan to add more as I go along.
+
+I have been exploring articles related to software architecture and organizational design, so I have listed the ones I have read. I plan to add more as I read them.
 
 # Article List
-- [logmi.jp - Aiming for 'Better' through Trade-offs in Organizational Design: Utilizing the Book 'Software Architecture: Hard Parts'](https://logmi.jp/tech/articles/328213)
-- [engineer.crowdworks.jp - The Path to Software Architecture and Organizational Structure that Adapts to Change](https://engineer.crowdworks.jp/entry/2022/12/24/174446)
-- [qiita.com - Why Do Organizational Structures and Software Architecture Tend to Be Similar?](https://qiita.com/hirokidaichi/items/d12fcce80ee593bcf34d)
-- [mtx2s.hatenablog.com - The Negative Impact of Organizational Design Failures on Software Development](https://mtx2s.hatenablog.com/entry/2022/05/07/142344)
-- [data.wingarc.com - Challenges of the 'Organizational Chart' Presented by 'Team Topologies: Adaptive Organizational Design for Rapid Delivery of Valuable Software' and New Organizational Models](https://data.wingarc.com/team-topologies-39414)
-- [forza.cocolog-nifty.com - The Rule 'Architecture Follows Organizational Structure' Has Two Meanings](https://forza.cocolog-nifty.com/blog/2014/12/2-ed73.html)
+- [logmi.jp - Aiming for 'Better' with Trade-offs According to the Situation: Utilizing the Book 'Software Architecture: The Hard Parts' in Organizational Design](https://logmi.jp/tech/articles/328213)
+- [engineer.crowdworks.jp - The Path to Adaptive Software Architecture and Organizational Structure](https://engineer.crowdworks.jp/entry/2022/12/24/174446)
+- [qiita.com - Why Do Organizational Structure and Software Architecture Resemble Each Other?](https://qiita.com/hirokidaichi/items/d12fcce80ee593bcf34d)
+- [mtx2s.hatenablog.com - The Negative Impact on Software Development Seen in Organizational Design Failures](https://mtx2s.hatenablog.com/entry/2022/05/07/142344)
+- [data.wingarc.com - Challenges of the 'Organizational Chart' and New Organizational Models Presented by 'Team Topologies: Organizing Business and Technology Teams for Fast Flow'](https://data.wingarc.com/team-topologies-39414)
+- [forza.cocolog-nifty.com - The Two Meanings of the Adage 'Architecture Follows Organizational Structure'](https://forza.cocolog-nifty.com/blog/2014/12/2-ed73.html)
 
 # Thoughts
-I feel that I need to learn more to articulate design theories from both software architecture and organizational perspectives. Perhaps, in my future career, I might spend time addressing such matters, so I want to broaden my horizons.
+I feel that I lack the knowledge to articulate design theories from both the perspectives of software architecture and organization. Perhaps, in my future career, I might spend time facing such matters, so I want to broaden my horizons.
 
 I might want to read 'Team Topologies' and 'An Invitation to Engineering Organization Theory'.
 
-Also, if focusing solely on organizational design, there seems to be various research and case studies based on management studies. I'm interested in that area but lack knowledge, so I would like to learn about it at some point.
+If focusing solely on organizational design, there seem to be various studies and case studies based on management science. I'm interested in that area, but since I'm not well-versed, I would like to learn about it at some point.

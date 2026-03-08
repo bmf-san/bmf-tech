@@ -1,38 +1,40 @@
 ---
-title: Design Patterns in PHP - Singleton ~Limiting the Number of Instances~
+title: 'Learning Design Patterns with PHP - Singleton: Limiting Instances'
 slug: php-design-patterns-singleton
 date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
   - Application
 tags:
-  - Design Patterns
+  - Design Pattern
   - PHP
-  - Singleton
+  - Singleton Pattern
 translation_key: php-design-patterns-singleton
 ---
 
+
+
 # What is the Singleton Pattern?
-A pattern that guarantees there is only one instance to control the cost of instance creation.
+This pattern ensures that only one instance exists to control the cost of instance creation.
 
 # Structure
 ## SingletonClass
-It simply prepares a private constructor, a static method that returns only one instance, and a static variable to hold its own instance.
+Simply prepare a private constructor, a static method that returns only one instance, and a static variable to hold its own instance.
 
 # Advantages
-## Control Access to the Instance
-The Singleton pattern restricts access to itself as private, allowing control over access from client-side code.
+## Control Access to Instances
+Since access to itself held by the Singleton pattern is restricted to private, you can control access from client-side code.
 
 ## Ability to Change the Number of Instances
-It is also possible to change the number of instances created to two or more.
+It is also possible to change the number of generated instances to two or more.
 
 # Disadvantages
-* Reduced testability
-* Difficult to adapt flexibly if changes to the number of controlled instances are needed after implementation.
+* Decreased testability
+* Difficult to flexibly respond if changes to the number of controlled instances are needed after implementation
 
-# Use Cases
+# When to Use
 
-# Implementation Example (Repository available on [github](https://github.com/bmf-san/design-patterns-php))
+# Implementation Example (※Repository available on [github](https://github.com/bmf-san/design-patterns-php).)
 
 ```SingletonConfig.php
 <?php
@@ -87,8 +89,8 @@ if ($instanceA->getConfig() === $instanceB->getConfig()) {
 ```
 
 # Summary
-* Make the instance creation method private to restrict access from outside.
-* Control the number of instance creations using a static method.
+* Restrict external access by making the instance creation method private
+* Control the number of instance creations with a static method
 
 # Related Keywords
 * Encapsulation

@@ -11,24 +11,26 @@ tags:
 translation_key: docker-elasticsearch-kibana-setup
 ---
 
-# Overview
-A brief summary of Elasticsearch and how to set up the environment using Docker.
 
-# What is Elasticsearch?
-- Distributed RESTful search/analytics engine
-  - Capable of both full-text search and analysis
-- Almost real-time search platform
+
+# Overview
+A brief summary of Elasticsearch and setting up the environment with Docker.
+
+# What is Elasticsearch
+- A distributed RESTful search/analytics engine
+  - Capable of not only full-text search but also analytics
+- Near real-time search platform
 - Cluster
-  - A collection of one or more nodes (servers) that hold all the data together
+  - A collection of one or more nodes (servers) that collectively hold your entire data
   - Provides integrated indexing and search capabilities across all nodes
 - Node
-  - A single server that is part of the cluster and stores data
+  - A single server within a cluster that stores data
 
 # Setting Up the Environment with Docker
-Creating an environment where Elasticsearch and Kibana can be used.
+Set up an environment where Elasticsearch and Kibana can be used.
 
-```yaml
 docker-compose.yml
+```
 elasticsearch:
   image: elasticsearch:5
   ports:

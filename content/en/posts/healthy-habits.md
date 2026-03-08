@@ -7,244 +7,247 @@ categories:
   - Healthcare
 tags:
   - Health
+description: Documenting my habits for health. Partly poetic, with the hope of future reflection and improvement.
 translation_key: healthy-habits
 ---
 
-I want to jot down the habits I practice for my health. About half of it is poetry. I might look back on this in the future for improvement.
+
+
+Documenting my habits for health. Partly poetic, with the hope of future reflection and improvement.
 
 # Disclaimer
-I cannot guarantee the accuracy of what I write here (i.e., that it is evidence-based). It is merely what I have researched and what I have judged to be useful.
+I cannot guarantee the accuracy (≒evidence-based) of what is written in this article. It is merely my "judgment" based on what I have researched and practiced.
 
 # About Me
-I am a 31-year-old (as of 2024) with a hobby in health. My job is primarily as a software engineer, and I tend to worry when I see unhealthy people.
+A 31-year-old (as of 2024) who considers health a hobby. I work as a software engineer, primarily desk work. I tend to worry when I see unhealthy people.
 
 # What is Health?
-I recommend referring to [japan-who.or.jp - Definition of Health](https://japan-who.or.jp/about/who-what/identification-health/).
+Refer to [japan-who.or.jp - Definition of Health](https://japan-who.or.jp/about/who-what/identification-health/).
 
-Health is defined not merely as the absence of disease but as a state of physical and mental well-being.
+Health is not simply the absence of disease; it is defined as a state of complete physical and mental well-being.
 
 # Why Health?
-Why is health important? Is there a need to raise health awareness?
+Why is health important? Why should we raise health awareness?
 
-I lived an unhealthy lifestyle from my university days until about my third year in the workforce (which I regret), but my health awareness has gradually improved.
+From my university days to about my third year as a working adult, I led an unhealthy lifestyle (regretfully), but gradually my health awareness improved.
 
-- I feel unwell. My adjustments are off. My performance is lacking.
-- Hangovers are tough. I shouldn't have drunk.
+- Feeling unwell, poor condition, low performance.
+- Hangovers are tough. Shouldn't have drunk.
 - My body shape is a bit... off?
-- My health check results aren't bad, but do I have established healthy habits? It doesn't seem so. At this rate...
-- I tend to accumulate stress. I want to release it effectively.
+- Health check results aren't bad, but are healthy habits established...? Not really. At this rate...
+- Tend to accumulate stress. Want to release it effectively.
 
-These small changes gradually shifted my awareness.
+Such small changes gradually altered my awareness.
 
-I believe my health awareness has significantly increased compared to before.
+Compared to before, I think my health awareness has significantly increased.
 
-If I were to be asked again why I should value health or invest in it, I would answer:
+If asked now why we should value health and invest in it, I would answer:
 
 "Because I want to enjoy my life to the fullest."
 
-Life may feel short in terms of time, but in terms of distance, it is long; I consider it akin to a marathon.
+Life may feel short in terms of time, but in terms of distance, it's long, like a marathon.
 
-Depending on personal values, I believe that being able to run steadily for as long as possible contributes to my happiness in life.
+Depending on individual values, I believe that being able to run steadily for as long as possible leads to happiness in my life.
 
-The longer I can remain healthy, the longer I believe I can enjoy life.
+The longer you can stay healthy, the longer you can enjoy life proportionally.
 
-What I want to enjoy includes spending a lot of time playing with family, engaging fully in meaningful work, and thoroughly enjoying my hobbies.
+Enjoying life means, for example, playing a lot with family, working hard at a rewarding job, or fully enjoying hobbies.
 
-I believe that health is the foundation that supports these pursuits.
+I believe health is the foundation that supports such things.
 
 # Health and Evidence
-For thoughts on evidence, please refer to [The Complete Guide to Techniques for Better Health](https://amzn.to/4eKtn3N).
+For thoughts on evidence, refer to [The Complete Guide to Health Technology](https://amzn.to/4eKtn3N).
 
-cf. [bmf-tech.com - The Complete Guide to Techniques for Better Health](https://bmf-tech.com/posts/%e5%81%a5%e5%ba%b7%e3%81%ab%e3%81%aa%e3%82%8b%e6%8a%80%e8%a1%93%e3%80%80%e5%a4%a7%e5%85%a8)
+cf. [bmf-tech.com - The Complete Guide to Health Technology](https://bmf-tech.com/posts/%e5%81%a5%e5%ba%b7%e3%81%ab%e3%81%aa%e3%82%8b%e6%8a%80%e8%a1%93%e3%80%80%e5%a4%a7%e5%85%a8)
 
-What is good for health? What is bad? It is not easy to conclude.
+It's not easy to conclude what is good or bad for health.
 
-There are more things that may not be good, such as "this might not be good" or "there could be cases where it isn't good," than things that are clearly recognized as bad.
+There are more things like "this might not be good" or "it may not be good in some cases" than things that are "clearly not good."
 
-The fields of medicine and public health are outside my expertise, but they evolve daily, just like the software world, and what is considered "correct" or "good" may not be so in the future.
+The fields of medicine and public health, though outside my expertise, are evolving daily, just like the software world, and what is considered "correct" or "good" today may not be so in the future.
 
-Thus, it is necessary to update knowledge and make judgments based on personal responsibility.
+Therefore, updating knowledge and making judgments at one's own risk are necessary.
 
-I place a certain level of trust in information released by WHO and the Ministry of Health, Labour and Welfare as sources, but I do not take it at face value; I pay attention to the latest research and related information when necessary.
+I place a certain level of trust in information from sources like WHO and the Ministry of Health, Labour and Welfare, but I don't take it at face value and sometimes pay attention to the latest research or related information.
 
 # Health and Investment
-Health is like a savings investment; you don't get returns just because you worked hard for one day. (It's hard to say if you get significant returns just because you saved...)
+Health is like cumulative investment; you don't get returns just because you worked hard for one day. (Though whether you get significant returns from cumulative investment is another question...)
 
-It requires long-term conscious effort, so it's better to start now than to say, "I'll try harder next year."
+It's something that requires long-term conscious effort, so it's better to start now rather than later.
 
-I believe that most of human daily life is made up of habits. Health can be improved by reviewing daily habits and working towards making them habitual.
+I believe that most of human daily life is made up of habits. Health can be improved by reviewing daily habits and trying to establish them.
 
-# Healthy Habits
-After a long preamble, I want to categorize and jot down the healthy habits I am practicing.
+# Health Habits
+The introduction has become long, but I will categorize and document the health habits I am actually practicing.
 
-The returns I feel I am gaining from these healthy habits include:
+The returns I feel I am getting from these health habits include:
 
-- I get tired less easily. I recover from fatigue every day.
-- I have plenty of stamina!
-- I accumulate stress less easily.
-- My concentration stabilizes and increases easily.
-- My daily physical and mental condition stabilizes.
-- I can wake up at almost the same time every day without an alarm.
-  - The stress from morning alarm alerts has become zero.
-  - I wake up more easily at times when it feels right, rather than being forced to wake up, which improves my awakening.
-- I do not receive alerts (such as needing tests or re-tests) from health check results.
-- I catch colds less easily (though I'm not entirely confident about this; you can still catch them even if you take care of your health).
+- Less fatigue. Recover well every day.
+- Lots of stamina!
+- Less stress accumulation
+- Stable and easily heightened concentration
+- Stable daily physical and mental condition
+- Able to wake up at almost the same time every day without an alarm
+  - Zero stress from morning alarm alerts
+  - Waking up naturally rather than forcibly, leading to better wakefulness
+- No alerts (like needing tests or retests) in health check results
+- Less prone to catching colds (though not entirely confident about this; you can still catch a cold even if you're careful about health.)
 
-In my teens and twenties, I thought, "What’s that? Isn’t that obvious?" But as humans age, they gradually decline, so I believe it is useful to resist aging as much as possible. (I realized this a few years ago.)
+In my teens and twenties, I thought "what's the big deal, that's normal," but as humans age, they gradually decline, so I believe it's useful to resist aging by establishing habits early. (Realized this a few years ago.)
 
-Even things that seem obvious require a certain level of effort to maintain.
+Even things that seem normal require a certain effort to maintain that normalcy.
 
-While it can be challenging to reach the point of habit formation, I feel that once it is established, maintaining it is not that difficult. In my case, there is some level of restraint, but it is hardly painful.
+While it is challenging to reach the point of habit formation, once it becomes a habit, maintaining it doesn't feel that difficult. In my habits, there is little hardship, even if there is some patience.
 
-The tips for forming habits are logically introduced in [The Complete Guide to Techniques for Better Health](https://amzn.to/4eKtn3N), so I recommend referring to it.
+Tips for habit formation are introduced in a rational way in [The Complete Guide to Health Technology](https://amzn.to/4eKtn3N), so please refer to it.
 
-I hold no critical opinions or thoughts about not having the habits listed here, and I do not harbor negative feelings towards those who have different healthy habits. This is merely my own voluntary effort. Moreover, this is what I am currently working on, and it may change in the future. If there are habits that are clearly harmful, I would appreciate it if you could discreetly inform me with evidence.
+I hold no critical opinions or thoughts towards those who do not have the habits listed here, nor do I have any negative feelings towards people with different health habits. It is merely something I am pursuing of my own volition. Also, these are the things I am currently working on, and they may change in the future. If there are habits that are clearly problematic, please let me know with evidence.
 
-The habits listed here are based on information from WHO, the Ministry of Health, Labour and Welfare, and other books, and I am undertaking them based on my judgment. It would be cumbersome to attach sources for each item, so I will omit that (you should be able to find evidence and research in books or through Google... It is not always possible to definitively state that something is scientifically good for health. In fact, there are things that cannot be definitively stated or that may be disproven by new research).
+The habits listed are based on information from sources like WHO, the Ministry of Health, Labour and Welfare, and other books, and are pursued at my own discretion. It is cumbersome to attach information sources for each item, so I will omit them (you should be able to find evidence or research by googling or in books... not everything can be definitively stated as scientifically healthy. Rather, there are things that cannot be definitively stated or may be negated by new research findings).
 
 ## Exercise
-I habitually engage in exercise.
+I engage in exercise habitually.
 
 - Walking
-  - I aim for over 8,500 steps a day.
-  - I measure it with Fitbit.
-  - I consciously use stairs and choose to walk instead of cycling.
+  - Aim for over 8500 steps a day
+  - Measured with Fitbit
+  - Consciously use stairs, walk instead of using a bicycle
 - Standing
-  - I consciously balance the time spent working while sitting and standing.
-    - I felt my leg strength had decreased due to remote work, but I feel that it has improved with increased standing time.
-  - I utilize Fitbit’s exercise alerts quite a bit.
+  - Consciously balance time spent working while sitting and standing
+    - Felt a decline in leg strength with remote work, but feel it has improved with more standing time
+  - Utilize Fitbit's exercise alerts
 - Gym
-  - I don’t have a strict schedule, but I go about 2-3 times a week.
-  - I train my whole body with running, free weights, machines, and bodyweight exercises in a balanced manner.
-  - Although it’s not a boxing gym, it has a rare punching bag, so I also do kickboxing (though only for about half an hour...)
-  - I keep records with Fitbit.
+  - Not strictly scheduled, but about 2-3 times a week
+  - Balance training with running, free weights, machines, bodyweight exercises
+  - Kickboxing with a sandbag at a non-boxing gym (only for a few minutes...)
+  - Recorded with Fitbit
 - Running
-  - I try to run about 2-3 times a week.
-  - I want to train my cardiovascular function, but since I don't run long distances, I'm not sure how effective it is.
-  - I find it enjoyable as I see improvements in my stamina.
-- Others
-  - I count household chores, shopping, and playing with my child as exercise (simply because they involve physical activity).
-    - If I don’t count these as exercise, it becomes difficult to manage fatigue recovery (adjusting exercise volume).
-      - ex. I was busy with housework today, and I stood a lot, so I’ll skip the gym.
+  - Run about 2-3 times a week
+  - Want to train cardiovascular function, but not sure if it's effective as I don't run long distances
+  - Enjoyable as I see improvements in stamina
+- Other
+  - Count household chores, shopping, and playing with children as exercise (due to the physical activity involved)
+    - If not counted as exercise, it's hard to control fatigue recovery (adjust exercise volume)
+      - ex. Busy with chores today, did a lot of standing, so I'll skip the gym
 
 ## Diet
-Compared to other habits, stabilizing my diet is particularly challenging. The temptations of appetite and busyness make it quite difficult to maintain a stable diet. There are times when it gets disrupted, but I try to balance it during those times.
+Stabilizing diet is particularly challenging compared to other habits. It's quite difficult to maintain a stable diet due to temptations like appetite and busyness. Sometimes it gets disrupted, but I try to balance it when that happens.
 
 - Timing
-  - I try to eat at roughly the same times every day.
-    - This contributes to stabilizing blood sugar levels (so I’ve heard).
-  - I try to eat when I’m as hungry as possible.
-    - The degree of nutrient intake differs (so I’ve heard).
+  - Eat meals at the same time every day as much as possible
+    - Contributes to blood sugar stability (apparently)
+  - Eat when hungry as much as possible
+    - Different level of nutrient absorption (apparently)
 - Frequency
-  - Three meals a day.
-    - I don’t change the frequency, but I adjust the quantity.
-      - ex. If I eat too much at lunch, I’ll reduce carbs at dinner.
+  - Three times a day
+    - Don't change the number of meals, but adjust the quantity
+      - ex. Ate too much at lunch, so reduce carbs at dinner
 - Quantity
-  - Eat until about 80% full.
-    - It was challenging to get used to this since I used to eat a lot.
-    - I’ve gotten used to increasing the number of chews, eating low-carb foods when I feel insufficient, and filling up with vegetables (has my stomach adjusted to the right size??).
-      - I tend to eat quickly, so I’m careful, but there’s room for improvement.
-    - I eat slightly more for breakfast and lunch than for dinner.
-      - I’m more active during the day.
+  - Eat until 80% full
+    - It was hard to get used to this. I used to eat a lot...
+    - Got used to it by increasing chewing, eating low-carb foods when feeling unsatisfied, filling up with vegetables, etc. (Did my stomach adjust to the right size??)
+      - I eat quickly, so I try to be careful, but there's room for improvement
+    - Eat slightly more in the morning and afternoon than at night
+      - More active during the day
 - Food
-  - I aim to consume 350g of vegetables (about what can fit in both hands) a day.
-    - This is difficult. I’m not quite sure about the amount.
-    - I try to keep vegetables stocked in the fridge to ensure I can have them at every meal, and I think I’m doing fairly well by making dishes with more vegetables than meat (though I’m not measuring, so I’m not confident).
-    - I focus on variety in color.
-    - I buy a variety of colorful vegetables and sometimes try to buy vegetables that aren’t part of my usual routine.
-  - Reduced salt
-    - I strive to bring my daily salt intake closer to WHO standards.
-    - I don’t use a salt concentration meter strictly, but I check the salt content of seasonings and ingredients and make sure to use measuring spoons.
-    - If I feel I’ve consumed too much, I focus on increasing vegetable intake for salt excretion (I’m not sure how medically credible this is).
-    - Eating out tends to be high in salt.
-    - I significantly reduce the frequency of extremely high-salt foods like ramen and tend to leave the soup behind.
-    - I try to buy low-salt products.
-    - There are studies suggesting that gradually reducing salt intake helps you get used to it.
-    - Personally, I feel that it works. You really get used to it. To what extent? To the point where I can eat vegetables with just olive oil? (Does the degree of relying on the natural flavor increase?)
+  - Consume 350g (about two handfuls) of vegetables a day
+    - This is difficult. I don't really understand the sense of it lol
+    - Keep the fridge stocked with vegetables to ensure vegetables are consumed at every meal. Make dishes with more vegetables than meat, etc., and I think I'm managing quite well. Probably... (Not measuring, so not confident.)
+    - Rich in color
+    - Buy colorful vegetables with nutritional balance in mind, try buying vegetables other than routine ones
+  - Reduce salt
+    - Try to get daily salt intake close to WHO standards
+    - Don't use a salt concentration meter strictly, but check the salt content of seasonings and ingredients, use measuring spoons properly
+    - If I feel I've taken too much, I increase vegetable intake to "excrete salt" (not sure if this is medically credible.)
+    - Eating out tends to be high in salt
+    - Greatly reduce frequency of extremely high-salt foods like ramen, leave the soup, etc.
+    - Buy reduced-salt products
+    - There seems to be research suggesting you can get used to slightly reducing salt intake
+    - Personally, I feel it. You really get used to it. To the extent that I can eat vegetables with just olive oil? (The degree to which the taste of the ingredients is sufficient increases?)
   - Rice
-    - When cooking white rice, I use mochigome (sticky rice) and occasionally brown rice.
-    - I’m somewhat concerned about arsenic in brown rice, so I don’t eat it every day. It seems there’s no definitive evidence regarding this, so I honestly don’t know.
+    - Add barley when cooking white rice, sometimes brown rice
+    - Not entirely unconcerned about arsenic in brown rice, so don't eat it every day. It doesn't seem like there's definitive evidence on this, so honestly, I don't know.
   - Meat
-    - I avoid processed meats.
-    - I eat red meat (beef, pork, etc.) but tend to eat more chicken.
-    - I try not to consume too much fat.
+    - Avoid processed meat
+    - Eat red meat (beef, pork, etc.) but more chicken
+    - Avoid consuming too much fat
   - Fish
-    - I aim to eat a balanced amount of both meat and fish, preferably leaning more towards fish.
-    - It tends to be about half and half, but I often eat more meat.
-    - Fish is expensive.
-    - I pay attention to purines (not over-consuming).
-    - I pay attention to salt content (fish tends to be high in salt).
+    - Eat meat and fish in balance, ideally with a slight preference for fish
+    - Tends to be about half and half, or more meat
+    - Fish is expensive
+    - Be mindful of purines (don't overeat)
+    - Be mindful of salt (fish tends to be high)
   - Dairy
-    - I eat yogurt almost every day.
-    - I drink milk fairly regularly. By the way, I’m no longer growing taller.
+    - Eat yogurt almost every day
+    - Drink milk almost every day. Though my height won't increase anymore.
   - Fruits
-    - I want to eat fruits daily for vitamin intake, but they are expensive.
+    - Want to eat daily for vitamin intake, but... expensive
   - Snacks
-    - I hardly ever snack.
-    - When I’m tired, I tend to snack, but I avoid it because I tend to overeat.
-    - If I feel I should consume some calories due to exercise or physical condition, I occasionally eat low-carb snacks.
+    - Rarely
+    - Tend to eat when tired, but avoid as I tend to overeat
+    - Occasionally eat low-carb foods if I feel I need calories due to exercise or condition
   - Sweets
-    - I treat myself to one sweet on the weekend as a weekend enjoyment.
-    - I tend to overeat, so I intentionally keep it strict to enhance the enjoyment level.
-  - Beverages
-    - Water and sparkling water
-      - I mainly drink these.
-    - I don’t drink juice.
-      - I avoid it because it’s high in sugar.
-      - I tend to overconsume it.
-    - I don’t drink alcohol.
-      - I occasionally drink non-alcoholic beverages.
+    - Eat one sweet on weekends as a weekend treat
+    - Strictly limit to enhance enjoyment as I tend to overeat
+  - Drinks
+    - Water, sparkling water
+      - Mostly drink these
+    - Don't drink juice
+      - Avoid due to high sugar content
+      - Tend to drink too much
+    - Don't drink alcohol
+      - Occasionally drink non-alcoholic beverages
     - Caffeine
-      - I try not to overconsume caffeine from tea and coffee.
-      - I don’t drink it daily. I switch to non-caffeinated options.
-      - I don’t feel the benefits of caffeine (increased concentration, reduced fatigue, etc.) in my body, so I rarely feel the need to actively consume it.
+      - Be mindful of not consuming too much caffeine from tea or coffee
+      - Don't drink daily. Opt for non-caffeine options.
+      - Don't feel the benefits of caffeine (increased concentration, reduced fatigue, etc.), so rarely feel the need to consume it actively
 - After meals
-  - I try to stay active while standing.
-    - This is said to help avoid blood sugar spikes.
-    - I actively engage in walking, household chores, and standing work.
+  - Try to stand and be active
+    - Avoid blood sugar spikes (apparently)
+    - Actively engage in walking, chores, standing work
 
 ## Sleep
-Controlling sleep is as challenging as controlling diet. I was finally able to completely adjust my late-night lifestyle due to the birth of my child, which helped me a lot (parenting somewhat forces a control over sleep cycles).
+Sleep is as difficult to control as diet. I finally managed to completely adjust my habit of staying up late thanks to the birth of my child, which helped. (Child-rearing forces a sleep cycle adjustment, making it easier to correct.)
 
-- Timing
-  - I get into bed by midnight.
-  - Based on Fitbit, I have about 6.5 to 7 hours of sleep.
-  - I feel rested even if I don’t sleep for 8 hours, but I think I could sleep a bit more.
+- Time
+  - Be in bed by midnight
+  - About 6.5 to 7 hours of sleep based on Fitbit
+  - Feel rested even without 8 hours of sleep, but think a bit more sleep would be good
 - Bedding
-  - I don’t have particular preferences, but I don’t use anything too cheap.
-  - I think spending more money could further improve sleep quality, but I’m tight on budget.
-- Pre-sleep
-  - I avoid blue light before bed.
-    - I try to read paper books instead of coding.
-  - I absolutely do not touch my smartphone once I’m in bed (ironclad rule).
-    - This is something I tend to do, and I believe it affects sleep quality.
-    - I feel that since I stopped doing this, my ability to fall asleep has improved (though other factors like exercise may also play a role).
-  - I adjust my daily rhythm to ensure there’s about a 2-hour gap between bath/meal times and sleep.
-    - This is difficult when I come home late.
+  - No particular preference, but don't use overly cheap items
+  - Think spending more might further improve sleep quality, but wallet is tight
+- Before bed
+  - Avoid blue light before sleep
+    - Avoid coding, opt for reading paper books, etc.
+  - Absolutely don't use smartphone once in bed (iron rule)
+    - Tend to do this, but believe it affects sleep quality
+    - Feel sleep onset improved since stopping (exercise and other factors may also contribute)
+  - Adjust lifestyle rhythm to have about 2 hours between bath or meal and sleep
+    - Not possible when returning home late
 
 ## Stress Management
-I strive to understand the nature of my stress and alleviate it by changing my thoughts and actions to avoid accumulating stress.
+Understand the nature of my stress and change thoughts and actions to relieve stress or avoid accumulating it.
 
-- Moderate exercise, diet, and sleep
+- Moderate exercise, diet, sleep
 - Positive thinking
-- Scheduling enjoyable plans
-  - I schedule enjoyable plans weekly, monthly, and yearly, or create routines.
-  - Having enjoyable things allows me to spend time in a good mood towards them.
+- Plan enjoyable activities
+  - Schedule enjoyable activities weekly, monthly, yearly, or create routines
+  - Having something to look forward to helps maintain a good mood
 - Mindfulness
-  - I occasionally try it, but I feel I only notice effects when I’m quite exhausted.
-  - I want to try it continuously to see if there are changes.
+  - Occasionally try it, but feel it only works when extremely tired
+  - Want to try it continuously to see if there's any change
 
-I’m only doing things that seem to be commonly written in books, but I feel that these are the most effective in the end.
+I only do things that seem to be commonly written in books, but ultimately, they seem to be the most effective.
 
 ## Measurement
-I engage in the following to measure my health:
+Things I do to measure health.
 
-- Health check-ups
-- Weight measurement
-  - I pay attention to whether I’m at a proper weight and my BMI.
+- Health checkups
+- Weighing
+  - Pay attention to whether I'm at a healthy weight or BMI
 - Fitbit
-  - I record my exercise and sleep.
-  - Recording promotes habit formation and reveals areas for improvement.
+  - Record exercise and sleep
+  - Recording promotes habit formation and reveals areas for improvement
 
 # Thoughts
-After writing all this down, I realize I’m not doing anything particularly significant and wonder if I can improve more, so I want to update my habits when I find good ones.
+After writing everything down, I feel like I'm not doing much, and wonder if I can improve more, so I want to update if I find good habits.

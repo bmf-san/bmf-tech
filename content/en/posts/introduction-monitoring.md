@@ -11,8 +11,10 @@ tags:
 translation_key: introduction-monitoring
 ---
 
-[Introduction to Monitoring](https://amzn.to/44ASkKm) is a book I read.
 
-You can learn the basics and practices of monitoring.
 
-It's an introductory book for when you want to learn about monitoring.
+[入門監視](https://amzn.to/44ASkKm)を読んだ。
+
+監視の基本と実践について学ぶことができる。
+
+監視について学んでみたいときの入門書。

@@ -1,5 +1,5 @@
 ---
-title: Struggles with Recursion
+title: Challenges with Recursion
 slug: recursion-challenges
 date: 2023-07-08T00:00:00Z
 author: bmf-san
@@ -10,17 +10,18 @@ tags:
 translation_key: recursion-challenges
 ---
 
-Recursion is a programmer's delight! It should be elegantly written and is expected to be straightforward! ...I wish I could say that with confidence, but honestly, I struggle with it.
 
-The only time I really write recursive code is during coding quizzes, and in reality, I don't have many opportunities to write it.
+Recursion is a programmer's art! It's expected to be written elegantly! ...is what I'd like to confidently say, but honestly, I'm not very good at it.
 
-In some cases, recursion can become complex without memoization or tail optimization, leading to high computational costs or memory-heavy code. However, depending on the algorithm, it can also result in simpler code.
+The only time I usually write recursive processes is during coding quizzes, and in reality, I don't have many opportunities to write them.
 
-That said, I feel the cognitive load remains high.
+Depending on the case, recursion can become computationally expensive or just memory-consuming if not done elegantly with memoization or tail optimization. However, it has the advantage of resulting in simple code for certain algorithms.
 
-I thought about what increases this cognitive load and makes it difficult, and I realized two things that I want to note down.
+Yet, I feel the cognitive load remains high.
 
-# Return
+I've thought about what increases this cognitive load and what makes it challenging, and I've realized two things, which I'll write about here.
+
+# return
 It's hard to grasp what gets returned and when.
 
 For example, the following case is simple and easy to understand, but when there are multiple recursive cases, the cognitive load increases.
@@ -44,16 +45,14 @@ func main() {
 }
 ```
 
-When confused about returns, I think it's good to write out the process straightforwardly. I wonder if there are better methods.
+When confused by returns, it might be good to write out the process straightforwardly. Is there a better way?
 
 # Stack
-The evaluation of a recursive function is stacked in the call stack. Since it's a stack, it follows LIFO.
+The evaluation of recursive functions is pushed onto the call stack. Since it's a stack, it's LIFO.
 
-Once the evaluation is complete, data is popped from the stack for processing.
+If you don't understand this, you might get lost even when tracing the code with a debugger.
 
-If you don't understand this, you can easily get lost while debugging the code.
-
-For example, consider the following simple code, which is easier to think about.
+For example, the following simple code is easy to think about.
 
 ```go
 package main
@@ -76,11 +75,11 @@ func main() {
 }
 ```
 
-It may seem very basic, but as the code becomes more complex, it can become quite confusing, so I want to return to this foundation in such cases.
+It might be very basic, but the more complex the code becomes, the more confusing it gets, so I want to return to these basics when that happens.
 
-# Thoughts
-If I can derive recurrence relations and think mathematically, I feel that the difficulty might decrease with familiarity, but I still can't shake off my struggles with recursion, so practice is necessary...
+# Impressions
+If you can derive recurrence relations and think mathematically, and if you're used to it, the difficulty might feel reduced, but I still can't shake off the difficulty with recursion, so I need practice...
 
-I think an approach of first writing it with a for loop and then rewriting it recursively could work, but I believe there are cases where it can be challenging depending on the problem.
+I think an approach where you first write it as a for loop and then rewrite it as a recursive process might work, but I believe there are cases where it would still be challenging depending on the problem.
 
-Once I become proficient in recursion through practice, I will revisit this article.
+Once I become proficient with recursion through practice, I'll look back at this article again.

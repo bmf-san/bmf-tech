@@ -11,30 +11,32 @@ tags:
 translation_key: all-for-saas
 ---
 
-[ALL for SaaS SaaS立ち上げのすべて](https://amzn.to/3JxPaNX)を読んだので気になったことをメモする。
 
-- ASPとSaaSの違い
-  - シングルテナントなのがASP、マルチテナントなのがSaaS
-    - と語られることもある
-- リカーリングレベニュー
-  - 繰延収益
-  - 企業の売上の内、継続可能性のあるもの
-- ユニットエコノミクス
-  - Unit ecnomics = Life time value/Customer Acquisition Cost
-  - 1顧客あたりの採算性
-  - ユーザー獲得コストが高すぎる（LTV < CAC）と事業として成り立たない
-- SaaSにおけるMVP
-  - 企画、開発、販売等の視点において多義性を持つため、定義が曖昧になりやすい
-  - プロトタイプとプロダクトという2つのワードの使い分けに留めたいほうが分かりやすい
-    - →MVPとはプロダクトの形の1つだが、MVPとプロトタイプを混同しがちになるというのよく分かる
-- 課金モデル選択における注意点
-  - ユーザーにとって分かりづらい複雑なプライシングを避ける
-  - ユーザーの事業促進に悪影響を及ぼすようなプラシングを避ける
-    - →プライシングの形によってはユーザーの業務効率を阻害してしまうという視点は盲点だった。柔軟性があればあるほど良いのではと思っている部分があった。
-- SaaSはサポートも含めてプロダクト
-  - →[カスタマーサクセス――サブスクリプション時代に求められる「顧客の成功」10の原則](https://amzn.to/3QgcWlk)を読んでいたのでよく腑に落ちる言葉だった
 
-# 所感
-この本だけに限らないが、SaaSに関連しそうな本を読む度に思うのは、SaaSに限らず他の事業モデルであっても大事な視点が語られていると感じる。（と思ったら似たような感想のamazonコメントがあって共感した。）
+[I read ALL for SaaS: Everything about Launching SaaS](https://amzn.to/3JxPaNX) and noted down some points that caught my attention.
 
-SaaSだけにしかないような特徴的な部分は結構限られるのではと思った。（まだ不勉強かもしれない。）
+- Difference between ASP and SaaS
+  - ASP is single-tenant, while SaaS is multi-tenant
+    - This is often how it's described
+- Recurring Revenue
+  - Deferred revenue
+  - The portion of a company's revenue that is sustainable
+- Unit Economics
+  - Unit economics = Life time value/Customer Acquisition Cost
+  - Profitability per customer
+  - If the user acquisition cost is too high (LTV < CAC), the business cannot sustain
+- MVP in SaaS
+  - Due to its multifaceted nature in planning, development, sales, etc., the definition tends to be ambiguous
+  - It's clearer to differentiate between the words prototype and product
+    - →MVP is one form of a product, but it's easy to confuse MVP with a prototype, which is understandable
+- Points to consider when choosing a billing model
+  - Avoid complex pricing that is difficult for users to understand
+  - Avoid pricing that negatively impacts the user's business promotion
+    - →The perspective that pricing could hinder user business efficiency was a blind spot. I thought the more flexibility, the better.
+- SaaS is a product that includes support
+  - →Having read [Customer Success: 10 Principles for "Customer Success" in the Subscription Era](https://amzn.to/3QgcWlk), this resonated well with me
+
+# Impressions
+Not limited to just this book, but every time I read a book related to SaaS, I feel that important perspectives are discussed that apply not only to SaaS but also to other business models. (I found a similar sentiment in an Amazon review and felt a sense of connection.)
+
+I thought the unique aspects exclusive to SaaS might be quite limited. (Perhaps I am still not well-versed enough.)

@@ -11,7 +11,7 @@ translation_key: php8-1-new-features
 ---
 
 # Overview
-I will quickly catch up on the new features from PHP 7.4 to 8.1 since my knowledge has been stuck at 7.3.
+Since my PHP knowledge has been stuck at version 7.3, I'm quickly catching up on the new features up to version 8.1.
 
 # PHP 7.3.x - PHP 7.4.x
 ## New Features
@@ -19,7 +19,7 @@ I will quickly catch up on the new features from PHP 7.4 to 8.1 since my knowled
 ```php
 <?php
 	class Person {
-		public int $age; // Enforced to only allow specified type
+		public int $age; // Enforced to only assign the specified type
 		public string $name;
 	}
 
@@ -29,16 +29,16 @@ I will quickly catch up on the new features from PHP 7.4 to 8.1 since my knowled
 ### Arrow Functions
 ```php
 <?php
-// This is
+// Previously
 $a = 1
 $func_7_3 = function($b) use ($a) {
 	return $a + $b;
 }
 echo $func_7_3(1); // 2
 
-// From 7.4, you can write like this
+// From 7.4, you can write it like this
 $func_7_4 = fn($b) => $a + $b; // Implicit value scope
-
+// 7.4からはこのように書ける
 echo $func_7_4(1); // 2
 
 ?>
@@ -47,10 +47,10 @@ echo $func_7_4(1); // 2
 ### Null Coalescing Assignment Operator
 ```php
 <?php
-// This is
-$name = isset($name) ? $name : getName();
+// Previously
+$name = isset($name) $name : getName();
 
-// From 7.4, you can write like this
+// From 7.4, you can write it like this
 $name ??= getName();
 ?>
 ```
@@ -64,10 +64,10 @@ $all = [...$values, 'c']; // a, b, c
 ```
 
 ### FFI (Foreign Function Interface)
-You can call other languages from PHP. Similar to Go's cgo.
+You can call other languages from PHP. It's like Go's cgo.
 
 ### Preload
-A feature has been added to preload scripts into opcache.
+A feature to preload scripts into opcache has been added.
 
 ```ini
 // php.ini
@@ -80,10 +80,10 @@ opcache.preload=preload.php
 ```php
 <?php
 function namedFunc($foo, $bar, $baz) {
-	echo $foo . $bar . $baz;
+  echo $foo . $bar . $baz;
 }
 
-// You can set arguments by name regardless of their order
+// You can set arguments by name, regardless of order
 namedFunc(baz: "baz", foo: 'foo', bar: "bar"); // bazfoobar
 ?>
 ```
@@ -96,12 +96,12 @@ A new feature for annotations.
 #[Attribute]
 class Person
 {
-	public $name;
-	
-	public function __construct($name)
-	{
-		$this->name = $name;
-	}
+  public $name;
+  
+  public function __construct($name)
+  {
+    $this->name = $name;
+  }
 }
 
 #[Person(name: "John")]
@@ -109,35 +109,37 @@ class Man
 {
 }
 
-// You can access attributes via the Reflection API
+// Access attributes with the Reflection API
 function output($reflection) {
-	foreach ($reflection->getAttributes() as $attribute) {
-		var_dump($attribute->getName());
-		var_dump($attribute->getArguments());
-		var_dump($attribute->newInstance());
-	}
+  foreach ($reflection->getAttributes() as $attribute) {
+    var_dump($attribute->getName());
+    var_dump($attribute->getArguments());
+    var_dump($attribute->newInstance());
+  }
 }
+
 
 output(new ReflectionClass(Man::class));
 // string(6) "Person"
 // array(1) {
-// 	'name' =>
-// 	string(4) "John"
+//   'name' =>
+//   string(4) "John"
 // }
 // class Person#3 (1) {
-// 	public $name =>
-// 	string(4) "John"
+//   public $name =>
+//   string(4) "John"
 // }
 ?>
 ```
 
 ### Union Types
-You can now declare union types for arguments, return types, and properties.
+You can now declare union types for arguments, return values, and properties.
 
 ```php
 <?php
 function unionFunc(int|string $value): int|string
-	return $value;
+  return $value;
+}
 
 unionFunc(1);
 unionFunc("Hello World");
@@ -156,6 +158,7 @@ function matchFunc($value) {
 	};
 };
 
+// Unlike switch文とは異なり、厳密な比較（===）となる
 echo matchFunc("one"); // 1
 ?>
 ```
@@ -167,22 +170,22 @@ Makes it easier to write null-safe code.
 <?php
 class User
 {
-	public $name;
-	
-	public function __construct()
-	{
-		$this->name = $name;
-	}
+  public $name;
+  
+  public function __construct()
+  {
+    $this->name = $name;
+  }
 
-	public function getName()
-	{
-		return $this->name;
-	}
+  public function getName()
+  {
+    return $this->name;
+  }
 }
 
 class Account
 {
-	public User|null $user = null;
+  public User|null $user = null;
 }
 
 $account = new Account();
@@ -198,7 +201,7 @@ $account->user?->getName();
 <?php
 	$a1 = ["a" => 1];
 	$a2 = ["a" => 2];
-	var_dump(["a"=>0, ...$a1, ...$a2]); // ["a" => 2] The last key wins.
+	var_dump(["a"=>0, ...$a1, ...$a2]); // ["a" => 2] The later key wins.
 ?>
 ```
 
@@ -207,14 +210,14 @@ $account->user?->getName();
 <?php
 enum ColorCode: string
 {
-	case BLUE = "#0000ff";
-	case YELLOW = "#ffff00";
-	case RED = "#ff0000";
+  case BLUE = "#0000ff";
+  case YELLOW = "#ffff00";
+  case RED = "#ff0000";
 }
 
 function enumFunc(ColorCode $color) {
-	echo $color->name; 
-	echo $color->value; 
+  echo $color->name; 
+  echo $color->value; 
 }
 
 enumFunc(ColorCode::BLUE); // BLUE blue
@@ -223,16 +226,16 @@ enumFunc(ColorCode::BLUE); // BLUE blue
 ```
 
 ### Fibers
-Functions that can be paused and resumed from anywhere in the call stack. You can write asynchronous code.
+Functions with a complete stack that can be paused. They can be paused and resumed from anywhere in the call stack, allowing for asynchronous processing.
 
 ### Intersection Types
-If union types are OR types, intersection types are AND types.
+If union is the OR of types, intersection types are the AND of types.
 
 ```php
 <?php
 function check(Foo&Bar $intersection)
 {
-	return;
+  return;
 }
 
 class Foo{}
@@ -248,10 +251,10 @@ $foo->check(new Bar());
 ```
 
 ### Never Type
-A type that can only be specified for return values. Indicates whether a function exits or throws an exception or does not terminate. Different from void.
+A type that can only be specified for return values. It indicates that the function will either exit(), throw an exception, or never finish. It's different from void.
 
 # Thoughts
-It feels like writing code with a focus on types is becoming easier and easier. I have only skimmed the backward compatibility, so I would like to read it again when updating.
+It seems increasingly easier to write code with a focus on types. I've only skimmed through backward compatibility, so I want to read it again when updating.
 
 # References
 - [Migration from PHP 7.3.x to PHP 7.4.x](https://www.php.net/manual/ja/migration74.php)

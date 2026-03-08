@@ -10,77 +10,80 @@ tags:
   - Kubernetes
   - Terraform
   - kubeadm
+description: A journey of setting up a Kubernetes environment using Terraform and Ansible.
 translation_key: kubernetes-setup-with-terraform-ansible
 ---
 
-# Overview
-I worked on building a Kubernetes environment using Terraform and Ansible.
 
-I started from the desire to run my custom application on Kubernetes.
+
+# Overview
+I embarked on building a Kubernetes environment using Terraform and Ansible.
+
+Driven by the desire to run my custom app on Kubernetes, I started from setting up the environment.
 
 # Server Selection
-Since this is for private development, I want to keep the budget around 2000 yen per month at most.
+Since this is a private development, I want to keep the budget around 2000 yen per month.
 
-The major considerations are whether to use cloud or VPS, managed or unmanaged, but I don't think it will be too difficult to decide as long as I consider the cost and operational benefits. As mentioned later, the biggest headache was the load balancer...
+The major considerations are whether to use cloud or VPS, managed or unmanaged. However, these decisions can be made by weighing the cost and operational benefits, so I don't think it's a big dilemma. As I'll mention later, the biggest headache was the load balancer...
 
-Three candidates came up this time.
+Three candidates emerged this time.
 
 ## GCP
 - GKE
-  - Using it as is could lead to cloud bankruptcy... but there is a high possibility of exceeding the budget.
-  - There is a way to use it cheaply by utilizing preemptible VMs, but I wonder how it would be operationally.
-    - [ludwig125.hatenablog.com - What I did to use GKE cheaply](https://ludwig125.hatenablog.com/entry/2019/11/30/073458)
-    - [sleepless-se.net - How to create the cheapest Kubernetes cluster on GKE](https://sleepless-se.net/2018/12/11/gke-kubernetes/)
-    - [blog.a-know.me - Creating a cheap GKE (k8s) cluster for hobby development](https://blog.a-know.me/entry/2018/06/17/220222)
+  - Using it as-is might not lead to cloud bankruptcy, but there's a high chance of exceeding the budget.
+  - There's a cheaper way using preemptible VMs, but how viable is it operationally?
+    - [ludwig125.hatenablog.com - GKE を格安で使うためにやったこと](https://ludwig125.hatenablog.com/entry/2019/11/30/073458)
+    - [sleepless-se.net - GKEで最安値のKubernetesクラスタを作る方法](https://sleepless-se.net/2018/12/11/gke-kubernetes/)
+    - [blog.a-know.me - 安価なGKE（k8s）クラスタを作って趣味開発に活用する](https://blog.a-know.me/entry/2018/06/17/220222)
 
 ## Digital Ocean
-- A VPS that allows managed Kubernetes.
-- The master node is free, and worker nodes are pay-as-you-go.
-- If downtime is acceptable, one worker costs $10 per month ($0.01/hour).
+- Managed Kubernetes available on VPS.
+- Free master node, pay-as-you-go worker nodes.
+- If downtime is acceptable, one worker node costs $10/month ($0.01/hour).
 - Load balancer is also pay-as-you-go.
-- You can get about $100 for signing up through a promo link, allowing you to try various things.
-- The free monitoring is quite solid and good.
-- The ecosystem is good
-  - [marketplace.digitalocean.com](https://marketplace.digitalocean.com/)
+- You can try various things with about $100 from a promo link for new registrations.
+- Free and robust monitoring is available.
+- Good ecosystem
+  - [marketplace.digitaloceancom.com](https://marketplace.digitalocean.com/)
   - [community](https://www.digitalocean.com/community)
 - Openstack API compatible
-- Might want to use it regardless of whether I use Kubernetes or not.
+- Might want to use it regardless of using Kubernetes
 
 ## Conoha VPS
-- No data transfer fees.
-- Openstack API compatible.
-- The UI is easy to understand.
-- There are also DB servers and object storage.
+- No data transfer charges.
+- Openstack API compatible
+- Easy-to-understand UI.
+- Also offers DB servers, object storage, etc.
 
-In addition to the above, I considered the option of managed k3s provided by [civo.com](https://www.civo.com/), but since I wanted to touch k8s, I excluded it from consideration.
+Besides the above, I considered [civo.com](https://www.civo.com/) which offers managed k3s, but since I wanted to work with k8s, I excluded it from consideration.
 
-I was torn between Digital Ocean and Conoha, but I chose Conoha because I was captivated by the reassuring pricing structure with no pay-as-you-go.
+I was torn between Digital Ocean and Conoha, but was captivated by the peace of mind of a non-pay-as-you-go pricing model, so I chose Conoha.
 
-I think GKE and Digital Ocean provide a good environment for quickly building and studying Kubernetes, so I decided to consider using them for that purpose.
+GKE and Digital Ocean provide a well-prepared environment for quickly setting up Kubernetes and studying, so I decided to consider using them for such purposes.
 
 # Building a Kubernetes Environment on Conoha VPS
-Since I chose not to use managed Kubernetes, I decided to build Kubernetes myself.
+Since I opted not to use managed Kubernetes, I decided to build Kubernetes myself.
 
-I adopted kubeadm as the tool for building.
+I adopted kubeadm as the tool for the build.
 
-Using Terraform and Ansible, I coded everything from instance creation to initial setup (user creation, SSH key adjustments, etc.) and the construction of Kubernetes using kubeadm, which can be found here:
+Using Terraform and Ansible, I coded everything from instance setup to initial setup (user creation, SSH key adjustments, etc.) and Kubernetes setup with kubeadm:
 
 [github.com - bmf-san/setup-kubernetes-cluster-on-vps-boilerplate](https://github.com/bmf-san/setup-kubernetes-cluster-on-vps-boilerplate)
 
-It is assumed to have one master node and multiple worker nodes.
+It assumes one master node and multiple worker nodes.
 
-Conoha provides an API that supports Openstack, so it should be easy to rewrite for other servers that support Openstack (e.g., Digital Ocean).
+Conoha provides an API that supports Openstack, so rewriting should be easy if you use other servers that support Openstack (e.g., Digital Ocean).
 
-Building Kubernetes with kubeadm wasn't too difficult as long as I read the official Kubernetes documentation to understand the prerequisites.
+Building Kubernetes with kubeadm wasn't too difficult as long as you read the official Kubernetes documentation and understand the prerequisites.
 
-# Issues I Couldn't Resolve
-I couldn't handle the load balancer, so I couldn't reach the point of publishing the application and operating Kubernetes.
+# Unresolved Issues
+I couldn't handle the load balancer, so I didn't reach the point of publishing the application and operating Kubernetes.
 
-In the case of a self-hosted Kubernetes cluster, I cannot use the load balancer provided by the cloud, so I need to prepare an OSS one myself, but I couldn't set it up successfully and gave up...
+In the case of a self-hosted Kubernetes cluster, you can't use the load balancer provided by the cloud, so you need to prepare an OSS one yourself, but I couldn't set it up successfully and gave up...
 
-I lost almost a week of sleep but couldn't make any progress..w
+I spent nearly a week cutting into my sleep time, but it was beyond my reach...w
 
-The unresolved issue is this.
+This is the unresolved issue:
 https://github.com/kubernetes/ingress-nginx/issues/5401
 
-I decided to temporarily shift to operating my custom application with docker-compose and plan to delve deeper into Kubernetes operations before proceeding further...
+I've decided to temporarily switch to operating my custom app with docker-compose and deepen my understanding of Kubernetes operations before proceeding further...

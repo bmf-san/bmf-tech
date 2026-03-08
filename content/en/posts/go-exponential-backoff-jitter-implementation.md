@@ -13,19 +13,19 @@ translation_key: go-exponential-backoff-jitter-implementation
 ---
 
 # Exponential Backoff
-A method for periodically retrying failed requests by increasing the delay of requests multiplicatively (delaying the retry interval).
+A method to periodically retry failed requests by multiplicatively increasing the delay of requests (delaying the retry interval).
 
-ex. The first retry is after 1 second, the second after 2 seconds, the third after 4 seconds, the fourth after 8 seconds...
+ex. The first retry is after 1 second, the second is after 2 seconds, the third is after 4 seconds, the fourth is after 8 seconds...
 
 In retry design, it is necessary to consider not only backoff but also retry limits and timeouts (connection timeout and request timeout).
 
 # Jitter
-A method to prevent simultaneous retries of failed requests by adding a random value to the retry interval of exponential backoff.
+A method to prevent requests that failed simultaneously from retrying at the same time by adding a random value to the retry interval of exponential backoff.
 
-If the intervals are simply exponential, the retry intervals will be the same, so jitter is introduced to create temporal fluctuations.
+With simple exponential intervals, the retry intervals become the same, so jitter is introduced to add temporal variation.
 
-# Implementation of Exponential Backoff and Jitter
-If we were to implement it simply, it might look something like this.
+# Implementing Exponential Backoff and Jitter
+Here's a simple implementation.
 
 ```go
 package main
@@ -73,7 +73,7 @@ func (r *Retryer) Retry(ja string, f func() error) {
 		log.Printf("retry %d times\n", i)
 		if err != nil {
 			log.Println(err)
-			// Error, so continue retrying
+			// Continue retrying due to error
 			continue
 		}
 	}
@@ -90,7 +90,7 @@ const jitterAlgoDecorrelated = "decorrelated"
 type Jitter struct {
 	base  int
 	cap   int
-	sleep int // for decorrelated jitter
+	sleep int /// for decorrelated jitter
 }
 
 // FullJitter is a full jitter algo.
@@ -141,16 +141,16 @@ func main() {
 }
 ```
 
-I referred to the article below for the jitter algorithms, but I'm not entirely confident that I implemented them correctly. There may be some logical oversights due to the fuzzy nature of the concept.
+I referred to the following article for the jitter algorithm, but I'm not entirely confident that it's correctly implemented. It's a bit fuzzy, so there might be some logical oversights.
 cf. [aws.amazon.com - Exponential Backoff And Jitter](https://aws.amazon.com/jp/blogs/architecture/exponential-backoff-and-jitter/)
 
 # Thoughts
-The implementation is a bit rough, but I got the general idea!
+The implementation is a bit rough, but I got the gist!
 
 # References
 - [en.wikipedia.org - Exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff)
-- [ebc-2in2crc.hatenablog.jp - Memo on confirming exponential backoff and minimal implementation](https://ebc-2in2crc.hatenablog.jp/entry/2020/12/19/220801)
+- [ebc-2in2crc.hatenablog.jp - A memo on confirming and minimally implementing exponential backoff](https://ebc-2in2crc.hatenablog.jp/entry/2020/12/19/220801)
 - [aws.amazon.com - Timeouts, retries, and backoff with jitter](https://aws.amazon.com/jp/builders-library/timeouts-retries-and-backoff-with-jitter/)
 - [aws.amazon.com - Exponential Backoff And Jitter](https://aws.amazon.com/jp/blogs/architecture/exponential-backoff-and-jitter/)
-- [qiita.com - Overview of the efficient approach to retry processing "Exponential Backoff" and its implementation in Go](https://qiita.com/po3rin/items/c80dea298f16a2625dbe)
+- [qiita.com - Efficient approach to retry processing "Exponential Backoff" overview and implementation in Go](https://qiita.com/po3rin/items/c80dea298f16a2625dbe)
 - [zenn.dev - Implementing Exponential Backoff And Jitter in Go](https://zenn.dev/sinozu/articles/5c0457876be42e)

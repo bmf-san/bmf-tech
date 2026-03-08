@@ -1,5 +1,5 @@
 ---
-title: CORS Support in Laravel
+title: Handling CORS with Laravel
 slug: laravel-cors-setup
 date: 2017-09-26T00:00:00Z
 author: bmf-san
@@ -11,27 +11,29 @@ tags:
 translation_key: laravel-cors-setup
 ---
 
+
+
 # Overview
-This article summarizes how to enable CORS (Cross-Origin Resource Sharing) in Laravel. The client side uses React and axios. As a prerequisite, it's good to understand the different types of CORS request formats, including simple requests and those that use preflight. For RESTful APIs, the request format typically involves preflight. This article will cover an example that supports requests using preflight.
+This post summarizes how to handle CORS (Cross-Origin Resource Sharing) in Laravel. The client-side uses React and axios. As a prerequisite, it's good to understand the types of CORS requests, the difference between simple request methods, and requests using preflight. For RESTful APIs, requests typically use preflight. This article covers examples of handling requests using preflight.
 
 # Environment
 Since it's CORS, it's obvious that we have separate domains for the API and web.
 
-Domains are set up like `api.hogehogedomain` and `admin.hogehogedomain`, where the admin calls the API managed on a different domain.
+The setup involves domains like `api.hogehogedomain` and `admin.hogehogedomain`, where the admin calls an API managed on a different domain.
 
 # Prepare Middleware
-On the API side, we will prepare middleware to adjust header information during API requests in Laravel.
+On the Laravel side, which provides the API, we prepare middleware to adjust header information during API requests.
 
-I wanted to create custom middleware here, but for some reason, only the update methods didn't work properly, so I decided to use [barryvdh/laravel-cors](https://github.com/barryvdh/laravel-cors).
+Initially, I wanted to create custom middleware, but for some reason, it didn't work well with update methods, so I decided to use [barryvdh/laravel-cors](https://github.com/barryvdh/laravel-cors).
 
-The setup is as per the README.
+Setup follows the README instructions.
 
 `composer require barryvdh/laravel-cors`
 
-Add the following to the provider array in `config/app.php`:
+Specify the following in the provider array of `config/app.php`
 `Barryvdh\Cors\ServiceProvider::class,`
 
-Set the cors middleware in the api middleware group in `app/Http/Kernel.php`:
+Set the cors middleware in the api middleware group of `app/Http/Kernel.php`
 
 ```
     protected $middlewareGroups = [
@@ -55,7 +57,7 @@ Set the cors middleware in the api middleware group in `app/Http/Kernel.php`:
 Publish and edit the configuration file.
 `php artisan vendor:publish --provider="Barryvdh\Cors\ServiceProvider"`
 
-In `config/cors.php`:
+`config/cors.php`
 
 ```
 return [
@@ -77,13 +79,14 @@ return [
 ]
 ```
 
-Since we want to allow sending cookies and Basic authentication, we set `supportsCredentials` to `true`.
+Since we want to allow cookie transmission and Basic authentication, set `supportsCredentials` to `true`.
 
-That's all for the server-side configuration.
+That's all for the server-side settings.
+
 
 # Calling the API from the Client Side
 
-Define the header information with axios.
+Define header information with axios.
 
 action/index.js
 
@@ -102,15 +105,23 @@ export function createCategory(props) {
   return {type: CREATE_CATEGORY, payload: request};
 }
 ```
-On the client side, you only need to set the `X-Requested-With` header, and then you can simply call the API as usual.
+On the client side, just set the `X-Requested-With` header, and then you can normally call the API.
+
 
 # Thoughts
-I haven't resolved why my custom middleware didn't work, so I'm left with some dissatisfaction, but for now, this should be fine.
+I haven't resolved why the custom middleware didn't work well, which is unsatisfactory, but for now, this should be fine.
+
 
 # References
 + [Laravel 5.1 - easily enable CORS](http://en.vedovelli.com.br/2015/web-development/Laravel-5-1-enable-CORS/)
-+ [cors - SPA with Laravel5 + AngularJS](http://qiita.com/fluke8259/items/c884bada22ccd286cf48)
-+ [Understanding CORS (Cross-Origin Resource Sharing)](http://dev.classmethod.jp/etc/about-cors/)
+
++ [cors - Building SPA with Laravel5 + AngularJS](http://qiita.com/fluke8259/items/c884bada22ccd286cf48)
+
++ [Organizing CORS (Cross-Origin Resource Sharing)
+cors-004](http://dev.classmethod.jp/etc/about-cors/)
+
 + [CORS Summary](http://qiita.com/tomoyukilabs/items/81698edd5812ff6acb34)
+
 + [Laravel 5.2 CORS, GET not working with preflight OPTIONS](http://stackoverflow.com/questions/34748981/laravel-5-2-cors-get-not-working-with-preflight-options)
+
 + [X-Requested-With Header](http://boscono.hatenablog.com/entry/2013/12/23/152851)

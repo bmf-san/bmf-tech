@@ -1,5 +1,5 @@
 ---
-title: Summary of OpenID Connect 1.0 Specification
+title: Summary of OpenID Connect 1.0 Specifications
 slug: openid-connect-1-0-spec-summary
 date: 2026-01-23T00:00:00Z
 author: bmf-san
@@ -12,7 +12,9 @@ tags:
 translation_key: openid-connect-1-0-spec-summary
 ---
 
-Summary of key points based on OpenID Connect Core 1.0.
+
+
+Summary based on OpenID Connect Core 1.0.
 
 ---
 
@@ -30,15 +32,15 @@ Summary of key points based on OpenID Connect Core 1.0.
 
 ## Overview
 
-OpenID Connect (OIDC) is an authentication protocol that adds a simple identity layer on top of the **OAuth 2.0 protocol**.
+OpenID Connect (OIDC) is an **authentication protocol that adds a simple identity layer on top of the OAuth 2.0 protocol**.
 
-While OAuth 2.0 serves as a framework for "authorization", OIDC achieves "authentication".
+While OAuth 2.0 is a framework for "authorization," OIDC achieves "authentication."
 
 | Item | OAuth 2.0 | OpenID Connect |
 |-----|-----------|----------------|
 | Purpose | Authorization | Authentication |
-| What is obtained | Access Token | ID Token + Access Token |
-| User information | Not standardized | Standard claims defined |
+| Obtained | Access Token | ID Token + Access Token |
+| User Information | Not standardized | Standard claims defined |
 
 ---
 
@@ -46,39 +48,39 @@ While OAuth 2.0 serves as a framework for "authorization", OIDC achieves "authen
 
 | OAuth 2.0 | OpenID Connect | Description |
 |-----------|----------------|------|
-| Authorization Server | **OpenID Provider (OP)** | Authenticates the user and issues ID Tokens |
-| Client | **Relying Party (RP)** | Application that requests authentication from OP |
+| Authorization Server | **OpenID Provider (OP)** | Authenticates users and issues ID Tokens |
+| Client | **Relying Party (RP)** | Application requesting authentication from OP |
 
 ---
 
 ## ID Token
 
-The core concept of OIDC. **A JWT (JSON Web Token) that contains Claims about the authentication event**.
+A core concept of OIDC. A **JWT (JSON Web Token) containing claims about the authentication event**.
 
 ### Structure of ID Token
 
 ```
-header.payload.signature
+Header.Payload.Signature
 ```
 
-A JWT consists of three parts, each Base64URL encoded.
+JWT consists of three parts, each Base64URL encoded.
 
 ### Required Claims (REQUIRED)
 
 | Claim | Description |
 |---------|------|
 | **iss** | Issuer Identifier. URL identifying the OP (https scheme, MUST) |
-| **sub** | Subject Identifier. Identifier for the end-user (255 characters or less, ASCII) |
-| **aud** | Audience. The intended audience for this ID Token. Must include client_id (MUST) |
-| **exp** | Expiration Time. Expiration time (UNIX time) |
-| **iat** | Issued At. Issuance time (UNIX time) |
+| **sub** | Subject Identifier. Identifier for the end user (255 characters or less, ASCII) |
+| **aud** | Audience. The intended recipient of this ID Token. Must include client_id (MUST) |
+| **exp** | Expiration Time. Validity period (UNIX time) |
+| **iat** | Issued At. Time of issuance (UNIX time) |
 
 ### Conditionally Required Claims
 
 | Claim | Condition | Description |
 |---------|------|------|
-| **auth_time** | When max_age is specified (REQUIRED) | Time when authentication occurred |
-| **nonce** | If included in the request (REQUIRED) | Replay attack mitigation |
+| **auth_time** | When max_age is specified (REQUIRED) | Time of authentication |
+| **nonce** | If included in the request (REQUIRED) | Countermeasure against replay attacks |
 
 ### Optional Claims
 
@@ -86,7 +88,7 @@ A JWT consists of three parts, each Base64URL encoded.
 |---------|------|
 | **acr** | Authentication Context Class Reference. Authentication context class |
 | **amr** | Authentication Methods References. Array of authentication methods |
-| **azp** | Authorized Party. Authorized party (when aud has multiple values) |
+| **azp** | Authorized Party. Authorized party (if aud has multiple values) |
 | **at_hash** | Access Token Hash. Hash value of the access token |
 
 ### Signature and Encryption
@@ -94,8 +96,8 @@ A JWT consists of three parts, each Base64URL encoded.
 | Requirement | Strength |
 |-----|:----:|
 | ID Token must be signed | MUST |
-| Signature algorithm must not be none | MUST |
-| If encrypting, must encrypt after signing | MUST |
+| Signature algorithm must be other than none | MUST |
+| If encrypted, encrypt after signing | MUST |
 
 ---
 
@@ -160,17 +162,17 @@ sequenceDiagram
 
 | Feature | Content |
 |-----|------|
-| Token Acquisition | Directly obtained from Authorization Endpoint (URL fragment) |
-| nonce | REQUIRED (for replay attack mitigation) |
+| Token Acquisition | Directly from Authorization Endpoint (URL fragment) |
+| nonce | REQUIRED (countermeasure against replay attacks) |
 | Client Authentication | Not possible |
 | Refresh Token | Not issued |
 | Security | Lower than Authorization Code Flow |
 
-**Note**: In OAuth 2.1, this flow is **not recommended** for security reasons. Use Authorization Code Flow with PKCE instead.
+**Note**: In OAuth 2.1, **not recommended** for security reasons. Use Authorization Code Flow with PKCE.
 
 ### 3. Hybrid Flow
 
-**A flow that combines characteristics of Authorization Code Flow and Implicit Flow.**
+**A flow combining characteristics of Authorization Code Flow and Implicit Flow.**
 
 ```mermaid
 sequenceDiagram
@@ -185,7 +187,7 @@ sequenceDiagram
     U-->>OP: (4) Grant
     OP-->>UA: (5) Code + ID Token<br/>(in URL Fragment)
     UA-->>RP: (6) Redirect with Code + ID Token
-    Note over RP: Can immediately verify authentication with ID Token
+    Note over RP: Immediate authentication confirmation with ID Token
     RP->>OP: (7) Token Request (code)
     OP-->>RP: (8) Access Token + ID Token
 ```
@@ -207,7 +209,7 @@ sequenceDiagram
 | **scope** | Must include `openid` (MUST) |
 | **response_type** | `code`, `id_token`, `id_token token`, `code id_token`, etc. |
 | **client_id** | Client identifier registered with OP |
-| **redirect_uri** | Must exactly match the registered URI (MUST) |
+| **redirect_uri** | Must exactly match registered URI (MUST) |
 
 ### Recommended Parameters (RECOMMENDED)
 
@@ -219,18 +221,18 @@ sequenceDiagram
 
 | Parameter | Description |
 |-----------|------|
-| **nonce** | For replay attack mitigation. REQUIRED in Implicit/Hybrid Flow |
-| **display** | Method of displaying the authentication UI (`page`, `popup`, `touch`, `wap`) |
+| **nonce** | Countermeasure against replay attacks. REQUIRED in Implicit/Hybrid Flow |
+| **display** | How the authentication UI is displayed (`page`, `popup`, `touch`, `wap`) |
 | **prompt** | Specifies authentication behavior (`none`, `login`, `consent`, `select_account`) |
-| **max_age** | Maximum elapsed time for authentication (in seconds) |
-| **ui_locales** | Language of the UI (in BCP47 format, space-separated) |
+| **max_age** | Maximum authentication age (seconds) |
+| **ui_locales** | UI language (BCP47 format, space-separated) |
 | **id_token_hint** | Previously issued ID Token |
 | **login_hint** | Hint for login identifier (e.g., email address) |
 | **acr_values** | Requested authentication context class |
 
 ### Values for prompt Parameter
 
-| Value | Action |
+| Value | Behavior |
 |----|------|
 | `none` | Authenticate without displaying UI. Error if not authenticated |
 | `login` | Request re-authentication |
@@ -241,19 +243,19 @@ sequenceDiagram
 
 ## UserInfo Endpoint
 
-An OAuth 2.0 Protected Resource that returns Claims about the authenticated user.
+An OAuth 2.0 Protected Resource that returns claims about the authenticated user.
 
 ### Requirements
 
 | Item | Requirement |
 |-----|:----:|
 | TLS | MUST |
-| HTTP GET support | MUST |
-| HTTP POST support | MUST |
+| Support for HTTP GET | MUST |
+| Support for HTTP POST | MUST |
 | Bearer Token | MUST |
-| CORS support | SHOULD |
+| CORS Support | SHOULD |
 
-### Example Request
+### Request Example
 
 ```http
 GET /userinfo HTTP/1.1
@@ -261,7 +263,7 @@ Host: op.example.com
 Authorization: Bearer SlAV32hkKG
 ```
 
-### Example Response
+### Response Example
 
 ```json
 {
@@ -275,13 +277,13 @@ Authorization: Bearer SlAV32hkKG
 }
 ```
 
-### Validation Requirements
+### Verification Requirements
 
 | Requirement | Strength |
 |-----|:----:|
-| `sub` in UserInfo Response must match `sub` in ID Token | MUST |
-| OP's TLS certificate must be validated | MUST |
-| If signed, the signature must be validated | SHOULD |
+| Ensure `sub` in UserInfo Response matches `sub` in ID Token | MUST |
+| Verify OP's TLS certificate | MUST |
+| If signed, verify signature | SHOULD |
 
 ---
 
@@ -304,7 +306,7 @@ Authorization: Bearer SlAV32hkKG
 | gender | string | Gender |
 | birthdate | string | Birthdate (YYYY-MM-DD format) |
 | zoneinfo | string | Time zone (e.g., `Asia/Tokyo`) |
-| locale | string | Locale (in BCP47 format, e.g., `ja-JP`) |
+| locale | string | Locale (BCP47 format, e.g., `ja-JP`) |
 | updated_at | number | Last updated time (UNIX time) |
 
 ### Contact Related
@@ -312,9 +314,9 @@ Authorization: Bearer SlAV32hkKG
 | Claim | Type | Description |
 |---------|-----|------|
 | email | string | Email address |
-| email_verified | boolean | Whether the email address is verified |
+| email_verified | boolean | Whether email is verified |
 | phone_number | string | Phone number (E.164 format recommended) |
-| phone_number_verified | boolean | Whether the phone number is verified |
+| phone_number_verified | boolean | Whether phone number is verified |
 | address | object | Address information (structured object) |
 
 ### Address Object
@@ -334,12 +336,12 @@ Authorization: Bearer SlAV32hkKG
 
 | Requirement | Strength |
 |-----|:----:|
-| `preferred_username` must not be assumed to be unique | MUST NOT |
-| `email` must not be assumed to be unique | MUST NOT |
+| Do not assume `preferred_username` is unique | MUST NOT |
+| Do not assume `email` is unique | MUST NOT |
 
 ---
 
-## Scope and Claim Correspondence
+## Scope and Claims Mapping
 
 | Scope | Returned Claims |
 |---------|-------------------|
@@ -361,34 +363,34 @@ Authorization: Bearer SlAV32hkKG
 | Token Endpoint | MUST |
 | UserInfo Endpoint | MUST |
 
-### Replay Attack Mitigation
+### Replay Attack Countermeasures
 
-| Mitigation | Strength |
+| Countermeasure | Strength |
 |-----|:----:|
-| Nonce value must have sufficient entropy | MUST |
-| Nonce must be stored and validated in association with the session | MUST |
+| Ensure nonce value has sufficient entropy | MUST |
+| Store and verify nonce linked to session | MUST |
 
-### CSRF Mitigation
+### CSRF Countermeasures
 
-| Mitigation | Strength |
+| Countermeasure | Strength |
 |-----|:----:|
 | Use state parameter | RECOMMENDED |
-| Validate state in association with the session | RECOMMENDED |
+| Verify state linked to session | RECOMMENDED |
 
-### Token Substitution Attack Mitigation
+### Token Substitution Attack Countermeasures
 
-| Mitigation | Strength |
+| Countermeasure | Strength |
 |-----|:----:|
 | Ensure `sub` in UserInfo Response matches `sub` in ID Token | MUST |
-| Validate at_hash in Implicit/Hybrid Flow | SHOULD |
+| Verify at_hash in Implicit/Hybrid Flow | SHOULD |
 
-### Other
+### Others
 
 | Item | Recommendation |
 |-----|------|
-| Expiration of Authorization Code | Set short (RECOMMENDED: within 10 minutes) |
-| Signature key and encryption key rotation | Perform regularly |
-| Clickjacking Mitigation | Use X-Frame-Options or frame-ancestors |
+| Set short expiration for Authorization Code | RECOMMENDED: within 10 minutes |
+| Rotate signing/encryption keys regularly |
+| Clickjacking protection | Use X-Frame-Options or frame-ancestors |
 
 ---
 
@@ -396,12 +398,12 @@ Authorization: Bearer SlAV32hkKG
 
 | Item | OAuth 2.0 | OpenID Connect |
 |-----|-----------|----------------|
-| Main Purpose | Authorization for resource access | User authentication |
-| Obtained Token | Access Token | ID Token + Access Token |
+| Main Purpose | Access authorization to resources | User authentication |
+| Obtained Tokens | Access Token | ID Token + Access Token |
 | User Identification | No standard | sub claim |
 | User Information Retrieval | Service-specific APIs | Standardized UserInfo Endpoint |
-| Scope | Arbitrary definition | Standardized openid, profile, email, etc. |
-| Session Management | No specification | Handled with Session Management extension |
+| scope | Arbitrarily defined | Standardized like openid, profile, email, etc. |
+| Session Management | Not specified | Supported by Session Management extension |
 
 ---
 
@@ -411,7 +413,7 @@ Authorization: Bearer SlAV32hkKG
 |-----|------|
 | OpenID Connect Core 1.0 | Core specification (subject of this document) |
 | OpenID Connect Discovery 1.0 | Automatic retrieval of OP metadata |
-| OpenID Connect Dynamic Client Registration 1.0 | Dynamic registration of clients |
+| OpenID Connect Dynamic Client Registration 1.0 | Dynamic client registration |
 | OpenID Connect Session Management 1.0 | Session management |
 | OpenID Connect Front-Channel Logout 1.0 | Front-channel logout |
 | OpenID Connect Back-Channel Logout 1.0 | Back-channel logout |

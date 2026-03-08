@@ -1,5 +1,5 @@
 ---
-title: Using Realize for Hot Reload in Go
+title: Notes on Implementing Hot Reload with Realize in Go
 slug: realize-hot-reload-go
 date: 2019-04-11T00:00:00Z
 author: bmf-san
@@ -7,12 +7,14 @@ categories:
   - Application
 tags:
   - Golang
-  - Realize
+  - realize
+description: A memo on using Realize for hot reloading in Go applications.
 translation_key: realize-hot-reload-go
 ---
 
+
 # Overview
-This is a note on using [github - oxequa/realize](https://github.com/oxequa/realize).
+Tried using [github - oxequa/realize](https://github.com/oxequa/realize).
 
 # Preparation
 `go get github.com/oxequa/realize`
@@ -68,7 +70,7 @@ func main() {
 }
 ```
 
-In the demo directory, running `realize start --server` will start a monitoring server, enabling hot reload.
+In the demo directory, running `realize start --server` will start the monitoring server, enabling hot reload.
 
 Monitoring server
 `http://localhost:5002/#/demo`
@@ -77,5 +79,5 @@ You can view logs, errors, and output.
 Server started by main.go
 `http://localhost:8080`
 
-# Thoughts
-It's easy to set up and convenient, so I think I'll use this for hot reload.
+# Impressions
+It's easy to set up and convenient, so I think I'll use this for hot reloading.

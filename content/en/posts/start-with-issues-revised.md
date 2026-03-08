@@ -1,5 +1,5 @@
 ---
-title: Start with Issues [Revised Edition] - The 'Simple Essence' of Intellectual Production
+title: Start with the Issue [Revised Edition] - The Simple Essence of Intellectual Production
 slug: start-with-issues-revised
 date: 2024-11-13T00:00:00Z
 author: bmf-san
@@ -11,31 +11,33 @@ tags:
 translation_key: start-with-issues-revised
 ---
 
-[Start with Issues [Revised Edition] - The 'Simple Essence' of Intellectual Production](https://amzn.to/3Z4V0z5) was read.
 
-In compulsory education, questions are usually provided, but in work, it is necessary to formulate questions on your own.
 
-While understanding the problem is important in both cases, I believe there is a significant difference in the need to deeply consider the quality of the problem, such as whether it is appropriate or if it is truly a problem.
+[Start with the Issue [Revised Edition] - The Simple Essence of Intellectual Production](https://amzn.to/3Z4V0z5) is a book I read.
 
-Even as a software engineer, if one misinterprets the essence of the task at hand, they may take a misguided approach and head in the wrong direction with their solutions.
+In compulsory education, questions are usually given, but in work, you need to formulate the questions yourself.
 
-That’s why I wanted to learn about the importance of properly considering 'questions' by reading this book.
+Understanding the problem is important in both cases, but is the problem appropriate? Is it really a problem? There is a significant difference in the need to deeply consider the quality of the problem.
+
+Even as a software engineer, if you misunderstand the essence of the task at hand, you might end up devising a solution that heads in the wrong direction with an inappropriate approach.
+
+That's why I wanted to learn about the importance of properly considering "questions," and read this book.
 
 The book defines an Issue as follows:
 
-- A problem that has not been resolved between two or more groups
-- A problem that is fundamental or ambiguous
+- A problem that has not been settled between two or more groups
+- A fundamental or unclear problem
 
-Additionally, it presents the following as a definition of a good Issue:
+Additionally, it lists the following as definitions of a good Issue:
 
 - It is an essential choice
-- There are deep hypotheses
+- There is a deep hypothesis
 - An answer can be provided
 
-The book posits that something that cannot yield an answer is not an Issue, but rather a concern.
+The book considers that something which cannot be answered is not an Issue but a worry.
 
-From my personal experience, I often feel that formulating and understanding the problem is more challenging and requires more time than solving it.
+From personal experience, I often feel that formulating and understanding the problem is more difficult and requires more time than solving it.
 
-If coding is seen as the act of solving, then the preceding process takes more time, which I believe everyone has experienced.
+If coding is seen as the act of solving, then everyone probably feels that the preceding process takes more time.
 
-Among the preceding processes, the part that is often overlooked is the 'question' at the forefront. I think this is because it is a skill that is not well cultivated in compulsory education. Therefore, when I am unsure about a solution, I want to consciously revisit the 'question'.
+Among the preceding processes, deeply considering the "question" at the very beginning is often overlooked (I think this is because it is not a skill cultivated much in compulsory education). So, when in doubt about solving something, I want to be conscious of reviewing the "question."

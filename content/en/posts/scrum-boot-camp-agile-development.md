@@ -1,5 +1,5 @@
 ---
-title: SCRUM BOOT CAMP THE BOOK [Revised Edition] Starting Agile Development with Scrum Teams
+title: SCRUM BOOT CAMP THE BOOK [Revised Edition] Starting Agile Development with a Scrum Team
 slug: scrum-boot-camp-agile-development
 date: 2020-09-07T00:00:00Z
 author: bmf-san
@@ -12,6 +12,8 @@ tags:
 translation_key: scrum-boot-camp-agile-development
 ---
 
-[SCRUM BOOT CAMP THE BOOK【増補改訂版】 スクラムチームではじめるアジャイル開発](https://amzn.to/3wwns1b)を読んだ。
 
-スクラム開発について学ぶ最初の本として良い。
+
+[SCRUM BOOT CAMP THE BOOK [Revised Edition] Starting Agile Development with a Scrum Team](https://amzn.to/3wwns1b) was read.
+
+It's a good first book to learn about Scrum development.

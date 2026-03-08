@@ -4,54 +4,56 @@ slug: php-conference-okinawa-2019-participation
 date: 2019-10-13T00:00:00Z
 author: bmf-san
 categories:
-  - Poetry
+  - Poem
 tags:
   - PHP
   - PHP Conference
 translation_key: php-conference-okinawa-2019-participation
 ---
 
-# Attending PHP Conference Okinawa
-I attended the PHP Conference again, following last month.
 
-It was my first time back in Okinawa since the end of June when I visited Miyako Island, and I could feel a slight change in temperature.
+
+# Attending PHP Conference Okinawa
+I attended the PHP Conference again, following last month's event.
+
+It was my first time back in Okinawa since visiting Miyako Island at the end of June, and I could feel a slight change in temperature.
 
 # Sessions
 ## Practical PHP Metaprogramming
 [Practical PHP Metaprogramming](https://www.pixiv.net/fanbox/creator/105589/post/601310?utm_campaign=manage_post_page&utm_medium=share&utm_source=twitter)
 
-- eval is a last resort
-  - ex. using eval to define functions within foreach
+- `eval` is a last resort
+  - ex. Defining a function using `eval` inside a `foreach`
   - → Strive with Closure
-- Great power comes with great responsibility
-  - You may lose the benefits of static analysis
+- With great power comes great responsibility
+  - You might lose the benefits of static analysis
 
-## A Story About Starting to Study OOP, Clean Architecture, and DDD in Internal Study Sessions
-[A Story About Starting to Study OOP, Clean Architecture, and DDD in Internal Study Sessions](https://speakerdeck.com/nazonohito51/she-nei-mian-qiang-hui-deooptocleanarchitecturetodddwomian-qiang-sishi-metatoiuohua)
+## Starting to Study OOP, Clean Architecture, and DDD in an Internal Study Group
+[Starting to Study OOP, Clean Architecture, and DDD in an Internal Study Group](https://speakerdeck.com/nazonohito51/she-nei-mian-qiang-hui-deooptocleanarchitecturetodddwomian-qiang-sishi-metatoiuohua)
 
-- I thought it was great to connect theory and practice in study sessions.
-- Mob programming-driven learning seems promising.
+- I thought it was great to have a study group that connects theory and practice
+- Mob programming-driven learning seems promising
 
 ## Learning Web Security from Vulnerabilities
 [Learning Web Security from Vulnerabilities](https://speakerdeck.com/hypermkt/study-web-security-from-vulnerability1)
 
-- The talk was clear and easy to understand.
-- I want to regularly review IPA materials.
+- The talk was clear and easy to understand
+- I want to regularly review IPA materials
 
-## This is How We Got Here in 6 Years! The Evolution and Current State of Our Development Environment by Yuta Ohashi
-[This is How We Got Here in 6 Years! The Evolution and Current State of Our Development Environment](https://speakerdeck.com/blue_goheimochi/phpconokinawa2019)
+## This is How We Evolved Over 6 Years! Our Development Environment's Transition and Present by Yuta Ohashi
+[This is How We Evolved Over 6 Years! Our Development Environment's Transition and Present](https://speakerdeck.com/blue_goheimochi/phpconokinawa2019)
 
-- From my observation, looking back over the last 1-2 years, I feel that Docker's momentum has significantly increased.
+- From my perspective, looking back over the past 1-2 years, I feel Docker's momentum has significantly increased
 
-## Code Design to Prevent 'Broken Windows'
-[Code Design to Prevent 'Broken Windows'](https://speakerdeck.com/hgsgtk/design-not-to-broke-additional-window)
+## Code Design to Prevent "Broken Windows"
+[Code Design to Prevent "Broken Windows"](https://speakerdeck.com/hgsgtk/design-not-to-broke-additional-window)
 
-- I thought that the 'broken windows' in software should be obvious bad practices.
-    - There are various characteristics of bad practices that are not obvious, hard to notice, or only understood later, but most of the time, tests should help.
+- I thought "broken windows" in software need to be obviously bad practices.
+    - There are various types of bad practices, such as those that are not obvious, hard to notice, or only realized later, but tests should generally help
 
-## How to Create a Culture for Engineers
-- A story about working on an internal podcast for technical publicity.
-- Transactive memory was enlightening.
+## How to Create an Engineer Culture
+- A story about working on an internal podcast for the purpose of technical PR
+- Learned about transactive memory
 
 ## Introduction to Mutation Testing
 [Introduction to Mutation Testing](https://speakerdeck.com/yahiru/a-bigginers-guide-to-mutation-testing)
@@ -59,9 +61,9 @@ It was my first time back in Okinawa since the end of June when I visited Miyako
 - I didn't know about mutation testing...
 
 # Impressions
-It seems that about half of the participants were from Tokyo.
-I heard that there is a community of engineers in Okinawa that is becoming more active year by year.
+Apparently, about half of the participants were from Tokyo.
+I heard that there is a community of engineers in Okinawa that is becoming more active each year.
 
-I think there were many challenges during the first event, but thank you to all the staff.
+I think there were many challenges since it was the first event, but thank you to all the staff.
 
 The next PHP Conference is CakeFest.

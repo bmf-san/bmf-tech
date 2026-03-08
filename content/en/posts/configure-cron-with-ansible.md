@@ -12,11 +12,11 @@ translation_key: configure-cron-with-ansible
 ---
 
 # Overview
-This is a task to set up cron with Ansible.
+This task involves setting up cron with Ansible.
 
 # Playbook
 
-Here is an example configuration that runs a task every minute.
+Below is an example configuration to execute a task every minute.
 
 ```
 ---
@@ -31,7 +31,7 @@ Here is an example configuration that runs a task every minute.
      minute: "*/1"
 ```
 
-One point to note is that if you want to write `*/1`, you need to enclose it in double quotes. If you don't, a syntax error will occur. (Lack of YAML study... lol)
+A point to note is that if you want to write `*/1`, you need to enclose it in double quotes. If not enclosed, a syntax error will occur. (Need to study YAML more... lol)
 
 # Thoughts
 The cron setup went smoothly without any issues.

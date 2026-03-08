@@ -8,7 +8,7 @@ categories:
 tags:
   - DI
   - Service Locator
-  - Design Patterns
+  - Design Pattern
 translation_key: dependency-injection-service-locator
 ---
 
@@ -19,11 +19,11 @@ Summarizing the differences between DI and Service Locator
 - A type of design pattern
 - Dependency Injection
   - Separates dependencies between objects
-  - Ensures that the necessary objects are injected at runtime
+  - Ensures necessary objects are injected at runtime
 - Makes testing easier
 
 # Implementing the DI Pattern
-Let's implement the DI pattern (constructor injection). Note that there are other methods of DI besides constructor injection, such as setter injection and method injection. For comparison, both a non-DI pattern and a DI pattern will be implemented.
+Let's implement the DI pattern (Constructor Injection). Note that the DI pattern includes methods other than constructor injection, such as setter injection and method injection. For comparison, both non-DI and DI patterns will be implemented.
 
 ## Non-DI Pattern
 
@@ -100,21 +100,21 @@ $application = new Application($slackNotification); // DI
 $application->alert('slack alert!');
 ```
 
-`Application` does not hold the responsibility of `SlackNotification` and only depends on `NotificationInterface`. The `Application` accepts (depends on) `SlackNotification` in its constructor.
+`Application` does not hold the responsibility of `SlackNotification`, and only depends on `NotificationInterface`. `Application` is structured to accept (depend on) `SlackNotification` in the constructor.
 
 The dependency injection part can be mocked, making it easier to test.
 
 ```php
 // For test
-$mockNotification = new MockNotification(); // MockNotification implements NotificationInterface
+$mockNotification = new MockNotification(); // MockNotification implementing NotificationInterface
 $application = new Application($mockNotification);
 $application->alert('mock alert!');
 ```
 
 # Advantages and Disadvantages of DI
 ## Advantages
-- Reduces coupling of objects and clarifies dependencies
-- Resilient to changes
+- Reduces coupling between objects and clarifies dependencies
+- Resistant to changes
 - Easier to test
 
 ## Disadvantages
@@ -123,17 +123,17 @@ $application->alert('mock alert!');
 
 # DI Container
 - A framework that provides DI functionality
-- Provides a container that can manage dependencies collectively
+- Offers a container to manage dependencies collectively
 
-# What is Service Locator
+# What is a Service Locator
 - A design pattern that abstracts the retrieval of services (objects)
-- An anti-pattern
-  - Increases the number of dependent classes (the service locator container class)
-  - Makes testing cumbersome due to the container class
-  - Makes dependent classes less clear
+- Considered an anti-pattern
+  - Adds one more dependent class (the container class of the service locator)
+  - Makes the container class difficult to test
+  - Makes it hard to understand dependent classes
    - For more details, see "PHP The Right Way"
 
-An example of this type:
+Something like this
 
 ```php
 <?php
@@ -146,13 +146,13 @@ class Application
     }
 }
 
-$application = new Application($container);
+$application = new Applicaion($container);
 ```
 
 # References
 - [Notes on DI (Dependency Injection)](http://blog.shin1x1.com/entry/di-memo)
-- [Creating and Learning DI Container in PHP - Part 1 - What is DI](https://qiita.com/zeriyoshi/items/e26daccd59669b623a41)
-- [Creating and Learning DI Container in PHP - Part 2 - DI Container and Service Locator](https://qiita.com/zeriyoshi/items/ef71bec08441877ca219)
+- [Learn DI Container by Creating with PHP - Part 1 - What is DI](https://qiita.com/zeriyoshi/items/e26daccd59669b623a41)
+- [Learn DI Container by Creating with PHP - Part 2 - DI Container and ServiceLocator](https://qiita.com/zeriyoshi/items/ef71bec08441877ca219)
 - [Design PatternsPHP - Service Locator](http://designpatternsphp.readthedocs.io/en/latest/More/ServiceLocator/README.html)
 - [PHP The Right Way](http://ja.phptherightway.com/#containers)
-- [How to avoid becoming a service locator when trying to use a DI container, specific examples are unclear](https://teratail.com/questions/49143)
+- [How to avoid becoming a service locator when trying to use a DI container, I don't understand specific examples](https://teratail.com/questions/49143)

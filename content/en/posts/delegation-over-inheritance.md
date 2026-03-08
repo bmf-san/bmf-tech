@@ -1,5 +1,5 @@
 ---
-title: About Delegation Over Inheritance
+title: Delegation Over Inheritance
 slug: delegation-over-inheritance
 date: 2025-10-20T00:00:00Z
 author: bmf-san
@@ -16,25 +16,25 @@ translation_key: delegation-over-inheritance
 
 ## Introduction
 
-Object-oriented programming (OOP) is a way of thinking about "representing real-world objects in programs." However, directly applying real-world classifications and definitions into programs can lead to unexpected breakdowns.
+Object-oriented programming (OOP) is a way of thinking about "representing real-world objects in programs." However, directly bringing real-world classifications and definitions into programs can lead to unexpected breakdowns.
 
-In this article, we will explain three important concepts through the concrete example of "rectangle and square."
+In this article, we will explain three important concepts through the specific example of "Rectangle and Square."
 
-- **Duck Typing** - Determining type by behavior rather than name
+- **Duck Typing** - Determining types by behavior, not by name
 - **Liskov Substitution Principle (LSP)** - Ensuring behavioral compatibility
 - **Delegation Over Inheritance** - Achieving robust design
 
-## Duck Typing - Type Determined by Behavior, Not Name
+## Duck Typing - Types Determined by Behavior
 
-"Duck typing" is a way of thinking about types based on the following philosophical metaphor.
+"Duck typing" is a type concept based on the following philosophical metaphor.
 
 > "If it quacks like a duck and walks like a duck, then it is a duck."
 
-This philosophy suggests that types are not determined by "type names" or "inheritance relationships," but rather by how the object behaves.
+This means determining types not by "type name" or "inheritance relationship," but by how the object behaves.
 
 ### Duck Typing in Go
 
-The Go language is statically typed, yet it naturally realizes this philosophy. You don't need to explicitly write "implements"; as long as it has the necessary methods, it satisfies the interface.
+The Go language naturally realizes this concept despite being statically typed. As long as an object has the necessary methods, it satisfies the interface without explicitly writing "implements."
 
 ```go
 package main
@@ -63,27 +63,27 @@ func main() {
 }
 ```
 
-`User` does not declaratively implement `Greeter`, but it can be treated as `Greeter` because it has the `Greet()` method. Thus, **abstraction by behavior** is the foundation of Go's interface design.
+`User` does not explicitly implement `Greeter`, but since it has the `Greet()` method, it can be treated as a `Greeter`. This kind of **behavior-based abstraction** is fundamental to Go's interface design.
 
 ## Liskov Substitution Principle - Maintaining Behavioral Compatibility
 
-One of the principles of object-oriented programming is the **Liskov Substitution Principle (LSP)**. This principle is defined as follows.
+One of the principles of object-oriented programming is the **Liskov Substitution Principle (LSP)**, defined as follows.
 
 > Derived classes must be substitutable for their base classes without affecting the correctness of the program.
 
-In other words, a subclass must behave the same way as its parent class. The key point here is not "structural matching" but rather "behavioral consistency."
+In other words, child classes must behave the same as their parent classes. The key here is "behavioral consistency," not "structural similarity."
 
 ### What is "Behavior"?
 
-The behavior of an object refers to its **dynamic nature** in how it responds to external operations (method calls).
+The behavior of an object is its **dynamic nature** of responding to external operations (method calls).
 
-For example, if a type offers a contract that "width and height can be set independently," a subclass that breaks this contract, even if structurally similar, cannot be substituted.
+For example, if a type offers a contract that "width and height can be set independently," a child class that breaks this contract cannot be substituted, even if structurally similar.
 
-Behavioral consistency is fundamental to the reliability of a program.
+Behavioral consistency is fundamental to the reliability of programs.
 
-## Square Inheriting Rectangle - A Typical LSP Violation
+## Square Inherited from Rectangle - A Typical LSP Violation
 
-A classic example of LSP violation is the case of "square (Square) inheriting rectangle (Rectangle)."
+A typical example of LSP violation is "Square inherited from Rectangle."
 
 ### Problematic Implementation
 
@@ -108,7 +108,7 @@ class Rectangle {
 }
 ```
 
-Now, let's implement square by inheriting this.
+Implementing a square by inheriting this.
 
 ```php
 <?php
@@ -126,9 +126,9 @@ class Square extends Rectangle {
 }
 ```
 
-### Breakdown Example
+### Breaking Example
 
-At first glance, this seems correct, but it breaks down with the following code.
+It seems correct at first glance, but it breaks with the following code.
 
 ```php
 <?php
@@ -139,23 +139,23 @@ $r->setHeight(10);
 echo $r->area(); // Expected: 50, Actual: 100
 ```
 
-`Square` cannot be substituted as `Rectangle`. This is because it breaks the contract expected by the parent class, which is "**width and height can be changed independently**."
+`Square` cannot be substituted for `Rectangle`. This is because it breaks the parent class's expectation of "**being able to change width and height independently**."
 
-Thus, even if they are structurally similar, their behaviors do not match.
+Thus, even if structurally similar, the behavior does not match.
 
-## Aristotelian Classification and OOP Misalignment
+## Aristotelian Classification and OOP Discrepancy
 
-In Aristotelian classification, things are classified by common properties. For example, the classification "a square is a type of rectangle" seems natural.
+In Aristotelian classification, things are classified by common properties. For example, "a square is a type of rectangle" seems natural.
 
 However, this is a **structural classification (commonality in appearance or properties)**, which differs from the **behavioral classification (consistency in response to operations)** required in OOP.
 
-Bringing real-world classification relationships directly into the program's inheritance structure risks violating the Liskov Substitution Principle.
+Bringing real-world classification relationships directly into program inheritance structures risks violating the Liskov Substitution Principle.
 
-## Delegation Over Inheritance - Composition over Inheritance
+## Composition Over Inheritance
 
-Inheritance may seem like a convenient means of reuse, but it strongly depends on the internal structure and behavior of the parent class, making it fragile to changes and prone to breaking the substitution principle.
+Inheritance may seem like a convenient means of reuse, but it strongly depends on the internal structure and behavior of the parent class, making it susceptible to changes and prone to violating substitution principles.
 
-To avoid this problem, the concept of **"delegation over inheritance"** is proposed. This design approach retains and utilizes the necessary functionality internally instead of inheriting.
+To avoid this problem, **"Composition over Inheritance"** is advocated. This is a design approach that involves holding and utilizing necessary functions internally rather than inheriting them.
 
 ### Example of Delegation
 
@@ -171,7 +171,7 @@ func (l Logger) Log(msg string) {
 }
 
 type Server struct {
-    Logger // "has" a Logger (embedding)
+    Logger // Embedding Logger
 }
 
 func (s Server) Start() {
@@ -184,11 +184,11 @@ func main() {
 }
 ```
 
-In this design, `Server` uses `Logger` without inheriting it. This makes the dependencies explicit and increases maintainability.
+In this design, `Server` uses `Logger` without inheriting it. This makes dependencies explicit and enhances maintainability.
 
-## Solving with Delegation and Interfaces (in Go)
+## Solving with Delegation and Interfaces (In Go)
 
-In Go, since inheritance does not exist, such problems can be naturally avoided. A square can "have" a rectangle to achieve equivalent functionality.
+In Go, since inheritance does not exist, such problems can be naturally avoided. A square can "hold" a rectangle to achieve equivalent functionality.
 
 ### Implementation Using Delegation
 
@@ -217,9 +217,9 @@ func (s Square) Area() int {
 }
 ```
 
-### Abstraction Using Interfaces
+### Abstraction with Interfaces
 
-Alternatively, you can define a common interface for abstraction.
+Alternatively, define a common interface for abstraction.
 
 ```go
 package main
@@ -257,26 +257,26 @@ func main() {
 }
 ```
 
-As long as both `Rectangle` and `Square` satisfy `Shape`, they can be treated as the same abstraction. This allows for ensuring reusability while preventing breakdowns due to inheritance.
+As long as both `Rectangle` and `Square` satisfy `Shape`, they can be treated as the same abstraction. This ensures reusability while preventing breakdowns due to inheritance.
 
-## Conclusion
+## Summary
 
-| Perspective | Content |
+| Aspect | Content |
 |------|------|
-| **Duck Typing** | A way of determining type by behavior |
+| **Duck Typing** | The concept of determining types by behavior |
 | **Behavior** | Consistent response of an object to external operations |
-| **Liskov Substitution Principle** | Subclasses should be substitutable for their parent classes |
-| **Delegation Over Inheritance** | Emphasizing reuse of behavior rather than structure |
-| **Aristotelian Classification** | Bringing structural classification directly into programs leads to breakdowns |
-| **Rectangle and Square Issue** | Structurally correct but behaviorally inconsistent, leading to LSP violation |
+| **Liskov Substitution Principle** | Child classes should be substitutable for parent classes |
+| **Composition Over Inheritance** | Emphasizing behavior reuse over structural reuse |
+| **Aristotelian Classification** | Structural classification can lead to breakdowns when directly applied to programs |
+| **Rectangle and Square Problem** | Structurally correct but behaviorally inconsistent, leading to LSP violation |
 
 ## Conclusion
 
-The "is-a" relationship in object-oriented programming is established **only by behavioral consistency**, differing from philosophical and linguistic classifications.
+The "is-a" relationship in object-oriented programming is established **only through behavioral consistency**, unlike philosophical or linguistic classifications.
 
-Even if in the real world "a square is a type of rectangle," in programming, a "square that cannot behave like a rectangle" is not substitutable.
+In the real world, "a square is a type of rectangle," but in programs, "a square that cannot behave like a rectangle" is not substitutable.
 
-Therefore, in OOP design, it is essential to **base designs on "delegation over inheritance" and perform abstraction based on behavior rather than type names** to achieve robust design.
+Therefore, in OOP design, **"Composition over Inheritance" should be the foundation, and abstraction should be based on behavior, not type names**, leading to robust design.
 
 ## References
 

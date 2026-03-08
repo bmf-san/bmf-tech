@@ -1,5 +1,5 @@
 ---
-title: Healthy Programmer - Health Hacks to Enjoy Programming
+title: 'The Healthy Programmer: Health Hacks for Enjoyable Programming'
 slug: healthy-programmer-hacks
 date: 2024-07-29T00:00:00Z
 author: bmf-san
@@ -8,17 +8,20 @@ categories:
 tags:
   - Books
   - Health
+description: Exploring health tips for programmers to maintain a healthy lifestyle while coding.
 translation_key: healthy-programmer-hacks
 ---
 
-[Healthy Programmer - Health Hacks to Enjoy Programming](https://amzn.to/3LF1Aom) was read.
 
-Overall, there is a lot of introduction to exercises.
 
-Many of the studies introduced in this book are based on scientific evidence. However, since it is a book from nearly 10 years ago, there may be updates to the evidence.
+[The Healthy Programmer: Health Hacks for Enjoyable Programming](https://amzn.to/3LF1Aom) was an insightful read.
 
-That said, there are many things that haven't changed since 10 years ago, and I thought it was worth a look. Particularly, the idea that health is nurtured from habits has been a long-standing concept.
+Overall, the book includes a lot of exercise recommendations.
 
-The definition of being healthy in this book is defined as "having a low risk of diseases arising from lifestyle" and "experiencing relatively little pain."
+The research introduced in this book is mostly based on scientific evidence. However, since the book was published nearly a decade ago, some updates to the evidence might be expected.
 
-There was a discussion about how sitting for more than 20 minutes or standing continuously is not good, and that the important thing is to change posture and move, rather than just standing continuously. This made me realize something. There may be various theories about the time spent standing or sitting, but what I felt is that the important thing is not the time itself, but that maintaining the same posture for long periods leads to physical strain.
+Still, many aspects haven't changed over the past ten years, making it worth a look. Particularly, the idea that health is cultivated through habits has been a longstanding concept.
+
+The book defines being healthy as having a "low risk of developing diseases from lifestyle" and "experiencing relatively little pain."
+
+There was a discussion about how sitting or standing for more than 20 minutes is not good, and the importance lies in changing posture and moving rather than just standing continuously. This was an eye-opener for me. While there might be various opinions on the duration of standing or sitting, the key takeaway seems to be that maintaining the same posture for extended periods is what burdens the body.

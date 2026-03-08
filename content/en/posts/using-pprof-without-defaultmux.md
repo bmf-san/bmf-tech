@@ -8,14 +8,17 @@ categories:
 tags:
   - Golang
   - Tips
+description: A note on using net/http/pprof with routers other than Go's default router.
 translation_key: using-pprof-without-defaultmux
 ---
 
+
+
 # Overview
-This is a note on how to use [net/http/pprof](https://pkg.go.dev/net/http/pprof) with routers other than DefaultServeMux (Go's standard router).
+A note on how to use [net/http/pprof](https://pkg.go.dev/net/http/pprof) with routers other than DefaultServeMux (Go's standard router).
 
 # Pitfalls
-Simply doing a blank import of pprof is not enough.
+Simply using a blank import for pprof is not enough.
 
 ```go
 package main
@@ -25,9 +28,9 @@ import (
 )
 ```
 
-When using a router other than DefaultServeMux, just a blank import will not enable pprof.
+When using a router other than DefaultServeMux, simply using a blank import will not enable pprof.
 
-Referring to [net/http/pprof](https://pkg.go.dev/net/http/pprof), it states:
+Refer to [net/http/pprof](https://pkg.go.dev/net/http/pprof), which states:
 
 > If you are not using DefaultServeMux, you will have to register handlers with the mux you are using.
 
@@ -55,10 +58,10 @@ func main() {
 }
 ```
 
-As shown above, you need to set up routing yourself and configure the pprof handlers.
+As shown above, you need to set up the routing yourself and configure the pprof Handlers.
 
-For httprouter, the following issue may be helpful.
+For httprouter, the following issue might be helpful:
 [pprof issue with httprouter #236](https://github.com/julienschmidt/httprouter/issues/236)
 
-# Aside
-I got stuck when trying to set up Go profiling in a pull-based manner with [pyroscope](https://pyroscope.io/).
+# Side Note
+I encountered this issue when trying to set up Go profiling in Pull mode with [pyroscope](https://pyroscope.io/).

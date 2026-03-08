@@ -1,5 +1,5 @@
 ---
-title: Using bitflyer's private API to notify Bitcoin asset status on Slack Part 2
+title: Notify Bitcoin Asset Status to Slack Using bitFlyer's Private API Part 2
 slug: notify-bitcoin-status-slack-bitflyer-api-part2
 date: 2017-09-26T00:00:00Z
 author: bmf-san
@@ -14,11 +14,13 @@ tags:
 translation_key: notify-bitcoin-status-slack-bitflyer-api-part2
 ---
 
-[Previous post](http://qiita.com/bmf_san/items/7ae9fc2c83d563291671) covered just hitting the bitflyer API, so this time we'll format the response data to send asset information to Slack.
 
-# Asynchronous Processing with Async
 
-Since we needed to hit multiple APIs, we used async. The error handling part is inspired by a reference site (which I forgot). The code ended up looking a bit convoluted...
+[Last time](http://qiita.com/bmf_san/items/7ae9fc2c83d563291671), I just hit the bitFlyer API and left it at that, so this time I'll format the response data and send it to Slack as asset information data.
+
+# Asynchronous Processing with async
+
+Since I needed to hit multiple APIs, I used async. The error handling part is mimicked from a reference site (which I forgot). The code has become somewhat hard to read...
 
 ```js
 var request = require('request');
@@ -63,10 +65,10 @@ async.map(requests, function(obj, callback) {
 
         var data = JSON.stringify({
             "attachments": [{
-                "fallback": "bitflyer asset information",
+                "fallback": "bitflyer Asset Information",
                 "color": "danger",
                 "title": "bitflyer Asset Information",
-                "text": "Currently holding BTC: " + btc_available + "",
+                "text": "The BTC you currently hold is " + btc_available + ".",
                 "fields": [{
                     "title": "Total BTC Assets",
                     "value": total_assets,
@@ -101,11 +103,11 @@ async.map(requests, function(obj, callback) {
 
 # Questions
 
-The total assets are calculated as `owned Bitcoin × recent transaction price (yen)`, but is there no way to get total assets in one go?
+The total assets are calculated as `owned Bitcoin × recent transaction price (yen)`, but can't you get the total assets in one go?
 
-# Issues
+# Challenges
 
-Due to sloppy calculations of the fractional part, there are discrepancies. I want to address that properly....
+Due to the rough calculation of floating-point numbers, there are discrepancies. I want to address this properly...
 
 # Source
 + [bitflyer-private-api-and-slack-api-sample](https://github.com/bmf-san/bitflyer-private-api-and-slack-api-sample)

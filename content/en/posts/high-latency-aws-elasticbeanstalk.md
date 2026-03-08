@@ -1,24 +1,26 @@
 ---
-title: High Latency in AWS (Elastic Beanstalk) Was Due to AWS Issues...
+title: When AWS (Elastic Beanstalk) Latency Was Unusually High...
 slug: high-latency-aws-elasticbeanstalk
 date: 2017-09-26T00:00:00Z
 author: bmf-san
 categories:
   - Infrastructure
 tags:
-  - Amazon Web Services
+  - Amazon Web Service
   - Elastic Beanstalk
 translation_key: high-latency-aws-elasticbeanstalk
 ---
 
-It was an issue on the AWS side.
 
-While monitoring an instance (m4) launched on AWS (Elastic Beanstalk), I noticed that the latency was unusually high, with users timing out approximately once a minute. (The average was around 5 seconds... I think)
 
-I initially thought there might be a bottleneck on the application side, but it was clearly worse than the environment of a previously launched instance (almost the same environment). As a temporary measure, I decided to create a clone and operate it instead.
+It was an issue on AWS's side.
 
-To investigate the cause, I contacted AWS, and... I received an apology from AWS.
+While monitoring an instance (m4) launched on AWS (Elastic Beanstalk), I noticed that the latency was unusually high, and there seemed to be users timing out roughly once a minute. (The average was around 5 seconds... I think.)
 
-The cause was attributed to AWS, as there was an anomaly with the ELB node. They mentioned that they would address it by replacing the ELB node.
+I initially thought there might be a bottleneck on the application side, but the environment of the instance I previously launched for testing (almost the same environment) was clearly better. As an emergency measure, I decided to create a clone and operate from there.
 
-So, this was a reminder that such things can happen. (I wonder if issues originating from AWS are quite common...?)
+Upon investigating the cause and contacting AWS, I received an apology from them.
+
+The issue was due to AWS, specifically an anomaly with the ELB node. They said they would address it by replacing the ELB node.
+
+That's the story of how such things can happen. (I wonder if issues originating from AWS are quite common...?)

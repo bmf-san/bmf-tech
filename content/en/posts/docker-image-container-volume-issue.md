@@ -1,5 +1,5 @@
 ---
-title: Notes on When Volumes Remain After Deleting Images and Containers in Docker
+title: Note on Volumes Not Being Deleted Even After Removing Docker Images and Containers
 slug: docker-image-container-volume-issue
 date: 2019-04-28T00:00:00Z
 author: bmf-san
@@ -12,43 +12,30 @@ translation_key: docker-image-container-volume-issue
 ---
 
 # Overview
-Even after deleting containers and images in Docker, I often forget that volumes are not deleted, so I'm jotting this down as a reminder.
+I often forget that volumes are not deleted even after removing containers and images in Docker, so I'm writing this note.
 
 I usually use docker-compose.
 
-```bash
-docker-compose build
-docker-compose up -d
-```
+`docker-compose build`
+`docker-compose up -d`
 
-Then I tidy up with:
+Then, I clean up with:
 
-```bash
-docker rm **
-docker rmi **
-```
+`docker rm **`
+`docker rmi **`
 
-However, it seems there is an option to delete the mounted volumes as well.
+However, it seems there is an option to delete mounted volumes.
 
 # Solution
-Check if volumes remain:
+Check if volumes remain.
+`docker volume ls`
 
-```bash
-docker volume ls
-```
+`docker volume rm **`
 
-Then remove them:
+# Additional Notes
+There is a way to clean up all containers, network images, and volumes described in docker-compose.yml at once using docker-compose.
 
-```bash
-docker volume rm **
-```
-
-# Aside
-There is a way to clean up all containers, network images, and volumes defined in the docker-compose.yml at once:
-
-```bash
-docker-compose down --rmi all -v
-```
+`docker-compose down --rmi all -v`
 
 # References
-- [About Docker Volumes -v --rm -d Garbage Leftover Issue Container Won't Start](https://stlisacity.hatenablog.com/entry/2018/09/10/145101)
+- [Docker Volume Issues -v --rm -d Garbage Remains, Container Won't Start](https://stlisacity.hatenablog.com/entry/2018/09/10/145101)

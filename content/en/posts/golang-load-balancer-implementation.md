@@ -13,32 +13,32 @@ translation_key: golang-load-balancer-implementation
 ---
 
 # Overview
-This article is the 24th entry of the [Makuake Advent Calendar 2021](https://adventar.org/calendars/6822). (I am very late..)
-This is a story about creating a load balancer that performs load balancing using Round Robin in Golang.
+This article is the 24th entry for the [Makuake Advent Calendar 2021](https://adventar.org/calendars/6822). (I am very late...)
+It's about creating a custom load balancer in Golang that distributes load using round-robin.
 
 # What is a Load Balancer?
-A load balancer is a server that has the function of distributing requests to multiple servers for load balancing.
+A load balancer is a server that distributes requests to multiple servers to balance the load (load balancing).
 
 ![Screenshot 2022-01-01 23 05 20](https://user-images.githubusercontent.com/13291041/147852643-0d5a6fab-1d8f-4d60-81f6-cf95091ca974.png)
 
-It is a type of reverse proxy that enhances service availability. There are two main types of load balancers: L7 load balancers that perform load balancing at the application layer, and L4 load balancers that perform load balancing at the transport layer. In addition to load balancing, load balancers also have functions for persistence (session maintenance) and health checks.
+It is a type of reverse proxy that enhances service availability. There are two main types of load balancers: L7 load balancers that distribute load at the application layer and L4 load balancers that do so at the transport layer. Besides load balancing, load balancers also provide persistence (session maintenance) and health check functionalities.
 
 # Types of Load Balancing
-Load balancing can be static or dynamic, each with its own methods. A representative static method is Round Robin, which evenly distributes requests. A representative dynamic method is Least Connection, which distributes requests to the server with the fewest unprocessed requests.
+Load balancing can be static or dynamic. A representative static method is Round Robin, which distributes requests evenly. A representative dynamic method is Least Connection, which distributes requests to the server with the fewest unprocessed requests.
 
 # Types of Persistence
-Persistence is a function that maintains sessions among multiple destination servers of the load balancer. There are two main types: Source address affinity persistence and Cookie persistence. Source address affinity persistence fixes the destination server based on the source IP address. Cookie persistence issues a cookie for session maintenance and fixes the destination server based on the cookie.
+Persistence is a feature that maintains sessions across multiple servers that a load balancer distributes to. There are two main types: Source address affinity persistence, which fixes the destination server based on the source IP address, and Cookie persistence, which issues a cookie for session maintenance and fixes the destination server based on the cookie.
 
 # Types of Health Checks
-Health checks are functions that allow the load balancer to check the operational status of the destination servers. There are active health check methods where the load balancer actively checks the destination servers and methods that monitor responses to requests from clients. Active checks can be categorized into L3 checks, L4 checks, and L7 checks depending on the protocol used.
+Health checks are a feature of load balancers that check the operational status of destination servers. There are active health checks, where the load balancer checks the destination servers, and passive checks, which monitor responses to client requests. Active checks can be categorized into L3, L4, and L7 checks depending on the protocol used.
 
 # Implementation
-We will implement an L4 load balancer as a package. The type of load balancing will be Round Robin, and health checks will support both active and passive checks. Persistence will not be supported.
+We will implement an L4 load balancer as a package. The load balancing method will be round-robin, and it will support both active and passive health checks. Persistence will not be supported.
 
-The code implemented this time can be found at [github.com/bmf-san/godon](https://github.com/bmf-san/godon).
+The code implemented this time is available at [github.com/bmf-san/godon](https://github.com/bmf-san/godon).
 
 # Implementing a Reverse Proxy
-A load balancer is a type of reverse proxy. We will start with a simple implementation of a reverse proxy.
+A load balancer is a type of reverse proxy. Let's start with a simple reverse proxy implementation.
 
 In Golang, you can easily implement it using `httputil`.
 
@@ -73,10 +73,10 @@ func Serve() {
 }
 ```
 
-I will skip the explanation here, but it would be good to read [pkg.go.dev/net/http/httputil#ReverseProxy](https://pkg.go.dev/net/http/httputil#ReverseProxy).
+I will omit the explanation here, but it would be good to read [pkg.go.dev/net/http/httputil#ReverseProxy](https://pkg.go.dev/net/http/httputil#ReverseProxy) thoroughly.
 
 # Implementing Config
-Since it is a simple load balancer, it does not have complex settings, but we will implement a feature to read settings from JSON.
+Since this is a simple load balancer, it does not have complex settings, but we will implement a feature to read settings from JSON.
 
 ```json
 {
@@ -127,7 +127,7 @@ var cfg Config
 func Serve() {
 	// ...
 	
-data, err := ioutil.ReadFile("./config.json")
+	data, err := ioutil.ReadFile("./config.json")
 	if err != nil {
 		log.Fatal(err.Error())
 	}
@@ -138,9 +138,10 @@ data, err := ioutil.ReadFile("./config.json")
 ```
 
 # Implementing Round Robin
-Next, we will implement Round Robin.
+Next, we will implement round-robin.
 
-We will implement it in a way that evenly distributes requests to the backend servers without considering the health of the backend servers.
+We will implement it so that requests are evenly distributed to backend servers without considering the status of the backend servers.
+
 
 ```golang
 // ...
@@ -186,14 +187,15 @@ func Serve() {
 }
 ```
 
-We use `sync.Mutex` to avoid race conditions caused by multiple Goroutines accessing the variable.
+The use of `sync.Mutex` is to avoid race conditions caused by multiple Goroutines accessing the variable.
 
-If you try removing `sync.Mutex` and run `go run -race server.go` to start the server, you can confirm the race condition by sending requests simultaneously from multiple terminals.
+Try removing `sync.Mutex` and start the server with `go run -race server.go`, then send requests from multiple terminals simultaneously to observe the race condition.
 
 # Implementing Active Check
-In the implementation so far, the load balancer has logic to forward requests to abnormal backends.
+So far, the implementation allows the load balancer to forward requests even to abnormal backends.
 
-In actual use cases, we do not want to forward requests to abnormal backends, so we will detect abnormal backends and exclude them from the distribution.
+In real use cases, you wouldn't want requests to be forwarded to abnormal backends, so we will detect abnormal backends and exclude them from the distribution.
+
 
 ```golang
 // Backend is servers which load balancer is transferred.
@@ -266,12 +268,12 @@ func Serve() {
 }
 ```
 
-We implement the `ErrorHandler` that is called when the load balancer detects an error while forwarding a request to the backend. In `ErrorHandler`, we flag the backend that does not return a normal response and ask it to forward the request to the load balancer again. The load balancer adjusts its logic not to forward requests to backends with the flag set.
+We implement `ErrorHandler`, which is called when the load balancer detects an error while forwarding a request to a backend. In `ErrorHandler`, a flag is set for backends that do not return a normal response, and the load balancer is requested to forward the request again. The load balancer is adjusted so that it does not forward requests to backends with flags set.
 
 # Implementing Passive Check
-Finally, we will implement passive checks. Passive checks simply monitor the responses of backend servers at specified intervals. Abnormal backends are flagged just like in active checks.
+Finally, we will implement passive checks. Passive checks simply monitor the response of backend servers at specified intervals. Backends detected as abnormal are flagged the same way as in active checks.
 
-The complete code after implementing passive checks is as follows:
+The complete code after implementing passive checks is as follows.
 
 ```golang
 package godon
@@ -381,6 +383,7 @@ func healthCheck() {
 			}
 		}
 	}
+
 }
 
 var cfg Config
@@ -406,21 +409,21 @@ func Serve() {
 ```
 
 # Thoughts
-Although I have not implemented retry logic or persistence support, I hope you can see that it is relatively easy to implement a load balancer in Golang.
+Although retry implementation and persistence support are not covered, I hope you found that implementing a load balancer in Golang is relatively straightforward.
 
 # References
 - [qiita.com - Introduction to net/http/httputil.ReverseProxy for creating a reverse proxy in Go](https://qiita.com/convto/items/64e8f090198a4cf7a4fc)
 - [kasvith.me - Let's Create a Simple Load Balancer With Go](https://kasvith.me/posts/lets-create-a-simple-lb-go/)
 - [dev.to - Build Load Balancer in Go](https://dev.to/b0r/build-load-balancer-in-go-1oo7)
 - [en.wikipedia.org - Load_balancing](https://en.wikipedia.org/wiki/Load_balancing_(computing)#Others)
-- [www.infraexpert.com - Starting from Load Balancer](https://www.infraexpert.com/study/study24.html)
+- [www.infraexpert.com - Introduction to Load Balancers](https://www.infraexpert.com/study/study24.html)
 - [www.opensquare.co.jp - Module 5 – Persistence](https://www.opensquare.co.jp/lmfile/support/document/TraningG/Module-5.pdf)
 - [ascii.jp - Basic Technologies of Load Balancers You Should Know](https://ascii.jp/elem/000/000/506/506272/)
 - [www.f5.com - Health Check](https://www.f5.com/ja_jp/services/resources/glossary/health-check)
-- [www.rworks.jp - What is a Load Balancer? Explanation of its Mechanism and Differences from DNS Round Robin](https://www.rworks.jp/system/system-column/sys-entry/16305/)
+- [www.rworks.jp - What is a Load Balancer? Explaining the Mechanism and Differences from DNS Round Robin](https://www.rworks.jp/system/system-column/sys-entry/16305/)
 - [docs.nginx.com - HTTP Load Balancing](https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/#choosing-a-load-balancing-method)
 - [medium.com - Running multiple HTTP servers in Go](https://medium.com/rungo/running-multiple-http-servers-in-go-d15300f4e59f)
-- [news.mynavi.jp - A Review of the Basic Roles of Load Balancers](https://news.mynavi.jp/techplus/article/load_balancer-1/)
+- [news.mynavi.jp - Reviewing the Basic Roles of Load Balancers](https://news.mynavi.jp/techplus/article/load_balancer-1/)
 - [github.com - yyyar/gobetween](https://github.com/yyyar/gobetween)
 - [github.com - kasvith/simplelb](https://github.com/kasvith/simplelb)
 - [github.com - arjunmahishi/loadbalancer-in-go](https://github.com/arjunmahishi/loadbalancer-in-go)

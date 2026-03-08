@@ -13,11 +13,10 @@ translation_key: mysql-locking
 ---
 
 # Overview
-This post summarizes MySQL locks.
-Assuming MySQL version 8.
+This post summarizes MySQL locks, assuming version 8.
 
-# Verification Environment
-The environment used for verification is prepared with docker-compose. (It's just one container, so using compose isn't necessary...)
+# Test Environment
+The environment used for testing is prepared with docker-compose. (Although it's just one container, so you don't necessarily need to use compose...)
 
 ```sh
 .
@@ -54,40 +53,40 @@ CREATE TABLE `users` (
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 ```
 
-You can prepare a MySQL 8 container with `docker compose up`.
+You can set up a MySQL 8 container with `docker compose up`.
 
 # Locks
 ## Internal Level Locks
-In MySQL, there are two methods for concurrency control: row-level locks and table-level locks.
+In MySQL, there are row-level locks and table-level locks as methods of exclusive control.
 
 cf. [dev.mysql.com - 8.11.1 Internal Locking Methods](https://dev.mysql.com/doc/refman/8.0/en/internal-locking.html)
 
-- Row-Level Lock
-  - A lock targeting individual rows within a table.
-  - Since the lock target is narrow, lock contention and rollback changes are minimized.
-  - A single row can be locked for a long time.
-- Table-Level Lock
-  - A lock targeting the entire table.
-  - Requires relatively less memory (row locks require memory for each locked row or group of rows).
-  - Fast when only a single lock is needed, especially when targeting most of the table.
-  - Fast when frequently executing GROUP BY on most of the data or scanning the entire table.
+- Row-level locks
+  - Locks targeting individual rows in a table
+  - Narrow lock targets reduce lock contention and rollback changes
+  - Allows long-term locking of a single row
+- Table-level locks
+  - Locks targeting the entire table
+  - Requires relatively less memory (row locks need memory for each locked row or group of rows)
+  - Fast when used for most of the table as only a single lock is needed
+  - Fast when frequently executing GROUP BY on most of the data or scanning the entire table
 
 ## InnoDB Locks
-cf. [dev.mysql.com - 15.7.1 InnoDB Locks](https://dev.mysql.com/doc/refman/8.0/en/innodb-locking.html)
+cf. [dev.mysql.com - 15.7.1 InnoDB Locking](https://dev.mysql.com/doc/refman/8.0/en/innodb-locking.html)
 
 ### Shared (READ) Lock
-A shared lock allows reading data but not writing. Shared lock (IS).
+A shared lock allows READ but not WRITE. Shared lock (IS).
 
 #### Verification
-1. Start a transaction in TX1 and apply a shared lock.
+1. Start a transaction in TX1 and apply a shared lock
 ```sql
 // TX1
-mysql> INSERT INTO users(name) VALUES('foo'); // Initial data insertion
+mysql> INSERT INTO users(name) VALUES('foo'); // Initial data input
 mysql> START TRANSACTION;
 mysql> SELECT * FROM users WHERE id = 1 LOCK IN SHARE MODE;
 ```
 
-2. Start a transaction in TX2 and perform a WRITE.
+2. Start a transaction in TX2 and perform WRITE
 ```sql
 // TX2
 mysql> START TRANSACTION;
@@ -97,148 +96,148 @@ mysql> UPDATE users SET name = 'bar' WHERE id = 1;
 TX2's update is locked until TX1 commits.
 
 ### Exclusive (WRITE) Lock
-An exclusive lock prevents both reading and writing of data. Exclusive lock (IX).
+An exclusive lock prevents both READ and WRITE. Exclusive lock (IX).
 
 #### Verification
-1. Start a transaction in TX1 and apply an exclusive lock.
+1. Start a transaction in TX1 and apply an exclusive lock
 ```sql
 // TX1
-mysql> INSERT INTO users(name) VALUES('foo'); // Initial data insertion
+mysql> INSERT INTO users(name) VALUES('foo'); // Initial data input
 mysql> START TRANSACTION;
 mysql> SELECT * FROM users WHERE id = 1 FOR UPDATE;
 ```
 
-2. Start a transaction in TX2 and perform READ and WRITE.
+2. Start a transaction in TX2 and perform READ and WRITE
 ```sql
 // TX2
 mysql> START TRANSACTION;
-mysql> SELECT * FROM users WHERE id = 1; // This is allowed
+mysql> SELECT * FROM users WHERE id = 1; // Allowed
 mysql> SELECT * FROM users WHERE id = 1 FOR UPDATE; // Not allowed
 mysql> UPDATE users SET name = 'bar' WHERE id = 1; // Not allowed
 ```
 
-It is confirmed that TX2 cannot perform READ (other than simple SELECT) or WRITE until TX1's lock is released.
+TX2 cannot perform READ (other than simple SELECT) or WRITE until TX1's lock is released.
 
-### Intention Lock
-A table-level lock indicating the type of lock (shared or exclusive) that a transaction requires on the rows of a table. It is designed to support coexistence of row locks and table locks.
+### Intention Locks
+Table-level locks indicating the type of lock (shared or exclusive) a transaction requires on a table's rows. They support coexistence of row and table locks.
 
 There are two types of intention locks:
 
-- Intention Shared Lock
-- Intention Exclusive Lock
+- Intention shared lock
+- Intention exclusive lock
 
 #### Verification
-This cannot be explicitly manipulated via SQL and is generally managed internally by the database, so verification is omitted.
+Not explicitly operable via SQL and generally managed internally by the database, so verification is omitted.
 
-There are several verification patterns, but various tests are conducted in the following article.
+Various verification patterns are available, as explored in the following article.
 
-cf. [qiita.com - Testing MySQL Locks While Reading Official Documentation: Row-Level Lock: Intention Lock](https://qiita.com/ham0215/items/2f38a2949d9012074c3d)
+cf. [qiita.com - Exploring MySQL Locks with Official Documentation](https://qiita.com/ham0215/items/2f38a2949d9012074c3d)
 
-### Record Lock
-Locking of index records. Index records refer to clustered indexes and secondary indexes. Locks are applied to the scanned indexes.
-
-#### Verification
-Omitted due to being an internal database operation.
-
-### Gap Lock
-Locking of gaps between index records, or gaps before or after index records.
+### Record Locks
+Locks on index records, which include clustered and secondary indexes. Locks the scanned indexes.
 
 #### Verification
-1. Start a transaction in TX1 and perform a READ.
+Omitted as it's an internal database operation.
+
+### Gap Locks
+Locks the gaps between index records or before/after index records.
+
+#### Verification
+1. Start a transaction in TX1 and perform READ
 ```sql
 // TX1
-mysql> INSERT INTO users(id, name) VALUES(1, 'foo'), (2, 'bar'), (4, 'qux'), (5, 'quux'), (6, 'corge'); // Initial data insertion
+mysql> INSERT INTO users(id, name) VALUES(1, 'foo'), (2, 'bar'), (4, 'qux'), (5, 'quux'), (6, 'corge'); // Initial data input
 mysql> START TRANSACTION;
 mysql> SELECT * FROM users WHERE ID between 1 AND 5 FOR UPDATE;
 ```
 
-2. Start a transaction in TX2 and perform a WRITE.
+2. Start a transaction in TX2 and perform WRITE
 ```sql
 // TX2
 mysql> START TRANSACTION;
 mysql> INSERT INTO users(id, name) VALUES(3, 'baz');
 ```
 
-It is confirmed that the lock is applied over a range rather than just row by row.
+It appears to be row-level locking, but it's confirmed to be range-locked.
 
-### Next-Key Lock
-A combination of a record lock on an index record and a gap lock on the gap before that index record.
+### Next-Key Locks
+A combination of record locks on index records and gap locks on the gap before the index record.
 
 #### Verification
-1. Start a transaction in TX1 and perform a READ.
+1. Start a transaction in TX1 and perform READ
 ```sql
 // TX1
-mysql> INSERT INTO users(id, name) VALUES(1, 'foo'), (2, 'bar'), (3, 'baz'), (4, 'qux'); // Initial data insertion
+mysql> INSERT INTO users(id, name) VALUES(1, 'foo'), (2, 'bar'), (3, 'baz'), (4, 'qux'); // Initial data input
 mysql> START TRANSACTION;
 mysql> SELECT * FROM users WHERE ID < 5 FOR UPDATE;
 ```
 
-2. Start a transaction in TX2 and perform a WRITE.
+2. Start a transaction in TX2 and perform WRITE
 ```sql
 // TX2
 mysql> START TRANSACTION;
 mysql> INSERT INTO users(id, name) VALUES(5, 'quux');
 ```
 
-It is confirmed that not only the rows with IDs less than 5 are locked, but also the gap after the last index value is locked.
+It's confirmed that not only rows with id less than 5 are locked, but also the gap after the row with the highest index value.
 
-### Intention Lock Insertion
-A type of gap lock set by an INSERT before the row insertion. Intention lock for INSERT.
-
-#### Verification
-Omitted due to being an internal database operation.
-
-This is verified in the following article.
-cf. [Testing MySQL Locks While Reading Official Documentation: Record Lock / Gap Lock / Next-Key Lock / Others](https://qiita.com/ham0215/items/99679d499869365446ec#%E3%82%A4%E3%83%B3%E3%83%86%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AF%E3%81%AE%E6%8C%AF%E5%85%A5)
-
-### AUTO-INC Lock
-A table lock obtained by transactions inserting into tables containing AUTO_INCREMENT columns. This lock prevents TX2 from obtaining AUTO_INCREMENT values while TX1 is acquiring them for an INSERT.
+### Insert Intention Locks
+A type of gap lock set by an INSERT before inserting a row. Insert intention lock.
 
 #### Verification
-Omitted due to being an internal operation and lack of reproducible methods.
+Omitted as it's an internal database operation.
 
-### Spatial Index Predicate Lock
-This refers to the documentation. (I wasn't quite sure about this as I'm not familiar with spatial indexes...)
+Refer to this article for verification.
+cf. [Exploring MySQL Locks with Official Documentation](https://qiita.com/ham0215/items/99679d499869365446ec#%E3%82%A4%E3%83%B3%E3%83%86%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%AD%E3%83%83%E3%82%AF%E3%81%AE%E6%8C%BF%E5%85%A5)
 
-cf. [Spatial Index Predicate Lock](https://dev.mysql.com/doc/refman/8.0/en/innodb-locking.html#innodb-auto-inc-locks)
+### AUTO-INC Locks
+Table locks acquired by transactions inserting into a table with an AUTO_INCREMENT column. Prevents TX2 from acquiring AUTO_INCREMENT values while TX1 is acquiring them for INSERT.
 
-# How to Check Locks
+#### Verification
+Omitted due to internal operation and lack of reproduction method.
+
+### Predicate Locks for Spatial Indexes
+Refer to the documentation. (I'm not familiar with spatial indexes, so I didn't fully understand...)
+
+cf. [Predicate Locks for Spatial Indexes](https://dev.mysql.com/doc/refman/8.0/en/innodb-locking.html#innodb-auto-inc-locks)
+
+# Checking Locks
 Locks can be checked with the following queries.
 
 ```sql
 // Check lock status
 SELECT * FROM performance_schema.data_locks;
 
-// Check number of locks + thread ID
+// Check lock count + thread ID
 SHOW ENGINE INNODB STATUS;
 
-// Check number of locks
+// Check lock count
 SELECT trx_id, trx_rows_locked, trx_mysql_thread_id FROM information_schema.INNODB_TRX;
 ```
 
 To check for deadlocks, execute `SHOW ENGINE INNODB STATUS` and look for the section labeled `LATEST DETECTED DEADLOCK`.
 
-# Conclusion
-MySQL has both explicit and implicit locking patterns.
+# Summary
+MySQL has patterns of explicit and implicit locks.
 
-It seems beneficial to first focus on what is being targeted (whether it's a row or a table) and the extent of the range.
+It's beneficial to first focus on what is being locked (row or table) and the extent of the range.
 
 # References
 - [dev.mysql.com - 8.11.1 Internal Locking Methods](https://dev.mysql.com/doc/refman/8.0/en/internal-locking.html)
-- [dev.mysql.com - 15.7.1 InnoDB Locks](https://dev.mysql.com/doc/refman/8.0/en/innodb-locking.html)
+- [dev.mysql.com - 15.7.1 InnoDB Locking](https://dev.mysql.com/doc/refman/8.0/en/innodb-locking.html)
 - [zenn.dev - Basics of Database Locks to Deadlocks](https://zenn.dev/gibjapan/articles/1d8dfb7520dabc)
-- [qiita.com - Testing MySQL Locks While Reading Official Documentation: Record Lock / Gap Lock / Next-Key Lock / Others](https://qiita.com/ham0215/items/99679d499869365446ec)
-- [qiita.com - Additional Information on MySQL Locks (Note: This content has already been extensively discussed)](https://qiita.com/hmatsu47/items/f5eb64428494686d4ad3)
-- [qiita.com - Testing MySQL Locks While Reading Official Documentation: Row-Level Lock: Shared Lock (S) / Exclusive Lock (X)](https://qiita.com/ham0215/items/b9efc718670b1d2d48c1#%E8%A1%8C%E3%83%AC%E3%83%99%E3%83%AB%E3%83%AD%E3%83%83%E3%82%AF%E3%82%92%E6%A4%9C%E8%A8%BC%E3%81%99%E3%82%8B)
-- [qiita.com - Testing MySQL Locks While Reading Official Documentation: Row-Level Lock: Intention Lock](https://qiita.com/ham0215/items/2f38a2949d9012074c3d)
-- [techblog.cartaholdings.co.jp - Knowledge of Locks That You Should Actually Remember for Those Who Have Never Thought About DB Locks](https://techblog.cartaholdings.co.jp/entry/2022/12/14/113000)
+- [qiita.com - Exploring MySQL Locks with Official Documentation](https://qiita.com/ham0215/items/99679d499869365446ec)
+- [qiita.com - Supplement on MySQL Locks (Note: Already well-discussed content)](https://qiita.com/hmatsu47/items/f5eb64428494686d4ad3)
+- [qiita.com - Exploring MySQL Locks with Official Documentation](https://qiita.com/ham0215/items/b9efc718670b1d2d48c1#%E8%A1%8C%E3%83%AC%E3%83%99%E3%83%AB%E3%83%AD%E3%83%83%E3%82%AF%E3%82%92%E6%A4%9C%E8%A8%BC%E3%81%99%E3%82%8B)
+- [qiita.com - Exploring MySQL Locks with Official Documentation](https://qiita.com/ham0215/items/2f38a2949d9012074c3d)
+- [techblog.cartaholdings.co.jp - Knowledge on Locks You Should Know](https://techblog.cartaholdings.co.jp/entry/2022/12/14/113000)
 - [www.wakuwakubank.com - Exclusive Lock (FOR UPDATE) and Shared Lock (LOCK IN SHARE MODE)](https://www.wakuwakubank.com/posts/201-mysql-lock/)
-- [saekis.hatenablog.com - Confirming the Behavior of MySQL Exclusive Locks](https://saekis.hatenablog.com/entry/2019/02/06/191454)
-- [bizstation.hatenablog.com - Detailed Control of InnoDB Locks in MySQL/MariaDB and Transactd Part 1](https://bizstation.hatenablog.com/entry/2014/12/24/103641)
+- [saekis.hatenablog.com - Verifying MySQL Exclusive Lock Behavior](https://saekis.hatenablog.com/entry/2019/02/06/191454)
+- [bizstation.hatenablog.com - Detailed InnoDB Lock Control in MySQL/MariaDB and Transactd](https://bizstation.hatenablog.com/entry/2014/12/24/103641)
 - [devsakaso.com - About MySQL Locks and Deadlocks](https://devsakaso.com/mysql-about-lock-and-deadlock/)
 - [nishinatoshiharu.com - Overview and Behavior Verification of InnoDB Shared and Exclusive Locks](https://nishinatoshiharu.com/db-lock-overview/)
 - [www.wakuwakubank.com - Exclusive Lock (FOR UPDATE) and Shared Lock (LOCK IN SHARE MODE)](https://www.wakuwakubank.com/posts/201-mysql-lock/)
-- [free-engineer.life - MySQL (InnoDB) Shared Lock, Exclusive Lock, and Intention Lock (Table Lock)](https://free-engineer.life/mysql-innodb-lock-mode/)
+- [free-engineer.life - MySQL (InnoDB) Shared, Exclusive, and Intention Locks](https://free-engineer.life/mysql-innodb-lock-mode/)
 - [free-engineer.life - MySQL (InnoDB) Row Locks](https://free-engineer.life/mysql-innodb-record-locks/)
-- [github.com - Investigation of MySQL InnoDB Lock Behavior](https://github.com/ichirin2501/doc/blob/master/innodb.md)
-- [github.com - MySQL Deadlock Analysis Method Using Thread ID](https://github.com/ichirin2501/doc/blob/master/innodb-deadlock-thread-id.md)
+- [github.com - Investigation of InnoDB Lock Behavior in MySQL](https://github.com/ichirin2501/doc/blob/master/innodb.md)
+- [github.com - Deadlock Analysis Method Using Thread ID in MySQL](https://github.com/ichirin2501/doc/blob/master/innodb-deadlock-thread-id.md)

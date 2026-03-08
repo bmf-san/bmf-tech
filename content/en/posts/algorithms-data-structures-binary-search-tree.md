@@ -1,37 +1,36 @@
 ---
-title: Algorithms and Data Structures - Binary Search Tree
+title: Algorithms and Data Structures - Binary Search Trees
 slug: algorithms-data-structures-binary-search-tree
 date: 2020-01-15T00:00:00Z
 author: bmf-san
 categories:
-  - Algorithms
-  - Data Structures
+  - Algorithms and Data Structures
 tags:
   - Binary Search Tree
 translation_key: algorithms-data-structures-binary-search-tree
 ---
 
 # Overview
-Referencing the [Algorithm Encyclopedia](https://www.shoeisha.co.jp/book/detail/9784798149776), we will learn about algorithms and data structures.
+Referencing [Algorithm Encyclopedia](https://www.shoeisha.co.jp/book/detail/9784798149776), we learn about algorithms and data structures.
 
-The implementation is also available at [github - bmf-san/road-to-algorithm-master](https://github.com/bmf-san/road-to-algorithm-master).
+The implementation is also available on [github - bmf-san/road-to-algorithm-master](https://github.com/bmf-san/road-to-algorithm-master).
 
-# Binary Search Tree
-- A type of binary tree where each node can have at most two child nodes, with the constraint that the left child node ≤ parent ≤ right child node.
+# Binary Search Trees
+- A type of binary tree where each node has at most two children, with the constraint that the left child node ≤ parent ≤ right child node.
     - The leftmost node is the minimum node, and the rightmost node is the maximum node.
-- This is not limited to binary search trees, but I will write about tree traversal methods:
-  - Depth-First Search (DFS)
+- Although not limited to binary search trees, here are some methods for traversing tree structures:
+  - Depth-First Search
     - Preorder
     - Inorder
     - Postorder
-  - Breadth-First Search (BFS)
+  - Breadth-First Search
     - Level-order
 
-# Time Complexity
-- Insertion/Deletion
-  - On average, O(log n), but the worst-case complexity is O(n).
+# Computational Time
+- Insertion and Deletion
+  - On average, O(log n), but the worst-case time complexity is O(n).
 - Search
-  - For balanced binary search trees, it can be done in O(log n). The worst-case complexity is O(n).
+  - For balanced binary search trees, it can be done in O(log n). The worst-case time complexity is O(n).
 
 # Implementation
 ```golang
@@ -262,8 +261,10 @@ func main() {
 
 	fmt.Printf("%#v\n", tree)
 }
+
 ```
-- Insertion and searching are relatively easy, but deletion is complex.
+
+- Insertion and search are relatively easy, but deletion is complex.
 
 # References
 - [Algorithms and Data Structures](http://www-ikn.ist.hokudai.ac.jp/~arim/pub/algo/algo6.pdf)

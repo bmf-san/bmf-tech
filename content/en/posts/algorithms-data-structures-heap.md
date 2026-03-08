@@ -4,31 +4,30 @@ slug: algorithms-data-structures-heap
 date: 2020-01-14T00:00:00Z
 author: bmf-san
 categories:
-  - Algorithms
-  - Data Structures
+  - Algorithms and Data Structures
 tags:
   - Heap
 translation_key: algorithms-data-structures-heap
 ---
 
 # Overview
-Referencing the [Algorithm Encyclopedia](https://www.shoeisha.co.jp/book/detail/9784798149776), we learn about algorithms and data structures.
+Referencing [Algorithm Encyclopedia](https://www.shoeisha.co.jp/book/detail/9784798149776), I am learning algorithms and data structures.
 
-The implementation is also available at [github - bmf-san/road-to-algorithm-master](https://github.com/bmf-san/road-to-algorithm-master).
+The implementation is also available on [github - bmf-san/road-to-algorithm-master](https://github.com/bmf-san/road-to-algorithm-master).
 
 # Heap
 - A type of priority queue
   - A priority queue is a data type that handles a set
-    - Elements in the set are retrieved in order of priority
+    - Elements contained in the set are retrieved in order of priority
     - Examples of data types that handle sets: queue, stack
 - Types of heaps
-  - Min Heap
-    - A heap where the root is always the minimum. The parent node is always smaller than the child nodes.
-  - Max Heap
-    - A heap where the root is always the maximum element. The parent node is always larger than the child nodes.
+  - Min heap
+    - A heap where the root is always the smallest. The parent node is always smaller than the child nodes.
+  - Max heap
+    - A heap where the root is always the largest element. The parent node is always larger than the child nodes.
 
-# Time Complexity
-- Both insertion and deletion are O(log n)
+# Computational Time
+- Both addition and deletion are O(log n)
 
 # Implementation
 ```golang
@@ -154,15 +153,15 @@ func main() {
 }
 ```
 
-- Implementation of Min Heap
+- Implementation of min heap
 - Nodes are always added in breadth-first order
-- After adding a node, if the added value is smaller than the root node, the root node and the added node are swapped
-- It is easy to understand by checking the image at [Data Structure Visualizations - Min Heap](https://www.cs.usfca.edu/~galles/visualization/Heap.html)
-- The calculations for root, parent, left child, and right child are characteristic
-  - Since the array index serves as the priority, the values of those nodes can be derived from the reference node through calculations
-  - The article [Explaining Heaps Clearly](https://medium.com/@yasufumy/data-structure-heap-ecfd0989e5be) is easy to understand
+- After adding a node, if the added value is smaller than the root node, swap the root node with the added node
+- It's easy to understand by checking the image at [Data Structure Visualizations - Min Heap](https://www.cs.usfca.edu/~galles/visualization/Heap.html)
+- Calculations for root, parent, left child node, and right child node are characteristic
+  - Since the array index becomes the priority, the values of these nodes can be derived from the reference node through calculations
+  - The article [Explaining Heap Clearly](https://medium.com/@yasufumy/data-structure-heap-ecfd0989e5be) is easy to understand
 - Referenced [Welcome To Golang By Example - Heap in Golang](https://golangbyexample.com/heap-in-golang/) (mostly transcribed..)
 
 # References
-- [Explaining Heaps Clearly](https://medium.com/@yasufumy/data-structure-heap-ecfd0989e5be)
+- [Explaining Heap Clearly](https://medium.com/@yasufumy/data-structure-heap-ecfd0989e5be)
 - [Welcome To Golang By Example - Heap in Golang](https://golangbyexample.com/heap-in-golang/)

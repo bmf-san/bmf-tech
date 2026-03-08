@@ -4,22 +4,23 @@ slug: algorithms-data-structures-merge-sort
 date: 2020-02-01T00:00:00Z
 author: bmf-san
 categories:
-  - Algorithms
-  - Data Structures
+  - Algorithms and Data Structures
 tags:
   - Merge Sort
 translation_key: algorithms-data-structures-merge-sort
 ---
 
+
+
 # Overview
-Referencing the [Algorithm Encyclopedia](https://www.shoeisha.co.jp/book/detail/9784798149776), we learn about algorithms and data structures.
+Learning algorithms and data structures with reference to [Algorithm Encyclopedia](https://www.shoeisha.co.jp/book/detail/9784798149776).
 
 The implementation is also available at [github - bmf-san/road-to-algorithm-master](https://github.com/bmf-san/road-to-algorithm-master).
 
 # Merge Sort
-- Sorts by recursively dividing the data sequence until it can no longer be split (when there is only one element) and repeatedly merging the divided data.
-- A sorting method based on the divide and conquer principle.
-  - Divides a large problem into smaller problems.
+- Recursively divide the data sequence until it can no longer be divided (single element), and sort by repeatedly merging the divided data multiple times
+- Sort based on the divide and conquer method
+  - Divide a large problem into smaller problems
 
 # Time Complexity
 - Worst-case time complexity
@@ -74,3 +75,4 @@ func mergeSort(n []int) []int {
 
 # References
 - [Algorithms and Data Structures](http://www-ikn.ist.hokudai.ac.jp/~arim/pub/algo/algo6.pdf)
+

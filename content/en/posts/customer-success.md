@@ -12,39 +12,41 @@ tags:
 translation_key: customer-success
 ---
 
-[Customer Success: 10 Principles for Supporting Customer Success in the Subscription Era](https://amzn.to/4aAHF4B) has been read.
+
+
+[I read "Customer Success: How Innovative Companies Are Reducing Churn and Growing Recurring Revenue"](https://amzn.to/4aAHF4B).
 
 # What is Customer Success?
-A business that supports the 'success' of customers.
+It is the work of supporting the "success" of customers.
 
-It is different from customer support, which responds to customer complaints and inquiries.
+It differs from customer support, which deals with customer complaints and inquiries.
 
-In subscription-based businesses, maximizing LTV is one of the key elements. Customer success becomes a profit center that contributes to business revenue through customer analysis and support.
+In subscription-based businesses, maximizing LTV is one of the important factors. Customer Success becomes a profit center that contributes to business revenue through customer analysis and support.
 
 It is also one of the sales processes in The Model.
 
-*Sales Process in The Model*
-Marketing (Visitors * Acquisition Rate = Prospects) → Inside Sales (Prospects * Opportunity Rate = Opportunities) → Field Sales (Opportunities * Order Rate = Orders) → Customer Success (Orders * Renewal Rate = Continuations)
+※The Model's Sales Process
+Marketing (Number of visitors * Acquisition rate = Number of prospects) → Inside Sales (Number of prospects * Conversion rate = Number of deals) → Field Sales (Number of deals * Order rate = Number of orders) → Customer Success (Number of orders * Renewal rate = Number of renewals)
 
-cf. [salesforce.com - What is The Model? Salesforce Explains Terms and Sales Processes](https://www.salesforce.com/jp/resources/articles/sales/the-model/)
+cf. [salesforce.com - What is The Model? Salesforce explains the terminology and sales process](https://www.salesforce.com/jp/resources/articles/sales/the-model/)
 
 # 10 Principles
-Ten principles of customer success to support and accompany customers in achieving success.
+10 principles of Customer Success to accompany and support customer success.
 
-1. Sell to the right customers.
-2. Customers and vendors will drift apart if nothing is done.
-3. What customers expect is great success.
-4. Continuously grasp and manage customer health.
-5. Building loyalty no longer requires personal relationships.
-6. The truly scalable differentiator is the product.
-7. Work tirelessly to improve time to value.
-8. Deeply understand customer metrics.
-9. Advance customer success with hard data metrics.
-10. Approach it from the top down and at the company-wide level.
+1. Sell to the right customer
+2. Customers and vendors will drift apart if nothing is done
+3. Customers expect great success
+4. Constantly understand and manage customer health
+5. Building loyalty no longer requires personal relationships
+6. The truly scalable differentiator is the product
+7. Thoroughly work on improving time-to-value
+8. Deeply understand customer metrics
+9. Advance Customer Success with hard data metrics
+10. Approach from the top-down and at the company-wide level
 
-In the era before the emergence of the SaaS service model, principles focused on retaining customers were required, but in recent years, principles centered on customer success have become necessary.
+In the era before the emergence of the SaaS service model, principles focused on retaining customers were required, but in recent years, principles that focus on customer success, centered on the customer, have become necessary.
 
-# Thoughts
-The role of customer success was unfamiliar to me, but I was able to grasp the atmosphere.
+# Impressions
+I wasn't familiar with the role of Customer Success, but I was able to get a sense of it.
 
-I realized that a cross-functional approach is not limited to technical organizations.
+I realized that a cross-functional approach is required not only in technical organizations.

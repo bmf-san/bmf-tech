@@ -10,12 +10,13 @@ tags:
   - Nginx
   - Apache
   - Sakura VPS
+description: Notes on configuring Nginx as a reverse proxy on a Sakura VPS previously running Apache.
 translation_key: nginx-reverse-proxy-configuration
 ---
 
-I set up Nginx as a reverse proxy on my Sakura VPS that was previously running Apache, so here are my notes.
+I configured Nginx as a reverse proxy on a Sakura VPS that was previously running Apache, so I'm jotting down some notes.
 
-Since this was set up quite a while ago, I might not remember everything perfectly, so please bear with me.
+It's been a while since I set it up, so I might not remember everything perfectly. Please bear with me.
 
 # Environment
 * Sakura VPS
@@ -23,20 +24,20 @@ Since this was set up quite a while ago, I might not remember everything perfect
 * Apache 2.2.15
 * Nginx 1.8.1
 
-# Prerequisite Knowledge
-* Understanding of Apache's virtual host mechanism and configuration
+# Recommended Knowledge
+* Understanding and configuring Apache virtual hosts
 
-In general terms, Nginx accepts requests and forwards them to the specified port of Apache. The virtual host settings will be configured on the Apache side. Nginx simply acts as a conduit.
+In simple terms, Nginx receives requests and forwards them to a specified port on Apache. The virtual host settings are configured on the Apache side. Nginx just acts as a pass-through.
 
 # Installing Nginx
 
-Using wget and yum to download it was straightforward. I will skip the details here, so please install it according to your own setup.
+Using `wget` and `yum` to download and install was straightforward. I won't cover the installation here, so please install it according to your environment.
 
-Once the installation is complete, let's stop Apache and check if Nginx is working properly.
+Once installed, stop Apache and verify Nginx's operation.
 
 # Changing Apache's Port
 
-We will use port 80 for Nginx. On the Apache side, we will specify a different port. Here, we will use port 8080.
+We'll use port 80 for Nginx. Specify a different port for Apache. Here, we'll use port 8080.
 
 /etc/httpd/conf/httpd.conf
 
@@ -50,14 +51,14 @@ hogehogehogehoge...
 </VirtualHost>
 ```
 
-Note:
-To check iptables, use:
+Note
+Check iptables with:
 `iptables -L`
 
 The location of iptables is:
 /etc/sysconfig/iptables
 
-If you have set up virtual hosts for your custom domain, make sure to change the port there as well.
+If you have virtual host settings for a custom domain, change those ports as well.
 
 Ex. /etc/httpd/conf.d/hoge.com.conf
 
@@ -89,9 +90,9 @@ Ex. /etc/httpd/conf.d/hoge.com.conf
 </VirtualHost>
 ```
 
-# Configuring Reverse Proxy on Nginx
+# Configuring Reverse Proxy in Nginx
 
-I referred to [Coexisting Apache and Nginx for Gradual Migration](http://concrete5.tomo.ac/developer/nginx%E3%81%A7concrete5/apache%E3%81%A8nginx%E3%82%92%E5%85%B1%E5%AD%98%E3%81%97%E3%81%A6%E5%BE%90%E3%80%85%E3%81%AB%E7%A7%BB%E8%A1%8C%E3%81%99%E3%82%8B) for this.
+I referred to [Coexisting Apache and Nginx and Gradually Migrating](http://concrete5.tomo.ac/developer/nginx%E3%81%A7concrete5/apache%E3%81%A8nginx%E3%82%92%E5%85%B1%E5%AD%98%E3%81%97%E3%81%A6%E5%BE%90%E3%80%85%E3%81%AB%E7%A7%BB%E8%A1%8C%E3%81%99%E3%82%8B).
 
 /etc/nginx/conf.d/reverse_proxy.conf
 
@@ -110,11 +111,12 @@ server {
                 proxy_set_header X-Forwarded-For       $proxy_add_x_forwarded_for;
         }
 }
+
 ```
 
 Finally, restart Apache and Nginx to complete the setup!
 
 # Thoughts
-I wonder how the performance will be... it seems to have improved a bit, maybe?
+The performance improvement is noticeable... somewhat faster, perhaps?
 
-There are many areas where I lack knowledge in infrastructure setup, so I plan to work on that in the future.
+I have much to learn about infrastructure setup, so I'll strive to improve in the future.

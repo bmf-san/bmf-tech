@@ -4,27 +4,28 @@ slug: algorithms-data-structures-quick-sort
 date: 2020-02-01T00:00:00Z
 author: bmf-san
 categories:
-  - Algorithms
-  - Data Structures
+  - Algorithms and Data Structures
 tags:
   - Quick Sort
 translation_key: algorithms-data-structures-quick-sort
 ---
 
-# Overview
-Referencing the [Algorithm Encyclopedia](https://www.shoeisha.co.jp/book/detail/9784798149776), we learn about algorithms and data structures.
 
-The implementation is also available at [github - bmf-san/road-to-algorithm-master](https://github.com/bmf-san/road-to-algorithm-master).
+
+# Overview
+Referencing [Algorithm Encyclopedia](https://www.shoeisha.co.jp/book/detail/9784798149776), we learn about algorithms and data structures.
+
+The implementation is also available on [github - bmf-san/road-to-algorithm-master](https://github.com/bmf-san/road-to-algorithm-master).
 
 # Quick Sort
-- Select an appropriate data (pivot) from the data sequence, moving data smaller than the pivot to the front and larger data to the back.
-- Sort the divided data separately.
-- A type of divide and conquer method.
+- Select an appropriate data (pivot) from the data sequence, and move data smaller than the pivot to the front and data larger than the pivot to the back.
+- Sort each divided data
+- A type of divide and conquer method
 
-# Time Complexity
+# Computational Time
 - Worst-case time complexity
   - O(n²)
-- Best-case and average time complexity
+- Best-case and average-case time complexity
   - O(n log n)
 
 # Implementation
@@ -71,6 +72,7 @@ func main() {
 	n := []int{2, 5, 7, 1, 3, 9}
 	fmt.Println(quickSort(n))
 }
+
 ```
 
 - cf. [Algorithms and Data Structures - Heap](https://bmf-tech.com/posts/%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0%E3%81%A8%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0%20-%20%E3%83%92%E3%83%BC%E3%83%97)

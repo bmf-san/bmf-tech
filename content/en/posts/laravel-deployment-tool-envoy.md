@@ -1,5 +1,5 @@
 ---
-title: Using Laravel's Deployment Tool Laravel Envoy
+title: 'Trying Out Laravel''s Deployment Tool: Laravel Envoy'
 slug: laravel-deployment-tool-envoy
 date: 2017-10-01T00:00:00Z
 author: bmf-san
@@ -11,22 +11,25 @@ tags:
 translation_key: laravel-deployment-tool-envoy
 ---
 
-There are various deployment tools like Capistrano, Fabric, Rocketeer, and Deployer, but mastering them can be quite challenging...
+
+
+Capistrano, Fabric, Rocketeer, Deployer... There are various deployment tools, but mastering them can be quite challenging...
 
 If you're a Laravel user, there's a simple and easy-to-use deployment tool available.
 
 [Laravel Envoy](https://github.com/laravel/envoy)
 
-Compared to general deployment tools, it may not seem capable of handling intricate tasks, but I believe it can perform the essential deployment tasks.
+Compared to general deployment tools, it might not handle all the intricate details, but it should be able to perform the essential deployment tasks.
 
-# Installation
+# Introduction
 As mentioned in the documentation...
-`composer global require "laravel/envoy=~1.0``
+`composer global require "laravel/envoy=~1.0"`
+
 
 # Writing Deployment Tasks
-Prepare a file named `envoy.blade.php` and write the tasks in it according to the Blade syntax.
+Prepare a file named envoy.blade.php and write tasks in it following the Blade syntax.
 
-You can directly write shell commands inside the @task, which makes it easy.
+Tasks can be directly written as shell commands within @task, making it convenient.
 
 ```
 @servers(['web' => '123.45.678.912'])
@@ -93,13 +96,14 @@ You can directly write shell commands inside the @task, which makes it easy.
 @endtask
 ```
 
-I intended to optimize composer and artisan for Laravel deployment, but I'm not very sure about it, haha. Please don't mind git and slack... they are just examples. (｀･ω･´)
+I've tried to optimize composer and artisan for Laravel deployment, but I'm not entirely sure, lol.
+Don't worry about git or slack... they're just examples. (｀･ω･´)
 
 # Deployment
 
-You can deploy with
-
 `envoy run deploy`
 
-# Thoughts
-Although I skipped some details, it can be easily set up from installation to usage, so this should be sufficient for small projects!
+This command will deploy.
+
+# Impressions
+I skipped a few details, but since it's easy to set up from introduction to use, it might be sufficient for small projects!

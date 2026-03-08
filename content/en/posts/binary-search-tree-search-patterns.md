@@ -4,8 +4,7 @@ slug: binary-search-tree-search-patterns
 date: 2023-08-04T00:00:00Z
 author: bmf-san
 categories:
-  - Algorithms
-  - Data Structures
+  - Algorithms and Data Structures
 tags:
   - Binary Search Tree
   - DFS
@@ -29,17 +28,17 @@ ex.
 
 # Search Patterns
 ## Depth First Search (DFS)
-The order of node exploration is easier to remember using the methods described in [www.momoyama-usagi.com - Understanding Binary Search Trees with Rabbits Part 2: Four Traversal Methods](https://www.momoyama-usagi.com/entry/info-algo-tree-traverse), so I will include that link here.
+The order of node traversal is easy to remember using the method described at [www.momoyama-usagi.com - Understanding Binary Search Trees for Beginners Part 2: Four Traversal Methods](https://www.momoyama-usagi.com/entry/info-algo-tree-traverse), so I have included the link.
 
 ### Preorder
-**Start scanning from the root node**, recursively scanning the left subtree and then the right subtree.
+Start traversal from the **root node**, recursively traversing the left subtree, then the right subtree.
 
-**Since root is pre (before), remember it as root → left → right.** (Just remember the position of the root; left always comes before right.)
+Remember it as **root is pre (before), so root → left → right**. (Just remember the position of the root. Left always comes before right.)
 
 cf.
-[(2) The Magic of Correctly Finding Preorder Traversal](https://www.momoyama-usagi.com/entry/info-algo-tree-traverse#2)
+[(2) The Magic of Correctly Determining Preorder](https://www.momoyama-usagi.com/entry/info-algo-tree-traverse#2)
 
-When the tree is wrapped in a single stroke, the order of nodes passed on the left side is preorder.
+When you trace the tree with a single stroke, the order in which you pass the left side of the nodes is preorder.
 
 ```sh
       5
@@ -52,14 +51,14 @@ When the tree is wrapped in a single stroke, the order of nodes passed on the le
 ```
 
 ### Inorder
-**Recursively scan from the left subtree**, then the root node, and finally the right subtree.
+Recursively traverse from the **left subtree**, then the root node, and finally the right subtree.
 
-**Since root is in (between), remember it as left → root → right.** (Just remember the position of the root; left always comes before right.)
+Remember it as **root is in (between), so left → root → right**. (Just remember the position of the root. Left always comes before right.)
 
 cf.
-[(2) The Magic of Correctly Finding Inorder Traversal](https://www.momoyama-usagi.com/entry/info-algo-tree-traverse#2-3)
+[(2) The Magic of Correctly Determining Inorder](https://www.momoyama-usagi.com/entry/info-algo-tree-traverse#2-3)
 
-When the tree is wrapped in a single stroke, the order of nodes passed on the lower side is inorder.
+When you trace the tree with a single stroke, the order in which you pass the bottom side of the nodes is inorder.
 
 ```sh
     5
@@ -72,15 +71,15 @@ When the tree is wrapped in a single stroke, the order of nodes passed on the lo
 ```
 
 ### Postorder
-**Recursively scan from the left subtree**, then the right subtree, and finally the root node.
+Recursively traverse from the **left subtree**, then the right subtree, and finally the root node.
 
-**Since root is post (after), remember it as left → right → root.** (Just remember the position of the root; left always comes before right.)
+Remember it as **root is post (after), so left → right → root**. (Just remember the position of the root. Left always comes before right.)
 
-cf. [(2) The Magic of Correctly Finding Postorder Traversal](https://www.momoyama-usagi.com/entry/info-algo-tree-traverse#2-4)
+cf. [(2) The Magic of Correctly Determining Postorder](https://www.momoyama-usagi.com/entry/info-algo-tree-traverse#2-4)
 
-As a side note, Reverse Polish Notation can also be solved using a stack, but a binary tree can also be solved using postorder.
+As an aside, Reverse Polish Notation can be solved with a stack, but it can also be solved with postorder traversal of a binary tree.
 
-When the tree is wrapped in a single stroke, the order of nodes passed on the right side is postorder.
+When you trace the tree with a single stroke, the order in which you pass the right side of the nodes is postorder.
 
 ```sh
     5
@@ -93,7 +92,7 @@ When the tree is wrapped in a single stroke, the order of nodes passed on the ri
 ```
 
 ## Breadth First Search (BFS)
-Scan level by level.
+Traverse by depth.
 
 ```sh
     5
@@ -106,7 +105,7 @@ Scan level by level.
 ```
 
 # Implementation
-The source code can be found at [binary_search_tree](https://github.com/bmf-san/road-to-algorithm-master/tree/master/data_structures/tree/binary_search_tree).
+The source code is available at [binary_search_tree](https://github.com/bmf-san/road-to-algorithm-master/tree/master/data_structures/tree/binary_search_tree).
 
 ```go
 package main
@@ -208,13 +207,13 @@ func (n *node) removeNode(v string) *node {
 
 // breadth first search - preorder
 //
-//	    5
-//	   / \
-//	  3   8
-//	 / \ / \
-//	1  4 6  9
+//    5
+//   / \
+//  3   8
+// / \ / \
+//1  4 6  9
 //
-//	5 -> 3 -> 1 -> 4 -> 8 -> 6 -> 9
+//5 -> 3 -> 1 -> 4 -> 8 -> 6 -> 9
 func (t *tree) preorder(n *node, f func(string)) {
 	if n != nil {
 		// root → left → right
@@ -226,13 +225,13 @@ func (t *tree) preorder(n *node, f func(string)) {
 
 // breadth first search - inorder
 //
-//	    5
-//	   / \
-//	  3   8
-//	 / \ / \
-//	1  4 6  9
+//    5
+//   / \
+//  3   8
+// / \ / \
+//1  4 6  9
 //
-//	1 -> 3 -> 4 -> 5 -> 6 -> 8 -> 9
+//1 -> 3 -> 4 -> 5 -> 6 -> 8 -> 9
 func (t *tree) inorder(n *node, f func(string)) {
 	if n != nil {
 		// left → root → right
@@ -244,13 +243,13 @@ func (t *tree) inorder(n *node, f func(string)) {
 
 // breadth first search - postorder
 //
-//	    5
-//	   / \
-//	  3   8
-//	 / \ / \
-//	1  4 6  9
+//    5
+//   / \
+//  3   8
+// / \ / \
+//1  4 6  9
 //
-//	1 -> 4 -> 3 -> 6 -> 9 -> 8 -> 5
+//1 -> 4 -> 3 -> 6 -> 9 -> 8 -> 5
 func (t *tree) postorder(n *node, f func(string)) {
 	if n != nil {
 		// left → right → root
@@ -262,13 +261,13 @@ func (t *tree) postorder(n *node, f func(string)) {
 
 // depth first search
 //
-//	    5
-//	   / \
-//	  3   8
-//	 / \ / \
-//	1  4 6  9
+//    5
+//   / \
+//  3   8
+// / \ / \
+//1  4 6  9
 //
-//	5 -> 3 -> 8 -> 1 -> 4 -> 6 -> 9
+//5 -> 3 -> 8 -> 1 -> 4 -> 6 -> 9
 func (t *tree) dfs(n *node, f func(string)) {
 	if n != nil {
 		s := []*node{n}
@@ -312,13 +311,13 @@ func main() {
 }
 ```
 
-For breadth-first search, just remember the starting position of the root (for preorder, it's root → left → right), and the recursive process can be written accordingly.
+Breadth-first search only requires remembering the starting position of the root (preorder is root → left → right), and recursive processing can be written accordingly.
 
-Depth-first search is a bit more complicated. Also, the deletion process of nodes is more troublesome, not just limited to binary search trees...
+Depth-first search is a bit more troublesome. Moreover, node deletion processing is cumbersome not only in binary search trees...
 
-# Thoughts
-It seems like I can remember the search patterns this way for now.
+# Impressions
+If you remember the search patterns this way, it seems like you can keep them in mind.
 
 # References
-- [www.momoyama-usagi.com - Understanding Binary Search Trees with Rabbits Part 2: Four Traversal Methods](https://www.momoyama-usagi.com/entry/info-algo-tree-traverse)
-  - The traversal methods are very easy to remember and were helpful.
+- [www.momoyama-usagi.com - Understanding Binary Search Trees for Beginners Part 2: Four Traversal Methods](https://www.momoyama-usagi.com/entry/info-algo-tree-traverse)
+  - The traversal methods are very easy to remember, and I used them as a reference.

@@ -12,15 +12,15 @@ tags:
 translation_key: saml-2-0-spec-summary
 ---
 
-OASIS Security Assertion Markup Language (SAML) 2.0 summary.
+OASIS Security Assertion Markup Language (SAML) 2.0 key points summary.
 
 ---
 
 ## Overview
 
-SAML (Security Assertion Markup Language) is an **XML-based standard for authentication and authorization data exchange**.
+SAML (Security Assertion Markup Language) is an **XML-based standard for exchanging authentication and authorization data**.
 
-It provides a framework for securely exchanging user authentication and attribute information across different security domains. It is primarily used for SSO (Single Sign-On) in enterprise environments.
+It is a framework for securely exchanging user authentication and attribute information between different security domains. It is primarily used for SSO (Single Sign-On) in enterprise environments.
 
 | Item | Content |
 |-----|------|
@@ -49,16 +49,16 @@ It provides a framework for securely exchanging user authentication and attribut
 
 | Term | Description |
 |-----|------|
-| **Identity Provider (IdP)** | The entity that authenticates the user and issues Assertions |
-| **Service Provider (SP)** | The entity that receives Assertions and provides services |
-| **Assertion** | An XML document containing authentication, attribute, and authorization information issued by the IdP |
-| **Principal** | The entity being authenticated (usually an end user) |
+| **Identity Provider (IdP)** | Entity that authenticates users and issues Assertions |
+| **Service Provider (SP)** | Entity that receives Assertions and provides services |
+| **Assertion** | XML document issued by IdP containing authentication, attribute, and authorization information |
+| **Principal** | Entity being authenticated (usually the end-user) |
 
 ---
 
 ## Four Components of SAML
 
-SAML is composed of a hierarchical design.
+SAML is structured with a hierarchical design.
 
 ```mermaid
 flowchart TB
@@ -92,11 +92,11 @@ flowchart TB
 
 ### 1. Assertions
 
-An XML document containing security information about the subject.
+XML documents containing security information about the subject.
 
 ### 2. Protocols
 
-A set of message formats for request/response.
+Request/response message sets.
 
 ### 3. Bindings
 
@@ -145,36 +145,36 @@ Combinations of Assertions, Protocols, and Bindings for specific use cases.
 </saml:Assertion>
 ```
 
-### Three Types of Statement
+### Three Types of Statements
 
 | Statement | Description |
 |-----------|------|
-| **AuthnStatement** | Information about authentication events (authentication method, authentication time) |
+| **AuthnStatement** | Information about the authentication event (method, time) |
 | **AttributeStatement** | User attribute information (name, email, group, etc.) |
-| **AuthzDecisionStatement** | Authorization decision (permission/denial to access resources) |
+| **AuthzDecisionStatement** | Authorization decision (access permission/denial to resources) |
 
 ### SubjectConfirmation Method
 
-Methods to verify the validity of the Assertion.
+Method to confirm the validity of an Assertion.
 
 | Method | Description |
 |--------|------|
 | **bearer** | Usable by the holder of the Assertion |
-| **holder-of-key** | Usable by the holder who proves possession of a specific key |
-| **sender-vouches** | Usable based on confirmation by the issuer |
+| **holder-of-key** | Usable by the holder of a specific key |
+| **sender-vouches** | Usable based on criteria confirmed by the issuer |
 
 ---
 
 ## Protocols
 
-### Main Protocols
+### Major Protocols
 
 | Protocol | Description |
 |-----------|------|
 | **Authentication Request Protocol** | SP requests authentication from IdP |
 | **Single Logout Protocol** | Logout from all SPs |
 | **Artifact Resolution Protocol** | Obtain Assertion via Artifact |
-| **Name Identifier Management Protocol** | Change or terminate identifiers |
+| **Name Identifier Management Protocol** | Change/terminate identifiers |
 
 ### AuthnRequest
 
@@ -227,17 +227,17 @@ Methods for transferring SAML messages.
 
 | Binding | Method | Features |
 |---------|---------|------|
-| **HTTP Redirect** | GET | Sent compressed in URL query parameters. Size limit applies |
-| **HTTP POST** | POST | Sent Base64 encoded in HTML form |
+| **HTTP Redirect** | GET | Sent as URL query parameters with DEFLATE compression. Size limit applies |
+| **HTTP POST** | POST | Sent as Base64 encoded in HTML form |
 | **HTTP Artifact** | GET/POST | Sends a small Artifact for reference, retrieved separately |
-| **SOAP** | POST | Sent in a SOAP envelope. Back-channel communication |
+| **SOAP** | POST | Sent in SOAP envelope. Back-channel communication |
 | **PAOS** | - | Reverse SOAP. For ECP Profile |
 
 ### HTTP Redirect Binding
 
 ```
 https://idp.example.com/sso?
-    SAMLRequest=fZJNT8MwDIbv... (DEFLATE + Base64)
+    SAMLRequest=fZJNT8MwDIbv...（DEFLATE + Base64）
     &RelayState=token
     &SigAlg=...
     &Signature=...
@@ -247,7 +247,7 @@ https://idp.example.com/sso?
 
 ```html
 <form method="post" action="https://sp.example.com/acs">
-    <input type="hidden" name="SAMLResponse" value="PHNhbW... (Base64)"/>
+    <input type="hidden" name="SAMLResponse" value="PHNhbW...（Base64）"/>
     <input type="hidden" name="RelayState" value="token"/>
     <input type="submit" value="Submit"/>
 </form>
@@ -272,15 +272,15 @@ sequenceDiagram
     U->>SP: (1) Access protected resource
     SP-->>U: (2) Redirect to IdP<br/>(AuthnRequest)
     U->>IdP: (3) Send AuthnRequest
-    IdP->>U: (4) Display login screen
+    IdP->>U: (4) Display login page
     U-->>IdP: (5) Enter authentication information
     IdP-->>U: (6) Redirect to SP<br/>(Response + Assertion)
     U->>SP: (7) Send Response
-    Note over SP: (8) Signature verification and Assertion processing
+    Note over SP: (8) Verify signature and process Assertion
     SP-->>U: (9) Grant access to resource
 ```
 
-**Features**: The user first accesses the SP and requests authentication from the IdP.
+**Feature**: The user first accesses the SP and requests authentication from the IdP.
 
 #### IdP-Initiated SSO
 
@@ -294,11 +294,11 @@ sequenceDiagram
     U->>IdP: (2) Click link to SP
     IdP-->>U: (3) Redirect to SP<br/>(Response + Assertion)
     U->>SP: (4) Send Response
-    Note over SP: (5) Signature verification and Assertion processing
+    Note over SP: (5) Verify signature and process Assertion
     SP-->>U: (6) Grant access to resource
 ```
 
-**Features**: The user logs in to the IdP first and then accesses the SP. No AuthnRequest is needed.
+**Feature**: The user logs in to the IdP first and accesses the SP from there. No AuthnRequest needed.
 
 ### Single Logout Profile
 
@@ -314,16 +314,16 @@ sequenceDiagram
     IdP->>SP2: (3) LogoutRequest
     SP2-->>IdP: (4) LogoutResponse
     IdP-->>SP1: (5) LogoutResponse
-    SP1-->>U: (6) Logout completed
+    SP1-->>U: (6) Logout complete
 ```
 
 ---
 
-## Combinations of Binding and Profile
+## Binding × Profile Combinations
 
-Combinations available for the Web Browser SSO Profile:
+Possible combinations for Web Browser SSO Profile:
 
-| Sending AuthnRequest | Sending Response |
+| AuthnRequest Sending | Response Sending |
 |-----------------|--------------|
 | HTTP Redirect | HTTP POST |
 | HTTP POST | HTTP POST |
@@ -334,9 +334,9 @@ Combinations available for the Web Browser SSO Profile:
 
 ## Metadata
 
-An XML document describing the configuration information for IdP and SP.
+XML documents describing IdP and SP configuration information.
 
-### Example IdP Metadata
+### IdP Metadata Example
 
 ```xml
 <EntityDescriptor entityID="https://idp.example.com">
@@ -354,7 +354,7 @@ An XML document describing the configuration information for IdP and SP.
 </EntityDescriptor>
 ```
 
-### Example SP Metadata
+### SP Metadata Example
 
 ```xml
 <EntityDescriptor entityID="https://sp.example.com">
@@ -377,7 +377,7 @@ An XML document describing the configuration information for IdP and SP.
 
 | Item | Description |
 |-----|------|
-| EntityID | Unique identifier for the entity (URI) |
+| EntityID | Unique identifier of the entity (URI) |
 | SSO Endpoint | URL for Single Sign-On |
 | SLO Endpoint | URL for Single Logout |
 | ACS | Assertion Consumer Service URL |
@@ -407,20 +407,20 @@ An XML document describing the configuration information for IdP and SP.
 | Threat | Countermeasure |
 |-----|------|
 | **Replay Attack** | Assertion expiration (NotOnOrAfter), InResponseTo verification |
-| **Man-in-the-Middle Attack** | TLS required, signature verification |
-| **Assertion Forgery** | Signature verification via XML Signature |
+| **Man-in-the-Middle Attack** | Mandatory TLS, signature verification |
+| **Assertion Forgery** | Signature verification with XML Signature |
 | **Session Hijacking** | Secure session management, SLO implementation |
 
-### Assertion Validation Checklist
+### Assertion Verification Checklist
 
-| Item | Validation Content |
+| Item | Verification Content |
 |-----|---------|
 | Signature | Signed with the legitimate IdP's private key |
-| Issuer | Is it the EntityID of a trusted IdP? |
-| Audience | Is it the target of the SP? |
-| NotBefore / NotOnOrAfter | Is it within the valid period? |
-| InResponseTo | Does it match the ID of the sent AuthnRequest? |
-| Recipient | Does it match the SP's ACS URL? |
+| Issuer | Trusted IdP's EntityID |
+| Audience | Targeted to own SP |
+| NotBefore / NotOnOrAfter | Within valid period |
+| InResponseTo | Matches the ID of the sent AuthnRequest |
+| Recipient | Matches own SP's ACS URL |
 
 ---
 
@@ -432,16 +432,16 @@ Format of user identifiers.
 |--------|------|
 | `unspecified` | No specific format |
 | `emailAddress` | Email address format |
-| `persistent` | Permanent pseudonymous identifier |
+| `persistent` | Persistent pseudonymous identifier |
 | `transient` | Temporary identifier (per session) |
-| `X509SubjectName` | Subject of the X.509 certificate |
+| `X509SubjectName` | X.509 certificate Subject |
 
 ### Privacy Considerations
 
-| Format | Use |
+| Format | Usage |
 |--------|------|
-| **persistent** | Permanently identify the same user (but opaque value) |
-| **transient** | One-time identifier. Prevents association across SPs |
+| **persistent** | Persistently identify the same user (opaque value) |
+| **transient** | One-time identifier. Prevents linking across SPs |
 
 ---
 
@@ -452,8 +452,8 @@ Format of user identifiers.
 | StatusCode | Description |
 |------------|------|
 | `Success` | Success |
-| `Requester` | Error on the request side |
-| `Responder` | Error on the response side |
+| `Requester` | Error on the requester's side |
+| `Responder` | Error on the responder's side |
 | `VersionMismatch` | SAML version mismatch |
 
 ### Second-Level Status Code
@@ -461,7 +461,7 @@ Format of user identifiers.
 | StatusCode | Description |
 |------------|------|
 | `AuthnFailed` | Authentication failed |
-| `NoPassive` | Passive authentication not allowed |
+| `NoPassive` | Passive authentication not possible |
 | `UnknownPrincipal` | Unknown user |
 | `RequestDenied` | Request denied |
 

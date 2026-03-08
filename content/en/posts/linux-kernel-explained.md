@@ -1,15 +1,21 @@
 ---
-title: Understanding the Linux Kernel Through Illustrations
+title: Understanding the Linux Kernel with Illustrations
 slug: linux-kernel-explained
 date: 2025-01-31T00:00:00Z
 author: bmf-san
 categories:
-  - OS
+  - Operating Systems
 tags:
   - Linux
-  - Books
+  - Book
   - Kernel
 translation_key: linux-kernel-explained
 ---
 
-[Understanding the Linux Kernel Through Illustrations](https://amzn.to/3WFteaw) is an easy-to-understand book about the workings of the Linux kernel for beginners. There were some parts that I couldn't grasp fully, but... Since I know very little about the Linux kernel, I want to use this as a starting point to study a bit more.
+
+
+[I read "Understanding the Linux Kernel with Illustrations"](https://amzn.to/3WFteaw).
+
+The book is written in a way that makes the workings of the Linux kernel easy to understand, even for beginners. There were parts I couldn't fully grasp, though...
+
+Since there are many things I don't know about the Linux kernel, I want to use this as a starting point to study a bit more.

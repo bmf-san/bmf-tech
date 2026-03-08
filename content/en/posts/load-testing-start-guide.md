@@ -7,135 +7,138 @@ categories:
   - Architecture
 tags:
   - Load Testing
+description: A guide to understanding and starting load testing.
 translation_key: load-testing-start-guide
 ---
 
+
+
 # Overview
-This post summarizes the content to help you understand load testing and get started with it.
+This guide compiles content to help you understand and start load testing.
 
 # What is Load Testing?
-Load testing is a **testing method to verify system performance**.
+It is a **testing method to verify the performance of a system**.
 
-It aims to clarify whether the system can maintain its expected capacity (performance tolerance), what system impacts occur under excessive load, and where performance-related bottlenecks are.
+This method aims to clarify whether the system can maintain its expected capacity (performance tolerance), what system impacts occur under excessive load, and where performance bottlenecks are.
 
-*Note: In this article, load testing and performance testing are treated as synonymous, while load test and stress test are also considered equivalent.*
+※ In this article, load testing and performance testing, as well as load test and stress test, are treated as synonymous.
 
 # Methods
-There are four main testing methods for load testing.
+Load testing can be broadly divided into four testing methods.
 
-While there are various definitions, these four methods generally apply.
+There are various definitions, but they generally fall into these four methods.
 
-Choose the testing method based on the purpose of load testing (what you want to test).
+Choose the testing method according to the purpose of the load test (what you want to test).
 
 ## Load Testing
-This method tests with a **constant level of requests**.
+A method that **tests with a constant level of requests**.
 
-The goal is to **verify whether the expected performance is met**.
+The purpose is to **verify whether the expected performance is met**.
 
 ## Stress Testing
-This method tests with requests that assume **limits**.
+A method that **tests with requests assuming limits**.
 
-The goal is to **clarify the performance limits and verify what kind of failures occur when exceeding tolerance levels**.
+The purpose is to **clarify the performance limit level and verify what kind of failures the system causes when the tolerance is exceeded**.
 
 ## Soak Testing
-This method tests with a **constant level of requests over a certain period (long duration)**.
+A method that **tests with a constant level of requests over a certain period (long duration)**.
 
-The goal is to **verify what impacts occur based on the system's resource status**.
+The purpose is to **verify what impact occurs according to the system's resource status**.
 
 Soak testing is synonymous with long-run testing.
 
 ## Baseline Testing
-This method tests based on **single user requests**.
+A method that **tests based on a single user's request**.
 
-The goal is to **identify performance benchmarks or analyze the degree of performance degradation compared to other test results**.
+The purpose is to **identify performance benchmarks and analyze the degree of performance degradation by comparing with other test results**.
 
-*Note: While benchmark testing and baseline testing seem synonymous, there are differences.*
+※ Although benchmark testing and baseline testing seem synonymous, there appears to be a difference.
 
-cf. [loadview - Explanation of Benchmark Testing](https://www.loadview-testing.com/ja/blog/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9-%E3%83%86%E3%82%B9%E3%83%88-%E3%83%99%E3%83%BC%E3%82%B9%E3%83%A9%E3%82%A4%E3%83%B3-%E3%83%86%E3%82%B9%E3%83%88%E3%81%A8%E3%83%99/) 
+cf. [loadview - Explanation of Benchmark Testing](https://www.loadview-testing.com/ja/blog/%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9-%E3%83%86%E3%82%B9%E3%83%88-%E3%83%99%E3%83%BC%E3%82%B9%E3%83%A9%E3%82%A4%E3%83%B3-%E3%83%86%E3%82%B9%E3%83%88%E3%81%A8%E3%83%99/)
 
 # Flow of Load Testing
-The flow of load testing is explained in terms of planning and execution.
+The flow of load testing is explained by dividing it into planning and execution.
 
 ## Planning
 ### Setting Objectives
-Clarify the **purpose of conducting load testing**, such as whether you want to test for performance degradation, know the limit performance, or meet required non-functional requirements.
+Clarify the **purpose** of conducting load testing, such as whether you want to test for no performance degradation, know the performance limits, or meet the required non-functional requirements.
 
-Consider **what risks exist if the objectives are not met**.
+Consider the **risks if the objectives are not met**. It's good to think about it in conjunction with risks.
 
-Examples:
-- Confirm that there is no performance degradation due to modifications to existing APIs.
-- Validate whether new features can withstand expected traffic.
-- Understand performance trends to define API throttling and quotas.
+ex.
+- Want to confirm that there is no performance degradation due to modifications of existing APIs
+- Want to verify if a new feature can withstand expected traffic
+- Want to understand performance trends to set API throttling or quotas
 
 ### Investigation
-Investigate the configuration and specifications of the system to be tested, as well as access conditions based on the objectives.
+Investigate the system configuration, functional specifications, access status, etc., to be tested according to the purpose.
 
 - Infrastructure configuration
 - Functional specifications
 - System resource usage
-- Access conditions
+- Access status
 
-Organize sufficient information necessary for planning.
+Organize the necessary information for planning sufficiently.
 
-Insufficient preparation may lead to ad-hoc responses during testing, affecting the credibility of the test results.
+Lack of preparation can lead to ad-hoc responses during testing, affecting the credibility of test results.
 
-Also, check the testing environment.
+It is also good to check the test execution environment.
 
 ### Setting Performance Goals and Metrics
-Clearly define performance goals as criteria for achieving objectives.
+Clarify performance goals as achievement criteria for the purpose.
 
-Examples:
-- When there are requests on the top screen with over 1000 simultaneous connections, the response time should be below an average of 800ms.
-- When continuously receiving request volumes during business days, the CPU usage should hover around an average of 20%.
+ex.
+- When there are requests to the top page with more than 1000 concurrent connections, the average response time should be below 800ms
+- When continuously accepting the request volume during regular hours over a period assuming business days, the CPU usage should hover around an average of 20%
 
-The more specific the performance goals, the easier it is to anticipate measurement metrics.
+The more specific the performance goals, the easier it is to anticipate metrics.
 
 ### Creating Test Scenarios
-Clarify how to apply load to the system with specific requests.
+Clarify what kind of requests will load the system.
 
 Depending on the purpose and method, consider how the test subject will be used by users.
 
 For example, in a load test to verify the response time of a My Page:
 
-1. Access the login page.
-2. Press the login button.
-    - Authentication information is set in cookies.
-    - User information retrieval API is called.
-3. Transition to My Page.
-    - After authentication processing, redirect occurs.
-    - User setting information retrieval API is called.
+1. Access the login page
+2. Press the login button
+    - Authentication information is set in the cookie
+    - User information retrieval API is called
+2. Transition to My Page
+    - Redirect after authentication processing
+    - User settings information retrieval API is called
 
-You need to clearly outline the processes that need to be emulated based on the state users will have when making requests.
+It is necessary to clarify what state the user is in when making requests about the test subject and write out the processes that need to be emulated.
 
 ## Execution
 ### 1. Preparation
-Prepare the following for testing execution:
+Prepare the following for test execution.
 
-- Prepare the execution environment.
-    - Set up the infrastructure environment for load testing and load testing tools.
-- Prepare test data.
-- Share with stakeholders.
-    - Communicate the impact of load testing to relevant parties both inside and outside the organization.
-    - → Estimate the impact range in advance.
-- Confirm monitoring targets.
-    - Organize the monitoring targets (logs, metrics, etc.) to be used during testing.
-    - It’s good to prepare a monitoring dashboard in advance.
+- Preparation of the execution environment
+    - Prepare the infrastructure environment for load testing and load testing tools
+- Preparation of test data
+- Sharing with stakeholders
+  - Share the impact of load testing with stakeholders both inside and outside the company
+    - → Estimate the impact range in advance
+- Confirmation of monitoring targets
+    - Organize the monitoring targets (logs, metrics, etc.) used during test execution
+    - It is good to prepare a monitoring dashboard in advance
 
-### 2. Conduct Testing
-Execute the tests.
+### 2. Test Execution
+Execute the test.
 
-### 3. Analyze Results
-Observe where spikes occurred, whether there are increasing or decreasing trends, or if unfamiliar errors are frequently occurring, and consider causes and countermeasures.
+### 3. Result Analysis
+Observe where spikes occurred, if there are increasing or decreasing trends, or if unfamiliar errors are frequent, and consider causes and countermeasures.
 
 ### Tuning
-Based on the analysis results, perform tuning if necessary and re-execute the tests.
+Based on the analysis results, perform tuning if necessary and re-execute.
 
 # Conclusion
-Above all, the purpose is crucial. If the purpose becomes unclear, the subsequent processes lose their meaning.
+In any case, the purpose is important. If the purpose wavers, the subsequent process becomes meaningless.
 
 # References
 - [Capacity Planning](https://www.oreilly.co.jp/books/9784873113999/)
-    - An old book, but a rare one that discusses capacity planning.
-    - The significance of capacity planning has not diminished in the cloud-dominated modern era, so it may be worth keeping.
+    - An old book but a rare one written about capacity planning
+    - The significance of capacity planning has not disappeared in the cloud-dominated modern era, so it seems worth having
 - [Web API Testing Techniques](https://www.shoeisha.co.jp/book/detail/9784798179728)
-    - There aren’t many books that discuss methods for conducting load testing, but this book dedicates a chapter to it.
+    - There aren't many books that write about how to conduct load testing, but this book dedicates a chapter to it

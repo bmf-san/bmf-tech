@@ -1,5 +1,5 @@
 ---
-title: Using Workspace Mode in Go's Multi-Module Structure
+title: Using Workspace Mode with Go's Multi-Module Structure
 slug: go-multi-module-workspace-mode
 date: 2024-01-19T00:00:00Z
 author: bmf-san
@@ -7,16 +7,18 @@ categories:
   - Application
 tags:
   - Golang
+description: Exploring the Workspace mode introduced in Go 1.18.
 translation_key: go-multi-module-workspace-mode
 ---
 
-I had never used Workspace mode, which was added in Go 1.18, so I decided to give it a try.
 
-# What is Workspace Mode
-A feature that facilitates Go's multi-module structure.
+I had never used the Workspace mode added in Go 1.18, so I decided to give it a try.
+
+# What is Workspace Mode?
+A feature to facilitate Go's multi-module structure.
 
 # How to Use Workspace Mode
-Prepare the following structure.
+Prepare the following structure:
 
 ```
 .
@@ -33,6 +35,7 @@ package foo
 func Foo() string {
 	return "foo"
 }
+
 ```
 
 ```go
@@ -44,17 +47,17 @@ func Bar() string {
 }
 ```
 
-Run the following command in the foo directory to set up go.mod.
+Execute the following command in the foo directory to set up go.mod.
 ```sh
 go mod init example.com/foo
 ```
 
-Similarly, run the following command in the bar directory to set up go.mod.
+Similarly, execute the following command in the bar directory to set up go.mod.
 ```sh
 go mod init example.com/bar
 ```
 
-Next, create a cmd directory and create the main.go file as follows.
+Next, create a cmd directory and create a main.go file as follows:
 
 ```go
 package main
@@ -75,7 +78,7 @@ Set up go.mod in the cmd directory as well.
 go mod init example.com/cmd
 ```
 
-At this point, the structure will look like this.
+At this point, the structure will be as follows:
 
 ```sh
 .
@@ -90,13 +93,14 @@ At this point, the structure will look like this.
     └── go.mod
 ```
 
-In the root directory, run the following command to configure the workspace.
+In the root directory, execute the following command to configure the workspace.
+
 
 ```sh
 go work init foo bar cmd
 ```
 
-A file named go.work will be created.
+A file named go.work is created.
 
 ```go
 go 1.21.1
@@ -108,10 +112,10 @@ use (
 )
 ```
 
-Confirm that `go run cmd/main.go` can be executed.
+Verify that `go run cmd/main.go` can be executed.
 
 ```sh
-// Output
+// Execution result
 foo
 bar
 ```
@@ -144,7 +148,7 @@ func Baz() string {
 }
 ```
 
-Run `go mod init example.com/baz` to generate go.mod just like the other modules.
+Execute `go mod init example.com/baz` to generate go.mod like the other modules.
 
 Next, add baz to main.go.
 
@@ -164,7 +168,7 @@ func main() {
 }
 ```
 
-Return to the root and run `go work use baz` to add the module, which will add baz to go.work.
+Return to the root and execute `go work use baz` to add the module, and baz will be added to go.work.
 
 ```go
 go 1.21.1
@@ -177,17 +181,17 @@ use (
 )
 ```
 
-Run `go run cmd/main.go` to confirm that baz has been added to the output.
+Execute `go run cmd/main.go` and confirm that baz is added to the output.
 
 ```sh
-// Output
+// Execution result
 foo
 bar
 baz
 ```
 
-# Thoughts
-I thought the multi-module structure was cumbersome, so I'm glad it has become easier.
+# Impressions
+I thought the multi-module structure was cumbersome, so I'm glad it has become simpler.
 
 # References
 - [Tutorial: Getting started with multi-module workspaces](https://go.dev/doc/tutorial/workspaces)

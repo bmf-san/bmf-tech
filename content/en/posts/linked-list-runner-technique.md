@@ -4,22 +4,22 @@ slug: linked-list-runner-technique
 date: 2023-07-22T00:00:00Z
 author: bmf-san
 categories:
-  - Algorithms
-  - Data Structures
+  - Algorithms and Data Structures
 tags:
   - Algorithm
   - Data Structure
   - Runner Technique
   - Tips
+description: Summarizing the runner technique useful for traversing linked lists.
 translation_key: linked-list-runner-technique
 ---
 
-This post summarizes the runner technique useful for traversing linked lists.
+Summarizing the runner technique useful for traversing linked lists.
 
-I first learned about it in the book [Improve Your Programming Skills to Compete Globally ~ 189 Coding Interview Questions and Their Solutions](https://amzn.to/3q35TCw).
+I first learned about it from [Cracking the Coding Interview: 189 Programming Questions and Solutions](https://amzn.to/3q35TCw).
 
 # What is the Runner Technique?
-The runner technique involves using two pointers: one that traverses from the head of the linked list and another that traverses from a position ahead of the first pointer, allowing for simultaneous traversal.
+This method involves using two pointers: one that traverses from the head of the linked list and another that starts ahead of the first pointer, traversing simultaneously.
 
 This technique is useful for solving problems like the following example.
 
@@ -45,16 +45,16 @@ func (l *list) search(n int) *node {
 	n1 := l.head
 	n2 := l.head
 
-	// Set n1 to the nth node
+       // Set n1 to the kth node
 	for i := 0; i < n; i++ {
 		if n1 == nil {
 			return nil
 		}
 		n1 = n1.next
 	}
-
-	// n2 traverses from the head, while n1 traverses from the nth node.
-	// When n1 reaches the end node, n2 will be the nth node from the end.
+        
+　　　　　　　　// Traverse n2 from the head node, and n1 from the kth node.
+        // When n1 reaches the end node, n2 is the nth node from the end.
 	for n1 != nil {
 		n1 = n1.next
 		n2 = n2.next
@@ -87,7 +87,7 @@ func main() {
 
 Using the runner technique, the time complexity is O(N) and the space complexity is O(1).
 
-If the number of nodes in the linked list is known, you could simply solve it without needing two pointers, as (total nodes - n) would give you the nth node from the end. However, if that is not the case, you would either solve it this way or use recursion, which would increase the computational complexity...
+If the number of nodes in the linked list is known, you can solve it simply by noting that (total nodes - n) is the nth node from the end, but if not, you can solve it this way or use recursion. In the case of recursion, the complexity should increase...
 
 # Thoughts
-I think this technique could be useful in coding quizzes, so I want to keep it in mind.
+I want to keep this in mind as it might be useful in coding quizzes.

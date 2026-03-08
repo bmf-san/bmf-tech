@@ -10,18 +10,18 @@ tags:
 translation_key: go-rune-type-explained
 ---
 
-# What is rune Type
-An alias type for int32, representing Unicode code points.
+# What is the rune Type
+The rune type is an alias for int32 and represents a Unicode code point.
 
-Unicode is a standard for character encoding that defines character sets and encoding schemes, assigning numbers to the diverse languages, formats, and symbols of the world.
+Unicode is a standard character encoding that defines character sets and encoding schemes, assigning numbers to a wide variety of languages, formats, and symbols around the world.
 
-A character set is a collection of characters and symbols that are gathered in a way that avoids duplication for use on computers, referring to a correspondence table of characters and their assigned numbers. An encoding scheme refers to the data format that corresponds to the numbers assigned to characters.
+A character set is a collection of characters and symbols used on computers, ensuring no duplication, and refers to a table mapping characters to their assigned numbers. A character encoding scheme refers to the data format used by computers for the numbers assigned to characters.
 
-For example, character set: Unicode, encoding format: UTF-8.
+ex. Character set: Unicode, Encoding scheme: UTF-8
 
-The numbers assigned in Unicode are called code points, and the rune type serves to represent these code points.
+The numbers assigned in Unicode, etc., are called code points, and the rune type is used to represent these code points.
 
-For instance, Unicode U+0041 (in hexadecimal 0041) is the code point for the character 'A', classified as a basic Latin character, and when represented as a rune type, it looks like this:
+For example, Unicode U+0041 (hexadecimal 0041) is the code point for the character 'A', classified as a basic Latin letter, and can be represented using the rune type as follows:
 
 ```go
 package main
@@ -29,12 +29,12 @@ package main
 import "fmt"
 
 func main() {
-	var a rune = 'A'             // Single quotes indicate rune type
+	var a rune = 'A'             // Single quotes indicate a rune type
 	fmt.Printf("%T %U %#v\n", a, a) // int32 U+0041 65
 }
 ```
 
-The number 65 of type int32 is the decimal representation of 0041, representing the Unicode code point.
+The number 65 of type int32 is the decimal representation of 0041, representing a Unicode code point.
 
 # string Type and rune Type
 In Go, the string type is a read-only slice of bytes.
@@ -51,9 +51,9 @@ func main() {
 }
 ```
 
-Unlike the rune type, the string type does not hold code points.
+The string type, unlike the rune type, does not hold code points.
 
-The behavior of the string type varies depending on how it is looped through.
+The behavior of the string type varies depending on how you loop through it.
 
 ```go
 package main
@@ -62,7 +62,7 @@ import "fmt"
 
 func main() {
 	s := "Hello"
-	// Can retrieve bytes
+	// Bytes can be retrieved
 	for i := 0; i < len(s); i++ {
 		fmt.Println(s[i]) // 72 101 108 108 111
 	}
@@ -79,7 +79,7 @@ func main() {
 }
 ```
 
-When dealing with multibyte characters, it's important to pay attention to the behavior of loops.
+When handling multibyte characters, you need to pay attention to the behavior of loops.
 
 ```go
 package main
@@ -100,9 +100,9 @@ func main() {
 }
 ```
 
-Since one Japanese character is 3 bytes, in a non-range loop, even a single character will loop 3 times.
+Since a single Japanese character is 3 bytes, even for one character, the loop will iterate 3 times if not using a range.
 
-When obtaining the number of characters, it's also important to note that the string type is a slice of bytes.
+When obtaining the number of characters, remember that the string type is a slice of bytes.
 
 ```go
 package main
@@ -122,7 +122,7 @@ func main() {
 }
 ```
 
-Since len returns the byte length, to get the number of characters, use utf8.RuneCountInString.
+Since len returns the byte length, use utf8.RuneCountInString to get the number of characters.
 
 # References
 - [go.dev - Strings, bytes, runes and characters in Go](https://go.dev/blog/strings)
@@ -130,4 +130,4 @@ Since len returns the byte length, to get the number of characters, use utf8.Run
 - [ja.wikipedia.org - Character Set](https://ja.wikipedia.org/wiki/%E6%96%87%E5%AD%97%E9%9B%86%E5%90%88)
 - [ja.wikipedia.org - Character Encoding Scheme](https://ja.wikipedia.org/wiki/%E6%96%87%E5%AD%97%E7%AC%A6%E5%8F%B7%E5%8C%96%E6%96%B9%E5%BC%8F)
 - [ja.wikipedia.org - Character Code](https://ja.wikipedia.org/wiki/%E6%96%87%E5%AD%97%E3%82%B3%E3%83%BC%E3%83%89)
-- [wa3.i-3-i.info - Difference between Character Set and Character Encoding Scheme](https://wa3.i-3-i.info/diff749moji.html)
+- [wa3.i-3-i.info - Difference between "Character Set" and "Character Encoding Scheme"](https://wa3.i-3-i.info/diff749moji.html)

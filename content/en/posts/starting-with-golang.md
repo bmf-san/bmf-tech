@@ -7,8 +7,12 @@ categories:
   - Application
 tags:
   - Golang
-  - Books
+  - Book
 translation_key: starting-with-golang
 ---
 
-[Starting Go Language](https://amzn.to/3xY3SLw) is a relatively easy-to-understand introduction to Go.
+
+
+[I read Starting Go Language](https://amzn.to/3xY3SLw).
+
+As an introductory book to Go, it contains relatively straightforward content.

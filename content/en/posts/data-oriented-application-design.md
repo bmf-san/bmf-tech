@@ -11,6 +11,10 @@ tags:
 translation_key: data-oriented-application-design
 ---
 
-[Data-Oriented Application Design](https://amzn.to/3UC7RGD) is a classic in distributed system design.
 
-There are still many parts I don't fully understand, so I want to read it again.
+
+[Data-Oriented Application Design](https://amzn.to/3UC7RGD) is a book I read.
+
+A classic in distributed system design.
+
+There are many parts I haven't fully understood, so I want to read it again.

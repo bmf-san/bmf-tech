@@ -1,5 +1,5 @@
 ---
-title: Building a Vagrant Development Environment (CentOS 7.3) with Ansible
+title: Building a Vagrant Development Environment (CentOS7.3) with Ansible
 slug: setup-vagrant-environment-ansible
 date: 2017-09-26T00:00:00Z
 author: bmf-san
@@ -12,8 +12,9 @@ tags:
 translation_key: setup-vagrant-environment-ansible
 ---
 
+
 # Overview
-We will build a development environment on Vagrant's CentOS 7.3 using Ansible.
+We will set up a development environment on Vagrant's CentOS7.3 using Ansible.
 
 # Environment
 + PHP7
@@ -78,9 +79,9 @@ ansible/
 └── site.yml
 ```
 
-The source is available at [github - my-ansible-vagrant](https://github.com/bmf-san/my-ansible-vagrant).
+Please refer to the contents on [github - my-ansible-vagrant](https://github.com/bmf-san/my-ansible-vagrant).
 
-The Vagrantfile looks like this:
+The Vagrantfile looks like this.
 
 ```
 # -*- mode: ruby -*-
@@ -93,7 +94,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.network "private_network", ip: "192.168.33.10"
 
-  config.vm.synced_folder "/path/to/directory", "/var/www/html", :mount_options => ["dmode=775,fmode=664"]
+  config.vm.synced_folder "/path/to/directory", "/var/www/html",:mount_options => ["dmode=775,fmode=664"]
 
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "ansible/site.yml"
@@ -107,28 +108,35 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 end
 ```
 
-You can run provisioning with `vagrant provision`.
+You can execute provisioning with `vagrant provision`.
 
 # Additional Notes
 
-## Is the php-fpm configuration incorrect??
-To use PHP7 with nginx, it seems necessary to use something called php-fpm as a CGI, which can be tricky. If you encounter a 500 error, reviewing this configuration might resolve the issue.
+## Issues with php-fpm Configuration?
+To use php7 with nginx, it seems necessary to use a CGI called php-fpm, which was quite tricky. If you encounter a 500 error, reviewing these settings might solve the issue.
 
-## Unable to access the IP address specified in the Vagrantfile
-Although the setup was successful, I struggled to access the IP specified in the Vagrantfile. By reviewing the IP settings and adjusting the firewalld configuration based on the following articles, I managed to resolve it. (It seems I encountered a bug in vagrant 1.9.0.)
+[VAGRANTにてCENTOS7にNGINX+PHP-FPM+PHP7でLARAVELの開発環境構築(前編)](https://namaikinamaiki.wordpress.com/2015/11/02/vagrant%E3%81%AB%E3%81%A6centos7%E3%81%ABnginxphp-fpmphp7%E3%81%A7laravel%E3%81%AE%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89%EF%BC%91/)
+
+## Cannot Access the IP Address Specified in Vagrantfile
+Although the setup was completed, I struggled quite a bit because I couldn't access the IP specified in the Vagrantfile. By referring to the following articles, I reviewed the IP settings and adjusted the firewalld settings, which eventually resolved the issue. (It seems the cause was a bug in vagrant1.9.0.)
+
++ [[Vagrant]Vagrantfileで指定したipアドレスでアクセスができない場合の対応](http://to-developer.com/blog/?p=1827)
++ [Vagrantでpingが通らない！ゆえにVagrantネットワークを学び直したよ](http://www.kaasan.info/archives/3665)
++ [vagrant + centos7 でprivate_networkで設定したIPに接続ができない](http://qiita.com/junqiq/items/a19d3ea48b072a1b28d3)
++ [Vagrant で CentOS7 + PHP + MySQL の仮想環境を構築する](http://fnya.cocolog-nifty.com/blog/2015/12/vagrant-centos7.html)
 
 # Impressions
-CentOS 7 has quite a few differences from previous OS versions, but I didn't struggle too much with those. Rather, I had more trouble with MySQL 5.7. It works for now, but I believe there is still room for improvement.
+There are quite a few differences in CentOS7 compared to previous OS versions, but I didn't struggle much with those. Instead, I had more trouble with MySQL5.7. It works for now, but I think there's still room for improvement.
 
 # References
-+ [github - MiyaseTakurou/vagrant_ansible_laravel](https://github.com/MiyaseTakurou/vagrant_ansible_laravel) - The directory structure following best practices was easy to understand.
-+ [Initializing virtual machines nicely in vagrant + ansible + CentOS7.0 + VirtualBox environment](http://qiita.com/omochimetaru/items/94bda388dbd05d782f7a)
-+ [Building nginx + wordpress with ansible on CentOS7](http://qiita.com/tamanugi/items/2a7fa9701f414ed663c0)
-+ [Building a LAMP environment with Vagrant + ansible (4)](http://qiita.com/k-serenade/items/0ab59f9563493f0cf293)
-+ [Installing PHP7 and Nginx in a Vagrant Ubuntu 16.04 environment with Ansible](http://koltatt.net/programing/ansible_ubuntu_php/)
-+ [Setting up a Ruby environment on CentOS with Vagrant + Ansible](http://qiita.com/yoshiokaCB/items/772bfadf6b7505cb8ba9)
++ [github - MiyaseTakurou/vagrant_ansible_laravel](https://github.com/MiyaseTakurou/vagrant_ansible_laravel) - The directory structure for best practices was easy to understand.
++ [vagrant + ansible + CentOS7.0 + VirtualBox 環境で仮想マシンを良い感じに初期化する](http://qiita.com/omochimetaru/items/94bda388dbd05d782f7a)
++ [CentOS7でansibleを使ってnginx+wordpressを構築](http://qiita.com/tamanugi/items/2a7fa9701f414ed663c0)
++ [Vagrant+ansibleでLAMP環境構築（４）](http://qiita.com/k-serenade/items/0ab59f9563493f0cf293)
++ [AnsibleでVagrantのubuntu16.04環境にPHP7とNginxをインストールする](http://koltatt.net/programing/ansible_ubuntu_php/)
++ [Vagrant + Ansible でCentOSにRubyの環境構築してみる。](http://qiita.com/yoshiokaCB/items/772bfadf6b7505cb8ba9)
 + [ansible mysql5.7](http://astail.net/?p=1178)
 + [Mysql 5.7 on Ansible](https://www.rennetti.com/howto/139/mysql-5-7-on-ansible)
-+ [Building an environment to manipulate Redis with Vagrant + Ansible](http://qiita.com/master-of-sugar/items/e78b173553f5233cd8bd)
-+ [Ansible Playbook to install Redis version 2.5 and later](http://qiita.com/joytomo/items/d0cb45074c61dd8935fd)
++ [Redisをいじくり倒す環境をVagrant+Ansibleで構築する](http://qiita.com/master-of-sugar/items/e78b173553f5233cd8bd)
++ [AnsibleでRedisの2.5以降のバージョンをインストールするPlaybook](http://qiita.com/joytomo/items/d0cb45074c61dd8935fd)
 + [github - heybigname/ansible](https://github.com/heybigname/ansible/blob/master/tasks/mailcatcher.yml)

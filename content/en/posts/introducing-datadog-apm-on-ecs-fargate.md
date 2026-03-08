@@ -1,5 +1,5 @@
 ---
-title: Implementing Datadog APM in ECS on Fargate
+title: Implementing Datadog APM in ECS on Fargate Environment
 slug: introducing-datadog-apm-on-ecs-fargate
 date: 2021-10-19T00:00:00Z
 author: bmf-san
@@ -13,11 +13,13 @@ tags:
 translation_key: introducing-datadog-apm-on-ecs-fargate
 ---
 
+
+
 # Overview
-This is a collection of notes on implementing Datadog APM in an ECS on Fargate environment.
+A casual note on implementing Datadog APM in an ECS on Fargate environment.
 
 # Adjusting PHP Container Image
-We are using a custom image based on the php-fpm image. Since we need the datadog-php-tracer, we incorporate it into the image as follows:
+We are using a custom image based on the php-fpm image. Since the datadog-php-tracer is required, it is incorporated into the image as follows:
 ```yaml
 ENV DDTRACE_VERSION=0.65.1
 
@@ -26,8 +28,8 @@ RUN curl -Lo datadog-php-tracer.apk https://github.com/DataDog/dd-trace-php/rele
     && rm datadog-php-tracer.apk
 ```
 
-In the fpm configuration, we set it to read environment variables:
-```ini
+In the fpm settings, configure it to read environment variables.
+```
 // fpm.www.conf
 clear_env = yes
 
@@ -51,7 +53,7 @@ Set up the necessary environment for both PHP and Datadog.
     "environment": [
       {
         "name": "DD_AGENT_HOST",
-        "value": "${DATADOG_AGENT_HOST}" // Datadog is a sidecar, so localhost is fine here
+        "value": "${DATADOG_AGENT_HOST}" // Since Datadog is a sidecar, localhost is fine here
       },
       {
         "name": "DD_SERVICE",
@@ -84,8 +86,7 @@ Set up the necessary environment for both PHP and Datadog.
       }
     ]
   }
-]
 ```
 
 # Conclusion
-With this setup, APM should be operational. This is probably the minimum configuration needed. If it doesn't work properly, check the Datadog section using `phpinfo()`.
+With this, APM should be operational. This is probably the minimum configuration required. If it doesn't work well, it's a good idea to check the datadog section in `phpinfo()`.

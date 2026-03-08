@@ -1,5 +1,5 @@
 ---
-title: Convert Markdown Files to PDF (with mermaid, emoji, and TOC support)
+title: Convert Markdown Files to PDF (Supports mermaid, emoji, toc)
 slug: markdown-to-pdf-conversion
 date: 2022-09-01T00:00:00Z
 author: bmf-san
@@ -11,45 +11,46 @@ tags:
   - emoji
   - mermaid
   - JavaScript
+description: A simple document management tool to convert Markdown files to PDF, supporting mermaid, emoji, and toc.
 translation_key: markdown-to-pdf-conversion
 ---
 
 # Overview
-I created a simple document management tool to meet the demand for converting Markdown files to PDF files.
+I created a simple document management tool to meet the demand for converting Markdown files to PDF.
 
 [bmf-san/docs-md-to-pdf-example](https://github.com/bmf-san/docs-md-to-pdf-example)
 
-Since I utilized existing libraries without much thought, the structure feels quite unsustainable.
+I used existing libraries without much thought, so the structure doesn't feel very sustainable.
 
 # Motivation
-If you simply want to convert Markdown files to PDF, you can just use the [md-to-pdf](https://github.com/simonhaenisch/md-to-pdf) library.
+If you just want to convert Markdown files to PDF, you can simply use a library called [md-to-pdf](https://github.com/simonhaenisch/md-to-pdf).
 
-This library has also been helpful for managing my resume.
-cf. [Managing my resume on GitHub](https://bmf-tech.com/posts/Github%e3%81%a7%e3%83%ac%e3%82%b8%e3%83%a5%e3%83%a1%e3%82%92%e7%ae%a1%e7%90%86%e3%81%99%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%97%e3%81%9f)
+This library is also helpful for managing resumes.
+cf. [Managing Resumes on Github](https://bmf-tech.com/posts/Github%e3%81%a7%e3%83%ac%e3%82%b8%e3%83%a5%e3%83%a1%e3%82%92%e7%ae%a1%e7%90%86%e3%81%99%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%97%e3%81%9f)
 
-I wanted to support mermaid syntax and use emojis that are not registered in Unicode, so I wanted to create something that accommodates those needs.
+I wanted to create something that supports mermaid notation and emojis not registered in unicode.
 
-Using the [vscode-markdown-pdf](https://github.com/yzane/vscode-markdown-pdf) extension makes it easy to solve this, but it requires VSCode, which means some people would need to install it.
+Using the [vscode-markdown-pdf](https://github.com/yzane/vscode-markdown-pdf) extension for VSCode can easily solve this, but it requires VSCode, which some people may need to install.
 
-I thought it was nonsensical to use VSCode just for conversion, so I decided to implement it myself.
+I thought using VSCode just for conversion was nonsensical, so I implemented it.
 
 # Design
-The [md-to-pdf](https://github.com/simonhaenisch/md-to-pdf) library is easy to use and a great library, but currently, the following features are not supported by default:
+The library [md-to-pdf](https://github.com/simonhaenisch/md-to-pdf) is easy to use and great, but it currently doesn't support the following features by default:
 
-- mermaid syntax
-- emojis (other than those registered in Unicode)
+- Mermaid notation
+- Emojis (other than those registered in unicode)
 - TOC generation
 
-Since [md-to-pdf](https://github.com/simonhaenisch/md-to-pdf) allows for configuration extensions of [markedjs/marked](https://github.com/markedjs/marked), it seems possible to achieve all of these by customizing [md-to-pdf](https://github.com/simonhaenisch/md-to-pdf).
+Since [md-to-pdf](https://github.com/simonhaenisch/md-to-pdf) allows configuration extensions with [markedjs/marked](https://github.com/markedjs/marked), it seems possible to achieve these by customizing [md-to-pdf](https://github.com/simonhaenisch/md-to-pdf).
 
-It seems that TOC support is planned.
+There seems to be a plan to support TOC.
 [Generate TOC (table of contents) #74](https://github.com/simonhaenisch/md-to-pdf/issues/74)
 
-While it would have been fine to use [md-to-pdf](https://github.com/simonhaenisch/md-to-pdf), it seemed a bit cumbersome, so I wanted to implement it quickly in a hackathon-like manner, so I decided to use the [md-to-pdf-ng](https://github.com/mikewootc/md-to-pdf-ng) library.
+Although using [md-to-pdf](https://github.com/simonhaenisch/md-to-pdf) was an option, it seemed a bit cumbersome, so I wanted to implement it quickly like a hackathon and decided to use a library called [md-to-pdf-ng](https://github.com/mikewootc/md-to-pdf-ng).
 
-This library extends [md-to-pdf](https://github.com/simonhaenisch/md-to-pdf) to support mermaid syntax, and while it doesn't seem to be maintained much, it works without issues.
+This library extends [md-to-pdf](https://github.com/simonhaenisch/md-to-pdf) to support mermaid notation. It doesn't seem to be well-maintained, but it works without issues.
 
-Based on [md-to-pdf-ng](https://github.com/mikewootc/md-to-pdf-ng), I used [node-emojify](https://github.com/jesselpalmer/node-emojify) for emoji support and [doctoc](https://github.com/thlorenz/doctoc) for TOC generation.
+Based on [md-to-pdf-ng](https://github.com/mikewootc/md-to-pdf-ng), emoji support is achieved using [node-emojify](https://github.com/jesselpalmer/node-emojify), and TOC generation is achieved using a library called [doctoc](https://github.com/thlorenz/doctoc).
 
 # Implementation
 Install the following via npm:
@@ -58,9 +59,9 @@ Install the following via npm:
 - [node-emojify](https://github.com/jesselpalmer/node-emojify)
 - [doctoc](https://github.com/thlorenz/doctoc)
 
-*Note: I also included textlint as a bonus, but I will skip that part.*
+*Note: textlint is also included as a bonus, but that part is omitted.*
 
-Emoji support is implemented by extending marked, so I prepared the following configuration file:
+Emoji support is handled by extending marked, so prepare a configuration file like this:
 
 ```js
 const marked = require('marked');
@@ -81,9 +82,11 @@ Define the following command in the scripts section of package.json:
 doctoc --notitle md/ && md-to-pdf md/*.md --config-file config.js && mv md/*.pdf pdf/
 ```
 
-First, generate the TOC with doctoc, then convert the Markdown to PDF, and finally move the directory.
+First, generate the TOC with doctoc, then convert Markdown to PDF, and finally move the directory.
 
-It would be nice if md-to-pdf allowed specifying the output directory for generated PDFs, but it seems there is no such option, so I handled it with the straightforward method of `mv md/*.pdf pdf/`.
+It would be nice if the output destination of the pdf generated by md-to-pdf could be specified by directory, but since there doesn't seem to be such an option, I'm handling it with a straightforward method: `mv md/*.pdf pdf/`.
 
 # Thoughts
-When trying to create something like this, it tends to rely heavily on external libraries. Ideally, I would like to implement everything myself, but it seems quite challenging. If I get the chance, I would like to learn about the PDF data structure and try to create a similar CLI tool in Go.
+When trying to create something like this, you tend to rely heavily on external libraries.
+Ideally, I'd like to implement everything myself, but it seems quite challenging.
+If I get the chance, I'd like to learn about PDF data structures or create a similar CLI tool in Go.

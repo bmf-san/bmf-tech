@@ -6,14 +6,17 @@ author: bmf-san
 categories:
   - Performance
 tags:
-  - Books
+  - Book
   - System Performance
   - ISUCON
 translation_key: system-performance-explained
 ---
 
-[Understanding System Performance Through Illustrations](https://amzn.to/4aagywt) is a book I read.
+
+
+[I read "Understanding System Performance Through Illustrations"](https://amzn.to/4aagywt).
 
 I decided to study something in preparation for ISUCON, so I read this book.
 
-It teaches the basic concepts of system performance. It's easy to understand.
+You can learn the basic concepts of system performance. It's easy to understand.
+

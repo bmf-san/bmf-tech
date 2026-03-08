@@ -1,5 +1,5 @@
 ---
-title: Generating Test Data with SQL in MySQL
+title: SQL for Generating Test Data in MySQL
 slug: mysql-test-data-generation-sql
 date: 2019-07-16T00:00:00Z
 author: bmf-san
@@ -9,11 +9,14 @@ tags:
   - MySQL
   - SQL
   - Cross Join
+description: A note on generating test data using only MySQL.
 translation_key: mysql-test-data-generation-sql
 ---
 
+
+
 ## Overview
-This is a note on generating test data using SQL in MySQL. While generating test data with scripts offers high flexibility and seems like a superior method, using just SQL might be sufficient when you want to perform performance tests with tens of thousands of records.
+This is a note on generating test data using only MySQL. While generating test data through scripts offers high flexibility and seems like a superior method, using only SQL might be sufficient when you want to perform performance tests with tens of thousands of records.
 
 # SQL
 The query looks like this.
@@ -56,7 +59,7 @@ FROM
   (SELECT @rownum := 0) AS v;
 ```
 
-This method uses user-defined variables to get row numbers while generating records with a CROSS JOIN and `INSERT INTO ... SELECT`. There were various patterns, but this one seems relatively easy to understand and write. However, it can be difficult to visualize what it is doing at a glance.
+This method uses user-defined variables to take row numbers and generates records using a Cartesian product (CROSS JOIN) and `INSERT INTO ... SELECT`. There were various patterns, but this one seems relatively easy to understand, or rather, easy to write. The downside is that it's difficult to immediately visualize what it's doing.
 
 # References
 - [Creating Large Test Data with SQL](https://qiita.com/cobot00/items/8d59e0734314a88d74c7)

@@ -1,5 +1,5 @@
 ---
-title: Introduction to System Metrics Using ISUCON Environment
+title: Introduction to System Metrics with ISUCON Environment
 slug: system-metrics-introduction-isucon
 date: 2024-04-14T00:00:00Z
 author: bmf-san
@@ -7,25 +7,25 @@ categories:
   - Architecture
 tags:
   - ISUCON
+description: A summary of regular study sessions using the ISUCON environment to properly understand system metrics.
 translation_key: system-metrics-introduction-isucon
 ---
 
 # Overview
+We regularly hold study sessions using the ISUCON environment to learn how to properly monitor system metrics, and this is a summary of those sessions.
 
-We regularly hold study sessions to properly observe system metrics using the ISUCON environment, and this is a summary of those sessions.
+Using [The Basics of Infrastructure Every Web Engineer Should Know: From Infrastructure Design to Configuration, Monitoring, and Tuning](https://book.mynavi.jp/ec/products/detail/id=33857) as a reference book, we conduct hands-on sessions from Chapter 5 onwards.
 
-Using [Fundamentals of Infrastructure Every Web Engineer Should Know: From Design to Configuration, Monitoring, and Tuning](https://book.mynavi.jp/ec/products/detail/id=33857) as a reference, we have been hands-on with the content from Chapter 5 onwards.
+The environment is set up on Conoha using the ISUCON8 image.
 
-The environment is set up using the ISUCON8 image on Conoha.
-
-Plan: Memory 512MB / CPU 1 Core
+Plan: Memory 512MB/CPU 1Core
 
 ```sh
 [root@160-251-16-96 ~]# cat /etc/redhat-release 
 CentOS Linux release 7.5.1804 (Core) 
 ```
 
-# Current System Status
+# Checking the Current System Status
 cf. Chapter 5
 
 ## iptables
@@ -50,17 +50,17 @@ ss -lnp
 
 It was confirmed that h2o is listening on port 80 without an IP address, the isucon application is listening on port 8080 without an IP address, mysqld is listening on port 3306 without an IP address, and sshd is listening on port 22 without an IP address.
 
-The items in the Local Address:Port section that start with :: indicate that they are also listening on IPv6.
+Entries with :: at the beginning of the Local Address:Port field are also listening on IPv6.
 
-I think it’s also fine to use lsof as a substitute for ss.
+You can also use lsof as an alternative to ss.
 
 ```sh
 lsof -i
-lsof -i:port_number
+lsof -i:port number
 ```
 
 ## ps
-Check the processes and verify the startup commands.
+Check the processes and their startup commands.
 
 ```
 ps aufx | grep -v grep | grep -e isucon -e h2o -e mysql
@@ -75,9 +75,9 @@ Check disk usage.
 df -h
 ```
 
-It was confirmed that the disk capacity is 30G with 22% used.
+It was confirmed that the disk capacity is 30G and 22% is used.
 
-This command lists the directories using space.
+You can list directories using capacity like this:
 
 ```sh
 df -sh /*
@@ -97,7 +97,7 @@ Check CPU usage, network usage, disk I/O, paging, and trends.
 dstat -taf 1 10
 ```
 
-While running the benchmarker, it was confirmed that there is a load on disk I/O.
+Running the benchmarker while checking confirmed that there is a load on disk I/O.
 
 # Status Monitoring
-// TODO:: Updating continuously
+// TODO:: Continuously updating

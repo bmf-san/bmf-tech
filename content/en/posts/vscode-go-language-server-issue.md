@@ -1,5 +1,5 @@
 ---
-title: Enabling Go Language Server in VSCode Prevented Code Definition Jumping
+title: Code Definition Jump Disabled After Enabling Go Language Server in VSCode
 slug: vscode-go-language-server-issue
 date: 2020-07-19T00:00:00Z
 author: bmf-san
@@ -16,7 +16,7 @@ translation_key: vscode-go-language-server-issue
 ---
 
 # Overview
-After enabling the Go Language Server settings in VSCode, I was unable to jump to code definitions, so I investigated the cause.
+After enabling the Go Language Server settings in VSCode, I found that jumping to code definitions was no longer possible, so I investigated the cause.
 
 settings.json
 ```json
@@ -24,11 +24,11 @@ settings.json
 ```
 
 # Conclusion
-It is necessary for `go.mod` to exist at the root of the project.
+A `go.mod` file needs to exist at the root of the project.
 
 cf. [stackoverflow - How to properly use go modules in vscode?](https://stackoverflow.com/questions/59732657/how-to-properly-use-go-modules-in-vscode)
 
-When opening a folder in VSCode, it should not be like this,
+When opening a folder in VSCode, instead of this,
 
 ```
 .
@@ -36,7 +36,7 @@ When opening a folder in VSCode, it should not be like this,
     ├── go.mod
 ```
 
-Instead, it should be opened like this, otherwise the paths may not resolve correctly, preventing code jumping.
+You need to open it like this, otherwise, the path won't be resolved correctly, preventing code jumps.
 ```
 .
 ├── go.mod
@@ -58,24 +58,24 @@ require (
 )
 ```
 
-I thought it would interpret this correctly since it says `module github.com/bmf-san/gobel-api/app`, but it seems that is not the case.
+Since it says `module github.com/bmf-san/gobel-api/app`, I thought it would interpret it correctly, but apparently not.
 
 # Investigation Method
-I opened the terminal in VSCode and selected OUTPUT>gopls(server). When trying to jump to code, I was able to check the error logs.
+Open the terminal in VSCode, select OUTPUT>gopls(server), and try jumping to code to check the error logs.
 
-From the error logs, it seemed the paths were suspicious, and after some investigation, I found the aforementioned StackOverflow post.
+From the error logs, it seemed like the path was suspicious, and after some investigation, I found a relevant post on Stack Overflow.
 
 # Solution
-The immediate countermeasures I could think of are as follows:
+Here are some immediate countermeasures:
 
 - Turn off the language server settings
 - Place go.mod at the project root, or open the folder where go.mod exists
 
-It might be possible to adjust settings in gopls or VSCode, but I couldn't find it quickly, so I temporarily addressed it by turning off the language server settings...
+It might be possible to adjust with gopls or VSCode settings, but since I couldn't find a quick solution and it seemed time-consuming, I temporarily responded by turning off the language server settings...
 
-I don't think this is a settled configuration, so I believe similar cases or the best solutions will be found eventually...
+I don't think this is a mature setting yet, so similar cases or the best solution might be found eventually...
 
-I plan to update if I find out anything.
+I plan to update if I find anything.
 
 # Related
 - [Big Sky - Stopping gocode (and moving to Language Server)](https://mattn.kaoriya.net/software/lang/go/20181217000056.htm)

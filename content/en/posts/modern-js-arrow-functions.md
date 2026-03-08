@@ -1,5 +1,5 @@
 ---
-title: 'Modern JS: Arrow Functions'
+title: 'Modern JS Talk: Arrow Functions'
 slug: modern-js-arrow-functions
 date: 2017-12-25T00:00:00Z
 author: bmf-san
@@ -12,19 +12,21 @@ tags:
 translation_key: modern-js-arrow-functions
 ---
 
-※This article is a repost from [Innovator Japan Engineers’ Blog](http://tech.innovator.jp.net/).
+
+
+※This article is a reprint from the [Innovator Japan Engineers’ Blog](http://tech.innovator.jp.net/).
 
 # What are Arrow Functions?
-In summary:
+In summary,
 
-- A new syntax introduced in ES2015
-- Can be written shorter than regular function expressions
-- Can lexically bind the value of `this` (i.e., makes it easier to understand the value of `this` from the context)
+- A new syntax added in ES2015
+- Shorter than regular function expressions
+- Lexically binds the value of `this` (making it easier to understand the context of `this`)
 - Always anonymous functions
 
-The key point is that arrow functions (=>) can **lexically bind the value of `this`**.
+The big point of arrow function expressions, written with `=>`, is that they "**lexically bind the value of `this`**".
 
-Using arrow functions, what used to be written like this...
+With arrow functions, what used to be written like this...
 
 ```javascript
 const foo = function() {
@@ -34,7 +36,7 @@ const foo = function() {
 foo();
 ```
 
-Can now be written like this:
+Can now be written like this.
 
 ```javascript
 const foo = () => {
@@ -44,7 +46,7 @@ const foo = () => {
 foo();
 ```
 
-By the way, when there are no arguments, parentheses () are required, and when there is only one argument, parentheses are optional.
+By the way, if there are no arguments, parentheses `()` are required, and if there is only one argument, parentheses are optional.
 
 ```javascript
 // Parentheses are required when there are no arguments
@@ -64,7 +66,7 @@ const foo = (value) => {
 foo('Hello!');
 ```
 
-If you want to create an immediately invoked function, you can write it like this:
+If you want to make it an immediately invoked function, you can write it like this.
 
 ```javascript
 (() => {
@@ -74,10 +76,11 @@ If you want to create an immediately invoked function, you can write it like thi
 
 This might be a bit confusing...
 
-# Where to Use
-I think it's a good policy to actively replace where you can with arrow functions, but you should be aware of what `this` refers to.
+# When to Use
+I think it's a good approach to actively replace where you can with arrow functions, but you should be aware of what `this` refers to.
 
-For example, what about in the case below?
+For example, how about in the following case?
+
 
 ```javascript
 const objA = {
@@ -99,12 +102,15 @@ const objB = {
 objB.sayHi();
 ```
 
-In the first case, `this` refers to the value inside the object, while in the second case, `this` refers to the global object. Seeing cases like this makes me feel that there are situations where it's necessary to differentiate between function expressions and arrow function expressions.
+The first `this` returns the value within the object, while the second `this` returns the global object.
+Looking at cases like this, there seem to be some situations where you need to differentiate between function expressions and arrow function expressions.
 
-For more details on JavaScript's `this`, please refer to [MDN - this](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/this). Understanding what **`this` refers to** will deepen your understanding of arrow functions and JS.
+For more details on JavaScript's `this`, please refer to [MDN - this](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/this).
+Understanding "**what the value of `this` refers to**" will deepen your understanding of arrow functions and JS.
 
-# Conclusion
-When using frameworks like Vue.js or React, the amount of code tends to increase, and `this` can get scattered around, leading to confusion. If you can use arrow functions to simplify the function parts, I believe it will improve the readability of your code.
+# Summary
+When using frameworks like Vue.js or React, the code tends to get lengthy, and `this` can be scattered all over, making it hard to understand.
+If you can use arrow functions to simplify the function parts, the code will be more readable.
 
 # References
 - [MDN - Arrow Functions](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/arrow_functions)

@@ -11,10 +11,12 @@ tags:
 translation_key: system-design-interview
 ---
 
-[System Design Interview – An insider's guide](https://amzn.to/3N8srJE) was read.
 
-It is the Japanese translation of the book.
 
-While I have some familiarity with the content from reading [donnemartin/system-design-primer](https://github.com/donnemartin/system-design-primer/blob/master/README-ja.md), it seems that there aren't many books of this kind published in Japan, so I wanted to keep this one on hand.
+[I read the System Design Interview](https://amzn.to/44oiVdI).
 
-[ByteByteGo](https://bytebytego.com/) is a service run by the author. It seems to be partially free, with the basics being a paid service, but it might be worth subscribing as it seems educational. The afterword mentioned a Discord channel where the author discusses system design, so I decided to join.
+This is the Japanese translation of [System Design Interview – An insider's guide](https://amzn.to/3N8srJE).
+
+While reading [donnemartin/system-design-primer](https://github.com/donnemartin/system-design-primer/blob/master/README-ja.md), I found that I already knew some of the content to a certain extent. However, it seems that books of this kind are not often published in Japan, so it's a book I want to keep at hand.
+
+[ByteByteGo](https://bytebytego.com/) is a service run by the author. It appears to be a mostly paid service with some free content, but it seems educational, so it might be worth subscribing to. The author's Discord channel, where they discuss system design, was mentioned in the afterword, so I joined it.

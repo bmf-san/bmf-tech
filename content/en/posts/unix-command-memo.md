@@ -4,37 +4,39 @@ slug: unix-command-memo
 date: 2018-07-07T00:00:00Z
 author: bmf-san
 categories:
-  - OS
+  - Operating Systems
 tags:
-  - unix command
+  - unix commands
   - jq
   - tee
 translation_key: unix-command-memo
 ---
 
+
+
 # Overview
 Notes on Unix commands.
 
 # jq
-A command for processing data in JSON format.
+A command to process data in JSON format.
 
 ## JSON Pretty Print
 ```
 echo '[{"name": "Tom", "age": 20}}]' | jq .
 ```
 
-In addition to Pretty Print, there are various uses such as extracting data by specifying properties from an object or obtaining the length of an object.
+Besides Pretty Print, you can extract data by specifying properties from objects, get the length of objects, and use it in various other ways.
+
 
 # tee
-Outputs standard input to both standard output and a file.
-Can be used with sudo.
-Overwrite without options, append with option -a.
+Outputs standard input to both standard output and a file. Can be used with sudo. Overwrites without options, appends with option -a.
 
 ```
 echo 'hello world' | sudo tee ./sample.txt
 ```
 
-In the case of redirection, `>` overwrites and `>>` appends. sudo cannot be used.
+In the case of redirection, > overwrites, >> appends. sudo cannot be used.
+
 
 # at
 Allows you to schedule the execution time of a command.
@@ -45,16 +47,18 @@ at -f ./sample.txt 2230
 
 There are various formats for the date and time part.
 
+
 # mktemp
-Creates a file in the /tmp directory with a random name.
+Creates a file with a random name under the /tmp directory.
 
 ```
 mktemp
 ```
 
+
 # lsof
-List of open files.
-Outputs files that a process has opened.
+List of open files
+Outputs files opened by processes.
 
 -i
 Filters output by port number.
@@ -63,30 +67,32 @@ Filters output by port number.
 Filters output by TCP or UDP.
 
 -P
-Outputs port numbers as numbers.
+Outputs port numbers as digits.
 
 -n
-Outputs IP addresses without resolving to hostnames.
+Outputs without reverse DNS lookup of IP addresses to hostnames.
 
 # nmap
-Checks the port status of the target host over the network.
+Examines the port status of a target host over the network.
 
 ```
 nmap 192.168.33.10
 ```
 
 # fsfreeze
-A command to temporarily stop I/O on a filesystem.
+A command to temporarily suspend file system I/O.
 
-Temporarily stops I/O on the filesystem (freeze operation).
+Temporarily suspends file system I/O (freeze process).
 ```
 fsfreeze -f /data
 ```
 
-Releases I/O on the filesystem (unfreeze operation).
+Releases file system I/O (unfreeze process).
 ```
 fsfreeze -u /data
 ```
 
 # findmnt
-Outputs information about mounted filesystems.
+Outputs information about mounted file systems.
+
+

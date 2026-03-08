@@ -1,5 +1,5 @@
 ---
-title: Created an Asset Trend Simulator
+title: Developed an Asset Trend Simulator
 slug: asset-transition-simulator
 date: 2025-05-25T00:00:00Z
 author: bmf-san
@@ -7,31 +7,34 @@ categories:
   - Application
 tags:
   - JavaScript
+description: Introducing a tool for personal asset formation, the Asset Trend Simulator.
 translation_key: asset-transition-simulator
 ---
 
+
+
 # Overview
-I developed an asset trend simulator as a tool for personal asset formation, and I would like to introduce it.
+As a tool for considering personal asset formation, I developed an asset trend simulator, which I would like to introduce.
 
 [asset-trend-simulator](https://asset-trend-simulator.netlify.app/)
 
 # Background
-I use Money Forward for asset management, but I had been using a Spreadsheet for simulating future asset trends.
+I use Money Forward for asset management, but for future asset trend simulation, I had been using a spreadsheet.
 
-While the Spreadsheet provided a reasonable level of accuracy (with discrepancies in actual asset trends being around several hundred thousand), updating it monthly was cumbersome. I was looking for a simpler solution, which led to this development.
+While the spreadsheet allowed for a reasonable degree of accuracy (with discrepancies in actual asset trends being limited to several hundred thousand yen), updating it once a month was cumbersome. I was looking for a simpler solution, which led to this development.
 
-To enhance the accuracy of the simulation, certain calculations and variable settings are necessary, but I believe that even a rough estimate can be useful for personal asset formation.
+Enhancing the accuracy of the simulation requires considerable calculations and variable settings, but I believe that an approximation is still useful for personal asset formation.
 
-Ideally, the actual asset situation should exceed the simulation results (as falling short could impact life plans).
+Ideally, the actual asset situation should exceed the simulation results, as a downward trend could affect life plans.
 
 # About the Asset Trend Simulator
 ## Main Features
 ### 1. Simple Simulation Functionality
-- Simulates asset trends for up to 50 years
-- Supports multiple currencies and considers exchange rate fluctuations
-- Reflects comprehensive asset situations including income, expenses, investments, and loans
+- Simulate asset trends for up to 50 years
+- Supports multiple currencies, considering exchange rate fluctuations
+- Reflects comprehensive asset situations, including income, expenses, investments, and loans
 
-It is designed to provide a rough estimate for life planning.
+It is designed to provide rough estimates for life planning.
 
 ### 2. Intuitive User Interface
 - Responsive design for mobile/desktop compatibility
@@ -39,19 +42,19 @@ It is designed to provide a rough estimate for life planning.
 - Easy data entry with accordion-style input forms
 - Detailed data tables for numerical verification
 
-Users can check calculation results annually and monthly, making it easier to grasp asset trend patterns.
+The calculation results can be checked annually or monthly, making it easy to understand asset trend tendencies.
 
 ### 3. Calculation Engine
-- Simulates investment returns using compound interest calculations
-- Loan calculations using equal principal and interest repayment methods
-- Accounts for exchange rate fluctuations
-- Income forecasts considering real wage growth rates
+- Simulates investment returns through compound interest calculations
+- Loan calculations using the equal principal and interest repayment method
+- Adapts to exchange rate fluctuations
+- Income predictions considering real wage growth rates
 - Calculates asset trends considering the impact of liabilities
-- Simulates growth of managed assets
+- Simulates the growth of managed assets
 
-For managed assets, it would be ideal to reflect actual stock prices for accuracy, but predicting stock price trends is challenging. Therefore, users can set the growth rate of managed assets.
+For managed assets, it would be ideal to reflect actual stock prices for accuracy, but predicting stock price trends is difficult. Therefore, it allows setting the growth rate of assets under management.
 
-Since the return on investment has a significant impact on assets, tightening this return setting allows for a more conservative simulation.
+Since the rate of return on investments significantly impacts assets, setting this rate strictly allows for a conservative simulation.
 
 ## Technologies Used
 - Frontend: HTML5, CSS3, JavaScript (ES6+)
@@ -59,45 +62,46 @@ Since the return on investment has a significant impact on assets, tightening th
 - Build/Development: npm, webpack
 - Testing: Jest
 
-The application is simply deployed on Netlify.
+The application is deployed on Netlify with ease.
 
-## Details of Main Features
-### Asset Situation Input
-- Settings for income and expenses (supports multiple currencies)
-- Input for cash and savings balances
-- Registration of investment assets
-- Settings for liability information such as mortgages
+## Details of Key Features
+### Asset Status Input
+- Set income and expenses (supports multiple currencies)
+- Input cash and deposit balances
+- Register investment assets
+- Set liability information such as housing loans
 
 ### Simulation Parameters
-- Setting the simulation period (up to 50 years)
-- Setting the real wage growth rate
-- Setting investment returns
-- Forecasting exchange rate fluctuations
+- Set simulation period (up to 50 years)
+- Set real wage growth rate
+- Set investment returns
+- Predict exchange rate fluctuations
 
 ### Result Display
 - Net asset trend graph
 - Asset allocation pie chart
-- Summary cards for key indicators
-- Detailed monthly data tables
+- Summary cards of key indicators
+- Detailed monthly data table
 
 ## How to Use
-1. Input Basic Information
-   - Current income and expense situation
+1. Enter Basic Information
+   - Current income and expense status
    - Status of owned assets
    - Details of liabilities
 
 2. Set Simulation Conditions
-   - Select the period
+   - Select period
    - Adjust various parameters
 
-3. Review and Analyze Results
+3. Check and Analyze Results
    - Check trends with graphs and tables
    - Adjust parameters as needed
-   - Simulate different scenarios
+   - Simulate with different scenarios
 
 # Future Prospects
-There is room for improvement in the accuracy of the simulation, so I want to adjust the precision while maintaining simplicity.
+There is room for improvement in simulation accuracy, so I would like to adjust it while maintaining simplicity.
 
-Currently, it is simplified to the frontend only, but if the number of users increases, it might be interesting to build a backend and develop it into a more substantial service. (For now, it’s quiet)
+Currently, it is completed with only the frontend, but if the number of users increases, it might be interesting to build a backend and develop it into a proper service. (Currently, there is no movement)
 
-I believe that visualizing the current asset situation and being aware of future asset trends will make it easier to plan for asset formation, so I hope you will give it a try.
+By visualizing the current asset situation and being aware of future asset trends, I believe it will be easier to plan asset formation, so please give it a try.
+

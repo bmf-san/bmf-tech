@@ -6,10 +6,14 @@ author: bmf-san
 categories:
   - Testing
 tags:
-  - Books
+  - Book
 translation_key: introduction-software-testing
 ---
 
-[Learning Software Testing Techniques for the First Time](https://amzn.to/3UM7CJ9) is a book that discusses testing methods and allows you to learn the fundamental patterns of software testing.
 
-If you have never written test code, this is a must-read to start with.
+
+[I read Learning Software Testing Techniques for the First Time](https://amzn.to/3UM7CJ9).
+
+This book covers methods of testing and allows you to learn the basic patterns of software testing.
+
+If you've never written test code before, this is the first book you should read.

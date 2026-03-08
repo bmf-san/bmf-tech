@@ -4,25 +4,24 @@ slug: algorithms-data-structures-heap-sort
 date: 2020-02-01T00:00:00Z
 author: bmf-san
 categories:
-  - Algorithms
-  - Data Structures
+  - Algorithms and Data Structures
 tags:
   - Heap Sort
 translation_key: algorithms-data-structures-heap-sort
 ---
 
 # Overview
-Referencing the [Algorithm Encyclopedia](https://www.shoeisha.co.jp/book/detail/9784798149776), we learn about algorithms and data structures.
+Learn algorithms and data structures with reference to [Algorithm Encyclopedia](https://www.shoeisha.co.jp/book/detail/9784798149776).
 
 The implementation is also available at [github - bmf-san/road-to-algorithm-master](https://github.com/bmf-san/road-to-algorithm-master).
 
 # Heap Sort
-- A sorting method that uses a binary heap tree to rearrange elements.
-	- Heap construction
-	- Extracting elements (root) from the heap until the heap tree is empty.
+- A sorting method that arranges elements using a binary heap tree
+  - Heap construction
+  - Extract elements (root) from the heap until the heap tree is empty
 
-# Time Complexity
-- Worst-case and average time complexity
+# Computational Time
+- Worst-case and average computational time
   - O(n log n)
 
 # Implementation

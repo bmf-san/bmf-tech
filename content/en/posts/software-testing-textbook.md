@@ -1,5 +1,5 @@
 ---
-title: Software Testing Textbook
+title: The Textbook of Software Testing
 slug: software-testing-textbook
 date: 2022-11-22T00:00:00Z
 author: bmf-san
@@ -10,6 +10,8 @@ tags:
 translation_key: software-testing-textbook
 ---
 
-[Software Testing Textbook](https://amzn.to/3UDkFer) was read.
 
-You can gain systematic knowledge about testing.
+
+[I read The Textbook of Software Testing](https://amzn.to/3UDkFer).
+
+It provides a systematic understanding of testing.

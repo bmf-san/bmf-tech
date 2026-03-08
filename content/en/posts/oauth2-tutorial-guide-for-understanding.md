@@ -1,5 +1,5 @@
 ---
-title: 'Understanding OAuth2.0 Properly: A Tutorial Guide'
+title: Understand Properly Without Just Going by Feel! A Tutorial Guide to Using OAuth2.0
 slug: oauth2-tutorial-guide-for-understanding
 date: 2021-10-05T00:00:00Z
 author: bmf-san
@@ -8,8 +8,13 @@ categories:
 tags:
   - OAuth
   - Authentication
-  - Books
+  - Book
 translation_key: oauth2-tutorial-guide-for-understanding
 ---
 
-[Understanding OAuth2.0 Properly: A Tutorial Guide](https://amzn.to/4dlYfXE) is an easy-to-read introduction to OAuth2.0.
+
+
+[Understand Properly Without Just Going by Feel! A Tutorial Guide to Using OAuth2.0](https://amzn.to/4dlYfXE) was read.
+
+It's an easy read as an introduction to OAuth2.0.
+

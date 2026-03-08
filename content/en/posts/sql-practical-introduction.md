@@ -1,5 +1,5 @@
 ---
-title: Practical SQL Introduction - Writing Fast and Understandable Queries
+title: 'Introduction to Practical SQL: Writing Fast and Understandable Queries'
 slug: sql-practical-introduction
 date: 2024-04-01T00:00:00Z
 author: bmf-san
@@ -8,10 +8,12 @@ categories:
 tags:
   - DB
   - NewSQL
-  - Books
+  - Book
 translation_key: sql-practical-introduction
 ---
 
-[Practical SQL Introduction - Writing Fast and Understandable Queries (WEB+DB PRESS plus)](https://amzn.to/4aTTjaJ) was read.
 
-It organizes what to keep in mind when writing SQL.
+
+[I read SQL実践入門──高速でわかりやすいクエリの書き方 (WEB+DB PRESS plus)](https://amzn.to/4aTTjaJ).
+
+It organizes the key points to keep in mind when writing SQL.

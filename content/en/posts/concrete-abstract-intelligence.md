@@ -1,5 +1,5 @@
 ---
-title: Concrete and Abstract - The Mechanism of Intelligence That Changes How We See the World
+title: 'Concrete and Abstract: The Mechanism of Intelligence that Changes How We See the World'
 slug: concrete-abstract-intelligence
 date: 2025-12-29T00:00:00Z
 author: bmf-san
@@ -10,18 +10,20 @@ tags:
 translation_key: concrete-abstract-intelligence
 ---
 
-[Concrete and Abstract - The Mechanism of Intelligence That Changes How We See the World](https://amzn.to/4scC7Xr) is a book I read.
 
-It discusses the importance of abstract thinking.
 
-The book mainly focuses on the contrast between concrete and abstract ways of thinking.
+[Concrete and Abstract: The Mechanism of Intelligence that Changes How We See the World](https://amzn.to/4scC7Xr) is a book I read.
 
-There are many parts that feel like a message aimed at those who do not understand abstraction.
+This book discusses the importance of abstract thinking.
 
-I was struck by the sentence, "Most people end their lives without systematically learning this."
+It mainly focuses on the contrast between concrete and abstract ways of thinking.
 
-I feel like there were few opportunities to learn about abstraction during my studies. It seems I only realized its importance after entering society.
+There are many parts that feel like messages directed at those who don't understand abstraction.
 
-I think I tend to be more of an abstract thinker, but I found many relatable aspects regarding the contrast between abstract and concrete thinking, which was interesting.
+I was struck by the sentence, "Most people go through life without systematically learning this."
 
-Finding ways to convey abstraction is a concern of mine, but it seems I still need to continue pondering this issue.
+I feel that there were few opportunities to learn about abstraction in my academic life. It seems that I only realized its importance after entering society.
+
+I think I am more inclined towards abstract thinking, but I found many relatable and interesting points in the contrast between abstract and concrete.
+
+How to solve the issue of abstraction not being conveyed is a concern of mine, but it seems I still need to continue pondering over it.

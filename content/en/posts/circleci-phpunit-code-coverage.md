@@ -8,8 +8,8 @@ categories:
 tags:
   - Docker
   - CircleCI
-  - CircleCI 2.0
-  - PHPUnit
+  - CircleCI2.0
+  - phpunit
 translation_key: circleci-phpunit-code-coverage
 ---
 
@@ -18,14 +18,14 @@ Output PHPUnit code coverage with CircleCI 2.0
 
 # Environment
 - CircleCI 2.0
-- Docker
-- Docker Compose
+- docker
+- docker-compose
 - PHPUnit 6.x
-- PHP 7.2
+- PHP 7.2.x
 
 # Steps
-## Adjust phpunit.xml Configuration
-Specify the sources you want to include in the coverage.
+## Adjust phpunit.xml Settings
+Specify the source you want to include in the coverage.
 
 ```
     <filter>
@@ -44,7 +44,7 @@ Specify the sources you want to include in the coverage.
     </filter>
 ```
 
-This is how it should be written.
+Write it like this.
 phpunit.xml
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -84,15 +84,16 @@ phpunit.xml
 </phpunit>
 ```
 
-## Output Coverage Report
-It seems that using phpdbg is faster than using xdebug, so we will create an HTML format coverage report using phpdbg. Since it crashed due to insufficient memory on CI, we specify the memory limit.
+## Output the Coverage Report
+It is said to be faster than using xdebug, so use phpdbg to create an HTML format coverage report. Due to memory shortage on CI, I specified a memory limit.
 
-`phpdbg -qrr vendor/bin/phpunit -d memory_limit=512M --coverage-html /tmp/artifacts`
+`phpdbg -qrr vendor/bin/phpunit -d memory_limit=512M --coverage-html /tmp/artifacts"`
+
 
 ## Adjust ./circleci/config.yml
-To view the coverage report from artifacts after running tests on CircleCI, we need to write a task that uploads the coverage report to `artifacts` using `store_artifacts`.
+To view the coverage report from artifacts after running tests on CircleCI, use `store_artifacts` to upload the coverage report to `artifacts`.
 
-Since we are running tests on Docker, we needed to mount the coverage report sources between the host and the Docker container. Although it might be a bit of a hack, I tried executing it using the `docker cp` command to copy the files.
+Since tests are conducted on docker, it was necessary to mount the coverage report source on both the host and docker sides. It might be a quick fix, but I tried executing it by copying files using the `docker cp` command.
 
 .circleci/config.yml
 ```
@@ -116,11 +117,11 @@ jobs:
 ```
 
 # Thoughts
-I was able to output the coverage, so I would like to integrate it with various web services (like Codacy and Coveralls). I spent a lot of time realizing that file mounting was necessary....
+I was able to output the coverage, so I would like to try integrating with various web services (like codacy or coverall). I spent a lot of time not realizing that file mounting was necessary...
 
 # References
 - [circleci - Collecting Test Metadata](https://phpunit.de/manual/6.5/en/appendixes.configuration.html#appendixes.configuration.logging)
 - [circleci - Storing and Accessing Build Artifacts](https://circleci.com/docs/2.0/artifacts/)
 - [phpunit - Appendix C. The XML Configuration File](https://phpunit.de/manual/6.5/en/appendixes.configuration.html#appendixes.configuration.logging)
-- [phpunit - Chapter 3 Command Line Test Runner](https://phpunit.de/manual/6.5/ja/textui.html)
+- [phpunit - Chapter 3. The Command-Line Test Runner](https://phpunit.de/manual/6.5/ja/textui.html)
 - [docker docs - docker cp](https://docs.docker.com/engine/reference/commandline/cp/)

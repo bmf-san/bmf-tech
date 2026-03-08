@@ -1,5 +1,5 @@
 ---
-title: Distributing Go Applications Using GoReleaser
+title: Distributing Go Applications with GoReleaser
 slug: goreleaser-go-distribution
 date: 2023-11-11T00:00:00Z
 author: bmf-san
@@ -8,23 +8,26 @@ categories:
 tags:
   - Golang
   - GitHub Actions
+description: Using GoReleaser to cross-compile and distribute Go application binaries.
 translation_key: goreleaser-go-distribution
 ---
 
-[GoReleaser](https://goreleaser.com/)を使ってGoのアプリケーションをクロスコンパイルしてバイナリ配布をやってみた。
 
-# GoReleaserとは
-[GoReleaser](https://goreleaser.com/)は、Go言語で書かれたアプリケーションのビルド、パッケージング、およびリリースを自動化するツール。
 
-クロスコンパイル、バイナリの圧縮、アーカイブの作成、GitHubなどのプラットフォームへのアーティファクトのアップロードができる。
+[GoReleaser](https://goreleaser.com/) was used to cross-compile and distribute binaries for a Go application.
 
-# GitHub Actionsを使ってバイナリを配布する
-Github ActionsにGoReleaserの公式Actionが用意されているので、それを使うことができる。GoReleaserは設定ファイルを用意することもできるが、特に用意しなくても使うことができる。
+# What is GoReleaser
+[GoReleaser](https://goreleaser.com/) is a tool that automates the build, packaging, and release of applications written in Go.
 
-cmdディレクトリ配下をビルドする想定でworkflowの実装例を記載する。
+It can perform cross-compilation, compress binaries, create archives, and upload artifacts to platforms like GitHub.
+
+# Distributing Binaries with GitHub Actions
+GitHub Actions provides an official GoReleaser Action, which can be used. Although GoReleaser can be configured with a settings file, it can also be used without one.
+
+Below is an example workflow implementation assuming a build under the cmd directory.
 
 ## Dry run
-ビルドしてバイナリを配布することができるかどうかCIのプロセスに組み込んでおくと、リリースする際に配布できなかった・・なんてことが避けれる。
+Incorporating a dry run into the CI process ensures that binaries can be distributed when releasing, avoiding distribution failures.
 
 ```yaml
 name: Dry run GoReleaser
@@ -59,7 +62,7 @@ jobs:
 ```
 
 ## Release
-タグリリース時にバイナリ配布を実行する。このジョブが完了すると、GitHubのリリースタグのページに成果物が添付される。
+Execute binary distribution upon tag release. Once this job is complete, artifacts will be attached to the GitHub release tag page.
 
 ```yml
 name: GoReleaser
@@ -98,12 +101,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-# バイナリ配布例
-これはまだ開発中のアプリケーションだが、こんな感じで配布することできる。
+# Example of Binary Distribution
+This is still a developing application, but it can be distributed like this.
 
 https://github.com/bmf-san/gondola/releases/tag/0.0.3
 
-# 所感
-アプリケーションの実装がツールに依存することもなく、簡単に使うことができるので気に入った。
+# Impressions
+I liked that the implementation of the application does not depend on the tool and is easy to use.
 
-類似のツールは他にもあるが、とりあえずGoReleaserをしばらく使ってみようと思う。
+There are other similar tools, but I plan to use GoReleaser for a while.

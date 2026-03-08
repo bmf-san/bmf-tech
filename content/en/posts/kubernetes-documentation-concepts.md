@@ -1,5 +1,5 @@
 ---
-title: Kubernetes Documentation Reading - Summary of Concepts
+title: Reading Kubernetes Documentation - Summary of Concepts
 slug: kubernetes-documentation-concepts
 date: 2020-10-20T00:00:00Z
 author: bmf-san
@@ -7,13 +7,15 @@ categories:
   - Infrastructure
 tags:
   - Docker
-  - Containers
+  - Container
   - Kubernetes
 translation_key: kubernetes-documentation-concepts
 ---
 
+
+
 # Overview
-To properly catch up with Kubernetes, I read the documentation and will leave my personal notes. Since it's long, I will only summarize the concepts section.
+To seriously catch up with Kubernetes, I read the documentation and left my personal notes. Since it's long, I only took notes on the concepts section.
 
 [kubernetes.io](https://kubernetes.io/ja/docs/home/)
 
@@ -25,187 +27,187 @@ cf. [What is Kubernetes?](https://kubernetes.io/ja/docs/concepts/overview/what-i
 - Promotion of automation
 - A platform for managing containerized workloads and services
 
-## Looking Back at the Past
-- Deployment in the era before virtualization (Traditional deployment)
+## Looking Back
+- Deployment before virtualization (Traditional deployment)
   - No resource limitations for applications on physical servers
     - Resource allocation issues
   - Difficult to scale
-  - High maintenance costs
+  - Maintenance costs
 - Deployment using virtualization (Virtualized deployment)
   - Applications can be isolated per VM
-    - Data access restrictions between applications
-  - Improved resource utilization within physical servers due to virtualization
-  - Easier to add or update applications
+    - Restriction on data access between applications
+  - Improved resource utilization within physical servers through virtualization
+  - Easy to add or update applications
     - Reduced hardware costs, improved scalability
 - Deployment using containers (Container deployment)
-  - Applications can share the OS
+  - OS can be shared between applications
     - Lightweight
   - Containers have their own filesystem, CPU, memory, process space, etc.
-  - Not dependent on cloud or OS distributions
+  - Independent of cloud or OS distribution
   - Benefits of containers
-    - Container images are easier and more efficient to create than VM images
-    - Continuous building and deployment of container images is easier
+    - Easier and more efficient to create container images than VM images
+    - Continuous build and deployment of container images
     - Separation of concerns between development and operations
-      - Creation of application container images occurs during build/release
+      - Application container images are created during build and release
     - High observability
-      - In addition to OS-level information and metrics, the operational state of applications and other warnings
-    - Consistency of environments
-      - Can run the same way in development, testing, and production
+      - In addition to OS-level information and metrics, also includes application status and other alerts
+    - Consistency across environments
+      - Can be run the same way in development, testing, and production
     - Portability across cloud and OS distributions
-      - Can run in any environment, whether on-premises or public cloud
+      - Can be run in any environment, whether on-premises or public cloud
     - Application-centric management
-      - Shift from running OS on virtual machines to running applications on OS using logical resources.
+      - From running OS on virtual machines to running applications using logical resources on OS
     - High affinity with microservices
       - Compatible with loosely coupled, distributed, scalable, and flexible microservices
     - Resource partitioning
       - Predictable application performance
     - Efficient use and aggregation of resources
 
-## Reasons Why Kubernetes is Needed and Its Features
+## Why Kubernetes is Needed and Its Features
 - Service discovery and load balancing
-  - Can expose containers via DNS names or IP addresses
-  - Can distribute network traffic
+  - Containers can be exposed using DNS names or IP addresses
+  - Network traffic can be distributed
 - Storage orchestration
-  - Can freely choose the storage to mount
+  - Freedom to choose storage to mount
 - Automated rollouts and rollbacks
-  - Can define the state of the containers to be deployed
-- Automated bin packing
-  - Can declare the CPU and memory (RAM) required by containers
+  - Can define the state of containers to be deployed
+- Automatic bin packing
+  - Can declare CPU and memory (RAM) required by containers
   - Can adjust according to nodes, efficiently utilizing resources
 - Self-healing
-  - Can restart, replace, or kill containers that fail to start
-- Secret and configuration management
-  - Can update application configuration information without needing to recreate container images
+  - Can restart, replace, or terminate containers that fail to start
+- Secrets and configuration management
+  - Can update application configuration without recreating container images
 
-## What Kubernetes Does Not Provide
+## What Kubernetes Does Not Include
 - Kubernetes does not...
   - Limit the types of applications it supports
   - Deploy source code or build applications
-  - Provide application-level (middleware, database, cache, etc.) functionality
+  - Provide built-in application-level (middleware, databases, caches, etc.) features
   - Specify logging, monitoring, or alerting features
-  - Provide configuration languages
-  - Offer systems for machine configuration, maintenance, management, or self-healing
+  - Provide a configuration language
+  - Provide or adopt systems for machine configuration, maintenance, management, or self-healing
   - Assume orchestration
 
 # Kubernetes Components
 
 cf. [Kubernetes Components](https://kubernetes.io/ja/docs/concepts/overview/components/)
-- When you deploy Kubernetes, a cluster is created
-  - A cluster is a collection of nodes that run containerized applications
+- Deploying Kubernetes results in a cluster
+  - A cluster is a set of nodes that run containerized applications
     - Every cluster has at least one worker node
   - Worker nodes host Pods, which are components of applications
-  - Master nodes manage the worker nodes and Pods within the cluster
-    - Using multiple master nodes can provide failover and high availability to the cluster
-  - The control plane manages the worker nodes and Pods within the cluster
+  - Master nodes manage worker nodes and Pods within the cluster
+    - Using multiple master nodes provides failover and high availability to the cluster
+  - The control plane manages worker nodes and Pods within the cluster
     - In production environments, multiple nodes can be used to provide fault tolerance and high availability
-  - [Kubernetes Cluster Diagram](https://d33wubrfki0l68.cloudfront.net/7016517375d10c702489167e704dcb99e570df85/7bb53/images/docs/components-of-kubernetes.png)
+  - [Diagram of a Kubernetes Cluster](https://d33wubrfki0l68.cloudfront.net/7016517375d10c702489167e704dcb99e570df85/7bb53/images/docs/components-of-kubernetes.png)
 
 ## Control Plane Components
-- Makes overall decisions about the cluster (scheduling, etc.)
+- Makes overall decisions about the cluster (e.g., scheduling)
 
 ### kube-apiserver
-- Component that provides the Kubernetes API externally
+- Component that exposes the Kubernetes API externally
 - Designed to scale horizontally
 
 ### etcd
-- A key-value store with consistency and high availability
-- The storage location for all cluster information in Kubernetes
-- Always create a backup plan when using etcd as a data store for Kubernetes
+- Consistent, highly available key-value store
+- Stores all cluster information for Kubernetes
+- When using etcd as a data store for Kubernetes, always create a backup plan
 
 ### kube-scheduler
-- Monitors whether a newly created Pod has been assigned to a node; if not, selects a node to run that Pod
+- Monitors newly created Pods that have no node assigned, and selects a node for them to run on
 
 ### kube-controller-manager
 - Runs multiple controller processes
 - Operates as a single process
   - Logically, each controller is compiled into a single executable file
 - Includes the following controllers:
-  - Node controller
-    - Notifies and responds when a node goes down
-  - Replication controller
+  - Node Controller
+    - Notifies and responds when nodes go down
+  - Replication Controller
     - Maintains the correct number of Pods for all replication controller objects
-  - Endpoint controller
+  - Endpoint Controller
     - Links Services and Pods
-  - Service account and token controller
+  - Service Account and Token Controller
     - Creates default accounts and API access tokens for new namespaces
 
 ### cloud-controller-manager
 - Runs controllers that interact with the underlying cloud provider
 - The following controllers have dependencies on the cloud provider:
-  - Node controller
+  - Node Controller
     - Checks with the cloud provider to determine if a node has been deleted after it stops responding
-  - Routing controller
+  - Routing Controller
     - Sets up routing in the underlying cloud infrastructure
-  - Service controller
+  - Service Controller
     - Creates, updates, and deletes cloud provider load balancers
-  - Volume controller
-    - Creates, attaches, and mounts volumes, and manages volume adjustments with the cloud provider
+  - Volume Controller
+    - Creates, attaches, mounts volumes, and coordinates with the cloud provider
 
 ## Node Components
-- Provides the execution environment for Kubernetes and manages Pods running on all nodes
+- Provides the runtime environment for managing Pods on all nodes
 
 ### kubelet
-- An agent that runs on each node in the cluster
-- Ensures that each container is running in a Pod
+- Agent that runs on each node in the cluster
+- Ensures that containers are running in a Pod
 
 ### kube-proxy
-- A network proxy running on each node in the cluster that implements part of the Kubernetes Service concept
+- Network proxy that runs on each node in the cluster, implementing part of the Kubernetes Service concept
 
 ### Container Runtime
 - Software responsible for running containers
-- ex. Docker, containerd, CRI-O, etc...
+- ex. Docker, containerd, CRI-O etc...
 
 ## Add-ons
 - Uses Kubernetes resources (DaemonSet, Deployment, etc.) to implement cluster features
-- Provides cluster-level functionality
-  - Add-on resources that require namespaces belong to the kube-system namespace
+- Provides cluster-level features
+  - Add-ons that require namespaces belong to the kube-system namespace
 - Some add-ons include:
   - DNS
   - Web UI
-  - Container resource monitoring
-  - Cluster-level logging
+  - Container Resource Monitoring
+  - Cluster-level Logging
 
 # Kubernetes API
 
 cf. [Kubernetes API](https://kubernetes.io/ja/docs/concepts/overview/kubernetes-api/)
 
-- [API Reference](https://kubernetes.io/docs/reference/) for more information
+- Refer to [API Reference](https://kubernetes.io/docs/reference/)
 
 # About Kubernetes Objects
 
 cf. [About Kubernetes Objects](https://kubernetes.io/ja/docs/concepts/overview/working-with-objects/)
 
 ## Object spec and status
-- Kubernetes objects have two nested object fields that manage the object's configuration:
+- Kubernetes objects have two nested object fields that manage the object's configuration
   - spec
-    - Describes the characteristics that the object should have as its desired state
+    - Describes the desired state and characteristics of the object
   - status
     - Indicates the current state of the object
 
-# Managing Kubernetes Objects
+# Kubernetes Object Management
 
-cf. [Managing Kubernetes Objects](https://kubernetes.io/ja/docs/concepts/overview/working-with-objects/object-management/)
+cf. [Kubernetes Object Management](https://kubernetes.io/ja/docs/concepts/overview/working-with-objects/object-management/)
 
 ## Management Methods
-- Imperative commands
-    - Targets current objects
+- Imperative Commands
+    - Targets existing objects
     - Recommended for development project environments
-- Imperative object configuration
+- Imperative Object Configuration
     - Targets individual files
     - Recommended for production project environments
-- Declarative object configuration
+- Declarative Object Configuration
     - Targets directories of files
     - Recommended for production project environments
 
 ## Imperative Commands
-- Users perform actions on the current objects in the cluster
+- Users perform operations on existing objects in the cluster
 
 ## Imperative Object Configuration
-- Specify the processing content, optional flags, and one or more file names in the kubectl command
+- Specify the operation, optional flags, and one or more filenames with the kubectl command
 
 ## Declarative Object Configuration
-- Users operate on configuration files stored locally
-- The operations are not recorded in the files
+- Users operate on configuration files located locally
+- Operations are not recorded in the files
 
 # Object Names and IDs
 
@@ -215,7 +217,7 @@ cf. [Object Names and IDs](https://kubernetes.io/ja/docs/concepts/overview/worki
 
 cf. [Namespace](https://kubernetes.io/ja/docs/concepts/overview/working-with-objects/namespaces/)
 
-- Supports the operation of multiple virtual clusters on the same physical cluster
+- Supports running multiple virtual clusters on the same physical cluster
   - These virtual clusters are called Namespaces
 
 # Nodes
@@ -223,18 +225,18 @@ cf. [Namespace](https://kubernetes.io/ja/docs/concepts/overview/working-with-obj
 cf. [Nodes](https://kubernetes.io/ja/docs/concepts/architecture/nodes/)
 
 - Worker machines
-- A single node can be a single VM or physical machine, depending on the nature of the cluster
-- Each node includes the services necessary to run Pods and is managed by the master components
+- A node can be a VM or a physical machine, depending on the cluster
+- Each node includes services necessary to run Pods and is managed by master components
 
-# Appearance of Pods
+# Pod Overview
 
-cf. [Appearance of Pods](https://kubernetes.io/ja/docs/concepts/workloads/pods/pod-overview/)
+cf. [Pod Overview](https://kubernetes.io/ja/docs/concepts/workloads/pods/pod-overview/)
 
-- The smallest deployable unit in Kubernetes' object model
+- The smallest deployable unit in the Kubernetes object model
 
 ## Understanding Pods
-- Pods are the basic execution unit of Kubernetes applications
-- Encapsulates application containers, storage resources, unique network IPs, and options for how containers are run
+- Pods are the basic execution units of Kubernetes applications
+- Encapsulate application containers, storage resources, unique network IPs, and options for managing container execution
 
 # ReplicaSet
 
@@ -243,47 +245,47 @@ cf. [ReplicaSet](https://kubernetes.io/ja/docs/concepts/workloads/controllers/re
 - Aims to maintain a stable set of replica Pods at all times
 
 ## When to Use ReplicaSet
-- Guarantees that a specified number of Pod replicas are running at all times
+- Ensures that a specified number of Pod replicas are running at all times
 
 # Deployment
 
 cf. [Deployment](https://kubernetes.io/ja/docs/concepts/workloads/controllers/deployment/)
 
-- Provides declarative update functionality for Pods and ReplicaSets
+- Provides declarative updates for Pods and ReplicaSets
 
 # StatefulSet
 
 cf. [StatefulSet](https://kubernetes.io/ja/docs/concepts/workloads/controllers/statefulset/)
 
 - A workload API for managing stateful applications
-- Manages scaling of sets of Deployments and Pods, ensuring order and uniqueness of Pods
+- Manages scaling of a set of Pods and ensures order and uniqueness
 
 # DaemonSet
 
 cf. [DaemonSet](https://kubernetes.io/ja/docs/concepts/workloads/controllers/statefulset/)
 
-- Ensures that all (or some) nodes run a copy of a single Pod
+- Ensures that all (or some) nodes run a copy of a Pod
 
 # Job
 
 cf. [Job](https://kubernetes.io/ja/docs/concepts/workloads/controllers/statefulset/)
 
-- Creates one or more Pods and ensures that a specified number of Pods successfully terminate
-- Tracks the successful termination of Pods
+- Creates one or more Pods and ensures that a specified number of them terminate successfully
+- Tracks successful completion of Pods
 
 # Service
 
 cf. [Service](https://kubernetes.io/ja/docs/concepts/services-networking/service/)
 
-- An abstract way to expose applications running on a set of Pods as a network service
+- An abstract way to expose an application running on a set of Pods as a network service
 
-## Motivation for Using Services
-- Pods are designed to stop, and when Pods are created and stopped, they are not recreated
-  - Using Deployment for application operation dynamically creates and deletes Pods
+## Motivation for Using Service
+- Pods are designed to be ephemeral, and when they are created and stopped, they are not recreated
+  - Using Deployment for application operation allows dynamic creation and deletion of Pods
 - Each Pod has its own IP address
 
 ## Service Resources
-- In Kubernetes, a Service defines a logical set of Pods and a policy to access that set of Pods
+- In Kubernetes, a Service defines a logical set of Pods and a policy for accessing them
 
 ## Service Exposure (Service Types)
 - ClusterIP
@@ -291,9 +293,9 @@ cf. [Service](https://kubernetes.io/ja/docs/concepts/services-networking/service
 - NodePort
   - Exposes the Service on a static port on each Node's IP
 - LoadBalancer
-  - Exposes the Service externally using a cloud provider's load balancer
+  - Uses a cloud provider's load balancer to expose the Service externally
 - ExternalName
-  - Associates the Service with content specified in the externalName field by returning a CNAME record
+  - Maps the Service to the contents specified in the externalName field by returning a CNAME record
 
 # Configuration
 
@@ -303,77 +305,77 @@ cf. [Configuration](https://kubernetes.io/ja/docs/concepts/configuration/)
 - General configuration tips
   - Use the latest stable API version
   - Configuration files should be stored in a version control system
-  - Use YAML instead of JSON; while compatibility is similar, YAML is more user-friendly.
+  - Use YAML instead of JSON. While compatibility is similar, YAML is more user-friendly.
   - Group related objects into a single file when meaningful
-  - Remember that many kubectl commands can also be called on directories
-  - Do not specify default values unnecessarily; simpler and minimal configurations are less prone to errors.
-  - Include annotations in object descriptions
+  - Remember that many kubectl commands can be called on directories
+  - Avoid specifying default values unnecessarily. Simplicity and minimalism reduce errors.
+  - Add annotations to describe objects
 
 ## ConfigMap
-- An API object used to store non-sensitive data as key-value pairs.
-  - ConfigMap does not provide confidentiality or encryption. Use Secrets for sensitive information or additional third-party tools.
-- Pods can use ConfigMaps as environment variables, command-line arguments, or configuration files in volumes.
+- An API object used to store non-confidential data in key-value pairs.
+  - ConfigMap does not provide confidentiality or encryption. Use Secret for sensitive data or additional third-party tools.
+- Pods can use ConfigMap as environment variables, command-line arguments, or configuration files within volumes
 
 ## Secrets
-- Allows you to store and manage sensitive information such as passwords, OAuth tokens, and SSH keys
+- Allows storage and management of sensitive information like passwords, OAuth tokens, and SSH keys
 - Can be included in Pod definitions or images
 
 # Security
 
 cf. https://kubernetes.io/ja/docs/concepts/security/
 
-## Overview of Cloud-Native Security
+## Overview of Cloud Native Security
 
-### The 4Cs of Cloud-Native Security
-- Security can be thought of in terms of layers.
-- The 4Cs of cloud-native:
+### The 4Cs of Cloud Native Security
+- Security can be thought of in layers.
+- The 4Cs of Cloud Native
   - Cloud
   - Cluster
   - Container
   - Code
 
 ### Infrastructure Security
-- Concerns regarding Kubernetes infrastructure include:
+- Concerns related to Kubernetes infrastructure
   - Network access to the API Server (control plane)
   - Network access to Nodes
   - Access to cloud provider APIs from Kubernetes
   - Access to etcd
   - Encryption of etcd
 
-### Components within the Cluster (Applications)
-- Concerns regarding workload security include:
+### Components Within the Cluster (Applications)
+- Concerns related to workload security
   - RBAC authorization (access to Kubernetes API)
 - Authentication
-- Management of application Secrets (and encryption when stored in etcd)
+- Secret management for applications (and encryption when stored in etcd)
 - PodSecurityPolicy
 - Quality of Service (and cluster resource management)
 - NetworkPolicy
 - TLS for Kubernetes Ingress
 
 ### Containers
-- Concerns regarding containers include:
-  - Vulnerability scanning and OS-dependent security for containers
+- Concerns related to containers
+  - Vulnerability scanning and OS-dependent security
   - Image signing and enforcement
-  - Avoiding privileged users
+  - Do not allow privileged users
 
 ### Code
-- Concerns regarding code include:
+- Concerns related to code
   - Access only via TLS
-  - Limiting the range of communication ports
+  - Restrict communication port ranges
   - Security dependencies on third parties
   - Static code analysis
   - Dynamic probing attacks
 
-# Personal Thoughts
+# Impressions
 The notes are quite abbreviated. It took a fair amount of time to read through the documentation...
 
 # References
-While progressing through the Kubernetes documentation, I also looked at external materials, so here are some references that were helpful:
+While progressing through the Kubernetes documentation, I also looked at external materials that were helpful.
 
-- [slideshare.net - Understanding Kubernetes: Learning the Internal Structure and Architecture](https://www.slideshare.net/ToruMakabe/kubernetes-120907020)
+- [slideshare.net - Understanding Kubernetes: Learn the Internal Structure and Architecture](https://www.slideshare.net/ToruMakabe/kubernetes-120907020)
 - [qiita.com - Kubernetes Dojo Advent Calendar 2018](https://qiita.com/advent-calendar/2018/k8s-dojo)
-- [qiita.com - Hands-on Introduction for Kubernetes Beginners](https://qiita.com/mihirat/items/ebb0833d50c882398b0f)
-- [qiita.com - Complete Understanding in a Few Hours! A Relatively Heavy Kubernetes Hands-on!!](https://qiita.com/Kta-M/items/ce475c0063d3d3f36d5d)
+- [qiita.com - Introduction Hands-on for Kubernetes Beginners](https://qiita.com/mihirat/items/ebb0833d50c882398b0f)
+- [qiita.com - Fully Understand in a Few Hours! A Rather Intense Kubernetes Hands-on!!](https://qiita.com/Kta-M/items/ce475c0063d3d3f36d5d)
 - [www.netone.co.jp - Introduction to Kubernetes Networking](https://www.netone.co.jp/knowledge-center/netone-blog/20191226-1/)
-- [www.slideshare.net - Understanding Kubernetes in About 30 Minutes](https://www.slideshare.net/YuyaOhara/30kubernetes-81054893)
-- [cloud.google.com - Overview of Networking](https://cloud.google.com/kubernetes-engine/docs/concepts/network-overview?hl=ja)
+- [www.slideshare.net - "About Kubernetes" in About 30 Minutes](https://www.slideshare.net/YuyaOhara/30kubernetes-81054893)
+- [cloud.google.com - Network Overview](https://cloud.google.com/kubernetes-engine/docs/concepts/network-overview?hl=ja)

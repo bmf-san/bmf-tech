@@ -1,32 +1,37 @@
 ---
-title: The Complete Guide to Becoming Healthy
+title: The Complete Guide to Health Technology
 slug: health-technology-guide
 date: 2024-05-09T00:00:00Z
 author: bmf-san
 categories:
   - Healthcare
 tags:
-  - Books
+  - Book
   - Health
+description: A book focused on health with a strong emphasis on evidence.
 translation_key: health-technology-guide
 ---
 
-[The Complete Guide to Becoming Healthy](https://amzn.to/4brpH4E) is a book that strongly emphasizes evidence-based health.
 
-It is organized based on perspectives and thoughts regarding evidence, and the sheer volume of references is overwhelming.
 
-The chapter on food takes up the most pages, which is appreciated since diet is one of the most important factors for health.
+[The Complete Guide to Health Technology](https://amzn.to/4brpH4E) was an insightful read.
 
-Regarding food, I felt that it is better to view it not simply as good or bad for health, but rather in terms of high or low risk. There were many parts that served as good references for thinking about risk on and off based on evidence.
+This book is heavily focused on health with a strong emphasis on evidence.
 
-In the first half, habits are also touched upon, and I understand that habits are crucial for health to the extent that one might want to say, "Health is habits."
+It organizes perspectives and thoughts on evidence as a premise. The sheer volume of references is overwhelming.
 
-To control "habits" (i.e., to become healthy), it is necessary to reconsider decision-making and actions. There are various methodologies and thoughts written about this, which can be useful even outside the theme of health.
+The chapter on food takes up the most pages, which is appreciated since diet is one of the most crucial factors for health.
 
-I pride myself on having a reasonable level of awareness and standards of action regarding health, but after reading this book, I found additional insights for improving my health habits.
+Regarding food, I found many parts suggesting that it's better to view it in terms of high or low risk rather than simply good or bad for health. There were many useful insights into risk-on and risk-off thinking based on evidence.
 
-The final chapter, "Emotions Create Health," was surprisingly interesting. I have only recently begun to understand the positive and negative aspects of emotions (the influence of emotions on behavior) after living for 30 years, and it is intriguing that emotions also have an impact on health.
+The first half also touches on habits, emphasizing that "health is habit," highlighting the importance of habits in health.
 
-I initially thought this book could be kept as a reference, but upon finishing it and reflecting, I realized that health-related research is constantly being updated, so I should not maintain an attitude of simply swallowing everything whole. (Thus, continuous learning is essential.)
+To control "habits" (≒ becoming healthy), it's necessary to review decisions and actions. Various methodologies and ideas are discussed, which can be useful even outside the theme of health.
 
-The title seems appealing to engineers, so it might be good to discreetly place it in the IT section of bookstores. w
+I pride myself on having a relatively high awareness and standard of behavior regarding health, but this book provided insights for further improving my health habits.
+
+The final chapter, "Emotions Create Health," was surprisingly intriguing. After 30 years of life, I finally understand the positive and negative aspects of emotions (their impact on behavior) and have learned to understand and leverage emotions to change my behavior. It's fascinating to see how emotions also affect health.
+
+I initially picked up this book thinking it could serve as a dictionary-like reference, but upon finishing it, I realized that health-related research is constantly being updated, so it's important not to maintain a mindset of blindly accepting everything. (Hence, continuous learning is necessary.)
+
+The title seems appealing to engineers, so it might be a good idea to discreetly place it in the IT section of bookstores. 😄

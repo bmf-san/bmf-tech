@@ -7,10 +7,12 @@ categories:
   - Application
 tags:
   - Golang
-  - Books
+  - Book
 translation_key: web-application-development-with-golang
 ---
 
-[Web Application Development with Go](https://amzn.to/3UGzvSK) was read.
 
-It touches on practical aspects of web application development, assuming a basic understanding of Go.
+
+[Web Application Development with Go](https://amzn.to/3UGzvSK)を読んだ。
+
+Goの基本の理解を前提とした形で、Webアプリケーション開発の実践的内容について触れている。

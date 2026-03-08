@@ -7,9 +7,11 @@ categories:
   - Development Process
 tags:
   - Lean
-  - Books
+  - Book
   - Startup
 translation_key: running-lean-practical-startup
 ---
 
-[Running Lean ― Practical Lean Startup](https://amzn.to/3UFmmbx) is a must-read for anyone involved in startups. It's also useful when starting new businesses.
+
+
+[Running Lean ―実践リーンスタートアップ](https://amzn.to/3UFmmbx) is a must-read if you're involved in a startup. It's also useful when starting a new business.

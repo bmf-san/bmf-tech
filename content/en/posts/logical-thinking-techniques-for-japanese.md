@@ -1,5 +1,5 @@
 ---
-title: 'Introduction to Thinking and Writing Skills: Practical Methods of Logical Thinking for Japanese'
+title: 'Introduction to Thinking and Writing Techniques: Practical Logical Thinking Methods for Japanese'
 slug: logical-thinking-techniques-for-japanese
 date: 2024-01-31T00:00:00Z
 author: bmf-san
@@ -11,6 +11,8 @@ tags:
 translation_key: logical-thinking-techniques-for-japanese
 ---
 
-[Introduction to Thinking and Writing Skills: Practical Methods of Logical Thinking for Japanese](https://amzn.to/3QtLUqQ) was read.
 
-It seems that reading books on themes like critical thinking and logical thinking will deepen understanding. The books I read in the past on this topic were quite helpful.
+
+[Introduction to Thinking and Writing Techniques: Practical Logical Thinking Methods for Japanese](https://amzn.to/3QtLUqQ) was read.
+
+Reading books on themes like critical thinking and logical thinking seems to deepen understanding. Books of that kind I read in the past were quite useful.

@@ -1,5 +1,5 @@
 ---
-title: Environment Variables Specified in docker-compose.yml Cannot Be Referenced During Container Build
+title: Environment Variables Specified in docker-compose.yml Not Accessible During Container Build
 slug: docker-compose-env-vars-issue
 date: 2020-11-14T00:00:00Z
 author: bmf-san
@@ -12,13 +12,15 @@ tags:
 translation_key: docker-compose-env-vars-issue
 ---
 
+
+
 # Overview
-I specified `env_file` in one of the services in docker-compose.yml to set environment variables, but they could not be referenced inside the container being built (on the Dockerfile side). I wanted to reference the environment variable during the build of the application using npm in the container as `process.env.VUE_APP_API_ENDPOINT`.
+I specified an `env_file` for one of the services in docker-compose.yml to set environment variables, but they were not accessible within the container being built (on the Dockerfile side). I was building a Vue application inside the container using npm and wanted the application to reference environment variables during the build process in the form of `process.env.VUE_APP_API_ENDPOINT`.
 
 # Solution
-The keys like `env_file` and `environment` specified in docker-compose.yml can only be referenced after the container is built, so simply using those keys does not allow referencing during the container build.
+The `env_file` and `environment` keys specified in docker-compose.yml become accessible after the container is built, so using these keys alone does not allow access during the container build.
 
-I resolved this by specifying the `args` key in docker-compose.yml to pass the variable to the container.
+The solution was to specify the `args` key in docker-compose.yml and pass variables to the container.
 
 .env
 ```sh
@@ -37,11 +39,11 @@ RUN npm install
 
 COPY . .
 
-# Receive arguments and define environment variables inside the container
+# Accept arguments and define environment variables inside the container
 ARG VUE_APP_API_ENDPOINT
 ENV VUE_APP_API_ENDPOINT=${VUE_APP_API_ENDPOINT}
 
-# Build the application. Can reference environment variables.
+# Build the application. Environment variables can be referenced.
 RUN npm run local-build
 
 FROM nginx:1.19.0-alpine
@@ -57,7 +59,7 @@ version: "3.8"
 services:
   app:
     container_name: "gobel-admin-client"
-    # Read environment variables from file
+    # Load environment variables from a file
     env_file: ".env"
     build:
         context: "./app"
@@ -74,7 +76,7 @@ networks:
         external: true
 ```
 
-For reference, here is the code from the application side where I want to reference the environment variable during the build.
+For reference, here is the application code that needs to reference environment variables during the build.
 ```js
 const apiClient = axios.create({
   baseURL: process.env.VUE_APP_API_ENDPOINT,

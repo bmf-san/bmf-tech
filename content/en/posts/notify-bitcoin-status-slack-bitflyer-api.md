@@ -1,5 +1,5 @@
 ---
-title: Notify Bitcoin Asset Status to Slack Using bitflyer's Private API
+title: Notify Bitcoin Asset Status on Slack Using bitFlyer's Private API
 slug: notify-bitcoin-status-slack-bitflyer-api
 date: 2017-09-26T00:00:00Z
 author: bmf-san
@@ -9,18 +9,18 @@ tags:
   - API
   - Bitcoin
   - Node.js
-  - bitflyer
+  - bitFlyer
 translation_key: notify-bitcoin-status-slack-bitflyer-api
 ---
 
+
 # Background
-I wanted to try using the API provided by bitflyer, so I hit the API that returns the asset status.
+I wanted to try out the API provided by bitFlyer, so I decided to call the API that returns asset status.
 
 # Source
-I will hit the API using Node.js.
-I won't show the response data as it's embarrassing.////
+We will call the API using Node.js. The response data is too embarrassing to show.////
 
-Most of the source code is based on examples from the documentation.
+Most of the source code is based on the examples in the documentation.
 
 ```bitflyer.js
 var request = require('request');
@@ -71,7 +71,7 @@ request(options, function (err, response, payload) {
 Feel free to format the JSON response as you like. (Lazy)
 
 # GitHub
-The source is available at [bmf-san/bitflyer-private-api-and-slack-api-sample](https://github.com/bmf-san/bitflyer-private-api-and-slack-api-sample)
+The source code is available here: [bmf-san/bitflyer-private-api-and-slack-api-sample](https://github.com/bmf-san/bitflyer-private-api-and-slack-api-sample)
 
 # Thoughts
-I would like to build a real-time application by combining it with WebSocket, but I can't seem to get started on the WebSocket implementation...
+I would like to build a real-time application by combining it with WebSocket, but I just can't get myself to implement WebSocket...

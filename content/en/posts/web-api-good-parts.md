@@ -7,13 +7,15 @@ categories:
   - Architecture
 tags:
   - API
-  - Books
+  - Book
   - Design
 translation_key: web-api-good-parts
 ---
 
+
+
 [Web API: The Good Parts](https://amzn.to/3ycWwnE) is a book I read.
 
-It's a must-read for learning about API design principles.
+It's a must-read to learn about API design principles.
 
-It covers the fundamentals of API design, making it a book you’ll want to revisit when you’re unsure about your design.
+The book covers the basics of API design. It's something you'll want to revisit when you're unsure about your design.

@@ -18,110 +18,112 @@ tags:
 translation_key: authentication-authorization-basics
 ---
 
-# Overview
-Since I have been involved in the development of authentication services recently, I wanted to summarize the basic concepts once again.
 
-I am referencing the authentication and authorization feature from the [Software Design November 2020 issue](https://gihyo.jp/magazine/SD/archive/2020/202011).
+
+# Overview
+Since I've been involved in the development of authentication services recently, I wanted to revisit the basics and summarize them.
+
+I referred to the authentication and authorization feature in the [Software Design November 2020 issue](https://gihyo.jp/magazine/SD/archive/2020/202011).
 
 # Relationship Between ID and Authentication/Authorization
 - ID
     - Identity
         - Management unit for system usage
-            - ex. User, Object, Organization, etc...
+            - ex. User, Object, Organization etc...
     - Identifier
         - Unit managed as data
-            - ex. User ID managed in SaaS, SNS, and other services
+            - ex. User IDs managed by SaaS, SNS, other services
     - Attribute
-        - Each piece of information that constitutes the Identifier
-            - ex. Identity is a person, Identifier is taro_yamada, Attributes are gender, date of birth, address, affiliation, etc...
+        - Each piece of information that makes up an Identifier
+            - ex. Identity is a person, Identifier is taro_yamada, Attribute is gender, date of birth, address, affiliation etc...
 
-# Identification, Authentication, and Authorization Process
+# Process of Identification, Authentication, and Authorization
 - Identification, Authentication, Authorization
     - Identification
-        - Uniquely identifies the Identifier
+        - Uniquely identify an Identifier
     - Authentication
-        - Verifies the legitimacy of the Identifier (≈ whether it is the person) using credentials
+        - Verify the legitimacy of an Identifier (≒ whether it is the person) using credentials
     - Authorization
-        - Decides how to assign permissions to the user
+        - Decide how to assign permissions to users
 
-# Incorporating Authentication and Authorization
+# Embedding Authentication and Authorization
 - ID and Permissions
     - Role
-        - Defines patterns of combinations of services or permissions and assigns users to them
+        - A system that defines patterns of service or permission combinations and assigns users to them
     - RBAC (Role-Based Access Control)
-        - Consolidates access restrictions for specific resources into roles and assigns users to them
+        - A system that consolidates access restrictions to specific resources as a role and assigns users to it
     - ABAC (Attribute-Based Access Control)
-        - Implements access restrictions based on specific attributes
+        - A system that imposes access restrictions based on specific attributes
 - Authentication Methods
-    - Credential Characteristics
+    - Characteristics of Credentials
         - Something you know
             - Based on user memory
         - Something you have
-            - Something the user possesses
+            - Based on what the user possesses
         - Something you are
             - Based on the user's physical characteristics
     - Two-Factor Authentication (Multi-Factor Authentication)
-        - Combines two or more credentials with different characteristics for authentication
+        - Authentication combining two or more credentials with different characteristics
     - Two-Step Authentication (Multi-Step Authentication)
-        - Requires the authentication process to be performed two or more times
+        - Authentication requiring the process to be performed more than once
 
 # Authentication and Authorization for Web Services
-- In-house ID management database
+- Own ID Management Database
 - Social Login
     - Reduces the number of authentications
-    - Reduces management load
+    - Reduces management burden
 - FIDO Authentication
     - First IDentity Online
-    - A technology created in 2012 by the FIDO Alliance, a non-profit organization
+    - Technology created by the non-profit FIDO Alliance in 2012
     - Online authentication centered on biometric authentication
     - Uses public key cryptography
-    - Stores authentication information in an Authenticator and performs authentication
+    - Stores authentication information in an authenticator and performs authentication
 - OAuth Authorization Framework
     - Open Authorization
-    - A mechanism that allows an app (OAuth client) to access APIs on behalf of the user
+    - A system that allows apps (OAuth clients) to access APIs on behalf of users
         - Authorizes API access
-- OAuth 2.0
-    - OAuth 1.0 primarily targeted web services
-    - OAuth 2.0 also targets mobile applications
+- OAuth2.0
+    - OAuth1.0 mainly targets web services
+    - OAuth2.0 also targets mobile apps
     - HTTPS is mandatory
 
-# Differences Between Authentication/Authorization for Web Services and APIs
+# Differences Between Authentication and Authorization for Web Services and APIs
 - Differences
     - Web Services
-        - After authentication and authorization, maintains login state in HTTP Cookies
-    - APIs
-        - Determines execution rights based on tokens
+        - Maintains login status in HTTP Cookie after authentication and authorization
+    - API
+        - Determines execution permission with a token
 - OpenID Connect Protocol
-    - Extends OAuth 2.0 to allow the transfer of identity information by including authentication results in the ID token
-    - OAuth 2.0 is focused on authorization and does not implement a mechanism to transfer identity information containing authentication results
-- Types of Authentication Flows in OpenID Connect 1.0
+    - An extension of OAuth2.0 that allows identity information, including authentication results, to be passed in an ID token
+    - OAuth2.0 is specialized in authorization and does not implement a mechanism to pass identity information including authentication results
+- Types of OpenID Connect1.0 Authentication Flows
     - Authorization Code Flow
-        - Transfers by exchanging authorization code and ID token (and access token)
+        - Exchanges authorization code and ID token (and access token)
     - Implicit Flow
-        - Signature verification is required when transferring ID tokens
+        - Signature verification is mandatory when passing ID token
     - Hybrid Flow
         - A fusion of the above two
-- Differences Between OAuth 2.0 and OpenID Connect 1.0
-    - OAuth 2.0 is undefined regarding authentication. OpenID Connect 1.0 is defined.
-    - OAuth 2.0 does not define the format of access tokens, but OpenID Connect 1.0 defines the format of ID tokens.
-    - The flow until token issuance is the same, but OpenID Connect 1.0 requires the implementation of an API for obtaining user information called the Userinfo endpoint.
+- Differences Between OAuth2.0 and OpenID Connect1.0
+    - OAuth2.0 does not define authentication. OpenID Connect1.0 does
+    - OAuth2.0 does not define the format of access tokens, but OpenID Connect1.0 defines the format of ID tokens
+    - The flow until token issuance is the same, but OpenID Connect1.0 requires the implementation of a Userinfo endpoint API to obtain user information
 
 # Enterprise Authentication and Authorization
-- In systems targeting enterprises, access management and access control are crucial.
+- In systems targeting enterprises, access management and access control are important
 - IAM (Identity and Access Management)
-    - The concept of managing user and member ID information, granting authentication, authorization, and access rights.
-    - For consumer IAM, improving UX is important, while for enterprises, corporate governance is a critical issue.
+    - A concept that manages user and member ID information, authentication, authorization, and grants access rights
+    - For consumer IAM, improving UX is important, while for enterprises, corporate governance is a key issue
 - Local Authentication
-    - Authentication that manages ID, authentication, and authorization for each system.
-    - Becomes difficult to manage as the number of users and systems increases.
+    - Authentication that manages ID, authentication, and authorization for each system
+    - Management becomes difficult as users and systems increase
 - Directory Services
-    - A service that records and manages the location, attributes, and configuration information of resources (systems, servers, applications, etc.) connected to the network.
+    - A service that collectively records and manages the location, attributes, and configuration information of resources (systems, servers, applications, etc.) connected to the network
     - LDAP (Lightweight Directory Access Protocol)
-        - A communication protocol for accessing directory services.
+        - A communication protocol for accessing directory services
     - Kerberos Authentication
-        - A protocol for mutual authentication between server and client, confirming identity. One of the technologies that achieve single sign-on.
+        - A protocol for mutual authentication between server and client, confirming identity. One of the technologies that enables single sign-on
 - SAML (Security Assertion Markup Language)
-    - A protocol for authentication between different cloud services.
+    - A protocol for authentication between different cloud services
 
 # References
-The authentication and authorization feature from the [Software Design November 2020 issue](https://gihyo.jp/magazine/SD/archive/2020/202011) was easy to understand.
+The authentication and authorization feature in the [Software Design November 2020 issue](https://gihyo.jp/magazine/SD/archive/2020/202011) was easy to understand.

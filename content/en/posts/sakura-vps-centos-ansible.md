@@ -1,5 +1,5 @@
 ---
-title: Sakura VPS + CentOS 7.3 + Ansible
+title: Sakura VPS + CentOS7.3 + Ansible
 slug: sakura-vps-centos-ansible
 date: 2017-10-01T00:00:00Z
 author: bmf-san
@@ -14,30 +14,30 @@ translation_key: sakura-vps-centos-ansible
 ---
 
 # Overview
-Automating the initial setup of Sakura VPS with Ansible.
+Automate the initial setup of Sakura VPS using Ansible.
 
 # Environment
 + Sakura VPS
-+ CentOS 7.3
-+ Ansible 2.2.1.0
++ CentOS7.3
++ Ansible2.2.1.0
 
 # Prerequisites
-+ Understanding the flow of initial setup for Sakura VPS.
-  + [Initial Setup of Sakura VPS](google.com)
++ Understand the initial setup flow of Sakura VPS.
+  + [Initial setup of Sakura VPS](google.com)
 
-# Installing CentOS 7 on Sakura VPS
-Select `OS Installation > Custom OS Installation` from the Sakura VPS console screen to install CentOS 7. Once the installation starts, you can open the console screen for CentOS 7 installation (either the HTML5 version of VNC console or the Java Applet version), so choose the one that suits your environment.
+# Install CentOS7 on Sakura VPS
+From the Sakura VPS console screen, select `OS Installation > Custom OS Installation` to install CentOS7. Once the installation starts, you can open the CentOS7 installation console screen (either the HTML5 version of the VNC console or the Java Applet version), and choose the one that suits your environment.
 
-During the CentOS 7 installation, you will need to configure language settings and initialize the disk. There is a screen for setting the root user password and creating a new user, but since the new user creation will be done with Ansible, you only need to set the root user password.
+During the CentOS7 installation, you need to configure language settings and initialize the disk. There is a screen for setting the root user's password and creating a new user, but since the new user creation will be done with Ansible, only set the root user's password.
 
-Next, send the public key from the Ansible host to the Sakura VPS. (Please create the key in advance; this part is omitted here.) This key is for the new user that will be created by Ansible.
+Next, send the public key from the Ansible host to the Sakura VPS. (Please create the key in advance. This step is omitted here.) This key is for the user that will be newly created by Ansible.
 `ssh-copy-id -i ~/.ssh/id_rsa.pub root@123.45.678.910`
 
-If you can SSH into Sakura VPS with `ssh root@123.45.678.901`, you're all set.
+If you can SSH into Sakura VPS with `ssh root@123.45.678.901`, you are ready.
 
 # Initial Setup of Sakura VPS with Ansible
 
-## Define the hosts file
+## Define hosts file
 hosts
 
 ```
@@ -45,8 +45,8 @@ hosts
 123.45.678.910 ansible_ssh_user=root ansible_ssh_private_key_file=~/.ssh/id_rsa
 ```
 
-## Define the Playbook
-The tasks will look like this:
+## Define Playbook
+The tasks are as follows:
 
 + Create a new user
 + Create an authorize_keys file
@@ -54,11 +54,12 @@ The tasks will look like this:
 + Grant sudo privileges to the wheel group
 + Prohibit SSH access for the root user
 + Change the SSH connection port number
-+ Change the TCP port for iptables
++ Change the tcp port for iptables
 + Shutdown the SSH port
 + Set SELinux to disabled
 
-One point to note is that `ssh_user_password` needs to be specified as an encrypted value using `openssl`.
+One point to note.
+`ssh_user_password` needs to be specified as an encrypted string using `openssl`.
 
 `openssl passwd -salt hoge -1 moge`
 
@@ -149,7 +150,7 @@ init.yml
     selinux: state=disabled
 ```
 
-## Define the handler
+## Define handler
 Define the handler.
 
 main.yml
@@ -166,5 +167,5 @@ main.yml
 Once all tasks are completed, restart the server to finish.
 
 # References
-+ [Initial Setup of Sakura VPS with Ansible](http://qiita.com/meganii/items/8c91a43e52bd5d61cdde#hosts)
-+ [Setting up a web server at lightning speed with Ansible.](http://qiita.com/sak_2/items/7dd3dcd864f93103f0db#%E3%81%95%E3%81%8F%E3%82%89vps%E5%81%B8%E3%81%AE%E6%BA%96%E5%82%99)
++ [Initial setup of Sakura VPS with Ansible](http://qiita.com/meganii/items/8c91a43e52bd5d61cdde#hosts)
++ [Configure a web server at the speed of light with Ansible.](http://qiita.com/sak_2/items/7dd3dcd864f93103f0db#%E3%81%95%E3%81%8F%E3%82%89vps%E5%81%B4%E3%81%AE%E6%BA%96%E5%82%99)

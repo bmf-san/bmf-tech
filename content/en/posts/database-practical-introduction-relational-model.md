@@ -1,5 +1,5 @@
 ---
-title: Introduction to Practical Databases from Theory ~ Efficient SQL with the Relational Model
+title: Learning Database Practice from Theory ~ Efficient SQL with the Relational Model
 slug: database-practical-introduction-relational-model
 date: 2024-04-01T00:00:00Z
 author: bmf-san
@@ -8,10 +8,13 @@ categories:
 tags:
   - DB
   - SQL
-  - Books
+  - Book
 translation_key: database-practical-introduction-relational-model
 ---
 
-[Introduction to Practical Databases from Theory ~ Efficient SQL with the Relational Model (WEB+DB PRESS plus)](https://amzn.to/3PZYdLg) was read.
 
-By learning from theory, I can organize my approach and thinking towards RDB. I have not fully understood set theory and logic, so this will be a future challenge.
+
+[I read Learning Database Practice from Theory ~ Efficient SQL with the Relational Model (WEB+DB PRESS plus)](https://amzn.to/3PZYdLg).
+
+By learning from theory, you can organize your approach and thinking towards RDB. Set theory and logic are areas I haven't fully understood yet, so they remain future challenges.
+

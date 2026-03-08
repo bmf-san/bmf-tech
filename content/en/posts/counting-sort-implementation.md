@@ -1,27 +1,28 @@
 ---
-title: Implementation of Count Sort
+title: Implementation of Counting Sort
 slug: counting-sort-implementation
 date: 2023-06-24T00:00:00Z
 author: bmf-san
 categories:
-  - Algorithms
-  - Data Structures
+  - Algorithms and Data Structures
 tags:
-  - Count Sort
+  - Counting Sort
 translation_key: counting-sort-implementation
 ---
 
-# What is Count Sort
-A unique sorting algorithm that sorts without comparisons.
 
-It can sort by counting the occurrences of elements.
 
-I found it fascinating that sorting can be done by counting, so I researched it.
+# What is Counting Sort
+Counting Sort is an unusual sorting algorithm that sorts without using comparisons.
+
+It can sort by counting elements instead of comparing them.
+
+I found it fascinating that sorting can be done by counting, so I decided to look into it.
 
 # Prerequisites
-You need to know about cumulative sums.
+You need to know about prefix sums.
 
-cf. [qiita.com - What is Cumulative Sum (For Beginners)](https://qiita.com/xryuseix/items/1059101a31107ba330d4)
+cf. [qiita.com - What is a Prefix Sum (For Beginners)](https://qiita.com/xryuseix/items/1059101a31107ba330d4)
 
 # Implementation
 The source code is as follows.
@@ -41,7 +42,7 @@ func countSort(s []int, maxVal int) []int {
 		count[num]++
 	}
 
-	// Calculate cumulative sum
+	// Calculate prefix sums
 	// ex. [1, 2, 3, 4, 5] → [1, 3, 6, 10, 15]
 	for i := 1; i <= maxVal; i++ {
 		count[i] += count[i-1]
@@ -67,19 +68,19 @@ func main() {
 }
 ```
 
-```go
+```
 // Output
 [1 2 2 3 3 4 5]
 ```
 
-The flow of the process is as follows:
-1. Count the occurrences of elements in the array using the indices of the array.
-2. Calculate the cumulative sum.
-3. Traverse from the end of the array to obtain the sorted result.
+The process flow is as follows:
+1. Count the occurrences of each element in the array using the elements as indices
+2. Calculate the prefix sums
+3. Traverse the array from the end to get the sorted result
 
-It feels very mathematical and not intuitive at all.
+It feels very mathematical rather than intuitive.
 
 # References
 - [en.wikipedia.org - prefix sum](https://en.wikipedia.org/wiki/Prefix_sum)
 - [www.techinterviewhandbook.org - sorting-searching](https://www.techinterviewhandbook.org/algorithms/sorting-searching/)
-- [qiita.com - What is Cumulative Sum (For Beginners)](https://qiita.com/xryuseix/items/1059101a31107ba330d4)
+- [qiita.com - What is a Prefix Sum (For Beginners)](https://qiita.com/xryuseix/items/1059101a31107ba330d4)

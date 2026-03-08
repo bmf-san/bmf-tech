@@ -12,10 +12,12 @@ tags:
 translation_key: mastering-tcp-ip-introduction
 ---
 
-[Mastering TCP/IP - Introduction (6th Edition)](https://amzn.to/44D5Jlm) is a great read.
 
-The examples are easy to understand and the book is very readable.
 
-I felt it was a good textbook for advancing understanding of networks from the basics of TCP/IP.
+[I read Mastering TCP/IP - Introduction (6th Edition)](https://amzn.to/44D5Jlm).
 
-Although I tend to have a negative perception of networks, this book was easy to read and enjoyable.
+The examples are easy to understand and it's easy to read.
+
+I felt it was a good textbook as an introductory book to advance understanding of networks from the basics of TCP/IP.
+
+I tend to have a mental block against networks and neglect them, but this book was easy to read and great.

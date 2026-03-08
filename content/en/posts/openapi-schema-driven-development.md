@@ -7,36 +7,36 @@ categories:
   - Application
 tags:
   - OpenAPI
-  - Schema Driven
+  - Schema-Driven
 translation_key: openapi-schema-driven-development
 ---
 
-# What is OpenAPI Specification
+# What is the OpenAPI Specification
 A format for defining HTTP API specifications in a language-agnostic way. It is written in YAML or JSON.
 
-The Swagger Specification is the predecessor of the OpenAPI Specification.
+Swagger Specification is the predecessor of the OpenAPI Specification.
 
 # Advantages and Disadvantages of Adopting OpenAPI
 ## Advantages
-- It is a standardized format for REST APIs, which can reduce communication costs among developers.
-- There is a rich ecosystem of tools (benefits of standardization).
-- Automatic generation of API documentation is possible.
-- Automation of code generation for API clients and servers can be achieved.
-- Being text-based makes it easier to manage when combined with version control systems.
-- You can start a mock server, allowing development to proceed without waiting for API implementation.
+- It is a standardized format for REST APIs, which can reduce communication costs among developers
+- The tools and ecosystem are well-developed (benefits of standardization)
+- Automatic generation of API documentation is possible
+- Automation of client and server code generation for APIs is possible
+- Being text-based, it becomes easier to manage when combined with version control systems
+- A mock server can be launched, allowing development to proceed without waiting for API implementation
 
-It can streamline the development process through schema-driven development.
+Schema-driven development can streamline the development process.
 
 ## Disadvantages
-- There is a learning cost for understanding the specifications when adopting it for the first time (which also affects the completeness of the design).
-- If the specifications and implementations are not synchronized, discrepancies may occur between them.
-- Since the OpenAPI specification is evolving, there is a cost associated with keeping up with the standards.
-- Depending on the tools used, unexpected behaviors or differences in interpretation of the specifications may arise.
+- There is a learning cost to understand the specifications when introducing it for the first time (also affects the degree of design completeness)
+- If the specification and implementation are not kept in sync, discrepancies may occur
+- As the OpenAPI specification evolves, there is a cost to keep up with the standard
+- Depending on the tools used, unexpected behavior or differences in interpretation of the specifications may occur
 
-It seems there are no critical disadvantages.
+There do not seem to be any critical disadvantages.
 
 # Trying It Out
-Since Docker is available, let's try it with Docker.
+Since Docker can be used, let's try it with Docker.
 
 cf. [github.com - OpenAPITools/openapi-generator](https://github.com/OpenAPITools/openapi-generator?tab=readme-ov-file#openapi-generator-cli-docker-image)
 
@@ -47,14 +47,14 @@ docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli generate \
     -o /local/out/go
 ```
 
-The API specification documentation seems to be well-suited for [OpenAPI (Swagger) Editor](https://marketplace.visualstudio.com/items?itemName=42Crunch.vscode-openapi) in VSCode.
+For API specification documents, [OpenAPI (Swagger) Editor](https://marketplace.visualstudio.com/items?itemName=42Crunch.vscode-openapi) seemed good for VSCode.
 
-# Thoughts
-I haven't properly looked at the generation options, so once I can confirm those, I plan to use it in a personal development project.
+# Impressions
+I haven't fully explored the generation options, so once I can confirm those, I plan to use it in a personal development project.
 
-I felt that adjusting what to auto-generate and what not to auto-generate is a challenge during the introduction phase.
+I felt that the challenge during introduction is to skillfully adjust what to auto-generate and what not to.
 
 # References
 - [www.openapis.org](https://www.openapis.org/)
-- [zenn.dev - Mastering OpenAPI Generator for Schema-Driven Development in Go](https://zenn.dev/ysk1to/books/248fad8cb34abe)
+- [zenn.dev - 【Go言語】OpenAPI Generatorを使いこなすスキーマ駆動開発](https://zenn.dev/ysk1to/books/248fad8cb34abe)
 - [medium.com - Generating Go code from OpenAPI Specification Document](https://medium.com/@MikeMwita/generating-go-code-from-openapi-specification-document-ae225e49e970)

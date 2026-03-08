@@ -8,59 +8,62 @@ categories:
 tags:
   - Architect
   - Books
+description: Reflecting on the roles and responsibilities of a software architect.
 translation_key: design-it
 ---
 
-I revisited [Design It](https://amzn.to/4635mAS), which I read about 1-2 years ago, and learned about the roles and responsibilities of a software architect, so I wanted to leave some notes.
 
-This will be a bit poetic as I mix in my feelings.
+
+I recently revisited [Design It](https://amzn.to/4635mAS), a book I read about 1-2 years ago, and found it insightful regarding the roles and responsibilities of a software architect. Here are some notes.
+
+This is a bit of a personal reflection, so consider it a poem.
 
 # What Does a Software Architect Do?
 A software architect writes code, leads projects, and thinks from a business perspective.
 
-They stand at the center of three elements: business, technology, and users.
+They stand at the intersection of business, technology, and user needs.
 
-The responsibilities of a software architect are generally defined in Design It as follows:
+In *Design It*, the responsibilities of a software architect are generally defined as follows:
 
-- Problem definition from an engineering perspective
-- System decomposition and responsibility assignment
-- Maintaining an overall view
+- Defining problems from an engineering perspective
+- Dividing systems and assigning responsibilities
+- Continuously overseeing the whole
 - Deciding on trade-offs between quality attributes
 - Managing technical debt
-- Improving the architectural skills of the team
+- Enhancing the team's architectural skills
 
-System decomposition and responsibility assignment do not necessarily mean microservices; it’s more about being able to reduce the size of the system, I think. Probably.
+Dividing systems and assigning responsibilities doesn't necessarily mean focusing on microservices; it's more about keeping the system size manageable. Probably.
 
-The educational responsibility of improving the team's skills was a bit refreshing to me.
+The educational responsibility of improving the team's skills was a fresh perspective.
 
 # What is Software Architecture?
-Software architecture is defined as "a collection of design decisions on how to build software to exhibit quality attributes and other properties."
+Software architecture is defined as "a collection of design decisions about how to build software to exhibit certain quality attributes and other properties."
 
-In other words, **a software architect needs the ability to understand the characteristics required by the system and make design decisions to exhibit those characteristics**.
+In other words, a software architect needs the ability to understand the characteristics required by the system and make design decisions to exhibit those characteristics.
 
-There are many things to do and be careful about in software construction, but one thing a software architect should be cautious of is "avoiding costly mistakes."
+There are many things to do and be cautious about when building software, but one thing a software architect should be careful about is "avoiding costly mistakes."
 
-**This means being able to detect and avoid parts where mistakes could lead to significant issues later on**, which I feel is an area where experience can greatly vary.
+**This means being able to detect and avoid parts that could lead to significant issues later, essentially risk control,** which I feel is an area where experience makes a big difference.
 
-In relation to this, one of the guiding principles for software architects is to "delay design decisions as much as possible."
+Related to this, one guiding principle for software architects is to "delay design decisions as much as possible."
 
-**This means postponing important design decisions (≒ decisions where costly mistakes could occur) as much as possible.**
+**Important design decisions (≒ decisions where costly mistakes could occur) should be postponed as much as possible.**
 
-There are times in life when you feel the same way; software architecture is life. I deeply felt that.
+This is true in life too; software architecture is life. I thought deeply about this.
 
-For issues that absolutely cannot move forward without a decision, I think it’s important to keep options open and make judgments. This is also life.
+For issues that must be decided now to move forward, I think it's important to leave options open when making decisions. This is also true in life.
 
-For a deeper discussion on software architecture, I think you can refer to [Software Architecture Basics: A Systematic Approach Based on Engineering](https://amzn.to/3PeBOKE). It covers similar topics. Various characteristics of software architecture are also organized there.
+For a deeper dive into software architecture, I think [Software Architecture: The Hard Parts](https://amzn.to/3PeBOKE) is a good reference. It covers similar topics and organizes various characteristics of software architecture.
 
-The sequel, [Software Architecture Hard Parts: Trade-off Analysis for Distributed Architecture](https://amzn.to/3JfKKM6), contains more advanced content, but I also find it interesting. As a side note, I have a personal connection to this book as I participated as a volunteer reviewer.
+The sequel, [Software Architecture: The Hard Parts](https://amzn.to/3JfKKM6), is more advanced but also interesting. As a side note, I participated as a volunteer in reviewing this book, so I have a personal connection to it.
 
-# Programmers are Software Architects
-On page 214 of Design It, it states, "Programmers make architectural decisions daily." Even a single line of code can lead to design decisions that affect the quality attributes of the architecture, so even programmers can be considered software architects.
+# Programmers as Software Architects
+On page 214 of *Design It*, it states, "Programmers make architectural decisions daily." Even a single line of code can be a design decision that affects architectural quality attributes, so even programmers can be considered software architects.
 
-Regardless of job responsibilities or titles, it’s important to be aware of acting as an architect when facing software.
+Regardless of differing responsibilities or changing titles, if you're dealing with software, it's important to act with the mindset of an architect.
 
-# Thoughts
-I want to be able to proudly say that I am a software architect someday.
+# Personal Thoughts
+I aspire to one day confidently call myself a software architect.
 
 # References
 - [Design It](https://amzn.to/4635mAS)

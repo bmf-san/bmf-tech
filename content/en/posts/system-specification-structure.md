@@ -12,12 +12,13 @@ tags:
 translation_key: system-specification-structure
 ---
 
+
 # Overview
-Sometimes I think about what structure should be used when writing out the specifications of a system in a document.
+Sometimes, I ponder over what structure a system specification document should have when I want to write it down.
 
-Here is the structure of my system specification document.
+Here, I describe the structure of my system specification document.
 
-It should be useful not only for the design phase of new projects but also for understanding the specifications of existing systems.
+This structure should be useful not only during the design phase of a new project but also for understanding the specifications of an existing system.
 
 # Structure
 ```sh
@@ -25,39 +26,39 @@ It should be useful not only for the design phase of new projects but also for u
 02_system_architecture.md  # System Architecture
 03_data_model.md           # Data Model (Conceptual Design)
 04_web_endpoint.md         # List of Web Endpoints
-05_api.md                  # API Specifications (mainly REST, etc.)
-06_technical_detail.md     # Technical Details (libraries, middleware, etc.)
+05_api.md                  # API Specifications (Mainly REST, etc.)
+06_technical_detail.md     # Technical Details (Libraries, Middleware, etc.)
 07_usecase.md              # Use Cases
-08_sequence.md             # Sequence Diagrams and Process Flow
+08_sequence.md             # Sequence Diagrams & Process Flow
 09_references.md           # References
 ```
 
-The file names are mostly self-explanatory, so not much explanation is needed, but I will outline some special notes.
+The file names are mostly self-explanatory, but I'll note down some special points.
 
 ## 01_overview.md
-In the overall overview, describe the purpose and outline of the specification document.
+In the overall overview, describe the purpose and general outline of the specification document.
 
 - What the specification document is about
 - Intended audience
-- Purpose / Out of scope
-- Article management policy (usage, update frequency, etc.)
+- Purpose/Non-purpose
+- Article management policy (usage purpose, update frequency, etc.)
 
 ## 02_system_architecture.md
-Personally, I like to document the C4 Model using mermaid, but sometimes maintenance can be difficult with mermaid, so I think carefully about it.
+I personally like to document the C4 Model using mermaid, but since mermaid can be difficult to maintain, it's important to think carefully.
 
-Recently, AI has been quite helpful, so it would be good to code it as much as possible.
+Recently, AI has been quite helpful, so it's good to leave it in code form as much as possible.
 
 ## 03_data_model.md
-In the data model, describe the data design of the system's abstraction and concreteness.
+In the data model, describe the abstract and concrete data design of the system.
 
-If it's a database, include both conceptual and physical design.
+For databases, include conceptual and physical design.
 
-It would also be good to have a model design.
+It would be good to have model design as well.
 
 ## 04_web_endpoint.md
 List the endpoints that return screens.
 
-Here is an example.
+Below is an example.
 
 ```sh
 | Item           | Value                                 |
@@ -66,49 +67,49 @@ Here is an example.
 | **Path**       | `/your/path/here`                 |
 | **HTTP Method** | `GET` / `POST` / `PUT` / `DELETE` |
 | **Controller**  | `Your::Controller#action`         |
-| **Authentication**       | `authenticate_user!`  etc.           |
-| **Authorization**       | `authorize YourPolicy`  etc.         |
+| **Authentication**       | `authenticate_user!` etc.           |
+| **Authorization**       | `authorize YourPolicy` etc.         |
 ```
 
-Authentication and authorization should be tailored to the concerns of the relevant web endpoints and the context of the system.
+Authentication and authorization should be appropriately tailored to the concerns of the relevant web endpoint and the system context.
 
 ## 05_api.md
 List the API endpoints.
 
-Here is an example.
+Below is an example.
 ```sh
 | API Name       | Endpoint                   | Method                  | Description              |
 | ---------- | ------------------------- | --------------------- | --------------- |
-| Specify API Name   | `/api/v1/sample_endpoint` | GET/POST/PATCH/DELETE | Brief overview of this API     |
-| Data Retrieval API | `/api/v1/items`           | GET                   | Retrieve the list of items     |
-| Search API    | `/api/v1/items/search`    | POST                  | Search for items based on conditions |
+| API Name   | `/api/v1/sample_endpoint` | GET/POST/PATCH/DELETE | Overview of this API     |
+| Data Retrieval API | `/api/v1/items`           | GET                   | Retrieve a list of items     |
+| Search API    | `/api/v1/items/search`    | POST                  | Search items based on conditions |
 ```
-
+         
 ## 06_technical_detail.md
 Write about the technical details.
 
-This section delves into important points regarding the system.
+This section delves into important points in the system.
 
-It is the most important section and also the most labor-intensive section.
+It is the most important and the most labor-intensive section.
 
 ## 07_usecase.md
 Write about the list of use cases.
 
-Here is an example assuming multiple systems.
+Below is an example assuming multiple systems.
 
 ```sh
 |   System   |  User  |       Category       |              Use Case               |
 | ------------ | ---------- | -------------------- | --------------------------------------- |
-| example       | Administrator     | Administrator Functions           | List Display                          |
+| example       | Administrator     | Admin Functions           | List Display                          |
 ```
 
 ## 08_sequence.md
 Write sequences according to the list of use cases.
 
 ## 09_references.md
-A section for related materials.
+Section about related materials.
 
 # Thoughts 
-If the documentation is well-organized from the start, that's one thing, but being able to write in this format for my own understanding makes it easier to form a mental model and align recognition with others.
+If the documentation is well-organized from the start, it makes it easier to form a mental model and align understanding with others when you can write in this format for your understanding.
 
-It varies case by case, but when maintenance becomes difficult, it can be a trigger to realize that the issue is not with the way the document is written but rather the complexity of the system.
+Depending on the case, when maintenance becomes difficult, it might be an opportunity to realize that the problem lies not in the way the document is written but in the complexity of the system.

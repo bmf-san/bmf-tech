@@ -11,9 +11,9 @@ translation_key: ruby-modules
 ---
 
 # Overview
-This post discusses Ruby modules.
+Writing about Ruby Modules.
 
-# What is a Module?
+# What is a Module
 A mechanism to provide common methods and constants to classes and other modules.
 
 ```ruby
@@ -25,11 +25,11 @@ module Hi
 end
 ```
 
-Unlike classes, modules cannot be instantiated and cannot be inherited.
+Unlike classes, modules cannot be instantiated. They also cannot be inherited.
 
 Modules can define class methods and instance methods.
 
-Class methods cannot be called from the included module.
+Class methods cannot be called from where the module is included.
 
 ```ruby
 module Greet
@@ -75,14 +75,16 @@ end
 
 Student.say # => 私は学生です
 University::Student.say # => I am a student
+
 ```
 
 ## Mixin
-Allows adding or overriding instance methods in a class without inheritance.
+Allows adding or overriding instance methods in a class without using inheritance.
 
-Classes cannot inherit multiple times, but multiple inheritance can be achieved through Module mixins.
+While classes cannot have multiple inheritance, multiple inheritance can be achieved through Module Mixin.
 
 ```ruby
+
 class Greet
   include Hi
 end
@@ -90,12 +92,12 @@ end
 puts Greet.new.say_hi # => Hi!
 ```
 
-By the way, Mixin and Trait are similar, but Mixin uses inheritance while Trait can combine methods through various means other than inheritance, which gives them slightly different nuances.
+Incidentally, Mixin and Trait are similar, but Mixin uses inheritance, whereas Trait can compose methods through various means other than inheritance, with slightly different nuances.
 
 cf. [ja.wikipedia.org - Mixin](https://ja.wikipedia.org/wiki/Mixin)
-cf. [ja.wikipedia.org - Trait](https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%AC%E3%82%A4%E3%83%88)
+cf. [ja.wikipedia.org - トレイト](https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%AC%E3%82%A4%E3%83%88)
 
-## Adding Singleton Methods to Classes Using extend
+## Adding Singleton Methods to a Class Using extend
 Using extend, you can add singleton methods to a class.
 
 ```ruby
@@ -112,5 +114,5 @@ Greet.new.extend(Hi).hi # => Hi!
 
 # References
 - [Module - docs.ruby-lang.org](https://docs.ruby-lang.org/ja/latest/class/Module.html)
-- [qiita.com - Implementing Inheritance for Mixin: Ruby module, Java interface, PHP trait](https://qiita.com/niwasawa/items/82a5611b23f4a95aac04)
-- [takayukinakata.hatenablog.com - Why can't class methods be inherited in mix-ins in Ruby?](https://takayukinakata.hatenablog.com/entry/2017/03/04/183546)
+- [qiita.com - Implementing Mixin-like Inheritance: Ruby module, Java interface, PHP trait](https://qiita.com/niwasawa/items/82a5611b23f4a95aac04)
+- [takayukinakata.hatenablog.com - Why can't class methods be inherited with mix-in in Ruby](https://takayukinakata.hatenablog.com/entry/2017/03/04/183546)

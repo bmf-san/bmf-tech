@@ -7,65 +7,67 @@ categories:
   - Application
 tags:
   - FuelPHP
+description: A summary of the current status of FuelPHP as of March 2023.
 translation_key: fuelphp-status-march-2023
 ---
 
 # Overview
-This post summarizes the current status of FuelPHP as of March 2023. The information is gathered from my own research, so it may lack accuracy.
+This is a summary of the current status of FuelPHP as of March 2023, based on my own research. The information may lack accuracy as it is independently gathered.
 
-While Laravel seems to be overwhelmingly popular among PHP frameworks, there may still be users actively using FuelPHP, and I hope this information can be of help.
+While Laravel seems to be overwhelmingly popular among PHP frameworks, there might still be people actively using FuelPHP. I hope this information can be of some help.
 
 # FuelPHP Version Information
-Here is a summary of the information I found regarding FuelPHP.
+Here is a summary of the information I gathered about FuelPHP.
 
-|                           Version                            | Supported PHP Version |                                                                         Changelog                                                                          |                                                                                                    Note                                                                                                    |
+|                           Version                            | Supported PHP Version |                                                                         Changelog                                                                          |                                                                                                    Notes                                                                                                    |
 | ------------------------------------------------------------ | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [1.8.0](https://github.com/fuel/fuel/tree/1.8.0)             | >=5.3.3               | [Changelog v1.8](https://github.com/fuel/core/wiki/Changelog-v1.8) [Changelog v1.8.0 hotfix1](https://github.com/fuel/core/wiki/Changelog-v1.8.0-hotfix-1) | Probably supports PHP up to 7.0                                                                                                                                                                       |
-| [1.8.1](https://github.com/fuel/fuel/tree/1.8.1)             | >=5.3.3               | [Changelog v1.8.1](https://github.com/fuel/core/wiki/Changelog-v1.8.1)                                                                                     | Probably supports PHP up to 7.3                                                                                                                                                                                 |
+| [1.8.0](https://github.com/fuel/fuel/tree/1.8.0)             | >=5.3.3               | [Changelog v1.8](https://github.com/fuel/core/wiki/Changelog-v1.8) [Changelog v1.8.0 hotfix1](https://github.com/fuel/core/wiki/Changelog-v1.8.0-hotfix-1) | It seems to support PHP up to 7.0                                                                                                                                                                       |
+| [1.8.1](https://github.com/fuel/fuel/tree/1.8.1)             | >=5.3.3               | [Changelog v1.8.1](https://github.com/fuel/core/wiki/Changelog-v1.8.1)                                                                                     | It seems to support PHP up to 7.3                                                                                                                                                                                 |
 | [1.8.2](https://github.com/fuel/fuel/tree/1.8.2)             | >=5.4                 | [Changelog v1.8.2](https://github.com/fuel/core/wiki/Changelog-v1.8.2)                                                                                     | According to [release information](https://fuelphp.com/blogs/2019/06/fuel-releases-1-8-2), it supports up to 7.3                                                                                                             |
-| [1.9/develop](https://github.com/fuel/fuel/tree/1.9/develop) | >=5.4                 | N/A                                                                                                                                                        | Based on [Forum](https://fuelphp.com/forums/discussion/comment/28148#Comment_28148) and [commit](https://github.com/fuel/core/commit/ad982afacf66f56b756b805071be29d10a04dab6), it seems to support PHP 8.0. |
-| 2.0 (private)                                                | N/A                   | N/A                                                                                                                                                        | According to [Forum](https://fuelphp.com/forums/discussion/comment/28148#Comment_28148), it is a redesigned version that supports PHP between 7.4 and 8.0.                                                    |
+| [1.9/develop](https://github.com/fuel/fuel/tree/1.9/develop) | >=5.4                 | N/A                                                                                                                                                        | According to [Forum](https://fuelphp.com/forums/discussion/comment/28148#Comment_28148) and [commit](https://github.com/fuel/core/commit/ad982afacf66f56b756b805071be29d10a04dab6), it seems to support PHP 8.0. |
+| 2.0 (private)                                                | N/A                   | N/A                                                                                                                                                        | According to [Forum](https://fuelphp.com/forums/discussion/comment/28148#Comment_28148), it is a redesigned version that supports PHP 7.4 and above but below 8.0                                                    |
 
-It seems that there is no clear indication of how long security support will last for each version of FuelPHP, and the EOL schedule is also unclear (it may be EOL for version 1).
+It seems that there is no clear statement on how long security support will be provided for each version of FuelPHP, or any planned EOL (End of Life) dates (version 1.x might already be EOL).
 
-The current latest version is FuelPHP 1.8.2, but the supported PHP version has already reached EOL.
+The current latest version is FuelPHP 1.8.2, but the PHP versions it supports have already reached EOL.
 
 # About FuelPHP 1.9/develop and 2.0
-While the table above indicates support up to 8.0, it seems that there is also some level of support for 8.1.
+In the table above, I mentioned that it seems to support up to 8.0, but it appears that some support for 8.1 is also in place.
 
 [Forum](https://fuelphp.com/forums/discussion/15418/php-8-1/p1)
 
-I have asked some questions to an insider (Harro) regarding this, and I will summarize the responses below. (The questions were asked around April 2022)
-Please note that the original text was in English, so I may not have fully captured the nuances (my English skills are not very high).
+I have asked some questions to an insider (Harro) about this, and I will summarize the responses below. (The questions were asked around April 2022)
+Please note that the original text is in English, so there might be nuances that I couldn't fully capture (my English skills are not high, so please bear with me).
 
 Q. Is there any update information about FuelPHP 1.9?<br>
-A. Our application (presumably the one Harro is working on) runs on PHP 8.1, so I think it is possible to use 1.9-dev.
+A. Our application (presumably the application Harro handles at work) is running on PHP 8.1, so I think it is possible to use 1.9-dev.
 
-Q. Does 1.9-dev run on PHP 8.1?<br>
-A. We haven't thoroughly tested it on 8.1; we can only run tests on 8.x.
+Q. Does 1.9-dev work on PHP 8.1?<br>
+A. We haven't been able to fully verify its operation on 8.1, and have only been able to run tests on version 8.
 
 Q. Is there anything I can do to help with the release of 1.9-dev?<br>
-A. We haven't tested the [PR](https://github.com/fuel/core/pull/2168), so we would appreciate help with that.
-(From this, it seems that addressing this PR alone may not lead to a release, so I think they were looking for other tasks they could assist with.)
+A. We haven't been able to test [PR](https://github.com/fuel/core/pull/2168), so we would appreciate your help.
+(It seems that addressing this PR alone won't make it releasable, so I think they suggested tasks I could help with.)
 
-Q. Is financial support needed? Can donations help with FuelPHP development? (I was curious if it could be a means to expedite the release of 1.9/develop.)<br>
-A. Not at this time. My (Harro's) company covers all the necessary infrastructure, and since all applications are developed with Fuel, bug fixes are implicitly supported. We are not lacking resources.
+Q. Do you need financial support? Can donations help with the development of FuelPHP? (I was curious if it could expedite the release of 1.9/develop, so I asked)<br>
+A. It is not necessary at the moment. My (Harro's) company provides all the necessary infrastructure, and since all applications are developed with Fuel, bug fixes are implicitly supported. We are not lacking resources.
 
-**While 1.9/develop is not an official release, it seems to be somewhat operational on PHP 8.1.**
+**1.9/develop is not an officially released version, but it seems to be somewhat operational on PHP 8.1.**
 
-I conducted my own personal research (upgrading the PHP and FuelPHP versions of applications running on FuelPHP) and found that it worked quite well.
+I conducted a personal investigation (upgrading the PHP and FuelPHP versions of applications running on FuelPHP and verifying their operation), and they worked quite well.
 
-However, the test coverage for 1.9/develop is quite low, which is concerning. But if you are using versions below 1.8.2 and absolutely need to upgrade your PHP version to 8.0 or 8.1, using 1.9/develop might be an option. (This is just my personal opinion. Use at your own risk.)
+The low test coverage of 1.9/develop is a bit concerning, but if you are using a version below 1.8.2 and absolutely need to upgrade the PHP version to 8.0-8.1, using 1.9/develop might be an option. (This is a personal opinion. Please proceed at your own risk.)
 
-From the conversations, I learned that FuelPHP version 1 has already passed EOL. Perhaps for this reason, I heard that there is a policy not to focus on version 1 anymore.
+Through the conversation, I learned that FuelPHP 1.x is apparently already past EOL. As a result, I also heard that there is a policy not to focus on version 1.x anymore.
 
-Just a few days after that conversation, there were posts on [Forum](https://fuelphp.com/forums/discussion/15435/sneak-peak-#Item_3) and Twitter [post](https://twitter.com/fuelphp/status/1629873448460734468?s=20), indicating that the focus will shift from version 1 to version 2.0.
+Shortly after having such a conversation, there was a [Forum](https://fuelphp.com/forums/discussion/15435/sneak-peak-#Item_3) post and a [Twitter post](https://twitter.com/fuelphp/status/1629873448460734468?s=20), revealing that the focus is on version 2.0 rather than version 1.x.
 
-Previously, it seemed that the direction was to release 1.9/develop first because 2.0 would involve significant changes and take a considerable amount of time, especially since the EOL for PHP was approaching. However, it appears that my understanding was incorrect.
+Previously, I thought the direction was "2.0 will be a major change, so it is taking quite some time, and since PHP's EOL has arrived, we will release 1.9/develop first," but it seems that understanding was incorrect.
 
-**It is unclear whether 1.9/develop will be officially released, but we might expect an alpha release of 2.0.**
+**It is unclear whether 1.9/develop will be officially released, but we might be able to look forward to an alpha release of 2.0.**
 
-Since 2.0 is still private and the source code is not public, the full picture is not yet clear. However, it seems that static interfaces will be removed and a DI container will be used, making it easier to write tests, so we might have some expectations regarding test coverage.
+Version 2.0 is still private, and the source code is not public, so the full picture is unknown. However, it seems that static interfaces will be removed, and a DI container will be used, making it easier to write tests, so we might be able to have expectations regarding test coverage as well.
 
-# Thoughts
-I believe there are still many services in the world facing challenges on how to refresh applications that are locked into FuelPHP. I wonder what strategies they are taking... especially in cases where replacing with another application or architecture is not realistic and would involve significant pain, the choices available are likely quite limited...
+# Impressions
+I believe there are still many services in the world facing challenges on how to revamp applications locked into FuelPHP. I wonder what strategies various places are adopting...
+Especially in cases where replacing with a different application or architecture is not realistic and involves significant pain, the choices to be made should be quite limited...

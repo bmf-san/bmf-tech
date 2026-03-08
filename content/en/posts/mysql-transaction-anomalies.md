@@ -1,5 +1,5 @@
 ---
-title: MySQL Transaction Anomalies
+title: About Transaction Anomalies in MySQL
 slug: mysql-transaction-anomalies
 date: 2023-06-08T00:00:00Z
 author: bmf-san
@@ -11,12 +11,13 @@ tags:
 translation_key: mysql-transaction-anomalies
 ---
 
+
+
 # Overview
-This post summarizes the anomalies of MySQL transactions.
-Assuming MySQL version 8.
+This post summarizes transaction anomalies in MySQL. The MySQL version assumed is 8 series.
 
 # Test Environment
-The environment used for testing is prepared with docker-compose. (Since it's only one container, using compose is not necessary...)
+The environment used for testing is prepared with docker-compose. (Although it's just one container, so you don't necessarily need to use compose...)
 
 ```sh
 .
@@ -53,47 +54,47 @@ CREATE TABLE `users` (
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 ```
 
-You can prepare a MySQL 8 container with `docker compose up`.
+You can prepare a MySQL 8 series container with `docker compose up`.
 
 # Transaction Isolation Levels
-MySQL's InnoDB provides the four transaction isolation levels defined by the ANSI/ISO SQL standard.
+MySQL's InnoDB provides four transaction isolation levels as defined by the ANSI/ISO SQL standard.
 
-|    Isolation Level   | Dirty Read | Inconsistent Read | Lost Update | Phantom Read |
-| -------------------- | ---------- | ----------------- | ----------- | ------------ |
-| READ UNCOMMITTED     | ○          | ○                 | ○           | ○            |
-| READ COMMITTED       | ×          | ○                 | ○           | ○            |
-| REPEATABLE READ※1   | ×          | ×                 | ○           | ○※           |
-| SERIALIZABLE         | ×          | ×                 | ×           | ×            |
+| Isolation Level   | Dirty Read | Inconsistent Read | Lost Update | Phantom Read |
+| ----------------- | ---------- | ----------------- | ----------- | ------------ |
+| READ UNCOMMITTED  | ○          | ○                 | ○           | ○            |
+| READ COMMITTED    | ×          | ○                 | ○           | ○            |
+| REPEATABLE READ※1 | ×          | ×                 | ○           | ○※           |
+| SERIALIZABLE      | ×          | ×                 | ×           | ×            |
 
 ※1 REPEATABLE READ is the default in MySQL.
 
-※2 Although marked as ○ above, MySQL prevents phantom reads from occurring in REPEATABLE READ.
+※2 Although marked as ○ above, MySQL is designed to prevent phantom reads in REPEATABLE READ.
 
-The transaction isolation level of READ UNCOMMITTED is the lowest, while SERIALIZABLE is the highest. The above list is ordered from lowest to highest. Generally, higher isolation levels tend to decrease performance.
+The transaction isolation level ranges from READ UNCOMMITTED, the lowest, to SERIALIZABLE, the highest. The above table is ordered from lowest to highest. Generally, the higher the isolation, the lower the performance tends to be.
 
-For more on transactions, see [Transaction Overview](https://bmf-tech.com/posts/%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B8%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E6%A6%82%E8%A6%B3).
+For more on transactions, see [Transaction Overview](https://bmf-tech.com/posts/%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B6%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E6%A6%82%E8%A6%B3).
 
 # Anomalies
 Let's reproduce transaction anomalies in MySQL.
 
-An anomaly refers to "unexpected results or inconsistencies that arise from the transaction isolation level and processing order."
+An anomaly refers to "unexpected results or inconsistencies arising from transaction isolation levels or processing order."
 
-Some anomalies are defined by the ANSI SQL standard and ISO/IEC 9075, and there are various others beyond those covered here.
+There are anomalies defined by ANSI SQL standards or ISO/IEC 9075, and there are various others besides those discussed here.
 
-Inconsistent Read is not defined by those standards. (I couldn't find where it is defined...)
+Inconsistent read is not defined by those standards. (I couldn't find where it is defined...)
 
 Transactions are denoted as TX. Numbers are used to distinguish multiple transactions (e.g., TX1, TX2).
 
 ## Dirty Read
-A dirty read is the phenomenon where TX1 reads data before TX2 has committed it.
+Dirty read is a phenomenon where TX1 reads data from TX2 before TX2 commits.
 
-### Verification
+### Test
 All sessions are conducted with READ UNCOMMITTED.
 ```sql
 mysql> SET SESSION TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
 ```
 
-1. Start transactions in TX1 and TX2.
+1. Start transactions in TX1 and TX2
 ```sql
 // TX1
 mysql> START TRANSACTION;
@@ -101,7 +102,7 @@ mysql> START TRANSACTION;
 mysql> START TRANSACTION;
 ```
 
-2. Add data in TX2.
+2. Add data in TX2
 ```sql
 // TX2
 mysql> INSERT INTO users(name) VALUES('foo');
@@ -109,37 +110,37 @@ mysql> INSERT INTO users(name) VALUES('foo');
 
 Data is added in TX2, but not committed.
 
-3. Read data again in TX1.
+3. Read data again in TX1
 ```sql
 // TX1
 mysql> SELECT * FROM users; // 1 row in set
 ```
 
-TX1 has read data before TX2's commit.
+TX1 reads data from TX2 before TX2 commits.
 
 ## Inconsistent Read
-An inconsistent read is the phenomenon where the data read lacks consistency.
+Inconsistent read is a phenomenon where the data being read lacks consistency.
 
-Refer to [Various Anomaly#Inconsistent Read Anomaly](https://qiita.com/kumagi/items/5ef5e404546736ebac49#inconsistent-read-anomaly).
+Refer to [Various Anomalies#Inconsistent Read Anomaly](https://qiita.com/kumagi/items/5ef5e404546736ebac49#inconsistent-read-anomaly).
 
-I wasn't quite sure about the exact definition, so my understanding might be off...
+I wasn't sure about the exact definition, so my understanding might be questionable...
 
-Since it refers to inconsistency after commit, inconsistent read seems to be a higher-level concept than fuzzy read or phantom read?? But strictly speaking, it might be different...
+Since it's about inconsistency after commit, inconsistent read seems like a higher concept than fuzzy read or phantom read?? But strictly, it should be different...
 
-### Verification
+### Test
 All sessions are conducted with READ UNCOMMITTED.
 ```sql
 mysql> SET SESSION TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
 ```
 
-1. Start transaction and read data in TX1.
+1. Start transaction and read data in TX1
 ```sql
 // TX1
 mysql> START TRANSACTION;
 mysql> SELECT * FROM users; // Empty set
 ```
 
-2. Start transaction in TX2 and add data.
+2. Start transaction and add data in TX2
 ```sql
 // TX2
 mysql> START TRANSACTION;
@@ -147,32 +148,32 @@ mysql> INSERT INTO users(name) VALUES('foo');
 mysql> COMMIT;
 ```
 
-3. Read data again in TX1.
+3. Read data again in TX1
 ```sql
 // TX1
 mysql> SELECT * FROM users; // 1 row in set
 ```
 
-It is confirmed that the result differs from the initial read (TX2's result), indicating a lack of consistency.
+The result differs from the initial read, confirming inconsistency due to TX2's actions.
 
-## Fuzzy Read (Non-Repeatable Read)
-A fuzzy read is the phenomenon where TX1 can reference data updated by another TX2.
+## Fuzzy Read (Non-repeatable Read)
+Fuzzy read is a phenomenon where TX1 can reference data updated by another TX2.
 
 All sessions are conducted with READ COMMITTED.
 ```sql
 mysql> SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED;
 ```
 
-### Verification
-1. Start transaction and read data in TX1.
+### Test
+1. Start transaction and read data in TX1
 ```sql
 // TX1
-mysql> INSERT INTO users(name) VALUES('foo'); // Initial data input
+mysql> INSERT INTO users(name) VALUES('foo'); // Initial data entry
 mysql> START TRANSACTION;
 mysql> SELECT * FROM users; // 1 row in set
 ```
 
-Initial data input result.
+Initial data entry result.
 ```
 +-----+------+
 | id  | name |
@@ -181,7 +182,8 @@ Initial data input result.
 +-----+------+
 ```
 
-2. Start transaction and read data in TX2.
+
+2. Start transaction and read data in TX2
 ```sql
 // TX2
 mysql> START TRANSACTION;
@@ -199,13 +201,14 @@ Update is complete.
 +-----+------+
 ```
 
-4. Read data again in TX1.
+
+4. Read data again in TX1
 ```sql
 // TX1
 mysql> SELECT * FROM users; // 1 row in set
 ```
 
-It is confirmed that TX1's read result has changed due to TX2's commit.
+TX1's read result changes due to TX2's commit.
 ```
 +-----+------+
 | id  | name |
@@ -215,23 +218,22 @@ It is confirmed that TX1's read result has changed due to TX2's commit.
 ```
 
 ## Phantom Read
-A phantom read is the phenomenon where the data read by TX1 changes when TX2 commits a new addition or deletion.
-Fuzzy read involves updates, while phantom read concerns new additions or deletions.
+Phantom read is a phenomenon where data read by TX1 changes if TX2 commits an addition or deletion. Fuzzy read involves updates, while phantom read involves additions or deletions.
 
-### Verification
+### Test
 All sessions are conducted with READ COMMITTED.
 ```sql
 mysql> SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED;
 ```
 
-1. Start transaction and read data in TX1.
+1. Start transaction and read data in TX1
 ```sql
 // TX1
 mysql> START TRANSACTION;
 mysql> SELECT * FROM users; // Empty set
 ```
 
-2. Add data in TX2 and commit.
+2. Add data and commit in TX2
 ```sql
 // TX2
 mysql> START TRANSACTION;
@@ -249,13 +251,13 @@ Addition is complete.
 +-----+------+
 ```
 
-3. Retrieve data again in TX1.
+3. Read data again in TX1
 ```sql
 // TX1
 mysql> SELECT * FROM users; // 1 row in set
 ```
 
-It is confirmed that TX1's read result has changed due to TX2's commit.
+TX1's read result changes due to TX2's commit.
 ```
 +-----+------+
 | id  | name |
@@ -265,30 +267,30 @@ It is confirmed that TX1's read result has changed due to TX2's commit.
 ```
 
 ## Lost Update
-A lost update occurs when TX1 and TX2 update the same data, causing some updates to be lost.
+Lost update is a phenomenon where a conflict occurs when TX1 and TX2 update the same data, resulting in some updates being lost.
 
-### Verification
+### Test
 All sessions are conducted with REPEATABLE READ.
 ```sql
 mysql> SET SESSION TRANSACTION ISOLATION LEVEL REPEATABLE READ;
 ```
 
-1. Start transaction and read data in TX1.
+1. Start transaction and read data in TX1
 ```sql
 // TX1
-mysql> INSERT INTO users(name) VALUES('foo'); // Initial data input
+mysql> INSERT INTO users(name) VALUES('foo'); // Initial data entry
 mysql> START TRANSACTION;
 mysql> SELECT * FROM users; // 1 row set
 ```
 
-2. Start transaction and read data in TX2.
+2. Start transaction and read data in TX2
 ```sql
 // TX2
 mysql> START TRANSACTION;
 mysql> SELECT * FROM users; // 1 row set
 ```
 
-3. Update data in TX1 and TX2.
+3. Update data in TX1 and TX2
 ```sql
 // TX1
 mysql> UPDATE users SET name = 'tx1' WHERE id = 1;
@@ -297,7 +299,7 @@ mysql> UPDATE users SET name = 'tx1' WHERE id = 1;
 mysql> UPDATE users SET name = 'tx2' WHERE id = 1;
 ```
 
-4. Commit TX1 and TX2.
+4. Commit TX1 and TX2
 ```sql
 // TX1
 mysql> COMMIT;
@@ -305,12 +307,12 @@ mysql> COMMIT;
 mysql> COMMIT;
 ```
 
-5. Read data.
+5. Read data
 ```sql
-mysql> SELECT * FROM users; // 1 row set
+mysql> SELECT * FROM users; 1 row set
 ```
 
-It is confirmed that TX1's commit was lost and only TX2's commit is reflected.
+TX1's commit is lost, and TX2's commit is reflected.
 ```
 +-----+------+
 | id  | name |
@@ -319,12 +321,12 @@ It is confirmed that TX1's commit was lost and only TX2's commit is reflected.
 +-----+------+
 ```
 
-# Conclusion
+# Summary
 The anomalies that occur vary depending on the transaction isolation level.
 
-Anomalies manifest as changes in data reading and consistency before and after commits.
+Anomalies are patterns where data reading and consistency change before and after commit.
 
-To learn more about transaction anomalies, it might be best to refer to a book or resource on transactions.
+To learn more about transaction anomalies, it might be better to refer to a book or something related to transactions.
 
 # References
 - [dev.mysql.com - 15.7.2.1 Transaction Isolation Levels](https://dev.mysql.com/doc/refman/8.0/ja/innodb-transaction-isolation-levels.html)

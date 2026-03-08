@@ -14,6 +14,8 @@ tags:
 translation_key: data-analysis-infrastructure-introduction
 ---
 
-[Introduction to Building a Data Analysis Platform](https://amzn.to/3QElp1W) was read.
 
-It was a reference book for creating a log collection and analysis platform.
+
+[I read Introduction to Building a Data Analysis Platform](https://amzn.to/3QElp1W).
+
+This book was a reference for creating a log collection and analysis platform.

@@ -13,50 +13,50 @@ translation_key: vagrant-centos-ansible-setup
 ---
 
 # Overview
-This is the first step in setting up a Vagrant environment with Ansible.
-We will prepare an environment that can perform provisioning.
+This is the first step in setting up a Vagrant environment with Ansible. We will prepare an environment capable of provisioning.
 
 # Environment
-+ Vagrant 1.9.1
-+ CentOS 7.3
-+ Ansible 2.2.1.0
++ Vagrant1.9.1
++ CentOS7.3
++ Ansible2.2.1.0
 
-# Preparing the CentOS 7.3 Vagrant Box
-We will set up the Vagrant environment in any directory (for this example, we will use centos7.3).
+# Prepare a CentOS7.3 Vagrant Box
+We will set up a Vagrant environment in any directory (for example, centos7.3).
 
 `vagrant box add https://atlas.hashicorp.com/centos/boxes/7`
 `vagrant init`
 
 Directory structure so far:
+
 ```
 centos7.3/
 ├── .vagrant.d
 ├── Vagrantfile
 ```
 
-*Since the default box name contains a slash, it might be better to rename it.*
+*Note: Since the default box name contains a slash, it might be better to rename it.*
 
-# Installing Ansible and Preparing for Provisioning
-There are various ways to install Ansible, such as using Homebrew, pip, or downloading from GitHub.
-Install Ansible on the host OS using one of these methods.
-I installed it using pip for some reason.
+# Install Ansible and Prepare for Provisioning
+There are various ways to get the source from Homebrew, pip, or GitHub. Install Ansible on the host OS using one of these methods. I installed it using pip for no particular reason.
 
-I will skip the installation details.
+Installation details are omitted.
 
-Once Ansible is installed, create a `provisioning` directory and two files: `hosts` and `site.yml`.
+Once Ansible is installed, prepare a `provisioning` directory and create two files: `hosts` and `site.yml`.
 
-Since we will use Ansible to SSH into Vagrant, prepare the SSH configuration file in the root of the development directory.
+Then, since Ansible will SSH into Vagrant, prepare an SSH configuration file directly under the development directory.
 `vagrant ssh-config > ssh.config`
 
-*The location of ssh.config can be anywhere.*
+*Note: The location of ssh.config can be anywhere.*
 
-Contents of the hosts file:
+Contents of hosts:
+
 ```
 [vagrants]
 127.0.0.1 ansible_ssh_port=2200 ansible_ssh_user=vagrant ansible_ssh_private_key_file=.vagrant/machines/default/virtualbox/private_key
 ```
 
-Contents of the site.yml file:
+Contents of site.yml:
+
 ```
 ---
 - hosts: vagrants
@@ -68,6 +68,7 @@ Contents of the site.yml file:
 ```
 
 Directory structure so far:
+
 ```
 centos7.3/
 ├── Vagrantfile
@@ -77,10 +78,10 @@ centos7.3/
 └── ssh.config
 ```
 
-*The ssh.config file does not necessarily have to be in this directory; it can be written in ~/.ssh/config, for example.*
+*Note: ssh.config does not necessarily have to be in this directory; it can be written in ~/.ssh/config, for example.*
 
 # Provisioning with Ansible
-Let's try executing the provisioning.
+Let's try executing provisioning.
 
 `vagrant provision`
 
@@ -102,21 +103,18 @@ PLAY RECAP *********************************************************************
 127.0.0.1                  : ok=2    changed=0    unreachable=0    failed=0
 ```
 
-Awesome! So much fun!!
+Amazing! So much fun!!
 
-# Issues Encountered
-I encountered quite a few issues when trying to SSH into Vagrant with Ansible, but I was helped by a question on Teratail.
-[Failed to SSH into Vagrant with Ansible](https://teratail.com/questions/46676)
+# Challenges
+I struggled quite a bit with SSHing into Vagrant with Ansible, but I was helped by a question on teratail.
+[vagrantにansbileでsshしようとすると失敗する](https://teratail.com/questions/46676)
 
 # Thoughts
-For now, I have set up an environment that can perform provisioning using Ansible locally, so I can focus on creating the tar.
-It seems necessary to configure provisioning for different hosts like VPS and brush up on best practices.
-Next time, I plan to create a tar for my own Laravel environment and write an article about it (planned).
+Now that I have an environment where I can use Ansible for provisioning locally, I can focus on creating roles. I need to set up provisioning for different hosts like VPS and get a grasp of best practices. Next time, I plan to create a role for my custom Laravel environment and write an article about it (planned).
 
-# Postscript
-It seems that when you run `vagrant destroy` and then `vagrant up` to rebuild, the port number in `ssh-config` may change.
-If one day you suddenly can't provision, it might be a good idea to check the SSH connection information.
+# Additional Notes
+When you execute `vagrant destroy` and then `vagrant up` to rebuild, the port number in `ssh-config` might change. If one day you suddenly can't provision, it might be a good idea to check the SSH connection information.
 
 # References
 + [Ansible Documentation](http://docs.ansible.com/ansible/intro_installation.html)
-+ [Getting Started with Ansible on CentOS 7](http://centos.sabakan.red/entry/2015/07/01/140000)
++ [CentOS 7 - Ansible Getting Started](http://centos.sabakan.red/entry/2015/07/01/140000)

@@ -1,5 +1,5 @@
 ---
-title: Code Reading of Reline
+title: Code Reading of reline
 slug: reline-code-reading
 date: 2024-10-20T00:00:00Z
 author: bmf-san
@@ -11,13 +11,15 @@ tags:
 translation_key: reline-code-reading
 ---
 
+
+
 # Overview
-Conducting a code reading of Reline.
+Conducting a code reading of reline.
 
 # Preparation
-1. Clone Reline
+1. Clone reline
 `git@github.com:ruby/reline.git`
-2. Create sample code
+2. Create a sample code
 ```ruby
 $LOAD_PATH.unshift(File.expand_path('lib', __dir__))
 require "reline"
@@ -41,16 +43,16 @@ rescue Interrupt
   exit 0
 end
 ```
-3. Insert `binding.irb` at any point.
+3. Insert `binding.irb` at any desired point
 
 # Code Reading
-Reading the code based on the sample code.
+Conduct code reading based on the sample code.
 
-1. Calling readline
+1. Call of readline
 - [ruby/reline/blob/master/lib/reline.rb#L251](https://github.com/ruby/reline/blob/master/lib/reline.rb#L251)
 - [ruby/reline/blob/master/lib/reline.rb#L294](https://github.com/ruby/reline/blob/master/lib/reline.rb#L294)
-2. Processing readline
+2. Processing of readline
 - Omitted due to length
 3. Output
 - [ruby/reline/blob/master/lib/reline/line_editor.rb#L1323](https://github.com/ruby/reline/blob/master/lib/reline/line_editor.rb#L1323)
-  - Finally, the input accumulated in the buffer is output here.
+  - The input accumulated in the buffer is finally output here

@@ -10,6 +10,8 @@ tags:
 translation_key: types-of-aws-services-az-region-global
 ---
 
+
+
 # Overview
 A note on the classification of representative AWS services.
 
@@ -25,7 +27,7 @@ A note on the classification of representative AWS services.
 - EBS Volume
 - Redshift
 
-# Regional Services
+# Region Services
 - VPC (can span multiple AZs)
 - Security Group
 - VPC Endpoints

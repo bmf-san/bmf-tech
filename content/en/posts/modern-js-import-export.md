@@ -1,5 +1,5 @@
 ---
-title: 'Modern JS: Import and Export'
+title: 'Modern JS: import and export'
 slug: modern-js-import-export
 date: 2017-12-25T00:00:00Z
 author: bmf-san
@@ -12,12 +12,14 @@ tags:
 translation_key: modern-js-import-export
 ---
 
-※This article is a repost from [Innovator Japan Engineers’ Blog](http://tech.innovator.jp.net/).
+
+
+※This article is a reprint from the [Innovator Japan Engineers’ Blog](http://tech.innovator.jp.net/).
 
 # What is export
-`export` is a statement that allows functions, variables, objects, and classes (classes are syntactic sugar for prototype-based inheritance and a type of function. For more details, see [Modern JS: Classes](http://tech.innovator.jp.net/entry/2017/09/27/164750)) to be used in any file by exporting them from a specified file.
+`export` is a statement that allows you to receive functions, variables, objects, classes (classes are syntactic sugar for prototype-based inheritance and are a type of function. For more details, see [Modern JS: Classes](http://tech.innovator.jp.net/entry/2017/09/27/164750)), etc., from a specified file and use them in any file.
 
-There are mainly two types of usage for export.
+There are mainly two ways to use export.
 
 #### Named exports
 This method involves naming the elements you want to `export`.
@@ -34,10 +36,10 @@ export let foo, bar, ...;
 export class foo{...};
 ```
 
-You can export elements like this. You can use `var` and `let` for variable exports as well.
+You can `export` elements like this. You can also use `var` and `let` for exporting variables.
 
 #### Default exports
-This method uses the default keyword to `export` a default element you want to define.
+This method uses the default keyword to `export` when you want to set a default element to export.
 
 ```javascript
 export default fooFunction() {}
@@ -48,7 +50,7 @@ export default class {}
 Note that `var`, `let`, and `const` cannot be used with `export default`.
 
 # What is import
-`import` is a statement that allows you to load functions, variables, and objects exported from another file so that you can use them.
+`import` is a statement that allows you to load functions, variables, and objects exported from another file and use them.
 
 ```javascript
 import { foo } from "Foo";
@@ -58,10 +60,11 @@ import { foo as bar, bar as foo, ... } "FooBar";
 import "FooBar"; // Import everything
 ```
 
-Regarding the scope of imported elements, it is generally the current scope (local scope).
+Regarding the scope of `import`ed elements, they are generally in the current scope (local scope).
 
 #### How to import default elements defined with export default
-To simply call the default, it looks like this:
+
+To simply call the default, do it like this.
 ```javascript
 import fooDefault from "Bar";
 ```
@@ -72,10 +75,10 @@ If you want to `import` named elements together, define them after the `default 
 import fooDefault, { foo, bar } "FooBar";
 ```
 
-# Example of exporting/importing classes
-When exporting a class, remember to call `new` at the import or export destination.
+# Example of exporting/importing a class
+When `export`ing a class, don't forget to call `new` in the `import` destination or `export` destination.
 
-An example of calling `new` at the import destination looks like this:
+An example of calling `new` in the `import` destination is like this.
 
 export.js
 ```javascript
@@ -85,11 +88,11 @@ export class foo {
   }
 }
 
+
 export default class bar {
   barFunction() {
      return 'bar';
   }
-}
 }
 ```
 
@@ -107,7 +110,7 @@ console.log(objBar.barFunction()); // bar
 
 <br/>
 
-If you want to call `new` at the caller, it looks like this:
+If you call `new` in the calling source, it looks like this.
 
 export.js
 ```javascript
@@ -131,8 +134,8 @@ import createFoo from 'export';
 console.log(createFoo.fooFunction()); // foo
 ```
 
-# Conclusion
-Since it is commonly used in recent frameworks like Vue.js and React, it is a good idea to thoroughly understand the specifications again.
+# Summary
+It is good to thoroughly understand the specifications once more, as they are commonly used in recent frameworks like Vue.js and React.
 
 # References
 - [MDN - Export](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/export)

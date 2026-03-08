@@ -1,12 +1,12 @@
 ---
-title: Everything about Digital Identity - Knowledge for Achieving a Safe and User-Centric Identity System
+title: 'All About Digital Identity: Knowledge for Implementing a Secure and User-Centric Identity System'
 slug: digital-identity-overview
 date: 2026-02-20T00:00:00Z
 author: bmf-san
 categories:
   - Architecture
 tags:
-  - Books
+  - Book
   - Authentication
   - Authorization
   - OIDC
@@ -14,4 +14,6 @@ tags:
 translation_key: digital-identity-overview
 ---
 
-[Everything about Digital Identity - Knowledge for Achieving a Safe and User-Centric Identity System](https://amzn.to/3ZOp0P7) is a comprehensive book that systematically explains the concept of digital identity from theory to implementation. It covers standard protocols such as OAuth 2.0, OpenID Connect, and SAML, as well as modern architectural concepts like Zero Trust and decentralized IDs. Beyond mere technical explanations, it addresses design philosophies that balance user experience and security, providing a broad perspective for engineers and architects involved in designing and operating authentication and authorization infrastructures.
+
+
+[All About Digital Identity: Knowledge for Implementing a Secure and User-Centric Identity System](https://amzn.to/3ZOp0P7) is a book I read. This book systematically and extensively explains everything from the concept to the implementation of digital identity. It covers not only the mechanisms of standard protocols like OAuth 2.0, OpenID Connect, and SAML but also modern architectural concepts such as Zero Trust and Decentralized ID. Beyond mere technical explanations, it also addresses design philosophies that balance user experience and security, providing engineers and architects designing and operating authentication and authorization infrastructures with a broad perspective.

@@ -12,142 +12,149 @@ tags:
 translation_key: what-is-architecture-advice-process
 ---
 
-There is a summary document compiled easily in LT, so please refer to the following if you want to know the summary.
 
-cf. [Researching AAP](https://speakerdeck.com/bmf_san/aapnituitediao-betemita)
 
-## What is the Architecture Advice Process?
+There is a brief summary in the LT materials, so if you want to know the gist, please refer to the following.
 
-In modern software development, while team autonomy and development speed are emphasized, consistency in architecture is also required. The Architecture Advice Process (AAP) responds to these conflicting demands. AAP is a Technique/Trial published in Thoughtworks Technology Radar 2025-04.
+cf. [Investigating AAP](https://speakerdeck.com/bmf_san/aapnituitediao-betemita)
 
-AAP is a decentralized approach where **anyone can make architectural decisions**. However, it is a condition that **advice must be sought from those affected** and **relevant experts** before making a decision. Importantly, this is **not an approval process**. While advice is sought, there is no need to obtain permission.
+## What is the Architecture Advice Process
 
-In traditional centralized architecture management, a small number of architects made all decisions. However, AAP decentralizes decision-making authority, allowing those affected and relevant experts to be involved through "advice." This optimizes decision-making authority while involving the appropriate number of people, building trust, and replacing delays waiting for approval with necessary advisory conversations.
+In modern software development, while team autonomy and development speed are prioritized, architectural consistency is also demanded. The Architecture Advice Process (AAP) addresses these conflicting requirements. AAP is a Techniques/Trial listed in the Thoughtworks Technology Radar 2025-04.
 
-The core of AAP is simple. It consists of **one rule** and **one constraint**. The rule is that "anyone can make architectural decisions." The constraint is to "consult two groups before making a decision." First, all people significantly affected by that decision. Second, experts in the decision domain.
+AAP is a decentralized approach where **anyone can make architectural decisions**. However, the condition is to **seek advice** from **affected people** and **relevant experts** before making a decision. Importantly, this is **not an approval process**. Advice is sought, but permission is not required.
+
+In traditional centralized architecture management, a few architects made all the decisions. However, AAP decentralizes decision-making authority, involving affected people and relevant experts through "advice." This optimizes decision-making authority while building trust and replacing approval delays with necessary and sufficient advisory conversations.
+
+The core of AAP is simple. It consists of **one rule** and **one constraint**. The rule is that "anyone can make architectural decisions." The constraint is to "consult two groups before making a decision." First, all people significantly affected by the decision. Second, experts in the decision area.
 
 ## Comparison with Architecture Review Board
 
-Traditional architecture governance is often conducted by a centralized organization known as the Architecture Review Board (ARB). The ARB is a governance body responsible for reviewing and approving the architectural aspects of software development projects within the organization.
+Traditional architecture governance is often conducted by a centralized organization called the Architecture Review Board (ARB). ARB is a governance body responsible for reviewing and approving the architectural aspects of software development projects within an organization.
 
-The main purpose of the ARB is to ensure that enterprise applications are designed, developed, and maintained in alignment with the organization’s strategic goals, standards, best practices, and architectural guidelines. Typically, it consists of experienced architects, senior developers, and key stakeholders who deeply understand the organization’s business and technical requirements.
+The main purpose of ARB is to ensure that enterprise applications are designed, developed, and maintained in line with the organization's strategic goals, standards, best practices, and architectural guidelines. It usually consists of experienced architects, senior developers, and key stakeholders who deeply understand the organization's business and technical requirements.
 
-The ARB indeed provides advantages such as ensuring consistency, risk mitigation, alignment with business goals, quality assurance, and knowledge sharing. By applying architectural standards, patterns, and best practices, it ensures consistency in application development across the organization and facilitates collaboration, maintenance, and software development among teams.
+ARB indeed provides benefits such as ensuring consistency, risk mitigation, alignment with business goals, quality assurance, and knowledge sharing. By applying architectural standards, patterns, and best practices, it ensures consistency in application development across the organization, facilitating collaboration, maintenance, and software development.
 
-However, centralized architectural review has significant issues. It creates queues waiting for approvals, which can **hinder the flow of value**. In fact, the State of DevOps Report states that external change approvals (such as Change Advisory Boards: CAB) are "counterproductive" and negatively correlate with software delivery performance, while there is no evidence that formal approval processes lead to lower change failure rates. Thoughtworks' Technology Radar presents AAP as a practical alternative to this situation. It evaluates that the decentralized approach of "anyone can decide, but advice must be obtained from stakeholders and experts" can **optimize flow without compromising quality**.
+However, centralized architecture review has significant issues. It creates queues waiting for approval, which can easily **impede the flow of value**. In fact, the State of DevOps Report states that external change approvals (such as Change Advisory Board: CAB) are "counterproductive" and negatively correlated with software delivery performance, while there is no evidence that formal approval processes reduce change failure rates. Thoughtworks' Technology Radar presents AAP as a practical alternative to this situation. By adopting a decentralized approach where "anyone can decide, but advice is sought from stakeholders and experts," it is evaluated as being able to **optimize flow without compromising quality**.
 
 cf. [Scaling the Practice of Architecture, Conversationally - martinfowler.com](https://martinfowler.com/articles/scaling-architecture-conversationally.html)
 
 ## Rules of the Architecture Advice Process
 
-The implementation of AAP is very simple. Its core is summarized in one rule and one constraint.
+The implementation of AAP is very simple. Its core is condensed into one rule and one constraint.
 
 **Rule: Anyone can make architectural decisions**
 
-**Constraint: Before making a decision, seek advice from those meaningfully affected and domain experts**
+**Constraint: Before deciding, seek advice from people who will be meaningfully affected and knowledgeable experts in the area**
 
-This concept is innovative in that it institutionalizes **conversations rather than meetings** and standardizes **advice gathering** rather than **waiting for approvals**. Decision-makers do not need to wait for approval. What is needed is dialogue with the appropriate people and documentation of that dialogue. There is no obligation to adopt the advice, but it should be listened to and recorded in the ADR.
+This concept is innovative in that it institutionalizes **conversation instead of meetings** and makes **advice gathering** the standard process instead of **waiting for approval**. Decision-makers do not need to wait for approval. What is needed is dialogue with the right people and documentation of that. Advice is not mandatory to adopt, but it should be listened to and recorded in the ADR on how it was handled.
 
 ### Distinction between "Advice" and "Opinion"
 
-In AAP, it is important to distinguish between **advice** and **opinion**. Advice is a recommendation based on experience and evidence, always accompanied by reasoning. In contrast, opinion is a subjective judgment based on preference or weak rationale. Effective AAP requires well-founded advice.
+In AAP, it is important to distinguish between **advice** and **opinion**. Advice is a recommendation based on experience and evidence, always accompanied by reasons. On the other hand, an opinion is a subjective judgment based on preference or weak grounds. Effective AAP requires advice with a basis.
 
-Example: "X does not meet the internal SLO" → advice (with basis) / "I dislike X" → opinion (weak basis)
+Example) "X does not meet internal SLO" → Advice (with basis) / "I dislike X" → Opinion (weak basis)
 
 ## Benefits of the Architecture Advice Process
 
-AAP brings various benefits to organizations.
+AAP brings numerous benefits to organizations.
 
-**Elimination of Bottlenecks**: Since decision-making authority lies with the parties (individuals or teams), development does not stop due to veto power. There are no queues waiting for approvals as in the past.
+**Elimination of Bottlenecks**: Since decision-making authority lies with the parties involved (individuals or teams), development is not halted by veto power. There are no queues waiting for approval as in the past.
 
-**Increased Speed**: Since **consensus is not a requirement**, progress can be made after collecting advice. Decision-making is expedited as there is no need to obtain agreement from everyone.
+**Speed Improvement**: **Consensus is not a requirement**, so progress can be made after gathering advice. Decisions are expedited as there is no need to obtain everyone's agreement.
 
-**Clarification of Boundaries**: The process of identifying who is affected helps clarify the **responsibility boundaries of the system**. Analyzing the scope of impact also validates the appropriateness of system design.
+**Healthy Boundaries**: The process of identifying who is affected clarifies the **system's responsibility boundaries**. Analyzing the impact range also verifies the validity of system design.
 
-**Increased Ownership**: The principle that the decision-maker is the executor clarifies accountability. There is a heightened sense of responsibility for one's decisions, leading to more careful and effective decision-making.
+**Increased Ownership**: The principle that the person who decides = the person who executes clarifies accountability. A sense of responsibility for one's decisions increases, leading to more careful and effective decisions.
 
-**Social Trust**: The mutual agreement of seeking and giving advice becomes part of the organizational culture. This deepens trust among teams and promotes knowledge sharing.
+**Social Trust**: The mutual agreement of seeking and giving advice becomes part of the organizational culture. This deepens trust between teams and promotes knowledge sharing.
 
 ## What the Architecture Advice Process Does Not Aim For
 
 To understand AAP, it is important to clarify what it does not aim for.
 
-**It is not an approval process**: Advice is sought, but there is no need to obtain **permission**. Decision-making authority lies with the decision-maker. Advisors do not have veto power.
+**Not an Approval Process**: Advice is sought, but there is no need to obtain **permission**. Decision-making authority lies with the decision-maker. Advisors do not have veto power.
 
-**It is not consensus-building**: Even if there are opposing opinions, they can be **recorded**, and necessary guardrails (such as phased releases) can be established to **move forward**. It is not a process that seeks consensus.
+**Not Consensus Building**: Even if there are opposing opinions, they should be **recorded**, and necessary guardrails (such as phased releases) should be established to **move forward**. It is not a process that seeks consensus.
 
-**It does not eliminate the need for architects**: The role of architects shifts from **decision-makers** to **facilitators**. They provide value through supporting activities such as creating advisory spaces and establishing principles and visualizations.
+**Not an Architect Elimination**: The role of architects shifts from **decision-makers** to **facilitators**. They add value through support tasks such as creating advisory opportunities, organizing principles, and visualization.
 
-These characteristics fundamentally differentiate AAP from traditional governance processes.
+These characteristics make AAP a fundamentally different approach from traditional governance processes.
 
 ## Supporting Elements of the Architecture Advice Process
 
-1. **ADR (Architecture Decision Records)**: Document the context, options, trade-offs of decisions, and **who provided what advice and how it was handled**.
-2. **Architecture Advisory Forum**: A **space for advice, not an approval body**. Bring ongoing decisions to the forum to publicly gather advice.
-3. **Team-sourced Architectural Principles**: **Design principles** developed by the team. The “North Star” of autonomy and alignment.
-4. **Internal Tech Radar**: **Visualize** the internal technology portfolio to inform decision-making. (Proposed by Andrew Harmel-Law)
+1. **ADR (Architecture Decision Records)**
+   Record the context, options, and trade-offs of decisions, as well as **who gave what advice and how it was handled**.
+2. **Architecture Advisory Forum**
+   **Not an approval body but a place for advice**. Bring ongoing decisions and gather advice openly.
+3. **Team-sourced Architectural Principles**
+   Design principles developed by the team. The "North Star" of autonomy and alignment.
+4. **In-house Tech Radar**
+   **Visualize** the internal technology portfolio and use it as a basis for decision-making.
+   (Andrew Harmel-Law's proposal set)
 
 cf. [Scaling the Practice of Architecture, Conversationally - martinfowler.com](https://martinfowler.com/articles/scaling-architecture-conversationally.html)
 
-## Metrics for the Architecture Advice Process
+## Outcome Indicators of the Architecture Advice Process
 
-To measure the effectiveness of AAP, appropriate metrics are needed. Based on Xapo's practices, the following metrics are effective.
+To measure the effectiveness of AAP, appropriate indicators are necessary. Based on Xapo's practice, the following indicators are effective.
 
-**Decision-making Lead Time**: Measured by the state transitions of ADR (Draft→Proposed→Accepted→**Adopted** [production reflection]). By tracking the time from decision to implementation completion, the efficiency of the process can be evaluated.
+**Decision Lead Time**: Measure the state transition of ADR (Draft→Proposed→Accepted→**Adopted** [production reflection]). By tracking the time from decision-making to implementation completion, the efficiency of the process can be evaluated.
 
-**Observability of Advice**: Continuously record advisors, summaries, and dates in the **Advice section** of ADR. This visualizes the transparency and participation of the advisory process.
+**Observability of Advice**: Continuously record advisors, summaries, and dates in the **Advice section** of ADR. Visualize the transparency and participation of the advisory process.
 
-**Engineering Outcomes**: Check trends alongside **team metrics** such as deployment frequency and lead time. This provides a comprehensive evaluation of the impact of AAP on team performance.
+**Engineering Outcomes**: Check trends in **team indicators** such as deployment frequency and lead time. Evaluate the impact of AAP introduction on team performance comprehensively.
 
-In Xapo's practice, an **Adopted** status was established in ADR to track the time from decision to implementation. This visualizes the entire process until the decision actually brings value.
+In Xapo's practice, an **Adopted** status was added to ADR to track the process from decision-making to implementation. This visualizes the entire process until the decision actually brings value.
 
 ## Case Study of the Architecture Advice Process
 
-Xapo, an online bank for Bitcoin, combined **DDD/Team Topologies/AAP** and simultaneously launched the **Architecture Advice Forum** and **ADR**. From the first session, they created a **public advisory habit** using “retroactive ADR” based on real cases, involving various teams and InfoSec/regulatory/operations/product. They also migrated ADR operations to Jira, visualizing the **lead time from decision to production reflection**. Innovations to avoid a return to consensus-seeking and to include product strategy have also been reported.
+Xapo, an online bank for Bitcoin, combined **DDD/Team Topologies/AAP** and simultaneously launched the **Architecture Advice Forum** and **ADR**. From the first session, they created a **public advisory habit** by using real projects as subjects and involving teams, InfoSec/regulation/operations/product. They also transferred ADR operations to Jira, visualizing **lead time from decision to production reflection**. They reported learnings such as **avoiding a return to consensusism** and **product strategy participation**.
 
 cf. [Decentralizing the Practice of Architecture at Xapo Bank - martinfowler.com](https://martinfowler.com/articles/xapo-architecture-experience.html)
 
 ## Patterns of Failure in the Architecture Advice Process
 
-Understanding key patterns that lead to failure in the implementation of AAP is important.
+Understanding the main patterns that lead to failure in AAP implementation is important.
 
-**Good Failures**: Small failures that occur when inexperienced individuals make decisions are actually valuable learning opportunities. Such failures increase transparency and allow for quick identification and correction. Decision-makers can safely reflect on and share learnings during implementation. These failures should be accepted and visualized and shared as learning in the advisory forum.
+**Good Failures**: Small failures that occur when inexperienced people make decisions are actually valuable learning opportunities. These failures increase transparency, allowing for quick identification and correction. Decision-makers recognize issues during implementation, enabling safe reflection and sharing of learning. These failures should be accepted and visualized/shared as learning in the advisory forum.
 
-**Participation Bias**: The most dangerous failure mode is when only a core group participates, and those who should be involved do not. It may seem successful in the early stages, but in reality, diverse perspectives are not utilized. It is important to pay attention to who is contributing and actively seek opinions from less vocal members.
+**Participation Bias**: The most dangerous failure mode is when only a core group participates, and those who should be involved do not. It may seem successful in the early stages, but it actually fails to leverage diverse perspectives. It is important to pay attention to who is contributing and actively seek input from less vocal members.
 
-**Bypassing the Process**: Decisions may occur without being addressed in the advisory forum or recorded in ADR. This should be viewed as a learning opportunity, necessitating a willingness to improve the process with those who made the decisions. Various reasons may exist, such as external pressure or misperception of importance.
+**Process Bypass**: Decisions may occur without being brought up in the advisory forum or recorded in ADR. This should be seen as a learning opportunity, with a stance of improving the process together with those who made the decisions. Various reasons such as external pressure or misperception of importance may exist.
 
-**Shadow Architecture**: The most dangerous scenario is when architects superficially support AAP while continuing traditional approvals behind the scenes. This nullifies all the benefits of AAP and undermines trust. Architects must commit to being facilitators who engage in the right conversations with the right people at the right time.
+**Shadow Architecture**: The most dangerous is when architects superficially support AAP while continuing traditional approvals behind the scenes. This nullifies all the benefits of AAP and breaks trust. Architects need to commit to their role as facilitators, having the right conversations with the right people at the right time.
 
 ## Conclusion
 
-The Architecture Advice Process is a practical answer to the challenge of balancing "speed and quality" in modern software development. It can eliminate the bottlenecks of traditional centralized architecture governance while maintaining architectural consistency and quality.
+The Architecture Advice Process is a practical answer to the challenge of "balancing speed and quality" in modern software development. It can maintain architectural consistency and quality while eliminating the bottlenecks of traditional centralized architecture governance.
 
-The success of AAP depends on transforming organizational culture. A shift from a culture of seeking approval to one of seeking advice, from consensus-building to a transparent decision-making process, and from architects as decision-makers to architects as facilitators is necessary.
+The success of AAP depends on transforming organizational culture. A shift is needed from a culture of seeking approval to one of seeking advice, from consensus-building to a transparent decision-making process, and from architects as decision-makers to architects as facilitators.
 
-However, this cannot be achieved overnight. The introduction of appropriate tools, continuous education, and fostering a culture of learning from failures are essential. Particularly, understanding failure patterns such as participation bias and process bypass, and maintaining a continuous improvement mindset is crucial.
+However, this cannot be achieved overnight. The introduction of appropriate tools, continuous education, and fostering a culture of learning from failures are essential. It is particularly important to understand and continuously improve failure patterns such as participation bias and process bypass.
 
-AAP is highly compatible with modern development practices such as Agile development and DevOps. This approach, which emphasizes team autonomy while maintaining organizational alignment, is likely to become increasingly important in the future.
+AAP is highly compatible with modern development practices such as Agile development and DevOps. This approach, which emphasizes team autonomy while maintaining organizational alignment, will become increasingly important in the future.
 
 ## References
 
 ### [Architecture advice process - thoughtworks.com](https://www.thoughtworks.com/en-us/radar/techniques/architecture-advice-process)
-Thoughtworks Technology Radar 2025-04 presents AAP as a **Trial**. It states that centralized ARB hinders workflows and correlates with low performance, recommending decentralized decision-making of "anyone can decide, but advice must be sought from stakeholders and experts." By combining ADR and advisory forums, it claims that flow can be optimized while maintaining quality, with increasing success stories in regulated industries.
+Thoughtworks Technology Radar 2025-04 lists AAP as a **Trial**. It states that centralized ARB impedes workflow and correlates with low performance, recommending decentralized decision-making where "anyone can decide but advice is sought from influencers and experts." By combining ADR and advisory forums, it states that flow can be optimized while maintaining quality, with increasing success examples even in regulated industries.
 
 ### [Scaling the Practice of Architecture, Conversationally - martinfowler.com](https://martinfowler.com/articles/scaling-architecture-conversationally.html)
-A comprehensive AAP guide by Andrew Harmel-Law. It advocates for a shift from centralized approval to decentralized decision-making supported by conversation, detailing the core of AAP and the four supporting elements (ADRs, advisory forums, team-sourced principles, internal Tech Radar). It also presents specific failure patterns and application procedures.
+A comprehensive AAP guide by Andrew Harmel-Law. Declares "I stopped making architectural decisions" and advocates a shift from centralized approval to conversation-supported decentralization. Details the core of AAP and the learning and alignment mechanisms supported by four elements (ADRs, advisory forums, team-sourced principles, in-house Tech Radar). Also presents failure patterns and application procedures concretely.
 
 ### [Decentralizing the Practice of Architecture at Xapo Bank - martinfowler.com](https://martinfowler.com/articles/xapo-architecture-experience.html)
-A report on practices at Xapo, a Bitcoin online bank. It combined DDD, Team Topologies, and AAP, launching the Architecture Advice Forum and ADR simultaneously. By inviting a wide range of stakeholders to weekly forums and enhancing the Advice section of ADR, it achieved alignment and learning. It also introduced operational metrics by managing ADR in Jira and visualizing decision lead times by adding the **Adopted** status.
+A practice report at Xapo, an online bank for Bitcoin. Combines DDD and Team Topologies with AAP, simultaneously launching the Architecture Advice Forum and ADR. Weekly forums inviting a wide range of stakeholders from development to management and enriching the Advice section of ADR to gain alignment and learning. Introduces operational measurement innovations such as managing ADR with Jira and adding an "Adopted" state to visualize decision lead time.
 
 ### [Architecture Advice Process - archicionado.com](https://archicionado.com/p/architecture-advice-process/)
-An implementation guide for AAP by Romain Vasseur. Inspired by Harmel-Law's ideas, it presents the purpose set of AAP (building a knowledge ecosystem, transparency and trust, team autonomy, lightweight but effective mechanisms). It shows implementation ideas using reader-prioritized ADR design and GitHub Issue/Discussion (ADR hub, advisory threads, labeling), proposing lightweight and traceable operations.
+An AAP implementation guide by Romain Vasseur. Inspired by Harmel-Law's ideas, presents a set of AAP objectives (building a knowledge ecosystem, transparency and trust, team autonomy, lightweight but effective mechanisms). Proposes implementation ideas using GitHub Issue/Discussion (ADR hub, advice threads, labeling, etc.) for lightweight and traceable operations.
 
 ### [Introducing the Architecture Advice Process - linkedin.com](https://www.linkedin.com/pulse/introducing-architecture-advice-process-lindsey-tibbitts-jwzsc)
-An introduction to AAP from a practitioner's perspective by Lindsey Tibbitts. It lists the effects of the decentralized decision-making model that seeks advice rather than approval, such as eliminating bottlenecks, increasing speed without consensus, strengthening system boundaries, increasing ownership, and fostering social trust. It emphasizes the difference between advice and opinion (evidence-based recommendations vs. unfounded preferences) and the importance of a mindset of "seeking knowledge, deciding close to the work, and trusting each other."
+An introduction to AAP from a practitioner's perspective by Lindsey Tibbitts. Lists the effects of a decentralized decision-making model that seeks advice instead of approval, such as eliminating bottlenecks, speeding up without consensus, strengthening system boundaries, increasing ownership, and fostering social trust. Emphasizes the difference between advice and opinion (evidence-based recommendation vs. baseless preference) and the importance of a stance of "seeking knowledge, deciding close to the work, and trusting each other."
 
 ### [Facilitating Software Architecture - facilitatingsoftwarearchitecture.com](https://facilitatingsoftwarearchitecture.com/)
-A book by Andrew Harmel-Law published by O'Reilly. Centered on "decentralization and empowerment," it serves as a guide to establish architecture as "everyone's work." Chapter 4 organizes concepts, introduction, and operations with supplementary materials like one-pagers on the Advice Process. It includes implementation guides divided into chapters on ADRs, advisory forums, principles, and Tech Radar, presenting a philosophy of starting with a minimal set and nurturing through documentation and space.
+A book published by O'Reilly by Andrew Harmel-Law. Centers on "decentralization and empowerment," providing a guide to making architecture "everyone's job." Systematizes the concept, introduction, and operation of the Advice Process with supplementary materials such as a one-pager in Chapter 4. Includes implementation guides with chapters on ADRs, advisory forums, principles, Tech Radar, and presents an implementation philosophy of starting with a minimal set and nurturing it through records and forums.
 
-### [DORA: Accelerate — State of DevOps 2019（PDF） - services.google.com](https://services.google.com/fh/files/misc/state-of-devops-2019.pdf)
-An annual report by DevOps Research and Assessment (DORA). It demonstrates that external change approvals (such as Change Advisory Boards: CAB) are "counterproductive" and negatively correlate with software delivery performance, providing theoretical support for AAP.
+### [DORA: Accelerate — State of DevOps 2019 (PDF) - services.google.com](https://services.google.com/fh/files/misc/state-of-devops-2019.pdf)
+An annual report by DevOps Research and Assessment (DORA). Demonstrates that external change approvals (such as Change Advisory Board: CAB) are "counterproductive" and negatively correlated with software delivery performance. States there is no evidence that formal approval processes reduce change failure rates, providing theoretical support for AAP.

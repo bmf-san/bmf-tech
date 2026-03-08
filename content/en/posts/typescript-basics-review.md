@@ -1,5 +1,5 @@
 ---
-title: Revisiting the Basics of TypeScript
+title: Relearning the Basics of TypeScript
 slug: typescript-basics-review
 date: 2024-07-20T00:00:00Z
 author: bmf-san
@@ -7,16 +7,19 @@ categories:
   - Application
 tags:
   - TypeScript
+description: Revisiting the fundamentals of TypeScript.
 translation_key: typescript-basics-review
 ---
+
+
 
 # Overview
 Revisiting the basics of TypeScript.
 
-# JavaScript Review
+# Review of JavaScript
 ## Variable Scope
 ### Global Scope
-Scope defined as a property of the window object.
+Defined as properties of the window object.
 
 ```javascript
 const a = "Hello";
@@ -35,7 +38,7 @@ function func() {
 ```
 
 #### Lexical Scope
-If a function is defined within another function, the inner function can access the variables of the outer function.
+When a function is defined within another function, the inner function can access the variables of the outer function.
 
 ```javascript
 function outer() {
@@ -48,7 +51,7 @@ function outer() {
 ```
 
 #### Block Scope
-Variables defined within a block, such as an if statement or for loop, are only valid within that block.
+Variables defined within a block like an if statement or a for loop are only valid within that block.
 
 ```javascript
 if (true) {
@@ -57,7 +60,7 @@ if (true) {
 }
 ```
 
-## const is Reassignable but Not Immutable
+## const is Non-reassignable but Not Immutable
 ```typescript
 const obj = { key: "value"};
 obj = { key: "newValue" }; // Error
@@ -65,14 +68,14 @@ obj.key = "newValue"; // OK
 ```
 
 ## Issues with var
-- Allows declaration of variables with the same name
+- Allows redeclaration of variables with the same name
 - Can overwrite global variables
 - Risk of bugs due to variable hoisting
-- Broad scope
-  - Function scope instead of block scope
+- Wide scope
+  - Function scope, not block scope
 
 ## Boxing
-Converting a primitive type to an object type.
+Converting primitive types to object types.
 
 ```typescript
 const a = "Hello";
@@ -80,24 +83,24 @@ const aobj = new String(a);
 aobj.length; // 5
 ```
 
-Since primitive types do not have fields or methods, boxing is necessary, but in JavaScript, boxing happens implicitly. This is called auto-boxing.
+Primitive types do not have fields or methods, so boxing is necessary, but in JavaScript, it is done implicitly. This is called auto-boxing.
 
 ```typescript
 const a = "Hello";
 a.length; // 5
 ```
 
-The object resulting from auto-boxing is called a wrapper object. For example, for boolean, the wrapper object is Boolean. There are no wrapper objects for undefined and null.
+The object resulting from auto-boxing is called a wrapper object. For example, Boolean is the wrapper object for boolean. There are no wrapper objects for undefined and null.
 
 ## Objects
 ### Everything Except Primitives is an Object
 ```typescript
-// Primitive
+// Primitives
 const num = 1;
 const str = "Hello";
 // etc...
 
-// Object
+// Objects
 const obj = { key: "value" };
 const arr = [1, 2, 3];
 const func = function() { return "Hello"; };
@@ -120,7 +123,7 @@ console.log(g.next()); // { value: 1, done: false }
 
 # Basics of TypeScript
 ## Type Annotation for Variable Declaration
-You can assign a type to a variable.
+You can assign types to variables.
 
 ```typescript
 const a: string = "Hello";
@@ -133,7 +136,7 @@ const a: Number = 0;
 const b: number = a; // Type 'Number' is not assignable to type 'number'.'number' is a primitive, but 'Number' is a wrapper object. Prefer using 'number' when possible.
 ```
 
-Additionally, you cannot use operators with wrapper object types.
+Also, operators cannot be used with wrapper object types.
 
 ```typescript
 const a: Number = 0;
@@ -143,7 +146,7 @@ const b = a + 1; // Operator '+' cannot be applied to types 'Number' and '1'.
 It is recommended to use primitive types instead of wrapper object types.
 
 ## Type Inference for Variable Declaration
-Type inference is provided.
+Types are inferred.
 
 ```typescript
 let a = "Hello"; // a: string
@@ -151,36 +154,36 @@ a = 1; // Type 'number' is not assignable to type 'string'
 ```
 
 ## Type Coercion
-There are cases where operations with different types do not result in an error.
+Even if the types are different, it may not result in an error.
 
 ```typescript
 "10" - 1; // 9
 ```
 
-Type coercion is the mechanism that implicitly converts to another type.
+Type coercion is the implicit conversion to another type.
 
 ## Literal Types
-A type that can only take specific values.
+Types that can only take specific values.
 
 ```typescript
 let a: "Hello" = "Hello";
 a = "World"; // Type '"World"' is not assignable to type '"Hello"'.
 ```
 
-The primitive types that can be used as literal types are:
-- string
-- number
-- boolean
+Primitive types that can be used as literal types are as follows.
+- string type
+- number type
+- boolean type
 
 ## any Type
-A type that can accept any value.
+A type that can accept any type.
 
 ```typescript
 let a: any = "Hello";
 a = 1; // OK
 ```
 
-When type inference cannot be made from context (e.g., when type annotation is omitted), it is treated as any type implicitly.
+When type inference cannot be made from context (e.g., when type annotation is omitted), it is implicitly treated as any type.
 
 ## Objects
 ### Type Annotation for Objects
@@ -188,20 +191,20 @@ When type inference cannot be made from context (e.g., when type annotation is o
 const obj: { key: string } = { key: "value" };
 ```
 
-Method type annotations are also possible.
+Method type annotation is also possible.
 
 ```typescript
 const obj: { key: () => string } = { key: () => "value" };
 ```
 
-There is also an object type, but it represents all objects excluding primitive types, so using the object type is not recommended. Additionally, the object type does not guarantee type safety.
+There is also an object type, but since it represents all objects except primitive types, it is not recommended to use the object type. Also, the object type does not guarantee type safety.
 
 ```typescript
 const obj: object = { key: "value" };
 obj.key; // Property 'key' does not exist on type 'object'.
 ```
 
-### Readonly for Object Types
+### readonly for Object Types
 A modifier to make properties read-only.
 
 ```typescript
@@ -209,7 +212,7 @@ const obj: { readonly key: string } = { key: "value" };
 obj.key = "newValue"; // Cannot assign to 'key' because it is a read-only property.
 ```
 
-You can also write it all together.
+It can also be written in a consolidated way.
 
 ```typescript
 const obj: Readonly<{
@@ -218,7 +221,7 @@ const obj: Readonly<{
 };>
 ```
 
-### Optional Properties for Object Types
+### Optional Property for Object Types
 A modifier to make object properties optional.
 
 ```typescript
@@ -227,7 +230,7 @@ obj = {} // OK
 ```
 
 ## never Type
-A type that has no value.
+A type that holds no values.
 
 ```typescript
 function error(message: string): never {
@@ -236,7 +239,7 @@ function error(message: string): never {
 ```
 
 ## unknown Type
-Like any type, it can accept any value, but the unknown type guarantees type safety. It is used when the type is unknown.
+Like any type, it can accept any type, but unknown type guarantees type safety. It is used when the type is unknown.
 
 ```typescript
 let a: unknown = "Hello";
@@ -244,7 +247,7 @@ a = 1; // OK
 const b: string = a; // Type 'unknown' is not assignable to type 'string'.
 ```
 
-When using the unknown type, you should explicitly specify the type using type assertion, typeof, or instanceof.
+When using unknown type, explicitly specify the type using type assertion, typeof, or instanceof.
 
 ```typescript
 const a: unknown = "hello";
@@ -252,11 +255,11 @@ const a: unknown = "hello";
 const b: string = a as string;
 
 if (typeof a === "string") {
-	const c: string = a;
+  const c: string = a;
 }
 
 if (a instanceof String) {
-	const d: string = a as string;
+  const d: string = a as string;
 }
 ```
 
@@ -283,7 +286,7 @@ const sayHi = (name: string): string => {
 ```
 
 ### Function Type Declaration
-You can declare only the type without implementing the function.
+You can declare only the type of a function without implementing it.
 
 ```typescript
 type SayHi = (name: string) => string;
@@ -301,7 +304,7 @@ type Obj = {
 ```
 
 ### Type Guard Functions
-Functions that specify the type when it is unknown.
+Functions that determine the type when it is unknown.
 
 ```typescript
 // a is string part is called type predicate
@@ -367,8 +370,8 @@ class Animal {
 }
 ```
 
-### Nominal Types
-Types with the same name are treated as different types.
+### Nominal Type
+Treating types as different even if they have the same name.
 
 TypeScript does not support nominal types, so they are treated as structural types.
 
@@ -387,9 +390,9 @@ const animal: Animal = { name: "Taro" };
 To achieve nominal types, you need to change the structure (e.g., add properties).
 
 ### Open-ended and Declaration Merging
-Open-ended means that defining multiple interfaces with the same name does not result in duplication errors.
+Open-ended means that defining multiple interfaces with the same name does not result in a duplication error.
 
-Declaration merging means that defining multiple interfaces with the same name merges them.
+Declaration merging means that defining multiple interfaces with the same name results in them being merged.
 
 ```typescript
 interface Animal {
@@ -403,11 +406,11 @@ interface Animal {
 const animal: Animal = { name: "Taro", age: 3 };
 ```
 
-The benefit of these properties is that they are useful when extending type definitions for libraries.
+These features are useful, for example, when extending library type definitions.
 
 By splitting type definition files, you can import only the necessary types.
 
-## Type Reuse
+## Reusing Types
 ### typeof
 Get the type of a variable.
 
@@ -417,7 +420,7 @@ type A = typeof a; // type A = string;
 ```
 
 ### keyof
-Get property names as types from the type of an object.
+Get property names as types from an object type.
 
 ```typescript
 type Animal = {
@@ -430,10 +433,10 @@ type AnimalKey = keyof Animal; // type AnimalKey = "name" | "age";
 
 ### Utility Types
 #### Required<T>
-Makes all properties required (removes optional).
+Make all properties required (≒ remove optional).
 
 ```typescript
- type Animal = {
+type Animal = {
   name?: string;
   age?: number;
 };
@@ -442,22 +445,21 @@ type RequiredAnimal = Required<Animal>; // type RequiredAnimal = { name: string;
 ```
 
 #### Readonly<T>
-Makes all properties read-only.
+Make all properties read-only.
 
 ```typescript
- type Animal = {
+type Animal = {
   name: string;
   age: number;
 };
 
 type ReadonlyAnimal = Readonly<Animal>; // type ReadonlyAnimal = { readonly name: string; readonly age: number; };
 ```
-
 #### Partial<T>
-Makes all properties optional.
+Make all properties optional.
 
 ```typescript
- type Animal = {
+type Animal = {
   name: string;
   age: number;
 };
@@ -466,19 +468,19 @@ type PartialAnimal = Partial<Animal>; // type PartialAnimal = { name?: string; a
 ```
 
 #### Record<Keys, Type>
-Generates an object type where the property keys and values are of Keys and Type respectively.
+Generate an object type where the property keys and values are Keys and Type, respectively.
 
 ```typescript
- type Name = string
- type Age = number
- type AnimalRecord = Record<Name, Age>; // type AnimalRecord = { [key: string]: number; };
+type Name = string
+type Age = number
+type AnimalRecord = Record<Name, Age>; // type AnimalRecord = { [key: string]: number; };
 ```
 
 #### Pick<T, Keys>
-Extracts properties from type T based on Keys.
+Extract properties from type T specified by Keys.
 
 ```typescript
- type Animal = {
+type Animal = {
   name: string;
   age: number;
 };
@@ -487,10 +489,10 @@ type Name = Pick<Animal, "name">; // type Name = { name: string; };
 ```
 
 #### Omit<T, Keys>
-Excludes properties from type T based on Keys.
+Exclude properties from type T specified by Keys.
 
 ```typescript
- type Animal = {
+type Animal = {
   name: string;
   age: number;
 };
@@ -499,28 +501,28 @@ type Name = Omit<Animal, "age">; // type Name = { name: string; };
 ```
 
 #### Exclude<T, U>
-Generates a union type excluding the type specified by U from type T.
+Generate a union type by excluding types specified by U from type T.
 
 ```typescript
- type Animal = "dog" | "cat" | "rabbit";
+type Animal = "dog" | "cat" | "rabbit";
 
 type ExcludeAnimal = Exclude<Animal, "dog">; // type ExcludeAnimal = "cat" | "rabbit";
 ```
 
 #### Extract<T, U>
-Generates a union type extracting the type specified by U from type T.
+Generate a union type by extracting types specified by U from type T.
 
 ```typescript
- type Animal = "dog" | "cat" | "rabbit";
+type Animal = "dog" | "cat" | "rabbit";
 
 type ExtractAnimal = Extract<Animal, "dog">; // type ExtractAnimal = "dog";
 ```
 
 #### NoInfer<T>
-Prevents type inference for type T.
+Prevent type inference for type T.
 
 ```typescript
- type Animal = {
+type Animal = {
   name: string;
   age: number;
 };
@@ -533,10 +535,10 @@ const animal = getAnimal<NoInfer<Animal>>({ name: "Taro", age: 3 });
 ```
 
 ### Mapped Types
-Generates a new type based on the specified type.
+Generate a new type based on a specified type.
 
 ```typescript
- type Animal = {
+type Animal = {
   name: string;
   age: number;
 };
@@ -547,10 +549,10 @@ type ReadonlyAnimal = {
 ```
 
 ### Indexed Access Types
-Obtains the type of properties or elements of an array.
+Get the type of a property or array element.
 
 ```typescript
- type Animal = {
+type Animal = {
   name: string;
   age: number;
 };
@@ -562,64 +564,65 @@ type ElementType = ArrayType[number]; // type ElementType = string;
 ```
 
 ### Conditional Types
-Changes the type based on conditions.
+Change types based on conditions.
 
 ```typescript
- type IsString<T> = T extends string ? "string" : "not string";
+type IsString<T> = T extends string ? "string" : "not string";
 
- type A = IsString<string>; // type A = "string";
+type A = IsString<string>; // type A = "string";
 ```
 
 ### infer
-A type operator used within conditional types to obtain a type variable.
+A type operator used in conditional types to obtain a type variable.
 
 ```typescript
 // Utility type to extract the return type of a function
- type MyReturnType<T> = T extends (...args: any[]) => infer R ? R : never;
+
+type MyReturnType<T> = T extends (...args: any[]) => infer R ? R : never;
 
 // Example function
- function exampleFunction(): string {
-   return "Hello, World!";
+function exampleFunction(): string {
+  return "Hello, World!";
 }
 
 // Get the return type of the function
- type ExampleFunctionReturnType = MyReturnType<typeof exampleFunction>;
+type ExampleFunctionReturnType = MyReturnType<typeof exampleFunction>;
 
-// ExampleFunctionReturnType will be of type string
- const exampleReturnValue: ExampleFunctionReturnType = "This is a string";
+// ExampleFunctionReturnType is of type string
+const exampleReturnValue: ExampleFunctionReturnType = "This is a string";
 
 console.log(exampleReturnValue); // This is a string
 ```
 
 ### Union Distribution
-Distributes union types and applies to each type.
+Distribute a union type and apply it to each type.
 
 ```typescript
- type A = "a" | "b";
+type A = "a" | "b";
 
- type B = A extends "a" ? "c" : "d"; // type B = "c" | "d";
+type B = A extends "a" ? "c" : "d"; // type B = "c" | "d";
 ```
 
 ## Generics
-Types that accept type arguments.
+Types that accept types as arguments.
 
 ```typescript
 // Generics
- function identity<T>(arg: T): T {
-   return arg;
+function identity<T>(arg: T): T {
+  return arg;
 }
 
- const a = identity<string>("Hello");
- const b = identity<number>(1);
+const a = identity<string>("Hello");
+const b = identity<number>(1);
 
 // Type arguments
- type Identity<T> = T;
- type A = Identity<string>; // type A = string;
+type Identity<T> = T;
+type A = Identity<string>; // type A = string;
 ```
 
 # Thoughts
-I have learned about JavaScript several times, but I feel like TypeScript makes JavaScript seem so much more difficult than I remembered...
+I have studied JavaScript several times before, but I felt like JavaScript was this difficult even before TypeScript...
 
 # References
 - [typescriptbook.jp - Survival TypeScript](https://typescriptbook.jp/)
-  - Very well organized and easy to understand.
+  - Very well organized

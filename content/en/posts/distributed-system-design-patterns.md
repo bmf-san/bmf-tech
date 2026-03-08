@@ -11,6 +11,8 @@ tags:
 translation_key: distributed-system-design-patterns
 ---
 
-[Distributed System Design Patterns](https://amzn.to/3UUTNbi) is a book I read.
+
+
+[I read Distributed System Design Patterns](https://amzn.to/3UUTNbi).
 
 You can learn about design patterns using containers.

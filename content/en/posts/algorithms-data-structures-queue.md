@@ -1,7 +1,6 @@
 ---
 title: Algorithms and Data Structures - Queue
 slug: algorithms-data-structures-queue
-image: /assets/images/posts/post-211/69003840-2b7d0700-094c-11ea-996e-c116235a1dbe.jpg
 date: 2019-11-17T00:00:00Z
 author: bmf-san
 categories:
@@ -11,21 +10,23 @@ tags:
 translation_key: algorithms-data-structures-queue
 ---
 
+
+
 # Overview
 Referencing the [Algorithm Encyclopedia](https://www.shoeisha.co.jp/book/detail/9784798149776), we learn about algorithms and data structures.
 
-The implementation is also available at [github - bmf-san/road-to-algorithm-master](https://github.com/bmf-san/road-to-algorithm-master).
+The implementation is also available on [github - bmf-san/road-to-algorithm-master](https://github.com/bmf-san/road-to-algorithm-master).
 
 # Queue
-- A structure where data is arranged in a line and can only be accessed from the data that was added first.
-  - The direction of addition and deletion is opposite to that of a stack.
+- A structure where data is lined up in a row so that only the data added first can be accessed.
+  - The direction of addition and removal is opposite to that of a stack.
   - FIFO (First In First Out)
-    - First in, first out
+    - First come, first served
 - Also known as a waiting line.
 - Adding data is called enqueue, and removing data is called dequeue.
 
-# Time Complexity
-Depends on the implementation form, such as arrays or linked lists.
+# Computational Time
+Depends on the implementation form such as arrays or linked lists.
 
 # Implementation
 ```golang
@@ -56,7 +57,8 @@ func (s *Queue) dequeue() {
 	s.nodes = s.nodes[1:len(s.nodes)]
 }
 ```
-- The implementation is almost the same as a stack; only the slice index access is different.
+
+- The implementation is almost the same as a stack. Only the slice index access is different.
 - Note
   - ![Image from iOS](https://user-images.githubusercontent.com/13291041/69003840-2b7d0700-094c-11ea-996e-c116235a1dbe.jpg)
 

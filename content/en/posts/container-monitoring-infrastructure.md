@@ -1,7 +1,6 @@
 ---
-title: Building a Monitoring Infrastructure with Containers
+title: Building a Monitoring Platform with Containers
 slug: container-monitoring-infrastructure
-image: /assets/images/posts/post-277/146595299-9e21d2b8-3b3d-4931-a739-ea3a8e69fa13.png
 date: 2021-12-18T00:00:00Z
 author: bmf-san
 categories:
@@ -20,53 +19,53 @@ tags:
 translation_key: container-monitoring-infrastructure
 ---
 
-This article is the 17th entry in the [Makuake Advent Calendar 2021](https://adventar.org/calendars/6822).
+This article is the 17th day entry for the [Makuake Advent Calendar 2021](https://adventar.org/calendars/6822).
 
-It has been exactly three years since I joined the company, and this is my third participation in the company's Advent Calendar.
+It's been three years since I joined the company, and this is my third time participating in the company's advent calendar.
 
-For the past year, I have been part of the Re-Architecture team, which is responsible for the development and operation of Makuake's service infrastructure, and I have been working hard on various tasks.
+For the past year, I've been part of the Re-Architecture team, which develops and operates the service infrastructure of Makuake, and I've been working hard on various tasks.
 
-I will surely continue to tackle various challenges next year as well.
+I'm sure I'll be tackling various challenges next year as well.
 
-You can find the job openings for the Re-Architecture team here.
-[【Go/Microservices】Hiring Engineers for the Re-Architecture Team to Revamp Makuake's Infrastructure!](https://findy-code.io/companies/633/jobs/3hdLodfPABhrO)
+Here's the job listing for the Re-Architecture team.
+[【Go/Microservices】Engineer Recruitment for the Re-Architecture Team to Revamp the "Makuake" Infrastructure!](https://findy-code.io/companies/633/jobs/3hdLodfPABhrO)
 
-Now, the first article of this year (I will probably write another one on the 24th) is "Building a Monitoring Infrastructure with Containers".
+Now, the first article of this year (I'll probably write another one on the 24th) is "Building a Monitoring Platform with Containers."
 
-I have been experimenting with creating a monitoring infrastructure for an application I am developing as a hobby, which is not directly related to my main job, and I would like to share my insights (though they may not be substantial...) from that experience.
+I've been experimenting with setting up a monitoring platform for an application I'm developing as a hobby, unrelated to my main job, using containers. I'd like to share the insights (though not much) I gained during that process.
 
-# Monitoring Infrastructure Configuration
+# Monitoring Platform Configuration
 ![Screenshot 2021-12-18 4 04 19](https://user-images.githubusercontent.com/13291041/146595314-d593b9d8-9faa-4275-8c94-6c12cfcbfe36.png)
 
-The applications that make up the monitoring infrastructure I will build are as follows:
+The applications that make up the monitoring platform we will build this time are as follows:
 
 - [Elasticsearch](https://www.elastic.co/jp/elasticsearch/)
-	- A search engine that accumulates application logs. I will implement a simple application in Go to collect the logs.
+  - A search engine. It accumulates application logs. The application that collects logs is a simple app implemented in Go.
 - [Fluentd](https://www.fluentd.org/)
-	- A log aggregator that collects logs and forwards them to Elasticsearch.
-	- I could have used the ELK stack (Logstash instead of Fluentd), but I opted for Fluentd since I am more familiar with it.
+  - A log aggregator. It collects logs and forwards them to Elasticsearch.
+  - Although we could have used ELK (Logstash instead of Fluentd) instead of the EFK stack, we chose Fluentd because we are more familiar with it.
 - [Kibana](https://www.elastic.co/jp/kibana/)
-	- A UI for data search, visualization, and analysis. It visualizes application logs.
+  - A UI for data search, visualization, and analysis. It visualizes application logs.
 - [Grafana](https://grafana.com/)
-	- Similar to Kibana, it is a UI for data visualization. It is used to visualize system metrics.
-	- While it can also be used for visualizing application logs, I will use Kibana for that purpose.
+  - Like Kibana, a UI for data. It is used for visualizing system metrics.
+  - It can also be used for visualizing application logs, but we use Kibana for application logs.
 - [Prometheus](https://prometheus.io/)
-	- A monitoring tool for system metrics. It collects system metrics in conjunction with node-exporter and cadvisor. The collected data is visualized using Grafana.
+  - A system metrics monitoring tool. It collects system metrics in conjunction with node-exporter and cadvisor. The collected data is visualized with Grafana.
 - [node-exporter](https://github.com/prometheus/node_exporter)
-	- Collects OS metrics.
+  - Collects OS metrics.
 - [cadvisor](https://github.com/google/cadvisor)
-	- Collects container metrics.
+  - Collects container metrics.
 
-I have roughly structured this for those who want to build and play around with it.
+This setup is roughly configured for those who want to build and play around with it.
 
 These applications will be built using docker-compose.
 
-# Building the Monitoring Infrastructure
+# Building the Monitoring Platform
 All implementations are available at [bmf-san/docker-based-monitoring-stack-boilerplate](https://github.com/bmf-san/docker-based-monitoring-stack-boilerplate).
 
-Once cloned, you can create a `.env` file and run `docker-compose up` to get started right away.
+Once cloned, you can create a `.env` file and run `docker-compose up` to start using it immediately.
 
-By the way, cadvisor does not start on M1, so container metrics cannot be collected. It has been confirmed to work on Intel Macs and Ubuntu.
+Note that cadvisor does not start on M1, so container metrics cannot be collected. It has been confirmed to work on Intel Macs and Ubuntu.
 
 The directory structure is as follows. I will explain each container one by one.
 
@@ -107,10 +106,10 @@ The directory structure is as follows. I will explain each container one by one.
         └── prometheus.yml.template
 ```
 
-I will explain each one.
+I will explain each one in detail.
 
 ## app
-First, I will create a rough application container that outputs logs.
+First, we create a rough application container that logs.
 
 ```sh
 ├── app
@@ -119,36 +118,36 @@ First, I will create a rough application container that outputs logs.
 │   └── main.go
 ```
 
-The application looks like this. It simply outputs "OK" in the logs and responds with "Hello World".
+The application is like this. It logs "OK" and responds with "Hello World".
 
 ```golang
 package main
 
 import (
-	"fmt"
-	"log"
-	"net/http"
+  "fmt"
+  "log"
+  "net/http"
 )
 
 func main() {
-	mux := http.NewServeMux()
-	mux.Handle("/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.WriteHeader(http.StatusOK)
-		log.Println("OK")
-		fmt.Fprintf(w, "Hello World")
-	}))
-	http.ListenAndServe(":8080", mux)
+  mux := http.NewServeMux()
+  mux.Handle("/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+    w.WriteHeader(http.StatusOK)
+    log.Println("OK")
+    fmt.Fprintf(w, "Hello World")
+  }))
+  http.ListenAndServe(":8080", mux)
 }
 ```
 
-The Dockerfile is a simple one that builds the source and runs the binary, with no special notes.
+The Dockerfile is simple, just building the source and executing the binary, so there's nothing to add.
 
-The docker-compose.yml looks like this:
+docker-compose.yml looks like this:
 
 ```yaml
 version: '3.9'
 services:
-  app:
+app:
     container_name: "${APP_CONTAINER_NAME}"
     environment:
       - APP_IMAGE_NAME=${APP_IMAGE_NAME}
@@ -173,12 +172,12 @@ services:
         tag: "${APP_LOGGING_TAG}"
 ```
 
-The logging driver is set to fluentd, which transfers logs to fluentd.
+The logging driver is set to fluentd to forward logs to fluentd.
 
-The `fluent-async-connect` option buffers logs until a connection to fluentd is established, and when set to true, it buffers logs even if the connection is not yet established.
+`fluent-async-connect` buffers logs until a connection to fluentd is established. If true, it buffers logs even if the connection is not yet established.
 
 ## fluentd
-Next, I will explain the fluentd container, which is the destination for application log transfers.
+Next, let's explain the fluentd container, which is the log destination for the application.
 
 ```sh
 ├── fluentd
@@ -203,11 +202,11 @@ RUN gem install fluent-plugin-elasticsearch
 USER fluent
 ```
 
-The only gem used in fluentd is fluent-plugin-elasticsearch for integration with Elasticsearch.
+The only gem used in fluentd is fluent-plugin-elasticsearch for integration with elasticsearch.
 
 The USER is set to root and then switched back to fluent because the execution user of the fluentd image is fluent.
 
-The fluentd configuration is set as follows:
+The fluentd conf is set as follows:
 
 ```sh
 <source>
@@ -235,12 +234,12 @@ The fluentd configuration is set as follows:
 </match>
 ```
 
-In the fluentd configuration, you can embed environment variables in the format `#{...}`, making it convenient to use without needing envsubst or similar tools.
+In the fluentd conf, you can embed environment variables in the format `#{...}`, which is convenient because you can embed variables without using envsubst.
 
-The docker-compose.yml for fluentd is omitted as there are no special notes.
+docker-compose.yml has no special notes, so it is omitted.
 
 ## elasticsearch
-Elasticsearch is configured to run as a single node. There are no other notable points, so I will skip the details.
+Elasticsearch is set to start as a single node. There is nothing else to note, so details are omitted.
 
 ```yaml
 ├── elasticsearch
@@ -248,9 +247,9 @@ Elasticsearch is configured to run as a single node. There are no other notable 
 ```
 
 ## kibana
-Next, I will discuss Kibana, which is used for visualizing application logs.
+Next, let's talk about kibana, which visualizes application logs.
 
-There are no special notes for the Dockerfile, so I will skip that and explain the Kibana configuration:
+There are no special notes about the Dockerfile, so it is omitted, and I will explain the kibana conf.
 
 ```yaml
 server.name: kibana
@@ -261,17 +260,17 @@ elasticsearch.username: ${ELASTICSEARCH_ELASTIC_USERNAME}
 elasticsearch.password: ${ELASTICSEARCH_ELASTIC_PASSWORD}
 ```
 
-The option `xpack.monitoring.ui.container.elasticsearch.enabled` needs to be enabled if Elasticsearch is running in a container.
+`xpack.monitoring.ui.container.elasticsearch.enabled` is an option that needs to be enabled if elasticsearch is running in a container.
 
-The docker-compose.yml for Kibana is also omitted as there are no special notes.
+There are no special notes about kibana's docker-compose.yml, so it is omitted.
 
 ## node-exporter & cadvisor
-For node-exporter and cadvisor, I will skip the explanation as it mainly involves being aware of the mounted directories and startup options.
+For node-exporter and cadvisor, it is enough to be aware of the directories to mount and the startup options, so the explanation is omitted.
 
 ## prometheus
-Next is Prometheus.
+Next is prometheus.
 
-I wanted to write the Prometheus configuration file using envsubst, so the Dockerfile is as follows:
+I wanted to write the prometheus configuration file using envsubst, so the Dockerfile is as follows:
 
 ```yaml
 # NOTE: see https://www.robustperception.io/environment-substitution-with-docker
@@ -290,7 +289,7 @@ RUN apk add gettext
 COPY --from=build-stage /bin/prometheus /bin/prometheus
 
 RUN mkdir -p /prometheus /etc/prometheus \
-	&& chown -R nobody:nogroup etc/prometheus /prometheus
+  && chown -R nobody:nogroup etc/prometheus /prometheus
 
 COPY ./template/prometheus.yml.template /template/prometheus.yml.template
 
@@ -301,7 +300,7 @@ VOLUME [ "/prometheus" ]
 WORKDIR /prometheus
 ```
 
-The docker-compose.yml is as follows:
+docker-compose.yml is as follows:
 
 ```yaml
   prometheus:
@@ -337,7 +336,7 @@ The docker-compose.yml is as follows:
     restart: always
 ```
 
-The Prometheus configuration file is written as follows:
+The prometheus configuration file is written as follows.
 ```sh
 scrape_configs:
   - job_name: 'prometheus'
@@ -355,12 +354,12 @@ scrape_configs:
         - ${NODE_EXPORTER_CONTAINER_NAME}:${NODE_EXPORTER_CONTAINER_PORT}
 ```
 
-I have only written the job names and targets that I want to scrape. If you want to set up alert notifications using Alertmanager, you will need to add the Alertmanager configuration to this configuration file as well.
+It only writes about the job names and targets to scrape. If you want to set up alert notifications using Alertmanager, you will need to add Alertmanager settings to this configuration file.
 
 ## grafana
-Finally, let's discuss Grafana.
+Finally, grafana.
 
-The docker-compose.yml looks like this:
+docker-compose.yml is as follows:
 
 ```yaml
 grafana:
@@ -385,9 +384,9 @@ grafana:
     restart: always
 ```
 
-The `provisioning` directory is where files for data source and dashboard provisioning are placed.
+`provisioning` is the directory where files used for provisioning data sources and dashboards are placed.
 
-Since we will use Prometheus as the data source, the Prometheus configuration is written in `datasources/datasource.yml`:
+Prometheus is used as the data source, so the prometheus settings are written in datasources/datasource.yml.
 
 ```
 apiVersion: 1
@@ -403,20 +402,20 @@ datasources:
     editable: true
 ```
 
-I have prepared configuration files for dashboards for container metrics and OS metrics.
+Dashboard configuration files for container metrics and OS metrics are prepared.
 
-You can use dashboard configuration files available on [grafana.com - grafana/dashboards](https://grafana.com/grafana/dashboards/).
+You can use the dashboard configuration files published at [grafana.com - grafana/dashboards](https://grafana.com/grafana/dashboards/).
 
-Building a dashboard from scratch can be quite challenging, so it seems better to look for a base one and adjust it.
+Building a dashboard from scratch can be quite challenging, so it seems good to find a base and adjust it.
 
-There are many publicly available options, so it can be interesting to explore them.
+The published ones are quite comprehensive, so it's interesting to try various ones.
 
 # Startup
-Most of the configuration values can be adjusted using environment variables.
+Most configuration values are structured to be adjustable with environment variables.
 
-You can copy `.env.example` from [bmf-san/docker-based-monitoring-stack-boilerplate](https://github.com/bmf-san/docker-based-monitoring-stack-boilerplate) to `.env`, and then start it with `docker-compose up`.
+Once you copy `.env.example` to `.env` in [bmf-san/docker-based-monitoring-stack-boilerplate](https://github.com/bmf-san/docker-based-monitoring-stack-boilerplate), you can start it with `docker-compose up`.
 
-The settings in `.env.example` assign port numbers as follows:
+In the `.env.example` settings, port numbers are assigned as follows:
 
 |   Application   |             URL             |
 | --------------- | --------------------------- |
@@ -429,7 +428,9 @@ The settings in `.env.example` assign port numbers as follows:
 
 ![Screenshot 2021-12-18 4 04 19](https://user-images.githubusercontent.com/13291041/146595299-9e21d2b8-3b3d-4931-a739-ea3a8e69fa13.png)
 
-# Conclusion
-I think it was relatively easy to set up (thanks to the benefits of containers).
-The architectural structure of each application is quite deep, so after touching them, it might be interesting to take a look at how they work.
-Since I have not yet been able to operate it in practice, I am eager to get it into operation soon.
+# Summary
+It seems we were able to build it quite easily (thanks to the benefits of containers).
+
+The architecture of each application is profound, so it might be interesting to look into the mechanisms after trying them out.
+
+I haven't been able to actually operate it yet, so I hope to get it up and running soon.

@@ -11,11 +11,12 @@ tags:
 translation_key: mackerel-recover-excluded-hosts
 ---
 
-# Overview
-This is a note on how to restore hosts that were mistakenly retired from monitoring or unintentionally removed from monitoring in Mackerel.
 
-# Steps
-Since the host will not automatically return even after restarting the mackerel-agent, it is necessary to update the hostId assigned to the host.
+# Overview
+This is a note on how to restore hosts that were mistakenly retired or unintentionally removed from monitoring in Mackerel.
+
+# Procedure
+Simply restarting the mackerel-agent will not automatically restore the host, so you need to update the hostId assigned to the host.
 
 ```sh
 service mackerel-agent stop
@@ -25,4 +26,4 @@ service mackerel-agent start
 ```
 
 # Thoughts
-I need to be careful as it can be a bit stressful at times...
+I sometimes panic, so I want to be careful...

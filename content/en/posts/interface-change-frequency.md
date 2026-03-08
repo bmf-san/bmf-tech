@@ -11,28 +11,30 @@ tags:
 translation_key: interface-change-frequency
 ---
 
-[Clean Code Cookbook - A Collection of Recipes to Improve Code Design and Quality](https://amzn.to/47uvc3g) caught my attention with its claim that interfaces change less frequently than their implementations, so I decided to articulate my thoughts on this.
+
+
+Reading [Clean Code Cookbook: Recipes for Improving Code Design and Quality](https://amzn.to/47uvc3g), I was intrigued by the claim that interfaces change less frequently than implementations, so I decided to articulate it.
 
 ## Interfaces as "Contracts" and "Abstractions"
 
-An interface is,
+Interfaces represent a "contract" that states:
 
-> A "contract" that represents "how this functionality can be used."
+> "This feature can be used in this way."
 
-On the other hand, an implementation is,
+In contrast, implementations represent:
 
-> A "concrete means" of "how to actually make it work."
+> "The specific method of how it operates."
 
-The two have different roles and varying degrees of susceptibility to change.
+Both have different roles and varying degrees of resistance to change.
 
-| Layer                | Role         | Susceptibility to Change |
-| -------------------- | ------------ | ------------------------ |
-| Abstraction (interface) | Purpose/Promise | More Stable              |
-| Concrete (implementation) | Method/Means   | More Changeable          |
+| Layer                | Role      | Susceptibility to Change |
+| -------------------- | --------- | ------------------------ |
+| Abstraction (interface) | Purpose/Promise | More stable              |
+| Concrete (implementation) | Method/Means   | More changeable          |
 
-## Contracts Cannot Be Changed Arbitrarily Because They Are Shared Externally
+## Contracts Are Shared Externally, So They Can't Be Changed Recklessly
 
-Changing an interface will break **all the calling code that uses it**.
+Changing an interface breaks **all calling code** that uses it.
 
 Example:
 
@@ -42,7 +44,7 @@ type UserRepository interface {
 }
 ```
 
-If we change it to:
+Changing it to:
 
 ```go
 type UserRepository interface {
@@ -50,41 +52,41 @@ type UserRepository interface {
 }
 ```
 
-All the places that call it will need to be modified.
+Requires all calling locations to be updated.
 
 ```go
-// Before modification
+// Before change
 user, err := repo.Find(123)
 
-// After modification
+// After change
 ctx := context.Background()
 user, err := repo.FindByID(ctx, 123)
 ```
 
-Changes to interfaces have a wide impact (i.e., they are fragile), so we must be cautious.
+Interface changes have a wide impact (i.e., they are fragile), so they are approached cautiously.
 
-As a result, we design them to **rarely change**.
+As a result, they are **designed to change rarely**.
 
-## Implementations Are Internal and Can Be Changed Freely
+## Implementations Are Behind the Scenes, So They Can Be Changed Freely
 
-Implementations are not called directly from the outside.
+Implementations are not called directly from outside.
 
-Internal logic, caching methods, algorithms, and storage can be changed **as long as they do not affect the users**.
+Internal logic, caching methods, algorithms, and storage can be changed **without affecting users**.
 
 ```go
 type userRepository struct {
     db    *sql.DB
-    cache map[int]*User // Added caching
+    cache map[int]*User // Added cache
     mu    sync.RWMutex  // For concurrency safety
 }
 
 func (r *userRepository) Find(id int) (*User, error) {
-    // The interface remains unchanged, but the internal implementation can be freely modified
+    // The interface remains unchanged, but internal implementation can be freely modified
 
     // Version 1: Direct DB search
     // return r.findFromDB(id)
 
-    // Version 2: Caching search
+    // Version 2: Search with cache
     r.mu.RLock()
     user, exists := r.cache[id]
     r.mu.RUnlock()
@@ -104,35 +106,35 @@ func (r *userRepository) Find(id int) (*User, error) {
 
 func (r *userRepository) findFromDB(id int) (*User, error) {
     // Database access logic
-    // Changing from PostgreSQL to MySQL does not affect the external interface
+    // Changing from PostgreSQL to MySQL does not affect the outside
     var user User
     err := r.db.QueryRow("SELECT * FROM users WHERE id = $1", id).Scan(&user.ID, &user.Name)
     return &user, err
 }
 ```
 
-Implementations are subject to **internal improvements, optimizations, and refactoring**.
+Implementations are **targets for internal improvement, optimization, and refactoring**.
 
-In other words, they are a **layer that can change frequently without breaking**.
+Thus, they are "**layers that can change frequently without breaking**."
 
-## Higher Levels of Abstraction Are More Resilient to Change
+## The Higher the Level of Abstraction, the More Resistant to Change
 
-Abstraction expresses "requirements (what to do)".
+Abstraction expresses "requirements (what to do)."
 
-Implementation expresses "means (how to do it)".
+Implementation expresses "means (how to do it)."
 
-**Means can change, but purposes are less likely to change.**
+**Means change, but purposes are less likely to change.**
 
 ```go
-// Abstraction layer (stable)
+// Abstract layer (stable)
 type NotificationService interface {
     Send(message string, recipient string) error
 }
 
-// Implementation layer (changeable)
+// Implementation layer (prone to change)
 type emailNotifier struct{}
 func (e *emailNotifier) Send(message, recipient string) error {
-    // Implementation can change from SMTP to SendGrid to AWS SES
+    // SMTP → SendGrid → AWS SES, etc., implementations change
 }
 
 type slackNotifier struct{}
@@ -142,23 +144,23 @@ func (s *slackNotifier) Send(message, recipient string) error {
 
 type smsNotifier struct{}
 func (s *smsNotifier) Send(message, recipient string) error {
-    // Implementation can change from Twilio to AWS SNS
+    // Twilio → AWS SNS, etc., implementations change
 }
 ```
 
-- "I want to send a notification" (abstraction) is less likely to change.
-- "Send via Email/Slack/SMS" (implementation) changes frequently.
+- "Want to send notifications" (abstraction) is less likely to change
+- "Send via Email/Slack/SMS" (implementation) changes frequently
 
-Thus, **interfaces as abstractions are more stable**.
+Therefore, **interfaces as abstractions are more stable**.
 
 ## Relation to Go's Design Philosophy
 
 In Go, it is customary to **keep interfaces small and define them on the consumer side**.
 
-This means,
+This means:
 
-> The way they are used (i.e., the contract) is stable, but
-> the implementation (i.e., internal logic) can change freely.
+> Usage (contract) is stable,
+> but implementation (internal logic) can be freely changed.
 
 ```go
 // Small interface (stable)
@@ -167,29 +169,29 @@ type Reader interface {
     Read(p []byte) (n int, err error)
 }
 
-// Various implementations (changeable)
+// Various implementations (prone to change)
 type fileReader struct { /* File reading */ }
 type networkReader struct { /* Network reading */ }
 type compressedReader struct { /* Compressed file reading */ }
 ```
 
-Since Go does not have explicit `implements` declarations (structural subtyping), the implementation side can implement multiple interfaces without being aware of them, allowing the consumer to define only the necessary contracts.
+Since Go lacks explicit `implements` declarations (structural subtyping), implementers can implement multiple interfaces without awareness, and consumers can define only the contracts they need.
 
-This characteristic naturally leads to designing the dependency direction as **"stable → unstable"**.
+This characteristic naturally leads to designing with **dependency direction from "stable → unstable"**.
 
-## Conclusion
+## Summary
 
-| Perspective | Interface         | Implementation       |
-| ----------- | ------------------ | -------------------- |
-| Role        | Function promise (contract) | Actual behavior (means) |
-| Scope       | Exposed externally  | Internal only        |
-| Impact of Change | Large (fragile)     | Small (self-contained) |
-| Result      | Hard to change (i.e., stable) | Easy to change (i.e., frequent) |
-| Essence     | "Purpose" does not change | "Method" changes    |
+| Aspect   | Interface        | Implementation       |
+| -------- | ---------------- | -------------------- |
+| Role     | Function promise (contract) | Actual operation (means) |
+| Usage    | Exposed externally | Internal only         |
+| Change Impact | Large (fragile) | Small (self-contained) |
+| Result   | Hard to change (stable) | Easy to change (frequent) |
+| Essence  | "Purpose" doesn't change | "Method" changes        |
 
 ### Conclusion
 
-Interfaces are a "contract with users," and once a contract is established, it cannot be easily changed.
+Interfaces are "contracts with users," and once a contract is established, it cannot be easily changed.
 
 On the other hand, implementations can be freely changed as long as they adhere to the contract.
 

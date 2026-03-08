@@ -1,7 +1,6 @@
 ---
 title: Algorithms and Data Structures - Lists
 slug: algorithms-data-structures-list
-image: /assets/images/posts/post-201/67028620-a0d79b00-f146-11e9-8d47-a5d0d933d15d.jpg
 date: 2019-10-18T00:00:00Z
 author: bmf-san
 categories:
@@ -12,34 +11,36 @@ tags:
 translation_key: algorithms-data-structures-list
 ---
 
-# Overview
-Referencing the [Algorithm Encyclopedia](https://www.shoeisha.co.jp/book/detail/9784798149776), we learn about algorithms and data structures.
 
-The implementation is also available at [github - bmf-san/road-to-algorithm-master](https://github.com/bmf-san/road-to-algorithm-master).
+
+# Overview
+Learn algorithms and data structures with reference to [Algorithm Encyclopedia](https://www.shoeisha.co.jp/book/detail/9784798149776).
+
+The implementation is also available on [github - bmf-san/road-to-algorithm-master](https://github.com/bmf-san/road-to-algorithm-master).
 
 # List (Singly Linked List)
-- A structure that arranges data in a straight line
+- A structure where data is arranged in a straight line
   - Each node has a pointer to the next node
-- Adding and removing data is easy, but accessing it takes time
+- Adding and deleting data is easy, but accessing data takes time
 - In a list, data does not need to be stored in contiguous memory areas
-  - Generally, it is stored in separate areas
+  - Generally stored in separate areas
 
-# Time Complexity
+# Computational Time
 Let n be the number of data stored in the list.
 
 ## Accessing Data
 - O(n)
-  - It requires sequential access from the head of the data, resulting in linear time.
+  - Since sequential access from the beginning of the data is necessary, it takes linear time
 
 ## Adding Data
 - O(1)
-  - Assuming access to the insertion point is complete, it only requires swapping two pointers, so it takes constant time.
+  - Assuming data access to the addition point is complete, it only requires swapping two pointers, so it takes constant time
 
 ## Deleting Data
-- Similar to adding data.
+- Same as adding data
 
 # Implementation
-## Singly Linked List
+## Linear List
 ### Singly Linked List
 
 ```golang
@@ -127,19 +128,19 @@ func main() {
 ```
 
 - The List struct stores the head node of the list
-  - This is to perform sequential access for data in the list.
+  - Because data access in the list is done sequentially
 - add
-  - A method to add a node to the tail of the list.
+  - A method to add a node to the end of the list
 - insert
-  - A method to add a node before a specified node in the list.
-    - Identify the insertion position → Adjust the pointer of the node before the insertion position and the pointer of the new node.
-    - When identifying the insertion position, check the value of the next node in the loop to see if it matches the specified value.
+  - A method to add a node before a specified node in the list
+    - Identify the position to add → adjust the pointer of the node before the addition position and the pointer of the node to be added
+    - When identifying the position to add, refer to the pointer of the next node in the loop and determine if the value of the next node matches the specified value
 - Note
 ![singly_linked_list](https://user-images.githubusercontent.com/13291041/67028620-a0d79b00-f146-11e9-8d47-a5d0d933d15d.jpg)
 
 # References
-- [Naim Ibrahim - Golang singly linked list](https://www.naimibrahim.me/2019/06/08/golang-singly-linked-list/)
-    - The implementation was easy to understand.
+- [Naim Ibrahim - Golang singly linked list](https://www.naimibrahim.me/2019/06/08/golang-singly-linked-list/) 
+    - The implementation was easy to understand
 
 # Related
-- [bmf-tech.com - Big O Notation and Algorithm Complexity Calculation](https://bmf-tech.com/posts/O（オーダー）記法とアルゴリズムの計算量の求め方)
+- [bmf-tech.com - O Notation and How to Determine Algorithm Complexity](https://bmf-tech.com/posts/O（オーダー）記法とアルゴリズムの計算量の求め方)

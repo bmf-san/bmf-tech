@@ -10,6 +10,8 @@ tags:
 translation_key: test-driven-development
 ---
 
-[Test-Driven Development](https://amzn.to/3WwNITP) was read.
 
-A TDD book by Kent Beck. If you want to learn about TDD, this is the one to pick up.
+
+[テスト駆動開発](https://amzn.to/3WwNITP)を読んだ。
+
+Kent Beck's TDD book. If you want to learn about TDD, this is the one to pick up first.

@@ -8,10 +8,12 @@ categories:
 tags:
   - DB
   - SQL
-  - Books
+  - Book
 translation_key: sql-anti-patterns
 ---
 
-[SQL Anti-Patterns](https://amzn.to/3vFzbdw) is a classic read.
 
-It's a staple of the genre, introducing anti-patterns with clear explanations.
+
+[SQL Anti-Patterns](https://amzn.to/3vFzbdw)を読んだ。
+
+定番of定番。分かりやすい解説でアンチパターンが紹介されている。

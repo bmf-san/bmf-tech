@@ -1,5 +1,5 @@
 ---
-title: Differences Between Ruby Instance Variables, Class Variables, and Class Instance Variables
+title: Differences Between Instance Variables, Class Variables, and Class Instance Variables in Ruby
 slug: ruby-instance-class-variables
 date: 2025-01-31T00:00:00Z
 author: bmf-san
@@ -7,15 +7,16 @@ categories:
   - Application
 tags:
   - Ruby
+description: Summarizing the differences between instance variables, class variables, and class instance variables in Ruby.
 translation_key: ruby-instance-class-variables
 ---
 
-This post summarizes the differences between Ruby instance variables, class variables, and class instance variables.
+Summarizing the differences between instance variables, class variables, and class instance variables in Ruby.
 
 # Instance Variables
 Variables that hold different values for each instance, using variable names that start with `@`.
 
-They are mainly used to manage the state of objects declared within a class.
+They are mainly used to manage the state of each object declared within a class.
 
 ```ruby
 class Person
@@ -36,9 +37,9 @@ puts p2.name # => Bob Different instances hold different values
 ```
 
 # Class Variables
-Variables that are shared across the entire class, using variable names that start with `@@`.
+Variables shared across the entire class, using variable names that start with `@@`.
 
-They are used to hold values shared among different instances of the same class.
+They are used to hold values shared between different instances of the same class.
 
 ```ruby
 class Person
@@ -60,7 +61,7 @@ p2 = Person.new("Bob")
 puts Person.count # => 2 Shared across all instances
 ```
 
-They are also shared in subclasses.
+They are also shared with subclasses.
 
 ```ruby
 class Parent
@@ -74,7 +75,7 @@ end
 class Child < Parent
   @@var = "Child"
 end
-puts Parent.var # => "Child" # Overwritten in subclass
+puts Parent.var # => "Child" Overwritten by subclass
 ```
 
 # Class Instance Variables
@@ -82,7 +83,7 @@ Unlike class variables, they are not shared with subclasses.
 
 They are used as instance variables of the class itself.
 
-Accessed within class methods using `self`.
+Access them within class methods using `self`.
 
 ```ruby
 class Person
@@ -110,8 +111,8 @@ puts Student.count # => 1 Count for Student class
 ```
 
 # Summary of Differences
-| Type of Variable                                      | Declaration Location                   | Scope                   | Effect on Subclass           | Purpose                          |
-| ----------------------------------------------------- | -------------------------------------- | ----------------------- | ----------------------------- | -------------------------------- |
-| **Instance Variable (`@var`)**                       | Inside `initialize` or instance methods| **Per instance**       | No effect                    | Manage data per instance        |
-| **Class Variable (`@@var`)**                          | Inside class                           | **Shared across all instances** | **Affects (shared)**         | Manage common data across instances |
-| **Class Instance Variable (`@var` in class context)**| At the top level of the class (`self.@var`) | **Per class**         | No effect (independent per class) | Manage data per class           |
+| Variable Type                                      | Declaration Location                  | Scope                  | Impact on Subclasses          | Usage                            |
+| -------------------------------------------------- | ------------------------------------- | ---------------------- | ----------------------------- | -------------------------------- |
+| **Instance Variable (`@var`)**                     | Within `initialize` or instance methods | **Per instance**       | No impact                     | Managing data per instance       |
+| **Class Variable (`@@var`)**                       | Within class                          | **Shared across all instances** | **Impacts (shared)**           | Managing common data across instances |
+| **Class Instance Variable (`@var` in class context)** | Top level of class (`self.@var`)    | **Per class**          | No impact (independent per class) | Managing data per class          |

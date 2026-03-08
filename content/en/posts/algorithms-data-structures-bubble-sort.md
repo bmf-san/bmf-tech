@@ -10,17 +10,19 @@ tags:
 translation_key: algorithms-data-structures-bubble-sort
 ---
 
-# Overview
-Referencing the [Algorithm Encyclopedia](https://www.shoeisha.co.jp/book/detail/9784798149776), we learn about algorithms and data structures.
 
-The implementation is also available at [github - bmf-san/road-to-algorithm-master](https://github.com/bmf-san/road-to-algorithm-master).
+
+# Overview
+Learn algorithms and data structures with reference to the [Algorithm Encyclopedia](https://www.shoeisha.co.jp/book/detail/9784798149776).
+
+The implementation is also available on [github - bmf-san/road-to-algorithm-master](https://github.com/bmf-san/road-to-algorithm-master).
 
 # Bubble Sort
-- One of the sorting algorithms that rearranges data in ascending or descending order.
-- For all elements, compare adjacent elements and swap them if they are in the wrong order, repeating this operation for the number of elements - 1 times.
+- A sorting method that arranges data in ascending or descending order
+- For all elements, compare adjacent elements and swap them if they are in the wrong order, repeating this operation `number of elements - 1` times
 
-# Time Complexity
-- Worst-case, best-case, and average-case time complexity:
+# Computational Time
+- Worst-case, best-case, and average-case computational time
   - O(n²)
 
 # Implementation
@@ -49,7 +51,7 @@ func main() {
 }
 ```
 
-- Loop through all elements and within that loop, compare adjacent elements.
+- Loop through all elements, and within that, loop and compare adjacent elements
 
 # References
 - [Algorithms and Data Structures](http://www-ikn.ist.hokudai.ac.jp/~arim/pub/algo/algo6.pdf)

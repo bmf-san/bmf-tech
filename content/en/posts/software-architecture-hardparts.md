@@ -11,12 +11,16 @@ tags:
 translation_key: software-architecture-hardparts
 ---
 
-[Software Architecture Hardparts](https://amzn.to/44mx0Z6) is a book that discusses difficult problems in distributed systems.
 
-It might be easier to read if you have previously gone through [Fundamentals of Software Architecture: An Engineering-Based Approach](https://amzn.to/3QJPqh0) and [Evolutionary Architecture: Support Constant Change](https://amzn.to/3QLFPGp).
+
+[Software Architecture Hardparts](https://amzn.to/44mx0Z6) is a book I read.
+
+The book discusses approaches to difficult problems in distributed systems.
+
+It might be easier to read if you have already read [Fundamentals of Software Architecture: A Comprehensive Approach](https://amzn.to/3QJPqh0) and [Building Evolutionary Architectures: Support Constant Change](https://amzn.to/3QLFPGp) beforehand.
 
 The book organizes thoughts and approaches on how to reconstruct architecture.
 
-Personally, my favorite chapter is the last one, "Chapter 15: Building Your Own Trade-Off Analysis." Although it slightly deviates from the main content of the book, it provides insights into the thought processes for considering architectural strategies.
+Personally, my favorite chapter is the last one, "Chapter 15: Building Your Own Trade-off Analysis." Although it slightly deviates from the main content of the book, it provides a way of thinking about architectural strategies.
 
-As a side note, I have a personal connection to this book as I participated in the translation review.
+As an aside, I participated in the translation review of this book, so I have a personal attachment to it.

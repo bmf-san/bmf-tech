@@ -4,38 +4,37 @@ slug: algorithms-data-structures-hashmap
 date: 2023-07-31T00:00:00Z
 author: bmf-san
 categories:
-  - Algorithms
-  - Data Structures
+  - Algorithms and Data Structures
 tags:
   - HashMap
 translation_key: algorithms-data-structures-hashmap
 ---
 
 # Overview
-Referencing the [Algorithm Encyclopedia](https://www.shoeisha.co.jp/book/detail/9784798149776), we learn about algorithms and data structures.
+Referencing [Algorithm Encyclopedia](https://www.shoeisha.co.jp/book/detail/9784798149776), we learn about algorithms and data structures.
 
-The implementation is also available at [github - bmf-san/road-to-algorithm-master](https://github.com/bmf-san/road-to-algorithm-master).
+The implementation is also available on [github - bmf-san/road-to-algorithm-master](https://github.com/bmf-san/road-to-algorithm-master).
 
 # HashMap
 - An array indexed by hash values
 - Hash collision handling
-  - Open addressing
-    - A method to find a different address using a function other than the hash function when a collision occurs.
+  - Open Addressing
+    - A method to find another address using a different function when a collision occurs.
   - Chaining
-    - A method to handle collisions by storing a linked list of colliding keys at the colliding address without seeking a new address.
+    - A method where, instead of finding a new address when a collision occurs, a linked list is stored at the collided address, connecting the collided keys with pointers.
 
-# Time Complexity
-## Accessing Data
+# Computational Time
+## Data Access
 - O(1)
- - Random access is possible using indices.
+  - Random access is possible using indices.
 
-## Adding Data
+## Data Addition
 - O(1)
- - In the case of an array, it requires linear search to find the insertion point, resulting in O(n), but a hash table can determine the insertion point using the hash, resulting in O(1).
- - This does not apply if there is a hash collision.
+  - In the case of arrays, a linear search is needed to find the addition location, making it O(n), but hash tables determine the addition location using a hash, so it is O(1).
+  - This does not apply if a hash collision occurs.
 
 # Implementation
-Below is a rough HashMap that does not consider hash collisions.
+Below is a rudimentary HashMap that does not consider hash collisions.
 
 ```golang
 package main

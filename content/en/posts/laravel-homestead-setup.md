@@ -1,5 +1,5 @@
 ---
-title: Setting Up Laravel Environment with Laravel Homestead
+title: Setting Up a Laravel Environment with Laravel Homestead
 slug: laravel-homestead-setup
 date: 2018-04-11T00:00:00Z
 author: bmf-san
@@ -14,8 +14,10 @@ tags:
 translation_key: laravel-homestead-setup
 ---
 
+
+
 # Overview
-I had the opportunity to work with Homestead, so I will summarize it briefly.
+I had the opportunity to work with Homestead, so here's a brief summary.
 
 # Preparation
 Make sure to have the following tools ready:
@@ -23,7 +25,7 @@ Make sure to have the following tools ready:
 - vagrant
 - virtualbox
 - ssh key
-    - Please create a key.
+    - Please create a key
 
 # Steps
 ## Install Laravel
@@ -39,7 +41,7 @@ Prepare the Vagrant box.
 
 `vagrant box add laravel/homestead`
 
-Clone the repository to use Homestead and run the initialization script.
+Clone the repository for using Homestead and run the initialization script.
 
 `cd ~`
 `git clone https://github.com/laravel/homestead.git Homestead`
@@ -85,7 +87,7 @@ databases:
 #       protocol: udp
 ```
 
-Next, edit the hosts file.
+Next, edit the host file.
 
 `vi /etc/hosts`
 
@@ -107,7 +109,7 @@ Next, edit the hosts file.
 `cd ~/Homestead`
 `vagrant up`
 
-You should be able to access the default Laravel welcome page at the following address:
+You should be able to see the default Laravel welcome page by accessing the following:
 
 `http://laravel`
 

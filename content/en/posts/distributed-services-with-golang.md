@@ -7,10 +7,14 @@ categories:
   - Application
 tags:
   - Golang
-  - Books
+  - Book
 translation_key: distributed-services-with-golang
 ---
 
-[Distributed Services with Go](https://amzn.to/3qIwOEj) is a book that discusses practical distributed services using Go.
 
-I believe it also covers modern technologies and the background of configurations in the context of microservices.
+
+[Distributed Services with Go](https://amzn.to/3qIwOEj) is a book I read.
+
+The book covers practical aspects of distributed services using Go.
+
+I think it also provides insights into modern technologies and configurations in the context of microservices.

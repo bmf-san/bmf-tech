@@ -8,31 +8,33 @@ categories:
 tags:
   - Architecture
   - SaaS
+description: A compilation of resources to transition from knowing nothing about SaaS to fully understanding it.
 translation_key: saas-architecture-resource-list
 ---
 
-I have compiled some resources that may help you move from not understanding anything about SaaS to fully grasping it!
+
+SaaSなんもわからん！からSaaS完全に理解した！に近づくために参考になりそうな資料をまとめておく。
 
 # Resources
-- [docs.aws.amazon.com - SaaS Architecture Fundamentals](https://docs.aws.amazon.com/ja_jp/whitepapers/latest/saas-architecture-fundamentals/saas-architecture-fundamentals.html)
-- [docs.aws.amazon.com - SaaS Lens](https://docs.aws.amazon.com/ja_jp/wellarchitected/latest/saas-lens/saas-lens.html)
+- [docs.aws.amazon.com - SaaS アーキテクチャの基礎](https://docs.aws.amazon.com/ja_jp/whitepapers/latest/saas-architecture-fundamentals/saas-architecture-fundamentals.html)
+- [docs.aws.amazon.com - SaaSレンズ](https://docs.aws.amazon.com/ja_jp/wellarchitected/latest/saas-lens/saas-lens.html)
 - [docs.aws.amazon.com - SaaS Tenant Isolation Strategies: Isolating Resources in a Multi-Tenant Environment](https://docs.aws.amazon.com/whitepapers/latest/saas-tenant-isolation-strategies/saas-tenant-isolation-strategies.html)
 - [docs.aws.amazon.com - SaaS Storage Strategies](https://docs.aws.amazon.com/whitepapers/latest/multi-tenant-saas-storage-strategies/multi-tenant-saas-storage-strategies.html)
-- [d1.awsstatic.com - SaaS Tenant Isolation Strategies](https://d1.awsstatic.com/whitepapers/ja_JP/saas-tenant-isolation-strategies.pdf)
-- [speakerdeck.com - Overview of SaaS Architecture](https://speakerdeck.com/ryurock/saas-akitekutiyagai-yao)
-- [dev.classmethod.jp - [Report] Learning SaaS Architecture Patterns #reinvent #ARC306](https://dev.classmethod.jp/articles/reinvent2021-arc306/)
+- [d1.awsstatic.com - SaaS のテナント分離戦略](https://d1.awsstatic.com/whitepapers/ja_JP/saas-tenant-isolation-strategies.pdf)
+- [speakerdeck.com - SaaS アーキテクチャ概要](https://speakerdeck.com/ryurock/saas-akitekutiyagai-yao)
+- [dev.classmethod.jp - [レポート] SaaSアーキテクチャーのパターンを学ぶ #reinvent #ARC306](https://dev.classmethod.jp/articles/reinvent2021-arc306/)
 
 # Important Considerations for SaaS Architecture in Business Models
 
-- Can you provide flexible services to users (subscription plans, features, etc.)?
-- Can you onboard users quickly (start using the service)?
-- Can you manage analytics, metrics, and billing appropriately?
-- Can you ensure non-functional requirements considering noisy neighbors?
-- Can you adequately address data leakage (ensuring that data not visible to other users between tenants remains secure)?
-  - There are various methods for isolating resources used by tenants.
-    - cf. [docs.aws.amazon.com - Basic Isolation Concepts](https://docs.aws.amazon.com/ja_jp/wellarchitected/latest/saas-lens/core-isolation-concepts.html)
-- What resources do you want to separate in terms of functionality, performance, and data?
+- Can flexible services (subscription plans, features, etc.) be provided to users?
+- Can user onboarding (starting service use) be expedited?
+- Can analytics, metrics, and billing be managed appropriately?
+- Can non-functional requirements considering noisy neighbors be ensured?
+- Can data breaches (such as data visible to other users between tenants) be appropriately addressed?
+  - There are various methods to isolate resources used by tenants
+    - cf. [docs.aws.amazon.com - 基本的な分離の概念](https://docs.aws.amazon.com/ja_jp/wellarchitected/latest/saas-lens/core-isolation-concepts.html)
+- What are the resources to be isolated in terms of functionality, performance, data, etc.?
 
 # Thoughts
-- Cost optimization seems challenging. If a specific tenant consumes excessive resources but ends up with the same billing as others, it could be problematic...
-- There may be needs to share tenants between parent and subsidiary companies or to partially integrate data, which could lead to trade-offs.
+- Cost optimization seems challenging. If a specific tenant consumes excessive resources but the billing remains similar to other tenants, it could become problematic...
+- There might be a need to share tenants between parent and subsidiary companies or partially integrate data, which could be tricky. There are trade-offs.

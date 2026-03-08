@@ -12,12 +12,14 @@ tags:
 translation_key: system-design-interview-tips
 ---
 
-[I read about the trends and strategies for system design interviews](https://amzn.to/3L1pQ6U).
 
-While it focuses on interview preparation, it's also a great resource for learning system design patterns.
 
-I believe it will be useful for those who create questions as well.
+[Trends and Strategies for System Design Interviews](https://amzn.to/3L1pQ6U) was an insightful read.
 
-There are parts that provide insights into question patterns that capture the essence of system design, which could also benefit interviewers in technical interviews that are not specifically about system design.
+Although it focuses on interview preparation, it's also perfect for learning system design patterns.
 
-There are few books of this kind, but I would like to see more books that allow learning about architectural design cases and patterns in a way that is close to real examples.
+I believe it would be useful for those creating interview questions as well.
+
+There are parts that provide insights into question patterns that capture the essence of system design, making it beneficial even for technical interviewers not conducting system design interviews.
+
+There aren't many books like this, but I wish to explore more books that allow learning about architecture design examples and patterns in a way that closely resembles real-world scenarios.

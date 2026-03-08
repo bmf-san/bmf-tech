@@ -1,5 +1,5 @@
 ---
-title: How to Split a Large Monolith? - Learning from Software Architecture and Hard Parts
+title: How to Split a Large Monolith? - Lessons from Software Architecture Hard Parts
 slug: splitting-large-monoliths
 date: 2025-02-17T00:00:00Z
 author: bmf-san
@@ -9,104 +9,107 @@ tags:
   - Architecture Strategy
   - Monolith
   - Microservices
+description: 'This article organizes useful points for considering service division from a monolith, based on chapters 1 to 4 of ''Software Architecture: The Hard Parts''.'
 translation_key: splitting-large-monoliths
 ---
 
-In this article, we will organize points that are helpful when considering service splitting from a monolith, based on Chapters 1 to 4 of [Software Architecture and Hard Parts - Trade-off Analysis for Distributed Architecture](https://amzn.to/41kcsAL).
 
-There is no "silver bullet" that applies to all organizations, but by understanding "what trade-offs to identify," we may be able to design a more convincing architecture.
 
-## 1. There Are No "Best Practices" - Identifying Trade-offs
-### 1.1 Why There Is No "Silver Bullet"
-- **Differences in Preconditions**  
-  Due to differences in organizational size, team composition, the nature of the data handled, and business requirements, a single splitting pattern rarely fits all situations.
-- **Existence of Conflicting Requirements**  
-  There are always trade-offs in technology selection and design policies, such as "increasing performance raises operational costs" and "enhancing security impacts availability."
+In this article, we organize useful points for considering service division from a monolith, based on chapters 1 to 4 of [Software Architecture: The Hard Parts](https://amzn.to/41kcsAL).
+
+There is no "silver bullet" that applies to all organizations, but understanding "what trade-offs to identify" might help in designing a more convincing architecture.
+
+## 1. There is No "Best Practice" — Identifying Trade-offs
+### 1.1 Why There is No "Silver Bullet"
+- **Differences in Preconditions**
+  - Due to differences in organizational size, team composition, nature of data handled, business requirements, etc., a single division pattern rarely fits all situations.
+- **Existence of Conflicting Requirements**
+  - "The more you enhance performance, the higher the operational cost," "The more you strengthen security, the more it affects availability," etc. There are always some trade-offs in technology selection and design policies.
 
 ### 1.2 Utilizing ADR (Architecture Decision Record)
-- **Importance of Documenting Decisions**  
-  Documenting what options were available and why a particular choice was made (ADR) makes it easier to trace back to "why this structure was chosen" when reviewing the architecture later.
-- **Granularity of Records**  
-  Recording not only major architectural changes (e.g., transitioning from a monolith to a distributed architecture) but also small design trade-offs can facilitate consensus within the team.
+- **Importance of Leaving Decisions**
+  - Documenting (ADR) what options were available and why a particular choice was made makes it easier to trace "why this structure was chosen" when reviewing the architecture later.
+- **Granularity of Records**
+  - Recording not only major architectural changes (e.g., transition from monolith to distributed architecture) but also small design trade-offs can facilitate consensus building within the team.
 
-## 2. Architecture Quantum - How Much is a "Single Unit"?
-The concept of **architecture quantum** is emphasized in [Software Architecture and Hard Parts - Trade-off Analysis for Distributed Architecture](https://amzn.to/41kcsAL).
+## 2. Architecture Quantum — How Much is a "Chunk"?
+In [Software Architecture: The Hard Parts](https://amzn.to/41kcsAL), the concept of **Architecture Quantum** is emphasized.
 
-> **Architecture Quantum**:  
-> A unit that is "independently deployable" and has "high functional cohesion, with elements that are strongly coupled both statically and dynamically."
+> **Architecture Quantum**:
+> A unit that can be "independently deployed" and has "high functional cohesion, with elements strongly coupled both statically and dynamically."
 
-**Coupling** refers to the state of dependency where a change in one affects the other.
+**Coupling** refers to dependency relationships where changes in one affect the other.
 
-**Cohesion** refers to the degree to which related elements are grouped together, with higher cohesion when they are grouped for the same purpose.
+**Cohesion** refers to the degree to which related elements are grouped together, with higher cohesion when grouped for the same purpose.
 
 ### 2.1 Examples of Static and Dynamic Coupling
-- **Static Coupling:**  
-  A typical example is a single large database. If table design and schema are integrated, dependencies are likely to remain even if you want to separate deployment units.  
-  Example countermeasures: Splitting table schemas, having independent DB instances per service, etc.
-- **Dynamic Coupling:**  
-  The more synchronous service-to-service calls there are, the wider the impact range during failures.  
-  Example countermeasures: Considering the use of asynchronous messaging, avoiding distributed transactions, etc.
+- **Static Coupling:**
+  - A typical example is a single large database. When table design and schema are integrated, dependencies remain even if you want to separate deployment units.
+  - Countermeasures: Split table schemas, have independent DB instances per service, etc.
+- **Dynamic Coupling:**
+  - The more synchronous service calls there are, the wider the impact range during failures.
+  - Countermeasures: Utilize asynchronous messaging, consider designs that avoid distributed transactions, etc.
 
-### 2.2 Factors Leading to Large Quantums
-- When a specific function frequently exchanges data with other functions, it tends to lead to a situation where **"it ultimately cannot operate unless deployed together."**  
-- Conversely, areas with weak communication or data dependencies may be relatively easy to extract.
+### 2.2 Factors Leading to Large Quanta
+- When specific functions frequently exchange data with other functions, even if separated, they often end up needing to be "deployed together to function."
+- Conversely, parts with weak communication or data dependencies can be relatively easily extracted.
 
-## 3. Why Aim for Service Splitting - Drivers for Modularization
+## 3. Why Aim for Service Division — Drivers of Modularization
 ### 3.1 Maintainability and Testability
-- **Improved Maintainability:**  
-  In a large monolith, the impact range is hard to predict, and a single fix carries a high risk of causing unexpected issues.  
-  If the responsibility range is clear for each service, it becomes easier to limit the responsible teams and testing scope.
-- **Improved Testability:**  
-  Unit tests and component tests can be performed more easily at the functional level.  
-  By adopting microservices, CI/CD pipelines can be established for each service, potentially shortening the release cycle.
+- **Improved Maintainability:**
+  - Large monoliths have unpredictable impact ranges, with a high risk of unexpected bugs from a single fix.
+  - If responsibility ranges are clear per service, it's easier to limit the responsible team and test range.
+- **Improved Testability:**
+  - Easier to perform unit tests and component tests per function.
+  - With microservices, CI/CD pipelines can be established per service, shortening release cycles.
 
 ### 3.2 Deployability and Scalability
-- **Independent Deployment:**  
-  When releasing only part of the functionality, you don't have to stop the entire application, improving agility.
-- **Selective Scaling:**  
-  Only high-load services can be scaled out.  
-  Since infrastructure resources can be used more intensively, cost optimization is also expected.
+- **Independent Deployment:**
+  - When releasing only part of the functionality, the entire app doesn't need to be stopped, improving agility.
+- **Selective Scaling:**
+  - Only high-load services can be scaled out.
+  - Infrastructure resources can be used intensively, optimizing costs.
 
 ### 3.3 Availability and Fault Tolerance
-- If services are split, even if part of them goes down, the impact on the whole can be minimized.  
-- However, if inter-service dependencies are strong, it can lead to a situation where **"if one part fails, it affects everything,"** so careful management of coupling points is necessary.
+- If services are divided, even if part goes down, the impact on the whole can be minimized.
+- However, if inter-service dependencies are strong, there can still be situations where "if one part fails, it affects everything," so careful management of coupling points is necessary.
 
-## 4. Splitting Approaches - How to Divide a Monolith
+## 4. Division Approach — How to Split a Monolith
 ### 4.1 Component-Based Decomposition Steps
-1. **Modularize the Monolith**  
-   First, visualize the dependencies of the existing code.  
-   Identify "components" through layering and package splitting.
-2. **Consider Database Splitting**  
-   If possible, organize at the table or schema level, aiming for independent DBs per service.  
-   To reduce migration risk, a pattern of first logically separating schemas before physically separating DBs can be adopted.
-3. **Create a State Where Services Can Be Independently Deployed**  
-   Gradually build CI/CD pipelines so that each service can be tested and deployed independently.  
-   Jumping straight to full microservices can cause confusion, so a small start is recommended.
+1. **Modularize the Monolith**
+   - First, visualize existing code dependencies.
+   - Find "components" through layering and package splitting.
+2. **Consider Database Splitting**
+   - If possible, organize by table or schema unit, aiming for independent DBs per service.
+   - To reduce migration risk, first logically separate schemas, then physically separate DBs.
+3. **Create a State for Independent Service Deployment**
+   - Gradually build CI/CD pipelines, enabling each service to be tested and deployed independently.
+   - A full microservices transition can be confusing, so a small start is recommended.
 
-### 4.2 Caution on Tactical Forking
-- **Method:**  
-  Extract only the necessary functions to create a new service, and stop using it from the monolith (evolve the fork).
-- **Benefits:**  
-  Can secure independent services in the short term and speed up migration.
-- **Drawbacks:**  
-  Tends to lose synchronization with the original fork, potentially increasing management costs in the future.
-- **Points:**  
-  Clearly define the code maintenance policy after forking.  
-  Agreement within the team on how much duplicate code to allow is essential.
+### 4.2 Cautions for Tactical Forking
+- **Method:**
+  - Extract only necessary functions to create a new service, ceasing use from the monolith side (evolve the fork).
+- **Advantages:**
+  - Can secure independent services in the short term, speeding up migration.
+- **Disadvantages:**
+  - Synchronization with the fork source can become difficult, potentially increasing future management costs.
+- **Points:**
+  - Clarify the code maintenance policy post-fork.
+  - Team consensus is essential on how much duplicate code is acceptable.
 
-## 5. Technical Checklist for Tackling Service Splitting
-1. **Trade-off Analysis**  
-   Determine the priorities of key elements (performance, availability, security, cost, etc.).  
-   Anticipating which elements can be sacrificed in advance helps keep decision-making steady.
-2. **Understanding Architecture Quantum**  
-   Check whether services can operate independently, and whether shared DBs or synchronous calls are not becoming a "bottleneck."
-3. **Incremental Implementation**  
-   Large-scale refactoring carries significant risks, so start with modularization.  
-   Planning the decomposition of the data layer, such as splitting table designs or using multiple DBs, is crucial.
-4. **Clarify Priorities for Maintainability and Scalability**  
-   Share with the team and management what kind of operational structure will be established after splitting and how much fault tolerance is needed.
+## 5. Technical Checklist When Challenging Service Division
+1. **Trade-off Analysis**
+   - Determine the priority of key elements (performance, availability, security, cost, etc.).
+   - Preconceiving which elements can be sacrificed helps stabilize decision-making.
+2. **Understanding Architecture Quantum**
+   - Confirm whether services can operate independently, and whether shared DBs or synchronous calls are "bottlenecks."
+3. **Gradual Implementation**
+   - Large-scale refactoring is risky, so start with modularization.
+   - Data layer decomposition planning, such as table design splitting and using multiple DBs, is crucial.
+4. **Clarify Priorities for Maintainability and Scalability**
+   - Share within the team and with management "what operational structure will be after division" and "what level of fault tolerance is needed."
 
-## 6. Conclusion
-There is no universal solution for service splitting, but by understanding trade-offs and identifying the optimal architecture quantum, it becomes possible to execute incrementally.
+## 5. Conclusion
+There is no universal solution for service division, but understanding trade-offs and identifying optimal architecture quanta allows for gradual execution.
 
-Since architectural changes take time, it is important to start with small steps.
+Architectural changes take time, so it's important to start with small steps.

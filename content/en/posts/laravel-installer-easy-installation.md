@@ -1,5 +1,5 @@
 ---
-title: Easy Installation of Laravel with Installer
+title: Easy Laravel Installation with Installer
 slug: laravel-installer-easy-installation
 date: 2016-05-15T00:00:00Z
 author: bmf-san
@@ -10,19 +10,24 @@ tags:
 translation_key: laravel-installer-easy-installation
 ---
 
-When installing Laravel, I used to type cumbersome commands with composer every time, but using the installer is much easier (better late than never).
+
+
+When installing Laravel, I used to type tedious commands with composer every time, but using the installer was much easier (better late than never).
+
 
 # Preparation
 - composer
 - MacOS
 
-# Global Installation of Installer
+
+# Install the Installer Globally
 
 `composer global require "laravel/installer"`
 
+
 # Set the Path
 
-I think this will work on MacOS. (I don't know about Windows...)
+If you're on MacOS, this should work. (I don't know about Windows...)
 
 `export PATH="~/.composer/vendor/bin:$PATH"`
 
@@ -32,12 +37,13 @@ I think this will work on MacOS. (I don't know about Windows...)
 
 The latest version of Laravel will be installed in the current directory.
 
-As mentioned in the documentation, it seems to run **faster than using composer**.
+As mentioned in the documentation, it **runs faster than using composer**.
 
-# Impressions
+
+# Thoughts
 
 Fast and easy.
 
-# Additional Information
-
-Add `export PATH="~/.composer/vendor/bin:$PATH"` to the .bash_profile in your MacOS home directory. If you don't have a .bash_profile, create one. If you want to know the difference from .bashrc, just Google it.
+# Additional Notes
+Add `export PATH="~/.composer/vendor/bin:$PATH"` to the .bash_profile in your MacOS home directory.
+If .bash_profile doesn't exist, create it. If you want to know the difference from .bashrc, Google it.

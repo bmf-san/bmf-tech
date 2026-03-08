@@ -11,4 +11,8 @@ tags:
 translation_key: software-architecture-basics
 ---
 
-[Fundamentals of Software Architecture](https://amzn.to/3y6m7hS) is a book that discusses evaluation criteria for software architecture and architectural patterns.
+
+
+[I read Fundamentals of Software Architecture](https://amzn.to/3y6m7hS).
+
+This book discusses evaluation perspectives of software architecture and architecture patterns.

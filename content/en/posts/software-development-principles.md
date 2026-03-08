@@ -10,41 +10,44 @@ tags:
 translation_key: software-development-principles
 ---
 
+
+
 # Overview
+
 # Postel's Law
 - Jon Postel
-- Be strict in what you send, be tolerant in what you receive
-- A generalization of a section described in RFC793, which defined TCP
+- Be conservative in what you send, be liberal in what you accept
+- A generalized principle from a section in RFC793, which Postel wrote to define TCP
 - A principle in internet communication
 
 # Parkinson's Law
 - Cyril Northcote Parkinson
-- First Law  
-  - The amount of work expands to fill the time available for its completion
+- First Law
+  - Work expands to fill the time available for its completion
 - Second Law
-  - Expenditures rise to meet income
-- A law proposed in "Parkinson's Law: The Pursuit of Progress"
-- Application to computers  
-  - The amount of data expands to fill the available storage space
+  - Expenditure rises to meet income
+- Proposed in "Parkinson's Law: The Pursuit of Progress"
+- Application to computers
+  - Data expands to fill the space available for storage
 
-# Pareto's Law
-- Vilfredo Pareto
+# Pareto Principle
+- Virfredo Pareto
 - In many phenomena, 80% of the results come from 20% of the causes
 - A theory in economics
 
 # Sturgeon's Law
 - Theodore Hamilton Sturgeon
-- Ninety percent of everything is crap
+- 90% of everything is crud
 
-# Peter's Law
+# Peter Principle
 - Laurence Johnston Peter
-- In an organization, every employee tends to rise to their level of incompetence
-- A sociological law
-- Engineers get promoted → become managers → fail to perform → become incompetent
+- In a hierarchy, every employee tends to rise to their level of incompetence
+- A sociological principle
+- Engineers become managers → can't perform well → become incompetent
 
 # Hofstadter's Law
 - Douglas Richard Hofstadter
-- Tasks always take longer than expected, even when you take Hofstadter's Law into account
+- It always takes longer than you expect, even when you take into account Hofstadter's Law
 
 # Murphy's Law
 - Edward Aloysius Murphy Jr.
@@ -56,11 +59,11 @@ translation_key: software-development-principles
 
 # Conway's Law
 - Melvin Edward Conway
-- Any piece of software reflects the structure of the organization that built it
+- Any piece of software reflects the organizational structure that produced it
 
 # Kerckhoffs's Principle
 - Auguste Kerckhoffs
-- A cryptographic system should be secure even if everything about the system, except the secret key, is public knowledge
+- A cryptosystem should be secure even if everything about the system, except the key, is public knowledge
 
 # Linus's Law
 - Linus Benedict Torvalds
@@ -68,36 +71,36 @@ translation_key: software-development-principles
 
 # Reed's Law
 - David Patrick Reed
-- The utility of large networks, particularly social networks, grows exponentially with the size of the network
+- The utility of large networks, particularly social networks, increases exponentially with the size of the network
 
 # Metcalfe's Law
 - Robert Melancton Metcalfe
-- In network theory, the value of a system is proportional to the square of the number of users of the system
+- In network theory, the value of a system is proportional to the square of the number of its users
 
 # Moore's Law
 - Gordon Earle Moore
-- The density of transistors on integrated circuits doubles approximately every 18 months
+- The number of transistors on an integrated circuit doubles approximately every 18 months
 
 # Rock's Law
 - Arthur Rock
-- The cost of making a microprocessor doubles every four years
+- The cost of semiconductor chip fabrication doubles every four years
 
 # Wirth's Law
 - Niklaus Emil Wirth
-- Software tends to become slower more rapidly than hardware becomes faster
+- Software is getting slower more rapidly than hardware becomes faster
 
 # Zawinski's Law
 - James Werner Zawinski
-- Every program attempts to expand until it can read mail. Those that cannot are replaced by those that can.
+- Every program attempts to expand until it can read mail. Those programs which cannot so expand are replaced by ones which can.
 
 # Fitts's Law
 - Paul Morris Fitts Jr.
-- The time required to reach a target is a function of the distance to the target and the size of the target
+- The time to acquire a target is a function of the distance to and size of the target
 
 # Hick's Law
 - William Edmund Hick
-- The time it takes to make a decision is proportional to the number of alternatives
+- The time it takes to make a decision increases with the number and complexity of choices
 
 # References
-- [19 Laws of Software Development](https://www.yamdas.org/column/technique/19laws.html)
+- [人名を冠したソフトウェア開発の19の法則](https://www.yamdas.org/column/technique/19laws.html)
 - [19 Eponymous Laws Of Software Development](https://haacked.com/archive/2007/07/17/the-eponymous-laws-of-software-development.aspx/)

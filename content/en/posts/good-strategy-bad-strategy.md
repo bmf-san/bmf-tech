@@ -10,26 +10,28 @@ tags:
 translation_key: good-strategy-bad-strategy
 ---
 
-[Good Strategy, Bad Strategy](https://amzn.to/4fEwDOO) is a book I read.
 
-It contains many sections discussing various case studies, some of which are quite interesting.
 
-- Good strategies include actionable guidelines.
-- The essence of strategy is to confront weaknesses with the strongest strengths and to use the most powerful weapons in areas with the greatest potential for growth.
-- When formulating a strategy, what to do is just as important as what not to do.
-- The causes of bad strategy are flawed thinking and a lack of leadership.
-- Characteristics of bad strategy:
-  - It is hollow.
-  - It does not address significant issues.
-  - It confuses goals with strategy.
-  - It sets incorrect strategic objectives.
-- Strategy is a hypothesis.
-- The key elements of strategy are diagnosis, guiding policy, and action.
+ [Good Strategy, Bad Strategy](https://amzn.to/4fEwDOO) was an interesting read.
 
-It may be a cliché, but I felt that strategy is not something that can be easily conceived. To differentiate oneself from others, it is crucial to possess or discover unique and outstanding information.
+There are many sections that discuss case studies, some of which were quite intriguing.
 
-When thinking about strategy, if you feel like you've missed the mark despite extensive contemplation, it might indicate a lack of sufficient or undiscovered differentiating information.
+- A good strategy includes a guiding policy for actions to be taken
+- The essence of strategy is to leverage your greatest strength against a weakness, using your strongest weapon in areas with the most potential for growth
+- When formulating a strategy, "what not to do" is as important as "what to do"
+- The causes of a bad strategy include flawed thinking and a lack of leadership
+- Characteristics of a bad strategy:
+  - It is empty
+  - It does not address critical issues
+  - It confuses goals with strategy
+  - It sets incorrect strategic objectives
+- Strategy is a hypothesis
+- The essence of strategy is diagnosis, guiding policy, and action
 
-While the strategies discussed in this book focus on business strategy, I believe they can also be beneficial in thinking about strategies in general, such as organizational strategy or career strategy.
+Though it may sound cliché, strategy is not something that can be easily conceived. To differentiate from others, it is crucial to either possess or discover unique and outstanding information.
 
-I often think about my career, and I want to utilize the insights gained from this book to make my strategy more concrete.
+When thinking about strategy, if you feel like you've missed the mark despite thorough consideration, it might be because you lack or haven't discovered the information necessary for differentiation.
+
+While this book focuses on business strategy, I believe the insights on strategy can be beneficial for thinking about strategy in general, whether it be organizational strategy or career strategy.
+
+I often think about my career, and I want to use the insights gained from this book to make my strategies more concrete.

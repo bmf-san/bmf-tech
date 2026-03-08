@@ -1,5 +1,5 @@
 ---
-title: Became a Certified Scrum Master (LSM)
+title: Became a Registered Scrum Master (LSM)
 slug: certified-scrum-master-lsm
 date: 2023-08-01T00:00:00Z
 author: bmf-san
@@ -7,32 +7,35 @@ categories:
   - Development Process
 tags:
   - Scrum
+description: Reflections and notes on becoming a Registered Scrum Master after attending the training and exam by scruminc.japan.
 translation_key: certified-scrum-master-lsm
 ---
 
-I took the training and exam for the [Registered Scrum Master](https://scruminc.jp/training/master/) from scruminc.japan and became a certified Scrum Master, so here are my thoughts and notes.
+scruminc.japan's [Registered Scrum Master](https://scruminc.jp/training/master/) training and exam led me to become a Registered Scrum Master, so here are my reflections and notes.
 
-By the way, it seems that the certification is valid for one year, so to maintain it, I need to take a small test once a year for renewal.
+Incidentally, the certification period is apparently one year, so to maintain the certification, it seems necessary to take a small test once a year for renewal.
 
-# Reason for Taking the Training
-I usually work in a team using Scrum for development, and as a developer (or rather, a team leader), I wanted to deepen my understanding of Scrum and contribute to improving the team's processes and enhancing the product's value.
+# Reason for Attending the Training
+I usually conduct Scrum development with my team, but as a developer (or rather, a team leader), I wanted to deepen my understanding of Scrum to contribute to improving the team's process and enhancing the product's value.
 
-My knowledge of Scrum was mostly from reading the Scrum Guide and SCRUM BOOT CAMP THE BOOK, and I learned from Scrum Masters during practice (is this what they call experiential learning?).
+My knowledge of Scrum was mostly from reading the Scrum Guide and SCRUM BOOT CAMP THE BOOK, and learning from the Scrum Master through practice (is this what they call empiricism?).
 
-I believe that the Scrum implementation in my team is going quite well, but I think there are points that can be improved, and I want to be able to pursue even greater results.
+I think my team's Scrum operations are going quite well, but I believe that by improving points that can be improved, we can relentlessly pursue further results.
 
 # Impressions of the Training
-There are other certifications like CSM and PSM, but since the company recommended the LSM training, I took the LSM.
+There are other certifications like CSM and PSM besides LSM, but the training recommended by the company was LSM, so I took LSM.
 
-The training was conducted over two days from 9 AM to 5:30 PM, making it quite a long session.
+[Registered Scrum Master](https://scruminc.jp/training/master/)
 
-The content was about 60% lectures and 40% work (discussions, etc.).
+The training is a long session conducted over two days from 9 AM to 5:30 PM.
 
-After the training, I could take the certification exam (30 questions, no time limit), and if I pass, I can download the certificate.
+The content is about 60% lectures and 40% work (such as discussions).
 
-The lectures included case studies, allowing us to learn the essence of Scrum. The work sessions let us experience Scrum patterns and processes in a practical format.
+After the training, you can take the certification exam (30 questions, no time limit), and if you pass, you can download the certificate.
 
-I gained a sense that the way we usually conduct Scrum is not wrong (though it's obvious since I've been taught by the Scrum Master...). On the other hand, I also found points that could be improved, so I gained some good takeaways. I discovered several things I want to try, such as estimation patterns and the concept of swarming.
+The lectures allow you to learn the essence of Scrum, incorporating case studies. The work lets you experience Scrum patterns and processes in a practical format.
 
-# Conclusion
-For the next few years, I plan to renew my certification every year and set aside time to update my learning about Scrum.
+I felt reassured that the way we usually conduct Scrum isn't wrong (though it's only natural since we're taught by a Scrum Master...). On the other hand, I also found points that could be improved, so I got some good takeaways. I discovered several things I want to try, like estimation patterns and the concept of swarming.
+
+# Thoughts
+For the next few years, I think I'll update my learning about Scrum annually by renewing the certification.

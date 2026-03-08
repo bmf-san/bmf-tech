@@ -11,7 +11,7 @@ translation_key: copy-local-file-to-remote-ansible
 ---
 
 # Overview
-This task copies files (contents of a directory) from local to remote using Ansible.
+This task involves copying files (contents of a directory) from a local machine to a remote location using Ansible.
 
 # Playbook
 
@@ -28,10 +28,10 @@ This task copies files (contents of a directory) from local to remote using Ansi
      mode: u+x
 ```
 
-This task copies all contents of the directory to the remote `/usr/local/bin`. Permissions are also specified.
+This task copies all contents of a directory to the remote `/usr/local/bin` directory. Permissions are also specified.
 
 # Thoughts
-There doesn't seem to be any particular points where one could get stuck, as per the documentation.
+There don't seem to be any tricky points; it works as documented.
 
 # References
 + [copy - Copies files to remote locations.](http://docs.ansible.com/ansible/copy_module.html)

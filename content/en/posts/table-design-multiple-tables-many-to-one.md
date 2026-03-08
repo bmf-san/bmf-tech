@@ -1,5 +1,5 @@
 ---
-title: Approaches to Table Design for Many-to-One Relationships Across Multiple Tables
+title: Approaches to Table Design for Many-to-One Relationships with Multiple Tables
 slug: table-design-multiple-tables-many-to-one
 date: 2018-08-06T00:00:00Z
 author: bmf-san
@@ -8,14 +8,15 @@ categories:
 tags:
   - Polymorphic
   - SQL Anti-pattern
+description: Summarizing table design patterns when a table is related to multiple tables in a many-to-one relationship.
 translation_key: table-design-multiple-tables-many-to-one
 ---
 
 # Overview
-This post summarizes table design patterns when multiple tables are related in a many-to-one relationship.
+Summarizing table design patterns when a table is related to multiple tables in a many-to-one relationship.
 
 # Data Design
-We will use the following case as an example of data design.
+Let's take the following case as an example of data design.
 
 - issues
     - id
@@ -29,9 +30,9 @@ We will use the following case as an example of data design.
     - id
     - content
 
-A case where `comments` relates to both `issues` and `pullrequests` in a many-to-one manner.
+A case where `comments` is related to both `issues` and `pullrequests` in a many-to-one relationship.
 
-# Polymorphic Relationships
+# Polymorphic Association
 
 - issues
     - id
@@ -47,15 +48,15 @@ A case where `comments` relates to both `issues` and `pullrequests` in a many-to
     - target_table
     - target_id
 
-This table design adds columns `target_table` and `target_id` to `comments`, allowing it to determine whether it is associated with `issues` or `pullrequests`.
+A table design where `comments` has columns `target_table` and `target_id` to determine whether it is linked to `issues` or `pullrequests`.
 
-This is discussed as one of the anti-patterns in SQL anti-pattern literature.
+In SQL anti-patterns, this is highlighted as one of the anti-patterns.
 
-Since `target_id` cannot determine whether it relates to `issues` or `pullrequests` without looking at `target_table`, **foreign key constraints cannot be used**. Therefore, in this pattern, **maintaining consistency between tables depends on application logic**.
+Since `target_id` cannot determine whether it is related to `issues` or `pullrequests` without looking at `target_table`, **foreign key constraints cannot be used**. Therefore, in this pattern, **maintaining consistency between tables depends on the application's logic**.
 
-While ORM frameworks like Laravel and Rails support polymorphic relationships, making implementation easier, this is a pattern that should generally be avoided.
+Although polymorphic associations are supported in ORMs like Laravel and Rails, making implementation easier, this is a pattern that should generally be avoided.
 
-# Junction (Pivot, Intermediate) Tables
+# Cross (Pivot, Intermediate) Table
 
 - issues
     - id
@@ -77,15 +78,15 @@ While ORM frameworks like Laravel and Rails support polymorphic relationships, m
     - id
     - content
 
-This pattern prepares junction tables for `issues` and `pullrequests`, allowing foreign key constraints to be used.
+A pattern where cross tables are prepared for `issues` and `pullrequests` to enable the use of foreign key constraints.
 
 `issues` and `issues_comments` have a one-to-many relationship, and `issues_comments` and `comments` have a many-to-one relationship. The same applies to `pullrequests`.
 
-Depending on application requirements, it may not be possible to guarantee that a single comment is associated with only one of `issues` or `pullrequests`.
+Depending on the application's requirements, it may not be possible to ensure that a single comment is linked to only one of `issues` or `pullrequests`.
 
-Since foreign keys can be used, this approach maintains consistency better than polymorphic relationships.
+Since foreign keys can be used, this pattern can maintain consistency better than polymorphic associations.
 
-# Common Parent Table
+# Table with a Common Parent
 - issues
     - id
     - post_id
@@ -103,15 +104,15 @@ Since foreign keys can be used, this approach maintains consistency better than 
     - content
     - post_id
 
-This pattern prepares a common parent table for `issues`, `pullrequests`, and `comments`.
+A pattern where a table is prepared as a common parent for `issues`, `pullrequests`, and `comments`.
 
-It seems reasonable to define `posts` based on the concept of class table inheritance (essentially treating it as a base class). 
-(Reference: [Single Table Inheritance, Class Table Inheritance, and Concrete Class Inheritance PofEAA](https://bmf-tech.com/posts/%E5%8D%98%E4%B8%80%E3%83%86%E3%83%BC%E3%83%95%E3%82%99%E3%83%AB%E7%B6%99%E6%89%BF%E3%83%BB%E3%82%AF%E3%83%A9%E3%82%B9%E3%83%86%E3%83%BC%E3%83%95%E3%82%99%E3%83%AB%E7%B6%99%E6%89%BF%E3%83%BB%E5%85%B7%E8%B1%A1%E3%82%AF%E3%83%A9%E3%82%B9%E7%B6%99%E6%89%BF%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6) )
+It seems good to define `posts` based on the concept of class table inheritance (essentially considering it as a base class).
+(Reference: [Single Table Inheritance, Class Table Inheritance, Concrete Class Inheritance PofEAA](https://bmf-tech.com/posts/%E5%8D%98%E4%B8%80%E3%83%86%E3%83%BC%E3%83%95%E3%82%99%E3%83%AB%E7%B6%99%E6%89%BF%E3%83%BB%E3%82%AF%E3%83%A9%E3%82%B9%E3%83%86%E3%83%BC%E3%83%95%E3%82%99%E3%83%AB%E7%B6%99%E6%89%BF%E3%83%BB%E5%85%B7%E8%B1%A1%E3%82%AF%E3%83%A9%E3%82%B9%E7%B6%99%E6%89%BF%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6))
 
 `issues` and `posts` have a one-to-one relationship, and `posts` and `comments` have a one-to-many relationship. The same applies to `pull_requests`.
-`posts` and `comments` are related in a one-to-many manner.
+`posts` and `comments` are related in a one-to-many relationship.
 
-This guarantees that a single comment is associated with one post, but it does not guarantee that it is associated with only one of `issues` or `pullrequests`.
+This pattern can ensure the constraint that a single comment is linked to one post, but it cannot ensure the constraint that it is linked to only one of `issues` or `pullrequests`.
 
 # Table Splitting
 
@@ -133,10 +134,10 @@ This guarantees that a single comment is associated with one post, but it does n
     - pullrequests_id
     - content
 
-This is a discussion that questions the original premise, suggesting that instead of consolidating `comments` into a single table, separate `comments` tables could be prepared for each, effectively splitting the tables.
+This is a pattern that questions the initial premise, suggesting that instead of consolidating `comments` into a single table, separate `comments` tables should be prepared for each.
 
 # Thoughts
-Relying on application logic increases the potential for human error, so I believe that a design philosophy that depends on the table structure for logic is generally a better pattern. In addition to application requirements, I want to choose the optimal pattern considering the intent of the queries.
+Relying on the application's logic increases the possibility of human error, so a design policy that depends on the table structure for logic is generally a good pattern. In addition to the application's requirements, I want to be able to choose the optimal pattern by considering the query's perspective.
 
-- [Design Approaches for Many-to-One Relationships Across Multiple Tables](https://spice-factory.co.jp/development/has-and-belongs-to-many-table/)
-- [Reading SQL Anti-patterns (About Polymorphic Relationships)](https://blog.motimotilab.com/?p=207)
+- [Approaches to Table Design for Many-to-One Relationships with Multiple Tables](https://spice-factory.co.jp/development/has-and-belongs-to-many-table/)
+- [Reading SQL Anti-patterns (About Polymorphic Associations)](https://blog.motimotilab.com/?p=207)

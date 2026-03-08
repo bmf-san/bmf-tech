@@ -11,17 +11,19 @@ tags:
 translation_key: go-html-template-url-encoding
 ---
 
+
+
 # Overview
 When using html/template, I wanted to prevent the URL passed to the template from being encoded.
 
 # Using template.URL
-When you pass a URL to a template using Go's [html/template](https://pkg.go.dev/html/template), it is encoded by default.
+When you use Go's [html/template](https://pkg.go.dev/html/template) to pass a URL to a template, it is designed to be encoded.
 
 cf. https://pkg.go.dev/html/template#hdr-Contexts
 
-I believe this behavior is for security reasons, but there are cases where you might want to avoid this in HTML.
+I believe this is due to security reasons, but there might be cases where you want to avoid this in HTML.
 
-In such cases, you can use `template.URL` to bypass this.
+In such cases, you can use `template.URL` to avoid it.
 
 ```golang
 package main

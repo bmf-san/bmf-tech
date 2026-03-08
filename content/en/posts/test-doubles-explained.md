@@ -13,51 +13,49 @@ translation_key: test-doubles-explained
 
 ## Introduction
 
-When writing unit tests, if the code under test depends on external databases, API servers, file systems, etc., the following problems may arise:
+When writing unit tests, if the code under test depends on external databases, API servers, file systems, etc., the following issues may arise:
 
-- Tests run slowly
-- Setting up the test environment is complex
-- Test results are unstable (e.g., network errors)
-- Reproducing specific states or error cases is difficult
+- Slow test execution
+- Complex test environment setup
+- Unstable test results (e.g., network errors)
+- Difficulty in reproducing specific states or error cases
 
-To solve these problems, we use **Test Doubles**.
+To solve these problems, **Test Doubles** are used.
 
-A test double is a "stand-in" that replaces a dependent component with a test-specific implementation instead of the real one, similar to a stunt double in movies.
+A Test Double is a "stand-in" that replaces the real component with a test-specific implementation, much like a stunt double in movies.
 
-In this article, we will explain the five types of test doubles (Dummy, Stub, Fake, Spy, Mock), their purposes, and how to differentiate them, along with Go code examples.
+This article explains the five types of Test Doubles (Dummy, Stub, Fake, Spy, Mock), their purposes, and how to use them, with examples in Go.
 
-## Basics of Test Doubles
+## Basic Knowledge of Test Doubles
 
 ### Five Types of Test Doubles
 
-There are five types of test doubles, each with different purposes and usages.
+There are five types of Test Doubles, each with different purposes and usage.
 
-| Type   | Purpose                     | Features                          |
-|--------|-----------------------------|-----------------------------------|
-| **Dummy** | Fills in arguments only      | Not actually used                 |
-| **Stub**  | Returns fixed values         | Used for state verification       |
-| **Fake**  | Simplified implementation     | Lightweight version that works    |
-| **Spy**   | Records calls                | Verifies history later            |
-| **Mock**  | Predefined expectations       | Used for behavior verification     |
+| Type | Purpose | Characteristics |
+|------|---------|-----------------|
+| **Dummy** | Just fills arguments | Not actually used |
+| **Stub** | Returns fixed values | Used for state verification |
+| **Fake** | Simplified implementation | Lightweight version that actually works |
+| **Spy** | Records calls | Verifies history later |
+| **Mock** | Pre-set expectations | Used for behavior verification |
 
 ### Prerequisite: Code Under Test
 
-In the following example, we will test a service that depends on a data store.
+In the following example, we test a service that depends on a data store.
 
 ```go
 package main
 
 import "errors"
 
-// Store is the interface for data storage
-
+// Store is the data storage interface
 type Store interface {
     Get(key string) (string, error)
     Put(key string, value string) error
 }
 
 // UserService is a service that depends on Store
-
 type UserService struct {
     store Store
 }
@@ -89,11 +87,11 @@ func (svc *UserService) SaveValue(key, value string) error {
 
 ### Types of Test Doubles and Implementation Examples
 
-Let's look at specific code examples and use cases for each type of test double.
+Let's look at specific code examples and use cases for each Test Double.
 
 ### 1. Dummy
 
-**Dummy** is an object that exists only to fill in arguments and is not actually used.
+A **Dummy** exists only to fill arguments and is not actually used.
 
 #### Usage Example
 
@@ -103,7 +101,6 @@ package main
 import "testing"
 
 // Dummy implementation
-
 type DummyStore struct {
     t *testing.T
 }
@@ -123,22 +120,20 @@ func (d *DummyStore) Put(key, value string) error {
 }
 
 // Logger interface
-
 type Logger interface {
     Info(msg string)
 }
 
 // SimpleLogger is a simple Logger implementation
-
 type SimpleLogger struct{}
 
 func (l *SimpleLogger) Info(msg string) {
-    // Actually logs, but does nothing here
+    // Actually logs output, but does nothing here
 }
 
 // ProcessData is a function with multiple dependencies (store is not used)
 func ProcessData(store Store, logger Logger) error {
-    // This function only uses logger, not store
+    // This function uses only logger, not store
     logger.Info("processing started")
     return nil
 }
@@ -153,18 +148,18 @@ func TestProcessData(t *testing.T) {
     if err != nil {
         t.Errorf("unexpected error: %v", err)
     }
-    // If store's methods are called, the test will fail with t.Fatal()
+    // If store methods are called, t.Fatal() will cause the test to fail
 }
 ```
 
 #### Use Cases
 
-- When an argument is needed to satisfy a function signature but is not actually used.
-- To detect misuse by failing immediately if called.
+- When an argument is needed to satisfy a function signature but is not actually used
+- Detect misuse by failing immediately if called
 
 ### 2. Stub
 
-**Stub** is a simple implementation that returns fixed values in response to calls. It is used for state verification.
+A **Stub** is a simple implementation that only returns fixed values. It is used for state verification.
 
 #### Usage Example
 
@@ -177,7 +172,6 @@ import (
 )
 
 // Stub implementation
-
 type StubStore struct {
     value string
     err   error
@@ -191,7 +185,7 @@ func (s *StubStore) Put(key, value string) error {
     return nil
 }
 
-// Successful test case
+// Test for normal case
 func TestFetchValue_Success(t *testing.T) {
     stub := &StubStore{value: "hello"}
     svc := NewUserService(stub)
@@ -205,7 +199,7 @@ func TestFetchValue_Success(t *testing.T) {
     }
 }
 
-// Error case test
+// Test for error case
 func TestFetchValue_Error(t *testing.T) {
     stub := &StubStore{err: errors.New("connection failed")}
     svc := NewUserService(stub)
@@ -216,7 +210,7 @@ func TestFetchValue_Error(t *testing.T) {
     }
 }
 
-// Empty string test
+// Test for empty string
 func TestFetchValue_EmptyValue(t *testing.T) {
     stub := &StubStore{value: ""}
     svc := NewUserService(stub)
@@ -230,13 +224,13 @@ func TestFetchValue_EmptyValue(t *testing.T) {
 
 #### Use Cases
 
-- When you want to return specific return values or errors in tests.
-- For tests that verify state (results).
-- The simplest and easiest to use test double.
+- When you want to return specific values or errors in tests
+- Tests that verify state (results)
+- The simplest and most user-friendly Test Double
 
 ### 3. Fake
 
-**Fake** is a lightweight implementation that actually performs simplified operations. It behaves similarly to the real thing but is simplified for testing.
+A **Fake** is a lightweight implementation that actually performs simplified operations. It behaves similarly to the real thing but is simplified for testing.
 
 #### Usage Example
 
@@ -249,7 +243,6 @@ import (
 )
 
 // Fake implementation: manages data in memory
-
 type FakeStore struct {
     data map[string]string
 }
@@ -279,7 +272,7 @@ func TestFetchValue_Fake(t *testing.T) {
 
     svc := NewUserService(fake)
 
-    // Fetching existing key
+    // Retrieve existing key
     got, err := svc.FetchValue("foo")
     if err != nil {
         t.Fatalf("unexpected error: %v", err)
@@ -288,7 +281,7 @@ func TestFetchValue_Fake(t *testing.T) {
         t.Errorf("got %q, want %q", got, "bar")
     }
 
-    // Fetching another key
+    // Retrieve another key
     got2, err := svc.FetchValue("hello")
     if err != nil {
         t.Fatalf("unexpected error: %v", err)
@@ -301,14 +294,14 @@ func TestFetchValue_Fake(t *testing.T) {
 
 #### Use Cases
 
-- When multiple test cases require a shared data store.
-- When tests need behavior close to actual operations.
-- Intermediate level tests between integration and unit tests.
-- Example: in-memory databases, in-memory file systems.
+- When a common data store is needed for multiple test cases
+- When tests close to real operation are needed
+- Intermediate level tests between integration and unit tests
+- Examples: in-memory databases, in-memory file systems
 
 ### 4. Spy
 
-**Spy** is intended to record call history (arguments, counts, etc.) and verify it later. Unlike Mock, Spy does not set expectations in advance but checks the history after execution.
+A **Spy** is intended to record call history (arguments, number of times, etc.) and verify it later. The difference from Mock is that Spy does not set expectations in advance but checks the history after execution.
 
 #### Usage Example
 
@@ -318,7 +311,6 @@ package main
 import "testing"
 
 // Spy implementation
-
 type SpyStore struct {
     GetCalls []string // List of keys called by Get
     PutCalls []struct {
@@ -357,7 +349,7 @@ func TestFetchValue_Spy(t *testing.T) {
     }
 }
 
-// Test multiple calls
+// Test for multiple calls
 func TestFetchMultipleValues_Spy(t *testing.T) {
     spy := &SpyStore{value: "test"}
     svc := NewUserService(spy)
@@ -381,13 +373,13 @@ func TestFetchMultipleValues_Spy(t *testing.T) {
 
 #### Use Cases
 
-- When you want to confirm that a method was called with the correct arguments.
-- When you want to verify call counts or order.
-- Testing processes with side effects like logging or notifications.
+- When you want to verify if a method was called with the correct arguments
+- When you want to verify the number of calls or order
+- Tests for processes with side effects such as logging or sending notifications
 
 ### 5. Mock
 
-**Mock** is specialized for behavior verification by setting expectations in advance and verifying if those expectations were met after the test. Unlike Spy, Mock explicitly states what should be called before execution.
+A **Mock** sets expectations in advance and verifies whether those expectations were met after the test. It is specialized for behavior verification. The difference from Spy is that Mock explicitly states "should be called this way" before the test execution.
 
 #### Usage Example
 
@@ -400,7 +392,6 @@ import (
 )
 
 // Mock implementation
-
 type MockStore struct {
     expectations []struct {
         key   string
@@ -454,7 +445,7 @@ func (m *MockStore) Put(key, value string) error {
     return nil
 }
 
-// Verify expectations
+// Verify if expectations were met
 func (m *MockStore) Verify() {
     if m.callIndex != len(m.expectations) {
         m.t.Errorf("expected %d calls, got %d", len(m.expectations), m.callIndex)
@@ -470,10 +461,10 @@ func TestFetchValue_Mock(t *testing.T) {
 
     result, err := svc.FetchValue("foo")
 
-    // Verify expectations
+    // Verify if called as expected
     mock.Verify()
 
-    // Verify result
+    // Also verify the result
     if err != nil {
         t.Errorf("unexpected error: %v", err)
     }
@@ -482,7 +473,7 @@ func TestFetchValue_Mock(t *testing.T) {
     }
 }
 
-// Test multiple calls
+// Test for multiple calls
 func TestFetchMultipleValues_Mock(t *testing.T) {
     mock := NewMockStore(t)
     mock.ExpectGet("key1").WillReturn("value1", nil)
@@ -506,21 +497,21 @@ func TestFetchMultipleValues_Mock(t *testing.T) {
 
 #### Use Cases
 
-- When you want to strictly verify that methods were called in the expected order and with the expected arguments.
-- When complex behavior verification is needed.
-- When testing interactions with external services.
+- When you want to strictly verify if methods were called in the expected order and with the expected arguments
+- When complex behavior verification is needed
+- When testing interactions with external services
 
 ## Conclusion
 
-Test doubles are powerful tools that make unit tests faster and more stable, enabling testing of hard-to-test code.
+Test Doubles are powerful tools that make unit tests fast and stable, and make hard-to-test code testable.
 
-1. First, abstract dependencies as interfaces.
-2. Use Stubs/Fakes for state verification.
-3. Use Spies/Mocks for behavior verification.
-4. Keep Mocks to a minimum.
-5. Keep test doubles simple.
+1. First, abstract dependencies as interfaces
+2. Use Stub/Fake for state verification
+3. Use Spy/Mock for behavior verification
+4. Keep Mock usage to a minimum
+5. Keep Test Doubles simple
 
-By choosing the appropriate test double, you can write tests that are maintainable and resilient to refactoring.
+By choosing the appropriate Test Double, you can write maintainable tests that are resilient to refactoring.
 
 ## References
 

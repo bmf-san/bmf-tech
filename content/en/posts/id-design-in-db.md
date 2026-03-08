@@ -10,39 +10,41 @@ tags:
 translation_key: id-design-in-db
 ---
 
+
+
 # What is an ID
-An identifier that uniquely specifies an object.
+An ID is something that uniquely identifies an entity.
 
-In set theory, a one-to-one correspondence between an object and its attributes is called a bijection.
+In set theory, a one-to-one correspondence between an entity and its attributes is called a bijection.
 
-Those that form a bijection function as IDs.
+An entity that forms a bijection can function as an ID.
 
-When considering IDs, it is necessary to think about whether it pertains to a singular object or multiple (groups), and if multiple, what granularity it has. For example, considering the attribute of crab, what kind is it? What family does it belong to? What color is it? What is its name?
+When considering IDs, it is necessary to consider whether it is for a single entity or multiple (group) entities, and if multiple, at what granularity? For example, when considering the attribute "crab," what type is it? What family does it belong to? What color is it? What is its name?
 
-Even attributes that seemingly lack uniqueness can function as IDs depending on the context. For example, items that a specific group possesses uniquely.
+Even attributes that do not seem to have uniqueness at first glance can function as IDs in certain contexts. For example, an item that a specific group possesses only one of.
 
-It is advisable to avoid designs that imbue meaning into parts of an ID. For example, including identifiers like color in the value of a product number.
+It is better to avoid designs that embed meaning into parts of an ID. For example, including identifiers like color in part of a product number.
 
-Such designs can lead to failure in satisfying the first normal form, complicating queries unnecessarily and adversely affecting database design.
+Such designs can prevent meeting the first normal form, unnecessarily complicating queries and negatively impacting database design.
 
 # Natural Key or Surrogate Key
-A natural key uses words or labels that exist in the real world as IDs, while a surrogate key uses identifiers that are understood only within the database or the applications that utilize it.
+A natural key uses real-world terms or labels as IDs, while a surrogate key uses something that only makes sense within the database or the application using it.
 
-If a bijection holds, using a natural key is acceptable, but attention should be paid to the following points:
+If a bijection holds, using a natural key is fine, but pay attention to the following points:
 
 - The lifecycle of the ID
-- Items that are unique but do not form a bijection (e.g., email is unique but does not have a one-to-one relationship with a person)
+- Attributes that are unique but not bijective (e.g., an email address is unique but does not have a one-to-one relationship with a person)
 
-For surrogate keys, the following points should be considered:
+For surrogate keys, pay attention to the following:
 
 - Is there a natural key?
-  - If one exists, use the natural key to avoid unnecessary overhead (even with a surrogate key, a unique constraint on the natural key is needed, leading to unnecessary index updates).
-  - Adding a surrogate key carelessly can create functional dependencies (the property that if A is determined, B is also determined) between the surrogate key and another attribute, complicating database design.
+  - If it exists, use the natural key to avoid unnecessary overhead (even with a surrogate key, a unique constraint on the natural key is needed, causing unnecessary index updates)
+  - Adding a surrogate key carelessly can create functional dependencies (if A is determined, B is determined) between the surrogate key and other attributes, complicating database design
 
-# Aside
-When designing IDs with surrogate keys, there are cases where physical design comes into play. There can be performance impacts depending on whether to use auto-incremented values or randomly selected unique values.
+# Additional Notes
+When designing IDs with surrogate keys, there may be cases where physical design is considered. For example, whether to use auto-increment values or randomly unique values can affect performance.
 
 # References
-- [amzn.to - Learning Database Practice from Theory ~ Efficient SQL with Relational Models (WEB+DB PRESS plus)](https://amzn.to/3TEltzx)
+- [amzn.to - Learn Database Practice from Theory: Efficient SQL with Relational Model (WEB+DB PRESS plus)](https://amzn.to/3TEltzx)
 - [nippondanji.blogspot.com - Discussion on Natural Keys and Surrogate Keys](https://nippondanji.blogspot.com/2013/12/blog-post_4.html)
 - [nippondanji.blogspot.com - Discussion on Domain Design in Relational Models](https://nippondanji.blogspot.com/2013/12/blog-post_8.html)

@@ -13,9 +13,9 @@ translation_key: php-interfaces-type-hinting
 ---
 
 # Overview
-This article is part of the [PHP Advent Calendar 2018](https://qiita.com/advent-calendar/2018/php). (Posting a bit early)
+This article is part of the [PHP Advent Calendar 2018](https://qiita.com/advent-calendar/2018/php). (Posted a bit earlier)
 
-Interfaces not only guarantee the implementation of methods as a 'contract', but they also allow for type hinting, which can make it easier to switch implementations by depending on abstractions.
+Interfaces not only serve as a "contract" to ensure method implementation, but they also allow implementations to depend on abstractions through type hinting, making it easier to switch implementations.
 
 # Defining and Implementing Interfaces
 Basic definition and implementation of an interface.
@@ -39,8 +39,8 @@ $obj = new Superman();
 $obj->say();
 ```
 
-# Separation of Functionality and Implementation via Interfaces
-By specifying an interface type with type hinting, you can add flexibility to the implementation.
+# Separation of Functionality and Implementation with Interfaces
+Specifying an interface type with type hinting allows for flexibility in implementation.
 
 ```php
 <?php
@@ -67,21 +67,21 @@ class Human
 
 class Bot
 {
-    public function do(HeroAction $heroAction) // Specify interface type as argument
+    public function do(HeroAction $heroAction) // Specify interface type in argument
     {
         $heroAction->say();
     }
 }
 
 $superMan = new SuperMan();
-human = new Human();
-bot = new Bot();
+$human = new Human();
+$bot = new Bot();
 
 $bot->do($superMan); // I'm a Superman
 $bot->do($human); // PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Bot::do() must implement interface HeroAction, instance of Human given, called in ....
 ```
 
-Switching the implementation from Superman to Hyperman.
+Switching from Superman to Hyperman implementation.
 
 ```php
 <?php
@@ -116,27 +116,27 @@ class Human
 
 class Bot
 {
-    public function do(HeroAction $heroAction) // Specify interface type as argument
+    public function do(HeroAction $heroAction) // Specify interface type in argument
     {
         $heroAction->say();
     }
 }
 
 // $superMan = new SuperMan();
-hyperMan = new HyperMan();
-human = new Human();
-bot = new Bot();
+$hyperMan = new HyperMan();
+$human = new Human();
+$bot = new Bot();
 
 // $bot->do($superMan); // I'm a Superman
 $bot->do($hyperMan); // I'm a Hyperman
 $bot->do($human); // PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Bot::do() must implement interface HeroAction, instance of Human given, called in ....
 ```
 
-If the do method of the Bot class depended on the Superman class instead of the interface, it would increase the effort needed to swap implementations.
+If the `do` method of the `Bot` class depended on the `Superman` class instead of an interface, switching implementations would be more cumbersome.
 ```php
 class Bot
 {
-    public function do(Superman $superman) // Specify interface type as argument
+    public function do(Superman $superman) // Specify interface type in argument
     {
         $superman->say();
     }
@@ -145,4 +145,4 @@ class Bot
 
 # References
 - [PHP - Object Interfaces](http://php.net/manual/ja/language.oop5.interfaces.php)
-- [A Discussion on PHP Interfaces](http://blog.anatoo.jp/entry/20080517/1211029059)
+- [A Discussion on Interfaces in PHP](http://blog.anatoo.jp/entry/20080517/1211029059)

@@ -1,5 +1,5 @@
 ---
-title: Comprehensive Guide to the Distributed SQL Query Engine Trino
+title: Comprehensive Guide to Distributed SQL Query Engine Trino
 slug: trino-sql-query-engine-guide
 date: 2024-10-24T00:00:00Z
 author: bmf-san
@@ -11,14 +11,16 @@ tags:
 translation_key: trino-sql-query-engine-guide
 ---
 
-[Comprehensive Guide to the Distributed SQL Query Engine Trino](https://amzn.to/3BXhPeQ) has been read.
+
+
+[Comprehensive Guide to Distributed SQL Query Engine Trino](https://amzn.to/3BXhPeQ) was read.
 
 - SQL Query Engine
 - Supports ANSI SQL
-- Federated Queries
+- Federated Query
   - Reference and use databases and schemas from different systems with the same SQL
 - Not a database
 - Not designed to handle OLTP
-  - Since it is aimed at OLAP, the performance target is likely at the OLAP level
-- The ability to scale computing resources as a distributed system is similar to the nature of New SQL
-- Handles data sources in a way that differs from traditional big data approaches (which require various query languages and tools, as well as costly data warehouses for operation and maintenance)
+  - Since it's for OLAP, the performance target is likely at the OLAP level
+- As a distributed system, it can scale computing resources up and down, similar to New SQL
+- Handles data sources differently from traditional big data approaches (which require costly data warehouses with various query languages, tools, operations, and maintenance costs)

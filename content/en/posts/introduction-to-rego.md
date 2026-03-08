@@ -13,7 +13,7 @@ translation_key: introduction-to-rego
 
 ## Table of Contents
 
-- [Chapter 1: What is Rego?](#chapter-1-what-is-rego)
+- [Chapter 1: What is Rego](#chapter-1-what-is-rego)
 - [Chapter 2: Basic Syntax and Data Structures](#chapter-2-basic-syntax-and-data-structures)
 - [Chapter 3: Types of Rules and How to Write Them](#chapter-3-types-of-rules-and-how-to-write-them)
 - [Chapter 4: Control Structures and Operators](#chapter-4-control-structures-and-operators)
@@ -21,38 +21,38 @@ translation_key: introduction-to-rego
 - [Chapter 6: Built-in Functions](#chapter-6-built-in-functions)
 - [Chapter 7: Testing and Debugging](#chapter-7-testing-and-debugging)
 
-## Chapter 1: What is Rego?
+## Chapter 1: What is Rego
 
 ### 1.1 Philosophy and Features of Rego
 
-Rego is a **declarative** policy description language. It describes "what should be satisfied" rather than "how to process it."
+Rego is a **declarative** policy language. It describes "what should be satisfied" rather than "how to process it."
 
 #### Comparison of Imperative vs Declarative
 
 | Imperative (Go, JavaScript, etc.) | Declarative (Rego) |
-| ---------------------------------- | ------------------- |
-| Looping with for statements and condition checks | `some i; input.groups[i] == "admin"` |
-| Branching with if/else statements | Describing conditions with multiple rules |
-| Procedural execution flow | Determining the validity of conditions |
+| --------------------------------- | ------------------ |
+| Loop with for and condition check | `some i; input.groups[i] == "admin"` |
+| Branching with if/else            | Condition description with multiple rules |
+| Procedural execution flow         | Determination of condition satisfaction |
 
 #### Separation of Input and Data
 
 Rego handles two types of data:
 
-| Type   | Description                       | Example                |
-| ------ | -------------------------------- | ---------------------- |
-| `input` | Dynamic data provided at evaluation | Request content        |
-| `data`  | Static/shared data for reference   | User information, role definitions |
+| Type    | Description                       | Example                |
+| ------- | --------------------------------- | ---------------------- |
+| `input` | Dynamic data provided at runtime  | Request content        |
+| `data`  | Static, shared data for reference | User information, role definitions |
 
 This separation makes policies generic and reusable.
 
-### 1.2 Rule-Based Evaluation Model
+### 1.2 Rule-based Evaluation Model
 
-The basic unit of Rego is a **rule**:
+The basic unit in Rego is a **rule**:
 
-- Multiple rules are evaluated, and if conditions are met, the result is `true`
-- If there is no explicit `default`, unmatched cases result in `undefined` (not evaluated as a result)
-- Describing decision-making: "Allow?" "Which fields are visible?"
+- Multiple rules are evaluated, and if conditions are met, it returns `true`
+- If there is no explicit `default`, unmatched cases result in `undefined` (not evaluated)
+- Decision description: "Is it allowed?" "Which fields are visible?"
 
 ## Chapter 2: Basic Syntax and Data Structures
 
@@ -79,26 +79,26 @@ allow {  # Inline comment
 
 ### 2.2 Data Types
 
-| Data Type | Example                          | Description       |
-| --------- | -------------------------------- | ------------------ |
-| String    | "admin", "user"               | Double quotes      |
-| Number    | 42, 3.14                        | Integer/Float      |
-| Boolean   | true, false                     | Boolean value      |
-| Array     | [1, 2, 3]                       | Ordered            |
-| Object    | {"name": "Alice", "age": 30} | Key-value pairs    |
-| Set       | {"admin", "user"}           | No duplicates      |
+| Data Type  | Example                        | Description       |
+| ---------- | ------------------------------ | ----------------- |
+| String     | `"admin"`, `"user"`           | Double quotes     |
+| Number     | `42`, `3.14`                  | Integer, float    |
+| Boolean    | `true`, `false`               | Boolean values    |
+| Array      | `[1, 2, 3]`                   | Ordered           |
+| Object     | `{"name": "Alice", "age": 30}` | Key-value pairs  |
+| Set        | `{"admin", "user"}`           | No duplicates     |
 
-### 2.3 Input and Data
+### 2.3 input and data
 
-#### Input - Dynamic Data
-**[Try it in Playground](https://play.openpolicyagent.org/)**
+#### input - Dynamic Data
+**[Try on Playground](https://play.openpolicyagent.org/)**
 
 ```rego
 package input_example
 
 import rego.v1
 
-# Request information
+# Request information, etc.
 allow if {
     input.method == "GET"
     input.user.role == "admin"
@@ -112,15 +112,15 @@ allow if {
 # Result: allow = false
 ```
 
-#### Data - Static Data
-**[Try it in Playground](https://play.openpolicyagent.org/)**
+#### data - Static Data
+**[Try on Playground](https://play.openpolicyagent.org/)**
 
 ```rego
 package data_example
 
 import rego.v1
 
-# Configuration information and master data
+# Configuration or master data
 allow if {
     data.roles[input.user.role].permissions[_] == "read"
 }
@@ -151,20 +151,20 @@ allow if {
 
 ### 3.1 Rule Syntax Patterns
 
-Rego rules have multiple patterns:
+Rego rules have several patterns:
 
-| Pattern                           | Syntax Example                          | Result Type | Description          |
-| ---------------------------------- | --------------------------------------- | ----------- | --------------------- |
-| `<name> := <value>`                | `pi := 3.14`                           | Single value | Complete rule        |
-| `<name> if <body>`                 | `valid if input.age >= 18`             | boolean     | Conditional complete rule |
-| `<name> contains <key> if <body>`  | `users contains name if ...`           | Set         | Set rule            |
-| `<name>[<key>] := <value> if <body>` | `scores[user] := score if ...`        | Object      | Object rule         |
+| Pattern                           | Syntax Example                       | Result Type | Description          |
+| --------------------------------- | ------------------------------------ | ----------- | -------------------- |
+| `<name> := <value>`               | `pi := 3.14`                        | Single value | Complete rule        |
+| `<name> if <body>`                | `valid if input.age >= 18`          | Boolean     | Conditional complete rule |
+| `<name> contains <key> if <body>` | `users contains name if ...`         | Set         | Set rule             |
+| `<name>[<key>] := <value> if <body>` | `scores[user] := score if ...`     | Object      | Object rule          |
 
 ### 3.2 Complete Rules
 
 Rules that return a single value.
 
-**[Try it in Playground](https://play.openpolicyagent.org/)**
+**[Try on Playground](https://play.openpolicyagent.org/)**
 
 ```rego
 package quota
@@ -194,9 +194,9 @@ request_quota := 50 if input.user.plan == "trial"
 
 ### 3.3 Partial Set Rules
 
-Rules that generate a set.
+Rules that generate sets.
 
-**[Try it in Playground](https://play.openpolicyagent.org/)**
+**[Try on Playground](https://play.openpolicyagent.org/)**
 
 ```rego
 package paths
@@ -222,16 +222,16 @@ allowed_paths contains path if {
 
 ### 3.4 Partial Object Rules
 
-Rules that generate an object.
+Rules that generate objects (maps).
 
-**[Try it in Playground](https://play.openpolicyagent.org/)**
+**[Try on Playground](https://play.openpolicyagent.org/)**
 
 ```rego
 package object_rules
 
 import rego.v1
 
-# Grouping paths by prefix
+# Group paths by prefix
 paths_by_prefix[prefix] := paths if {
     some path in input.paths
     parts := split(path, "/")
@@ -262,15 +262,15 @@ paths_by_prefix[prefix] := paths if {
 | -------- | ----------- | ---------------------------- |
 | `==`     | Equal       | `input.role == "admin"`    |
 | `!=`     | Not equal   | `input.status != "banned"` |
-| `<`      | Less than   | `input.age < 65`             |
-| `<=`     | Less than or equal | `input.score <= 100`   |
-| `>`      | Greater than | `input.salary > 50000`      |
-| `>=`     | Greater than or equal | `input.age >= 18`     |
+| `<`      | Less than   | `input.age < 65`            |
+| `<=`     | Less or equal | `input.score <= 100`     |
+| `>`      | Greater than | `input.salary > 50000`    |
+| `>=`     | Greater or equal | `input.age >= 18`     |
 
 ### 4.2 Logical Operators
 
 #### AND (Logical Conjunction)
-**[Try it in Playground](https://play.openpolicyagent.org/)**
+**[Try on Playground](https://play.openpolicyagent.org/)**
 
 ```rego
 package logical_and
@@ -294,7 +294,7 @@ allow if {
 ```
 
 #### OR (Logical Disjunction)
-**[Try it in Playground](https://play.openpolicyagent.org/)**
+**[Try on Playground](https://play.openpolicyagent.org/)**
 
 ```rego
 package logical_or
@@ -303,7 +303,7 @@ import rego.v1
 
 default allow := false
 
-# Expressing OR with multiple rules
+# Express OR with multiple rules
 allow if {
     input.user.role == "admin"
 }
@@ -325,7 +325,7 @@ allow if {
 ```
 
 #### NOT (Negation)
-**[Try it in Playground](https://play.openpolicyagent.org/)**
+**[Try on Playground](https://play.openpolicyagent.org/)**
 
 ```rego
 package logical_not
@@ -353,9 +353,9 @@ allow if {
 ### 4.3 Quantification
 
 #### some - Existential Quantification
-True if "at least one satisfies the condition."
+Returns true if "at least one satisfies the condition."
 
-**[Try it in Playground](https://play.openpolicyagent.org/)**
+**[Try on Playground](https://play.openpolicyagent.org/)**
 
 ```rego
 package quantification_some
@@ -370,19 +370,19 @@ has_admin_role if {
     input.user.roles[i] == "admin"
 }
 
-# Short form
+# Simplified form
 default has_admin_role_short := false
 
 has_admin_role_short if {
     input.user.roles[_] == "admin"
 }
 
-# Combining with variable binding
+# Combined with variable binding
 default allowed_action := false
 
 allowed_action if {
     some role in input.user.roles
-    role == "admin"  # For simplification
+    role == "admin"  # Simplified
 }
 
 # Sample execution for testing
@@ -394,9 +394,9 @@ allowed_action if {
 ```
 
 #### every - Universal Quantification
-True if "all satisfy the condition."
+Returns true if "all satisfy the condition."
 
-**[Try it in Playground](https://play.openpolicyagent.org/)**
+**[Try on Playground](https://play.openpolicyagent.org/)**
 
 ```rego
 package quantification_every
@@ -425,7 +425,7 @@ all_files_owned if {
 ```
 
 ### 4.4 in Operator
-**[Try it in Playground](https://play.openpolicyagent.org/)**
+**[Try on Playground](https://play.openpolicyagent.org/)**
 
 ```rego
 package in_operator
@@ -456,15 +456,15 @@ valid_role if {
 
 Comprehensions are syntax for generating new collections from existing data.
 
-| Type           | Syntax                    | Features            | Use Case                |
-| -------------- | ------------------------- | --------------------- | ----------------------- |
-| Array Comprehension | `[term | body]`        | Ordered, duplicates allowed | List processing         |
-| Set Comprehension   | `{term | body}`        | Unordered, duplicates removed | Unique value collection  |
-| Object Comprehension | `{key: value | body}`  | Key-value pairs      | Structured data transformation |
+| Type           | Syntax                   | Features           | Use Case                |
+| -------------- | ------------------------ | ------------------ | ----------------------- |
+| Array          | `[term \| body]`        | Ordered, duplicates allowed | List processing         |
+| Set            | `{term \| body}`        | Unordered, duplicates removed | Unique value collection |
+| Object         | `{key: value \| body}`  | Key-value pairs    | Structured data transformation |
 
 ### 5.2 Array Comprehension
 
-**[Try it in Playground](https://play.openpolicyagent.org/)**
+**[Try on Playground](https://play.openpolicyagent.org/)**
 
 ```rego
 package array_comprehension
@@ -501,14 +501,14 @@ user_names := [name |
 
 ### 5.3 Set Comprehension
 
-**[Try it in Playground](https://play.openpolicyagent.org/)**
+**[Try on Playground](https://play.openpolicyagent.org/)**
 
 ```rego
 package set_comprehension
 
 import rego.v1
 
-# Automatically removes duplicates
+# Automatically remove duplicates
 unique_roles := {role |
     some user in input.users
     some role in user.roles
@@ -529,7 +529,7 @@ admin_users := {user.name |
 
 ### 5.4 Object Comprehension
 
-**[Try it in Playground](https://play.openpolicyagent.org/)**
+**[Try on Playground](https://play.openpolicyagent.org/)**
 
 ```rego
 package object_comprehension
@@ -541,7 +541,7 @@ users_by_id := {user.id: user |
     user := input.users[_]
 }
 
-# Count of members by department
+# Count number of people per department
 dept_counts := {dept: count(members) |
     some dept in {user.department | user := input.users[_]}
     members := [user |
@@ -560,14 +560,14 @@ dept_counts := {dept: count(members) |
 
 ### 5.5 Nested Comprehensions
 
-**[Try it in Playground](https://play.openpolicyagent.org/)**
+**[Try on Playground](https://play.openpolicyagent.org/)**
 
 ```rego
 package nested_comprehension
 
 import rego.v1
 
-# Active users by department
+# Active users per department
 active_by_dept := {dept: active_users |
     some dept in {user.department | user := input.users[_]}
     active_users := [user.name |
@@ -587,21 +587,21 @@ active_by_dept := {dept: active_users |
 
 ## Chapter 6: Built-in Functions
 
-Rego has a rich set of built-in functions. The available functions may vary depending on the execution environment (Go SDK, WebAssembly, etc.), so please refer to the official reference for details.
+Rego provides a rich set of built-in functions. The availability of functions depends on the execution environment (Go SDK, WebAssembly, etc.), so refer to the official reference for details.
 
 - **[Built-in Functions Reference](https://www.openpolicyagent.org/docs/policy-reference/builtins)**
   - Detailed specifications of all built-in functions
-  - Compatibility by execution environment (Wasm / SDK-dependent)
+  - Environment-specific support (Wasm / SDK-dependent)
   - Usage examples and parameter descriptions
 
 ## Chapter 7: Testing and Debugging
 
 ### 7.1 Basics of Testing
 
-Rego tests are written as functions that start with `test_`.
+Rego tests are written as functions starting with `test_`.
 
 #### Basic Test Syntax
-**[Try it in Playground](https://play.openpolicyagent.org/)**
+**[Try on Playground](https://play.openpolicyagent.org/)**
 
 ```rego
 package example
@@ -618,7 +618,6 @@ allow if {
 # === Test Code ===
 
 # Successful test
-
 test_admin_is_allowed if {
     allow with input as {"user": {"role": "admin"}}
 }
@@ -634,11 +633,11 @@ test_guest_is_denied if {
 # test_guest_is_denied = true
 ```
 
-### 7.2 Replacing Values with `with`
+### 7.2 Overriding Values with with
 
-You can replace `input` or `data` during testing using the `with` keyword.
+Use the `with` keyword to override `input` or `data` during testing.
 
-**[Try it in Playground](https://play.openpolicyagent.org/)**
+**[Try on Playground](https://play.openpolicyagent.org/)**
 
 ```rego
 package with_example
@@ -653,22 +652,19 @@ allow if {
 
 # === Test Code ===
 
-# Replacing input
-
+# Override input
 test_with_input if {
     allow with input as {"user": {"role": "admin"}}
           with data.config.strict_mode as false
 }
 
-# Replacing data
-
+# Override data
 test_with_data if {
     allow with input as {"user": {"role": "admin"}}
           with data as {"config": {"strict_mode": false}}
 }
 
-# Replacing multiple values simultaneously
-
+# Override multiple values simultaneously
 test_with_multiple if {
     allow with input as {"user": {"role": "admin"}}
           with data.config.strict_mode as false
@@ -688,7 +684,8 @@ package authz_test
 
 import data.authz
 
-# Normal tests
+# Normal test
+
 test_admin_user_allowed {
     authz.allow with input as {
         "user": {"role": "admin", "active": true},
@@ -707,7 +704,8 @@ test_user_with_permission_allowed {
     }
 }
 
-# Abnormal tests
+# Abnormal test
+
 test_inactive_user_denied {
     not authz.allow with input as {
         "user": {"role": "admin", "active": false},
@@ -726,7 +724,8 @@ test_insufficient_permission_denied {
     }
 }
 
-# Edge case tests
+# Edge case test
+
 test_empty_input_denied {
     not authz.allow with input as {}
 }
@@ -741,7 +740,7 @@ test_missing_role_denied {
 
 ### 7.4 Debugging Techniques
 
-#### Debugging with print statements
+#### Debugging with print
 ```rego
 allow if {
     user_role := input.user.role
@@ -754,7 +753,7 @@ allow if {
 }
 ```
 
-#### trace function (for more detailed output)
+#### trace Function (More Detailed Output)
 ```rego
 allow if {
     trace(sprintf("Evaluating access for user: %v", [input.user.name]))
@@ -768,10 +767,10 @@ allow if {
 # Run all tests
 opa test .
 
-# Detailed output
+# Verbose output
 opa test . -v
 
-# Test a specific file
+# Test specific file
 opa test policy_test.rego
 
 # With coverage information
@@ -780,7 +779,7 @@ opa test . --coverage
 
 ## References
 
-- [Official OPA Site](https://www.openpolicyagent.org/)
+- [OPA Official Site](https://www.openpolicyagent.org/)
 - [Rego Language Reference](https://www.openpolicyagent.org/docs/latest/policy-language/)
 - [Rego Cheat Sheet](https://docs.styra.com/opa/rego-cheat-sheet)
 - [Introduction to OPA/Rego (Zenn)](https://zenn.dev/mizutani/books/d2f1440cfbba94)

@@ -12,12 +12,13 @@ tags:
 translation_key: postgresql-install-configure-error-troubleshooting
 ---
 
+
 # Troubleshooting 'configure' Errors During PostgreSQL Installation
 ## 1. Introduction
 
-When compiling the source code of PostgreSQL, an error occurred when running `make`: `You need to run the 'configure' program first.`
+When compiling the PostgreSQL source code, an error occurred when running `make`: `You need to run the 'configure' program first.`
 
-I will document the troubleshooting steps.
+This post documents the troubleshooting steps.
 
 ## 2. Error Details
 
@@ -31,7 +32,7 @@ Makefile:19: recipe for target 'all' failed
 make: *** [all] Error 1
 ```
 
-This error occurs because the `configure` script has not been executed in the PostgreSQL source code directory.
+This error occurs because the `configure` script has not been run in the PostgreSQL source code directory.
 
 ## 3. Solution
 
@@ -49,7 +50,7 @@ If additional options are needed when running `configure`, execute it as follows
 ./configure --prefix=/usr/local/pgsql --enable-debug --enable-cassert
 ```
 
-To check available options, run the following command:
+To check available options, run:
 
 ```sh
 ./configure --help
@@ -57,17 +58,17 @@ To check available options, run the following command:
 
 ### Step 2: Re-run `make`
 
-Once `configure` completes successfully, run the following command to build:
+Once `configure` completes successfully, execute the build with the following command:
 
 ```sh
 make -j$(nproc)
 ```
 
-This will utilize the available CPU cores for faster compilation.
+This will compile quickly by utilizing the available CPU cores.
 
 ### Step 3: Run `make install` (if necessary)
 
-If `make` succeeds, the next step is to install PostgreSQL:
+If `make` succeeds, proceed to install PostgreSQL:
 
 ```sh
 make install
@@ -75,7 +76,7 @@ make install
 
 This will install PostgreSQL in the specified prefix directory (default is `/usr/local/pgsql`).
 
-## 4. Additional Issues and Solutions When Running `configure`
+## 4. Additional Issues and Solutions During `configure`
 
 ### Issue 1: `configure: command not found`
 
@@ -99,7 +100,7 @@ autoreconf -fi
 ./configure
 ```
 
-If errors still occur, check if the required packages are installed.
+If errors persist, verify that the necessary packages are installed.
 
 #### For Ubuntu/Debian
 
@@ -114,7 +115,7 @@ yum groupinstall -y "Development Tools"
 yum install -y readline-devel zlib-devel flex bison
 ```
 
-### Issue 2: Library errors when running `configure`
+### Issue 2: Library Errors During `configure`
 
 Example error message:
 
@@ -138,9 +139,9 @@ yum install -y readline-devel
 
 ## 5. Conclusion
 
-The failure of `make` during PostgreSQL compilation can be attributed to the `configure` not being executed or missing required libraries. By following the steps outlined in this article, you may resolve the following issues:
+The failure of `make` during PostgreSQL compilation can be due to not running `configure` or missing necessary libraries. By following the steps outlined in this article, you may resolve the following issues:
 
-1. Execute `configure` to properly set up the environment
-2. Run `make` to build PostgreSQL
-3. Execute `make install` if necessary to install
-4. Properly resolve issues that arise during the execution of `configure` (such as missing libraries)
+1. Run `configure` to properly set up the environment
+2. Execute `make` to build PostgreSQL
+3. Run `make install` if necessary to install
+4. Properly address issues that arise during `configure` (such as missing libraries)

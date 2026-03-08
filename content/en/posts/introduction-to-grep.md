@@ -4,7 +4,7 @@ slug: introduction-to-grep
 date: 2019-01-22T00:00:00Z
 author: bmf-san
 categories:
-  - OS
+  - Operating Systems
 tags:
   - Linux
   - grep
@@ -12,12 +12,12 @@ translation_key: introduction-to-grep
 ---
 
 # Overview
-I have been using grep without fully understanding it, so I did a rough investigation.
+grep is a command I used casually, so I decided to investigate it more thoroughly.
 
 # Basics
-`grep search_regex filename`
+`grep search-pattern filename`
 
-You can use wildcards, so for example, if you want to target all files in the current directory:
+You can use wildcards, so for example, if you want to target all files in the current directory, you can do it like this:
 
 `grep "foo" ./*`
 
@@ -26,28 +26,28 @@ If you want to include directories under the current directory, use the `-r` opt
 `grep -r "foo" ./*`
 
 # Options
-I picked out only the ones that seem useful.
+Here are some commonly used options.
 
 ## -i
-- Case insensitive
+- Ignore case distinctions
 
 ## -v
-- Target non-matching items
+- Select non-matching lines
 
 ## -n
-- Display line numbers in search results
+- Display line numbers with output lines
 
 ## -l
-- Display filenames in search results
+- Display file names with matches
 
 ## -L
-- Display files that did not match in search results
+- Display file names without matches
 
 ## -r
-- Include directories in the search target
+- Include directories in the search
 
 ## -w
-- Search by whole word (search for exact matches)
+- Search for whole words (exact match)
 
 # Practical Use
 ## OR Search
@@ -58,8 +58,8 @@ You need to escape with `\`.
 ## AND Search
 `grep "foo" ./* | grep "bar"`
 
-## Exclude Specific Directory
+## Exclude Specific Directories
 `grep "foo" ./* --exclude-dir=vendor`
 
 # References
-- [@IT - grep command: Extract lines containing specific characters](http://www.atmarkit.co.jp/ait/articles/1604/07/news018.html)
+- [@IT - 【 grep 】Command: Extract lines containing specific characters](http://www.atmarkit.co.jp/ait/articles/1604/07/news018.html)

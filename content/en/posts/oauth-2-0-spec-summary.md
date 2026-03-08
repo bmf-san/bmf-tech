@@ -9,21 +9,20 @@ tags:
   - OAuth
   - Authentication
   - Authorization
+description: Summary based on RFC 6749 (OAuth 2.0 Authorization Framework) and RFC 6750 (Bearer Token Usage).
 translation_key: oauth-2-0-spec-summary
 ---
 
-Based on RFC 6749 (OAuth 2.0 Authorization Framework) and RFC 6750 (Bearer Token Usage).
 
----
 
-## RFC Terms (RFC 2119)
+## RFC Terminology (RFC 2119)
 
 | Term | Meaning |
 |-----|------|
 | **MUST** / **REQUIRED** / **SHALL** | Absolute requirement |
 | **MUST NOT** / **SHALL NOT** | Absolute prohibition |
-| **SHOULD** / **RECOMMENDED** | Recommended (should be followed unless there is a special reason) |
-| **SHOULD NOT** / **NOT RECOMMENDED** | Not recommended (should be avoided unless there is a special reason) |
+| **SHOULD** / **RECOMMENDED** | Recommended (should be followed unless there is a specific reason not to) |
+| **SHOULD NOT** / **NOT RECOMMENDED** | Not recommended (should be avoided unless there is a specific reason not to) |
 | **MAY** / **OPTIONAL** | Optional (may or may not be implemented) |
 
 ---
@@ -32,7 +31,7 @@ Based on RFC 6749 (OAuth 2.0 Authorization Framework) and RFC 6750 (Bearer Token
 
 OAuth 2.0 is an authorization framework that allows third-party applications to obtain **limited access** to HTTP services.
 
-In traditional client-server authentication models, third parties needed to directly use the resource owner's credentials. OAuth 2.0 resolves this issue by introducing **access tokens**.
+In the traditional client-server authentication model, third parties needed to use the resource owner's credentials directly. OAuth 2.0 solves this issue by introducing **access tokens**.
 
 ---
 
@@ -40,9 +39,9 @@ In traditional client-server authentication models, third parties needed to dire
 
 | Role | Description |
 |-------|------|
-| **Resource Owner** | Entity that grants access to protected resources (usually an end-user) |
-| **Resource Server** | Server that hosts protected resources and accepts requests via access tokens |
-| **Client** | Application that accesses protected resources on behalf of the resource owner with authorization |
+| **Resource Owner** | Entity that grants access to the protected resource (usually the end-user) |
+| **Resource Server** | Server hosting the protected resources and accepting requests with access tokens |
+| **Client** | Application accessing the protected resources on behalf of the resource owner with authorization |
 | **Authorization Server** | Server that authenticates the resource owner and issues access tokens after obtaining authorization |
 
 ```mermaid
@@ -66,7 +65,7 @@ sequenceDiagram
 
 ### 1. Authorization Code Grant
 
-**Most recommended flow. For web applications.**
+**The most recommended flow. Suitable for web applications.**
 
 ```mermaid
 sequenceDiagram
@@ -85,16 +84,16 @@ sequenceDiagram
     AS-->>C: (E) Access Token<br/>(+ Refresh Token)
 ```
 
-| Step | Content |
+| Step | Description |
 |---------|------|
-| (A) | Client redirects user agent to authorization endpoint |
-| (B) | Authorization server authenticates resource owner and grants/denies access |
-| (C) | Authorization server grants authorization code and redirects |
-| (D) | Client exchanges authorization code for access token at token endpoint |
-| (E) | Authorization server issues access token (and refresh token) |
+| (A) | Client redirects the user agent to the authorization endpoint |
+| (B) | Authorization server authenticates the resource owner and grants/denies access |
+| (C) | Authorization server issues an authorization code and redirects |
+| (D) | Client exchanges the authorization code for an access token at the token endpoint |
+| (E) | Authorization server issues an access token (and refresh token) |
 
 **Features**:
-- Authorization code is short-lived (RECOMMENDED: less than 10 minutes)
+- Authorization code is short-lived (RECOMMENDED: within 10 minutes)
 - Refresh tokens can be issued
 - Client authentication is performed
 
@@ -117,14 +116,14 @@ sequenceDiagram
     UA-->>C: (D) Extract Token from Fragment
 ```
 
-| Feature | Content |
+| Feature | Description |
 |-----|------|
 | Token Acquisition | Access token is obtained directly from the authorization endpoint |
 | Refresh Token | Not issued |
 | Client Authentication | Not performed |
 | Security | Lower than authorization code grant (token exposed in URL fragment) |
 
-**Note**: Removed in OAuth 2.1 (draft) for security reasons. Recommended to use authorization code grant with PKCE.
+**Note**: In OAuth 2.1 (draft), **removed** for security reasons. Use authorization code grant with PKCE instead.
 
 ### 3. Resource Owner Password Credentials Grant
 
@@ -141,17 +140,17 @@ sequenceDiagram
     AS-->>C: (C) Access Token<br/>(+ Optional Refresh Token)
 ```
 
-| Feature | Content |
+| Feature | Description |
 |-----|------|
-| Purpose | Migration from legacy systems, highly trusted clients |
-| Risk | Client has access to credentials, potential for misuse |
-| Recommendation | Only if other grant types cannot be used |
+| Use Case | Migration from legacy systems, highly trusted clients |
+| Risk | Client has access to credentials, risk of misuse |
+| Recommendation | Use only if other grant types are not available |
 
-**Note**: Removed in OAuth 2.1 (draft) for security reasons.
+**Note**: In OAuth 2.1 (draft), **removed** for security reasons.
 
 ### 4. Client Credentials Grant
 
-**Flow for accessing with the client's own permissions.**
+**Flow for accessing resources with the client's own authority.**
 
 ```mermaid
 sequenceDiagram
@@ -162,10 +161,10 @@ sequenceDiagram
     AS-->>C: (B) Access Token
 ```
 
-| Feature | Content |
+| Feature | Description |
 |-----|------|
-| Purpose | Machine-to-machine communication (M2M), batch processing |
-| Resource Owner | The client itself is the resource owner |
+| Use Case | Machine-to-machine (M2M) communication, batch processing |
+| Resource Owner | Client itself is the resource owner |
 | User Involvement | Not required |
 
 ---
@@ -174,21 +173,21 @@ sequenceDiagram
 
 ### Access Token
 
-| Item | Content |
+| Item | Description |
 |-----|------|
 | Role | Credential for accessing protected resources |
-| Expiration | Short-lived (SHOULD: less than 1 hour, RFC 6750) |
-| Format | Not specified in the specification (implementation-dependent, JWT is common) |
-| Scope | Limits the accessible range |
+| Expiry | Short-lived (SHOULD: less than 1 hour, RFC 6750) |
+| Format | Not specified by the specification (implementation-dependent, JWT is common) |
+| Scope | Limits the range of access |
 
 ### Refresh Token
 
-| Item | Content |
+| Item | Description |
 |-----|------|
-| Role | Used to refresh access tokens |
-| Expiration | Long-lived (days to weeks) |
-| Usage Location | Only at the token endpoint (not sent to resource server) |
-| Issuance | Can be issued with authorization code grant, not issued with implicit |
+| Role | Used to refresh the access token |
+| Expiry | Long-lived (days to weeks) |
+| Usage Location | Only at the token endpoint (not sent to the resource server) |
+| Issuance | Can be issued in authorization code grant, not in implicit |
 
 ```mermaid
 sequenceDiagram
@@ -217,16 +216,16 @@ sequenceDiagram
 
 ### Authorization Endpoint
 
-| Item | Content |
+| Item | Description |
 |-----|------|
-| Role | Obtaining authentication and authorization from the resource owner |
+| Role | Obtains authentication and authorization from the resource owner |
 | Communication | TLS (MUST) |
-| Grant Types Used | Authorization Code, Implicit |
+| Used Grants | Authorization code, implicit |
 | HTTP Method | GET (SHOULD), POST (MAY) |
 
 **Request Parameters**:
 
-| Parameter | Required | Description |
+| Parameter | Requirement | Description |
 |-----------|:----:|------|
 | `response_type` | REQUIRED | `code` (authorization code) or `token` (implicit) |
 | `client_id` | REQUIRED | Client identifier |
@@ -236,7 +235,7 @@ sequenceDiagram
 
 ### Token Endpoint
 
-| Item | Content |
+| Item | Description |
 |-----|------|
 | Role | Exchanges authorization grant for access token |
 | Communication | TLS (MUST) |
@@ -245,11 +244,11 @@ sequenceDiagram
 
 **Request Parameters (Authorization Code Grant)**:
 
-| Parameter | Required | Description |
+| Parameter | Requirement | Description |
 |-----------|:----:|------|
 | `grant_type` | REQUIRED | `authorization_code` |
 | `code` | REQUIRED | Authorization code |
-| `redirect_uri` | REQUIRED* | Same URI as specified during authorization request (*if specified during authorization) |
+| `redirect_uri` | REQUIRED* | Same URI as in authorization request (*if specified during authorization) |
 | `client_id` | REQUIRED* | Client identifier (*if not authenticated) |
 
 **Response Example**:
@@ -267,11 +266,11 @@ sequenceDiagram
 
 ## Scope
 
-| Item | Content |
+| Item | Description |
 |-----|------|
-| Format | Space-separated string list |
-| Role | Limits the accessible range |
-| Definition | Defined by the authorization server (not specified in the specification) |
+| Format | Space-separated list of strings |
+| Role | Limits the range of access |
+| Definition | Defined by the authorization server (not specified by the specification) |
 | Principle | Clients should request the minimum necessary scope |
 
 **Example**:
@@ -279,7 +278,7 @@ sequenceDiagram
 scope=read write profile email
 ```
 
-The authorization server may completely ignore the requested scope, partially allow it, or grant additional scopes.
+The authorization server may ignore the requested scope entirely, partially allow it, or grant additional scopes.
 
 ---
 
@@ -287,26 +286,26 @@ The authorization server may completely ignore the requested scope, partially al
 
 ### What is a Bearer Token
 
-A security token that can be used by any party that possesses the token without proving possession of a cryptographic key.
+A security token that any party in possession of the token can use without proving possession of a cryptographic key.
 
-### How to Send Tokens
+### Token Transmission Methods
 
-| Method | Required | Example |
+| Method | Requirement | Example |
 |-----|:------:|-----|
 | **Authorization Header** | MUST (server) / SHOULD (client) | `Authorization: Bearer mF_9.B5f-4.1JqM` |
 | Form-Encoded Body | MAY | `access_token=mF_9.B5f-4.1JqM` (POST body) |
 | URI Query Parameter | SHOULD NOT | `?access_token=mF_9.B5f-4.1JqM` |
 
-Resource servers must support the method using the Authorization Header (MUST).
+The resource server must support the Authorization Header method (MUST).
 
 ### Security Requirements
 
-| Requirement | Content | Strength |
+| Requirement | Description | Strength |
 |-----|------|:----:|
-| **TLS Required** | Always sent over HTTPS | MUST |
-| **Certificate Validation** | Validate TLS certificate chain | MUST |
-| **Cookie Storage Prohibited** | Must not be stored in cookies that can be sent in plaintext | MUST NOT |
-| **Short Expiration** | Recommended to be less than 1 hour (RFC 6750 Section 5.3) | SHOULD |
+| **TLS Required** | Always send via HTTPS | MUST |
+| **Certificate Verification** | Verify TLS certificate chain | MUST |
+| **No Cookie Storage** | Must not be stored in cookies that can be sent in plaintext | MUST NOT |
+| **Short Expiry** | Recommended to be less than 1 hour (RFC 6750 Section 5.3) | SHOULD |
 | **Avoid URL Transmission** | Tokens should not be included in page URLs | SHOULD NOT |
 
 ---
@@ -317,15 +316,15 @@ Resource servers must support the method using the Authorization Header (MUST).
 
 | Threat | Countermeasure |
 |-----|------|
-| **CSRF Attack** | Validation using `state` parameter |
-| **Authorization Code Interception** | Use of PKCE (Proof Key for Code Exchange) |
-| **Token Leakage** | TLS required, short expiration, scope limitation |
-| **Phishing** | Use only legitimate authorization servers, certificate validation |
-| **Client Impersonation** | Client authentication, redirect URI validation |
+| **CSRF Attacks** | Verification using `state` parameter |
+| **Authorization Code Interception** | Use PKCE (Proof Key for Code Exchange) |
+| **Token Leakage** | TLS required, short expiry, scope limitation |
+| **Phishing** | Use only legitimate authorization servers, certificate verification |
+| **Client Impersonation** | Client authentication, redirect URI verification |
 
 ### PKCE (RFC 7636)
 
-An extension to safely use authorization code grant for public clients (SPA and mobile apps) instead of implicit grant.
+An extension to safely use authorization code grant in public clients (SPAs and mobile apps) instead of implicit grant.
 
 ```mermaid
 sequenceDiagram
@@ -354,7 +353,7 @@ OAuth 2.1 is a draft specification that integrates best practices from OAuth 2.0
 | Implicit Grant | MAY | Removed |
 | Password Grant | MAY | Removed |
 | PKCE | OPTIONAL | REQUIRED |
-| Strict Match for Redirect URI | SHOULD | MUST |
+| Strict Redirect URI Matching | SHOULD | MUST |
 | Bearer Token (Query Parameter) | SHOULD NOT | MUST NOT |
 | Refresh Token Rotation | - | SHOULD |
 
@@ -366,7 +365,7 @@ OAuth 2.1 is a draft specification that integrates best practices from OAuth 2.0
 | Implicit | Do not use |
 | Password | Do not use |
 | Token Format | JWT (signed) |
-| Token Expiration | Access tokens should be short (SHOULD: less than 1 hour), refreshed with refresh tokens |
+| Token Expiry | Short for access tokens (SHOULD: less than 1 hour), refresh with refresh tokens |
 | Scope | Principle of least privilege |
 
 ---

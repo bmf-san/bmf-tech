@@ -7,8 +7,12 @@ categories:
   - Application
 tags:
   - Ruby
-  - Books
+  - Book
 translation_key: ruby-introduction-for-beginners
 ---
 
-[Introduction to Ruby for Aspiring Professionals](https://amzn.to/4baAm3P) is a detailed read that seems useful at a professional level. It's easy to read.
+
+
+[I read "Introduction to Ruby for Aspiring Professionals"](https://amzn.to/4baAm3P).
+
+It contains detailed information that seems useful at a professional level. Easy to read.

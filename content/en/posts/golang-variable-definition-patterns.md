@@ -1,5 +1,5 @@
 ---
-title: Summary of Variable Definition and Declaration Patterns in Golang
+title: Summary of Variable Definitions and Declarations in Golang
 slug: golang-variable-definition-patterns
 date: 2018-11-13T00:00:00Z
 author: bmf-san
@@ -11,13 +11,13 @@ translation_key: golang-variable-definition-patterns
 ---
 
 # Overview
-Summarizing the patterns of variable definition and declaration in Golang
+A summary of patterns for variable definitions and declarations in Golang.
 
-# Notes on Variable Definition and Declaration
-- If the first character is uppercase, the variable is visible from other packages.
-- If the first character is lowercase, the variable is only visible within that package.
+# Cautions in Variable Definitions and Declarations
+- If the first letter is uppercase, the variable is visible from other packages.
+- If the first letter is lowercase, the variable is only visible within the package.
 
-# Variable Definition and Declaration
+# Variable Definitions and Declarations
 ## Variable declarations
 ```golang
 var i int
@@ -76,5 +76,5 @@ fmt.Printf("%T", j) // int
 ```
 
 # References
-- [Qiita - A Summary for Programmers from Other Languages to Understand the Basics of Golang](https://qiita.com/tfrcm/items/e2a3d7ce7ab8868e37f7)
+- [Qiita - Summary for Programmers from Other Languages to Grasp Golang Basics](https://qiita.com/tfrcm/items/e2a3d7ce7ab8868e37f7)
 - [Golang.org - Variable Declarations](https://golang.org/ref/spec#Variable_declarations)

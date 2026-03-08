@@ -1,5 +1,5 @@
 ---
-title: Issues Encountered When Checking PHP 8.2 Compatibility Using PHPCompatibility
+title: Challenges Faced When Checking PHP 8.2 Compatibility with PHPCompatibility
 slug: phpcompatibility-php82-compatibility-issues
 date: 2024-04-14T00:00:00Z
 author: bmf-san
@@ -11,19 +11,20 @@ tags:
 translation_key: phpcompatibility-php82-compatibility-issues
 ---
 
-[PHPCompatibility](https://github.com/PHPCompatibility/PHPCompatibility) notes on issues encountered while checking PHP 8.2 compatibility.
 
-# Issues Encountered
-As of October 2023, even after installing the latest version [9.3.5](https://github.com/PHPCompatibility/PHPCompatibility/releases/tag/9.3.5), compatibility checks for PHP 8.2 cannot be performed.
+[PHPCompatibilitiy](https://github.com/PHPCompatibility/PHPCompatibility) is a tool used for checking compatibility with PHP 8.2, and here are some challenges I faced.
 
-Version 9.3.5 was released in 2019 and seems to not yet support recent PHP versions...
+# Challenges
+As of October 2023, even if you install the latest version [9.3.5](https://github.com/PHPCompatibility/PHPCompatibility/releases/tag/9.3.5), you cannot check compatibility with PHP 8.2.
+
+Version 9.3.5 was released in 2019 and apparently does not yet support recent PHP versions...
 
 # Solution
 I briefly wondered if development had stopped, but that doesn't seem to be the case.
 
-Commits are being made to the develop branch, so it appears that using develop is the way to go.
+There are commits being added to the develop branch, so it seems using develop is the way to go.
 
 cf. [Should I use develop or 9.3.5 sniffs? #1653](https://github.com/PHPCompatibility/PHPCompatibility/issues/1653)
 
 # Thoughts
-I don't think it supports 100% compatibility checks, but it's a useful tool that I want to continue using in the future.
+While it may not support 100% compatibility checks, it's a useful tool that I plan to continue using in the future.

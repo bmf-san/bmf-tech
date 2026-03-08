@@ -6,8 +6,12 @@ author: bmf-san
 categories:
   - Testing
 tags:
-  - Books
+  - Book
 translation_key: software-testing-improvement-ideas
 ---
 
-[50 Ideas to Improve Software Testing](https://amzn.to/3JWDsN1) is a book that teaches ideas to enhance test quality.
+
+
+[I read 50 Ideas to Improve Software Testing](https://amzn.to/3JWDsN1).
+
+A book where you can learn ideas to improve test quality.

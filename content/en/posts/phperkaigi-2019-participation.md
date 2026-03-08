@@ -1,10 +1,10 @@
 ---
-title: Participated and Spoke at PHPerKaigi2019
+title: Participated and Presented at PHPerKaigi2019
 slug: phperkaigi-2019-participation
 date: 2019-04-01T00:00:00Z
 author: bmf-san
 categories:
-  - Poetry
+  - Poem
 tags:
   - PHP
   - PHP Conference
@@ -12,57 +12,59 @@ tags:
 translation_key: phperkaigi-2019-participation
 ---
 
-# Participated and Spoke at PHPerKaigi2019
-I participated in PHPerKaigi for the first time and also spoke.
 
-[fortee - Creating URL Routing with PHP](https://fortee.jp/phperkaigi-2019/proposal/08d951da-29cb-4ee5-bf08-c88129c0bb3f)
-[Speaker Deck - Creating URL Routing with PHP](https://speakerdeck.com/bmf_san/urlruteinguwotukuru)
 
-I was quite nervous since the audience was closer and the slides were larger than at previous venues...
+# Participated and Presented at PHPerKaigi2019
+I participated and presented at PHPerKaigi for the first time.
+
+[fortee - PHPでURLルーティングをつくる](https://fortee.jp/phperkaigi-2019/proposal/08d951da-29cb-4ee5-bf08-c88129c0bb3f)
+[Speaker Deck - PHPでURLルーティングをつくる](https://speakerdeck.com/bmf_san/urlruteinguwotukuru)
+
+The audience was closer and the slides were larger than at previous venues, which made me quite nervous...
 
 # After the Presentation
-At the time of submitting the CFP, I hadn't finalized my topic and was rushing the implementation...
-After being accepted, I spent a decent amount of time preparing until the actual event, and I finally felt a sense of relief.
-Honestly, I'm not sure if I delivered a fulfilling talk, but I received some positive feedback before and after my presentation, which made me very happy.
-The Q&A and Ask the Speaker sessions were a first for me, as I had rarely done LT presentations in the past, but I was glad to communicate properly.
-I was pleased that 2-3 people approached me during the Q&A and Ask the Speaker sessions.
-Despite my clumsy presentation, I felt joy and a sense of responsibility knowing that people were actually listening.
+When I submitted the CFP, I hadn't finished the topic and was rushing the implementation...
+After being accepted, I spent a decent amount of time preparing until the actual event, and I finally felt relieved.
+Honestly, I'm not confident if I delivered a fulfilling talk, but I received some positive feedback before and after the presentation, which made me very happy.
+The QA and Ask the Speaker sessions were a first for me, as I had rarely done LT presentations before, but I was glad to have good communication.
+I was approached by 2-3 people during QA and Ask the Speaker, which made me happy.
+I felt both joy and a sense of responsibility knowing that people listened to my clumsy presentation.
 
-During a few mental rehearsals, I took about 15 minutes, but due to nerves, I finished in about 13 minutes on the actual day...
-I reflected on how I should have prepared more thoroughly, especially since I was not used to the 15-minute talk format...
+During my mental rehearsals, it took a little over 15 minutes, but due to nerves, I finished in about 13 minutes during the actual presentation...
+I'm not used to the 15-minute talk time, so I reflected on how I should have prepared more thoroughly...
 
-### Postscript:
-Feedback has been posted on fortee.
-From the feedback I've seen, it seems that the part I wanted to convey the most was communicated well.
-There appeared to be interest from those who were curious about the routing algorithm and the design discussions leading up to it.
-This time, I focused on the preliminary discussions, but I thought it might be good to focus on the algorithm in the next session (though I need to study properly to discuss it, which is challenging...).
+Addendum:
+Feedback was posted on fortee.
+From the feedback I received, it seems that the part I most wanted to convey was understood.
+Some people were interested in the routing algorithm, while others were interested in the design phase before that.
+This time, I focused on the design phase, but next time, I might focus on the algorithm, although it's a difficult topic that requires proper study...
 
-The routing I created this time was not meant to be a library for others to use, but rather for my own experience and learning, so I was clear about that.
-Of course, I want to create something that can be used as a library, but I believe I need to catch up on various things to achieve that.
-I thought that what I worked on for my own experience and learning could be beneficial in other technical and practical areas, which is why I submitted the CFP for PHPerKaigi.
-There was feedback mentioning that the discussions on the implementation's preliminary stages could be helpful processes for other designs and implementations, but the part I wanted to convey the most was actually around this topic.
+The reason I created the routing myself was more for my own experience and study rather than to create a library for others to use, and I was clear about that.
+Of course, I would like to create something that can be used as a library, but I think I need to catch up on many things to achieve that.
+I submitted a CFP to PHPerKaigi because I thought that what I worked on for my experience and study could be applied to other technologies and practical aspects.
+In the feedback, someone mentioned that the discussion before implementation is a process that can be useful for other designs and implementations, and that was actually the part I most wanted to convey.
 
 Thank you to everyone who provided feedback!
 
-Next, I will be speaking at [PHP Conference Fukuoka](https://phpcon.fukuoka.jp/2019/)!
+Next, I will be presenting at [PHP Conference Fukuoka](https://phpcon.fukuoka.jp/2019/)!
+
 
 # Sessions
-The session that left the strongest impression on me was,
+The most memorable session was by [@uzulla](https://twitter.com/uzulla) on [The Return of the Last Heisei Era My Own Framework](https://speakerdeck.com/uzulla/gui-tutekita-ping-cheng-zui-hou-falseoreorehuremuwakufalsezuo-rifang).
 
-[@uzulla](https://twitter.com/uzulla)'s [How to Create Your Own Framework - The Last of Heisei](https://speakerdeck.com/uzulla/gui-tutekita-ping-cheng-zui-hou-falseoreorehuremuwakufalsezuo-rifang).
+The talk was interesting and greatly motivated me to create my own framework.
 
-The talk was interesting, and it greatly stimulated my motivation to create my own framework.
-
-# Experience at PHPerKaigi
-As both a speaker and an attendee, I strongly felt that this event had a high level of hospitality.
-Before the talk, the staff made considerations to help me present more comfortably and provided thorough guidance before and after the talk.
-From the staff's responses to the event's progression and the venue setup, I noticed many thoughtful touches, which I found wonderful.
-I was particularly impressed by how they adjusted the placement of drinks as needed.
-Also, the novelties were luxurious. Haha.
-I really liked the design of the Pechi Parker, as it's easy to use in everyday life!
+# Participating in PHPerKaigi
+I strongly felt that it was a very hospitable event both as a speaker and as a participant.
+Before the talk, the staff made considerations to make it easier to present, and they guided me carefully before and after the talk.
+I thought it was wonderful to see the staff's attention to detail, from the event's progress to the venue setup.
+The adjustment of drink placements was particularly impressive.
+Also, the novelties were luxurious. Haha
+I really liked the Pech Parker design, which is easy to use daily!
 
 I'm looking forward to next year's event.
 Thank you to the chairperson and all the staff!
 
 # Aside
-I was part of the staff for the Laravel JP Conference held in February this year, and I realized that several members were also staff at PHPerKaigi, which made me appreciate how dedicated people support domestic PHP conferences.
+I was a staff member at the Laravel JP Conference held in February this year, and several members were also staff at PHPerKaigi.
+I felt a renewed sense of gratitude for the dedicated people supporting PHP conferences in Japan.

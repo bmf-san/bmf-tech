@@ -1,43 +1,41 @@
 ---
 title: Algorithms and Data Structures - Arrays
 slug: algorithms-data-structures-array
-image: /assets/images/posts/post-202/67912042-f3e03200-fbcb-11e9-8a42-34f28fd474f4.jpg
 date: 2019-10-31T00:00:00Z
 author: bmf-san
 categories:
-  - Algorithms
-  - Data Structures
+  - Algorithms and Data Structures
 tags:
   - Arrays
 translation_key: algorithms-data-structures-array
 ---
 
 # Overview
-Referencing the [Algorithm Encyclopedia](https://www.shoeisha.co.jp/book/detail/9784798149776), we will learn about algorithms and data structures.
+Learning algorithms and data structures with reference to [Algorithm Encyclopedia](https://www.shoeisha.co.jp/book/detail/9784798149776).
 
-The implementation is also available at [github - bmf-san/road-to-algorithm-master](https://github.com/bmf-san/road-to-algorithm-master).
+The implementation is also available on [github - bmf-san/road-to-algorithm-master](https://github.com/bmf-san/road-to-algorithm-master).
 
 # Arrays
-- A structure that arranges data in a single line.
-- Accessing data is easy, but adding or deleting takes time.
-- The data in an array is stored sequentially in a contiguous area of memory.
-  - Fixed-length memory allocation.
-    - Allocated at declaration (static allocation).
-    - Allocated at runtime (dynamic allocation).
+- Data arranged in a single row
+- Easy access to data, but adding or deleting takes time
+- Array data is stored sequentially in contiguous memory regions
+  - Fixed-length memory allocation
+    - Allocated at declaration (static allocation)
+    - Allocated at runtime (dynamic allocation)
 
-# Time Complexity
+# Computational Time
 Let n be the number of data stored in the array.
 
 ## Accessing Data
 - O(1)
-  - Since the memory address can be calculated using the index, data can be accessed directly. (Random access)
+  - Direct access to data is possible because the memory address can be calculated using the index (random access).
 
 ## Adding Data
 - O(n)
-  - All data after the insertion point must be shifted one by one.
+  - All data after the insertion point needs to be shifted one by one.
 
 ## Deleting Data
-- Similar to adding data.
+- Same as adding data
 
 # Implementation
 ```golang
@@ -70,10 +68,10 @@ func (a *Array) insert(index int, value string) error {
 	}
 
 	// insert a value to target index
-a.data[index] = value
+	a.data[index] = value
 
 	// update the length
-a.length++
+	a.length++
 
 	return nil
 }
@@ -92,10 +90,10 @@ func (a *Array) delete(index int) (string, error) {
 	}
 
 	// unset
-a.data[a.length-1] = ""
+	a.data[a.length-1] = ""
 
 	// update the length
-a.length--
+	a.length--
 
 	return v, nil
 }
@@ -153,33 +151,34 @@ func main() {
 	}
 }
 ```
-- The struct Array defines the data structure of the array.
-  - Although Go has arrays, we implement the array data structure using slices here.
-  - Since the array has a fixed length, we prepare a length variable.
+
+- The `Array` struct defines the data structure of an array.
+  - Although Go has arrays, here we implement the array data structure using slices.
+  - Arrays are fixed-length, so we prepare a length.
 - insert
-  - Conditional branches:
-    - When the array is full (i.e., the number of data equals length).
-    - When out-of-bounds access occurs.
-  - Shift data:
-    - Loop to shift data from the end of the array to the specified index.
-    - After shifting, add data to the array and update the length.
+  - Conditional branching
+    - When the array is full (i.e., the number of data equals the length)
+    - When an out-of-range access occurs
+  - Shifting data
+    - Loop to shift data from the end of the array to the desired index
+    - After shifting, add data to the array and update the length
 - delete
-  - Conceptually similar to the reverse of insert.
-  - Conditional branches:
-    - Only consider out-of-bounds access.
-    - Since data is being reduced, whether the array is full is not a condition.
-  - Shift data:
-    - Unset the data specified by the index.
-    - Loop to shift data from the specified index to the end.
-    - After shifting, update the length.
+  - Conceptually similar to the reverse of insert
+  - Conditional branching
+    - Only need to consider out-of-range access
+    - Since data is reduced, whether the array is full is not a condition
+  - Shifting data
+    - Unset the data specified by the index
+    - Loop to shift data from the desired index to the end
+    - After shifting, update the length
 - get
-  - Consider only out-of-bounds access for random access (referencing data by index).
+  - Only consider out-of-range access and perform random access (referencing data by index)
 - Note
 ![Image from iOS](https://user-images.githubusercontent.com/13291041/67912042-f3e03200-fbcb-11e9-8a42-34f28fd474f4.jpg)
 
 # References
 - [github - TomorrowWu/golang-algorithms](https://github.com/TomorrowWu/golang-algorithms/blob/master/data-structures/array/array.go)
-  - I referred to this easy-to-understand code that implemented an array using slices.
+  - Referenced as it was an easy-to-understand code implementing array with slice.
 
 # Related
-- [bmf-tech.com - Big O Notation and How to Calculate Algorithm Complexity](https://bmf-tech.com/posts/O（オーダー）記法とアルゴリズムの計算量の求め方)
+- [bmf-tech.com - O Notation and How to Calculate Algorithm Complexity](https://bmf-tech.com/posts/O（オーダー）記法とアルゴリズムの計算量の求め方)

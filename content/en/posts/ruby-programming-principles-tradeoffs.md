@@ -7,14 +7,17 @@ categories:
   - Application
 tags:
   - Ruby
-  - Books
+  - Book
 translation_key: ruby-programming-principles-tradeoffs
 ---
 
-[Mastering Ruby Programming: Principles and Trade-offs for Practical Code](https://amzn.to/3YlKRfO) was read.
 
-Having started using Ruby at work and having read through several introductory books, I reached a point where I wanted to learn more practical aspects, so I decided to read this.
 
-I feel that I was able to grasp not only practical knowledge of Ruby but also the charm of Ruby from this book.
+[Mastering Ruby Programming: Principles and Trade-offs for Practical Code](https://amzn.to/3YlKRfO) was a book I read.
 
-From a programming perspective, I was able to pick up ideas that are not dependent on Ruby.
+After starting to use Ruby at work and going through various introductory books, I reached a stage where I had acquired a certain level of knowledge and wanted to learn more practical aspects, so I decided to read this book.
+
+I felt that I could grasp not only practical knowledge of Ruby but also the charm of Ruby from this book.
+
+From a programming perspective, I was able to pick up concepts that are not dependent on Ruby as well.
+

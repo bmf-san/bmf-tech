@@ -10,8 +10,9 @@ tags:
 translation_key: write-remote-file-ansible
 ---
 
+
 # Overview
-A task to write to remote files using Ansible. A commonly used one.
+A task to write to remote files using Ansible. Frequently used.
 
 # Playbook
 
@@ -31,7 +32,7 @@ A task to write to remote files using Ansible. A commonly used one.
 ```
 
 # Thoughts
-It can be written easily.
+It's easy to write.
 
-# Reference
+# References
 + [lineinfile - Ensure a particular line is in a file, or replace an existing line using a back-referenced regular expression.](http://docs.ansible.com/ansible/lineinfile_module.html)

@@ -1,5 +1,5 @@
 ---
-title: GLOBIS MBA Critical Thinking
+title: Globis MBA Critical Thinking
 slug: globis-mba-critical-thinking
 date: 2015-05-19T00:00:00Z
 author: bmf-san
@@ -12,4 +12,8 @@ tags:
 translation_key: globis-mba-critical-thinking
 ---
 
-[GLOBIS MBA Critical Thinking](https://amzn.to/3yotEc5) is a book that allows you to learn about critical thinking through exercises.
+
+
+[グロービスMBAクリティカル・シンキング](https://amzn.to/3yotEc5)を読んだ。
+
+A book where you can learn about critical thinking along with exercises.

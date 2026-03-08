@@ -1,5 +1,5 @@
 ---
-title: Getting Started with Live Coding using Atom, TidalCycles, and SuperCollider
+title: Starting Live Coding with Atom×TidalCycles×SuperCollider
 slug: live-coding-atom-tidalcycles-supercollider
 date: 2018-06-11T00:00:00Z
 author: bmf-san
@@ -9,13 +9,15 @@ tags:
   - Atom
   - Git
   - Haskell
-  - Homebrew
-  - TidalCycles
+  - homebrew
+  - tidalcycles
 translation_key: live-coding-atom-tidalcycles-supercollider
 ---
 
+
+
 # Overview
-I wanted to create music through programming, so I ventured into sound programming.
+I wanted to create music through programming, so I decided to try out sound programming.
 
 # Preparation
 - Mac
@@ -23,12 +25,12 @@ I wanted to create music through programming, so I ventured into sound programmi
 - Git
 - Homebrew
 - Haskell
-- TidalCycles
+- Tidalcycles
 - SuperCollider
 
-Assuming that Mac, Git, Atom, and Homebrew are already set up, let's proceed.
+Assuming Mac, Git, Atom, and Homebrew are already set up.
 
-# Installing Haskell and TidalCycles with Homebrew
+# Install Haskell and TidalCycles with Homebrew
 
 ```
 brew install ghc
@@ -38,24 +40,25 @@ cabal install cabal-install
 cabal install tidal
 ```
 
-# Installing the tidalcycles package in Atom
-Install the [Atom - tidalcycles](https://atom.io/packages/tidalcycles) package in Atom.
+# Install the tidalcycles package in Atom
+Install [Atom - tidalcycles](https://atom.io/packages/tidalcycles) in Atom.
 
-# Installing SuperCollider
-Install the Current Version from [SuperCollider](https://supercollider.github.io/download).
+# Install SuperCollider
+Download the Current Version from [SuperCollider](https://supercollider.github.io/download).
 
-Once the installation is complete, launch SuperCollider and execute the following command. (command+enter)
+Once the installation is complete, launch SuperCollider and execute the following command (command+enter).
 
 ```
 include("SuperDirt")
 ```
 
-# Functionality Check
-## Launching SuperCollider
+# Verification
+## Launch SuperCollider
 Start SuperDirt with `SuperDirt.start`.
 
-## Launching TidalCycles
-Launch tidalcycles in Atom. Create a file with the extension `.tidal` and execute the following command. (eval in tidalcycles)
+## Launch TidalCycles
+Launch tidalcycles in Atom.
+Create a file with the extension `.tidal` and execute the following command (tidalcycles eval).
 
 ```
 d1 $ sound "bd sn"

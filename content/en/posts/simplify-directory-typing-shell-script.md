@@ -1,5 +1,5 @@
 ---
-title: Using Shell Script to Avoid Typing Directory with cd Command
+title: Got Tired of Typing Directories with the cd Command, So I Made It Easier with a Shell Script
 slug: simplify-directory-typing-shell-script
 date: 2017-09-26T00:00:00Z
 author: bmf-san
@@ -11,8 +11,10 @@ tags:
 translation_key: simplify-directory-typing-shell-script
 ---
 
+
+
 # Overview
-Typing paths and directories like `cd hogehoge` has become tedious, so I decided to use a shell script to make it a bit easier.
+I started feeling lazy about typing paths and directories like `cd hogehoge`, so I used a shell script to make it a bit easier.
 
 # Source
 
@@ -36,7 +38,7 @@ function cdSelect() {
 alias cd-s=cdSelect
 ```
 
-When you type `cd-s`,
+When you type `cd-s`, it looks like this:
 
 ```
 Directory list:
@@ -50,7 +52,5 @@ Directory list:
 Select directory > 3
 ```
 
-It looks like this.
-
 # Thoughts
-It seems cumbersome when there are many directories, but it has reduced the stress of using the cd command. I might create a vim version as well.
+It might be challenging when there are many directories, but it has reduced the stress of using the cd command. I'm considering making a vim version too.

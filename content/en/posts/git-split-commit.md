@@ -1,5 +1,5 @@
 ---
-title: How to Split Commits in Git
+title: How to Split a Commit in Git
 slug: git-split-commit
 date: 2021-06-01T00:00:00Z
 author: bmf-san
@@ -10,15 +10,17 @@ tags:
 translation_key: git-split-commit
 ---
 
+
+
 # Overview
 A note on the steps to split a commit.
 
 # Steps
 ```sh
-# Specify where to split and rebase. Change the target commit to edit.
+# Specify where you want to split and rebase. Set the target commit to edit.
 git rebase -i HEAD~5
 
-# Unstage the changes
+# Unstage
 git rebase HEAD~
 
 # Recommit the unstaged changes at the desired granularity.

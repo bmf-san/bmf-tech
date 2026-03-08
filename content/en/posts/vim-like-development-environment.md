@@ -1,5 +1,5 @@
 ---
-title: Revisiting the Development Environment to Make it Vim-like
+title: Revamping My Development Environment to be Vim-like
 slug: vim-like-development-environment
 date: 2018-05-22T00:00:00Z
 author: bmf-san
@@ -10,36 +10,38 @@ tags:
   - vim
   - Atom
   - iTerm
+description: Streamlining development efficiency by integrating Vim and refreshing the development environment.
 translation_key: vim-like-development-environment
 ---
 
+
 # Overview
-To improve development efficiency, I incorporated Vim and revamped my development environment. I will omit detailed settings for each tool and the specifics of the plugins used.
+To enhance development efficiency, I integrated Vim and revamped various aspects of my development environment. Detailed settings for each tool and the plugins I have installed are omitted.
 
 # Editor
 - Atom
-	- Main editor used for development
-	- Introduced plugins to enable Vim keybindings
-		- vim-mode-plus-ex-mode
-		- vim-mode-plus
-		- Adjusted keybindings slightly to allow for screen splitting and pane movement similar to Vim
+  - The main editor used for development
+  - Installed plugins to enable Vim keybindings
+    - vim-mode-plus-ex-mode
+    - vim-mode-plus
+  - Tweaked keybindings to make screen splitting and pane navigation more Vim-like
 
 - Vim
-	- Used as a secondary editor for minor edits
-	- Only the minimum necessary plugins are installed
+  - Used as a secondary editor for minor edits
+  - Installed only essential plugins
 
 # Command Line Tools
 - iTerm2
-	- Enabled vi-mode in bash
-		- Allows the use of vi keybindings in the command line
+  - Enabled vi-mode in bash
+    - Allows the use of vi keybindings on the command line
 
-# Terminal Multiplexer Software
+# Terminal Multiplexer
 - tmux
-	- Might be essential for heavy command line usage
+  - Essential for heavy command line usage
 
 # References
 - [github - bmf-san/my-dotfiles](https://github.com/bmf-san/my-dotfiles)
-	- Current settings for Atom and Vim
+  - Current settings for Atom and Vim
 
-# Thoughts
-By embracing the Vim mindset and applying Vim keybindings across various tools, I feel a sense of happiness.
+# Impressions
+Embracing the Vim mindset and applying Vim keybindings across various tools has made me feel happier.
