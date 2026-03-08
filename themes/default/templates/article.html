@@ -73,6 +73,21 @@
   </div>
   {{end}}
 
+  {{/* Share buttons */}}
+  {{- $shareURL := printf "%s%s" $.Config.Site.BaseURL .URL}}
+  <div class="flex items-center gap-3 mb-8 flex-wrap">
+    <span class="text-sm font-medium text-secondary">Share:</span>
+    <a href="https://twitter.com/intent/tweet?url={{urlquery $shareURL}}&text={{urlquery .FrontMatter.Title}}"
+       target="_blank" rel="noopener noreferrer"
+       class="badge badge-light text-secondary">𝕏 Post</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{urlquery $shareURL}}"
+       target="_blank" rel="noopener noreferrer"
+       class="badge badge-light text-secondary">Facebook</a>
+    <a href="https://b.hatena.ne.jp/entry/{{$shareURL}}"
+       target="_blank" rel="noopener noreferrer"
+       class="badge badge-light text-secondary">Hatena</a>
+  </div>
+
   {{/* GitHub feedback link */}}
   {{- $contentPath := .ContentPath}}
   {{with $.Config.Site.GitHubRepo}}
