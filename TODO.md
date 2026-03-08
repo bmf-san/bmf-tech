@@ -15,6 +15,7 @@
 - [x] Phase 8: 英語版記事スケルトン + canonical/hreflang SEO 対応（PR #9）
 - [x] Phase 9: CI/CD パイプライン構築 + about/privacy-policy ページ + README/Makefile（PR #10）
 - [ ] Phase 10: Cloudflare Pages 本番デプロイ
+  - [ ] `config.yaml` の `ga_id` / `adsense_id` / `adsense_slot` のコメントアウトを外して有効化（現在は無効化中）
   - [ ] GitHub Secrets 設定（`CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`）
   - [ ] Cloudflare Pages プロジェクト `bmf-tech` 作成
   - [ ] PR #2〜#10 を順番にマージして main へ
