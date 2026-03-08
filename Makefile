@@ -8,7 +8,7 @@ help: ## ヘルプを表示
 		awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-15s\033[0m %s\n", $$1, $$2}'
 
 install: ## 依存ツールをインストール (gohan)
-        GOTOOLCHAIN=auto go install github.com/bmf-san/gohan/cmd/gohan@v0.1.9
+        GOTOOLCHAIN=auto go install github.com/bmf-san/gohan/cmd/gohan@v0.1.10
 install-e2e: ## Playwright依存をインストール
 	cd e2e && npm ci && npx playwright install chromium
 
