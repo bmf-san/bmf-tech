@@ -1,16 +1,17 @@
 ---
-title: "SLI・SLO・SLAについて"
-slug: "sli-slo-sla-explained"
-date: 2022-09-10
+title: SLI・SLO・SLAについて
+slug: sli-slo-sla-explained
+date: 2022-09-10T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "SLI"
-  - "SLA"
-  - "SLO"
-draft: false
+  - SLI
+  - SLA
+  - SLO
+translation_key: sli-slo-sla-explained
 ---
+
 
 # SLI・SLO・SLAについて
 SLI・SLO・SLAについて色々調べてみたことをまとめる。

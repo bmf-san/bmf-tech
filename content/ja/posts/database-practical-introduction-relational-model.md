@@ -1,16 +1,17 @@
 ---
-title: "理論から学ぶデータベース実践入門 ~リレーショナルモデルによる効率的なSQL"
-slug: "database-practical-introduction-relational-model"
-date: 2024-04-01
+title: 理論から学ぶデータベース実践入門 ~リレーショナルモデルによる効率的なSQL
+slug: database-practical-introduction-relational-model
+date: 2024-04-01T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "DB"
-  - "sql"
-  - "本"
-draft: false
+  - DB
+  - sql
+  - 本
+translation_key: database-practical-introduction-relational-model
 ---
+
 
 [理論から学ぶデータベース実践入門 ~リレーショナルモデルによる効率的なSQL (WEB+DB PRESS plus)](https://amzn.to/3PZYdLg)を読んだ。
 

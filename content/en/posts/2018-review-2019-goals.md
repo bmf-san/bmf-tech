@@ -1,180 +1,187 @@
 ---
-title: Looking Back on 2018 and Goals for 2019
+title: Reflection on 2018 and Goals for 2019
 slug: 2018-review-2019-goals
 date: 2018-12-31T00:00:00Z
 author: bmf-san
 categories:
-  - Reflection
+  - Poetry
 tags:
-  - Year in Review
-  - Goals
-description: Reflections on 2018 and setting goals for 2019.
+  - Reflection and Resolutions
 translation_key: 2018-review-2019-goals
 ---
 
-※Article migrated from Hatena Blog
+※This article has been transferred from a previously published post.
 
 # Overview
 As the title suggests.
 
-Last year’s reflections were quite rough, but I spent my days thinking about various things, so I feel like I managed to take meaningful actions overall.
+Last year was quite rough, but I feel like I was able to act reasonably well while thinking about various things every day.
 
-# Reflections
-Let’s start by looking back at what I did this year.
+# Reflection
+Starting with a reflection on what I did this year.
 
-This year marked my 3rd or 4th year as an engineer. I was aware of my lack of input, so I focused on improving that. As a result, I feel like my output was less compared to previous years.
+This year was around my 3rd or 4th year as an engineer, and I was aware of my lack of input, so I consciously focused on input. Therefore, I feel like my output was less compared to previous years.
 
-Additionally, this year was a time for me to think deeply about my future career. I feel like I’ve gained a clearer image of my direction moving forward.
+Additionally, it was a year where I pondered various thoughts about my future career, so I feel like my future direction has become quite clear.
 
-I’ve gained a bit more confidence in what I’ve done so far. While adjusting my vision daily, I was able to end the year with good motivation to continue working toward my future goals.
+Having gained a bit of confidence in what I've done so far, I think I was able to welcome the end of the year with a good motivation to continue moving towards my future vision while adjusting my vision daily.
 
-## Programming Languages
-Every year, I set a goal to learn at least one new programming language. This year, I studied Go (golang).
+## Language
+Every year, I have a challenge to learn at least one new language, and this year I was able to study Golang.
 
-I haven’t produced any concrete output yet, so that’s something I’ll carry over to next year...
+I haven't produced any specific output yet, so that will carry over to next year...
 
-Having never worked with compiled languages before, studying Go has changed how I view PHP and broadened my perspective on programming.
+As someone who has never worked with a compiled language, studying Golang has changed my perspective on PHP and broadened my way of thinking about programming.
 
-It’s hard to put into words, but I feel like I’ve gained something valuable. I’ll continue studying Go to deepen this understanding.
+It's difficult to articulate, but I have that feeling, so I will continue to work on Golang to feel it more.
 
 ## Infrastructure
-I read several books related to server design, architecture, monitoring, and tuning.
+I read several books related to server design, configuration, monitoring, tuning, etc.
 
-I mostly revisited books I already owned, while newly purchased books piled up unread...
+I just reread books I already owned, and new books piled up...
 
-## Operating Systems
-I read a few books about operating systems. I had to read and re-read them to really absorb the content, focusing on the basics.
+## OS
+I read several books related to OS.
 
-I feel like I’ve gained a minimum level of fundamental knowledge...
+I realized that I need to read and repeat them thoroughly to retain the information, so I revisited some basic ones.
 
-## Networking
-I bought a book on TCP/IP but haven’t read it yet...
+I think I have acquired the minimum knowledge of the really basic parts...
 
-I vaguely remember reading a book about DNS.
+## Network
+I bought a book on TCP/IP, but I haven't read it yet...
 
-To be honest, I’m not very interested in this field, so I haven’t been motivated to dive into it. However, I recognize that I lack a lot of knowledge here, so I want to find a way to start learning.
+I remember reading a book on DNS.
+
+To be honest, I don't have much interest in this field, so I haven't felt motivated to read, but I think it's a field with too many unknowns, so I want to create an opportunity to study.
 
 ## Software Architecture
-I considered exploring topics like DDD, Clean Architecture, and Microservices. However, I felt I needed to study the foundational concepts behind these first, so I decided to hold off for now.
+I thought about diving into DDD, Clean Architecture, microservices, etc., but before that, I felt I should study more about the prerequisites, so I decided to stay put for now.
 
 ## Development
-I made some commits, but I don’t remember much...
+I committed to something, but I don't remember...
+   [https://github.com/bmf-san/Rubel:title]
 
-[https://github.com/bmf-san/Rubel:title]
+This year, rather than creating something new, I mostly touched on new technologies and studied languages, so my commits were mostly in that direction.
 
-This year, instead of creating new things, I mostly dabbled in new technologies and studied programming languages.
+## Contest
+I participated in ISUcon. It was a disaster, but there were many things to learn.
 
-## Contests
-I participated in ISUcon. It was a disaster, but I learned a lot.
+I want to participate again next year, so I will start preparing from the beginning of the year.
 
-I want to participate again next year, so I’ll start preparing at the beginning of the year.
+## Study Group (Community Activities)
+I held LaraCafe several times.
+   [https://laracafe.connpass.com/:title]
 
-## Study Groups (Community Activities)
-I hosted several LaraCafe events.
+Regarding the management of LaraCafe, I plan to have a meeting with the management team at the beginning of the year, so future activities are currently undecided.
 
-[https://laracafe.connpass.com/:title]
+## Speaking Engagements
+I also spoke at PHP Conference 2018 in Tokyo.
 
-Regarding LaraCafe, we plan to hold a meeting with the organizers at the beginning of the year to decide on future activities, which are currently undecided.
+Having done it for two consecutive years, my desire to speak next year has increased.
 
-## Presentations
-I gave a lightning talk at PHP Conference 2018 in Tokyo again this year.
+Continuing from last year, I set a theme somewhat away from technology, so I want to increase opportunities to speak on technical themes starting next year.
 
-Having done it two years in a row, I’m even more motivated to present next year.
+I feel that having speaking opportunities creates a semi-forced motivation that enhances my input and output abilities, which I believe is beneficial for my growth.
 
-Like last year, I chose a topic slightly removed from technical subjects. Starting next year, I want to focus more on technical topics in my presentations.
+While I don't want to be driven solely by speaking, I want to actively present what I can based on what I've studied.
 
-Presenting forces me to improve both my input and output skills, which I feel is beneficial for my growth.
+Preparing a theme just to present can be counterproductive, so I want to avoid losing sight of the purpose.
 
-While I don’t want to present just for the sake of it, I aim to actively share what I’ve learned. I also gave one internal lightning talk.
+I also did an internal LT.
 
-## Blogging
-I feel like I wrote more blog posts than last year.
+## Blog
+I feel like I wrote more than last year.
 
-While I don’t think the quality of my content is particularly high, I believe I’ve been able to summarize what I’ve researched and done at a decent level.
+I don't think the quality of the content is high, but I think I was able to summarize what I researched and did to a certain quality.
 
-Writing posts with enough depth to be repurposed as a lightning talk ensures that I spend adequate time learning and producing meaningful content. I want to maintain this pace.
+Writing each article with a volume that can be directly converted into an LT seems to allow me to write articles while ensuring a decent amount of learning time and content, so I want to continue at that pace.
 
 ## Books
-I think I bought dozens of books (on infrastructure, OS, networking, software architecture, programming languages, etc.).
+I feel like I bought several dozen books (Infrastructure, OS, Network, Software Architecture, Languages, etc.).
 
-I read a few, but my unread pile keeps growing...
+I read a few, but my unread pile hasn't been cleared...
 
-I want to focus on reading classic books thoroughly, not just new releases.
+I want to read classical books as much as possible, regardless of new publications.
 
-I subscribed to two technical magazines: WEB+DB Press and Software Design. The information in these magazines is invaluable.
+I subscribed to two technical magazines: WEB+DB and Software Design.
+
+The information power of magazines should not be underestimated.
 
 ## Gym
-I’m not a hardcore fitness enthusiast, but I’ve been going to the gym regularly enough for it to be a hobby.
+I'm not a hardcore bodybuilder, but I think I go enough to consider it a hobby.
 
-After a year of consistent gym visits, I feel like I’ve gotten better at pushing myself during workouts. I’ll keep it up.
+After about a year of going to the gym, I feel like I've grasped how to push myself in weight training, so I will continue to work hard.
 
-Staying consistent seems to have positively impacted my health and mental well-being. While the effects aren’t entirely clear, I feel more confident, which likely boosts my daily motivation.
+I feel like my continued attendance has had a positive impact on my health and mental state.
 
-I believe maintaining a good balance between physical and mental health is essential for engineers. I’m glad I managed to keep up my gym routine this year.
+I don't know how effective it is, but I sometimes feel a sense of "I am strong (baseless confidence)," so I think it positively influences my daily motivation.
+
+I believe that engineers need a good balance of mind and body to develop their skills, so I'm glad I was able to continue going to the gym this year.
 
 # Goals for Next Year
-My main goal is to continue the unfinished input from this year.
+Basically, I will continue the input I didn't finish this year.
 
-However, focusing solely on input isn’t enough, so I plan to produce more output (specifically through development and presentations).
+However, since too much input is tough, I will also produce some output (specifically in development and speaking).
 
-## Programming Languages
-I’ll continue studying Go.
+## Language
+I will continue with Golang.
 
-I’m also considering exploring a functional programming language.
+I'm considering picking up a functional language to try out.
 
 ## Development
-I want to create small projects in Go.
+I want to create small things in Golang.
 
-Additionally, I’d like to gradually replace parts of this CMS with Go as a learning exercise and because it’s something I’ve wanted to do for a while.
+Also, I feel that replacing the CMS functionality of this thing with Golang will be a good study and is something I actually wanted to do.
+   [https://github.com/bmf-san/Rubel:title]
 
-[https://github.com/bmf-san/Rubel:title]
+I also want to write Golang in my work... it might be difficult now, but I'll do my best.
 
-I also want to write Go at work... though it might be challenging for now. I’ll do my best.
+## Contest
+I dream of wanting 1 million, but my realistic goal is to pass the preliminaries.
 
-## Contests
-Winning 1 million yen is a dream, but my realistic goal is to make it past the qualifiers.
+No, at this rate, it is not realistic at all... lol
 
-Honestly, even that feels far-fetched right now... haha.
+Of course, the goal in contests should be to win, but my immediate goal is to be able to support the performance of applications that can scale up with business growth, so I want to be able to take home whether I got closer to that goal when participating.
 
-Of course, the ultimate goal in contests is to win. However, my personal aim is to become someone who can support the performance of applications as they scale with business growth. I want to participate with this goal in mind and take away lessons that bring me closer to it.
+## Study Group
+As mentioned earlier regarding the study group I organize.
 
-## Study Groups
-As mentioned earlier, the future of the study group I host is undecided.
+I want to actively participate in or host communities related to the languages or frameworks I'm working with.
 
-I want to actively participate in or host communities related to the languages or frameworks I use.
+Study groups can provide not only technical information but also other valuable insights, so I want to participate more actively than before.
 
-Study groups are valuable not only for technical knowledge but also for other useful information, so I plan to participate more actively than before.
+## Speaking Engagements
+As mentioned earlier, I want to increase speaking opportunities without losing sight of the purpose of speaking.
 
-## Presentations
-As mentioned earlier, I want to increase my presentation opportunities without losing sight of the purpose.
+There will be an internal LT competition, so the number of opportunities will naturally increase, but I particularly want to increase external speaking opportunities.
 
-While internal lightning talks will naturally increase, I especially want to focus on external opportunities.
+## Blog
+I will continue this as well.
 
-## Blogging
-I’ll continue blogging.
-
-Whenever I learn or try something new, I’ll write posts with enough depth to be repurposed as a lightning talk.
+If I have learned or tried something, I will write articles with an outline that can be presented as an LT.
 
 ## Books
-I’ll prioritize my reading list to tackle my unread pile.
+I will consider the priority of books and work on clearing my unread pile.
 
-I’ll continue my strong style of buying books without hesitation if I want them. I feel that stopping this habit might dull my curiosity and information-gathering skills.
+I will continue my strong style of buying books without hesitation if I want them (I feel that if I stop this style, my information gathering and sensitivity might dull).
 
 ## Gym
-I need to work on my back muscles and aim to get six-pack abs by summer. :)
+I haven't trained my back at all, so I want to focus on that and aim to get abs by summer.
 
 # Theme for Next Year
-In previous years, my theme was “challenge,” focusing on trying new things in both my personal and professional life. However, this year, I’ve decided to change it.
+Until now, the theme has been "Challenge," focusing on doing something new both personally and professionally every year, but this year I decided to change it.
 
-In my personal life, it’s getting harder to find new things I want to try. In terms of technology, I feel like I naturally take on new challenges every year. At work, I recently changed jobs, so I’m already in a new environment. As a result, the theme of “challenge” no longer feels fresh.
+In my personal life, it has become difficult to find new things I want to do, and in terms of technology, I feel like I'm doing new things every year as a matter of course, and in my work, I recently changed jobs and entered a new environment, so the theme of "Challenge" has lost its freshness, prompting me to think of a new theme.
 
-Therefore, my theme for next year will be “Learning from the Past to Innovate.”
+Therefore, I would like to set the theme for next year as "Learning from the Past."
 
-Instead of “challenge,” I want to focus on revisiting and deepening my understanding of what I’ve already learned. As an engineer, I’ve studied a wide range of fields, and now I want to revisit and deepen my knowledge.
+Instead of "Challenge," it will be "Learning from the Past."
 
-In my personal life, I can also focus on “depth” (muscles) through the gym. At work, while I’m still onboarding, there’s plenty of room to deepen my expertise. I think this theme fits perfectly.
+While it may lack depth, I have studied a variety of fields as an engineer, so now I want to add depth, and I think it's appropriate to revisit what I've learned so far.
+
+In my personal life, there is still room to add more "depth (muscle)" in the gym, and in my work, although I am still onboarding, there are many areas where I need to add "depth" in the future, so I think this is a fitting theme.
 
 # Conclusion
-To everyone involved, thank you for your support this year.
+To all involved, thank you for your support this year.
 
-I look forward to working with you again next year.
+I look forward to your continued support next year.

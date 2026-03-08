@@ -1,17 +1,18 @@
 ---
-title: "PHPで学ぶデザインパターン - Strategy"
-slug: "php-design-patterns-strategy"
-date: 2018-12-09
+title: PHPで学ぶデザインパターン - Strategy
+slug: php-design-patterns-strategy
+date: 2018-12-09T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "デザインパターン"
-  - "PHP"
-  - "GoF"
-  - "ストラテジーパターン"
-draft: false
+  - デザインパターン
+  - PHP
+  - GoF
+  - ストラテジーパターン
+translation_key: php-design-patterns-strategy
 ---
+
 
 # 概要
 この記事は[PHPで学ぶデザインパターン Advent Calendar 2018](https://qiita.com/advent-calendar/2018/php-design-pattern)の記事です。

@@ -1,15 +1,16 @@
 ---
-title: "正規化理論について"
-slug: "normalization-theory"
-date: 2024-04-02
+title: 正規化理論について
+slug: normalization-theory
+date: 2024-04-02T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "正規化理論"
-  - "正規化"
-draft: false
+  - 正規化理論
+  - 正規化
+translation_key: normalization-theory
 ---
+
 
 # 正規化とは
 データの重複をなくし、データの論理的不整合を防ぐように設計すること。

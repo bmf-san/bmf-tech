@@ -1,16 +1,17 @@
 ---
-title: "PHPで学ぶデザインパターン - Singleton ~いくつ作るかを制限~"
-slug: "php-design-patterns-singleton"
-date: 2017-10-01
+title: PHPで学ぶデザインパターン - Singleton ~いくつ作るかを制限~
+slug: php-design-patterns-singleton
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "デザインパターン"
-  - "PHP"
-  - "シングルトンパターン"
-draft: false
+  - デザインパターン
+  - PHP
+  - シングルトンパターン
+translation_key: php-design-patterns-singleton
 ---
+
 
 # Singleton パターンとは？
 インスタンス生成のコストを制御するために、インスタンスが１つしかないことを保証するパターンです。

@@ -1,16 +1,17 @@
 ---
-title: "ザ・モデル"
-slug: "the-model"
-date: 2024-04-16
+title: ザ・モデル
+slug: the-model
+date: 2024-04-16T00:00:00Z
 author: bmf-san
 categories:
-  - "ビジネス"
+  - ビジネス
 tags:
-  - "セールス"
-  - "本"
-  - "SaaS"
-draft: false
+  - セールス
+  - 本
+  - SaaS
+translation_key: the-model
 ---
+
 
 [ザ・モデル: マーケティング・インサイドセールス・営業・カスタマーサクセスの共業プロセス](https://amzn.to/4aBjHpS)を読んだ。
 

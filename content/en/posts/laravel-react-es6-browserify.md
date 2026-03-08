@@ -13,17 +13,17 @@ tags:
   - ES6
   - browserify
   - ES5
-description: Rebuilding the environment for React with npm and ES6 for better future compatibility.
 translation_key: laravel-react-es6-browserify
 ---
 
-A while ago, I wrote an article about setting up a React environment using bower. However, managing React packages with npm is smarter, and it's more beneficial to start writing in ES6 for future compatibility. So, I rebuilt the environment.
 
-Switching from ES5 to ES6 involves some changes in syntax, which was a bit tedious, but it's not particularly difficult, so there's no need to worry too much.
+I previously wrote about setting up a React environment using bower, but managing React packages with npm is smarter, and it's better to be able to write in ES6 for future benefits. So, I rebuilt the environment.
+
+Since the way of writing changes quite a bit from ES5 to ES6, making those modifications was a bit of a hassle, but it doesn't seem too difficult, so there's no need to feel overwhelmed.
 
 # Environment
-* Laravel 5.2: If you're using Laravel 5.1 or 5.2, it might be a good idea to update the elixir version to the latest (the same as 5.3).
-* Browserify (included with Elixir)
+* Laravel 5.2 ... If you're using 5.1 or 5.2, it might be a good idea to upgrade the version of Elixir to the latest (the same as 5.3).
+* Browserify (the one that comes with Elixir)
 * React
 * ES6
 
@@ -38,12 +38,12 @@ elixir(function(mix) {
 });
 ```
 
-# Refactoring ES5 to ES6
-This resource is very helpful:
-[Refactoring React.js source from ES5 to ES6](http://qiita.com/kuniken/items/2e850daa26a10b5098d6)
+# Modifying ES5 to ES6
+This is very helpful.
+[Rewrite React.js source from ES5 to ES6](http://qiita.com/kuniken/items/2e850daa26a10b5098d6)
 
 # Making ES6 compatible with ES5
-Use a transpiler, such as babel.
+Use a transpiler, like Babel.
 
 # Thoughts
-This was just a quick memo φ(..)
+This was just a memo.

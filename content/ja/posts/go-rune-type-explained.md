@@ -1,14 +1,15 @@
 ---
-title: "Goのrune型について"
-slug: "go-rune-type-explained"
-date: 2024-02-21
+title: Goのrune型について
+slug: go-rune-type-explained
+date: 2024-02-21T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-draft: false
+  - Golang
+translation_key: go-rune-type-explained
 ---
+
 
 # rune型とは
 int32のエイリアス型で、Unicodeのコードポイントを表す。

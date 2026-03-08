@@ -1,14 +1,16 @@
 ---
-title: "アルゴリズムとデータ構造 - スタック"
-slug: "algorithms-data-structures-stack"
-date: 2019-11-17
+title: アルゴリズムとデータ構造 - スタック
+slug: algorithms-data-structures-stack
+image: /assets/images/posts/post-210/69003839-2ae47080-094c-11ea-8506-cb733abec36e.jpg
+date: 2019-11-17T00:00:00Z
 author: bmf-san
 categories:
-  - "アルゴリズムとデータ構造"
+  - アルゴリズムとデータ構造
 tags:
-  - "スタック"
-draft: false
+  - スタック
+translation_key: algorithms-data-structures-stack
 ---
+
 
 # 概要
 [アルゴリズム図鑑](https://www.shoeisha.co.jp/book/detail/9784798149776)を参考に、アルゴリズムとデータ構造を学ぶ。

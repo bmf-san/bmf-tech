@@ -1,15 +1,16 @@
 ---
-title: "システム設計の面接試験"
-slug: "system-design-interview"
-date: 2023-02-27
+title: システム設計の面接試験
+slug: system-design-interview
+date: 2023-02-27T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "システム設計"
-  - "本"
-draft: false
+  - システム設計
+  - 本
+translation_key: system-design-interview
 ---
+
 
 [システム設計の面接試験](https://amzn.to/44oiVdI)を読んだ。
 

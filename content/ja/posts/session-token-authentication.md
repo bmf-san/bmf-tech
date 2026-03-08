@@ -1,15 +1,16 @@
 ---
-title: "セッションベースとトークンベースの認証方式について"
-slug: "session-token-authentication"
-date: 2025-09-17
+title: セッションベースとトークンベースの認証方式について
+slug: session-token-authentication
+date: 2025-09-17T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "認証"
-  - "認可"
-draft: false
+  - 認証
+  - 認可
+translation_key: session-token-authentication
 ---
+
 
 # セッションベースとトークンベースの認証方式について
 

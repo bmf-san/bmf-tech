@@ -1,15 +1,16 @@
 ---
-title: "エンジニアが学ぶ金融システムの「知識」と「技術」"
-slug: "financial-system-knowledge-skills"
-date: 2024-04-04
+title: エンジニアが学ぶ金融システムの「知識」と「技術」
+slug: financial-system-knowledge-skills
+date: 2024-04-04T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "金融"
-  - "本"
-draft: false
+  - 金融
+  - 本
+translation_key: financial-system-knowledge-skills
 ---
+
 
 [エンジニアが学ぶ金融システムの「知識」と「技術」](https://amzn.to/3wd9dhG)を読んだ。
 

@@ -4,30 +4,29 @@ slug: laravel-jp-conference-participation
 date: 2019-02-16T00:00:00Z
 author: bmf-san
 categories:
-  - Reflection
+  - Poetry
 tags:
   - Laravel
-  - LT
+  - Lightning Talk
   - PHP
-description: Joined Laravel JP Conference as core staff and gave a lightning talk.
 translation_key: laravel-jp-conference-participation
 ---
 
-[Laravel JP Conference](https://conference2019.laravel.jp/)のコアスタッフとLT登壇してきました。
+[Laravel JP Conference](https://conference2019.laravel.jp/) core staff and LT speaker.
 
 # Participating as Core Staff
-Usually, I attend conferences as a participant, but this time I had the opportunity to contribute, even in a small way, to the PHP community and participate in a conference for my favorite framework. So, I joined as core staff.
-(I spent almost the entire day working at the reception desk.)
+Usually, I attend conferences as a participant, but this was an opportunity to contribute, even in a small way, to the PHP community, and it was a conference for a framework I love, so I participated as core staff.  
+(I spent almost the entire day as a registration staff.)
 
-As an engineer, I feel that I owe a lot to the supportive PHP community, and I wanted to give back, even just a little.
+I feel that my ability to manage as an engineer is largely due to the inclusive PHP community, so I hope to give back in any way I can.
 
-Participating as staff made me realize how challenging it is to organize a conference. Moving forward, I want to continue appreciating the efforts of conference organizers while finding ways to contribute to the community.
+Participating as staff made me acutely aware of the challenges of conference management, and I want to continue to contribute to the community while being grateful to those who run conferences.
 
-The staff members were all wonderful people, and I had a great time! Thank you so much!
+The staff members were all great people, and I had a wonderful time! Thank you!
 
-# LT
-- [Laravelで始めるテスト生活](https://speakerdeck.com/bmf_san/laraveldeshi-merutesutosheng-huo)
+# Lightning Talk
+- [Starting a Testing Life with Laravel](https://speakerdeck.com/bmf_san/laraveldeshi-merutesutosheng-huo)
 
-Recently, I've gotten used to giving 10-minute lightning talks, so I couldn't fit everything into 5 minutes...
+Recently, I've gotten used to giving 10-minute lightning talks, so I couldn't keep it to 5 minutes...
 
-I think it might have been better to focus the theme on digging deeper into Dusk, but lately, I've been away from Laravel and haven't had the motivation to work with Dusk...
+I thought it might have been better to focus on a theme that delves into Dusk, but I haven't been motivated to touch Dusk lately as I've been away from Laravel.

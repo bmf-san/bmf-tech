@@ -1,14 +1,15 @@
 ---
-title: "NGINXのbuffer関連ディレクティブのメモ"
-slug: "nginx-buffer-directives-notes"
-date: 2024-03-02
+title: NGINXのbuffer関連ディレクティブのメモ
+slug: nginx-buffer-directives-notes
+date: 2024-03-02T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Nginx"
-draft: false
+  - Nginx
+translation_key: nginx-buffer-directives-notes
 ---
+
 
 bufferサイズを記録したかったときに調べていたのでメモ。
 

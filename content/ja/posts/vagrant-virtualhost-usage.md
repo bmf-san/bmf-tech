@@ -1,14 +1,15 @@
 ---
-title: "VagrantでVirtualHostを使う"
-slug: "vagrant-virtualhost-usage"
-date: 2017-10-01
+title: VagrantでVirtualHostを使う
+slug: vagrant-virtualhost-usage
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Vagrant"
-draft: false
+  - Vagrant
+translation_key: vagrant-virtualhost-usage
 ---
+
 
 VagrantBoxを作りっぱなしでほったらかしな仮想環境を維持してきたのですが、今更ながらVirtualHostの設定をしました。
 

@@ -1,15 +1,16 @@
 ---
-title: "Load Averageとは何か？"
-slug: "what-is-load-average"
-date: 2025-07-07
+title: Load Averageとは何か？
+slug: what-is-load-average
+date: 2025-07-07T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "システムパフォーマンス"
-  - "Load Average"
-draft: false
+  - システムパフォーマンス
+  - Load Average
+translation_key: what-is-load-average
 ---
+
 
 システムの負荷を確認する際に、`top` や `uptime` コマンドで表示される「Load Average」という指標を目にすることは多い。
 

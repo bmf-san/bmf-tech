@@ -1,17 +1,18 @@
 ---
-title: "Tidy First? ―個人で実践する経験主義的ソフトウェア設計"
-slug: "tidy-first-experiential-software-design"
-date: 2025-01-06
+title: Tidy First? ―個人で実践する経験主義的ソフトウェア設計
+slug: tidy-first-experiential-software-design
+date: 2025-01-06T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "本"
-  - "ソフトウェア"
-  - "ソフトウェア開発"
-  - "設計"
-draft: false
+  - 本
+  - ソフトウェア
+  - ソフトウェア開発
+  - 設計
+translation_key: tidy-first-experiential-software-design
 ---
+
 
 [Tidy First? ―個人で実践する経験主義的ソフトウェア設計](https://amzn.to/4iXbNMp)を読んだ。
 

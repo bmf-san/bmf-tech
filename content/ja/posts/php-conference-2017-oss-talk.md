@@ -1,17 +1,18 @@
 ---
-title: "PHPカンファレンス2017で、「3年目エンジニアOSSをはじめる」というテーマでLT登壇してきました"
-slug: "php-conference-2017-oss-talk"
-date: 2017-10-11
+title: PHPカンファレンス2017で、「3年目エンジニアOSSをはじめる」というテーマでLT登壇してきました
+slug: php-conference-2017-oss-talk
+date: 2017-10-11T00:00:00Z
 author: bmf-san
 categories:
-  - "ポエム"
+  - ポエム
 tags:
-  - "OSS"
-  - "PHP"
-  - "LT"
-  - "PHPカンファレンス"
-draft: false
+  - OSS
+  - PHP
+  - LT
+  - PHPカンファレンス
+translation_key: php-conference-2017-oss-talk
 ---
+
 
 # 初登壇！
 2017年10月8日、PHPカンファレンス2017にて、LT初登壇してきました。

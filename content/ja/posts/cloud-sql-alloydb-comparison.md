@@ -1,16 +1,17 @@
 ---
-title: "Cloud SQLとAlloyDBの比較"
-slug: "cloud-sql-alloydb-comparison"
-date: 2024-11-17
+title: Cloud SQLとAlloyDBの比較
+slug: cloud-sql-alloydb-comparison
+date: 2024-11-17T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "AlloyDB"
-  - "Cloud SQL"
-  - "Google Cloud Platform"
-draft: false
+  - AlloyDB
+  - Cloud SQL
+  - Google Cloud Platform
+translation_key: cloud-sql-alloydb-comparison
 ---
+
 
 Cloud SQLと比較したAlloyDBの優位性について知りたかったので簡単に調査してみた。
 

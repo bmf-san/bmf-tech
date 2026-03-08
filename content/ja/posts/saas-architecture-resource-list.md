@@ -1,15 +1,16 @@
 ---
-title: "SaaSのアーキテクチャについて知るためのリスト"
-slug: "saas-architecture-resource-list"
-date: 2024-02-24
+title: SaaSのアーキテクチャについて知るためのリスト
+slug: saas-architecture-resource-list
+date: 2024-02-24T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "アーキテクチャ"
-  - "SaaS"
-draft: false
+  - アーキテクチャ
+  - SaaS
+translation_key: saas-architecture-resource-list
 ---
+
 
 SaaSなんもわからん！からSaaS完全に理解した！に近づくために参考になりそうな資料をまとめておく。
 

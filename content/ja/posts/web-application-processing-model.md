@@ -1,16 +1,17 @@
 ---
-title: "Webアプリケーションの処理モデルについて"
-slug: "web-application-processing-model"
-date: 2025-08-02
+title: Webアプリケーションの処理モデルについて
+slug: web-application-processing-model
+date: 2025-08-02T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "イベントループ"
-  - "スレッド"
-  - "プロセス"
-draft: false
+  - イベントループ
+  - スレッド
+  - プロセス
+translation_key: web-application-processing-model
 ---
+
 
 この記事では、Webアプリケーションの代表的な処理モデルについて書く。
 

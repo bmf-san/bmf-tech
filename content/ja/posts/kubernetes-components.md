@@ -1,14 +1,15 @@
 ---
-title: "Kubernetesの各コンポーネントについて"
-slug: "kubernetes-components"
-date: 2024-03-27
+title: Kubernetesの各コンポーネントについて
+slug: kubernetes-components
+date: 2024-03-27T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Kubernetes"
-draft: false
+  - Kubernetes
+translation_key: kubernetes-components
 ---
+
 
  # Kubernetesの各コンポーネントについて
 

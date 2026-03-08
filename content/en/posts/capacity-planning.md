@@ -7,69 +7,71 @@ categories:
   - Architecture
 tags:
   - Capacity Planning
-description: An overview of capacity planning for efficient resource management in systems.
 translation_key: capacity-planning
 ---
 
 # Purpose of Capacity Planning
-The goal is to manage system resources and utilize them efficiently.
+The goal is to manage system resources and aim for efficient utilization of those resources.
 
-# Capacity Planning Process
-Capacity planning involves balancing between rough estimates and detailed analysis. Avoid unnecessary deep dives and prepare detailed information only when needed.
+# Process of Capacity Planning
+Capacity planning uses both rough estimates and detailed analysis. It avoids unnecessary detail while preparing appropriate specifics when needed.
 
 1. Define application performance requirements
-   - Response time, throughput, concurrent connections, load performance, etc.
+
+   Response time, throughput, concurrent connections, load performance, etc.
 
 2. Understand the current infrastructure's operational status
-   - Measure the load characteristics of each architectural component (e.g., web servers, databases, storage) that make up the application and compare them with performance requirements.
+
+   Measure the load characteristics of each architectural element that makes up the application (Web servers, DB, storage, etc.) and compare them with performance requirements.
 
 3. Consider future needs to maintain acceptable performance
-   - Based on past data, evaluate what resources will be needed, in what quantity, and when, while considering budget and schedule.
+
+   Based on past performance, determine what will be needed, when, and how much, in relation to budget and schedule.
 
 4. Sizing
-   - Adjust the architecture (modifications, additions, removals) according to the capacity plan.
+
+   Adjust the architecture according to the capacity plan, including changes, additions, or deletions of architecture.
 
 # Measurement
-System metrics should be evaluated in relation to the application's specific characteristics (e.g., how users utilize features, peak usage times, etc.).
+System metrics should be compared with application-specific characteristics (how users utilize features, when they are most used, etc.).
 
-By closely observing application performance trends, it becomes easier to determine which capacity areas should be prioritized.
+This allows for deeper observation of application performance trends, making it easier to prioritize which capacities to consider.
 
-Additionally, linking metrics to business requirements and indicators enhances the persuasiveness of technical investments.
+Additionally, it becomes easier to relate to business requirements and business metrics, increasing the persuasiveness of technical investments.
 
-# Performance Tuning vs. Capacity Planning
+# Performance Tuning and Capacity Planning
 Performance tuning aims to optimize the performance of existing systems.
 
-Capacity planning, on the other hand, predicts what resources and when they will be needed based on the performance of existing systems, without focusing on optimization.
+Capacity planning, on the other hand, predicts what will be needed for the system and when, based on the performance of existing systems, without considering what to optimize.
 
-In capacity planning, observations based on actual usage are prioritized over benchmarks like load testing.
+In capacity planning, observations based on actual usage take precedence over observations from benchmarks like load testing.
 
 # Goal Setting in Capacity Planning
-The goals to be set in capacity planning include the following:
+Goals to be set in capacity planning include the following items:
 
-- **Performance**
+- Performance
   - Performance requirements based on monitoring
     - Predict future performance needs
   - SLA
-    - For web applications, primarily targets availability and performance metrics
+    - Target values mainly focused on availability and performance for web applications
   - Business requirements
-  - User-expected performance
-
-- **Capacity**
+  - Performance expected by users
+- Capacity
   - System metrics
   - Resource limits
 
-# Safety Margin
-The safety margin refers to the buffer percentage added as a risk hedge against uncertainties in the predicted capacity during capacity planning.
+# Safety Factor
+The safety factor is the percentage of buffer added as a risk hedge against the uncertainty of the capacity predicted in capacity planning.
 
-Determine a reasonable percentage based on past system performance trends and the nature of the application.
+Determine a reasonable percentage based on past system performance trends and application characteristics.
 
 # Requirements for Measurement Tools
-- Ability to store data over a certain period
+- Ability to store data for a certain period
 - Customizable metrics
-- Capability to collect and compare metrics from arbitrary sources
+- Ability to obtain and compare metrics from any source
 - Ability to import and export metrics
 
-The "observer effect" caused by measurement should be accepted as a necessary cost in capacity planning.
+The "observer effect" from measurement is best accepted as a necessary cost in capacity planning.
 
 # References
 - [www.oreilly.co.jp - Capacity Planning](https://www.oreilly.co.jp/books/9784873113999/)

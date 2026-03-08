@@ -1,15 +1,16 @@
 ---
-title: "Ruby コードレシピ集"
-slug: "ruby-code-recipes"
-date: 2024-10-20
+title: Ruby コードレシピ集
+slug: ruby-code-recipes
+date: 2024-10-20T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Ruby"
-  - "本"
-draft: false
+  - Ruby
+  - 本
+translation_key: ruby-code-recipes
 ---
+
 
 [Ruby コードレシピ集](https://amzn.to/4dVe5Yo)を読んだ。
 

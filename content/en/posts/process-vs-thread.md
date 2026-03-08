@@ -4,102 +4,101 @@ slug: process-vs-thread
 date: 2018-06-25T00:00:00Z
 author: bmf-san
 categories:
-  - Operating Systems
-tags:
   - OS
-  - Thread
-  - Process
-  - Stack
-  - Heap
-description: A summary of the differences between processes and threads.
+tags:
+  - os
+  - thread
+  - process
+  - stack
+  - heap
 translation_key: process-vs-thread
 ---
 
 # Overview
-A summary of the differences between processes and threads.
+Summarizing the differences between processes and threads
 
-# What is a Process?
-- A unit of program execution
+# What is a Process
+- The unit of execution for a program
 - Executed on the CPU
 - Cannot share resources
 - Uses dedicated memory space
-  - Maintains a virtual address space
+  - Holds a virtual address space
   - Switching processes requires mapping between virtual and physical addresses
 
-## Data Structures Maintained by a Process
-The data structures maintained in memory by a process are divided into two segments:
+## Data Structures Held by a Process
+The data structures held in memory by a process are divided into two segments.
 
-- **Text Segment**
-    - Sequence of program instructions (the program itself to be executed)
+- Text Segment
+    - Sequence of instructions for the program (the program itself)
         - Read-only
 
-- **Data Segment**
-    - **PDA (Processor Data Area)**
+- Data Segment
+    - PDA (Processor Data Area)
         - Contains processor information and data for process management
-            - Includes the stack pointer and program counter
-               - **Stack Pointer**
-                   - When the CPU's internal registers (storage locations within the CPU) are insufficient during program execution, data may be temporarily stored in main memory.
-                   - This temporary storage location is called the stack, and the stack pointer holds the address of this temporary storage.
-               - **Program Counter**
-                   - A register that holds the memory address of the next instruction to be executed
-    - **Data Area**
-        - **Static Area**
-             - Stores constants and global variables
-             - **Heap Area**
-              - Stores regular variables
-              - The process dynamically increases or decreases this area, so its size is unknown until runtime
-    - **Stack Area**
-        - Temporarily stores data such as arguments and local scope data
+            - Holds stack pointer, program counter, etc.
+               - Stack Pointer
+                   - When the internal registers of the CPU (the storage for data within the CPU) are insufficient during program execution, data may be temporarily stored in main memory.
+                   - This temporary storage area is called the stack, and the address that holds temporary information is maintained by the stack pointer.
+             - Program Counter
+                   - A register that holds the memory address of the next instruction to be executed.
+    - Data Area
+        - Static Area
+             - Holds constants and global variables.
+             - Heap Area
+              - Holds regular variables, etc.
+              - The size is unknown at runtime as the process dynamically increases or decreases the area.
+    - Stack Area 
+        - Temporarily holds arguments and local scope data.
 
-# What is a Thread?
+# What is a Thread
 - An execution unit generated from a single process
 - Can share resources
-- Uses shared memory space
-  - Stores data within the memory space of the parent process
+- Utilizes shared memory space
+  - Holds data within the parent process's memory space.
 
 # Differences Between Processes and Threads During Parallel Execution
-Differences between processes and threads when executing programs in parallel:
+The differences between processes and threads when executing a program in parallel.
 
 ## Process
-- Programs can be executed in parallel by forking the parent process to create multiple child processes
-- When a child process is created, memory space is allocated for it
-    - The allocated memory space includes a copy of the parent process's data segment, and a dedicated data segment is reserved for the child process
-- Since the program instructions are the same as the parent process, the text segment refers to the same area as the parent process
-- A child process is still a separate process and cannot directly access the memory of other processes
+- Can run programs in parallel by forking the parent process to launch multiple child processes.
+- When launching a child process, memory space for the child process is allocated.
+    - The allocated memory space copies the parent process's data segment and secures a dedicated data segment for the child process.
+- Since the program instructions themselves are the same as the parent process, the text segment references the same area as the parent process.
+- A child process is still a single process, so it cannot directly access the memory of other processes.
 
 ## Thread
-- Programs can be executed in parallel by generating threads from a process
-- When a thread is created, the following values are copied into the parent process's virtual address space:
-    - Stack area
-    - Stack pointer
-    - Program counter
-- Other data is shared with the parent process
-- A thread only holds data about which part of the program it is executing
-- Variables used by a thread may be modified by other threads
-    - Programs that can operate without issues in such situations are called thread-safe
+- Can run programs in parallel by generating threads from a process.
+- When generating a thread, the following values are copied into the parent process's virtual address space:
+    - Stack Area
+    - Stack Pointer
+    - Program Counter
+- Data other than the above is shared with the parent process.
+- A thread only holds data about which part of the program it is executing.
+- There is a possibility that a variable a thread intends to use may be modified by another thread.
+    - Programs that operate without issues in such situations are called thread-safe.
 
 # Performance
 
 ## Process
-- **Process Switching**
-    - Requires clearing the cache held by the MMU
-        - TLB flush
+- Process switching
+    - Requires clearing the cache held by the MMU.
+        - TLB flush.
 
 ## Thread
-- **Thread Switching**
-    - Only requires switching the stack area, stack pointer, and program counter
+- Thread switching
+    - Only requires switching the stack area, stack pointer, and program counter.
 
-# Miscellaneous
+# Aside
 
 ## Stack
-- Automatically allocated and released by the OS or compiler
-- The size is determined during program compilation and linking
+- Automatically allocated and freed by the OS or compiler.
+- The size is determined during program compilation and linking.
 
 ## Heap
-- Applications need to allocate and release memory as needed
-- The size can be dynamically specified when allocating memory
+- The application must handle the allocation when memory is needed and release it when it is no longer needed.
+- It is possible to specify the size dynamically when allocating memory.
 
 # References
 - [Differences Between Processes and Threads](https://imokuri123.com/blog/2013/12/difference-between-process-and-thread.html)
-- [Let's Become a Cool Engineer Series ~ Memory, Processes, and Threads Edition ~](http://moro-archive.hatenablog.com/entry/2014/09/11/013520)
+- [Let's Become Cool Engineers Series - Memory, Processes, and Threads Edition](http://moro-archive.hatenablog.com/entry/2014/09/11/013520)
 - [Heap and Stack](https://www.uquest.co.jp/embedded/learning/lecture16.html)

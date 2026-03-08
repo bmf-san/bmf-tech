@@ -1,5 +1,5 @@
 ---
-title: When Excluding Table Names from Conventions in Laravel Many-to-Many Relationships
+title: Excluding Table Names from Laravel's Many-to-Many Relations
 slug: laravel-many-to-many-table-name-customization
 date: 2017-10-01T00:00:00Z
 author: bmf-san
@@ -7,80 +7,75 @@ categories:
   - Application
 tags:
   - Laravel
-description: A story about a small misunderstanding when designing many-to-many relationships in Laravel.
 translation_key: laravel-many-to-many-table-name-customization
 ---
 
-When designing many-to-many relationships, I thought I was following the documentation correctly, but I made a small misunderstanding.
+When designing many-to-many relationships, I thought I was following the documentation, but I had a slight misunderstanding.
 
 # Here are three tables, right?
 
-The tables this time:
+The tables in this case:
 * events
 * event_tags
 * event_tag_event ← pivot table
 
-Normally, the tables would be:
+For normal tables:
 * events
 * tags
 * tag_event
 
-If you follow the default conventions, you can create relationships like this. However, when you use slightly unconventional names, there are some things to watch out for.
+You would typically set up the relationship according to the default conventions, but when using slightly unconventional names, there are some things to be cautious about.
 
-# Checking the documentation
+# Let's take a look at the documentation
 [Laravel 5.1 Eloquent: Relationships](https://readouble.com/laravel/5.1/ja/eloquent-relationships.html#many-to-many)
 
-Oh, I see, you just need to provide the second argument.
+Ah, so I just need to provide a second argument!
 
 ```php
-Event.php
 public function eventTags()
 {
-  // The second argument is the pivot table!
+  // The second argument is the Pivot table!
   return $this->belongstoMany('App\Modles\EventTag', 'event_tag_event')->withTimestamps();
 }
 ```
 
 ```php
-EventTag.php
 public function events()
 {
   return $this->belongsToMany('App\Models\Events');
 }
 ```
 
-When I checked using tinker...
+When I launched tinker to check...
 
 ```
 SQLSTATE[42000]: Syntax error or access violation: 1066 Not unique table/alias on relationship
 ```
 
-It throws an error. ヽ(´ー｀)ノ
+I got an error. ヽ(´ー｀)ノ
 
-# The second argument is the pivot table name!
+# The second argument is the Pivot table name!
 
-Could it be that I need to specify the pivot table name?
+Could it be that I need to specify the Pivot table name?
 
 [SQLSTATE[42000]: Syntax error or access violation: 1066 Not unique table/alias on relationship](http://stackoverflow.com/questions/31059595/sqlstate42000-syntax-error-or-access-violation-1066-not-unique-table-alias-o)
 
 ```php
-Event.php
 public function eventTags()
 {
-  // The second argument is the pivot table!
+  // The second argument is the Pivot table!
   return $this->belongstoMany('App\Modles\EventTag', 'event_tag_event')->withTimestamps();
 }
 ```
 
 ```php
-EventTag.php
 public function events()
 {
   return $this->belongsToMany('App\Models\Events');
 }
 ```
 
-No more errors. ヽ(´ー｀)ノ
+I didn't get an error this time. ヽ(´ー｀)ノ
 
 # Thoughts
-Recently, I’ve been more interested in frontend than backend, and I can’t sleep at night. ヽ(´ー｀)ノ
+Recently, I've been more interested in the front end than the back end, and I can't sleep at night. ヽ(´ー｀)ノ

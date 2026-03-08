@@ -1,17 +1,18 @@
 ---
-title: "PHPで学ぶデザインパターン - Mediatorパターン"
-slug: "php-design-patterns-mediator"
-date: 2019-01-31
+title: PHPで学ぶデザインパターン - Mediatorパターン
+slug: php-design-patterns-mediator
+date: 2019-01-31T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "PHP"
-  - "デザインパターン"
-  - "メディエーターパターン"
-  - "GoF"
-draft: false
+  - PHP
+  - デザインパターン
+  - メディエーターパターン
+  - GoF
+translation_key: php-design-patterns-mediator
 ---
+
 
 # 概要
 [PHPで学ぶデザインパターン Advent Calendar 2018](https://qiita.com/advent-calendar/2018/php-design-pattern)で間に合わなかった記事。

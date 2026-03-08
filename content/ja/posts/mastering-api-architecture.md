@@ -1,17 +1,18 @@
 ---
-title: "マスタリングAPIアーキテクチャ ―モノリシックからマイクロサービスへとアーキテクチャを進化させるための実践的手法"
-slug: "mastering-api-architecture"
-date: 2024-11-01
+title: マスタリングAPIアーキテクチャ ―モノリシックからマイクロサービスへとアーキテクチャを進化させるための実践的手法
+slug: mastering-api-architecture
+date: 2024-11-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "本"
-  - "API"
-  - "マイクロサービス"
-  - "アーキテクチャ"
-draft: false
+  - 本
+  - API
+  - マイクロサービス
+  - アーキテクチャ
+translation_key: mastering-api-architecture
 ---
+
 
 [マスタリングAPIアーキテクチャ ―モノリシックからマイクロサービスへとアーキテクチャを進化させるための実践的手法](https://amzn.to/3Uw15l6)を読んだ。
 

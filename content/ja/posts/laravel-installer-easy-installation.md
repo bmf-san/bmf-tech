@@ -1,14 +1,15 @@
 ---
-title: "Laravelをinstallerでカンタンインストール"
-slug: "laravel-installer-easy-installation"
-date: 2016-05-15
+title: Laravelをinstallerでカンタンインストール
+slug: laravel-installer-easy-installation
+date: 2016-05-15T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Laravel"
-draft: false
+  - Laravel
+translation_key: laravel-installer-easy-installation
 ---
+
 
 Laravelをインストールする時、composerを使って毎回面倒なコマンドをうっていたのですが、インストーラを使ったほうが楽でした（今更感）。
 

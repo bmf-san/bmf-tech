@@ -1,15 +1,16 @@
 ---
-title: "Go CodeReviewCommentsのまとめ"
-slug: "go-code-review-comments-summary"
-date: 2020-09-15
+title: Go CodeReviewCommentsのまとめ
+slug: go-code-review-comments-summary
+date: 2020-09-15T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "コードレビュー\u3000"
-draft: false
+  - Golang
+  - コードレビュー　
+translation_key: go-code-review-comments-summary
 ---
+
 
 # 概要
 [github.com - CodeReviewComments](https://github.com/golang/go/wiki/CodeReviewComments)を読んでメモしておきたいことをまとめる。

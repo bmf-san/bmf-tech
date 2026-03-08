@@ -1,16 +1,17 @@
 ---
-title: "PHPで学ぶデザインパターン - Template Method ~処理の穴埋め~"
-slug: "php-design-patterns-template-method"
-date: 2017-10-01
+title: PHPで学ぶデザインパターン - Template Method ~処理の穴埋め~
+slug: php-design-patterns-template-method
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "デザインパターン"
-  - "PHP"
-  - "テンプレートメソッドパターン"
-draft: false
+  - デザインパターン
+  - PHP
+  - テンプレートメソッドパターン
+translation_key: php-design-patterns-template-method
 ---
+
 
 # Template Method パターンとは？
 似たような処理を枠組み（型）としてスーパークラスで定義し、より具体的な処理内容をサブクラスで実装するというパターンです。

@@ -1,14 +1,15 @@
 ---
-title: "テストケースの種類と洗い出し"
-slug: "types-of-test-cases"
-date: 2018-04-11
+title: テストケースの種類と洗い出し
+slug: types-of-test-cases
+date: 2018-04-11T00:00:00Z
 author: bmf-san
 categories:
-  - "テスト"
+  - テスト
 tags:
-  - "設計"
-draft: false
+  - 設計
+translation_key: types-of-test-cases
 ---
+
 
 # 概要
 テストケースの基本的な種類と洗い出し方についてのざっくりまとめ。

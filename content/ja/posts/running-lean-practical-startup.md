@@ -1,16 +1,17 @@
 ---
-title: "Running Lean ―実践リーンスタートアップ"
-slug: "running-lean-practical-startup"
-date: 2016-12-27
+title: Running Lean ―実践リーンスタートアップ
+slug: running-lean-practical-startup
+date: 2016-12-27T00:00:00Z
 author: bmf-san
 categories:
-  - "開発プロセス"
+  - 開発プロセス
 tags:
-  - "リーン"
-  - "本"
-  - "スタートアップ"
-draft: false
+  - リーン
+  - 本
+  - スタートアップ
+translation_key: running-lean-practical-startup
 ---
+
 
 [Running Lean ―実践リーンスタートアップ](https://amzn.to/3UFmmbx)を読んだ。
 

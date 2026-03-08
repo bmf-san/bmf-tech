@@ -1,17 +1,18 @@
 ---
-title: "連結リストのランナーテクニック"
-slug: "linked-list-runner-technique"
-date: 2023-07-22
+title: 連結リストのランナーテクニック
+slug: linked-list-runner-technique
+date: 2023-07-22T00:00:00Z
 author: bmf-san
 categories:
-  - "アルゴリズムとデータ構造"
+  - アルゴリズムとデータ構造
 tags:
-  - "アルゴリズム"
-  - "データ構造"
-  - "ランナーテクニック"
-  - "Tips"
-draft: false
+  - アルゴリズム
+  - データ構造
+  - ランナーテクニック
+  - Tips
+translation_key: linked-list-runner-technique
 ---
+
 
 連結リストの走査で役立つランナーテクニックについてまとめる。
 

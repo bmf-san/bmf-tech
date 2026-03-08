@@ -1,16 +1,17 @@
 ---
-title: "Goで指数バックオフとジッターを実装してみる"
-slug: "go-exponential-backoff-jitter-implementation"
-date: 2024-01-31
+title: Goで指数バックオフとジッターを実装してみる
+slug: go-exponential-backoff-jitter-implementation
+date: 2024-01-31T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "指数バックオフ"
-  - "リトライ"
-  - "ジッター"
-draft: false
+  - 指数バックオフ
+  - リトライ
+  - ジッター
+translation_key: go-exponential-backoff-jitter-implementation
 ---
+
 
 # 指数バックオフ(Exponential backoff)
 リクエストの遅延を乗算的に増加させる（リトライ間隔を遅延させていく）形で失敗したリクエストを定期的に再試行（リトライ）する手法。

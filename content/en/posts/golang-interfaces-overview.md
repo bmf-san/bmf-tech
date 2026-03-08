@@ -7,22 +7,21 @@ categories:
   - Application
 tags:
   - Golang
-description: A summary of Golang interfaces.
 translation_key: golang-interfaces-overview
 ---
 
 # Overview
-This post summarizes Golang interfaces.
+Summarizing Golang interfaces.
 
-# What is a Golang Interface?
-- A type that enumerates only the types of specific methods.
-- A struct that implements all the methods declared in the interface `Foo` can be treated as type `Foo`.
-- Interfaces enable polymorphism.
+# What is a Golang Interface
+- A type that enumerates only specific method types.
+- A struct that implements all methods declared in the interface Foo can be treated as type Foo.
+- Using interfaces allows for the realization of polymorphism.
 
-# Defining an Interface
+# Definition of an Interface
 ```golang
 type <TypeName> interface {
-  <MethodName(<ArgumentType>, ...)(<ReturnType>, ...)
+  <MethodName>(<ArgumentType>, ...)(<ReturnType>, ...)
 }
 ```
 
@@ -33,9 +32,9 @@ type Human interface {
 }
 ```
 
-# Features of Interfaces
+# Characteristics of Interfaces
 ## Variables of Interface Type
-Variables declared as `interface` type can hold values of any type.
+Variables declared as interface type can hold values of any type.
 
 ```golang
 var i interface{}
@@ -45,8 +44,8 @@ i = "Hello World"
 i = []int{1, 2, 3} // etc...
 ```
 
-## Interface Type as Function Arguments
-When an `interface` type is used as a function argument, values of any type can be passed.
+## Interface Type Arguments
+When an interface type is used as an argument, any type of value can be passed.
 
 ```golang
 package main
@@ -74,17 +73,17 @@ func main() {
 
 # Type Assertion
 
-Syntax for type assertion:
+The syntax for type assertion.
 ```golang
-<Variable>.(<Type>)
+<variable>.(<type>)
 ```
 
-Usage involves two variables:
+It is used in a way that takes two variables.
 ```golang
 s, ok := i.(Human)
 ```
 
-If the variable `i` is of type `Human`, `s` will hold the actual value of `i` as type `Human`, and `ok` will be `true`. Otherwise, `s` will hold the zero value of type `Human`.
+If variable i is of type Human, variable s will hold the actual value of variable i of type Human, and variable ok will be true. Conversely, if variable i is not of type Human, variable s will hold the zero value of type Human.
 
 ```golang
 package main
@@ -105,12 +104,12 @@ func printOnlyHuman(i interface{}) {
   s, ok := i.(Human)
 
   if !ok {
-    fmt.Printf("%v\n", "Not a Human type")
+    fmt.Printf("%v\n", "Not of type Human")
     fmt.Printf("%v\n", s)
     return
   }
 
-  fmt.Printf("%v\n", "Is a Human type")
+  fmt.Printf("%v\n", "Is of type Human")
   fmt.Printf("%v\n", s)
 }
 
@@ -125,13 +124,13 @@ func main() {
     Age: 200000,
   }
 
-  printOnlyHuman(h) // Is a Human type. {John 20}
-  printOnlyHuman(a) // Not a Human type. { 0}
+  printOnlyHuman(h) // Is of type Human. {John 20}
+  printOnlyHuman(a) // Not of type Human. { 0}
 }
 ```
 
 # Example of Interface Implementation
-An example of a common use case for Golang interfaces: adding shared behavior to different types.
+An example of a popular use case for Golang interfaces, which is to "add common properties to different types."
 
 ```golang
 package main
@@ -172,10 +171,10 @@ func main() {
 
 # References
 - [golang.org - Interface types](https://golang.org/ref/spec#Interface_types)
-- [Go Language - Empty Interfaces and Type Assertions](https://blog.y-yuki.net/entry/2017/05/08/000000)
-- [Introduction to Go Language - Interfaces](http://cuto.unirita.co.jp/gostudy/post/interface/)
-- [Relaxed Go Language Programming Introduction](http://www.geocities.jp/m_hiroi/golang/abcgo09.html)
-- [Type Casting and Type Conversion with Type Assertion](https://maku77.github.io/hugo/go/cast.html)
-- [Understanding Interface Handling in Go Language](http://maku77.github.io/hugo/go/interface.html)
+- [Go Language - Empty Interface and Type Assertion](https://blog.y-yuki.net/entry/2017/05/08/000000)
+- [First Go Language - Interfaces](http://cuto.unirita.co.jp/gostudy/post/interface/)
+- [Easy Go Language Programming Introduction](http://www.geocities.jp/m_hiroi/golang/abcgo09.html)
+- [Type Casting and Type Conversion via Type Assertion](https://maku77.github.io/hugo/go/cast.html)
+- [Understanding the Handling of Interfaces in Go Language](http://maku77.github.io/hugo/go/interface.html)
 - [astaxie/build-web-application-with-golang](https://github.com/astaxie/build-web-application-with-golang/blob/master/ja/02.6.md)
 - [SE Book - Starting Go Language](https://www.shoeisha.co.jp/book/detail/9784798142418)

@@ -1,15 +1,16 @@
 ---
-title: "孤児プロセスとゾンビプロセスの違い"
-slug: "orphan-process-vs-zombie-process"
-date: 2020-08-24
+title: 孤児プロセスとゾンビプロセスの違い
+slug: orphan-process-vs-zombie-process
+date: 2020-08-24T00:00:00Z
 author: bmf-san
 categories:
-  - "コンピューターアーキテクチャ"
+  - コンピューターアーキテクチャ
 tags:
-  - "UNIX"
-  - "プロセス"
-draft: false
+  - UNIX
+  - プロセス
+translation_key: orphan-process-vs-zombie-process
 ---
+
 
 # 概要
 Dockerを触っていたらorphan（孤児の意）というプロセスの存在を知ったのでゾンビプロセスとの違いを調べてみた。

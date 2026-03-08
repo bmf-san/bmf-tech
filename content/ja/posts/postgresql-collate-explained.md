@@ -1,14 +1,15 @@
 ---
-title: "PostgreSQLにおけるCOLLATE（照合順序）について"
-slug: "postgresql-collate-explained"
-date: 2025-03-05
+title: PostgreSQLにおけるCOLLATE（照合順序）について
+slug: postgresql-collate-explained
+date: 2025-03-05T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "PostgreSQL"
-draft: false
+  - PostgreSQL
+translation_key: postgresql-collate-explained
 ---
+
 
 PostgreSQLにおけるCOLLATE（照合順序）について調べたことをまとめる。
 

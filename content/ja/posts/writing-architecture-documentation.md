@@ -1,15 +1,16 @@
 ---
-title: "アーキテクチャドキュメントを書くときに気をつけること"
-slug: "writing-architecture-documentation"
-date: 2025-05-25
+title: アーキテクチャドキュメントを書くときに気をつけること
+slug: writing-architecture-documentation
+date: 2025-05-25T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "アーキテクチャ戦略"
-  - "アーキテクチャ"
-draft: false
+  - アーキテクチャ戦略
+  - アーキテクチャ
+translation_key: writing-architecture-documentation
 ---
+
 
 # 概要
 システム設計においてアーキテクチャドキュメントは重要な役割を果たす。特に設計段階においては、関係者に対して設計の妥当性を説明し、合意を形成するための資料として機能する。このドキュメントは、単なる設計情報の羅列ではなく、読者の理解と納得を導くための戦略的な文書であるべきである。

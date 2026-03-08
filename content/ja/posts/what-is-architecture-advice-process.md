@@ -1,16 +1,17 @@
 ---
-title: "アーキテクチャアドバイスプロセス（AAP）とは何か？"
-slug: "what-is-architecture-advice-process"
-date: 2025-08-16
+title: アーキテクチャアドバイスプロセス（AAP）とは何か？
+slug: what-is-architecture-advice-process
+date: 2025-08-16T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "アーキテクチャアドバイスプロセス"
-  - "アーキテクチャレビューボード"
-  - "アーキテクチャ"
-draft: false
+  - アーキテクチャアドバイスプロセス
+  - アーキテクチャレビューボード
+  - アーキテクチャ
+translation_key: what-is-architecture-advice-process
 ---
+
 
 LTで簡単にまとめた資料もあるので、要約を知りたい場合は以下を参照してほしい。
 

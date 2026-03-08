@@ -1,16 +1,17 @@
 ---
-title: "グロービスMBAクリティカル・シンキング "
-slug: "globis-mba-critical-thinking"
-date: 2015-05-19
+title: 'グロービスMBAクリティカル・シンキング '
+slug: globis-mba-critical-thinking
+date: 2015-05-19T00:00:00Z
 author: bmf-san
 categories:
-  - "ビジネス"
+  - ビジネス
 tags:
-  - "本"
-  - "ロジカルシンキング"
-  - "クリティカルシンキング"
-draft: false
+  - 本
+  - ロジカルシンキング
+  - クリティカルシンキング
+translation_key: globis-mba-critical-thinking
 ---
+
 
 [グロービスMBAクリティカル・シンキング](https://amzn.to/3yotEc5)を読んだ。
 

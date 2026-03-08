@@ -1,14 +1,15 @@
 ---
-title: "通知基盤構築についてのメモ書き"
-slug: "notification-infrastructure-notes"
-date: 2023-08-28
+title: 通知基盤構築についてのメモ書き
+slug: notification-infrastructure-notes
+date: 2023-08-28T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "通知"
-draft: false
+  - 通知
+translation_key: notification-infrastructure-notes
 ---
+
 
 # 概要
 通知基盤の構築に関してざっくりと考えたことや調べたことなどをまとめておく。

@@ -1,16 +1,17 @@
 ---
-title: "Web API: The Good Parts"
-slug: "web-api-good-parts"
-date: 2016-10-18
+title: 'Web API: The Good Parts'
+slug: web-api-good-parts
+date: 2016-10-18T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "API"
-  - "本"
-  - "設計"
-draft: false
+  - API
+  - 本
+  - 設計
+translation_key: web-api-good-parts
 ---
+
 
 [Web API: The Good Parts](https://amzn.to/3ycWwnE)を読んだ。
 

@@ -1,18 +1,19 @@
 ---
-title: "ソフトウェアアーキテクトのための意思決定術\u3000リーダーシップ／技術／プロダクトマネジメントの活用"
-slug: "decision-making-software-architects"
-date: 2024-12-26
+title: ソフトウェアアーキテクトのための意思決定術　リーダーシップ／技術／プロダクトマネジメントの活用
+slug: decision-making-software-architects
+date: 2024-12-26T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "アーキテクチャ"
-  - "アーキテクト"
-  - "システム設計"
-  - "設計"
-  - "本"
-draft: false
+  - アーキテクチャ
+  - アーキテクト
+  - システム設計
+  - 設計
+  - 本
+translation_key: decision-making-software-architects
 ---
+
 
 [ソフトウェアアーキテクトのための意思決定術　リーダーシップ／技術／プロダクトマネジメントの活用](https://amzn.to/3DysQ7d)を読んだ。
 

@@ -1,31 +1,29 @@
 ---
-title: 'Creating URL Routing: Episode 2'
+title: Creating URL Routing Episode 2
 slug: creating-url-routing-episode-2
 date: 2019-01-06T00:00:00Z
 author: bmf-san
 categories:
-  - Algorithms
-  - Data Structures
+  - Algorithms and Data Structures
 tags:
   - HTTP
   - URL Routing
   - Tree Structure
   - Router
-description: Continuing from Episode 1, this post discusses updates and improvements made to the URL routing implementation, including changes to the data structure and exploration of tree structures.
 translation_key: creating-url-routing-episode-2
 ---
 
 # Overview
-[Creating URL Routing: Episode 1](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%891) continuation.
+Continuing from [Creating URL Routing Episode 1](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%891).
 
-I managed to create a working version and published it as a package named [packagist - ahi-router](https://packagist.org/packages/bmf-san/ahi-router#v1.0).
+I finished a working version and published it as a package named [packagist - ahi-router](https://packagist.org/packages/bmf-san/ahi-router#v1.0).
 
 # Changes from Episode 1
-In Episode 1, I attempted to create routing by adopting a tree structure for the data structure.
+In Episode 1, I attempted to create routing using a tree structure for the data structure.
 
-In libraries optimized for performance, it seems common to prepare logic for generating tree structures and implement optimized search algorithms. However, writing the logic to generate a tree structure seemed time-consuming, so I decided to focus on improving the search part instead.
+While libraries that consider performance seem to prepare logic to generate tree structures and implement optimized search algorithms, writing the logic to generate the tree structure seemed to take too much time, so I decided to focus on just the search part.
 
-Previously, the routing definition data structure was:
+Previously, the data structure for routing definitions was defined as follows:
 
 ```php
 <?php
@@ -61,7 +59,7 @@ $routes = [
 ];
 ```
 
-But I redefined it as:
+However, I redefined it as follows:
 
 ```php
 <?php
@@ -98,13 +96,13 @@ $routes = [
 
 The changes include:
 
-- Unified the structure into a single root to form a proper tree structure.
-    - **A root node is a node without a parent node. It is the topmost node in a tree structure, and there can be at most one root node in a tree structure.** - [Wikipedia - Tree Structure (Data Structure)](https://ja.wikipedia.org/wiki/%E6%9C%A8%E6%A7%8B%E9%80%A0_(%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0))
-    - In other words, the previous version was not technically a tree structure but a pseudo-tree structure.
-- Introduced an identifier called `END_POINT`.
-    - While the name `END_POINT` may not be ideal, it was introduced to clearly distinguish it from the root node.
+- The structure had two roots, so I unified it to form a valid tree structure.
+    - **A root node is a node that has no parent node. The root node is the topmost node in a tree structure and can exist only once in a single tree structure.** - Quoted from [Wikipedia - Tree Structure (Data Structure)](https://ja.wikipedia.org/wiki/%E6%9C%A8%E6%A7%8B%E9%80%A0_(%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0))
+    - In other words, the previous version was not exactly a tree structure, but rather a tree-like structure.
+- An identifier called END_POINT was introduced.
+    - Although I don't think the name END_POINT is appropriate, I decided to use it to clearly distinguish it from the root node.
 
-Previously, I tried to manage everything with functions, but it was challenging. Switching to an object-oriented approach made the implementation smoother. The changes to the data structure also contributed to easier implementation.
+In the previous attempt, I struggled with functions, but switching to an object-oriented approach made implementation much smoother. I believe changing the data structure also contributed to the ease of implementation.
 
 # Implementation
 ```php
@@ -134,7 +132,7 @@ class Router
 
         for ($i=0; $i < $currentPathLength; $i++) {
             if ($currentPathLength == 1) {
-                // Root case
+                // When at root
                 if ($currentPath{$i} == '/') {
                     $arrayFromCurrentPath[] = '/';
                 }
@@ -231,22 +229,22 @@ $currentPathArray = $router->createArrayFromCurrentPath($currentPath);
 $router->search($routes, $currentPathArray, $currentMethod, $currentParams);
 ```
 
-The time complexity is roughly O(n), so as `n` (route definitions) increases, the computational complexity increases proportionally, making it a suboptimal algorithm.
+The time complexity is roughly O(n), so as n (the number of route definitions) increases, the computational complexity increases proportionally, which is unfortunate for the algorithm.
 
 # Thoughts
-If I were to build this properly, I should definitely study tree traversal algorithms. I had a hunch about this, but I’ve learned my lesson.
+If I want to do it properly, I should definitely study tree structure search algorithms. I had a feeling about this and I regret it.
 
-I feel like I’ve come to appreciate the importance of algorithms. (Just my two cents.)
+I feel like I have come to understand the importance of algorithms more deeply. (Just a casual thought)
 
-I don’t usually write such convoluted code, so this was a good mental exercise. (I think doing such exercises occasionally to get used to algorithms is a good idea.)
+Since I don't usually write such convoluted code, it was a good mental exercise. (I think it's good to do such exercises irregularly to get accustomed to algorithms)
 
-Even some major routing libraries seem to use regular expressions or non-optimized algorithms, so I’d like to continue studying various implementations and algorithms and eventually try implementing routing again.
+Even relatively major routing libraries seem to use regular expressions or implement unoptimized algorithms, so I want to continue looking at various implementations and studying algorithms, and eventually challenge routing implementation again.
 
-# Source Code and Package
+# Source and Package
 - [github - bmf-san/ahi-router](https://github.com/bmf-san/ahi-router)
 - [packagist - ahi-router](https://packagist.org/packages/bmf-san/ahi-router#v1.0)
-    - It’s a bit rough, but I packaged it.
+    - It's rough, but I've packaged it.
 
 # References
-- [pixiv inside - Creating a High-Performance URL Router in PHP](https://devpixiv.hatenablog.com/entry/2015/12/13/145741)
+- [pixiv inside - I tried creating a fast URL routing in PHP](https://devpixiv.hatenablog.com/entry/2015/12/13/145741)
 - [github - devlibs/routing](https://github.com/devlibs/routing)

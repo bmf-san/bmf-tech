@@ -4,7 +4,7 @@ slug: programming-basics-why-programs-work
 date: 2024-05-01T00:00:00Z
 author: bmf-san
 categories:
-  - Applications
+  - Application
 tags:
   - CPU
   - Memory
@@ -12,8 +12,8 @@ tags:
 translation_key: programming-basics-why-programs-work
 ---
 
-[Why Programs Work, 3rd Edition: Essential Programming Knowledge](https://amzn.to/4afy0zD) was a book I read.
+[Why Programs Work, 3rd Edition: Essential Programming Knowledge](https://amzn.to/4afy0zD) was read.
 
 I reread it since a revised edition was released.
 
-If you're in an information technology school, I feel like these topics are something you'd learn in lectures.
+I feel like this is something that would be taught in lectures at information technology schools.

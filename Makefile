@@ -1,4 +1,4 @@
-.PHONY: help install install-e2e build serve clean test-e2e new-ja new-en translate translate-dry-run
+.PHONY: help install install-e2e build serve clean test-e2e new-ja new-en translate translate-gemini translate-dry-run
 
 TITLE   ?= untitled
 SLUG    ?= untitled
@@ -8,18 +8,14 @@ help: ## ヘルプを表示
 		awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-15s\033[0m %s\n", $$1, $$2}'
 
 install: ## 依存ツールをインストール (gohan)
-	GOTOOLCHAIN=auto go install github.com/bmf-san/gohan/cmd/gohan@v0.1.8
-
+        GOTOOLCHAIN=auto go install github.com/bmf-san/gohan/cmd/gohan@v0.1.11
 install-e2e: ## Playwright依存をインストール
 	cd e2e && npm ci && npx playwright install chromium
 
 build: ## サイトをビルド
 	GOTOOLCHAIN=auto gohan build
 
-serve: build ## ローカルサーバーを起動 (http://localhost:1313) — public/ を静的配信
-	cd public && npx http-server -p 1313 -s --cors -c-1
-
-dev: ## ライブリロード付きローカルサーバー (http://localhost:1313)
+serve: ## ローカルサーバーを起動 (http://localhost:1313)
 	GOTOOLCHAIN=auto gohan serve
 
 clean: ## ビルド出力を削除
@@ -51,6 +47,9 @@ new-en: ## 英語記事を作成  例: make new-en TITLE="Title" SLUG=slug
 
 translate: ## JA記事を一括英語翻訳 (GITHUB_TOKEN or OPENAI_API_KEY が必要)
 	cd tools/translate && GOTOOLCHAIN=auto go run . -delay 1000
+
+translate-gemini: ## JA記事を一括英語翻訳 (GOOGLE_API_KEY 使用 / Gemini 2.0 Flash, 15RPM対応)
+	cd tools/translate && GOTOOLCHAIN=auto go run . -delay 5000
 
 translate-dry-run: ## 翻訳対象の確認 (API不要)
 	cd tools/translate && GOTOOLCHAIN=auto go run . -dry-run

@@ -9,39 +9,34 @@ tags:
   - Books
   - Agile
   - Scrum
-description: Exploring what it means to create a product and the future of Agile methodologies.
 translation_key: building-correctly
 ---
 
-[Building the Right Thing the Right Way: What it Means to Create a Product and the Future Beyond Agile](https://amzn.to/49ObPAs) - I read this book.
+[Building the Right Thing the Right Way: What Does It Mean to Create a Product, or Beyond Agile?](https://amzn.to/49ObPAs) is a book that verbalizes various aspects of the product development process. Here are some notes on points that caught my attention.
 
-This book verbalizes various aspects of the product development process. Here are some notes on points that caught my attention:
-
-- **The two levers for managing product creation are interconnected:**
-  - **Risk Management**
-    - Detect and address requirement risks, technical risks, personnel risks, and political risks as early as possible.
-  - **Expectation Management**
+- The two levers that manage product creation are interrelated:
+  - Risk Management
+    - Quickly detect and address requirement risks, technical risks, personnel risks, and political risks.
+  - Expectation Management
     - Adjust expectations among stakeholders.
-    - Gantt charts (schedules) can serve as tools for visualizing expectations and facilitating communication.
-- **Naming activities in product creation:**
-  - Makes them easier to handle in communication and fosters shared understanding.
-- **Both the Product Owner and the Development Team cross boundaries:**
-  - To fulfill the goals of the product, both parties must step into each other's domains.
-- **In the hypothesis testing phase:**
-  - Explore MVPs using a set-based approach (progressing while keeping options open).
-  - Create and validate MVPs using a point-based approach (progressing with narrowed-down options).
+    - A timeline can serve as a means of visualizing expectations and confirming intentions.
+- Naming activities in product creation:
+  - Makes communication easier and fosters a shared awareness.
+- Both the Product Owner and the development team cross boundaries:
+  - To fulfill what the product aims to achieve, they must step into each other's domains.
+- In the hypothesis validation phase, explore MVPs using a set-based approach (keeping options open) and create MVPs using a point-based approach (narrowing down options) to validate.
 
-# Impressions
-To summarize boldly and without fear of oversimplification, this book outlines the entire product development process combining Lean Development × Agile + Scrum.
+# Thoughts
+To summarize without fear of misunderstanding, this book discusses the entirety of the product development process involving Lean Development, Agile, and Scrum.
 
-To implement this process, it feels like having an Agile-proficient team capable of continuously and swiftly cycling through hypothesis testing and product improvement is a prerequisite. While some teams are adept at hypothesis testing cycles but struggle with Scrum, or vice versa, such teams need to build a solid foundation first. (Being proficient in both is ideal, but that's quite challenging, isn't it?)
+I felt that realizing this process requires a team proficient in Agile that can swiftly cycle through hypothesis validation and product improvement. While I am familiar with the cycle of hypothesis validation, teams that struggle with Scrum or vice versa need to build a solid foundation. (It is ideal to do both well, but I think that is quite challenging.)
 
-Building the right thing the right way requires overcoming all kinds of uncertainties, making it very difficult.
+Building the right thing the right way necessitates navigating through various uncertainties, making it very difficult.
 
-I also want to focus on not creating the wrong thing.
+I also want to focus on avoiding the creation of incorrect products.
 
-When making decisions, being able to reflect on whether those decisions were correct is an important step toward achieving the next "rightness." (Poetic thought)
+Whether one can reflect on the correctness of a decision made is an important step towards the next correctness. (Poetic)
 
-I believe organizing correct and incorrect information helps guide product development. (Defining "rightness" is difficult, so organizing things in a binary way is also challenging...)
+I believe that organizing correct and incorrect information guides product development. (Defining correctness is difficult, so organizing it in a binary manner is also challenging...)
 
-The discussion on perspective and viewpoint in the latter chapters was excellent. It made me realize that I still lack the ability to shift perspectives effectively.
+The discussion on perspectives and viewpoints in the latter chapters was good. It made me realize that I still lack sufficient perspective shifts.

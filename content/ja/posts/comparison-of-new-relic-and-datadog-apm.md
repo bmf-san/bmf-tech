@@ -1,16 +1,17 @@
 ---
-title: "New RelicとDatadog APMの比較"
-slug: "comparison-of-new-relic-and-datadog-apm"
-date: 2021-08-10
+title: New RelicとDatadog APMの比較
+slug: comparison-of-new-relic-and-datadog-apm
+date: 2021-08-10T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "APM"
-  - "Datadog"
-  - "New Relic"
-draft: false
+  - APM
+  - Datadog
+  - New Relic
+translation_key: comparison-of-new-relic-and-datadog-apm
 ---
+
 
 # 概要
 New RelicからDatadog APMへの乗り換え検討時に機能比較をしたのでメモ。

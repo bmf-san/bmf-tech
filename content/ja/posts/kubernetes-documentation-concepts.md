@@ -1,16 +1,17 @@
 ---
-title: "Kubernetesドキュメントのリーディングーコンセプトのまとめ"
-slug: "kubernetes-documentation-concepts"
-date: 2020-10-20
+title: Kubernetesドキュメントのリーディングーコンセプトのまとめ
+slug: kubernetes-documentation-concepts
+date: 2020-10-20T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Docker"
-  - "コンテナ"
-  - "Kubernetes"
-draft: false
+  - Docker
+  - コンテナ
+  - Kubernetes
+translation_key: kubernetes-documentation-concepts
 ---
+
 
 # 概要
 Kubernetesを本格的にキャッチアップしていくためにドキュメントを読んだので、オレオレメモを残す。

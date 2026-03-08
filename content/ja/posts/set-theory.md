@@ -1,15 +1,16 @@
 ---
-title: "集合について"
-slug: "set-theory"
-date: 2024-07-06
+title: 集合について
+slug: set-theory
+date: 2024-07-06T00:00:00Z
 author: bmf-san
 categories:
-  - "数学"
+  - 数学
 tags:
-  - "離散数学"
-  - "集合"
-draft: false
+  - 離散数学
+  - 集合
+translation_key: set-theory
 ---
+
 
 # 概要
 集合の基本についてまとめる。

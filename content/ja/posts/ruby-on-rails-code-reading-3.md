@@ -1,15 +1,16 @@
 ---
-title: "Ruby on Railsのコードリーディング第3回-WelcomeControllerの呼び出し"
-slug: "ruby-on-rails-code-reading-3"
-date: 2024-09-04
+title: Ruby on Railsのコードリーディング第3回-WelcomeControllerの呼び出し
+slug: ruby-on-rails-code-reading-3
+date: 2024-09-04T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Ruby on Rails"
-  - "Ruby"
-draft: false
+  - Ruby on Rails
+  - Ruby
+translation_key: ruby-on-rails-code-reading-3
 ---
+
 
 # 概要
 Ruby on Railsのコードリーディング作業を記録する。

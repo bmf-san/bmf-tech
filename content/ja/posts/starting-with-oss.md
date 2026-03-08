@@ -1,18 +1,19 @@
 ---
-title: "OSSをはじめてみた話"
-slug: "starting-with-oss"
-date: 2017-07-17
+title: OSSをはじめてみた話
+slug: starting-with-oss
+date: 2017-07-17T00:00:00Z
 author: bmf-san
 categories:
-  - "ポエム"
+  - ポエム
 tags:
-  - "OSS"
-  - "GitHub"
-  - "CMS"
-  - "Laravel"
-  - "React"
-draft: false
+  - OSS
+  - GitHub
+  - CMS
+  - Laravel
+  - React
+translation_key: starting-with-oss
 ---
+
 
 # 概要
 [Rubel](https://github.com/bmf-san/Rubel)

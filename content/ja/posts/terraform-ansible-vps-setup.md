@@ -1,17 +1,18 @@
 ---
-title: "TerraformとAnsibleを使ってVPSを構築する"
-slug: "terraform-ansible-vps-setup"
-date: 2020-12-20
+title: TerraformとAnsibleを使ってVPSを構築する
+slug: terraform-ansible-vps-setup
+date: 2020-12-20T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Ansible"
-  - "VPS"
-  - "OpenStack"
-  - "Terraform"
-draft: false
+  - Ansible
+  - VPS
+  - OpenStack
+  - Terraform
+translation_key: terraform-ansible-vps-setup
 ---
+
 
 # 概要
 この記事は[Makuake Advent Calendar 2020](https://adventar.org/calendars/5986)の20日目の記事です。

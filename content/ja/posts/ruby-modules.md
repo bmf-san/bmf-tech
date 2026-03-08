@@ -1,14 +1,15 @@
 ---
-title: "RubyのModuleについて"
-slug: "ruby-modules"
-date: 2024-05-15
+title: RubyのModuleについて
+slug: ruby-modules
+date: 2024-05-15T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Ruby"
-draft: false
+  - Ruby
+translation_key: ruby-modules
 ---
+
 
 # 概要
 RubyのModuleについてかく。

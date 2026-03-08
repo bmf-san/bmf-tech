@@ -1,3 +1,4 @@
+- name: 2-Phase Commit
 - name: 2phase commit
 - name: ABAC
 - name: ACID
@@ -7,34 +8,55 @@
 - name: AJAX
 - name: API
 - name: APM
+- name: AWS
+- name: Abstract Factory
+- name: Abstract Factory Pattern
 - name: Access Control
+- name: Access Management
 - name: Accounting
+- name: Adapter Pattern
 - name: Adjacency List
 - name: Adjacency Matrix
 - name: Agile
+- name: Algorithm
 - name: Algorithms
 - name: AlloyDB
 - name: Amazon Web Service
+- name: Amazon Web Services
 - name: Anonymous Function
 - name: Ansible
+- name: Apache
+- name: Architect
+- name: Architecting
 - name: Architecture
+- name: Architecture Advice Process
 - name: Architecture Decision Record
+- name: Architecture Review Board
+- name: Architecture Strategy
+- name: Arrays
 - name: Atom
+- name: Authentication
+- name: Authorization
 - name: Authorization Management
 - name: BASE
 - name: BFF
 - name: BFS
+- name: Backtrack
 - name: Backtracking
 - name: Backup
+- name: Base Conversion
 - name: Bi-Temporal
+- name: Big O Notation
 - name: Binary Search
+- name: Binary Search Tree
+- name: Bitcoin
 - name: Book
 - name: Books
+- name: Bridge Pattern
 - name: Bubble Sort
 - name: Burp Suite
 - name: Business Strategy
 - name: C4 Model
-- name: C4モデル
 - name: CAP
 - name: CDN
 - name: CLI
@@ -47,37 +69,67 @@
 - name: Cache
 - name: Callback
 - name: Capacity Planning
+- name: Career Change
 - name: CentOS
 - name: ChatGPT
 - name: Chrome
 - name: CircleCI
+- name: CircleCI 2.0
 - name: CircleCI2.0
 - name: Clean Architecture
 - name: Cloud Functions
+- name: Cloud Native
 - name: Cloud SQL
+- name: Code Quality
 - name: Code Reading
+- name: Code Review
+- name: Coding
 - name: CoffeScript
+- name: CoffeeScript
 - name: Cognitive Science
+- name: Constraints
+- name: Consumer-Driven Contract Testing
+- name: Container
+- name: Containers
+- name: Context Engineering
 - name: Context engineering
 - name: Continuous AI
+- name: Contract Testing
+- name: Count Sort
+- name: Counting Sort
+- name: Critical Thinking
 - name: Critical User Journey
+- name: Cross Join
 - name: Cursor Pagination
+- name: Customer Success
 - name: DB
 - name: DDD
 - name: DFS
 - name: DI
 - name: DIP
 - name: DNS
+- name: Data Structure
 - name: Data Structures
 - name: Datadog
+- name: Debug
+- name: Debugging
+- name: Delegation
+- name: Deployment
 - name: Design
 - name: Design Docs
+- name: Design Pattern
+- name: Design Patterns
+- name: Development Productivity
 - name: DigitalOcean
+- name: Discrete Math
+- name: Discrete Mathematics
 - name: Distributed Systems
+- name: Distributed Transactions
 - name: Docker
 - name: Docker Compose
 - name: Docker Machine
 - name: Dockerize
+- name: Duck Typing
 - name: ECS
 - name: ER
 - name: ERE
@@ -85,16 +137,29 @@
 - name: ES6
 - name: ESModules
 - name: ETL
+- name: Editor
 - name: Elastic Beanstalk
 - name: Elasticsearch
 - name: Email
 - name: Emoji
+- name: Event Loop
+- name: Exponential Backoff
 - name: FIDO
+- name: Factory Method
+- name: Factory Method Pattern
+- name: Factory Pattern
 - name: Fargate
+- name: Finance
 - name: Forward Proxy
+- name: Frontend
 - name: FuelPHP
 - name: Function
+- name: Functional
+- name: Functional Testing
+- name: Fundamentals
+- name: Game
 - name: Gateway
+- name: Generative AI
 - name: Git
 - name: GitHub
 - name: GitHub Actions
@@ -104,36 +169,59 @@
 - name: Golang
 - name: Google Analytics
 - name: Google Chrome Extension
+- name: Google Cloud
 - name: Google Cloud Platform
 - name: Google SpreadSheet
+- name: Google Spreadsheet
 - name: Grafana
 - name: Graph
 - name: GraphQL
+- name: GraphQL Federation
 - name: GraphQL federation
+- name: HR
 - name: HTTP
 - name: HTTP/2
 - name: HTTPS
+- name: Hard Links
+- name: Hardware
+- name: HashMap
 - name: Haskell
 - name: Health
 - name: Heap
+- name: Heap Sort
+- name: History
 - name: History API
+- name: Homebrew
 - name: IAM
 - name: IP
 - name: ISUCON
 - name: ISUCON10
 - name: ISUCON8
+- name: IT Fundamentals
+- name: IaaS
 - name: Iaas
+- name: Index
+- name: Inheritance
+- name: Insertion Sort
+- name: Intellectual Production
+- name: Interface
 - name: Inventory Management
 - name: JWT
 - name: JavaScript
+- name: Jest
+- name: Jitter
 - name: Job Change
+- name: Jobs Theory
 - name: KPT
+- name: Kernel
 - name: Keynote
 - name: Kibana
 - name: Kubernetes
 - name: LDAP
+- name: LLM as Judge
 - name: LLM as judge
 - name: LT
+- name: Labor
 - name: Language Server
 - name: Laravel
 - name: Leadership
@@ -141,19 +229,39 @@
 - name: Legacy Code
 - name: Let's Encrypt
 - name: Let\'s Encrypt
+- name: Lightning Talk
 - name: Linear Search
+- name: Link Collection
+- name: Linked List
+- name: Links
 - name: Linux
 - name: Linux Capabilities
+- name: Liskov Substitution Principle
 - name: Load Average
+- name: Load Balancer
+- name: Load Testing
+- name: Lock
 - name: Locust
+- name: Log
 - name: Logical Thinking
+- name: Logistics
+- name: Logs
 - name: Loki
 - name: M1
 - name: Mackerel
 - name: Manager
 - name: Managers
+- name: Mediator Pattern
 - name: Memory
+- name: Merge Sort
+- name: Metrics
+- name: Microservices
+- name: Mob Programming
 - name: Modeling
+- name: Modular Monolith
+- name: Monitoring
+- name: Monolith
+- name: Monorepo
 - name: MySQL
 - name: N+1
 - name: New Relic
@@ -161,113 +269,206 @@
 - name: Nginx
 - name: Node.js
 - name: Non-Temporal
+- name: Normalization
+- name: Normalization Theory
+- name: Notification
 - name: OAuth
 - name: OIDC
 - name: OOP
 - name: OS
 - name: OSS
 - name: Offset Pagination
+- name: Open Addressing Hash Table
 - name: Open Policy Agent
 - name: OpenAPI
+- name: OpenID Connect
 - name: OpenIDConnect
 - name: OpenStack
 - name: Org Design
+- name: Organization Design
+- name: Organization Theory
+- name: Organizational Design
 - name: Organizational Theory
-- name: O記法
 - name: PACELC
 - name: PDF
 - name: PHP
 - name: PHP CodeSniffer
+- name: PHP Conference
 - name: PHP7
 - name: PHPCompatibility
+- name: PHPUnit
 - name: PHPerKaigi
-- name: PHPカンファレンス
 - name: Pact
+- name: Partitioning
+- name: Pass by Reference
+- name: Pass by Value
+- name: Performance Tuning
+- name: Permission Management
+- name: Permissions
 - name: PgCat
+- name: Platform Engineering
 - name: PofEAA
+- name: Pointer
+- name: Polymorphic
+- name: Polymorphism
 - name: PostgreSQL
+- name: Postmortem
+- name: Problem Solving
 - name: Process
+- name: Processes
+- name: Production Management
 - name: Productivity
+- name: Productivity Techniques
+- name: Profiling
 - name: Prolog
 - name: Prometheus
+- name: Prompt Engineering
 - name: Prompt Ops
+- name: Prompt as Code
 - name: Prompt as code
 - name: Prompt engineering
 - name: Promtail
 - name: Protocol Buffers
+- name: Provider-Driven Contract Testing
+- name: Queue
+- name: Quick Sort
 - name: RBAC
 - name: REST
 - name: RPC
 - name: RSpec
+- name: Radix Conversion
+- name: Radix Tree
 - name: React
+- name: Realize
+- name: Recursion
 - name: Redis
 - name: Redux
+- name: Reference
 - name: Reflection
+- name: Reflection and Aspirations
+- name: Reflection and Goals
+- name: Reflection and Resolutions
+- name: Reflections and Aspirations
+- name: Reflections and Resolutions
 - name: Rego
 - name: Regular Expressions
+- name: Reliability
 - name: Repository Pattern
+- name: Requests
+- name: Requirements
+- name: Resignation
 - name: Resolutions
+- name: Resource Collection
+- name: Resource Links
+- name: Resource List
+- name: Resources
 - name: Resume
+- name: Retrospective
+- name: Retry
 - name: Reverse Proxy
+- name: Round Robin
 - name: Router
 - name: Ruby
 - name: Ruby on Rails
+- name: Runner Technique
 - name: SAML
 - name: SLA
 - name: SLI
 - name: SLO
 - name: SPA
 - name: SQL
+- name: SQL Anti-pattern
 - name: SQLite
-- name: SQLアンチパターン
 - name: SSH
 - name: SSL
 - name: SSO
 - name: SaaS
-- name: Sagaパターン
+- name: Saga Pattern
+- name: Sakura VPS
+- name: Sales
+- name: Scalability
+- name: Schema Driven
+- name: Schema-Driven
 - name: Scrum
 - name: Seccomp
+- name: Security
 - name: Selection Sort
+- name: Service Locator
+- name: Service Mesh
+- name: Session
+- name: Sets
+- name: Sharding
 - name: Shell Script
 - name: Sidekiq
+- name: Singleton
+- name: Singleton Pattern
+- name: Singly Linked List
 - name: Slack
 - name: Slack Bot
+- name: Sliding Window
+- name: Software
+- name: Software Development
 - name: Spanner
 - name: Stack
 - name: Startup
+- name: State Pattern
+- name: Stateful
+- name: Stateless
 - name: Strategy
+- name: Strategy Pattern
 - name: StreamYard
 - name: Superagent
+- name: Swiss Table
+- name: Symbolic Links
 - name: System Design
 - name: System Performance
-- name: TCCパターン
+- name: TCC Pattern
 - name: TCP
 - name: TLS
 - name: TUI
 - name: Team Management
+- name: Team Topologies
+- name: Team Topology
+- name: Technical Writing
 - name: Technology Radar
 - name: Template Method
+- name: Template Method Pattern
 - name: Temporal Data Model
+- name: Terminal
 - name: Terraform
+- name: Test Double
+- name: Thinking Method
+- name: Thinking Methods
 - name: Thread
+- name: TidalCycles
 - name: Tips
+- name: Transaction
 - name: Tree Structure
 - name: Trello
+- name: Trie
 - name: Trino
+- name: Two Pointer
 - name: Two-Pointer Approach
+- name: Two-Pointer Technique
+- name: Type Hinting
 - name: TypeScript
 - name: UML
 - name: UNIX
 - name: URL Routing
-- name: URLルーティング
+- name: URL routing
 - name: UX
 - name: Ubuntu
 - name: Uni-Temporal
+- name: Unicorn
 - name: VPS
 - name: Vagrant
+- name: Virtual Environment
 - name: VirtualBox
 - name: Vue.js
+- name: Vulnerabilities
+- name: Vulnerability
 - name: Year in Review
+- name: Zabbix
 - name: anyenv
 - name: apache
 - name: artisan
@@ -300,6 +501,8 @@
 - name: google chrome extension
 - name: gopls
 - name: grep
+- name: heap
+- name: highlight.js
 - name: highlightjs
 - name: history-api
 - name: homebrew
@@ -313,6 +516,7 @@
 - name: k3s
 - name: kubeadm
 - name: libcontainer
+- name: link collection
 - name: linux capabilities
 - name: logwatch
 - name: lxc
@@ -324,8 +528,11 @@
 - name: mysqldump
 - name: node-exporter
 - name: npm
+- name: operating systems
 - name: os
 - name: phpunit
+- name: process
+- name: processes
 - name: pundit
 - name: rbenv
 - name: react-router
@@ -342,229 +549,20 @@
 - name: sql
 - name: ssh
 - name: sshd
+- name: stack
 - name: superagent
 - name: tee
 - name: termios
 - name: textlint
+- name: thread
+- name: threads
 - name: tidalcycles
 - name: tmux
 - name: union
-- name: unixコマンド
+- name: unix command
+- name: unix commands
 - name: vim
 - name: vscode
 - name: webpack
 - name: yum
 - name: zabbix
-- name: さくらのVPS
-- name: アジャイル
-- name: アダプターパターン
-- name: アブストラクトファクトリーパターン
-- name: アルゴリズム
-- name: アーキテクチャ
-- name: アーキテクチャアドバイスプロセス
-- name: アーキテクチャレビューボード
-- name: アーキテクチャ戦略
-- name: アーキテクティング
-- name: アーキテクト
-- name: イベントループ
-- name: インターフェース
-- name: インデックス
-- name: エディタ
-- name: オフセットページネーション
-- name: オープンアドレスハッシュテーブル
-- name: カウントソート
-- name: カスタマーサクセス
-- name: カーソルページネーション
-- name: カーネル
-- name: キャッシュ
-- name: キャパシティプランニング
-- name: キュー
-- name: クイックソート
-- name: クラウドネイティブ
-- name: クリティカルシンキング
-- name: クリティカルユーザージャーニー
-- name: グラフ
-- name: ゲートウェイ
-- name: ゲーム
-- name: コンシューマー駆動契約テスト
-- name: コンテキストエンジニアリング
-- name: コンテナ
-- name: コーディング
-- name: コードリーディング
-- name: コードレビュー　
-- name: コード品質
-- name: コールバック
-- name: サービスメッシュ
-- name: サービスロケーター
-- name: システムパフォーマンス
-- name: システム設計
-- name: シャーディング
-- name: シングルトンパターン
-- name: シンボリックリンク
-- name: ジッター
-- name: ジョブ理論
-- name: スイステーブル
-- name: スキーマ駆動
-- name: スクラム
-- name: スケーラビリティ
-- name: スタック
-- name: スタートアップ
-- name: ステートパターン
-- name: ステートフル
-- name: ステートレス
-- name: ストラテジーパターン
-- name: スライディングウィンドウ
-- name: スレッド
-- name: セキュリティ
-- name: セッション
-- name: セレクションソート
-- name: セールス
-- name: ソフトウェア
-- name: ソフトウェア開発
-- name: タイプヒンティング
-- name: ターミナル
-- name: ダック・タイピング
-- name: チームトポロジー
-- name: チームマネジメント
-- name: テクニカルライティング
-- name: テストダブル
-- name: テンプレートメソッドパターン
-- name: デザインパターン
-- name: デバッグ
-- name: デプロイ
-- name: データ構造
-- name: トライ木
-- name: トランザクション
-- name: ハッシュテーブル
-- name: ハッシュマップ
-- name: ハードウェア
-- name: ハードリンク
-- name: バイナリーサーチ
-- name: バックアップ
-- name: バックトラック
-- name: バブルソート
-- name: パフォーマンスチューニング
-- name: パーティショニング
-- name: パーミッション
-- name: ヒープ
-- name: ヒープソート
-- name: ファクトリーパターン
-- name: ファクトリーメソッドパターン
-- name: フォワードプロキシ
-- name: フロントエンド
-- name: ブラウザ
-- name: ブリッジパターン
-- name: プラットフォーム・エンジニアリング
-- name: プロセス
-- name: プロデューサー駆動契約テスト
-- name: プロファイリング
-- name: プロンプトエンジニアリング
-- name: ポインタ
-- name: ポストモーテム
-- name: ポリモーフィズム
-- name: ポリモーフィック
-- name: マイクロサービス
-- name: マネージャー
-- name: マージソート
-- name: メディエーターパターン
-- name: メトリクス
-- name: メモリ
-- name: メール
-- name: モジュラモノリス
-- name: モデリング
-- name: モニタリング
-- name: モノリス
-- name: モノレポ
-- name: モブプログラミング
-- name: ユニコーン
-- name: ラウンドロビン
-- name: ランナーテクニック
-- name: リスコフの置換原則
-- name: リトライ
-- name: リニアサーチ
-- name: リバースプロキシ
-- name: リファクタリング
-- name: リポジトリーパターン
-- name: リンク集
-- name: リーダーシップ
-- name: リーン
-- name: レガシーコード
-- name: レジュメ
-- name: ログ
-- name: ロジカルシンキング
-- name: ロック
-- name: ロードバランサー
-- name: 事業戦略
-- name: 二分探索
-- name: 二分探索木
-- name: 人事
-- name: 仮想メモリ
-- name: 仮想環境
-- name: 会計
-- name: 信頼性
-- name: 値渡し
-- name: 健康
-- name: 再帰
-- name: 分散システム
-- name: 分散トランザクション
-- name: 制約
-- name: 労務
-- name: 参照
-- name: 双方向リスト
-- name: 在庫管理
-- name: 基数変換
-- name: 基数木
-- name: 基本情報技術者
-- name: 契約テスト
-- name: 委譲
-- name: 尺取り法
-- name: 履歴
-- name: 思考法
-- name: 指数バックオフ
-- name: 振り返り
-- name: 振り返りと抱負
-- name: 挿入ソート
-- name: 数学
-- name: 木構造
-- name: 本
-- name: 権限管理
-- name: 機能テスト
-- name: 正規化
-- name: 正規化理論
-- name: 正規表現
-- name: 無名関数
-- name: 片方向リスト
-- name: 物流
-- name: 生成AI
-- name: 生産管理
-- name: 監視
-- name: 知的生産
-- name: 知的生産術
-- name: 組織設計
-- name: 組織論
-- name: 継承
-- name: 線形探索
-- name: 脆弱性
-- name: 要件
-- name: 要件定義
-- name: 要求
-- name: 設計
-- name: 認可
-- name: 認知科学
-- name: 認証
-- name: 負荷試験
-- name: 転職
-- name: 退職
-- name: 通知
-- name: 連結リスト
-- name: 選択ソート
-- name: 配列
-- name: 金融
-- name: 開発生産性
-- name: 関数
-- name: 関数型
-- name: 障害対応
-- name: 隣接リスト
-- name: 隣接行列
-- name: 集合
-- name: 離散数学

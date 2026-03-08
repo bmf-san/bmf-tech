@@ -1,14 +1,15 @@
 ---
-title: "Rubyを学ぶ"
-slug: "learning-ruby"
-date: 2024-05-16
+title: Rubyを学ぶ
+slug: learning-ruby
+date: 2024-05-16T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Ruby"
-draft: false
+  - Ruby
+translation_key: learning-ruby
 ---
+
 
 # 概要
 PHPやGoを触ってきた人間はRubyを学ぶ際に取り組んだことを書く。

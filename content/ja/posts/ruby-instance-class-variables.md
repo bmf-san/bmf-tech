@@ -1,14 +1,15 @@
 ---
-title: "Rubyのインスタンス変数とクラス変数とクラスインスタンス変数の違い"
-slug: "ruby-instance-class-variables"
-date: 2025-01-31
+title: Rubyのインスタンス変数とクラス変数とクラスインスタンス変数の違い
+slug: ruby-instance-class-variables
+date: 2025-01-31T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Ruby"
-draft: false
+  - Ruby
+translation_key: ruby-instance-class-variables
 ---
+
 
 Rubyのインスタンス変数とクラス変数とクラスインスタンス変数の違いについてまとめる。
 

@@ -1,15 +1,16 @@
 ---
-title: "RubyとRailsのIO・CPU特性について"
-slug: "ruby-rails-io-cpu-characteristics"
-date: 2025-06-14
+title: RubyとRailsのIO・CPU特性について
+slug: ruby-rails-io-cpu-characteristics
+date: 2025-06-14T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Ruby"
-  - "Ruby on Rails"
-draft: false
+  - Ruby
+  - Ruby on Rails
+translation_key: ruby-rails-io-cpu-characteristics
 ---
+
 
 # 概要
 Rubyの並行モデルやGVLの役割、Pumaサーバのスレッド・プロセス設計、IO/CPUバウンドの捉え方、計測手法によるボトルネック把握、Rails/Pumaデフォルト設定変更背景などを整理し、適切なチューニング方針を提示する。

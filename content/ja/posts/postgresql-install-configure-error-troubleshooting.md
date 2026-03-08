@@ -1,16 +1,17 @@
 ---
-title: "PostgreSQL インストール時の 'configure' エラーに関するトラブルシューティング"
-slug: "postgresql-install-configure-error-troubleshooting"
-date: 2025-03-07
+title: PostgreSQL インストール時の 'configure' エラーに関するトラブルシューティング
+slug: postgresql-install-configure-error-troubleshooting
+date: 2025-03-07T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "PostgreSQL"
-  - "Ubuntu"
-  - "CentOS"
-draft: false
+  - PostgreSQL
+  - Ubuntu
+  - CentOS
+translation_key: postgresql-install-configure-error-troubleshooting
 ---
+
 
 # PostgreSQL インストール時の 'configure' エラーに関するトラブルシューティング
 ## 1. はじめに

@@ -1,16 +1,17 @@
 ---
-title: "大規模モノリスをどう分割するか？ - ソフトウェアアーキテクチャ・ハードパーツに学ぶ"
-slug: "splitting-large-monoliths"
-date: 2025-02-17
+title: 大規模モノリスをどう分割するか？ - ソフトウェアアーキテクチャ・ハードパーツに学ぶ
+slug: splitting-large-monoliths
+date: 2025-02-17T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "アーキテクチャ戦略"
-  - "モノリス"
-  - "マイクロサービス"
-draft: false
+  - アーキテクチャ戦略
+  - モノリス
+  - マイクロサービス
+translation_key: splitting-large-monoliths
 ---
+
 
 本記事では[ソフトウェアアーキテクチャ・ハードパーツ ―分散アーキテクチャのためのトレードオフ分析](https://amzn.to/41kcsAL)の第1章～第4章をベースに、モノリスからのサービス分割を検討するときに役立つポイントを整理する。
 

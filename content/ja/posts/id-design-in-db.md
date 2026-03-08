@@ -1,14 +1,15 @@
 ---
-title: "DB設計におけるID設計について"
-slug: "id-design-in-db"
-date: 2024-03-30
+title: DB設計におけるID設計について
+slug: id-design-in-db
+date: 2024-03-30T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "DB"
-draft: false
+  - DB
+translation_key: id-design-in-db
 ---
+
 
 # IDとは
 あるものを一意に特定するもの。

@@ -1,17 +1,18 @@
 ---
-title: "Nginxをリバースプロキシとして設定する"
-slug: "nginx-reverse-proxy-configuration"
-date: 2017-10-01
+title: Nginxをリバースプロキシとして設定する
+slug: nginx-reverse-proxy-configuration
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "CentOS"
-  - "Nginx"
-  - "apache"
-  - "さくらのVPS"
-draft: false
+  - CentOS
+  - Nginx
+  - apache
+  - さくらのVPS
+translation_key: nginx-reverse-proxy-configuration
 ---
+
 
 Apacheで運用していたさくらVPSにNginxをリバースプロキシとして設定したのでメモします。
 

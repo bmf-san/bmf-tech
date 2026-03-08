@@ -1,16 +1,17 @@
 ---
-title: "チームトポロジー 価値あるソフトウェアをすばやく届ける適応型組織設計"
-slug: "team-topologies-adaptive-organization-design"
-date: 2024-11-28
+title: チームトポロジー 価値あるソフトウェアをすばやく届ける適応型組織設計
+slug: team-topologies-adaptive-organization-design
+date: 2024-11-28T00:00:00Z
 author: bmf-san
 categories:
-  - "マネジメント"
+  - マネジメント
 tags:
-  - "組織論"
-  - "組織設計"
-  - "本"
-draft: false
+  - 組織論
+  - 組織設計
+  - 本
+translation_key: team-topologies-adaptive-organization-design
 ---
+
 
 [チームトポロジー 価値あるソフトウェアをすばやく届ける適応型組織設計](https://amzn.to/4ilaaI2)を読んだ。
 

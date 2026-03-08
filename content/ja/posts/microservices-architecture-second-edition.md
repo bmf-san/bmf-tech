@@ -1,16 +1,17 @@
 ---
-title: "マイクロサービスアーキテクチャ 第2版"
-slug: "microservices-architecture-second-edition"
-date: 2024-06-16
+title: マイクロサービスアーキテクチャ 第2版
+slug: microservices-architecture-second-edition
+date: 2024-06-16T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "モノリス"
-  - "マイクロサービス"
-  - "本"
-draft: false
+  - モノリス
+  - マイクロサービス
+  - 本
+translation_key: microservices-architecture-second-edition
 ---
+
 
 [マイクロサービスアーキテクチャ 第2版 ](https://amzn.to/3RRUcJV)を読んだ。
 

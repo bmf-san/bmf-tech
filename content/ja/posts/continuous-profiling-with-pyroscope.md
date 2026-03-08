@@ -1,14 +1,15 @@
 ---
-title: "PyroscopeでContinuous Profiling"
-slug: "continuous-profiling-with-pyroscope"
-date: 2023-05-07
+title: PyroscopeでContinuous Profiling
+slug: continuous-profiling-with-pyroscope
+date: 2023-05-07T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "プロファイリング"
-draft: false
+  - プロファイリング
+translation_key: continuous-profiling-with-pyroscope
 ---
+
 
 # 概要
 [Pyroscope](https://pyroscope.io/)というContinous Profilingのツールを導入してみた。

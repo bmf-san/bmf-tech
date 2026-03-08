@@ -1,15 +1,16 @@
 ---
-title: "エンジニアが学ぶ生産管理システムの「知識」と「技術」"
-slug: "knowledge-and-skills-in-production-management-for-engineers"
-date: 2024-04-04
+title: エンジニアが学ぶ生産管理システムの「知識」と「技術」
+slug: knowledge-and-skills-in-production-management-for-engineers
+date: 2024-04-04T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "生産管理"
-  - "本"
-draft: false
+  - 生産管理
+  - 本
+translation_key: knowledge-and-skills-in-production-management-for-engineers
 ---
+
 
 [エンジニアが学ぶ生産管理システムの「知識」と「技術」](https://amzn.to/3Wg7PW9)を読んだ。
 

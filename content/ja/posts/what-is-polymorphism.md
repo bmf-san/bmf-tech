@@ -1,14 +1,15 @@
 ---
-title: "ポリモーフィズムとは"
-slug: "what-is-polymorphism"
-date: 2018-05-07
+title: ポリモーフィズムとは
+slug: what-is-polymorphism
+date: 2018-05-07T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "ポリモーフィズム"
-draft: false
+  - ポリモーフィズム
+translation_key: what-is-polymorphism
 ---
+
 
 # 概要
 ポリモーフィズムについてまとめる

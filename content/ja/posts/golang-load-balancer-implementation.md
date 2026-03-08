@@ -1,16 +1,17 @@
 ---
-title: "Golangでロードバランサーを実装する"
-slug: "golang-load-balancer-implementation"
-date: 2022-01-01
+title: Golangでロードバランサーを実装する
+slug: golang-load-balancer-implementation
+date: 2022-01-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "ロードバランサー"
-  - "ラウンドロビン"
-draft: false
+  - Golang
+  - ロードバランサー
+  - ラウンドロビン
+translation_key: golang-load-balancer-implementation
 ---
+
 
 # 概要
 この記事は[Makuake Advent Calendar 2021](https://adventar.org/calendars/6822)の24日目の記事です。（大遅刻しました・・）

@@ -1,15 +1,16 @@
 ---
-title: "テストダブルとは何か"
-slug: "test-doubles-explained"
-date: 2025-10-18
+title: テストダブルとは何か
+slug: test-doubles-explained
+date: 2025-10-18T00:00:00Z
 author: bmf-san
 categories:
-  - "テスト"
+  - テスト
 tags:
-  - "Golang"
-  - "テストダブル"
-draft: false
+  - Golang
+  - テストダブル
+translation_key: test-doubles-explained
 ---
+
 
 ## はじめに
 

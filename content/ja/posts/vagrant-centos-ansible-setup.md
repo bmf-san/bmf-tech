@@ -1,16 +1,17 @@
 ---
-title: "Vagrant+CentOS7.3+Ansible"
-slug: "vagrant-centos-ansible-setup"
-date: 2017-10-01
+title: Vagrant+CentOS7.3+Ansible
+slug: vagrant-centos-ansible-setup
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Ansible"
-  - "CentOS"
-  - "Vagrant"
-draft: false
+  - Ansible
+  - CentOS
+  - Vagrant
+translation_key: vagrant-centos-ansible-setup
 ---
+
 
 # 概要
 AnsibleでVagrantの環境構築をする最初の一歩です。

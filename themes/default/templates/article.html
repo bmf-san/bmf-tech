@@ -1,7 +1,7 @@
 {{template "head" .}}
 <body class="bg-body">
 {{template "header" .}}
-<main class="container mx-auto px-4 py-8 max-w-4xl">
+<main class="container mx-auto py-8 max-w-4xl">
   {{range .Articles}}
   {{- $localePrefix := ""}}
   {{- if eq .Locale "ja"}}{{$localePrefix = "/ja"}}{{end}}
@@ -29,18 +29,19 @@
   <header class="mb-8">
     <div class="flex items-center gap-2 mb-4 flex-wrap">
       {{range .FrontMatter.Categories}}<span class="badge badge-info">{{.}}</span>{{end}}
-      <span class="text-sm text-secondary">{{formatDate "Jan 2, 2006" .FrontMatter.Date}}</span>
+      <span class="text-sm text-secondary">{{formatDate "2006-01-02" .FrontMatter.Date}}</span>
     </div>
     <h1 class="text-4xl font-bold mb-6 leading-tight">{{.FrontMatter.Title}}</h1>
     <div class="flex items-center justify-between flex-wrap gap-4">
       <div class="flex items-center gap-3">
         <div>
           {{if .FrontMatter.Author}}<p class="font-semibold text-sm">{{.FrontMatter.Author}}</p>{{end}}
-          {{if .FrontMatter.Description}}<p class="text-xs text-secondary">{{.FrontMatter.Description}}</p>{{end}}
+          {{if .FrontMatter.Description}}<p class="text-sm text-secondary leading-relaxed">{{.FrontMatter.Description}}</p>{{end}}
         </div>
       </div>
       {{if .Translations}}
       <div class="flex items-center gap-2">
+        <span class="text-sm text-secondary">Read in:</span>
         {{range .Translations}}
         <a href="{{.URL}}" class="badge badge-light text-secondary" lang="{{.Locale}}">{{.Locale}}</a>
         {{end}}
@@ -48,6 +49,14 @@
       {{end}}
     </div>
   </header>
+
+  {{/* Eyecatch image */}}
+  {{- $eyecatch := index .FrontMatter.Extra "image"}}
+  {{if $eyecatch}}
+  <div class="mb-8">
+    <img src="{{$eyecatch}}" alt="{{.FrontMatter.Title}}" class="w-full rounded max-h-96 object-cover">
+  </div>
+  {{end}}
 
   {{/* Article Body */}}
   <article class="prose prose-full mb-12">
@@ -61,6 +70,33 @@
     {{range .FrontMatter.Tags}}
     <a href="{{$localePrefix}}/tags/{{.}}/" class="badge badge-light text-secondary">{{.}}</a>
     {{end}}
+  </div>
+  {{end}}
+
+  {{/* Share buttons */}}
+  {{- $shareURL := printf "%s%s" $.Config.Site.BaseURL .URL}}
+  <div class="flex items-center gap-3 mb-8 flex-wrap">
+    <span class="text-sm font-medium text-secondary">Share:</span>
+    <a href="https://twitter.com/intent/tweet?url={{urlquery $shareURL}}&text={{urlquery .FrontMatter.Title}}"
+       target="_blank" rel="noopener noreferrer"
+       class="badge badge-light text-secondary">𝕏 Post</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{urlquery $shareURL}}"
+       target="_blank" rel="noopener noreferrer"
+       class="badge badge-light text-secondary">Facebook</a>
+    <a href="https://b.hatena.ne.jp/entry/{{$shareURL}}"
+       target="_blank" rel="noopener noreferrer"
+       class="badge badge-light text-secondary">Hatena</a>
+  </div>
+
+  {{/* GitHub feedback link */}}
+  {{- $contentPath := .ContentPath}}
+  {{with $.Config.Site.GitHubRepo}}
+  <div class="flex items-center gap-2 mb-8">
+    <a href="{{.}}/blob/{{$.Config.Site.GitHubBranch}}/content/{{$contentPath}}"
+       target="_blank" rel="noopener noreferrer"
+       class="badge badge-light text-secondary">
+      ✏️ View source / Discuss on GitHub
+    </a>
   </div>
   {{end}}
 

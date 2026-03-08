@@ -1,15 +1,16 @@
 ---
-title: "New Relic実践入門 第2版 オブザーバビリティの基礎と実現"
-slug: "new-relic-observability-introduction"
-date: 2024-08-10
+title: New Relic実践入門 第2版 オブザーバビリティの基礎と実現
+slug: new-relic-observability-introduction
+date: 2024-08-10T00:00:00Z
 author: bmf-san
 categories:
-  - "ツール"
+  - ツール
 tags:
-  - "New Relic"
-  - "本"
-draft: false
+  - New Relic
+  - 本
+translation_key: new-relic-observability-introduction
 ---
+
 
 [New Relic実践入門 第2版 オブザーバビリティの基礎と実現](https://amzn.to/4cmAsFm)を読んだ。
 

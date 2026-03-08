@@ -1,16 +1,17 @@
 ---
-title: "Unixコマンドメモ"
-slug: "unix-command-memo"
-date: 2018-07-07
+title: Unixコマンドメモ
+slug: unix-command-memo
+date: 2018-07-07T00:00:00Z
 author: bmf-san
 categories:
-  - "OS"
+  - OS
 tags:
-  - "unixコマンド"
-  - "jq"
-  - "tee"
-draft: false
+  - unixコマンド
+  - jq
+  - tee
+translation_key: unix-command-memo
 ---
+
 
 # 概要
 Unixコマンドのメモ。

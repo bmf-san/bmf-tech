@@ -8,25 +8,24 @@ categories:
 tags:
   - pundit
   - Ruby
-description: Exploring the code of Pundit.
 translation_key: pundit-code-reading
 ---
 
 # Overview
-Conducting a code reading of Pundit.
+Reading the code of Pundit.
 
 # Preparation
 1. Clone the Pundit repository
    - `git clone git@github.com:varvet/pundit.git`
 
 # Code Reading
-Examining the `authorize` method used for applying permissions.
+Let's take a look at the `authorize` method used when applying permissions.
 
 1. authorize
 - [varvet/pundit/blob/main/lib/pundit.rb#L75](https://github.com/varvet/pundit/blob/main/lib/pundit.rb#L75)
-  - Defined as a class method in the module
+  - Defined as a class method of the module
 - [varvet/pundit/blob/main/lib/pundit/context.rb#L55](https://github.com/varvet/pundit/blob/main/lib/pundit/context.rb#L55)
-  - The actual processing is handled by the `authorize` method in the `Pundit::Context` class
-  - This is where the policy is checked and permissions are determined
+  - The actual processing is done in the `authorize` method of the `Pundit::Context` class
+  - Here, the policy is checked, and permissions are determined.
 
 The implementation was surprisingly simple.

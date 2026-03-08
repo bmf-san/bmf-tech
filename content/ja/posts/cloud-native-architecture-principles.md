@@ -1,16 +1,17 @@
 ---
-title: "クラウドネイティブ・アーキテクチャ 可用性と費用対効果を極める次世代設計の原則"
-slug: "cloud-native-architecture-principles"
-date: 2025-06-06
+title: クラウドネイティブ・アーキテクチャ 可用性と費用対効果を極める次世代設計の原則
+slug: cloud-native-architecture-principles
+date: 2025-06-06T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "Amazon Web Service"
-  - "Google Cloud Platform"
-  - "クラウドネイティブ"
-draft: false
+  - Amazon Web Service
+  - Google Cloud Platform
+  - クラウドネイティブ
+translation_key: cloud-native-architecture-principles
 ---
+
 
 [クラウドネイティブ・アーキテクチャ 可用性と費用対効果を極める次世代設計の原則](https://amzn.to/446hhyM)を読んだ。
 

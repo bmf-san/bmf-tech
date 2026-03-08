@@ -1,16 +1,18 @@
 ---
-title: "自作ルーティングをアップデートした"
-slug: "update-custom-routing"
-date: 2021-06-18
+title: 自作ルーティングをアップデートした
+slug: update-custom-routing
+image: /assets/images/posts/post-259/117675761-d4c25780-b1e7-11eb-9ec7-e78ac0ce142b.png
+date: 2021-06-18T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "OSS"
-  - "router"
-draft: false
+  - Golang
+  - OSS
+  - router
+translation_key: update-custom-routing
 ---
+
 
 # 概要
 最近、自作ルーティングの[goblin](https://github.com/bmf-san/goblin)をアップデートしたのでその記録を書き残しておく。

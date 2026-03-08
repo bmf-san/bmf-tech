@@ -1,16 +1,17 @@
 ---
-title: "Web配信の技術―HTTPキャッシュ・リバースプロキシ・CDNを活用する"
-slug: "web-streaming-technology"
-date: 2026-01-05
+title: Web配信の技術―HTTPキャッシュ・リバースプロキシ・CDNを活用する
+slug: web-streaming-technology
+date: 2026-01-05T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "キャッシュ"
-  - "リバースプロキシ"
-  - "CDN"
-draft: false
+  - キャッシュ
+  - リバースプロキシ
+  - CDN
+translation_key: web-streaming-technology
 ---
+
 
 [Web配信の技術―HTTPキャッシュ・リバースプロキシ・CDNを活用する](https://amzn.to/496qjhP)を読んだ。
 

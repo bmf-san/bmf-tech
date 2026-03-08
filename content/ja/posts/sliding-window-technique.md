@@ -1,15 +1,16 @@
 ---
-title: "尺取り法について"
-slug: "sliding-window-technique"
-date: 2023-08-01
+title: 尺取り法について
+slug: sliding-window-technique
+date: 2023-08-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アルゴリズムとデータ構造"
+  - アルゴリズムとデータ構造
 tags:
-  - "尺取り法"
-  - "Two-Pointer Approach"
-draft: false
+  - 尺取り法
+  - Two-Pointer Approach
+translation_key: sliding-window-technique
 ---
+
 
 # 概要
 尺取り法についてまとめる。

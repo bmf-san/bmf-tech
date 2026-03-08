@@ -1,14 +1,15 @@
 ---
-title: "Reactで複数のinputを扱うフォームを実装する"
-slug: "react-multiple-input-form"
-date: 2017-10-01
+title: Reactで複数のinputを扱うフォームを実装する
+slug: react-multiple-input-form
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "React"
-draft: false
+  - React
+translation_key: react-multiple-input-form
 ---
+
 
 Reactでフォームを実装するのはちょっと癖があります。
 

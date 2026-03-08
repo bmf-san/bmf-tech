@@ -1,15 +1,16 @@
 ---
-title: "Ruby on Railsのコードリーディング第1回-Railsの起動"
-slug: "ruby-on-rails-code-reading-1"
-date: 2024-09-02
+title: Ruby on Railsのコードリーディング第1回-Railsの起動
+slug: ruby-on-rails-code-reading-1
+date: 2024-09-02T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Ruby"
-  - "Ruby on Rails"
-draft: false
+  - Ruby
+  - Ruby on Rails
+translation_key: ruby-on-rails-code-reading-1
 ---
+
 
 # 概要
 Ruby on Railsのコードリーディング作業を記録する。

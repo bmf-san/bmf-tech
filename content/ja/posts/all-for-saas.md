@@ -1,15 +1,16 @@
 ---
-title: "All for SaaS"
-slug: "all-for-saas"
-date: 2024-04-16
+title: All for SaaS
+slug: all-for-saas
+date: 2024-04-16T00:00:00Z
 author: bmf-san
 categories:
-  - "ビジネス"
+  - ビジネス
 tags:
-  - "本"
-  - "SaaS"
-draft: false
+  - 本
+  - SaaS
+translation_key: all-for-saas
 ---
+
 
 [ALL for SaaS SaaS立ち上げのすべて](https://amzn.to/3JxPaNX)を読んだので気になったことをメモする。
 

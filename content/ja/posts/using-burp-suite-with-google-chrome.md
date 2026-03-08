@@ -1,16 +1,17 @@
 ---
-title: "GoogleChromeでBurp Suiteを使う手順"
-slug: "using-burp-suite-with-google-chrome"
-date: 2019-03-22
+title: GoogleChromeでBurp Suiteを使う手順
+slug: using-burp-suite-with-google-chrome
+date: 2019-03-22T00:00:00Z
 author: bmf-san
 categories:
-  - "ツール"
+  - ツール
 tags:
-  - "Burp Suite"
-  - "セキュリティ"
-  - "脆弱性"
-draft: false
+  - Burp Suite
+  - セキュリティ
+  - 脆弱性
+translation_key: using-burp-suite-with-google-chrome
 ---
+
 
 # 概要
 Burp SuiteをChormeで使う際の諸々の設定について。

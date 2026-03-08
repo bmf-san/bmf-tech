@@ -1,14 +1,15 @@
 ---
-title: "MySQLで全文検索"
-slug: "full-text-search-with-mysql"
-date: 2023-04-30
+title: MySQLで全文検索
+slug: full-text-search-with-mysql
+date: 2023-04-30T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "MySQL"
-draft: false
+  - MySQL
+translation_key: full-text-search-with-mysql
 ---
+
 
 # 概要
 MySQLにはだいぶ前から全文検索が使えるになっているが、最近まで全然触ってもいなかったので軽く素振りしてみた。

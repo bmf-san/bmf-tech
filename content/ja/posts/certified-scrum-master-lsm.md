@@ -1,14 +1,15 @@
 ---
-title: "認定スクラムマスター（LSM）になった"
-slug: "certified-scrum-master-lsm"
-date: 2023-08-01
+title: 認定スクラムマスター（LSM）になった
+slug: certified-scrum-master-lsm
+date: 2023-08-01T00:00:00Z
 author: bmf-san
 categories:
-  - "開発プロセス"
+  - 開発プロセス
 tags:
-  - "スクラム"
-draft: false
+  - スクラム
+translation_key: certified-scrum-master-lsm
 ---
+
 
 scruminc.japanの[Registered Scrum Master](https://scruminc.jp/training/master/)の研修・試験を受けて認定スクラムマスターになったので感想とメモ。
 

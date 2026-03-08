@@ -7,7 +7,6 @@ categories:
   - Database
 tags:
   - ER
-description: A summary of the types of relationships in ER diagrams.
 translation_key: er-diagram-relationship-types
 ---
 
@@ -17,65 +16,65 @@ This post summarizes the types of relationships in ER diagrams.
 # Types of Relationships in ER Diagrams
 There are three types of relationships in ER diagrams.
 
-| Relationship Type         | Table Relationship                                  | Line Type          |
-|---------------------------|----------------------------------------------------|--------------------|
-| Dependent Relationship    | Child table depends on the parent table (parent-child relationship between tables) | Solid line (Parent → Child) |
-| Independent Relationship  | Child table does not depend on the parent table (no parent-child relationship between tables) | Dashed line (Parent → Child) |
-| Many-to-Many Relationship | Many-to-many table relationship                    | Solid line (Parent ↔ Child) |
+|Type of Relationship|Table Relationship|Line Type|
+|---|---|---|
+|Dependent Relationship|Child table depends on parent table (parent-child relationship exists between tables)|Solid line (Parent → Child)|
+|Independent Relationship|Child table does not depend on parent table (no parent-child relationship exists between tables)|Dotted line (Parent → Child)|
+|Many-to-Many Relationship|Many-to-many table relationship|Solid line (Parent ↔ Child)|
 
 # Dependent Relationship
 
 - User
-  - UserNo (PK)
-  - CompanyNo (FK)
+  - User No (PK)
+  - Company No (FK)
   - Name
   - Email Address
 
 - User Profile
-  - UserNo (FK)
+  - User No (FK)
   - Age
   - Gender
 
-The child table, User Profile, cannot exist without a record in the parent table, User. Therefore, the child table is said to depend on the parent table.
+The child table, User Profile, cannot exist without a record in the parent table, User, so it can be said that the child table depends on the parent table.
 
 # Independent Relationship
 
 - User
-  - UserNo (PK)
-  - CompanyNo (FK)
+  - User No (PK)
+  - Company No (FK)
   - Name
   - Email Address
 
 - User Profile
-  - UserNo (FK)
+  - User No (FK)
   - Age
   - Gender
 
 - Company
-   - CompanyNo (PK)
+   - Company No (PK)
    - Company Name
 
 As explained earlier, the relationship between User and User Profile is a dependent relationship.
 
-The relationship between User and Company, however, is independent because a company can exist without a user, and vice versa.
+The relationship between User and Company is independent because a customer can exist without a user, and vice versa.
 
 # Many-to-Many Relationship
 - User
-  - UserNo (PK)
-  - CompanyNo (FK)
-  - PermissionNo (FK)
+  - User No (PK)
+  - Company No (FK)
+  - Permission No (FK)
   - Name
   - Email Address
 
 - Permission
-  - PermissionNo (PK)
-  - UserNo (FK)
+  - Permission No (PK)
+  - User No (FK)
 
-This type of relationship requires a so-called cross (intermediate or pivot) table.
+This relationship requires a junction (intermediate, pivot) table.
 
 # Thoughts
-I want to dive deeper into this topic by reading more books.
+I want to read more books and delve deeper into this topic.
 
 # References
-- [ER Diagram: Properly Differentiating Relationships](https://products.sint.co.jp/siob/blog/relationship)
-- [A Must-Read for Junior Programmers! Understand ER Diagram Creation in 5 Minutes](https://it-koala.com/entity-relationship-diagram-1897)
+- [Let's Properly Differentiate ER Diagram Relationships](https://products.sint.co.jp/siob/blog/relationship)
+- [A Must-Read for Young Programmers! 5 Steps to Understand How to Draw ER Diagrams in 5 Minutes](https://it-koala.com/entity-relationship-diagram-1897)

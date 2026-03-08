@@ -1,16 +1,17 @@
 ---
-title: "PHPで学ぶデザインパターン - オブジェクト指向の基礎"
-slug: "php-design-patterns-object-oriented-basics"
-date: 2017-10-01
+title: PHPで学ぶデザインパターン - オブジェクト指向の基礎
+slug: php-design-patterns-object-oriented-basics
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "デザインパターン"
-  - "PHP"
-  - "OOP"
-draft: false
+  - デザインパターン
+  - PHP
+  - OOP
+translation_key: php-design-patterns-object-oriented-basics
 ---
+
 
 # 概要
 

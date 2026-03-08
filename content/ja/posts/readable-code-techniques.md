@@ -1,15 +1,16 @@
 ---
-title: "リーダブルコード ―より良いコードを書くためのシンプルで実践的なテクニック"
-slug: "readable-code-techniques"
-date: 2016-06-15
+title: リーダブルコード ―より良いコードを書くためのシンプルで実践的なテクニック
+slug: readable-code-techniques
+date: 2016-06-15T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "コード品質"
-  - "本"
-draft: false
+  - コード品質
+  - 本
+translation_key: readable-code-techniques
 ---
+
 
 [リーダブルコード ―より良いコードを書くためのシンプルで実践的なテクニック](https://amzn.to/4abQaC9)を読んだ。
 

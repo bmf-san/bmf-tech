@@ -1,15 +1,16 @@
 ---
-title: "SOAとマイクロサービスとの違いについて整理するために読んだ記事メモ"
-slug: "soa-vs-microservices"
-date: 2022-11-21
+title: SOAとマイクロサービスとの違いについて整理するために読んだ記事メモ
+slug: soa-vs-microservices
+date: 2022-11-21T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "マイクロサービス"
-  - "リンク集"
-draft: false
+  - マイクロサービス
+  - リンク集
+translation_key: soa-vs-microservices
 ---
+
 
 SOAとマイクロサービスの違いについて整理したくなったときに漁った記事の雑メモ。
 

@@ -1,6 +1,7 @@
 ---
 title: "net／httpでつくるHTTPルーター自作入門"
 slug: "building-http-router-with-net-http"
+image: /assets/images/posts/net-http/138551922-8fce2b9c-51d6-49e6-bea1-015e383cdb6e.png
 date: 2021-10-24
 author: bmf-san
 categories:

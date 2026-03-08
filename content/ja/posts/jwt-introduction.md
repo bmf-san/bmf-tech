@@ -1,14 +1,15 @@
 ---
-title: "JWTとは"
-slug: "jwt-introduction"
-date: 2020-09-11
+title: JWTとは
+slug: jwt-introduction
+date: 2020-09-11T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "JWT"
-draft: false
+  - JWT
+translation_key: jwt-introduction
 ---
+
 
 # 概要
 JWTについて調べたことをまとめておく。

@@ -1,5 +1,5 @@
 ---
-title: Read Agile Metrics
+title: Reading Agile Metrics
 slug: agile-metrics-review
 date: 2022-12-17T00:00:00Z
 author: bmf-san
@@ -10,36 +10,36 @@ tags:
 translation_key: agile-metrics-review
 ---
 
-[Makuake Advent Calendar 2022](https://adventar.org/calendars/8496) - Article for Day 6!
+[Makuake Advent Calendar 2022](https://adventar.org/calendars/8496)の6日目の記事です！
 
-# Overview
-Recently, I've been frequently reflecting on process improvements for our Scrum team. To find some hints for Kaizen, I decided to read *Agile Metrics*.
+# 概要
+最近スクラムチームのプロセス改善について頻繁に思いを馳せており、カイゼンのヒントが何か得られないだろうかと思ってアジャイルメトリクスを読んでみた。
 
-[*Agile Metrics*](https://www.shoeisha.co.jp/book/detail/9784798169415)
+[アジャイルメトリクス](https://www.shoeisha.co.jp/book/detail/9784798169415)
 
-The original book is probably [Agile Metrics in Action](https://www.amazon.co.jp/Agile-Metrics-Action-measure-performance/dp/1617292486), which was published a few years ago.
+原著は多分[Agile Metrics in Action](https://www.amazon.co.jp/Agile-Metrics-Action-measure-performance/dp/1617292486)。何年か前に出版された本。
 
-# What is Agile Metrics?
-Agile Metrics refers to metrics used to measure the performance of agile teams.
+# アジャイルメトリクスとは？
+アジャイルメトリクスとは、アジャイルなチームのパフォーマンスを測定するためのメトリクスのこと。
 
-Metrics involve collecting data related to the definition of performance for the team from the team's processes. Specifically, this means gathering data from tools used in the team's activities, such as project management, source code management, build systems, and monitoring tools.
+メトリクスは、チームにとってのパフォーマンスの定義に関連するデータをチームのプロセスから収集する。具体的にはチームの活動で利用しているプロジェクト管理、ソースコード管理、ビルドシステム、監視などのツールが持っているデータをソースとして収集するといった感じ。
 
-The purpose of Agile Metrics is to improve performance, not to weaponize (using metrics to blame teams or individuals) or to engage in gaming (focusing solely on improving metrics). 
+アジャイルメトリクスはパフォーマンスの改善を目的とするともあって、Weponaize（チームや個人を非難するために活用すること）やGaming（メトリクスを改善することだけに集中してしまうこと）といった活用は推奨されない。
 
-It is crucial to observe the team's situation and changes through metrics, and to repeatedly learn and connect this to improvements.
+メトリクスからはチームの状況や起きている変化を観察し、改善につなげていくという学習を繰り返すことが重要になる。
 
-# What the Book Discusses
-[*Agile Metrics*](https://www.shoeisha.co.jp/book/detail/9784798169415) provides hints to answer the following questions:
+# 本書で語られていること
+[アジャイルメトリクス](https://www.shoeisha.co.jp/book/detail/9784798169415)では次のような問への答えがヒントが語られていた。
 
-- How do you measure performance in an agile team?
-- Where do you collect metric data from?
-- What trends and insights can be learned from data obtained through tools like project management, source code management, build systems, and monitoring?
-- How do you create actionable metrics?
-- How do you measure team performance based on agile principles?
+- アジャイルなチームにおけるパフォーマンスをどのように測定するか？
+- メトリクスのデータをどこから収集するか？
+- プロジェクト管理、ソースコード管理、ビルドシステム、監視などのツールから取得できるデータの傾向や学びについて
+- 活用可能なメトリクスをどのように作成するか？
+- アジャイルな原則に基づいてチームのパフォーマンスを測定する方法
 
-# Thoughts
-To measure a team's performance, it's essential to first break down and consider what aspects of performance to measure and what constitutes good performance for the team. This should be the first step.
+# 所感
+チームのパフォーマンスを計測するには、チームのパフォーマンスの何を計測するのか？チームにとって良いパフォーマンスとは何か？など因数分解して考えることが大事なことで、まず最初に取り組むべきことだと思った。
 
-Defining metrics that lead to actionable insights seems to require some level of prediction about what insights can be derived from the data. This is the most challenging part of agile metrics compared to system monitoring, in my opinion. Should we learn from experience? I’d like to know more examples about this.
+アクションにつながるようなメトリクスを定義するには、データからどんなインサイトが得られそうか？というある程度の予想を持つ必要がありそう。システムの監視と違ってアジャイルのメトリクスで一番難しいなと思う部分。経験から学ぶべき？これについてはもっと事例とか知りたいところ。
 
-Even though a lot can be analyzed from a single data point depending on the method, collecting data from various sources makes me realize how tedious it is to set up the necessary infrastructure. While there seem to be convenient services available, still...
+単一のデータからでも分析の仕方次第で色々見えるのだろうが、あちこちからデータを収集するとなるとやはりその基盤を用意するのは面倒だなと再三思った。。。便利なサービスがあることにはあるみたいだが・・。

@@ -1,14 +1,15 @@
 ---
-title: "具体と抽象 ―世界が変わって見える知性のしくみ"
-slug: "concrete-abstract-intelligence"
-date: 2025-12-29
+title: 具体と抽象 ―世界が変わって見える知性のしくみ
+slug: concrete-abstract-intelligence
+date: 2025-12-29T00:00:00Z
 author: bmf-san
 categories:
-  - "ビジネス"
+  - ビジネス
 tags:
-  - "本"
-draft: false
+  - 本
+translation_key: concrete-abstract-intelligence
 ---
+
 
 [具体と抽象 ―世界が変わって見える知性のしくみ](https://amzn.to/4scC7Xr)を読んだ。
 

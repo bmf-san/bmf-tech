@@ -7,27 +7,26 @@ categories:
   - Application
 tags:
   - Golang
-description: Guide to setting up a Go development environment.
 translation_key: golang-development-environment
 ---
 
 # Overview
-Set up a Go development environment.
+We will set up the Go environment.
 
 # Setting Up Go Environment
-## Install Go
-Installation methods are omitted here. I use a tool called **anyenv** for installation.
+## Installing Go
+The installation method is omitted. I use a tool called **anyenv** for installation.
 
-## Specify GOPATH
-Add GOPATH to `.bashrc` or `.bash_profile`.
+## Specifying GOPATH
+Specify GOPATH in `.bashrc` or `.bash_profile`.
 
 ```bash
-export GOPATH=$HOME/localdev/project/go_dev // Set as you prefer
+export GOPATH=$HOME/localdev/project/go_dev // Set as you like
 PATH=$PATH:$GOPATH/bin
 ```
 
-## Check Go Directory Structure
-The local environment directory structure will follow the official documentation.
+## Checking Go Directory Structure
+The directory structure in the local environment will be organized according to the official documentation.
 
 ```
 go_dev/
@@ -36,12 +35,12 @@ go_dev/
 └── src
 ```
 
-Prepare a Go development directory named **go_dev**, and within it, create three directories based on their roles as specified in the official documentation. **bin** contains executable commands, **pkg** contains packages, and **src** contains source code. Only **src/** is managed with git.
+A development directory for Go called **go_dev** is prepared, containing three directories for different roles, in accordance with the official documentation's directory structure. Executable commands are placed in **bin**, packages in **pkg**, and sources in **src**. The **src/** directory is managed by git.
 
-# Create a Package
-To verify that the setup is working correctly, create a package.
+# Creating a Package
+As a check to see if the setup so far is successful, let's create a package.
 
-Inside `src/`, create a directory named `test/` and a file `main.go` with the following content:
+Prepare a `test/` directory in `src/` and create a file called `main.go` as follows:
 
 ```go
 package main
@@ -53,10 +52,10 @@ func main() {
 }
 ```
 
-Run `go build main.go` to compile and create a binary file. Then, use `go install` to generate a binary file named `test` in `bin/`. If successful, the setup is complete.
+Compile with `go build main.go`, create a binary file, and if a binary file named `test` is generated in `bin/` with `go install`, you're all set.
 
-# Setting Up Docker Development Environment
+# Setting Up a Docker Development Environment
 - [github - astaxie/build-web/application-with-golang](https://github.com/astaxie/build-web-application-with-golang/blob/master/ja/01.0.md)
 - [golang.org](https://golang.org/doc/code.html)
-- [Setting Up Go Development Environment](https://medium.com/@Akitsuyoshi/go%E8%A8%80%E8%AA%9E%E3%81%AE%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B-77f272229a64)
-- [Common Pitfalls for Developers New to Go](https://qiita.com/mumoshu/items/0d2f2a13c6e9fc8da2a4)
+- [Setting Up a Go Development Environment](https://medium.com/@Akitsuyoshi/go%E8%A8%80%E8%AA%9E%E3%81%AE%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B-77f272229a64)
+- [Things That People Coming from Other Languages Encounter When They Start Using Go and Their Solutions](https://qiita.com/mumoshu/items/0d2f2a13c6e9fc8da2a4)

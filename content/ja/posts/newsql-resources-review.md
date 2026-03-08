@@ -1,15 +1,16 @@
 ---
-title: "NewSQL関連の資料を読み漁った"
-slug: "newsql-resources-review"
-date: 2023-03-29
+title: NewSQL関連の資料を読み漁った
+slug: newsql-resources-review
+date: 2023-03-29T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "NewSQL"
-  - "リンク集"
-draft: false
+  - NewSQL
+  - リンク集
+translation_key: newsql-resources-review
 ---
+
 
 NewSQLについての色々と調べて読み漁ってみたので読んだものをまとめておく。
 

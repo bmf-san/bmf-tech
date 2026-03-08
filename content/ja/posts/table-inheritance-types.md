@@ -1,14 +1,16 @@
 ---
-title: "単一テーブル継承・クラステーブル継承・具象クラス継承について"
-slug: "table-inheritance-types"
-date: 2017-10-01
+title: 単一テーブル継承・クラステーブル継承・具象クラス継承について
+slug: table-inheritance-types
+image: /assets/images/posts/post-73/33047bc2-d4a3-700c-0995-8738c9897a23.png
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "PofEAA"
-draft: false
+  - PofEAA
+translation_key: table-inheritance-types
 ---
+
 
 # 概要
 **リレーショナルなデータベースは継承をサポートをしていないので、オブジェクトの継承関係をデータベースにどのように表現するのか**考慮する必要があります。

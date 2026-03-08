@@ -1,14 +1,15 @@
 ---
-title: "ゴリラで学ぶソフトウェアの法則10選"
-slug: "gorilla-software-principles"
-date: 2019-04-17
+title: ゴリラで学ぶソフトウェアの法則10選
+slug: gorilla-software-principles
+date: 2019-04-17T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "ソフトウェア開発"
-draft: false
+  - ソフトウェア開発
+translation_key: gorilla-software-principles
 ---
+
 
 # 概要
 以前書いた[ソフトウェア開発の法則

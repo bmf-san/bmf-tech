@@ -1,16 +1,17 @@
 ---
-title: "Indexとはなにか"
-slug: "what-is-index"
-date: 2024-04-01
+title: Indexとはなにか
+slug: what-is-index
+date: 2024-04-01T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "DB"
-  - "インデックス"
-  - "MySQL"
-draft: false
+  - DB
+  - インデックス
+  - MySQL
+translation_key: what-is-index
 ---
+
 
 # インデックスとは
 テーブルに格納されているレコードを高速に取り出すための仕組み

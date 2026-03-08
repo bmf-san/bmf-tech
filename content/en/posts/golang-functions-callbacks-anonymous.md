@@ -1,5 +1,5 @@
 ---
-title: About Functions in Golang - Function Values, Callback Functions, and Anonymous Functions
+title: About Golang Functions - Function Values / Callback Functions / Anonymous Functions
 slug: golang-functions-callbacks-anonymous
 date: 2018-10-04T00:00:00Z
 author: bmf-san
@@ -10,15 +10,14 @@ tags:
   - Callback
   - Function
   - Anonymous Function
-description: A summary of function values, callback functions, and anonymous functions in Golang.
 translation_key: golang-functions-callbacks-anonymous
 ---
 
 # Overview
-This post summarizes the following aspects of functions in Golang:
+In Golang functions, we will summarize the following three points.
 - Functions treated as function values
 - Functions that take other functions as arguments
-- Defining anonymous functions
+- Definition of anonymous functions
     - Function values
     - Closures
 
@@ -64,12 +63,12 @@ func main() {
 }
 ```
 
-The `sum` function defines two arguments:
-- `v`, which is of type `int`
-- `r`, which is a function that takes an `int` as an argument and returns an `int`
-  - When defining a callback function as an argument, you must specify the return type even if it is an argument.
+The function `sum` defines two arguments:
+- `v` of type int
+- `r`, which is a function that takes an **int as an argument and returns an int**
+  - When defining a callback function as an argument, it is necessary to specify the return type even if it is an argument.
 
-Incidentally, the `add` function executed in the `main` function stores an address.
+By the way, the `add` function being executed in the main function has its address stored.
 
 ```golang
 fmt.Println("%v", add) // 0x10936d0
@@ -77,9 +76,9 @@ fmt.Println("%v", add) // 0x10936d0
 
 In PHP, callbacks were implemented using variable variables or `call_user_func`.
 
-# Defining Anonymous Functions
+# Definition of Anonymous Functions
 ## Function Values
-An example of treating an anonymous function as a function value:
+Example of treating an anonymous function as a function value
 
 ```golang
 package main
@@ -96,7 +95,7 @@ func main() {
 ```
 
 ## Closures
-An example of defining an anonymous function as a closure:
+Example of defining an anonymous function as a closure
 
 ```golang
 package main
@@ -122,4 +121,4 @@ func main() {
 Using closures allows the scope to remain open, so the value of `count` can be retained.
 
 # Thoughts
-I realized I have been using callback functions without fully understanding them, so I want to delve deeper into how they work.
+I feel like I have been using callback functions without fully understanding them, so I want to delve deeper into how callback functions work.

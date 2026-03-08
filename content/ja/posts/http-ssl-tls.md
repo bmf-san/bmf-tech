@@ -1,17 +1,18 @@
 ---
-title: "HTTPとSSL／TLS"
-slug: "http-ssl-tls"
-date: 2018-04-18
+title: HTTPとSSL／TLS
+slug: http-ssl-tls
+date: 2018-04-18T00:00:00Z
 author: bmf-san
 categories:
-  - "ネットワーク"
+  - ネットワーク
 tags:
-  - "HTTP"
-  - "HTTPS"
-  - "SSL"
-  - "TLS"
-draft: false
+  - HTTP
+  - HTTPS
+  - SSL
+  - TLS
+translation_key: http-ssl-tls
 ---
+
 
 # HTTPSとは
 

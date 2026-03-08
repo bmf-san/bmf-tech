@@ -1,14 +1,15 @@
 ---
-title: "スクラムマスターとプロダクトオーナーの違いについて"
-slug: "scrum-master-product-owner-differences"
-date: 2022-09-04
+title: スクラムマスターとプロダクトオーナーの違いについて
+slug: scrum-master-product-owner-differences
+date: 2022-09-04T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "スクラム"
-draft: false
+  - スクラム
+translation_key: scrum-master-product-owner-differences
 ---
+
 
 # 概要
 先日認定スクラムマスターの研修を受けたのだが、スクラムマスターとプロダクトオーナーの違いについて改めて整理しておく必要があると感じたので、記事にする。

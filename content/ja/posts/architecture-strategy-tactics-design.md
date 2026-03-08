@@ -1,16 +1,17 @@
 ---
-title: "アーキテクチャ戦略・戦術・設計の書き分け"
-slug: "architecture-strategy-tactics-design"
-date: 2026-02-05
+title: アーキテクチャ戦略・戦術・設計の書き分け
+slug: architecture-strategy-tactics-design
+date: 2026-02-05T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "アーキテクチャ戦略"
-  - "アーキテクチャ"
-  - "設計"
-draft: false
+  - アーキテクチャ戦略
+  - アーキテクチャ
+  - 設計
+translation_key: architecture-strategy-tactics-design
 ---
+
 
 アーキテクチャに関するドキュメントを書く際、「これは戦略に書くべきか、戦術に書くべきか、それとも設計ドキュメントに書くべきか」と迷うことがある。
 

@@ -1,14 +1,15 @@
 ---
-title: "DB設計におけるNULLについて"
-slug: "null-in-db-design"
-date: 2024-03-30
+title: DB設計におけるNULLについて
+slug: null-in-db-design
+date: 2024-03-30T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "DB"
-draft: false
+  - DB
+translation_key: null-in-db-design
 ---
+
 
 # NULLとは
 「値が存在しない」または「値が不明」ということを示す。

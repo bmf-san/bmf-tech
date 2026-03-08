@@ -1,15 +1,16 @@
 ---
-title: "ジョブ理論"
-slug: "job-theory-overview"
-date: 2024-03-20
+title: ジョブ理論
+slug: job-theory-overview
+date: 2024-03-20T00:00:00Z
 author: bmf-san
 categories:
-  - "ビジネス"
+  - ビジネス
 tags:
-  - "ジョブ理論"
-  - "本"
-draft: false
+  - ジョブ理論
+  - 本
+translation_key: job-theory-overview
 ---
+
 
 [ジョブ理論 イノベーションを予測可能にする消費のメカニズム](https://amzn.to/3To9WEi)を読んだ。
 

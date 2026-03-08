@@ -1,61 +1,54 @@
 ---
-title: Reflecting on 2021 and Goals for Next Year
+title: Reflection on 2021 and Goals for Next Year
 slug: 2021-review-and-2022-goals
 date: 2021-12-30T00:00:00Z
 author: bmf-san
 categories:
-  - Poem
+  - Poetry
 tags:
-  - Reflection
-  - Goals
+  - Reflection and Goals
 translation_key: 2021-review-and-2022-goals
 ---
 
-# Reflecting on 2021 and Goals for Next Year
-Last year's post: [Reflecting on 2020 and Goals for Next Year](https://bmf-tech.com/posts/2020%E5%B9%B4%E3%81%AE%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A%E3%81%A8%E6%9D%A5%E5%B9%B4%E3%81%AE%E6%8A%B1%E8%B2%A0)
+# Reflection on 2021 and Goals for Next Year
+Last year's post.
+[Reflection on 2020 and Goals for Next Year](https://bmf-tech.com/posts/2020%E5%B9%B4%E3%81%AE%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A%E3%81%A8%E6%9D%A5%E5%B9%B4%E3%81%AE%E6%8A%B1%E8%B2%A0)
 
-This year, I thought I’d write another reflection, but since it’s becoming more of a hassle every year, I’ll keep it brief.
+I think I’ll write a reflection this year as well, but it’s becoming more tedious each year, so I’ll keep it brief.
 
 # Good Purchases
-2021 was probably the year I spent the most money in my life.
+I believe 2021 was the year I spent the most in my life.
 
 - Wedding
 - Moving
 - Car
-- M1 MacBook Air
+- M1 Macbook Air
 - Office chair
 
-I feel like I bought a lot of other small things too.
+I feel like I bought a bunch of other small things too.
 
-Although I tend to be frugal, this was a year where I made meaningful expenditures.
+I tend to be a bit frugal, but it was a year of meaningful expenses.
 
 # Work
-I’ve been feeling busier! (Not that I was ever particularly idle...)
+I’ve been feeling quite busy! (Not that I was originally free or anything…)
 
-I’ve been involved in various things, but I’ll leave the details to my resume and public articles.
+I’m doing various things, but I’ll leave the details to my resume and published articles.
 
 # Learning
-In terms of tangible achievements, I earned the AWS SAA certification. In 2022, I aim to obtain the SAP certification.
-
-As for coding, I’ve been writing Go here and there. I also attended and gave my first talk at GoCon.
-
-Following 2020, I participated in ISUCon again in 2021. Unfortunately, we didn’t make it past the preliminaries...
-
-I focused on input this year, and looking back at my Trello, I see tasks reflecting that focus here and there.
-
-On the other hand, my output was limited. In that sense, it might have been a somewhat blurry year.
-
-In 2021, I also aimed to learn beyond the application layer.
+In terms of tangible achievements, I obtained the AWS SAA certification. I want to obtain SAP in 2022.
+I’ve been gradually writing Go. I also participated in GoCon for the first time and gave a presentation.
+Continuing from 2020, I participated in ISUCon again in 2021. The result was that I didn’t make it past the preliminaries...
+Since I focused on input this year, looking back at Trello, I can see several tasks related to that.
+Output was minimal. In that sense, it might have been a vague year.
+I think 2021 will also be a year focused on learning in areas outside of applications.
 
 # Reflection on Goals
-My 2021 goal was "turn weaknesses into strengths."
+My goal for 2021 was to "turn weaknesses into strengths."
+I think I did fairly well in reducing my discomfort with infrastructure.
 
-In terms of reducing my discomfort with infrastructure-related tasks, I think I made decent progress.
+# Goals for 2021
+This year, instead of a slogan-like approach, I aimed for something more concrete: "Increase the number of clear answers to the question of what I can do."
+As I turn 30 this year, I feel the need for long-term investments looking towards the next 5 to 10 years, and as part of that, I want to clarify my strengths.
 
-# Goals for 2022
-This year, instead of a slogan-like goal, I set a more concrete one: "Increase the number of clear answers to the question, 'What can I do?'"
-
-I’ll be turning 30 this year, and I feel the need to make long-term investments for the next 5 to 10 years. As part of that, I want to focus on clarifying my strengths.
-
-# Final Thoughts
-I’ll just say that there isn’t enough time to summarize everything I’ve thought about over the past year.
+# Thoughts
+I want to make the excuse that there isn’t enough time to summarize everything I’ve thought about over the year.

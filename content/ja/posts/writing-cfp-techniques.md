@@ -1,14 +1,16 @@
 ---
-title: "CFPを書く技術"
-slug: "writing-cfp-techniques"
-date: 2024-04-14
+title: CFPを書く技術
+slug: writing-cfp-techniques
+image: /assets/images/posts/cfp/228522378-8668892b-aaa3-4d30-8bfa-063af494225d.png
+date: 2024-04-14T00:00:00Z
 author: bmf-san
 categories:
-  - "ビジネス"
+  - ビジネス
 tags:
-  - "テクニカルライティング"
-draft: false
+  - テクニカルライティング
+translation_key: writing-cfp-techniques
 ---
+
 
 # 概要
 カンファレンスなどの登壇イベントでCFPを提出することがあるが、自分がどのようにCFPを書き上げ、提出しているかについてポエムを書いておく。

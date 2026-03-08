@@ -1,16 +1,17 @@
 ---
-title: "MySQLでテストデータを生成するSQL"
-slug: "mysql-test-data-generation-sql"
-date: 2019-07-16
+title: MySQLでテストデータを生成するSQL
+slug: mysql-test-data-generation-sql
+date: 2019-07-16T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "MySQL"
-  - "sql"
-  - "cross join"
-draft: false
+  - MySQL
+  - sql
+  - cross join
+translation_key: mysql-test-data-generation-sql
 ---
+
 
  概要
 MySQLだけでテストデータを生成するSQLについてメモしておく。

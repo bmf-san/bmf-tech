@@ -1,17 +1,18 @@
 ---
-title: "PHPで学ぶデザインパターン - Adapterパターン"
-slug: "php-design-patterns-adapter"
-date: 2019-02-01
+title: PHPで学ぶデザインパターン - Adapterパターン
+slug: php-design-patterns-adapter
+date: 2019-02-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "アダプターパターン"
-  - "GoF"
-  - "PHP"
-  - "デザインパターン"
-draft: false
+  - アダプターパターン
+  - GoF
+  - PHP
+  - デザインパターン
+translation_key: php-design-patterns-adapter
 ---
+
 
 # 概要
 [PHPで学ぶデザインパターン Advent Calendar 2018](https://qiita.com/advent-calendar/2018/php-design-pattern)で間に合わなかった記事。

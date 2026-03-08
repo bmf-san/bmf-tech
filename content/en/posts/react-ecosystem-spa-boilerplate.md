@@ -12,12 +12,11 @@ tags:
   - react-router
   - Redux
   - webpack
-description: A simple boilerplate for building SPAs with React and modern tools.
 translation_key: react-ecosystem-spa-boilerplate
 ---
 
 # Overview
-I created a simple boilerplate for building SPAs with React. Keeping up with the latest frontend trends is overwhelming, so I can't guarantee the quality of the source code, but I think it works for now (*_*).
+I created a simple boilerplate for SPAs using React. I'm just barely keeping up with the recent frontend technologies, so I don't have much confidence in the source code, but I think it has taken shape, so I'll make that excuse (*_*).
 
 # Environment
 ## Modules
@@ -39,19 +38,19 @@ I created a simple boilerplate for building SPAs with React. Keeping up with the
 + webpack
 + webpack-dev-server
 
-*Most of these are the latest versions as of now, but react-router might be one version behind.*
+*I believe most of these are the latest versions as of now, but I think react-router is one version behind.*
 
 # Features
 + Routing
-+ API calls
++ API Calls
 
 That's it (--)
 
 # Demo
 ![redux.gif](https://qiita-image-store.s3.amazonaws.com/0/124495/409d4146-bc7e-7f54-5c9f-ad963b56a25b.gif)
 
-# Source Code
+# Source
 + [bmf-san/react-redux-spa-boilerplate](https://github.com/bmf-san/react-redux-spa-boilerplate)
 
 # Thoughts
-When building a more complex SPA, you end up adding more external libraries and creating more complex components, which can lead to chaos. I think this is due to my lack of design skills.
+When actually building a decent SPA, it becomes chaotic as you add more external libraries and the components get more complex, but I think that's due to my lack of design skills.

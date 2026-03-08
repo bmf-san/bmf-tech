@@ -1,19 +1,20 @@
 ---
-title: "権限管理の設計について調べてみた"
-slug: "permission-management-design"
-date: 2024-05-22
+title: 権限管理の設計について調べてみた
+slug: permission-management-design
+date: 2024-05-22T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "ABAC"
-  - "ACL"
-  - "RBAC"
-  - "権限管理"
-  - "システム設計"
-  - "リンク集"
-draft: false
+  - ABAC
+  - ACL
+  - RBAC
+  - 権限管理
+  - システム設計
+  - リンク集
+translation_key: permission-management-design
 ---
+
 
 # 概要
 権限管理の設計について事例を調べてみたのでメモしておく。

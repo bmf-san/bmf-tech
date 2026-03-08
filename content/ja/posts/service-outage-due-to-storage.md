@@ -1,14 +1,16 @@
 ---
-title: "ファイルシステムの容量不足によるサービスダウン"
-slug: "service-outage-due-to-storage"
-date: 2023-05-07
+title: ファイルシステムの容量不足によるサービスダウン
+slug: service-outage-due-to-storage
+image: /assets/images/posts/post-316/210195173-9bc2975f-73f4-495d-bb19-71732ce593f2.png
+date: 2023-05-07T00:00:00Z
 author: bmf-san
 categories:
-  - "障害報告"
+  - 障害報告
 tags:
-  - "ポストモーテム"
-draft: false
+  - ポストモーテム
+translation_key: service-outage-due-to-storage
 ---
+
 
 # ステータス
 解決

@@ -1,18 +1,19 @@
 ---
-title: "データ分析基盤構築入門"
-slug: "data-analysis-infrastructure-introduction"
-date: 2020-06-19
+title: データ分析基盤構築入門
+slug: data-analysis-infrastructure-introduction
+date: 2020-06-19T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "ETL"
-  - "本"
-  - "Elasticsearch"
-  - "Kibana"
-  - "fluentd"
-draft: false
+  - ETL
+  - 本
+  - Elasticsearch
+  - Kibana
+  - fluentd
+translation_key: data-analysis-infrastructure-introduction
 ---
+
 
 [データ分析基盤構築入門](https://amzn.to/3QElp1W)を読んだ。
 
