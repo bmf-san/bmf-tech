@@ -91,11 +91,12 @@
     {{if eq .CurrentLocale "ja"}}
     <li><a href="/ja/" class="navbar-item">ホーム</a></li>
     <li><a href="/ja/about/" class="navbar-item">About</a></li>
+    <li><a href="/atom.xml" class="navbar-item">フィード</a></li>
     {{else}}
     <li><a href="/" class="navbar-item">Home</a></li>
     <li><a href="/about/" class="navbar-item">About</a></li>
-    {{end}}
     <li><a href="/atom.xml" class="navbar-item">Feed</a></li>
+    {{end}}
     <li><a href="{{$altURL}}" class="navbar-item" onclick="localStorage.setItem('pref-locale','{{$targetLocale}}')">
       <span class="badge badge-primary">{{if eq .CurrentLocale "ja"}}EN{{else}}JA{{end}}</span>
     </a></li>
@@ -115,18 +116,22 @@
 
 {{define "pagination"}}
 {{if .Pagination}}
+{{- $current := .Pagination.CurrentPage}}
+{{- $total := .Pagination.TotalPages}}
+{{- $base := .Pagination.BaseURL}}
 <nav aria-label="pagination" class="flex justify-center mt-8">
-  <ul class="pagination flex gap-2">
+  <ul class="pagination flex gap-1 flex-wrap">
     <li class="pagination-item">
       {{if .Pagination.PrevURL}}<a href="{{.Pagination.PrevURL}}" class="pagination-link">&laquo;</a>{{else}}<span class="pagination-link disabled">&laquo;</span>{{end}}
     </li>
+    {{range paginationPages $current $total}}
+    {{if eq . -1}}
+    <li class="pagination-item"><span class="pagination-link disabled">&hellip;</span></li>
+    {{else}}
     <li class="pagination-item">
-      <span class="pagination-link active">{{.Pagination.CurrentPage}}</span>
+      {{if eq . $current}}<span class="pagination-link active">{{.}}</span>{{else}}<a href="{{pageURL $base .}}" class="pagination-link">{{.}}</a>{{end}}
     </li>
-    {{if gt .Pagination.TotalPages 1}}
-    <li class="pagination-item">
-      <span class="pagination-ellipsis text-secondary text-sm px-2">/ {{.Pagination.TotalPages}}</span>
-    </li>
+    {{end}}
     {{end}}
     <li class="pagination-item">
       {{if .Pagination.NextURL}}<a href="{{.Pagination.NextURL}}" class="pagination-link">&raquo;</a>{{else}}<span class="pagination-link disabled">&raquo;</span>{{end}}
