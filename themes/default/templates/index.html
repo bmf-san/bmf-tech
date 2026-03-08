@@ -14,15 +14,6 @@
     {{end}}
   </div>
 
-  {{/* Category filter — EN only */}}
-  {{if and .Categories (ne .CurrentLocale "ja")}}
-  <div class="flex gap-2 flex-wrap justify-center mb-10">
-    {{range .Categories}}
-    <a href="/categories/{{.Name}}/" class="badge badge-light text-secondary badge-lg">{{.Name}}</a>
-    {{end}}
-  </div>
-  {{end}}
-
   {{if .Articles}}
 
   {{/* Featured hero post (first article) */}}
@@ -74,12 +65,9 @@
             {{if $a.FrontMatter.Description}}
             <p class="text-secondary text-sm leading-relaxed line-clamp-2 mb-4">{{$a.FrontMatter.Description}}</p>
             {{end}}
-            <div class="flex items-center justify-between">
-              <div class="flex flex-wrap gap-1">
+            <div class="flex flex-wrap gap-1">
                 {{range $a.FrontMatter.Tags}}<span class="badge badge-light text-secondary">#{{.}}</span>{{end}}
               </div>
-              {{if $a.FrontMatter.Author}}<span class="text-xs text-secondary">{{$a.FrontMatter.Author}}</span>{{end}}
-            </div>
           </div>
         </a>
         {{end}}

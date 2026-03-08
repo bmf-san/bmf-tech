@@ -1,29 +1,26 @@
 ---
-title: Laravel5.3で自作artisanコマンド.md
+title: Creating Custom Artisan Command in Laravel 5.3
 slug: laravel-5-3-custom-artisan-command
 date: 2017-09-26T00:00:00Z
 author: bmf-san
 categories:
-  - アプリケーション
+  - Application
 tags:
   - Laravel
-  - リポジトリーパターン
+  - Repository Pattern
   - artisan
 translation_key: laravel-5-3-custom-artisan-command
 ---
 
+Currently, I am working on a project that implements the Repository pattern, and I thought it would be convenient to have a command that automatically generates Repository-related files, so I created one.
 
-今携わっているプロジェクトでRepositoryパターンを導入しているのですが、Repository関連のファイルを自動で生成するコマンドがあったら便利だなと思い、作ってみました。
-
-# コマンドを生成
+# Generate Command
 `php artisan make:command Repository`
 
-/CommandsにRespository.phpというコマンド用のファイルが生成されます。
+A command file named Repository.php will be generated in the /Commands directory.
 
-
-# コマンドファイルを編集
-Repository.phpを編集します。
-handleメソッド部分は[Creating file using Artisan Command in Laravel 5.1](http://stackoverflow.com/questions/32798132/creating-file-using-artisan-command-in-laravel-5-1)のコードをお借りして、少しカスタマイズしました。（偶然同じことをやろうとしている方がいたので・・）
+# Edit Command File
+Edit the Repository.php file. I borrowed the code from [Creating file using Artisan Command in Laravel 5.1](http://stackoverflow.com/questions/32798132/creating-file-using-artisan-command-in-laravel-5-1) for the handle method and made some customizations. (Coincidentally, someone else was trying to do the same thing...)
 
 ```Repository.php
 <?php
@@ -84,7 +81,7 @@ class Repository extends Command
 
                      file_put_contents($contractFileName, $contractFileContent);
 
-                     $eloquentFileContent = "<?php\n\nnamespace App\\Http\\Repositories\\Eloquent;\n\nuse App\\Repositories\\Contracts\\".$modelName."RepositoryContract;\n\nclass " . $modelName . "Repository implements " . $modelName . "RepositoryContract\n{\n}";
+                     $eloquentFileContent = "<?php\n\nnamespace App\\Http\\Repositories\\Eloquent;\n\nuse App\\Repositories\\Contracts\".$modelName."RepositoryContract;\n\nclass " . $modelName . "Repository implements " . $modelName . "RepositoryContract\n{\n}";
 
                      file_put_contents($eloquentFileName, $eloquentFileContent);
 
@@ -98,8 +95,8 @@ class Repository extends Command
 }
 ```
 
-# Kernel.phpにコマンドを登録
-RepositoryコマンドをKernel.phpに登録します。
+# Register Command in Kernel.php
+Register the Repository command in Kernel.php.
 
 ```Kernel.php
 <?php
@@ -166,7 +163,7 @@ class Repository extends Command
 
             file_put_contents($contractFileName, $contractFileContent);
 
-            $eloquentFileContent = "<?php\n\nnamespace App\\Repositories\\Eloquent;\n\nuse App\\Repositories\\Contracts\\".$modelName."RepositoryContract;\n\nclass " . $modelName . "Repository implements " . $modelName . "RepositoryContract\n{\n}";
+            $eloquentFileContent = "<?php\n\nnamespace App\\Repositories\\Eloquent;\n\nuse App\\Repositories\\Contracts\".$modelName."RepositoryContract;\n\nclass " . $modelName . "Repository implements " . $modelName . "RepositoryContract\n{\n}";
 
             file_put_contents($eloquentFileName, $eloquentFileContent);
 
@@ -178,20 +175,18 @@ class Repository extends Command
 }
 ```
 
-# コマンドを実行してみる
+# Execute the Command
 `php artisan make:repository Hoge`
 
 ```
 Repositories
 ├── Contracts
-│   └── HogeRepositoryContract.php
+│   └── HogeRepositoryContract.php
 └── Eloquent
     └── HogeRepository.php
 ```
 
-こんな感じでファイルが生成されるかと思います。
+I believe files will be generated like this.
 
-#　所感
-今回はRepositoryパターンの実装用のコマンドを作成しましたが、これを応用して色々なコマンドが作れそうですね。
-今回つくったコマンドは、現在開発している[プロダクト](https://github.com/bmf-san/laravel-react-redux-blog-boilerplate)に導入しています。
-
+# Thoughts
+This time, I created a command for implementing the Repository pattern, but it seems like I could create various commands by applying this. The command I created has been integrated into the [product](https://github.com/bmf-san/laravel-react-redux-blog-boilerplate) I am currently developing.

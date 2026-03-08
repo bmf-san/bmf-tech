@@ -1,28 +1,27 @@
 ---
-title: Singletonパターンはなぜアンチパターンなのか
+title: Why the Singleton Pattern is an Anti-Pattern
 slug: singleton-pattern-anti-pattern
 date: 2025-10-18T00:00:00Z
 author: bmf-san
 categories:
-  - アプリケーション
+  - Application
 tags:
-  - シングルトンパターン
+  - Singleton Pattern
   - Golang
 translation_key: singleton-pattern-anti-pattern
 ---
 
+## Introduction
 
-## はじめに
+The Singleton pattern is one of the most well-known and widely used design patterns. However, from the perspective of clean code and maintainability, it has many issues.
 
-シングルトンパターンは、デザインパターンの中でも最もよく知られ、広く使われているパターンの一つである。しかし、クリーンコードや保守性の観点から見ると、多くの問題を抱えている。
+In this article, we will discuss the main problems of the Singleton pattern, using specific Go code examples.
 
-本記事では、シングルトンパターンの主要な問題点について、具体的なGoのコード例を交えながら解説する。
+## What is the Singleton Pattern?
 
-## シングルトンパターンとは
+The Singleton pattern is a design pattern that guarantees that a class has only one instance and provides a global point of access to it.
 
-シングルトンパターンは、クラスのインスタンスが常に1つだけ存在することを保証するデザインパターンである。
-
-### Goでの基本的な実装
+### Basic Implementation in Go
 
 ```go
 package main
@@ -31,7 +30,7 @@ import (
     "sync"
 )
 
-// Database はシングルトンとして実装されたデータベース接続
+// Database is a database connection implemented as a singleton
 type Database struct {
     connectionString string
 }
@@ -41,7 +40,7 @@ var (
     once     sync.Once
 )
 
-// GetInstance はDatabaseのシングルトンインスタンスを返す
+// GetInstance returns the singleton instance of Database
 func GetInstance() *Database {
     once.Do(func() {
         instance = &Database{
@@ -56,35 +55,35 @@ func (db *Database) Query(sql string) string {
 }
 ```
 
-一見便利に見えるこのパターンだが、実際には多くの問題を引き起こす。
+Although this pattern seems convenient at first glance, it actually causes many problems.
 
-## シングルトンパターンの問題点
+## Problems with the Singleton Pattern
 
-### 1. 全単射性の欠如
+### 1. Lack of Bijectivity
 
-シングルトンは現実世界に直接対応する概念ではない。現実世界では、ほとんどの概念は複数のインスタンスを持つことができる。
+Singletons do not correspond directly to concepts in the real world. In reality, most concepts can have multiple instances.
 
-#### 問題の例
+#### Example of the Problem
 
 ```go
-// 現実世界では複数のデータベース接続が存在しうる
+// In the real world, multiple database connections can exist
 func Example() {
-    // プライマリDB
+    // Primary DB
     primaryDB := GetInstance()
 
-    // レプリカDBにも接続したい...しかしシングルトンでは不可能
-    // replicaDB := GetReplicaInstance() // これはできない
+    // I want to connect to a replica DB... but it's impossible with a singleton
+    // replicaDB := GetReplicaInstance() // This is not possible
 
     primaryDB.Query("SELECT * FROM users")
 }
 ```
 
-現実世界では、プライマリとレプリカ、あるいは複数のデータベースに接続する必要がある場合が多い。しかし、シングルトンはこの柔軟性を奪う。
+In the real world, there are often needs to connect to a primary and a replica, or to multiple databases. However, the Singleton pattern takes away this flexibility.
 
-#### 改善策
+#### Improvement
 
 ```go
-// インターフェースと依存性注入を使用
+// Using interfaces and dependency injection
 type DBConnection interface {
     Query(sql string) string
 }
@@ -101,29 +100,29 @@ func (db *PostgresDB) Query(sql string) string {
     return "result from " + db.connectionString
 }
 
-// 複数の接続を柔軟に管理できる
+// Flexibly manage multiple connections
 func ImprovedExample() {
     primaryDB := NewPostgresDB("primary.db.com:5432")
     replicaDB := NewPostgresDB("replica.db.com:5432")
 
-    primaryDB.Query("INSERT INTO users VALUES (...)")
+    primaryDB.Query("INSERT INTO users VALUES (...)" )
     replicaDB.Query("SELECT * FROM users")
 }
 ```
 
-### 2. 密結合
+### 2. Tight Coupling
 
-シングルトンは、分離が困難なグローバルなアクセスポイントを提供する。これにより、コード全体が強く結合される。
+Singletons provide a global access point that is difficult to separate, causing the codebase to become tightly coupled.
 
-#### 問題の例
+#### Example of the Problem
 
 ```go
 type UserService struct {
-    // データベースへの依存が隠蔽されている
+    // Dependency on the database is hidden
 }
 
 func (s *UserService) GetUser(id int) string {
-    // グローバルなシングルトンに直接依存
+    // Directly depends on the global singleton
     db := GetInstance()
     return db.Query("SELECT * FROM users WHERE id = " + string(rune(id)))
 }
@@ -134,17 +133,17 @@ func (s *UserService) CreateUser(name string) {
 }
 ```
 
-このコードの問題点：
-- `UserService`が`Database`のシングルトンに暗黙的に依存している
-- 依存関係が明示的でなく、コードを読むだけでは分からない
-- テスト時にモックに置き換えることが困難
+Problems with this code:
+- `UserService` implicitly depends on the `Database` singleton.
+- The dependency is not explicit, making it hard to understand just by reading the code.
+- Difficult to replace with mocks during testing.
 
-#### 改善策
+#### Improvement
 
 ```go
-// 依存性注入を使用して明示的に依存関係を示す
+// Use dependency injection to explicitly show dependencies
 type UserService struct {
-    db DBConnection // 依存関係が明示的
+    db DBConnection // Dependency is explicit
 }
 
 func NewUserService(db DBConnection) *UserService {
@@ -160,37 +159,37 @@ func (s *UserService) CreateUser(name string) {
 }
 ```
 
-### 3. テストが困難
+### 3. Difficult to Test
 
-シングルトンの存在により、ユニットテストの作成が非常に困難になる。
+The existence of a singleton makes it very difficult to create unit tests.
 
-#### 問題の例
+#### Example of the Problem
 
 ```go
-// テストしたいコード
+// Code to be tested
 func ProcessUser(userID int) string {
-    db := GetInstance() // シングルトンに依存
+    db := GetInstance() // Depends on the singleton
     result := db.Query("SELECT * FROM users WHERE id = " + string(rune(userID)))
     return "Processed: " + result
 }
 
-// テストコード - モックに置き換えられない
+// Test code - cannot be replaced with a mock
 func TestProcessUser(t *testing.T) {
-    // 問題: 実際のデータベースが使われてしまう
-    // モックに置き換える方法がない
+    // Problem: The actual database is being used
+    // No way to replace with a mock
     result := ProcessUser(1)
 
-    // 実際のDBに接続してしまうため、テストが遅く、不安定
+    // Since it connects to the actual DB, the test is slow and unstable
     if result == "" {
         t.Error("Expected non-empty result")
     }
 }
 ```
 
-#### 改善策
+#### Improvement
 
 ```go
-// モック実装
+// Mock implementation
 type MockDB struct {
     queryFunc func(sql string) string
 }
@@ -202,15 +201,15 @@ func (m *MockDB) Query(sql string) string {
     return "mock result"
 }
 
-// テスト可能な実装
+// Testable implementation
 func ProcessUserImproved(userID int, db DBConnection) string {
     result := db.Query("SELECT * FROM users WHERE id = " + string(rune(userID)))
     return "Processed: " + result
 }
 
-// テストコード - モックを使用可能
+// Test code - can use mocks
 func TestProcessUserImproved(t *testing.T) {
-    // モックDBを注入
+    // Inject mock DB
     mockDB := &MockDB{
         queryFunc: func(sql string) string {
             return "test user data"
@@ -226,11 +225,11 @@ func TestProcessUserImproved(t *testing.T) {
 }
 ```
 
-### 4. 状態の蓄積
+### 4. State Accumulation
 
-複数のテスト実行により、シングルトンに不要なデータが蓄積される。
+With multiple test executions, unnecessary data can accumulate in the singleton.
 
-#### 問題の例
+#### Example of the Problem
 
 ```go
 type Cache struct {
@@ -257,7 +256,7 @@ func (c *Cache) Get(key string) string {
     return c.data[key]
 }
 
-// テスト1
+// Test 1
 func TestCacheSet(t *testing.T) {
     cache := GetCache()
     cache.Set("key1", "value1")
@@ -267,22 +266,22 @@ func TestCacheSet(t *testing.T) {
     }
 }
 
-// テスト2 - テスト1の状態が残っている
+// Test 2 - State from Test 1 remains
 func TestCacheGet(t *testing.T) {
     cache := GetCache()
 
-    // 問題: 前のテストのデータが残っている
-    // "key1"がすでに存在してしまう
+    // Problem: Data from the previous test remains
+    // "key1" already exists
     if cache.Get("key1") != "" {
         t.Error("Expected empty cache, but got data from previous test")
     }
 }
 ```
 
-#### 改善策
+#### Improvement
 
 ```go
-// インスタンスを都度生成
+// Generate instances each time
 type ImprovedCache struct {
     data map[string]string
 }
@@ -296,14 +295,15 @@ func NewCache() *ImprovedCache {
 func (c *ImprovedCache) Set(key, value string) {
     c.data[key] = value
 }
+}
 
 func (c *ImprovedCache) Get(key string) string {
     return c.data[key]
 }
 
-// テスト1 - 独立したインスタンス
+// Test 1 - Independent instance
 func TestImprovedCacheSet(t *testing.T) {
-    cache := NewCache() // 新しいインスタンス
+    cache := NewCache() // New instance
     cache.Set("key1", "value1")
 
     if cache.Get("key1") != "value1" {
@@ -311,22 +311,22 @@ func TestImprovedCacheSet(t *testing.T) {
     }
 }
 
-// テスト2 - 独立したインスタンス
+// Test 2 - Independent instance
 func TestImprovedCacheGet(t *testing.T) {
-    cache := NewCache() // 別の新しいインスタンス
+    cache := NewCache() // Another new instance
 
-    // 前のテストの影響を受けない
+    // Not affected by previous tests
     if cache.Get("key1") != "" {
         t.Error("Expected empty cache")
     }
 }
 ```
 
-### 5. 並行処理の問題
+### 5. Concurrency Issues
 
-シングルトンパターンを使うと、並行環境でスレッドセーフな実装が必要になり、複雑さが増す。
+Using the Singleton pattern requires thread-safe implementations in concurrent environments, increasing complexity.
 
-#### 問題の例（スレッドセーフではないシングルトン）
+#### Example of the Problem (Non-thread-safe Singleton)
 
 ```go
 type Counter struct {
@@ -336,7 +336,7 @@ type Counter struct {
 var counterInstance *Counter
 var counterOnce sync.Once
 
-// シングルトンとして実装（インスタンス生成はスレッドセーフ）
+// Implemented as a singleton (instance creation is thread-safe)
 func GetCounter() *Counter {
     counterOnce.Do(func() {
         counterInstance = &Counter{count: 0}
@@ -344,60 +344,60 @@ func GetCounter() *Counter {
     return counterInstance
 }
 
-// 問題: シングルトンなので、このメソッドがスレッドセーフでないと
-// すべての呼び出し元でレースコンディションが発生する
+// Problem: Since it's a singleton, if this method is not thread-safe,
+// race conditions will occur for all callers
 func (c *Counter) Increment() {
-    c.count++ // レースコンディション
-    // 注意: コンパイルエラーにはならない
-    // しかし、並行実行時に予期しない結果になる
+    c.count++ // Race condition
+    // Note: No compile error
+    // However, unexpected results occur during concurrent execution
 }
 
 func (c *Counter) GetCount() int {
-    return c.count // これもレースコンディション
+    return c.count // This also has a race condition
 }
 
-// レースコンディションの詳細:
-// シングルトンのため、すべてのgoroutineが同じインスタンスにアクセスする
-// c.count++ は以下の処理に分解される:
-//   1. メモリから値を読み取る (READ)
-//   2. 値を1増やす (INCREMENT)
-//   3. メモリに書き戻す (WRITE)
+// Details of the race condition:
+// Because it's a singleton, all goroutines access the same instance
+// c.count++ breaks down into the following operations:
+//   1. Read value from memory (READ)
+//   2. Increment value (INCREMENT)
+//   3. Write back to memory (WRITE)
 //
-// 例: 現在のcount = 5 の状態で、2つのgoroutineが同時にIncrement()を呼ぶ
-//   goroutine A: count = 5 を読む
-//   goroutine B: count = 5 を読む  ← Aと同じ値を読む
-//   goroutine A: 5 + 1 = 6 を計算
-//   goroutine B: 5 + 1 = 6 を計算
-//   goroutine A: count = 6 を書く
-//   goroutine B: count = 6 を書く ← 上書きされる
-//   結果: 2回インクリメントしたのに、countは6（期待値は7）
+// Example: If the current count = 5, and two goroutines call Increment() simultaneously
+//   goroutine A: Reads count = 5
+//   goroutine B: Reads count = 5  ← A reads the same value
+//   goroutine A: Calculates 5 + 1 = 6
+//   goroutine B: Calculates 5 + 1 = 6
+//   goroutine A: Writes count = 6
+//   goroutine B: Writes count = 6 ← Overwritten
+//   Result: Incremented twice, but count is 6 (expected value is 7)
 
-// 並行実行時に問題が発生
+// Problems occur during concurrent execution
 func ConcurrentExample() {
     var wg sync.WaitGroup
 
-    // 1000個のgoroutineがシングルトンの同じインスタンスにアクセス
+    // 1000 goroutines access the same singleton instance
     for i := 0; i < 1000; i++ {
         wg.Add(1)
         go func() {
             defer wg.Done()
-            counter := GetCounter() // すべて同じインスタンス
-            counter.Increment()      // レースコンディション
+            counter := GetCounter() // All access the same instance
+            counter.Increment()      // Race condition
         }()
     }
 
     wg.Wait()
 
-    // 期待値: 1000
-    // 実際: 1000より小さい値（例: 987, 934など）
-    // 理由: シングルトンなので全goroutineが同じインスタンスを共有し、
-    //       スレッドセーフでないIncrement()を呼ぶため
+    // Expected: 1000
+    // Actual: Less than 1000 (e.g., 987, 934, etc.)
+    // Reason: Since it's a singleton, all goroutines share the same instance,
+    //       calling the non-thread-safe Increment() function
     fmt.Println("Count:", GetCounter().GetCount())
 }
 
-// レースコンディションの検出方法
-// 通常の実行では問題が顕在化しないこともあるが、
-// go run -race main.go を実行すると警告が表示される:
+// How to detect race conditions
+// Problems may not manifest during normal execution,
+// but running go run -race main.go will show warnings:
 //
 // WARNING: DATA RACE
 // Write at 0x... by goroutine 7:
@@ -406,14 +406,14 @@ func ConcurrentExample() {
 //   main.(*Counter).Increment()
 ```
 
-#### 改善策1: スレッドセーフなシングルトン実装
+#### Improvement 1: Thread-safe Singleton Implementation
 
-シングルトンを使う場合、すべてのメソッドをスレッドセーフにする必要がある：
+If using a singleton, all methods must be thread-safe:
 
 ```go
 type Counter struct {
     count int
-    mu    sync.Mutex // すべてのメソッドでロックが必要
+    mu    sync.Mutex // Lock needed for all methods
 }
 
 var (
@@ -428,7 +428,7 @@ func GetCounter() *Counter {
     return counterInstance
 }
 
-// すべてのメソッドでmutexによる排他制御が必要
+// All methods need mutex for exclusive control
 func (c *Counter) Increment() {
     c.mu.Lock()
     defer c.mu.Unlock()
@@ -442,16 +442,16 @@ func (c *Counter) GetCount() int {
 }
 ```
 
-問題点：
-- シングルトンなので、すべてのgoroutineが同じmutexで競合する
-- パフォーマンスのボトルネックになる
-- デッドロックのリスクが高まる
-- シングルトンの他の問題（テスタビリティ、密結合など）も残る
+Problems:
+- Since it's a singleton, all goroutines compete for the same mutex.
+- Becomes a performance bottleneck.
+- Increases the risk of deadlocks.
+- Other issues with the singleton (testability, tight coupling, etc.) remain.
 
-#### 改善策2: シングルトンを使わない実装
+#### Improvement 2: Implementation without Singleton
 
 ```go
-// シングルトンを使わず、必要に応じて複数のインスタンスを作成
+// Create multiple instances as needed without using a singleton
 type SafeCounter struct {
     count int
     mu    sync.Mutex
@@ -473,9 +473,9 @@ func (c *SafeCounter) GetCount() int {
     return c.count
 }
 
-// 改善例: 各goroutineグループで独立したカウンターを使用
+// Improved example: Use independent counters for each goroutine group
 func ImprovedConcurrentExample() {
-    // 10個の独立したカウンターを作成
+    // Create 10 independent counters
     counters := make([]*SafeCounter, 10)
     for i := range counters {
         counters[i] = NewSafeCounter()
@@ -486,34 +486,34 @@ func ImprovedConcurrentExample() {
         wg.Add(1)
         go func(idx int) {
             defer wg.Done()
-            // 各goroutineは異なるカウンターにアクセス
-            // → mutex競合が分散される
+            // Each goroutine accesses a different counter
+            // → Mutex contention is distributed
             counters[idx%10].Increment()
         }(i)
     }
 
     wg.Wait()
 
-    // 最後に集計
+    // Aggregate at the end
     total := 0
     for _, c := range counters {
         total += c.GetCount()
     }
-    fmt.Println("Total count:", total) // 確実に1000
+    fmt.Println("Total count:", total) // Definitely 1000
 }
 ```
 
-メリット：
-- 複数のインスタンスを使うことで、mutex競合が分散される
-- パフォーマンスが向上する
-- テストが容易（各カウンターを独立してテスト可能）
-- シングルトンの制約から解放される
+Benefits:
+- By using multiple instances, mutex contention is distributed.
+- Performance improves.
+- Testing is easier (each counter can be tested independently).
+- Freed from the constraints of a singleton.
 
-### 6. 単一責任原則の違反
+### 6. Violation of the Single Responsibility Principle
 
-シングルトンクラスは、本来の責任に加えて「インスタンス管理」という責任も持つことになる。
+Singleton classes take on the responsibility of "instance management" in addition to their primary responsibility.
 
-#### 問題の例
+#### Example of the Problem
 
 ```go
 type Logger struct {
@@ -532,19 +532,19 @@ func GetLogger() *Logger {
     return loggerInstance
 }
 
-// Loggerは2つの責任を持つ:
-// 1. ログを書く（本来の責任）
-// 2. 自身のインスタンスを管理する（シングルトンの責任）
+// Logger has two responsibilities:
+// 1. Writing logs (its primary responsibility)
+// 2. Managing its own instance (singleton responsibility)
 func (l *Logger) Log(message string) {
-    // ログ処理
+    // Log processing
     fmt.Println("Log to", l.logFile, ":", message)
 }
 ```
 
-#### 改善策
+#### Improvement
 
 ```go
-// Loggerは本来の責任（ログ記録）のみを持つ
+// Logger only holds its primary responsibility (logging)
 type ImprovedLogger struct {
     logFile string
 }
@@ -557,11 +557,11 @@ func (l *ImprovedLogger) Log(message string) {
     fmt.Println("Log to", l.logFile, ":", message)
 }
 
-// インスタンス管理は別の場所（main関数やDIコンテナ）で行う
+// Instance management is handled elsewhere (main function or DI container)
 func main() {
     logger := NewLogger("/var/log/app.log")
 
-    // 必要なら複数のロガーも作成可能
+    // Can create multiple loggers if needed
     errorLogger := NewLogger("/var/log/error.log")
 
     logger.Log("Application started")
@@ -569,42 +569,44 @@ func main() {
 }
 ```
 
-### 7. 依存性注入の阻害
+### 7. Hindrance to Dependency Injection
 
-シングルトンは、依存性注入のパターンを阻害し、コンポーネント間の分離を困難にする。
+Singletons hinder the pattern of dependency injection, making it difficult to separate components.
 
-#### 問題の例
+#### Example of the Problem
 
 ```go
 type EmailService struct {
-    // 依存関係が隠蔽されている
+    // Dependency is hidden
 }
 
 func (s *EmailService) SendEmail(to, message string) {
-    // グローバルなシングルトンに依存
+    // Depends on a global singleton
     logger := GetLogger()
     logger.Log("Sending email to " + to)
 
-    // 実際のメール送信処理
+    // Actual email sending process
     fmt.Println("Email sent to", to)
 }
 
-// 使用側
+// Usage
 func NotifyUser(userEmail string) {
-    service := &EmailService{} // 依存関係が見えない
+    service := &EmailService{} // Dependency is not visible
     service.SendEmail(userEmail, "Hello!")
 }
 ```
 
-#### 改善策
+#### Improvement
 
 ```go
-// インターフェースを定義
+// Define an interface
+
 type LogWriter interface {
     Log(message string)
 }
 
-// EmailServiceは依存関係を明示的に受け取る
+// EmailService explicitly receives its dependencies
+
 type ImprovedEmailService struct {
     logger LogWriter
 }
@@ -618,13 +620,14 @@ func (s *ImprovedEmailService) SendEmail(to, message string) {
     fmt.Println("Email sent to", to)
 }
 
-// 使用側 - 依存関係が明示的
+// Usage - dependencies are explicit
 func ImprovedNotifyUser(userEmail string, logger LogWriter) {
-    service := NewEmailService(logger) // 依存関係が明確
+    service := NewEmailService(logger) // Dependencies are clear
     service.SendEmail(userEmail, "Hello!")
 }
 
-// テストでモックを注入可能
+// Can inject mocks for testing
+
 type MockLogger struct{}
 
 func (m *MockLogger) Log(message string) {
@@ -638,11 +641,11 @@ func TestEmailService(t *testing.T) {
 }
 ```
 
-### 8. 柔軟性の欠如
+### 8. Lack of Flexibility
 
-一度作成されたシングルトンオブジェクトの変更や置換が困難である。
+Once a singleton object is created, it becomes difficult to change or replace it.
 
-#### 問題の例
+#### Example of the Problem
 
 ```go
 type Config struct {
@@ -665,15 +668,15 @@ func GetConfig() *Config {
 
 func MakeAPICall() string {
     config := GetConfig()
-    // 問題: テスト環境でも本番環境のURLが使われてしまう
+    // Problem: Even in the test environment, the production URL is used
     return "Calling " + config.apiURL
 }
 ```
 
-#### 改善策
+#### Improvement
 
 ```go
-// 環境ごとに異なる設定を使用可能
+// Use different settings for different environments
 type Environment string
 
 const (
@@ -707,27 +710,27 @@ func NewConfig(env Environment) *FlexibleConfig {
     return &cfg
 }
 
-// 環境に応じて柔軟に設定を切り替え可能
+// Flexibly switch settings according to the environment
 func FlexibleAPICall(config *FlexibleConfig) string {
     return "Calling " + config.apiURL
 }
 
 func Example() {
-    // 開発環境
+    // Development environment
     devConfig := NewConfig(Development)
     FlexibleAPICall(devConfig)
 
-    // 本番環境
+    // Production environment
     prodConfig := NewConfig(Production)
     FlexibleAPICall(prodConfig)
 }
 ```
 
-### 9. 文脈依存の一意性
+### 9. Context-Dependent Uniqueness
 
-一意なオブジェクトであるという概念は、一定のスコープ内に依存するべきであり、グローバルに適用すべきではない。
+The concept of being a unique object should depend on a certain scope and should not be applied globally.
 
-#### 問題の例
+#### Example of the Problem
 
 ```go
 type Session struct {
@@ -748,18 +751,18 @@ func GetSession() *Session {
     return sessionInstance
 }
 
-// 問題: 複数ユーザーのセッションを管理できない
+// Problem: Cannot manage sessions for multiple users
 func HandleRequest(userID int) {
     session := GetSession()
-    // すべてのユーザーが同じセッションを共有してしまう
+    // All users share the same session
     session.userID = userID
 }
 ```
 
-#### 改善策
+#### Improvement
 
 ```go
-// コンテキストごとにセッションを管理
+// Manage sessions per context
 type SessionManager struct {
     sessions map[int]*Session
     mu       sync.RWMutex
@@ -795,23 +798,23 @@ func (sm *SessionManager) RemoveSession(userID int) {
     delete(sm.sessions, userID)
 }
 
-// 使用例
+// Usage example
 func ImprovedHandleRequest(userID int, sm *SessionManager) {
     session := sm.GetSession(userID)
-    // 各ユーザーが独立したセッションを持つ
+    // Each user has an independent session
     fmt.Println("User", session.userID, "logged in at", session.loginTime)
 }
 ```
 
-### 10. 非効率なメモリ使用
+### 10. Inefficient Memory Usage
 
-現代のGC（ガベージコレクタ）は、永続的なオブジェクトよりも一時的なオブジェクトを効率的に管理する。
+Modern GC (Garbage Collector) manages temporary objects more efficiently than persistent objects.
 
-#### 問題の例
+#### Example of the Problem
 
 ```go
 type DataProcessor struct {
-    cache map[string][]byte // 永続的にメモリを占有
+    cache map[string][]byte // Permanently occupies memory
 }
 
 var processorInstance *DataProcessor
@@ -827,33 +830,33 @@ func GetDataProcessor() *DataProcessor {
 }
 
 func (dp *DataProcessor) Process(data string) {
-    // 問題点:
-    // 1. キャッシュが無制限に蓄積され、メモリ使用量が増大し続ける
-    // 2. シングルトンなのでプログラム終了までメモリが解放されない
-    // 3. GCが効率的にメモリを回収できない（長寿命オブジェクトのため）
+    // Issues:
+    // 1. Cache accumulates indefinitely, increasing memory usage
+    // 2. Since it's a singleton, memory is not released until program termination
+    // 3. GC cannot efficiently reclaim memory (due to long-lived objects)
     dp.cache[data] = []byte(data)
 }
 
-// 使用例
+// Usage example
 func ProcessLargeDataset() {
     processor := GetDataProcessor()
 
-    // 100万件のデータを処理
+    // Process 1 million data entries
     for i := 0; i < 1000000; i++ {
         data := fmt.Sprintf("data-%d", i)
         processor.Process(data)
     }
-    // キャッシュに100万件のデータが残り続ける
-    // 他の処理で同じプロセッサを使うと、メモリがさらに増える
+    // Cache retains 1 million data entries
+    // Using the same processor for other processes increases memory further
 }
 ```
 
-#### 改善策
+#### Improvement
 
 ```go
-// 改善案1: 短命なオブジェクトを使用
+// Improvement 1: Use short-lived objects
 type ImprovedDataProcessor struct {
-    // 状態を持たない、またはローカルスコープで管理
+    // No state, or managed in local scope
 }
 
 func NewDataProcessor() *ImprovedDataProcessor {
@@ -861,48 +864,48 @@ func NewDataProcessor() *ImprovedDataProcessor {
 }
 
 func (dp *ImprovedDataProcessor) Process(data string) []byte {
-    // 処理ごとに一時的なデータを作成
+    // Create temporary data for each process
     result := []byte(data)
-    // 関数終了後、resultへの参照がなくなればGCが回収できる
+    // After function ends, references to result are gone, allowing GC to reclaim
     return result
 }
 
 func ProcessImprovedDataset() {
-    // 処理ごとに新しいプロセッサを作成
+    // Create a new processor for each process
     for i := 0; i < 1000000; i++ {
         processor := NewDataProcessor()
         data := fmt.Sprintf("data-%d", i)
         result := processor.Process(data)
 
-        // 使用後、processorとresultへの参照がなくなる
-        // GCが次のサイクルで効率的に回収できる
+        // After use, references to processor and result are gone
+        // GC can efficiently reclaim in the next cycle
         _ = result
     }
-    // メモリ使用量は一定に保たれる
+    // Memory usage remains constant
 }
 ```
 
-## まとめ
+## Conclusion
 
-シングルトンパターンは、一見便利に見えるが、以下の重大な問題を引き起こす：
+The Singleton pattern, while seemingly convenient, causes the following significant problems:
 
-1. テスタビリティの低下: モックへの置き換えが困難
-2. 密結合: コンポーネント間の分離が困難
-3. 柔軟性の欠如: 実行時の動作変更が困難
-4. 並行処理の問題: スレッドセーフな実装が複雑
-5. 原則違反: 単一責任原則など、SOLIDの原則に反する
+1. Decreased testability: Difficult to replace with mocks
+2. Tight coupling: Difficult to separate components
+3. Lack of flexibility: Difficult to change behavior at runtime
+4. Concurrency issues: Complex to implement thread-safe
+5. Principle violations: Violates the Single Responsibility Principle and other SOLID principles
 
-### 代替案
+### Alternatives
 
-シングルトンの代わりに、以下のアプローチを推奨する：
+Instead of using a singleton, the following approaches are recommended:
 
-1. 依存性注入（DI）: 依存関係を明示的に注入
-2. ファクトリーパターン: インスタンス生成を制御
-3. コンテキスト管理: スコープごとにインスタンスを管理
-4. 関数型アプローチ: 状態を持たない関数を使用
+1. Dependency Injection (DI): Explicitly inject dependencies
+2. Factory Pattern: Control instance creation
+3. Context Management: Manage instances per scope
+4. Functional Approach: Use stateless functions
 
 ```go
-// 推奨される構造
+// Recommended structure
 type Application struct {
     db     DBConnection
     logger LogWriter
@@ -918,20 +921,20 @@ func NewApplication(db DBConnection, logger LogWriter, config *Config) *Applicat
 }
 
 func main() {
-    // 依存関係を明示的に構築
+    // Build dependencies explicitly
     db := NewPostgresDB("localhost:5432")
     logger := NewLogger("/var/log/app.log")
     config := NewConfig(Production)
 
     app := NewApplication(db, logger, config)
 
-    // アプリケーションを実行
+    // Run the application
     _ = app
 }
 ```
 
-シングルトンパターンは、特別な理由がない限り避けるべきである。代わりに、依存性注入やコンテキスト管理を使用することで、テスタブルで保守性の高いコードを書くことができる。
+The Singleton pattern should be avoided unless there are special reasons. Instead, using dependency injection or context management allows for writing testable and maintainable code.
 
-## 参考
+## References
 
-- [クリーンコードクックブック ―コードの設計と品質を改善するためのレシピ集](https://amzn.to/47uvc3g)
+- [Clean Code Cookbook: A Collection of Recipes for Improving Code Design and Quality](https://amzn.to/47uvc3g)

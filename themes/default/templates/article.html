@@ -65,22 +65,6 @@
   </div>
   {{end}}
 
-  {{/* Author Bio Card */}}
-  {{if .FrontMatter.Author}}
-  <div class="card mb-12">
-    <div class="card-body">
-      <div class="flex items-start gap-4">
-        <div>
-          <p class="font-semibold mb-1">{{.FrontMatter.Author}}</p>
-          {{if .FrontMatter.Description}}
-          <p class="text-sm text-secondary leading-relaxed">{{.FrontMatter.Description}}</p>
-          {{end}}
-        </div>
-      </div>
-    </div>
-  </div>
-  {{end}}
-
   <hr class="border-t mb-8">
 
   {{end}}
