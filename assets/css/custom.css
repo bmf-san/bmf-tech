@@ -1,5 +1,1 @@
-/* prose table — uses sleyt .table variables */
-.prose table{border-collapse:collapse;font-size:var(--font-size-sm);margin-bottom:var(--spacing-4);width:100%}
-.prose table th,.prose table td{border:1px solid var(--border-color);padding:var(--spacing-3);vertical-align:top;text-align:left}
-.prose table thead th{border-bottom:2px solid var(--border-color);color:var(--text-secondary);font-size:var(--font-size-xs);font-weight:var(--font-weight-bold);letter-spacing:.05em;text-align:left;text-transform:uppercase;vertical-align:bottom}
-.prose table{border:1px solid var(--border-color)}
+
