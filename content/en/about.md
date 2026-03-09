@@ -126,7 +126,7 @@ All slides are available on [Speaker Deck](https://speakerdeck.com/bmf_san).
 
 ## Media
 
-| Media | |
+| Media | Title |
 |---|---|
 | フリーランスHub | スキルアップやキャッチアップにつながる！注目の IT ブログ・メディアまとめ その 2 |
 | レバテックフリーランス | 市場価値を高めたいエンジニアに読んでほしい技術ブログ特集 |
