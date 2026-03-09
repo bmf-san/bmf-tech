@@ -7,7 +7,7 @@ categories:
   - アプリケーション
 tags:
   - Golang
-  - コードレビュー　
+  - コードレビュー
 translation_key: go-code-review-comments-summary
 ---
 
