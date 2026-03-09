@@ -16,6 +16,7 @@ build: ## サイトをビルド
 	GOTOOLCHAIN=auto gohan build
 
 serve: ## ローカルサーバーを起動 (http://localhost:1313)
+	@pkill -f "gohan serve" 2>/dev/null; sleep 0.3; true
 	GOTOOLCHAIN=auto gohan serve
 
 clean: ## ビルド出力を削除
