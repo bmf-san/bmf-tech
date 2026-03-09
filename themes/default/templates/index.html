@@ -22,7 +22,8 @@
   <section class="mb-12">
     <a href="{{$featured.URL}}" class="card">
       {{- $featuredImg := index $featured.FrontMatter.Extra "image"}}
-      {{if $featuredImg}}<img src="{{$featuredImg}}" alt="{{$featured.FrontMatter.Title}}" class="w-full object-cover rounded-t max-h-80">{{end}}
+      {{- if not $featuredImg}}{{$featuredImg = printf "/ogp/%s.png" $featured.FrontMatter.Slug}}{{end}}
+      <img src="{{$featuredImg}}" alt="{{$featured.FrontMatter.Title}}" class="w-full object-cover rounded-t max-h-80">
       <div class="card-body">
         <div class="flex items-center gap-3 mb-3 flex-wrap">
           {{range $featured.FrontMatter.Categories}}<span class="badge badge-info">{{.}}</span>{{end}}
@@ -58,8 +59,9 @@
         {{range $i, $a := .Articles}}
         {{if gt $i 0}}
         {{- $cardImg := index $a.FrontMatter.Extra "image"}}
+        {{- if not $cardImg}}{{$cardImg = printf "/ogp/%s.png" $a.FrontMatter.Slug}}{{end}}
         <a href="{{$a.URL}}" class="card">
-          {{if $cardImg}}<img src="{{$cardImg}}" alt="{{$a.FrontMatter.Title}}" class="w-full object-cover rounded-t max-h-40">{{end}}
+          <img src="{{$cardImg}}" alt="{{$a.FrontMatter.Title}}" class="w-full object-cover rounded-t max-h-40">
           <div class="card-body">
             <div class="flex items-center gap-2 mb-2 flex-wrap">
               {{range $a.FrontMatter.Categories}}<span class="badge badge-secondary">{{.}}</span>{{end}}

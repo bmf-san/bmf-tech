@@ -52,11 +52,10 @@
 
   {{/* Eyecatch image */}}
   {{- $eyecatch := index .FrontMatter.Extra "image"}}
-  {{if $eyecatch}}
+  {{- if not $eyecatch}}{{$eyecatch = printf "/ogp/%s.png" .FrontMatter.Slug}}{{end}}
   <div class="mb-8">
     <img src="{{$eyecatch}}" alt="{{.FrontMatter.Title}}" class="w-full rounded max-h-96 object-cover">
   </div>
-  {{end}}
 
   {{/* Article Body */}}
   <article class="prose prose-full mb-12">
