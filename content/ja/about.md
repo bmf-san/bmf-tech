@@ -17,7 +17,7 @@ draft: false
 
 関わる組織とソフトウェアの長期的な価値を継続的に高めることを目標としており、システムアーキテクチャに特に関心がある。趣味は OSS 開発、筋トレ、観葉植物。
 
-| | |
+| Key | Value |
 |---|---|
 | Email | bmf.infomation@gmail.com |
 | GitHub | [bmf-san](https://github.com/bmf-san) |

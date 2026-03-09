@@ -17,7 +17,7 @@ Started my career as a freelance web developer, then gained experience launching
 
 My goal is to continuously improve the long-term value of the organizations and software I'm involved with. I'm particularly interested in system architecture. Hobbies include OSS development, the gym, and houseplants.
 
-| | |
+| Key | Value |
 |---|---|
 | Email | bmf.infomation@gmail.com |
 | GitHub | [bmf-san](https://github.com/bmf-san) |
