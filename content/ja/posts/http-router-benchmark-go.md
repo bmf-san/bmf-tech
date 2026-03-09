@@ -1,14 +1,15 @@
 ---
-title: "GoのHTTP Routerを比較するベンチマーカーを実装した"
-slug: "http-router-benchmark-go"
-date: 2022-12-20
+title: GoのHTTP Routerを比較するベンチマーカーを実装した
+slug: http-router-benchmark-go
+date: 2022-12-20T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-draft: false
+  - Golang
+translation_key: http-router-benchmark-go
 ---
+
 
 [Makuake Advent Calendar 2022](https://adventar.org/calendars/8496)の5日目の記事です！
 

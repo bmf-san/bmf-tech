@@ -1,16 +1,16 @@
 ---
-title: "net／httpでつくるHTTPルーター自作入門"
-slug: "building-http-router-with-net-http"
-image: /assets/images/posts/net-http/138551922-8fce2b9c-51d6-49e6-bea1-015e383cdb6e.png
-date: 2021-10-24
+title: net／httpでつくるHTTPルーター自作入門
+slug: building-http-router-with-net-http
+date: 2021-10-24T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "HTTP"
-draft: false
+  - Golang
+  - HTTP
+translation_key: building-http-router-with-net-http
 ---
+
 
 # はじめに
 本記事では、Golangの標準パッケージであるnet/httpを用いて、HTTPルーターを自作する方法について解説します。

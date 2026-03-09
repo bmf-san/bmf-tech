@@ -1,17 +1,18 @@
 ---
-title: "Laravelでajaxの際にCsrfTokenに引っかかった話"
-slug: "laravel-ajax-csrf-token-issue"
-date: 2017-09-26
+title: Laravelでajaxの際にCsrfTokenに引っかかった話
+slug: laravel-ajax-csrf-token-issue
+date: 2017-09-26T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "AJAX"
-  - "Laravel"
-  - "React"
-  - "superagent"
-draft: false
+  - AJAX
+  - Laravel
+  - React
+  - superagent
+translation_key: laravel-ajax-csrf-token-issue
 ---
+
 
 Laravel+React+SuperagentでAjaxを実装していたら、500エラーがでて、「いやいやまさかTokenじゃないっしょ〜　そんなの知ってるもん〜」と捻くれていたら、CsrfTokenが原因でした。
 

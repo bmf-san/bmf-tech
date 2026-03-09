@@ -1,14 +1,15 @@
 ---
-title: "Goで始めるコードのパフォーマンス改善"
-slug: "go-performance-improvement"
-date: 2023-06-12
+title: Goで始めるコードのパフォーマンス改善
+slug: go-performance-improvement
+date: 2023-06-12T00:00:00Z
 author: bmf-san
 categories:
-  - "パフォーマンス"
+  - パフォーマンス
 tags:
-  - "Golang"
-draft: false
+  - Golang
+translation_key: go-performance-improvement
 ---
+
 
 [Makuake Advent Calendar 2022](https://adventar.org/calendars/8496)の9日目の記事です！
 

@@ -1,19 +1,19 @@
 ---
-title: "gRPCとはーGolangでgRPCに入門するー"
-slug: "grpc-introduction-golang"
-image: /assets/images/posts/golang/147852643-0d5a6fab-1d8f-4d60-81f6-cf95091ca974.png
-date: 2020-09-08
+title: gRPCとはーGolangでgRPCに入門するー
+slug: grpc-introduction-golang
+date: 2020-09-08T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "gRPC"
-  - "マイクロサービス"
-  - "HTTP/2"
-  - "RPC"
-draft: false
+  - Golang
+  - gRPC
+  - マイクロサービス
+  - HTTP/2
+  - RPC
+translation_key: grpc-introduction-golang
 ---
+
 
 # 概要
 GolangでgRPCに入門する。

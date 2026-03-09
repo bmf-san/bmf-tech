@@ -1,14 +1,15 @@
 ---
-title: "Datadog continuous testingについて調べたことメモ"
-slug: "datadog-continuous-testing-notes"
-date: 2023-01-31
+title: Datadog continuous testingについて調べたことメモ
+slug: datadog-continuous-testing-notes
+date: 2023-01-31T00:00:00Z
 author: bmf-san
 categories:
-  - "ツール"
+  - ツール
 tags:
-  - "Datadog"
-draft: false
+  - Datadog
+translation_key: datadog-continuous-testing-notes
 ---
+
 
 # 概要
 Datadog continuous testingについて調べたことのメモ。

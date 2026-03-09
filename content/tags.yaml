@@ -531,3 +531,6 @@
 - name: webpack
 - name: yum
 - name: zabbix
+- name: Code Quality
+- name: Organizational Design
+- name: Singleton Pattern

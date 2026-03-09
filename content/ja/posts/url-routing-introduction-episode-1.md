@@ -1,16 +1,17 @@
 ---
-title: "URLルーティング自作入門\u3000エピソード１"
-slug: "url-routing-introduction-episode-1"
-date: 2019-12-14
+title: URLルーティング自作入門　エピソード１
+slug: url-routing-introduction-episode-1
+date: 2019-12-14T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "HTTP"
-  - "URLルーティング"
-  - "router"
-draft: false
+  - HTTP
+  - URLルーティング
+  - router
+translation_key: url-routing-introduction-episode-1
 ---
+
 
 # 概要
 この記事は[Makuake Development Team Advent Calendar 2019](https://adventar.org/calendars/4716)の14日目の記事です。

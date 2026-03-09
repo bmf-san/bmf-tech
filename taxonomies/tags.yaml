@@ -45,6 +45,7 @@
 - name: Backtracking
 - name: Backup
 - name: Base Conversion
+- name: Basic IT Engineer
 - name: Bi-Temporal
 - name: Big O Notation
 - name: Binary Search
@@ -80,6 +81,7 @@
 - name: Cloud Functions
 - name: Cloud Native
 - name: Cloud SQL
+- name: Cloud-Native
 - name: Code Quality
 - name: Code Reading
 - name: Code Review
@@ -437,6 +439,7 @@
 - name: Terminal
 - name: Terraform
 - name: Test Double
+- name: Thinking
 - name: Thinking Method
 - name: Thinking Methods
 - name: Thread
@@ -476,6 +479,7 @@
 - name: babel
 - name: babel-jest
 - name: bash
+- name: bitFlyer
 - name: bitcoin
 - name: bitflyer
 - name: boilerplate

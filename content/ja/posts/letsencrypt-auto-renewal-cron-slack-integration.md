@@ -1,17 +1,18 @@
 ---
-title: "letsencryptの証明書自動更新(cron)とちょっとだけSlack連携"
-slug: "letsencrypt-auto-renewal-cron-slack-integration"
-date: 2017-10-01
+title: letsencryptの証明書自動更新(cron)とちょっとだけSlack連携
+slug: letsencrypt-auto-renewal-cron-slack-integration
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "cron"
-  - "Let's Encrypt"
-  - "shellscript"
-  - "Slack"
-draft: false
+  - cron
+  - Let's Encrypt
+  - shellscript
+  - Slack
+translation_key: letsencrypt-auto-renewal-cron-slack-integration
 ---
+
 
 # letsencryptの証明書自動更新(cron)とちょっとだけSlack連携　
 
