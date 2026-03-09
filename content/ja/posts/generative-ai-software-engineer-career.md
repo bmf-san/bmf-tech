@@ -7,7 +7,6 @@ categories:
   - キャリア
 tags:
   - 生成AI
-draft: true
 translation_key: generative-ai-software-engineer-career
 ---
 
