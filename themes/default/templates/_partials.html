@@ -6,6 +6,7 @@
 <html lang="{{if .CurrentLocale}}{{.CurrentLocale}}{{else}}{{.Config.Site.Language}}{{end}}">
 <head>
 <meta charset="utf-8">
+<meta name="color-scheme" content="light dark">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{if $isSingle}}{{$article.FrontMatter.Title}} | {{end}}{{.Config.Site.Title}}</title>
 <meta name="description" content="{{if and $isSingle $article.FrontMatter.Description}}{{$article.FrontMatter.Description}}{{else}}{{.Config.Site.Description}}{{end}}">
