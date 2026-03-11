@@ -187,7 +187,7 @@ test.describe('About page /ja/about/', () => {
 test.describe('Archive page /archives/2024/03/', () => {
   test('loads and has article list', async ({ page }) => {
     await page.goto('/archives/2024/03/');
-    await expect(page.locator('div.card-body li').first()).toBeVisible();
+    await expect(page.locator('a.card').first()).toBeVisible();
   });
 
   test('articles are from 2024-03', async ({ page }) => {
