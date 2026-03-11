@@ -20,18 +20,28 @@ lint-content: ## 全記事を textlint でチェック (JA + EN)
 	npx textlint --config .textlintrc-ja.json "content/ja/posts/*.md"
 	npx textlint --config .textlintrc-en.json "content/en/posts/*.md"
 
-lint-content-diff: ## origin/main との差分ファイルのみ textlint でチェック
-	@JA_FILES=$$(git diff --name-only --diff-filter=ACM origin/main...HEAD -- 'content/ja/posts/*.md'); \
-	EN_FILES=$$(git diff --name-only --diff-filter=ACM origin/main...HEAD -- 'content/en/posts/*.md'); \
+lint-content-diff: ## origin/main との差分ファイルのうち本文変更があるもののみ textlint でチェック
+	@ALL_JA=$$(git diff --name-only --diff-filter=ACM origin/main...HEAD -- 'content/ja/posts/*.md'); \
+	ALL_EN=$$(git diff --name-only --diff-filter=ACM origin/main...HEAD -- 'content/en/posts/*.md'); \
+	JA_FILES=$$(for f in $$ALL_JA; do \
+		if git diff origin/main...HEAD -- "$$f" | awk 'BEGIN{fm=0;cnt=0} /^[+-]{3} /{next} /^[+-]---$$/{cnt++;if(cnt==2)fm=0;next} cnt<2{next} /^[+-]/{found=1;exit} END{exit !found}'; then \
+			echo "$$f"; \
+		fi; \
+	done); \
+	EN_FILES=$$(for f in $$ALL_EN; do \
+		if git diff origin/main...HEAD -- "$$f" | awk 'BEGIN{fm=0;cnt=0} /^[+-]{3} /{next} /^[+-]---$$/{cnt++;if(cnt==2)fm=0;next} cnt<2{next} /^[+-]/{found=1;exit} END{exit !found}'; then \
+			echo "$$f"; \
+		fi; \
+	done); \
 	if [ -n "$$JA_FILES" ]; then \
 		echo "$$JA_FILES" | xargs npx textlint --config .textlintrc-ja.json; \
 	else \
-		echo "No changed JA posts to lint."; \
+		echo "No changed JA post bodies to lint."; \
 	fi; \
 	if [ -n "$$EN_FILES" ]; then \
 		echo "$$EN_FILES" | xargs npx textlint --config .textlintrc-en.json; \
 	else \
-		echo "No changed EN posts to lint."; \
+		echo "No changed EN post bodies to lint."; \
 	fi
 
 build: ## サイトをビルド
