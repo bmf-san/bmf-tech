@@ -4,7 +4,7 @@ slug: introduction-to-prolog
 date: 2025-08-09T00:00:00Z
 author: bmf-san
 categories:
-  - Applications
+  - Application
 tags:
   - Prolog
   - Book Review

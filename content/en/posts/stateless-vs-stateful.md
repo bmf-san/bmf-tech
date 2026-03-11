@@ -4,7 +4,7 @@ slug: stateless-vs-stateful
 date: 2018-04-17T00:00:00Z
 author: bmf-san
 categories:
-  - Networking
+  - Network
 tags:
   - Stateful
   - Stateless

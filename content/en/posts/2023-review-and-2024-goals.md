@@ -6,8 +6,7 @@ author: bmf-san
 categories:
   - Poetry
 tags:
-  - Reflection
-  - Goals
+  - Reflection and Goals
 translation_key: 2023-review-and-2024-goals
 ---
 
@@ -63,9 +62,9 @@ Depending on family circumstances, I think it was very good that I was able to t
 # Reflection on Goals
 I wrote my goals for 2023 as follows:
 
-> I want to set the goal of "creating weapons."  
-> This is an extension of my 2021 goals, but I want to be conscious of something a bit different.  
-> Specifically, I want to have something in my area of expertise that is a hard skill, not a soft skill.  
+> I want to set the goal of "creating weapons."
+> This is an extension of my 2021 goals, but I want to be conscious of something a bit different.
+> Specifically, I want to have something in my area of expertise that is a hard skill, not a soft skill.
 > I don't think I can reach the level of a pioneer or expert in that area within a year, so I want to have at least one thing that I can confidently say I'm good at.
 
 Although I wrote this for my goals, I feel like I ended up going in a direction quite different from my goals, as I was doing things broadly and shallowly rather than deepening something. However, I feel like I was able to plant the seeds to grasp something I can call my strength.
@@ -95,12 +94,12 @@ I hope next year will be a good year both personally and professionally.
 # Postscript
 There were several things I had to do in my personal life.
 
-- Study real estate  
+- Study real estate
   - I want to shift from renting to owning a home due to changes in my life stage, so I will study.
-- Review insurance  
+- Review insurance
   - I think it's time to review this due to changes in my life stage and age, so I will do it.
-- Health promotion  
-  - I am in my early 30s, but I want to review my diet, exercise, and health in preparation for my 40s and 50s.  
+- Health promotion
+  - I am in my early 30s, but I want to review my diet, exercise, and health in preparation for my 40s and 50s.
   - I want to invest time and money to raise my health awareness without being stingy.
 
 After turning 30, there was a period when I still lived with the mindset of being in my 20s, but this past year, I feel like I have aged both physically and mentally...

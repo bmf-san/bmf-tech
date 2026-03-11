@@ -401,6 +401,66 @@ func checkTranslationConsistency(root string) {
 		}
 	}
 
+	// 逆マッピング: EN → JA dominant (双方向チェック用)
+	revTagCoOccur := make(map[string]map[string]int) // enTag → (jaTag → count)
+	revTagAppears := make(map[string]int)
+	revCatCoOccur := make(map[string]map[string]int)
+	revCatAppears := make(map[string]int)
+	for _, p := range pairs {
+		jaTagSet := make(map[string]bool)
+		for _, t := range p.JA.FM.Tags {
+			jaTagSet[t] = true
+		}
+		jaCatSet := make(map[string]bool)
+		for _, c := range p.JA.FM.Categories {
+			jaCatSet[c] = true
+		}
+		for _, et := range p.EN.FM.Tags {
+			revTagAppears[et]++
+			if revTagCoOccur[et] == nil {
+				revTagCoOccur[et] = make(map[string]int)
+			}
+			for jt := range jaTagSet {
+				revTagCoOccur[et][jt]++
+			}
+		}
+		for _, ec := range p.EN.FM.Categories {
+			revCatAppears[ec]++
+			if revCatCoOccur[ec] == nil {
+				revCatCoOccur[ec] = make(map[string]int)
+			}
+			for jc := range jaCatSet {
+				revCatCoOccur[ec][jc]++
+			}
+		}
+	}
+	revTagMap := make(map[string]string) // enTag → dominant JA tag
+	for et, jaCounts := range revTagCoOccur {
+		total := revTagAppears[et]
+		best, bestN := "", 0
+		for jt, c := range jaCounts {
+			if c > bestN {
+				bestN, best = c, jt
+			}
+		}
+		if total >= minPairsForMapping && float64(bestN)/float64(total) >= dominanceThreshold {
+			revTagMap[et] = best
+		}
+	}
+	revCatMap := make(map[string]string) // enCat → dominant JA category
+	for ec, jaCounts := range revCatCoOccur {
+		total := revCatAppears[ec]
+		best, bestN := "", 0
+		for jc, c := range jaCounts {
+			if c > bestN {
+				bestN, best = c, jc
+			}
+		}
+		if total >= minPairsForMapping && float64(bestN)/float64(total) >= dominanceThreshold {
+			revCatMap[ec] = best
+		}
+	}
+
 	// 各ペアを検証
 	tagCountErr, catCountErr := 0, 0
 	tagMapErr, catMapErr := 0, 0
@@ -436,7 +496,18 @@ func checkTranslationConsistency(root string) {
 			if !ok {
 				continue // 件数が少ないタグはスキップ
 			}
-			if !enTagSet[expectedEN] {
+			if enTagSet[expectedEN] {
+				continue // 直接一致
+			}
+			// 逆引き: EN タグのどれかが jt にマップされていれば OK
+			reverseMatch := false
+			for et := range enTagSet {
+				if revTagMap[et] == jt {
+					reverseMatch = true
+					break
+				}
+			}
+			if !reverseMatch {
 				warn(sec, fmt.Sprintf("タグ翻訳不整合 [%s] JA:%q → 期待EN:%q, 実際のENタグ:%v",
 					p.TK, jt, expectedEN, p.EN.FM.Tags))
 				tagMapErr++
@@ -448,7 +519,18 @@ func checkTranslationConsistency(root string) {
 			if !ok {
 				continue
 			}
-			if !enCatSet[expectedEN] {
+			if enCatSet[expectedEN] {
+				continue // 直接一致
+			}
+			// 逆引き: EN カテゴリのどれかが jc にマップされていれば OK
+			reverseMatch := false
+			for ec := range enCatSet {
+				if revCatMap[ec] == jc {
+					reverseMatch = true
+					break
+				}
+			}
+			if !reverseMatch {
 				warn(sec, fmt.Sprintf("カテゴリ翻訳不整合 [%s] JA:%q → 期待EN:%q, 実際のENカテゴリ:%v",
 					p.TK, jc, expectedEN, p.EN.FM.Categories))
 				catMapErr++

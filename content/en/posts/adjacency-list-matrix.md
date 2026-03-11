@@ -4,8 +4,7 @@ slug: adjacency-list-matrix
 date: 2023-07-29T00:00:00Z
 author: bmf-san
 categories:
-  - Algorithms
-  - Data Structures
+  - Algorithms and Data Structures
 tags:
   - Graph
   - Adjacency Matrix

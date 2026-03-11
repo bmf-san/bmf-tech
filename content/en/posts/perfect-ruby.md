@@ -4,7 +4,7 @@ slug: perfect-ruby
 date: 2024-05-04T00:00:00Z
 author: bmf-san
 categories:
-  - Applications
+  - Application
 tags:
   - Ruby
   - Book Review

@@ -7,7 +7,7 @@ categories:
   - Application
 tags:
   - Golang
-  - Links
+  - Link Collection
 translation_key: golang-study-resources
 ---
 
