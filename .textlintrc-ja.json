@@ -1,0 +1,30 @@
+{
+  "rules": {
+    "preset-ja-spacing": true,
+    "preset-ja-technical-writing": {
+      "sentence-length": {
+        "max": 120
+      },
+      "max-comma": false,
+      "no-mix-dearu-desumasu": true,
+      "ja-no-mixed-period": true,
+      "no-double-negative-ja": true,
+      "no-dropping-the-ra": true,
+      "no-redundant-expression": true,
+      "arabic-kanji-numbers": false,
+      "no-start-duplicated-conjunction": true,
+      "max-kanji-continuous-len": {
+        "max": 20
+      },
+      "ja-no-successive-word": true,
+      "ja-no-abiguous-number-expression": false,
+      "no-hankaku-kana": false
+    },
+    "terminology": {
+      "defaultTerms": true
+    }
+  },
+  "filters": {
+    "comments": true
+  }
+}
