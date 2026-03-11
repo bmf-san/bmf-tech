@@ -18,7 +18,7 @@ jobs:
           cache: false
 
       - name: Install gohan
-        run: go install github.com/bmf-san/gohan/cmd/gohan@v0.1.12
+        run: go install github.com/bmf-san/gohan/cmd/gohan@v0.1.16
 
       - name: Build site
         run: gohan build
@@ -47,3 +47,11 @@ jobs:
           name: playwright-report
           path: e2e/playwright-report/
           retention-days: 30
+
+      - name: Upload test results to Codecov
+        if: always()
+        uses: codecov/test-results-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: e2e/results.xml
+          flags: e2e

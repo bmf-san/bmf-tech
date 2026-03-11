@@ -1,5 +1,8 @@
 # bmf-tech
 
+[![E2E Tests](https://github.com/bmf-san/bmf-tech/actions/workflows/e2e.yml/badge.svg)](https://github.com/bmf-san/bmf-tech/actions/workflows/e2e.yml)
+[![codecov](https://codecov.io/gh/bmf-san/bmf-tech/branch/main/graph/badge.svg)](https://codecov.io/gh/bmf-san/bmf-tech)
+
 [bmf-tech.com](https://bmf-tech.com) のソースリポジトリ。
 [gohan](https://github.com/bmf-san/gohan) 製の静的サイトで、Cloudflare Pages でホスティングしている。
 
