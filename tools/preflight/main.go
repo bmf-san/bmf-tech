@@ -307,8 +307,8 @@ func checkTaxonomy(root string) {
 	}
 	info(sec, fmt.Sprintf("tags.yaml: %d tags, categories.yaml: %d categories", len(knownTags), len(knownCats)))
 
-	unknownTags := make(map[string][]string)   // tag → []slug
-	unknownCats := make(map[string][]string)    // cat → []slug
+	unknownTags := make(map[string][]string) // tag → []slug
+	unknownCats := make(map[string][]string) // cat → []slug
 
 	dirs := []string{
 		filepath.Join(root, "content", "ja", "posts"),

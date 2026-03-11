@@ -128,7 +128,7 @@ translation_key: hello
 2. `_redirects` を `public/` へコピー
 3. `wrangler pages deploy public` で `public/` を Cloudflare Pages へダイレクトアップロード
 
-> Cloudflare Pages 側ではビルドを行わない。ビルドは GitHub Actions ランナー上で完結する。  
+> Cloudflare Pages 側ではビルドを行わない。ビルドは GitHub Actions ランナー上で完結する。
 > `assets/fonts/` など `gohan build` に必要なファイルはリポジトリに含める必要がある。
 
 **GitHub Secrets に設定が必要**:
