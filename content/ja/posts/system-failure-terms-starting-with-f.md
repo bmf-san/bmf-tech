@@ -1,12 +1,13 @@
 ---
-title: "フから始まるシステム障害関連用語"
-slug: "system-failure-terms-starting-with-f"
-date: 2021-06-05
+title: フから始まるシステム障害関連用語
+slug: system-failure-terms-starting-with-f
+date: 2021-06-05T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
-draft: false
+  - インフラストラクチャ
+translation_key: system-failure-terms-starting-with-f
 ---
+
 
 # 概要
 たまに混乱するので用語集としてメモ。

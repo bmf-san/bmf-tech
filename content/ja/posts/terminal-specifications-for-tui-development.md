@@ -1,18 +1,19 @@
 ---
-title: "TUI開発で役立つターミナル仕様の理解"
-slug: "terminal-specifications-for-tui-development"
-date: 2025-10-18
+title: TUI開発で役立つターミナル仕様の理解
+slug: terminal-specifications-for-tui-development
+date: 2025-10-18T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "TUI"
-  - "termios"
-  - "ターミナル"
-  - "UNIX"
-  - "Golang"
-draft: false
+  - TUI
+  - termios
+  - ターミナル
+  - UNIX
+  - Golang
+translation_key: terminal-specifications-for-tui-development
 ---
+
 
 ## はじめに
 

@@ -1,17 +1,18 @@
 ---
-title: "セキュア・バイ・デザイン: 安全なソフトウェア設計"
-slug: "secure-by-design-software"
-date: 2024-09-07
+title: 'セキュア・バイ・デザイン: 安全なソフトウェア設計'
+slug: secure-by-design-software
+date: 2024-09-07T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "本"
-  - "セキュリティ"
-  - "設計"
-  - "DDD"
-draft: false
+  - 本
+  - セキュリティ
+  - 設計
+  - DDD
+translation_key: secure-by-design-software
 ---
+
 
 [セキュア・バイ・デザイン: 安全なソフトウェア設計](https://amzn.to/3MCk5KA)を読んだ。
 

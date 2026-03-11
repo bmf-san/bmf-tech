@@ -1,5 +1,5 @@
 ---
-title: Handling the Docker 'Operation not permitted' Error
+title: Handling Docker 'Operation not permitted' Error
 slug: docker-operation-not-permitted-error
 date: 2019-09-27T00:00:00Z
 author: bmf-san
@@ -12,17 +12,16 @@ tags:
   - Linux Capabilities
   - Seccomp
   - Tips
-description: How to resolve the 'Operation not permitted' error encountered when using Docker Compose.
 translation_key: docker-operation-not-permitted-error
 ---
 
 # Overview
-While running golang tests using Docker Compose, I encountered an **Operation not permitted** error.
+While running tests in golang using Docker Compose, I encountered an **Operation not permitted** error.
 
-# Resolution
+# Solution
 [Docker Documentation - runtime-privilege-and-linux-capabilities](https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities)
 
-Adjusting the privilege settings of the Docker container resolved the issue.
+Adjusting the privilege settings of the Docker container resolves the issue.
 
 ```yml
   gobel_test_db:
@@ -39,7 +38,7 @@ Adjusting the privilege settings of the Docker container resolved the issue.
     privileged: true  // add this option
 ```
 
-However, I wasn't entirely sure about the security implications of the above configuration, so I opted for a more restrictive setup.
+Since I wasn't entirely sure about the security implications of the above, I configured it to restrict permissions further.
 
 ```yml
   gobel_test_db:
@@ -59,13 +58,15 @@ However, I wasn't entirely sure about the security implications of the above con
       - seccomp:unconfined
 ```
 
-`cap_add` is an option to add Linux capabilities. In this case, it adds permissions for system administration operations.
+`cap_add` is an option to add Linux capabilities, and here it adds permissions for system administration operations.
 
-Linux capabilities are a feature that allows fine-grained control of superuser privileges.
+Linux capabilities are a feature that subdivides superuser privileges.
 
-`seccomp` is a security feature in the Linux kernel that restricts system call execution. Here, the setting is `unconfined`, which disables restrictions.
+`seccomp` is a security feature that restricts system call issuance in the Linux kernel.
 
-The term "unconfined" literally means "not confined".
+Here, it is set to unconfined, which means disabled.
+
+Unconfined literally translates to "not confined."
 
 # Thoughts
 [speakerdeck - Fully Understanding Containers](https://speakerdeck.com/bmf_san/kontenawan-quan-nili-jie-sita)

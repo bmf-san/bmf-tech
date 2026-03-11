@@ -1,15 +1,16 @@
 ---
-title: "DefaultServeMux以外でpprofを使う方法"
-slug: "using-pprof-without-defaultmux"
-date: 2023-04-30
+title: DefaultServeMux以外でpprofを使う方法
+slug: using-pprof-without-defaultmux
+date: 2023-04-30T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "Tips"
-draft: false
+  - Golang
+  - Tips
+translation_key: using-pprof-without-defaultmux
 ---
+
 
 # 概要
 [net/http/pprof](https://pkg.go.dev/net/http/pprof)をDefaultServeMux以外（Goの標準のルーター以外）で使う方法についてメモ。

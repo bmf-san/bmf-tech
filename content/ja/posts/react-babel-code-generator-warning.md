@@ -1,15 +1,16 @@
 ---
-title: "Reactでrequireしてたら、[BABEL] Note: The code generator has deoptimised the styling of "
-slug: "react-babel-code-generator-warning"
-date: 2017-10-01
+title: 'Reactでrequireしてたら、[BABEL] Note: The code generator has deoptimised the styling of '
+slug: react-babel-code-generator-warning
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "React"
-  - "Tips"
-draft: false
+  - React
+  - Tips
+translation_key: react-babel-code-generator-warning
 ---
+
 
 ReactでComponentをrequireしてたら見慣れないエラーがでました。
 

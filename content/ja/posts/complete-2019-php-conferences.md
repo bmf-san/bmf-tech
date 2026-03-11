@@ -1,15 +1,16 @@
 ---
-title: "2019年の全PHPカンファレンスをコンプリートした"
-slug: "complete-2019-php-conferences"
-date: 2019-12-03
+title: 2019年の全PHPカンファレンスをコンプリートした
+slug: complete-2019-php-conferences
+date: 2019-12-03T00:00:00Z
 author: bmf-san
 categories:
-  - "ポエム"
+  - ポエム
 tags:
-  - "PHP"
-  - "PHPカンファレンス"
-draft: false
+  - PHP
+  - PHPカンファレンス
+translation_key: complete-2019-php-conferences
 ---
+
 
 # 概要
 2019年に日本国内で開催された全ての公式PHPカンファレンスにしたので参加記録をまとめる。
@@ -48,9 +49,9 @@ cf. [Laravel JP Conference 2020](https://conference2020.laravel.jp/)
 来年は海外カンファレンスに・・(ry
 
 PHPカンファレンススタンプラリーコンプリート。
-![php](https://user-images.githubusercontent.com/13291041/70024371-31761780-15dd-11ea-9d69-fab5ba7eeb5d.jpeg)
+![php](/assets/images/posts/complete-2019-php-conferences/70024371-31761780-15dd-11ea-9d69-fab5ba7eeb5d.jpeg)
 
 スタンプコンプリートで頂いた景品。かわいい。
-![zou](https://user-images.githubusercontent.com/13291041/70024372-31761780-15dd-11ea-84b9-978cad2585ed.jpeg)
+![zou](/assets/images/posts/complete-2019-php-conferences/70024372-31761780-15dd-11ea-84b9-978cad2585ed.jpeg)
 
 

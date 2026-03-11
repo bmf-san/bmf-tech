@@ -1,14 +1,15 @@
 ---
-title: "PHPでUMLを自動生成してくれるツールーphUML"
-slug: "php-uml-auto-generator-phuml"
-date: 2020-06-26
+title: PHPでUMLを自動生成してくれるツールーphUML
+slug: php-uml-auto-generator-phuml
+date: 2020-06-26T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "PHP"
-draft: false
+  - PHP
+translation_key: php-uml-auto-generator-phuml
 ---
+
 
 #  概要
 クラス設計の外観を把握したい時にUMLを自動生成してくれるツールが欲しかった。

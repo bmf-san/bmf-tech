@@ -1,15 +1,16 @@
 ---
-title: "ストレスフリー超大全"
-slug: "stress-free-guide"
-date: 2023-02-06
+title: ストレスフリー超大全
+slug: stress-free-guide
+date: 2023-02-06T00:00:00Z
 author: bmf-san
 categories:
-  - "ヘルスケア"
+  - ヘルスケア
 tags:
-  - "健康"
-  - "本"
-draft: false
+  - 健康
+  - 本
+translation_key: stress-free-guide
 ---
+
 
 [ストレスフリー超大全](https://amzn.to/3WxOvUj)を読んだ。
 

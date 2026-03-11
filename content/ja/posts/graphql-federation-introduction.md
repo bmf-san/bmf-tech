@@ -1,15 +1,16 @@
 ---
-title: "GraphQL federationについて"
-slug: "graphql-federation-introduction"
-date: 2025-02-02
+title: GraphQL federationについて
+slug: graphql-federation-introduction
+date: 2025-02-02T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "GraphQL"
-  - "GraphQL federation"
-draft: false
+  - GraphQL
+  - GraphQL federation
+translation_key: graphql-federation-introduction
 ---
+
 
 GraphQL federationについて調べたことをまとめる。
 

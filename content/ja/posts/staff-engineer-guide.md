@@ -1,14 +1,15 @@
 ---
-title: "スタッフエンジニアの道 ―優れた技術専門職になるためのガイド"
-slug: "staff-engineer-guide"
-date: 2025-01-23
+title: スタッフエンジニアの道 ―優れた技術専門職になるためのガイド
+slug: staff-engineer-guide
+date: 2025-01-23T00:00:00Z
 author: bmf-san
 categories:
-  - "キャリア"
+  - キャリア
 tags:
-  - "本"
-draft: false
+  - 本
+translation_key: staff-engineer-guide
 ---
+
 
 [スタッフエンジニアの道 ―優れた技術専門職になるためのガイド](https://amzn.to/4h6kZg3)を読んだ。
 

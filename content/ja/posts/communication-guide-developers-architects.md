@@ -1,14 +1,15 @@
 ---
-title: "開発者とアーキテクトのためのコミュニケーションガイド ―パターンで学ぶ情報伝達術"
-slug: "communication-guide-developers-architects"
-date: 2025-05-10
+title: 開発者とアーキテクトのためのコミュニケーションガイド ―パターンで学ぶ情報伝達術
+slug: communication-guide-developers-architects
+date: 2025-05-10T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "アーキテクト"
-draft: false
+  - アーキテクト
+translation_key: communication-guide-developers-architects
 ---
+
 
 [開発者とアーキテクトのためのコミュニケーションガイド ―パターンで学ぶ情報伝達術](https://amzn.to/3ZcZy5P)を読んだ。
 

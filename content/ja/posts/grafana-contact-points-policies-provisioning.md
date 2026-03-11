@@ -1,15 +1,16 @@
 ---
-title: "GrafanaでContact PointsとPoliciesをプロビジョニングするようにする"
-slug: "grafana-contact-points-policies-provisioning"
-date: 2023-12-27
+title: GrafanaでContact PointsとPoliciesをプロビジョニングするようにする
+slug: grafana-contact-points-policies-provisioning
+date: 2023-12-27T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Grafana"
-  - "Docker"
-draft: false
+  - Grafana
+  - Docker
+translation_key: grafana-contact-points-policies-provisioning
 ---
+
 
 # 概要
 GrafanaでContact Pointsがプロビジョニングがいつの間にかできるようになっていたので、プロビジョニングを設定してみる。

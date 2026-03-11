@@ -1,14 +1,15 @@
 ---
-title: "健康のために行っている習慣について"
-slug: "healthy-habits"
-date: 2024-06-30
+title: 健康のために行っている習慣について
+slug: healthy-habits
+date: 2024-06-30T00:00:00Z
 author: bmf-san
 categories:
-  - "ヘルスケア"
+  - ヘルスケア
 tags:
-  - "健康"
-draft: false
+  - 健康
+translation_key: healthy-habits
 ---
+
 
 自分が健康のために行っている習慣について書き留めておく。半分くらいはポエム。そのうち将来振り返ることがあるかもしれないので、いつかの改善のために。
 

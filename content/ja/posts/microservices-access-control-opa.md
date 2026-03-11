@@ -1,17 +1,18 @@
 ---
-title: "OPAを使用したマイクロサービスのアクセス制御システムの実装"
-slug: "microservices-access-control-opa"
-date: 2025-03-20
+title: OPAを使用したマイクロサービスのアクセス制御システムの実装
+slug: microservices-access-control-opa
+date: 2025-03-20T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "権限管理"
-  - "Open Policy Agent"
-  - "RBAC"
-  - "マイクロサービス"
-draft: false
+  - 権限管理
+  - Open Policy Agent
+  - RBAC
+  - マイクロサービス
+translation_key: microservices-access-control-opa
 ---
+
 
 # OPAを使用したマイクロサービスのアクセス制御システムの実装
 

@@ -1,16 +1,17 @@
 ---
-title: "Webフロントエンド ハイパフォーマンス チューニング"
-slug: "web-frontend-performance-tuning"
-date: 2019-05-29
+title: Webフロントエンド ハイパフォーマンス チューニング
+slug: web-frontend-performance-tuning
+date: 2019-05-29T00:00:00Z
 author: bmf-san
 categories:
-  - "パフォーマンス"
+  - パフォーマンス
 tags:
-  - "フロントエンド"
-  - "パフォーマンスチューニング"
-  - "本"
-draft: false
+  - フロントエンド
+  - パフォーマンスチューニング
+  - 本
+translation_key: web-frontend-performance-tuning
 ---
+
 
 [Webフロントエンド ハイパフォーマンス チューニング](https://amzn.to/3QErDil)を読んだ。
 

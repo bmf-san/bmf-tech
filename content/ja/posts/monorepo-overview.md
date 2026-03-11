@@ -1,14 +1,15 @@
 ---
-title: "モノレポについて"
-slug: "monorepo-overview"
-date: 2023-08-11
+title: モノレポについて
+slug: monorepo-overview
+date: 2023-08-11T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "モノレポ"
-draft: false
+  - モノレポ
+translation_key: monorepo-overview
 ---
+
 
 # 概要
 モノレポについてまとめる。

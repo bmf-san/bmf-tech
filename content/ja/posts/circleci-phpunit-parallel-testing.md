@@ -1,15 +1,16 @@
 ---
-title: "CircleCIでphpunitの並列テストを行う"
-slug: "circleci-phpunit-parallel-testing"
-date: 2023-10-21
+title: CircleCIでphpunitの並列テストを行う
+slug: circleci-phpunit-parallel-testing
+date: 2023-10-21T00:00:00Z
 author: bmf-san
 categories:
-  - "テスト"
+  - テスト
 tags:
-  - "CircleCI"
-  - "phpunit"
-draft: false
+  - CircleCI
+  - phpunit
+translation_key: circleci-phpunit-parallel-testing
 ---
+
 
 # 概要
 CircleCIでphpunitの並列テストを行うアプローチについてかく。

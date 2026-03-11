@@ -1,15 +1,16 @@
 ---
-title: "アルゴリズムとデータ構造の基本の復習"
-slug: "algorithms-data-structures-review"
-date: 2023-06-28
+title: アルゴリズムとデータ構造の基本の復習
+slug: algorithms-data-structures-review
+date: 2023-06-28T00:00:00Z
 author: bmf-san
 categories:
-  - "アルゴリズムとデータ構造"
+  - アルゴリズムとデータ構造
 tags:
-  - "アルゴリズム"
-  - "データ構造"
-draft: false
+  - アルゴリズム
+  - データ構造
+translation_key: algorithms-data-structures-review
 ---
+
 
 # 概要
 コーディングクイズを解く日課を再開するに当たって、リハビリを兼ねてアルゴリズムとデータ構造の基本について復習。

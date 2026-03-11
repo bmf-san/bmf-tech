@@ -1,15 +1,16 @@
 ---
-title: "Dockerとは"
-slug: "what-is-docker"
-date: 2018-04-01
+title: Dockerとは
+slug: what-is-docker
+date: 2018-04-01T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Docker"
-  - "仮想環境"
-draft: false
+  - Docker
+  - 仮想環境
+translation_key: what-is-docker
 ---
+
 
 # Dockerとは
 

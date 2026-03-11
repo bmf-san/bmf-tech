@@ -1,15 +1,16 @@
 ---
-title: "SLOを始めるためのスタートガイド"
-slug: "slo-start-guide"
-date: 2024-07-23
+title: SLOを始めるためのスタートガイド
+slug: slo-start-guide
+date: 2024-07-23T00:00:00Z
 author: bmf-san
 categories:
-  - "運用"
+  - 運用
 tags:
-  - "信頼性"
-  - "SLO"
-draft: false
+  - 信頼性
+  - SLO
+translation_key: slo-start-guide
 ---
+
 
 # 概要
 SLOについて理解し、SLOの運用を始めることができるようになるためのガイドとなるような内容をまとめる。

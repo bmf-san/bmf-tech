@@ -1,5 +1,5 @@
 ---
-title: Accounting System 'Knowledge' and 'Technology' for Engineers
+title: Knowledge and Skills of Accounting Systems for Engineers
 slug: accounting-system-knowledge-skills
 date: 2024-04-04T00:00:00Z
 author: bmf-san
@@ -11,6 +11,6 @@ tags:
 translation_key: accounting-system-knowledge-skills
 ---
 
-[Accounting System 'Knowledge' and 'Technology' for Engineers](https://amzn.to/3xSP2WC) was an interesting read.
+[Knowledge and Skills of Accounting Systems for Engineers](https://amzn.to/3xSP2WC) was read.
 
-It explains the foundational knowledge of accounting and bookkeeping, focusing on how to produce outputs from various inputs. This is a field I personally find challenging...
+It assumes knowledge of accounting and bookkeeping, explaining how to produce outputs from various inputs. I have a sense of discomfort in this field...

@@ -1,18 +1,19 @@
 ---
-title: "継承より委譲について"
-slug: "delegation-over-inheritance"
-date: 2025-10-20
+title: 継承より委譲について
+slug: delegation-over-inheritance
+date: 2025-10-20T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "ダック・タイピング"
-  - "リスコフの置換原則"
-  - "委譲"
-  - "継承"
-  - "Golang"
-draft: false
+  - ダック・タイピング
+  - リスコフの置換原則
+  - 委譲
+  - 継承
+  - Golang
+translation_key: delegation-over-inheritance
 ---
+
 
 ## はじめに
 

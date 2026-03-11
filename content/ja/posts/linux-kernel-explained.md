@@ -1,16 +1,17 @@
 ---
-title: "絵で見てわかるLinuxカーネルの仕組み"
-slug: "linux-kernel-explained"
-date: 2025-01-31
+title: 絵で見てわかるLinuxカーネルの仕組み
+slug: linux-kernel-explained
+date: 2025-01-31T00:00:00Z
 author: bmf-san
 categories:
-  - "OS"
+  - OS
 tags:
-  - "Linux"
-  - "本"
-  - "カーネル"
-draft: false
+  - Linux
+  - 本
+  - カーネル
+translation_key: linux-kernel-explained
 ---
+
 
 [絵で見てわかるLinuxカーネルの仕組み](https://amzn.to/3WFteaw)を読んだ。
 

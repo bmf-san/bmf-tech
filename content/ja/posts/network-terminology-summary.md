@@ -1,15 +1,16 @@
 ---
-title: "ネットワーク用語まとめ"
-slug: "network-terminology-summary"
-date: 2020-11-02
+title: ネットワーク用語まとめ
+slug: network-terminology-summary
+date: 2020-11-02T00:00:00Z
 author: bmf-san
 categories:
-  - "ネットワーク"
+  - ネットワーク
 tags:
-  - "IP"
-  - "ロードバランサー"
-draft: false
+  - IP
+  - ロードバランサー
+translation_key: network-terminology-summary
 ---
+
 
 # 概要
 ネットワークに関して知識が曖昧なワードをまとめる。

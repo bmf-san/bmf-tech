@@ -8,43 +8,42 @@ categories:
 tags:
   - Code Reading
   - AI
-description: A miscellaneous note on the process of code reading utilizing AI.
 translation_key: ai-code-reading-techniques
 ---
 
-A miscellaneous note on the process of code reading utilizing AI.
+Miscellaneous notes on the steps for code reading utilizing AI.
 
-Suggestions for prompt crafting would be helpful, but for now, only the process is summarized.
+While it would be good to have some creativity in the prompts, I will summarize just the process.
 
 ## Steps
-### 1. Review the overall structure and key parts of the code
-Use prompts to identify the overall structure of the code and the key parts that need to be read.
+### 1. Review the Overall Code and Key Parts
+Use prompts to review the overall code and identify the key parts to read.
 
-During this step, leverage README files, other documentation, and tools (such as call graphs) to ensure the understanding of the overall structure is reasonably accurate.
+At this time, utilize README files, other documents, and tools (like call graphs) to confirm that your understanding of the overall picture is generally correct.
 
-It’s also beneficial to check data structures and sequences.
+It’s also good to check the data structures and sequences.
 
-### 2. Create a procedure document
-Request AI to create a procedure document for code reading via prompts.
+### 2. Create a Procedure Document
+Request the creation of a code reading procedure document using prompts.
 
-Tailor the document to the purpose of the code reading.
+Make sure to tailor it to the purpose of the code reading.
 
-At a minimum, it should include the reading order and a checklist. If the amount of code can be read in a short time, a checklist may not be necessary. However, for time-consuming tasks, preparing a simple checklist for progress management can help offload working memory and make the process more convenient.
+At a minimum, it’s good to have the order of reading the code and a checklist. If the amount is small enough to read in a short time, a checklist may not be necessary, but if it takes time, having a simple checklist for progress management can help dump your working memory, making it convenient.
 
-### 3. Read the code following the procedure document
+### 3. Read the Code According to the Procedure Document
 Read the code according to the procedure document.
 
-While reading the code, it’s helpful to take notes on the key points in a suitable format. Prepare a file for taking these notes. Summarize the information obtained from AI in these notes to save effort and focus on reading the code.
+While reading the code, it’s good to take notes on the key points, so prepare a file in a suitable format to take meaningful notes. Summarizing what you asked the AI in these notes can greatly reduce the effort of note-taking, allowing you to focus on reading the code.
 
-Additionally, if you find areas for improvement during the code reading, make sure to note them down as well.
+Additionally, since you may find areas for improvement during code reading, it’s good to note those as well.
 
 ## Summary
-Use AI to efficiently perform the following:
+Efficiently perform the following using AI:
 
-- Grasp the overall structure
-- Create various documents:
-  - Code reading procedure document (reading order, checklist)
+- Grasp the overall picture
+- Create various documents
+  - Code reading procedure document (order of reading, checklist)
   - Code reading notes
   - Improvement notes
 
-If deeper understanding is required, it’s also beneficial to create documents like [System Specification Structure](https://bmf-tech.com/posts/%e8%87%aa%e5%88%86%e7%9a%84%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e3%81%ae%e4%bb%95%e6%a7%98%e6%9b%b8%e3%81%ae%e6%a7%8b%e6%88%90).
+If a deeper understanding is required, it’s also good to create documents like [the structure of my system's specification](https://bmf-tech.com/posts/%e8%87%aa%e5%88%86%e7%9a%84%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e3%81%ae%e4%bb%95%e6%a7%98%e6%9b%b8%e3%81%ae%e6%a7%8b%e6%88%90).

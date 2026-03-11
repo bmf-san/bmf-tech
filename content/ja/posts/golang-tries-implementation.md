@@ -1,16 +1,17 @@
 ---
-title: "Golangでトライ木を実装する"
-slug: "golang-tries-implementation"
-date: 2019-09-24
+title: Golangでトライ木を実装する
+slug: golang-tries-implementation
+date: 2019-09-24T00:00:00Z
 author: bmf-san
 categories:
-  - "アルゴリズムとデータ構造"
+  - アルゴリズムとデータ構造
 tags:
-  - "Golang"
-  - "基数木"
-  - "トライ木"
-draft: false
+  - Golang
+  - 基数木
+  - トライ木
+translation_key: golang-tries-implementation
 ---
+
 
 # 概要
 トライ木のアルゴリズムと実装についてかく。

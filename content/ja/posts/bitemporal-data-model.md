@@ -1,18 +1,19 @@
 ---
-title: "Bitemporal Data Modelについて"
-slug: "bitemporal-data-model"
-date: 2024-05-27
+title: Bitemporal Data Modelについて
+slug: bitemporal-data-model
+date: 2024-05-27T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "Bi-Temporal"
-  - "Uni-Temporal"
-  - "Non-Temporal"
-  - "履歴"
-  - "Temporal Data Model"
-draft: false
+  - Bi-Temporal
+  - Uni-Temporal
+  - Non-Temporal
+  - 履歴
+  - Temporal Data Model
+translation_key: bitemporal-data-model
 ---
+
 
 # 概要
 Bitemporal Data Modelについて調べたことをまとめる。

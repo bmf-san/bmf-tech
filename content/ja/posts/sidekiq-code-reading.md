@@ -1,15 +1,16 @@
 ---
-title: "Sidekiqのコードリーディング"
-slug: "sidekiq-code-reading"
-date: 2024-09-21
+title: Sidekiqのコードリーディング
+slug: sidekiq-code-reading
+date: 2024-09-21T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Ruby"
-  - "Sidekiq"
-draft: false
+  - Ruby
+  - Sidekiq
+translation_key: sidekiq-code-reading
 ---
+
 
 # 概要
 Sidekiqのコードをさらっと読んでみる。

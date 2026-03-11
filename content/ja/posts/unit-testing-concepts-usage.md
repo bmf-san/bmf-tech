@@ -1,15 +1,16 @@
 ---
-title: "単体テストの考え方／使い方"
-slug: "unit-testing-concepts-usage"
-date: 2024-05-21
+title: 単体テストの考え方／使い方
+slug: unit-testing-concepts-usage
+date: 2024-05-21T00:00:00Z
 author: bmf-san
 categories:
-  - "テスト"
+  - テスト
 tags:
-  - "設計"
-  - "本"
-draft: false
+  - 設計
+  - 本
+translation_key: unit-testing-concepts-usage
 ---
+
 
 [単体テストの考え方/使い方](https://amzn.to/44Y35Xt)を読んだ。
 

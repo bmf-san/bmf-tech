@@ -1,18 +1,19 @@
 ---
-title: "アーキテクチャ戦略について考える"
-slug: "architecture-strategy-discussion"
-date: 2025-02-16
+title: アーキテクチャ戦略について考える
+slug: architecture-strategy-discussion
+date: 2025-02-16T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "アーキテクチャ"
-  - "組織設計"
-  - "設計"
-  - "システム設計"
-  - "アーキテクチャ戦略"
-draft: false
+  - アーキテクチャ
+  - 組織設計
+  - 設計
+  - システム設計
+  - アーキテクチャ戦略
+translation_key: architecture-strategy-discussion
 ---
+
 
 # アーキテクチャ戦略について考える
 ソフトウェア開発において、必ずしもCTOやアーキテクトといった明確なポジションにいなくても、「アーキテクチャ戦略の必要性」を感じ、考える機会がある。

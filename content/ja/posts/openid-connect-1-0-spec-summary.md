@@ -1,16 +1,17 @@
 ---
-title: "OpenID Connect 1.0 仕様まとめ"
-slug: "openid-connect-1-0-spec-summary"
-date: 2026-01-23
+title: OpenID Connect 1.0 仕様まとめ
+slug: openid-connect-1-0-spec-summary
+date: 2026-01-23T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "OIDC"
-  - "認証"
-  - "認可"
-draft: false
+  - OIDC
+  - 認証
+  - 認可
+translation_key: openid-connect-1-0-spec-summary
 ---
+
 
 OpenID Connect Core 1.0 に基づく要点整理。
 

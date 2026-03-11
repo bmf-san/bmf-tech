@@ -1,17 +1,18 @@
 ---
-title: "設計の賞味期限を考える"
-slug: "design-shelf-life-considerations"
-date: 2025-06-08
+title: 設計の賞味期限を考える
+slug: design-shelf-life-considerations
+date: 2025-06-08T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "設計"
-  - "システム設計"
-  - "アーキテクチャ戦略"
-  - "アーキテクチャ"
-draft: false
+  - 設計
+  - システム設計
+  - アーキテクチャ戦略
+  - アーキテクチャ
+translation_key: design-shelf-life-considerations
 ---
+
 
 # 概要
 システム設計に「間違い」はあっても「正解」は存在しない。あるのは、そのときの状況に応じた“最適な妥協”である。

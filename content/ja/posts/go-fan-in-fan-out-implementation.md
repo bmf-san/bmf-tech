@@ -1,15 +1,16 @@
 ---
-title: "Goでfan-inとfan-outを実装する"
-slug: "go-fan-in-fan-out-implementation"
-date: 2023-08-21
+title: Goでfan-inとfan-outを実装する
+slug: go-fan-in-fan-out-implementation
+date: 2023-08-21T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "fan-in"
-  - "fan-out"
-draft: false
+  - fan-in
+  - fan-out
+translation_key: go-fan-in-fan-out-implementation
 ---
+
 
 # 概要
 並行処理のパターンであるfan-in、fan-outをGoで実装する。

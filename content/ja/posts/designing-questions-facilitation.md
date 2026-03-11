@@ -1,14 +1,15 @@
 ---
-title: "問いのデザイン: 創造的対話のファシリテーション"
-slug: "designing-questions-facilitation"
-date: 2025-12-29
+title: '問いのデザイン: 創造的対話のファシリテーション'
+slug: designing-questions-facilitation
+date: 2025-12-29T00:00:00Z
 author: bmf-san
 categories:
-  - "ビジネス"
+  - ビジネス
 tags:
-  - "本"
-draft: false
+  - 本
+translation_key: designing-questions-facilitation
 ---
+
 
 [問いのデザイン: 創造的対話のファシリテーション](https://amzn.to/49fe9lE)を読んだ。
 

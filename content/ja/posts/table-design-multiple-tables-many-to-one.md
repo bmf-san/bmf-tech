@@ -1,15 +1,16 @@
 ---
-title: "複数のテーブルに多対1で紐づく時のテーブル設計のアプローチについて"
-slug: "table-design-multiple-tables-many-to-one"
-date: 2018-08-06
+title: 複数のテーブルに多対1で紐づく時のテーブル設計のアプローチについて
+slug: table-design-multiple-tables-many-to-one
+date: 2018-08-06T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "ポリモーフィック"
-  - "SQLアンチパターン"
-draft: false
+  - ポリモーフィック
+  - SQLアンチパターン
+translation_key: table-design-multiple-tables-many-to-one
 ---
+
 
 # 概要
 複数のテーブルに対し、多対1でテーブルが関係付くときのテーブル設計のパターンについてまとめる。

@@ -1,14 +1,15 @@
 ---
-title: "トランザクション概観"
-slug: "transaction-overview"
-date: 2023-06-07
+title: トランザクション概観
+slug: transaction-overview
+date: 2023-06-07T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "トランザクション"
-draft: false
+  - トランザクション
+translation_key: transaction-overview
 ---
+
 
 # 概要
 トランザクションについてまとめる。

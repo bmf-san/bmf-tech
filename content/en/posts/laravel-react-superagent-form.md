@@ -1,5 +1,5 @@
 ---
-title: Implementing a Form with Laravel, React, and Superagent
+title: Implementing Forms with Laravel, React, and Superagent
 slug: laravel-react-superagent-form
 date: 2017-09-26T00:00:00Z
 author: bmf-san
@@ -10,30 +10,29 @@ tags:
   - React
   - AJAX
   - Superagent
-description: A guide to implementing an AJAX form using Laravel, React, and Superagent.
 translation_key: laravel-react-superagent-form
 ---
 
-As the title suggests, this post explains how to implement an AJAX form using Laravel, React, and Superagent.
+As the title suggests, we will implement an Ajax form using Laravel, React, and Superagent.
 
-Superagent is chosen as the AJAX library because I wanted to move away from jQuery, and I found it easier to understand compared to jQuery's AJAX. While there is a complex concept called Promises, you can still use Superagent without fully understanding it for now.
+The reason for choosing Superagent as the Ajax library is that I wanted to move away from jQuery, and I found it easier to understand than jQuery's Ajax. There seems to be a complicated concept called Promises, but we can set that aside for now and see if we can use it.
 
-From a web standards perspective, Fetch API seems to be the modern choice, but due to inconsistencies in browser implementations, I decided to avoid it.
+From a web standards perspective, the Fetch API is considered cool, but it seems to have inconsistencies in implementation across different browser vendors, so I decided to avoid it.
 
-Frontend development can feel chaotic at times, but let's move forward.
+While I grumble about how chaotic the frontend can be, I would like to proceed with the discussion.
 
-# What We'll Do
-* Set up an API in Laravel
-* Convert FormRequest responses to JSON
-* Use React to call Laravel's API with Superagent (verify GET and POST requests)
+# What to Do
+* Prepare an API with Laravel
+* Set the FormRequest response to JSON
+* Use Superagent to call Laravel's API with React → Check GET and POST
 
-# What We Won't Do
-* Setting up the build environment
-* Setting up React or Superagent
+# What Not to Do
+* Set up the build environment
+* Set up React and Superagent
 
 # Laravel Implementation
 
-The order is a bit random, so bear with me.
+Please excuse the random order...
 
 ## Routing
 
@@ -46,7 +45,7 @@ Route::group(['prefix' => 'api/v1'], function () {
 
 ## View
 
-Skipping a lot here. This is just an example of how to summon the component.
+I will omit various details. This is just a demonstration of how to summon components.
 
 ```hoge.blade.php
 <div id="form-component" class="mdl-cell mdl-cell--12-col"></div>
@@ -54,7 +53,7 @@ Skipping a lot here. This is just an example of how to summon the component.
 
 ## Controller
 
-In practice, I use a ResourceController to create a RESTful API, but I’ll skip the detailed implementation here.
+In reality, I create the API with a ResourceController and structure it in a RESTful manner, but I will skip the detailed construction.
 
 ```HogeController.php
 <?php
@@ -85,7 +84,7 @@ class ConfigController extends Controller
      */
     public function update(ConfigRequest $request)
     {
-        // Example update process
+        // Example of update processing
         $user_name = \Auth::guard('users')->user()->name;
         $users = User::where('name', $user_name)->first();
         $users->fill(\Input::all())->save();
@@ -128,16 +127,17 @@ class HogeRequest extends Request
     public function rules()
     {
         if ($this->form_type == 'name') {
-          return [
-            'user_name' => 'max:5|required',
-            'email' => 'email|required'
-          ];
+            return [
+                'user_name' => 'max:5|required',
+                'email' => 'email|required'
+            ];
         }
 
         // Default (when null)
         return [];
     }
 
+    //
     public function response(array $errors)
     {
         $response['status'] = 'error';
@@ -148,15 +148,14 @@ class HogeRequest extends Request
 }
 ```
 
-To return errors as JSON with FormRequest, you just need to override the `response` method in `Illuminate/Foundation/Http/FormRequest`.
+To return errors as JSON with FormRequest, you just need to override the response method of Illuminate/Foundation/Http/FormRequest.
 
-The usage is the same as the usual FormRequest. If there are errors, it will return the error messages as a JSON response.
+After that, the usage is the same as the usual FormRequest. If there are errors, it will return the error messages as a JsonResponse.
 
 [Laravel API - FormRequest](https://github.com/laravel/framework/blob/5.2/src/Illuminate/Foundation/Http/FormRequest.php)
 
 ## CSRF Token Exception Settings
-
-Don't forget to configure this in `VerifyCsrfToken.php`.
+Don't forget to set this in VerifyCsrfToken.php.
 
 ```VerifyCsrfToken.php
 <?php
@@ -179,13 +178,13 @@ class VerifyCsrfToken extends BaseVerifier
 }
 ```
 
-This completes the Laravel side.
+That's it for the Laravel side.
 
 # React Implementation
 
 ```hoge.js
 
-// Strict mode is just for the vibe...
+// Strict mode is just for show...
 "use strict";
 
 var request = require('superagent');
@@ -201,7 +200,7 @@ var ConfigNameForm = React.createClass({
 
       // Messages
       message: {
-        // If there are no input errors, the controller response is assigned. If there are errors, the FormRequest response is assigned. (If you want to simplify, you might want to skip FormRequest validation and implement validation logic in the controller instead.)
+        // If there are no input errors, the controller's response will be assigned; if there are, the form request's response will be assigned. (If you want to simplify, it might be better to stop the form request validation and build the validation logic in the controller.)
         user_name: '',
         email: ''
       }
@@ -259,7 +258,7 @@ var ConfigNameForm = React.createClass({
 
           switch (res.body.status) {
             case 'success':
-              // This part is clunky, so adjust as needed.
+              // This is a bit clunky, but please adjust as needed.
               message.user_name = res.body.message;
               message.email = res.body.message;
               break;
@@ -280,7 +279,7 @@ var ConfigNameForm = React.createClass({
   },
 
   render: function () {
-    // Clunky...
+    // A bit clunky...
     var msgOfName = false;
 
     if (this.state.message.name.length > 0) {
@@ -313,7 +312,7 @@ var ConfigNameForm = React.createClass({
           <input type="text" name="user_name" id="user_name" value={this.state.data.user_name} onChange={this.handleChange} disabled />
 
           {/* Email */}
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">Email Address</label>
           <input type="text" name="email" id="email" value={this.state.data.email} onChange={this.handleChange} />
           <button type="submit">Update</button>
         </form>
@@ -323,17 +322,16 @@ var ConfigNameForm = React.createClass({
 });
 
 ReactDOM.render(
-  <FormApp />,
-  document.getElementById('form-component')
+  <FormApp />, 
+  document.getElementById('form-compoent')
 );
-
 ```
 
 # Thoughts
-I made this quite roughly, so there are likely many areas that need improvement.
+I made it quite roughly, so there seems to be a lot that needs fixing.
 
-While architecture is important, I realized I need to study modern JavaScript practices more to write code more flexibly.
+While architecture is important, I think I need to study modern JavaScript writing more to be able to write flexibly.
 
 # References
-* [Things I looked into when creating an API with Laravel 5.1.x](http://qiita.com/zaburo/items/f0db54bd3ebd81a8ce68)
-* [About the subtle but important `key` in React.js](http://qiita.com/koba04/items/a4d23245d246c53cd49d) - This was important for iterating over responses from the API.
+* [Things I was curious about when creating an API with Laravel 5.1.x](http://qiita.com/zaburo/items/f0db54bd3ebd81a8ce68)
+* [The important but subtle key in React.js](http://qiita.com/koba04/items/a4d23245d246c53cd49d) ... It was important for scanning the response returned from the API.

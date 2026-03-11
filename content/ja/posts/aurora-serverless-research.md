@@ -1,14 +1,15 @@
 ---
-title: "Aurora Serverlessについて調べた"
-slug: "aurora-serverless-research"
-date: 2023-12-27
+title: Aurora Serverlessについて調べた
+slug: aurora-serverless-research
+date: 2023-12-27T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "Amazon Web Service"
-draft: false
+  - Amazon Web Service
+translation_key: aurora-serverless-research
 ---
+
 
 Aurora Serverlessについて興味を持ったので記事を漁ってみた。
 

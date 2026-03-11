@@ -1,16 +1,17 @@
 ---
-title: "アーキテクチャ設計と組織設計についての記事漁り"
-slug: "architecture-design-organization-design-resources"
-date: 2023-12-27
+title: アーキテクチャ設計と組織設計についての記事漁り
+slug: architecture-design-organization-design-resources
+date: 2023-12-27T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "設計"
-  - "アーキテクチャ"
-  - "リンク集"
-draft: false
+  - 設計
+  - アーキテクチャ
+  - リンク集
+translation_key: architecture-design-organization-design-resources
 ---
+
 
 ソフトウェアのアーキテクチャと組織の設計に関して記事を漁ってみたので、読んだものをリストアップしておく。随時読んだものを追加していこうと思う。
 

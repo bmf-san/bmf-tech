@@ -1,17 +1,18 @@
 ---
-title: "信頼性のパターンについて"
-slug: "reliability-patterns"
-date: 2024-10-30
+title: 信頼性のパターンについて
+slug: reliability-patterns
+date: 2024-10-30T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "信頼性"
-  - "アーキテクチャ"
-  - "設計"
-  - "システム設計"
-draft: false
+  - 信頼性
+  - アーキテクチャ
+  - 設計
+  - システム設計
+translation_key: reliability-patterns
 ---
+
 
 # 概要
 信頼性のパターンについてAzure、AWS、GCPの提唱するパターンに基づいてまとめる。

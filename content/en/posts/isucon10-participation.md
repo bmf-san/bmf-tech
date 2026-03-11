@@ -11,43 +11,40 @@ tags:
 translation_key: isucon10-participation
 ---
 
-[ISUCON10](http://isucon.net/archives/54704557.html) participated.
-This was my second time participating in ISUCON, after a two-year gap.
+[ISUCON10](http://isucon.net/archives/54704557.html) was held, and I participated. It was my second time participating in ISUCON after two years.
 
-Last time, I participated as a two-person team, but this time, we joined as a three-person team.
+Last time, I participated as a two-person team, but this time I was part of a three-person team.
 
 # What We Did
 - Reviewed the preliminary manual and regulations
-- Checked SSH connections
-  - We were able to connect using the key registered on GitHub. A bastion server was provided this time.
+- Confirmed SSH connection
+  - I was able to connect using the key registered on GitHub. This time, a bastion server was provided.
 - Checked processes
 - Verified API endpoints and UI
 - Checked the database
-- Improved deployment
-  - Made it possible to deploy the application and manage the schema with a single `make` command.
-- Introduced `alp`
-- Adjusted MySQL general query logs, slow query logs, and various parameters
-- Tuned Nginx settings
-- Ran the initial benchmarker
+- Prepared deployment
+  - Made it possible to deploy the application and manage the schema with a single make command.
+- Introduced alp
+- Adjusted MySQL general query log, slow query log, and various parameters
+- Adjusted Nginx settings
+- Executed the initial benchmark
 
 ## Tasks
 - Query tuning
-- Filtering (blocking) bot access
+- Filtering bot access (blocking)
 - Upgraded MySQL from 5.7 to 8
-  - This turned out to be a trap... Simply upgrading wasn’t enough; fundamental adjustments were required.
-    - Latitude and longitude were stored as `double precision`, but we needed to change them to `geometry` or `point` and enable spatial indexing. By the time we realized this, it was too late...
-    - We also needed to address N+1 queries, but couldn’t finish in time...
-    - Later, while reading various blogs, I found that some teams took a competitive programming-like approach by optimizing the calculation logic on the application side to reduce computational load. That was insightful.
-- Configured a two-server setup for the application and database
-  - Although we had three servers, we lost one due to an operational mistake... very unfortunate.
-  - The database server’s CPU usage was close to 100%, so we focused on improving this, but ran out of time toward the end.
-  - Since there were only two tables, we should have split the database server into two: one for the table with location data and the other for the remaining table. I realized this after the event. Even with the remaining two servers, a setup of APP+DB and DB might have slightly improved our score...
+  - This was a trap... Just upgrading wasn't enough; fundamental adjustments were necessary.
+    - Latitude and longitude were stored as double precision, but I needed to change them to geometry or point to enable spatial indexing. By the time I realized this, it was already too late...
+    - I also needed to improve the N+1 query, but I ran out of time...
+    - Later, while browsing various blogs, I noticed some teams took a competitive programming approach by optimizing the calculation logic on the application side to reduce computational load, which I found insightful.
+- Configured a two-server setup for AP and DB
+  - There were three servers, but due to an operational mistake, one was rendered unusable... such sadness.
+  - The DB was nearly at 100% CPU usage, so I was trying to make significant improvements there, but I ran out of time towards the end.
+  - Since there were only two tables, I realized afterward that I should have tried splitting the DB server between the table with location information and the other table. If I had set up the remaining two servers as APP+DB and DB, perhaps the score would have changed a bit...
 
 # Results
-We didn’t make it past the preliminaries. Last time, we failed with a score of 0, but this time we managed to score some points, so perhaps we’ve grown a little.
+We were eliminated in the preliminaries. Last time, we scored 0 points due to failure, but this time we managed to score some points, so perhaps I have grown a little.
+I felt quite accustomed to the operations in the early stages, and although I couldn't resolve the bottlenecks (still struggling with them...), I felt some growth. However, there is still much to do and learn, so I need more training...
 
-I felt more comfortable with the initial operations (we had been practicing ISUCON as a team for about six months), and while we struggled with bottlenecks (though we couldn’t resolve them), I felt some growth. However, there’s still a lot more we can and should do, so more practice is needed...
-
-After conducting a KPT session with the team, we plan to start preparing for next year. Looking forward to participating again next year!
-
+After doing a KPT with the team, we plan to start training for next year, so I hope to see you again next year!
 Thank you to the organizers!!

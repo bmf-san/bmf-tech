@@ -49,7 +49,7 @@ Reactで作るSPAの簡易的なボイラープレートをつくりました。
 これだけです(--)
 
 # 動作
-![redux.gif](https://qiita-image-store.s3.amazonaws.com/0/124495/409d4146-bc7e-7f54-5c9f-ad963b56a25b.gif)
+![redux.gif](/assets/images/posts/react-ecosystem-spa-boilerplate/409d4146-bc7e-7f54-5c9f-ad963b56a25b.gif)
 
 # ソース
 + [bmf-san/react-redux-spa-boilerplate](https://github.com/bmf-san/react-redux-spa-boilerplate)

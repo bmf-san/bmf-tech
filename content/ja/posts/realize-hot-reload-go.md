@@ -1,15 +1,16 @@
 ---
-title: "Realizeを使ってgoでホットリロードを実現するメモ"
-slug: "realize-hot-reload-go"
-date: 2019-04-11
+title: Realizeを使ってgoでホットリロードを実現するメモ
+slug: realize-hot-reload-go
+date: 2019-04-11T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "realize"
-draft: false
+  - Golang
+  - realize
+translation_key: realize-hot-reload-go
 ---
+
 
 # 概要
 [github - oxequa/realize](https://github.com/oxequa/realize)を使ってみたメモ。

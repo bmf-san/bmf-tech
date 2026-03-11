@@ -1,20 +1,21 @@
 ---
-title: "VPS×Docker Compose×Docker Machine×Golang×Nginx×Let's Encryptでの本番運用"
-slug: "vps-docker-compose-golang-nginx-lets-encrypt"
-date: 2020-06-07
+title: VPS×Docker Compose×Docker Machine×Golang×Nginx×Let's Encryptでの本番運用
+slug: vps-docker-compose-golang-nginx-lets-encrypt
+date: 2020-06-07T00:00:00Z
 author: bmf-san
 categories:
-  - "ポエム"
+  - ポエム
 tags:
-  - "Docker"
-  - "Docker Compose"
-  - "Golang"
-  - "Let's Encrypt"
-  - "Nginx"
-  - "Docker Machine"
-  - "VPS"
-draft: false
+  - Docker
+  - Docker Compose
+  - Golang
+  - Let's Encrypt
+  - Nginx
+  - Docker Machine
+  - VPS
+translation_key: vps-docker-compose-golang-nginx-lets-encrypt
 ---
+
 
 # 概要
 GolangのアプリケーションをVPSでDocker-Composeを使って本番運用してみたかったので、トライ

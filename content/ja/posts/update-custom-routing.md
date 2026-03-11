@@ -1,16 +1,17 @@
 ---
-title: "自作ルーティングをアップデートした"
-slug: "update-custom-routing"
-date: 2021-06-18
+title: 自作ルーティングをアップデートした
+slug: update-custom-routing
+date: 2021-06-18T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "OSS"
-  - "router"
-draft: false
+  - Golang
+  - OSS
+  - router
+translation_key: update-custom-routing
 ---
+
 
 # 概要
 最近、自作ルーティングの[goblin](https://github.com/bmf-san/goblin)をアップデートしたのでその記録を書き残しておく。
@@ -41,10 +42,10 @@ draft: false
 なので、データ構造を以下のように変更をして、ミドルウェアのサポートを実装した。
 
 Before
-![Based on trie tree](https://user-images.githubusercontent.com/13291041/70862745-7148e180-1f83-11ea-85d3-2cd8fb4db0d3.png "Based on trie tree")
+![Based on trie tree](/assets/images/posts/update-custom-routing/70862745-7148e180-1f83-11ea-85d3-2cd8fb4db0d3.png "Based on trie tree")
 
 After
-![after](https://user-images.githubusercontent.com/13291041/117675761-d4c25780-b1e7-11eb-9ec7-e78ac0ce142b.png)
+![after](/assets/images/posts/update-custom-routing/117675761-d4c25780-b1e7-11eb-9ec7-e78ac0ce142b.png)
 
 
 # ベンチマーク

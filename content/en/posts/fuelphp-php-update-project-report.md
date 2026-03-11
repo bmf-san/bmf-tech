@@ -1,5 +1,5 @@
 ---
-title: FuelPHP and PHP Upgrade Project Report
+title: FuelPHP and PHP Update Project Report
 slug: fuelphp-php-update-project-report
 date: 2024-01-26T00:00:00Z
 author: bmf-san
@@ -8,162 +8,285 @@ categories:
 tags:
   - PHP
   - FuelPHP
-description: A report on the project to upgrade PHP and FuelPHP for a service in operation for over 10 years.
 translation_key: fuelphp-php-update-project-report
 ---
 
-This article is for [Makuake Advent Calendar 2023](https://adventar.org/calendars/8992), Day 24.
+This article is the 24th entry of the [Makuake Advent Calendar 2023](https://adventar.org/calendars/8992).
 
 # Overview
-This is a report on the project to upgrade PHP and FuelPHP for a service that has been in operation for over 10 years.
+This report details a project to update PHP and FuelPHP for a service that has been in operation for over 10 years.
 
-- **Upgrade Targets**
-  - Main service (the company's primary application)
+- Update Targets
+  - Main service (the primary service operated by the company) application
     - Uses FuelPHP
-  - Two internal libraries used by the main service
-    - Built with PHP
+  - Internal libraries used by the main service (two)
+    - Written in PHP
   - Execution environment of the main service
     - Container environment using ECS
     - Uses PHP-FPM
-- **Target Versions**
-  - PHP 7.3 to PHP 8.1
-  - FuelPHP 1.8.2 to FuelPHP 1.9-develop
-- **Team Structure**
+- Target Versions for Update
+  - From PHP 7.3 to PHP 8.1
+  - From FuelPHP 1.8.2 to FuelPHP 1.9-develop
+- Team Structure
   - 2 in-house engineers
-    - Responsible for project management, research, and implementation
-  - 1 contract engineer
+    - Responsible for project progress, research, and implementation
+  - 1 contracted engineer
     - Responsible for research and implementation
-      - Due to internal resource constraints, the main implementation work was assigned to the contract engineer
-- **Timeline**
+      - Due to internal resource adjustments, the main implementation work was requested from the contracted engineer.
+- Duration
   - From May 2022 to April 2023
-    - Completed in April 2023 with a one-month delay
-      - The delay was mainly due to the high workload on in-house engineers who were involved in the project while also working in their respective teams, and the time required to validate the infrastructure configuration for the upgrade project.
+    - Ultimately completed in April 2023 with a one-month delay
+      - The main reasons for the delay are believed to be the high workload of in-house engineers being involved in the update project while belonging to their respective teams, and the time taken to verify the infrastructure configuration for the update project.
 
 # Background
-PHP 7.3 reached its EOL in December 2021, ending security updates, making an upgrade necessary. FuelPHP 1.8.2, which depends on PHP, was in a similar situation.
+PHP 7.3 reached EOL in December 2021, and security updates have ended, necessitating consideration for an update. FuelPHP 1.8.2, which depends on PHP, was in a similar situation.
 
-In this project, it was necessary to evaluate whether simply upgrading was the optimal choice. Unlike previous upgrade projects, the development of FuelPHP had stagnated, and it was necessary to consider whether continuing to use FuelPHP was appropriate from a technical strategy perspective.
+In this project, it was necessary to consider whether simply updating was optimal. Unlike previous update projects, the development of FuelPHP had stagnated, and it was necessary to evaluate whether continuing to use FuelPHP was appropriate from a technical strategy perspective.
 
-For more details on the state of FuelPHP, refer to [FuelPHP's Current Status as of March 2023](https://bmf-tech.com/posts/FuelPHP%E3%81%AE2023%E5%B9%B43%E6%9C%88%E7%8F%BE%E5%9C%A8%E3%81%AE%E7%8F%BE%E6%B3%81).
+*For the current status of FuelPHP, please refer to the previous summary in [FuelPHP's Status as of March 2023](https://bmf-tech.com/posts/FuelPHP%E3%81%AE2023%E5%B9%B43%E6%9C%88%E7%8F%BE%E5%9C%A8%E3%81%AE%E7%8F%BE%E6%B3%81).*  
 
 # Planning
 ## Preliminary Research
-Before starting the project, the following research was conducted:
+As preliminary research before starting the project, the following investigations were conducted:
 
-- Reviewed migration information from PHP 7.3 to PHP 8.1 on [www.php.net](https://www.php.net/docs.php)
-- Investigated PHP compatibility in the codebase
-  - Used tools like Rector and PHPCompatibility, and searched with grep based on documentation to identify compatibility issues for the upgrade from PHP 7.3 to PHP 8.1
-    - Investigation items were based on [PHP Manual > Appendices](https://www.php.net/manual/ja/appendices.php)
-      - New features/classes/interfaces, new functions, new global constants, backward-incompatible changes, deprecated features in PHP 8.3.x, other changes, Windows support
-- Investigated runtime errors
-  - Set up a PHP 8.2 environment, ran tests, and manually checked application behavior to identify runtime errors
-- Checked the PHP 8.1 compatibility of dependent packages
-  - Identified packages that were already compatible, needed updates, or required alternative solutions due to incompatibility
-- Identified necessary adjustments for CI/CD
-- Reviewed installed extensions in the execution environment and identified those needing updates or additions
+- Gathered migration information from [www.php.net](https://www.php.net/docs.php) for migrating from PHP 7.3 to PHP 8.1.
+- Conducted a PHP compatibility investigation of the codebase.
+  - Utilized tools like Rector and PHPCompatibility, and searched through documentation using grep to investigate compatibility for the update from PHP 7.3 to PHP 8.1.
+    - The investigation items were based on [PHP Manual > Appendices](https://www.php.net/manual/ja/appendices.php).
+      - New features/new classes and interfaces/newly added functions/new global constants/incompatibilities/features deprecated in PHP 8.3.x/other changes/Windows support.
+- Investigated runtime errors.
+  - Prepared a PHP 8.2 execution environment, executed tests, and manually verified application behavior to identify runtime errors.
+- Investigated the PHP 8.1 compatibility status of dependent packages.
+  - Identified those that were already compatible, those needing updates, and those that required some action due to incompatibility.
+- Identified areas needing adjustments related to CI/CD.
+- Checked installed extension modules in the execution environment and identified those that might need updates or additions.
 
-Based on these investigations, we identified areas requiring fixes and estimated the overall project workload.
+Based on the investigation items, identified areas needing modifications and estimated the overall effort required for the project.
 
 ## Monolithic Application Architecture Strategy
-The main service application is a monolith developed by multiple teams. A significant challenge has been determining how to modernize this monolith as part of the development organization’s strategy.
+The application used by the main service is a so-called monolith, developed by multiple teams.
 
-The update strategy considered the future of the technology stack, including PHP and FuelPHP, and the architecture of the main service. Several plans were evaluated:
+As a strategy for the development organization, how to refresh this monolith has been a significant challenge in recent years.
 
-1. Replace with another framework
-2. Replace with another language
-3. Service decomposition
-4. Transition to a modular monolith architecture
-5. Continue using FuelPHP
+The strategy for updating the technology stack and architecture used in the main service, including PHP and FuelPHP, was established.
 
-Each plan had its pros and cons. Ultimately, we chose to continue using FuelPHP for the following reasons:
+For this update, several plans were considered:
 
-- To mitigate security and compliance risks from prolonged use of EOL software
-- Anticipation that some code would remain in the monolith even if decomposition was pursued, necessitating a future decision on FuelPHP
-- Desire to complete the upgrade with minimal internal resources
+- 1. Replace with a different framework
+  - Move away from FuelPHP and rewrite using another framework.
+- 2. Replace with a different language
+  - Move away from FuelPHP and PHP and rewrite in a different language, considering the use of a framework.
+- 3. Service splitting
+  - Maintain the monolith while extracting part of it as a separate service.
+  - Delay updates to FuelPHP and PHP for the time being, and consider the next steps after minimizing the monolith.
+- 4. Change architecture to a modular monolith
+  - Maintain the monolith while performing module splitting.
+  - Service splitting is a prerequisite, and after module splitting, consider extracting to separate services.
+- 5. Continue using FuelPHP
+  - Proceed with updates for PHP and FuelPHP.
 
-## Selecting Target Versions for PHP and FuelPHP
-Since we decided to continue using FuelPHP, we determined the target versions for PHP and FuelPHP based on research.
+Each of these has its pros and cons (details omitted), and after comparison, the plan to "continue using FuelPHP" was chosen.
 
-For PHP, we considered upgrading from PHP 7.3 to PHP 7.4, PHP 8.0, or PHP 8.1. PHP 7.4 was excluded as it reached EOL in November 2022, and PHP 8.0 was excluded as it would reach EOL shortly after the project’s completion. Thus, PHP 8.1 was chosen.
+Reasons for this choice include:
 
-For FuelPHP, we considered two options:
+- Avoiding security and compliance risks associated with leaving EOL software unattended for too long.
+- It is anticipated that even if the monolith is split, there will still be code remaining in the monolith, necessitating a reevaluation of what to do with FuelPHP, making it unreasonable to postpone the update.
+- Aiming to complete the update with minimal internal resources.
+  - Cannot impose a heavy burden of rewriting or splitting the monolith.
 
-- Forking FuelPHP to support PHP 8.1
-- Using FuelPHP 1.9-develop
+## Selection of Target Versions for PHP and FuelPHP Updates
+Having decided to continue using FuelPHP, the versions to which FuelPHP and PHP would be updated were determined based on investigations.
 
-We chose FuelPHP 1.9-develop because:
+During the project planning phase, the candidates for the update version from PHP 7.3 were PHP 7.4, PHP 8.0, and PHP 8.1. (PHP 8.2 had not yet been released.)
 
-- It was likely to work with PHP 8.1 based on codebase research and inquiries with developers
-- It had ongoing, albeit irregular, development activity, suggesting potential for an official release
-- Using 1.9-develop was less costly than forking FuelPHP
+PHP 7.4 reached EOL in November 2022, so it was excluded as it would become EOL during the project period.
 
-However, risks included low test coverage and uncertainty about future PHP 8.2 support.
+PHP 8.0 has an EOL in November 2023, but it would likely reach EOL shortly after the project completion, so it was similarly excluded.
 
-# Upgrade Strategy
-## Policies
-The following policies guided the upgrade project:
+According to the official [release information](https://fuelphp.com/blogs/2019/06/fuel-releases-1-8-2), FuelPHP 1.8.2 supports up to PHP 7.3, so it was necessary to update FuelPHP to a version that supports PHP 8.1. However, the version being used, PHP 1.8.2, was the latest, and the next version had not been released.
 
-- Avoid big bang releases
-- Minimize code freeze periods
-- Enable quick rollback in case of issues
-- Avoid complicating development workflows during the project
+Thus, two plans were considered:
 
-## Upgrade Strategy
-We planned a phased architecture change from PHP 7.3 to PHP 8.1, enabling parallel operation of both environments. The plan included five phases:
+- Fork FuelPHP to support PHP 8.1.
+- Use FuelPHP 1.9-develop.
 
-1. Prepare for parallel operation in the staging environment
-2. Start parallel operation in the staging environment
-3. Extend parallel operation to the production environment
-4. Transition to PHP 8.1-only operation
-5. Complete the transition to PHP 8.1
+As a result of the investigation, it was decided to use FuelPHP 1.9-develop for the following reasons:
 
-Each phase is detailed in the blog post with diagrams illustrating the infrastructure changes.
+- Based on codebase investigations and inquiries to FuelPHP developers, it appeared that 1.9-develop could run on PHP 8.1.
+- Although the release schedule is undecided, commits have been made irregularly, and considering the developers' intentions, it seemed possible that it might be officially released in the future.
+
+FuelPHP 1.9-develop has not yet been officially released, but it was determined that there was room for adoption based on investigations.
+
+Using 1.9-develop was also considered to be more cost-effective than forking FuelPHP.
+
+However, there are risks and disadvantages, such as "the test coverage of the framework itself being quite low" and "the likelihood of PHP 8.2 support not being expected in the near future even if released."
+
+Another approach considered was to become a committer for FuelPHP, but it was deemed uncertain how much could be contributed to accelerating FuelPHP's release cycle, so this was abandoned.
+
+# Update Strategy
+## Policy
+The following policies were established for the update project:
+
+- Avoid big bang releases.
+- Minimize the code freeze period.
+- Quickly roll back when issues arise.
+- During the update project period, avoid complicating the development flow or increasing implementation effort as much as possible.
+
+## Update Strategy
+Based on the policy, it was deemed desirable to gradually implement architectural changes from PHP 7.3 to PHP 8.1.
+
+To achieve this, it was necessary to build a structure that could operate both PHP 7.3 and PHP 8.1 environments in parallel.
+
+To realize such a structure, five phases were established to achieve gradual architectural changes.
+
+### Phase 1: Production and Staging Environments Running PHP 7.3
+This phase serves as a preparation period to create an environment where PHP 7.3 and PHP 8.1 can run in parallel in the staging environment.
+
+During this phase, the following was done:
+
+- Updated the application codebase and libraries to work on both PHP 7.3 and PHP 8.1.
+
+<img width="594" alt="phase1" src="https://github.com/bmf-san/bmf-tech-client/assets/13291041/c7a797ec-6685-4a01-8957-2bf8b5ce5777">
+
+### Phase 2: Start of Parallel Operation in Staging Environment
+This phase marks the start of parallel operation of PHP 7.3 and PHP 8.1 in the staging environment only.
+
+QA was conducted, and load testing was performed to validate the pre-production environment.
+
+Particularly, the infrastructure configuration for parallel operation was verified to ensure no issues would arise in production.
+
+<img width="883" alt="phase2" src="https://github.com/bmf-san/bmf-tech-client/assets/13291041/54c1d027-4a73-4875-a8b2-9a71e7d667ad">
+
+### Phase 2.5: Start of Parallel Operation in Production Environment
+This phase involves deploying the parallel operation environment from the staging environment to the production environment and starting operations.
+
+Monitoring and bug fixes arising from the start of operations are conducted, aiming to stabilize operations in the production environment and prepare for a complete switch to PHP 8.1.
+
+<img width="886" alt="phase2 5" src="https://github.com/bmf-san/bmf-tech-client/assets/13291041/013aa6ad-a05a-4ff3-80ed-ba5cf0c408d6">
+
+### Phase 3: Start Switching Staging and Production Environments to PHP 8.1
+This phase involves switching the staging and production environments, which are running in parallel with PHP 7.3 and PHP 8.1, to operate solely on PHP 8.1, validating operational stability.
+
+It is anticipated that there will be a certain level of stability at the Phase 2.5 stage, but due to increased traffic when operating solely on PHP 8.1, this phase is established for caution.
+
+In this phase, infrastructure resources related to the PHP 7.3 environment are retained to allow for a rollback to the PHP 7.3 environment.
+
+<img width="882" alt="phase3" src="https://github.com/bmf-san/bmf-tech-client/assets/13291041/74fc21f4-302f-44f8-9180-59f5dd0ebec7">
+
+### Phase 3.5: Complete Switch to PHP 8.1 Environment
+In this phase, various infrastructure resources related to the PHP 7.3 environment and the code branching for parallel operation are removed, completing the switch to the PHP 8.1 environment.
+
+In this phase, rolling back to the PHP 7.3 environment is fundamentally impossible (it can be done if necessary, but quick rollback is not feasible).
+
+<img width="546" alt="phase3 5" src="https://github.com/bmf-san/bmf-tech-client/assets/13291041/815b6917-7f56-4482-bf78-03ca71e47ca8">
 
 # Implementation
-## Code Modifications
-Application source code was categorized into two patterns:
+## Modification Policy
+The application source code, excluding dependent packages, could be broadly categorized into two patterns:
 
-1. Code that could be modified to work with both PHP 7.3 and PHP 8.1
-2. Code that required version-specific modifications
+- Those that could be modified to work correctly on both PHP 7.3 and PHP 8.1.
+- Those that could not be modified to work correctly on both PHP 7.3 and PHP 8.1.
 
-For the latter, we used conditional statements based on PHP version:
+The former only required simple modifications, while the latter required conditional branching based on the PHP version to ensure correct operation on each version.
 
 ```php
+// Code example
 if (version_compare(PHP_VERSION, '7.4.0') < 0){
-	// Code for PHP < 7.4
+	// Code for versions below 7.4.0
 }
 
 if (version_compare(PHP_VERSION, '8.1.0') >= 0) {
-	// Code for PHP 8.1
+	// Code for PHP 8.1 support
 }
 ```
 
-Dependency packages were categorized into three patterns:
+This conditional branching was defined as a helper function and utilized in a feature toggle-like manner at each modification point.
 
-1. Compatible with both PHP versions
-2. Not compatible with both versions but manageable with separate `composer.json` files
-3. Incompatible and required forking for PHP 8.1 support
+On the other hand, there were three patterns regarding dependent packages:
+1. Those that could be updated to versions functioning correctly on both PHP 7.3 and PHP 8.1.
+2. Those that could not be updated to versions functioning correctly on both PHP 7.3 and PHP 8.1.
+3. Those that could not be updated to versions functioning correctly on both PHP 7.3 and PHP 8.1 and required forking for PHP 8.1 support.
 
-Forking was necessary for two cases, including the `ruflin/Elastica` library.
+The first pattern only required straightforward updates, while the other patterns required respective actions.
 
-## Infrastructure
-We modified the existing ALB+ECS environment to support parallel operation of PHP 7.3 and PHP 8.1. We used CloudFront’s Continuous Deployment feature to distribute traffic between environments.
+The second pattern was addressed by preparing separate composer.json files for each environment of PHP 7.3 and PHP 8.1.
 
-Final architecture:
+Due to this approach, until Phase 3.0, both composer.json files needed to specify the same dependent packages, but since library additions did not occur frequently, it did not become a significant burden.
 
-![Infrastructure Diagram](https://github.com/bmf-san/bmf-tech-client/assets/13291041/ab6725f2-7c6e-4ecc-91df-0fafa41f6cf6)
+The third pattern had two cases.
+
+One was the fork of the PHP Elasticsearch client library [ruflin/Elastica](https://github.com/ruflin/Elastica).
+
+The version of Elasticsearch used by the service was quite old, and the PHP 8.1 compatible version of ruflin/Elastica could not be utilized.
+
+Therefore, ruflin/Elastica was forked, and PHP 8.1 support was implemented. (About six months after the completion of the update project, some features using Elasticsearch no longer required the client library, rendering the forked repository obsolete.)
+
+The other was the fork of an internal library.
+
+The internal library was also used in another internal service operated with PHP 7.3, so it was necessary to ensure that the internal library operated correctly on both PHP 7.3 and PHP 8.1.
+
+If the internal library could be modified to separate processing based on PHP version by dividing the composer.json files, forking would not have been necessary, but a good approach could not be devised, leading to the decision to fork.
+
+As a result, until Phase 3.0, there was an additional burden to synchronize the specifications between the forked source and the forked destination, but since it was not a library that underwent frequent specification changes, it did not become a significant burden.
+
+After the completion of the update project, the forked source and destination could be operated as separate entities, allowing synchronization efforts to be unnecessary after Phase 3.5.
+
+## Infrastructure Construction
+To build a parallel operating environment for PHP 7.3 and PHP 8.1, it was necessary to modify the existing execution environment.
+
+The existing execution environment was composed of ALB + ECS, utilizing Nginx as the web server.
+
+<img width="491" alt="before" src="https://github.com/bmf-san/bmf-tech-client/assets/13291041/a46f532a-72e9-4026-96c3-48adfcd5d13c">
+
+The existing execution environment was modified to meet the following requirements:
+
+- Quick switching between PHP 7.3 and PHP 8.1 environments.
+- Flexible traffic distribution between PHP 7.3 and PHP 8.1 environments.
+- Ability to collect logs separately for PHP 7.3 and PHP 8.1 environments (ensuring observability).
+
+Several approaches were considered for the modifications:
+
+- Using Nginx for traffic distribution.
+- Using Route53 for traffic distribution.
+- Using NLB for traffic distribution.
+
+Ultimately, it was decided to utilize the newly released feature of CloudFront's Continuous Deployment.
+
+cf. [Using CloudFront continuous deployment to safely test CDN configuration changes](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/continuous-deployment.html)
+
+This feature met the requirements by allowing the distribution of traffic between two CloudFront Distributions: Primary and Staging.
+
+The traffic distribution condition adopted was weight-based, which has the constraint of only being able to allocate 0-15% of all requests to the distribution target, but it was determined that accepting traffic at a maximum of 15% for a certain period would gather sufficient traffic necessary for switching decisions.
+
+The final configuration was as follows:
+
+<img width="883" alt="after" src="https://github.com/bmf-san/bmf-tech-client/assets/13291041/ab6725f2-7c6e-4ecc-91df-0fafa41f6cf6">
 
 # Testing
 ## QA
-We conducted QA in both PHP 7.3 and PHP 8.1 environments, using comprehensive test cases executed through the UI.
+Due to the operation of the parallel environments for PHP 7.3 and PHP 8.1, code modifications were made to execute the main branch in both PHP 7.3 and PHP 8.1 environments, necessitating QA in both execution environments.
+
+For QA execution, comprehensive test cases for the entire service were prepared and executed on the UI.
 
 ## Load Testing
-We used `k6` to ensure no performance degradation with PHP 8.1. Tests showed a 25% improvement in response times.
+To verify that there was no performance degradation due to the update to PHP 8.1, load testing was conducted using k6.
+
+Tests were conducted for each expected traffic pattern, and response times showed approximately a 25% improvement.
 
 # Results
-The project was completed successfully with no major issues, thanks to careful planning.
+Thanks to the planned execution, no major issues arose (though some difficult-to-solve problems did occur), and the update project was successfully completed.
 
 # Reflections
-Despite challenges such as team member transitions, thorough documentation and communication minimized project impact. However, areas for improvement include test coverage, reducing dead code, updating dependencies, and improving QA efficiency.
+This project initially started with a team of three engineers, including myself, but two of them took parental leave and left at different times, leading to a relay-like project with handovers to other members.
 
-This was my second upgrade project at my current company, and it highlighted the increasing complexity of such projects as organizations and architectures evolve. While the future of FuelPHP remains uncertain, I aim to apply the lessons learned to future projects.
+Even with such a structure, thorough documentation and internal communication minimized the impact on project execution.
+
+Updating a monolithic application touched by multiple teams tends to incur high communication costs, but I realized that proper planning allows for smooth updates.
+
+On the other hand, I also felt that there were several areas that would require improvement in the future.
+
+Insufficient test coverage, excessive dead code, outdated dependent libraries that are not updated, and the efficiency of QA execution are some areas that I felt need ongoing improvement through the update project.
+
+This was my second update project in my current position, but the organizational structure, architectural composition, and application state were different from the previous one, leading to an increased number of considerations. (This is also a challenge...)
+
+I wonder what the next update will be like (whether to consider a forked FuelPHP or take another strategy...), and the future of FuelPHP (whether there will be a next release...) remains uncertain, but I hope to leverage the insights from this update project in the next one.

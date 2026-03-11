@@ -1,15 +1,16 @@
 ---
-title: "Design It"
-slug: "design-it"
-date: 2019-11-25
+title: Design It
+slug: design-it
+date: 2019-11-25T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "アーキテクト"
-  - "本"
-draft: false
+  - アーキテクト
+  - 本
+translation_key: design-it
 ---
+
 
 1~2年くらいに前に読んだ[Design It](https://amzn.to/4635mAS)を読み直していたら、ソフトウェアアーキテクトとして果たすべき役割や責任について学び得ることがあったので、メモを残す。
 

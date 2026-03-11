@@ -1,14 +1,15 @@
 ---
-title: "ソフトウェア開発のプロジェクトにおける不確実性への向き合い方"
-slug: "dealing-with-uncertainty-software-projects"
-date: 2023-12-22
+title: ソフトウェア開発のプロジェクトにおける不確実性への向き合い方
+slug: dealing-with-uncertainty-software-projects
+date: 2023-12-22T00:00:00Z
 author: bmf-san
 categories:
-  - "開発プロセス"
+  - 開発プロセス
 tags:
-  - "アジャイル"
-draft: false
+  - アジャイル
+translation_key: dealing-with-uncertainty-software-projects
 ---
+
 
 この記事は[Makuake Advent Calendar 2023](https://adventar.org/calendars/8992)の22日目の記事（ポエム）です。
 

@@ -1,15 +1,16 @@
 ---
-title: "Laravelでの機能テストの始め方雑メモ"
-slug: "getting-started-with-laravel-feature-testing"
-date: 2019-02-11
+title: Laravelでの機能テストの始め方雑メモ
+slug: getting-started-with-laravel-feature-testing
+date: 2019-02-11T00:00:00Z
 author: bmf-san
 categories:
-  - "テスト"
+  - テスト
 tags:
-  - "Laravel"
-  - "機能テスト"
-draft: false
+  - Laravel
+  - 機能テスト
+translation_key: getting-started-with-laravel-feature-testing
 ---
+
 
 # 概要
 Laravelでの機能テストの始め方と簡単な使い方について紹介する。

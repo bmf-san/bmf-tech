@@ -1,15 +1,16 @@
 ---
-title: "2進数、10進数、16進数の変換について"
-slug: "binary-decimal-hexadecimal-conversion"
-date: 2018-11-27
+title: 2進数、10進数、16進数の変換について
+slug: binary-decimal-hexadecimal-conversion
+date: 2018-11-27T00:00:00Z
 author: bmf-san
 categories:
-  - "数学"
+  - 数学
 tags:
-  - "基数変換"
-  - "離散数学"
-draft: false
+  - 基数変換
+  - 離散数学
+translation_key: binary-decimal-hexadecimal-conversion
 ---
+
 
 # 概要
 2進数、10進数、16進数をそれぞれ変換するための計算方法についてまとめる。

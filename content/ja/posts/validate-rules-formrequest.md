@@ -1,14 +1,15 @@
 ---
-title: "FormRequestのrulesメソッド内でバリデーションルールを振り分ける"
-slug: "validate-rules-formrequest"
-date: 2017-09-26
+title: FormRequestのrulesメソッド内でバリデーションルールを振り分ける
+slug: validate-rules-formrequest
+date: 2017-09-26T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Laravel"
-draft: false
+  - Laravel
+translation_key: validate-rules-formrequest
 ---
+
 
 複数のフォームがある状況で、「フォームリクエストのクラスは一つに絞って、rulesメソッド内で分岐したい」なんて思う日があるかもしれません。（私はRest APIつくっているときにありました。）
 

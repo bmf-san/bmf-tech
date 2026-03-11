@@ -1,15 +1,16 @@
 ---
-title: "メモリ管理に関する用語まとめ"
-slug: "memory-management-terminology-summary"
-date: 2018-11-30
+title: メモリ管理に関する用語まとめ
+slug: memory-management-terminology-summary
+date: 2018-11-30T00:00:00Z
 author: bmf-san
 categories:
-  - "OS"
+  - OS
 tags:
-  - "Linux"
-  - "メモリ"
-draft: false
+  - Linux
+  - メモリ
+translation_key: memory-management-terminology-summary
 ---
+
 
 # 概要
 [試して理解 Linuxの仕組み](https://gihyo.jp/book/2018/978-4-7741-9607-7)のメモリ管理の章を読んでいて理解の乏しい単語があったのでいくつかピックアップしてまとめる。

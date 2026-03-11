@@ -7,11 +7,10 @@ categories:
   - Application
 tags:
   - Architecture Decision Record
-description: A Make command to generate ADR template files.
 translation_key: adr-template-command
 ---
 
-I created a Make command that generates ADR template files, so here's a quick note.
+I created a Make command that simply generates a template file for ADR, so I'm jotting it down.
 
 # Command
 ```sh
@@ -32,16 +31,16 @@ Proposed
 Proposed/Approved/Rejected...
 -->
 
-## Outcome
+## Result
 
 endef
 
 export ADR_TEMPLATE
 
 .PHONY: adr
-adr: ## Create a new ADR. ex. make adr title=タイトル
+adr: ## Create a new ADR. ex. make adr title=Title
 	@if [ -z "$(title)" ]; then \
-		echo "タイトルが設定されていません。 'ex. make adr title=タイトル'"; \
+		echo "Title is not set. 'ex. make adr title=Title'"; \
 		exit 1; \
 	fi
 	adr_number=$$(ls adr/ADR*-*.md 2>/dev/null | awk -F- '/ADR[0-9]+-/{match($$0, /[0-9]+/); print substr($$0, RSTART, RLENGTH)}' | sort -n | tail -n 1); \
@@ -50,15 +49,11 @@ adr: ## Create a new ADR. ex. make adr title=タイトル
 	echo "New ADR created: adr/$$adr_name.md"
 ```
 
-The naming convention for ADR files is `ADR<incremental-number>-title`, so this command looks at the files under the `adr` directory and generates a new ADR template file with an appropriate file name.
+The file naming convention for ADR is ADR<incrementable number>-Title, so this command generates the ADR template file with an appropriate file name by looking at the files in the adr directory.
 
-For example, if there is a file named `ADR1-foo.md`, it will increment the number and create a file like `ADR2-bar.md`.
+If there is a file named ADR1-foo.md, it will increment the number to create ADR2-bar.md, and so on.
 
-# Other Notes
-If you manage ADRs under git, it might become difficult to track the status of each ADR. Some measures may be necessary, such as:
+# Others
+If ADRs are managed under git, it may become difficult to grasp the status of each ADR, so some measures may be necessary.
 
-- Preparing a command to list ADRs by status
-- Organizing ADRs into directories by status
-- Including the status in the file name
-
-Consider implementing one of these approaches to improve manageability.
+It might be necessary to prepare a command to list by status, separate directories by status, or include the status in the file name.

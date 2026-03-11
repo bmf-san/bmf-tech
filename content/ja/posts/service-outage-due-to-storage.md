@@ -1,14 +1,15 @@
 ---
-title: "ファイルシステムの容量不足によるサービスダウン"
-slug: "service-outage-due-to-storage"
-date: 2023-05-07
+title: ファイルシステムの容量不足によるサービスダウン
+slug: service-outage-due-to-storage
+date: 2023-05-07T00:00:00Z
 author: bmf-san
 categories:
-  - "障害報告"
+  - 障害報告
 tags:
-  - "ポストモーテム"
-draft: false
+  - ポストモーテム
+translation_key: service-outage-due-to-storage
 ---
+
 
 # ステータス
 解決
@@ -26,15 +27,15 @@ Nginxのリクエスト状況を確認するに、2023年1月2日午前5時48分
 
 復旧は同日12時40分頃。
 
-![スクリーンショット 2023-01-02 13 26 53](https://user-images.githubusercontent.com/13291041/210195174-bf6c78c5-505d-41ff-8329-7781ef1fcae1.png)
+![スクリーンショット 2023-01-02 13 26 53](/assets/images/posts/service-outage-due-to-storage/210195174-bf6c78c5-505d-41ff-8329-7781ef1fcae1.png)
 
 2023年1月2日午前5時48分頃~12時40分頃までの間に58件の500エラーが発生。
 ※ある程度のユーザー数を計測したかったが、ログやGA4などから集計できるように調整していないため調査しづらい。
 
-![スクリーンショット 2023-01-02 13 48 34](https://user-images.githubusercontent.com/13291041/210195945-c9e1ae53-d624-4119-b8c5-22a185e66239.png)
+![スクリーンショット 2023-01-02 13 48 34](/assets/images/posts/service-outage-due-to-storage/210195945-c9e1ae53-d624-4119-b8c5-22a185e66239.png)
 
 # 原因
-![スクリーンショット 2023-01-02 12 39 03](https://user-images.githubusercontent.com/13291041/210195173-9bc2975f-73f4-495d-bb19-71732ce593f2.png)
+![スクリーンショット 2023-01-02 12 39 03](/assets/images/posts/service-outage-due-to-storage/210195173-9bc2975f-73f4-495d-bb19-71732ce593f2.png)
 
 ファイルシステムに空きがないのが原因であった。
 
@@ -81,7 +82,7 @@ ex.
 # 再発防止
 ファイルシステムの利用率をアラートに追加。事前に逼迫を検知して対処できるようにした。
 
-![スクリーンショット 2023-01-02 14 10 54](https://user-images.githubusercontent.com/13291041/210196950-64e37302-38a2-4cda-a34e-e20b99b77791.png)
+![スクリーンショット 2023-01-02 14 10 54](/assets/images/posts/service-outage-due-to-storage/210196950-64e37302-38a2-4cda-a34e-e20b99b77791.png)
 
 # その他
 削除できるデータやローテーションすべきデータを洗い出して節約できるようにしたい。

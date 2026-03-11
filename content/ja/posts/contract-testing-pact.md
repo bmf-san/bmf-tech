@@ -1,17 +1,18 @@
 ---
-title: "契約テストとPactについて"
-slug: "contract-testing-pact"
-date: 2024-07-21
+title: 契約テストとPactについて
+slug: contract-testing-pact
+date: 2024-07-21T00:00:00Z
 author: bmf-san
 categories:
-  - "テスト"
+  - テスト
 tags:
-  - "契約テスト"
-  - "Pact"
-  - "プロデューサー駆動契約テスト"
-  - "コンシューマー駆動契約テスト"
-draft: false
+  - 契約テスト
+  - Pact
+  - プロデューサー駆動契約テスト
+  - コンシューマー駆動契約テスト
+translation_key: contract-testing-pact
 ---
+
 
 # 概要
 契約テストとPactについて調べたことをまとめる。

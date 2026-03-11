@@ -1,15 +1,16 @@
 ---
-title: "slogを使ったContextual Logging"
-slug: "slog-contextual-logging"
-date: 2023-10-08
+title: slogを使ったContextual Logging
+slug: slog-contextual-logging
+date: 2023-10-08T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "slog"
-  - "contextual logging"
-draft: false
+  - slog
+  - contextual logging
+translation_key: slog-contextual-logging
 ---
+
 
 # 概要
 Goでlog/slogを使ったcontextual loggingについてまとめる。

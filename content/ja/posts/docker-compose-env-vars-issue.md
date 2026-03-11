@@ -1,16 +1,17 @@
 ---
-title: "docker-compose.ymlで指定した環境変数がコンテナビルド中に参照できない"
-slug: "docker-compose-env-vars-issue"
-date: 2020-11-14
+title: docker-compose.ymlで指定した環境変数がコンテナビルド中に参照できない
+slug: docker-compose-env-vars-issue
+date: 2020-11-14T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Docker"
-  - "Docker Compose"
-  - "Tips"
-draft: false
+  - Docker
+  - Docker Compose
+  - Tips
+translation_key: docker-compose-env-vars-issue
 ---
+
 
 # 概要
 docker-compose.ymlのserviceの1つに`env_file`を指定し、環境変数を設定したが、サービスがbuildするコンテナ内（Dockerfile側）では参照できなかった。

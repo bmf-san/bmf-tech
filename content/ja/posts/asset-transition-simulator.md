@@ -1,14 +1,15 @@
 ---
-title: "資産推移シミュレーターを作った"
-slug: "asset-transition-simulator"
-date: 2025-05-25
+title: 資産推移シミュレーターを作った
+slug: asset-transition-simulator
+date: 2025-05-25T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "JavaScript"
-draft: false
+  - JavaScript
+translation_key: asset-transition-simulator
 ---
+
 
 # 概要
 個人の資産形成を考えるためのツールとして、資産推移シミュレーターを開発したので、それについて紹介したい。

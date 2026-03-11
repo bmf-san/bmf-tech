@@ -1,15 +1,16 @@
 ---
-title: "PHPカンファレンス沖縄2019に参加してきた"
-slug: "php-conference-okinawa-2019-participation"
-date: 2019-10-13
+title: PHPカンファレンス沖縄2019に参加してきた
+slug: php-conference-okinawa-2019-participation
+date: 2019-10-13T00:00:00Z
 author: bmf-san
 categories:
-  - "ポエム"
+  - ポエム
 tags:
-  - "PHP"
-  - "PHPカンファレンス"
-draft: false
+  - PHP
+  - PHPカンファレンス
+translation_key: php-conference-okinawa-2019-participation
 ---
+
 
 # PHPカンファレンス沖縄に参加してきた
 先月に続きPHPカンファレンスに参加してきました。

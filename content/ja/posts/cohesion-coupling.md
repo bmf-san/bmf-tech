@@ -1,15 +1,16 @@
 ---
-title: "凝集度と結合度"
-slug: "cohesion-coupling"
-date: 2025-06-25
+title: 凝集度と結合度
+slug: cohesion-coupling
+date: 2025-06-25T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "設計"
-  - "システム設計"
-draft: false
+  - 設計
+  - システム設計
+translation_key: cohesion-coupling
 ---
+
 
 # 概要
 ソフトウェア設計において品質を測る基本的な指標として、\*\*凝集度（Cohesion）**と**結合度（Coupling）\*\*がある。これらは、モジュール化、保守性、再利用性などを考慮する際に重要な概念である。

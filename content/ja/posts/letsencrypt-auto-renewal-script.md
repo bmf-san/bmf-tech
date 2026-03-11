@@ -1,17 +1,18 @@
 ---
-title: "Letsencryptの証明書自動更新スクリプト"
-slug: "letsencrypt-auto-renewal-script"
-date: 2017-10-01
+title: Letsencryptの証明書自動更新スクリプト
+slug: letsencrypt-auto-renewal-script
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "cron"
-  - "Let's Encrypt"
-  - "shellscript"
-  - "Slack"
-draft: false
+  - cron
+  - Let's Encrypt
+  - shellscript
+  - Slack
+translation_key: letsencrypt-auto-renewal-script
 ---
+
 
 # 概要
 letsencryptの証明書を自動更新するスクリプトの紹介です。
@@ -86,11 +87,11 @@ fi
 
 # 結果
 成功すると、
-![スクリーンショット 2017-07-01 15.46.02.png](https://qiita-image-store.s3.amazonaws.com/0/124495/90642f68-e9bc-f8cf-5164-e33897cf11dd.png)
+![スクリーンショット 2017-07-01 15.46.02.png](/assets/images/posts/letsencrypt-auto-renewal-script/90642f68-e9bc-f8cf-5164-e33897cf11dd.png)
 
 
 失敗すると、
-![スクリーンショット 2017-07-01 15.45.56.png](https://qiita-image-store.s3.amazonaws.com/0/124495/26b2eef6-3d92-7a3b-38a0-c5ea40b3e22f.png)
+![スクリーンショット 2017-07-01 15.45.56.png](/assets/images/posts/letsencrypt-auto-renewal-script/26b2eef6-3d92-7a3b-38a0-c5ea40b3e22f.png)
 
 成功しても失敗しても赤なのはナンセンスですね。。。
 

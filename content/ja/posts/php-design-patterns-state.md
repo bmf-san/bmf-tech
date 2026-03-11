@@ -1,17 +1,18 @@
 ---
-title: "PHPで学ぶデザインパターン - Stateパターン"
-slug: "php-design-patterns-state"
-date: 2019-04-20
+title: PHPで学ぶデザインパターン - Stateパターン
+slug: php-design-patterns-state
+date: 2019-04-20T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "GoF"
-  - "PHP"
-  - "デザインパターン"
-  - "ステートパターン"
-draft: false
+  - GoF
+  - PHP
+  - デザインパターン
+  - ステートパターン
+translation_key: php-design-patterns-state
 ---
+
 
 # 概要
 [PHPで学ぶデザインパターン Advent Calendar 2018](https://qiita.com/advent-calendar/2018/php-design-pattern)で間に合わなかった記事。

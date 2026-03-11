@@ -1,15 +1,16 @@
 ---
-title: "なぜインターフェースの方が実装より変更頻度が低いのか"
-slug: "interface-change-frequency"
-date: 2025-10-18
+title: なぜインターフェースの方が実装より変更頻度が低いのか
+slug: interface-change-frequency
+date: 2025-10-18T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "インターフェース"
-draft: false
+  - Golang
+  - インターフェース
+translation_key: interface-change-frequency
 ---
+
 
 [クリーンコードクックブック ―コードの設計と品質を改善するためのレシピ集](https://amzn.to/47uvc3g)を読んでいて、インターフェースの実装よりも変更頻度が低いという主張が気になったので、言語化してみた。
 

@@ -1,5 +1,5 @@
 ---
-title: Basic Patterns of Caching Strategies
+title: Basic Patterns of Cache Strategies
 slug: cache-strategy-patterns
 date: 2025-08-03T00:00:00Z
 author: bmf-san
@@ -8,11 +8,10 @@ categories:
 tags:
   - Cache
   - System Performance
-description: An overview of essential caching patterns to enhance performance in web applications and distributed systems.
 translation_key: cache-strategy-patterns
 ---
 
-Web applications and distributed systems often rely on caching to enhance performance. This post covers the basic patterns for effective caching.
+To enhance performance in web applications and distributed systems, it is essential to understand the basic usage patterns of "cache."
 
 * Cache Aside
 * Read Through
@@ -31,7 +30,7 @@ graph TD
     A[Application] -->|Read Request| B[Cache]
     B -->|Hit| A
     B -->|Miss| C[Database]
-    C -->|Retrieve Data| A
+    C -->|Data Retrieval| A
     A -->|Save to Cache| B
 
     A -->|Write| C
@@ -44,34 +43,34 @@ sequenceDiagram
     participant C as Cache
     participant D as Database
 
-    Note over A,D: Read Operation (Cache Miss)
+    Note over A,D: Read Process (Cache Miss)
     A->>C: Data Request
     C->>A: Cache Miss
-    A->>D: Retrieve Data
-    D->>A: Return Data
+    A->>D: Data Retrieval
+    D->>A: Data Return
     A->>C: Save Data to Cache
 
-    Note over A,D: Write Operation
-    A->>D: Update Data
+    Note over A,D: Write Process
+    A->>D: Data Update
     D->>A: Update Complete
     A->>C: Invalidate Cache
 ```
 
 ### Read Flow
 
-1. Check if data exists in the cache (**Cache Hit**).
-2. If not, fetch from the database and save it to the cache (**Cache Miss**).
+1. Check if data exists in the cache (**Cache Hit**)
+2. If not, retrieve from the DB and save to cache (**Cache Miss**)
 
 ### Write Flow
 
-1. Update the database.
-2. Invalidate or update the cache as needed.
+1. Update the database
+2. Optionally delete or update the cache
 
-### Characteristics
+### Features
 
-* Cache management is handled by the application.
-* Suitable for data with high read frequency and low update frequency.
-* Ensuring consistency between the cache and the database is the application's responsibility.
+* Cache management is handled by the application
+* Suitable for data with high read frequency and low update frequency
+* Cache and DB consistency is the application's responsibility
 
 ### Use Cases
 
@@ -81,15 +80,15 @@ sequenceDiagram
 
 ### Overview
 
-In this pattern, the cache automatically handles fetching data from the database during read operations. The application interacts only with the cache, and cache misses are handled transparently.
+In this pattern, the cache automatically handles retrieval from the DB during read operations. The application interacts only with the cache, and processing during cache misses is handled transparently.
 
 ```mermaid
 graph TD
     A[Application] -->|Read Request| B[Cache]
     B -->|Hit| A
-    B -->|Auto-fetch on Miss| C[Database]
-    C -->|Return Data| B
-    B -->|Save and Return| A
+    B -->|Auto Retrieve on Miss| C[Database]
+    C -->|Data Return| B
+    B -->|Auto Save and Return| A
 
     A -->|Write| C
 ```
@@ -100,40 +99,40 @@ sequenceDiagram
     participant C as Cache
     participant D as Database
 
-    Note over A,D: Read Operation (Cache Miss)
+    Note over A,D: Read Process (Cache Miss)
     A->>C: Data Request
-    C->>D: Auto-fetch from DB
-    D->>C: Return Data
-    C->>C: Auto-save to Cache
-    C->>A: Return Data
+    C->>D: Automatically Retrieve from DB
+    D->>C: Data Return
+    C->>C: Auto Save to Cache
+    C->>A: Data Return
 
-    Note over A,D: Write Operation
-    A->>D: Update Data (Cache Bypass)
+    Note over A,D: Write Process
+    A->>D: Data Update (Cache Bypass)
     D->>A: Update Complete
 ```
 
 ### Read Flow
 
-1. The application sends a read request to the cache.
-2. If the cache hits, it returns the data directly.
-3. If the cache misses, the cache fetches the data from the database, saves it, and then returns it to the application.
+1. The application requests data from the cache
+2. If it’s a cache hit, return it directly
+3. If it’s a cache miss, the cache retrieves data from the DB and automatically saves it before returning to the application
 
-### Characteristics
+### Features
 
-* The cache transparently handles database access.
-* The application does not need to be aware of the cache.
-* Cache miss handling is hidden from the application.
-* Writes are typically performed directly to the database.
+* The cache transparently handles DB access
+* The application does not need to be aware of the cache's existence
+* Processing during cache misses is hidden from the application
+* Writes are typically done directly to the DB
 
 ### Use Cases
 
-* ORM L2 cache, CDN, proxy cache, Hibernate, etc.
+* ORM L2 cache features, CDN, proxy cache, Hibernate, etc.
 
 ## Write Through
 
 ### Overview
 
-In this strategy, write operations are first performed on the cache and **simultaneously written to the database**.
+This strategy involves writing operations first to the cache and **simultaneously writing to the DB**.
 
 ```mermaid
 graph TD
@@ -152,43 +151,43 @@ sequenceDiagram
     participant C as Cache
     participant D as Database
 
-    Note over A,D: Write Operation
+    Note over A,D: Write Process
     A->>C: Data Update Request
     C->>D: Synchronous Write
     D->>C: Write Complete
     C->>A: Update Complete Notification
 
-    Note over A,D: Read Operation
+    Note over A,D: Read Process
     A->>C: Data Request
-    C->>A: Cache Hit (Return Data)
+    C->>A: Cache Hit (Data Return)
 ```
 
 ### Write Flow
 
-1. Update the cache.
-2. Simultaneously reflect the same update in the database.
+1. Update the cache
+2. Immediately reflect the same content in the DB
 
-### Characteristics
+### Features
 
-* Cache and database always remain consistent.
-* Write latency is slightly higher.
-* Reads are fast and consistent.
+* Cache and DB maintain consistency
+* Write latency is somewhat higher
+* Reads are fast and consistent
 
 ### Use Cases
 
-* User profiles, configuration data, master data where consistency is critical.
+* User profiles, configuration information, master data, etc., where consistency is prioritized
 
 ## Write Back
 
 ### Overview
 
-Write operations are first applied to the cache, and **database writes are performed asynchronously** at a later time.
+In this strategy, write operations are reflected only in the cache first, and **writing to the DB is processed asynchronously with a delay**.
 
 ```mermaid
 graph TD
     A[Application] -->|Write Request| B[Cache]
     B -->|Immediate Completion Notification| A
-    B -->|Asynchronous Batch Write| C[Database]
+    B -->|Asynchronously Batch Write| C[Database]
 
     A -->|Read Request| B
     B -->|Cache Hit| A
@@ -204,43 +203,43 @@ sequenceDiagram
     participant D as Database
     participant B as Background Process
 
-    Note over A,D: Write Operation (Asynchronous)
+    Note over A,D: Write Process (Asynchronous)
     A->>C: Data Update Request
     C->>A: Immediate Completion Notification
 
-    Note over A,D: Read Operation
+    Note over A,D: Read Process
     A->>C: Data Request
-    C->>A: Cache Hit (Return Data)
+    C->>A: Cache Hit (Data Return)
 
-    Note over A,D: Background Sync
-    B->>C: Check Dirty Data
-    C->>B: Return Unsynced Data
+    Note over A,D: Background Synchronization
+    B->>C: Check for Dirty Data
+    C->>B: Return Unsynchronized Data
     B->>D: Batch Write
     D->>B: Write Complete
 ```
 
 ### Write Flow
 
-1. Write only to the cache (marking it as dirty).
-2. Notify the application of immediate completion.
-3. Update the database later via batch or event-driven processes.
+1. Write only to the cache (mark as dirty)
+2. Notify the application of completion immediately
+3. Later, update the DB in batches or driven by events
 
-### Characteristics
+### Features
 
-* Fast writes (low latency).
-* Risk of data loss during crashes.
-* Suitable for high-frequency updates (only the final state is written).
-* Managing dirty data is crucial.
+* Fast writes (low latency)
+* Risk of data loss in case of a crash
+* Suitable for high-frequency updates (consecutive updates to the same key can result in only the final outcome)
+* Management of dirty data is crucial
 
 ### Use Cases
 
-* CPU caches, logs, temporary game scores, telemetry data, etc.
+* CPU cache, logs, temporary game scores, measurement data, etc.
 
 ## Write Around
 
 ### Overview
 
-Write operations **bypass the cache and are written only to the database**.
+This strategy involves writing operations **without reflecting in the cache, writing only to the DB**.
 
 ```mermaid
 graph TD
@@ -249,8 +248,8 @@ graph TD
 
     A -->|Read Request| B[Cache]
     B -->|Miss| C
-    C -->|Retrieve Data| B
-    B -->|Save and Return| A
+    C -->|Data Retrieval| B
+    B -->|Save to Cache and Return| A
 
     B -.->|Bypass Cache| X[Skip on Write]
 ```
@@ -261,60 +260,60 @@ sequenceDiagram
     participant C as Cache
     participant D as Database
 
-    Note over A,D: Write Operation (Cache Bypass)
+    Note over A,D: Write Process (Cache Bypass)
     A->>D: Data Update (Skip Cache)
     D->>A: Update Complete
 
-    Note over A,D: Read Operation (Cache Miss)
+    Note over A,D: Read Process (Cache Miss)
     A->>C: Data Request
     C->>A: Cache Miss
-    A->>D: Retrieve Data
-    D->>A: Return Data
+    A->>D: Data Retrieval
+    D->>A: Data Return
     A->>C: Save Data to Cache
 ```
 
 ### Write Flow
 
-1. Bypass the cache and write directly to the database.
+1. Write directly to the DB, bypassing the cache
 
 ### Read Flow
 
-* On a cache miss, fetch the data from the database and save it to the cache.
+* A cache miss occurs during read → retrieve from DB and save to cache
 
-### Characteristics
+### Features
 
-* Writes do not pollute the cache (unnecessary data is not cached).
-* Cache misses are more likely immediately after a write (data is not in the cache).
+* Writes do not pollute the cache (no unnecessary data in the cache)
+* Reading immediately after writing is prone to misses (as it does not exist in the cache)
 
 ### Use Cases
 
-* Access logs, temporary files, backup data (low-frequency access records).
+* Access logs, temporary files, backup data, etc. (records with low-frequency access)
 
-## Comparison Table
+## Comparison Table of Each Pattern
 
-| Strategy           | Overview                        | Fast Reads | Fast Writes | Consistency         | Cache Management   |
-| ------------------ | ------------------------------ | ---------- | ----------- | ------------------- | ------------------ |
-| Cache Aside        | App explicitly manages cache   | ✅          | ⚠️ (manual) | ⚠️ (manual)         | App-managed        |
-| Read Through       | Cache transparently fetches DB | ✅          | ⚠️ (direct DB) | ⚠️ (read-only)      | Auto (read)        |
-| Write Through      | Simultaneous cache & DB writes | ✅          | ⚠️ (sync wait) | ✅ (always synced)  | Auto               |
-| Write Back         | Cache-only writes, async sync  | ✅          | ✅ (async)   | ⚠️ (delayed sync)   | Auto (risky)       |
-| Write Around       | Writes bypass cache            | ✅          | ✅ (direct DB) | ⚠️ (read sync only) | Auto               |
+| Strategy            | Overview                          | Fast Read | Fast Write  | Consistency          | Cache Management     |
+| ------------------- | --------------------------------- | --------- | ----------- | --------------------- | -------------------- |
+| Cache Aside         | Application explicitly manages cache | ◎         | △ (Management needed) | △ (Manual)           | Managed by application |
+| Read Through        | Cache transparently retrieves from DB | ◎         | △ (Direct to DB) | △ (Only during read) | Automatic (Read)     |
+| Write Through       | Simultaneous write to cache and DB  | ◎         | △ (Same wait) | ◎ (Always synchronized) | Automatic             |
+| Write Back          | Write only to cache, sync later    | ◎         | ◎ (Asynchronous) | △ (Delayed sync)     | Automatic (Risky)     |
+| Write Around        | Bypass cache during writes          | ◎         | ◎ (Direct to DB) | △ (Consistency during read) | Automatic             |
 
 ## Conclusion
 
-The best strategy depends on your use case and trade-offs:
+Which strategy is best depends on the use case and trade-offs.
 
-* **High read frequency with strong consistency** → Write Through
-* **Transparent read handling** → Read Through
-* **Write performance priority, some data loss acceptable** → Write Back
-* **Low-frequency access, cache efficiency** → Write Around
-* **Fine-grained control, willing to invest development effort** → Cache Aside
+* **If reads are primary and consistency is important** → Write Through
+* **If transparency in reading is prioritized** → Read Through
+* **If write performance is the top priority and some data loss risk is acceptable** → Write Back
+* **For low-frequency access and cache efficiency** → Write Around
+* **If fine control is needed and development effort can be allocated** → Cache Aside
 
-Consider the following factors when choosing:
+When making a selection, consider the following factors:
 
-* **Consistency Requirements**: Is strong consistency necessary?
-* **Performance Requirements**: Prioritize read or write performance?
-* **Availability Requirements**: Tolerance for data loss risk?
-* **Operational Costs**: Complexity of management and development effort?
+* **Consistency Requirements**: Is strong consistency needed?
+* **Performance Requirements**: Which is prioritized, read or write?
+* **Availability Requirements**: What is the tolerance for data loss risk?
+* **Operational Costs**: Complexity of management and development effort
 
-Effectively leveraging caching strategies can significantly improve application performance and availability. Choosing the right strategy for your project requirements is crucial.
+By effectively utilizing cache strategies, the performance and availability of applications can be significantly improved. It is crucial to choose the one that fits the requirements of each project.

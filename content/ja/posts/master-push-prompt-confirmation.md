@@ -1,15 +1,16 @@
 ---
-title: "master直プッシュの際にプロンプトで確認するようにする"
-slug: "master-push-prompt-confirmation"
-date: 2019-05-08
+title: master直プッシュの際にプロンプトで確認するようにする
+slug: master-push-prompt-confirmation
+date: 2019-05-08T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Git"
-  - "shellscript"
-draft: false
+  - Git
+  - shellscript
+translation_key: master-push-prompt-confirmation
 ---
+
 
 # 概要
 gitでmasterブランチへの直pushを未然に防ぐためのセーフーティネットの作り方。

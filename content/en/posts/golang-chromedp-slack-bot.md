@@ -1,5 +1,5 @@
 ---
-title: Creating a Slack Emoji Auto-Generator Bot with Golang, chromedp, and Slack Bot
+title: Creating a Slack Emoji Auto-Generation Bot with Golang, chromedp, and Slack
 slug: golang-chromedp-slack-bot
 date: 2020-08-11T00:00:00Z
 author: bmf-san
@@ -12,29 +12,28 @@ tags:
   - chromedp
   - Emoji
   - Slack Bot
-description: A weekend project to create a Slack bot that automatically generates emoji images using Golang, chromedp, and a headless browser.
 translation_key: golang-chromedp-slack-bot
 ---
 
 # Overview
-I created a Slack bot that automatically generates emoji images using Golang, chromedp, and Slack Bot.
+I created a Slack emoji auto-generation bot using Golang, chromedp, and Slack.
 
 # What I Made
-This bot generates an image when you mention it in Slack with specific parameters. Internally, it creates an image using a canvas based on the parameters, takes a screenshot with a headless browser, saves the image, and posts it to Slack.
+When you send a mention with parameters to the bot in Slack, it generates an image. Internally, it generates an image based on the parameters using a canvas, takes a screenshot with a headless browser, saves the image, and posts it to Slack.
 
 [github.com - emoji-generator-slack-app](https://github.com/bmf-san/emoji-generator-slack-app)
 
-You can get a rough idea of how to use it by checking the README...
+You should be able to understand how to use it by looking at the README...
 
-Since I made this over a weekend hackathon-style, there are still some bugs left...
+Since I made it in a hackathon-like spirit over the weekend, there are some bugs left...
 https://github.com/bmf-san/emoji-generator-slack-app/issues/1
 
-# Image Generation in Golang
-Golang has a standard package called `image` that provides a full range of image processing features.
+# Image Generation with Golang
+Golang has a standard package called image that is rich in image processing features.
 
-You can easily perform tasks like applying mosaic effects, combining images, cropping, and drawing text (at least from what I’ve seen).
+You can relatively easily apply mosaic processing, composite images, crop, and draw text. (At least, that's what I've seen.)
 
-While it’s not very practical, for example, you can create a solid-colored image with just a few lines of code:
+Although it has little practical use, if you want to generate a solid color image, you can achieve it with a few lines of code like this:
 
 ```go
 package main
@@ -63,7 +62,7 @@ func main() {
 	if err != nil {
 		log.Println(err)
 	}
-	defer file.Close()
+def	er file.Close()
 
 	if err = jpeg.Encode(file, img, &jpeg.Options{quality}); err != nil {
 		log.Println(err)
@@ -71,7 +70,7 @@ func main() {
 }
 ```
 
-If you want to make it more interesting by drawing text on the image, you can use the following code:
+A solid color image is boring, so if you want to draw text on an image, you can achieve it with the following code:
 
 ```go
 package main
@@ -94,7 +93,7 @@ func main() {
 	if err != nil {
 		log.Println(err)
 	}
-	defer baseFile.Close()
+def	er baseFile.Close()
 	baseImage, _, err := image.Decode(baseFile)
 	if err != nil {
 		log.Println(err)
@@ -137,74 +136,77 @@ func main() {
 }
 ```
 
-By carefully adjusting the drawing parameters as shown in the code above, you can generate custom images. If you want to create complex geometric patterns, you’ll need to adjust more parameters, which can be quite a challenge.
+By skillfully adjusting the drawing parameters as shown in the code above, you can generate any image. If you want to create complex geometric patterns, the number of parameters to adjust will increase, and the calculations will likely become quite a challenge.
 
-While it seems possible to create Slack emojis using the `image` package, I found adjusting the parameters to be tedious. So, I looked for a simpler solution and came across an article introducing image generation using a headless browser. I decided to use a headless browser for this project.
+For creating emojis for Slack, it seems feasible to achieve it with the image package, but since adjusting parameters seemed cumbersome, I was looking for a more straightforward way to implement it. I came across an article introducing image generation using a headless browser, so I decided to implement it this way this time.
 
 cf. [note.com - Dynamic Image Generation Using Headless Browser in Go](https://note.com/timakin/n/n55d483d11b22)
 
-From the article above, I learned that the `image` package only supports the TrueType font format. While I wasn’t too concerned about this since I wasn’t aiming for a highly designed output, it’s something to keep in mind if you want to customize fonts for your service.
+From the article, I learned that the font formats that the image package can draw are only supported in truetype.
+
+This time, since I didn't want to focus on design, I didn't pay much attention to it, but if you want to adjust the font according to the service, you need to be careful.
 
 # Image Generation Using a Headless Browser
-The idea is to use a headless browser to take a screenshot and generate an image.
+In short, the method is to start a headless browser and take a screenshot to generate the image.
 
-Compared to using the `image` package, this method allows you to adjust the image on the frontend rather than the server-side. This provides greater design flexibility, such as adjusting the image with CSS or using any font supported by the browser.
+Compared to the method using the image package, you can adjust the image on the front end rather than the server side, allowing for high design flexibility by adjusting the image with CSS and freely using fonts supported by the browser.
 
-Additionally, this method is highly versatile as it can also be used for web scraping or generating Open Graph Protocol (OGP) images.
+Additionally, since scraping can also be done, it has high versatility. It seems to be a good match for automatic OGP generation.
 
-To use a headless browser (Chrome) with Golang, I used the `chromedp` package.
+For using a headless browser (Chrome) in Golang, I utilized the chromedp package.
 [github.com - chromedp](https://github.com/chromedp/chromedp)
 
-`chromedp` supports the Chrome DevTools Protocol, allowing you to control Chrome with or without a UI, without relying on external tools like Selenium or PhantomJS.
-[chrome devtools protocol](https://chromedevtools.github.io/devtools-protocol/)
+chromedp supports the Chrome DevTools Protocol, allowing you to operate Chrome with or without a UI without external dependencies like Selenium or PhantomJS.
+[Chrome DevTools Protocol](https://chromedevtools.github.io/devtools-protocol/)
 
-Here’s an example of how to take a screenshot using `chromedp` in headless mode:
+The code to take a screenshot headlessly using chromedp can be written like this:
 
 ```go
-// Extracted from https://github.com/bmf-san/emoji-generator-slack-app
+// Extracted part of the code from https://github.com/bmf-san/emoji-generator-slack-app
 ctx, cancel := chromedp.NewContext(context.Background())
-defer cancel()
+def	er cancel()
 
 var buf []byte
 if err := chromedp.Run(ctx, chromedp.Tasks{
-    chromedp.Navigate(`http://localhost:9999/generator?` + query.Encode()),
-    chromedp.Sleep(2 * time.Second),
-    chromedp.WaitVisible(`#target`, chromedp.ByID),
-    chromedp.Screenshot(`#target`, &buf, chromedp.NodeVisible, chromedp.ByID),
+	chromedp.Navigate(`http://localhost:9999/generator?` + query.Encode()),
+	chromedp.Sleep(2 * time.Second),
+	chromedp.WaitVisible(`#target`, chromedp.ByID),
+	chromedp.Screenshot(`#target`, &buf, chromedp.NodeVisible, chromedp.ByID),
 }); err != nil {
-    log.Println(err)
-    w.WriteHeader(http.StatusInternalServerError)
-    w.Write([]byte("Failed to take a screen shot."))
-    return
+	log.Println(err)
+	w.WriteHeader(http.StatusInternalServerError)
+	w.Write([]byte("Failed to take a screen shot."))
+	return
 }
 ```
 
-After taking the screenshot with `chromedp`, you can save it to a file and post it to Slack to complete the bot’s workflow.
+After that, you just need to write the screenshot taken with chromedp to a file and post the data to Slack to complete the bot's job.
 
-# Creating the Slack Emoji Auto-Generator Bot
-I’ll skip the details of Slack bot development.
+# Creating a Slack Emoji Auto-Generation Bot
+I will skip the development of the Slack bot.
 
-This article explains it well:
+This article is easy to understand.
 cf. [qiita.com - Creating a Slack Bot with Go (March 2020 Edition)](https://qiita.com/frozenbonito/items/cf75dadce12ef9a048e9)
 
-For this project, I created a bot that responds to mentions with parameters, generates an image based on the parameters, and posts the image. I didn’t use features like dialogs or slash commands, only event subscriptions.
+This time, when a mention with parameters comes in, I created a bot that simply takes the parameters as input, generates the image, and posts the image.
 
-Using dialogs might improve the user experience, but it seemed complicated and there weren’t many examples available, so I implemented a bot that simply responds to mentions.
+I used only event subscription without using features like dialogs or slash commands.
 
-Here’s the final result before diving into the implementation:
+I thought using a dialog would be good for UX, but it seemed quite cumbersome and there were few samples, so it would take time, so I implemented it as a bot that only responds to mentions.
 
-![Screen Shot 2020-08-11 at 14 49 46](https://user-images.githubusercontent.com/13291041/89861979-f3a4a680-dbe1-11ea-8c93-7c118c89e813.png)
-![Screen Shot 2020-08-11 at 14 49 40](https://user-images.githubusercontent.com/13291041/89861975-f1dae300-dbe1-11ea-8e59-10ef38800cce.png)
+Let me introduce the completed version before touching on the implementation.
 
-When you mention the bot like this, it generates a Slack emoji image (128px × 128px) with one or two lines of text and responds.
+![Screen Shot 2020-08-11 at 14 49 46](/assets/images/posts/golang-chromedp-slack-bot/89861979-f3a4a680-dbe1-11ea-8c93-7c118c89e813.png)
+![Screen Shot 2020-08-11 at 14 49 40](/assets/images/posts/golang-chromedp-slack-bot/89861975-f1dae300-dbe1-11ea-8e59-10ef38800cce.png)
 
-The bot takes the following input:
+When you send a mention like this, the bot generates a Slack emoji image (128px × 128px) in one or two lines and responds.
+
+The input that the bot receives is as follows:
 `@botname [color] [bgColor] [line1] [line2(optional)]`
 
-The input data is used to generate the image. I used a canvas for the image generation. Initially, I wanted to achieve this with just CSS, but I couldn’t figure out how to take a screenshot without including extra margins. Using a canvas worked as expected, so I decided to go with it.
+Based on this input data, the image is generated using a canvas. I actually wanted to do it nicely with just CSS without using a canvas, but since the screenshot included margins (I couldn't find a way to take a screenshot without margins like a selection area), I tried using a canvas, and it turned out as expected, so I decided to implement it with a canvas.
 
-The input data is passed into a template file (tpl), which the canvas uses to generate the image:
-
+The input data is fed into a template file (tpl) to generate the image using the canvas.
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -234,70 +236,69 @@ function draw() {
 </html>
 ```
 
-There’s no specific limit on the number of characters, so I adjusted the x-axis to fit the width nicely. For the y-axis, I found a suitable value and set it (I should probably think about how to calculate it properly, but I didn’t bother...).
+Since there are no specific restrictions on the number of characters, I adjusted the x-axis to make it look good. For the y-axis, I found a nice value and set it (I think it would be better to consider how to calculate it, but it was cumbersome...).
 
-Even though I ended up dealing with x and y axes using the canvas, which made me think I could have just used the `image` package, I still feel this method was relatively easier to implement.
+In the end, since I was facing the x-axis and y-axis using the canvas, I sometimes thought about using the image package, but it seems that I was able to achieve it relatively easily.
 
-Once the template for image generation is ready, I set up an API endpoint that generates images using query strings.
-For example: http://localhost:9999/generator?color=red&bgColor=green&line1=foo&line2=bar
+Once the template for image generation was created, I prepared an endpoint as an API that generates images via query strings.
+ex. http://localhost:9999/generator?color=red&bgColor=green&line1=foo&line2=bar
 
-Finally, I wrote the code to respond to bot mentions, extract parameters from the mention, launch a headless browser with `chromedp`, hit the image generation endpoint, create the image, and post it to Slack.
+After that, I just needed to write code to respond to the bot's mention, read the parameters from the mention, start the headless browser with chromedp, hit the endpoint for image generation, create the image, and post the created image to Slack.
 
-Here’s an excerpt of the code:
-
+I will omit various details, but here is an excerpt of the code.
 ```golang
 ctx, cancel := chromedp.NewContext(context.Background())
-defer cancel()
+def	er cancel()
 
 var buf []byte
 // Take a screenshot
 if err := chromedp.Run(ctx, chromedp.Tasks{
-    chromedp.Navigate(`http://localhost:9999/generator?` + query.Encode()),
-    chromedp.Sleep(2 * time.Second),
-    chromedp.WaitVisible(`#target`, chromedp.ByID),
-    chromedp.Screenshot(`#target`, &buf, chromedp.NodeVisible, chromedp.ByID),
+	chromedp.Navigate(`http://localhost:9999/generator?` + query.Encode()),
+	chromedp.Sleep(2 * time.Second),
+	chromedp.WaitVisible(`#target`, chromedp.ByID),
+	chromedp.Screenshot(`#target`, &buf, chromedp.NodeVisible, chromedp.ByID),
 }); err != nil {
-    log.Println(err)
-    w.WriteHeader(http.StatusInternalServerError)
-    w.Write([]byte("Failed to take a screen shot."))
-    return
+	log.Println(err)
+	w.WriteHeader(http.StatusInternalServerError)
+	w.Write([]byte("Failed to take a screen shot."))
+	return
 }
 
-// Write the image to a file
+// Write the image
 if err := ioutil.WriteFile("result.png", buf, 0644); err != nil {
-    log.Println(err)
-    w.WriteHeader(http.StatusInternalServerError)
-    w.Write([]byte("Failed to take a screen shot."))
-    return
+	log.Println(err)
+	w.WriteHeader(http.StatusInternalServerError)
+	w.Write([]byte("Failed to take a screen shot."))
+	return
 }
 
 // Post the image
 r := bytes.NewReader(buf)
 _, err = api.UploadFile(
-    slack.FileUploadParameters{
-        Reader:   r,
-        Filename: "upload file name",
-        Channels: []string{event.Channel},
-    })
+	slack.FileUploadParameters{
+		Reader:   r,
+		Filename: "upload file name",
+		Channels: []string{event.Channel},
+	})
 if err != nil {
-    log.Println(err)
-    w.WriteHeader(http.StatusInternalServerError)
-    w.Write([]byte("Failed to post a image."))
-    return
+	log.Println(err)
+	w.WriteHeader(http.StatusInternalServerError)
+	w.Write([]byte("Failed to post a image."))
+	return
 }
 ```
 
-With this, I was able to create a bot that responds to mentions and generates images. However, unfortunately, there are still some bugs left...
+With this, I have created a bot that generates images in response to mentions, but unfortunately, there are still bugs left...
 
 https://github.com/bmf-san/emoji-generator-slack-app/issues/1
 
 # Thoughts
-I feel like I didn’t really need to use `chromedp`. Now I’m wondering how to fix the bugs...
+I feel like I didn't need to use chromedp. I wonder how I should fix the bugs...
 
 # References
 - [note.com - Dynamic Image Generation Using Headless Browser in Go](https://note.com/timakin/n/n55d483d11b22)
 - [qiita.com - Creating a Slack Bot with Go (March 2020 Edition)](https://qiita.com/frozenbonito/items/cf75dadce12ef9a048e9)
 - [qiita.com - Creating an Interactive Slack Bot with Go (May 2020 Edition)](https://qiita.com/frozenbonito/items/1df9bb685e6173160991#%E3%81%BE%E3%81%A8%E3%82%81)
-- [dev.to - Creating a Bot That Responds with Images in Slack](https://dev.to/amotarao/slackbot-376)
-- [lab.syncer.jp - How to Draw Multi-Line Text](https://lab.syncer.jp/Web/JavaScript/Canvas/8)
+- [dev.to - Created a bot that returns text sent on Slack as an image](https://dev.to/amotarao/slackbot-376)
+- [lab.syncer.jp - How to Draw Multiple Lines of Text](https://lab.syncer.jp/Web/JavaScript/Canvas/8)
 - [Stackoverflow - Size to fit font on a canvas](https://stackoverflow.com/questions/20551534/size-to-fit-font-on-a-canvas)

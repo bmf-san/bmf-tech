@@ -1,15 +1,16 @@
 ---
-title: "Laravel5.4でsqliteを使ってテストをかく準備"
-slug: "laravel-5-4-sqlite-test-setup"
-date: 2017-09-26
+title: Laravel5.4でsqliteを使ってテストをかく準備
+slug: laravel-5-4-sqlite-test-setup
+date: 2017-09-26T00:00:00Z
 author: bmf-san
 categories:
-  - "テスト"
+  - テスト
 tags:
-  - "Laravel"
-  - "SQLite"
-draft: false
+  - Laravel
+  - SQLite
+translation_key: laravel-5-4-sqlite-test-setup
 ---
+
 
 # 概要
 Laravel5.4でsqliteの使ってテストをかく準備をします。

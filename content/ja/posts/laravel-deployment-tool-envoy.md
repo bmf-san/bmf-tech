@@ -1,15 +1,16 @@
 ---
-title: "Laravelのデプロイツール Laravel Envoy を使ってみる"
-slug: "laravel-deployment-tool-envoy"
-date: 2017-10-01
+title: Laravelのデプロイツール Laravel Envoy を使ってみる
+slug: laravel-deployment-tool-envoy
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Laravel"
-  - "デプロイ"
-draft: false
+  - Laravel
+  - デプロイ
+translation_key: laravel-deployment-tool-envoy
 ---
+
 
 Capistrano, Fabric, Rocketeer, Deployer... など様々なデプロイツールがありますが、使いこなすのが結構大変。。。
 

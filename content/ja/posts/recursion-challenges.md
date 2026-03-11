@@ -1,14 +1,15 @@
 ---
-title: "再帰処理の苦手なところ"
-slug: "recursion-challenges"
-date: 2023-07-08
+title: 再帰処理の苦手なところ
+slug: recursion-challenges
+date: 2023-07-08T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "再帰"
-draft: false
+  - 再帰
+translation_key: recursion-challenges
 ---
+
 
 再帰処理はプログラマーの嗜み！エレガントにかけて当たり前！・・・と自信を持って言いたいところだが、自分は正直なところ苦手である。
 

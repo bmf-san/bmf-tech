@@ -1,14 +1,15 @@
 ---
-title: "Rubyのシンボルについて"
-slug: "ruby-symbols"
-date: 2024-05-14
+title: Rubyのシンボルについて
+slug: ruby-symbols
+date: 2024-05-14T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Ruby"
-draft: false
+  - Ruby
+translation_key: ruby-symbols
 ---
+
 
 # 概要
 Rubyのシンボルについて書く。

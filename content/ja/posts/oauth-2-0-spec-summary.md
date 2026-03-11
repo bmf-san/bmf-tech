@@ -1,16 +1,17 @@
 ---
-title: "OAuth 2.0 仕様まとめ"
-slug: "oauth-2-0-spec-summary"
-date: 2026-01-23
+title: OAuth 2.0 仕様まとめ
+slug: oauth-2-0-spec-summary
+date: 2026-01-23T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "OAuth"
-  - "認証"
-  - "認可"
-draft: false
+  - OAuth
+  - 認証
+  - 認可
+translation_key: oauth-2-0-spec-summary
 ---
+
 
 RFC 6749（OAuth 2.0 Authorization Framework）およびRFC 6750（Bearer Token Usage）に基づく要点整理。
 

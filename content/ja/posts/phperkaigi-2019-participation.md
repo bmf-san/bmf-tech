@@ -1,16 +1,17 @@
 ---
-title: "PHPerKaigi2019に参加・登壇してきました"
-slug: "phperkaigi-2019-participation"
-date: 2019-04-01
+title: PHPerKaigi2019に参加・登壇してきました
+slug: phperkaigi-2019-participation
+date: 2019-04-01T00:00:00Z
 author: bmf-san
 categories:
-  - "ポエム"
+  - ポエム
 tags:
-  - "PHP"
-  - "PHPカンファレンス"
-  - "PHPerKaigi"
-draft: false
+  - PHP
+  - PHPカンファレンス
+  - PHPerKaigi
+translation_key: phperkaigi-2019-participation
 ---
+
 
 # PHPerKaigi2019に参加・登壇してきました
 PHPerKaigiに初参加＆登壇してきました。

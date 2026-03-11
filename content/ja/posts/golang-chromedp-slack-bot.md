@@ -199,8 +199,8 @@ dialogを使うのがUX的に良さそうだと思ったが、中々に面倒か
 
 先に完成形を紹介してから実装について触れる。
 
-![Screen Shot 2020-08-11 at 14 49 46](https://user-images.githubusercontent.com/13291041/89861979-f3a4a680-dbe1-11ea-8c93-7c118c89e813.png)
-![Screen Shot 2020-08-11 at 14 49 40](https://user-images.githubusercontent.com/13291041/89861975-f1dae300-dbe1-11ea-8e59-10ef38800cce.png)
+![Screen Shot 2020-08-11 at 14 49 46](/assets/images/posts/golang-chromedp-slack-bot/89861979-f3a4a680-dbe1-11ea-8c93-7c118c89e813.png)
+![Screen Shot 2020-08-11 at 14 49 40](/assets/images/posts/golang-chromedp-slack-bot/89861975-f1dae300-dbe1-11ea-8e59-10ef38800cce.png)
 
 こんな感じにメンションを飛ばすと、1行、もしくは2行の形のslack絵文字画像（128px×128px）を生成してレスポンスしてくれるだけのbot。
 

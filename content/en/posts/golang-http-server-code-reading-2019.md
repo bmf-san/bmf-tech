@@ -1,5 +1,5 @@
 ---
-title: Code Reading of Golang HTTP Server
+title: Code Reading of Golang's HTTP Server
 slug: golang-http-server-code-reading-2019
 date: 2019-11-03T00:00:00Z
 author: bmf-san
@@ -9,17 +9,16 @@ tags:
   - Golang
   - Code Reading
   - Router
-description: A detailed code reading of setting up an HTTP server in Golang.
 translation_key: golang-http-server-code-reading-2019
 ---
 
 # Overview
-This article is the 20th entry in the [Qiita - Go6 Advent Calendar 2019](https://qiita.com/advent-calendar/2019/go6).
+This article is the 20th entry of the [Qiita - Go6 Advent Calendar 2019](https://qiita.com/advent-calendar/2019/go6).
 
-We will conduct a detailed code reading of setting up an HTTP server in Golang.
+We will perform a code reading of the details of setting up an HTTP server in Golang.
 
 # Reference Implementation
-Here is the implementation we will analyze:
+Here is the implementation we will be reading through.
 
 ```golang
 package main
@@ -47,10 +46,10 @@ func (h *HelloHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-We will go through this verbose code line by line, simplifying it while reading.
+We will go through this somewhat verbose code line by line, simplifying it as we read.
 
-# ServeHttp(w ResponseWriter, r *Request)
-First, let’s look at this part:
+# ServeHttp(w ResponseWriter, r *Request) 
+First, let's look at:
 
 ```golang
 type HelloHandler struct{}
@@ -60,7 +59,7 @@ func (h *HelloHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-`ServeHTTP(w ResponseWriter, r *Request)` is an implementation of the `Handler` interface.
+This part implements the `Handler` interface.
 
 ```golang
 // url: https://golang.org/src/net/http/server.go?s=61586:61646#L1996
@@ -84,7 +83,7 @@ type Handler interface {
 }
 ```
 
-In the reference implementation, the `HelloHandler` struct is prepared for `ServeHTTP(w ResponseWriter, r *Request)`. However, it can be rewritten more concisely using `HandlerFunc`.
+In the reference implementation, a `HelloHandler` struct is prepared for `ServeHTTP(w ResponseWriter, r *Request)`, but we can rewrite it more concisely using `HandlerFunc`.
 
 ```golang
 // url: https://golang.org/src/net/http/server.go?s=61509:61556#L1993
@@ -95,7 +94,7 @@ func (f HandlerFunc) ServeHTTP(w ResponseWriter, r *Request) {
 }
 ```
 
-Rewriting the reference implementation:
+Rewriting the reference implementation looks like this:
 
 ```golang
 package main
@@ -120,9 +119,9 @@ func hello(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-We successfully rewrote the part using `ServeHTTP(w ResponseWriter, r *Request)`.
+We were able to rewrite the part that used `ServeHTTP(w ResponseWriter, r *Request)`.
 
-By the way, the implementation of `mux.Handle` looks like this:
+By the way, the implementation inside `mux.Handle` looks like this:
 
 ```golang
 // url: https://golang.org/src/net/http/server.go?s=75321:75365#L2390
@@ -156,7 +155,7 @@ func (mux *ServeMux) Handle(pattern string, handler Handler) {
 ```
 
 # ServeMux
-Let’s dive deeper into the shortened part:
+Next, let's take a closer look at the shortened part.
 
 ```golang
 	mux := http.NewServeMux()
@@ -165,10 +164,10 @@ Let’s dive deeper into the shortened part:
 	s := http.Server{
 		Addr:    ":3000",
 		Handler: mux,
-    }
+	}
 ```
 
-The part `mux.Handle("/", http.HandlerFunc(hello))` can be further simplified using `HandleFunc`, which internally handles some of the processing.
+The part `mux.Handle("/", http.HandlerFunc(hello))` can be written more concisely by using `HandleFunc`, which allows some internal processing.
 
 ```golang
 url: https://golang.org/src/net/http/server.go?s=75575:75646#L2448
@@ -187,7 +186,7 @@ func (mux *ServeMux) HandleFunc(pattern string, handler func(ResponseWriter, *Re
 }
 ```
 
-Considering the above, the rewritten code looks like this:
+Taking the above into account, we can rewrite it like this:
 
 ```golang
 package main
@@ -211,7 +210,7 @@ func hello(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-`DefaultServeMux` is essentially a variable that holds a pointer to a `ServeMux` struct. `HandleFunc` is a method that allows registering URL pattern matches to `DefaultServeMux`.
+`DefaultServeMux` is a variable that internally holds a pointer to the `ServeMux` struct. `HandleFunc` is a method that allows registration of URL pattern matches to `DefaultServeMux`.
 
 ```golang
 url: https://golang.org/src/net/http/server.go?s=75575:75646#L2207
@@ -230,9 +229,8 @@ type ServeMux struct {
 	hosts bool       // whether any patterns contain hostnames
 }
 ```
-
 # Server
-Finally, let’s look at this part:
+Finally, let's look at this part.
 
 ```golang
 	s := http.Server{
@@ -242,7 +240,7 @@ Finally, let’s look at this part:
 	s.ListenAndServe()
 ```
 
-The content of `s.ListenAndServe()`:
+The internals of `s.ListenAndServe()` are as follows:
 
 ```golang
 url: https://golang.org/src/net/http/server.go?s=68149:68351#L3093
@@ -262,7 +260,7 @@ func (srv *Server) ListenAndServe() error {
 }
 ```
 
-When no specific settings are needed for the `Server`, you can write it more concisely using `ListenAndServe()`. For details on `Server` settings, refer to [golang.org - server.go](https://golang.org/src/net/http/server.go?s=77156:81268#L2480).
+When there is no need to provide detailed configuration values to the `Server`, we can write it more concisely by using `ListenAndServe()`. For details about the `Server` configuration values, refer to [golang.org - server.go](https://golang.org/src/net/http/server.go?s=77156:81268#L2480).
 
 ```golang
 url: https://golang.org/src/net/http/server.go?s=68149:68351#L3071
@@ -272,7 +270,7 @@ func ListenAndServe(addr string, handler Handler) error {
 }
 ```
 
-Here’s the shorter version:
+When written concisely, it looks like this:
 
 ```golang
 package main
@@ -292,7 +290,7 @@ func hello(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-Using an anonymous function:
+Using an anonymous function, it looks like this:
 
 ```golang
 package main
@@ -311,13 +309,13 @@ func main() {
 ```
 
 # Thoughts
-I was planning to create my own HTTP router package in Golang, so I did some research on the internal implementation of `net/http`. It seems to be quite extensible, making it relatively easy to create custom implementations.
+I was trying to create my own HTTP router package in Golang, and I needed to touch on the internal implementation of net/http, so I did a little research. It seems easy to extend, so I have a positive impression of creating my own.
 
-# Addendum
+# Postscript
 I implemented a URL router.
 
 [github.com - bmf-san/goblin](https://github.com/bmf-san/goblin)
 
 # References
-- [golangのHTTPサーバを構成しているもの](https://reiki4040.hatenablog.com/entry/2017/03/01/212647)
-- [【Go】net/httpパッケージを読んでhttp.HandleFuncが実行される仕組み](https://qiita.com/shoichiimamura/items/1d1c64d05f7e72e31a98)
+- [Components of Golang's HTTP Server](https://reiki4040.hatenablog.com/entry/2017/03/01/212647)
+- [How http.HandleFunc is executed in the net/http package](https://qiita.com/shoichiimamura/items/1d1c64d05f7e72e31a98)

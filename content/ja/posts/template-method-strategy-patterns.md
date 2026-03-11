@@ -1,15 +1,16 @@
 ---
-title: "Template MethodパターンとStarategyパターンについて"
-slug: "template-method-strategy-patterns"
-date: 2023-08-20
+title: Template MethodパターンとStarategyパターンについて
+slug: template-method-strategy-patterns
+date: 2023-08-20T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Strategy"
-  - "Template Method"
-draft: false
+  - Strategy
+  - Template Method
+translation_key: template-method-strategy-patterns
 ---
+
 
 # 概要
 GoFの振る舞いに関するパターンであるTemplate MethodパターンとStrategyパターンについてまとめる。

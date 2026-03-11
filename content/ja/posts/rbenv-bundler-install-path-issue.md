@@ -1,18 +1,19 @@
 ---
-title: "anyenvでインストールしたrbenvでbundlerをinstallしたときにパスでハマった"
-slug: "rbenv-bundler-install-path-issue"
-date: 2018-12-04
+title: anyenvでインストールしたrbenvでbundlerをinstallしたときにパスでハマった
+slug: rbenv-bundler-install-path-issue
+date: 2018-12-04T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "anyenv"
-  - "gem"
-  - "rbenv"
-  - "Ruby"
-  - "Tips"
-draft: false
+  - anyenv
+  - gem
+  - rbenv
+  - Ruby
+  - Tips
+translation_key: rbenv-bundler-install-path-issue
 ---
+
 
 # 概要
  anyenvでインストールしたrbenvでbundlerをinstallしたときにパスでハマった話。

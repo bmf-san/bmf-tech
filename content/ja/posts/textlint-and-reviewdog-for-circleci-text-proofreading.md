@@ -1,16 +1,17 @@
 ---
-title: "textlintとreviewdogを使ってCircleCIでテキスト校正する"
-slug: "textlint-and-reviewdog-for-circleci-text-proofreading"
-date: 2021-10-09
+title: textlintとreviewdogを使ってCircleCIでテキスト校正する
+slug: textlint-and-reviewdog-for-circleci-text-proofreading
+date: 2021-10-09T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "CircleCI"
-  - "npm"
-  - "textlint"
-draft: false
+  - CircleCI
+  - npm
+  - textlint
+translation_key: textlint-and-reviewdog-for-circleci-text-proofreading
 ---
+
 
 # 概要
 長文の執筆をする際にテキスト校正を自動化しておきたかったのでやってみた。
@@ -100,7 +101,7 @@ jobs:
 # CIを回してみる
 textlintに引っかかるとreviewdogがコメントしてくれる。
 
-![スクリーンショット 2021-10-09 22 38 19](https://user-images.githubusercontent.com/13291041/136660112-ef84725e-2c4b-4dda-8476-ae30bdb029a2.png)
+![スクリーンショット 2021-10-09 22 38 19](/assets/images/posts/textlint-and-reviewdog-for-circleci-text-proofreading/136660112-ef84725e-2c4b-4dda-8476-ae30bdb029a2.png)
 
 # 参考
 - [gist.github.com - taichi/config.yml](https://gist.github.com/taichi/fef9839243c2fbd017d272c7d838dbde)

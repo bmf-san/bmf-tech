@@ -1,15 +1,16 @@
 ---
-title: "クリーンコードクックブック ―コードの設計と品質を改善するためのレシピ集"
-slug: "clean-code-cookbook"
-date: 2025-10-26
+title: クリーンコードクックブック ―コードの設計と品質を改善するためのレシピ集
+slug: clean-code-cookbook
+date: 2025-10-26T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "設計"
-  - "本"
-draft: false
+  - 設計
+  - 本
+translation_key: clean-code-cookbook
 ---
+
 
 [クリーンコードクックブック ―コードの設計と品質を改善するためのレシピ集](https://amzn.to/4qHoSNI)を読んだ。
 

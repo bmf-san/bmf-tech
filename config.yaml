@@ -27,9 +27,9 @@ theme:
     zenn: "bmf_san"
     speaker_deck: "bmf_san"
     footer_text: "© 2026 Kenta Takeuchi"
-    adsense_id: "ca-pub-5146230866088201"
-    adsense_slot: "7900864416"
-    ga_id: "G-784B55NW88"
+    # adsense_id: "ca-pub-5146230866088201"  # TODO: re-enable before production deploy (Phase 10)
+    # adsense_slot: "7900864416"
+    # ga_id: "G-784B55NW88"  # TODO: re-enable before production deploy (Phase 10)
 
 syntax_highlight:
   theme: "github"
@@ -49,3 +49,8 @@ i18n:
   locales:
     - "en"
     - "ja"
+
+plugins:
+  amazon_books:
+    enabled: true
+    tag: "bmf035-22"

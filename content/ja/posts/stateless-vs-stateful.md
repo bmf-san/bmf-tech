@@ -1,16 +1,17 @@
 ---
-title: "ステートレスとステートフル"
-slug: "stateless-vs-stateful"
-date: 2018-04-17
+title: ステートレスとステートフル
+slug: stateless-vs-stateful
+date: 2018-04-17T00:00:00Z
 author: bmf-san
 categories:
-  - "ネットワーク"
+  - ネットワーク
 tags:
-  - "ステートフル"
-  - "ステートレス"
-  - "セッション"
-draft: false
+  - ステートフル
+  - ステートレス
+  - セッション
+translation_key: stateless-vs-stateful
 ---
+
 
 # 前提
 

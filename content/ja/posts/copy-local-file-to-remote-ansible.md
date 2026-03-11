@@ -1,14 +1,15 @@
 ---
-title: "Ansibleでローカルのファイルをリモートにコピーする"
-slug: "copy-local-file-to-remote-ansible"
-date: 2017-09-26
+title: Ansibleでローカルのファイルをリモートにコピーする
+slug: copy-local-file-to-remote-ansible
+date: 2017-09-26T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Ansible"
-draft: false
+  - Ansible
+translation_key: copy-local-file-to-remote-ansible
 ---
+
 
 # 概要
 Ansibleでローカルにあるファイル（ディレクトリの中身）をリモートにコピーするタスクです。

@@ -1,14 +1,15 @@
 ---
-title: "TypeScriptの基本を学び直す"
-slug: "typescript-basics-review"
-date: 2024-07-20
+title: TypeScriptの基本を学び直す
+slug: typescript-basics-review
+date: 2024-07-20T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "TypeScript"
-draft: false
+  - TypeScript
+translation_key: typescript-basics-review
 ---
+
 
 # 概要
 TypeScriptの基本について学び直す。

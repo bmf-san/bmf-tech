@@ -1,15 +1,16 @@
 ---
-title: "雑Trelloと雑spreadsheetを公開した話とプライベートのタスクを計測し始めた話"
-slug: "trello-spreadsheet-sharing-and-task-tracking"
-date: 2019-02-12
+title: 雑Trelloと雑spreadsheetを公開した話とプライベートのタスクを計測し始めた話
+slug: trello-spreadsheet-sharing-and-task-tracking
+date: 2019-02-12T00:00:00Z
 author: bmf-san
 categories:
-  - "ポエム"
+  - ポエム
 tags:
-  - "Google SpreadSheet"
-  - "Trello"
-draft: false
+  - Google SpreadSheet
+  - Trello
+translation_key: trello-spreadsheet-sharing-and-task-tracking
 ---
+
 
 # 雑Trelloと雑spreadsheetを公開にした
 

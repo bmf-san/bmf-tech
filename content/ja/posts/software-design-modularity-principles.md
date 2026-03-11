@@ -1,15 +1,16 @@
 ---
-title: "ソフトウェア設計の結合バランス\u3000持続可能な成長を支えるモジュール化の原則"
-slug: "software-design-modularity-principles"
-date: 2025-12-29
+title: ソフトウェア設計の結合バランス　持続可能な成長を支えるモジュール化の原則
+slug: software-design-modularity-principles
+date: 2025-12-29T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "本"
-  - "設計"
-draft: false
+  - 本
+  - 設計
+translation_key: software-design-modularity-principles
 ---
+
 
 [ソフトウェア設計の結合バランス　持続可能な成長を支えるモジュール化の原則](https://amzn.to/4q8HN2Y)を読んだ。
 

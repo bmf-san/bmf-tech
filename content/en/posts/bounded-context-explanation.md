@@ -1,5 +1,5 @@
 ---
-title: What is a Bounded Context?
+title: Bounded Contexts
 slug: bounded-context-explanation
 date: 2025-05-19T00:00:00Z
 author: bmf-san
@@ -7,15 +7,14 @@ categories:
   - Architecture
 tags:
   - DDD
-description: Explaining the concept of bounded contexts in a way that is understandable even to non-developers.
 translation_key: bounded-context-explanation
 ---
 
 # Overview
 
-There was a challenge in explaining why contexts are divided the way they are on a context map, and what the significance of these divisions is, to people outside of the development team.
+There was a challenge to convey to non-developers why contexts organized in a context map are divided in such a way and what the significance of this separation is.
 
-This post attempts to explain "bounded contexts" in a way that is understandable even to non-developers.
+In this article, I will attempt to explain "Bounded Contexts" in a way that is understandable to non-developers.
 
 # Being Aware of Context Differences
 
@@ -23,92 +22,92 @@ Even if the same word is used, its meaning can change depending on the context.
 
 For example, consider the word "order."
 
-In the sales department, it might refer to "a request from a customer," in the warehouse, it could mean "a shipping instruction," and in the accounting department, it might mean "data for billing."
+In the sales department, it may refer to "a request from a customer," while in the warehouse, it could mean "shipping instructions," and in the accounting department, it might refer to "billing data."
 
-Other examples include:
+Here are some other examples:
 
-* **"User"**: For the development team, it refers to someone who logs in; for customer support, it means someone making inquiries; for marketing, it refers to target customers.
-* **"Service"**: For engineers, it means an API; for sales, it refers to customer-facing plans.
+* "User": In the development team, it refers to someone who logs in; in customer support, it refers to someone making inquiries; in marketing, it refers to target customers.
+* "Service": For engineers, it means an API; for sales, it refers to customer plans.
 
-In this way, **the same word can have different meanings depending on the business or perspective.**
+Thus, **the same word can have different meanings depending on the business or position in which it is used**.
 
-The concept of "context" helps clarify these differences.
+The concept of "context" aims to clarify these differences.
 
-# What is a Context?
+# What is Context?
 
-A context is **a cohesive unit of business where the meaning of words and rules remains consistent.**
+Context refers to **a grouping of business activities where the meanings of words and rules consistently apply**.
 
 In Domain-Driven Design (DDD), this is referred to as a "Bounded Context."
 
-For example, the word "order" can have different meanings depending on the context:
+For instance, the meaning of the word "order" can differ based on context as follows:
 
-* In Context A, it means a customer's purchase intent.
-* In Context B, it means a shipping request to the warehouse.
-* In Context C, it refers to billing targets.
+* In Context A, it refers to the customer's intention to purchase.
+* In Context B, it refers to a shipping request to the warehouse.
+* In Context C, it refers to the subject of billing.
 
-The characteristic of a context is that it "divides" and handles the differences in the meaning of words and rules for each business area.
+In this way, the characteristic of context is to "segment" where the meanings and rules of words change in each business.
 
 ## Why Organize Contexts?
 
-If you proceed with business operations or system design without being aware of contexts, various problems can arise:
+If you proceed with business or design systems without being aware of these contexts, various problems can arise.
 
-* Overloading the "order" table with billing and shipping information, resulting in a complex and fragile system.
-* Teams frequently asking, "What does this mean?" leading to misunderstandings and unclear responsibilities.
-* Difficulty in improving processes due to an inability to predict the scope of impact.
+* The "order" table becomes complex and fragile because it is stuffed with billing and shipping information.
+* Questions like "What does ○○ mean?" circulate between teams, leading to misunderstandings and unclear responsibilities.
+* Even when trying to improve business processes, it becomes difficult to assess the impact.
 
-On the other hand, organizing and separating contexts provides the following benefits:
+Conversely, if you separate and organize contexts, you can gain the following benefits:
 
-* Clarifies the meaning of words.
-* Organizes the scope of responsibility for business operations and systems.
-* Makes it easier to divide or modify team responsibilities.
+* The meanings of words become clear.
+* The scope of responsibilities for business and systems is organized.
+* Team assignments and changes become easier.
 
-In short, properly organizing contexts allows systems and organizations to enjoy the following advantages:
+In other words, by properly organizing contexts, systems and organizations can benefit in the following ways:
 
-* **Reduced communication costs**
-* **Lower complexity in system design and implementation**
-* **Clearer role definitions and responsibilities between teams**
+* **Reduction of communication costs**
+* **Decreased complexity in system design and implementation**
+* **Clarification of roles and responsibilities between teams**
 
-Properly organized contexts contribute to **improved stability for both systems and organizations.**
+Properly organized contexts lead to **improved stability in both systems and organizations**.
 
-# Example of Contexts: "Order" in an E-commerce Site
+# Example of Context: Orders in an E-Commerce Site
 
-Let’s divide the business operations related to orders in an e-commerce site into three departments:
+Let’s divide the business related to orders in an e-commerce site into three departments.
 
-| Department       | Meaning of "Order"            |
-| ---------------- | ------------------------------ |
-| Frontend Website | Content confirmed in the cart  |
-| Warehouse        | Data for shipping instructions |
-| Accounting       | Sales data for billing         |
+| Department      | Meaning of "Order"       |
+| ------- | ------------- |
+| Frontend Site | Content confirmed by the customer in the cart |
+| Warehouse Operations    | Instruction data for shipping    |
+| Accounting      | Sales data to be processed for billing  |
 
-All of these use the word "order," but **the content, purpose, and processes involved are completely different.**
+All of these use the word "order," but the **content, purpose, and processing involved are completely different**.
 
-If these differences are ignored and everything is lumped under a single term:
+Ignoring these differences and lumping everything under one term leads to:
 
-* The system becomes more complex.
-* The scope of impact during changes becomes unclear.
-* Misunderstandings are more likely to occur.
+* Increased complexity in the system.
+* Uncertainty about the scope of impact during modifications.
+* Higher likelihood of misunderstandings.
 
-This is why it is important to separate and consider "contexts."
+This is why it is important to think about "contexts" separately.
 
 # Not Just for Developers
 
-Contexts are not something only developers need to understand.
+Contexts are not something that only developers need to understand.
 
-For example, have you ever encountered questions like these?
+For example, have you ever wondered about the following questions?
 
-* "What exactly is our team responsible for?"
+* "What is our team's scope of responsibility?"
 * "Should I ask sales, development, or support about this?"
-* "What is the impact of this change?"
+* "What impact will this change have?"
 
-All of these questions are closely related to the organization of contexts.
+These questions are all closely related to the organization of contexts.
 
-**By drawing boundaries where business purposes and the meanings of words change, and clarifying roles and responsibilities within those boundaries,**
+**Draw boundaries where the purpose of business and the meanings of words change, and clarify roles and responsibilities within those boundaries.**
 
-this perspective is beneficial not only for developers but also for sales, support, planning, and other roles.
+This perspective is beneficial not only for developers but also for sales, support, planning, and all other professions.
 
 # Conclusion
 
 * The same word can often have different meanings.
-* Recognizing these differences and organizing them as boundaries in business and systems is what "context" is about.
-* Clarifying contexts prevents misunderstandings and reduces system complexity.
-* It also facilitates role division and process improvement, making it a valuable concept for all roles.
+* Recognizing these differences and organizing them as boundaries for business and systems is what "context" is about.
+* Clarifying contexts can prevent discrepancies in understanding and system complexity.
+* This is an effective approach for all professions, leading to clearer role assignments and business improvements.

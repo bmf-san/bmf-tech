@@ -1,16 +1,17 @@
 ---
-title: "自分的システムの仕様書の構成"
-slug: "system-specification-structure"
-date: 2025-05-19
+title: 自分的システムの仕様書の構成
+slug: system-specification-structure
+date: 2025-05-19T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "システム設計"
-  - "設計"
-  - "Tips"
-draft: false
+  - システム設計
+  - 設計
+  - Tips
+translation_key: system-specification-structure
 ---
+
 
 # 概要
 システムの仕様をドキュメントに書き出したい時にどういった構成であるべきか考えることが偶にある。

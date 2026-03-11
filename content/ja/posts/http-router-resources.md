@@ -1,17 +1,18 @@
 ---
-title: "HTTP Routerの自作で参考にした資料"
-slug: "http-router-resources"
-date: 2023-10-30
+title: HTTP Routerの自作で参考にした資料
+slug: http-router-resources
+date: 2023-10-30T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "router"
-  - "HTTP"
-  - "URLルーティング"
-  - "リンク集"
-draft: false
+  - router
+  - HTTP
+  - URLルーティング
+  - リンク集
+translation_key: http-router-resources
 ---
+
 
 [goblin](https://github.com/bmf-san/goblin)の開発で参考にした各種ソースや自分の記事をリストアップする。
 

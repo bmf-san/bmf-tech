@@ -1,14 +1,15 @@
 ---
-title: "N+1問題とは"
-slug: "what-is-n-plus-one-problem"
-date: 2018-05-12
+title: N+1問題とは
+slug: what-is-n-plus-one-problem
+date: 2018-05-12T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "N+1"
-draft: false
+  - N+1
+translation_key: what-is-n-plus-one-problem
 ---
+
 
 # 概要
 N+1問題の説明と対応についてまとめる。

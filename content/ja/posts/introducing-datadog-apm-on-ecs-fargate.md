@@ -1,17 +1,18 @@
 ---
-title: "ECS on Fargate環境でDatadog APMを導入"
-slug: "introducing-datadog-apm-on-ecs-fargate"
-date: 2021-10-19
+title: ECS on Fargate環境でDatadog APMを導入
+slug: introducing-datadog-apm-on-ecs-fargate
+date: 2021-10-19T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Amazon Web Service"
-  - "Datadog"
-  - "ECS"
-  - "Fargate"
-draft: false
+  - Amazon Web Service
+  - Datadog
+  - ECS
+  - Fargate
+translation_key: introducing-datadog-apm-on-ecs-fargate
 ---
+
 
 # 概要
 ECS on Fargate環境でDatadog APMを導入したときの雑メモ。

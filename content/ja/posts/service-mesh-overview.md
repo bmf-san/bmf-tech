@@ -1,14 +1,15 @@
 ---
-title: "サービスメッシュについて"
-slug: "service-mesh-overview"
-date: 2023-10-29
+title: サービスメッシュについて
+slug: service-mesh-overview
+date: 2023-10-29T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "サービスメッシュ"
-draft: false
+  - サービスメッシュ
+translation_key: service-mesh-overview
 ---
+
 
 # 概要
 サービスメッシュについて調べたことをまとめる。

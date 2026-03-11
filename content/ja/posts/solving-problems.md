@@ -1,15 +1,16 @@
 ---
-title: "いかにして問題をとくか"
-slug: "solving-problems"
-date: 2024-11-04
+title: いかにして問題をとくか
+slug: solving-problems
+date: 2024-11-04T00:00:00Z
 author: bmf-san
 categories:
-  - "ビジネス"
+  - ビジネス
 tags:
-  - "本"
-  - "思考法"
-draft: false
+  - 本
+  - 思考法
+translation_key: solving-problems
 ---
+
 
 [いかにして問題をとくか](https://amzn.to/4fh4mNS)を読んだ。
 

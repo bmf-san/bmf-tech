@@ -7,25 +7,23 @@ categories:
   - Testing
 tags:
   - JavaScript
-  - jest
-description: A casual note on why you might want to avoid Jest snapshot testing.
+  - Jest
 translation_key: jest-snapshot-testing-drawbacks
 ---
 
-A casual note on the disadvantages of Jest snapshot testing and why you might want to avoid it.
+Here are some rough notes on the disadvantages of avoiding Jest snapshot testing.
 
 # Disadvantages
-
 ## Tests Become Fragile
-Snapshot testing makes it easy to detect UI changes, but even changes that are not relevant to the test (e.g., renaming a class name without altering the appearance) can cause the test to fail.
+While snapshot tests can easily detect changes in the UI, they can also fail due to changes that are not the main concern of the test (e.g., renaming a class that does not change the appearance).
 
 ## Unclear Assertion Expectations
-Snapshot testing uses the `toMatchSnapshot()` assertion, but when a test fails, it can be difficult to understand the expected behavior. You have to judge based on the snapshot diff, but the assertion is often too concise to determine the correct state.
+In snapshot tests, the assertion `toMatchSnapshot()` is used, but when a test fails, it can be difficult to read the expected specifications. You have to look at the differences in the snapshot to make a judgment, but the assertion is too concise, making it hard to determine what the correct state is.
 
 ## Delayed Test Writing
-Snapshot tests tend to fail repeatedly unless the implementation is complete, making it necessary to wait until the implementation is finished before writing the tests.
+Snapshot tests can only be written after the implementation is complete, as they will fail continuously otherwise, making the completion of the implementation a prerequisite.
 
 # References
-There aren't many Japanese articles discussing the drawbacks of Jest, but the following article is well-organized and highly informative:
+The disadvantages of Jest are not often discussed in Japanese articles, but the following article is well summarized and very helpful.
 
-- [azukiazusa.dev - スナップショットテストとアサーションテスト](https://azukiazusa.dev/blog/snapshot-test-vs-assertion-test/)
+- [azukiazusa.dev - Snapshot Testing vs Assertion Testing](https://azukiazusa.dev/blog/snapshot-test-vs-assertion-test/)

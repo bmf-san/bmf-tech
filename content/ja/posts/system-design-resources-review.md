@@ -1,15 +1,16 @@
 ---
-title: "システム設計関連の資料を読み漁った"
-slug: "system-design-resources-review"
-date: 2023-02-27
+title: システム設計関連の資料を読み漁った
+slug: system-design-resources-review
+date: 2023-02-27T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "システム設計"
-  - "リンク集"
-draft: false
+  - システム設計
+  - リンク集
+translation_key: system-design-resources-review
 ---
+
 
 システム設計関連の資料をいくつか読み漁ったので、リンク集的にまとめておく。
 動画系は見れていないものが多い。

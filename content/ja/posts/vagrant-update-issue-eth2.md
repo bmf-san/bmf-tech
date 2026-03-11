@@ -1,17 +1,18 @@
 ---
-title: "Vagrantを1.7.4から1.9.1に一気にアップデートしたら「Bringing up interface eth2:  Device eth2 does not seem to be present, delaying initialization.」"
-slug: "vagrant-update-issue-eth2"
-date: 2017-10-01
+title: 'Vagrantを1.7.4から1.9.1に一気にアップデートしたら「Bringing up interface eth2:  Device eth2 does not seem to be present, delaying initialization.」'
+slug: vagrant-update-issue-eth2
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "apache"
-  - "Vagrant"
-  - "VirtualBox"
-  - "Tips"
-draft: false
+  - apache
+  - Vagrant
+  - VirtualBox
+  - Tips
+translation_key: vagrant-update-issue-eth2
 ---
+
 
 Vagrantのバージョンが1.7.4というちょっと古いバージョンだったのでアップデートしてみたらネットワーク周りでエラーがでてハマった話です。
 

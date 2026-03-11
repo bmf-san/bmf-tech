@@ -1,16 +1,17 @@
 ---
-title: "セキュアで信頼性のあるシステム構築 ―Google SREが考える安全なシステムの設計、実装、保守"
-slug: "secure-reliable-system-design-google-sre"
-date: 2024-05-24
+title: セキュアで信頼性のあるシステム構築 ―Google SREが考える安全なシステムの設計、実装、保守
+slug: secure-reliable-system-design-google-sre
+date: 2024-05-24T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "セキュリティ"
-  - "本"
-  - "信頼性"
-draft: false
+  - セキュリティ
+  - 本
+  - 信頼性
+translation_key: secure-reliable-system-design-google-sre
 ---
+
 
 [セキュアで信頼性のあるシステム構築 ―Google SREが考える安全なシステムの設計、実装、保守](https://amzn.to/3yBLnNy)を読んだ。
 

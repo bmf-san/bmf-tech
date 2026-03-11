@@ -1,14 +1,15 @@
 ---
-title: "Reactで複数のinputを扱うフォームを実装する"
-slug: "react-multiple-input-form"
-date: 2017-10-01
+title: Reactで複数のinputを扱うフォームを実装する
+slug: react-multiple-input-form
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "React"
-draft: false
+  - React
+translation_key: react-multiple-input-form
 ---
+
 
 Reactでフォームを実装するのはちょっと癖があります。
 
@@ -139,7 +140,7 @@ ReactDOM.render(
 動作はこんな感じです。
 
 
-![react-form.gif](https://qiita-image-store.s3.amazonaws.com/0/124495/9f1e3bb6-d5ed-eec8-7605-cfdeb54ae4b2.gif)
+![react-form.gif](/assets/images/posts/react-multiple-input-form/9f1e3bb6-d5ed-eec8-7605-cfdeb54ae4b2.gif)
 
 
 

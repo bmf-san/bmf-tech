@@ -1,17 +1,18 @@
 ---
-title: "Nontemporarl・Unitemporal・Bitemporalの特徴と設計"
-slug: "nontemporarl-unitemporal-bitemporal-design"
-date: 2025-02-27
+title: Nontemporarl・Unitemporal・Bitemporalの特徴と設計
+slug: nontemporarl-unitemporal-bitemporal-design
+date: 2025-02-27T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "Bi-Temporal"
-  - "Uni-Temporal"
-  - "Non-Temporal"
-  - "DB"
-draft: false
+  - Bi-Temporal
+  - Uni-Temporal
+  - Non-Temporal
+  - DB
+translation_key: nontemporarl-unitemporal-bitemporal-design
 ---
+
 
 データモデルには、時間軸（履歴や有効期間など）をどのように管理するかによって、いくつかのパターンが存在する。
 

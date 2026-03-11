@@ -7,7 +7,6 @@ categories:
   - Infrastructure
 tags:
   - Cache
-description: An overview of cache write methods.
 translation_key: cache-write-methods
 ---
 
@@ -15,15 +14,15 @@ translation_key: cache-write-methods
 This post summarizes cache write methods.
 
 # Write-Through
-A method where data is written to the cache and main memory simultaneously. Write operations occur on both the cache and main memory. This approach makes it easier to maintain data consistency but may introduce write latency.
+A method where data is written to both the cache and main memory simultaneously. Write operations occur on both the cache and main memory. It is easier to maintain data consistency, but there may be delays in writing.
 
 # Write-Back
-A method where data is first written to the cache and retained there until it is eventually written to main memory. Write operations occur only on the cache, and writes to main memory happen as needed. This approach can hide write latency but requires measures to maintain data consistency.
+A method where data is held in the cache after being written, and is only written to main memory later. Write operations occur only in the cache, and writing to main memory happens as needed. This can hide write delays, but requires measures to maintain data consistency.
 
 # Write-Around
-A method where data is written directly to main memory, bypassing the cache. This reduces the write load on the cache. The cache is used only for read operations in this pattern.
+A method where data is written directly to main memory, bypassing the cache. This reduces the write load on the cache. The cache is used only for reading.
 
 # References
-- [ライトスルーとライトバックの違いを調べよう！](https://itmanabi.com/write-through-back/)
-- [どこでどのように？　キャッシュ技術／製品最新動向](https://techtarget.itmedia.co.jp/tt/news/1407/28/news01.html)
-- [Storage Magazine翻訳記事](https://www.jdsf.gr.jp/sms/stm/201610.html)
+- [Let's investigate the differences between Write-Through and Write-Back!](https://itmanabi.com/write-through-back/)
+- [Where and how? Latest trends in cache technology/products](https://techtarget.itmedia.co.jp/tt/news/1407/28/news01.html)
+- [Storage Magazine translated article](https://www.jdsf.gr.jp/sms/stm/201610.html)

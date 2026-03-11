@@ -1,14 +1,15 @@
 ---
-title: "ソフトウェアテストをカイゼンする50のアイデア"
-slug: "software-testing-improvement-ideas"
-date: 2022-11-22
+title: ソフトウェアテストをカイゼンする50のアイデア
+slug: software-testing-improvement-ideas
+date: 2022-11-22T00:00:00Z
 author: bmf-san
 categories:
-  - "テスト"
+  - テスト
 tags:
-  - "本"
-draft: false
+  - 本
+translation_key: software-testing-improvement-ideas
 ---
+
 
 [ソフトウェアテストをカイゼンする50のアイデア](https://amzn.to/3JWDsN1)を読んだ。
 

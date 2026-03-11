@@ -13,18 +13,18 @@ tags:
 translation_key: react-markdown-editor-tutorial
 ---
 
-※This article is a repost from the [Innovator Japan Engineers’ Blog](http://tech.innovator.jp.net/).
+※This article is a repost from [Innovator Japan Engineers’ Blog](http://tech.innovator.jp.net/).
 
 # Preparation
-Setting up a build environment can be tedious, so this time we’ll use Facebook’s official tool, [create-react-app](https://github.com/facebookincubator/create-react-app).
+Setting up the build environment can be cumbersome, so this time we will use the official Facebook tool [create-react-app](https://github.com/facebookincubator/create-react-app).
 
 `npm install -g create-react-app`
 
-We’ll set up the environment with the app name `md-editor`.
+We will prepare the environment with the app name `md-editor`.
 
 `create-react-app md-editor`
 
-Next, let’s install the libraries we’ll use this time.
+Next, let's install the libraries we will use this time.
 
 `cd ./md-editor`
 
@@ -32,21 +32,21 @@ Next, let’s install the libraries we’ll use this time.
 
 `npm install`
 
-Finally, start the server, and the setup is complete.
+Finally, once the server is started, we are ready to go.
 `npm start`
 
 # Implementation
 
-## STEP1
-Before starting the implementation, let’s delete unnecessary files that we won’t use this time.
+## STEP 1
+Before we start implementing, let's delete the unnecessary files that we won't be using this time.
 
 - `App.css` 
 - `App.test.js`
 - `logo.svg`
 
-Remove the import statements for the above files in `src/index.js` and `src/App.js`.
+Make sure to remove the imports for these files from `src/index.js` and `src/App.js`.
 
-Then, in `src/App.js`, clear the content inside the return statement. (You’ll get a build error because the return statement is empty, but you can ignore it for now.)
+Also, in `src/App.js`, let's leave the contents of the return statement empty. (We will ignore the warning during build about the return statement being empty for now.)
 
 `src/index.js`
 ```
@@ -72,8 +72,8 @@ class App extends Component {
 export default App;
 ```
 
-## STEP2
-Create a file called `Markdown.js` under the `src` directory. This file will contain the implementation of the Markdown component.
+## STEP 2
+Create a file named `Markdown.js` under the `src` directory. We will implement the markdown component in this file.
 
 `src/Markdown.js`
 ```javascript
@@ -114,10 +114,10 @@ class Markdown extends Component {
 export default Markdown;
 ```
 
-Just a few lines of code. This is enough to make it function as a Markdown editor. It’s almost pure JavaScript. The only React-specific part is the JSX.
+It's just a few lines. This will function as a markdown editor. It's almost raw JS. The only thing specific to React is JSX.
 
-## STEP3
-Finally, import `Markdown.js` into `App.js`.
+## STEP 3
+Finally, let's import `Markdown.js` into `App.js`.
 
 ```javascript
 import React, {Component} from 'react';
@@ -132,18 +132,18 @@ class App extends Component {
 export default App;
 ```
 
-# Testing
-If you want to highlight source code, you can customize `marked` using [isagalaev/highlight.js - github](https://github.com/isagalaev/highlight.js).
+# Verification
+If you want to highlight the source code, you can customize marked using [isagalaev/highlight.js - github](https://github.com/isagalaev/highlight.js) for a better experience.
 
 # References
 - [chjj/marked](https://github.com/chjj/marked)
 - [React.Component - React](https://reactjs.org/docs/react-component.html#constructor)
-- [super - MDN](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/super#Description)
+- [super - MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/super#Description)
 
 # Repository
 The source code is available at [bmf-san/til/javascript/md-editor/ - github](https://github.com/bmf-san/til/tree/master/javascript/md-editor).
 
 # Thoughts
-I like React because it allows coding in a way that’s close to pure JavaScript, which reduces the risk of being locked into framework-specific knowledge.
+I like React because it allows coding in a way that is close to raw JS, making it less likely to lock you into knowledge of the framework.
 
-I’ve skipped most of the code explanations, but you can check out the article [Modern JavaScript by @bmf_san](http://tech.innovator.jp.net/archive/category/%E3%83%A2%E3%83%80%E3%83%B3%E3%81%AAJS%E3%81%AE%E8%A9%B1) for more details.
+I have omitted most of the code explanations, but I think you can understand most of it by looking at the article [Modern JS Discussion by @bmf_san](http://tech.innovator.jp.net/archive/category/%E3%83%A2%E3%83%80%E3%83%B3%E3%81%AAJS%E3%81%AE%E8%A9%B1).

@@ -1,15 +1,16 @@
 ---
-title: "Road to Vimmer"
-slug: "road-to-vimmer"
-date: 2018-04-22
+title: Road to Vimmer
+slug: road-to-vimmer
+date: 2018-04-22T00:00:00Z
 author: bmf-san
 categories:
-  - "ツール"
+  - ツール
 tags:
-  - "vim"
-  - "エディタ"
-draft: false
+  - vim
+  - エディタ
+translation_key: road-to-vimmer
 ---
+
 
 # 概要
 Vimmerになるために覚えていったコマンドを書き連ねていく。

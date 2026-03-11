@@ -1,14 +1,15 @@
 ---
-title: "Laravelのフォームリクエストでバリデーションされる値をカスタマイズする"
-slug: "laravel-form-request-validation-customization"
-date: 2017-10-01
+title: Laravelのフォームリクエストでバリデーションされる値をカスタマイズする
+slug: laravel-form-request-validation-customization
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Laravel"
-draft: false
+  - Laravel
+translation_key: laravel-form-request-validation-customization
 ---
+
 
 # 概要
 Laravelのフォームリクエストで、バリデーションされる値をカスタマイズする方法です。

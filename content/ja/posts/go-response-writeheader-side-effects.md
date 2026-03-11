@@ -1,15 +1,16 @@
 ---
-title: "Goのresponse.WriteHeaderの副作用について"
-slug: "go-response-writeheader-side-effects"
-date: 2023-09-11
+title: Goのresponse.WriteHeaderの副作用について
+slug: go-response-writeheader-side-effects
+date: 2023-09-11T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "Tips"
-draft: false
+  - Golang
+  - Tips
+translation_key: go-response-writeheader-side-effects
 ---
+
 
 # 概要
 Goのresponse.WriteHeaderの副作用についてメモする。

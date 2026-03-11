@@ -1,15 +1,16 @@
 ---
-title: "Web APIテスト技法"
-slug: "web-api-testing-techniques"
-date: 2024-07-08
+title: Web APIテスト技法
+slug: web-api-testing-techniques
+date: 2024-07-08T00:00:00Z
 author: bmf-san
 categories:
-  - "テスト"
+  - テスト
 tags:
-  - "API"
-  - "本"
-draft: false
+  - API
+  - 本
+translation_key: web-api-testing-techniques
 ---
+
 
 [Web APIテスト技法](https://amzn.to/3VP13Vs)を読んだ。
 

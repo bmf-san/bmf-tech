@@ -1,15 +1,16 @@
 ---
-title: "multipassでk3sを動かす"
-slug: "multipass-k3s-setup"
-date: 2023-08-17
+title: multipassでk3sを動かす
+slug: multipass-k3s-setup
+date: 2023-08-17T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "multipass"
-  - "k3s"
-draft: false
+  - multipass
+  - k3s
+translation_key: multipass-k3s-setup
 ---
+
 
 # 概要
 docker-composeで構成されている個人開発のアプリケーションをKubernetes（k3s）へ移行するという試みの際に、multipassを使ってみたのでそれについてメモを残す。

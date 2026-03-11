@@ -1,15 +1,16 @@
 ---
-title: "退職エントリ"
-slug: "resignation-entry"
-date: 2024-04-30
+title: 退職エントリ
+slug: resignation-entry
+date: 2024-04-30T00:00:00Z
 author: bmf-san
 categories:
-  - "ポエム"
+  - ポエム
 tags:
-  - "退職"
-  - "転職"
-draft: false
+  - 退職
+  - 転職
+translation_key: resignation-entry
 ---
+
 
 5年5ヶ月勤めた現職を退職しました。
 

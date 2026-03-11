@@ -1,22 +1,23 @@
 ---
-title: "OSSをはじめてみた話"
-slug: "starting-with-oss"
-date: 2017-07-17
+title: OSSをはじめてみた話
+slug: starting-with-oss
+date: 2017-07-17T00:00:00Z
 author: bmf-san
 categories:
-  - "ポエム"
+  - ポエム
 tags:
-  - "OSS"
-  - "GitHub"
-  - "CMS"
-  - "Laravel"
-  - "React"
-draft: false
+  - OSS
+  - GitHub
+  - CMS
+  - Laravel
+  - React
+translation_key: starting-with-oss
 ---
+
 
 # 概要
 [Rubel](https://github.com/bmf-san/Rubel)
-![スクリーンショット 2017-07-17 23.59.44.png](https://qiita-image-store.s3.amazonaws.com/0/124495/66acb76a-8549-169f-a68b-2025ab0b7188.png)
+![スクリーンショット 2017-07-17 23.59.44.png](/assets/images/posts/starting-with-oss/66acb76a-8549-169f-a68b-2025ab0b7188.png)
 
 数ヶ月前くらいからOSSとしてソースコードをgithubに公開しながらCMSを開発しています。
 何の目的で始めたかについてダラダラとかきます。
@@ -40,7 +41,7 @@ OSSの定義についてWikipediaを参照してみます。
 マークダウンで記事を書くことのできるCMSを開発しています。
 バックエンドはLaravel、フロントエンドはReactで開発しています。
 
-![screencapture-admin-rubel-dashboard-new-post-1500641283831.png](https://qiita-image-store.s3.amazonaws.com/0/124495/5b01469f-b8d2-b023-f975-0a9d649d8788.png)
+![screencapture-admin-rubel-dashboard-new-post-1500641283831.png](/assets/images/posts/starting-with-oss/5b01469f-b8d2-b023-f975-0a9d649d8788.png)
 
 
 ### 開発のきっかけ

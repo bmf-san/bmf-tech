@@ -1,14 +1,15 @@
 ---
-title: "O（オーダー）記法とアルゴリズムの計算量の求め方"
-slug: "big-o-notation-algorithms"
-date: 2018-04-18
+title: O（オーダー）記法とアルゴリズムの計算量の求め方
+slug: big-o-notation-algorithms
+date: 2018-04-18T00:00:00Z
 author: bmf-san
 categories:
-  - "アルゴリズムとデータ構造"
+  - アルゴリズムとデータ構造
 tags:
-  - "O記法"
-draft: false
+  - O記法
+translation_key: big-o-notation-algorithms
 ---
+
 
 # 概要
 アルゴリズムの演算性能をざっくりと計算するO記法と計算量の求め方についての前提知識をまとめる。

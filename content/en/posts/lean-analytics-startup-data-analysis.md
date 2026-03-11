@@ -12,8 +12,6 @@ tags:
 translation_key: lean-analytics-startup-data-analysis
 ---
 
-[LEAN ANALYTICS スタートアップのためのデータ解析と活用法](https://amzn.to/44zNRHS)を読んだ。
+[LEAN ANALYTICS: Data Analysis and Utilization for Startups](https://amzn.to/44zNRHS) is a must-read for anyone involved in startups.
 
-If you're involved in a startup, this is a must-read.
-
-Even if you're not in a startup, it's recommended for gaining insights into web-based businesses.
+I also recommend it for those who want insights into web-based businesses, regardless of their involvement in startups.

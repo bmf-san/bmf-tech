@@ -1,15 +1,16 @@
 ---
-title: "Golangの勉強で参考にした資料"
-slug: "golang-study-resources"
-date: 2018-03-01
+title: Golangの勉強で参考にした資料
+slug: golang-study-resources
+date: 2018-03-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "リンク集"
-draft: false
+  - Golang
+  - リンク集
+translation_key: golang-study-resources
 ---
+
 
 # 概要
 golangの勉強をする時に参考にした本とリンクのまとめ。

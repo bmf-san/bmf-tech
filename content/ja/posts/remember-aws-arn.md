@@ -1,14 +1,15 @@
 ---
-title: "AWSのARNを覚える"
-slug: "remember-aws-arn"
-date: 2021-06-23
+title: AWSのARNを覚える
+slug: remember-aws-arn
+date: 2021-06-23T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Amazon Web Service"
-draft: false
+  - Amazon Web Service
+translation_key: remember-aws-arn
 ---
+
 
 AWSのリソースネーム（ARN)の形式を忘れないようにメモ。
 

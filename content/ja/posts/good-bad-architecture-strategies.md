@@ -1,16 +1,17 @@
 ---
-title: "良いアーキテクチャ戦略・悪いアーキテクチャ戦略"
-slug: "good-bad-architecture-strategies"
-date: 2026-02-05
+title: 良いアーキテクチャ戦略・悪いアーキテクチャ戦略
+slug: good-bad-architecture-strategies
+date: 2026-02-05T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "アーキテクチャ戦略"
-  - "アーキテクチャ"
-  - "設計"
-draft: false
+  - アーキテクチャ戦略
+  - アーキテクチャ
+  - 設計
+translation_key: good-bad-architecture-strategies
 ---
+
 
 アーキテクチャ戦略を書いても、機能しないケースがある。形だけの戦略になってしまったり、実行に移されなかったりする。
 

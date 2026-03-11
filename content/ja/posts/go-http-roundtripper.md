@@ -1,14 +1,15 @@
 ---
-title: "Goのhttp.RoundTripperについて"
-slug: "go-http-roundtripper"
-date: 2023-08-22
+title: Goのhttp.RoundTripperについて
+slug: go-http-roundtripper
+date: 2023-08-22T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-draft: false
+  - Golang
+translation_key: go-http-roundtripper
 ---
+
 
 # 概要
 Goのhttp.RoundTripperについてかく。

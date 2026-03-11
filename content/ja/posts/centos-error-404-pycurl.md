@@ -1,17 +1,18 @@
 ---
-title: "CentOS6.7で[Errno 14] PYCURL ERROR 22 - \\\"The requested URL returned error: 404 Not Found\\\"とかいうエラーがでた"
-slug: "centos-error-404-pycurl"
-date: 2017-09-26
+title: 'CentOS6.7で[Errno 14] PYCURL ERROR 22 - \"The requested URL returned error: 404 Not Found\"とかいうエラーがでた'
+slug: centos-error-404-pycurl
+date: 2017-09-26T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "CentOS"
-  - "os"
-  - "zabbix"
-  - "Tips"
-draft: false
+  - CentOS
+  - os
+  - zabbix
+  - Tips
+translation_key: centos-error-404-pycurl
 ---
+
 
 # CentOS6.7で[Errno 14] PYCURL ERROR 22 - "The requested URL returned error: 404 Not Found"とかいうエラーがでた
 

@@ -1,16 +1,17 @@
 ---
-title: "マスタリングTCP/IP―入門編―(第6版)"
-slug: "mastering-tcp-ip-introduction"
-date: 2024-05-13
+title: マスタリングTCP/IP―入門編―(第6版)
+slug: mastering-tcp-ip-introduction
+date: 2024-05-13T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "TCP"
-  - "IP"
-  - "本"
-draft: false
+  - TCP
+  - IP
+  - 本
+translation_key: mastering-tcp-ip-introduction
 ---
+
 
 [マスタリングTCP/IP―入門編―(第6版)](https://amzn.to/44D5Jlm)を読んだ。
 

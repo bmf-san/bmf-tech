@@ -1,15 +1,16 @@
 ---
-title: "開発生産性についての記事漁り"
-slug: "development-productivity-resources"
-date: 2023-12-30
+title: 開発生産性についての記事漁り
+slug: development-productivity-resources
+date: 2023-12-30T00:00:00Z
 author: bmf-san
 categories:
-  - "マネジメント"
+  - マネジメント
 tags:
-  - "開発生産性"
-  - "リンク集"
-draft: false
+  - 開発生産性
+  - リンク集
+translation_key: development-productivity-resources
 ---
+
 
 開発生産性についての記事を漁った。
 

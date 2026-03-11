@@ -1,17 +1,18 @@
 ---
-title: "LaravelでRestAPIをつくる"
-slug: "laravel-rest-api-creation"
-date: 2017-09-26
+title: LaravelでRestAPIをつくる
+slug: laravel-rest-api-creation
+date: 2017-09-26T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "API"
-  - "Laravel"
-  - "React"
-  - "REST"
-draft: false
+  - API
+  - Laravel
+  - React
+  - REST
+translation_key: laravel-rest-api-creation
 ---
+
 
 LaravelでReactをフロントエンドのフレームワークとして採用しているのですが、APIを設計する必要がでてきたのでやってみました。
 

@@ -1,18 +1,19 @@
 ---
-title: "システムアーキテクチャ構築の原理~ITアーキテクトが持つべき3つの思考"
-slug: "principles-of-system-architecture"
-date: 2025-07-07
+title: システムアーキテクチャ構築の原理~ITアーキテクトが持つべき3つの思考
+slug: principles-of-system-architecture
+date: 2025-07-07T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "システム設計"
-  - "アーキテクチャ戦略"
-  - "アーキテクチャ"
-  - "アーキテクト"
-  - "本"
-draft: false
+  - システム設計
+  - アーキテクチャ戦略
+  - アーキテクチャ
+  - アーキテクト
+  - 本
+translation_key: principles-of-system-architecture
 ---
+
 
 [システムアーキテクチャ構築の原理~ITアーキテクトが持つべき3つの思考](https://amzn.to/4lDpXCy)を読んだ。
 

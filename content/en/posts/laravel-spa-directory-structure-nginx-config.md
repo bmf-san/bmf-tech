@@ -1,5 +1,5 @@
 ---
-title: Directory Structure and Nginx Configuration for Integrating SPA into Laravel
+title: Directory Structure and Nginx Config for Integrating SPA with Laravel
 slug: laravel-spa-directory-structure-nginx-config
 date: 2017-10-01T00:00:00Z
 author: bmf-san
@@ -9,22 +9,17 @@ tags:
   - Laravel
   - React
   - Nginx
-description: A discussion on directory structure and nginx configuration when implementing an SPA for the admin panel in a Laravel application.
 translation_key: laravel-spa-directory-structure-nginx-config
 ---
 
 # Overview
-This post discusses the directory structure and nginx configuration adjustments made when implementing an SPA (Single Page Application) for the admin panel in a Laravel application. It was my first attempt, so I summarized my notes here.
+This is a brief note on modifying the directory structure of Laravel and the Nginx config file when implementing a SPA for the admin panel of an application built with Laravel. Since it was my first attempt, I decided to document it.
 
 # Laravel Directory Structure
-The application was divided into two main directories: `backend-app` for backend-related tasks and `frontend-app` for frontend-related tasks. 
+I divided the directory into two main parts: `backend-app` for the backend and `frontend-app` for the frontend. The `backend-app` handles user-facing screens, APIs, and backend processing, while the frontend is responsible for the SPA admin panel. Although the user-facing screens might also fall under `frontend-app`, I will address that later.
+It might be better to move away from a full-stack framework if we are going to separate things like this... For now, I structured it in a way that makes it easier to manage the frontend and backend separately.
 
-- `backend-app` handles user-facing screens, APIs, and backend processing.
-- `frontend-app` is responsible for the SPA-based admin panel.
-
-Although user-facing screens could also fall under `frontend-app`, I decided to separate them for now and plan to refactor later. If splitting them further, moving away from a full-stack framework might be worth considering. For now, I aimed for a structure that makes managing frontend and backend easier.
-
-This structure was inspired by common setups found on GitHub when searching for "Laravel SPA" or "Laravel React".
+This structure is based on common setups I found while searching for "Laravel SPA" or "Laravel React" on GitHub.
 
 ```
 .
@@ -47,8 +42,8 @@ This structure was inspired by common setups found on GitHub when searching for 
     └── src
 ```
 
-# Nginx Configuration File
-The `location` directive was separated for `backend-app` and `frontend-app`. While separating them via `server` directives and using subdomains is another option, I felt it wasn’t suitable for this application. The configuration could be improved further, but this setup works for now.
+# Nginx Config File
+I separated the `location` directives for `backend-app` and `frontend-app`. If I were to separate them using the `server` directive, it would involve creating subdomains, which I thought would be awkward for this application, so I avoided that. I feel like I need to work harder on the configuration, but please bear with me (*_*).
 
 ```
 server {
@@ -88,11 +83,11 @@ server {
 }
 ```
 
-### Fix (Added on 2017/4/2)
-When directly accessing or reloading URLs under the SPA root (e.g., `laravel-app/dashboard/post`), a 404 error occurred. This was fixed as follows:
+*Note (Updated on 2017/4/2)*
 
-Before:
+I fixed a 404 error that occurred when directly accessing or reloading URLs under the root (e.g., laravel-app/dashboard/post) in the SPA.
 
+Before the fix:
 ```
  # frontend-app
  location /dashboard {
@@ -101,8 +96,7 @@ Before:
     }
 ```
 
-After:
-
+After the fix:
 ```
  # frontend-app
  location /dashboard {
@@ -113,8 +107,8 @@ After:
 ```
 
 # Thoughts
-If you have recommended structures or repositories that might be helpful, please share them!
+If you have any recommended structures or repositories that might be helpful, please let me know!
 
 # References
-+ [nginx root and alias](https://kinjouj.github.io/2013/01/nginx-root-alias.html)
++ [Nginx root and alias](https://kinjouj.github.io/2013/01/nginx-root-alias.html)
 + [try_files, alias, and regexp locations](http://stackoverflow.com/questions/26356210/try-files-alias-and-regexp-locations)

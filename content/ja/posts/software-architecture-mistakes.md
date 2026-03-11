@@ -1,16 +1,17 @@
 ---
-title: "間違いだらけのソフトウェア・アーキテクチャ―非機能要件の開発と評価"
-slug: "software-architecture-mistakes"
-date: 2024-05-24
+title: 間違いだらけのソフトウェア・アーキテクチャ―非機能要件の開発と評価
+slug: software-architecture-mistakes
+date: 2024-05-24T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "アーキテクチャ"
-  - "システム設計"
-  - "本"
-draft: false
+  - アーキテクチャ
+  - システム設計
+  - 本
+translation_key: software-architecture-mistakes
 ---
+
 
 [間違いだらけのソフトウェア・アーキテクチャ―非機能要件の開発と評価](https://amzn.to/3Vdsk4O)を読んだ。
 

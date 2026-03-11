@@ -1,15 +1,16 @@
 ---
-title: "Linuxのパーミッションの読み方と指定方法について"
-slug: "linux-permission-reading-specification"
-date: 2018-07-18
+title: Linuxのパーミッションの読み方と指定方法について
+slug: linux-permission-reading-specification
+date: 2018-07-18T00:00:00Z
 author: bmf-san
 categories:
-  - "OS"
+  - OS
 tags:
-  - "Linux"
-  - "パーミッション"
-draft: false
+  - Linux
+  - パーミッション
+translation_key: linux-permission-reading-specification
 ---
+
 
 # 概要
 Linuxのパーミッションについてまとめる

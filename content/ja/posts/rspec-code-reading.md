@@ -1,15 +1,16 @@
 ---
-title: "RSpecのコードリーディング"
-slug: "rspec-code-reading"
-date: 2024-10-20
+title: RSpecのコードリーディング
+slug: rspec-code-reading
+date: 2024-10-20T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "RSpec"
-  - "Ruby"
-draft: false
+  - RSpec
+  - Ruby
+translation_key: rspec-code-reading
 ---
+
 
 # 概要
 RSpecのコードリーディングをする。

@@ -1,14 +1,15 @@
 ---
-title: "tmuxコトハジメ"
-slug: "tmux-beginners-guide"
-date: 2018-05-22
+title: tmuxコトハジメ
+slug: tmux-beginners-guide
+date: 2018-05-22T00:00:00Z
 author: bmf-san
 categories:
-  - "ツール"
+  - ツール
 tags:
-  - "tmux"
-draft: false
+  - tmux
+translation_key: tmux-beginners-guide
 ---
+
 
 # 概要
 端末多重化ソフトウェアであるtmuxのコトハジメ

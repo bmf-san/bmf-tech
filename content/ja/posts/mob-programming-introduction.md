@@ -1,15 +1,16 @@
 ---
-title: "モブプログラミングについて"
-slug: "mob-programming-introduction"
-date: 2024-01-23
+title: モブプログラミングについて
+slug: mob-programming-introduction
+date: 2024-01-23T00:00:00Z
 author: bmf-san
 categories:
-  - "開発プロセス"
+  - 開発プロセス
 tags:
-  - "モブプログラミング"
-  - "アジャイル"
-draft: false
+  - モブプログラミング
+  - アジャイル
+translation_key: mob-programming-introduction
 ---
+
 
 最近モブプロを人生で初めて経験したので、その体験の良さを忘れないようにメモ書きしておく。
 
