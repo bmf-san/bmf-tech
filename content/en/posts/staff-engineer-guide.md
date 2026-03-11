@@ -6,8 +6,11 @@ author: bmf-san
 categories:
   - Career
 tags:
-  - Books
+  - Book Review
 translation_key: staff-engineer-guide
+books:
+  - asin: "4814400861"
+    title: "スタッフエンジニアの道 ―優れた技術専門職になるためのガイド"
 ---
 
 

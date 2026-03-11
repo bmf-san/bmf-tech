@@ -7,8 +7,11 @@ categories:
   - Applications
 tags:
   - Ruby
-  - Books
+  - Book Review
 translation_key: perfect-ruby
+books:
+  - asin: "4774189774"
+    title: "パーフェクトRuby"
 ---
 
 

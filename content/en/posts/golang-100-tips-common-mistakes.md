@@ -7,8 +7,11 @@ categories:
   - Application
 tags:
   - Golang
-  - Books
+  - Book Review
 translation_key: golang-100-tips-common-mistakes
+books:
+  - asin: "4295017531"
+    title: "Go言語100Tips 開発者にありがちな間違いへの対処法 (impress top gear)"
 ---
 
 [100 Tips for Go: How to Address Common Developer Mistakes (impress top gear)](https://amzn.to/3QXZt2F) is a comprehensive tips book that covers common mistakes in Go, as the title suggests.

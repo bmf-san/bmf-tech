@@ -7,8 +7,11 @@ categories:
   - Business
 tags:
   - Intellectual Production
-  - Books
+  - Book Review
 translation_key: start-with-issues-revised
+books:
+  - asin: "4862763561"
+    title: "イシューからはじめよ［改訂版］――知的生産の「シンプルな本質」"
 ---
 
 

@@ -7,8 +7,11 @@ categories:
   - Business
 tags:
   - Logical Thinking
-  - Books
+  - Book Review
 translation_key: problem-discovery-human-science
+books:
+  - asin: "B09BDWRCXN"
+    title: "ライト、ついてますか　問題発見の人間学"
 ---
 
 [Is the Light On? The Human Science of Problem Discovery](https://amzn.to/4dK0NiK) is a book I read.

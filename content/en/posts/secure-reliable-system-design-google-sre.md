@@ -7,9 +7,12 @@ categories:
   - Architecture
 tags:
   - Security
-  - Books
+  - Book Review
   - Reliability
 translation_key: secure-reliable-system-design-google-sre
+books:
+  - asin: "481440025X"
+    title: "セキュアで信頼性のあるシステム構築 ―Google SREが考える安全なシステムの設計、実装、保守"
 ---
 
 

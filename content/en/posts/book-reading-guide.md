@@ -6,8 +6,11 @@ author: bmf-san
 categories:
   - Business
 tags:
-  - Books
+  - Book Review
 translation_key: book-reading-guide
+books:
+  - asin: "4061592998"
+    title: "本を読む本"
 ---
 
 [How to Read Books](https://amzn.to/4jWO5QN) is a book I read.

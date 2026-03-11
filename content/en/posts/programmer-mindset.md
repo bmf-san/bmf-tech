@@ -7,9 +7,12 @@ categories:
   - Application
 tags:
   - Cognitive Science
-  - Books
+  - Book Review
   - Code Reading
 translation_key: programmer-mindset
+books:
+  - asin: "4798068535"
+    title: "プログラマ脳"
 ---
 
 What is the mindset of people who excel at both reading and writing code? What sets them apart from me? I believe this is something every engineer has pondered at some point. (Probably)

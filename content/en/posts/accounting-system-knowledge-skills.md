@@ -7,8 +7,11 @@ categories:
   - Architecture
 tags:
   - Accounting
-  - Books
+  - Book Review
 translation_key: accounting-system-knowledge-skills
+books:
+  - asin: "4798162949"
+    title: "エンジニアが学ぶ会計システムの「知識」と「技術」"
 ---
 
 [Knowledge and Skills of Accounting Systems for Engineers](https://amzn.to/3xSP2WC) was read.

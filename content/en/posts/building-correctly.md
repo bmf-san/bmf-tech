@@ -6,10 +6,13 @@ author: bmf-san
 categories:
   - Development Process
 tags:
-  - Books
+  - Book Review
   - Agile
   - Scrum
 translation_key: building-correctly
+books:
+  - asin: "4802511191"
+    title: "正しいものを正しくつくる プロダクトをつくるとはどういうことなのか、あるいはアジャイルのその先について"
 ---
 
 [Building the Right Thing the Right Way: What Does It Mean to Create a Product, or Beyond Agile?](https://amzn.to/49ObPAs) is a book that verbalizes various aspects of the product development process. Here are some notes on points that caught my attention.

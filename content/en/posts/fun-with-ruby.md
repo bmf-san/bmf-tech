@@ -7,8 +7,11 @@ categories:
   - Applications
 tags:
   - Ruby
-  - Books
+  - Book Review
 translation_key: fun-with-ruby
+books:
+  - asin: "4797399848"
+    title: "たのしいRuby"
 ---
 
 

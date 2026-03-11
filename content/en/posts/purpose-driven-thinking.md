@@ -6,8 +6,11 @@ author: bmf-san
 categories:
   - Business
 tags:
-  - Books
+  - Book Review
 translation_key: purpose-driven-thinking
+books:
+  - asin: "479932831X"
+    title: "目的ドリブンの思考法"
 ---
 
 [Purpose-Driven Thinking](https://amzn.to/49dqSp0) is a book that discusses how to create work outcomes using a framework of purpose, goals, and means.

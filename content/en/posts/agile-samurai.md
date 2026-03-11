@@ -8,8 +8,11 @@ categories:
 tags:
   - Agile
   - Scrum
-  - Books
+  - Book Review
 translation_key: agile-samurai
+books:
+  - asin: "4274068560"
+    title: "アジャイルサムライ"
 ---
 
 [The Agile Samurai](https://amzn.to/3y9JvuW) is a great book for laying the groundwork for Agile development.

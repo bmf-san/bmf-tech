@@ -7,8 +7,11 @@ categories:
   - Testing
 tags:
   - API
-  - Books
+  - Book Review
 translation_key: web-api-testing-techniques
+books:
+  - asin: "B0C6DFQNLP"
+    title: "Web APIテスト技法"
 ---
 
 

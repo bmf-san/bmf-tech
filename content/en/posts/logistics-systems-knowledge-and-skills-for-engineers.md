@@ -6,9 +6,12 @@ author: bmf-san
 categories:
   - Architecture
 tags:
-  - Books
+  - Book Review
   - Logistics
 translation_key: logistics-systems-knowledge-and-skills-for-engineers
+books:
+  - asin: "4798172774"
+    title: "エンジニアが学ぶ物流システムの「知識」と「技術」"
 ---
 
 

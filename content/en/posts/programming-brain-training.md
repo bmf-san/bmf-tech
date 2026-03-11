@@ -7,8 +7,11 @@ categories:
   - Application
 tags:
   - Logical Thinking
-  - Books
+  - Book Review
 translation_key: programming-brain-training
+books:
+  - asin: "4822297942"
+    title: "プログラミング脳をこれから鍛える本"
 ---
 
 [A Book to Train Your Programming Mind](https://amzn.to/44JQvuZ) is a book I read.
