@@ -1,0 +1,43 @@
+name: Lint Content
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'content/ja/posts/**'
+      - 'content/en/posts/**'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install textlint dependencies
+        run: npm ci
+
+      - name: Lint changed JA posts
+        run: |
+          JA_FILES=$(git diff --name-only --diff-filter=ACM origin/main...HEAD -- 'content/ja/posts/*.md')
+          if [ -n "$JA_FILES" ]; then
+            echo "$JA_FILES" | xargs npx textlint --config .textlintrc-ja.json
+          else
+            echo "No changed JA posts to lint."
+          fi
+
+      - name: Lint changed EN posts
+        run: |
+          EN_FILES=$(git diff --name-only --diff-filter=ACM origin/main...HEAD -- 'content/en/posts/*.md')
+          if [ -n "$EN_FILES" ]; then
+            echo "$EN_FILES" | xargs npx textlint --config .textlintrc-en.json
+          else
+            echo "No changed EN posts to lint."
+          fi

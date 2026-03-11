@@ -1,4 +1,4 @@
-.PHONY: help install install-e2e build serve clean test-e2e test-e2e-ui new-ja new-en translate translate-gemini translate-dry-run
+.PHONY: help install install-e2e install-lint build serve clean test-e2e test-e2e-ui new-ja new-en translate translate-gemini translate-dry-run lint-content lint-content-diff
 
 TITLE   ?= untitled
 SLUG    ?= untitled
@@ -12,6 +12,27 @@ install: ## 依存ツールをインストール (gohan)
 
 install-e2e: ## Playwright依存をインストール
 	cd e2e && npm ci && npx playwright install chromium
+
+install-lint: ## textlint 依存をインストール
+	npm ci
+
+lint-content: ## 全記事を textlint でチェック (JA + EN)
+	npx textlint --config .textlintrc-ja.json "content/ja/posts/*.md"
+	npx textlint --config .textlintrc-en.json "content/en/posts/*.md"
+
+lint-content-diff: ## main との差分ファイルのみ textlint でチェック
+	@JA_FILES=$$(git diff --name-only --diff-filter=ACM main -- 'content/ja/posts/*.md'); \
+	EN_FILES=$$(git diff --name-only --diff-filter=ACM main -- 'content/en/posts/*.md'); \
+	if [ -n "$$JA_FILES" ]; then \
+		echo "$$JA_FILES" | xargs npx textlint --config .textlintrc-ja.json; \
+	else \
+		echo "No changed JA posts to lint."; \
+	fi; \
+	if [ -n "$$EN_FILES" ]; then \
+		echo "$$EN_FILES" | xargs npx textlint --config .textlintrc-en.json; \
+	else \
+		echo "No changed EN posts to lint."; \
+	fi
 
 build: ## サイトをビルド
 	GOTOOLCHAIN=auto gohan build

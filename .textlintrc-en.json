@@ -1,0 +1,32 @@
+{
+  "rules": {
+    "write-good": {
+      "passive": true,
+      "illusion": true,
+      "so": false,
+      "thereIs": true,
+      "weasel": false,
+      "adverb": false,
+      "tooWordy": true,
+      "cliches": true,
+      "eprime": false
+    },
+    "terminology": {
+      "defaultTerms": true,
+      "terms": [
+        ["Javascript", "JavaScript"],
+        ["Golang", "Go"],
+        ["Github", "GitHub"],
+        ["Mysql", "MySQL"],
+        ["Postgresql", "PostgreSQL"],
+        ["Nginx", "nginx"],
+        ["Docker-compose", "Docker Compose"],
+        ["mac os", "macOS"],
+        ["Macos", "macOS"]
+      ]
+    }
+  },
+  "filters": {
+    "comments": true
+  }
+}
