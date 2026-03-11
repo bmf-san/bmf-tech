@@ -1,15 +1,16 @@
 ---
-title: "カモメになったペンギン"
-slug: "penguin-becoming-seagull"
-date: 2025-08-09
+title: カモメになったペンギン
+slug: penguin-becoming-seagull
+date: 2025-08-09T00:00:00Z
 author: bmf-san
 categories:
-  - "マネジメント"
+  - マネジメント
 tags:
-  - "組織論"
-  - "本"
-draft: false
+  - 組織論
+  - 本
+translation_key: penguin-becoming-seagull
 ---
+
 
 [カモメになったペンギン](https://amzn.to/41zV76h)を読んだ。
 

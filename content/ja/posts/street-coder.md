@@ -1,15 +1,16 @@
 ---
-title: "ストリートコーダー"
-slug: "street-coder"
-date: 2025-09-20
+title: ストリートコーダー
+slug: street-coder
+date: 2025-09-20T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "コーディング"
-  - "本"
-draft: false
+  - コーディング
+  - 本
+translation_key: street-coder
 ---
+
 
 [ストリートコーダー](https://amzn.to/4nF6SRG)を読んだ。
 

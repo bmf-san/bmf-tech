@@ -1,5 +1,5 @@
 ---
-title: Technologies Behind bmf-tech
+title: Technologies Supporting bmf-tech
 slug: bmf-tech-supporting-technologies
 date: 2022-08-08T00:00:00Z
 author: bmf-san
@@ -16,252 +16,269 @@ tags:
   - Loki
   - Grafana
   - Nginx
-description: An overview of the technology stack supporting the bmf-tech blog.
 translation_key: bmf-tech-supporting-technologies
 ---
 
-# Technologies Behind bmf-tech
-This post describes the technology stack supporting this blog (bmf-tech.com).
+# Technologies Supporting bmf-tech
+This post discusses the technology stack that supports this blog (bmf-tech.com).
 
-# Previous bmf-tech Architecture
-First, let's look at the architecture of the previous generation of bmf-tech.
+# Previous bmf-tech Configuration
+First, let's look at the previous generation configuration of bmf-tech.
 
-<img style="width:757px;!important" alt="old_architecture" src="https://user-images.githubusercontent.com/13291041/183280770-84280c0f-e9ab-4cce-9f2d-0ea775e96ea5.png">
+<img style="width:757px;!important" alt="old_architecture" src="/assets/images/posts/bmf-tech-supporting-technologies/183280770-84280c0f-e9ab-4cce-9f2d-0ea775e96ea5.png">
 
-- The application was a monolithic architecture based on Laravel.
-  - The API was built with PHP, and the admin panel was a React-based SPA.
-    - These technologies were chosen somewhat arbitrarily at the time.
+- The application was a monolithic structure based on Laravel.
+  - The API was built with PHP, and the admin panel was a SPA built with React.
+    - Technologies were adopted somewhat randomly based on what I was using at the time.
 - Hosted on Sakura VPS.
-  - No configuration management tools (like Ansible) were used; middleware was installed and configured manually.
-    - A "warm" setup.
-- No monitoring tools were in place.
-  - Logs were checked by SSHing into the server directly.
+  - I didn't use any configuration management tools (like Ansible) and manually installed middleware and configured the setup.
+    - A "warm" configuration.
+- No monitoring tools were provided.
+  - When I wanted to see logs, I would ssh into the server and check directly.
 - Containers were not used.
-  - It was the era when Vagrant was mainstream or trending.
-- Deployment was handled via Git hooks.
+  - It was an era when Vagrant was mainstream or trending.
+- Deployment was done using git hooks to manage everything.
 
-The previous application was the first custom CMS I built, called [Rubel](https://github.com/bmf-san/Rubel).
+The application I was operating in the previous generation was the first self-made CMS called [Rubel](https://github.com/bmf-san/Rubel).
 
-I don't remember exactly how long it was in operation, but probably around 3–5 years.
+I don't remember how many years it was in operation, but I think it was around 3 to 5 years.
 
-Before [Rubel](https://github.com/bmf-san/Rubel), I ran the blog using WordPress with custom themes.
+Before operating [Rubel](https://github.com/bmf-san/Rubel), I was running a blog with an original theme on Wordpress.
 
-The progression was: WordPress (custom theme 1) → WordPress (custom theme 2) → [Rubel](https://github.com/bmf-san/Rubel) → the current system.
+Wordpress (Original Theme 1) → Wordpress (Original Theme 2) → [Rubel](https://github.com/bmf-san/Rubel) → and here we are now.
 
-The domain for bmf-tech.com was registered on November 2, 2015. Based on the domain age, the blog has been running for nearly seven years.
+When I checked the domain age of bmf-tech.com, it was registered on November 2, 2015.
 
-# Current bmf-tech Architecture
-Now, let's discuss the current architecture of bmf-tech.
+I forgot when I started operating the blog, but based on the domain age, it has been running for nearly 7 years.
 
-The same architecture is available as sample code in [gobel-example](https://github.com/bmf-san/gobel-example).
+# Current bmf-tech Configuration
+Now, let's discuss the current configuration of bmf-tech.
+
+I have published sample code with the same configuration at [gobel-example](https://github.com/bmf-san/gobel-example).
 
 ## Design
-There were several reasons for wanting to replace the system:
+There were several reasons I wanted to replace the system.
 
-- I wanted an opportunity to explore new technologies.
-  - At the time, I was mainly working with PHP and wanted to try other languages.
+- I wanted to have the opportunity to touch new technologies.
+  - At that time, I was mainly working with PHP, so I wanted a chance to work with other languages.
 - I lacked the motivation to maintain [Rubel](https://github.com/bmf-san/Rubel).
   - Laravel's update cycle was fast, requiring frequent updates.
-    - I wanted to focus more on business logic rather than framework updates.
-  - React felt overwhelming.
-    - Redux was particularly challenging.
-      - The scale didn't justify using FLUX.
-  - I wanted a structure where the API could be separated, and the frontend could be easily discarded.
-  - I wanted more control over the source code.
-    - I felt uneasy about being overly dependent on frameworks.
-  - Debugging system issues was difficult.
-  - Etc.
+    - I wanted to focus on business logic as much as possible rather than framework updates.
+  - React was beyond my capabilities.
+    - I struggled with Redux.
+      - The scale did not require FLUX.
+  - I wanted to separate the API and make it easy to discard the front end.
+  - I wanted to have more control over the source code.
+    - I felt a vague sense of crisis about being too dependent on the framework.
+  - It was difficult to trace system bugs.
+  - etc...
 
-Based on these reasons, I roughly outlined the design principles for the new system:
+Based on these reasons, I roughly thought about the design policy for the new system.
 
 - Build a system that is easy to maintain in the long term.
-  - Server configuration management:
+  - Server configuration management.
     - Properly implement IaC.
       - Ensure idempotency.
       - Make it easy to switch servers if needed.
-  - Application design:
-    - Minimize dependency on frameworks.
-    - Limit dependencies to standard libraries or custom libraries, except for the frontend.
-  - Set up a monitoring environment:
-    - Enable monitoring of system metrics, logs, and alerts.
+  - Application design.
+    - Avoid dependency on frameworks.
+    - Limit dependencies to standard libraries or custom libraries outside of the front end.
+  - Build a monitoring environment.
+    - Enable monitoring of system metrics and logs, and set alerts.
 
-## Architecture
-The architecture built based on the design principles is as follows:
+## Architecture Configuration
+The architecture configuration built based on the design policy is as follows.
 
-![スクリーンショット 2022-11-22 22 53 31](https://user-images.githubusercontent.com/13291041/203331548-95daeea8-8108-400a-91ae-35f8cddf899a.png)
+![Screenshot 2022-11-22 22 53 31](/assets/images/posts/bmf-tech-supporting-technologies/203331548-95daeea8-8108-400a-91ae-35f8cddf899a.png)
 
-- The server is hosted on ConoHa VPS instead of Sakura VPS.
+- Instead of Sakura VPS, I adopted ConoHa VPS.
   - Specs:
-    - CPU: 2 cores
-    - Memory: 1GB
-    - SSD: 100GB
-    - Image type: Ubuntu
-  - ConoHa supports OpenStack, making it easier to manage instances with Terraform.
-  - It's affordable and user-friendly.
-- Server configuration management is handled with Ansible.
+    - CPU: 2 Core
+    - Memory: 1 GB
+    - SSD: 100 GB
+    - Image Type: Ubuntu
+  - ConoHa supports OpenStack, making instance construction easy to manage with Terraform.
+  - It's also affordable and user-friendly.
+- I use Ansible for server configuration management.
 - SSL is provided by Let's Encrypt.
-  - Certificates are obtained and renewed using [go-acme/lego](https://github.com/go-acme/lego).
-    - cf. [legoでLet's encryptのSSL証明書をDNS-01方式で取得する](https://bmf-tech.com/posts/lego%E3%81%A7Let%27s%20encrypt%E3%81%AESSL%E8%A8%BC%E6%98%8E%E6%9B%B8%E3%82%92DNS-01%E6%96%B9%E5%BC%8F%E3%81%A7%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B)
-  - Initially, I tried using a custom script for DNS-01 certificate acquisition but abandoned it due to occasional failures.
+  - Certificate acquisition and renewal are handled by [go-acme/lego](https://github.com/go-acme/lego).
+    - cf. [Obtaining Let's Encrypt SSL Certificates via DNS-01 with lego](https://bmf-tech.com/posts/lego%E3%81%A7Let%27s%20encrypt%E3%81%AESSL%E8%A8%BC%E6%98%8E%E6%9B%B8%E3%82%92DNS-01%E6%96%B9%E5%BC%8F%E3%81%A7%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B)
+  - Initially, I attempted to obtain DNS-01 certificates with my own script without using lego, but I gave up because it occasionally failed to acquire them.
     - cf. [k2snow/letsencrypt-dns-conoha](https://github.com/k2snow/letsencrypt-dns-conoha)
-- Docker is used for virtualization.
-  - Docker Compose manages multiple containers.
+- I adopted Docker for virtualization.
+  - I manage multiple containers using Docker Compose.
   - I also experimented with Kubernetes.
-    - [TerraformとAnsibleを使ってKubernetes環境構築](https://bmf-tech.com/posts/Terraform%E3%81%A8Ansible%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6Kubernetes%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89)
-    - I wanted to manage a self-hosted Kubernetes cluster but struggled with bare-metal load balancers and gave up.
-- Nginx serves as the web server for the admin panel (SPA), API (headless CMS in Go), and client (user-facing interface in Go).
-  - The Nginx image is customized with a multi-stage build to include the admin panel's pre-built source code.
-  - The API and client are built as Go binaries and included in the image.
-- Monitoring is handled using Grafana as the UI.
-  - Prometheus collects server metrics, while Promtail and Loki handle container log collection.
-    - Grafana visualizes the collected data.
-  - Initially, I used the EFK stack for log collection, but the 1GB server struggled with resource usage, so I switched to Loki and Promtail.
-    - This setup is simpler and meets my requirements.
+    - [Building a Kubernetes Environment with Terraform and Ansible](https://bmf-tech.com/posts/Terraform%E3%81%A8Ansible%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6Kubernetes%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89)
+    - I wanted to operate my own Kubernetes cluster, but I gave up because I couldn't handle a bare-metal load balancer.
+- Nginx serves as the web server for the admin panel (SPA), API (headless CMS, Go), and Client (user-side screen, Go).
+  - The Nginx image is customized to include the admin panel image through multi-stage builds, so the built source code for the admin panel is included.
+  - The API and Client are images that contain binaries built with Go.
+- Monitoring is done using Grafana as the UI.
+  - Various metrics collection for the server is handled by Prometheus, while container log collection is managed by Promtail and Loki.
+    - Visualization of collected data is done with Grafana.
+  - Initially, I built an EFK stack for container log collection, but due to the 1GB server specs, resources were tight, so I switched to a configuration using Loki and Promtail.
+    - It seemed functionally sufficient and simple to use, which appeared to meet my requirements.
 
 ## Deployment
-Deployment is straightforward.
+The deployment process is not particularly complex.
 
-<img style="width:820px;!important" alt="deploy" src="https://user-images.githubusercontent.com/13291041/183280768-78484c56-5775-4691-898b-f12b42d573e3.png">
+<img style="width:820px;!important" alt="deploy" src="/assets/images/posts/bmf-tech-supporting-technologies/183280768-78484c56-5775-4691-898b-f12b42d573e3.png">
 
-- A private repository (bmf-tech) manages the container configuration.
-  - [gobel-example](https://github.com/bmf-san/gobel-example) serves as the template.
-    - While [gobel-example](https://github.com/bmf-san/gobel-example) uses the EFK stack, the private repository (bmf-tech) uses a Promtail × Loki setup.
-  - The same container configuration can be run locally as in production.
-  - Application source code is not included.
-  - All environment variables are injected externally.
-- Deployment involves running a script that:
-  - SSHs into the server.
-  - Pulls the bmf-tech repository.
-  - Uploads environment variable files via rsync.
-  - Runs `docker-compose build & up`.
-  - There is no version management.
-  - This approach causes brief downtime, but given the current traffic, it's not a significant issue.
-    - It does affect availability, though...
-- Initially, I tested deployment using Docker context but eventually abandoned it (I forgot why).
+- I have a private repository (bmf-tech) to manage the container configuration.
+  - It uses [gobel-example](https://github.com/bmf-san/gobel-example) as a template.
+    - [gobel-example](https://github.com/bmf-san/gobel-example) is an EFK stack, but the private repository (bmf-tech) uses a configuration with promtail and Loki.
+  - I can run containers in the local environment with the same container configuration as the production environment.
+  - The application source code is not included at all.
+  - All environment variables are configured to be injected from outside.
+- Deployment is done by running a script that sshs into the server, pulls bmf-tech, uploads environment variable files via rsync, and then runs docker-compose build & up.
+  - There is no particular version control.
+  - A drawback is that there is a momentary downtime, but considering the current traffic, it is not a significant issue.
+    - It affects availability, though...
+- Initially, I was testing a deployment method using docker context, but it was not adopted (I forgot the reason...)
 
 ## Source Code Management
-The following diagram illustrates how source code is managed based on the container configuration:
+The following diagram shows how source code management is structured based on the container configuration.
 
 ![NOTE - Source code management](https://github.com/bmf-san/bmf-tech-client/assets/13291041/1fb40523-cfc2-4030-82bd-10e7f38dafff)
 
-- bmf-tech:
-  - A private repository based on [gobel-example](https://github.com/bmf-san/gobel-example), managing the container configuration.
-- bmf-tech-ops:
-  - A private repository based on [gobel-ops-example](https://github.com/bmf-san/gobel-ops-example), managing server configuration, deployment scripts, and other operational code.
-- [bmf-tech-client](https://github.com/bmf-san/bmf-tech-client):
-  - A repository based on [gobel-client-example](https://github.com/bmf-san/gobel-client-example), managing the frontend source code.
-  - Images are pushed to DockerHub as public images.
-- gobel-api:
-  - [gobel-api](https://github.com/bmf-san/gobel-api):
-  - Manages the headless CMS source code.
-  - Images are pushed to DockerHub as public images.
-- gobel-admin-client:
-  - [gobel-admin-client-example](https://github.com/bmf-san/gobel-admin-client-example):
-  - Used as-is to manage the admin panel source code.
-  - Images are pushed to DockerHub as public images.
+- bmf-tech
+  - A private repository managed based on the template of [gobel-example](https://github.com/bmf-san/gobel-example) for container configuration.
+- bmf-tech-ops
+  - A private repository managed based on the template of [gobel-ops-example](https://github.com/bmf-san/gobel-ops-example) for managing server configuration and deployment scripts, related to construction and operational operations.
+- [bmf-tech-client](https://github.com/bmf-san/bmf-tech-client)
+  - A repository managed based on the template of [gobel-client-example](https://github.com/bmf-san/gobel-client-example) for managing the front-end source code.
+  - The images are pushed to DockerHub and managed as public images.
+- gobel-api
+  - [gobel-api](https://github.com/bmf-san/gobel-api)
+  - Manages the source code for the headless CMS.
+  - The images are pushed to Dockerhub and managed as public images.
+- gobel-admin-client
+  - Directly uses [gobel-admin-client-example](https://github.com/bmf-san/gobel-admin-client-example).
+  - Manages the source code for the admin panel.
+  - The images are pushed to Dockerhub and managed as public images.
 
 ## Application Design
-Details of the API, Client (user-facing interface), and Admin (admin panel) applications:
+This section discusses the applications for API, Client (user-side screen), and Admin (admin panel).
 
 ### API
-- Built as a headless CMS API.
-- Developed using Go:
-  - Simple language specifications, strong backward compatibility, fast compilation, portability with binaries, strong typing, and a rich standard library make it a good match for containers.
-- Implements Clean Architecture:
-  - While opinions on the compatibility of Go and Clean Architecture vary, I decided to try it.
-  - I believe adhering to "separation of concerns" in Clean Architecture helps maintain long-term application maintainability.
-- Minimal dependencies beyond standard packages.
+- Built as a headless CMS.
+- Uses Go.
+  - The language specification is simple, backward compatibility is well maintained, compilation is fast, and it runs as a binary when built, making it compatible with containers. It has types and a rich standard library, etc.
+- Adopted Clean Architecture.
+  - There may be mixed opinions about the compatibility of Go and Clean Architecture, but I tried it out.
+  - I believe that adhering to "separation of concerns" in Clean Architecture is one way to keep the application easy to maintain in the long term.
+- There are few dependencies outside of the standard package.
   - cf. [go.mod](https://github.com/bmf-san/gobel-api/blob/master/app/go.mod)
-- Uses REST as the API protocol.
-  - If I were building it now, I might consider gRPC.
+- The API protocol is REST.
+  - If I were to create it now, gRPC might have been a good option.
 
 ### Client
-- A web server that responds with pages.
-- Implements an API client in Go.
-- Embeds template files (HTML) into the binary.
+- A web server that serves the screen.
+- Implements the API client in Go.
+- Template files (html) are embedded in the binary.
 - Uses a custom CSS framework for design.
   - cf. [sea.css](https://github.com/bmf-san/sea.css)
 
 ### Admin
 - Admin panel.
-- Authentication uses JWT tokens.
-- Session management uses Redis.
-- Developed using Vue.js:
-  - Chosen for its simplicity and ease of use compared to React.
-    - I haven't used React recently, but I started using Vue more often and adopted it to gain experience.
-  - Experimented with Atomic Design.
-    - Not sure if it was implemented well.
-  - Upgraded from Vue 2 to Vue 3 during development.
-  - Considered introducing TypeScript but postponed it.
-    - The admin panel is not expected to require frequent feature additions, so maintenance is assumed to be limited to library updates.
-    - Considering the changing trends in frontend frameworks, I decided to keep it simple.
-- SPA is served via Nginx.
+- Authentication is done via JWT token authentication.
+- Session management is handled by Redis.
+- Adopted Vue.js.
+  - It seems simpler to write than React and easier to work with.
+    - I haven't touched React recently, but I've started using Vue in various places, so I adopted it to gain insights.
+  - I tried to challenge Atomic Design.
+    - However, I'm not sure if I did it well.
+  - During development, I updated from version 2 to 3.
+  - I considered introducing TypeScript, but I fell behind.
+    - I assumed that the admin panel wouldn't require frequent feature additions, so I planned to only maintain library updates.
+    - Considering that frontend trends may change over the years and new frameworks may emerge, I thought it might become complicated if I invested too much effort, so I kept it as simple as possible.
+- SPA delivery is handled by Nginx.
 
-## Database Design
-The database design is mostly inherited from [Rubel](https://github.com/bmf-san/Rubel), but logical and physical deletions were reviewed and redesigned in some areas. Column data types and sizes were also reviewed.
+## DB Design
+Basically, I inherited the DB design from [Rubel](https://github.com/bmf-san/Rubel), but I reviewed and redesigned some parts regarding logical and physical deletions.
+I also reviewed the data types and sizes of columns.
 
-## Migration
-Data migration was handled using a custom migration tool I developed: [migrate-rubel-to-gobel](https://github.com/bmf-san/migrate-rubel-to-gobel).
+## Migration Work
+I wrote my own data migration tool to handle data migration.
 
-Since there were no significant differences in database design, the migration tool was implemented in about 2–3 days.
+[migrate-rubel-to-gobel](https://github.com/bmf-san/migrate-rubel-to-gobel)
 
-Server migration involved setting up the new server environment, obtaining a test domain for verification, and conducting various checks. The release process was completed by simply switching DNS.
+Since there were no significant differences in DB design, I was able to implement the migration tool in about 2 to 3 days.
 
-The old environment was deleted and the contract terminated after a month of stable operation in the new environment.
+Regarding server migration, I didn't do much.
+I prepared the server environment for migration, obtained a verification domain for operation confirmation, and conducted various operational checks in the new server environment.
+I repeatedly created and destroyed to check for issues with IaC.
+
+During the release process, the migration to the new environment was completed simply by switching the DNS.
+
+I deleted the old environment after confirming that there were no issues with the new environment for about a month and completed the contract termination process.
 
 ## Monitoring
-Monitoring dashboards and alerts were created and configured in Grafana.
+Monitoring dashboards and alerts were created and configured using Grafana.
 
-The monitoring dashboards are managed as JSON files for provisioning, while alerts were initially configured via the Grafana UI.
-~(Alert provisioning was not supported at the time cf. [github.com - grafana/issues/36153](https://github.com/grafana/grafana/issues/36153)~ → Now supported and implemented provisioning for alerts.
+The monitoring dashboard is managed in JSON file format, allowing for provisioning, but alerts are set from the Grafana UI.
+~(Alerts have not yet been supported for provisioning, cf. [github.com - grafana/issues/36153](https://github.com/grafana/grafana/issues/36153)~ → This has been addressed, and provisioning is now supported.)
 
-## SLI & SLO
-Although the traffic is low, I wanted to set these up to monitor and ensure consistent availability. This is still a work in progress.
+## SLI/SLO
+It feels futile to set this up with little traffic, but I want to set it up to observe whether I can maintain a certain level of availability stably, rather than focusing on traffic. However, it is still not addressed.
 
 ## Load Testing
-I am considering conducting load testing as a future task.
+I am considering doing some load testing, so it's under consideration.
 
-## Summary of Created Tools
-Here is a summary of the tools and resources created during the development of the new bmf-tech:
+## Summary of What I Created
+Here’s a summary of what I created before releasing the new bmf-tech.
 
-- Applications:
+- Applications
   - [gobel-api](https://github.com/bmf-san/gobel-api)
   - [gobel-admin-client-example](https://github.com/bmf-san/gobel-admin-client-example)
   - [gobel-client-example](https://github.com/bmf-san/gobel-client-example)
   - [gobel-example](https://github.com/bmf-san/gobel-example)
   - [gobel-ops-example](https://github.com/bmf-san/gobel-ops-example)
-- Libraries:
-  - [goblin](https://github.com/bmf-san/goblin): Trie-based router.
-  - [golem](https://github.com/bmf-san/golem): Simple JSON logger with log level support.
-  - [goemon](https://github.com/bmf-san/goemon): Go-based dotEnv. Created but ultimately unused.
-- Tools:
-  - [migrate-rubel-to-gobel](https://github.com/bmf-san/migrate-rubel-to-gobel): Data migration tool.
-- Boilerplates (created during testing):
-  - [go-clean-architecture-web-application-boilerplate](https://github.com/bmf-san/go-clean-architecture-web-application-boilerplate): A base repository for implementing Clean Architecture in Go.
-  - [go-production-boilerplate](https://github.com/bmf-san/go-production-boilerplate): Repository for testing deployment methods using Docker context.
-  - [docker-based-monitoring-stack-boilerplate](https://github.com/bmf-san/docker-based-monitoring-stack-boilerplate): Repository created for reusing the monitoring environment setup.
-  - [terraform-ansible-openstack-boilerplate](https://github.com/bmf-san/terraform-ansible-openstack-boilerplate): Repository for testing Terraform and Ansible integration.
-  - [setup-kubernetes-cluster-on-vps-boilerplate](https://github.com/bmf-san/setup-kubernetes-cluster-on-vps-boilerplate): Repository for testing Kubernetes cluster setup on VPS. Abandoned due to issues with bare-metal load balancers.
-  - [vue-js-boilerplate](https://github.com/bmf-san/vue-js-boilerplate): Repository created to catch up with recent developments in Vue.js.
+- Libraries
+  - [goblin](https://github.com/bmf-san/goblin)
+    - Trie-based router.
+    - I spent quite a bit of time on this, so I wrote various blog posts about it.
+  - [golem](https://github.com/bmf-san/golem)
+    - Simple JSON logger. Allows specifying log levels.
+  - [goemon](https://github.com/bmf-san/goemon)
+    - Go-based dotEnv.
+    - I created it but ended up not using it.
+- Tools
+  - [migrate-rubel-to-gobel](https://github.com/bmf-san/migrate-rubel-to-gobel)
+    - Data migration tool.
+- Boilerplates (created during the verification process)
+  - [go-clean-architecture-web-application-boilerplate](https://github.com/bmf-san/go-clean-architecture-web-application-boilerplate)
+    - A repository created to provide a base for doing Clean Architecture in Go.
+  - [go-production-boilerplate](https://github.com/bmf-san/go-production-boilerplate)
+    - A repository for testing deployment methods using docker context.
+  - [docker-based-monitoring-stack-boilerplate](https://github.com/bmf-san/docker-based-monitoring-stack-boilerplate)
+    - A repository created for reuse when building a monitoring environment.
+  - [terraform-ansible-openstack-boilerplate](https://github.com/bmf-san/terraform-ansible-openstack-boilerplate)
+    - A repository tested for using Terraform and Ansible together.
+  - [setup-kubernetes-cluster-on-vps-boilerplate](https://github.com/bmf-san/setup-kubernetes-cluster-on-vps-boilerplate)
+    - A repository tested for building a Kubernetes cluster on VPS. I gave up because I couldn't handle a bare-metal load balancer.
+  - [vue-js-boilerplate](https://github.com/bmf-san/vue-js-boilerplate)
+    - A repository created to catch up on how recent Vue.js looks.
 
-While creating these resources, I also wrote blog posts, gave lightning talks, and engaged in other activities, which significantly extended the time it took to release the new bmf-tech.
+While creating the above, I wrote blog posts, gave lightning talks, and did various other things, so I spent quite a bit of time on the release of the new bmf-tech.
 
-## Future Plans
-There were times when I paused development or considered switching to WordPress or another existing system, but I am relieved to have finally completed a functional system.
+## Future Prospects
+I have occasionally paused development, strayed off course, and considered switching to Wordpress or another existing system several times, but I have successfully reached a manageable operational state.
 
-There are still many unresolved issues and things I want to do, which I plan to address gradually as a hobby.
+There are various issues I want to address and things I want to do, so I plan to tackle them as a hobby on the side.
 
-Rather than just building something, I want to focus on how to build and operate systems effectively. I see this blog system as an investment in that learning process.
+I want to refine not just what to create, but how to create it and how to operate it, so I plan to invest in this through the blog system.
 
-The reasons I run my own blog are primarily for learning:
+The reason I operate my self-made blog is strongly tied to learning. It has provided me with many learning opportunities, and I feel I can continue to learn even more in the future.
 
-- For personal growth:
-  - Writing articles helps organize my thoughts.
-  - Building, hosting, and using my own blog system provides learning opportunities.
-- To gain experience in system construction and operation:
-  - Operating a system where I have full control offers valuable learning experiences.
-- To earn a little extra money:
-  - While living off ad revenue is a joke, it would be nice to cover server costs.
-  - I don't focus on monetization, but in the past 1–2 years, I've managed to cover a portion of the annual operating costs, which makes me think this might be worthwhile in the long run.
+- For my own learning.
+  - Writing articles to organize my learning.
+  - By creating and hosting my own blog system, I believe it will provide me with further learning opportunities.
+- Gaining system construction and operation experience.
+  - I believe that operating a system I fully understand will allow me to learn a lot.
+- Earning some pocket money.
+  - While I joke about wanting to live off advertising revenue, I do hope to earn at least enough to cover server operation costs.
+  - I consider it a side benefit, so I am not focusing on monetization.
+    - Over the past 1-2 years, I have been making some profit that covers a portion of the annual operating costs, so I optimistically think there may be some value in continuing this.
 
-For now, I plan to continue operating the current system at a relaxed pace.
+For the time being, I believe I can continue to operate the current system, so I plan to take my time with it.

@@ -1,5 +1,5 @@
 ---
-title: Setting Up a Resource Monitoring Environment with Prometheus and Grafana
+title: Setting Up Resource Monitoring with Prometheus and Grafana
 slug: prometheus-grafana-resource-monitoring
 date: 2018-09-15T00:00:00Z
 author: bmf-san
@@ -8,32 +8,31 @@ categories:
 tags:
   - Prometheus
   - Grafana
-description: A guide to building a resource monitoring environment using Prometheus and Grafana.
 translation_key: prometheus-grafana-resource-monitoring
 ---
 
 # Overview
-This is a memo on setting up a resource monitoring environment using Prometheus and Grafana.
+I built a resource monitoring environment using Prometheus and Grafana, so here are my notes.
 
 # Environment
 - Sakura VPS
 - CentOS 7 series
 
 # Installing Prometheus
-Download Prometheus following the instructions on [Prometheus - Getting Started](https://prometheus.io/docs/prometheus/latest/getting_started/).
+Follow the instructions on [Prometheus - Getting Started](https://prometheus.io/docs/prometheus/latest/getting_started/) to download Prometheus.
 
-After downloading, start Prometheus and confirm that you can access the dashboard.
+Once downloaded, start Prometheus and confirm that you can access the dashboard.
 
 If the port is not open, make sure to open it.
 
 # Installing node_exporter
 Download node_exporter from [Prometheus - node_exporter](https://prometheus.io/download/#node_exporter).
 
-Start node_exporter as well.
+Make sure to start it as well.
 
-Similarly, check the port.
+Check the port similarly.
 
-Add the following to the `static_configs` section in `Prometheus.yml`:
+Add the following to the `static_configs` section of `Prometheus.yml`:
 
 ```
 - targets: ['localhost:9100']
@@ -43,43 +42,43 @@ Run `killall prometheus` and then restart Prometheus.
 
 # Installing Grafana
 Download Grafana following the instructions on [Grafana - Installing on RPM-based Linux (CentOS, Fedora, OpenSuse, RedHat)](http://docs.grafana.org/installation/debian/).
-
-Add the Yum Repository and install it.
+I added the Yum Repository and installed it.
 
 After installation, start Grafana and confirm that you can access it.
 
-If the port is not open, make sure to open it.
+Again, if the port is not open, make sure to open it.
 
 # Integrating Prometheus and Grafana
 ## Login
-Once Grafana is installed, access Grafana and log in.
+Once Grafana is installed, access Grafana and log in first.
 
-The default login credentials are username: `admin` and password: `admin`.
+The initial login information is username: admin, password: admin.
 
-After logging in, you can change the login credentials as needed.
+You can change the login information after logging in, so adjust it as needed.
 
-## Setting the Data Source
-Click the Windows-like icon in the left menu, then click Dashboards → Home.
+## Setting Up Data Source
+There is a Windows-like icon in the left menu, click it and then click Dashboards → Home.
 
 To set up the Data Source, select Add data source.
 
-Refer to [Sakura Knowledge - Creating Monitoring Dashboards with Prometheus and Grafana](https://knowledge.sakura.ad.jp/12058/) for configuration details.
+Refer to [Sakura Knowledge - Creating a Monitoring Dashboard by Combining Prometheus and Grafana](https://knowledge.sakura.ad.jp/12058/) for the setup method.
 
-Due to the placeholder design in the HTTP settings URL, I mistakenly thought the default value was pre-configured. If you proceed without setting it, the graphs will not generate properly. Don’t forget to configure it.
+I mistakenly thought the URL in the HTTP settings was the default due to the placeholder design, and continued working without setting it, which resulted in the graphs not being generated properly. Don't forget to set it up.
 
-## Preparing a Dashboard Template
+## Preparing Dashboard Template
 Prepare a dashboard template for Prometheus from Grafana Labs.
 
-Use [Prometheus system by Thomas Cheronneau](https://grafana.com/dashboards/159) and click `Copy ID to Clipboard`.
+Click `Copy ID to Clipboard` on [Prometheus system by Thomas Cheronneau](https://grafana.com/dashboards/159).
 
-In the left menu, click the + icon → Dashboards → Import.
+Select the + icon in the left menu → Dashboards → Import.
 
-Paste the ID into the Grafana.com Dashboard field and click Load.
+Paste the ID into the Grafana.com Dashboard → Click Load.
 
-In the Options section, select `prometheus` (the Prometheus Data Source) for the Data source.
+Select prometheus (Prometheus Data source) in the Options Data source.
 
-# Impressions
-This is a rough summary, but this setup should allow for monitoring. It seems you can also configure alerts, so I’d like to try that at some point.
+# Thoughts
+I summarized this roughly, but it should allow for monitoring.
+It seems that alerts can also be set up properly, so I would like to try that eventually.
 
 # References
-- [Qiita - Prometheus Setup Guide](https://qiita.com/tSU_RooT/items/fec5b9217417758988ae)
+- [Qiita - Prometheus Environment Setup Procedure](https://qiita.com/tSU_RooT/items/fec5b9217417758988ae)

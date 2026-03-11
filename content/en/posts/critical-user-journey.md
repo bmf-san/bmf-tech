@@ -1,5 +1,5 @@
 ---
-title: What is a Critical User Journey?
+title: What is a Critical User Journey
 slug: critical-user-journey
 date: 2024-08-15T00:00:00Z
 author: bmf-san
@@ -8,228 +8,227 @@ categories:
 tags:
   - Critical User Journey
   - SLO
-description: An overview of critical user journeys in the context of SLOs.
 translation_key: critical-user-journey
 ---
 
 # Overview
-I wanted to learn more about critical user journeys in the context of SLOs.
+I became interested in the Critical User Journey in the context of SLOs.
 
-This post summarizes what I found about critical user journeys.
+Here, I summarize what I found out about Critical User Journeys.
 
-# What is a Critical User Journey?
-A critical user journey represents the most important experiences or key paths that users take to achieve specific goals within a service.
+# What is a Critical User Journey
+It represents the most important experiences for users of a service and the main paths to achieve specific goals.
 
-It helps identify key touchpoints and obstacles in the process of achieving user goals.
+It allows us to identify important touchpoints and obstacles in the process of users achieving their goals.
 
-It clarifies the goals users need to achieve and identifies tasks and subtasks.
+It clarifies the goals users should achieve and identifies tasks and subtasks.
 
 # Examples of Critical User Journeys
 ## Example 1: Purchase Process on an E-commerce Site
 
 ### User Goal:
-To purchase a specific product online.
+The user wants to purchase a specific product online.
 
 ### Touchpoints:
 
 #### Product Search and Discovery
-- Users search for products using a search bar or browse categories.
-- A recommendation engine displays related products.
+- The user searches for products using the search bar or browses categories.
+- Related products are displayed by the recommendation engine.
 
-#### Product Details Review
-- Users access the product detail page to check price, reviews, and specifications.
-- Users view product images or videos.
+#### Product Detail Confirmation
+- The user accesses the product detail page to check the price, reviews, and specifications.
+- The user views product images and videos.
 
-#### Adding to Cart
-- Users add desired products to their cart.
-- Users review the list of items in their cart on the cart page.
+#### Add to Cart
+- The user adds the desired product to the cart.
+- The user checks the list of products intended for purchase on the cart page.
 
 #### Checkout
-- Users proceed to the payment page and enter shipping and payment information.
-- Users apply discount codes for savings.
+- The user proceeds to the payment page and enters shipping information and payment method.
+- The user applies a coupon code for discounts.
 
 #### Order Confirmation
-- Users review their order and confirm the purchase.
-- Users receive an order confirmation email.
+- The user performs a final check and confirms the order.
+- The user receives an order confirmation email.
 
-#### Product Delivery
-- Users receive the product and check for any issues.
-- If necessary, users leave reviews or contact customer support.
+#### Product Receipt
+- The user receives the product and checks for any issues.
+- The user may post a review or contact customer support if necessary.
 
 ### Pain Points:
-- Difficulty in finding products or irrelevant search results.
-- Limited payment options or failed transactions during checkout.
-- Delayed delivery or defective products.
+- If product search is not smooth or search results do not meet expectations.
+- Limited payment methods or payment failures during checkout.
+- Delays in delivery or defects in the product.
 
-## Example 2: Signing Up for a Subscription Service
+## Example 2: Registration for a Subscription Service
 
 ### User Goal:
-To sign up for a music streaming service, create playlists, and listen to music.
+The user wants to register for a music streaming service, create playlists, and listen to music.
 
 ### Touchpoints:
 
-#### Visiting the Website and Signing Up
-- Users visit the service's website and review the service details.
-- Users create an account and select a subscription plan.
+#### Website Visit and Registration
+- The user accesses the service's website and checks the service details.
+- The user creates an account and selects a subscription plan.
 
-#### Downloading and Installing the App
-- Users download and install the mobile app.
+#### App Download and Installation
+- The user downloads and installs the mobile app.
 
-#### Logging In and Setting Up
-- Users log in to their account and set up their profile.
-- Users select their favorite music genres and artists.
+#### Login and Setup
+- The user logs into the account and sets up the profile.
+- The user selects preferred music genres and artists.
 
-#### Searching and Playing Music
-- Users search for their favorite music and start streaming.
-- Users create custom playlists and add favorite songs.
+#### Music Search and Playback
+- The user searches for favorite music and starts streaming playback.
+- The user creates custom playlists and adds favorite songs.
 
-#### Setting Up Offline Playback
-- Users download music for offline playback.
+#### Offline Playback Setup
+- The user downloads music and sets it up for offline playback.
 
 ### Pain Points:
-- Complicated registration process with too many input fields.
-- Difficult-to-use app interface or inability to find desired music.
-- Unstable download functionality or issues with offline playback.
+- The registration process is complicated with too much information to input.
+- The app interface is difficult to use, making it hard to find desired music.
+- The download feature is unstable, causing issues with offline playback.
 
-## Example 3: Transferring Money via a Banking App
+## Example 3: Money Transfer Using a Banking App
 
 ### User Goal:
-To transfer money to a specified account using a banking app.
+The user wants to use the banking app to transfer money to a specified account.
 
 ### Touchpoints:
 
-#### Launching the App and Logging In
-- Users launch the banking app and log in using a security code or fingerprint authentication.
+#### App Launch and Login
+- The user launches the banking app and logs in using a security code or fingerprint authentication.
 
-#### Selecting the Recipient
-- Users select an existing recipient or enter new recipient details.
+#### Selecting Transfer Destination
+- The user selects a transfer destination or inputs new transfer destination information.
 
-#### Entering the Transfer Amount
-- Users input the transfer amount and add a purpose or note.
+#### Entering Transfer Amount
+- The user inputs the transfer amount and adds a purpose or memo for the transfer.
 
-#### Reviewing and Approving
-- Users review the transfer details and approve the transaction (e.g., using a one-time password).
-- Users receive a notification confirming the transfer.
+#### Confirmation and Approval
+- The user reviews the transfer details and approves the transfer (using a one-time password, etc.).
+- The user receives a notification of transfer completion.
 
 ### Pain Points:
-- Complicated login process or failed authentication.
-- Unclear error messages when entering incorrect recipient details.
-- Delays in real-time transfer processing.
+- The login process is complicated, and authentication may fail.
+- If the transfer destination information is entered incorrectly, the error message may be unclear.
+- Transfers may not reflect in real-time.
 
-# Critical User Journeys and SLOs
-Critical user journeys are closely related to defining reliability.
+# Critical User Journey and SLO
+The Critical User Journey is related to the definition of reliability.
 
-Achieving SLOs is considered to support critical journeys.
+Achieving SLOs is thought to support the Critical User Journey.
 
-By defining critical user journeys and using them as a basis for defining SLOs, the contribution of SLOs to reliability can be enhanced.
+By defining the Critical User Journey and then defining SLOs based on it, we can enhance the degree to which SLOs contribute to reliability.
 
 ## Example 1: Purchase Process on an E-commerce Site
 
-**CUJ: Adding products to the cart and completing checkout**
+**CUJ: Add product to cart and checkout**
 
 **SLO Settings:**
 
 - **Product Search and Discovery**
-  - **Page Load Time**: Product search result pages load within 2 seconds.
-  - **Recommendation System Accuracy**: Related product suggestions are 80% accurate.
+  - **Page Load Time**: The load time for the product search results page is within 2 seconds.
+  - **Recommendation System Accuracy**: Related product suggestions display appropriate products with 80% accuracy.
 
-- **Product Details Review**
-  - **Accuracy of Product Details**: Information on product pages (price, reviews, specifications) is 100% accurate.
-  - **Image/Video Load Time**: Product images and videos load within 1 second.
+- **Product Detail Confirmation**
+  - **Accuracy of Product Details**: Information on the product page (price, reviews, specifications) is 100% accurate.
+  - **Image and Video Load Time**: Product images and videos are displayed within 1 second.
 
-- **Adding to Cart**
-  - **Cart Update Time**: Adding a product to the cart reflects within 2 seconds.
-  - **Cart Information Accuracy**: Items added to the cart are displayed correctly 99.9% of the time.
+- **Add to Cart**
+  - **Cart Update Time**: The action of adding a product to the cart is reflected within 2 seconds.
+  - **Cart Information Consistency**: The rate at which products added to the cart are displayed accurately is 99.9% or higher.
 
 - **Checkout**
-  - **Payment Processing Time**: Payment processing completes within 3 seconds.
-  - **Payment Error Rate**: Payment error rate is below 0.1%.
-  - **Coupon Code Application**: Coupon codes are applied in real-time.
+  - **Payment Processing Time**: The processing of the payment page is completed within 3 seconds.
+  - **Payment Error Rate**: The error rate for payment processing is below 0.1%.
+  - **Coupon Code Application**: The application of coupon codes is reflected in real-time.
 
 - **Order Confirmation**
-  - **Order Confirmation Email Delivery**: Confirmation emails are sent within 5 minutes of order completion.
+  - **Order Confirmation Email Delivery**: The time from order confirmation to the delivery of the confirmation email is within 5 minutes.
 
-- **Product Delivery**
-  - **Delivery Time**: Average delivery time from shipment to completion is within 3 business days.
-  - **Delivery Error Rate**: Delivery errors (delays, incorrect deliveries, etc.) are below 0.5%.
+- **Product Receipt**
+  - **Delivery Time**: The average time from shipment to delivery completion is within 3 business days.
+  - **Delivery Error Rate**: The rate of delivery errors (delays, misdeliveries, etc.) is below 0.5%.
 
 **Reliability Perspective:**
 
-SLOs are set to ensure the reliability required for users to smoothly complete the purchase process. Metrics such as error rates and response times are critical indicators of reliability.
+These settings are established to ensure the reliability necessary for users to smoothly complete the purchase process. In particular, error rates and response times are important indicators that directly demonstrate reliability.
 
 ---
 
-## Example 2: Signing Up for a Subscription Service
+## Example 2: Registration for a Subscription Service
 
-**CUJ: Signing up for a music streaming service, creating playlists, and listening to music**
+**CUJ: Register for a music streaming service, create playlists, and listen to music**
 
 **SLO Settings:**
 
-- **Visiting the Website and Signing Up**
-  - **Website Uptime**: 99.9% or higher uptime.
-  - **Registration Form Response Time**: Form submission processes within 2 seconds.
+- **Website Visit and Registration**
+  - **Website Uptime**: 99.9% uptime.
+  - **Registration Form Response Time**: Form submissions are processed within 2 seconds.
 
-- **Downloading and Installing the App**
-  - **Download Success Rate**: Download and installation success rate is 99.9% or higher.
-  - **Installation Time**: App installation completes within 1 minute.
+- **App Download and Installation**
+  - **Download Success Rate**: The success rate for downloads and installations is 99.9% or higher.
+  - **Installation Time**: The app installation is completed within 1 minute.
 
-- **Logging In and Setting Up**
-  - **Login Success Rate**: Login attempts succeed 99.9% of the time.
-  - **Profile Setup Response Time**: Profile settings reflect in real-time.
+- **Login and Setup**
+  - **Login Success Rate**: The success rate for login attempts is 99.9% or higher.
+  - **Profile Setting Reflection Time**: Profile settings are reflected in real-time.
 
-- **Searching and Playing Music**
-  - **Search Response Time**: Search results display within 1 second.
+- **Music Search and Playback**
+  - **Search Result Response Time**: Search results are displayed within 1 second.
   - **Playback Start Time**: Music playback starts within 3 seconds.
-  - **Streaming Interruption Rate**: Music streaming interruption rate is below 0.05%.
+  - **Streaming Interruption Rate**: The music interruption rate is below 0.05%.
 
-- **Setting Up Offline Playback**
-  - **Download Success Rate**: Music download success rate is 99.9% or higher.
-  - **Offline Playback Error Rate**: Offline playback error rate is below 0.1%.
+- **Offline Playback Setup**
+  - **Download Success Rate**: The success rate for music downloads is 99.9% or higher.
+  - **Offline Playback Error Rate**: The error rate during offline playback is below 0.1%.
 
 **Reliability Perspective:**
 
-SLOs ensure users can complete the process from registration to music playback without issues. Key reliability indicators include installation and login success rates, as well as playback speed.
+This ensures that users can smoothly proceed from registration to music playback. In particular, the success rates for installation and login, as well as the speed of playback start, are key indicators of reliability.
 
 ---
 
-## Example 3: Transferring Money via a Banking App
+## Example 3: Money Transfer Using a Banking App
 
-**CUJ: Using a banking app to transfer money to a specified account**
+**CUJ: Use the banking app to transfer money to a specified account**
 
 **SLO Settings:**
 
-- **Launching the App and Logging In**
-  - **Login Success Rate**: Login attempts succeed 99.9% of the time.
-  - **Login Processing Time**: Login processes complete within 3 seconds.
+- **App Launch and Login**
+  - **Login Success Rate**: The success rate for login attempts is 99.9% or higher.
+  - **Login Processing Time**: The login process is completed within 3 seconds.
 
-- **Selecting the Recipient**
-  - **Recipient Selection Response Time**: Selecting a recipient completes within 2 seconds.
+- **Selecting Transfer Destination**
+  - **Transfer Destination Selection Response Time**: Selecting the transfer destination is completed within 2 seconds.
 
-- **Entering the Transfer Amount**
-  - **Amount Input Accuracy**: Entered amounts are processed with 100% accuracy.
+- **Entering Transfer Amount**
+  - **Amount Input Consistency**: The rate at which the entered amount is processed accurately is 100%.
 
-- **Reviewing and Approving**
-  - **Review Process Response Time**: Reviewing transfer details completes within 2 seconds.
-  - **Approval Process Error Rate**: Transfer approval error rate is below 0.05%.
-  - **One-Time Password Delivery Time**: OTP is received within 30 seconds.
+- **Confirmation and Approval**
+  - **Confirmation Process Response Time**: The confirmation of transfer details is completed within 2 seconds.
+  - **Approval Process Error Rate**: The error rate during transfer approval is below 0.05%.
+  - **One-Time Password Reception Time**: OTP is received within 30 seconds.
 
 - **Transfer Completion Notification**
-  - **Notification Delivery Time**: Transfer completion notification is sent within 5 minutes.
+  - **Notification Delivery Time**: Notifications are delivered within 5 minutes after transfer completion.
 
 **Reliability Perspective:**
 
-SLOs ensure the accuracy and speed of the transfer process, enabling users to complete transactions without issues. Key reliability indicators include login and transfer success rates, as well as timely notification delivery.
+SLOs guarantee the accuracy and speed of transfer processing, allowing users to complete the transfer process without issues. The success rates for login and transfer processing, as well as the timely delivery of notifications, are key indicators of reliability.
 
 # Thoughts
-I realized the importance of defining critical user journeys when considering SLOs.
+I understood the importance of defining the Critical User Journey when considering SLOs.
 
-Organizing based on user experience, rather than user flows (expected user actions or screen transitions in the specifications), makes the definition of reliability clearer.
+I felt that organizing based on user experience, rather than user flow (the expected behavior flow for users, as per specifications), clarifies the definition of reliability.
 
-By being able to answer questions like "Why was this SLO defined?" or "Why is this SLO important?", it becomes easier to involve stakeholders outside of development in the design and operation of SLOs.
+Having clear answers to questions like "Why was this SLO defined?" and "Why is this SLO important?" makes it easier to involve non-developers in the design and operation of SLOs.
 
 # References
 - [sre.google - Modeling User Journeys](https://sre.google/workbook/implementing-slos/#modeling-user-journeys)
 - [cloud.google.com - Standardizing the SLO Design Process](https://cloud.google.com/blog/ja/products/devops-sre/how-to-design-good-slos-according-to-google-sres)
-- [popinsight.jp - In-depth Explanation of Critical User Journeys by a Google UX Manager](https://popinsight.jp/blog/?p=40141)
-- [speakerdeck.com - Improving SLI/SLO Using Critical User Journeys / #mackerelio](https://speakerdeck.com/heleeen/slo-critical-user-journey)
+- [popinsight.jp - Comprehensive Explanation of Critical User Journey by a Current Google UX Manager](https://popinsight.jp/blog/?p=40141)
+- [speakerdeck.com - Improving SLI/SLO Using Critical User Journey](https://speakerdeck.com/heleeen/slo-critical-user-journey)
 - [u-site.jp - Comparison of User Journeys and User Flows](https://u-site.jp/alertbox/user-journeys-vs-user-flows)

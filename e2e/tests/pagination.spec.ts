@@ -20,7 +20,7 @@ test.describe('JA root pagination', () => {
 
   test('page 2 loads with articles', async ({ page }) => {
     await page.goto('/ja/page/2/');
-    await expect(page.locator('ul.article-list li').first()).toBeVisible();
+    await expect(page.locator('a.card').first()).toBeVisible();
     await expect(page.locator('.pagination-info')).toContainText('2 /');
   });
 
@@ -30,7 +30,7 @@ test.describe('JA root pagination', () => {
     const text = await page.locator('.pagination-info').textContent();
     const total = text!.split('/')[1]?.trim();
     await page.goto(`/ja/page/${total}/`);
-    await expect(page.locator('ul.article-list li').first()).toBeVisible();
+    await expect(page.locator('a.card').first()).toBeVisible();
     await expect(page.locator('.pagination-info')).toContainText(`${total} /`);
   });
 
@@ -53,13 +53,13 @@ test.describe('Tag pagination /ja/tags/Golang/', () => {
 
   test('page 2 loads with articles', async ({ page }) => {
     await page.goto('/ja/tags/Golang/page/2/');
-    await expect(page.locator('ul.article-list li').first()).toBeVisible();
+    await expect(page.locator('a.card').first()).toBeVisible();
     await expect(page.locator('.pagination-info')).toContainText('2 / 3');
   });
 
   test('page 3 (last) loads with articles', async ({ page }) => {
     await page.goto('/ja/tags/Golang/page/3/');
-    await expect(page.locator('ul.article-list li').first()).toBeVisible();
+    await expect(page.locator('a.card').first()).toBeVisible();
     await expect(page.locator('.pagination-info')).toContainText('3 / 3');
   });
 
@@ -81,13 +81,13 @@ test.describe('Category pagination /ja/categories/アーキテクチャ/', () =>
 
   test('page 2 loads with articles', async ({ page }) => {
     await page.goto(`${BASE}page/2/`);
-    await expect(page.locator('ul.article-list li').first()).toBeVisible();
+    await expect(page.locator('a.card').first()).toBeVisible();
     await expect(page.locator('.pagination-info')).toContainText('2 / 5');
   });
 
   test('page 5 (last) loads with articles', async ({ page }) => {
     await page.goto(`${BASE}page/5/`);
-    await expect(page.locator('ul.article-list li').first()).toBeVisible();
+    await expect(page.locator('a.card').first()).toBeVisible();
     await expect(page.locator('.pagination-info')).toContainText('5 / 5');
   });
 

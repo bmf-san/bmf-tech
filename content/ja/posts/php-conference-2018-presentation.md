@@ -1,14 +1,15 @@
 ---
-title: "PHPカンファレンス2018のLT枠で登壇してきた"
-slug: "php-conference-2018-presentation"
-date: 2018-12-16
+title: PHPカンファレンス2018のLT枠で登壇してきた
+slug: php-conference-2018-presentation
+date: 2018-12-16T00:00:00Z
 author: bmf-san
 categories:
-  - "ポエム"
+  - ポエム
 tags:
-  - "PHPカンファレンス"
-draft: false
+  - PHPカンファレンス
+translation_key: php-conference-2018-presentation
 ---
+
 
 # PHPカンファレンス2018
 「20代が考えるエンジニアキャリア論」というテーマでLTをしてきた。

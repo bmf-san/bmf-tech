@@ -12,8 +12,6 @@ tags:
 translation_key: lean-startup
 ---
 
-[Lean Startup](https://amzn.to/3yeN2IC) is a book I read.
+[Lean Startup](https://amzn.to/3yeN2IC) is a bible-like book on the subject.
 
-It's considered a bible on Lean Startup.
-
-You can learn what Lean Startup, based on the Lean manufacturing method, is all about.
+You can learn what Lean Startup is, based on the Lean Production System.

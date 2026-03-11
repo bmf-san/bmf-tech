@@ -1,23 +1,24 @@
 ---
-title: "OAuth2、OIDCのキャッチアップのための資料"
-slug: "resources-for-catching-up-on-oauth2-oidc"
-date: 2021-10-05
+title: OAuth2、OIDCのキャッチアップのための資料
+slug: resources-for-catching-up-on-oauth2-oidc
+date: 2021-10-05T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "FIDO"
-  - "IAM"
-  - "LDAP"
-  - "OAuth"
-  - "OpenIDConnect"
-  - "SAML"
-  - "SSO"
-  - "認可"
-  - "認証"
-  - "リンク集"
-draft: false
+  - FIDO
+  - IAM
+  - LDAP
+  - OAuth
+  - OpenIDConnect
+  - SAML
+  - SSO
+  - 認可
+  - 認証
+  - リンク集
+translation_key: resources-for-catching-up-on-oauth2-oidc
 ---
+
 
 # 概要
 OAuth2、OIDCのキャッチアップで読み漁った資料など。

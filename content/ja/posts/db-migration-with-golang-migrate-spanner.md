@@ -1,16 +1,17 @@
 ---
-title: "golang-migrateを使ってspannerのDBマイグレーションをする"
-slug: "db-migration-with-golang-migrate-spanner"
-date: 2021-03-17
+title: golang-migrateを使ってspannerのDBマイグレーションをする
+slug: db-migration-with-golang-migrate-spanner
+date: 2021-03-17T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Google Cloud Platform"
-  - "Golang"
-  - "Spanner"
-draft: false
+  - Google Cloud Platform
+  - Golang
+  - Spanner
+translation_key: db-migration-with-golang-migrate-spanner
 ---
+
 
 # 概要
 spannerのDBマイグレーションで、[golang-migrate](https://github.com/golang-migrate/migrate)を使ったのでメモ。

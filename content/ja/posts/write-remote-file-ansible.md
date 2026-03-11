@@ -1,14 +1,15 @@
 ---
-title: "Ansibleでリモートのファイルに書き込みをする"
-slug: "write-remote-file-ansible"
-date: 2017-09-26
+title: Ansibleでリモートのファイルに書き込みをする
+slug: write-remote-file-ansible
+date: 2017-09-26T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Ansible"
-draft: false
+  - Ansible
+translation_key: write-remote-file-ansible
 ---
+
 
 # 概要
 Ansibleでリモートのファイルに書き込みをするタスク。よく使うやつ。

@@ -1,14 +1,15 @@
 ---
-title: "FuelPHPの2023年3月現在の現況"
-slug: "fuelphp-status-march-2023"
-date: 2023-03-01
+title: FuelPHPの2023年3月現在の現況
+slug: fuelphp-status-march-2023
+date: 2023-03-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "FuelPHP"
-draft: false
+  - FuelPHP
+translation_key: fuelphp-status-march-2023
 ---
+
 
 # 概要
 2023年3月現在のFuelPHPの現況についてざっくり調べたことをまとめる。

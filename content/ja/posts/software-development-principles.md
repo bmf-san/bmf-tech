@@ -1,14 +1,15 @@
 ---
-title: "ソフトウェア開発の法則"
-slug: "software-development-principles"
-date: 2018-05-07
+title: ソフトウェア開発の法則
+slug: software-development-principles
+date: 2018-05-07T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "ソフトウェア開発"
-draft: false
+  - ソフトウェア開発
+translation_key: software-development-principles
 ---
+
 
 # 概要
 # ポステルの法則

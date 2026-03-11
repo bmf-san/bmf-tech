@@ -1,14 +1,15 @@
 ---
-title: "デプロイ戦略について"
-slug: "deployment-strategies"
-date: 2023-06-03
+title: デプロイ戦略について
+slug: deployment-strategies
+date: 2023-06-03T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "デプロイ"
-draft: false
+  - デプロイ
+translation_key: deployment-strategies
 ---
+
 
 # 概要
 デプロイ戦略についてまとめる。

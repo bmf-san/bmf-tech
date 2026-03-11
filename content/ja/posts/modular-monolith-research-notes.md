@@ -1,14 +1,15 @@
 ---
-title: "モジュラモノリスについて調べたことをメモ"
-slug: "modular-monolith-research-notes"
-date: 2023-09-25
+title: モジュラモノリスについて調べたことをメモ
+slug: modular-monolith-research-notes
+date: 2023-09-25T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "モジュラモノリス"
-draft: false
+  - モジュラモノリス
+translation_key: modular-monolith-research-notes
 ---
+
 
 # 概要　
 モジュラモノリスについて調べたことをメモする。

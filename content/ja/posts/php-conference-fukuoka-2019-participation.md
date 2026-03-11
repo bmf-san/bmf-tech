@@ -1,15 +1,16 @@
 ---
-title: "PHPカンファレンス福岡2019に参加・登壇してきました"
-slug: "php-conference-fukuoka-2019-participation"
-date: 2019-07-04
+title: PHPカンファレンス福岡2019に参加・登壇してきました
+slug: php-conference-fukuoka-2019-participation
+date: 2019-07-04T00:00:00Z
 author: bmf-san
 categories:
-  - "ポエム"
+  - ポエム
 tags:
-  - "PHP"
-  - "PHPカンファレンス"
-draft: false
+  - PHP
+  - PHPカンファレンス
+translation_key: php-conference-fukuoka-2019-participation
 ---
+
 
 # PHPカンファレンス福岡2019に参加・登壇してきました
 PHPカンファレンス福岡に初めて参加してきました。

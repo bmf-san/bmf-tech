@@ -1,15 +1,16 @@
 ---
-title: "シンボリックリンクとハードリンクの違い"
-slug: "symbolic-vs-hard-links"
-date: 2018-05-24
+title: シンボリックリンクとハードリンクの違い
+slug: symbolic-vs-hard-links
+date: 2018-05-24T00:00:00Z
 author: bmf-san
 categories:
-  - "OS"
+  - OS
 tags:
-  - "シンボリックリンク"
-  - "ハードリンク"
-draft: false
+  - シンボリックリンク
+  - ハードリンク
+translation_key: symbolic-vs-hard-links
 ---
+
 
 # 概要
 シンボリックリンクとハードリンクの違いについてまとめる

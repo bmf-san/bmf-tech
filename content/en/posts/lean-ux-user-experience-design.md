@@ -1,5 +1,5 @@
 ---
-title: Lean UX ― Designing User Experiences with Lean Thinking
+title: Lean UX - User Experience Design with Lean Thinking
 slug: lean-ux-user-experience-design
 date: 2016-12-27T00:00:00Z
 author: bmf-san
@@ -13,6 +13,6 @@ tags:
 translation_key: lean-ux-user-experience-design
 ---
 
-[Lean UX ―リーン思考によるユーザエクスペリエンス・デザイン](https://amzn.to/3UW33vZ)を読んだ。
+[Lean UX - User Experience Design with Lean Thinking](https://amzn.to/3UW33vZ) is a book I read.
 
-UXにおいてリーンの考え方を実践するアプローチについて書かれている。
+It discusses an approach to practicing lean thinking in UX.

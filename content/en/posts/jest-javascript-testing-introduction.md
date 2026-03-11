@@ -1,5 +1,5 @@
 ---
-title: Getting Started with JavaScript Testing Using Jest
+title: Getting Started with JavaScript Testing using Jest
 slug: jest-javascript-testing-introduction
 date: 2018-09-20T00:00:00Z
 author: bmf-san
@@ -12,20 +12,19 @@ tags:
   - babel-jest
   - ESModules
   - jest
-description: An introduction to writing JavaScript tests with Jest.
 translation_key: jest-javascript-testing-introduction
 ---
 
 # Overview
-Write JavaScript tests using Jest.
+Let's write JavaScript tests using Jest.
 
 # Preparation
-Since we want to use jest and ESModules, install `babel-preset-2015`.
-(Note: `babel-jest` is included with jest.)
+Since we want to use jest and ESModules, we need to install babel-preset-2015.
+(babel-jest is provided with jest.)
 
 `npm install --save-dev jest babel-preset-2015`
 
-The contents of `.babelrc` should look like this:
+The contents of `.babelrc` look like this.
 
 ```
 {
@@ -33,7 +32,7 @@ The contents of `.babelrc` should look like this:
 }
 ```
 
-The `package.json` file should look like this:
+The `package.json` looks like this.
 
 ```
 {
@@ -47,7 +46,7 @@ The `package.json` file should look like this:
 }
 ```
 
-The directory structure should look like this:
+The directory structure looks like this.
 `tree -a -I "node_modules"`
 
 ```
@@ -56,27 +55,27 @@ The directory structure should look like this:
 ├── package-lock.json
 ├── package.json
 ├── src
-│   ├── esmodules
-│   │   └── calc.js
-│   └── native
-│       └── calc.js
+│   ├── esmodules
+│   │   └── calc.js
+│   └── native
+│       └── calc.js
 └── test
     ├── esmodules
-    │   └── calc.test.js
+    │   └── calc.test.js
     └── native
         └── calc.test.js
 
 6 directories, 7 files
 ```
 
-There are two patterns for creating test files:
-- Files located under a directory named `__tests__` are considered test files.
-- Files with extensions `*.spec.js` or `*.test.js` are considered test files.
+There are two patterns for creating test files.
+- Files located under a directory named `__tests__` are treated as test files.
+- Files with the extensions `*.spec.js` or `*.test.js` are treated as test files.
 
-In this case, we will use the latter format and place the test files in the `test` directory.
+This time, we will use the latter format and place the test files in the `test` directory.
 
 # Writing Tests for Native JavaScript
-Implement functions for addition and subtraction.
+We will implement a function that performs addition and subtraction.
 
 `./src/native/calc.js`
 
@@ -96,7 +95,7 @@ module.exports = {
 }
 ```
 
-Test whether each function returns the correct calculation result.
+We will test whether each function returns the correct calculation result.
 
 `./test/native/calc.test.js`
 
@@ -114,12 +113,12 @@ describe('Calc - native', () => {
 })
 ```
 
-`describe(name, fn)` creates a block to group multiple tests into a test suite.
+`describe(name, fn)` creates a block that groups multiple tests into a test suite.
 
-Run the test:
+Run the tests.
 `npm test ./test/native/calc.test.js`
 
-Test results:
+Test results.
 ```
 > @ test /Users/k.takeuchi/localdev/project/til/javascript/test/jest
 > jest "./test/native/calc.test.js"
@@ -136,8 +135,8 @@ Time:        0.887s, estimated 1s
 Ran all test suites matching /.\/test\/native\/calc.test.js/i.
 ```
 
-# Writing Tests for JavaScript Using ESModules
-Create a class that implements methods for addition and subtraction.
+# Writing Tests using ESModules
+We will create a class that implements methods for addition and subtraction.
 
 `./src/esmodules/calc.js`
 
@@ -161,7 +160,7 @@ export default class Calc {
 }
 ```
 
-Test whether each method returns the correct calculation result.
+We will test whether each method returns the correct calculation result.
 
 `./test/esmodules/calc.test.js`
 
@@ -182,13 +181,15 @@ describe('Calc - esmodules', () => {
 ```
 
 # Matchers
-Refer to [Jest - Expect](https://jestjs.io/docs/expect).
+Refer to [Jest - Expect](https://jestjs.io/docs/ja/expect).
 
 # Thoughts
-I think Jest's API is well-organized and easy to understand, even for first-time users. The documentation was also easy to read. It was easier than expected to get started with testing, which makes me want to actively write JavaScript tests.
+I think the Jest API is well organized to be easy to understand even for beginners.
+The documentation was also easy to read.
+I found it surprisingly easy to get started with testing, so I want to actively write tests for JavaScript.
 
 # References
-- [jest](https://jestjs.io/docs/getting-started)
+- [jest](https://jestjs.io/docs/ja/getting-started)
 - [babel-preset-es2015](https://babeljs.io/docs/en/babel-preset-es2015)
 - [github - dooburt/jest-test](https://github.com/dooburt/jest-test)
 - [github - LarsBergqvist/jest_playground](https://github.com/LarsBergqvist/jest_playground)

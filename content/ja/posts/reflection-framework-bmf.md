@@ -1,15 +1,16 @@
 ---
-title: "選択と集中を促す振り返りフレームワーク「bmf」"
-slug: "reflection-framework-bmf"
-date: 2025-07-23
+title: 選択と集中を促す振り返りフレームワーク「bmf」
+slug: reflection-framework-bmf
+date: 2025-07-23T00:00:00Z
 author: bmf-san
 categories:
-  - "開発プロセス"
+  - 開発プロセス
 tags:
-  - "振り返り"
-  - "KPT"
-draft: false
+  - 振り返り
+  - KPT
+translation_key: reflection-framework-bmf
 ---
+
 
 振り返りと言えば KPT（Keep / Problem / Try）が定番であるが、自分なりのオリジナリティ溢れるフレームワークを考えたくなったのでそのアイデアを記す。
 

@@ -1,17 +1,18 @@
 ---
-title: "redux-formのサーバーサイドバリデーションでpromissをいじってたら「Uncaught (in promise) error」"
-slug: "redux-form-promise-error"
-date: 2017-10-01
+title: redux-formのサーバーサイドバリデーションでpromissをいじってたら「Uncaught (in promise) error」
+slug: redux-form-promise-error
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "React"
-  - "Redux"
-  - "redux-form"
-  - "Tips"
-draft: false
+  - React
+  - Redux
+  - redux-form
+  - Tips
+translation_key: redux-form-promise-error
 ---
+
 
 # 概要
 redux-formでサーバーサイドのバリデーションを実装している時に、promissをいじってredux-formの`SubmissionError`を投げていたら`Uncaught (in promise) error`と怒られた話です。

@@ -1,14 +1,15 @@
 ---
-title: "Spannerの知見メモ"
-slug: "spanner-knowledge-notes"
-date: 2024-03-03
+title: Spannerの知見メモ
+slug: spanner-knowledge-notes
+date: 2024-03-03T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "Spanner"
-draft: false
+  - Spanner
+translation_key: spanner-knowledge-notes
 ---
+
 
 # 概要
 Cloud Spannerの知見を漁ったのでメモ。走り書きなのでカテゴライズしていない。

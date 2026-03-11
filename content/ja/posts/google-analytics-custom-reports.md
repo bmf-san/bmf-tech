@@ -1,14 +1,15 @@
 ---
-title: "Google Analyticsのカスタムレポートをつくってみた"
-slug: "google-analytics-custom-reports"
-date: 2018-10-12
+title: Google Analyticsのカスタムレポートをつくってみた
+slug: google-analytics-custom-reports
+date: 2018-10-12T00:00:00Z
 author: bmf-san
 categories:
-  - "ツール"
+  - ツール
 tags:
-  - "Google Analytics"
-draft: false
+  - Google Analytics
+translation_key: google-analytics-custom-reports
 ---
+
 
 # Google Analyticsのカスタムレポートをつくってみた
 

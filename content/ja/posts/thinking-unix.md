@@ -1,15 +1,16 @@
 ---
-title: "UNIXという考え方"
-slug: "thinking-unix"
-date: 2018-05-18
+title: UNIXという考え方
+slug: thinking-unix
+date: 2018-05-18T00:00:00Z
 author: bmf-san
 categories:
-  - "OS"
+  - OS
 tags:
-  - "UNIX"
-  - "本"
-draft: false
+  - UNIX
+  - 本
+translation_key: thinking-unix
 ---
+
 
 [UNIXという考え方](https://amzn.to/4adUXDh)を読んだ。
 

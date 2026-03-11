@@ -11,19 +11,18 @@ tags:
   - React
   - History API
   - Router
-description: Learn how to build a custom router using React and the History API.
 translation_key: react-history-api-router
 ---
 
 # Overview
 
 # Preparation
-First, understand the History API. GO TO MDN.
+First, let's understand the History API. GO TO MDN.
 
 - [MDN - History](https://developer.mozilla.org/ja/docs/Web/API/History)
-- [MDN - Manipulating the browser history](https://developer.mozilla.org/ja/docs/Web/Guide/DOM/Manipulating_the_browser_history)
+- [MDN - Manipulating the Browser History](https://developer.mozilla.org/ja/docs/Web/Guide/DOM/Manipulating_the_browser_history)
 
-If you're short on time, understanding just `pushState` and `window.popstate` should suffice.
+For those in a hurry, just understanding `pushState` and `window.popstate` should suffice.
 
 # Specifications
 This router will support the following URLs:
@@ -32,23 +31,23 @@ This router will support the following URLs:
 - `/post/:id`
 - `/post/:id/:title`
 
-Query parameters are not supported.
+It does not support query parameters.
 
 # Packages Used
-We'll skip over the React-related packages.
+We will skip the React-related packages.
 
-Other than React, we'll use just one package:
+There is only one package used besides React:
 
 [pillarjs/path-to-regexp](https://github.com/pillarjs/path-to-regexp)
 
-This package handles regular expressions for URLs efficiently.
+This package helps with regular expressions for the URL part.
 
-Someday, I want to write my own regular expressions, but for now, I'll rely on this package.
+I would like to write my own regular expressions eventually, but for now, I will rely on this package.
 
 # Implementation
 
 ## Create Components for Navigation and Pages
-Prepare components for navigation and the pages corresponding to each navigation link.
+Prepare components corresponding to navigation and the pages.
 
 ```
 src/
@@ -60,32 +59,32 @@ src/
 ```
 
 ## Implement Routing
-Let's implement the routing.
+Now, let's implement the routing.
 
-We'll prepare two components: `Router` and `Route`.
+We will prepare two components: `Router` and `Route`.
 
-`Router` is a component that switches rendering based on the URL.
+`Router` is the component that handles rendering based on the URL.
 
-`Route` is a component that simply wraps an anchor (`a`) tag.
+`Route` is just a component that wraps an anchor tag.
 
-Additionally, we'll create a file called `routes.js` to define the routing rules.
+We will also prepare a file called `routes.js` to describe the routing conventions.
 
-`routes.js` will contain an array of objects that map paths to their corresponding components.
+`routes.js` is an array of objects that describes the paths and their corresponding components.
 
-By now, you might have guessed the sequence of routing operations:
+At this point, you might have an idea of the overall routing process:
 
 **Initial State (First View)**
-1. Retrieve the current URL information.
+1. Get the current URL information.
 2. Render the component that matches the current URL information.
 
-The URL information is stored in the state.
+The URL information is held as State.
 
-**Navigation**
-1. Retrieve the path of the clicked link.
-2. Use the History API's `pushState` to add to the history and navigate.
+**Transition**
+1. Get the path of the clicked link.
+2. Add to history and transition using the History API's `pushState`.
 3. Re-render the component.
 
-The state is updated, and the component is re-rendered.
+The State is updated, and the component is re-rendered.
 
 The implementation of each component looks like this:
 
@@ -256,35 +255,35 @@ class App extends Component {
 export default App;
 ```
 
-*Note: The strange line breaks in the JSX code might be due to improper ESLint settings.*
+*The strange line breaks in jsx are probably due to not properly configuring eslint...*
 
-I referred heavily to [You might not need React Router](https://medium.freecodecamp.org/you-might-not-need-react-router-38673620f3d).
+I referred to [You might not need React Router](https://medium.freecodecamp.org/you-might-not-need-react-router-38673620f3d) quite a bit.
 
-The most challenging part of the implementation was figuring out how to retrieve and manage parameter information (e.g., `:id`). Thanks to the awesome library `path-to-regexp`, I was able to overcome this issue.
+The challenging part of the implementation was figuring out how to retrieve and maintain the information of parameters (like :id), but thanks to the awesome library `path-to-regexp`, I was able to overcome that.
 
 # Github
-Here is the source code for this implementation:
+Here is the source code for this project.
 
 [bmf-san/rubel-router](https://github.com/bmf-san/rubel-router)
 
-It is also published on npm:
+It is also published on npm.
 
 [rubel-router](https://www.npmjs.com/package/rubel-router)
 
 # Thoughts
-Using EventEmitter or Observer might make the implementation cleaner... (I need to study more).
+I feel like it could be cleaner if I used EventEmitter or Observer... (lack of study)
 
 # References
-## Articles
+## Reference Articles
 - [You might not need React Router](https://medium.freecodecamp.org/you-might-not-need-react-router-38673620f3d)
 - [Building a React-based Application](https://reactjsnews.com/building-a-react-based-application)
 - [Routing in React, the uncomplicated way](https://hackernoon.com/routing-in-react-the-uncomplicated-way-b2c5ffaee997)
 - [MDN - History](https://developer.mozilla.org/ja/docs/Web/API/History)
-- [MDN - Manipulating the browser history](https://developer.mozilla.org/ja/docs/Web/Guide/DOM/Manipulating_the_browser_history)
-- [Using the History API](http://www.allinthemind.biz/markup/javascript/history_api.html)
-- [Memo on manipulating URLs with JavaScript](https://qiita.com/PianoScoreJP/items/fa66f357419fece0e531)
+- [MDN - Manipulating the Browser History](https://developer.mozilla.org/ja/docs/Web/Guide/DOM/Manipulating_the_browser_history)
+- [Trying out the History API](http://www.allinthemind.biz/markup/javascript/history_api.html)
+- [Notes on manipulating URLs with JavaScript](https://qiita.com/PianoScoreJP/items/fa66f357419fece0e531)
 
-## Source Code
+## Reference Sources
 - [jsfiddle - frenzzy](https://jsfiddle.net/frenzzy/4ota5fag/2/)
 - [jsfiddle - janfoeh](http://jsfiddle.net/janfoeh/2SCbv/)
 - [jsfiddle - rgrove](http://jsfiddle.net/rgrove/WsHXm/)

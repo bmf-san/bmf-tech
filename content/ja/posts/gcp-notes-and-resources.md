@@ -1,14 +1,15 @@
 ---
-title: "GCPについての覚え書き"
-slug: "gcp-notes-and-resources"
-date: 2023-05-22
+title: GCPについての覚え書き
+slug: gcp-notes-and-resources
+date: 2023-05-22T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Google Cloud Platform"
-draft: false
+  - Google Cloud Platform
+translation_key: gcp-notes-and-resources
 ---
+
 
 # 概要
 Google Cloud認定アソシエイトクラウドエンジニアの試験に向けた勉強をしている際の雑多な覚え書き。

@@ -1,16 +1,17 @@
 ---
-title: "ソフトウェアアーキテクチャメトリクス ―アーキテクチャ品質を改善する10のアドバイス"
-slug: "software-architecture-metrics"
-date: 2025-01-25
+title: ソフトウェアアーキテクチャメトリクス ―アーキテクチャ品質を改善する10のアドバイス
+slug: software-architecture-metrics
+date: 2025-01-25T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "本"
-  - "アーキテクチャ"
-  - "メトリクス"
-draft: false
+  - 本
+  - アーキテクチャ
+  - メトリクス
+translation_key: software-architecture-metrics
 ---
+
 
 [ソフトウェアアーキテクチャメトリクス ―アーキテクチャ品質を改善する10のアドバイス](https://amzn.to/4jsa9T9)を読んだ。
 

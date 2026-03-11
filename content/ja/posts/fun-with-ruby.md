@@ -1,15 +1,16 @@
 ---
-title: "たのしいRuby"
-slug: "fun-with-ruby"
-date: 2024-05-04
+title: たのしいRuby
+slug: fun-with-ruby
+date: 2024-05-04T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Ruby"
-  - "本"
-draft: false
+  - Ruby
+  - 本
+translation_key: fun-with-ruby
 ---
+
 
 [たのしいRuby](https://amzn.to/3UV14YP)を読んだ。
 

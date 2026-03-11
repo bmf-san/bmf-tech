@@ -1,14 +1,15 @@
 ---
-title: "RubyのProcとlamdaについて"
-slug: "ruby-proc-lambda"
-date: 2024-05-15
+title: RubyのProcとlamdaについて
+slug: ruby-proc-lambda
+date: 2024-05-15T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Ruby"
-draft: false
+  - Ruby
+translation_key: ruby-proc-lambda
 ---
+
 
 # 概要
 RubyのProcとlamdaについてかく。

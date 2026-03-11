@@ -1,7 +1,14 @@
 import { test, expect } from '@playwright/test';
 
+// ── EN root index / ──────────────────────────────────────────────────────────
+
 test.describe('English root index /', () => {
-  test('page title', async ({ page }) => {
+  test('page loads with status 200', async ({ page }) => {
+    const res = await page.goto('/');
+    expect(res?.status()).toBe(200);
+  });
+
+  test('page title is "bmf-tech"', async ({ page }) => {
     await page.goto('/');
     await expect(page).toHaveTitle('bmf-tech');
   });
@@ -11,35 +18,72 @@ test.describe('English root index /', () => {
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
   });
 
-  test('all navigation links are present', async ({ page }) => {
+  test('navbar is present with Home, About, Feed links', async ({ page }) => {
     await page.goto('/');
-    const nav = page.locator('.nav-links');
-    // Scope to nav to avoid duplicates from article list items
-    await expect(nav.locator('.locale-toggle')).toHaveText('JA');
-    await expect(nav.getByRole('link', { name: 'Tags' })).toBeVisible();
-    await expect(nav.getByRole('link', { name: 'Categories' })).toBeVisible();
+    const nav = page.locator('nav.navbar');
+    await expect(nav).toBeVisible();
+    await expect(nav.getByRole('link', { name: 'Home' })).toBeVisible();
     await expect(nav.getByRole('link', { name: 'About' })).toBeVisible();
     await expect(nav.getByRole('link', { name: 'Feed' })).toBeVisible();
   });
 
-  test('article list has items', async ({ page }) => {
+  test('locale toggle shows "JA" badge and links to /ja/', async ({ page }) => {
     await page.goto('/');
-    const items = page.locator('ul.article-list li');
-    await expect(items.first()).toBeVisible();
-    expect(await items.count()).toBeGreaterThan(0);
+    const toggle = page.locator('nav.navbar .badge-primary');
+    await expect(toggle).toHaveText('JA');
+    const href = await toggle.locator('..').getAttribute('href');
+    expect(href).toBe('/ja/');
   });
 
-  test('pagination info is visible', async ({ page }) => {
+  test('article cards are present (a.card elements)', async ({ page }) => {
     await page.goto('/');
-    await expect(page.locator('.pagination-info')).toContainText('/');
+    const cards = page.locator('a.card');
+    await expect(cards.first()).toBeVisible();
+    expect(await cards.count()).toBeGreaterThan(0);
   });
 
+  test('each card has a title, date and category', async ({ page }) => {
+    await page.goto('/');
+    // Second card (nth(1)) is a regular card with h3; first is hero card with h2
+    const card = page.locator('a.card').nth(1);
+    await expect(card.locator('h3')).toBeVisible();
+    await expect(card.locator('.text-xs.text-secondary')).toBeVisible();
+    await expect(card.locator('.badge-secondary')).toBeVisible();
+  });
+
+  test('article cards link to /posts/', async ({ page }) => {
+    await page.goto('/');
+    const href = await page.locator('a.card').first().getAttribute('href');
+    expect(href).toMatch(/^\/posts\//);
+  });
+
+  test('sidebar has Categories section', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.locator('aside')).toBeVisible();
+  });
+
+  test('pagination is present on page 1', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.locator('ul.pagination')).toBeVisible();
+    await expect(page.locator('.pagination-link.active')).toBeVisible();
+  });
+
+  test('footer is present with Sitemap, GitHub, X links', async ({ page }) => {
+    await page.goto('/');
+    const footer = page.locator('footer');
+    await expect(footer).toBeVisible();
+    await expect(footer.getByRole('link', { name: 'Sitemap' })).toBeVisible();
+    await expect(footer.getByRole('link', { name: 'GitHub' })).toBeVisible();
+    await expect(footer.getByRole('link', { name: /X/ })).toBeVisible();
+  });
 });
 
-test.describe('English article /posts/hello-world/', () => {
-  const URL = '/posts/hello-world/';
+// ── EN paginated index /page/{n}/ ─────────────────────────────────────────────
 
-  test('page loads with status 200', async ({ page }) => {
+test.describe('English paginated index /page/2/', () => {
+  const URL = '/page/2/';
+
+  test('page 2 loads with status 200', async ({ page }) => {
     const res = await page.goto(URL);
     expect(res?.status()).toBe(200);
   });
@@ -49,16 +93,43 @@ test.describe('English article /posts/hello-world/', () => {
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
   });
 
-  test('article title h1 is visible', async ({ page }) => {
+  test('article cards are present', async ({ page }) => {
     await page.goto(URL);
-    await expect(page.locator('article header h1').first()).toBeVisible();
+    await expect(page.locator('a.card').first()).toBeVisible();
+    expect(await page.locator('a.card').count()).toBeGreaterThan(0);
   });
 
-  test('article-content is present and not empty', async ({ page }) => {
+  test('pagination shows page 2 as active', async ({ page }) => {
     await page.goto(URL);
-    const content = page.locator('.article-content');
-    await expect(content).toBeVisible();
-    const text = await content.textContent();
-    expect(text?.trim().length).toBeGreaterThan(0);
+    await expect(page.locator('.pagination-link.active')).toBeVisible();
+  });
+});
+
+// ── EN paginated index last page ─────────────────────────────────────────────
+
+test.describe('English paginated index: last page and beyond', () => {
+  test('last page loads with articles', async ({ page }) => {
+    // Discover total page count from page 1
+    await page.goto('/');
+    const links = page.locator('ul.pagination .pagination-item a');
+    const count = await links.count();
+    // The last numeric page link (exclude prev/next arrows)
+    let lastPage = 1;
+    for (let i = 0; i < count; i++) {
+      const text = await links.nth(i).textContent();
+      const n = parseInt(text?.trim() ?? '0');
+      if (!isNaN(n) && n > lastPage) lastPage = n;
+    }
+    if (lastPage <= 1) {
+      test.skip(); // only one page, nothing to test
+      return;
+    }
+    await page.goto(`/page/${lastPage}/`);
+    await expect(page.locator('a.card').first()).toBeVisible();
+  });
+
+  test('beyond last page returns 404', async ({ page }) => {
+    const res = await page.goto('/page/9999/');
+    expect(res?.status()).toBe(404);
   });
 });

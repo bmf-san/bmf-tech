@@ -1,17 +1,18 @@
 ---
-title: "CircleCI2.0でPHPUnitのコードカバレッジを出力する"
-slug: "circleci-phpunit-code-coverage"
-date: 2018-08-13
+title: CircleCI2.0でPHPUnitのコードカバレッジを出力する
+slug: circleci-phpunit-code-coverage
+date: 2018-08-13T00:00:00Z
 author: bmf-san
 categories:
-  - "テスト"
+  - テスト
 tags:
-  - "Docker"
-  - "CircleCI"
-  - "CircleCI2.0"
-  - "phpunit"
-draft: false
+  - Docker
+  - CircleCI
+  - CircleCI2.0
+  - phpunit
+translation_key: circleci-phpunit-code-coverage
 ---
+
 
 # 概要
 CircleCi2.0でPHPUnitのコードカバレッジを出力する

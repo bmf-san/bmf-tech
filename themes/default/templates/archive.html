@@ -1,8 +1,12 @@
 {{template "head" .}}
 <body class="bg-body">
 {{template "header" .}}
-<main class="container mx-auto px-4 py-10">
+<main class="container mx-auto py-10">
 
+  {{/* Page header */}}
+  {{$first := index .Articles 0}}
+  {{$year := ""}}
+  {{if $first}}{{$year = formatDate "2006" $first.FrontMatter.Date}}{{end}}
   <div class="mb-8">
     <ol class="breadcrumbs mb-4">
       <li class="breadcrumbs-item">
@@ -10,26 +14,40 @@
         <span class="breadcrumbs-separator">/</span>
       </li>
       <li class="breadcrumbs-item active">
-        <span class="breadcrumbs-link">Archive</span>
+        <span class="breadcrumbs-link">Archive{{if $year}} {{$year}}{{end}}</span>
       </li>
     </ol>
-    <h1 class="text-3xl font-bold">Archive</h1>
+    <h1 class="text-3xl font-bold mb-2">Archive{{if $year}} {{$year}}{{end}}</h1>
+    <p class="text-secondary">{{len .Articles}} articles</p>
   </div>
 
   {{if .Articles}}
-  <div class="card mb-8">
-    <div class="card-body">
-      <ul>
-        {{range .Articles}}
-        <li class="flex items-center gap-3 py-3 border-b border-slate-200">
-          <span class="text-xs text-secondary whitespace-nowrap">{{formatDate "2006-01-02" .FrontMatter.Date}}</span>
+  <div class="grid gap-4 mb-8">
+    {{range .Articles}}
+    {{- $img := index .FrontMatter.Extra "image"}}
+    {{- if not $img}}{{$img = printf "/ogp/%s.png" .FrontMatter.Slug}}{{end}}
+    <a href="{{.URL}}" class="card no-underline">
+      <img src="{{$img}}" alt="{{.FrontMatter.Title}}" class="w-full object-cover rounded-t max-h-40">
+      <div class="card-body">
+        <div class="flex items-center gap-2 mb-2 flex-wrap">
+          {{range .FrontMatter.Categories}}<span class="badge badge-secondary">{{.}}</span>{{end}}
           {{if .Locale}}<span class="badge {{if eq .Locale "ja"}}badge-warning{{else}}badge-info{{end}} text-xs">{{.Locale}}</span>{{end}}
-          <a href="{{.URL}}" class="font-medium text-sm">{{.FrontMatter.Title}}</a>
-        </li>
+          <span class="text-xs text-secondary">{{formatDate "2006-01-02" .FrontMatter.Date}}</span>
+        </div>
+        <h3 class="font-semibold text-primary mb-1">{{.FrontMatter.Title}}</h3>
+        {{if .FrontMatter.Description}}
+        <p class="text-sm text-secondary leading-relaxed line-clamp-2">{{.FrontMatter.Description}}</p>
         {{end}}
-      </ul>
-    </div>
+        {{if .FrontMatter.Tags}}
+        <div class="flex flex-wrap gap-1 mt-2">
+          {{range .FrontMatter.Tags}}<span class="badge badge-light text-secondary">#{{.}}</span>{{end}}
+        </div>
+        {{end}}
+      </div>
+    </a>
+    {{end}}
   </div>
+  {{template "pagination" .}}
   {{else}}
   <p class="text-secondary mt-4">No articles found.</p>
   {{end}}

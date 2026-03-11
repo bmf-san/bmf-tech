@@ -1,22 +1,23 @@
 ---
-title: "認証・認可の基本"
-slug: "authentication-authorization-basics"
-date: 2020-11-05
+title: 認証・認可の基本
+slug: authentication-authorization-basics
+date: 2020-11-05T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "FIDO"
-  - "IAM"
-  - "LDAP"
-  - "OAuth"
-  - "OpenIDConnect"
-  - "SAML"
-  - "SSO"
-  - "認可"
-  - "認証"
-draft: false
+  - FIDO
+  - IAM
+  - LDAP
+  - OAuth
+  - OpenIDConnect
+  - SAML
+  - SSO
+  - 認可
+  - 認証
+translation_key: authentication-authorization-basics
 ---
+
 
 # 概要
 最近認証サービスの開発に携わっているので今一度基本的なことを再確認しておく意味でまとめる。

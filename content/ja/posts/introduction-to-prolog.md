@@ -1,15 +1,16 @@
 ---
-title: "Prologへの入門"
-slug: "introduction-to-prolog"
-date: 2025-08-09
+title: Prologへの入門
+slug: introduction-to-prolog
+date: 2025-08-09T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Prolog"
-  - "本"
-draft: false
+  - Prolog
+  - 本
+translation_key: introduction-to-prolog
 ---
+
 
 [Prologへの入門](https://amzn.to/45HIIQb)を読んだ。
 

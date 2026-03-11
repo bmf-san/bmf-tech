@@ -1,18 +1,19 @@
 ---
-title: "Laravel Homesteadを使ったLaravelの環境構築"
-slug: "laravel-homestead-setup"
-date: 2018-04-11
+title: Laravel Homesteadを使ったLaravelの環境構築
+slug: laravel-homestead-setup
+date: 2018-04-11T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Laravel"
-  - "Vagrant"
-  - "VirtualBox"
-  - "composer"
-  - "homestead"
-draft: false
+  - Laravel
+  - Vagrant
+  - VirtualBox
+  - composer
+  - homestead
+translation_key: laravel-homestead-setup
 ---
+
 
 # 概要
 Homesteadを触る機会があったのでざっくりまとめる。

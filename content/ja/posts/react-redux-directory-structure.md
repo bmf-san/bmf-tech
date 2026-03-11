@@ -1,16 +1,17 @@
 ---
-title: "React+Reduxのディレクトリ構成検討"
-slug: "react-redux-directory-structure"
-date: 2017-10-01
+title: React+Reduxのディレクトリ構成検討
+slug: react-redux-directory-structure
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "ES6"
-  - "React"
-  - "Redux"
-draft: false
+  - ES6
+  - React
+  - Redux
+translation_key: react-redux-directory-structure
 ---
+
 
 React+Reduxをアプリケーションに導入しようとするときに、そのディレクトリ構成について悩んでいたのですが、良さ気な記事を見かけたのでまとめてみました。
 

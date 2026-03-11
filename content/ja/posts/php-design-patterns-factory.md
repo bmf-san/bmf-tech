@@ -1,19 +1,20 @@
 ---
-title: "PHPで学ぶデザインパターン - Factory・Factory Method・Abstract Factory"
-slug: "php-design-patterns-factory"
-date: 2018-12-01
+title: PHPで学ぶデザインパターン - Factory・Factory Method・Abstract Factory
+slug: php-design-patterns-factory
+date: 2018-12-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "デザインパターン"
-  - "GoF"
-  - "PHP"
-  - "アブストラクトファクトリーパターン"
-  - "ファクトリーパターン"
-  - "ファクトリーメソッドパターン"
-draft: false
+  - デザインパターン
+  - GoF
+  - PHP
+  - アブストラクトファクトリーパターン
+  - ファクトリーパターン
+  - ファクトリーメソッドパターン
+translation_key: php-design-patterns-factory
 ---
+
 
 この記事は[PHPで学ぶデザインパターン Advent Calendar 2018](https://qiita.com/advent-calendar/2018/php-design-pattern)の記事です。
 

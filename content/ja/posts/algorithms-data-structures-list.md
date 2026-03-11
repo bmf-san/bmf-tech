@@ -1,15 +1,16 @@
 ---
-title: "アルゴリズムとデータ構造 - リスト"
-slug: "algorithms-data-structures-list"
-date: 2019-10-18
+title: アルゴリズムとデータ構造 - リスト
+slug: algorithms-data-structures-list
+date: 2019-10-18T00:00:00Z
 author: bmf-san
 categories:
-  - "アルゴリズムとデータ構造"
+  - アルゴリズムとデータ構造
 tags:
-  - "連結リスト"
-  - "片方向リスト"
-draft: false
+  - 連結リスト
+  - 片方向リスト
+translation_key: algorithms-data-structures-list
 ---
+
 
 # 概要
 [アルゴリズム図鑑](https://www.shoeisha.co.jp/book/detail/9784798149776)を参考に、アルゴリズムとデータ構造を学ぶ。
@@ -134,7 +135,7 @@ func main() {
     - 追加する位置を特定する→追加位置の一つ手前のポインタと追加するノードのポインタを調整
     - 追加する位置を特定する時は、ループ内で次のノードのポインタを参照して次のノードの値が指定した値とマッチするか判定する
 - ノート
-![singly_linked_list](https://user-images.githubusercontent.com/13291041/67028620-a0d79b00-f146-11e9-8d47-a5d0d933d15d.jpg)
+![singly_linked_list](/assets/images/posts/algorithms-data-structures-list/67028620-a0d79b00-f146-11e9-8d47-a5d0d933d15d.jpg)
 
 # 参考
 - [Naim Ibrahim - Golang singly linked list](https://www.naimibrahim.me/2019/06/08/golang-singly-linked-list/) 

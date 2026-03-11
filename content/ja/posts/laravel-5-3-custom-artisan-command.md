@@ -1,16 +1,17 @@
 ---
-title: "Laravel5.3で自作artisanコマンド.md"
-slug: "laravel-5-3-custom-artisan-command"
-date: 2017-09-26
+title: Laravel5.3で自作artisanコマンド.md
+slug: laravel-5-3-custom-artisan-command
+date: 2017-09-26T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Laravel"
-  - "リポジトリーパターン"
-  - "artisan"
-draft: false
+  - Laravel
+  - リポジトリーパターン
+  - artisan
+translation_key: laravel-5-3-custom-artisan-command
 ---
+
 
 今携わっているプロジェクトでRepositoryパターンを導入しているのですが、Repository関連のファイルを自動で生成するコマンドがあったら便利だなと思い、作ってみました。
 

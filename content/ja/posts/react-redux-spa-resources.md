@@ -1,16 +1,17 @@
 ---
-title: "ReactとReduxでSPAを構築するために参考にした記事"
-slug: "react-redux-spa-resources"
-date: 2017-10-01
+title: ReactとReduxでSPAを構築するために参考にした記事
+slug: react-redux-spa-resources
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "React"
-  - "Redux"
-  - "SPA"
-draft: false
+  - React
+  - Redux
+  - SPA
+translation_key: react-redux-spa-resources
 ---
+
 
 雑メモです。
 ReactとReduxでSPAで作ろうとした時に参考にしたリポジトリや記事です。

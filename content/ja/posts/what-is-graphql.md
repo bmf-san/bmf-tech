@@ -1,17 +1,18 @@
 ---
-title: "GraphQLとは"
-slug: "what-is-graphql"
-date: 2018-06-14
+title: GraphQLとは
+slug: what-is-graphql
+date: 2018-06-14T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "API"
-  - "HTTP"
-  - "REST"
-  - "GraphQL"
-draft: false
+  - API
+  - HTTP
+  - REST
+  - GraphQL
+translation_key: what-is-graphql
 ---
+
 
 # GraphQLとは
 - Facebookが開発

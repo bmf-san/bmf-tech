@@ -1,16 +1,17 @@
 ---
-title: "パーフェクトRuby on Rails"
-slug: "perfect-ruby-on-rails"
-date: 2024-05-04
+title: パーフェクトRuby on Rails
+slug: perfect-ruby-on-rails
+date: 2024-05-04T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Ruby on Rails"
-  - "Ruby"
-  - "本"
-draft: false
+  - Ruby on Rails
+  - Ruby
+  - 本
+translation_key: perfect-ruby-on-rails
 ---
+
 
 [パーフェクトRuby on Rails](https://amzn.to/3UEbQB4)を読んだ。
 

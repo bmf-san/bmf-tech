@@ -1,18 +1,19 @@
 ---
-title: "要件と制約の違い"
-slug: "requirements-vs-constraints"
-date: 2026-01-09
+title: 要件と制約の違い
+slug: requirements-vs-constraints
+date: 2026-01-09T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "制約"
-  - "要件"
-  - "要求"
-  - "設計"
-  - "アーキテクチャ"
-draft: false
+  - 制約
+  - 要件
+  - 要求
+  - 設計
+  - アーキテクチャ
+translation_key: requirements-vs-constraints
 ---
+
 
 ソフトウェア開発の現場で、「要件（Requirements）」と「制約（Constraints）」の違いに悩んだことはないだろうか。
 

@@ -1,19 +1,20 @@
 ---
-title: "GitHub Agentic Workflowを使ったLLMプロンプト管理・評価基盤"
-slug: "github-agentic-workflow-llm-prompt-management"
-date: 2026-02-25
+title: GitHub Agentic Workflowを使ったLLMプロンプト管理・評価基盤
+slug: github-agentic-workflow-llm-prompt-management
+date: 2026-02-25T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "LLM as judge"
-  - "Prompt as code"
-  - "Prompt Ops"
-  - "コンテキストエンジニアリング"
-  - "プロンプトエンジニアリング"
-  - "Continuous AI"
-draft: false
+  - LLM as judge
+  - Prompt as code
+  - Prompt Ops
+  - コンテキストエンジニアリング
+  - プロンプトエンジニアリング
+  - Continuous AI
+translation_key: github-agentic-workflow-llm-prompt-management
 ---
+
 
 LLMをプロダクトに組み込む開発が増えるにつれて、プロンプトをソフトウェアエンジニアリングのプロセスに取り入れていく場面が増えてきた。「プロンプトの品質を継続的に管理したい」「プロンプト自体の管理や評価を最適化するアプローチを模索したい」という課題感から、コードと同等のプロセスでプロンプトを扱う仕組みを検討してみた。
 

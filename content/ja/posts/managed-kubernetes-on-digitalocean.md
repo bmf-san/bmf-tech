@@ -1,16 +1,17 @@
 ---
-title: "DigitalOceanでマネージドKubernetesを使ってみる"
-slug: "managed-kubernetes-on-digitalocean"
-date: 2021-03-07
+title: DigitalOceanでマネージドKubernetesを使ってみる
+slug: managed-kubernetes-on-digitalocean
+date: 2021-03-07T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Kubernetes"
-  - "VPS"
-  - "DigitalOcean"
-draft: false
+  - Kubernetes
+  - VPS
+  - DigitalOcean
+translation_key: managed-kubernetes-on-digitalocean
 ---
+
 
 # DigitalOceanでマネージドKubernetesを使ってみる
 プライベートの開発で学習も兼ねてk8sを利用したく、色々検討した結果、DigitalOceanが良さそうだったので、利用してみた。

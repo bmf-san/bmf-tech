@@ -1,14 +1,15 @@
 ---
-title: "アルゴリズムとデータ構造 - キュー"
-slug: "algorithms-data-structures-queue"
-date: 2019-11-17
+title: アルゴリズムとデータ構造 - キュー
+slug: algorithms-data-structures-queue
+date: 2019-11-17T00:00:00Z
 author: bmf-san
 categories:
-  - "アルゴリズムとデータ構造"
+  - アルゴリズムとデータ構造
 tags:
-  - "キュー"
-draft: false
+  - キュー
+translation_key: algorithms-data-structures-queue
 ---
+
 
 # 概要
 [アルゴリズム図鑑](https://www.shoeisha.co.jp/book/detail/9784798149776)を参考に、アルゴリズムとデータ構造を学ぶ。
@@ -58,7 +59,7 @@ func (s *Queue) dequeue() {
 
 - 実装内容的にはスタックとほぼ同じ。スライスの添字アクセスが違うだけ。
 - ノート
-  - ![Image from iOS](https://user-images.githubusercontent.com/13291041/69003840-2b7d0700-094c-11ea-996e-c116235a1dbe.jpg)
+  - ![Image from iOS](/assets/images/posts/algorithms-data-structures-queue/69003840-2b7d0700-094c-11ea-996e-c116235a1dbe.jpg)
 
 # 参考
 - [flaviocopes.com - Go Data Structures: Queue](https://flaviocopes.com/golang-data-structure-queue/)

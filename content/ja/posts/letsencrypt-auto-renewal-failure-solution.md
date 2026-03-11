@@ -1,17 +1,18 @@
 ---
-title: "Let'sEncryptの証明書自動更新に失敗し続けていたけど何とかした話"
-slug: "letsencrypt-auto-renewal-failure-solution"
-date: 2017-10-01
+title: Let'sEncryptの証明書自動更新に失敗し続けていたけど何とかした話
+slug: letsencrypt-auto-renewal-failure-solution
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "cron"
-  - "Let's Encrypt"
-  - "Slack"
-  - "shellscript"
-draft: false
+  - cron
+  - Let's Encrypt
+  - Slack
+  - shellscript
+translation_key: letsencrypt-auto-renewal-failure-solution
 ---
+
 
 [letsencryptの証明書自動更新(cron)とちょっとだけSlack連携](http://qiita.com/bmf_san/items/9a072023df9ca6fab354) でかいたスクリプトは、手動で実行する場合は更新成功するのですが、cronで実行すると何故か毎回失敗するという問題作でした。
 

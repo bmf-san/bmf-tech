@@ -7,26 +7,25 @@ categories:
   - Application
 tags:
   - React
-description: Learn how to create a Twitter-style follow button using React.
 translation_key: react-follow-button-implementation
 ---
 
-![react_follow_button.gif](https://qiita-image-store.s3.amazonaws.com/0/124495/f532fbdd-45bb-93b4-aacf-d6220f58663a.gif)
+![react_follow_button.gif](/assets/images/posts/react-follow-button-implementation/f532fbdd-45bb-93b4-aacf-d6220f58663a.gif)
 
-# What We'll Create
-We'll create a follow button inspired by Twitter's design. The functionality is similar, but the implementation differs. The button toggles between "Follow" and "Following" text when clicked, and displays "Unfollow" text when hovered over while in the "Following" state. Feel free to adjust the CSS styling as needed.
+# What We Will Create
+We will create a follow button inspired by Twitter. The specifications are quite similar, but the mechanism is different. The text will toggle between "Follow" and "Following" when clicked, and when hovered over while in the "Following" state, it will display the text "Unfollow". That's all there is to it. There are some unnecessary CSS styles added for decoration, but feel free to adjust the stylesheet as needed.
 
 # Required Knowledge
-* Basic knowledge of React setup and component creation
-* Some understanding of JSX and Babel
+* How to set up React and create simple components
+* Some knowledge and understanding of JSX and Babel
 
 # Environment
-* React: v15.3.0
-* Babel: Compiler (also compiles JSX)
+* React ... v15.3.0
+* Babel ... Compiler (it seems to compile JSX as well)
 
 # Prepare HTML and CSS First
 
-**Note: Adjust paths as needed!**
+**Note: Please adjust the paths as necessary! (~~I was too lazy to fix it~~)**
 
 ```html
 <!DOCTYPE html>
@@ -129,7 +128,7 @@ Follow Button
 }
 ```
 
-The `div` with the ID `content` will contain the follow button component. The `follow-button` CSS class defines the style of the button. If you only want to check the behavior, you can skip the CSS.
+We will generate the follow button component inside the div with the id "content". The CSS class "follow-button" is the style for the generated follow button. (If you just want to check the behavior, you can skip the CSS.)
 
 # Creating the Follow Button Component
 
@@ -137,7 +136,7 @@ The `div` with the ID `content` will contain the follow button component. The `f
 var FollowButton = React.createClass({
     getInitialState: function () {
         return {
-            value: "フォロー",
+            value: "Follow",
             toggle: false
         };
     },
@@ -145,12 +144,12 @@ var FollowButton = React.createClass({
     handleClick: function () {
         if (this.state.toggle) {
             this.setState({
-                value: "フォロー",
+                value: "Follow",
                 toggle: false
             });
         } else {
             this.setState({
-                value: "フォロー中",
+                value: "Following",
                 toggle: true
             });
         };
@@ -159,7 +158,7 @@ var FollowButton = React.createClass({
     handleMouseOver: function () {
         if (this.state.toggle) {
             this.setState({
-                value: "解除",
+                value: "Unfollow",
             });
         };
     },
@@ -167,7 +166,7 @@ var FollowButton = React.createClass({
     handleMouseOut: function () {
         if (this.state.toggle) {
             this.setState({
-                value: "フォロー中",
+                value: "Following",
             });
         };
     },
@@ -183,14 +182,14 @@ var FollowButton = React.createClass({
 });
 
 ReactDOM.render(
-    <FollowButton />,
+    <FollowButton />, 
     document.getElementById('content')
 );
 ```
 
 # Thoughts
-It seems I still need more practice to create components at the level of React tutorials _(:3」∠)_
+It seems I still need more practice to create components on par with React tutorials _(:3」∠)_
 
 # References
-* [React: Dynamically Add/Remove Element Classes with JedWatson's classnames](http://qiita.com/taka1970/items/2b220b1c249a29797a08)
-* [Beginner's Guide to React and Example Collection](http://tango-ruby.hatenablog.com/entry/2016/04/30/090000) - A great resource for learning React step by step!
+* [If you want to dynamically add and remove classes in React, JedWatson's classnames is convenient](http://qiita.com/taka1970/items/2b220b1c249a29797a08)
+* [Beginner's Guide to React with Code Examples](http://tango-ruby.hatenablog.com/entry/2016/04/30/090000) ... A recommended resource to learn React step by step!

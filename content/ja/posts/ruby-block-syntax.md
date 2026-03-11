@@ -1,14 +1,15 @@
 ---
-title: "Rubyのブロック構文について"
-slug: "ruby-block-syntax"
-date: 2024-05-15
+title: Rubyのブロック構文について
+slug: ruby-block-syntax
+date: 2024-05-15T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Ruby"
-draft: false
+  - Ruby
+translation_key: ruby-block-syntax
 ---
+
 
 # 概要
 Rubyのブロック構文についてかく。

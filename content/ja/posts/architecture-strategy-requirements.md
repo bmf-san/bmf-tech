@@ -1,16 +1,17 @@
 ---
-title: "要件最適アーキテクチャ戦略"
-slug: "architecture-strategy-requirements"
-date: 2025-03-08
+title: 要件最適アーキテクチャ戦略
+slug: architecture-strategy-requirements
+date: 2025-03-08T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "本"
-  - "アーキテクチャ戦略"
-  - "アーキテクチャ"
-draft: false
+  - 本
+  - アーキテクチャ戦略
+  - アーキテクチャ
+translation_key: architecture-strategy-requirements
 ---
+
 
 [要件最適アーキテクチャ戦略](https://amzn.to/3F8FmLx)を読んだ。
 

@@ -1,14 +1,15 @@
 ---
-title: "Gitでcommitを分割する方法"
-slug: "git-split-commit"
-date: 2021-06-01
+title: Gitでcommitを分割する方法
+slug: git-split-commit
+date: 2021-06-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Git"
-draft: false
+  - Git
+translation_key: git-split-commit
 ---
+
 
 # 概要
 commitを分割したいときの手順についてメモ。

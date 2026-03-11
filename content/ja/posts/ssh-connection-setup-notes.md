@@ -1,15 +1,16 @@
 ---
-title: "ssh接続セットアップメモ"
-slug: "ssh-connection-setup-notes"
-date: 2018-09-18
+title: ssh接続セットアップメモ
+slug: ssh-connection-setup-notes
+date: 2018-09-18T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "ssh"
-  - "sshd"
-draft: false
+  - ssh
+  - sshd
+translation_key: ssh-connection-setup-notes
 ---
+
 
 # 概要
 ssh接続のセットアップ方法についてメモ。

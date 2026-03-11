@@ -1,4 +1,4 @@
-.PHONY: help install install-e2e build serve clean test-e2e new-ja new-en translate translate-dry-run
+.PHONY: help install install-e2e install-lint build serve clean test-e2e test-e2e-ui new-ja new-en translate translate-gemini translate-dry-run lint-content lint-content-diff
 
 TITLE   ?= untitled
 SLUG    ?= untitled
@@ -8,18 +8,37 @@ help: ## ヘルプを表示
 		awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-15s\033[0m %s\n", $$1, $$2}'
 
 install: ## 依存ツールをインストール (gohan)
-	GOTOOLCHAIN=auto go install github.com/bmf-san/gohan/cmd/gohan@v0.1.8
+	GOTOOLCHAIN=auto go install github.com/bmf-san/gohan/cmd/gohan@latest
 
 install-e2e: ## Playwright依存をインストール
 	cd e2e && npm ci && npx playwright install chromium
 
+install-lint: ## textlint 依存をインストール
+	npm ci
+
+lint-content: ## 全記事を textlint でチェック (JA + EN)
+	npx textlint --config .textlintrc-ja.json "content/ja/posts/*.md"
+	npx textlint --config .textlintrc-en.json "content/en/posts/*.md"
+
+lint-content-diff: ## origin/main との差分ファイルのみ textlint でチェック
+	@JA_FILES=$$(git diff --name-only --diff-filter=ACM origin/main...HEAD -- 'content/ja/posts/*.md'); \
+	EN_FILES=$$(git diff --name-only --diff-filter=ACM origin/main...HEAD -- 'content/en/posts/*.md'); \
+	if [ -n "$$JA_FILES" ]; then \
+		echo "$$JA_FILES" | xargs npx textlint --config .textlintrc-ja.json; \
+	else \
+		echo "No changed JA posts to lint."; \
+	fi; \
+	if [ -n "$$EN_FILES" ]; then \
+		echo "$$EN_FILES" | xargs npx textlint --config .textlintrc-en.json; \
+	else \
+		echo "No changed EN posts to lint."; \
+	fi
+
 build: ## サイトをビルド
 	GOTOOLCHAIN=auto gohan build
 
-serve: build ## ローカルサーバーを起動 (http://localhost:1313) — public/ を静的配信
-	cd public && npx http-server -p 1313 -s --cors -c-1
-
-dev: ## ライブリロード付きローカルサーバー (http://localhost:1313)
+serve: ## ローカルサーバーを起動 (http://localhost:1313)
+	@pkill -f "gohan serve" 2>/dev/null; sleep 0.3; true
 	GOTOOLCHAIN=auto gohan serve
 
 clean: ## ビルド出力を削除
@@ -51,6 +70,9 @@ new-en: ## 英語記事を作成  例: make new-en TITLE="Title" SLUG=slug
 
 translate: ## JA記事を一括英語翻訳 (GITHUB_TOKEN or OPENAI_API_KEY が必要)
 	cd tools/translate && GOTOOLCHAIN=auto go run . -delay 1000
+
+translate-gemini: ## JA記事を一括英語翻訳 (GOOGLE_API_KEY 使用 / Gemini 2.0 Flash, 15RPM対応)
+	cd tools/translate && GOTOOLCHAIN=auto go run . -delay 5000
 
 translate-dry-run: ## 翻訳対象の確認 (API不要)
 	cd tools/translate && GOTOOLCHAIN=auto go run . -dry-run

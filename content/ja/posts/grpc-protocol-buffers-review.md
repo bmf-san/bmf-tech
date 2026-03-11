@@ -1,16 +1,17 @@
 ---
-title: "gRPCとProtocol Buffersについて復習するためのリンク集"
-slug: "grpc-protocol-buffers-review"
-date: 2024-01-25
+title: gRPCとProtocol Buffersについて復習するためのリンク集
+slug: grpc-protocol-buffers-review
+date: 2024-01-25T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "gRPC"
-  - "Protocol Buffers"
-  - "リンク集"
-draft: false
+  - gRPC
+  - Protocol Buffers
+  - リンク集
+translation_key: grpc-protocol-buffers-review
 ---
+
 
 # 概要
 gRPCとProtocol Buffersについて改めておさらいしておきたかった。

@@ -1,17 +1,18 @@
 ---
-title: "モノリスからマイクロサービスへ ―モノリスを進化させる実践移行ガイド"
-slug: "monolith-to-microservices-migration-guide"
-date: 2024-05-29
+title: モノリスからマイクロサービスへ ―モノリスを進化させる実践移行ガイド
+slug: monolith-to-microservices-migration-guide
+date: 2024-05-29T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "モノリス"
-  - "モジュラモノリス"
-  - "マイクロサービス"
-  - "本"
-draft: false
+  - モノリス
+  - モジュラモノリス
+  - マイクロサービス
+  - 本
+translation_key: monolith-to-microservices-migration-guide
 ---
+
 
 [モノリスからマイクロサービスへ ―モノリスを進化させる実践移行ガイド](https://amzn.to/3VlOlyB)を読んだ。
 

@@ -1,14 +1,15 @@
 ---
-title: "Goで始めるコードのパフォーマンス改善"
-slug: "go-performance-improvement"
-date: 2023-06-12
+title: Goで始めるコードのパフォーマンス改善
+slug: go-performance-improvement
+date: 2023-06-12T00:00:00Z
 author: bmf-san
 categories:
-  - "パフォーマンス"
+  - パフォーマンス
 tags:
-  - "Golang"
-draft: false
+  - Golang
+translation_key: go-performance-improvement
 ---
+
 
 [Makuake Advent Calendar 2022](https://adventar.org/calendars/8496)の9日目の記事です！
 
@@ -180,13 +181,13 @@ CPUのプロファイルがみたいとき以下を実行。
 
 `go test -test.bench=BenchmarkSortAlphabetically -cpuprofile cpu.out && go tool pprof -http=":8888" cpu.out`
 
-![cpu_profile](https://user-images.githubusercontent.com/13291041/206718659-bc8b2df8-30d6-4d3c-819f-2846fd3b2c71.png)
+![cpu_profile](/assets/images/posts/go-performance-improvement/206718659-bc8b2df8-30d6-4d3c-819f-2846fd3b2c71.png)
 
 メモリのプロファイルがみたいときは以下を実行。
 
 `go test -test.bench=BenchmarkSortAlphabetically profilingexample_test.go -memprofile mem.out && go tool pprof -http=":8889" mem.out`
 
-![memory_profile](https://user-images.githubusercontent.com/13291041/206716765-b62ab1a9-9bad-4cdb-8dd7-966c714fe940.png)
+![memory_profile](/assets/images/posts/go-performance-improvement/206716765-b62ab1a9-9bad-4cdb-8dd7-966c714fe940.png)
 
 [pprof](https://pkg.go.dev/net/http/pprof)のUIを活用することでどこの処理にボトルネックがあるか特定しやすくなる。
 
@@ -251,19 +252,19 @@ go test -bench . -memprofile mem.out && go tool pprof -http=":8889" mem.out
 ```
 
 Graphの出力結果。
-![pprof_graph](https://user-images.githubusercontent.com/13291041/206716778-8c5b2ad6-2e6a-444f-8f4c-7267a253446f.png)
+![pprof_graph](/assets/images/posts/go-performance-improvement/206716778-8c5b2ad6-2e6a-444f-8f4c-7267a253446f.png)
 
 ボックスが一番大きい（メモリを一番使っている）処理が`explodePath`だと分かる。
 
 Top（実行時間の長い順のリスト）を見ても`explodePath`が最上位にいる。
 
-![pprof_top](https://user-images.githubusercontent.com/13291041/206716793-08c464a8-db4c-4838-b872-dc6b2c51b154.png)
+![pprof_top](/assets/images/posts/go-performance-improvement/206716793-08c464a8-db4c-4838-b872-dc6b2c51b154.png)
 
 Flatは関数の処理時間、Cumは待ち時間も含めた処理時間となる。
 
 さらにSourceを実際に関数内のどのあたりの処理が重いかの確認。
 
-![pprof_source](https://user-images.githubusercontent.com/13291041/206716787-c1be565d-9364-40d1-b555-70836d056832.png)
+![pprof_source](/assets/images/posts/go-performance-improvement/206716787-c1be565d-9364-40d1-b555-70836d056832.png)
 
 `Search`はルーターのマッチング処理を担う根幹の処理なので、そこが一番ネックだろうとは思っていたが、その中の特定の処理である`explodePath`がネックになっているということが分かった。
 
@@ -546,11 +547,11 @@ ok      github.com/bmf-san/goblin       13.666s
 ### プロファイリング
 pprofのGraph。
 
-![pprof_graph_after](https://user-images.githubusercontent.com/13291041/206716776-7cee0600-6cb4-4d82-b534-e9b2e2ff72ac.png)
+![pprof_graph_after](/assets/images/posts/go-performance-improvement/206716776-7cee0600-6cb4-4d82-b534-e9b2e2ff72ac.png)
 
 pprofのTop。
 
-![pprof_top_after](https://user-images.githubusercontent.com/13291041/206716789-1ef3cbae-c638-4935-a6fa-22907fe30633.png)
+![pprof_top_after](/assets/images/posts/go-performance-improvement/206716789-1ef3cbae-c638-4935-a6fa-22907fe30633.png)
 
 ボトルネックが`explodePath`内で呼び出している`strings.FieldsFunc`に移動したのが分かる。
 

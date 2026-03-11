@@ -1,14 +1,15 @@
 ---
-title: "アルゴリズムとデータ構造 - 配列"
-slug: "algorithms-data-structures-array"
-date: 2019-10-31
+title: アルゴリズムとデータ構造 - 配列
+slug: algorithms-data-structures-array
+date: 2019-10-31T00:00:00Z
 author: bmf-san
 categories:
-  - "アルゴリズムとデータ構造"
+  - アルゴリズムとデータ構造
 tags:
-  - "配列"
-draft: false
+  - 配列
+translation_key: algorithms-data-structures-array
 ---
+
 
 # 概要
 [アルゴリズム図鑑](https://www.shoeisha.co.jp/book/detail/9784798149776)を参考に、アルゴリズムとデータ構造を学ぶ。
@@ -174,7 +175,7 @@ func main() {
 - get
   - 配列の範囲外へのアクセスだけ考慮してランダムアクセス（添字でデータを参照）
 - ノート
-![Image from iOS](https://user-images.githubusercontent.com/13291041/67912042-f3e03200-fbcb-11e9-8a42-34f28fd474f4.jpg)
+![Image from iOS](/assets/images/posts/algorithms-data-structures-array/67912042-f3e03200-fbcb-11e9-8a42-34f28fd474f4.jpg)
 
 # 参考
 - [github -  TomorrowWu/golang-algorithms](https://github.com/TomorrowWu/golang-algorithms/blob/master/data-structures/array/array.go)

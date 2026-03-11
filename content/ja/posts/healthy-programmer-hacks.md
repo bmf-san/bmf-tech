@@ -1,15 +1,16 @@
 ---
-title: "ヘルシープログラマ ―プログラミングを楽しく続けるための健康Hack"
-slug: "healthy-programmer-hacks"
-date: 2024-07-29
+title: ヘルシープログラマ ―プログラミングを楽しく続けるための健康Hack
+slug: healthy-programmer-hacks
+date: 2024-07-29T00:00:00Z
 author: bmf-san
 categories:
-  - "ヘルスケア"
+  - ヘルスケア
 tags:
-  - "本"
-  - "健康"
-draft: false
+  - 本
+  - 健康
+translation_key: healthy-programmer-hacks
 ---
+
 
 [ヘルシープログラマ ―プログラミングを楽しく続けるための健康Hack](https://amzn.to/3LF1Aom)を読んだ。
 

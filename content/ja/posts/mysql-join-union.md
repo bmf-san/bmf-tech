@@ -1,16 +1,17 @@
 ---
-title: "MySQLのJOINとUNIONについて"
-slug: "mysql-join-union"
-date: 2018-07-18
+title: MySQLのJOINとUNIONについて
+slug: mysql-join-union
+date: 2018-07-18T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "MySQL"
-  - "join"
-  - "union"
-draft: false
+  - MySQL
+  - join
+  - union
+translation_key: mysql-join-union
 ---
+
 
 # 概要
 MySQLのJOINの種類とUNIONについてまとめる

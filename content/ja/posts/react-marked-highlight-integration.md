@@ -1,18 +1,19 @@
 ---
-title: "React＋marked＋highlight"
-slug: "react-marked-highlight-integration"
-date: 2017-10-01
+title: React＋marked＋highlight
+slug: react-marked-highlight-integration
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "ES6"
-  - "React"
-  - "highlightjs"
-  - "markdown"
-  - "marked"
-draft: false
+  - ES6
+  - React
+  - highlightjs
+  - markdown
+  - marked
+translation_key: react-marked-highlight-integration
 ---
+
 
 wysiwygエディタではなく、マークダウンエディタをReactでつくってみました。
 
@@ -20,7 +21,7 @@ wysiwygエディタではなく、マークダウンエディタをReactでつ�
 
 
 雑なgifサンプルはこちら_(:3」∠)_
-![markdown.gif](https://qiita-image-store.s3.amazonaws.com/0/124495/a60a6293-1345-ae00-942c-e544e6e526a6.gif)
+![markdown.gif](/assets/images/posts/react-marked-highlight-integration/a60a6293-1345-ae00-942c-e544e6e526a6.gif)
 
 
 

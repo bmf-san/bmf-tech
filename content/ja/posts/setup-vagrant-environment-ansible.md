@@ -1,16 +1,17 @@
 ---
-title: "AnsibleでVagrant開発環境（CentOS7.3）を構築する"
-slug: "setup-vagrant-environment-ansible"
-date: 2017-09-26
+title: AnsibleでVagrant開発環境（CentOS7.3）を構築する
+slug: setup-vagrant-environment-ansible
+date: 2017-09-26T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Ansible"
-  - "CentOS"
-  - "Vagrant"
-draft: false
+  - Ansible
+  - CentOS
+  - Vagrant
+translation_key: setup-vagrant-environment-ansible
 ---
+
 
 # 概要
 VagrantのCentOS7.3に開発環境をAnsibleで構築します。

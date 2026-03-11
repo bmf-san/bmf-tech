@@ -8,12 +8,9 @@ categories:
 tags:
   - Agile
   - Books
-description: A book about measurement metrics in Agile development.
 translation_key: agile-metrics
 ---
 
-[Agile Metrics](https://amzn.to/3QDOGJW) is a book I read.
-
-It teaches measurement metrics in Agile development.
+[Agile Metrics](https://amzn.to/3QDOGJW) is a book that teaches measurement indicators in agile development.
 
 You can learn observation methods to improve team performance.

@@ -1,14 +1,15 @@
 ---
-title: "Laravelでエラーメッセージを共通のテンプレートで対応する方法"
-slug: "laravel-error-message-template"
-date: 2017-10-01
+title: Laravelでエラーメッセージを共通のテンプレートで対応する方法
+slug: laravel-error-message-template
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Laravel"
-draft: false
+  - Laravel
+translation_key: laravel-error-message-template
 ---
+
 
 # 概要
 Laravelのエラーページを共通のテンプレートで対応する方法について説明します。

@@ -1,16 +1,17 @@
 ---
-title: "ユニコーン企業のひみつ ―Spotifyで学んだソフトウェアづくりと働き方"
-slug: "unicorn-company-secrets"
-date: 2023-05-19
+title: ユニコーン企業のひみつ ―Spotifyで学んだソフトウェアづくりと働き方
+slug: unicorn-company-secrets
+date: 2023-05-19T00:00:00Z
 author: bmf-san
 categories:
-  - "マネジメント"
+  - マネジメント
 tags:
-  - "本"
-  - "ユニコーン"
-  - "スクラム"
-draft: false
+  - 本
+  - ユニコーン
+  - スクラム
+translation_key: unicorn-company-secrets
 ---
+
 
 [ユニコーン企業のひみつ ―Spotifyで学んだソフトウェアづくりと働き方](https://amzn.to/44PiyJp)を読んだ。
 

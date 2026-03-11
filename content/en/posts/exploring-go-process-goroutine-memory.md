@@ -12,7 +12,6 @@ tags:
   - Stack
   - Process
   - Thread
-description: Using Go to observe process address spaces, goroutine behavior, stack, and heap.
 translation_key: exploring-go-process-goroutine-memory
 ---
 
@@ -20,13 +19,13 @@ translation_key: exploring-go-process-goroutine-memory
 
 # Overview
 
-Using Go to lightly observe process address spaces, goroutine behavior, stack, and heap.
+Using Go, we will take a light look at the address space of processes, the behavior of goroutines, and the stack and heap.
 
-# Checking Differences Between Child Processes and Address Spaces
+# Confirming the Difference Between Child Processes and Address Space
 
-In Go, new processes are typically launched using the `os/exec` package. Internally, `os/exec` performs operations equivalent to `fork()` + `exec()` on Unix-like OSes to execute a new program (in this example, itself).
+In Go, the standard `os/exec` package is used to start new processes. `os/exec` internally performs operations equivalent to `fork()` + `exec()` on Unix-like OSs to execute a new program (in this example, itself).
 
-Display the addresses of the same variables in parent and child processes to confirm the independence of memory spaces.
+We will display the addresses of the same variable in the parent and child processes to confirm the independence of memory space.
 
 ```go
 package main
@@ -64,15 +63,15 @@ Parent: PID=15224, globalVar=0x100720448, localVar=0x14000102020
 Child: PID=15225, globalVar=0x10502c448, localVar=0x14000090020
 ```
 
-## Meaning of Execution Results
+## Meaning of the Execution Results
 
 * **Process Isolation**: Different PIDs are displayed for parent and child.
-* **Address Space Independence**:
+* **Independence of Address Space**:
 
   * Both the global variable `globalVar` and the local variable `localVar` show different addresses in parent and child.
-  * This is because Unix-like OSes allocate independent **virtual address spaces** for each process. Although the numbers may appear similar, they are completely separate in physical memory.
+  * This is because Unix-like OSs allocate independent **virtual address spaces** for each process. Even if the numbers appear similar, they are completely separate in physical memory.
 
-## Diagram of Memory Spaces Between Processes
+## Diagram of Memory Space Between Processes
 
 ```mermaid
 graph TD
@@ -94,7 +93,7 @@ graph TD
 
 # Observing Goroutines and Memory Sharing
 
-Using Go's lightweight threads, **goroutines**, to observe memory. Since goroutines operate within the same process, they share the virtual address space. To confirm this, display the addresses of global and local variables across multiple goroutines.
+We will use Go's lightweight threads, **goroutines**, to observe memory. Since goroutines operate within the same process, they share the virtual address space. To confirm this, we will display the addresses of global and local variables across multiple goroutines.
 
 ```go
 package main
@@ -116,7 +115,8 @@ func worker(id int, wg *sync.WaitGroup) {
 	fmt.Printf("Goroutine %d: PID=%d, globalVar=%p (value=%d), localVar=%p (value=%d)\n",
 		id, os.Getpid(), &globalVar, globalVar, &localVar, localVar)
 
-	// Intentionally cause a data race by modifying the global variable
+	// Modify global variable (intentionally causing data race)
+	// Multiple goroutines access the same variable without synchronization → race condition
 	globalVar += id
 	time.Sleep(100 * time.Millisecond)
 }
@@ -152,24 +152,23 @@ Number of goroutines: 1
 ## Analysis
 
 1. **Same PID**
-   All goroutines operate within the same process, so the PID is identical.
-2. **Global Variable Sharing**
+   All goroutines operate within the same process, so the PID is the same.
+2. **Shared Global Variable**
    The address of `globalVar` is the same across all goroutines.
-3. **Local Variable Independence**
-   Each goroutine has an independent **stack**, but in this example, the address of `localVar` is obtained and passed to `fmt.Printf`, causing it to escape to the heap. Even so, each goroutine is allocated a separate memory region, maintaining independence.
+3. **Independence of Local Variables**
+   Each goroutine has its own independent **stack**, but in this example, the address of `localVar` is obtained and passed to `fmt.Printf`, causing it to be allocated on the heap due to escape analysis. Still, it is placed in different memory areas for each goroutine, maintaining independence.
 4. **Data Race**
-   The value of `globalVar` becoming 106 is coincidental; the result varies depending on execution timing. To safely perform concurrent processing, synchronization mechanisms like channels or mutexes are required.
-   → Use `go run -race` to detect race conditions.
+   The value of `globalVar` being 106 is coincidental, and the result may vary depending on execution timing. To safely perform concurrent processing, synchronization mechanisms like channels or mutexes are necessary. → Detect races with `go run -race`.
 
 ## Diagram of Memory Sharing Between Goroutines
 
 ```mermaid
 graph TD
     subgraph Proc[Single Process<br/>PID=2000]
-        subgraph G0[g0 Stack]
+        subgraph G0[g0's Stack]
             G0L[localVar=5]
         end
-        subgraph G1[g1 Stack]
+        subgraph G1[g1's Stack]
             G1L[localVar=10]
         end
         Heap[Heap Area<br/>globalVar=100]
@@ -184,9 +183,9 @@ graph TD
     style Heap fill:#d1ffd1,stroke:#333,stroke-width:1px
 ```
 
-# Safe Concurrent Processing Using Goroutines and Channels
+# Safe Concurrent Processing with Goroutines and Channels
 
-Using channels allows data exchange without directly updating shared variables.
+Using channels allows data to be exchanged without directly updating shared variables.
 
 ```go
 package main
@@ -218,7 +217,7 @@ func main() {
 
 # Heap Area and Garbage Collection
 
-In Go, dynamic memory is often placed in the heap, but the placement can be confirmed via **escape analysis**.
+In Go, dynamic memory is often placed in the heap, but the allocation destination can be confirmed with **escape analysis**.
 
 ```go
 package main
@@ -236,22 +235,22 @@ func main() {
 heapSlice addr: 0x140000ac030
 ```
 
-* The heap area is managed by GC, and explicit deallocation is unnecessary.
+* The heap area is managed by GC, and there is no need to explicitly free it.
 
 # Differences Between Stack and Heap
 
-| Item          | Stack                            | Heap              |
-| ------------- | -------------------------------- | ----------------- |
-| Management    | Automatically allocated/released with function calls | Managed by GC     |
-| Independence  | Independent per goroutine        | Shared across the process |
-| Speed         | Fast                             | Relatively slower |
-| Placement     | Non-escaping variables           | Escaping variables |
+| Item          | Stack                             | Heap                |
+|---------------|----------------------------------|---------------------|
+| Management    | Automatically allocated and freed with function calls | Managed by GC       |
+| Area Independence | Independent for each goroutine | Shared across the process |
+| Speed         | Fast                             | Relatively slower    |
+| Allocation Condition | Variables that do not escape | Variables that escape |
 
 # Summary
 
 1. **Process Independence**
    Child processes have separate virtual address spaces from parent processes, and variables are not shared.
-2. **Goroutine Memory Sharing**
-   Goroutines operate within the same process, sharing global variables but maintaining independent stacks.
+2. **Memory Sharing in Goroutines**
+   They operate within the same process and share global variables, but stacks are independent.
 3. **Memory Management Characteristics**
-   Go automatically allocates stack and heap using escape analysis, and manages the heap with GC.
+   Go automatically allocates between stack and heap via escape analysis and manages the heap with GC.

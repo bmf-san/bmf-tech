@@ -1,15 +1,16 @@
 ---
-title: "Go言語による分散サービス"
-slug: "distributed-services-with-golang"
-date: 2023-08-18
+title: Go言語による分散サービス
+slug: distributed-services-with-golang
+date: 2023-08-18T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "本"
-draft: false
+  - Golang
+  - 本
+translation_key: distributed-services-with-golang
 ---
+
 
 [Go言語による分散サービス](https://amzn.to/3qIwOEj)を読んだ。
 

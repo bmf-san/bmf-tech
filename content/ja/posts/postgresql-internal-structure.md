@@ -1,15 +1,16 @@
 ---
-title: "内部構造から学ぶPostgreSQL―設計・運用計画の鉄則"
-slug: "postgresql-internal-structure"
-date: 2024-05-07
+title: 内部構造から学ぶPostgreSQL―設計・運用計画の鉄則
+slug: postgresql-internal-structure
+date: 2024-05-07T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "PostgreSQL"
-  - "本"
-draft: false
+  - PostgreSQL
+  - 本
+translation_key: postgresql-internal-structure
 ---
+
 
 [内部構造から学ぶPostgreSQL―設計・運用計画の鉄則](https://amzn.to/3JP16uL)を読んだ。
 

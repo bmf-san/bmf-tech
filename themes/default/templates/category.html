@@ -1,10 +1,12 @@
 {{template "head" .}}
 <body class="bg-body">
 {{template "header" .}}
-<main class="container mx-auto px-4 py-10">
+<main class="container mx-auto py-10">
 
   {{/* Page header */}}
   {{$first := index .Articles 0}}
+  {{$catName := ""}}
+  {{if $first}}{{$catName = index $first.FrontMatter.Categories 0}}{{end}}
   <div class="mb-8">
     <ol class="breadcrumbs mb-4">
       <li class="breadcrumbs-item">
@@ -15,12 +17,20 @@
         {{end}}
         <span class="breadcrumbs-separator">/</span>
       </li>
+      <li class="breadcrumbs-item">
+        {{if eq .CurrentLocale "ja"}}
+        <a href="/ja/categories/" class="breadcrumbs-link">カテゴリ</a>
+        {{else}}
+        <a href="/categories/" class="breadcrumbs-link">Categories</a>
+        {{end}}
+        <span class="breadcrumbs-separator">/</span>
+      </li>
       <li class="breadcrumbs-item active">
-        <span class="breadcrumbs-link">{{if eq .CurrentLocale "ja"}}カテゴリ{{else}}Category{{end}}</span>
+        <span class="breadcrumbs-link">{{$catName}}</span>
       </li>
     </ol>
     <h1 class="text-3xl font-bold mb-2">
-      {{if $first}}<span class="badge badge-info badge-lg mr-2">{{index $first.FrontMatter.Categories 0}}</span>{{end}}
+      {{if $catName}}<span class="badge badge-info badge-lg mr-2">{{$catName}}</span>{{end}}
     </h1>
     <p class="text-secondary">{{len .Articles}} {{if eq .CurrentLocale "ja"}}件の記事{{else}}articles{{end}}</p>
   </div>
@@ -29,7 +39,10 @@
   <div class="grid gap-4 mb-8">
     {{range .Articles}}
     {{- $lp := ""}}{{if eq .Locale "ja"}}{{$lp = "/ja"}}{{end}}
+    {{- $img := index .FrontMatter.Extra "image"}}
+    {{- if not $img}}{{$img = printf "/ogp/%s.png" .FrontMatter.Slug}}{{end}}
     <a href="{{.URL}}" class="card no-underline">
+      <img src="{{$img}}" alt="{{.FrontMatter.Title}}" class="w-full object-cover rounded-t max-h-40">
       <div class="card-body">
         <div class="flex items-center gap-2 mb-2 flex-wrap">
           {{range .FrontMatter.Categories}}<span class="badge badge-info">{{.}}</span>{{end}}

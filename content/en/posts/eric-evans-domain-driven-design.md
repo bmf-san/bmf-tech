@@ -8,16 +8,15 @@ categories:
 tags:
   - DDD
   - Books
-description: Reflections on reading Eric Evans' Domain-Driven Design.
 translation_key: eric-evans-domain-driven-design
 ---
 
-[Eric Evans' Domain-Driven Design: Tackling Complexity in the Heart of Software](https://amzn.to/4bgaiEm) was a challenging read.
+[Eric Evans' Domain-Driven Design: Tackling Complexity in the Heart of Software](https://amzn.to/4bgaiEm) was read.
 
-I read it as part of a book club, but I struggled quite a bit. There were many parts I couldn't fully digest.
+I read it in a study group format, but it was quite challenging. There were many parts that were hard to digest.
 
-I came to understand that DDD emphasizes the importance of understanding and interpreting the domain itself, rather than focusing solely on how to represent it in code.
+I understood that the understanding and interpretation of the domain, which comes before how DDD is expressed in code, is crucial.
 
-I find the process of understanding the domain before translating it into code to be the most challenging part.
+I feel that the initial understanding of how to translate the domain into code is more difficult than the coding itself.
 
-I plan to revisit this book after some time.
+I would like to reread it after some time.

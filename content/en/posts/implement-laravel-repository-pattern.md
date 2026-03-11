@@ -8,39 +8,40 @@ categories:
 tags:
   - Laravel
   - Repository Pattern
-description: 'A smart implementation pattern for database operations: the Repository Pattern.'
+description: A smart implementation pattern related to DB operations, let's discuss the repository pattern.
 translation_key: implement-laravel-repository-pattern
 ---
 
-The Repository Pattern is a smart implementation pattern related to database operations. Let's explore it.
+
+A smart implementation pattern related to DB operations, let's discuss the repository pattern.
 
 # What is the Repository Pattern?
-The Repository Pattern separates data manipulation logic from business logic by delegating it to an abstract layer, enhancing maintainability and scalability. (It is not necessarily limited to database operation logic.)
+The repository pattern is a way to separate the logic related to data manipulation from business logic, delegating it to an abstract layer to enhance maintainability and scalability. (It is not necessarily a pattern that only retains DB operation logic.)
 
-By incorporating the Repository Pattern into Laravel, you can achieve:
+By incorporating the repository pattern into Laravel, you can gain benefits such as:
 
 * Easier testing
-* Better adaptability to database engine changes
-* Centralized data manipulation logic for easier management
+* Easier adaptation to changes in the DB engine
+* Centralized data manipulation logic, making it easier to manage
 
 # Implementing the Repository Pattern
-Create a `Repository` directory corresponding to each model. (This approach may have mixed opinions.)
+Create a Repository directory at the same level as the Model. (This might be a controversial choice)
 
-For this example, we'll implement the Repository Pattern with the following structure:
+This time, we will implement the repository pattern with the following structure:
 
 ```:php
 .
 ├── Models
-│   ├── User.php
-│  
+│   ├── User.php
+│  
 ├── Repositories
     └── User
         ├── UserRepository.php
         └── UserRepositoryInterface.php
 ```
 
-# Designing the Interface
-First, design the interface:
+# Interface Design
+First, design the interface.
 
 ```php
 <?php
@@ -50,7 +51,7 @@ namespace App\Repositories\User;
 interface UserRepositoryInterface
 {
     /**
-     * Retrieve a single record by Name
+     * Get one record by Name
      *
      * @var string $name
      * @return object
@@ -59,8 +60,8 @@ interface UserRepositoryInterface
 }
 ```
 
-# Implementing the Class
-Next, prepare the implementation class. Here, we'll inject the corresponding model and implement the methods:
+# Implementation Class
+Next, prepare the implementation class. Here, we perform DI of the corresponding model and implement the methods.
 
 ```php
 <?php
@@ -82,7 +83,7 @@ class UserRepository implements UserRepositoryInterface
     }
 
     /**
-     * Retrieve a single record by Name
+     * Get one record by name
      *
      * @var $name
      * @return object
@@ -94,10 +95,10 @@ class UserRepository implements UserRepositoryInterface
 }
 ```
 
-You can further abstract the implementation by adding a Service layer, but for simplicity, we'll stick to these two classes.
+From here, you can further prepare a Service layer and add classes to increase abstraction, but this time we will implement with just these two classes.
 
 # Service Provider
-Register the interface and implementation class in `AppServiceProvider.php`:
+Register the interface and implementation class in AppServiceProvider.php.
 
 ```php
 <?php
@@ -134,8 +135,8 @@ class AppServiceProvider extends ServiceProvider
 }
 ```
 
-# Calling it in the Controller
-Use the implemented Repository Pattern in the controller:
+# Calling in the Controller
+Use the implemented repository pattern.
 
 ```php
 <?php
@@ -158,12 +159,12 @@ class UserController extends Controller
 }
 ```
 
-Simply inject the interface!
+Just inject the interface!
 
 # Thoughts
-Both the model and controller look cleaner now. This implementation has inspired me to study Domain-Driven Design (DDD).
+Both the model and the controller have become cleaner. I would like to take this opportunity to study DDD as well.
 
 # References
 * [Laravel4.2 Repository Pattern](http://tech.aainc.co.jp/archives/10227)
-* [Laravel5.1 Tutorial: Intermediate Task List Part 4](http://laravel-room.com/tutorial-intermediate-4)
-* [Application Design in Laravel Without Regrets](https://speakerdeck.com/localdisk/laravelniokeruhou-hui-sinaitamefalseapurikesiyonshe-ji)
+* [Intermediate Task List Tutorial for Laravel5.1](http://laravel-room.com/tutorial-intermediate-4)
+* [Application Design in Laravel to Avoid Regrets](https://speakerdeck.com/localdisk/laravelniokeruhou-hui-sinaitamefalseapurikesiyonshe-ji)

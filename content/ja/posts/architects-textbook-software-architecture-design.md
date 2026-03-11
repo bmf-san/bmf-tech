@@ -1,18 +1,19 @@
 ---
-title: "アーキテクトの教科書 価値を生むソフトウェアのアーキテクチャ構築"
-slug: "architects-textbook-software-architecture-design"
-date: 2025-01-13
+title: アーキテクトの教科書 価値を生むソフトウェアのアーキテクチャ構築
+slug: architects-textbook-software-architecture-design
+date: 2025-01-13T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "アーキテクト"
-  - "アーキテクチャ"
-  - "設計"
-  - "基本情報技術者"
-  - "本"
-draft: false
+  - アーキテクト
+  - アーキテクチャ
+  - 設計
+  - 基本情報技術者
+  - 本
+translation_key: architects-textbook-software-architecture-design
 ---
+
 
 [アーキテクトの教科書 価値を生むソフトウェアのアーキテクチャ構築](https://amzn.to/4hbJ04P)を読んだ。
 

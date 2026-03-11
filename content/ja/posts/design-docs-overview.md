@@ -1,14 +1,15 @@
 ---
-title: "Design Docsについて"
-slug: "design-docs-overview"
-date: 2022-10-07
+title: Design Docsについて
+slug: design-docs-overview
+date: 2022-10-07T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "Design Docs"
-draft: false
+  - Design Docs
+translation_key: design-docs-overview
 ---
+
 
 # 概要
 Design Docsについて調べてみた。

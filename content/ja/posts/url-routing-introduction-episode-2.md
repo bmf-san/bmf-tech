@@ -1,16 +1,17 @@
 ---
-title: "URLルーティング自作入門\u3000エピソード２"
-slug: "url-routing-introduction-episode-2"
-date: 2019-12-15
+title: URLルーティング自作入門　エピソード２
+slug: url-routing-introduction-episode-2
+date: 2019-12-15T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "HTTP"
-  - "URLルーティング"
-  - "router"
-draft: false
+  - HTTP
+  - URLルーティング
+  - router
+translation_key: url-routing-introduction-episode-2
 ---
+
 
 # 概要
 この記事は[URLルーティング自作入門　エピソード１](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E8%87%AA%E4%BD%9C%E5%85%A5%E9%96%80%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%EF%BC%91)の続きで、[Makuake Development Team Advent Calendar 2019](https://adventar.org/calendars/4716)の15日目となります。
@@ -20,7 +21,7 @@ draft: false
 
 ルーターを自作するにあたり、ルーターがどういった処理を行うのかデータ構造の観点から考えてみます。
 
-![Screen Shot 2019-12-15 at 19 07 42](https://user-images.githubusercontent.com/13291041/70861219-30929d80-1f6e-11ea-8e86-114e8ba0942b.png)
+![Screen Shot 2019-12-15 at 19 07 42](/assets/images/posts/url-routing-introduction-episode-2/70861219-30929d80-1f6e-11ea-8e86-114e8ba0942b.png)
 
 ルーターがどんなInputを受け取って、どんなOutputを返すのか、動的なルーティングの場合の例を図示してみました。
 
@@ -34,14 +35,14 @@ URLのパス部分をInputとして受け取り、パスとマッチするデー
 
 では木構造について簡単に説明します。
 
-![Screen Shot 2019-12-15 at 20 55 26](https://user-images.githubusercontent.com/13291041/70862253-3e9bea80-1f7d-11ea-9856-1da4906c316a.png)
+![Screen Shot 2019-12-15 at 20 55 26](/assets/images/posts/url-routing-introduction-episode-2/70862253-3e9bea80-1f7d-11ea-9856-1da4906c316a.png)
 
 木構造とは、根（Root）、枝（Edge）、節点（Node）、葉（Leaf 終端の節点のこと）を持つデータ構造のことです。データの格納方法や探索方法のパターンにより様々な種類の木構造があります。URLルーティングでは文字列を主に扱いたいので、文字列探索に特化したトライ木というデータ構造を採用します。
 トライ木については[bmf-tech.com - A Trie implementation in Golang](https://bmf-tech.com/posts/A%20Trie%20implementation%20in%20Golang)を参照してください。
 
 トライ木をカスタマイズして、URLのパスマッチングのためのデータを以下のように格納します。
 
-![Screen Shot 2019-12-15 at 21 39 38](https://user-images.githubusercontent.com/13291041/70862745-7148e180-1f83-11ea-85d3-2cd8fb4db0d3.png)
+![Screen Shot 2019-12-15 at 21 39 38](/assets/images/posts/url-routing-introduction-episode-2/70862745-7148e180-1f83-11ea-85d3-2cd8fb4db0d3.png)
 
 例として、GETのみに対応するルーティングを定義しています。
 

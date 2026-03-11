@@ -1,5 +1,8 @@
 *.sql
 .DS_Store
+node_modules/
+.textlintcache
+test-results/
 public/
 .gohan/
 *.log

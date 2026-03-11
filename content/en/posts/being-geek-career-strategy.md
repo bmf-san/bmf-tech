@@ -1,5 +1,5 @@
 ---
-title: 'Being Geek: Career Strategies for Staying Geeky'
+title: 'Being Geek: Career Strategies to Stay a Geek'
 slug: being-geek-career-strategy
 date: 2017-12-23T00:00:00Z
 author: bmf-san
@@ -7,14 +7,11 @@ categories:
   - Career
 tags:
   - Books
-description: A book about career strategies for geeks and engineers.
 translation_key: being-geek-career-strategy
 ---
 
-[Being Geek ギークであり続けるためのキャリア戦略](https://amzn.to/3WBItSL)を読んだ。
+[Being Geek: Career Strategies to Stay a Geek](https://amzn.to/3WBItSL) is a book written by a geek, and while the title includes 'geek', it offers valuable insights for any engineer.
 
-ギークが書いている本で、タイトルもギークを含んでいるが、ギークでなくともエンジニアであれば学びを得られる本。
+The author's perspective and way of expressing ideas may have a unique style, but it is certainly informative.
 
-エンジニアとしての姿勢、考え方など語り口に少しクセはあるが、参考になる。
-
-私がこの本が結構好きで、手元に置いておきたい1冊だったりする。
+I really like this book and consider it one that I want to keep on hand.

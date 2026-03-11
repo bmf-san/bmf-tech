@@ -1,15 +1,16 @@
 ---
-title: "AWS(Elasticbeanstalk)のレイテンシーがやたら高いと思ったら・・・"
-slug: "high-latency-aws-elasticbeanstalk"
-date: 2017-09-26
+title: AWS(Elasticbeanstalk)のレイテンシーがやたら高いと思ったら・・・
+slug: high-latency-aws-elasticbeanstalk
+date: 2017-09-26T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Amazon Web Service"
-  - "Elastic Beanstalk"
-draft: false
+  - Amazon Web Service
+  - Elastic Beanstalk
+translation_key: high-latency-aws-elasticbeanstalk
 ---
+
 
 AWS側の問題でした。
 

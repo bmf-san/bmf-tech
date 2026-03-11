@@ -1,16 +1,17 @@
 ---
-title: "絵で見てわかるシステムパフォーマンスの仕組み"
-slug: "system-performance-explained"
-date: 2018-07-12
+title: 絵で見てわかるシステムパフォーマンスの仕組み
+slug: system-performance-explained
+date: 2018-07-12T00:00:00Z
 author: bmf-san
 categories:
-  - "パフォーマンス"
+  - パフォーマンス
 tags:
-  - "本"
-  - "システムパフォーマンス"
-  - "ISUCON"
-draft: false
+  - 本
+  - システムパフォーマンス
+  - ISUCON
+translation_key: system-performance-explained
 ---
+
 
 [絵で見てわかるシステムパフォーマンスの仕組み](https://amzn.to/4aagywt)を読んだ。
 

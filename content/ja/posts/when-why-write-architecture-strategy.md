@@ -1,16 +1,17 @@
 ---
-title: "なぜ・いつアーキテクチャ戦略を書くべきか"
-slug: "when-why-write-architecture-strategy"
-date: 2026-02-05
+title: なぜ・いつアーキテクチャ戦略を書くべきか
+slug: when-why-write-architecture-strategy
+date: 2026-02-05T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "アーキテクチャ戦略"
-  - "アーキテクチャ"
-  - "設計"
-draft: false
+  - アーキテクチャ戦略
+  - アーキテクチャ
+  - 設計
+translation_key: when-why-write-architecture-strategy
 ---
+
 
 戦略や戦術が明確に定義されていないケースは多い。その有用性や必要性が十分に認識されていないことが一因かもしれない。
 

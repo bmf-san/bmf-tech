@@ -1,17 +1,18 @@
 ---
-title: "開発環境を見直してvimライクにした"
-slug: "vim-like-development-environment"
-date: 2018-05-22
+title: 開発環境を見直してvimライクにした
+slug: vim-like-development-environment
+date: 2018-05-22T00:00:00Z
 author: bmf-san
 categories:
-  - "ツール"
+  - ツール
 tags:
-  - "tmux"
-  - "vim"
-  - "Atom"
-  - "iTerm"
-draft: false
+  - tmux
+  - vim
+  - Atom
+  - iTerm
+translation_key: vim-like-development-environment
 ---
+
 
 # 概要
 開発の効率化を図り、vimを取り入れ、開発環境諸々を刷新したのでまとめておく。

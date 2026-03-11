@@ -1,16 +1,17 @@
 ---
-title: "「人事・労務」の実務がまるごとわかる本"
-slug: "comprehensive-guide-to-hr-and-labor-practices"
-date: 2024-04-18
+title: 「人事・労務」の実務がまるごとわかる本
+slug: comprehensive-guide-to-hr-and-labor-practices
+date: 2024-04-18T00:00:00Z
 author: bmf-san
 categories:
-  - "ビジネス"
+  - ビジネス
 tags:
-  - "人事"
-  - "労務"
-  - "本"
-draft: false
+  - 人事
+  - 労務
+  - 本
+translation_key: comprehensive-guide-to-hr-and-labor-practices
 ---
+
 
 [「人事・労務」の実務がまるごとわかる本](https://amzn.to/49vzoO8)を読んだ
 

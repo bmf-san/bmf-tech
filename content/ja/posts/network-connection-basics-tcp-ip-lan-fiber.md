@@ -1,17 +1,18 @@
 ---
-title: "ネットワークはなぜつながるのか 第2版 知っておきたいTCP/IP、LAN、光ファイバの基礎知識"
-slug: "network-connection-basics-tcp-ip-lan-fiber"
-date: 2024-05-09
+title: ネットワークはなぜつながるのか 第2版 知っておきたいTCP/IP、LAN、光ファイバの基礎知識
+slug: network-connection-basics-tcp-ip-lan-fiber
+date: 2024-05-09T00:00:00Z
 author: bmf-san
 categories:
-  - "ネットワーク"
+  - ネットワーク
 tags:
-  - "本"
-  - "IP"
-  - "TCP"
-  - "HTTP"
-draft: false
+  - 本
+  - IP
+  - TCP
+  - HTTP
+translation_key: network-connection-basics-tcp-ip-lan-fiber
 ---
+
 
 [ネットワークはなぜつながるのか 第2版 知っておきたいTCP/IP、LAN、光ファイバの基礎知識](https://amzn.to/3JUlISw)を読んだ。
 

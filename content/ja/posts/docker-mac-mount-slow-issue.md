@@ -1,15 +1,16 @@
 ---
-title: "Docker for Macのマウントが遅い問題の対応"
-slug: "docker-mac-mount-slow-issue"
-date: 2018-08-19
+title: Docker for Macのマウントが遅い問題の対応
+slug: docker-mac-mount-slow-issue
+date: 2018-08-19T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Docker"
-  - "Tips"
-draft: false
+  - Docker
+  - Tips
+translation_key: docker-mac-mount-slow-issue
 ---
+
 
 # 概要
 Docker for Macのマウントが遅い。

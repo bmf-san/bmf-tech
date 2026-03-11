@@ -1,14 +1,15 @@
 ---
-title: "ダック・タイピングとは"
-slug: "what-is-duck-typing"
-date: 2018-05-07
+title: ダック・タイピングとは
+slug: what-is-duck-typing
+date: 2018-05-07T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "ダック・タイピング"
-draft: false
+  - ダック・タイピング
+translation_key: what-is-duck-typing
 ---
+
 
 # 概要
 ダック・タイピングについてまとめる

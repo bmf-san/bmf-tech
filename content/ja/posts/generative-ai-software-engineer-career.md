@@ -1,14 +1,15 @@
 ---
-title: "生成AIとソフトウェアエンジニアのキャリア"
-slug: "generative-ai-software-engineer-career"
-date: 2025-02-12
+title: 生成AIとソフトウェアエンジニアのキャリア
+slug: generative-ai-software-engineer-career
+date: 2025-02-12T00:00:00Z
 author: bmf-san
 categories:
-  - "キャリア"
+  - キャリア
 tags:
-  - "生成AI"
-draft: true
+  - 生成AI
+translation_key: generative-ai-software-engineer-career
 ---
+
 
 昨今の生成AIの進化は目覚ましく、社会に多くの変化をもたらしている。
 

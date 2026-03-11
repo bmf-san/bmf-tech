@@ -1,14 +1,15 @@
 ---
-title: "スケーラビリティを計測する"
-slug: "measuring-scalability"
-date: 2025-06-08
+title: スケーラビリティを計測する
+slug: measuring-scalability
+date: 2025-06-08T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "スケーラビリティ"
-draft: false
+  - スケーラビリティ
+translation_key: measuring-scalability
 ---
+
 
 # 概要
 スケーラビリティの計測方法について調べたのでまとめる。

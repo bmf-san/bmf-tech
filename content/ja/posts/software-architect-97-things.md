@@ -1,15 +1,16 @@
 ---
-title: "ソフトウェアアーキテクトが知るべき97のこと"
-slug: "software-architect-97-things"
-date: 2019-01-26
+title: ソフトウェアアーキテクトが知るべき97のこと
+slug: software-architect-97-things
+date: 2019-01-26T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "アーキテクチャ"
-  - "本"
-draft: false
+  - アーキテクチャ
+  - 本
+translation_key: software-architect-97-things
 ---
+
 
 [ソフトウェアアーキテクトが知るべき97のこと](https://amzn.to/4dOEvfU)を読んだ。
 

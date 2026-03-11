@@ -1,16 +1,17 @@
 ---
-title: "MySQLのロックについて"
-slug: "mysql-locking"
-date: 2024-04-05
+title: MySQLのロックについて
+slug: mysql-locking
+date: 2024-04-05T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "MySQL"
-  - "トランザクション"
-  - "ロック"
-draft: false
+  - MySQL
+  - トランザクション
+  - ロック
+translation_key: mysql-locking
 ---
+
 
 # 概要
 MySQLのロックについてまとめる。

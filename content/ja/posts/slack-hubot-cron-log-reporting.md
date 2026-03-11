@@ -1,21 +1,22 @@
 ---
-title: "Slack＋hubot＋cron(node-cron)＋shell＋logwatchでサーバーログを定時報告"
-slug: "slack-hubot-cron-log-reporting"
-date: 2017-10-01
+title: Slack＋hubot＋cron(node-cron)＋shell＋logwatchでサーバーログを定時報告
+slug: slack-hubot-cron-log-reporting
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "cron"
-  - "CentOS"
-  - "Slack"
-  - "さくらのVPS"
-  - "CoffeScript"
-  - "hubot"
-  - "logwatch"
-  - "shell"
-draft: false
+  - cron
+  - CentOS
+  - Slack
+  - さくらのVPS
+  - CoffeScript
+  - hubot
+  - logwatch
+  - shell
+translation_key: slack-hubot-cron-log-reporting
 ---
+
 
 以前、slackとhubotでShellScriptをSlackから実行しようという記事を書きました。
 [さくらvps＋hubot＋Slackでslack botをつくる](http://qiita.com/BMF_Engineer/items/1f04032b05c22de062af)

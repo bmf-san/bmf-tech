@@ -1,15 +1,16 @@
 ---
-title: "さくらVPSでDocker環境を構築する"
-slug: "docker-environment-sakura-vps"
-date: 2018-06-09
+title: さくらVPSでDocker環境を構築する
+slug: docker-environment-sakura-vps
+date: 2018-06-09T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Docker"
-  - "さくらのVPS"
-draft: false
+  - Docker
+  - さくらのVPS
+translation_key: docker-environment-sakura-vps
 ---
+
 
 # 概要
 さくらVPS上にDocker環境を構築する。

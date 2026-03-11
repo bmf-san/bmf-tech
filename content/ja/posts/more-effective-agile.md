@@ -1,15 +1,16 @@
 ---
-title: "More Effective Agile"
-slug: "more-effective-agile"
-date: 2023-10-01
+title: More Effective Agile
+slug: more-effective-agile
+date: 2023-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "開発プロセス"
+  - 開発プロセス
 tags:
-  - "アジャイル"
-  - "本"
-draft: false
+  - アジャイル
+  - 本
+translation_key: more-effective-agile
 ---
+
 
 [More Effective Agile](https://amzn.to/3JYYieN)を読んだ。
 

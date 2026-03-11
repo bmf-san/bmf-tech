@@ -1,16 +1,17 @@
 ---
-title: "モダンなJSの話──Promise"
-slug: "modern-js-promises"
-date: 2017-12-29
+title: モダンなJSの話──Promise
+slug: modern-js-promises
+date: 2017-12-29T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "ES5"
-  - "ES6"
-  - "JavaScript"
-draft: false
+  - ES5
+  - ES6
+  - JavaScript
+translation_key: modern-js-promises
 ---
+
 
 ※この記事は[Innovator Japan Engineers’ Blog](http://tech.innovator.jp.net/)で掲載されている記事を転載したものです。
 

@@ -1,5 +1,5 @@
 ---
-title: 'Creating URL Routing: Episode 3 (Final Chapter)'
+title: Creating URL Routing Episode 3 (Final Episode)
 slug: creating-url-routing-episode-3
 date: 2019-03-17T00:00:00Z
 author: bmf-san
@@ -11,163 +11,185 @@ tags:
   - HTTP
   - Tree Structure
   - Router
-description: The final chapter in the series on building a custom URL routing system.
 translation_key: creating-url-routing-episode-3
 ---
 
 # Overview
+I have documented the trial and error process of creating URL routing in [Creating URL Routing Episode 1](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%891) and [Creating URL Routing Episode 2](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%892), and I can finally wrap it up, so I want to conclude it in this final episode.
 
-In [Episode 1](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%891) and [Episode 2](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%892), I documented the trial-and-error process of creating a custom URL routing system. Finally, I’ve reached a point where I can wrap things up, so I’d like to conclude this series with the final chapter.
+That said, there are always challenges, and I understand that if I delve deeper, I could spend a lot of time on this alone...
 
-That said, there are still plenty of challenges and areas to refine. If I were to pursue this further, I could easily spend an endless amount of time on it...
+# Previous Discussions
+In [Episode 1](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%891), I thought about the data structure for routing and tried to implement it to get a grasp of the concept. (I couldn't get it to work...)
 
-# Recap of Previous Episodes
+In [Episode 2](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%892), I reviewed the data structure and searched for potentially useful repositories to bring it to a working state.
 
-In [Episode 1](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%891), I explored the data structure for routing and tried to get a feel for the implementation by writing some code (though I didn’t get it fully functional).
+In this Episode 3, I completed the implementation of the parts I left unfinished in [Creating URL Routing Episode 2](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%892).
 
-In [Episode 2](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%892), I revisited the data structure, explored some relevant repositories, and managed to create a working implementation.
+Specifically, in [Episode 2](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%892), I implemented routing without generating a routing map, relying on the client side to prepare the routing map in advance. This time, I implemented that part.
 
-In this final episode, I completed the parts that were left unfinished in [Episode 2](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%892).
+The content of this article also serves as a summary for my presentation at [phperkaigi2019](https://phperkaigi.jp/2019/), so it includes the contents of [Episode 1](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%891) and [Creating URL Routing Episode 2](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%892).
 
-Specifically, in [Episode 2](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%892), I skipped implementing the process to generate the routing map and instead relied on pre-defined routing maps on the client side. This time, I implemented that part.
+Proposal↓
+[fortee - Creating URL Routing in PHP by bmf_san](https://fortee.jp/phperkaigi-2019/proposal/08d951da-29cb-4ee5-bf08-c88129c0bb3f)
 
-This article also serves as a summary for my presentation at [phperkaigi2019](https://phperkaigi.jp/2019/), so it includes content from [Episode 1](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%891) and [Episode 2](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%892).
+Slides here↓
+[Speakerdeck - Creating URL Routing](https://speakerdeck.com/bmf_san/urlruteinguwotukuru?slide=43)
 
-Proposal: [fortee - Creating URL Routing in PHP by bmf_san](https://fortee.jp/phperkaigi-2019/proposal/08d951da-29cb-4ee5-bf08-c88129c0bb3f)
-
-Slides: [Speakerdeck - Creating URL Routing](https://speakerdeck.com/bmf_san/urlruteinguwotukuru?slide=43)
-
-**This article serves as a supplement to the slides, so it might be easier to understand by referring to the slides.**
+**The content of the article may be easier to understand by looking at the slides as they serve as supplementary material.**
 
 # Source Code
-The repository and package are publicly available:
+I have published the repository and package.
 
-- [GitHub - bmf-san/ahi-router](https://github.com/bmf-san/ahi-router)
+- [github - bmf-san/ahi-router](https://github.com/bmf-san/ahi-router)
 - [Packagist - bmf-san/ahi-router](https://packagist.org/packages/bmf-san/ahi-router#2.0.0)
 
 # What is URL Routing?
+**It returns the process to execute for the requested URL.**
 
-**It’s a mechanism that returns the desired process for a requested URL.**
+If you can implement logic that parses the path part of the URL and returns arbitrary values, you should meet the minimum functionality of URL routing.
 
-By parsing the path part of a URL, you can implement logic that returns arbitrary values, fulfilling the minimum requirements for URL routing.
-
-For parsing paths (e.g., `/foo/bar/1`), you can use regular expressions or string search algorithms.
+For parsing paths (e.g., /foo/bar/1), you can use regular expressions or string search algorithms.
 
 # PHP Routing Libraries
-Some well-known libraries include:
+Here are some well-known ones:
 
 - [FastRoute](https://github.com/nikic/FastRoute)
 - [Pux](https://github.com/c9s/Pux)
 - [Klein](https://github.com/klein/klein.php)
 
-FastRoute, for instance, is used in Slim.
+etc...
 
-# Building My Own
+I believe FastRoute was adopted in Slim.
 
+# Trying to Create My Own
 ## Prerequisites
+As a minimum requirement, I considered ease of porting to other languages and aimed to avoid using PHP's standard functions as much as possible. (I want to rewrite it in Go later...)
 
-The minimum requirement was to create something functional. Additionally, I wanted to make it easier to port to other languages, so I avoided PHP-specific functions as much as possible (I plan to rewrite it in Go later).
-
-I also wanted to design and implement my own algorithm from scratch, so I focused on writing pure logic (avoiding even regular expressions).
+Also, I simply wanted to implement it from scratch with my own algorithm, so I aimed to write it with pure logic. (Thus, I won't use regular expressions.)
 
 ## Specifications
+I set the specifications to meet the minimum conditions for routing.
 
-I aimed to meet the minimum requirements for routing:
+- Support URLs containing multiple path parameters:
+  - /foo/bar/:foo/:bar
+  - Common routing patterns
+- Return action and parameter information for matched routes.
 
-- Support URLs with multiple path parameters:
-  - `/foo/bar/:foo/:bar`
-  - A common routing pattern
-- Return the action and parameter information for matched routes
+## I/O
+Before implementation, I will confirm the I/O.
 
-## Input/Output
+The intention is to organize what kind of data the Router (the class that performs routing) receives and what form of data it returns.
 
-Before implementation, I clarified the input and output of the Router class.
+- Input
+  - Request URI
+    - /foo/bar/1
+  - HTTP Method
+    - GET/POST/PUT/PATCH/DELETE
+  - Routing Map
+    - Data mapping I/O. To be discussed later.
 
-### Input
-- **Request URI**: `/foo/bar/1`
-- **HTTP Method**: `GET/POST/PUT/PATCH/DELETE`
-- **Routing Map**: Data mapping inputs to outputs (explained below)
+- Output
+  - Action
+    - ex. PostController@getPosts
+  - Parameter
+    - Set of path parameters and values
+       - ex. /foo/bar/1
+         - /foo/bar/:id
+           - → id 1
 
-### Output
-- **Action**: e.g., `PostController@getPosts`
-- **Parameter**: Path parameters and their values
-  - e.g., `/foo/bar/1`
-    - `/foo/bar/:id` → `id: 1`
+## Considering Data Structure
+I will consider the data structure that the Router handles internally.
 
-## Designing the Data Structure
+The data handled internally = Routing Map.
 
-The data structure managed internally by the Router is the Routing Map.
+The term Routing Map does not seem to have a defined meaning, so let me explain:
 
-Routing Map refers to **data mapping URIs to the desired actions**. It defines the rules for which process to execute when a specific path is requested. The Router generates this Routing Map from predefined route definitions and uses it to perform routing by searching for the appropriate process.
+**It is data that maps the URI to the desired process.**
 
-For example, in Laravel, route definitions look like this:
+It summarizes the rules that say, "If this path is requested, perform this process," and the Router generates this Routing Map from predefined route definitions and searches this Routing Map when performing routing to return the process.
+
+The route definitions here refer to the settings written in the routing configuration files that describe the endpoints and processes handled by the application according to the library's API.
+
+For example, in Laravel, it would be defined like this:
 
 ```php
 <?php
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'HomeController@index);
 ```
 
-The route definition serves as the information to create the Routing Map.
+The route definitions serve as information for creating the Routing Map.
 
-To design the Routing Map, I focused on the hierarchical structure of paths in routing and represented the route definitions as a tree structure. I referred to a radix tree for this structure (though it might not strictly qualify as a radix tree).
+Now, let's think about the data structure of this Routing Map.
 
-The path is represented as a tree structure, with the leaves representing actions. The result of traversing the tree is the value (action) that the routing should return.
+Focusing on the hierarchical structure of the paths to be explored in routing, I will represent the route definitions as a tree structure.
 
-This might be hard to grasp in text, so please refer to the slides:
+There are various types of tree algorithms, but this time I referred to a radix tree (though it may not strictly be a radix tree; I haven't studied that thoroughly).
+
+By representing the path part as a tree structure and treating the leaf nodes as actions, the result of exploring the tree structure will be the values that should be returned by routing (the values of the leaves).
+
+This part may be difficult to understand through text, so I would like you to refer to the slides.
 
 [Speakerdeck - Creating URL Routing](https://speakerdeck.com/bmf_san/urlruteinguwotukuru?slide=43)
 
-In PHP, the tree-structured Routing Map is represented as a multidimensional array, like this:
+The Routing Map using a tree structure is represented as a multidimensional array in PHP.
+
+Here’s a rough example:
 
 ```php
 <?php
 $routeMap = [
-    '/' => [
-        'END_POINT' => [
-            'GET' => 'IndexController@index',
-        ],
-        'posts' => [
+        '/' => [
             'END_POINT' => [
-                'GET' => 'PostController@getPosts',
+                'GET' => 'IndexController@index',
             ],
-            ':id' => [
+            'posts' => [
                 'END_POINT' => [
-                    'GET' => 'PostController@edit',
-                    'POST' => 'PostController@update',
+                    'GET' => 'PostController@getPosts',
                 ],
-                ':token' =>  [
+                ':id' => [
                     'END_POINT' => [
-                        'GET' => 'PostController@preview',
+                        'GET' => 'PostController@edit',
+                        'POST' => 'PostController@update',
+                    ],
+                    ':token' =>  [
+                        'END_POINT' => [
+                            'GET' => 'PostController@preview',
+                        ],
+                    ],
+                ],
+                ':category' => [
+                    'END_POINT' => [
+                        'GET' => 'PostController@getPostsByCategory',
                     ],
                 ],
             ],
-            ':category' => [
+            'profile' => [
                 'END_POINT' => [
-                    'GET' => 'PostController@getPostsByCategory',
+                    'GET' => 'ProfileController@getProfile',
                 ],
             ],
         ],
-        'profile' => [
-            'END_POINT' => [
-                'GET' => 'ProfileController@getProfile',
-            ],
-        ],
-    ],
-];
+    ];
 ```
 
-Once the data structure is designed, the next step is to implement it.
+Once the data structure is considered, all that’s left is to implement it straightforwardly...
 
 ## Implementation
+I will implement the Router class, which is responsible for the processes related to routing.
 
-The Router class, responsible for routing, needs to handle two main processes:
+This Router class needs two processes:
 
-- Generating the Routing Map
-- Searching the Routing Map
+- Process to generate the Routing Map
+- Process to search from the Routing Map
 
-The specifications are simple, but the implementation can be a bit tricky.
+The specifications are simple, so that’s all. (The implementation is somewhat tedious...)
 
-Here’s an example of how the client-side implementation might look:
+For specific implementation, please refer to [github - bmf-san/ahi-router](https://github.com/bmf-san/ahi-router).
+
+Here, I will only describe the key points.
+
+The implementation on the client side using the Router looks like this:
 
 ```php
 <?php
@@ -217,25 +239,26 @@ var_dump($result);
 // }
 ```
 
-### Generating the Routing Map
-
-This process updates the Routing Map with a dataset of Path, Method, and Action.
+### Process to Generate the Routing Map
+Implement the process to update the Routing Map from the dataset of Path, Method, and Action.
 
 ```php
-/**
- * Add routing to route map
- *
- * @param string $route
- * @param array $handler
- * @return void
- */
-public function add($route, $handler)
-{
-    // Use recursion and references to dynamically generate the routing map
-}
+    /**
+     * Add routing to route map
+     *
+     * @param string $route
+     * @param array $handler
+     * @return void
+     */
+    public function add($route, $handler)
+    {
+        // Use recursion and references to add routing to the routing map
+    }
 ```
 
-Here’s a simplified example:
+I am writing logic to dynamically generate the multidimensional array using references.
+
+A simplified example is as follows:
 
 ```php
 <?php
@@ -270,65 +293,64 @@ var_dump($routeMap);
 //       }
 //    }
 //  }
-// } 
+// }
 ```
 
-### Searching the Routing Map
-
-This process searches the Routing Map for the corresponding leaf based on the dataset of Path, Method, and Parameters.
+### Process to Search from the Routing Map
+Implement the process to explore the routing map based on the dataset of Path, Method, and Parameter.
 
 ```php
-/**
- * Search a path and return action and parameters
- *
- * @param  string $requestUri
- * @param  string $requestMethod
- * @param  array  $targetParams
- * @return array
- */
-public function search($requestUri, $requestMethod, $targetParams = []): array
-{
-   // Implement logic to search the routing map
-}
+ /**
+     * Search a path and return action and parameters
+     *
+     * @param  string $requestUri
+     * @param  string $requestMethod
+     * @param  array  $targetParams
+     * @return array
+     */
+    public function search($requestUri, $requestMethod, $targetParams = []): array
+    {
+       // Process to explore the routing map
+    }
 ```
 
-Here’s an example of the logic:
+I am implementing it straightforwardly with the following logic.
+
+Since I am trying to avoid using PHP's standard functions as much as possible, it has become a bit of a power play...
 
 ```php
 <?php
 
 $request_uri = '/posts';
-$routing_path = '/posts'; // Defined path in the routing map
+$routing_path = '/posts'; // Path defined in the routing map
 
-// Simplified for explanation purposes
+// The following part is simplified for explanation
 for ($i = 0; $i < str_length($routing_path); $i++) {
-    if ($request_uri{$i} === $routing_path{$i}) {  // Compare paths character by character
+    if ($request_uri{$i} === $routing_path{$i}) {  // Comparing the paths character by character
         // something to do
     }
 }
 ```
 
-# Challenges Encountered
+# Challenges Faced During Implementation
+Error handling and execution speed considerations have not been addressed, making it somewhat disappointing as a library...
 
-- **Error Handling and Performance**: The library lacks proper error handling and performance optimization, which makes it less robust as a library.
-- **Algorithm Selection**: Choosing the right string search algorithm for better performance is a challenge that requires further study.
+Regarding the former, the latter requires selecting string search algorithms, which seems to be a bit challenging. (I need to study...)
 
-Although the goal was to implement only basic functionality, adding features like named routes (grouping route definitions), support for regular expressions in path parameters, and middleware integration would make it a more useful routing library.
+This time, I aimed to implement only simple functionality, but I think it would be convenient to handle named routes (grouping of route definitions) and use regular expressions for path parameters, as well as implement middleware integration, making it a more useful routing library.
 
-# Reflections
+# Thoughts
+- It worked with just 158 lines.
+- Recursion and power play can work.
+- To establish it as a library, I want to learn about tree structure algorithms (trie, radix tree, Patricia tree...etc) and be able to select the appropriate one.
 
-- It worked with just 158 lines of code.
-- Recursive processing and brute force can work.
-- To make it a proper library, I need to study tree structure algorithms (trie, radix tree, Patricia tree, etc.) and choose the most suitable one.
+# Addendum
+The performance of routing processes may vary depending on the expected number of elements, so even if the implementation is not smart, it might still be practical.
+This time, the algorithm has become one where the computational complexity increases proportionally as the number of routes and parameter information increases.
+Also, there are libraries implemented with regular expressions instead of tree structures, so it doesn't seem that tree structures are the standard implementation.
+It would be better to follow the saying, "Don't guess, measure," and take benchmarks. (I slacked off this time...)
 
-# Additional Notes
-
-The performance of routing depends on the expected number of routes, so even a less elegant implementation might be sufficient for practical use. However, the current algorithm’s complexity increases proportionally with the number of routes and parameters, which could become a bottleneck.
-
-It’s worth noting that some libraries implement routing using regular expressions instead of tree structures, so a tree structure isn’t necessarily the standard approach. Following the principle of "don’t guess, measure," it would be better to benchmark the implementation (though I skipped this step for now).
-
-# Additional Resources
-
-I found a great article worth noting:
+# Addendum 2
+I found a good article, so here’s a note.
 
 [Hatena Developers Blog - How to Learn String Algorithms](https://developer.hatenastaff.com/entry/2016/12/22/210006)

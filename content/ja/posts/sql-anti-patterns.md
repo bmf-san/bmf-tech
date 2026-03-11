@@ -1,16 +1,17 @@
 ---
-title: "SQLアンチパターン"
-slug: "sql-anti-patterns"
-date: 2024-04-01
+title: SQLアンチパターン
+slug: sql-anti-patterns
+date: 2024-04-01T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "DB"
-  - "sql"
-  - "本"
-draft: false
+  - DB
+  - sql
+  - 本
+translation_key: sql-anti-patterns
 ---
+
 
 [SQLアンチパターン](https://amzn.to/3vFzbdw)を読んだ。
 

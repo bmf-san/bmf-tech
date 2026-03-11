@@ -1,16 +1,17 @@
 ---
-title: "Golangでロードバランサーを実装する"
-slug: "golang-load-balancer-implementation"
-date: 2022-01-01
+title: Golangでロードバランサーを実装する
+slug: golang-load-balancer-implementation
+date: 2022-01-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "ロードバランサー"
-  - "ラウンドロビン"
-draft: false
+  - Golang
+  - ロードバランサー
+  - ラウンドロビン
+translation_key: golang-load-balancer-implementation
 ---
+
 
 # 概要
 この記事は[Makuake Advent Calendar 2021](https://adventar.org/calendars/6822)の24日目の記事です。（大遅刻しました・・）
@@ -19,7 +20,7 @@ draft: false
 # ロードバランサーとは何か
 ロードバランサーはリクエストを複数のサーバーへ振り分けて負荷分散する（ロードバランシング）機能を持ったサーバーです。
 
-![スクリーンショット 2022-01-01 23 05 20](https://user-images.githubusercontent.com/13291041/147852643-0d5a6fab-1d8f-4d60-81f6-cf95091ca974.png)
+![スクリーンショット 2022-01-01 23 05 20](/assets/images/posts/golang-load-balancer-implementation/147852643-0d5a6fab-1d8f-4d60-81f6-cf95091ca974.png)
 
 サービスの可用性を高めてくれるリバースプロキシの一種です。
 ロードバランサーの種類は大きく分けて2種類あります。アプリケーション層で負荷分散するL7ロードバランサーと、トランスポート層で負荷分散するL4ロードバランサーです。

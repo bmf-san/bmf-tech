@@ -1,16 +1,17 @@
 ---
-title: "APIデザイン・パターン"
-slug: "api-design-patterns"
-date: 2024-08-26
+title: APIデザイン・パターン
+slug: api-design-patterns
+date: 2024-08-26T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "本"
-  - "API"
-  - "設計"
-draft: false
+  - 本
+  - API
+  - 設計
+translation_key: api-design-patterns
 ---
+
 
 [APIデザイン・パターン](https://amzn.to/3AD3Vhr)を読んだ。
 

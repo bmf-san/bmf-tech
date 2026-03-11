@@ -1,14 +1,15 @@
 ---
-title: "アルゴリズムとデータ構造 - 二分探索木"
-slug: "algorithms-data-structures-binary-search-tree"
-date: 2020-01-15
+title: アルゴリズムとデータ構造 - 二分探索木
+slug: algorithms-data-structures-binary-search-tree
+date: 2020-01-15T00:00:00Z
 author: bmf-san
 categories:
-  - "アルゴリズムとデータ構造"
+  - アルゴリズムとデータ構造
 tags:
-  - "二分探索木"
-draft: false
+  - 二分探索木
+translation_key: algorithms-data-structures-binary-search-tree
 ---
+
 
 # 概要
 [アルゴリズム図鑑](https://www.shoeisha.co.jp/book/detail/9784798149776)を参考に、アルゴリズムとデータ構造を学ぶ。

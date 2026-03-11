@@ -1,15 +1,16 @@
 ---
-title: "思考の整理学"
-slug: "organizing-thoughts"
-date: 2024-12-08
+title: 思考の整理学
+slug: organizing-thoughts
+date: 2024-12-08T00:00:00Z
 author: bmf-san
 categories:
-  - "ビジネス"
+  - ビジネス
 tags:
-  - "思考法"
-  - "本"
-draft: false
+  - 思考法
+  - 本
+translation_key: organizing-thoughts
 ---
+
 
 [ワイド新版　思考の整理学](https://amzn.to/3D4s3KR)を読んだ。
 

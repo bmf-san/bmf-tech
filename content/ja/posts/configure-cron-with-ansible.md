@@ -1,15 +1,16 @@
 ---
-title: "Ansibleでcronを設定"
-slug: "configure-cron-with-ansible"
-date: 2017-09-26
+title: Ansibleでcronを設定
+slug: configure-cron-with-ansible
+date: 2017-09-26T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Ansible"
-  - "cron"
-draft: false
+  - Ansible
+  - cron
+translation_key: configure-cron-with-ansible
 ---
+
 
 # 概要
 Ansibleでcronを設定するタスクです。

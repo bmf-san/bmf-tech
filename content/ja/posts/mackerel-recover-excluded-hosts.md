@@ -1,15 +1,16 @@
 ---
-title: "Mackerelで監視対象から外れたホストを再度復帰させる方法"
-slug: "mackerel-recover-excluded-hosts"
-date: 2019-09-17
+title: Mackerelで監視対象から外れたホストを再度復帰させる方法
+slug: mackerel-recover-excluded-hosts
+date: 2019-09-17T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "Mackerel"
-  - "Tips"
-draft: false
+  - Mackerel
+  - Tips
+translation_key: mackerel-recover-excluded-hosts
 ---
+
 
 # 概要
 Mackerelの監視対象から誤ったホストを退役させてしまったり、意図せず監視対象から外してしまったときなどに復帰させる方法についてメモっておく。

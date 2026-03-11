@@ -1,15 +1,16 @@
 ---
-title: "脳に収まるコードの書き方 ―複雑さを避け持続可能にするための経験則とテクニック"
-slug: "writing-sustainable-code"
-date: 2025-02-15
+title: 脳に収まるコードの書き方 ―複雑さを避け持続可能にするための経験則とテクニック
+slug: writing-sustainable-code
+date: 2025-02-15T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "本"
-  - "コーディング"
-draft: false
+  - 本
+  - コーディング
+translation_key: writing-sustainable-code
 ---
+
 
 [脳に収まるコードの書き方 ―複雑さを避け持続可能にするための経験則とテクニック](https://amzn.to/4gD7NxX)を読んだ。
 

@@ -1,16 +1,17 @@
 ---
-title: "DIとサービスロケーター"
-slug: "dependency-injection-service-locator"
-date: 2018-06-05
+title: DIとサービスロケーター
+slug: dependency-injection-service-locator
+date: 2018-06-05T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "DI"
-  - "サービスロケーター"
-  - "デザインパターン"
-draft: false
+  - DI
+  - サービスロケーター
+  - デザインパターン
+translation_key: dependency-injection-service-locator
 ---
+
 
 # 概要
 DIとService Locatorの違いについてまとめる

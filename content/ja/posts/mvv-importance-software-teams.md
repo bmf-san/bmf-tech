@@ -1,14 +1,15 @@
 ---
-title: "ソフトウェア開発チームがMVVを定めるべき理由"
-slug: "mvv-importance-software-teams"
-date: 2026-01-07
+title: ソフトウェア開発チームがMVVを定めるべき理由
+slug: mvv-importance-software-teams
+date: 2026-01-07T00:00:00Z
 author: bmf-san
 categories:
-  - "マネジメント"
+  - マネジメント
 tags:
-  - "チームマネジメント"
-draft: false
+  - チームマネジメント
+translation_key: mvv-importance-software-teams
 ---
+
 
 
 ソフトウェア開発において「技術的に正しいか」を議論することは重要である。しかし、それだけでは不十分である。技術的な正解というものは、技術のトレンドや実行環境、あるいはビジネスフェーズの変化によって容易に変容するからである。

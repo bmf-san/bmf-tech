@@ -1,14 +1,15 @@
 ---
-title: "ISUCON環境で学ぶシステムメトリクス入門"
-slug: "system-metrics-introduction-isucon"
-date: 2024-04-14
+title: ISUCON環境で学ぶシステムメトリクス入門
+slug: system-metrics-introduction-isucon
+date: 2024-04-14T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "ISUCON"
-draft: false
+  - ISUCON
+translation_key: system-metrics-introduction-isucon
 ---
+
 
 # 概要　
 ISUCON環境を利用してシステムメトリクスをちゃんと見れるようなろうという勉強会を定期的に行っているので、そのまとめを残す。

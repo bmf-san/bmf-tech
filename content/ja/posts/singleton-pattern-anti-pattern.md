@@ -1,15 +1,16 @@
 ---
-title: "Singletonパターンはなぜアンチパターンなのか"
-slug: "singleton-pattern-anti-pattern"
-date: 2025-10-18
+title: Singletonパターンはなぜアンチパターンなのか
+slug: singleton-pattern-anti-pattern
+date: 2025-10-18T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "シングルトンパターン"
-  - "Golang"
-draft: false
+  - シングルトンパターン
+  - Golang
+translation_key: singleton-pattern-anti-pattern
 ---
+
 
 ## はじめに
 

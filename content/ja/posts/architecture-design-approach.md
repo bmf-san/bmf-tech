@@ -1,15 +1,16 @@
 ---
-title: "アーキテクチャ設計の進め方"
-slug: "architecture-design-approach"
-date: 2023-11-23
+title: アーキテクチャ設計の進め方
+slug: architecture-design-approach
+date: 2023-11-23T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "アーキテクチャ"
-  - "設計"
-draft: false
+  - アーキテクチャ
+  - 設計
+translation_key: architecture-design-approach
 ---
+
 
 # 概要
 構成図レベルでのアーキテクチャの設計をする時の進め方として個人的に良いと思ったやり方を1つ取り上げてまとめておく。

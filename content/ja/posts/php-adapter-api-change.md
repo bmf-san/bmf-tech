@@ -1,16 +1,17 @@
 ---
-title: "PHPで学ぶデザインパターン - Adapter ~APIを変更する~"
-slug: "php-adapter-api-change"
-date: 2017-10-01
+title: PHPで学ぶデザインパターン - Adapter ~APIを変更する~
+slug: php-adapter-api-change
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "PHP"
-  - "アダプターパターン"
-  - "デザインパターン"
-draft: false
+  - PHP
+  - アダプターパターン
+  - デザインパターン
+translation_key: php-adapter-api-change
 ---
+
 
 # Adapter パターンとは？
 API（互換性のないインターフェース）同士を適合させるためのパターンです。**既存のコードの変更をせずに、再利用することで新しい機能を提供する**というものです。再利用するコードには変更を加えないというのが特徴です。

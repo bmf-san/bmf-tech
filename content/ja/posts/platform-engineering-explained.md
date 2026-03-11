@@ -1,14 +1,15 @@
 ---
-title: "プラットフォーム・エンジニアリングとは何か"
-slug: "platform-engineering-explained"
-date: 2025-12-26
+title: プラットフォーム・エンジニアリングとは何か
+slug: platform-engineering-explained
+date: 2025-12-26T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "プラットフォーム・エンジニアリング"
-draft: false
+  - プラットフォーム・エンジニアリング
+translation_key: platform-engineering-explained
 ---
+
 
 ## 概要
 

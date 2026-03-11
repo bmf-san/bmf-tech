@@ -1,19 +1,20 @@
 ---
-title: "php7をインストールした時にmysqlドライバーがなかった"
-slug: "mysql-driver-php7-installation-issue"
-date: 2017-10-01
+title: php7をインストールした時にmysqlドライバーがなかった
+slug: mysql-driver-php7-installation-issue
+date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:
-  - "インフラストラクチャ"
+  - インフラストラクチャ
 tags:
-  - "CentOS"
-  - "MySQL"
-  - "PHP"
-  - "PHP7"
-  - "さくらのVPS"
-  - "yum"
-draft: false
+  - CentOS
+  - MySQL
+  - PHP
+  - PHP7
+  - さくらのVPS
+  - yum
+translation_key: mysql-driver-php7-installation-issue
 ---
+
 
 # php7をインストールした時にmysqlドライバーがなかった（）
 

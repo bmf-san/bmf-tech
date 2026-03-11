@@ -1,16 +1,17 @@
 ---
-title: "x／termで作るTUIアプリケーション開発"
-slug: "tui-application-development"
-date: 2025-07-16
+title: x／termで作るTUIアプリケーション開発
+slug: tui-application-development
+date: 2025-07-16T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "TUI"
-  - "CLI"
-  - "ゲーム"
-draft: false
+  - TUI
+  - CLI
+  - ゲーム
+translation_key: tui-application-development
 ---
+
 
 # はじめに
 

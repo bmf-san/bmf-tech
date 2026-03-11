@@ -1,14 +1,15 @@
 ---
-title: "負荷試験を始めるためのスターティングガイド"
-slug: "load-testing-start-guide"
-date: 2024-08-24
+title: 負荷試験を始めるためのスターティングガイド
+slug: load-testing-start-guide
+date: 2024-08-24T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "負荷試験"
-draft: false
+  - 負荷試験
+translation_key: load-testing-start-guide
 ---
+
 
 # 概要
 負荷試験を理解し、負荷試験を始めることができるようになるためのガイドとなるような内容をまとめます。

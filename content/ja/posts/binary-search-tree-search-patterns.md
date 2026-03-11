@@ -1,16 +1,17 @@
 ---
-title: "2分探索木の探索パターンについて"
-slug: "binary-search-tree-search-patterns"
-date: 2023-08-04
+title: 2分探索木の探索パターンについて
+slug: binary-search-tree-search-patterns
+date: 2023-08-04T00:00:00Z
 author: bmf-san
 categories:
-  - "アルゴリズムとデータ構造"
+  - アルゴリズムとデータ構造
 tags:
-  - "二分探索木"
-  - "DFS"
-  - "BFS"
-draft: false
+  - 二分探索木
+  - DFS
+  - BFS
+translation_key: binary-search-tree-search-patterns
 ---
+
 
 # 概要
 

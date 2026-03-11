@@ -1,14 +1,15 @@
 ---
-title: "2025年の振り返りと抱負"
-slug: "reflections-and-resolutions-2025"
-date: 2025-12-29
+title: 2025年の振り返りと抱負
+slug: reflections-and-resolutions-2025
+date: 2025-12-29T00:00:00Z
 author: bmf-san
 categories:
-  - "ポエム"
+  - ポエム
 tags:
-  - "振り返りと抱負"
-draft: false
+  - 振り返りと抱負
+translation_key: reflections-and-resolutions-2025
 ---
+
 
 # 2025年の振り返りと来年の抱負
 今年も1年を振り返り、来年の抱負を記す。振り返りブログを書き始めて今回で8回目になる。

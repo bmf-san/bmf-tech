@@ -1,16 +1,17 @@
 ---
-title: "チームトポロジーとは何か"
-slug: "team-topologies-introduction"
-date: 2026-01-09
+title: チームトポロジーとは何か
+slug: team-topologies-introduction
+date: 2026-01-09T00:00:00Z
 author: bmf-san
 categories:
-  - "マネジメント"
+  - マネジメント
 tags:
-  - "チームトポロジー"
-  - "チームマネジメント"
-  - "組織設計"
-draft: false
+  - チームトポロジー
+  - チームマネジメント
+  - 組織設計
+translation_key: team-topologies-introduction
 ---
+
 
 ## チームトポロジーとは何か？
 

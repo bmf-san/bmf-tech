@@ -1,17 +1,18 @@
 ---
-title: "ソフトウェア設計のトレードオフと誤り ―プログラミングの際により良い選択をするには"
-slug: "software-design-tradeoffs-errors"
-date: 2024-05-20
+title: ソフトウェア設計のトレードオフと誤り ―プログラミングの際により良い選択をするには
+slug: software-design-tradeoffs-errors
+date: 2024-05-20T00:00:00Z
 author: bmf-san
 categories:
-  - "アーキテクチャ"
+  - アーキテクチャ
 tags:
-  - "アーキテクチャ"
-  - "設計"
-  - "システム設計"
-  - "本"
-draft: false
+  - アーキテクチャ
+  - 設計
+  - システム設計
+  - 本
+translation_key: software-design-tradeoffs-errors
 ---
+
 
 [ソフトウェア設計のトレードオフと誤り ―プログラミングの際により良い選択をするには](https://amzn.to/4ausWrh)を読んだ。
 

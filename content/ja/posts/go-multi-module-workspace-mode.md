@@ -1,14 +1,15 @@
 ---
-title: "Goのマルチモジュール構成でWorkspace modeを使ってみる"
-slug: "go-multi-module-workspace-mode"
-date: 2024-01-19
+title: Goのマルチモジュール構成でWorkspace modeを使ってみる
+slug: go-multi-module-workspace-mode
+date: 2024-01-19T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-draft: false
+  - Golang
+translation_key: go-multi-module-workspace-mode
 ---
+
 
 Go1.18から追加されたWorkspace modeを使ったことがなかったので、使ってみた。
 

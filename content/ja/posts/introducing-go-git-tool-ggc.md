@@ -1,17 +1,18 @@
 ---
-title: "Go製Git操作ツール「ggc」の紹介"
-slug: "introducing-go-git-tool-ggc"
-date: 2025-06-15
+title: Go製Git操作ツール「ggc」の紹介
+slug: introducing-go-git-tool-ggc
+date: 2025-06-15T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "Git"
-  - "CLI"
-  - "TUI"
-draft: false
+  - Golang
+  - Git
+  - CLI
+  - TUI
+translation_key: introducing-go-git-tool-ggc
 ---
+
 
 # Go製Git操作ツール「ggc」の紹介
 

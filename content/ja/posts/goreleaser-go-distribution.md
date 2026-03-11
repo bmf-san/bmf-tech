@@ -1,15 +1,16 @@
 ---
-title: "GoReleaserを使ってのGoのアプリケーションを配布する"
-slug: "goreleaser-go-distribution"
-date: 2023-11-11
+title: GoReleaserを使ってのGoのアプリケーションを配布する
+slug: goreleaser-go-distribution
+date: 2023-11-11T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Golang"
-  - "GitHub Actions"
-draft: false
+  - Golang
+  - GitHub Actions
+translation_key: goreleaser-go-distribution
 ---
+
 
 [GoReleaser](https://goreleaser.com/)を使ってGoのアプリケーションをクロスコンパイルしてバイナリ配布をやってみた。
 

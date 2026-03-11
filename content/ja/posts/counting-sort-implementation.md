@@ -1,14 +1,15 @@
 ---
-title: "カウントソートの実装"
-slug: "counting-sort-implementation"
-date: 2023-06-24
+title: カウントソートの実装
+slug: counting-sort-implementation
+date: 2023-06-24T00:00:00Z
 author: bmf-san
 categories:
-  - "アルゴリズムとデータ構造"
+  - アルゴリズムとデータ構造
 tags:
-  - "カウントソート"
-draft: false
+  - カウントソート
+translation_key: counting-sort-implementation
 ---
+
 
 # カウントソートとは
 ソートアルゴリズムの中でも比較を使わずにソートする変わった？アルゴリズム。

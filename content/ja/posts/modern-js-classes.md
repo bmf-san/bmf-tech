@@ -1,16 +1,17 @@
 ---
-title: "モダンなJSの話──クラス"
-slug: "modern-js-classes"
-date: 2017-12-25
+title: モダンなJSの話──クラス
+slug: modern-js-classes
+date: 2017-12-25T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "ES5"
-  - "ES6"
-  - "JavaScript"
-draft: false
+  - ES5
+  - ES6
+  - JavaScript
+translation_key: modern-js-classes
 ---
+
 
 ※この記事は[Innovator Japan Engineers’ Blog](http://tech.innovator.jp.net/)で掲載されている記事を転載したものです。
 

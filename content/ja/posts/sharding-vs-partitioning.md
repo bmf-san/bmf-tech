@@ -1,15 +1,16 @@
 ---
-title: "シャーディングとパーティショニングの違い"
-slug: "sharding-vs-partitioning"
-date: 2023-06-03
+title: シャーディングとパーティショニングの違い
+slug: sharding-vs-partitioning
+date: 2023-06-03T00:00:00Z
 author: bmf-san
 categories:
-  - "データベース"
+  - データベース
 tags:
-  - "パーティショニング"
-  - "シャーディング"
-draft: false
+  - パーティショニング
+  - シャーディング
+translation_key: sharding-vs-partitioning
 ---
+
 
 # 概要
 時々どっちがどっちか混乱してしまうので、メモを残す。

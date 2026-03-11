@@ -1,17 +1,18 @@
 ---
-title: "OPAにおけるページネーションへの影響と解決策に関する検討"
-slug: "pagination-impact-solutions-opa"
-date: 2025-06-14
+title: OPAにおけるページネーションへの影響と解決策に関する検討
+slug: pagination-impact-solutions-opa
+date: 2025-06-14T00:00:00Z
 author: bmf-san
 categories:
-  - "アプリケーション"
+  - アプリケーション
 tags:
-  - "Open Policy Agent"
-  - "オフセットページネーション"
-  - "カーソルページネーション"
-  - "権限管理"
-draft: false
+  - Open Policy Agent
+  - オフセットページネーション
+  - カーソルページネーション
+  - 権限管理
+translation_key: pagination-impact-solutions-opa
 ---
+
 
 # OPA の基本と課題背景
 OPA（Open Policy Agent）は Rego 言語で記述されたポリシーを用いて、入力（input）や外部データ（data）に基づいて評価を行い、許可／拒否などの判定を行うエンジンである。

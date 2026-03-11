@@ -1,14 +1,15 @@
 ---
-title: "アルゴリズムとデータ構造 - 選択ソート"
-slug: "algorithms-data-structures-selection-sort"
-date: 2020-02-01
+title: アルゴリズムとデータ構造 - 選択ソート
+slug: algorithms-data-structures-selection-sort
+date: 2020-02-01T00:00:00Z
 author: bmf-san
 categories:
-  - "アルゴリズムとデータ構造"
+  - アルゴリズムとデータ構造
 tags:
-  - "選択ソート"
-draft: false
+  - 選択ソート
+translation_key: algorithms-data-structures-selection-sort
 ---
+
 
 # 概要
 [アルゴリズム図鑑](https://www.shoeisha.co.jp/book/detail/9784798149776)を参考に、アルゴリズムとデータ構造を学ぶ。
