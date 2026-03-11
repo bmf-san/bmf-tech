@@ -287,6 +287,198 @@ func checkContent(root string) (jaSlugs, enSlugs map[string]bool) {
 }
 
 // ────────────────────────────────────────────────────────────
+// [TRANSLATION] JA/EN 翻訳整合性チェック
+// ────────────────────────────────────────────────────────────
+
+func checkTranslationConsistency(root string) {
+	sec := "TRANSLATION"
+
+	jaDir := filepath.Join(root, "content", "ja", "posts")
+	enDir := filepath.Join(root, "content", "en", "posts")
+
+	type Info struct {
+		Slug string
+		FM   *PostFrontMatter
+	}
+
+	jaByTK := make(map[string]Info)
+	enByTK := make(map[string]Info)
+
+	jaPaths, _ := filepath.Glob(filepath.Join(jaDir, "*.md"))
+	for _, p := range jaPaths {
+		fm, err := parseFrontMatter(p)
+		if err != nil || fm.TranslationKey == "" {
+			continue
+		}
+		jaByTK[fm.TranslationKey] = Info{slugFromPath(p), fm}
+	}
+	enPaths, _ := filepath.Glob(filepath.Join(enDir, "*.md"))
+	for _, p := range enPaths {
+		fm, err := parseFrontMatter(p)
+		if err != nil || fm.TranslationKey == "" {
+			continue
+		}
+		enByTK[fm.TranslationKey] = Info{slugFromPath(p), fm}
+	}
+
+	type Pair struct {
+		TK string
+		JA Info
+		EN Info
+	}
+	var pairs []Pair
+	for tk, ja := range jaByTK {
+		if en, ok := enByTK[tk]; ok {
+			pairs = append(pairs, Pair{tk, ja, en})
+		}
+	}
+	sort.Slice(pairs, func(i, j int) bool { return pairs[i].TK < pairs[j].TK })
+	info(sec, fmt.Sprintf("JA-EN 翻訳ペア: %d 件", len(pairs)))
+
+	// 共起カウント: jaTag → (enTag → 共起ペア数)
+	tagCoOccur := make(map[string]map[string]int)
+	catCoOccur := make(map[string]map[string]int)
+	tagAppears := make(map[string]int) // jaTag → ペア数
+	catAppears := make(map[string]int)
+
+	for _, p := range pairs {
+		enTagSet := make(map[string]bool)
+		for _, t := range p.EN.FM.Tags {
+			enTagSet[t] = true
+		}
+		enCatSet := make(map[string]bool)
+		for _, c := range p.EN.FM.Categories {
+			enCatSet[c] = true
+		}
+		for _, jt := range p.JA.FM.Tags {
+			tagAppears[jt]++
+			if tagCoOccur[jt] == nil {
+				tagCoOccur[jt] = make(map[string]int)
+			}
+			for et := range enTagSet {
+				tagCoOccur[jt][et]++
+			}
+		}
+		for _, jc := range p.JA.FM.Categories {
+			catAppears[jc]++
+			if catCoOccur[jc] == nil {
+				catCoOccur[jc] = make(map[string]int)
+			}
+			for ec := range enCatSet {
+				catCoOccur[jc][ec]++
+			}
+		}
+	}
+
+	// dominant mapping: 70% 以上の共起率を持つ EN 語を "正訳" とみなす
+	const dominanceThreshold = 0.70
+	const minPairsForMapping = 3 // 3件未満のタグはチェック対象外
+
+	tagMap := make(map[string]string) // jaTag → EN tag
+	for jt, enCounts := range tagCoOccur {
+		total := tagAppears[jt]
+		best, bestN := "", 0
+		for et, c := range enCounts {
+			if c > bestN {
+				bestN, best = c, et
+			}
+		}
+		if total >= minPairsForMapping && float64(bestN)/float64(total) >= dominanceThreshold {
+			tagMap[jt] = best
+		}
+	}
+	catMap := make(map[string]string) // jaCat → EN category
+	for jc, enCounts := range catCoOccur {
+		total := catAppears[jc]
+		best, bestN := "", 0
+		for ec, c := range enCounts {
+			if c > bestN {
+				bestN, best = c, ec
+			}
+		}
+		if total >= minPairsForMapping && float64(bestN)/float64(total) >= dominanceThreshold {
+			catMap[jc] = best
+		}
+	}
+
+	// 各ペアを検証
+	tagCountErr, catCountErr := 0, 0
+	tagMapErr, catMapErr := 0, 0
+
+	for _, p := range pairs {
+		// タグ数の一致チェック
+		if len(p.JA.FM.Tags) != len(p.EN.FM.Tags) {
+			warn(sec, fmt.Sprintf("タグ数不一致 [%s] JA=%d EN=%d (JA:%v / EN:%v)",
+				p.TK, len(p.JA.FM.Tags), len(p.EN.FM.Tags),
+				p.JA.FM.Tags, p.EN.FM.Tags))
+			tagCountErr++
+		}
+		// カテゴリ数の一致チェック
+		if len(p.JA.FM.Categories) != len(p.EN.FM.Categories) {
+			warn(sec, fmt.Sprintf("カテゴリ数不一致 [%s] JA=%d EN=%d (JA:%v / EN:%v)",
+				p.TK, len(p.JA.FM.Categories), len(p.EN.FM.Categories),
+				p.JA.FM.Categories, p.EN.FM.Categories))
+			catCountErr++
+		}
+
+		enTagSet := make(map[string]bool)
+		for _, t := range p.EN.FM.Tags {
+			enTagSet[t] = true
+		}
+		enCatSet := make(map[string]bool)
+		for _, c := range p.EN.FM.Categories {
+			enCatSet[c] = true
+		}
+
+		// タグ翻訳マッピングチェック
+		for _, jt := range p.JA.FM.Tags {
+			expectedEN, ok := tagMap[jt]
+			if !ok {
+				continue // 件数が少ないタグはスキップ
+			}
+			if !enTagSet[expectedEN] {
+				warn(sec, fmt.Sprintf("タグ翻訳不整合 [%s] JA:%q → 期待EN:%q, 実際のENタグ:%v",
+					p.TK, jt, expectedEN, p.EN.FM.Tags))
+				tagMapErr++
+			}
+		}
+		// カテゴリ翻訳マッピングチェック
+		for _, jc := range p.JA.FM.Categories {
+			expectedEN, ok := catMap[jc]
+			if !ok {
+				continue
+			}
+			if !enCatSet[expectedEN] {
+				warn(sec, fmt.Sprintf("カテゴリ翻訳不整合 [%s] JA:%q → 期待EN:%q, 実際のENカテゴリ:%v",
+					p.TK, jc, expectedEN, p.EN.FM.Categories))
+				catMapErr++
+			}
+		}
+	}
+
+	if tagCountErr == 0 {
+		passf(sec, fmt.Sprintf("全翻訳ペアのタグ数が一致 (%d pairs)", len(pairs)))
+	} else {
+		warn(sec, fmt.Sprintf("タグ数不一致: %d pair(s)", tagCountErr))
+	}
+	if catCountErr == 0 {
+		passf(sec, fmt.Sprintf("全翻訳ペアのカテゴリ数が一致 (%d pairs)", len(pairs)))
+	} else {
+		warn(sec, fmt.Sprintf("カテゴリ数不一致: %d pair(s)", catCountErr))
+	}
+	if tagMapErr == 0 {
+		passf(sec, "タグ翻訳マッピングが整合 (70%以上共起ルール)")
+	} else {
+		warn(sec, fmt.Sprintf("タグ翻訳不整合: %d 件", tagMapErr))
+	}
+	if catMapErr == 0 {
+		passf(sec, "カテゴリ翻訳マッピングが整合 (70%以上共起ルール)")
+	} else {
+		warn(sec, fmt.Sprintf("カテゴリ翻訳不整合: %d 件", catMapErr))
+	}
+}
+
+// ────────────────────────────────────────────────────────────
 // [TAXONOMY] タグ・カテゴリー整合性チェック
 // ────────────────────────────────────────────────────────────
 
@@ -858,6 +1050,7 @@ func main() {
 	fmt.Printf("チェック対象: %s\n", absRoot)
 
 	checkContent(absRoot)
+	checkTranslationConsistency(absRoot)
 	checkTaxonomy(absRoot)
 	checkRedirects(absRoot)
 	checkConfig(absRoot)
