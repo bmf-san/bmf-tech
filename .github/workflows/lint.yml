@@ -1,0 +1,28 @@
+name: Lint Content
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'content/ja/posts/**'
+      - 'content/en/posts/**'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install textlint dependencies
+        run: npm ci
+
+      - name: Lint changed posts
+        run: make lint-content-diff

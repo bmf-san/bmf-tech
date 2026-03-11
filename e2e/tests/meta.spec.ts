@@ -9,8 +9,8 @@ test.describe('page <title> tag', () => {
   });
 
   test('article page shows "Article Title | Site Title"', async ({ page }) => {
-    await page.goto('/posts/hello-world/');
-    await expect(page).toHaveTitle('Hello, World | bmf-tech');
+    await page.goto('/posts/2018-review-2019-goals/');
+    await expect(page).toHaveTitle('Reflection on 2018 and Goals for 2019 | bmf-tech');
   });
 
   test('about page shows "About | Site Title"', async ({ page }) => {
@@ -22,7 +22,7 @@ test.describe('page <title> tag', () => {
 // ── meta description ──────────────────────────────────────────────────────────
 
 test.describe('meta description on key pages', () => {
-  const PAGES = ['/', '/ja/', '/posts/hello-world/', '/about/'];
+  const PAGES = ['/', '/ja/', '/posts/2018-review-2019-goals/', '/about/'];
   for (const path of PAGES) {
     test(`meta[name="description"] is non-empty on ${path}`, async ({ page }) => {
       await page.goto(path);
@@ -36,14 +36,14 @@ test.describe('meta description on key pages', () => {
 
 // ── OGP meta tags — article pages ────────────────────────────────────────────
 
-test.describe('OGP on EN article /posts/hello-world/', () => {
-  const URL = '/posts/hello-world/';
+test.describe('OGP on EN article /posts/2018-review-2019-goals/', () => {
+  const URL = '/posts/2018-review-2019-goals/';
 
   test('og:title equals article title', async ({ page }) => {
     await page.goto(URL);
     const ogTitle = page.locator('meta[property="og:title"]');
     await expect(ogTitle).toHaveCount(1);
-    expect(await ogTitle.getAttribute('content')).toBe('Hello, World');
+    expect(await ogTitle.getAttribute('content')).toBe('Reflection on 2018 and Goals for 2019');
   });
 
   test('og:type is "article"', async ({ page }) => {
@@ -57,7 +57,7 @@ test.describe('OGP on EN article /posts/hello-world/', () => {
     await page.goto(URL);
     const ogUrl = page.locator('meta[property="og:url"]');
     await expect(ogUrl).toHaveCount(1);
-    expect(await ogUrl.getAttribute('content')).toContain('/posts/hello-world/');
+    expect(await ogUrl.getAttribute('content')).toContain('/posts/2018-review-2019-goals/');
   });
 
   test('og:description is non-empty', async ({ page }) => {
@@ -68,11 +68,11 @@ test.describe('OGP on EN article /posts/hello-world/', () => {
     expect(content?.trim().length).toBeGreaterThan(0);
   });
 
-  test('og:image points to /ogp/hello-world.png', async ({ page }) => {
+  test('og:image points to /ogp/2018-review-2019-goals.png', async ({ page }) => {
     await page.goto(URL);
     const ogImage = page.locator('meta[property="og:image"]');
     await expect(ogImage).toHaveCount(1);
-    expect(await ogImage.getAttribute('content')).toContain('/ogp/hello-world.png');
+    expect(await ogImage.getAttribute('content')).toContain('/ogp/2018-review-2019-goals.png');
   });
 });
 
@@ -133,15 +133,15 @@ test.describe('OGP on listing pages', () => {
 
 // ── canonical / hreflang on article pages ────────────────────────────────────
 
-test.describe('canonical on EN article /posts/hello-world/', () => {
-  const URL = '/posts/hello-world/';
+test.describe('canonical on EN article /posts/2018-review-2019-goals/', () => {
+  const URL = '/posts/2018-review-2019-goals/';
 
   test('exactly one canonical link pointing to article URL', async ({ page }) => {
     await page.goto(URL);
     const canonical = page.locator('link[rel="canonical"]');
     await expect(canonical).toHaveCount(1);
     const href = await canonical.getAttribute('href');
-    expect(href).toContain('/posts/hello-world/');
+    expect(href).toContain('/posts/2018-review-2019-goals/');
     expect(href).toContain('bmf-tech.com');
   });
 

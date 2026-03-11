@@ -1,0 +1,25 @@
+{
+  "rules": {
+    "write-good": {
+      "passive": true,
+      "illusion": true,
+      "so": false,
+      "thereIs": true,
+      "weasel": false,
+      "adverb": false,
+      "tooWordy": true,
+      "cliches": true,
+      "eprime": false
+    },
+    "terminology": {
+      "defaultTerms": true,
+      "terms": [
+        ["Nginx", "nginx"],
+        ["Docker-compose", "Docker Compose"]
+      ]
+    }
+  },
+  "filters": {
+    "comments": true
+  }
+}
