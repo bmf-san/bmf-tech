@@ -72,11 +72,11 @@ test.describe('English article page (new template) /posts/2018-review-2019-goals
   });
 });
 
-// ── EN article (static/manual) /posts/hello-world/ ───────────────────────────
-// hello-world is a manually created EN-only article using the standard template
+// ── EN article /posts/2018-review-2019-goals/ ───────────────────────────────
+// 2018-review-2019-goals is an EN article using the standard template
 
-test.describe('English article page /posts/hello-world/', () => {
-  const URL = '/posts/hello-world/';
+test.describe('English article page /posts/2018-review-2019-goals/', () => {
+  const URL = '/posts/2018-review-2019-goals/';
 
   test('page loads with status 200', async ({ page }) => {
     const res = await page.goto(URL);
@@ -88,9 +88,9 @@ test.describe('English article page /posts/hello-world/', () => {
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
   });
 
-  test('page title is "Hello, World | bmf-tech"', async ({ page }) => {
+  test('page title is "Reflection on 2018 and Goals for 2019 | bmf-tech"', async ({ page }) => {
     await page.goto(URL);
-    await expect(page).toHaveTitle('Hello, World | bmf-tech');
+    await expect(page).toHaveTitle('Reflection on 2018 and Goals for 2019 | bmf-tech');
   });
 
   test('article h1 heading is visible', async ({ page }) => {
