@@ -34,12 +34,12 @@ test.describe('Nav: locale toggle', () => {
     expect(href).toBe('/posts/cto-thinking-strategy-leadership/');
   });
 
-  test('EN article /posts/hello-world/ toggle links to /ja/', async ({ page }) => {
-    await page.goto('/posts/hello-world/');
+  test('EN article toggle links to JA translation when one exists', async ({ page }) => {
+    await page.goto('/posts/cto-thinking-strategy-leadership/');
     const toggle = page.locator('nav.navbar a:has(.badge-primary)');
     const href = await toggle.getAttribute('href');
-    // No JA translation for this article → falls back to /ja/
-    expect(href).toBe('/ja/');
+    // Has JA translation → links to JA article
+    expect(href).toBe('/ja/posts/cto-thinking-strategy-leadership/');
   });
 });
 
@@ -63,14 +63,14 @@ test.describe('Tags index /tags/', () => {
   });
 });
 
-test.describe('Tag page /tags/Go/', () => {
+test.describe('Tag page /tags/Golang/', () => {
   test('loads and has article list', async ({ page }) => {
-    await page.goto('/tags/Go/');
+    await page.goto('/tags/Golang/');
     await expect(page.locator('a.card').first()).toBeVisible();
   });
 
   test('article links point to /ja/posts/ or /posts/', async ({ page }) => {
-    await page.goto('/tags/Go/');
+    await page.goto('/tags/Golang/');
     const href = await page.locator('a.card').first().getAttribute('href');
     expect(href).toMatch(/\/posts\//);
   });
@@ -187,7 +187,7 @@ test.describe('About page /ja/about/', () => {
 test.describe('Archive page /archives/2024/03/', () => {
   test('loads and has article list', async ({ page }) => {
     await page.goto('/archives/2024/03/');
-    await expect(page.locator('div.card-body li').first()).toBeVisible();
+    await expect(page.locator('a.card').first()).toBeVisible();
   });
 
   test('articles are from 2024-03', async ({ page }) => {

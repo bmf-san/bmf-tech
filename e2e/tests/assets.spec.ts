@@ -8,7 +8,7 @@ import { test, expect } from '@playwright/test';
 const PAGES_WITH_CSS = [
   '/',
   '/ja/',
-  '/posts/hello-world/',
+  '/posts/2018-review-2019-goals/',
   '/ja/posts/2018-review-2019-goals/',
   '/tags/',
   '/ja/tags/',
