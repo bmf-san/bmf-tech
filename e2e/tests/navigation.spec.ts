@@ -63,14 +63,14 @@ test.describe('Tags index /tags/', () => {
   });
 });
 
-test.describe('Tag page /tags/Go/', () => {
+test.describe('Tag page /tags/Golang/', () => {
   test('loads and has article list', async ({ page }) => {
-    await page.goto('/tags/Go/');
+    await page.goto('/tags/Golang/');
     await expect(page.locator('a.card').first()).toBeVisible();
   });
 
   test('article links point to /ja/posts/ or /posts/', async ({ page }) => {
-    await page.goto('/tags/Go/');
+    await page.goto('/tags/Golang/');
     const href = await page.locator('a.card').first().getAttribute('href');
     expect(href).toMatch(/\/posts\//);
   });

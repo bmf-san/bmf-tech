@@ -7,3 +7,9 @@ template: page.html
 draft: false
 translation_key: categories
 ---
+
+Browse all articles by category.
+
+- [Tools](/categories/Tools/)
+- [Architecture](/categories/Architecture/)
+- [Development Process](/categories/開発プロセス/)
