@@ -44,10 +44,11 @@ test.describe('English root index /', () => {
 
   test('each card has a title, date and category', async ({ page }) => {
     await page.goto('/');
-    const firstCard = page.locator('a.card').first();
-    await expect(firstCard.locator('h3')).toBeVisible();
-    await expect(firstCard.locator('.text-xs.text-secondary')).toBeVisible();
-    await expect(firstCard.locator('.badge-secondary')).toBeVisible();
+    // Second card (nth(1)) is a regular card with h3; first is hero card with h2
+    const card = page.locator('a.card').nth(1);
+    await expect(card.locator('h3')).toBeVisible();
+    await expect(card.locator('.text-xs.text-secondary')).toBeVisible();
+    await expect(card.locator('.badge-secondary')).toBeVisible();
   });
 
   test('article cards link to /posts/', async ({ page }) => {

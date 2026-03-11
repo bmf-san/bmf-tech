@@ -49,3 +49,8 @@ i18n:
   locales:
     - "en"
     - "ja"
+
+plugins:
+  amazon_books:
+    enabled: true
+    tag: "bmf035-22"

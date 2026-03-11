@@ -72,10 +72,10 @@ test.describe('English article page (new template) /posts/2018-review-2019-goals
   });
 });
 
-// ── EN article (legacy/static template) /posts/hello-world/ ──────────────────
-// hello-world is the manually created static article using the older nav template
+// ── EN article (static/manual) /posts/hello-world/ ───────────────────────────
+// hello-world is a manually created EN-only article using the standard template
 
-test.describe('English article page (legacy template) /posts/hello-world/', () => {
+test.describe('English article page /posts/hello-world/', () => {
   const URL = '/posts/hello-world/';
 
   test('page loads with status 200', async ({ page }) => {
@@ -95,25 +95,25 @@ test.describe('English article page (legacy template) /posts/hello-world/', () =
 
   test('article h1 heading is visible', async ({ page }) => {
     await page.goto(URL);
-    await expect(page.locator('article header h1').first()).toBeVisible();
+    await expect(page.locator('h1').first()).toBeVisible();
   });
 
-  test('article-meta shows date', async ({ page }) => {
+  test('publication date is displayed', async ({ page }) => {
     await page.goto(URL);
-    await expect(page.locator('.article-meta time')).toBeVisible();
+    await expect(page.locator('header .text-sm.text-secondary').first()).toBeVisible();
   });
 
-  test('article-content is present and non-empty', async ({ page }) => {
+  test('article prose content is present and non-empty', async ({ page }) => {
     await page.goto(URL);
-    const content = page.locator('.article-content');
+    const content = page.locator('article.prose');
     await expect(content).toBeVisible();
     const text = await content.textContent();
     expect(text?.trim().length).toBeGreaterThan(0);
   });
 
-  test('legacy site-header is present', async ({ page }) => {
+  test('navbar is present', async ({ page }) => {
     await page.goto(URL);
-    await expect(page.locator('.site-header')).toBeVisible();
+    await expect(page.locator('nav.navbar')).toBeVisible();
   });
 
   test('footer is present', async ({ page }) => {

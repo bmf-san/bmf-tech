@@ -5,7 +5,7 @@ import { test, expect } from '@playwright/test';
 test.describe('Nav: locale toggle', () => {
   test('EN page shows JA toggle linking to /ja/', async ({ page }) => {
     await page.goto('/');
-    const toggle = page.locator('.nav-links .locale-toggle');
+    const toggle = page.locator('nav.navbar a:has(.badge-primary)');
     await expect(toggle).toHaveText('JA');
     const href = await toggle.getAttribute('href');
     expect(href).toBe('/ja/');
@@ -13,7 +13,7 @@ test.describe('Nav: locale toggle', () => {
 
   test('JA page shows EN toggle linking to /', async ({ page }) => {
     await page.goto('/ja/');
-    const toggle = page.locator('.nav-links .locale-toggle');
+    const toggle = page.locator('nav.navbar a:has(.badge-primary)');
     await expect(toggle).toHaveText('EN');
     const href = await toggle.getAttribute('href');
     expect(href).toBe('/');
@@ -21,22 +21,22 @@ test.describe('Nav: locale toggle', () => {
 
   test('clicking JA toggle navigates to /ja/', async ({ page }) => {
     await page.goto('/');
-    await page.locator('.nav-links .locale-toggle').click();
+    await page.locator('nav.navbar a:has(.badge-primary)').click();
     await expect(page).toHaveURL('/ja/');
     await expect(page.locator('html')).toHaveAttribute('lang', 'ja');
   });
 
-  test('JA article toggle falls back to / when no EN translation', async ({ page }) => {
+  test('JA article toggle links to EN translation when one exists', async ({ page }) => {
     await page.goto('/ja/posts/cto-thinking-strategy-leadership/');
-    const toggle = page.locator('.nav-links .locale-toggle');
+    const toggle = page.locator('nav.navbar a:has(.badge-primary)');
     const href = await toggle.getAttribute('href');
-    // No EN translation → falls back to /
-    expect(href).toBe('/');
+    // Has EN translation → links to EN article
+    expect(href).toBe('/posts/cto-thinking-strategy-leadership/');
   });
 
   test('EN article /posts/hello-world/ toggle links to /ja/', async ({ page }) => {
     await page.goto('/posts/hello-world/');
-    const toggle = page.locator('.nav-links .locale-toggle');
+    const toggle = page.locator('nav.navbar a:has(.badge-primary)');
     const href = await toggle.getAttribute('href');
     // No JA translation for this article → falls back to /ja/
     expect(href).toBe('/ja/');
@@ -50,15 +50,15 @@ test.describe('Nav: locale toggle', () => {
 test.describe('Tags index /tags/', () => {
   test('loads a proper HTML page (not a directory listing)', async ({ page }) => {
     await page.goto('/tags/');
-    // page.html renders an .article-content wrapper
-    await expect(page.locator('.article-content')).toBeVisible();
+    // page.html renders an article.prose wrapper
+    await expect(page.locator('article.prose')).toBeVisible();
     // must NOT show the http-server directory listing header
     await expect(page.locator('body')).not.toContainText('Index of /');
   });
 
   test('contains tag links', async ({ page }) => {
     await page.goto('/tags/');
-    const links = page.locator('.article-content a');
+    const links = page.locator('article.prose a');
     expect(await links.count()).toBeGreaterThan(0);
   });
 });
@@ -66,12 +66,12 @@ test.describe('Tags index /tags/', () => {
 test.describe('Tag page /tags/Go/', () => {
   test('loads and has article list', async ({ page }) => {
     await page.goto('/tags/Go/');
-    await expect(page.locator('ul.article-list li').first()).toBeVisible();
+    await expect(page.locator('a.card').first()).toBeVisible();
   });
 
   test('article links point to /ja/posts/ or /posts/', async ({ page }) => {
     await page.goto('/tags/Go/');
-    const href = await page.locator('ul.article-list li a').first().getAttribute('href');
+    const href = await page.locator('a.card').first().getAttribute('href');
     expect(href).toMatch(/\/posts\//);
   });
 });
@@ -79,14 +79,14 @@ test.describe('Tag page /tags/Go/', () => {
 test.describe('Tags index /ja/tags/', () => {
   test('loads a proper HTML page (not a directory listing)', async ({ page }) => {
     await page.goto('/ja/tags/');
-    // page.html renders an .article-content wrapper
-    await expect(page.locator('.article-content')).toBeVisible();
+    // page.html renders an article.prose wrapper
+    await expect(page.locator('article.prose')).toBeVisible();
     await expect(page.locator('body')).not.toContainText('Index of /');
   });
 
   test('contains tag links', async ({ page }) => {
     await page.goto('/ja/tags/');
-    const links = page.locator('.article-content a');
+    const links = page.locator('article.prose a');
     expect(await links.count()).toBeGreaterThan(0);
   });
 });
@@ -97,32 +97,32 @@ test.describe('Tags index /ja/tags/', () => {
 test.describe('Categories index /categories/', () => {
   test('loads a proper HTML page (not a directory listing)', async ({ page }) => {
     await page.goto('/categories/');
-    await expect(page.locator('.article-content')).toBeVisible();
+    await expect(page.locator('article.prose')).toBeVisible();
     await expect(page.locator('body')).not.toContainText('Index of /');
   });
 
   test('contains category links', async ({ page }) => {
     await page.goto('/categories/');
-    const links = page.locator('.article-content a');
+    const links = page.locator('article.prose a');
     expect(await links.count()).toBeGreaterThan(0);
   });
 
   test('Tools category link is present', async ({ page }) => {
     await page.goto('/categories/');
-    await expect(page.locator('.article-content').getByRole('link', { name: 'Tools' })).toBeVisible();
+    await expect(page.locator('article.prose').getByRole('link', { name: 'Tools' })).toBeVisible();
   });
 });
 
 test.describe('Categories index /ja/categories/', () => {
   test('loads a proper HTML page (not a directory listing)', async ({ page }) => {
     await page.goto('/ja/categories/');
-    await expect(page.locator('.article-content')).toBeVisible();
+    await expect(page.locator('article.prose')).toBeVisible();
     await expect(page.locator('body')).not.toContainText('Index of /');
   });
 
   test('contains category links', async ({ page }) => {
     await page.goto('/ja/categories/');
-    const links = page.locator('.article-content a');
+    const links = page.locator('article.prose a');
     expect(await links.count()).toBeGreaterThan(0);
   });
 });
@@ -130,12 +130,12 @@ test.describe('Categories index /ja/categories/', () => {
 test.describe('Category page /ja/categories/OS/', () => {
   test('loads and has article list', async ({ page }) => {
     await page.goto('/ja/categories/OS/');
-    await expect(page.locator('ul.article-list li').first()).toBeVisible();
+    await expect(page.locator('a.card').first()).toBeVisible();
   });
 
   test('article links are present', async ({ page }) => {
     await page.goto('/ja/categories/OS/');
-    const links = page.locator('ul.article-list li a');
+    const links = page.locator('a.card');
     expect(await links.count()).toBeGreaterThan(0);
   });
 });
@@ -150,12 +150,12 @@ test.describe('About page /about/', () => {
 
   test('has article-content', async ({ page }) => {
     await page.goto('/about/');
-    await expect(page.locator('.article-content')).toBeVisible();
+    await expect(page.locator('article.prose')).toBeVisible();
   });
 
   test('contains profile information', async ({ page }) => {
     await page.goto('/about/');
-    await expect(page.locator('.article-content')).toContainText('Kenta Takeuchi');
+    await expect(page.locator('article.prose')).toContainText('Kenta Takeuchi');
   });
 });
 
@@ -167,17 +167,17 @@ test.describe('About page /ja/about/', () => {
 
   test('has article-content', async ({ page }) => {
     await page.goto('/ja/about/');
-    await expect(page.locator('.article-content')).toBeVisible();
+    await expect(page.locator('article.prose')).toBeVisible();
   });
 
   test('contains Japanese profile text', async ({ page }) => {
     await page.goto('/ja/about/');
-    await expect(page.locator('.article-content')).toContainText('シニアプラットフォームエンジニア');
+    await expect(page.locator('article.prose')).toContainText('シニアプラットフォームエンジニア');
   });
 
   test('JA nav About link points to /ja/about/', async ({ page }) => {
     await page.goto('/ja/');
-    const href = await page.locator('.nav-links').getByRole('link', { name: 'About' }).getAttribute('href');
+    const href = await page.locator('nav.navbar').getByRole('link', { name: 'About' }).getAttribute('href');
     expect(href).toBe('/ja/about/');
   });
 });
@@ -187,12 +187,12 @@ test.describe('About page /ja/about/', () => {
 test.describe('Archive page /archives/2024/03/', () => {
   test('loads and has article list', async ({ page }) => {
     await page.goto('/archives/2024/03/');
-    await expect(page.locator('ul.article-list li').first()).toBeVisible();
+    await expect(page.locator('div.card-body li').first()).toBeVisible();
   });
 
   test('articles are from 2024-03', async ({ page }) => {
     await page.goto('/archives/2024/03/');
-    const firstDate = await page.locator('.article-date').first().textContent();
+    const firstDate = await page.locator('div.card-body .text-xs.text-secondary').first().textContent();
     expect(firstDate).toMatch(/^2024-03/);
   });
 });
@@ -200,22 +200,22 @@ test.describe('Archive page /archives/2024/03/', () => {
 // ── JA nav labels ─────────────────────────────────────────────────────────────
 
 test.describe('Nav: JA locale shows Japanese labels', () => {
-  test('nav shows タグ and カテゴリ on /ja/', async ({ page }) => {
+  test('JA nav shows ホーム and フィード', async ({ page }) => {
     await page.goto('/ja/');
-    await expect(page.locator('.nav-links').getByRole('link', { name: 'タグ' })).toBeVisible();
-    await expect(page.locator('.nav-links').getByRole('link', { name: 'カテゴリ' })).toBeVisible();
+    await expect(page.locator('nav.navbar').getByRole('link', { name: 'ホーム' })).toBeVisible();
+    await expect(page.locator('nav.navbar').getByRole('link', { name: 'フィード' })).toBeVisible();
   });
 
-  test('タグ link points to /ja/tags/', async ({ page }) => {
+  test('JA ホーム link points to /ja/', async ({ page }) => {
     await page.goto('/ja/');
-    const href = await page.locator('.nav-links').getByRole('link', { name: 'タグ' }).getAttribute('href');
-    expect(href).toBe('/ja/tags/');
+    const href = await page.locator('nav.navbar').getByRole('link', { name: 'ホーム' }).getAttribute('href');
+    expect(href).toBe('/ja/');
   });
 
-  test('EN nav does not show タグ/カテゴリ', async ({ page }) => {
+  test('EN nav shows Home and Feed (not Japanese labels)', async ({ page }) => {
     await page.goto('/');
-    await expect(page.locator('.nav-links').getByRole('link', { name: 'Tags' })).toBeVisible();
-    await expect(page.locator('.nav-links').getByRole('link', { name: 'タグ' })).toHaveCount(0);
+    await expect(page.locator('nav.navbar').getByRole('link', { name: 'Home' })).toBeVisible();
+    await expect(page.locator('nav.navbar').getByRole('link', { name: 'Feed' })).toBeVisible();
   });
 });
 
@@ -224,7 +224,7 @@ test.describe('Nav: JA locale shows Japanese labels', () => {
 test.describe('JA article tag links use /ja/tags/ prefix', () => {
   test('tag badge href starts with /ja/tags/', async ({ page }) => {
     await page.goto('/ja/posts/cto-thinking-strategy-leadership/');
-    const tagHref = await page.locator('.badge-secondary').first().getAttribute('href');
+    const tagHref = await page.locator('a[href^="/ja/tags/"]').first().getAttribute('href');
     expect(tagHref).toMatch(/^\/ja\/tags\//);
   });
 
