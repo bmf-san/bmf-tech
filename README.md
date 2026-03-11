@@ -27,19 +27,13 @@
 │   └── ja/
 │       └── posts/                # 日本語記事 (旧ブログ移行済み 504記事)
 ├── docs/
-│   ├── DESIGN_DOC.md             # 設計ドキュメント
-│   └── MIGRATION.md              # 移行手順
+│   └── DESIGN_DOC.md             # 設計ドキュメント
 ├── public/                       # ビルド出力 (.gitignore済み)
 ├── taxonomies/
 │   ├── categories.yaml           # カテゴリ一覧
 │   └── tags.yaml                 # タグ一覧
 ├── themes/default/
 │   └── templates/                # HTMLテンプレート
-├── tools/
-│   ├── migrate/                  # SQLダンプ→Markdown変換ツール
-│   ├── download_images/          # 外部画像ダウンロードツール
-│   ├── slug_map_generator/       # 英語スラッグ生成ツール
-│   └── slug_map.csv              # 記事ID→スラッグ対応表
 ├── _redirects                    # Cloudflare Pages リダイレクトルール
 └── config.yaml                   # gohan 設定
 ```
@@ -52,7 +46,7 @@ git clone git@github.com:bmf-san/bmf-tech.git
 cd bmf-tech
 
 # gohan をインストール
-make install
+make install-gohan
 ```
 
 ## 開発
@@ -137,16 +131,6 @@ translation_key: hello
 
 手動デプロイ: GitHub Actions の `workflow_dispatch` からトリガー可能。
 
-## ツール
-
-`tools/` 以下に移行時に使用した一時的なツールコードがある。
-
-| ディレクトリ | 用途 |
-|---|---|
-| `tools/migrate/` | 旧ブログ MySQL ダンプ → Markdown 変換 |
-| `tools/download_images/` | 外部画像 URL → ローカルファイル置換 |
-| `tools/slug_map_generator/` | 日本語タイトルから英語スラッグを生成 |
-
 ## ライセンス
 
-コンテンツ (content/) は著作権保持。ソースコード (themes/, tools/) は MIT ライセンス。
+コンテンツ (content/) は著作権保持。ソースコード (themes/) は MIT ライセンス。

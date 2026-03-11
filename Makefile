@@ -1,4 +1,4 @@
-.PHONY: help install-gohan install-e2e install-lint build serve clean copy-redirects test-e2e test-e2e-ui new-ja new-en translate translate-gemini translate-dry-run lint-content lint-content-diff
+.PHONY: help install-gohan install-e2e install-lint build serve clean copy-redirects test-e2e test-e2e-ui new-ja new-en lint-content lint-content-diff
 
 TITLE   ?= untitled
 SLUG    ?= untitled
@@ -82,11 +82,4 @@ new-en: ## 英語記事を作成  例: make new-en TITLE="Title" SLUG=slug
 		$$(date +%Y-%m-%d) > content/en/posts/$(SLUG).md
 	@echo "created: content/en/posts/$(SLUG).md"
 
-translate: ## JA記事を一括英語翻訳 (GITHUB_TOKEN or OPENAI_API_KEY が必要)
-	cd tools/translate && GOTOOLCHAIN=auto go run . -delay 1000
 
-translate-gemini: ## JA記事を一括英語翻訳 (GOOGLE_API_KEY 使用 / Gemini 2.0 Flash, 15RPM対応)
-	cd tools/translate && GOTOOLCHAIN=auto go run . -delay 5000
-
-translate-dry-run: ## 翻訳対象の確認 (API不要)
-	cd tools/translate && GOTOOLCHAIN=auto go run . -dry-run
