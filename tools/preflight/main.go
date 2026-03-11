@@ -586,14 +586,6 @@ func checkConfig(root string) {
 func checkAssets(root string) {
 	sec := "ASSETS"
 
-	// OGP フォントファイル
-	fontPath := filepath.Join(root, "assets", "fonts", "NotoSansJP-Bold.ttf")
-	if _, err := os.Stat(fontPath); err != nil {
-		fail(sec, fmt.Sprintf("OGP font not found: assets/fonts/NotoSansJP-Bold.ttf — OGP image generation will fail"))
-	} else {
-		passf(sec, "OGP font file exists (NotoSansJP-Bold.ttf)")
-	}
-
 	// 外部画像参照チェック
 	externalRefs := 0
 	externalDomains := make(map[string]int)

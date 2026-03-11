@@ -20,9 +20,9 @@ lint-content: ## 全記事を textlint でチェック (JA + EN)
 	npx textlint --config .textlintrc-ja.json "content/ja/posts/*.md"
 	npx textlint --config .textlintrc-en.json "content/en/posts/*.md"
 
-lint-content-diff: ## main との差分ファイルのみ textlint でチェック
-	@JA_FILES=$$(git diff --name-only --diff-filter=ACM main -- 'content/ja/posts/*.md'); \
-	EN_FILES=$$(git diff --name-only --diff-filter=ACM main -- 'content/en/posts/*.md'); \
+lint-content-diff: ## origin/main との差分ファイルのみ textlint でチェック
+	@JA_FILES=$$(git diff --name-only --diff-filter=ACM origin/main...HEAD -- 'content/ja/posts/*.md'); \
+	EN_FILES=$$(git diff --name-only --diff-filter=ACM origin/main...HEAD -- 'content/en/posts/*.md'); \
 	if [ -n "$$JA_FILES" ]; then \
 		echo "$$JA_FILES" | xargs npx textlint --config .textlintrc-ja.json; \
 	else \

@@ -1,5 +1,6 @@
 {
   "rules": {
+    "preset-ja-spacing": true,
     "preset-ja-technical-writing": {
       "sentence-length": {
         "max": 120
@@ -12,12 +13,15 @@
       "no-redundant-expression": true,
       "arabic-kanji-numbers": false,
       "no-start-duplicated-conjunction": true,
-      "max-kanji-continuous-len": false,
+      "max-kanji-continuous-len": {
+        "max": 20
+      },
       "ja-no-successive-word": true,
-      "ja-no-abiguous-number-expression": false
+      "ja-no-abiguous-number-expression": false,
+      "no-hankaku-kana": false
     },
-    "prh": {
-      "rulePaths": ["./prh-rules.yaml"]
+    "terminology": {
+      "defaultTerms": true
     }
   },
   "filters": {

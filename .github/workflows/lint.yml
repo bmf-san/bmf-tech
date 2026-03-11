@@ -24,20 +24,5 @@ jobs:
       - name: Install textlint dependencies
         run: npm ci
 
-      - name: Lint changed JA posts
-        run: |
-          JA_FILES=$(git diff --name-only --diff-filter=ACM origin/main...HEAD -- 'content/ja/posts/*.md')
-          if [ -n "$JA_FILES" ]; then
-            echo "$JA_FILES" | xargs npx textlint --config .textlintrc-ja.json
-          else
-            echo "No changed JA posts to lint."
-          fi
-
-      - name: Lint changed EN posts
-        run: |
-          EN_FILES=$(git diff --name-only --diff-filter=ACM origin/main...HEAD -- 'content/en/posts/*.md')
-          if [ -n "$EN_FILES" ]; then
-            echo "$EN_FILES" | xargs npx textlint --config .textlintrc-en.json
-          else
-            echo "No changed EN posts to lint."
-          fi
+      - name: Lint changed posts
+        run: make lint-content-diff
