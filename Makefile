@@ -1,4 +1,4 @@
-.PHONY: help install install-e2e install-lint build serve clean test-e2e test-e2e-ui new-ja new-en translate translate-gemini translate-dry-run lint-content lint-content-diff
+.PHONY: help install-gohan install-e2e install-lint build serve clean copy-redirects test-e2e test-e2e-ui new-ja new-en translate translate-gemini translate-dry-run lint-content lint-content-diff
 
 TITLE   ?= untitled
 SLUG    ?= untitled
@@ -7,11 +7,11 @@ help: ## ヘルプを表示
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | \
 		awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-15s\033[0m %s\n", $$1, $$2}'
 
-install: ## 依存ツールをインストール (gohan)
+install-gohan: ## gohanをインストール
 	GOTOOLCHAIN=auto go install github.com/bmf-san/gohan/cmd/gohan@latest
 
 install-e2e: ## Playwright依存をインストール
-	cd e2e && npm ci && npx playwright install chromium
+	cd e2e && npm ci && npx playwright install --with-deps chromium
 
 install-lint: ## textlint 依存をインストール
 	npm ci
@@ -54,11 +54,14 @@ serve: ## ローカルサーバーを起動 (http://localhost:1313)
 clean: ## ビルド出力を削除
 	rm -rf public/*
 
-test-e2e: ## E2Eテストを実行 (事前にビルドして http-server で配信)
-	gohan build && cd e2e && npx playwright test
+copy-redirects: ## _redirects を public/ にコピー
+	cp _redirects public/
 
-test-e2e-ui: ## E2EテストをPlaywright UI モードで実行
-	gohan build && cd e2e && npx playwright test --ui
+test-e2e: ## E2Eテストを実行 (make build を事前に実行すること)
+	cd e2e && npx playwright test
+
+test-e2e-ui: ## E2EテストをPlaywright UI モードで実行 (make build を事前に実行すること)
+	cd e2e && npx playwright test --ui
 
 new-ja: ## 日本語記事を作成  例: make new-ja TITLE="タイトル" SLUG=slug
 	@mkdir -p content/ja/posts
