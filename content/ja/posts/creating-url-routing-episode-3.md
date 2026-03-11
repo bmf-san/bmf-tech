@@ -1,7 +1,6 @@
 ---
 title: URLルーティングをつくる　エピソード3（完結編）
 slug: creating-url-routing-episode-3
-image: /assets/images/posts/url/70861219-30929d80-1f6e-11ea-8e86-114e8ba0942b.png
 date: 2019-03-17T00:00:00Z
 author: bmf-san
 categories:
