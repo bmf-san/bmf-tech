@@ -20,7 +20,7 @@ I created a markdown editor using React instead of a WYSIWYG editor.
 Most of the source code was referenced from [React入門](http://yusuke-aono.hatenablog.com/entry/20150503/1430661392).
 
 Here's a rough gif sample _(:3」∠)_
-![markdown.gif](https://qiita-image-store.s3.amazonaws.com/0/124495/a60a6293-1345-ae00-942c-e544e6e526a6.gif)
+![markdown.gif](/assets/images/posts/react-marked-highlight-integration/a60a6293-1345-ae00-942c-e544e6e526a6.gif)
 
 
 # Environment

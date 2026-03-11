@@ -136,7 +136,7 @@ func main() {
     - Identify the position to add → adjust the pointer of the node before the addition position and the pointer of the node to be added
     - When identifying the position to add, refer to the pointer of the next node in the loop and determine if the value of the next node matches the specified value
 - Note
-![singly_linked_list](https://user-images.githubusercontent.com/13291041/67028620-a0d79b00-f146-11e9-8d47-a5d0d933d15d.jpg)
+![singly_linked_list](/assets/images/posts/algorithms-data-structures-list/67028620-a0d79b00-f146-11e9-8d47-a5d0d933d15d.jpg)
 
 # References
 - [Naim Ibrahim - Golang singly linked list](https://www.naimibrahim.me/2019/06/08/golang-singly-linked-list/) 

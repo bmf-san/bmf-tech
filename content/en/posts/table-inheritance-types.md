@@ -19,7 +19,7 @@ translation_key: table-inheritance-types
 # Prerequisites
 We will consider four classes in this example.
 
-![people_class.png](https://qiita-image-store.s3.amazonaws.com/0/124495/7680ef3c-3c9f-6365-8622-364ed30936b3.png)
+![people_class.png](/assets/images/posts/table-inheritance-types/7680ef3c-3c9f-6365-8622-364ed30936b3.png)
 
 The structure where Party People inherits from Rich People might be a bit confusing, but as long as the concept is conveyed, it’s fine.
 
@@ -51,19 +51,19 @@ Party people.
 # Single Table Inheritance
 Single Table Inheritance represents object inheritance relationships in a single table. The table includes a column (`type`) to determine the subclass.
 
-![single_table_inheritance_table.png](https://qiita-image-store.s3.amazonaws.com/0/124495/733b241d-ed09-6e1f-958c-b664f2d4133c.png)
+![single_table_inheritance_table.png](/assets/images/posts/table-inheritance-types/733b241d-ed09-6e1f-958c-b664f2d4133c.png)
 
 It seems that Rails supports the implementation of STI.
 
 # Class Table Inheritance
 Class Table Inheritance represents object inheritance relationships by preparing one table per class. The superclass table contains columns held by the superclass, while the subclass table contains only columns held by the subclass.
 
-![class_table_inheritance.png](https://qiita-image-store.s3.amazonaws.com/0/124495/33047bc2-d4a3-700c-0995-8738c9897a23.png)
+![class_table_inheritance.png](/assets/images/posts/table-inheritance-types/33047bc2-d4a3-700c-0995-8738c9897a23.png)
 
 # Concrete Class Inheritance
 Concrete Class Inheritance represents object inheritance relationships by preparing tables that correspond only to concrete classes. Each table includes columns held by the superclass as common attributes.
 
-![concrete_table_inheritance.png](https://qiita-image-store.s3.amazonaws.com/0/124495/bec91e44-0b28-7bcc-6666-026dd5a10f2a.png)
+![concrete_table_inheritance.png](/assets/images/posts/table-inheritance-types/bec91e44-0b28-7bcc-6666-026dd5a10f2a.png)
 
 # Thoughts
 The choice of which pattern to implement depends on the consideration of the advantages and disadvantages of table design and the cost of application logic. Please point out any misleading or incorrect parts.

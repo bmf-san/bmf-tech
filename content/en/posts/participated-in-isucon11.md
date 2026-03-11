@@ -29,7 +29,7 @@ The things we studied and practiced were somewhat fruitful, allowing us to work 
 # Differences from Last Year
 Last year we participated offline, but this year, considering the circumstances, we participated online, so we needed to consider tools for information sharing.
 
-There are various online whiteboard tools, but since we often use miro at work and are familiar with it, we decided to use it. ![Screenshot 2021-08-22 21 26 05](https://user-images.githubusercontent.com/13291041/130355082-819552fe-7bf3-4af2-a0b7-f8db76df5d2b.png) It was utilized for checking the investigation status on the day and for retrospectives afterward.
+There are various online whiteboard tools, but since we often use miro at work and are familiar with it, we decided to use it. ![Screenshot 2021-08-22 21 26 05](/assets/images/posts/participated-in-isucon11/130355082-819552fe-7bf3-4af2-a0b7-f8db76df5d2b.png) It was utilized for checking the investigation status on the day and for retrospectives afterward.
 
 We kept Discord connected for chat. Since AirPods run out of battery, we also prepared wired earphones to avoid wasting time on audio issues.
 

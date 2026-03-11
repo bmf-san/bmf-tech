@@ -11,7 +11,7 @@ translation_key: react-follow-button-implementation
 ---
 
 
-![react_follow_button.gif](https://qiita-image-store.s3.amazonaws.com/0/124495/f532fbdd-45bb-93b4-aacf-d6220f58663a.gif)
+![react_follow_button.gif](/assets/images/posts/react-follow-button-implementation/f532fbdd-45bb-93b4-aacf-d6220f58663a.gif)
 
 
 # つくるもの

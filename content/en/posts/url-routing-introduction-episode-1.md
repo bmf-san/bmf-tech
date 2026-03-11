@@ -89,7 +89,7 @@ Routers in the network layer have a data structure called a routing table, and r
 # Building Your Own URL Routing
 It might be more accurate to say "building your own URL router" rather than "building your own URL routing," but we'll treat them as synonymous.
 
-![Screen Shot 2019-12-14 at 23 05 02](https://user-images.githubusercontent.com/13291041/70849757-3b91f300-1ec6-11ea-8cfe-b3880811fb5e.png)
+![Screen Shot 2019-12-14 at 23 05 02](/assets/images/posts/url-routing-introduction-episode-1/70849757-3b91f300-1ec6-11ea-8cfe-b3880811fb5e.png)
 
 The position of the router is like this.
 

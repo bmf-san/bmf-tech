@@ -140,7 +140,7 @@ There doesn't seem to be anything particularly noteworthy.
 Here's how it works.
 
 
-![react-form.gif](https://qiita-image-store.s3.amazonaws.com/0/124495/9f1e3bb6-d5ed-eec8-7605-cfdeb54ae4b2.gif)
+![react-form.gif](/assets/images/posts/react-multiple-input-form/9f1e3bb6-d5ed-eec8-7605-cfdeb54ae4b2.gif)
 
 
 

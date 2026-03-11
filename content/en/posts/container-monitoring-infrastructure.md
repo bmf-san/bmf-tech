@@ -35,7 +35,7 @@ Now, the first article of this year (I'll probably write another one on the 24th
 I've been experimenting with setting up a monitoring platform for an application I'm developing as a hobby, unrelated to my main job, using containers. I'd like to share the insights (though not much) I gained during that process.
 
 # Monitoring Platform Configuration
-![Screenshot 2021-12-18 4 04 19](https://user-images.githubusercontent.com/13291041/146595314-d593b9d8-9faa-4275-8c94-6c12cfcbfe36.png)
+![Screenshot 2021-12-18 4 04 19](/assets/images/posts/container-monitoring-infrastructure/146595314-d593b9d8-9faa-4275-8c94-6c12cfcbfe36.png)
 
 The applications that make up the monitoring platform we will build this time are as follows:
 
@@ -426,7 +426,7 @@ In the `.env.example` settings, port numbers are assigned as follows:
 | grafana         | http://localhost:3000/      |
 | kibana          | http://0.0.0.0:5601/        |
 
-![Screenshot 2021-12-18 4 04 19](https://user-images.githubusercontent.com/13291041/146595299-9e21d2b8-3b3d-4931-a739-ea3a8e69fa13.png)
+![Screenshot 2021-12-18 4 04 19](/assets/images/posts/container-monitoring-infrastructure/146595299-9e21d2b8-3b3d-4931-a739-ea3a8e69fa13.png)
 
 # Summary
 It seems we were able to build it quite easily (thanks to the benefits of containers).

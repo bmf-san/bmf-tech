@@ -85,9 +85,9 @@ fi
 
 # Results
 If successful,
-![Screenshot 2017-07-01 15.46.02.png](https://qiita-image-store.s3.amazonaws.com/0/124495/90642f68-e9bc-f8cf-5164-e33897cf11dd.png)
+![Screenshot 2017-07-01 15.46.02.png](/assets/images/posts/letsencrypt-auto-renewal-script/90642f68-e9bc-f8cf-5164-e33897cf11dd.png)
 
 If failed,
-![Screenshot 2017-07-01 15.45.56.png](https://qiita-image-store.s3.amazonaws.com/0/124495/26b2eef6-3d92-7a3b-38a0-c5ea40b3e22f.png)
+![Screenshot 2017-07-01 15.45.56.png](/assets/images/posts/letsencrypt-auto-renewal-script/26b2eef6-3d92-7a3b-38a0-c5ea40b3e22f.png)
 
 It's nonsensical that it's red whether it succeeds or fails...

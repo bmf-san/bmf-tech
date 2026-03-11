@@ -50,7 +50,7 @@ I am deeply grateful to my company for supporting my participation.
 Next year, to an overseas conference... (to be continued)
 
 PHP Conference Stamp Rally Complete.
-![php](https://user-images.githubusercontent.com/13291041/70024371-31761780-15dd-11ea-9d69-fab5ba7eeb5d.jpeg)
+![php](/assets/images/posts/complete-2019-php-conferences/70024371-31761780-15dd-11ea-9d69-fab5ba7eeb5d.jpeg)
 
 The prize received for completing the stamp rally. Cute.
-![zou](https://user-images.githubusercontent.com/13291041/70024372-31761780-15dd-11ea-84b9-978cad2585ed.jpeg)
+![zou](/assets/images/posts/complete-2019-php-conferences/70024372-31761780-15dd-11ea-84b9-978cad2585ed.jpeg)

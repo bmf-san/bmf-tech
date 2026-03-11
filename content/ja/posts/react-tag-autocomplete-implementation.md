@@ -51,7 +51,7 @@ apiではこんな感じのJsonレスポンスを返しています。
 ```
 
 res.body.skillsのデバッグ
-![スクリーンショット 2016-09-28 3.04.10.png](https://qiita-image-store.s3.amazonaws.com/0/124495/819ec751-a2d9-df73-d353-76847710c4b7.png)
+![スクリーンショット 2016-09-28 3.04.10.png](/assets/images/posts/react-tag-autocomplete-implementation/819ec751-a2d9-df73-d353-76847710c4b7.png)
 
 
 ```hoge.js
@@ -82,8 +82,8 @@ var App = React.createClass({
     var tags = this.state.tags
     tags.splice(i, 1)
     this.setState({ tags: tags })
-  },![tags.gif](https://qiita-image-store.s3.amazonaws.com/0/124495/173c6de9-b87a-6200-65ed-506e181f565e.gif)
-![tags.gif](https://qiita-image-store.s3.amazonaws.com/0/124495/a3372702-2a85-9b80-0b53-ede2c9c3c486.gif)
+  },![tags.gif](/assets/images/posts/react-tag-autocomplete-implementation/173c6de9-b87a-6200-65ed-506e181f565e.gif)
+![tags.gif](/assets/images/posts/react-tag-autocomplete-implementation/a3372702-2a85-9b80-0b53-ede2c9c3c486.gif)
 
 
   handleAddition: function (tag) {
@@ -110,7 +110,7 @@ ReactDOM.render(
 ```
 
 動作確認（余計なものが映っていますが・・）
-![tags.gif](https://qiita-image-store.s3.amazonaws.com/0/124495/c0c75e77-d212-4cd4-5e1b-c59a8a412c61.gif)
+![tags.gif](/assets/images/posts/react-tag-autocomplete-implementation/c0c75e77-d212-4cd4-5e1b-c59a8a412c61.gif)
 
 cssは設定していないのですごくダサいですねｗ
 

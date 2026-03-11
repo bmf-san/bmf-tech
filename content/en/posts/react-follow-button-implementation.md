@@ -10,7 +10,7 @@ tags:
 translation_key: react-follow-button-implementation
 ---
 
-![react_follow_button.gif](https://qiita-image-store.s3.amazonaws.com/0/124495/f532fbdd-45bb-93b4-aacf-d6220f58663a.gif)
+![react_follow_button.gif](/assets/images/posts/react-follow-button-implementation/f532fbdd-45bb-93b4-aacf-d6220f58663a.gif)
 
 # What We Will Create
 We will create a follow button inspired by Twitter. The specifications are quite similar, but the mechanism is different. The text will toggle between "Follow" and "Following" when clicked, and when hovered over while in the "Following" state, it will display the text "Unfollow". That's all there is to it. There are some unnecessary CSS styles added for decoration, but feel free to adjust the stylesheet as needed.

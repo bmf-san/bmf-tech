@@ -18,7 +18,7 @@ translation_key: starting-with-oss
 
 # Overview
 [Rubel](https://github.com/bmf-san/Rubel)
-![Screenshot 2017-07-17 23.59.44.png](https://qiita-image-store.s3.amazonaws.com/0/124495/66acb76a-8549-169f-a68b-2025ab0b7188.png)
+![Screenshot 2017-07-17 23.59.44.png](/assets/images/posts/starting-with-oss/66acb76a-8549-169f-a68b-2025ab0b7188.png)
 
 For the past few months, I've been developing a CMS while publicly sharing the source code on GitHub as OSS. I'll ramble on about why I started this.
 
@@ -38,7 +38,7 @@ Although the product I'm currently developing doesn't fully meet the "collaborat
 # What am I developing?
 I'm developing a CMS where you can write articles in Markdown. The backend is developed with Laravel, and the frontend with React.
 
-![screencapture-admin-rubel-dashboard-new-post-1500641283831.png](https://qiita-image-store.s3.amazonaws.com/0/124495/5b01469f-b8d2-b023-f975-0a9d649d8788.png)
+![screencapture-admin-rubel-dashboard-new-post-1500641283831.png](/assets/images/posts/starting-with-oss/5b01469f-b8d2-b023-f975-0a9d649d8788.png)
 
 ### Motivation for Development
 #### "Wanted to Own My Product"

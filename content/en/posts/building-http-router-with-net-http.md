@@ -72,7 +72,7 @@ An HTTP router is sometimes called a URL router or simply a router, but in this 
 
 An HTTP router is an application that connects the requested URL with the response processing, as shown in the following diagram.
 
-![route_in_client_and_server](https://user-images.githubusercontent.com/13291041/138551922-8fce2b9c-51d6-49e6-bea1-015e383cdb6e.png)
+![route_in_client_and_server](/assets/images/posts/building-http-router-with-net-http/138551922-8fce2b9c-51d6-49e6-bea1-015e383cdb6e.png)
 
 An HTTP router can perform routing based on data (hereafter referred to as a route map) that maps URLs to response processing.
 
@@ -158,7 +158,7 @@ The elements that make up a tree are called nodes, the topmost node with no pare
 
 Adding a node to a tree is called insertion, and finding a node in a tree is called searching.
 
-![tree_structure](https://user-images.githubusercontent.com/13291041/138551925-b0544b07-1f2d-44bb-9724-495780908b2d.png)
+![tree_structure](/assets/images/posts/building-http-router-with-net-http/138551925-b0544b07-1f2d-44bb-9724-495780908b2d.png)
 
 An example implementation of a basic tree, a binary search tree, is shown below.
 
@@ -489,7 +489,7 @@ Below is the data structure adopted in [bmf-san/goblin](https://github.com/bmf-s
 
 Since goblin supports middleware and path parameters, it has a data structure that corresponds to them.
 
-![trie_based_tree_for_goblin](https://user-images.githubusercontent.com/13291041/138551926-666c7e6e-03f7-4a5a-8f18-ad1ba27b615a.png)
+![trie_based_tree_for_goblin](/assets/images/posts/building-http-router-with-net-http/138551926-666c7e6e-03f7-4a5a-8f18-ad1ba27b615a.png)
 
 This data structure represents the following route map.
 
@@ -814,7 +814,7 @@ All the code implemented here can be referenced below.
 
 This time, we will adopt the following tree structure, which is a simplified version of the data structure of goblin.
 
-![tree_for_implementation](https://user-images.githubusercontent.com/13291041/138551924-ca2e28f5-a0c1-4ae4-ac9f-76d6ee1c46d9.png)
+![tree_for_implementation](/assets/images/posts/building-http-router-with-net-http/138551924-ca2e28f5-a0c1-4ae4-ac9f-76d6ee1c46d9.png)
 
 The route map represented by this tree structure is as follows.
 

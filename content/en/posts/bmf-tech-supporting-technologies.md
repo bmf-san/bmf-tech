@@ -26,7 +26,7 @@ This post discusses the technology stack that supports this blog (bmf-tech.com).
 # Previous bmf-tech Configuration
 First, let's look at the previous generation configuration of bmf-tech.
 
-<img style="width:757px;!important" alt="old_architecture" src="https://user-images.githubusercontent.com/13291041/183280770-84280c0f-e9ab-4cce-9f2d-0ea775e96ea5.png">
+<img style="width:757px;!important" alt="old_architecture" src="/assets/images/posts/bmf-tech-supporting-technologies/183280770-84280c0f-e9ab-4cce-9f2d-0ea775e96ea5.png">
 
 - The application was a monolithic structure based on Laravel.
   - The API was built with PHP, and the admin panel was a SPA built with React.
@@ -90,7 +90,7 @@ Based on these reasons, I roughly thought about the design policy for the new sy
 ## Architecture Configuration
 The architecture configuration built based on the design policy is as follows.
 
-![Screenshot 2022-11-22 22 53 31](https://user-images.githubusercontent.com/13291041/203331548-95daeea8-8108-400a-91ae-35f8cddf899a.png)
+![Screenshot 2022-11-22 22 53 31](/assets/images/posts/bmf-tech-supporting-technologies/203331548-95daeea8-8108-400a-91ae-35f8cddf899a.png)
 
 - Instead of Sakura VPS, I adopted ConoHa VPS.
   - Specs:
@@ -123,7 +123,7 @@ The architecture configuration built based on the design policy is as follows.
 ## Deployment
 The deployment process is not particularly complex.
 
-<img style="width:820px;!important" alt="deploy" src="https://user-images.githubusercontent.com/13291041/183280768-78484c56-5775-4691-898b-f12b42d573e3.png">
+<img style="width:820px;!important" alt="deploy" src="/assets/images/posts/bmf-tech-supporting-technologies/183280768-78484c56-5775-4691-898b-f12b42d573e3.png">
 
 - I have a private repository (bmf-tech) to manage the container configuration.
   - It uses [gobel-example](https://github.com/bmf-san/gobel-example) as a template.

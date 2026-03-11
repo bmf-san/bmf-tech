@@ -80,13 +80,13 @@ Clone [github.com - bmf-san/technology-radar-boilerplate](https://github.com/bmf
 #### 3. Generate the Radar
 Access `http://localhost:8080`, input `http://localhost:8080/files/radar.json`, and press `Build My Radar`.
 
-![form](https://user-images.githubusercontent.com/13291041/205632529-e528abd5-9013-458e-a540-6fc1251867e9.png)
+![form](/assets/images/posts/create-technology-radar/205632529-e528abd5-9013-458e-a540-6fc1251867e9.png)
 
 #### 4. Play with the Generated Radar. Modify the Radar.
 Once the Radar is generated, you will be redirected to a link like this:
 `http://localhost:8080/?sheetId=http%3A%2F%2Flocalhost%3A8080%2Ffiles%2Fradar.json`
 
-![radar](https://user-images.githubusercontent.com/13291041/205632536-d39195f1-2570-4645-bfb4-869bc7f77454.png)
+![radar](/assets/images/posts/create-technology-radar/205632536-d39195f1-2570-4645-bfb4-869bc7f77454.png)
 
 You can adjust the content displayed on the Radar by editing `./files/radar.json`.
 (Originally, I wanted to provision the JSON file, but it seemed difficult due to the frontend build constraints...)

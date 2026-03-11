@@ -100,7 +100,7 @@ cf. [Kubernetes Components](https://kubernetes.io/ja/docs/concepts/overview/comp
     - Using multiple master nodes provides failover and high availability to the cluster
   - The control plane manages worker nodes and Pods within the cluster
     - In production environments, multiple nodes can be used to provide fault tolerance and high availability
-  - [Diagram of a Kubernetes Cluster](https://d33wubrfki0l68.cloudfront.net/7016517375d10c702489167e704dcb99e570df85/7bb53/images/docs/components-of-kubernetes.png)
+  - [Diagram of a Kubernetes Cluster](/assets/images/posts/kubernetes-documentation-concepts/components-of-kubernetes.png)
 
 ## Control Plane Components
 - Makes overall decisions about the cluster (e.g., scheduling)

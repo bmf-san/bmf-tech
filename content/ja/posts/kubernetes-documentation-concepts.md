@@ -100,7 +100,7 @@ cf. [Kubernetesのコンポーネント](https://kubernetes.io/ja/docs/concepts/
     - 複数のマスターノードを使用することでクラスターにフェイルオーバーと高可用性を提供することができる
   - コントロールプレーンはクラスター内のワーカーノードとPodを管理する
     - 本番環境では複数のノードを使用し、耐障害性や高可用性を提供することができる
-  - [Kubernetesクラスターの図](https://d33wubrfki0l68.cloudfront.net/7016517375d10c702489167e704dcb99e570df85/7bb53/images/docs/components-of-kubernetes.png)
+  - [Kubernetesクラスターの図](/assets/images/posts/kubernetes-documentation-concepts/components-of-kubernetes.png)
 
 ## コントロールプレーンコンポーネント
 - クラスターに関する全体的な決定（スケジューリングなど）を行う

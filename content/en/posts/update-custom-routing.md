@@ -39,10 +39,10 @@ The tricky part in considering such cases was the internal data structure of the
 Therefore, I changed the data structure as follows and implemented middleware support.
 
 Before
-![Based on trie tree](https://user-images.githubusercontent.com/13291041/70862745-7148e180-1f83-11ea-85d3-2cd8fb4db0d3.png "Based on trie tree")
+![Based on trie tree](/assets/images/posts/update-custom-routing/70862745-7148e180-1f83-11ea-85d3-2cd8fb4db0d3.png "Based on trie tree")
 
 After
-![after](https://user-images.githubusercontent.com/13291041/117675761-d4c25780-b1e7-11eb-9ec7-e78ac0ce142b.png)
+![after](/assets/images/posts/update-custom-routing/117675761-d4c25780-b1e7-11eb-9ec7-e78ac0ce142b.png)
 
 # Benchmark
 I had written benchmarks for static routing only, but I wanted to compare with other libraries in dynamic routing tests, so I used the most comprehensive [github.com - julienschmidt/go-http-routing-benchmark](https://github.com/julienschmidt/go-http-routing-benchmark) for benchmark testing.

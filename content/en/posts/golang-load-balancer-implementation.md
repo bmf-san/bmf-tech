@@ -19,7 +19,7 @@ It's about creating a custom load balancer in Golang that distributes load using
 # What is a Load Balancer?
 A load balancer is a server that distributes requests to multiple servers to balance the load (load balancing).
 
-![Screenshot 2022-01-01 23 05 20](https://user-images.githubusercontent.com/13291041/147852643-0d5a6fab-1d8f-4d60-81f6-cf95091ca974.png)
+![Screenshot 2022-01-01 23 05 20](/assets/images/posts/golang-load-balancer-implementation/147852643-0d5a6fab-1d8f-4d60-81f6-cf95091ca974.png)
 
 It is a type of reverse proxy that enhances service availability. There are two main types of load balancers: L7 load balancers that distribute load at the application layer and L4 load balancers that do so at the transport layer. Besides load balancing, load balancers also provide persistence (session maintenance) and health check functionalities.
 

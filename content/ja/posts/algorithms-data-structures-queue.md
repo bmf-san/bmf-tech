@@ -60,7 +60,7 @@ func (s *Queue) dequeue() {
 
 - 実装内容的にはスタックとほぼ同じ。スライスの添字アクセスが違うだけ。
 - ノート
-  - ![Image from iOS](https://user-images.githubusercontent.com/13291041/69003840-2b7d0700-094c-11ea-996e-c116235a1dbe.jpg)
+  - ![Image from iOS](/assets/images/posts/algorithms-data-structures-queue/69003840-2b7d0700-094c-11ea-996e-c116235a1dbe.jpg)
 
 # 参考
 - [flaviocopes.com - Go Data Structures: Queue](https://flaviocopes.com/golang-data-structure-queue/)

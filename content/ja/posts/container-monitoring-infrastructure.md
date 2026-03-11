@@ -37,7 +37,7 @@ Re-Architectureチームの求人はこちら。
 特に本業とは関係なく、趣味で作っているアプリケーションのモニタリング基盤をコンテナでいい感じにしてみたいと思ってあれこれ試していたので、その時の知見（というほどでもないですが・・・）を公開しようと思います。
 
 # モニタリング基盤構成
-![スクリーンショット 2021-12-18 4 04 19](https://user-images.githubusercontent.com/13291041/146595314-d593b9d8-9faa-4275-8c94-6c12cfcbfe36.png)
+![スクリーンショット 2021-12-18 4 04 19](/assets/images/posts/container-monitoring-infrastructure/146595314-d593b9d8-9faa-4275-8c94-6c12cfcbfe36.png)
 
 今回構築するモニタリング基盤を構成するアプリケーションは以下です。
 
@@ -429,7 +429,7 @@ datasources:
 | grafana         | http://localhost:3000/      |
 | kibana          | http://0.0.0.0:5601/        |
 
-![スクリーンショット 2021-12-18 4 04 19](https://user-images.githubusercontent.com/13291041/146595299-9e21d2b8-3b3d-4931-a739-ea3a8e69fa13.png)
+![スクリーンショット 2021-12-18 4 04 19](/assets/images/posts/container-monitoring-infrastructure/146595299-9e21d2b8-3b3d-4931-a739-ea3a8e69fa13.png)
 
 # まとめ
 割と簡単に構築できたのではないでしょうか（コンテナの恩恵かな）。

@@ -176,7 +176,7 @@ func main() {
 - get
   - 配列の範囲外へのアクセスだけ考慮してランダムアクセス（添字でデータを参照）
 - ノート
-![Image from iOS](https://user-images.githubusercontent.com/13291041/67912042-f3e03200-fbcb-11e9-8a42-34f28fd474f4.jpg)
+![Image from iOS](/assets/images/posts/algorithms-data-structures-array/67912042-f3e03200-fbcb-11e9-8a42-34f28fd474f4.jpg)
 
 # 参考
 - [github -  TomorrowWu/golang-algorithms](https://github.com/TomorrowWu/golang-algorithms/blob/master/data-structures/array/array.go)

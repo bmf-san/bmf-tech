@@ -40,32 +40,32 @@ After deploying the function, note the trigger URL listed under the function det
 ## Create a Slack App
 At [Create an app](https://api.slack.com/apps?new_app=1), click **From scratch**.
 
-<img width="721" alt="Screenshot 2022-09-04 17 29 50" src="https://user-images.githubusercontent.com/13291041/188304723-637b0b8a-6253-45db-86c9-17b33131444b.png">
+<img width="721" alt="Screenshot 2022-09-04 17 29 50" src="/assets/images/posts/cloud-functions-slack-app-slash-command/188304723-637b0b8a-6253-45db-86c9-17b33131444b.png">
 
 Enter the **App Name**.
 
 Select a workspace under **Pick a workspace to develop your app in:** and click **Create App**.
 
-<img width="714" alt="Screenshot 2022-09-04 17 32 07" src="https://user-images.githubusercontent.com/13291041/188304790-225cfb1c-2a31-4627-8f57-35b856b4aed8.png">
+<img width="714" alt="Screenshot 2022-09-04 17 32 07" src="/assets/images/posts/cloud-functions-slack-app-slash-command/188304790-225cfb1c-2a31-4627-8f57-35b856b4aed8.png">
 
 ## Configure Slash Command
 In the settings screen (e.g., https://api.slack.com/app/****), select Slash Commands.
 
-<img width="720" alt="Screenshot 2022-09-04 17 33 21" src="https://user-images.githubusercontent.com/13291041/188304841-db000433-2a20-4e4a-b303-9a2fac7e3e7b.png">
+<img width="720" alt="Screenshot 2022-09-04 17 33 21" src="/assets/images/posts/cloud-functions-slack-app-slash-command/188304841-db000433-2a20-4e4a-b303-9a2fac7e3e7b.png">
 
 Click **Create New Command** and enter **Command**, **Short Description**, **Usage Hint**, and **Escape channels, users, and links sent to your app** as desired.
 
 Enter the trigger URL noted earlier as the **Request URL**.
 The trigger URL is in the format **https://REGION-NAME-PROJECT-ID.cloudfunctions.net/FUNCTION_NAME**.
 
-<img width="568" alt="Screenshot 2022-09-04 17 35 59" src="https://user-images.githubusercontent.com/13291041/188304929-a17ccbf4-3194-490e-ad65-12c77c5f324a.png">
+<img width="568" alt="Screenshot 2022-09-04 17 35 59" src="/assets/images/posts/cloud-functions-slack-app-slash-command/188304929-a17ccbf4-3194-490e-ad65-12c77c5f324a.png">
 
 Once entered, click **Save**.
 
 ## Install the Slack App
 In the settings screen (e.g., https://api.slack.com/apps/****), click **Install App**.
 
-<img width="738" alt="Screenshot 2022-09-04 17 37 16" src="https://user-images.githubusercontent.com/13291041/188304972-f35057c1-7392-429e-90f0-b1ec02e096b0.png">
+<img width="738" alt="Screenshot 2022-09-04 17 37 16" src="/assets/images/posts/cloud-functions-slack-app-slash-command/188304972-f35057c1-7392-429e-90f0-b1ec02e096b0.png">
 
 Click **Install to workspace** to install the app in any workspace.
 
@@ -92,7 +92,7 @@ Try using the created Slash Command in Slack.
 ex. 
 **/hello Bob**
 
-<img width="489" alt="Screenshot 2022-09-04 17 47 11" src="https://user-images.githubusercontent.com/13291041/188305315-5fe063c2-971b-4b18-978a-719596c2bd87.png">
+<img width="489" alt="Screenshot 2022-09-04 17 47 11" src="/assets/images/posts/cloud-functions-slack-app-slash-command/188305315-5fe063c2-971b-4b18-978a-719596c2bd87.png">
 
 # Thoughts
 It would be nice to be able to code the part of creating a Slack App.

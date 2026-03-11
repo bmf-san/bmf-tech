@@ -75,7 +75,7 @@ Recently, I've been using Miro to organize.
 
 I organize it like the image below.
 
-![miro-cfp](https://user-images.githubusercontent.com/13291041/228522378-8668892b-aaa3-4d30-8bfa-063af494225d.png)
+![miro-cfp](/assets/images/posts/writing-cfp-techniques/228522378-8668892b-aaa3-4d30-8bfa-063af494225d.png)
 
 Here's the format I prepare to write a CFP.
 
@@ -103,14 +103,14 @@ If the idea is ready and the blog is written, the session title can be mostly de
 
 When thinking about the title, I only consider whether it conveys the presentation's image concisely in one breath, similar to naming functions or variables when coding.
 
-![Session Title](https://user-images.githubusercontent.com/13291041/228795335-2a813b7e-8412-43cf-bf38-64f8a8b7d255.png)
+![Session Title](/assets/images/posts/writing-cfp-techniques/228795335-2a813b7e-8412-43cf-bf38-64f8a8b7d255.png)
 
 #### Event Information
 Check and write down information about the event.
 
 Write the event title, date, and details of the speaking slot for which you're submitting the CFP.
 
-![Event Information](https://user-images.githubusercontent.com/13291041/228795322-902f4835-ced1-4f97-84ff-e79483aee9cb.png)
+![Event Information](/assets/images/posts/writing-cfp-techniques/228795322-902f4835-ced1-4f97-84ff-e79483aee9cb.png)
 
 #### CFP
 Write the text of the CFP to be submitted.
@@ -129,7 +129,7 @@ I write the CFP with the following outline.
 - Outline of the presentation content
 - Supplementary material links
 
-![CFP](https://user-images.githubusercontent.com/13291041/228795290-a0f50267-6edc-4d02-b04d-e4bbe0abf6b5.png)
+![CFP](/assets/images/posts/writing-cfp-techniques/228795290-a0f50267-6edc-4d02-b04d-e4bbe0abf6b5.png)
 
 #### Acceptance Criteria
 Check and write down the event's acceptance criteria.
@@ -140,21 +140,21 @@ This is a regulation, so read and confirm it carefully.
 
 Not only the acceptance criteria but also the code of conduct should be read thoroughly.
 
-![Acceptance Criteria](https://user-images.githubusercontent.com/13291041/228795338-5a2deeb6-d343-4571-9cc4-5053484d699c.png)
+![Acceptance Criteria](/assets/images/posts/writing-cfp-techniques/228795338-5a2deeb6-d343-4571-9cc4-5053484d699c.png)
 
 #### What to Talk About / What Not to Talk About
 Write what to talk about and what not to talk about.
 
 It's especially important to write what not to talk about. Prioritizing the main theme and avoiding talking too much about unrelated topics prevents the content from becoming scattered and hard to convey, so it's important to clarify unnecessary topics.
 
-![What to Talk About / What Not to Talk About](https://user-images.githubusercontent.com/13291041/228795346-9ea4cec0-5ae6-4239-a043-4efb8fad68de.png)
+![What to Talk About / What Not to Talk About](/assets/images/posts/writing-cfp-techniques/228795346-9ea4cec0-5ae6-4239-a043-4efb8fad68de.png)
 
 #### What I Want to Convey
 Write what you want to convey.
 
 You can write as many as you want, but focusing on one per theme makes the content more cohesive.
 
-![What I Want to Convey](https://user-images.githubusercontent.com/13291041/228795341-06470fad-c4a6-4a48-8e86-6c4a5cec4af3.png)
+![What I Want to Convey](/assets/images/posts/writing-cfp-techniques/228795341-06470fad-c4a6-4a48-8e86-6c4a5cec4af3.png)
 
 #### Keywords
 Pick up and write keywords related to the presentation content.
@@ -165,7 +165,7 @@ Writing them out helps identify important keywords, making it easier to summariz
 
 Conversely, it also reveals keywords that may not need to be addressed, so I write them out as an exercise.
 
-![Keywords](https://user-images.githubusercontent.com/13291041/228795328-93c629d2-13c9-4115-ab97-c7acd22d6355.png)
+![Keywords](/assets/images/posts/writing-cfp-techniques/228795328-93c629d2-13c9-4115-ab97-c7acd22d6355.png)
 
 #### Outline
 Write the outline of the presentation content.
@@ -174,7 +174,7 @@ I sometimes write this, sometimes not. If the blog is finished, I might not writ
 
 If the blog is finished, I organize the outline based on the blog content.
 
-![Outline](https://user-images.githubusercontent.com/13291041/228795315-f9749517-c0d2-4400-9482-681b0ea350ba.png)
+![Outline](/assets/images/posts/writing-cfp-techniques/228795315-f9749517-c0d2-4400-9482-681b0ea350ba.png)
 
 #### Slide Draft
 Write a rough image of the slides using sticky notes.

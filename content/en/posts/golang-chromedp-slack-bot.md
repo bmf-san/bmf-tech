@@ -196,8 +196,8 @@ I thought using a dialog would be good for UX, but it seemed quite cumbersome an
 
 Let me introduce the completed version before touching on the implementation.
 
-![Screen Shot 2020-08-11 at 14 49 46](https://user-images.githubusercontent.com/13291041/89861979-f3a4a680-dbe1-11ea-8c93-7c118c89e813.png)
-![Screen Shot 2020-08-11 at 14 49 40](https://user-images.githubusercontent.com/13291041/89861975-f1dae300-dbe1-11ea-8e59-10ef38800cce.png)
+![Screen Shot 2020-08-11 at 14 49 46](/assets/images/posts/golang-chromedp-slack-bot/89861979-f3a4a680-dbe1-11ea-8c93-7c118c89e813.png)
+![Screen Shot 2020-08-11 at 14 49 40](/assets/images/posts/golang-chromedp-slack-bot/89861975-f1dae300-dbe1-11ea-8e59-10ef38800cce.png)
 
 When you send a mention like this, the bot generates a Slack emoji image (128px × 128px) in one or two lines and responds.
 

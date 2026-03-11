@@ -176,13 +176,13 @@ To view the CPU profile, execute:
 
 `go test -test.bench=BenchmarkSortAlphabetically -cpuprofile cpu.out && go tool pprof -http=":8888" cpu.out`
 
-![cpu_profile](https://user-images.githubusercontent.com/13291041/206718659-bc8b2df8-30d6-4d3c-819f-2846fd3b2c71.png)
+![cpu_profile](/assets/images/posts/go-performance-improvement/206718659-bc8b2df8-30d6-4d3c-819f-2846fd3b2c71.png)
 
 To view the memory profile, execute:
 
 `go test -test.bench=BenchmarkSortAlphabetically profilingexample_test.go -memprofile mem.out && go tool pprof -http=":8889" mem.out`
 
-![memory_profile](https://user-images.githubusercontent.com/13291041/206716765-b62ab1a9-9bad-4cdb-8dd7-966c714fe940.png)
+![memory_profile](/assets/images/posts/go-performance-improvement/206716765-b62ab1a9-9bad-4cdb-8dd7-966c714fe940.png)
 
 Using [pprof](https://pkg.go.dev/net/http/pprof)'s UI makes it easier to identify where the bottlenecks are.
 
@@ -247,19 +247,19 @@ go test -bench . -memprofile mem.out && go tool pprof -http=":8889" mem.out
 ```
 
 Graph output:
-![pprof_graph](https://user-images.githubusercontent.com/13291041/206716778-8c5b2ad6-2e6a-444f-8f4c-7267a253446f.png)
+![pprof_graph](/assets/images/posts/go-performance-improvement/206716778-8c5b2ad6-2e6a-444f-8f4c-7267a253446f.png)
 
 The largest box (most memory usage) is the `explodePath` process.
 
 The Top (list of longest execution times) also shows `explodePath` at the top.
 
-![pprof_top](https://user-images.githubusercontent.com/13291041/206716793-08c464a8-db4c-4838-b872-dc6b2c51b154.png)
+![pprof_top](/assets/images/posts/go-performance-improvement/206716793-08c464a8-db4c-4838-b872-dc6b2c51b154.png)
 
 Flat is the function's processing time, Cum is the processing time including wait time.
 
 Further, check the Source to see which part of the function is heavy.
 
-![pprof_source](https://user-images.githubusercontent.com/13291041/206716787-c1be565d-9364-40d1-b555-70836d056832.png)
+![pprof_source](/assets/images/posts/go-performance-improvement/206716787-c1be565d-9364-40d1-b555-70836d056832.png)
 
 `Search` is the core process responsible for router matching, and `explodePath` is identified as the bottleneck within it.
 
@@ -542,11 +542,11 @@ Overall improvement trends can be observed when comparing before and after.
 ### Profiling
 pprof Graph.
 
-![pprof_graph_after](https://user-images.githubusercontent.com/13291041/206716776-7cee0600-6cb4-4d82-b534-e9b2e2ff72ac.png)
+![pprof_graph_after](/assets/images/posts/go-performance-improvement/206716776-7cee0600-6cb4-4d82-b534-e9b2e2ff72ac.png)
 
 pprof Top.
 
-![pprof_top_after](https://user-images.githubusercontent.com/13291041/206716789-1ef3cbae-c638-4935-a6fa-22907fe30633.png)
+![pprof_top_after](/assets/images/posts/go-performance-improvement/206716789-1ef3cbae-c638-4935-a6fa-22907fe30633.png)
 
 The bottleneck has shifted to `strings.FieldsFunc` called within `explodePath`.
 

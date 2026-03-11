@@ -62,7 +62,7 @@ func (s *Stack) pop() {
 
 - Goのスライスに慣れていれば難しいところは特にないはず
 - ノート
-  - ![Image from iOS (1)](https://user-images.githubusercontent.com/13291041/69003839-2ae47080-094c-11ea-8506-cb733abec36e.jpg)
+  - ![Image from iOS (1)](/assets/images/posts/algorithms-data-structures-stack/69003839-2ae47080-094c-11ea-8506-cb733abec36e.jpg)
 
 # 参考
 - [Golang program for implementation LIFO Stack and FIFO Queue](https://www.golangprograms.com/golang-program-for-implementation-lifo-stack-and-fifo-queue.html)
