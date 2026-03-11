@@ -34,12 +34,12 @@ test.describe('Nav: locale toggle', () => {
     expect(href).toBe('/posts/cto-thinking-strategy-leadership/');
   });
 
-  test('EN article /posts/hello-world/ toggle links to /ja/', async ({ page }) => {
-    await page.goto('/posts/hello-world/');
+  test('EN article toggle links to JA translation when one exists', async ({ page }) => {
+    await page.goto('/posts/cto-thinking-strategy-leadership/');
     const toggle = page.locator('nav.navbar a:has(.badge-primary)');
     const href = await toggle.getAttribute('href');
-    // No JA translation for this article → falls back to /ja/
-    expect(href).toBe('/ja/');
+    // Has JA translation → links to JA article
+    expect(href).toBe('/ja/posts/cto-thinking-strategy-leadership/');
   });
 });
 
