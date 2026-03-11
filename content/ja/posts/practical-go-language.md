@@ -7,8 +7,11 @@ categories:
   - アプリケーション
 tags:
   - Golang
-  - 本
+  - 書評
 translation_key: practical-go-language
+books:
+  - asin: "4873119693"
+    title: "実用Go言語"
 ---
 
 

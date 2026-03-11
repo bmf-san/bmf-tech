@@ -6,8 +6,11 @@ author: bmf-san
 categories:
   - ビジネス
 tags:
-  - 本
+  - 書評
 translation_key: designing-questions-facilitation
+books:
+  - asin: "4761527439"
+    title: "問いのデザイン: 創造的対話のファシリテーション"
 ---
 
 

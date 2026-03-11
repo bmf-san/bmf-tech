@@ -6,10 +6,13 @@ author: bmf-san
 categories:
   - アーキテクチャ
 tags:
-  - 本
+  - 書評
   - DDD
   - 事業戦略
 translation_key: getting-started-domain-driven-design
+books:
+  - asin: "481440073X"
+    title: "ドメイン駆動設計をはじめよう―ソフトウェアの実装と事業戦略を結びつける実践技法"
 ---
 
 

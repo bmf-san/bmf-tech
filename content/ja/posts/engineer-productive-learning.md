@@ -6,9 +6,12 @@ author: bmf-san
 categories:
   - ビジネス
 tags:
-  - 本
+  - 書評
   - 知的生産術
 translation_key: engineer-productive-learning
+books:
+  - asin: "4774198765"
+    title: "エンジニアの知的生産術 ──効率的に学び、整理し、アウトプットする"
 ---
 
 

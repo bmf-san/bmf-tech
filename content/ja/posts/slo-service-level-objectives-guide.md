@@ -7,8 +7,11 @@ categories:
   - 運用
 tags:
   - SLO
-  - 本
+  - 書評
 translation_key: slo-service-level-objectives-guide
+books:
+  - asin: "4814400349"
+    title: "SLO サービスレベル目標 ―SLI、SLO、エラーバジェット導入の実践ガイド"
 ---
 
 

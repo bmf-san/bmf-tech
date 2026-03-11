@@ -7,8 +7,11 @@ categories:
   - アーキテクチャ
 tags:
   - アーキテクト
-  - 本
+  - 書評
 translation_key: design-it
+books:
+  - asin: "4873118956"
+    title: "Design It"
 ---
 
 

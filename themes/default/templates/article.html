@@ -50,32 +50,33 @@
     </div>
   </header>
 
-  {{/* Eyecatch image */}}
+  {{/* Amazon Books (book cover — shown at top for book-review posts) */}}
+  {{- $hasBooks := false}}
+  {{- with index .PluginData "amazon_books"}}{{if .books}}{{$hasBooks = true}}{{end}}{{end}}
+  {{if $hasBooks}}
+  {{with index .PluginData "amazon_books"}}
+  <div class="flex flex-wrap gap-6 mb-8">
+    {{range .books}}
+    <a href="{{.LinkURL}}" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center gap-2">
+      <img src="{{.ImageURL}}" alt="{{.Title}}" class="h-48 object-contain rounded shadow">
+      {{if .Title}}<span class="text-xs text-secondary text-center max-w-32">{{.Title}}</span>{{end}}
+    </a>
+    {{end}}
+  </div>
+  {{end}}
+  {{else}}
+  {{/* Eyecatch image (shown when no book cover) */}}
   {{- $eyecatch := index .FrontMatter.Extra "image"}}
   {{- if not $eyecatch}}{{$eyecatch = printf "/ogp/%s.png" .FrontMatter.Slug}}{{end}}
   <div class="mb-8">
     <img src="{{$eyecatch}}" alt="{{.FrontMatter.Title}}" class="w-full rounded max-h-96 object-cover">
   </div>
+  {{end}}
 
   {{/* Article Body */}}
   <article class="prose prose-full mb-12">
     {{.HTMLContent}}
   </article>
-
-  {{/* Amazon Books */}}
-  {{with index .PluginData "amazon_books"}}
-  {{if .books}}
-  <div class="flex flex-wrap gap-4 mb-10">
-    <span class="text-sm font-medium text-secondary w-full">Books:</span>
-    {{range .books}}
-    <a href="{{.LinkURL}}" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center gap-2">
-      <img src="{{.ImageURL}}" alt="{{.Title}}" class="h-40 object-contain rounded shadow">
-      {{if .Title}}<span class="text-xs text-secondary text-center max-w-24">{{.Title}}</span>{{end}}
-    </a>
-    {{end}}
-  </div>
-  {{end}}
-  {{end}}
 
   {{/* Tags */}}
   {{if .FrontMatter.Tags}}

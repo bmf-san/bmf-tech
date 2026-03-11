@@ -12,8 +12,11 @@ tags:
   - アーキテクト
   - 設計
   - システム設計
-  - 本
+  - 書評
 translation_key: practical-system-architecture
+books:
+  - asin: "4798121649"
+    title: "システムアーキテクチャ構築の実践手法"
 ---
 
 

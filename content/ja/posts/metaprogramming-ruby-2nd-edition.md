@@ -6,9 +6,12 @@ author: bmf-san
 categories:
   - アプリケーション
 tags:
-  - 本
+  - 書評
   - Ruby
 translation_key: metaprogramming-ruby-2nd-edition
+books:
+  - asin: "4873117437"
+    title: "メタプログラミングRuby 第2版"
 ---
 
 

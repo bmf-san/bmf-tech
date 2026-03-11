@@ -7,8 +7,11 @@ categories:
   - 運用
 tags:
   - アジャイル
-  - 本
+  - 書評
 translation_key: agile-metrics
+books:
+  - asin: "4798169412"
+    title: "アジャイルメトリクス"
 ---
 
 

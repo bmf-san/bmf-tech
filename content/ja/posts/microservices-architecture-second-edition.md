@@ -8,8 +8,11 @@ categories:
 tags:
   - モノリス
   - マイクロサービス
-  - 本
+  - 書評
 translation_key: microservices-architecture-second-edition
+books:
+  - asin: "4814400012"
+    title: "マイクロサービスアーキテクチャ 第2版 "
 ---
 
 

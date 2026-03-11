@@ -7,8 +7,11 @@ categories:
   - インフラストラクチャ
 tags:
   - 監視
-  - 本
+  - 書評
 translation_key: introduction-monitoring
+books:
+  - asin: "4873118646"
+    title: "入門監視"
 ---
 
 

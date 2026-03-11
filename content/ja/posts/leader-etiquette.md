@@ -6,9 +6,12 @@ author: bmf-san
 categories:
   - マネジメント
 tags:
-  - 本
+  - 書評
   - リーダーシップ
 translation_key: leader-etiquette
+books:
+  - asin: "4873119898"
+    title: "リーダーの作法―ささいなことをていねいに"
 ---
 
 

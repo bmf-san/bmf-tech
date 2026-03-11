@@ -6,8 +6,11 @@ author: bmf-san
 categories:
   - テスト
 tags:
-  - 本
+  - 書評
 translation_key: test-driven-development
+books:
+  - asin: "4274217884"
+    title: "テスト駆動開発"
 ---
 
 

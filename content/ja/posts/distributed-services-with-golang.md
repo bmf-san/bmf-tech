@@ -7,8 +7,11 @@ categories:
   - アプリケーション
 tags:
   - Golang
-  - 本
+  - 書評
 translation_key: distributed-services-with-golang
+books:
+  - asin: "4873119979"
+    title: "Go言語による分散サービス"
 ---
 
 

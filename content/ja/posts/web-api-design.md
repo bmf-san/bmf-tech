@@ -9,8 +9,11 @@ tags:
   - API
   - OpenAPI
   - 設計
-  - 本
+  - 書評
 translation_key: web-api-design
+books:
+  - asin: "4798167010"
+    title: "Web APIの設計"
 ---
 
 

@@ -10,8 +10,11 @@ tags:
   - アーキテクト
   - システム設計
   - 設計
-  - 本
+  - 書評
 translation_key: decision-making-software-architects
+books:
+  - asin: "4295020761"
+    title: "ソフトウェアアーキテクトのための意思決定術　リーダーシップ／技術／プロダクトマネジメントの活用"
 ---
 
 

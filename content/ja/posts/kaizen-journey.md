@@ -7,8 +7,11 @@ categories:
   - 開発プロセス
 tags:
   - アジャイル
-  - 本
+  - 書評
 translation_key: kaizen-journey
+books:
+  - asin: "4798153346"
+    title: "カイゼン・ジャーニー"
 ---
 
 

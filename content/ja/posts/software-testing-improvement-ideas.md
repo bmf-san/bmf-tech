@@ -6,8 +6,11 @@ author: bmf-san
 categories:
   - テスト
 tags:
-  - 本
+  - 書評
 translation_key: software-testing-improvement-ideas
+books:
+  - asin: "4798176060"
+    title: "ソフトウェアテストをカイゼンする50のアイデア"
 ---
 
 

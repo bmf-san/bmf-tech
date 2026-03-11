@@ -7,9 +7,12 @@ categories:
   - ヘルスケア
 tags:
   - アジャイル
-  - 本
+  - 書評
   - 健康
 translation_key: agile-health-improvement-guide
+books:
+  - asin: "4798170704"
+    title: "「アジャイル式」健康カイゼンガイド"
 ---
 
 

@@ -7,8 +7,11 @@ categories:
   - アプリケーション
 tags:
   - Golang
-  - 本
+  - 書評
 translation_key: starting-with-golang
+books:
+  - asin: "B01FH3KRTI"
+    title: "スターティングGo言語"
 ---
 
 

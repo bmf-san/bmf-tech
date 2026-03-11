@@ -7,8 +7,11 @@ categories:
   - アーキテクチャ
 tags:
   - 会計
-  - 本
+  - 書評
 translation_key: accounting-system-knowledge-skills
+books:
+  - asin: "4798162949"
+    title: "エンジニアが学ぶ会計システムの「知識」と「技術」"
 ---
 
 

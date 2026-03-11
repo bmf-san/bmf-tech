@@ -7,8 +7,11 @@ categories:
   - アプリケーション
 tags:
   - コーディング
-  - 本
+  - 書評
 translation_key: street-coder
+books:
+  - asin: "4798073458"
+    title: "ストリートコーダー"
 ---
 
 

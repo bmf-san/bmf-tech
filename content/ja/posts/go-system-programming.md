@@ -7,8 +7,11 @@ categories:
   - アプリケーション
 tags:
   - Golang
-  - 本
+  - 書評
 translation_key: go-system-programming
+books:
+  - asin: "4908686033"
+    title: "Goならわかるシステムプログラミング"
 ---
 
 

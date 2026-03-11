@@ -8,8 +8,11 @@ categories:
 tags:
   - CPU
   - メモリ
-  - 本
+  - 書評
 translation_key: programming-basics-why-programs-work
+books:
+  - asin: "4296000195"
+    title: "プログラムはなぜ動くのか 第3版 知っておきたいプログラミングの基礎知識"
 ---
 
 

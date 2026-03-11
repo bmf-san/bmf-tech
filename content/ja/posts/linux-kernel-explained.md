@@ -7,9 +7,12 @@ categories:
   - OS
 tags:
   - Linux
-  - 本
+  - 書評
   - カーネル
 translation_key: linux-kernel-explained
+books:
+  - asin: "4798177849"
+    title: "絵で見てわかるLinuxカーネルの仕組み"
 ---
 
 

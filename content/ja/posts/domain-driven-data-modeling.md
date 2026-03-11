@@ -9,8 +9,10 @@ tags:
   - モデリング
   - 設計
   - システム設計
-  - 本
+  - 書評
 translation_key: domain-driven-data-modeling
+books:
+  - asin: "4297140101"
 ---
 
 

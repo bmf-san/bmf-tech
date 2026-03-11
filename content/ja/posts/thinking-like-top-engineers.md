@@ -7,8 +7,11 @@ categories:
   - ビジネス
 tags:
   - 思考法
-  - 本
+  - 書評
 translation_key: thinking-like-top-engineers
+books:
+  - asin: "4163917683"
+    title: "世界一流エンジニアの思考法"
 ---
 
 

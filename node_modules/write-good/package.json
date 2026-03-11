@@ -1,0 +1,74 @@
+{
+  "name": "write-good",
+  "version": "1.0.8",
+  "description": "Naive linter for English prose",
+  "main": "write-good.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/btford/write-good.git"
+  },
+  "bin": {
+    "write-good": "bin/write-good.js",
+    "writegood": "bin/write-good.js"
+  },
+  "engines": {
+    "node": ">=6",
+    "npm": ">=5"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npm run lint && ./node_modules/.bin/jasmine-node test",
+    "lint": "eslint ./ --fix"
+  },
+  "keywords": [
+    "english",
+    "writing",
+    "prose",
+    "words",
+    "grammar"
+  ],
+  "author": "Brian Ford",
+  "contributors": [
+    {
+      "name": "Richard Littauer",
+      "email": "richard@maintainer.io",
+      "url": "https://burntfen.com"
+    },
+    {
+      "name": "Matt Blair",
+      "email": "matt@mattblair.co",
+      "url": "https://blog.mattblair.co"
+    },
+    {
+      "name": "Timotheus Kampik",
+      "email": "",
+      "url": "timotheuskampik.de"
+    }
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.12.4",
+    "grunt": "^1.3.0",
+    "jasmine-node": "^3.0.0",
+    "schreib-gut": "0.0.1"
+  },
+  "dependencies": {
+    "adverb-where": "^0.2.2",
+    "commander": "^2.19.0",
+    "e-prime": "^0.10.4",
+    "no-cliches": "^0.3.0",
+    "passive-voice": "^0.1.0",
+    "too-wordy": "^0.3.1",
+    "weasel-words": "^0.1.1"
+  },
+  "coordinates": [
+    45.51921480000001,
+    -73.5789434
+  ]
+}

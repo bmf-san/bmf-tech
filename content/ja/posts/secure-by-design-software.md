@@ -6,11 +6,14 @@ author: bmf-san
 categories:
   - アーキテクチャ
 tags:
-  - 本
+  - 書評
   - セキュリティ
   - 設計
   - DDD
 translation_key: secure-by-design-software
+books:
+  - asin: "B09F697K2V"
+    title: "セキュア・バイ・デザイン: 安全なソフトウェア設計"
 ---
 
 

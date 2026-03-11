@@ -8,8 +8,11 @@ categories:
 tags:
   - DB
   - sql
-  - 本
+  - 書評
 translation_key: database-practical-introduction-relational-model
+books:
+  - asin: "4774171972"
+    title: "理論から学ぶデータベース実践入門 ~リレーショナルモデルによる効率的なSQL (WEB+DB PRESS plus)"
 ---
 
 

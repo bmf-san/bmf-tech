@@ -1,0 +1,45 @@
+{
+  "name": "no-cliches",
+  "version": "0.3.6",
+  "description": "Find clichés in your writings",
+  "main": "cliches.js",
+  "homepage": "https://github.com/duereg/no-cliches",
+  "author": {
+    "name": "Matt Blair",
+    "url": "https://blog.mattblair.co"
+  },
+  "engines": {
+    "node": ">=16",
+    "npm": ">=8"
+  },
+  "bugs": {
+    "url": "https://github.com/duereg/no-cliches/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/duereg/no-cliches.git"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npm run lint && ./node_modules/.bin/jasmine",
+    "lint": "eslint ./ --fix"
+  },
+  "keywords": [
+    "english",
+    "writing",
+    "prose",
+    "words",
+    "cliches",
+    "clichés",
+    "readability"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.48.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.22.1",
+    "jasmine": "^5.1.0"
+  }
+}

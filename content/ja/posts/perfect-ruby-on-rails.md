@@ -8,8 +8,11 @@ categories:
 tags:
   - Ruby on Rails
   - Ruby
-  - 本
+  - 書評
 translation_key: perfect-ruby-on-rails
+books:
+  - asin: "4297114623"
+    title: "パーフェクトRuby on Rails"
 ---
 
 

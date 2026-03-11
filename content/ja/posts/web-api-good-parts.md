@@ -7,9 +7,12 @@ categories:
   - アーキテクチャ
 tags:
   - API
-  - 本
+  - 書評
   - 設計
 translation_key: web-api-good-parts
+books:
+  - asin: "4873116864"
+    title: "Web API: The Good Parts"
 ---
 
 

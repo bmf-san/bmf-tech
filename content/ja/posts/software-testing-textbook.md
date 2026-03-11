@@ -6,8 +6,11 @@ author: bmf-san
 categories:
   - テスト
 tags:
-  - 本
+  - 書評
 translation_key: software-testing-textbook
+books:
+  - asin: "4822286584"
+    title: "ソフトウェアテストの教科書"
 ---
 
 

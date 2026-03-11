@@ -6,7 +6,7 @@ author: bmf-san
 categories:
   - マネジメント
 tags:
-  - 本
+  - 書評
   - 組織設計
   - 組織論
   - マネージャー

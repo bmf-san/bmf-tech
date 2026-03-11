@@ -7,8 +7,11 @@ categories:
   - マネジメント
 tags:
   - 組織論
-  - 本
+  - 書評
 translation_key: invitation-to-engineering-organization
+books:
+  - asin: "4774196053"
+    title: "エンジニアリング組織論への招待 ~不確実性に向き合う思考と組織のリファクタリング"
 ---
 
 

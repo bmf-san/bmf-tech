@@ -7,8 +7,11 @@ categories:
   - インフラストラクチャ
 tags:
   - Google Cloud Platform
-  - 本
+  - 書評
 translation_key: gcp-textbook-container-development
+books:
+  - asin: "4865942416"
+    title: "GCPの教科書II 【コンテナ開発編】 KubernetesとGKE、Cloud Run、サービスメッシュを詳解"
 ---
 
 

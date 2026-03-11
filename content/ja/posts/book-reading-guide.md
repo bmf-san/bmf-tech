@@ -6,8 +6,11 @@ author: bmf-san
 categories:
   - ビジネス
 tags:
-  - 本
+  - 書評
 translation_key: book-reading-guide
+books:
+  - asin: "4061592998"
+    title: "本を読む本"
 ---
 
 

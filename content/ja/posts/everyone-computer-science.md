@@ -6,10 +6,13 @@ author: bmf-san
 categories:
   - コンピューターアーキテクチャ
 tags:
-  - 本
+  - 書評
   - データ構造
   - アルゴリズム
 translation_key: everyone-computer-science
+books:
+  - asin: "4798154814"
+    title: "みんなのコンピュータサイエンス"
 ---
 
 
