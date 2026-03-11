@@ -12,12 +12,15 @@ import (
 	"bytes"
 	"flag"
 	"fmt"
+	"net/http"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"sort"
 	"strconv"
 	"strings"
+	"sync"
+	"time"
 
 	"gopkg.in/yaml.v3"
 )
@@ -679,6 +682,104 @@ func checkBuild(root string) {
 }
 
 // ────────────────────────────────────────────────────────────
+// [LIVE] リダイレクト先 HTTP 200 チェック
+// ────────────────────────────────────────────────────────────
+
+func checkLive(root string, baseURL string) {
+	sec := "LIVE"
+	path := filepath.Join(root, "_redirects")
+
+	f, err := os.Open(path)
+	if err != nil {
+		fail(sec, fmt.Sprintf("Cannot open _redirects: %v", err))
+		return
+	}
+	defer f.Close()
+
+	// 宛先パスを収集（重複除去）
+	destSet := make(map[string]bool)
+	scanner := bufio.NewScanner(f)
+	for scanner.Scan() {
+		line := strings.TrimSpace(scanner.Text())
+		if line == "" || strings.HasPrefix(line, "#") {
+			continue
+		}
+		fields := strings.Fields(line)
+		if len(fields) < 2 {
+			continue
+		}
+		dest := fields[1]
+		if strings.HasPrefix(dest, "/") {
+			destSet[dest] = true
+		}
+	}
+
+	destList := make([]string, 0, len(destSet))
+	for d := range destSet {
+		destList = append(destList, d)
+	}
+	sort.Strings(destList)
+
+	info(sec, fmt.Sprintf("Checking %d unique redirect destinations against %s ...", len(destList), baseURL))
+
+	type result struct {
+		dest   string
+		status int
+		err    error
+	}
+
+	client := &http.Client{
+		Timeout: 10 * time.Second,
+		// リダイレクトをたどらず、宛先そのものの応答だけを確認する
+		CheckRedirect: func(_ *http.Request, _ []*http.Request) error {
+			return http.ErrUseLastResponse
+		},
+	}
+
+	sem := make(chan struct{}, 20) // 同時接続数上限
+	resultsCh := make(chan result, len(destList))
+	var wg sync.WaitGroup
+
+	for _, d := range destList {
+		wg.Add(1)
+		go func(dest string) {
+			defer wg.Done()
+			sem <- struct{}{}
+			defer func() { <-sem }()
+
+			url := baseURL + dest
+			resp, err := client.Get(url)
+			if err != nil {
+				resultsCh <- result{dest, 0, err}
+				return
+			}
+			resp.Body.Close()
+			resultsCh <- result{dest, resp.StatusCode, nil}
+		}(d)
+	}
+
+	wg.Wait()
+	close(resultsCh)
+
+	notOK := 0
+	for r := range resultsCh {
+		if r.err != nil {
+			fail(sec, fmt.Sprintf("GET %s → error: %v", r.dest, r.err))
+			notOK++
+		} else if r.status != 200 {
+			fail(sec, fmt.Sprintf("GET %s → HTTP %d (expected 200)", r.dest, r.status))
+			notOK++
+		}
+	}
+
+	if notOK == 0 {
+		passf(sec, fmt.Sprintf("All %d redirect destinations return HTTP 200", len(destList)))
+	} else {
+		fail(sec, fmt.Sprintf("%d / %d destinations did NOT return HTTP 200", notOK, len(destList)))
+	}
+}
+
+// ────────────────────────────────────────────────────────────
 // 出力
 // ────────────────────────────────────────────────────────────
 
@@ -751,6 +852,8 @@ func main() {
 	var (
 		root      = flag.String("root", ".", "bmf-tech リポジトリのルートパス")
 		skipBuild = flag.Bool("skip-build", false, "gohan build チェックをスキップ")
+		live      = flag.Bool("live", false, "localhost への HTTP 200 チェックを実行")
+		port      = flag.Int("port", 8080, "gohan serve のポート番号 (-live 時に使用)")
 	)
 	flag.Parse()
 
@@ -771,6 +874,12 @@ func main() {
 		checkBuild(absRoot)
 	} else {
 		warn("BUILD", "gohan build チェックはスキップされました (-skip-build フラグ)")
+	}
+
+	if *live {
+		checkLive(absRoot, fmt.Sprintf("http://localhost:%d", *port))
+	} else {
+		warn("LIVE", "HTTP 200 チェックはスキップ (実行するには -live フラグを追加、サーバー起動後に使用)")
 	}
 
 	printReport()
