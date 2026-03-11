@@ -1,7 +1,6 @@
 ---
 title: Letsencryptの証明書自動更新スクリプト
 slug: letsencrypt-auto-renewal-script
-image: /assets/images/posts/letsencrypt/26b2eef6-3d92-7a3b-38a0-c5ea40b3e22f.png
 date: 2017-10-01T00:00:00Z
 author: bmf-san
 categories:

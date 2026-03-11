@@ -1,7 +1,6 @@
 ---
 title: StreamYardでKeynoteの発表者ディスプレイを表示しながら配信する方法
 slug: streamyard-keynote-presenter-display
-image: /assets/images/posts/streamyard-keynote/140072377-36300e50-c3ad-43b6-83fc-0415d308935e.png
 date: 2021-11-03T00:00:00Z
 author: bmf-san
 categories:

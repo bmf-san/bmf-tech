@@ -1,7 +1,6 @@
 ---
 title: Cloud Functionsを使ってSlack AppのSlash Commandを実装
 slug: cloud-functions-slack-app-slash-command
-image: /assets/images/posts/cloud-functions-slack-app-slash-command/188304723-637b0b8a-6253-45db-86c9-17b33131444b.png
 date: 2022-09-19T00:00:00Z
 author: bmf-san
 categories:

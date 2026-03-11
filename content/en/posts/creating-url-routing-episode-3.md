@@ -64,7 +64,7 @@ I believe FastRoute was adopted in Slim.
 
 # Trying to Create My Own
 ## Prerequisites
-As a minimum requirement, I considered ease of porting to other languages and aimed to avoid using PHP's standard functions as much as possible. (I want to rewrite it in Go later...) 
+As a minimum requirement, I considered ease of porting to other languages and aimed to avoid using PHP's standard functions as much as possible. (I want to rewrite it in Go later...)
 
 Also, I simply wanted to implement it from scratch with my own algorithm, so I aimed to write it with pure logic. (Thus, I won't use regular expressions.)
 
@@ -293,7 +293,7 @@ var_dump($routeMap);
 //       }
 //    }
 //  }
-// } 
+// }
 ```
 
 ### Process to Search from the Routing Map

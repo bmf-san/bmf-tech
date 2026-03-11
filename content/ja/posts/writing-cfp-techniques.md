@@ -1,7 +1,6 @@
 ---
 title: CFPを書く技術
 slug: writing-cfp-techniques
-image: /assets/images/posts/cfp/228522378-8668892b-aaa3-4d30-8bfa-063af494225d.png
 date: 2024-04-14T00:00:00Z
 author: bmf-san
 categories:

@@ -1,7 +1,6 @@
 ---
 title: アルゴリズムとデータ構造 - 配列
 slug: algorithms-data-structures-array
-image: /assets/images/posts/post-202/67912042-f3e03200-fbcb-11e9-8a42-34f28fd474f4.jpg
 date: 2019-10-31T00:00:00Z
 author: bmf-san
 categories:

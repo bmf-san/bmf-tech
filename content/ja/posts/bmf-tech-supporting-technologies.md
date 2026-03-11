@@ -1,7 +1,6 @@
 ---
 title: bmf-techを支える技術
 slug: bmf-tech-supporting-technologies
-image: /assets/images/posts/bmf-tech/183280768-78484c56-5775-4691-898b-f12b42d573e3.png
 date: 2022-08-08T00:00:00Z
 author: bmf-san
 categories:
