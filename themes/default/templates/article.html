@@ -54,11 +54,11 @@
   {{- with index .PluginData "amazon_books"}}{{if .books}}{{$hasBooks = true}}{{end}}{{end}}
   {{if $hasBooks}}
   {{with index .PluginData "amazon_books"}}
-  <div class="flex flex-wrap gap-6 mb-8">
+  <div class="flex flex-wrap justify-start gap-6 mb-8">
     {{range .books}}
-    <a href="{{.LinkURL}}" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center gap-2">
-      <img src="{{.ImageURL}}" alt="{{.Title}}" class="h-48 object-contain rounded shadow">
-      {{if .Title}}<span class="text-xs text-secondary text-center max-w-32">{{.Title}}</span>{{end}}
+    <a href="{{.LinkURL}}" target="_blank" rel="noopener noreferrer" class="flex flex-col items-start gap-2">
+      <img src="{{.ImageURL}}" alt="{{.Title}}" class="h-30 object-contain rounded shadow">
+      {{if .Title}}<span class="text-xs text-secondary text-left" style="max-width:8rem;word-break:break-word">{{.Title}}</span>{{end}}
     </a>
     {{end}}
   </div>
