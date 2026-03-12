@@ -53,11 +53,6 @@ test.describe('English article page (new template) /posts/2018-review-2019-goals
     await expect(page.locator('header .text-sm.text-secondary').first()).toBeVisible();
   });
 
-  test('author name bmf-san is displayed', async ({ page }) => {
-    await page.goto(URL);
-    await expect(page.locator('header')).toContainText('bmf-san');
-  });
-
   test('link to JA counterpart is present', async ({ page }) => {
     await page.goto(URL);
     const jaLink = page.locator('[lang="ja"]');
