@@ -62,6 +62,7 @@
     {{end}}
   </div>
   {{template "pagination" .}}
+  {{template "ad-unit" .}}
   {{else}}
   <p class="text-secondary mt-4">{{if eq .CurrentLocale "ja"}}記事がありません。{{else}}No articles found.{{end}}</p>
   {{end}}
