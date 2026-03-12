@@ -73,7 +73,8 @@ bmf-tech/
 │   ├── tags.yaml
 │   └── categories.yaml
 ├── tools/
-│   └── gen_redirects.py     # _redirects 再生成スクリプト
+│   ├── populate_book_asins.py         # 書籍記事に ASIN を補完するスクリプト
+│   └── populate_en_book_asins_v2.py   # EN 書籍記事用 v2
 └── docs/
     ├── DESIGN_DOC.md
     └── MIGRATION.md
@@ -106,8 +107,6 @@ theme:
   name: "default"
   dir: "themes/default"
   params:
-    # DNS 移管完了後にこの行を削除してリビルドする
-    noindex: "true"
     author: "Kenta Takeuchi"
     github: "bmf-san"
     twitter: "bmf_san"
@@ -116,7 +115,9 @@ theme:
     speaker_deck: "bmf_san"
     footer_text: "© 2026 Kenta Takeuchi"
     adsense_id: "ca-pub-5146230866088201"
-    adsense_slot: "7900864416"
+    adsense_slot_article_top: "3773998823"
+    adsense_slot_article_bottom: "2224967643"
+    adsense_slot_list_mobile: "4950844549"
     ga_id: "G-784B55NW88"
 
 syntax_highlight:
@@ -139,7 +140,7 @@ i18n:
     - "ja"
 ```
 
-> DNS 移管後（Phase 11）に必ず `noindex: "true"` を削除してリビルドすること。
+> noindex は DNS 移管完了後に削除済み（本番公開中）。
 
 ---
 
@@ -189,17 +190,17 @@ description: "Kenta Takeuchi のプロフィールページ"
 | 施策 | 実装状況 |
 |---|---|
 | `<title>` タグ最適化 | `{記事タイトル} — {site.title}` 形式（`article.html` の `{{define "title"}}`） |
-| `<meta name="description">` | Front Matter の `description` フィールドを使用 |
+| `<meta name="description">` | Front Matter の `description` フィールドを使用。EN/JA 全記事（各 584 件）に `description` 設定済み |
 | OGP タグ | `og:title / og:type / og:url / og:description / og:image` を `_partials.html` の `{{define "head"}}` に実装済み。記事ページは `ogp/{slug}.png`（ビルド時自動生成）、一覧ページは `assets/images/ogp-default.png` を使用 |
 | Twitter Card | `twitter:card / twitter:site / twitter:creator` を実装済み |
 | Canonical URL | `<link rel="canonical">` を `article.html` に実装済み |
 | hreflang | 日英ペア記事に `hreflang="ja"` / `hreflang="en"` / `hreflang="x-default"` を出力（gohan が `translation_key` で自動処理） |
-| JSON-LD (Article) | **未実装**（検討事項参照） |
+| JSON-LD (Article) | 実装済み。`_partials.html` の `{{define "seo"}}` 内で `@type: BlogPosting`（headline / datePublished / dateModified / url / image / author / publisher / description）を出力 |
 | JSON-LD (BreadcrumbList) | **未実装** |
 | sitemap.xml | gohan が自動生成。記事・固定ページの URL + ロケール別インデックスページ（`/`・`/ja/`）を収録（タグ・カテゴリー・アーカイブ個別ページは含まれない） |
 | robots.txt | `assets/robots.txt` に配置済み。`Allow: /` + sitemap 参照 |
 | Atom フィード | gohan が自動生成 (`/atom.xml`) |
-| noindex | DNS 移管前は `theme.params.noindex: "true"` で全ページに `<meta name="robots" content="noindex, nofollow">` を付与 |
+| noindex | DNS 移管完了後に削除済み。本番公開中（`config.yaml` から `noindex` 設定を除去した）|
 
 ### 5.2 コンテンツ SEO
 
@@ -228,15 +229,12 @@ description: "Kenta Takeuchi のプロフィールページ"
 [sleyt](https://github.com/bmf-san/sleyt)（bmf-san 製ミニマル CSS フレームワーク）を CDN 経由で読み込む。独自 `<style>` タグは使用しない。
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/sleyt@latest/dist/css/index.css">
-<link rel="stylesheet" href="/assets/css/custom.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bmf-san/sleyt@latest/docs/public/css/index.css">
 ```
 
-- **`sleyt`**: CSS リセット・デザイントークン変数（`--color-slate-*` / `--text-primary` 等）・レイアウトユーティリティ（`container`, `flex`, `grid`, `gap-*`, `px-*` 等）・タイポグラフィ（`text-sm`, `font-bold` など）・ダークモード対応を提供
-- **`assets/css/custom.css`**: sleyt ユーティリティクラスを付与できない要素（Markdown レンダリング後の `.article-content` 内 `pre/code/blockquote/table/img/h1-h6` 等）と、サイト固有クラス（`.article-row`, `.tag-badge`, `.site-main`, `.nav-brand`, `.footer-link` 等）を定義
+- **`sleyt`** (v1.3.2): CSS リセット・デザイントークン変数（`--color-slate-*` / `--text-primary` 等）・レイアウトユーティリティ（`container`, `flex`, `grid`, `gap-*`, `px-*` 等）・タイポグラフィ（`text-sm`, `font-bold` など）・ダークモード対応を提供。`pre[style]`（chroma シンタックスハイライト）と `.adsbygoogle` のダークモード補正も含む
+- CSS の追加が必要な場合は sleyt リポジトリ側に追加してバージョンを上げる
 - インライン `style=""` は Google AdSense 必須属性 (`<ins style="display:block">`) のみ許容
-
-> `assets/css/custom.css` は gohan のビルド時に `assets/` の内容が `public/assets/css/custom.css` へ自動コピーされる。
 
 ### テンプレート一覧
 
@@ -244,7 +242,7 @@ description: "Kenta Takeuchi のプロフィールページ"
 |---|---|
 | `_partials.html` | `head` / `header` / `footer` / `pagination` の共通ブロック。CSS もここに集約 |
 | `index.html` | トップページ（記事一覧、ページネーション） |
-| `article.html` | 記事詳細。canonical / hreflang / GitHub ソースリンクを出力 |
+| `article.html` | 記事詳細。canonical / hreflang / GitHub ソースリンク / 関連記事（2カラムグリッド、OGP 画像・カテゴリ・タグ・説明文付き）を出力 |
 | `page.html` | 固定ページ（about, privacy-policy）。`{{define "htmllang"}}` で locale を設定 |
 | `tag.html` | タグ別記事一覧 |
 | `category.html` | カテゴリー別記事一覧 |
@@ -287,9 +285,9 @@ description: "Kenta Takeuchi のプロフィールページ"
 | 項目 | 内容 |
 |---|---|
 | sitemap.xml のタクソノミー・アーカイブ URL 欠落 | 個別タグ・カテゴリー・アーカイブページが含まれない（ロケール別インデックスページ `/` / `/ja/` は v0.1.7 で対応済み）。gohan 側 enhancement として対応予定 |
-| JSON-LD | `article.html` に `@type: BlogPosting`、各ページに BreadcrumbList を未実装。移行後に追加予定 |
+| JSON-LD | `@type: BlogPosting` は実装済み。BreadcrumbList は未実装 |
 | 検索機能 | Pagefind などのクライアントサイド全文検索の採用を検討 |
-| 広告 | Google AdSense 実装済み。`_partials.html` の head に AdSense スクリプト、`article.html` の記事コンテンツ直下に fluid 広告ユニット（slot: `7900864416`）を配置 |
+| 広告 | Google AdSense 実装済み。`_partials.html` の head に AdSense スクリプトを配置。スロットは3種（`adsense_slot_article_top`: 3773998823 / `adsense_slot_article_bottom`: 2224967643 / `adsense_slot_list_mobile`: 4950844549）をテンプレートから参照 |
 | Google Analytics | GA4 実装済み。`_partials.html` の head に gtag.js スクリプトを配置（ID: `G-784B55NW88`） |
 | OGP 画像カスタマイズ | デフォルト画像（`assets/images/ogp-default.png`）はシンプルなテキストのみ。ブランドロゴや背景画像を使ったデザイン改善が可能 |
 | タグ・カテゴリーページの多言語混在 | `/tags/{name}/` / `/categories/{name}/` は en + ja の記事が混在して出力される（gohan の現仕様）。テンプレートでロケールラベルを表示するなど UX 面での対処が必要 |
