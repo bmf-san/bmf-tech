@@ -31,26 +31,26 @@ test.describe('JA root pagination', () => {
   });
 });
 
-// ── Tag pagination (/tags/Golang/ has 3 pages) ────────────────────────────────
+// ── Tag pagination (/tags/golang/ has 3 pages) ────────────────────────────────
 
-test.describe('Tag pagination /ja/tags/Golang/', () => {
+test.describe('Tag pagination /ja/tags/golang/', () => {
   test('page 1 loads with articles', async ({ page }) => {
-    await page.goto('/ja/tags/Golang/');
+    await page.goto('/ja/tags/golang/');
     await expect(page.locator('a.card').first()).toBeVisible();
   });
 
   test('page 2 loads with articles', async ({ page }) => {
-    await page.goto('/ja/tags/Golang/page/2/');
+    await page.goto('/ja/tags/golang/page/2/');
     await expect(page.locator('a.card').first()).toBeVisible();
   });
 
   test('page 3 (last) loads with articles', async ({ page }) => {
-    await page.goto('/ja/tags/Golang/page/3/');
+    await page.goto('/ja/tags/golang/page/3/');
     await expect(page.locator('a.card').first()).toBeVisible();
   });
 
   test('page 4 (beyond last) returns 404', async ({ page }) => {
-    const res = await page.goto('/ja/tags/Golang/page/4/');
+    const res = await page.goto('/ja/tags/golang/page/4/');
     expect(res?.status()).toBe(404);
   });
 });

@@ -10,7 +10,7 @@ translation_key: tags
 
 Browse all articles by tag.
 
-- [Golang](/tags/Golang/)
-- [Architecture](/tags/Architecture/)
-- [Go](/tags/Go/)
-- [Book Review](/tags/Book Review/)
+- [Golang](/tags/golang/)
+- [Architecture](/tags/architecture/)
+- [Go](/tags/go/)
+- [Book Review](/tags/book-review/)
