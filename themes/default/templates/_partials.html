@@ -173,3 +173,36 @@
 </div>
 {{- end}}
 {{end}}
+
+{{define "support-links"}}
+{{- $p := .Config.Theme.Params}}
+{{- $github := index $p "github"}}
+{{- $zenn := index $p "zenn"}}
+{{- $paypal := index $p "paypal"}}
+{{- $wishlist := index $p "amazon_wishlist"}}
+{{- $isJA := eq .CurrentLocale "ja"}}
+<div class="card mb-8">
+  <div class="card-header">
+    <span class="font-semibold text-base">{{if $isJA}}☕ サポート{{else}}☕ Support{{end}}</span>
+  </div>
+  <div class="card-body">
+    <p class="text-sm text-secondary mb-4">
+      {{if $isJA}}このブログを応援していただける方は、以下からサポートをお願いします。いただいたサポートはブログ運営・技術研鑽に活用します。{{else}}If you enjoy this blog, consider supporting it. Every bit helps keep it running!{{end}}
+    </p>
+    <div class="flex flex-wrap gap-3">
+      {{if $paypal}}
+      <a href="https://www.paypal.com/paypalme/{{$paypal}}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">💳 PayPal</a>
+      {{end}}
+      {{if $wishlist}}
+      <a href="https://www.amazon.jp/hz/wishlist/ls/{{$wishlist}}?ref_=wl_share" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">📚 {{if $isJA}}ほしい本リスト{{else}}Amazon Wishlist{{end}}</a>
+      {{end}}
+      {{if $github}}
+      <a href="https://github.com/sponsors/{{$github}}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">🐙 GitHub Sponsors</a>
+      {{end}}
+      {{if $zenn}}
+      <a href="https://zenn.dev/{{$zenn}}?tab=books" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">📖 Zenn Books</a>
+      {{end}}
+    </div>
+  </div>
+</div>
+{{end}}

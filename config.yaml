@@ -28,6 +28,8 @@ theme:
     adsense_id: "ca-pub-5146230866088201"
     adsense_slot: "7900864416"
     ga_id: "G-784B55NW88"
+    paypal: "bmfsan"
+    amazon_wishlist: "7UKXW63I8NEK"
 
 syntax_highlight:
   theme: "github"
