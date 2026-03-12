@@ -127,6 +127,8 @@
     <div class="grid md:grid-cols-2 gap-4">
       {{range $.RelatedArticles}}
       <a href="{{.URL}}" class="card no-underline">
+        {{- $relImg := printf "/ogp/%s.png" .FrontMatter.Slug}}
+        <img src="{{$relImg}}" alt="{{.FrontMatter.Title}}" class="w-full object-cover rounded-t max-h-40">
         <div class="card-body">
           <div class="flex items-center gap-2 mb-1 flex-wrap">
             {{range .FrontMatter.Categories}}<span class="badge badge-info">{{.}}</span>{{end}}
