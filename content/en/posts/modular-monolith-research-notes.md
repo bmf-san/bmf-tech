@@ -1,5 +1,5 @@
 ---
-title: Notes on Researching Modular Monoliths
+title: "Modular Monolith Architecture: A Practical Guide and When to Choose It Over Microservices"
 slug: modular-monolith-research-notes
 date: 2023-09-25T00:00:00Z
 author: bmf-san

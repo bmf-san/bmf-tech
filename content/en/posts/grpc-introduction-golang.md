@@ -1,5 +1,5 @@
 ---
-title: What is gRPC - Introduction to gRPC with Golang
+title: What is gRPC? A Practical Introduction to gRPC with Go
 slug: grpc-introduction-golang
 date: 2020-09-08T00:00:00Z
 author: bmf-san

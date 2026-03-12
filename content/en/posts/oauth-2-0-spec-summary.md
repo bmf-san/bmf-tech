@@ -1,5 +1,5 @@
 ---
-title: Summary of OAuth 2.0 Specifications
+title: "OAuth 2.0 Explained: Complete Guide to Flows, Tokens, and Implementation"
 slug: oauth-2-0-spec-summary
 date: 2026-01-23T00:00:00Z
 author: bmf-san

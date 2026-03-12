@@ -1,5 +1,5 @@
 ---
-title: Differences Between Symbolic Links and Hard Links
+title: "Symbolic Links vs Hard Links: Key Differences on Linux"
 slug: symbolic-vs-hard-links
 date: 2018-05-24T00:00:00Z
 author: bmf-san

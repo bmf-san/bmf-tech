@@ -1,5 +1,5 @@
 ---
-title: About Monorepos
+title: "Monorepos Explained: Benefits, Drawbacks, and When to Use Them"
 slug: monorepo-overview
 date: 2023-08-11T00:00:00Z
 author: bmf-san

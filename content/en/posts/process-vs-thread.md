@@ -1,5 +1,5 @@
 ---
-title: Differences Between Processes and Threads
+title: "Processes vs Threads: Key Differences Every Developer Should Know"
 slug: process-vs-thread
 date: 2018-06-25T00:00:00Z
 author: bmf-san

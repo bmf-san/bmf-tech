@@ -1,5 +1,5 @@
 ---
-title: About GraphQL
+title: What is GraphQL? A Complete Guide with Practical Examples
 slug: graphql-introduction
 date: 2023-11-09T00:00:00Z
 author: bmf-san

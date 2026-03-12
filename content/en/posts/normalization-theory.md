@@ -1,5 +1,5 @@
 ---
-title: About Normalization Theory
+title: "Database Normalization Explained: 1NF to 3NF with Examples"
 slug: normalization-theory
 date: 2024-04-02T00:00:00Z
 author: bmf-san

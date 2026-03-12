@@ -1,5 +1,5 @@
 ---
-title: About Architecture Decision Records (ADR)
+title: "Architecture Decision Records (ADR) Explained: How to Document Technical Decisions"
 slug: adr-architecture-decision-record
 date: 2022-10-10T00:00:00Z
 author: bmf-san
