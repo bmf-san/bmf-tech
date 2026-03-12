@@ -1,5 +1,6 @@
 ---
 title: Setting Up Cron with Ansible
+description: An in-depth look at Setting Up Cron with Ansible, covering key concepts and practical insights.
 slug: configure-cron-with-ansible
 date: 2017-09-26T00:00:00Z
 author: bmf-san

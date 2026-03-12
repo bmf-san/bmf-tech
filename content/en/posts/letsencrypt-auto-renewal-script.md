@@ -1,5 +1,6 @@
 ---
 title: Let's Encrypt Certificate Auto-Renewal Script
+description: 'An in-depth look at Let''s Encrypt Certificate Auto-Renewal Script, covering key concepts and practical insights.'
 slug: letsencrypt-auto-renewal-script
 date: 2017-10-01T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: 資産推移シミュレーターを作った
+description: 資産推移シミュレーターを作ったについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: asset-transition-simulator
 date: 2025-05-25T00:00:00Z
 author: bmf-san

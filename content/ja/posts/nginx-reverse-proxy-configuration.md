@@ -1,5 +1,6 @@
 ---
 title: Nginxをリバースプロキシとして設定する
+description: Nginxをリバースプロキシとして設定するの手順と実践例を詳しく解説します。
 slug: nginx-reverse-proxy-configuration
 date: 2017-10-01T00:00:00Z
 author: bmf-san

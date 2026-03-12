@@ -1,5 +1,6 @@
 ---
 title: 「アジャイル式」健康カイゼンガイド
+description: 「「アジャイル式」健康カイゼンガイド」のまとめと読書メモ。重要なポイントと実践的な知見を整理します。
 slug: agile-health-improvement-guide
 date: 2022-12-02T00:00:00Z
 author: bmf-san

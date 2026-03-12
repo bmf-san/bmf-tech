@@ -1,5 +1,6 @@
 ---
 title: Algorithms and Data Structures - Lists
+description: An in-depth look at Algorithms and Data Structures - Lists, covering key concepts and practical insights.
 slug: algorithms-data-structures-list
 date: 2019-10-18T00:00:00Z
 author: bmf-san

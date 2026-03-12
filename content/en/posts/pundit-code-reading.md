@@ -1,5 +1,6 @@
 ---
 title: Code Reading of Pundit
+description: 'A review and summary of "Code Reading of Pundit", covering key takeaways and practical insights.'
 slug: pundit-code-reading
 date: 2024-10-22T00:00:00Z
 author: bmf-san

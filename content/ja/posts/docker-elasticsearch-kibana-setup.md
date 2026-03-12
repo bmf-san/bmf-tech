@@ -1,5 +1,6 @@
 ---
 title: DockerでElasticsearchとKibanaの環境構築
+description: DockerでElasticsearchとKibanaの環境構築の手順と実践例を詳しく解説します。
 slug: docker-elasticsearch-kibana-setup
 date: 2018-10-22T00:00:00Z
 author: bmf-san

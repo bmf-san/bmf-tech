@@ -1,5 +1,6 @@
 ---
 title: 'Modern JS Discussion: var/let/const'
+description: 'An in-depth look at Modern JS Discussion: var/let/const, covering key concepts and practical insights.'
 slug: modern-js-var-let-const
 date: 2017-12-25T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: Understanding the Linux Kernel with Illustrations
+description: An in-depth look at Understanding the Linux Kernel with Illustrations, covering key concepts and practical insights.
 slug: linux-kernel-explained
 date: 2025-01-31T00:00:00Z
 author: bmf-san

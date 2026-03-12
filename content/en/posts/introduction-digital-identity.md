@@ -1,5 +1,6 @@
 ---
 title: 'Introduction to Digital Identity: Essential Authentication, Authorization, and ID Management for Web Services'
+description: 'Research notes and a structured overview of Introduction to Digital Identity: Essential Authentication, Authorization, and ID Management for Web Services, summarizing key concepts and findings.'
 slug: introduction-digital-identity
 date: 2026-02-20T00:00:00Z
 author: bmf-san

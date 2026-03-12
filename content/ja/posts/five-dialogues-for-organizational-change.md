@@ -1,5 +1,6 @@
 ---
 title: 組織を変える5つの対話―対話を通じてアジャイルな組織文化を創る
+description: 組織を変える5つの対話―対話を通じてアジャイルな組織文化を創るについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: five-dialogues-for-organizational-change
 date: 2026-02-20T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: トランザクション概観
+description: トランザクション概観について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: transaction-overview
 date: 2023-06-07T00:00:00Z
 author: bmf-san

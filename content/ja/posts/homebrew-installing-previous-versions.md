@@ -1,5 +1,6 @@
 ---
 title: homebrewで過去バージョンをインストールする
+description: homebrewで過去バージョンをインストールするについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: homebrew-installing-previous-versions
 date: 2022-10-30T00:00:00Z
 author: bmf-san

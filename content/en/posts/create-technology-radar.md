@@ -1,5 +1,6 @@
 ---
 title: Creating My Own Technology Radar
+description: A step-by-step guide on Creating My Own Technology Radar, with practical examples and configuration tips.
 slug: create-technology-radar
 date: 2022-12-17T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: 2020年の振り返りと来年の抱負
+description: 2020年の振り返りと来年の抱負。個人的な振り返りとハイライトをまとめます。
 slug: 2020-reflection-and-goals
 date: 2021-01-03T00:00:00Z
 author: bmf-san

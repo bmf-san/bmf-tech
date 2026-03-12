@@ -1,5 +1,6 @@
 ---
 title: Web Application Development with Go
+description: An in-depth look at Web Application Development with Go, covering key concepts and practical insights.
 slug: web-application-development-with-golang
 date: 2017-03-12T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: はじめてのデジタルアイデンティティ―Webサービスに欠かせない認証・認可・ID管理
+description: はじめてのデジタルアイデンティティ―Webサービスに欠かせない認証・認可・ID管理について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: introduction-digital-identity
 date: 2026-02-20T00:00:00Z
 author: bmf-san

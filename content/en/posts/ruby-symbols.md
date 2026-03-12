@@ -1,5 +1,6 @@
 ---
 title: About Ruby Symbols
+description: An in-depth look at About Ruby Symbols, covering key concepts and practical insights.
 slug: ruby-symbols
 date: 2024-05-14T00:00:00Z
 author: bmf-san

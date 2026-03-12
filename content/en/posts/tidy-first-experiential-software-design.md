@@ -1,5 +1,6 @@
 ---
 title: Tidy First? ― Practicing Empirical Software Design Individually
+description: An in-depth exploration of Tidy First? ― Practicing Empirical Software Design Individually, covering design principles, trade-offs, and practical applications.
 slug: tidy-first-experiential-software-design
 date: 2025-01-06T00:00:00Z
 author: bmf-san

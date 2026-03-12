@@ -1,5 +1,6 @@
 ---
 title: Fun with Ruby
+description: An in-depth look at Fun with Ruby, covering key concepts and practical insights.
 slug: fun-with-ruby
 date: 2024-05-04T00:00:00Z
 author: bmf-san

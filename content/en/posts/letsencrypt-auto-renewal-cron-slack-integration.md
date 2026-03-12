@@ -1,5 +1,6 @@
 ---
 title: Automating Let's Encrypt Certificate Renewal (cron) with a Touch of Slack Integration
+description: 'An in-depth look at Automating Let''s Encrypt Certificate Renewal (cron) with a Touch of Slack Integration, covering key concepts and practical insights.'
 slug: letsencrypt-auto-renewal-cron-slack-integration
 date: 2017-10-01T00:00:00Z
 author: bmf-san

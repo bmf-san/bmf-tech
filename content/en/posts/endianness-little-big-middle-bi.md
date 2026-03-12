@@ -1,5 +1,6 @@
 ---
 title: Differences Between Little Endian, Big Endian, Middle Endian, and Bi-endian
+description: An in-depth look at Differences Between Little Endian, Big Endian, Middle Endian, and Bi-endian, covering key concepts and practical insights.
 slug: endianness-little-big-middle-bi
 date: 2020-08-25T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: ReactとReduxでSPAを構築するために参考にした記事
+description: ReactとReduxでSPAを構築するために参考にした記事の手順と実践例を詳しく解説します。
 slug: react-redux-spa-resources
 date: 2017-10-01T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: Web API Testing Techniques
+description: An in-depth look at Web API Testing Techniques, covering key concepts and practical insights.
 slug: web-api-testing-techniques
 date: 2024-07-08T00:00:00Z
 author: bmf-san

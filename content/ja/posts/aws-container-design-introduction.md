@@ -1,5 +1,6 @@
 ---
 title: AWSコンテナ設計・構築[本格]入門
+description: 「AWSコンテナ設計・構築[本格]入門」のまとめと読書メモ。重要なポイントと実践的な知見を整理します。
 slug: aws-container-design-introduction
 date: 2021-10-16T00:00:00Z
 author: bmf-san

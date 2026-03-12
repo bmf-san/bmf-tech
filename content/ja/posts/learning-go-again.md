@@ -1,5 +1,6 @@
 ---
 title: Goを学びなおす
+description: Goを学びなおすについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: learning-go-again
 date: 2023-01-23T00:00:00Z
 author: bmf-san

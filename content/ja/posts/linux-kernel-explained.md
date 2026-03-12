@@ -1,5 +1,6 @@
 ---
 title: 絵で見てわかるLinuxカーネルの仕組み
+description: 絵で見てわかるLinuxカーネルの仕組みについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: linux-kernel-explained
 date: 2025-01-31T00:00:00Z
 author: bmf-san

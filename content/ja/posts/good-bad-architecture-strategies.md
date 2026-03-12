@@ -1,5 +1,6 @@
 ---
 title: 良いアーキテクチャ戦略・悪いアーキテクチャ戦略
+description: 良いアーキテクチャ戦略・悪いアーキテクチャ戦略について、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
 slug: good-bad-architecture-strategies
 date: 2026-02-05T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: Participated and Presented at PHPerKaigi2019
+description: An in-depth look at Participated and Presented at PHPerKaigi2019, covering key concepts and practical insights.
 slug: phperkaigi-2019-participation
 date: 2019-04-01T00:00:00Z
 author: bmf-san

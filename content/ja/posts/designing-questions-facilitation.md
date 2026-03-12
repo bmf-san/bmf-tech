@@ -1,5 +1,6 @@
 ---
 title: '問いのデザイン: 創造的対話のファシリテーション'
+description: '問いのデザイン: 創造的対話のファシリテーションについて、基本的な概念から実践的な知見まで詳しく解説します。'
 slug: designing-questions-facilitation
 date: 2025-12-29T00:00:00Z
 author: bmf-san

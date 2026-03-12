@@ -1,5 +1,6 @@
 ---
 title: Attended PHP Conference Sendai 2019
+description: An in-depth look at Attended PHP Conference Sendai 2019, covering key concepts and practical insights.
 slug: php-conference-sendai-2019
 date: 2019-01-27T00:00:00Z
 author: bmf-san

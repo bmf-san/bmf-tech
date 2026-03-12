@@ -1,5 +1,6 @@
 ---
 title: Controlling Container Startup Order with Dockerize in Docker Compose
+description: An in-depth look at Controlling Container Startup Order with Dockerize in Docker Compose, covering key concepts and practical insights.
 slug: dockerize-control-docker-compose-start-order
 date: 2019-09-17T00:00:00Z
 author: bmf-san

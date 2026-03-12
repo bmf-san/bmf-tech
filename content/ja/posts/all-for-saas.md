@@ -1,5 +1,6 @@
 ---
 title: All for SaaS
+description: All for SaaSについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: all-for-saas
 date: 2024-04-16T00:00:00Z
 author: bmf-san

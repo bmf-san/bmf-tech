@@ -1,5 +1,6 @@
 ---
 title: 'Building Secure and Reliable Systems: Design, Implementation, and Maintenance from Google SRE'
+description: 'A step-by-step guide on Building Secure and Reliable Systems: Design, Implementation, and Maintenance from Google SRE, with practical examples and configuration tips.'
 slug: secure-reliable-system-design-google-sre
 date: 2024-05-24T00:00:00Z
 author: bmf-san

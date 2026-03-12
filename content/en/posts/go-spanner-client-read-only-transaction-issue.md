@@ -1,5 +1,6 @@
 ---
 title: Stuck with ReadOnlyTransaction in Go's Spanner Client
+description: 'An in-depth look at Stuck with ReadOnlyTransaction in Go''s Spanner Client, covering key concepts and practical insights.'
 slug: go-spanner-client-read-only-transaction-issue
 date: 2021-02-08T00:00:00Z
 author: bmf-san

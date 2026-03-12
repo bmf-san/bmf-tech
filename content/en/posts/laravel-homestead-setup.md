@@ -1,5 +1,6 @@
 ---
 title: Setting Up a Laravel Environment with Laravel Homestead
+description: An in-depth look at Setting Up a Laravel Environment with Laravel Homestead, covering key concepts and practical insights.
 slug: laravel-homestead-setup
 date: 2018-04-11T00:00:00Z
 author: bmf-san

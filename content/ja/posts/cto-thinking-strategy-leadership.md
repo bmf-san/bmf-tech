@@ -1,5 +1,6 @@
 ---
 title: CTOの思考法　技術と組織を動かす意思決定・戦略・リーダーシップ
+description: CTOの思考法　技術と組織を動かす意思決定・戦略・リーダーシップについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: cto-thinking-strategy-leadership
 date: 2026-02-21T00:00:00Z
 author: bmf-san

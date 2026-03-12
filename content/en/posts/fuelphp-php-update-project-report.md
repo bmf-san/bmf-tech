@@ -1,5 +1,6 @@
 ---
 title: FuelPHP and PHP Update Project Report
+description: An in-depth look at FuelPHP and PHP Update Project Report, covering key concepts and practical insights.
 slug: fuelphp-php-update-project-report
 date: 2024-01-26T00:00:00Z
 author: bmf-san

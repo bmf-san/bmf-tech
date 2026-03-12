@@ -1,5 +1,6 @@
 ---
 title: 'Getting Started with Domain-Driven Design: Practical Techniques for Linking Software Implementation and Business Strategy'
+description: 'A step-by-step guide on Getting Started with Domain-Driven Design: Practical Techniques for Linking Software Implementation and Business Strategy, with practical examples and configuration tips.'
 slug: getting-started-domain-driven-design
 date: 2026-02-20T00:00:00Z
 author: bmf-san

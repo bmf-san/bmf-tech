@@ -1,5 +1,6 @@
 ---
 title: Cache Write Methods
+description: An in-depth look at Cache Write Methods, covering key concepts and practical insights.
 slug: cache-write-methods
 date: 2023-06-03T00:00:00Z
 author: bmf-san

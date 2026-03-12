@@ -1,5 +1,6 @@
 ---
 title: 'Practical Redis Introduction: From Technical Mechanisms to Field Applications'
+description: 'Research notes and a structured overview of Practical Redis Introduction: From Technical Mechanisms to Field Applications, summarizing key concepts and findings.'
 slug: redis-practical-introduction
 date: 2025-02-15T00:00:00Z
 author: bmf-san

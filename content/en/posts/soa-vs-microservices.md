@@ -1,5 +1,6 @@
 ---
 title: Notes on Articles Read to Clarify the Differences Between SOA and Microservices
+description: Research notes and a structured overview of Notes on Articles Read to Clarify the Differences Between SOA and Microservices, summarizing key concepts and findings.
 slug: soa-vs-microservices
 date: 2022-11-21T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: Distributing Validation Rules within the FormRequest's rules Method
+description: 'An in-depth look at Distributing Validation Rules within the FormRequest''s rules Method, covering key concepts and practical insights.'
 slug: validate-rules-formrequest
 date: 2017-09-26T00:00:00Z
 author: bmf-san

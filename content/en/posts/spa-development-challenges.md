@@ -1,5 +1,6 @@
 ---
 title: Challenges Faced When Building an SPA
+description: A step-by-step guide on Challenges Faced When Building an SPA, with practical examples and configuration tips.
 slug: spa-development-challenges
 date: 2018-06-06T00:00:00Z
 author: bmf-san

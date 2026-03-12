@@ -1,5 +1,6 @@
 ---
 title: URLルーティングをつくる　エピソード3（完結編）
+description: URLルーティングをつくる　エピソード3（完結編）について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: creating-url-routing-episode-3
 date: 2019-03-17T00:00:00Z
 author: bmf-san

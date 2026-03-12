@@ -1,5 +1,6 @@
 ---
 title: Reflection on 2020 and Resolutions for Next Year
+description: An in-depth look at Reflection on 2020 and Resolutions for Next Year, covering key concepts and practical insights.
 slug: 2020-reflection-and-goals
 date: 2021-01-03T00:00:00Z
 author: bmf-san

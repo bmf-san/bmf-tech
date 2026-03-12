@@ -1,5 +1,6 @@
 ---
 title: All for SaaS
+description: An in-depth look at All for SaaS, covering key concepts and practical insights.
 slug: all-for-saas
 date: 2024-04-16T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: Goで始めるコードのパフォーマンス改善
+description: Goで始めるコードのパフォーマンス改善について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: go-performance-improvement
 date: 2023-06-12T00:00:00Z
 author: bmf-san

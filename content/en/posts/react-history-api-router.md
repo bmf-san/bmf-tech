@@ -1,5 +1,6 @@
 ---
 title: Creating a Custom Router with React and the History API
+description: A step-by-step guide on Creating a Custom Router with React and the History API, with practical examples and configuration tips.
 slug: react-history-api-router
 date: 2018-01-03T00:00:00Z
 author: bmf-san

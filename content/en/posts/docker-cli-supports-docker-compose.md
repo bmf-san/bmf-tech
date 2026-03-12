@@ -1,5 +1,6 @@
 ---
 title: Docker CLI Now Supports Docker Compose
+description: An in-depth look at Docker CLI Now Supports Docker Compose, covering key concepts and practical insights.
 slug: docker-cli-supports-docker-compose
 date: 2021-05-06T00:00:00Z
 author: bmf-san

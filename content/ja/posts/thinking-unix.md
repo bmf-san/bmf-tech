@@ -1,5 +1,6 @@
 ---
 title: UNIXという考え方
+description: UNIXという考え方について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: thinking-unix
 date: 2018-05-18T00:00:00Z
 author: bmf-san

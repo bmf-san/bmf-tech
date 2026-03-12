@@ -1,5 +1,6 @@
 ---
 title: Understanding System Performance Through Illustrations
+description: An in-depth look at Understanding System Performance Through Illustrations, covering key concepts and practical insights.
 slug: system-performance-explained
 date: 2018-07-12T00:00:00Z
 author: bmf-san

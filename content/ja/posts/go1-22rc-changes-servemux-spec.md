@@ -1,5 +1,6 @@
 ---
 title: Go1.22rcで変更されるServeMuxの仕様
+description: Go1.22rcで変更されるServeMuxの仕様について調査・整理したメモ。基本概念と重要ポイントを解説します。
 slug: go1-22rc-changes-servemux-spec
 date: 2024-01-25T00:00:00Z
 author: bmf-san

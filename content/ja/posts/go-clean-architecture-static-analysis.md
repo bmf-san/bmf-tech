@@ -1,5 +1,6 @@
 ---
 title: GoでClean Architectureのレイヤーを静的解析する
+description: GoでClean Architectureのレイヤーを静的解析するについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: go-clean-architecture-static-analysis
 date: 2022-09-04T00:00:00Z
 author: bmf-san

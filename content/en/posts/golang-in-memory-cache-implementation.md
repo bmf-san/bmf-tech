@@ -1,5 +1,6 @@
 ---
 title: Implementing In-Memory Cache in Golang
+description: A step-by-step guide on Implementing In-Memory Cache in Golang, with practical examples and configuration tips.
 slug: golang-in-memory-cache-implementation
 date: 2020-09-29T00:00:00Z
 author: bmf-san

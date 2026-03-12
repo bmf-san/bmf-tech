@@ -1,5 +1,6 @@
 ---
 title: Unix Command Notes
+description: Research notes and a structured overview of Unix Command Notes, summarizing key concepts and findings.
 slug: unix-command-memo
 date: 2018-07-07T00:00:00Z
 author: bmf-san

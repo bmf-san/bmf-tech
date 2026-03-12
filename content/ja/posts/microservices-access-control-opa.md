@@ -1,5 +1,6 @@
 ---
 title: OPAを使用したマイクロサービスのアクセス制御システムの実装
+description: OPAを使用したマイクロサービスのアクセス制御システムの実装の手順と実践例を詳しく解説します。
 slug: microservices-access-control-opa
 date: 2025-03-20T00:00:00Z
 author: bmf-san

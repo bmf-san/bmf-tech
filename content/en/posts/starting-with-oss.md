@@ -1,5 +1,6 @@
 ---
 title: My First Experience with OSS
+description: An in-depth look at My First Experience with OSS, covering key concepts and practical insights.
 slug: starting-with-oss
 date: 2017-07-17T00:00:00Z
 author: bmf-san

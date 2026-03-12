@@ -1,5 +1,6 @@
 ---
 title: Reactでフォローボタンをつくってみる
+description: Reactでフォローボタンをつくってみるについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: react-follow-button-implementation
 date: 2017-10-01T00:00:00Z
 author: bmf-san

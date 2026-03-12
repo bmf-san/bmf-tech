@@ -1,5 +1,6 @@
 ---
 title: ECS on Fargate環境でDatadog APMを導入
+description: ECS on Fargate環境でDatadog APMを導入の手順と実践例を詳しく解説します。
 slug: introducing-datadog-apm-on-ecs-fargate
 date: 2021-10-19T00:00:00Z
 author: bmf-san

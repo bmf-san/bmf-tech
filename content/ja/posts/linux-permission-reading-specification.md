@@ -1,5 +1,6 @@
 ---
 title: Linuxのパーミッションの読み方と指定方法について
+description: Linuxのパーミッションの読み方と指定方法についての手順と実践例を詳しく解説します。
 slug: linux-permission-reading-specification
 date: 2018-07-18T00:00:00Z
 author: bmf-san

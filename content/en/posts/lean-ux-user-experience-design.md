@@ -1,5 +1,6 @@
 ---
 title: Lean UX - User Experience Design with Lean Thinking
+description: An in-depth exploration of Lean UX - User Experience Design with Lean Thinking, covering design principles, trade-offs, and practical applications.
 slug: lean-ux-user-experience-design
 date: 2016-12-27T00:00:00Z
 author: bmf-san

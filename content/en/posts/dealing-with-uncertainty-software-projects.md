@@ -1,5 +1,6 @@
 ---
 title: How to Deal with Uncertainty in Software Development Projects
+description: An in-depth look at How to Deal with Uncertainty in Software Development Projects, covering key concepts and practical insights.
 slug: dealing-with-uncertainty-software-projects
 date: 2023-12-22T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: API設計について学べる本
+description: 「API設計について学べる本」のまとめと読書メモ。重要なポイントと実践的な知見を整理します。
 slug: books-on-api-design
 date: 2024-08-26T00:00:00Z
 author: bmf-san

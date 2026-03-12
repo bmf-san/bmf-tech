@@ -1,5 +1,6 @@
 ---
 title: freee 技術の本 freeeにおけるマルチプロダクト開発
+description: 「freee 技術の本 freeeにおけるマルチプロダクト開発」のまとめと読書メモ。重要なポイントと実践的な知見を整理します。
 slug: freee-technical-book-multi-product-development
 date: 2024-11-09T00:00:00Z
 author: bmf-san

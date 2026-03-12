@@ -1,5 +1,6 @@
 ---
 title: About Architecture, Architects, and Architecting
+description: An in-depth exploration of About Architecture, Architects, and Architecting, covering design principles, trade-offs, and practical applications.
 slug: architecture-architecting
 date: 2025-07-14T00:00:00Z
 author: bmf-san

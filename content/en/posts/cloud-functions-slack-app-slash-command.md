@@ -1,5 +1,6 @@
 ---
 title: Implementing Slack App Slash Command Using Cloud Functions
+description: A step-by-step guide on Implementing Slack App Slash Command Using Cloud Functions, with practical examples and configuration tips.
 slug: cloud-functions-slack-app-slash-command
 date: 2022-09-19T00:00:00Z
 author: bmf-san

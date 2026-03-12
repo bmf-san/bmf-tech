@@ -1,5 +1,6 @@
 ---
 title: Learning Design Patterns with PHP - Strategy
+description: An in-depth exploration of Learning Design Patterns with PHP - Strategy, covering design principles, trade-offs, and practical applications.
 slug: php-design-patterns-strategy
 date: 2018-12-09T00:00:00Z
 author: bmf-san

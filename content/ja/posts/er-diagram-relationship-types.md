@@ -1,5 +1,6 @@
 ---
 title: ER図のリレーションシップの種類について
+description: ER図のリレーションシップの種類についてについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: er-diagram-relationship-types
 date: 2018-07-31T00:00:00Z
 author: bmf-san

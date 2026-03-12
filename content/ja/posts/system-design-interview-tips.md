@@ -1,5 +1,6 @@
 ---
 title: システム設計面接の傾向と対策
+description: システム設計面接の傾向と対策について、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
 slug: system-design-interview-tips
 date: 2025-09-29T00:00:00Z
 author: bmf-san

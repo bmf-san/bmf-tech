@@ -1,5 +1,6 @@
 ---
 title: セッションベースとトークンベースの認証方式について
+description: セッションベースとトークンベースの認証方式についてについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: session-token-authentication
 date: 2025-09-17T00:00:00Z
 author: bmf-san

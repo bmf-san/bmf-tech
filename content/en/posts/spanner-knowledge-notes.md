@@ -1,5 +1,6 @@
 ---
 title: Notes on Spanner Insights
+description: Research notes and a structured overview of Notes on Spanner Insights, summarizing key concepts and findings.
 slug: spanner-knowledge-notes
 date: 2024-03-03T00:00:00Z
 author: bmf-san

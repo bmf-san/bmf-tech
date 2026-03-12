@@ -1,5 +1,6 @@
 ---
 title: Delegation Over Inheritance
+description: An in-depth look at Delegation Over Inheritance, covering key concepts and practical insights.
 slug: delegation-over-inheritance
 date: 2025-10-20T00:00:00Z
 author: bmf-san

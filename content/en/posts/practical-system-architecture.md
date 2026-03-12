@@ -1,5 +1,6 @@
 ---
 title: Practical Methods for Building System Architecture
+description: A step-by-step guide on Practical Methods for Building System Architecture, with practical examples and configuration tips.
 slug: practical-system-architecture
 date: 2025-07-17T00:00:00Z
 author: bmf-san

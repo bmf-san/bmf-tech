@@ -1,5 +1,6 @@
 ---
 title: Understanding IO and CPU Characteristics in Ruby and Rails
+description: An in-depth look at Understanding IO and CPU Characteristics in Ruby and Rails, covering key concepts and practical insights.
 slug: ruby-rails-io-cpu-characteristics
 date: 2025-06-14T00:00:00Z
 author: bmf-san

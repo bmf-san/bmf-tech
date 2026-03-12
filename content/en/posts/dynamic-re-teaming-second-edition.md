@@ -1,5 +1,6 @@
 ---
 title: Dynamic Re-teaming 2nd Edition - Effective Team Structuring with 5 Patterns
+description: 'A review and summary of "Dynamic Re-teaming 2nd Edition - Effective Team Structuring with 5 Patterns", covering key takeaways and practical insights.'
 slug: dynamic-re-teaming-second-edition
 date: 2026-02-20T00:00:00Z
 author: bmf-san

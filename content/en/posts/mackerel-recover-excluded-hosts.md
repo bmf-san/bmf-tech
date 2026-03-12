@@ -1,5 +1,6 @@
 ---
 title: How to Restore Hosts Removed from Monitoring in Mackerel
+description: An in-depth look at How to Restore Hosts Removed from Monitoring in Mackerel, covering key concepts and practical insights.
 slug: mackerel-recover-excluded-hosts
 date: 2019-09-17T00:00:00Z
 author: bmf-san

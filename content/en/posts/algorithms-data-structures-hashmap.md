@@ -1,5 +1,6 @@
 ---
 title: Algorithms and Data Structures - HashMap
+description: An in-depth look at Algorithms and Data Structures - HashMap, covering key concepts and practical insights.
 slug: algorithms-data-structures-hashmap
 date: 2023-07-31T00:00:00Z
 author: bmf-san

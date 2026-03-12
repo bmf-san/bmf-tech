@@ -1,5 +1,6 @@
 ---
 title: RubyのProcとlamdaについて
+description: RubyのProcとlamdaについてについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: ruby-proc-lambda
 date: 2024-05-15T00:00:00Z
 author: bmf-san

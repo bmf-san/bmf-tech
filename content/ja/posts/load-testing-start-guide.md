@@ -1,5 +1,6 @@
 ---
 title: 負荷試験を始めるためのスターティングガイド
+description: 「負荷試験を始めるためのスターティングガイド」のまとめと読書メモ。重要なポイントと実践的な知見を整理します。
 slug: load-testing-start-guide
 date: 2024-08-24T00:00:00Z
 author: bmf-san

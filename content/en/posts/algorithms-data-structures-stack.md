@@ -1,5 +1,6 @@
 ---
 title: Algorithms and Data Structures - Stack
+description: An in-depth look at Algorithms and Data Structures - Stack, covering key concepts and practical insights.
 slug: algorithms-data-structures-stack
 date: 2019-11-17T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: 'Mastering SQL: A Comprehensive Guide 2nd Edition - For Those Who Don''t Want to Remain Beginners'
+description: 'A review and summary of "Mastering SQL: A Comprehensive Guide 2nd Edition - For Those Who Don''''t Want to Remain Beginners", covering key takeaways and practical insights.'
 slug: sql-master-guide-for-advanced-beginners
 date: 2024-04-01T00:00:00Z
 author: bmf-san

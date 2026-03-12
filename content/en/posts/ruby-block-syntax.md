@@ -1,5 +1,6 @@
 ---
 title: About Ruby Block Syntax
+description: An in-depth look at About Ruby Block Syntax, covering key concepts and practical insights.
 slug: ruby-block-syntax
 date: 2024-05-15T00:00:00Z
 author: bmf-san

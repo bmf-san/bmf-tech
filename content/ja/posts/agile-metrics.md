@@ -1,5 +1,6 @@
 ---
 title: アジャイルメトリクス
+description: アジャイルメトリクスについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: agile-metrics
 date: 2022-11-23T00:00:00Z
 author: bmf-san

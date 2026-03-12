@@ -1,5 +1,6 @@
 ---
 title: Using VirtualHost with Vagrant
+description: An in-depth look at Using VirtualHost with Vagrant, covering key concepts and practical insights.
 slug: vagrant-virtualhost-usage
 date: 2017-10-01T00:00:00Z
 author: bmf-san

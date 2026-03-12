@@ -1,5 +1,6 @@
 ---
 title: Singletonパターンはなぜアンチパターンなのか
+description: Singletonパターンはなぜアンチパターンなのかについて、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
 slug: singleton-pattern-anti-pattern
 date: 2025-10-18T00:00:00Z
 author: bmf-san

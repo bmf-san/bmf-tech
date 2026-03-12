@@ -1,5 +1,6 @@
 ---
 title: Goで指数バックオフとジッターを実装してみる
+description: Goで指数バックオフとジッターを実装してみるの手順と実践例を詳しく解説します。
 slug: go-exponential-backoff-jitter-implementation
 date: 2024-01-31T00:00:00Z
 author: bmf-san

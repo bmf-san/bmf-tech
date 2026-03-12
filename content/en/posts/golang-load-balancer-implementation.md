@@ -1,5 +1,6 @@
 ---
 title: Implementing a Load Balancer in Golang
+description: A step-by-step guide on Implementing a Load Balancer in Golang, with practical examples and configuration tips.
 slug: golang-load-balancer-implementation
 date: 2022-01-01T00:00:00Z
 author: bmf-san

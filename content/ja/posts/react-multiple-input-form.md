@@ -1,5 +1,6 @@
 ---
 title: Reactで複数のinputを扱うフォームを実装する
+description: Reactで複数のinputを扱うフォームを実装するの手順と実践例を詳しく解説します。
 slug: react-multiple-input-form
 date: 2017-10-01T00:00:00Z
 author: bmf-san

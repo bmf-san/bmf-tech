@@ -1,5 +1,6 @@
 ---
 title: 'Introduction to Custom URL Routing: Episode 2'
+description: 'Research notes and a structured overview of Introduction to Custom URL Routing: Episode 2, summarizing key concepts and findings.'
 slug: url-routing-introduction-episode-2
 date: 2019-12-15T00:00:00Z
 author: bmf-san

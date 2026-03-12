@@ -1,5 +1,6 @@
 ---
 title: The Model
+description: An in-depth exploration of The Model, covering design principles, trade-offs, and practical applications.
 slug: the-model
 date: 2024-04-16T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: Nontemporarl・Unitemporal・Bitemporalの特徴と設計
+description: Nontemporarl・Unitemporal・Bitemporalの特徴と設計について、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
 slug: nontemporarl-unitemporal-bitemporal-design
 date: 2025-02-27T00:00:00Z
 author: bmf-san

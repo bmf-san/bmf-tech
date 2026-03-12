@@ -1,5 +1,6 @@
 ---
 title: コンテナで始めるモニタリング基盤構築
+description: コンテナで始めるモニタリング基盤構築の手順と実践例を詳しく解説します。
 slug: container-monitoring-infrastructure
 date: 2021-12-18T00:00:00Z
 author: bmf-san

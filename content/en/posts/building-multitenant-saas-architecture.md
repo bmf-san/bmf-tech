@@ -1,5 +1,6 @@
 ---
 title: Building Multi-Tenant SaaS Architecture - Principles, Best Practices, AWS Architecture Patterns
+description: A step-by-step guide on Building Multi-Tenant SaaS Architecture - Principles, Best Practices, AWS Architecture Patterns, with practical examples and configuration tips.
 slug: building-multitenant-saas-architecture
 date: 2025-04-20T00:00:00Z
 author: bmf-san

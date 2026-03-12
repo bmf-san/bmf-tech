@@ -1,5 +1,6 @@
 ---
 title: 初めてのGo言語 第2版 ―他言語プログラマーのためのイディオマティックGo実践ガイド
+description: 「初めてのGo言語 第2版 ―他言語プログラマーのためのイディオマティックGo実践ガイド」のまとめと読書メモ。重要なポイントと実践的な知見を整理します。
 slug: idiomatic-go-practice-guide
 date: 2025-10-26T00:00:00Z
 author: bmf-san

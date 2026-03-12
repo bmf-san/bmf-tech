@@ -1,5 +1,6 @@
 ---
 title: 凝集度と結合度
+description: 凝集度と結合度について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: cohesion-coupling
 date: 2025-06-25T00:00:00Z
 author: bmf-san

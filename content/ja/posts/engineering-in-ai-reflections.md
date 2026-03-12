@@ -1,5 +1,6 @@
 ---
 title: AI時代のエンジニアリングについて考える
+description: AI時代のエンジニアリングについて考えるについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: engineering-in-ai-reflections
 date: 2026-02-25T00:00:00Z
 author: bmf-san

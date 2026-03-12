@@ -1,5 +1,6 @@
 ---
 title: AIを使ったコードリーディングの手順について
+description: AIを使ったコードリーディングの手順についての手順と実践例を詳しく解説します。
 slug: ai-code-reading-techniques
 date: 2025-11-02T00:00:00Z
 author: bmf-san

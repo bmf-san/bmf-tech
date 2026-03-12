@@ -1,5 +1,6 @@
 ---
 title: DI and Service Locator
+description: An in-depth look at DI and Service Locator, covering key concepts and practical insights.
 slug: dependency-injection-service-locator
 date: 2018-06-05T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: Laravel リポジトリパターンの実装
+description: Laravel リポジトリパターンの実装の手順と実践例を詳しく解説します。
 slug: implement-laravel-repository-pattern
 date: 2017-09-26T00:00:00Z
 author: bmf-san

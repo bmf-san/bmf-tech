@@ -1,5 +1,6 @@
 ---
 title: プロを目指す人のためのRuby入門
+description: プロを目指す人のためのRuby入門について調査・整理したメモ。基本概念と重要ポイントを解説します。
 slug: ruby-introduction-for-beginners
 date: 2024-05-04T00:00:00Z
 author: bmf-san

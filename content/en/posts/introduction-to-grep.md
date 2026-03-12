@@ -1,5 +1,6 @@
 ---
 title: Introduction to grep
+description: Research notes and a structured overview of Introduction to grep, summarizing key concepts and findings.
 slug: introduction-to-grep
 date: 2019-01-22T00:00:00Z
 author: bmf-san

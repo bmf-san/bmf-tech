@@ -1,5 +1,6 @@
 ---
 title: VagrantでCentOS6.7の開発環境を構築する
+description: VagrantでCentOS6.7の開発環境を構築するの手順と実践例を詳しく解説します。
 slug: vagrant-centos-development-environment
 date: 2017-10-01T00:00:00Z
 author: bmf-san

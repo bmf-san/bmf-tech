@@ -1,5 +1,6 @@
 ---
 title: Implementing Exponential Backoff and Jitter in Go
+description: A step-by-step guide on Implementing Exponential Backoff and Jitter in Go, with practical examples and configuration tips.
 slug: go-exponential-backoff-jitter-implementation
 date: 2024-01-31T00:00:00Z
 author: bmf-san

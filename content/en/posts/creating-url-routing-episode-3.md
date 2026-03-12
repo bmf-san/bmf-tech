@@ -1,5 +1,6 @@
 ---
 title: Creating URL Routing Episode 3 (Final Episode)
+description: A step-by-step guide on Creating URL Routing Episode 3 (Final Episode), with practical examples and configuration tips.
 slug: creating-url-routing-episode-3
 date: 2019-03-17T00:00:00Z
 author: bmf-san

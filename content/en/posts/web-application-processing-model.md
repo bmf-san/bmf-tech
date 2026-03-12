@@ -1,5 +1,6 @@
 ---
 title: About Processing Models of Web Applications
+description: An in-depth exploration of About Processing Models of Web Applications, covering design principles, trade-offs, and practical applications.
 slug: web-application-processing-model
 date: 2025-08-02T00:00:00Z
 author: bmf-san

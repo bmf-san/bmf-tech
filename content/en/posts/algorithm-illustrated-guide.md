@@ -1,5 +1,6 @@
 ---
 title: 'Algorithm Encyclopedia Revised Edition: 33 Algorithms Illustrated'
+description: 'A review and summary of "Algorithm Encyclopedia Revised Edition: 33 Algorithms Illustrated", covering key takeaways and practical insights.'
 slug: algorithm-illustrated-guide
 date: 2021-05-16T00:00:00Z
 author: bmf-san

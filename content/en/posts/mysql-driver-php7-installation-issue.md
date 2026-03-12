@@ -1,5 +1,6 @@
 ---
 title: No MySQL Driver After Installing PHP7
+description: A step-by-step guide on No MySQL Driver After Installing PHP7, with practical examples and configuration tips.
 slug: mysql-driver-php7-installation-issue
 date: 2017-10-01T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: 退職エントリ
+description: 退職エントリについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: resignation-entry
 date: 2024-04-30T00:00:00Z
 author: bmf-san

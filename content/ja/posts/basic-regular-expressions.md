@@ -1,5 +1,6 @@
 ---
 title: 正規表現の基本
+description: 「正規表現の基本」のまとめと読書メモ。重要なポイントと実践的な知見を整理します。
 slug: basic-regular-expressions
 date: 2018-12-01T00:00:00Z
 author: bmf-san

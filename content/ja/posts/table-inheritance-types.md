@@ -1,5 +1,6 @@
 ---
 title: 単一テーブル継承・クラステーブル継承・具象クラス継承について
+description: 単一テーブル継承・クラステーブル継承・具象クラス継承についてについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: table-inheritance-types
 date: 2017-10-01T00:00:00Z
 author: bmf-san

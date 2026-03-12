@@ -1,5 +1,6 @@
 ---
 title: Using dotEnv Environment Variables on the Client Side - dotenv-webpack
+description: An in-depth look at Using dotEnv Environment Variables on the Client Side - dotenv-webpack, covering key concepts and practical insights.
 slug: use-dotenv-variables-client-side
 date: 2017-09-26T00:00:00Z
 author: bmf-san

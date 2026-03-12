@@ -1,5 +1,6 @@
 ---
 title: Agile Metrics
+description: An in-depth look at Agile Metrics, covering key concepts and practical insights.
 slug: agile-metrics
 date: 2022-11-23T00:00:00Z
 author: bmf-san

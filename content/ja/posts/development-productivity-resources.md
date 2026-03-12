@@ -1,5 +1,6 @@
 ---
 title: 開発生産性についての記事漁り
+description: 開発生産性についての記事漁りについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: development-productivity-resources
 date: 2023-12-30T00:00:00Z
 author: bmf-san

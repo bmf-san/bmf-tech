@@ -1,5 +1,6 @@
 ---
 title: Bounded Contexts
+description: An in-depth look at Bounded Contexts, covering key concepts and practical insights.
 slug: bounded-context-explanation
 date: 2025-05-19T00:00:00Z
 author: bmf-san

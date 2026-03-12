@@ -1,5 +1,6 @@
 ---
 title: SOAとマイクロサービスとの違いについて整理するために読んだ記事メモ
+description: SOAとマイクロサービスとの違いについて整理するために読んだ記事メモについて調査・整理したメモ。基本概念と重要ポイントを解説します。
 slug: soa-vs-microservices
 date: 2022-11-21T00:00:00Z
 author: bmf-san

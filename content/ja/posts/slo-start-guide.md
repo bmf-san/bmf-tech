@@ -1,5 +1,6 @@
 ---
 title: SLOを始めるためのスタートガイド
+description: 「SLOを始めるためのスタートガイド」のまとめと読書メモ。重要なポイントと実践的な知見を整理します。
 slug: slo-start-guide
 date: 2024-07-23T00:00:00Z
 author: bmf-san

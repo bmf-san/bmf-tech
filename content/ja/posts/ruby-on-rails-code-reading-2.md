@@ -1,5 +1,6 @@
 ---
 title: Ruby on Railsのコードリーディング第2回-Railsのリクエスト処理
+description: Ruby on Railsのコードリーディング第2回-Railsのリクエスト処理について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: ruby-on-rails-code-reading-2
 date: 2024-09-02T00:00:00Z
 author: bmf-san

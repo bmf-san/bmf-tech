@@ -1,5 +1,6 @@
 ---
 title: ADRを書くときに抑えておくべきポイント
+description: ADRを書くときに抑えておくべきポイントについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: adr-writing-key-points
 date: 2026-01-09T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: Implementing Datadog APM in ECS on Fargate Environment
+description: A step-by-step guide on Implementing Datadog APM in ECS on Fargate Environment, with practical examples and configuration tips.
 slug: introducing-datadog-apm-on-ecs-fargate
 date: 2021-10-19T00:00:00Z
 author: bmf-san

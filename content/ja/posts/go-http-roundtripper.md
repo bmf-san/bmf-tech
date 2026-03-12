@@ -1,5 +1,6 @@
 ---
 title: Goのhttp.RoundTripperについて
+description: Goのhttp.RoundTripperについてについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: go-http-roundtripper
 date: 2023-08-22T00:00:00Z
 author: bmf-san

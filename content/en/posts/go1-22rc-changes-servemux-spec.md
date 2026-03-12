@@ -1,5 +1,6 @@
 ---
 title: Changes to ServeMux Specification in Go 1.22rc
+description: Research notes and a structured overview of Changes to ServeMux Specification in Go 1.22rc, summarizing key concepts and findings.
 slug: go1-22rc-changes-servemux-spec
 date: 2024-01-25T00:00:00Z
 author: bmf-san

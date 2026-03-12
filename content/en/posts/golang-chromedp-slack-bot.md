@@ -1,5 +1,6 @@
 ---
 title: Creating a Slack Emoji Auto-Generation Bot with Golang, chromedp, and Slack
+description: A step-by-step guide on Creating a Slack Emoji Auto-Generation Bot with Golang, chromedp, and Slack, with practical examples and configuration tips.
 slug: golang-chromedp-slack-bot
 date: 2020-08-11T00:00:00Z
 author: bmf-san

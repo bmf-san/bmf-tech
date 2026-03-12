@@ -1,5 +1,6 @@
 ---
 title: スライディングウィンドウの実装
+description: スライディングウィンドウの実装の手順と実践例を詳しく解説します。
 slug: sliding-window-implementation
 date: 2023-08-17T00:00:00Z
 author: bmf-san

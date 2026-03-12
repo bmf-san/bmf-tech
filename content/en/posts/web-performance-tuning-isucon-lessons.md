@@ -1,5 +1,6 @@
 ---
 title: 'Web Performance Tuning by Experts: Practical Speed Enhancement from ISUCON'
+description: 'An in-depth look at Web Performance Tuning by Experts: Practical Speed Enhancement from ISUCON, covering key concepts and practical insights.'
 slug: web-performance-tuning-isucon-lessons
 date: 2022-06-09T00:00:00Z
 author: bmf-san

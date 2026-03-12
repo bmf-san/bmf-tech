@@ -1,5 +1,6 @@
 ---
 title: Differentiating Architecture Strategy, Tactics, and Design
+description: An in-depth exploration of Differentiating Architecture Strategy, Tactics, and Design, covering design principles, trade-offs, and practical applications.
 slug: architecture-strategy-tactics-design
 date: 2026-02-05T00:00:00Z
 author: bmf-san

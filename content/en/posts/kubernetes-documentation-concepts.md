@@ -1,5 +1,6 @@
 ---
 title: Reading Kubernetes Documentation - Summary of Concepts
+description: 'A review and summary of "Reading Kubernetes Documentation - Summary of Concepts", covering key takeaways and practical insights.'
 slug: kubernetes-documentation-concepts
 date: 2020-10-20T00:00:00Z
 author: bmf-san

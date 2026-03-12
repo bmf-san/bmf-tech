@@ -1,5 +1,6 @@
 ---
 title: Ansibleでcronを設定
+description: Ansibleでcronを設定の手順と実践例を詳しく解説します。
 slug: configure-cron-with-ansible
 date: 2017-09-26T00:00:00Z
 author: bmf-san

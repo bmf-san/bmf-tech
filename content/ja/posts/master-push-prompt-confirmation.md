@@ -1,5 +1,6 @@
 ---
 title: master直プッシュの際にプロンプトで確認するようにする
+description: master直プッシュの際にプロンプトで確認するようにするについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: master-push-prompt-confirmation
 date: 2019-05-08T00:00:00Z
 author: bmf-san

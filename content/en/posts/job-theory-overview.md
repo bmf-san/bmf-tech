@@ -1,5 +1,6 @@
 ---
 title: Jobs Theory
+description: An in-depth look at Jobs Theory, covering key concepts and practical insights.
 slug: job-theory-overview
 date: 2024-03-20T00:00:00Z
 author: bmf-san

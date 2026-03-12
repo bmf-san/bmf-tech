@@ -1,5 +1,6 @@
 ---
 title: Software Architecture Hardparts
+description: An in-depth exploration of Software Architecture Hardparts, covering design principles, trade-offs, and practical applications.
 slug: software-architecture-hardparts
 date: 2023-02-27T00:00:00Z
 author: bmf-san

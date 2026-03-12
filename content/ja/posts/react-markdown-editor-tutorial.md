@@ -1,5 +1,6 @@
 ---
 title: Reactでマークダウンエディタをシャッとつくる
+description: Reactでマークダウンエディタをシャッとつくるについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: react-markdown-editor-tutorial
 date: 2017-12-25T00:00:00Z
 author: bmf-san

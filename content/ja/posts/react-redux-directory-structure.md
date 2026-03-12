@@ -1,5 +1,6 @@
 ---
 title: React+Reduxのディレクトリ構成検討
+description: React+Reduxのディレクトリ構成検討について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: react-redux-directory-structure
 date: 2017-10-01T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: スタックとキューの実装
+description: スタックとキューの実装の手順と実践例を詳しく解説します。
 slug: stack-queue-implementation
 date: 2023-07-25T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: 'Software Architecture Metrics: 10 Tips to Improve Architecture Quality'
+description: 'An in-depth exploration of Software Architecture Metrics: 10 Tips to Improve Architecture Quality, covering design principles, trade-offs, and practical applications.'
 slug: software-architecture-metrics
 date: 2025-01-25T00:00:00Z
 author: bmf-san

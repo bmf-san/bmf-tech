@@ -1,5 +1,6 @@
 ---
 title: SaaSのアーキテクチャについて知るためのリスト
+description: SaaSのアーキテクチャについて知るためのリストについて、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
 slug: saas-architecture-resource-list
 date: 2024-02-24T00:00:00Z
 author: bmf-san

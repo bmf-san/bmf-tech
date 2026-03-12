@@ -1,5 +1,6 @@
 ---
 title: 'Legacy Code Improvement Guide: Refactoring for Maintenance Development'
+description: 'An in-depth look at Legacy Code Improvement Guide: Refactoring for Maintenance Development, covering key concepts and practical insights.'
 slug: legacy-code-improvement-guide
 date: 2017-03-12T00:00:00Z
 author: bmf-san

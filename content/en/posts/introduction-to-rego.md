@@ -1,5 +1,6 @@
 ---
 title: Introduction to Rego
+description: Research notes and a structured overview of Introduction to Rego, summarizing key concepts and findings.
 slug: introduction-to-rego
 date: 2025-07-31T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: PHPカンファレンス2017で、「3年目エンジニアOSSをはじめる」というテーマでLT登壇してきました
+description: PHPカンファレンス2017で、「3年目エンジニアOSSをはじめる」というテーマでLT登壇してきましたについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: php-conference-2017-oss-talk
 date: 2017-10-11T00:00:00Z
 author: bmf-san

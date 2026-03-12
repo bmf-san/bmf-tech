@@ -1,5 +1,6 @@
 ---
 title: Purpose-Driven Thinking
+description: An in-depth look at Purpose-Driven Thinking, covering key concepts and practical insights.
 slug: purpose-driven-thinking
 date: 2025-12-29T00:00:00Z
 author: bmf-san

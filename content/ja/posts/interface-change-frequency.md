@@ -1,5 +1,6 @@
 ---
 title: なぜインターフェースの方が実装より変更頻度が低いのか
+description: なぜインターフェースの方が実装より変更頻度が低いのかの手順と実践例を詳しく解説します。
 slug: interface-change-frequency
 date: 2025-10-18T00:00:00Z
 author: bmf-san

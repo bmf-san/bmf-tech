@@ -1,5 +1,6 @@
 ---
 title: From Custom HTTP Router to New ServeMux
+description: An in-depth look at From Custom HTTP Router to New ServeMux, covering key concepts and practical insights.
 slug: custom-http-router-to-new-servemux
 date: 2024-04-27T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: いかにして問題をとくか
+description: いかにして問題をとくかの原因と解決方法について解説します。
 slug: solving-problems
 date: 2024-11-04T00:00:00Z
 author: bmf-san

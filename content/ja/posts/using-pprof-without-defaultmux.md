@@ -1,5 +1,6 @@
 ---
 title: DefaultServeMux以外でpprofを使う方法
+description: DefaultServeMux以外でpprofを使う方法の手順と実践例を詳しく解説します。
 slug: using-pprof-without-defaultmux
 date: 2023-04-30T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: マスタリングTCP/IP―入門編―(第6版)
+description: マスタリングTCP/IP―入門編―(第6版)について調査・整理したメモ。基本概念と重要ポイントを解説します。
 slug: mastering-tcp-ip-introduction
 date: 2024-05-13T00:00:00Z
 author: bmf-san

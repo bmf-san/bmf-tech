@@ -1,5 +1,6 @@
 ---
 title: ISUCON環境で学ぶシステムメトリクス入門
+description: ISUCON環境で学ぶシステムメトリクス入門について調査・整理したメモ。基本概念と重要ポイントを解説します。
 slug: system-metrics-introduction-isucon
 date: 2024-04-14T00:00:00Z
 author: bmf-san

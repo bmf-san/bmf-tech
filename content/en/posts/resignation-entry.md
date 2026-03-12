@@ -1,5 +1,6 @@
 ---
 title: Resignation Entry
+description: An in-depth look at Resignation Entry, covering key concepts and practical insights.
 slug: resignation-entry
 date: 2024-04-30T00:00:00Z
 author: bmf-san

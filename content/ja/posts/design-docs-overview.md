@@ -1,5 +1,6 @@
 ---
 title: Design Docsについて
+description: Design Docsについてについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: design-docs-overview
 date: 2022-10-07T00:00:00Z
 author: bmf-san

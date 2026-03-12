@@ -1,5 +1,6 @@
 ---
 title: Comprehensive Guide to Distributed SQL Query Engine Trino
+description: An in-depth exploration of Comprehensive Guide to Distributed SQL Query Engine Trino, covering design principles, trade-offs, and practical applications.
 slug: trino-sql-query-engine-guide
 date: 2024-10-24T00:00:00Z
 author: bmf-san

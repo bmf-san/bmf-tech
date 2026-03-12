@@ -1,5 +1,6 @@
 ---
 title: 認証・認可の基本
+description: 「認証・認可の基本」のまとめと読書メモ。重要なポイントと実践的な知見を整理します。
 slug: authentication-authorization-basics
 date: 2020-11-05T00:00:00Z
 author: bmf-san

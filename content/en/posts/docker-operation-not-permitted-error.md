@@ -1,5 +1,6 @@
 ---
 title: Handling Docker 'Operation not permitted' Error
+description: 'A troubleshooting guide for Handling Docker ''Operation not permitted'' Error, explaining the root cause and how to resolve it.'
 slug: docker-operation-not-permitted-error
 date: 2019-09-27T00:00:00Z
 author: bmf-san

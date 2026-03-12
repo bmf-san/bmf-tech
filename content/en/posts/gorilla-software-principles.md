@@ -1,5 +1,6 @@
 ---
 title: 10 Software Laws Learned from Gorillas
+description: An in-depth look at 10 Software Laws Learned from Gorillas, covering key concepts and practical insights.
 slug: gorilla-software-principles
 date: 2019-04-17T00:00:00Z
 author: bmf-san

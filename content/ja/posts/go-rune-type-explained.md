@@ -1,5 +1,6 @@
 ---
 title: Goのrune型について
+description: Goのrune型についてについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: go-rune-type-explained
 date: 2024-02-21T00:00:00Z
 author: bmf-san

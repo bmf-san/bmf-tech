@@ -1,5 +1,6 @@
 ---
 title: 実践Redis入門 技術の仕組みから現場の活用まで
+description: 実践Redis入門 技術の仕組みから現場の活用までについて調査・整理したメモ。基本概念と重要ポイントを解説します。
 slug: redis-practical-introduction
 date: 2025-02-15T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: OSSをはじめてみた話
+description: OSSをはじめてみた話について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: starting-with-oss
 date: 2017-07-17T00:00:00Z
 author: bmf-san

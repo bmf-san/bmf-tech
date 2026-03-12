@@ -1,5 +1,6 @@
 ---
 title: Starting Algorithms with JavaScript
+description: An in-depth look at Starting Algorithms with JavaScript, covering key concepts and practical insights.
 slug: javascript-algorithms-introduction
 date: 2018-07-13T00:00:00Z
 author: bmf-san

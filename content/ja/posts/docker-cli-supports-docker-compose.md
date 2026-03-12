@@ -1,5 +1,6 @@
 ---
 title: Docker CLIでDocker Composeが使えるようになった
+description: Docker CLIでDocker Composeが使えるようになったについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: docker-cli-supports-docker-compose
 date: 2021-05-06T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: Sidekiqのコードリーディング
+description: Sidekiqのコードリーディングについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: sidekiq-code-reading
 date: 2024-09-21T00:00:00Z
 author: bmf-san

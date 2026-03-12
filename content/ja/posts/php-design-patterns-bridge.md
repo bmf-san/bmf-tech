@@ -1,5 +1,6 @@
 ---
 title: PHPで学ぶデザインパターン - Bridgeパターン
+description: PHPで学ぶデザインパターン - Bridgeパターンについて、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
 slug: php-design-patterns-bridge
 date: 2019-02-01T00:00:00Z
 author: bmf-san

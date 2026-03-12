@@ -1,5 +1,6 @@
 ---
 title: Algorithms and Data Structures - Arrays
+description: An in-depth look at Algorithms and Data Structures - Arrays, covering key concepts and practical insights.
 slug: algorithms-data-structures-array
 date: 2019-10-31T00:00:00Z
 author: bmf-san

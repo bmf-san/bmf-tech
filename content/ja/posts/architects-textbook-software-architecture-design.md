@@ -1,5 +1,6 @@
 ---
 title: アーキテクトの教科書 価値を生むソフトウェアのアーキテクチャ構築
+description: アーキテクトの教科書 価値を生むソフトウェアのアーキテクチャ構築の手順と実践例を詳しく解説します。
 slug: architects-textbook-software-architecture-design
 date: 2025-01-13T00:00:00Z
 author: bmf-san

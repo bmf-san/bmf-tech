@@ -1,5 +1,6 @@
 ---
 title: 'Team Topologies: Adaptive Organization Design for Delivering Valuable Software Quickly'
+description: 'An in-depth exploration of Team Topologies: Adaptive Organization Design for Delivering Valuable Software Quickly, covering design principles, trade-offs, and practical applications.'
 slug: team-topologies-adaptive-organization-design
 date: 2024-11-28T00:00:00Z
 author: bmf-san

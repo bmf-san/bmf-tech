@@ -1,5 +1,6 @@
 ---
 title: Exploring Articles on Architecture Design and Organizational Design
+description: An in-depth exploration of Exploring Articles on Architecture Design and Organizational Design, covering design principles, trade-offs, and practical applications.
 slug: architecture-design-organization-design-resources
 date: 2023-12-27T00:00:00Z
 author: bmf-san

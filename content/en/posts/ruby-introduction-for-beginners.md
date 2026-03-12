@@ -1,5 +1,6 @@
 ---
 title: Introduction to Ruby for Aspiring Professionals
+description: Research notes and a structured overview of Introduction to Ruby for Aspiring Professionals, summarizing key concepts and findings.
 slug: ruby-introduction-for-beginners
 date: 2024-05-04T00:00:00Z
 author: bmf-san

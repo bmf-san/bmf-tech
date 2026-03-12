@@ -1,5 +1,6 @@
 ---
 title: Goのresponse.WriteHeaderの副作用について
+description: Goのresponse.WriteHeaderの副作用についてについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: go-response-writeheader-side-effects
 date: 2023-09-11T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: アルゴリズムとデータ構造 - 選択ソート
+description: アルゴリズムとデータ構造 - 選択ソートについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: algorithms-data-structures-selection-sort
 date: 2020-02-01T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: About Go's http.RoundTripper
+description: 'An in-depth look at About Go''s http.RoundTripper, covering key concepts and practical insights.'
 slug: go-http-roundtripper
 date: 2023-08-22T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: クリティカルユーザージャーニーとは
+description: クリティカルユーザージャーニーとはについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: critical-user-journey
 date: 2024-08-15T00:00:00Z
 author: bmf-san

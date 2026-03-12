@@ -1,5 +1,6 @@
 ---
 title: GCPの教科書
+description: GCPの教科書について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: gcp-textbook
 date: 2021-07-27T00:00:00Z
 author: bmf-san

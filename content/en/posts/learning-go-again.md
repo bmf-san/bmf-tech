@@ -1,5 +1,6 @@
 ---
 title: Relearning Go
+description: An in-depth look at Relearning Go, covering key concepts and practical insights.
 slug: learning-go-again
 date: 2023-01-23T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: MySQL 'MySQL Daemon failed to start' on Vagrant
+description: 'An in-depth look at MySQL ''MySQL Daemon failed to start'' on Vagrant, covering key concepts and practical insights.'
 slug: vagrant-mysql-daemon-start-failure
 date: 2017-10-01T00:00:00Z
 author: bmf-san

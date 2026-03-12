@@ -1,5 +1,6 @@
 ---
 title: 'Modern JS Talk: Destructuring Assignment'
+description: 'An in-depth look at Modern JS Talk: Destructuring Assignment, covering key concepts and practical insights.'
 slug: modern-js-destructuring
 date: 2017-12-25T00:00:00Z
 author: bmf-san

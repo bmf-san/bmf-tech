@@ -1,5 +1,6 @@
 ---
 title: About Capacity Planning
+description: An in-depth look at About Capacity Planning, covering key concepts and practical insights.
 slug: capacity-planning
 date: 2024-03-30T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: Reliability Patterns
+description: An in-depth exploration of Reliability Patterns, covering design principles, trade-offs, and practical applications.
 slug: reliability-patterns
 date: 2024-10-30T00:00:00Z
 author: bmf-san

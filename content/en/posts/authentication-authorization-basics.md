@@ -1,5 +1,6 @@
 ---
 title: Basics of Authentication and Authorization
+description: An in-depth look at Basics of Authentication and Authorization, covering key concepts and practical insights.
 slug: authentication-authorization-basics
 date: 2020-11-05T00:00:00Z
 author: bmf-san

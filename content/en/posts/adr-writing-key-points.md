@@ -1,5 +1,6 @@
 ---
 title: Key Points to Consider When Writing an ADR
+description: An in-depth look at Key Points to Consider When Writing an ADR, covering key concepts and practical insights.
 slug: adr-writing-key-points
 date: 2026-01-09T00:00:00Z
 author: bmf-san

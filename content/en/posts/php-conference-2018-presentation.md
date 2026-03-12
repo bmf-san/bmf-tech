@@ -1,5 +1,6 @@
 ---
 title: Presented at the PHP Conference 2018 LT Session
+description: An in-depth look at Presented at the PHP Conference 2018 LT Session, covering key concepts and practical insights.
 slug: php-conference-2018-presentation
 date: 2018-12-16T00:00:00Z
 author: bmf-san

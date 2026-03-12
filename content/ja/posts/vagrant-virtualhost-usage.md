@@ -1,5 +1,6 @@
 ---
 title: VagrantでVirtualHostを使う
+description: VagrantでVirtualHostを使うについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: vagrant-virtualhost-usage
 date: 2017-10-01T00:00:00Z
 author: bmf-san

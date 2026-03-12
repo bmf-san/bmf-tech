@@ -1,5 +1,6 @@
 ---
 title: Things I Bought This Year That I Liked
+description: An in-depth look at Things I Bought This Year That I Liked, covering key concepts and practical insights.
 slug: best-things-of-2018
 date: 2018-12-29T00:00:00Z
 author: bmf-san

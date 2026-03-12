@@ -1,5 +1,6 @@
 ---
 title: 'Introduction to Practical SQL: Writing Fast and Understandable Queries'
+description: 'Research notes and a structured overview of Introduction to Practical SQL: Writing Fast and Understandable Queries, summarizing key concepts and findings.'
 slug: sql-practical-introduction
 date: 2024-04-01T00:00:00Z
 author: bmf-san

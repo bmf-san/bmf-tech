@@ -1,5 +1,6 @@
 ---
 title: 大規模データ管理 ―エンタープライズアーキテクチャのベストプラクティス
+description: 大規模データ管理 ―エンタープライズアーキテクチャのベストプラクティスについて、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
 slug: large-scale-data-management-best-practices
 date: 2024-06-30T00:00:00Z
 author: bmf-san

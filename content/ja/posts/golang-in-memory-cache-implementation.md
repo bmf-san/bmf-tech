@@ -1,5 +1,6 @@
 ---
 title: Golangでインメモリなキャッシュを実装する
+description: Golangでインメモリなキャッシュを実装するについて調査・整理したメモ。基本概念と重要ポイントを解説します。
 slug: golang-in-memory-cache-implementation
 date: 2020-09-29T00:00:00Z
 author: bmf-san

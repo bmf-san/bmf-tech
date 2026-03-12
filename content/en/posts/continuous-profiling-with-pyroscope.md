@@ -1,5 +1,6 @@
 ---
 title: Continuous Profiling with Pyroscope
+description: An in-depth look at Continuous Profiling with Pyroscope, covering key concepts and practical insights.
 slug: continuous-profiling-with-pyroscope
 date: 2023-05-07T00:00:00Z
 author: bmf-san

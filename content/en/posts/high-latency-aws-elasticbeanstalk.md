@@ -1,5 +1,6 @@
 ---
 title: When AWS (Elastic Beanstalk) Latency Was Unusually High...
+description: An in-depth look at When AWS (Elastic Beanstalk) Latency Was Unusually High..., covering key concepts and practical insights.
 slug: high-latency-aws-elasticbeanstalk
 date: 2017-09-26T00:00:00Z
 author: bmf-san

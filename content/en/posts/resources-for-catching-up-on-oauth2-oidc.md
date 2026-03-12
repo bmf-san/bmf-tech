@@ -1,5 +1,6 @@
 ---
 title: Resources for Catching Up on OAuth2 and OIDC
+description: An in-depth look at Resources for Catching Up on OAuth2 and OIDC, covering key concepts and practical insights.
 slug: resources-for-catching-up-on-oauth2-oidc
 date: 2021-10-05T00:00:00Z
 author: bmf-san

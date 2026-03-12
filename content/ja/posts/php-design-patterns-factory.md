@@ -1,5 +1,6 @@
 ---
 title: PHPで学ぶデザインパターン - Factory・Factory Method・Abstract Factory
+description: PHPで学ぶデザインパターン - Factory・Factory Method・Abstract Factoryについて、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
 slug: php-design-patterns-factory
 date: 2018-12-01T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: Understanding ES6 Export and Import
+description: An in-depth look at Understanding ES6 Export and Import, covering key concepts and practical insights.
 slug: es6-export-import
 date: 2017-09-26T00:00:00Z
 author: bmf-san

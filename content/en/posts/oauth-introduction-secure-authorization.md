@@ -1,5 +1,6 @@
 ---
 title: 'Comprehensive Introduction to OAuth: Principles and Practices for Applying a Secure Authorization System'
+description: 'Research notes and a structured overview of Comprehensive Introduction to OAuth: Principles and Practices for Applying a Secure Authorization System, summarizing key concepts and findings.'
 slug: oauth-introduction-secure-authorization
 date: 2021-10-05T00:00:00Z
 author: bmf-san

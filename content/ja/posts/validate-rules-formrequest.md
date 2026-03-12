@@ -1,5 +1,6 @@
 ---
 title: FormRequestのrulesメソッド内でバリデーションルールを振り分ける
+description: FormRequestのrulesメソッド内でバリデーションルールを振り分けるについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: validate-rules-formrequest
 date: 2017-09-26T00:00:00Z
 author: bmf-san

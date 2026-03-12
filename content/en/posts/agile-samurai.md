@@ -1,5 +1,6 @@
 ---
 title: The Agile Samurai
+description: An in-depth look at The Agile Samurai, covering key concepts and practical insights.
 slug: agile-samurai
 date: 2020-09-12T00:00:00Z
 author: bmf-san

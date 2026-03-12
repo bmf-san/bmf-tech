@@ -1,5 +1,6 @@
 ---
 title: 内部構造から学ぶPostgreSQL―設計・運用計画の鉄則
+description: 内部構造から学ぶPostgreSQL―設計・運用計画の鉄則について、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
 slug: postgresql-internal-structure
 date: 2024-05-07T00:00:00Z
 author: bmf-san

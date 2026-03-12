@@ -1,5 +1,6 @@
 ---
 title: プログラムはなぜ動くのか 第3版 知っておきたいプログラミングの基礎知識
+description: プログラムはなぜ動くのか 第3版 知っておきたいプログラミングの基礎知識について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: programming-basics-why-programs-work
 date: 2024-05-01T00:00:00Z
 author: bmf-san

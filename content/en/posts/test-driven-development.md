@@ -1,5 +1,6 @@
 ---
 title: Test-Driven Development
+description: An in-depth look at Test-Driven Development, covering key concepts and practical insights.
 slug: test-driven-development
 date: 2017-10-08T00:00:00Z
 author: bmf-san

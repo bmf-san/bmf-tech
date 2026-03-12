@@ -1,5 +1,6 @@
 ---
 title: システム設計の面接試験
+description: システム設計の面接試験について、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
 slug: system-design-interview
 date: 2023-02-27T00:00:00Z
 author: bmf-san

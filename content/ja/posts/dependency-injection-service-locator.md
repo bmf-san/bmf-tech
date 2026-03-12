@@ -1,5 +1,6 @@
 ---
 title: DIとサービスロケーター
+description: DIとサービスロケーターについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: dependency-injection-service-locator
 date: 2018-06-05T00:00:00Z
 author: bmf-san

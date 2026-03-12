@@ -1,5 +1,6 @@
 ---
 title: Google ExtenstionのPluginをつくってみた
+description: Google ExtenstionのPluginをつくってみたについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: build-google-extension-plugin
 date: 2017-09-26T00:00:00Z
 author: bmf-san

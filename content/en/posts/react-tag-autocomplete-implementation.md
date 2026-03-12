@@ -1,5 +1,6 @@
 ---
 title: Implementing a Tag Feature with Suggestions Using React Tag Autocomplete
+description: A step-by-step guide on Implementing a Tag Feature with Suggestions Using React Tag Autocomplete, with practical examples and configuration tips.
 slug: react-tag-autocomplete-implementation
 date: 2017-10-01T00:00:00Z
 author: bmf-san

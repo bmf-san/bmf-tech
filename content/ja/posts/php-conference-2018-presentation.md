@@ -1,5 +1,6 @@
 ---
 title: PHPカンファレンス2018のLT枠で登壇してきた
+description: PHPカンファレンス2018のLT枠で登壇してきたについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: php-conference-2018-presentation
 date: 2018-12-16T00:00:00Z
 author: bmf-san

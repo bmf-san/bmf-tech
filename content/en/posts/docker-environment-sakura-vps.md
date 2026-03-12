@@ -1,5 +1,6 @@
 ---
 title: Setting Up a Docker Environment on Sakura VPS
+description: An in-depth look at Setting Up a Docker Environment on Sakura VPS, covering key concepts and practical insights.
 slug: docker-environment-sakura-vps
 date: 2018-06-09T00:00:00Z
 author: bmf-san

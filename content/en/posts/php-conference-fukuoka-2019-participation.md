@@ -1,5 +1,6 @@
 ---
 title: Participated and Presented at PHP Conference Fukuoka 2019
+description: An in-depth look at Participated and Presented at PHP Conference Fukuoka 2019, covering key concepts and practical insights.
 slug: php-conference-fukuoka-2019-participation
 date: 2019-07-04T00:00:00Z
 author: bmf-san

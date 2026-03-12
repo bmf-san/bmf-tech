@@ -1,5 +1,6 @@
 ---
 title: PostgreSQL インストール時の 'configure' エラーに関するトラブルシューティング
+description: 'PostgreSQL インストール時の ''configure'' エラーに関するトラブルシューティングの原因と解決方法について解説します。'
 slug: postgresql-install-configure-error-troubleshooting
 date: 2025-03-07T00:00:00Z
 author: bmf-san

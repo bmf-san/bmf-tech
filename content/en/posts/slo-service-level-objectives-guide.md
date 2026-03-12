@@ -1,5 +1,6 @@
 ---
 title: 'SLO Service Level Objectives: A Practical Guide to Implementing SLI, SLO, and Error Budgets'
+description: 'A step-by-step guide on SLO Service Level Objectives: A Practical Guide to Implementing SLI, SLO, and Error Budgets, with practical examples and configuration tips.'
 slug: slo-service-level-objectives-guide
 date: 2024-07-20T00:00:00Z
 author: bmf-san

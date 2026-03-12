@@ -1,5 +1,6 @@
 ---
 title: テストケースの種類と洗い出し
+description: テストケースの種類と洗い出しについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: types-of-test-cases
 date: 2018-04-11T00:00:00Z
 author: bmf-san

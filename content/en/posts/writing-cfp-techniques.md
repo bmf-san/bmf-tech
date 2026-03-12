@@ -1,5 +1,6 @@
 ---
 title: The Art of Writing a CFP
+description: An in-depth look at The Art of Writing a CFP, covering key concepts and practical insights.
 slug: writing-cfp-techniques
 date: 2024-04-14T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: 孤児プロセスとゾンビプロセスの違い
+description: 孤児プロセスとゾンビプロセスの違いについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: orphan-process-vs-zombie-process
 date: 2020-08-24T00:00:00Z
 author: bmf-san

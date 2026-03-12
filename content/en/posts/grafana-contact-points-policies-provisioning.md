@@ -1,5 +1,6 @@
 ---
 title: Provisioning Contact Points and Policies in Grafana
+description: An in-depth look at Provisioning Contact Points and Policies in Grafana, covering key concepts and practical insights.
 slug: grafana-contact-points-policies-provisioning
 date: 2023-12-27T00:00:00Z
 author: bmf-san

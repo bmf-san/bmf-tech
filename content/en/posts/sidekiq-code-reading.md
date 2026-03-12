@@ -1,5 +1,6 @@
 ---
 title: Code Reading of Sidekiq
+description: 'A review and summary of "Code Reading of Sidekiq", covering key takeaways and practical insights.'
 slug: sidekiq-code-reading
 date: 2024-09-21T00:00:00Z
 author: bmf-san

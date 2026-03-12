@@ -1,5 +1,6 @@
 ---
 title: Beginning SQL, 3rd Edition
+description: 'A review and summary of "Beginning SQL, 3rd Edition", covering key takeaways and practical insights.'
 slug: beginner-sql-third-edition
 date: 2024-04-01T00:00:00Z
 author: bmf-san

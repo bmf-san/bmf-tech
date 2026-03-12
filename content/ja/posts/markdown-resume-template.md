@@ -1,5 +1,6 @@
 ---
 title: Markdownで履歴書・職務経歴書を管理するテンプレートを作成した
+description: Markdownで履歴書・職務経歴書を管理するテンプレートを作成したの手順と実践例を詳しく解説します。
 slug: markdown-resume-template
 date: 2025-07-16T00:00:00Z
 author: bmf-san

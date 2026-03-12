@@ -1,5 +1,6 @@
 ---
 title: モノリスからマイクロサービスへ ―モノリスを進化させる実践移行ガイド
+description: 「モノリスからマイクロサービスへ ―モノリスを進化させる実践移行ガイド」のまとめと読書メモ。重要なポイントと実践的な知見を整理します。
 slug: monolith-to-microservices-migration-guide
 date: 2024-05-29T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: Modern JS Talk──async function
+description: An in-depth look at Modern JS Talk──async function, covering key concepts and practical insights.
 slug: modern-js-async-functions
 date: 2018-01-29T00:00:00Z
 author: bmf-san

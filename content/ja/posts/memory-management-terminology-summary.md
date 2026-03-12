@@ -1,5 +1,6 @@
 ---
 title: メモリ管理に関する用語まとめ
+description: メモリ管理に関する用語まとめについて調査・整理したメモ。基本概念と重要ポイントを解説します。
 slug: memory-management-terminology-summary
 date: 2018-11-30T00:00:00Z
 author: bmf-san

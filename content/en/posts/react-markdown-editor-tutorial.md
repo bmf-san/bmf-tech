@@ -1,5 +1,6 @@
 ---
 title: Quickly Create a Markdown Editor with React
+description: A step-by-step guide on Quickly Create a Markdown Editor with React, with practical examples and configuration tips.
 slug: react-markdown-editor-tutorial
 date: 2017-12-25T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: Creating a mysqldump Tool with Go
+description: A step-by-step guide on Creating a mysqldump Tool with Go, with practical examples and configuration tips.
 slug: creating-mysqldump-tool-with-go
 date: 2019-02-04T00:00:00Z
 author: bmf-san

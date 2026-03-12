@@ -1,5 +1,6 @@
 ---
 title: Logical Thinking
+description: An in-depth look at Logical Thinking, covering key concepts and practical insights.
 slug: logical-thinking
 date: 2015-05-19T00:00:00Z
 author: bmf-san

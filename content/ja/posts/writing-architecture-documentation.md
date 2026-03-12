@@ -1,5 +1,6 @@
 ---
 title: アーキテクチャドキュメントを書くときに気をつけること
+description: アーキテクチャドキュメントを書くときに気をつけることについて、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
 slug: writing-architecture-documentation
 date: 2025-05-25T00:00:00Z
 author: bmf-san

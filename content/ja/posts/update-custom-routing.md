@@ -1,5 +1,6 @@
 ---
 title: 自作ルーティングをアップデートした
+description: 自作ルーティングをアップデートしたについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: update-custom-routing
 date: 2021-06-18T00:00:00Z
 author: bmf-san

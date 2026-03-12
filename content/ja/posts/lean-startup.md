@@ -1,5 +1,6 @@
 ---
 title: リーン・スタートアップ
+description: リーン・スタートアップについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: lean-startup
 date: 2017-06-01T00:00:00Z
 author: bmf-san

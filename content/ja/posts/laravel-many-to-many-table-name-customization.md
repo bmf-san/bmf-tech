@@ -1,5 +1,6 @@
 ---
 title: Laravelの多対多のリレーションでテーブル名を規則から外す時
+description: Laravelの多対多のリレーションでテーブル名を規則から外す時について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: laravel-many-to-many-table-name-customization
 date: 2017-10-01T00:00:00Z
 author: bmf-san

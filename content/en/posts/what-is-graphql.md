@@ -1,5 +1,6 @@
 ---
 title: What is GraphQL
+description: An in-depth look at What is GraphQL, covering key concepts and practical insights.
 slug: what-is-graphql
 date: 2018-06-14T00:00:00Z
 author: bmf-san

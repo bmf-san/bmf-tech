@@ -1,5 +1,6 @@
 ---
 title: Datadog continuous testingについて調べたことメモ
+description: Datadog continuous testingについて調べたことメモについて調査・整理したメモ。基本概念と重要ポイントを解説します。
 slug: datadog-continuous-testing-notes
 date: 2023-01-31T00:00:00Z
 author: bmf-san

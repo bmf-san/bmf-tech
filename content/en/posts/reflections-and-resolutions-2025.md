@@ -1,5 +1,6 @@
 ---
 title: Reflections on 2025 and Aspirations for the Coming Year
+description: An in-depth look at Reflections on 2025 and Aspirations for the Coming Year, covering key concepts and practical insights.
 slug: reflections-and-resolutions-2025
 date: 2025-12-29T00:00:00Z
 author: bmf-san

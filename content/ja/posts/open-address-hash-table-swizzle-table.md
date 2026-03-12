@@ -1,5 +1,6 @@
 ---
 title: オープンアドレスハッシュテーブルとスイステーブル
+description: オープンアドレスハッシュテーブルとスイステーブルについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: open-address-hash-table-swizzle-table
 date: 2025-02-27T00:00:00Z
 author: bmf-san

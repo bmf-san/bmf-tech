@@ -1,5 +1,6 @@
 ---
 title: relineのコードリーディング
+description: relineのコードリーディングについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: reline-code-reading
 date: 2024-10-20T00:00:00Z
 author: bmf-san

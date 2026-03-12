@@ -1,5 +1,6 @@
 ---
 title: Setting Up Resource Monitoring with Prometheus and Grafana
+description: An in-depth look at Setting Up Resource Monitoring with Prometheus and Grafana, covering key concepts and practical insights.
 slug: prometheus-grafana-resource-monitoring
 date: 2018-09-15T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: エンジニアリング統括責任者の手引き―組織を成功に導く技術リーダーシップ
+description: エンジニアリング統括責任者の手引き―組織を成功に導く技術リーダーシップについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: engineering-cto-leadership-guide
 date: 2026-02-20T00:00:00Z
 author: bmf-san

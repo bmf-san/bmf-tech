@@ -1,5 +1,6 @@
 ---
 title: Golangでロードバランサーを実装する
+description: Golangでロードバランサーを実装するの手順と実践例を詳しく解説します。
 slug: golang-load-balancer-implementation
 date: 2022-01-01T00:00:00Z
 author: bmf-san

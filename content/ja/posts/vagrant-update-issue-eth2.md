@@ -1,5 +1,6 @@
 ---
 title: 'Vagrantを1.7.4から1.9.1に一気にアップデートしたら「Bringing up interface eth2:  Device eth2 does not seem to be present, delaying initialization.」'
+description: 'Vagrantを1.7.4から1.9.1に一気にアップデートしたら「Bringing up interface eth2:  Device eth2 does not seem to be present, delaying initialization.」について、基本的な概念から実践的な知見まで詳しく解説します。'
 slug: vagrant-update-issue-eth2
 date: 2017-10-01T00:00:00Z
 author: bmf-san

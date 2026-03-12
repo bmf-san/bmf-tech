@@ -1,5 +1,6 @@
 ---
 title: ソフトウェアテストをカイゼンする50のアイデア
+description: ソフトウェアテストをカイゼンする50のアイデアについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: software-testing-improvement-ideas
 date: 2022-11-22T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: Design It
+description: Design Itについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: design-it
 date: 2019-11-25T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: 'Encountering ''[BABEL] Note: The code generator has deoptimised the styling of'' in React'
+description: 'An in-depth look at Encountering ''''[BABEL] Note: The code generator has deoptimised the styling of'''' in React, covering key concepts and practical insights.'
 slug: react-babel-code-generator-warning
 date: 2017-10-01T00:00:00Z
 author: bmf-san

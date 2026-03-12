@@ -1,5 +1,6 @@
 ---
 title: エンジニアリングマネージャーのしごと―チームが必要とするマネージャーになる方法
+description: エンジニアリングマネージャーのしごと―チームが必要とするマネージャーになる方法の手順と実践例を詳しく解説します。
 slug: engineering-manager-role-guide
 date: 2026-02-20T00:00:00Z
 author: bmf-san

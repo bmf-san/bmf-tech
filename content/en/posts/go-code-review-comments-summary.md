@@ -1,5 +1,6 @@
 ---
 title: Summary of Go CodeReviewComments
+description: Research notes and a structured overview of Summary of Go CodeReviewComments, summarizing key concepts and findings.
 slug: go-code-review-comments-summary
 date: 2020-09-15T00:00:00Z
 author: bmf-san

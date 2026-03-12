@@ -1,5 +1,6 @@
 ---
 title: Handling CORS with Laravel
+description: An in-depth look at Handling CORS with Laravel, covering key concepts and practical insights.
 slug: laravel-cors-setup
 date: 2017-09-26T00:00:00Z
 author: bmf-san

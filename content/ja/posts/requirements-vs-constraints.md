@@ -1,5 +1,6 @@
 ---
 title: 要件と制約の違い
+description: 要件と制約の違いについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: requirements-vs-constraints
 date: 2026-01-09T00:00:00Z
 author: bmf-san

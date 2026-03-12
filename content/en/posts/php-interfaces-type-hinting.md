@@ -1,5 +1,6 @@
 ---
 title: PHP Interfaces and Type Hinting
+description: An in-depth look at PHP Interfaces and Type Hinting, covering key concepts and practical insights.
 slug: php-interfaces-type-hinting
 date: 2018-12-08T00:00:00Z
 author: bmf-san

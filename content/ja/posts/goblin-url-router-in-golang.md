@@ -1,5 +1,6 @@
 ---
 title: GolangでgoblinというURLルーターを自作した
+description: GolangでgoblinというURLルーターを自作したについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: goblin-url-router-in-golang
 date: 2020-01-26T00:00:00Z
 author: bmf-san

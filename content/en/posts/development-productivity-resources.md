@@ -1,5 +1,6 @@
 ---
 title: Exploring Articles on Development Productivity
+description: An in-depth look at Exploring Articles on Development Productivity, covering key concepts and practical insights.
 slug: development-productivity-resources
 date: 2023-12-30T00:00:00Z
 author: bmf-san

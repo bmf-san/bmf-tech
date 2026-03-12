@@ -1,5 +1,6 @@
 ---
 title: ユニコーン企業のひみつ ―Spotifyで学んだソフトウェアづくりと働き方
+description: ユニコーン企業のひみつ ―Spotifyで学んだソフトウェアづくりと働き方について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: unicorn-company-secrets
 date: 2023-05-19T00:00:00Z
 author: bmf-san

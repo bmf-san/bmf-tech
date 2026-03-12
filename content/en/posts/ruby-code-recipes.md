@@ -1,5 +1,6 @@
 ---
 title: Ruby Code Recipe Collection
+description: An in-depth look at Ruby Code Recipe Collection, covering key concepts and practical insights.
 slug: ruby-code-recipes
 date: 2024-10-20T00:00:00Z
 author: bmf-san

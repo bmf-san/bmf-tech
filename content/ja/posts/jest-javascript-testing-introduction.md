@@ -1,5 +1,6 @@
 ---
 title: Jestで始めるJavaScriptのテスト
+description: Jestで始めるJavaScriptのテストについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: jest-javascript-testing-introduction
 date: 2018-09-20T00:00:00Z
 author: bmf-san

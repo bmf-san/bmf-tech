@@ -1,5 +1,6 @@
 ---
 title: Notes on Datadog Continuous Testing
+description: Research notes and a structured overview of Notes on Datadog Continuous Testing, summarizing key concepts and findings.
 slug: datadog-continuous-testing-notes
 date: 2023-01-31T00:00:00Z
 author: bmf-san

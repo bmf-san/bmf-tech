@@ -1,5 +1,6 @@
 ---
 title: Programmer Brain
+description: An in-depth look at Programmer Brain, covering key concepts and practical insights.
 slug: programmer-mindset
 date: 2023-06-26T00:00:00Z
 author: bmf-san

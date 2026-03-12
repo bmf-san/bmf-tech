@@ -1,5 +1,6 @@
 ---
 title: Proposal to Extend ServeMux Functionality in Go Accepted
+description: An in-depth look at Proposal to Extend ServeMux Functionality in Go Accepted, covering key concepts and practical insights.
 slug: go-servemux-extension-proposal-accepted
 date: 2023-08-31T00:00:00Z
 author: bmf-san
