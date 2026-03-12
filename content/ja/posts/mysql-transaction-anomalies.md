@@ -1,5 +1,5 @@
 ---
-title: MySQLのトランザクションのアノマリーについて
+title: "MySQLのトランザクション分離レベル：ダーティリード・ファントムリードを防ぐ"
 slug: mysql-transaction-anomalies
 date: 2023-06-08T00:00:00Z
 author: bmf-san

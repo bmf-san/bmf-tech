@@ -1,5 +1,5 @@
 ---
-title: Differences Between Sharding and Partitioning
+title: "Sharding vs Partitioning: Key Differences and When to Use Each"
 slug: sharding-vs-partitioning
 date: 2023-06-03T00:00:00Z
 author: bmf-san

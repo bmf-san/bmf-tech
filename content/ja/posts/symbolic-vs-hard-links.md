@@ -1,5 +1,5 @@
 ---
-title: シンボリックリンクとハードリンクの違い
+title: "シンボリックリンク vs ハードリンク：Linuxでの本質的な違い"
 slug: symbolic-vs-hard-links
 date: 2018-05-24T00:00:00Z
 author: bmf-san

@@ -1,5 +1,5 @@
 ---
-title: DB設計におけるID設計について
+title: "DB設計のID設計：UUID vs 連番 vs ULID の選び方"
 slug: id-design-in-db
 date: 2024-03-30T00:00:00Z
 author: bmf-san

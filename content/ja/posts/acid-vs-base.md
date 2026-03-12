@@ -1,5 +1,5 @@
 ---
-title: ACIDとBASEについて
+title: "ACID vs BASE：データベースの一貫性モデルを徹底解説"
 slug: acid-vs-base
 date: 2025-08-02T00:00:00Z
 author: bmf-san

@@ -1,5 +1,5 @@
 ---
-title: About MySQL Locks
+title: "MySQL Locks Explained: Preventing Deadlocks and Improving Performance"
 slug: mysql-locking
 date: 2024-04-05T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
-title: Summary of SAML 2.0 Specifications
-slug: saml-2-0-spec-summary
+title: "SAML 2.0 Explained: How SSO and Federated Identity Work"
+slug: saml-2-0
 date: 2026-01-23T00:00:00Z
 author: bmf-san
 categories:

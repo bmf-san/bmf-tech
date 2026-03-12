@@ -1,5 +1,5 @@
 ---
-title: MySQLのロックについて
+title: "MySQLのロック解説：デッドロックの防ぎ方とパフォーマンス改善"
 slug: mysql-locking
 date: 2024-04-05T00:00:00Z
 author: bmf-san

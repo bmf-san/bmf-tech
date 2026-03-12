@@ -1,5 +1,5 @@
 ---
-title: About ACID and BASE
+title: "ACID vs BASE: Understanding Database Consistency Models"
 slug: acid-vs-base
 date: 2025-08-02T00:00:00Z
 author: bmf-san

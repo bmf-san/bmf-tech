@@ -1,5 +1,5 @@
 ---
-title: 正規化理論について
+title: "データベース正規化を解説：1NFから3NFまで実例付き"
 slug: normalization-theory
 date: 2024-04-02T00:00:00Z
 author: bmf-san

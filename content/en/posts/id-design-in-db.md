@@ -1,5 +1,5 @@
 ---
-title: About ID Design in Database Design
+title: "Database ID Design: UUID vs Auto Increment vs ULID — Which to Choose?"
 slug: id-design-in-db
 date: 2024-03-30T00:00:00Z
 author: bmf-san

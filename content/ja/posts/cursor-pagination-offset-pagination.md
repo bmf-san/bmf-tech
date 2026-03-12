@@ -1,5 +1,5 @@
 ---
-title: カーソルページネーションとオフセットページネーションについて
+title: "カーソルページネーション vs オフセットページネーション：どちらを選ぶべきか"
 slug: cursor-pagination-offset-pagination
 date: 2024-10-08T00:00:00Z
 author: bmf-san

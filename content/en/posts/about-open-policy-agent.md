@@ -1,6 +1,6 @@
 ---
-title: About Open Policy Agent
-slug: about-open-policy-agent
+title: What is Open Policy Agent (OPA)? A Practical Guide to Policy as Code
+slug: open-policy-agent
 date: 2025-05-13T00:00:00Z
 author: bmf-san
 categories:

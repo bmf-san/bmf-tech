@@ -1,5 +1,5 @@
 ---
-title: プロセスとスレッドの違い
+title: "プロセス vs スレッド：開発者が知るべき本質的な違い"
 slug: process-vs-thread
 date: 2018-06-25T00:00:00Z
 author: bmf-san

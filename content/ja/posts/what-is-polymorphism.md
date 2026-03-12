@@ -1,5 +1,5 @@
 ---
-title: ポリモーフィズムとは
+title: "ポリモーフィズムとは？オブジェクト指向コードを柔軟にする方法"
 slug: what-is-polymorphism
 date: 2018-05-07T00:00:00Z
 author: bmf-san

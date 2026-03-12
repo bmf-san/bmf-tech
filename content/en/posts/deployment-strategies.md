@@ -1,5 +1,5 @@
 ---
-title: About Deployment Strategies
+title: "Deployment Strategies Explained: Blue-Green, Canary, Rolling, and More"
 slug: deployment-strategies
 date: 2023-06-03T00:00:00Z
 author: bmf-san

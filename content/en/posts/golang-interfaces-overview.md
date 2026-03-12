@@ -1,5 +1,5 @@
 ---
-title: Overview of Golang Interfaces
+title: "Go Interfaces Explained: How to Write Flexible, Testable Go Code"
 slug: golang-interfaces-overview
 date: 2018-11-15T00:00:00Z
 author: bmf-san
