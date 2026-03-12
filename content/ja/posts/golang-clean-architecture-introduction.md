@@ -1,5 +1,5 @@
 ---
-title: "GoでクリーンアーキテクチャをImplementする実践ガイド"
+title: "Goでクリーンアーキテクチャを実装する実践ガイド"
 slug: golang-clean-architecture-introduction
 date: 2019-08-18T00:00:00Z
 author: bmf-san
