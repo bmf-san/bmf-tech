@@ -1,5 +1,6 @@
 ---
 title: "Symbolic Links vs Hard Links: Key Differences on Linux"
+description: 'Understand the difference between symbolic (soft) links and hard links on Linux. Learn about inodes, how each link type behaves on deletion, and practical use cases.'
 slug: symbolic-vs-hard-links
 date: 2018-05-24T00:00:00Z
 author: bmf-san

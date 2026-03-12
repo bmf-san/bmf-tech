@@ -1,5 +1,6 @@
 ---
 title: "Go Interfaces Explained: How to Write Flexible, Testable Go Code"
+description: 'A practical guide to Go interfaces. Learn implicit implementation, interface composition, using interfaces for dependency injection, and common design pitfalls.'
 slug: golang-interfaces-overview
 date: 2018-11-15T00:00:00Z
 author: bmf-san

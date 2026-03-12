@@ -1,5 +1,6 @@
 ---
 title: "MySQL JOIN vs UNION: Differences, Use Cases, and Examples"
+description: 'Learn the difference between MySQL JOIN and UNION with practical SQL examples. Covers INNER JOIN, LEFT JOIN, FULL OUTER JOIN, and how to combine result sets correctly.'
 slug: mysql-join-union
 date: 2018-07-18T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: What is JWT? JSON Web Tokens Explained for Secure API Authentication
+description: 'Learn how JSON Web Tokens (JWT) work—header, payload, signature structure—how to use JWTs for stateless API authentication, and common security pitfalls to avoid.'
 slug: jwt-introduction
 date: 2020-09-11T00:00:00Z
 author: bmf-san

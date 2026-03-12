@@ -1,5 +1,6 @@
 ---
 title: What is a Service Mesh? How Istio and Linkerd Work Explained
+description: 'Learn what a service mesh is, how the sidecar proxy pattern works, and what problems Istio and Linkerd solve for service communication inside a Kubernetes cluster.'
 slug: service-mesh-overview
 date: 2023-10-29T00:00:00Z
 author: bmf-san

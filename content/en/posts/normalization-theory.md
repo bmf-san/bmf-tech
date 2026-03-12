@@ -1,5 +1,6 @@
 ---
 title: "Database Normalization Explained: 1NF to 3NF with Examples"
+description: 'Learn database normalization from first principles. Understand 1NF, 2NF, and 3NF with practical examples and when denormalization is the right trade-off for performance.'
 slug: normalization-theory
 date: 2024-04-02T00:00:00Z
 author: bmf-san

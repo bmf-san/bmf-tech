@@ -1,5 +1,6 @@
 ---
 title: "CAP Theorem Explained: Understanding Distributed Database Trade-offs"
+description: 'Understand the CAP theorem and PACELC theorem with clear examples. Learn the distributed system trade-offs between consistency, availability, and partition tolerance.'
 slug: cap-theorem-pacelc-theorem
 date: 2025-08-02T00:00:00Z
 author: bmf-san

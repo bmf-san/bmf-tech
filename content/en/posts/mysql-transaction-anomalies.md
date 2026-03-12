@@ -1,5 +1,6 @@
 ---
 title: "MySQL Transaction Isolation Levels: Preventing Dirty Reads, Phantom Reads, and More"
+description: "Learn MySQL's four transaction isolation levels, the anomalies each prevents (dirty read, non-repeatable read, phantom read), and how to choose the right level."
 slug: mysql-transaction-anomalies
 date: 2023-06-08T00:00:00Z
 author: bmf-san

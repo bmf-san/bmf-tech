@@ -1,5 +1,6 @@
 ---
 title: "Container Technology Explained: How Docker and OCI Containers Work"
+description: 'Learn how container technology works—namespaces, cgroups, OCI standards—and why containers have become essential for modern application deployment.'
 slug: container-technology-overview
 date: 2023-06-05T00:00:00Z
 author: bmf-san

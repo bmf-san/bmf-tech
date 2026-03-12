@@ -1,5 +1,6 @@
 ---
 title: "Test Doubles Explained: Mocks, Stubs, Fakes, and Spies"
+description: 'Learn the differences between test doubles: mocks, stubs, fakes, dummies, and spies. Understand when to use each type and how they improve unit test isolation and clarity.'
 slug: test-doubles-explained
 date: 2025-10-18T00:00:00Z
 author: bmf-san

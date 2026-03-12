@@ -1,5 +1,6 @@
 ---
 title: "SAML 2.0 Explained: How SSO and Federated Identity Work"
+description: 'Understand SAML 2.0 and how it enables Single Sign-On (SSO), the roles of Identity Provider and Service Provider, and how it compares to OAuth 2.0 and OpenID Connect.'
 slug: saml-2-0
 date: 2026-01-23T00:00:00Z
 author: bmf-san

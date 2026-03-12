@@ -1,5 +1,6 @@
 ---
 title: What is gRPC? A Practical Introduction to gRPC with Go
+description: 'Learn what gRPC is, how Protocol Buffers work, and how to build a gRPC server and client in Go. Includes comparison with REST and when to choose gRPC.'
 slug: grpc-introduction-golang
 date: 2020-09-08T00:00:00Z
 author: bmf-san

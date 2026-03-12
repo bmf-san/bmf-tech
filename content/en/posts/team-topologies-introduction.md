@@ -1,5 +1,6 @@
 ---
 title: What is Team Topologies? How to Structure Engineering Teams
+description: 'Learn Team Topologies—the four team types (stream-aligned, platform, enabling, complicated-subsystem) and three interaction modes for effective software delivery organization.'
 slug: team-topologies-introduction
 date: 2026-01-09T00:00:00Z
 author: bmf-san

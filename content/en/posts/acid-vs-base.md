@@ -1,5 +1,6 @@
 ---
 title: "ACID vs BASE: Understanding Database Consistency Models"
+description: 'Compare ACID and BASE consistency models. Understand the trade-offs involved, when to use each, and how the CAP theorem connects to your database design choices.'
 slug: acid-vs-base
 date: 2025-08-02T00:00:00Z
 author: bmf-san

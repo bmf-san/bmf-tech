@@ -1,5 +1,6 @@
 ---
 title: "MySQL Locks Explained: Preventing Deadlocks and Improving Performance"
+description: 'Understand MySQL locking mechanisms—table locks, row locks, gap locks, and intent locks. Learn how deadlocks occur and how to prevent and diagnose them effectively.'
 slug: mysql-locking
 date: 2024-04-05T00:00:00Z
 author: bmf-san

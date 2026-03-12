@@ -1,5 +1,6 @@
 ---
 title: "Modular Monolith Architecture: A Practical Guide and When to Choose It Over Microservices"
+description: 'Learn what a modular monolith is, how it differs from microservices and traditional monoliths, and when it is the better architectural choice for your team.'
 slug: modular-monolith
 date: 2023-09-25T00:00:00Z
 author: bmf-san

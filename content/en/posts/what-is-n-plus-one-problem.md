@@ -1,5 +1,6 @@
 ---
 title: "The N+1 Problem Explained: How to Detect and Fix It in Go/Rails"
+description: 'Learn what the N+1 query problem is, why it degrades application performance, how to detect it with query logs, and how to fix it with eager loading in Go and Rails.'
 slug: what-is-n-plus-one-problem
 date: 2018-05-12T00:00:00Z
 author: bmf-san

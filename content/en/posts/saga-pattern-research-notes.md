@@ -1,5 +1,6 @@
 ---
 title: "The Saga Pattern Explained: Managing Distributed Transactions in Microservices"
+description: 'Learn how the Saga pattern manages distributed transactions in microservices. Compare choreography vs orchestration-based sagas and their practical trade-offs.'
 slug: saga-pattern
 date: 2023-09-17T00:00:00Z
 author: bmf-san

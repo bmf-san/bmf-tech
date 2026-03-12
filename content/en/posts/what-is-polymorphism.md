@@ -1,5 +1,6 @@
 ---
 title: "Polymorphism Explained: How Object-Oriented Code Stays Flexible"
+description: 'Understand polymorphism in object-oriented programming—subtype, parametric, and ad-hoc polymorphism—with examples in Go, Java, and Python to show how each language applies it.'
 slug: what-is-polymorphism
 date: 2018-05-07T00:00:00Z
 author: bmf-san

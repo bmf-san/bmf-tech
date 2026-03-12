@@ -1,5 +1,6 @@
 ---
 title: "Scrum Master vs Product Owner: Roles and Responsibilities Compared"
+description: 'Clarify the roles of Scrum Master and Product Owner in Scrum. Learn distinct responsibilities, how each role interacts with the development team, and common misconceptions.'
 slug: scrum-master-product-owner-differences
 date: 2022-09-04T00:00:00Z
 author: bmf-san
