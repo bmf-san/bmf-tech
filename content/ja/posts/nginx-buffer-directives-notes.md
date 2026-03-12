@@ -1,6 +1,6 @@
 ---
 title: "NGINXのバッファ系ディレクティブ解説：プロキシパフォーマンスの最適化"
-slug: nginx-buffer-directives-notes
+slug: nginx-buffer-directives
 date: 2024-03-02T00:00:00Z
 author: bmf-san
 categories:

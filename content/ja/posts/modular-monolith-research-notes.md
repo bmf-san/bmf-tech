@@ -1,6 +1,6 @@
 ---
 title: "モジュラモノリスアーキテクチャ：マイクロサービスとの比較と選び方"
-slug: modular-monolith-research-notes
+slug: modular-monolith
 date: 2023-09-25T00:00:00Z
 author: bmf-san
 categories:

@@ -1088,4 +1088,18 @@
 /posts/tags/%E9%9B%86%E5%90%88  /ja/tags/集合/  301
 /posts/tags/%E9%9B%A2%E6%95%A3%E6%95%B0%E5%AD%A6  /ja/tags/離散数学/  301
 
-
+# slug improvements
+/posts/about-open-policy-agent/  /posts/open-policy-agent/  301
+/posts/cqrs-research-notes/  /posts/cqrs/  301
+/posts/modular-monolith-research-notes/  /posts/modular-monolith/  301
+/posts/nginx-buffer-directives-notes/  /posts/nginx-buffer-directives/  301
+/posts/oauth-2-0-spec-summary/  /posts/oauth-2-0/  301
+/posts/saml-2-0-spec-summary/  /posts/saml-2-0/  301
+/posts/saga-pattern-research-notes/  /posts/saga-pattern/  301
+/ja/posts/about-open-policy-agent/  /ja/posts/open-policy-agent/  301
+/ja/posts/cqrs-research-notes/  /ja/posts/cqrs/  301
+/ja/posts/modular-monolith-research-notes/  /ja/posts/modular-monolith/  301
+/ja/posts/nginx-buffer-directives-notes/  /ja/posts/nginx-buffer-directives/  301
+/ja/posts/oauth-2-0-spec-summary/  /ja/posts/oauth-2-0/  301
+/ja/posts/saml-2-0-spec-summary/  /ja/posts/saml-2-0/  301
+/ja/posts/saga-pattern-research-notes/  /ja/posts/saga-pattern/  301

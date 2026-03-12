@@ -1,6 +1,6 @@
 ---
 title: "NGINX Buffer Directives Explained: Optimizing Proxy Performance"
-slug: nginx-buffer-directives-notes
+slug: nginx-buffer-directives
 date: 2024-03-02T00:00:00Z
 author: bmf-san
 categories:

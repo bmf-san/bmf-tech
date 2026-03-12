@@ -1,6 +1,6 @@
 ---
 title: "CQRS Explained: When to Use Command Query Responsibility Segregation"
-slug: cqrs-research-notes
+slug: cqrs
 date: 2023-09-18T00:00:00Z
 author: bmf-san
 categories:

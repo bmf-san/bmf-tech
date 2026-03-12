@@ -1,6 +1,6 @@
 ---
 title: "CQRSとは？コマンドクエリ責務分離を使うべき場面"
-slug: cqrs-research-notes
+slug: cqrs
 date: 2023-09-18T00:00:00Z
 author: bmf-san
 categories:
