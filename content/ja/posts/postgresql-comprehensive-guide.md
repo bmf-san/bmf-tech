@@ -8,8 +8,11 @@ categories:
 tags:
   - DB
   - PostgreSQL
-  - 本
+  - 書評
 translation_key: postgresql-comprehensive-guide
+books:
+  - asin: "4798160431"
+    title: "PostgreSQL徹底入門 第4版 インストールから機能・仕組み、アプリ作り、管理・運用まで"
 ---
 
 

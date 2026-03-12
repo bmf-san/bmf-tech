@@ -6,9 +6,12 @@ author: bmf-san
 categories:
   - Business
 tags:
-  - Books
+  - Book Review
 description: A book about designing questions and facilitating creative dialogue.
 translation_key: designing-questions-facilitation
+books:
+  - asin: "4761527439"
+    title: "問いのデザイン: 創造的対話のファシリテーション"
 ---
 
 

@@ -7,8 +7,11 @@ categories:
   - アプリケーション
 tags:
   - Ruby
-  - 本
+  - 書評
 translation_key: ruby-introduction-for-beginners
+books:
+  - asin: "4297124378"
+    title: "プロを目指す人のためのRuby入門"
 ---
 
 

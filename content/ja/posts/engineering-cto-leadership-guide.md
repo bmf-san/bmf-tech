@@ -6,12 +6,15 @@ author: bmf-san
 categories:
   - マネジメント
 tags:
-  - 本
+  - 書評
   - 組織論
   - チームマネジメント
   - リーダーシップ
   - マネージャー
 translation_key: engineering-cto-leadership-guide
+books:
+  - asin: "4814401140"
+    title: "エンジニアリング統括責任者の手引き―組織を成功に導く技術リーダーシップ"
 ---
 
 

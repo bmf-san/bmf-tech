@@ -7,8 +7,11 @@ categories:
   - データベース
 tags:
   - PostgreSQL
-  - 本
+  - 書評
 translation_key: postgresql-internal-structure
+books:
+  - asin: "4297132060"
+    title: "内部構造から学ぶPostgreSQL―設計・運用計画の鉄則"
 ---
 
 

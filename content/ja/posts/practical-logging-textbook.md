@@ -6,10 +6,12 @@ author: bmf-san
 categories:
   - 運用
 tags:
-  - 本
+  - 書評
   - ログ
   - デバッグ
 translation_key: practical-logging-textbook
+books:
+  - asin: "4798192120"
 ---
 
 

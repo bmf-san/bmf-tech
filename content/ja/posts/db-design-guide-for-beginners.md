@@ -8,8 +8,11 @@ categories:
 tags:
   - DB
   - sql
-  - 本
+  - 書評
 translation_key: db-design-guide-for-beginners
+books:
+  - asin: "4798124702"
+    title: "達人に学ぶDB設計徹底指南書: 初級者で終わりたくないあなたへ"
 ---
 
 

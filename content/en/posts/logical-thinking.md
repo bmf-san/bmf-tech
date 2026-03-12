@@ -7,9 +7,12 @@ categories:
   - Business
 tags:
   - Logical Thinking
-  - Books
+  - Book Review
   - Critical Thinking
 translation_key: logical-thinking
+books:
+  - asin: "4492531122"
+    title: "ロジカル・シンキング"
 ---
 
 

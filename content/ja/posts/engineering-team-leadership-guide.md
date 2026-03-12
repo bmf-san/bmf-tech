@@ -6,11 +6,14 @@ author: bmf-san
 categories:
   - マネジメント
 tags:
-  - 本
+  - 書評
   - チームマネジメント
   - リーダーシップ
   - マネージャー
 translation_key: engineering-team-leadership-guide
+books:
+  - asin: "4814401116"
+    title: "エンジニアリングチームのリード術―Googleに学ぶインディビジュアルコントリビューターとマネージャーのための実践ガイド"
 ---
 
 

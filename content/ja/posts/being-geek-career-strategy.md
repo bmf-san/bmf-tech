@@ -6,8 +6,11 @@ author: bmf-san
 categories:
   - キャリア
 tags:
-  - 本
+  - 書評
 translation_key: being-geek-career-strategy
+books:
+  - asin: "4873114993"
+    title: "Being Geek ギークであり続けるためのキャリア戦略"
 ---
 
 

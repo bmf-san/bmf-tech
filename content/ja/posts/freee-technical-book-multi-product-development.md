@@ -8,7 +8,7 @@ categories:
 tags:
   - 設計
   - システム設計
-  - 本
+  - 書評
 translation_key: freee-technical-book-multi-product-development
 ---
 

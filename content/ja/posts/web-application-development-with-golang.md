@@ -7,8 +7,11 @@ categories:
   - アプリケーション
 tags:
   - Golang
-  - 本
+  - 書評
 translation_key: web-application-development-with-golang
+books:
+  - asin: "4873117526"
+    title: "Go言語によるWebアプリケーション開発"
 ---
 
 

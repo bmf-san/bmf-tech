@@ -7,8 +7,11 @@ categories:
   - Healthcare
 tags:
   - Health
-  - Books
+  - Book Review
 translation_key: stress-free-guide
+books:
+  - asin: "4478107327"
+    title: "ストレスフリー超大全"
 ---
 
 

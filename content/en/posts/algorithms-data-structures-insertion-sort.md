@@ -4,7 +4,7 @@ slug: algorithms-data-structures-insertion-sort
 date: 2020-02-01T00:00:00Z
 author: bmf-san
 categories:
-  - Algorithm and Data Structures
+  - Algorithms and Data Structures
 tags:
   - Insertion Sort
 translation_key: algorithms-data-structures-insertion-sort

@@ -10,8 +10,11 @@ tags:
   - アーキテクチャ戦略
   - アーキテクチャ
   - アーキテクト
-  - 本
+  - 書評
 translation_key: principles-of-system-architecture
+books:
+  - asin: "4798116424"
+    title: "システムアーキテクチャ構築の原理~ITアーキテクトが持つべき3つの思考"
 ---
 
 

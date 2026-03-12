@@ -7,8 +7,11 @@ categories:
   - インフラストラクチャ
 tags:
   - Google Cloud Platform
-  - 本
+  - 書評
 translation_key: gcp-textbook
+books:
+  - asin: "4865941959"
+    title: "GCPの教科書"
 ---
 
 

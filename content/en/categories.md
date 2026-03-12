@@ -10,6 +10,6 @@ translation_key: categories
 
 Browse all articles by category.
 
-- [Tools](/categories/Tools/)
-- [Architecture](/categories/Architecture/)
+- [Tools](/categories/tools/)
+- [Architecture](/categories/architecture/)
 - [Development Process](/categories/開発プロセス/)

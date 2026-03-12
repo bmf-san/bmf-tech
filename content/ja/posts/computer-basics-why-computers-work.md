@@ -8,8 +8,11 @@ categories:
 tags:
   - ソフトウェア
   - ハードウェア
-  - 本
+  - 書評
 translation_key: computer-basics-why-computers-work
+books:
+  - asin: "429600123X"
+    title: "コンピュータはなぜ動くのか 第２版 知っておきたいハードウエア＆ソフトウエアの基礎知識"
 ---
 
 

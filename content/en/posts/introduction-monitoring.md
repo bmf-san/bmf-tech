@@ -7,8 +7,11 @@ categories:
   - Infrastructure
 tags:
   - Monitoring
-  - Books
+  - Book Review
 translation_key: introduction-monitoring
+books:
+  - asin: "4873118646"
+    title: "入門監視"
 ---
 
 

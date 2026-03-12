@@ -7,8 +7,11 @@ categories:
   - アプリケーション
 tags:
   - Golang
-  - 本
+  - 書評
 translation_key: programming-language-go
+books:
+  - asin: "4621300253"
+    title: "プログラミング言語Go"
 ---
 
 

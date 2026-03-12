@@ -6,11 +6,14 @@ author: bmf-san
 categories:
   - マネジメント
 tags:
-  - 本
+  - 書評
   - チームマネジメント
   - リーダーシップ
   - マネージャー
 translation_key: engineering-manager-role-guide
+books:
+  - asin: "4873119944"
+    title: "エンジニアリングマネージャーのしごと―チームが必要とするマネージャーになる方法"
 ---
 
 

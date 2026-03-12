@@ -7,8 +7,11 @@ categories:
   - Tools
 tags:
   - UML
-  - Books
+  - Book Review
 translation_key: uml-introduction-from-zero
+books:
+  - asin: "4774190055"
+    title: "ゼロからわかるUML超入門"
 ---
 
 

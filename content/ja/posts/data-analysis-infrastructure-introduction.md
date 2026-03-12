@@ -7,11 +7,14 @@ categories:
   - アーキテクチャ
 tags:
   - ETL
-  - 本
+  - 書評
   - Elasticsearch
   - Kibana
   - fluentd
 translation_key: data-analysis-infrastructure-introduction
+books:
+  - asin: "477419218X"
+    title: "データ分析基盤構築入門"
 ---
 
 

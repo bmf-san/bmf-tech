@@ -7,8 +7,11 @@ categories:
   - アーキテクチャ
 tags:
   - 金融
-  - 本
+  - 書評
 translation_key: financial-system-knowledge-skills
+books:
+  - asin: "4798155330"
+    title: "エンジニアが学ぶ金融システムの「知識」と「技術」"
 ---
 
 

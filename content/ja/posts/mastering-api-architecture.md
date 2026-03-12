@@ -6,11 +6,14 @@ author: bmf-san
 categories:
   - アーキテクチャ
 tags:
-  - 本
+  - 書評
   - API
   - マイクロサービス
   - アーキテクチャ
 translation_key: mastering-api-architecture
+books:
+  - asin: "4814400896"
+    title: "マスタリングAPIアーキテクチャ ―モノリシックからマイクロサービスへとアーキテクチャを進化させるための実践的手法"
 ---
 
 

@@ -7,8 +7,11 @@ categories:
   - アーキテクチャ
 tags:
   - システム設計
-  - 本
+  - 書評
 translation_key: software-architecture-hardparts
+books:
+  - asin: "4814400063"
+    title: "ソフトウェアアーキテクチャ Hardparts"
 ---
 
 

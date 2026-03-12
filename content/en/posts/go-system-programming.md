@@ -7,8 +7,11 @@ categories:
   - Application
 tags:
   - Golang
-  - Books
+  - Book Review
 translation_key: go-system-programming
+books:
+  - asin: "4908686033"
+    title: "Goならわかるシステムプログラミング"
 ---
 
 [Understanding System Programming with Go](https://amzn.to/4azsQyI) is a book that allows you to learn about low-level programming using Go. You can gain insight into the internal specifications of the Go language's standard packages.

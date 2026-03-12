@@ -4,13 +4,13 @@ slug: process-vs-thread
 date: 2018-06-25T00:00:00Z
 author: bmf-san
 categories:
-  - OS
+  - Operating Systems
 tags:
-  - os
-  - thread
-  - process
-  - stack
-  - heap
+  - OS
+  - Thread
+  - Process
+  - Stack
+  - Heap
 translation_key: process-vs-thread
 ---
 
@@ -47,7 +47,7 @@ The data structures held in memory by a process are divided into two segments.
              - Heap Area
               - Holds regular variables, etc.
               - The size is unknown at runtime as the process dynamically increases or decreases the area.
-    - Stack Area 
+    - Stack Area
         - Temporarily holds arguments and local scope data.
 
 # What is a Thread

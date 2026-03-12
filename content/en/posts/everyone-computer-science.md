@@ -6,10 +6,13 @@ author: bmf-san
 categories:
   - Computer Architecture
 tags:
-  - Books
+  - Book Review
   - Data Structures
   - Algorithms
 translation_key: everyone-computer-science
+books:
+  - asin: "4798154814"
+    title: "みんなのコンピュータサイエンス"
 ---
 
 [Everyone's Computer Science](https://amzn.to/4avmhgB) is a great read for getting a comprehensive understanding of computer science.

@@ -7,8 +7,11 @@ categories:
   - アーキテクチャ
 tags:
   - アーキテクチャ
-  - 本
+  - 書評
 translation_key: software-architect-97-things
+books:
+  - asin: "4873114292"
+    title: "ソフトウェアアーキテクトが知るべき97のこと"
 ---
 
 

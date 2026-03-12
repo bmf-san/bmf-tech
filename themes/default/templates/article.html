@@ -16,7 +16,7 @@
     </li>
     {{if .FrontMatter.Categories}}
     <li class="breadcrumbs-item">
-      <a href="{{$localePrefix}}/categories/{{index .FrontMatter.Categories 0}}/" class="breadcrumbs-link">{{index .FrontMatter.Categories 0}}</a>
+      <a href="{{$localePrefix}}{{categoryURL (index .FrontMatter.Categories 0)}}" class="breadcrumbs-link">{{index .FrontMatter.Categories 0}}</a>
       <span class="breadcrumbs-separator">/</span>
     </li>
     {{end}}
@@ -28,14 +28,13 @@
   {{/* Article Header */}}
   <header class="mb-8">
     <div class="flex items-center gap-2 mb-4 flex-wrap">
-      {{range .FrontMatter.Categories}}<a href="{{$localePrefix}}/categories/{{.}}/" class="badge badge-info">{{.}}</a>{{end}}
+      {{range .FrontMatter.Categories}}<a href="{{$localePrefix}}{{categoryURL .}}" class="badge badge-info">{{.}}</a>{{end}}
       <span class="text-sm text-secondary">{{formatDate "2006-01-02" .FrontMatter.Date}}</span>
     </div>
     <h1 class="text-4xl font-bold mb-6 leading-tight">{{.FrontMatter.Title}}</h1>
     <div class="flex items-center justify-between flex-wrap gap-4">
       <div class="flex items-center gap-3">
         <div>
-          {{if .FrontMatter.Author}}<p class="font-semibold text-sm">{{.FrontMatter.Author}}</p>{{end}}
           {{if .FrontMatter.Description}}<p class="text-sm text-secondary leading-relaxed">{{.FrontMatter.Description}}</p>{{end}}
         </div>
       </div>
@@ -50,39 +49,40 @@
     </div>
   </header>
 
-  {{/* Eyecatch image */}}
+  {{/* Amazon Books (book cover — shown at top for book-review posts) */}}
+  {{- $hasBooks := false}}
+  {{- with index .PluginData "amazon_books"}}{{if .books}}{{$hasBooks = true}}{{end}}{{end}}
+  {{if $hasBooks}}
+  {{with index .PluginData "amazon_books"}}
+  <div class="flex flex-wrap justify-start gap-6 mb-8">
+    {{range .books}}
+    <a href="{{.LinkURL}}" target="_blank" rel="noopener noreferrer" class="flex flex-col items-start gap-2">
+      <img src="{{.ImageURL}}" alt="{{.Title}}" class="h-30 object-contain rounded shadow">
+      {{if .Title}}<span class="text-xs text-secondary text-left" style="max-width:8rem;word-break:break-word">{{.Title}}</span>{{end}}
+    </a>
+    {{end}}
+  </div>
+  {{end}}
+  {{else}}
+  {{/* Eyecatch image (shown when no book cover) */}}
   {{- $eyecatch := index .FrontMatter.Extra "image"}}
   {{- if not $eyecatch}}{{$eyecatch = printf "/ogp/%s.png" .FrontMatter.Slug}}{{end}}
   <div class="mb-8">
     <img src="{{$eyecatch}}" alt="{{.FrontMatter.Title}}" class="w-full rounded max-h-96 object-cover">
   </div>
+  {{end}}
 
   {{/* Article Body */}}
   <article class="prose prose-full mb-12">
     {{.HTMLContent}}
   </article>
 
-  {{/* Amazon Books */}}
-  {{with index .PluginData "amazon_books"}}
-  {{if .books}}
-  <div class="flex flex-wrap gap-4 mb-10">
-    <span class="text-sm font-medium text-secondary w-full">Books:</span>
-    {{range .books}}
-    <a href="{{.LinkURL}}" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center gap-2">
-      <img src="{{.ImageURL}}" alt="{{.Title}}" class="h-40 object-contain rounded shadow">
-      {{if .Title}}<span class="text-xs text-secondary text-center max-w-24">{{.Title}}</span>{{end}}
-    </a>
-    {{end}}
-  </div>
-  {{end}}
-  {{end}}
-
   {{/* Tags */}}
   {{if .FrontMatter.Tags}}
   <div class="flex flex-wrap gap-2 mb-10">
     <span class="text-sm font-medium text-secondary mr-2">Tags:</span>
     {{range .FrontMatter.Tags}}
-    <a href="{{$localePrefix}}/tags/{{.}}/" class="badge badge-light text-secondary">{{.}}</a>
+    <a href="{{$localePrefix}}{{tagURL .}}" class="badge badge-light text-secondary">{{.}}</a>
     {{end}}
   </div>
   {{end}}

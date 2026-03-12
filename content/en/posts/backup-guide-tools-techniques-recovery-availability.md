@@ -6,9 +6,12 @@ author: bmf-san
 categories:
   - Operations
 tags:
-  - Books
+  - Book Review
   - Backup
 translation_key: backup-guide-tools-techniques-recovery-availability
+books:
+  - asin: "4798188387"
+    title: "実務で役立つ バックアップの教科書 基本の考え方からツール活用・差分管理・世代管理・データ保全・リストア・リカバリー・可用性の確保まで"
 ---
 
 [A Practical Guide to Backup: From Basic Concepts to Tool Utilization, Differential Management, Generation Management, Data Preservation, Restore, Recovery, and Ensuring Availability](https://amzn.to/4izftCH) is a book that covers the fundamental concepts and knowledge about backups.

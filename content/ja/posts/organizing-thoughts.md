@@ -7,8 +7,11 @@ categories:
   - ビジネス
 tags:
   - 思考法
-  - 本
+  - 書評
 translation_key: organizing-thoughts
+books:
+  - asin: "4480815783"
+    title: "ワイド新版　思考の整理学"
 ---
 
 

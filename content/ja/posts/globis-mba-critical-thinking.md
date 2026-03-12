@@ -6,10 +6,13 @@ author: bmf-san
 categories:
   - ビジネス
 tags:
-  - 本
+  - 書評
   - ロジカルシンキング
   - クリティカルシンキング
 translation_key: globis-mba-critical-thinking
+books:
+  - asin: "4478020582"
+    title: "グロービスMBAクリティカル・シンキング"
 ---
 
 

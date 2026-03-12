@@ -7,8 +7,11 @@ categories:
   - アプリケーション
 tags:
   - Prolog
-  - 本
+  - 書評
 translation_key: introduction-to-prolog
+books:
+  - asin: "476490165X"
+    title: "Prologへの入門"
 ---
 
 

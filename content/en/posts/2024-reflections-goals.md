@@ -6,8 +6,7 @@ author: bmf-san
 categories:
   - Poetry
 tags:
-  - Reflection
-  - Goals
+  - Reflection and Goals
 translation_key: 2024-reflections-goals
 ---
 

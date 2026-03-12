@@ -7,8 +7,11 @@ categories:
   - Management
 tags:
   - Organization Theory
-  - Books
+  - Book Review
 translation_key: invitation-to-engineering-organization
+books:
+  - asin: "4774196053"
+    title: "エンジニアリング組織論への招待 ~不確実性に向き合う思考と組織のリファクタリング"
 ---
 
 [An Invitation to Engineering Organization Theory ~ Confronting Uncertainty and Refactoring Organizations](https://amzn.to/3AMxHAI) was read.

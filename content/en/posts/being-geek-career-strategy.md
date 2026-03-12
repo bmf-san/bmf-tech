@@ -6,8 +6,11 @@ author: bmf-san
 categories:
   - Career
 tags:
-  - Books
+  - Book Review
 translation_key: being-geek-career-strategy
+books:
+  - asin: "4873114993"
+    title: "Being Geek ギークであり続けるためのキャリア戦略"
 ---
 
 [Being Geek: Career Strategies to Stay a Geek](https://amzn.to/3WBItSL) is a book written by a geek, and while the title includes 'geek', it offers valuable insights for any engineer.

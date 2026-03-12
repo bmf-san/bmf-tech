@@ -8,8 +8,11 @@ categories:
 tags:
   - Clean Architecture
   - アーキテクチャ
-  - 本
+  - 書評
 translation_key: clean-architecture-software-structure-design
+books:
+  - asin: "4048930656"
+    title: "Clean Architecture 達人に学ぶソフトウェアの構造と設計"
 ---
 
 

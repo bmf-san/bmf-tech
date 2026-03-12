@@ -6,10 +6,13 @@ author: bmf-san
 categories:
   - アーキテクチャ
 tags:
-  - 本
+  - 書評
   - API
   - 設計
 translation_key: api-design-patterns
+books:
+  - asin: "4839979391"
+    title: "APIデザイン・パターン"
 ---
 
 

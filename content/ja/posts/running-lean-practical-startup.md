@@ -7,9 +7,12 @@ categories:
   - 開発プロセス
 tags:
   - リーン
-  - 本
+  - 書評
   - スタートアップ
 translation_key: running-lean-practical-startup
+books:
+  - asin: "4873115914"
+    title: "Running Lean ―実践リーンスタートアップ"
 ---
 
 

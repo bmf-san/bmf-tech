@@ -7,8 +7,11 @@ categories:
   - アプリケーション
 tags:
   - React
-  - 本
+  - 書評
 translation_key: introduction-react-component-based-development
+books:
+  - asin: "4873117194"
+    title: "入門 React ―コンポーネントベースのWebフロントエンド開発"
 ---
 
 

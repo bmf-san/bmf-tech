@@ -7,9 +7,12 @@ categories:
   - Business
 tags:
   - Thinking Methods
-  - Books
+  - Book Review
 description: Notes on the book about world-class engineers' thinking methods.
 translation_key: thinking-like-top-engineers
+books:
+  - asin: "4163917683"
+    title: "世界一流エンジニアの思考法"
 ---
 
 

@@ -8,8 +8,11 @@ categories:
 tags:
   - DB
   - NewSQL
-  - 本
+  - 書評
 translation_key: sql-practical-introduction
+books:
+  - asin: "4774173010"
+    title: "SQL実践入門──高速でわかりやすいクエリの書き方 (WEB+DB PRESS plus)"
 ---
 
 

@@ -4,7 +4,7 @@ slug: homebrew-installing-previous-versions
 date: 2022-10-30T00:00:00Z
 author: bmf-san
 categories:
-  - Applications
+  - Application
 tags:
   - homebrew
   - vim

@@ -8,8 +8,11 @@ categories:
 tags:
   - Startup
   - Lean
-  - Books
+  - Book Review
 translation_key: lean-startup
+books:
+  - asin: "4822248976"
+    title: "リーン・スタートアップ"
 ---
 
 [Lean Startup](https://amzn.to/3yeN2IC) is a bible-like book on the subject.

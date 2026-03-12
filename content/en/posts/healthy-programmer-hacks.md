@@ -6,10 +6,13 @@ author: bmf-san
 categories:
   - Healthcare
 tags:
-  - Books
+  - Book Review
   - Health
 description: Exploring health tips for programmers to maintain a healthy lifestyle while coding.
 translation_key: healthy-programmer-hacks
+books:
+  - asin: "4873117283"
+    title: "ヘルシープログラマ ―プログラミングを楽しく続けるための健康Hack"
 ---
 
 

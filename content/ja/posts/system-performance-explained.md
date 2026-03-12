@@ -6,10 +6,13 @@ author: bmf-san
 categories:
   - パフォーマンス
 tags:
-  - 本
+  - 書評
   - システムパフォーマンス
   - ISUCON
 translation_key: system-performance-explained
+books:
+  - asin: "B00LHFOTF4"
+    title: "絵で見てわかるシステムパフォーマンスの仕組み"
 ---
 
 

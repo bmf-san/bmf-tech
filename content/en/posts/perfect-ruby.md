@@ -4,11 +4,14 @@ slug: perfect-ruby
 date: 2024-05-04T00:00:00Z
 author: bmf-san
 categories:
-  - Applications
+  - Application
 tags:
   - Ruby
-  - Books
+  - Book Review
 translation_key: perfect-ruby
+books:
+  - asin: "4774189774"
+    title: "パーフェクトRuby"
 ---
 
 

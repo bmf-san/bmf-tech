@@ -6,12 +6,15 @@ author: bmf-san
 categories:
   - アーキテクチャ
 tags:
-  - 本
+  - 書評
   - 認証
   - 認可
   - OIDC
   - OAuth
 translation_key: introduction-digital-identity
+books:
+  - asin: "4297153769"
+    title: "はじめてのデジタルアイデンティティ―Webサービスに欠かせない認証・認可・ID管理"
 ---
 
 

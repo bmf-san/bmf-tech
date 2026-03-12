@@ -7,8 +7,11 @@ categories:
   - アーキテクチャ
 tags:
   - 分散システム
-  - 本
+  - 書評
 translation_key: distributed-system-design-patterns
+books:
+  - asin: "4873118751"
+    title: "分散システムデザインパターン"
 ---
 
 

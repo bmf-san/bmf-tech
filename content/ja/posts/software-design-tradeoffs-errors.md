@@ -9,8 +9,11 @@ tags:
   - アーキテクチャ
   - 設計
   - システム設計
-  - 本
+  - 書評
 translation_key: software-design-tradeoffs-errors
+books:
+  - asin: "4814400314"
+    title: "ソフトウェア設計のトレードオフと誤り ―プログラミングの際により良い選択をするには"
 ---
 
 

@@ -6,11 +6,14 @@ author: bmf-san
 categories:
   - マネジメント
 tags:
-  - 本
+  - 書評
   - CTO
   - 事業戦略
   - リーダーシップ
 translation_key: cto-thinking-strategy-leadership
+books:
+  - asin: "4839987793"
+    title: "CTOの思考法　技術と組織を動かす意思決定・戦略・リーダーシップ"
 ---
 
 

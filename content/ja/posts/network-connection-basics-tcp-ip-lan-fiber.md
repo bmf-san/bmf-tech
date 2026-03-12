@@ -6,11 +6,14 @@ author: bmf-san
 categories:
   - ネットワーク
 tags:
-  - 本
+  - 書評
   - IP
   - TCP
   - HTTP
 translation_key: network-connection-basics-tcp-ip-lan-fiber
+books:
+  - asin: "4822283119"
+    title: "ネットワークはなぜつながるのか 第2版 知っておきたいTCP/IP、LAN、光ファイバの基礎知識"
 ---
 
 

@@ -8,8 +8,11 @@ categories:
 tags:
   - DB
   - sql
-  - 本
+  - 書評
 translation_key: beginner-sql-third-edition
+books:
+  - asin: "4873119588"
+    title: "初めてのSQL 第3版"
 ---
 
 

@@ -8,8 +8,11 @@ categories:
 tags:
   - DB
   - sql
-  - 本
+  - 書評
 translation_key: sql-anti-patterns
+books:
+  - asin: "4873115892"
+    title: "SQLアンチパターン"
 ---
 
 

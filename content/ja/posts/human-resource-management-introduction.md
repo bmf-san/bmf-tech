@@ -8,8 +8,10 @@ categories:
 tags:
   - 人事
   - 労務
-  - 本
+  - 書評
 translation_key: human-resource-management-introduction
+books:
+  - asin: "4799326120"
 ---
 
 

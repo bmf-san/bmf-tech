@@ -7,8 +7,11 @@ categories:
   - アプリケーション
 tags:
   - DDD
-  - 本
+  - 書評
 translation_key: eric-evans-domain-driven-design
+books:
+  - asin: "B00GRKD6XU"
+    title: "エリック・エヴァンスのドメイン駆動設計: ソフトウェアの核心にある複雑さに立ち向かう"
 ---
 
 
