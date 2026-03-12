@@ -233,7 +233,7 @@ description: "Kenta Takeuchi のプロフィールページ"
 ```
 
 - **`sleyt`** (v1.3.2): CSS リセット・デザイントークン変数（`--color-slate-*` / `--text-primary` 等）・レイアウトユーティリティ（`container`, `flex`, `grid`, `gap-*`, `px-*` 等）・タイポグラフィ（`text-sm`, `font-bold` など）・ダークモード対応を提供。`pre[style]`（chroma シンタックスハイライト）と `.adsbygoogle` のダークモード補正も含む
-- CSS の追加が必要な場合は sleyt リポジトリ側に追加してバージョンを上げる（`assets/css/custom.css` は現在空）
+- CSS の追加が必要な場合は sleyt リポジトリ側に追加してバージョンを上げる
 - インライン `style=""` は Google AdSense 必須属性 (`<ins style="display:block">`) のみ許容
 
 ### テンプレート一覧
