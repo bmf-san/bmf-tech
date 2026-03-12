@@ -12,6 +12,7 @@
 | 静的サイトジェネレーター | [gohan](https://github.com/bmf-san/gohan) |
 | ホスティング | Cloudflare Pages |
 | CI/CD | GitHub Actions |
+| CSS フレームワーク | [sleyt](https://github.com/bmf-san/sleyt) |
 | 言語 | Go (ツール類), HTML/CSS (テーマ) |
 
 ## ディレクトリ構成
