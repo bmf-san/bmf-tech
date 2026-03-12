@@ -79,6 +79,21 @@ make serve
 
 `main` ブランチへの push で自動デプロイ。
 
+```mermaid
+sequenceDiagram
+    participant Dev as Developer
+    participant GH as GitHub
+    participant GA as GitHub Actions
+    participant CF as Cloudflare Pages
+
+    Dev->>GH: git push origin main
+    GH->>GA: trigger workflow
+    GA->>GA: gohan build → public/
+    GA->>GA: cp _redirects public/
+    GA->>CF: wrangler pages deploy public/
+    CF-->>GA: deploy complete
+```
+
 **CI フロー（`.github/workflows/deploy.yml`）:**
 
 1. GitHub Actions (ubuntu ランナー) が `gohan build` を実行し `public/` を生成
