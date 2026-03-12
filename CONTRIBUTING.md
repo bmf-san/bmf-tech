@@ -40,8 +40,8 @@ draft: false
 ### テンプレート (`themes/default/templates/`)
 
 - CSS は [sleyt](https://github.com/bmf-san/sleyt) のユーティリティクラスを使用する
-- テンプレート固有スタイルは `assets/css/custom.css` に追記する
-- インライン `<style>` タグは追加しない
+- CSS の追加が必要な場合は sleyt リポジトリ側に追加し、バージョンを上げる
+- テンプレートにインライン `<style>` タグは追加しない
 
 ### ローカル確認
 
