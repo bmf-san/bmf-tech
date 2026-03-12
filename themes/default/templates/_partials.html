@@ -158,9 +158,9 @@
 {{end}}
 {{end}}
 
-{{define "ad-unit"}}
+{{define "ad-unit-article-top"}}
 {{- $id := index .Config.Theme.Params "adsense_id"}}
-{{- $slot := index .Config.Theme.Params "adsense_slot"}}
+{{- $slot := index .Config.Theme.Params "adsense_slot_article_top"}}
 {{- if and $id $slot}}
 <div class="my-6">
   <ins class="adsbygoogle"
@@ -169,6 +169,37 @@
        data-ad-slot="{{$slot}}"
        data-ad-format="auto"
        data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+{{- end}}
+{{end}}
+
+{{define "ad-unit-article-bottom"}}
+{{- $id := index .Config.Theme.Params "adsense_id"}}
+{{- $slot := index .Config.Theme.Params "adsense_slot_article_bottom"}}
+{{- if and $id $slot}}
+<div class="my-6">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-format="autorelaxed"
+       data-ad-client="{{$id}}"
+       data-ad-slot="{{$slot}}"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+{{- end}}
+{{end}}
+
+{{define "ad-unit-list-mobile"}}
+{{- $id := index .Config.Theme.Params "adsense_id"}}
+{{- $slot := index .Config.Theme.Params "adsense_slot_list_mobile"}}
+{{- if and $id $slot}}
+<div class="block md:hidden my-4">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-format="fluid"
+       data-ad-layout-key="-5s+cz-w-9a+pg"
+       data-ad-client="{{$id}}"
+       data-ad-slot="{{$slot}}"></ins>
   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 {{- end}}

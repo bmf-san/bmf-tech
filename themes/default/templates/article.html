@@ -73,11 +73,11 @@
   {{end}}
 
   {{/* Article Body */}}
-  {{template "ad-unit" $}}
+  {{template "ad-unit-article-top" $}}
   <article class="prose prose-full mb-12">
     {{.HTMLContent}}
   </article>
-  {{template "ad-unit" $}}
+  {{template "ad-unit-article-bottom" $}}
 
   {{/* Tags */}}
   {{if .FrontMatter.Tags}}
