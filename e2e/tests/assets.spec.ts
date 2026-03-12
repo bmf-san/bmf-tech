@@ -82,3 +82,22 @@ test('sitemap.xml contains EN and JA homepage URLs', async ({ request }) => {
   expect(body).toContain('https://bmf-tech.com/</loc>');
   expect(body).toContain('https://bmf-tech.com/ja/</loc>');
 });
+
+// ── robots.txt ────────────────────────────────────────────────────────────────
+
+test('robots.txt is served at root (200)', async ({ request }) => {
+  const res = await request.get('/robots.txt');
+  expect(res.status()).toBe(200);
+  expect(res.headers()['content-type']).toMatch(/text/);
+});
+
+// ── ads.txt ───────────────────────────────────────────────────────────────────
+
+test('ads.txt is served at root with correct publisher ID', async ({ request }) => {
+  const res = await request.get('/ads.txt');
+  expect(res.status()).toBe(200);
+  const body = await res.text();
+  expect(body).toContain('google.com');
+  expect(body).toContain('pub-5146230866088201');
+  expect(body).toContain('DIRECT');
+});
