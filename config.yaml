@@ -10,6 +10,7 @@ build:
   content_dir: "content"
   output_dir: "public"
   assets_dir: "assets"
+  static_dir: "static"
   parallelism: 4
   per_page: 20
   exclude_files: []
