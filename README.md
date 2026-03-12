@@ -28,7 +28,7 @@
 │   │   ├── about.md              # About ページ
 │   │   └── privacy-policy.md     # プライバシーポリシー
 │   └── ja/
-│       └── posts/                # 日本語記事 (584記事)
+│       └── posts/                # 日本語記事
 ├── docs/
 │   └── DESIGN_DOC.md             # 設計ドキュメント
 ├── public/                       # ビルド出力 (.gitignore済み)
