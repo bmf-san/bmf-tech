@@ -1,5 +1,6 @@
 ---
 title: Approach to Architecture Design
+description: An in-depth exploration of Approach to Architecture Design, covering design principles, trade-offs, and practical applications.
 slug: architecture-design-approach
 date: 2023-11-23T00:00:00Z
 author: bmf-san

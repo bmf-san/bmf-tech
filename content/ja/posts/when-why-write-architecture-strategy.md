@@ -1,5 +1,6 @@
 ---
 title: なぜ・いつアーキテクチャ戦略を書くべきか
+description: なぜ・いつアーキテクチャ戦略を書くべきかについて、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
 slug: when-why-write-architecture-strategy
 date: 2026-02-05T00:00:00Z
 author: bmf-san

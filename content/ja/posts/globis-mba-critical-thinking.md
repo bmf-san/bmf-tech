@@ -1,5 +1,6 @@
 ---
 title: 'グロービスMBAクリティカル・シンキング '
+description: グロービスMBAクリティカル・シンキング について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: globis-mba-critical-thinking
 date: 2015-05-19T00:00:00Z
 author: bmf-san

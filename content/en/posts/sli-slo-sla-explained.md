@@ -1,5 +1,6 @@
 ---
 title: "SLI, SLO, and SLA Explained: A Practical Guide for Engineers"
+description: 'Learn the differences between SLIs, SLOs, and SLAs in site reliability engineering. Understand how to define service level objectives that balance reliability and velocity.'
 slug: sli-slo-sla-explained
 date: 2022-09-10T00:00:00Z
 author: bmf-san

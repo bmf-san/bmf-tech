@@ -1,5 +1,6 @@
 ---
 title: Prevent URL Encoding in Go's html/template
+description: 'An in-depth look at Prevent URL Encoding in Go''s html/template, covering key concepts and practical insights.'
 slug: go-html-template-url-encoding
 date: 2023-04-23T00:00:00Z
 author: bmf-san

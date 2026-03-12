@@ -1,5 +1,6 @@
 ---
 title: Understanding Attacks and Countermeasures on OAuth/OIDC (Redirect Attack Edition)
+description: 'A review and summary of "Understanding Attacks and Countermeasures on OAuth/OIDC (Redirect Attack Edition)", covering key takeaways and practical insights.'
 slug: oauth-oidc-attacks-and-countermeasures-guide
 date: 2021-10-05T00:00:00Z
 author: bmf-san

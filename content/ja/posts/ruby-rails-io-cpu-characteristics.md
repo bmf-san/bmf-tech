@@ -1,5 +1,6 @@
 ---
 title: RubyとRailsのIO・CPU特性について
+description: RubyとRailsのIO・CPU特性についてについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: ruby-rails-io-cpu-characteristics
 date: 2025-06-14T00:00:00Z
 author: bmf-san

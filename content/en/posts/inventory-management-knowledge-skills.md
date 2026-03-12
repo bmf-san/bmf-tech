@@ -1,5 +1,6 @@
 ---
 title: Knowledge and Skills of Inventory Management Systems for Engineers
+description: An in-depth look at Knowledge and Skills of Inventory Management Systems for Engineers, covering key concepts and practical insights.
 slug: inventory-management-knowledge-skills
 date: 2024-04-04T00:00:00Z
 author: bmf-san

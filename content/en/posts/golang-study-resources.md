@@ -1,5 +1,6 @@
 ---
 title: Resources I Used for Studying Golang
+description: An in-depth look at Resources I Used for Studying Golang, covering key concepts and practical insights.
 slug: golang-study-resources
 date: 2018-03-01T00:00:00Z
 author: bmf-san

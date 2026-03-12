@@ -1,5 +1,6 @@
 ---
 title: URLルーティングをつくる　エピソード1
+description: URLルーティングをつくる　エピソード1について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: creating-url-routing-episode-1
 date: 2018-12-19T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: Metaprogramming Ruby 2nd Edition
+description: 'A review and summary of "Metaprogramming Ruby 2nd Edition", covering key takeaways and practical insights.'
 slug: metaprogramming-ruby-2nd-edition
 date: 2025-01-06T00:00:00Z
 author: bmf-san

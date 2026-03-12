@@ -1,5 +1,6 @@
 ---
 title: ステートレスとステートフル
+description: ステートレスとステートフルについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: stateless-vs-stateful
 date: 2018-04-17T00:00:00Z
 author: bmf-san

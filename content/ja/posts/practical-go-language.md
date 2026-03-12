@@ -1,5 +1,6 @@
 ---
 title: 実用Go言語
+description: 実用Go言語について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: practical-go-language
 date: 2023-08-05T00:00:00Z
 author: bmf-san

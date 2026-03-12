@@ -1,5 +1,6 @@
 ---
 title: "MySQLのトランザクション分離レベル：ダーティリード・ファントムリードを防ぐ"
+description: 'MySQL のトランザクション分離レベルを解説。ダーティリード・ノンリピータブルリード・ファントムリードと、それぞれを防ぐ設定方法を学べます。'
 slug: mysql-transaction-anomalies
 date: 2023-06-08T00:00:00Z
 author: bmf-san

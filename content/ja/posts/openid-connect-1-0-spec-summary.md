@@ -1,5 +1,6 @@
 ---
 title: OpenID Connect 1.0 仕様まとめ
+description: OpenID Connect 1.0 仕様まとめについて調査・整理したメモ。基本概念と重要ポイントを解説します。
 slug: openid-connect-1-0-spec-summary
 date: 2026-01-23T00:00:00Z
 author: bmf-san

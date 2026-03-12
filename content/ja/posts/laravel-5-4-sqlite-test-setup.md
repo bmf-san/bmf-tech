@@ -1,5 +1,6 @@
 ---
 title: Laravel5.4でsqliteを使ってテストをかく準備
+description: Laravel5.4でsqliteを使ってテストをかく準備について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: laravel-5-4-sqlite-test-setup
 date: 2017-09-26T00:00:00Z
 author: bmf-san

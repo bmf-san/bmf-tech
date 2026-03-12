@@ -1,5 +1,6 @@
 ---
 title: Attending PHP Conference Okinawa 2019
+description: An in-depth look at Attending PHP Conference Okinawa 2019, covering key concepts and practical insights.
 slug: php-conference-okinawa-2019-participation
 date: 2019-10-13T00:00:00Z
 author: bmf-san

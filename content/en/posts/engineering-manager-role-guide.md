@@ -1,5 +1,6 @@
 ---
 title: 'The Work of an Engineering Manager: How to Become the Manager Your Team Needs'
+description: 'An in-depth look at The Work of an Engineering Manager: How to Become the Manager Your Team Needs, covering key concepts and practical insights.'
 slug: engineering-manager-role-guide
 date: 2026-02-20T00:00:00Z
 author: bmf-san

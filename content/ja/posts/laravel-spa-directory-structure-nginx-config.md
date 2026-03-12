@@ -1,5 +1,6 @@
 ---
 title: LaravelにSPAを組み込む時に考えたディレクトリ構成とnginxのconfファイル
+description: LaravelにSPAを組み込む時に考えたディレクトリ構成とnginxのconfファイルについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: laravel-spa-directory-structure-nginx-config
 date: 2017-10-01T00:00:00Z
 author: bmf-san

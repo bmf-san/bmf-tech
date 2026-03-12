@@ -1,5 +1,6 @@
 ---
 title: Laravelでajaxの際にCsrfTokenに引っかかった話
+description: Laravelでajaxの際にCsrfTokenに引っかかった話について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: laravel-ajax-csrf-token-issue
 date: 2017-09-26T00:00:00Z
 author: bmf-san

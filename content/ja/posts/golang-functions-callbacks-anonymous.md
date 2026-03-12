@@ -1,5 +1,6 @@
 ---
 title: Golangの関数についてー関数値／コールバック関数／無名関数
+description: Golangの関数についてー関数値／コールバック関数／無名関数について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: golang-functions-callbacks-anonymous
 date: 2018-10-04T00:00:00Z
 author: bmf-san

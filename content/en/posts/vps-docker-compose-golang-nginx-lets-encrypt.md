@@ -1,5 +1,6 @@
 ---
 title: Production Deployment with VPS, Docker Compose, Docker Machine, Golang, Nginx, and Let's Encrypt
+description: 'A step-by-step guide on Production Deployment with VPS, Docker Compose, Docker Machine, Golang, Nginx, and Let''s Encrypt, with practical examples and configuration tips.'
 slug: vps-docker-compose-golang-nginx-lets-encrypt
 date: 2020-06-07T00:00:00Z
 author: bmf-san

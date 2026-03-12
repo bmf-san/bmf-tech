@@ -1,5 +1,6 @@
 ---
 title: Ubuntu Initial Setup Notes
+description: Research notes and a structured overview of Ubuntu Initial Setup Notes, summarizing key concepts and findings.
 slug: ubuntu-initial-setup-notes
 date: 2019-02-15T00:00:00Z
 author: bmf-san

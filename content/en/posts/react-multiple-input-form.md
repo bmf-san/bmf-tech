@@ -1,5 +1,6 @@
 ---
 title: Implementing a Form with Multiple Inputs in React
+description: A step-by-step guide on Implementing a Form with Multiple Inputs in React, with practical examples and configuration tips.
 slug: react-multiple-input-form
 date: 2017-10-01T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: Street Coder
+description: An in-depth look at Street Coder, covering key concepts and practical insights.
 slug: street-coder
 date: 2025-09-20T00:00:00Z
 author: bmf-san

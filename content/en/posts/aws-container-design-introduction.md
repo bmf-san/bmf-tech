@@ -1,5 +1,6 @@
 ---
 title: AWS Container Design and Construction [Advanced] Introduction
+description: Research notes and a structured overview of AWS Container Design and Construction [Advanced] Introduction, summarizing key concepts and findings.
 slug: aws-container-design-introduction
 date: 2021-10-16T00:00:00Z
 author: bmf-san

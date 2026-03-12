@@ -1,5 +1,6 @@
 ---
 title: "ACID vs BASE：データベースの一貫性モデルを徹底解説"
+description: 'ACID と BASE という2つのデータベース一貫性モデルの違いを比較し、CAP 定理との関係やどちらを選ぶべき場面かをわかりやすく解説します。'
 slug: acid-vs-base
 date: 2025-08-02T00:00:00Z
 author: bmf-san

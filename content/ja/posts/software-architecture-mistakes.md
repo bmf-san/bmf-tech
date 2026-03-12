@@ -1,5 +1,6 @@
 ---
 title: 間違いだらけのソフトウェア・アーキテクチャ―非機能要件の開発と評価
+description: 間違いだらけのソフトウェア・アーキテクチャ―非機能要件の開発と評価について、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
 slug: software-architecture-mistakes
 date: 2024-05-24T00:00:00Z
 author: bmf-san

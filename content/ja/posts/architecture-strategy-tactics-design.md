@@ -1,5 +1,6 @@
 ---
 title: アーキテクチャ戦略・戦術・設計の書き分け
+description: アーキテクチャ戦略・戦術・設計の書き分けについて、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
 slug: architecture-strategy-tactics-design
 date: 2026-02-05T00:00:00Z
 author: bmf-san

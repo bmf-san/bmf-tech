@@ -1,5 +1,6 @@
 ---
 title: Laravelでエラーメッセージを共通のテンプレートで対応する方法
+description: Laravelでエラーメッセージを共通のテンプレートで対応する方法の手順と実践例を詳しく解説します。
 slug: laravel-error-message-template
 date: 2017-10-01T00:00:00Z
 author: bmf-san

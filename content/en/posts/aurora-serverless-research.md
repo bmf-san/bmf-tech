@@ -1,5 +1,6 @@
 ---
 title: Exploring Aurora Serverless
+description: An in-depth look at Exploring Aurora Serverless, covering key concepts and practical insights.
 slug: aurora-serverless-research
 date: 2023-12-27T00:00:00Z
 author: bmf-san

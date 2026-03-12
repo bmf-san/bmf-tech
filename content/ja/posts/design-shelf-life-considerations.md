@@ -1,5 +1,6 @@
 ---
 title: 設計の賞味期限を考える
+description: 設計の賞味期限を考えるについて、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
 slug: design-shelf-life-considerations
 date: 2025-06-08T00:00:00Z
 author: bmf-san

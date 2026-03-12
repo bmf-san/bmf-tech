@@ -1,5 +1,6 @@
 ---
 title: Laravelでの機能テストの始め方雑メモ
+description: Laravelでの機能テストの始め方雑メモについて調査・整理したメモ。基本概念と重要ポイントを解説します。
 slug: getting-started-with-laravel-feature-testing
 date: 2019-02-11T00:00:00Z
 author: bmf-san

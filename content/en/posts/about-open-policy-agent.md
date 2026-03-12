@@ -1,5 +1,6 @@
 ---
 title: What is Open Policy Agent (OPA)? A Practical Guide to Policy as Code
+description: 'Learn what Open Policy Agent (OPA) is, how policy as code works, and practical examples of using OPA to centralize authorization logic in your infrastructure.'
 slug: open-policy-agent
 date: 2025-05-13T00:00:00Z
 author: bmf-san

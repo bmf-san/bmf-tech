@@ -1,5 +1,6 @@
 ---
 title: "MySQL JOIN vs UNION：違いと使い分けを実例で解説"
+description: 'MySQL の JOIN と UNION の違いを実例で解説。INNER JOIN・LEFT JOIN・UNION ALL などの使い分けとパフォーマンスへの影響を学べます。'
 slug: mysql-join-union
 date: 2018-07-18T00:00:00Z
 author: bmf-san

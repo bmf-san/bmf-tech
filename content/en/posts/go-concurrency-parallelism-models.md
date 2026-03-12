@@ -1,5 +1,6 @@
 ---
 title: Go's Concurrency and Parallelism Model and Goroutine Scheduling
+description: 'An in-depth exploration of Go''s Concurrency and Parallelism Model and Goroutine Scheduling, covering design principles, trade-offs, and practical applications.'
 slug: go-concurrency-parallelism-models
 date: 2025-06-14T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: About Bitemporal Data Model
+description: An in-depth exploration of About Bitemporal Data Model, covering design principles, trade-offs, and practical applications.
 slug: bitemporal-data-model
 date: 2024-05-27T00:00:00Z
 author: bmf-san

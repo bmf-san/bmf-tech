@@ -1,5 +1,6 @@
 ---
 title: GoogleChromeでBurp Suiteを使う手順
+description: GoogleChromeでBurp Suiteを使う手順の手順と実践例を詳しく解説します。
 slug: using-burp-suite-with-google-chrome
 date: 2019-03-22T00:00:00Z
 author: bmf-san

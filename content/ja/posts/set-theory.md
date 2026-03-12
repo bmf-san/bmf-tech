@@ -1,5 +1,6 @@
 ---
 title: 集合について
+description: 集合についてについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: set-theory
 date: 2024-07-06T00:00:00Z
 author: bmf-san

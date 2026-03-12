@@ -1,5 +1,6 @@
 ---
 title: "Open Policy Agent (OPA)とは？ポリシー・アズ・コードの実践ガイド"
+description: 'Open Policy Agent (OPA) とは何か、ポリシー・アズ・コードの仕組み、インフラの認可ロジックを一元管理する実践的な使い方を解説します。'
 slug: open-policy-agent
 date: 2025-05-13T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: 'Evolving Architecture: Supporting Continuous Change'
+description: 'An in-depth exploration of Evolving Architecture: Supporting Continuous Change, covering design principles, trade-offs, and practical applications.'
 slug: evolutionary-architecture-supporting-change
 date: 2018-08-23T00:00:00Z
 author: bmf-san

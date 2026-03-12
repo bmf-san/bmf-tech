@@ -1,5 +1,6 @@
 ---
 title: "NGINXのバッファ系ディレクティブ解説：プロキシパフォーマンスの最適化"
+description: 'NGINX のリバースプロキシ用バッファ系ディレクティブを解説。proxy_buffering・proxy_buffer_size などの設定がパフォーマンスに与える影響を学べます。'
 slug: nginx-buffer-directives
 date: 2024-03-02T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: Laravel Homesteadを使ったLaravelの環境構築
+description: Laravel Homesteadを使ったLaravelの環境構築の手順と実践例を詳しく解説します。
 slug: laravel-homestead-setup
 date: 2018-04-11T00:00:00Z
 author: bmf-san

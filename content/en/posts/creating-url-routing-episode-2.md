@@ -1,5 +1,6 @@
 ---
 title: Creating URL Routing Episode 2
+description: A step-by-step guide on Creating URL Routing Episode 2, with practical examples and configuration tips.
 slug: creating-url-routing-episode-2
 date: 2019-01-06T00:00:00Z
 author: bmf-san

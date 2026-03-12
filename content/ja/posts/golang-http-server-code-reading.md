@@ -1,5 +1,6 @@
 ---
 title: GolangのHTTPサーバーのコードリーディング
+description: GolangのHTTPサーバーのコードリーディングについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: golang-http-server-code-reading
 date: 2021-06-30T00:00:00Z
 author: bmf-san

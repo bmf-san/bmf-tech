@@ -1,5 +1,6 @@
 ---
 title: Golang×chromedp×slack botでslackの絵文字自動生成ボットをつくってみた
+description: Golang×chromedp×slack botでslackの絵文字自動生成ボットをつくってみたについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: golang-chromedp-slack-bot
 date: 2020-08-11T00:00:00Z
 author: bmf-san

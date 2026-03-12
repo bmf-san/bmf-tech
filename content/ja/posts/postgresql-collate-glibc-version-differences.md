@@ -1,5 +1,6 @@
 ---
 title: PostgreSQLのCOLLATEとglibcのバージョン差によるソート順の違い
+description: PostgreSQLのCOLLATEとglibcのバージョン差によるソート順の違いについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: postgresql-collate-glibc-version-differences
 date: 2025-03-05T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: Side Effects of Go's response.WriteHeader
+description: 'An in-depth look at Side Effects of Go''s response.WriteHeader, covering key concepts and practical insights.'
 slug: go-response-writeheader-side-effects
 date: 2023-09-11T00:00:00Z
 author: bmf-san

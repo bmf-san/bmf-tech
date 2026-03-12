@@ -1,5 +1,6 @@
 ---
 title: 健康のために行っている習慣について
+description: 健康のために行っている習慣についてについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: healthy-habits
 date: 2024-06-30T00:00:00Z
 author: bmf-san

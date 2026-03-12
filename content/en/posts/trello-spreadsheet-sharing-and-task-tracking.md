@@ -1,5 +1,6 @@
 ---
 title: Publishing Casual Trello and Casual Spreadsheet and Starting to Measure Private Tasks
+description: An in-depth look at Publishing Casual Trello and Casual Spreadsheet and Starting to Measure Private Tasks, covering key concepts and practical insights.
 slug: trello-spreadsheet-sharing-and-task-tracking
 date: 2019-02-12T00:00:00Z
 author: bmf-san

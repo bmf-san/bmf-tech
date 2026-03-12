@@ -1,5 +1,6 @@
 ---
 title: grep入門
+description: grep入門について調査・整理したメモ。基本概念と重要ポイントを解説します。
 slug: introduction-to-grep
 date: 2019-01-22T00:00:00Z
 author: bmf-san

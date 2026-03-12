@@ -1,5 +1,6 @@
 ---
 title: 'The Architect''s Textbook: Building Software Architectures that Create Value'
+description: 'A review and summary of "The Architect''''s Textbook: Building Software Architectures that Create Value", covering key takeaways and practical insights.'
 slug: architects-textbook-software-architecture-design
 date: 2025-01-13T00:00:00Z
 author: bmf-san

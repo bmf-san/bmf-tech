@@ -1,5 +1,6 @@
 ---
 title: 正しいものを正しくつくる
+description: 正しいものを正しくつくるについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: building-correctly
 date: 2024-04-16T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: PostgreSQLのRow Level Security（RLS）について
+description: PostgreSQLのRow Level Security（RLS）についてについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: postgresql-row-level-security
 date: 2025-05-23T00:00:00Z
 author: bmf-san

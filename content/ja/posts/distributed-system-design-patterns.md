@@ -1,5 +1,6 @@
 ---
 title: 分散システムデザインパターン
+description: 分散システムデザインパターンについて、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
 slug: distributed-system-design-patterns
 date: 2021-08-17T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: One-Liner for Self-Signed Certificates in Go
+description: An in-depth look at One-Liner for Self-Signed Certificates in Go, covering key concepts and practical insights.
 slug: go-self-signed-certificate-creation
 date: 2024-02-16T00:00:00Z
 author: bmf-san

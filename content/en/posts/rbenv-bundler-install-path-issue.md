@@ -1,5 +1,6 @@
 ---
 title: Encountered Path Issues When Installing Bundler with rbenv via anyenv
+description: A step-by-step guide on Encountered Path Issues When Installing Bundler with rbenv via anyenv, with practical examples and configuration tips.
 slug: rbenv-bundler-install-path-issue
 date: 2018-12-04T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: ソフトウェアアーキテクトが知るべき97のこと
+description: ソフトウェアアーキテクトが知るべき97のことについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: software-architect-97-things
 date: 2019-01-26T00:00:00Z
 author: bmf-san

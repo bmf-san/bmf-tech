@@ -1,5 +1,6 @@
 ---
 title: PHPerKaigi2019に参加・登壇してきました
+description: PHPerKaigi2019に参加・登壇してきましたについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: phperkaigi-2019-participation
 date: 2019-04-01T00:00:00Z
 author: bmf-san

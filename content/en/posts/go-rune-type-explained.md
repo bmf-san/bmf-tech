@@ -1,5 +1,6 @@
 ---
 title: About Go's rune Type
+description: 'An in-depth look at About Go''s rune Type, covering key concepts and practical insights.'
 slug: go-rune-type-explained
 date: 2024-02-21T00:00:00Z
 author: bmf-san

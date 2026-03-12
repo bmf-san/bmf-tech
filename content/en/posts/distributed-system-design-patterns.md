@@ -1,5 +1,6 @@
 ---
 title: Distributed System Design Patterns
+description: An in-depth exploration of Distributed System Design Patterns, covering design principles, trade-offs, and practical applications.
 slug: distributed-system-design-patterns
 date: 2021-08-17T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: 継承より委譲について
+description: 継承より委譲についてについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: delegation-over-inheritance
 date: 2025-10-20T00:00:00Z
 author: bmf-san

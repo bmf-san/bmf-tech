@@ -1,5 +1,6 @@
 ---
 title: "ADR（アーキテクチャ決定記録）とは？技術的意思決定の記録方法"
+description: 'ADR（アーキテクチャ決定記録）とは何か、技術的意思決定を文書化する意義と、エンジニアリングチームで活用するための書き方を解説します。'
 slug: adr-architecture-decision-record
 date: 2022-10-10T00:00:00Z
 author: bmf-san

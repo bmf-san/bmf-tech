@@ -1,5 +1,6 @@
 ---
 title: アーキテクチャ設計の進め方
+description: アーキテクチャ設計の進め方について、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
 slug: architecture-design-approach
 date: 2023-11-23T00:00:00Z
 author: bmf-san

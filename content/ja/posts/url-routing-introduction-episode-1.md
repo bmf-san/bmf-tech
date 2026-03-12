@@ -1,5 +1,6 @@
 ---
 title: URLルーティング自作入門　エピソード１
+description: URLルーティング自作入門　エピソード１について調査・整理したメモ。基本概念と重要ポイントを解説します。
 slug: url-routing-introduction-episode-1
 date: 2019-12-14T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: OPAにおけるページネーションへの影響と解決策に関する検討
+description: OPAにおけるページネーションへの影響と解決策に関する検討の原因と解決方法について解説します。
 slug: pagination-impact-solutions-opa
 date: 2025-06-14T00:00:00Z
 author: bmf-san

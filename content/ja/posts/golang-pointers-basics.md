@@ -1,5 +1,6 @@
 ---
 title: Golangのポインタの基本
+description: 「Golangのポインタの基本」のまとめと読書メモ。重要なポイントと実践的な知見を整理します。
 slug: golang-pointers-basics
 date: 2018-09-03T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: 'Reactでrequireしてたら、[BABEL] Note: The code generator has deoptimised the styling of '
+description: 'Reactでrequireしてたら、[BABEL] Note: The code generator has deoptimised the styling of について、基本的な概念から実践的な知見まで詳しく解説します。'
 slug: react-babel-code-generator-warning
 date: 2017-10-01T00:00:00Z
 author: bmf-san

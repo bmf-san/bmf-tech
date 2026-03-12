@@ -1,5 +1,6 @@
 ---
 title: GraphQL federationについて
+description: GraphQL federationについてについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: graphql-federation-introduction
 date: 2025-02-02T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: AnsibleでVagrant開発環境（CentOS7.3）を構築する
+description: AnsibleでVagrant開発環境（CentOS7.3）を構築するの手順と実践例を詳しく解説します。
 slug: setup-vagrant-environment-ansible
 date: 2017-09-26T00:00:00Z
 author: bmf-san

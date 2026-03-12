@@ -1,5 +1,6 @@
 ---
 title: About Row Level Security (RLS) in PostgreSQL
+description: An in-depth look at About Row Level Security (RLS) in PostgreSQL, covering key concepts and practical insights.
 slug: postgresql-row-level-security
 date: 2025-05-23T00:00:00Z
 author: bmf-san

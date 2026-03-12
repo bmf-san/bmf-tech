@@ -1,5 +1,6 @@
 ---
 title: 'The Path to Staff Engineer: A Guide to Becoming an Excellent Technical Professional'
+description: 'An in-depth look at The Path to Staff Engineer: A Guide to Becoming an Excellent Technical Professional, covering key concepts and practical insights.'
 slug: staff-engineer-guide
 date: 2025-01-23T00:00:00Z
 author: bmf-san

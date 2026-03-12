@@ -1,5 +1,6 @@
 ---
 title: クラウドネイティブ・アーキテクチャ 可用性と費用対効果を極める次世代設計の原則
+description: クラウドネイティブ・アーキテクチャ 可用性と費用対効果を極める次世代設計の原則について、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
 slug: cloud-native-architecture-principles
 date: 2025-06-06T00:00:00Z
 author: bmf-san

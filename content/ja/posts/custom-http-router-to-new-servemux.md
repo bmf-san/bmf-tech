@@ -1,5 +1,6 @@
 ---
 title: 自作HTTPルーターから新しいServeMuxへ
+description: 自作HTTPルーターから新しいServeMuxへについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: custom-http-router-to-new-servemux
 date: 2024-04-27T00:00:00Z
 author: bmf-san

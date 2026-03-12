@@ -1,5 +1,6 @@
 ---
 title: Trends and Strategies for System Design Interviews
+description: An in-depth exploration of Trends and Strategies for System Design Interviews, covering design principles, trade-offs, and practical applications.
 slug: system-design-interview-tips
 date: 2025-09-29T00:00:00Z
 author: bmf-san

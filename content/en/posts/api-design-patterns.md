@@ -1,5 +1,6 @@
 ---
 title: API Design Patterns
+description: An in-depth exploration of API Design Patterns, covering design principles, trade-offs, and practical applications.
 slug: api-design-patterns
 date: 2024-08-26T00:00:00Z
 author: bmf-san

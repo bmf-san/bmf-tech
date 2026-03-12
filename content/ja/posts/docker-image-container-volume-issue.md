@@ -1,5 +1,6 @@
 ---
 title: dockerでイメージとコンテナを削除してもボリュームが消えていなかったときのメモ
+description: dockerでイメージとコンテナを削除してもボリュームが消えていなかったときのメモについて調査・整理したメモ。基本概念と重要ポイントを解説します。
 slug: docker-image-container-volume-issue
 date: 2019-04-28T00:00:00Z
 author: bmf-san

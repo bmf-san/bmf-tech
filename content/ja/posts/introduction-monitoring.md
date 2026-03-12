@@ -1,5 +1,6 @@
 ---
 title: 入門監視
+description: 入門監視について調査・整理したメモ。基本概念と重要ポイントを解説します。
 slug: introduction-monitoring
 date: 2019-01-26T00:00:00Z
 author: bmf-san

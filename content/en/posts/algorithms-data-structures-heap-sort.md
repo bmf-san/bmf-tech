@@ -1,5 +1,6 @@
 ---
 title: Algorithms and Data Structures - Heap Sort
+description: An in-depth look at Algorithms and Data Structures - Heap Sort, covering key concepts and practical insights.
 slug: algorithms-data-structures-heap-sort
 date: 2020-02-01T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: Tidy First? ―個人で実践する経験主義的ソフトウェア設計
+description: Tidy First? ―個人で実践する経験主義的ソフトウェア設計について、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
 slug: tidy-first-experiential-software-design
 date: 2025-01-06T00:00:00Z
 author: bmf-san

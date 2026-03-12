@@ -1,5 +1,6 @@
 ---
 title: Implementation of Stack and Queue
+description: A step-by-step guide on Implementation of Stack and Queue, with practical examples and configuration tips.
 slug: stack-queue-implementation
 date: 2023-07-25T00:00:00Z
 author: bmf-san

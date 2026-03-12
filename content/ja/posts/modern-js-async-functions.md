@@ -1,5 +1,6 @@
 ---
 title: モダンなJSの話──async function
+description: モダンなJSの話──async functionについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: modern-js-async-functions
 date: 2018-01-29T00:00:00Z
 author: bmf-san

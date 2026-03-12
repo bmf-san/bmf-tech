@@ -1,5 +1,6 @@
 ---
 title: 「人事・労務」の実務がまるごとわかる本
+description: 「「人事・労務」の実務がまるごとわかる本」のまとめと読書メモ。重要なポイントと実践的な知見を整理します。
 slug: comprehensive-guide-to-hr-and-labor-practices
 date: 2024-04-18T00:00:00Z
 author: bmf-san

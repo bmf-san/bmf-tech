@@ -1,5 +1,6 @@
 ---
 title: Getting Started with tmux
+description: An in-depth look at Getting Started with tmux, covering key concepts and practical insights.
 slug: tmux-beginners-guide
 date: 2018-05-22T00:00:00Z
 author: bmf-san

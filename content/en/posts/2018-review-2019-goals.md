@@ -1,5 +1,6 @@
 ---
 title: Reflection on 2018 and Goals for 2019
+description: Personal reflections and highlights from Reflection on 2018 and Goals for 2019.
 slug: 2018-review-2019-goals
 date: 2018-12-31T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: Cohesion and Coupling
+description: An in-depth look at Cohesion and Coupling, covering key concepts and practical insights.
 slug: cohesion-coupling
 date: 2025-06-25T00:00:00Z
 author: bmf-san

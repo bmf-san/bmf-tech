@@ -1,5 +1,6 @@
 ---
 title: React+react-redux+react-router+ES6+webpackで作るSPAボイラープレート
+description: React+react-redux+react-router+ES6+webpackで作るSPAボイラープレートについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: react-ecosystem-spa-boilerplate
 date: 2017-10-01T00:00:00Z
 author: bmf-san

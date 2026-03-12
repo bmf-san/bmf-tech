@@ -1,5 +1,6 @@
 ---
 title: 'Clean Architecture: Learning Software Structure and Design from the Experts'
+description: 'An in-depth exploration of Clean Architecture: Learning Software Structure and Design from the Experts, covering design principles, trade-offs, and practical applications.'
 slug: clean-architecture-software-structure-design
 date: 2018-08-01T00:00:00Z
 author: bmf-san

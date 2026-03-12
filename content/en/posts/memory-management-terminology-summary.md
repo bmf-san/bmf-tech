@@ -1,5 +1,6 @@
 ---
 title: Summary of Memory Management Terms
+description: Research notes and a structured overview of Summary of Memory Management Terms, summarizing key concepts and findings.
 slug: memory-management-terminology-summary
 date: 2018-11-30T00:00:00Z
 author: bmf-san

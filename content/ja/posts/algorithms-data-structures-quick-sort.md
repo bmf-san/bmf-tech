@@ -1,5 +1,6 @@
 ---
 title: アルゴリズムとデータ構造 - クイックソート
+description: アルゴリズムとデータ構造 - クイックソートについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: algorithms-data-structures-quick-sort
 date: 2020-02-01T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: Obtaining SSL Certificates from Let's Encrypt Using DNS-01 with Lego
+description: 'An in-depth look at Obtaining SSL Certificates from Let''s Encrypt Using DNS-01 with Lego, covering key concepts and practical insights.'
 slug: lego-lets-encrypt-dns-01-ssl
 date: 2022-01-18T00:00:00Z
 author: bmf-san

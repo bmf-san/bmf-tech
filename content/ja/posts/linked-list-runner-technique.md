@@ -1,5 +1,6 @@
 ---
 title: 連結リストのランナーテクニック
+description: 連結リストのランナーテクニックについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: linked-list-runner-technique
 date: 2023-07-22T00:00:00Z
 author: bmf-san

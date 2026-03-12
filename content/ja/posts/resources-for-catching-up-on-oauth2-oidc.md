@@ -1,5 +1,6 @@
 ---
 title: OAuth2、OIDCのキャッチアップのための資料
+description: OAuth2、OIDCのキャッチアップのための資料について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: resources-for-catching-up-on-oauth2-oidc
 date: 2021-10-05T00:00:00Z
 author: bmf-san

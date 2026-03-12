@@ -1,5 +1,6 @@
 ---
 title: Understanding Terminal Specifications for TUI Development
+description: Research notes and a structured overview of Understanding Terminal Specifications for TUI Development, summarizing key concepts and findings.
 slug: terminal-specifications-for-tui-development
 date: 2025-10-18T00:00:00Z
 author: bmf-san

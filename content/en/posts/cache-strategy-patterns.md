@@ -1,5 +1,6 @@
 ---
 title: Basic Patterns of Cache Strategies
+description: An in-depth exploration of Basic Patterns of Cache Strategies, covering design principles, trade-offs, and practical applications.
 slug: cache-strategy-patterns
 date: 2025-08-03T00:00:00Z
 author: bmf-san

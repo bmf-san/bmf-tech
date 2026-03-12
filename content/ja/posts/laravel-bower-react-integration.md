@@ -1,5 +1,6 @@
 ---
 title: LaravelにbowerでReactを導入してみる
+description: LaravelにbowerでReactを導入してみるの手順と実践例を詳しく解説します。
 slug: laravel-bower-react-integration
 date: 2017-10-01T00:00:00Z
 author: bmf-san

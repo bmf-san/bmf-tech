@@ -1,5 +1,6 @@
 ---
 title: 'Trade-offs and Mistakes in Software Design: Making Better Choices in Programming'
+description: 'An in-depth exploration of Trade-offs and Mistakes in Software Design: Making Better Choices in Programming, covering design principles, trade-offs, and practical applications.'
 slug: software-design-tradeoffs-errors
 date: 2024-05-20T00:00:00Z
 author: bmf-san

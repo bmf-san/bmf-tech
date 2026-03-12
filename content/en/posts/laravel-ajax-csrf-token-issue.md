@@ -1,5 +1,6 @@
 ---
 title: Encountering CsrfToken Issues with AJAX in Laravel
+description: A troubleshooting guide for Encountering CsrfToken Issues with AJAX in Laravel, explaining the root cause and how to resolve it.
 slug: laravel-ajax-csrf-token-issue
 date: 2017-09-26T00:00:00Z
 author: bmf-san

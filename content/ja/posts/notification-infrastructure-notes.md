@@ -1,5 +1,6 @@
 ---
 title: 通知基盤構築についてのメモ書き
+description: 通知基盤構築についてのメモ書きについて調査・整理したメモ。基本概念と重要ポイントを解説します。
 slug: notification-infrastructure-notes
 date: 2023-08-28T00:00:00Z
 author: bmf-san

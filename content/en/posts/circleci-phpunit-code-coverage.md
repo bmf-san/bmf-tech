@@ -1,5 +1,6 @@
 ---
 title: Output PHPUnit Code Coverage with CircleCI 2.0
+description: An in-depth look at Output PHPUnit Code Coverage with CircleCI 2.0, covering key concepts and practical insights.
 slug: circleci-phpunit-code-coverage
 date: 2018-08-13T00:00:00Z
 author: bmf-san

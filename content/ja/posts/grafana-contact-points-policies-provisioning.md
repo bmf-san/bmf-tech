@@ -1,5 +1,6 @@
 ---
 title: GrafanaでContact PointsとPoliciesをプロビジョニングするようにする
+description: GrafanaでContact PointsとPoliciesをプロビジョニングするようにするについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: grafana-contact-points-policies-provisioning
 date: 2023-12-27T00:00:00Z
 author: bmf-san

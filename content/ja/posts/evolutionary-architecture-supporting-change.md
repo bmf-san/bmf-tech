@@ -1,5 +1,6 @@
 ---
 title: 進化的アーキテクチャ 絶え間ない変化を支える
+description: 進化的アーキテクチャ 絶え間ない変化を支えるについて、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
 slug: evolutionary-architecture-supporting-change
 date: 2018-08-23T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: モダンなJSの話──Destructuring assignment（分割代入）
+description: モダンなJSの話──Destructuring assignment（分割代入）について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: modern-js-destructuring
 date: 2017-12-25T00:00:00Z
 author: bmf-san

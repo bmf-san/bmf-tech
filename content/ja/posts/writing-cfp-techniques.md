@@ -1,5 +1,6 @@
 ---
 title: CFPを書く技術
+description: CFPを書く技術について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: writing-cfp-techniques
 date: 2024-04-14T00:00:00Z
 author: bmf-san

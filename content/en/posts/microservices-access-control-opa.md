@@ -1,5 +1,6 @@
 ---
 title: Implementation of Access Control System for Microservices Using OPA
+description: A step-by-step guide on Implementation of Access Control System for Microservices Using OPA, with practical examples and configuration tips.
 slug: microservices-access-control-opa
 date: 2025-03-20T00:00:00Z
 author: bmf-san

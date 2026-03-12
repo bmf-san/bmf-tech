@@ -1,5 +1,6 @@
 ---
 title: What is Platform Engineering? Building Internal Developer Platforms
+description: 'Learn what platform engineering is, how internal developer platforms (IDPs) work, and how platform teams reduce cognitive load and improve developer productivity.'
 slug: platform-engineering-explained
 date: 2025-12-26T00:00:00Z
 author: bmf-san

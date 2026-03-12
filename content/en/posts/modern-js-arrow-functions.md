@@ -1,5 +1,6 @@
 ---
 title: 'Modern JS Talk: Arrow Functions'
+description: 'An in-depth look at Modern JS Talk: Arrow Functions, covering key concepts and practical insights.'
 slug: modern-js-arrow-functions
 date: 2017-12-25T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: "DB設計におけるNULL：よくある落とし穴とベストプラクティス"
+description: 'DB 設計における NULL の扱い方を解説。NULL を使う場面・避けるべき場面・よくある落とし穴とベストプラクティスをまとめます。'
 slug: null-in-db-design
 date: 2024-03-30T00:00:00Z
 author: bmf-san

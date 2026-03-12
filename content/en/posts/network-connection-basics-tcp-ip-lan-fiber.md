@@ -1,5 +1,6 @@
 ---
 title: 'Why Do Networks Connect? 2nd Edition: Essential Knowledge of TCP/IP, LAN, and Optical Fiber'
+description: 'A review and summary of "Why Do Networks Connect? 2nd Edition: Essential Knowledge of TCP/IP, LAN, and Optical Fiber", covering key takeaways and practical insights.'
 slug: network-connection-basics-tcp-ip-lan-fiber
 date: 2024-05-09T00:00:00Z
 author: bmf-san

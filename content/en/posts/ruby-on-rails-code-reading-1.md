@@ -1,5 +1,6 @@
 ---
 title: Ruby on Rails Code Reading Part 1 - Rails Startup
+description: 'A review and summary of "Ruby on Rails Code Reading Part 1 - Rails Startup", covering key takeaways and practical insights.'
 slug: ruby-on-rails-code-reading-1
 date: 2024-09-02T00:00:00Z
 author: bmf-san

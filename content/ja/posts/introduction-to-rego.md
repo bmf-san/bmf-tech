@@ -1,5 +1,6 @@
 ---
 title: Rego入門
+description: Rego入門について調査・整理したメモ。基本概念と重要ポイントを解説します。
 slug: introduction-to-rego
 date: 2025-07-31T00:00:00Z
 author: bmf-san

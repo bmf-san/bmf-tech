@@ -1,5 +1,6 @@
 ---
 title: Full-Text Search with MySQL
+description: An in-depth look at Full-Text Search with MySQL, covering key concepts and practical insights.
 slug: full-text-search-with-mysql
 date: 2023-04-30T00:00:00Z
 author: bmf-san

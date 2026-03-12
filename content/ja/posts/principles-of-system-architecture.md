@@ -1,5 +1,6 @@
 ---
 title: システムアーキテクチャ構築の原理~ITアーキテクトが持つべき3つの思考
+description: システムアーキテクチャ構築の原理~ITアーキテクトが持つべき3つの思考の手順と実践例を詳しく解説します。
 slug: principles-of-system-architecture
 date: 2025-07-07T00:00:00Z
 author: bmf-san

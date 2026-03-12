@@ -1,5 +1,6 @@
 ---
 title: Addressing Slow Mounting Issues in Docker for Mac
+description: A troubleshooting guide for Addressing Slow Mounting Issues in Docker for Mac, explaining the root cause and how to resolve it.
 slug: docker-mac-mount-slow-issue
 date: 2018-08-19T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: bmfと今年買ってよかったモノ
+description: bmfと今年買ってよかったモノ。個人的な振り返りとハイライトをまとめます。
 slug: bmf-best-purchases-of-the-year
 date: 2017-12-25T00:00:00Z
 author: bmf-san

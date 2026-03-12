@@ -1,5 +1,6 @@
 ---
 title: How to Split a Commit in Git
+description: An in-depth look at How to Split a Commit in Git, covering key concepts and practical insights.
 slug: git-split-commit
 date: 2021-06-01T00:00:00Z
 author: bmf-san

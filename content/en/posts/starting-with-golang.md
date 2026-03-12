@@ -1,5 +1,6 @@
 ---
 title: Starting Go Language
+description: An in-depth look at Starting Go Language, covering key concepts and practical insights.
 slug: starting-with-golang
 date: 2018-03-01T00:00:00Z
 author: bmf-san

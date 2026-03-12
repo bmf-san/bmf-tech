@@ -1,5 +1,6 @@
 ---
 title: Ansibleでリモートのファイルに書き込みをする
+description: Ansibleでリモートのファイルに書き込みをするについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: write-remote-file-ansible
 date: 2017-09-26T00:00:00Z
 author: bmf-san

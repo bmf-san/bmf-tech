@@ -1,5 +1,6 @@
 ---
 title: "DB設計のID設計：UUID vs 連番 vs ULID の選び方"
+description: 'DB 設計における ID の選び方を解説。UUID・連番（AUTO_INCREMENT）・ULID それぞれのトレードオフとユースケースを比較します。'
 slug: id-design-in-db
 date: 2024-03-30T00:00:00Z
 author: bmf-san

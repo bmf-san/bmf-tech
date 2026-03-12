@@ -1,5 +1,6 @@
 ---
 title: A Collection of Links for Reviewing gRPC and Protocol Buffers
+description: Personal reflections and highlights from A Collection of Links for Reviewing gRPC and Protocol Buffers.
 slug: grpc-protocol-buffers-review
 date: 2024-01-25T00:00:00Z
 author: bmf-san

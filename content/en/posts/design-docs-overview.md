@@ -1,5 +1,6 @@
 ---
 title: About Design Docs
+description: An in-depth exploration of About Design Docs, covering design principles, trade-offs, and practical applications.
 slug: design-docs-overview
 date: 2022-10-07T00:00:00Z
 author: bmf-san

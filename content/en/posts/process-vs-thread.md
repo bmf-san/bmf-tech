@@ -1,5 +1,6 @@
 ---
 title: "Processes vs Threads: Key Differences Every Developer Should Know"
+description: 'Understand the key differences between processes and threads—memory isolation, context switching costs, and when to use multi-processing vs multi-threading in your code.'
 slug: process-vs-thread
 date: 2018-06-25T00:00:00Z
 author: bmf-san

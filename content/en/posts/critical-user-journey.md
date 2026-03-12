@@ -1,5 +1,6 @@
 ---
 title: What is a Critical User Journey
+description: An in-depth look at What is a Critical User Journey, covering key concepts and practical insights.
 slug: critical-user-journey
 date: 2024-08-15T00:00:00Z
 author: bmf-san

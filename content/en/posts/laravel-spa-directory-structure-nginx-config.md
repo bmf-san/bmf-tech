@@ -1,5 +1,6 @@
 ---
 title: Directory Structure and Nginx Config for Integrating SPA with Laravel
+description: An in-depth look at Directory Structure and Nginx Config for Integrating SPA with Laravel, covering key concepts and practical insights.
 slug: laravel-spa-directory-structure-nginx-config
 date: 2017-10-01T00:00:00Z
 author: bmf-san

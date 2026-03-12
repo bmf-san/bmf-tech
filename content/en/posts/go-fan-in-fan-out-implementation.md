@@ -1,5 +1,6 @@
 ---
 title: Implementing Fan-In and Fan-Out in Go
+description: A step-by-step guide on Implementing Fan-In and Fan-Out in Go, with practical examples and configuration tips.
 slug: go-fan-in-fan-out-implementation
 date: 2023-08-21T00:00:00Z
 author: bmf-san

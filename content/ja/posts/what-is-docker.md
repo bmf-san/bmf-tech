@@ -1,5 +1,6 @@
 ---
 title: "Dockerとは？コンテナ入門の完全ガイド"
+description: 'Docker とは何か、コンテナ・イメージ・Dockerfile・コンテナランタイムの仕組みをはじめて学ぶ人向けに完全ガイドとして解説します。'
 slug: what-is-docker
 date: 2018-04-01T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: Preparing to Write Tests with SQLite in Laravel 5.4
+description: An in-depth look at Preparing to Write Tests with SQLite in Laravel 5.4, covering key concepts and practical insights.
 slug: laravel-5-4-sqlite-test-setup
 date: 2017-09-26T00:00:00Z
 author: bmf-san

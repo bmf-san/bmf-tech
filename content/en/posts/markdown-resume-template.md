@@ -1,5 +1,6 @@
 ---
 title: Created a Template to Manage Resumes and CVs with Markdown
+description: A step-by-step guide on Created a Template to Manage Resumes and CVs with Markdown, with practical examples and configuration tips.
 slug: markdown-resume-template
 date: 2025-07-16T00:00:00Z
 author: bmf-san

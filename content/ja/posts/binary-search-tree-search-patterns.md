@@ -1,5 +1,6 @@
 ---
 title: 2分探索木の探索パターンについて
+description: 2分探索木の探索パターンについてについて、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
 slug: binary-search-tree-search-patterns
 date: 2023-08-04T00:00:00Z
 author: bmf-san

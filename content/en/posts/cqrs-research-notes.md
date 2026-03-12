@@ -1,5 +1,6 @@
 ---
 title: "CQRS Explained: When to Use Command Query Responsibility Segregation"
+description: 'Learn what CQRS (Command Query Responsibility Segregation) is, how it differs from CRUD, and when applying it actually improves your system design and scalability.'
 slug: cqrs
 date: 2023-09-18T00:00:00Z
 author: bmf-san

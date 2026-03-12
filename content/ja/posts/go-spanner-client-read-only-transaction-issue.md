@@ -1,5 +1,6 @@
 ---
 title: goのspannerクライアントのReadOnlyTransactionでハマった
+description: goのspannerクライアントのReadOnlyTransactionでハマったについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: go-spanner-client-read-only-transaction-issue
 date: 2021-02-08T00:00:00Z
 author: bmf-san

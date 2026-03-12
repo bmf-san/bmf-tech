@@ -1,5 +1,6 @@
 ---
 title: Challenges Faced When Checking PHP 8.2 Compatibility with PHPCompatibility
+description: An in-depth look at Challenges Faced When Checking PHP 8.2 Compatibility with PHPCompatibility, covering key concepts and practical insights.
 slug: phpcompatibility-php82-compatibility-issues
 date: 2024-04-14T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: ソフトウェア開発の法則
+description: ソフトウェア開発の法則について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: software-development-principles
 date: 2018-05-07T00:00:00Z
 author: bmf-san

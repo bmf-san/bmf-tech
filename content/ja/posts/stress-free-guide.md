@@ -1,5 +1,6 @@
 ---
 title: ストレスフリー超大全
+description: ストレスフリー超大全について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: stress-free-guide
 date: 2023-02-06T00:00:00Z
 author: bmf-san

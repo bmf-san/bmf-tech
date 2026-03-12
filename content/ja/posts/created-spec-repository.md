@@ -1,5 +1,6 @@
 ---
 title: specリポジトリを作った
+description: specリポジトリを作ったについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: created-spec-repository
 date: 2025-08-11T00:00:00Z
 author: bmf-san

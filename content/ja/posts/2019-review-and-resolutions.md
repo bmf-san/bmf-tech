@@ -1,5 +1,6 @@
 ---
 title: 2019年の振り返りと来年の抱負
+description: 2019年の振り返りと来年の抱負。個人的な振り返りとハイライトをまとめます。
 slug: 2019-review-and-resolutions
 date: 2019-12-21T00:00:00Z
 author: bmf-san

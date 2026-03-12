@@ -1,5 +1,6 @@
 ---
 title: JavaScriptで始めるアルゴリズム
+description: JavaScriptで始めるアルゴリズムについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: javascript-algorithms-introduction
 date: 2018-07-13T00:00:00Z
 author: bmf-san

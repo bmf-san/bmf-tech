@@ -1,5 +1,6 @@
 ---
 title: Rubyのシンボルについて
+description: Rubyのシンボルについてについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: ruby-symbols
 date: 2024-05-14T00:00:00Z
 author: bmf-san

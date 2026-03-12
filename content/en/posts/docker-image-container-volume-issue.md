@@ -1,5 +1,6 @@
 ---
 title: Note on Volumes Not Being Deleted Even After Removing Docker Images and Containers
+description: An in-depth look at Note on Volumes Not Being Deleted Even After Removing Docker Images and Containers, covering key concepts and practical insights.
 slug: docker-image-container-volume-issue
 date: 2019-04-28T00:00:00Z
 author: bmf-san

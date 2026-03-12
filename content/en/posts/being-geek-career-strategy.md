@@ -1,5 +1,6 @@
 ---
 title: 'Being Geek: Career Strategies to Stay a Geek'
+description: 'An in-depth look at Being Geek: Career Strategies to Stay a Geek, covering key concepts and practical insights.'
 slug: being-geek-career-strategy
 date: 2017-12-23T00:00:00Z
 author: bmf-san

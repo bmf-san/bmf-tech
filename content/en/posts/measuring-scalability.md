@@ -1,5 +1,6 @@
 ---
 title: Measuring Scalability
+description: An in-depth look at Measuring Scalability, covering key concepts and practical insights.
 slug: measuring-scalability
 date: 2025-06-08T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: AWSのARNを覚える
+description: AWSのARNを覚えるについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: remember-aws-arn
 date: 2021-06-23T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: Why Interfaces Change Less Frequently Than Implementations
+description: A step-by-step guide on Why Interfaces Change Less Frequently Than Implementations, with practical examples and configuration tips.
 slug: interface-change-frequency
 date: 2025-10-18T00:00:00Z
 author: bmf-san

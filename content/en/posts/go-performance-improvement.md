@@ -1,5 +1,6 @@
 ---
 title: Improving Code Performance with Go
+description: An in-depth look at Improving Code Performance with Go, covering key concepts and practical insights.
 slug: go-performance-improvement
 date: 2023-06-12T00:00:00Z
 author: bmf-san

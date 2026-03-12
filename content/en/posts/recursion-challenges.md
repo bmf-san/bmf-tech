@@ -1,5 +1,6 @@
 ---
 title: Challenges with Recursion
+description: An in-depth look at Challenges with Recursion, covering key concepts and practical insights.
 slug: recursion-challenges
 date: 2023-07-08T00:00:00Z
 author: bmf-san

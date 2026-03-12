@@ -1,5 +1,6 @@
 ---
 title: TerraformとAnsibleを使ってKubernetes環境構築
+description: TerraformとAnsibleを使ってKubernetes環境構築の手順と実践例を詳しく解説します。
 slug: kubernetes-setup-with-terraform-ansible
 date: 2021-04-06T00:00:00Z
 author: bmf-san

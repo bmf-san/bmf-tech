@@ -1,5 +1,6 @@
 ---
 title: Created Git Shortcut Commands in .bashrc
+description: A step-by-step guide on Created Git Shortcut Commands in .bashrc, with practical examples and configuration tips.
 slug: create-git-shortcut-bashrc
 date: 2017-09-26T00:00:00Z
 author: bmf-san

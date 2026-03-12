@@ -1,5 +1,6 @@
 ---
 title: PostgreSQLにおけるCOLLATE（照合順序）について
+description: PostgreSQLにおけるCOLLATE（照合順序）についてについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: postgresql-collate-explained
 date: 2025-03-05T00:00:00Z
 author: bmf-san

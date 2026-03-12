@@ -1,5 +1,6 @@
 ---
 title: アルゴリズムとデータ構造 - リスト
+description: アルゴリズムとデータ構造 - リストについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: algorithms-data-structures-list
 date: 2019-10-18T00:00:00Z
 author: bmf-san

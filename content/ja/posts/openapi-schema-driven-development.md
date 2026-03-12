@@ -1,5 +1,6 @@
 ---
 title: OpenAPIを使ったスキーマ駆動開発
+description: OpenAPIを使ったスキーマ駆動開発について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: openapi-schema-driven-development
 date: 2024-01-19T00:00:00Z
 author: bmf-san

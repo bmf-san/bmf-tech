@@ -1,5 +1,6 @@
 ---
 title: Transaction Overview
+description: Research notes and a structured overview of Transaction Overview, summarizing key concepts and findings.
 slug: transaction-overview
 date: 2023-06-07T00:00:00Z
 author: bmf-san

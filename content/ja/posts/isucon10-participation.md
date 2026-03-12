@@ -1,5 +1,6 @@
 ---
 title: ISUCON10に参加してきた
+description: ISUCON10に参加してきたについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: isucon10-participation
 date: 2020-05-21T00:00:00Z
 author: bmf-san

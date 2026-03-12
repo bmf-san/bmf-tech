@@ -1,5 +1,6 @@
 ---
 title: Githubでレジュメを管理するようにした
+description: Githubでレジュメを管理するようにしたについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: github-resume-management
 date: 2023-06-07T00:00:00Z
 author: bmf-san

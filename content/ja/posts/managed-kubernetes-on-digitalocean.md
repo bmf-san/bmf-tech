@@ -1,5 +1,6 @@
 ---
 title: DigitalOceanでマネージドKubernetesを使ってみる
+description: DigitalOceanでマネージドKubernetesを使ってみるについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: managed-kubernetes-on-digitalocean
 date: 2021-03-07T00:00:00Z
 author: bmf-san

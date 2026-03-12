@@ -1,5 +1,6 @@
 ---
 title: "Linux Load Averageとは？読み方とパフォーマンス問題の診断"
+description: 'Linux の Load Average とは何か、3つの値の読み方・高負荷時の診断方法・CPU 使用率との違いを実践的に解説します。'
 slug: what-is-load-average
 date: 2025-07-07T00:00:00Z
 author: bmf-san

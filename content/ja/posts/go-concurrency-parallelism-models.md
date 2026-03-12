@@ -1,5 +1,6 @@
 ---
 title: Goの並行・並列処理モデルとgoroutineスケジューリング
+description: Goの並行・並列処理モデルとgoroutineスケジューリングについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: go-concurrency-parallelism-models
 date: 2025-06-14T00:00:00Z
 author: bmf-san

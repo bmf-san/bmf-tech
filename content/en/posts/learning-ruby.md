@@ -1,5 +1,6 @@
 ---
 title: Learning Ruby
+description: An in-depth look at Learning Ruby, covering key concepts and practical insights.
 slug: learning-ruby
 date: 2024-05-16T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: The UNIX Philosophy
+description: An in-depth look at The UNIX Philosophy, covering key concepts and practical insights.
 slug: thinking-unix
 date: 2018-05-18T00:00:00Z
 author: bmf-san

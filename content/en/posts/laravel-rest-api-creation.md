@@ -1,5 +1,6 @@
 ---
 title: Creating a Rest API with Laravel
+description: A step-by-step guide on Creating a Rest API with Laravel, with practical examples and configuration tips.
 slug: laravel-rest-api-creation
 date: 2017-09-26T00:00:00Z
 author: bmf-san

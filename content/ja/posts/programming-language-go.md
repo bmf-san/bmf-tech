@@ -1,5 +1,6 @@
 ---
 title: プログラミング言語Go
+description: プログラミング言語Goについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: programming-language-go
 date: 2017-03-12T00:00:00Z
 author: bmf-san

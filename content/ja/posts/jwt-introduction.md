@@ -1,5 +1,6 @@
 ---
 title: "JWTとは？安全なAPI認証のためのJSON Web Token解説"
+description: 'JWT（JSON Web Token）とは何か、署名の仕組み・クレームの構造・API 認証を安全に実装するためのベストプラクティスを解説します。'
 slug: jwt-introduction
 date: 2020-09-11T00:00:00Z
 author: bmf-san

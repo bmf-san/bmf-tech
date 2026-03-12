@@ -1,5 +1,6 @@
 ---
 title: Laws of Software Development
+description: An in-depth look at Laws of Software Development, covering key concepts and practical insights.
 slug: software-development-principles
 date: 2018-05-07T00:00:00Z
 author: bmf-san

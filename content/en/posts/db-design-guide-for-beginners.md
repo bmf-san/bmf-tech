@@ -1,5 +1,6 @@
 ---
 title: 'Mastering Database Design: A Comprehensive Guide for Beginners Who Want to Advance'
+description: 'An in-depth exploration of Mastering Database Design: A Comprehensive Guide for Beginners Who Want to Advance, covering design principles, trade-offs, and practical applications.'
 slug: db-design-guide-for-beginners
 date: 2024-04-11T00:00:00Z
 author: bmf-san

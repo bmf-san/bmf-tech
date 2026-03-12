@@ -1,5 +1,6 @@
 ---
 title: About Ruby Modules
+description: An in-depth look at About Ruby Modules, covering key concepts and practical insights.
 slug: ruby-modules
 date: 2024-05-15T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: 今年買ってよかったモノ
+description: 今年買ってよかったモノ。個人的な振り返りとハイライトをまとめます。
 slug: best-things-of-2018
 date: 2018-12-29T00:00:00Z
 author: bmf-san

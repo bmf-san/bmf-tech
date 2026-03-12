@@ -1,5 +1,6 @@
 ---
 title: "NULL in Database Design: Common Pitfalls and Best Practices"
+description: 'Learn how NULL works in relational databases, the three-valued logic problem, common query mistakes with NULL, and schema design strategies to avoid NULL-related bugs.'
 slug: null-in-db-design
 date: 2024-03-30T00:00:00Z
 author: bmf-san

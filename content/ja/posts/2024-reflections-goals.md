@@ -1,5 +1,6 @@
 ---
 title: 2024年の振り返りと来年の抱負
+description: 2024年の振り返りと来年の抱負。個人的な振り返りとハイライトをまとめます。
 slug: 2024-reflections-goals
 date: 2025-01-02T00:00:00Z
 author: bmf-san

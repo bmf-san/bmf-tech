@@ -1,5 +1,6 @@
 ---
 title: Installing Older Versions with Homebrew
+description: A step-by-step guide on Installing Older Versions with Homebrew, with practical examples and configuration tips.
 slug: homebrew-installing-previous-versions
 date: 2022-10-30T00:00:00Z
 author: bmf-san

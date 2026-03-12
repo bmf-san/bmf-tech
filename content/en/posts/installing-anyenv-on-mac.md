@@ -1,5 +1,6 @@
 ---
 title: Installing anyenv on Mac
+description: A step-by-step guide on Installing anyenv on Mac, with practical examples and configuration tips.
 slug: installing-anyenv-on-mac
 date: 2017-10-01T00:00:00Z
 author: bmf-san

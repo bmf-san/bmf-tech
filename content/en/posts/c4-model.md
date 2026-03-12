@@ -1,5 +1,6 @@
 ---
 title: What is the C4 Model
+description: An in-depth exploration of What is the C4 Model, covering design principles, trade-offs, and practical applications.
 slug: c4-model
 date: 2024-08-15T00:00:00Z
 author: bmf-san

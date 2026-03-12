@@ -1,5 +1,6 @@
 ---
 title: Excluding Table Names from Laravel's Many-to-Many Relations
+description: 'An in-depth look at Excluding Table Names from Laravel''s Many-to-Many Relations, covering key concepts and practical insights.'
 slug: laravel-many-to-many-table-name-customization
 date: 2017-10-01T00:00:00Z
 author: bmf-san

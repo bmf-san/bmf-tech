@@ -1,5 +1,6 @@
 ---
 title: "Architecture Decision Records (ADR) Explained: How to Document Technical Decisions"
+description: 'Learn what Architecture Decision Records (ADRs) are, why documenting technical decisions matters, and how to write effective ADRs for your engineering team.'
 slug: adr-architecture-decision-record
 date: 2022-10-10T00:00:00Z
 author: bmf-san

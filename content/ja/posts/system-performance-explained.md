@@ -1,5 +1,6 @@
 ---
 title: 絵で見てわかるシステムパフォーマンスの仕組み
+description: 絵で見てわかるシステムパフォーマンスの仕組みについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: system-performance-explained
 date: 2018-07-12T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: bmf-techを支える技術
+description: bmf-techを支える技術について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: bmf-tech-supporting-technologies
 date: 2022-08-08T00:00:00Z
 author: bmf-san

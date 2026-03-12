@@ -1,5 +1,6 @@
 ---
 title: TerraformとAnsibleを使ってVPSを構築する
+description: TerraformとAnsibleを使ってVPSを構築するの手順と実践例を詳しく解説します。
 slug: terraform-ansible-vps-setup
 date: 2020-12-20T00:00:00Z
 author: bmf-san

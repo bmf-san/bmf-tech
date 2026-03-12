@@ -1,5 +1,6 @@
 ---
 title: VPS×Docker Compose×Docker Machine×Golang×Nginx×Let's Encryptでの本番運用
+description: '「VPS×Docker Compose×Docker Machine×Golang×Nginx×Let''s Encryptでの本番運用」のまとめと読書メモ。重要なポイントと実践的な知見を整理します。'
 slug: vps-docker-compose-golang-nginx-lets-encrypt
 date: 2020-06-07T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: Service Downtime Due to File System Capacity Shortage
+description: An in-depth look at Service Downtime Due to File System Capacity Shortage, covering key concepts and practical insights.
 slug: service-outage-due-to-storage
 date: 2023-05-07T00:00:00Z
 author: bmf-san

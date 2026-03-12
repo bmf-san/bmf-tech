@@ -1,5 +1,6 @@
 ---
 title: Learning Design Patterns with PHP - Template Method ~Filling in the Blanks~
+description: An in-depth exploration of Learning Design Patterns with PHP - Template Method ~Filling in the Blanks~, covering design principles, trade-offs, and practical applications.
 slug: php-design-patterns-template-method
 date: 2017-10-01T00:00:00Z
 author: bmf-san

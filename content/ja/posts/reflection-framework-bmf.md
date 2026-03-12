@@ -1,5 +1,6 @@
 ---
 title: 選択と集中を促す振り返りフレームワーク「bmf」
+description: 選択と集中を促す振り返りフレームワーク「bmf」。個人的な振り返りとハイライトをまとめます。
 slug: reflection-framework-bmf
 date: 2025-07-23T00:00:00Z
 author: bmf-san

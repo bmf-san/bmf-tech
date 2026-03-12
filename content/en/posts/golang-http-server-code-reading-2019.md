@@ -1,5 +1,6 @@
 ---
 title: Code Reading of Golang's HTTP Server
+description: 'A review and summary of "Code Reading of Golang''s HTTP Server", covering key takeaways and practical insights.'
 slug: golang-http-server-code-reading-2019
 date: 2019-11-03T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: Modern JS Talk──Promise
+description: An in-depth look at Modern JS Talk──Promise, covering key concepts and practical insights.
 slug: modern-js-promises
 date: 2017-12-29T00:00:00Z
 author: bmf-san

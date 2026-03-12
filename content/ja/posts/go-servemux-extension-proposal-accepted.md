@@ -1,5 +1,6 @@
 ---
 title: GoでServeMuxの機能拡張を提案するProposalがAcceptedになった
+description: GoでServeMuxの機能拡張を提案するProposalがAcceptedになったについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: go-servemux-extension-proposal-accepted
 date: 2023-08-31T00:00:00Z
 author: bmf-san

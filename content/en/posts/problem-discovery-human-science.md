@@ -1,5 +1,6 @@
 ---
 title: Is the Light On? The Human Science of Problem Discovery
+description: A troubleshooting guide for Is the Light On? The Human Science of Problem Discovery, explaining the root cause and how to resolve it.
 slug: problem-discovery-human-science
 date: 2023-05-19T00:00:00Z
 author: bmf-san

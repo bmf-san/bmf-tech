@@ -1,5 +1,6 @@
 ---
 title: Creating a Follow Button with React
+description: A step-by-step guide on Creating a Follow Button with React, with practical examples and configuration tips.
 slug: react-follow-button-implementation
 date: 2017-10-01T00:00:00Z
 author: bmf-san

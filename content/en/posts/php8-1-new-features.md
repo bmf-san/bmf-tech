@@ -1,5 +1,6 @@
 ---
 title: Catching Up on New Features from PHP 7.4 to PHP 8.1
+description: An in-depth look at Catching Up on New Features from PHP 7.4 to PHP 8.1, covering key concepts and practical insights.
 slug: php8-1-new-features
 date: 2022-03-21T00:00:00Z
 author: bmf-san

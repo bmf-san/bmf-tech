@@ -1,5 +1,6 @@
 ---
 title: HTTP and SSL/TLS
+description: An in-depth look at HTTP and SSL/TLS, covering key concepts and practical insights.
 slug: http-ssl-tls
 date: 2018-04-18T00:00:00Z
 author: bmf-san

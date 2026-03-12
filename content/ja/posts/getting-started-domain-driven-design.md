@@ -1,5 +1,6 @@
 ---
 title: ドメイン駆動設計をはじめよう―ソフトウェアの実装と事業戦略を結びつける実践技法
+description: ドメイン駆動設計をはじめよう―ソフトウェアの実装と事業戦略を結びつける実践技法の手順と実践例を詳しく解説します。
 slug: getting-started-domain-driven-design
 date: 2026-02-20T00:00:00Z
 author: bmf-san

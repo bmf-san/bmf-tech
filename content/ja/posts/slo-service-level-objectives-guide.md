@@ -1,5 +1,6 @@
 ---
 title: SLO サービスレベル目標 ―SLI、SLO、エラーバジェット導入の実践ガイド
+description: 「SLO サービスレベル目標 ―SLI、SLO、エラーバジェット導入の実践ガイド」のまとめと読書メモ。重要なポイントと実践的な知見を整理します。
 slug: slo-service-level-objectives-guide
 date: 2024-07-20T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: Adjacency List and Adjacency Matrix
+description: An in-depth look at Adjacency List and Adjacency Matrix, covering key concepts and practical insights.
 slug: adjacency-list-matrix
 date: 2023-07-29T00:00:00Z
 author: bmf-san

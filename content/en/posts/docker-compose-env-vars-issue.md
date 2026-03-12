@@ -1,5 +1,6 @@
 ---
 title: Environment Variables Specified in docker-compose.yml Not Accessible During Container Build
+description: Research notes and a structured overview of Environment Variables Specified in docker-compose.yml Not Accessible During Container Build, summarizing key concepts and findings.
 slug: docker-compose-env-vars-issue
 date: 2020-11-14T00:00:00Z
 author: bmf-san

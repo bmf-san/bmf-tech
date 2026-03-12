@@ -1,5 +1,6 @@
 ---
 title: Google Cloud認定アソシエイトクラウドエンジニアを受験した
+description: Google Cloud認定アソシエイトクラウドエンジニアを受験したについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: google-cloud-associate-engineer-exam
 date: 2023-06-07T00:00:00Z
 author: bmf-san

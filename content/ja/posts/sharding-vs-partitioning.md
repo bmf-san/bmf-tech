@@ -1,5 +1,6 @@
 ---
 title: "シャーディング vs パーティショニング：違いと使い分け"
+description: 'シャーディングとパーティショニングの違いを解説。水平分割・垂直分割の使い分けとデータベーススケーリング戦略をまとめます。'
 slug: sharding-vs-partitioning
 date: 2023-06-03T00:00:00Z
 author: bmf-san

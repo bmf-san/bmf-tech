@@ -1,5 +1,6 @@
 ---
 title: 'セキュア・バイ・デザイン: 安全なソフトウェア設計'
+description: 'セキュア・バイ・デザイン: 安全なソフトウェア設計について、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。'
 slug: secure-by-design-software
 date: 2024-09-07T00:00:00Z
 author: bmf-san

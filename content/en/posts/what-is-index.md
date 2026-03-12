@@ -1,5 +1,6 @@
 ---
 title: What is a Database Index? How It Works and When You Need It
+description: 'Understand how database indexes work internally—B-tree and hash structures—when to add or avoid indexes, and how to measure index effectiveness using EXPLAIN.'
 slug: what-is-index
 date: 2024-04-01T00:00:00Z
 author: bmf-san

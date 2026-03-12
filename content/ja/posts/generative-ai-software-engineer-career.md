@@ -1,5 +1,6 @@
 ---
 title: 生成AIとソフトウェアエンジニアのキャリア
+description: 生成AIとソフトウェアエンジニアのキャリアについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: generative-ai-software-engineer-career
 date: 2025-02-12T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: エンジニアが学ぶ会計システムの「知識」と「技術」
+description: エンジニアが学ぶ会計システムの「知識」と「技術」について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: accounting-system-knowledge-skills
 date: 2024-04-04T00:00:00Z
 author: bmf-san

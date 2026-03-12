@@ -1,5 +1,6 @@
 ---
 title: Building & Pushing Docker Images with GoReleaser
+description: A step-by-step guide on Building & Pushing Docker Images with GoReleaser, with practical examples and configuration tips.
 slug: goreleaser-docker-image-build-push
 date: 2024-05-29T00:00:00Z
 author: bmf-san

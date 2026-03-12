@@ -1,5 +1,6 @@
 ---
 title: ゴリラで学ぶソフトウェアの法則10選
+description: ゴリラで学ぶソフトウェアの法則10選について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: gorilla-software-principles
 date: 2019-04-17T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: "Database ID Design: UUID vs Auto Increment vs ULID — Which to Choose?"
+description: 'Compare auto-increment integers, UUIDs, and ULIDs as database IDs. Learn the trade-offs in performance, sortability, and distributed system compatibility.'
 slug: id-design-in-db
 date: 2024-03-30T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: Laravelをinstallerでカンタンインストール
+description: Laravelをinstallerでカンタンインストールについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: laravel-installer-easy-installation
 date: 2016-05-15T00:00:00Z
 author: bmf-san

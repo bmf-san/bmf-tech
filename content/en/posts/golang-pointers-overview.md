@@ -1,5 +1,6 @@
 ---
 title: "Go Pointers Explained: When to Use Them and Common Pitfalls"
+description: 'Understand Go pointers clearly—when to use pointer receivers vs value receivers, how pointers affect memory and performance, and the most common mistakes to avoid.'
 slug: golang-pointers-overview
 date: 2018-11-13T00:00:00Z
 author: bmf-san

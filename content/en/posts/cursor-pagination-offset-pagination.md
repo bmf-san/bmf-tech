@@ -1,5 +1,6 @@
 ---
 title: "Cursor Pagination vs Offset Pagination: Which Should You Choose?"
+description: 'Compare cursor-based and offset-based pagination. Learn the performance implications, when to use each approach, and how to implement cursor pagination in SQL.'
 slug: cursor-pagination-offset-pagination
 date: 2024-10-08T00:00:00Z
 author: bmf-san

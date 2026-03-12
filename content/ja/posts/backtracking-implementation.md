@@ -1,5 +1,6 @@
 ---
 title: バックトラッキングの実装
+description: バックトラッキングの実装の手順と実践例を詳しく解説します。
 slug: backtracking-implementation
 date: 2023-06-23T00:00:00Z
 author: bmf-san

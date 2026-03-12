@@ -1,5 +1,6 @@
 ---
 title: Data-Oriented Application Design
+description: An in-depth exploration of Data-Oriented Application Design, covering design principles, trade-offs, and practical applications.
 slug: data-oriented-application-design
 date: 2023-02-27T00:00:00Z
 author: bmf-san

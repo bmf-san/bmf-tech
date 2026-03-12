@@ -1,5 +1,6 @@
 ---
 title: Participated in ISUCON11
+description: An in-depth look at Participated in ISUCON11, covering key concepts and practical insights.
 slug: participated-in-isucon11
 date: 2021-10-21T00:00:00Z
 author: bmf-san

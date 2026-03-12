@@ -1,5 +1,6 @@
 ---
 title: Command to Generate ADR Template Files
+description: An in-depth look at Command to Generate ADR Template Files, covering key concepts and practical insights.
 slug: adr-template-command
 date: 2023-11-10T00:00:00Z
 author: bmf-san

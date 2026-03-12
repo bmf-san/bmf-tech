@@ -1,5 +1,6 @@
 ---
 title: Customer Success
+description: An in-depth look at Customer Success, covering key concepts and practical insights.
 slug: customer-success
 date: 2024-04-16T00:00:00Z
 author: bmf-san

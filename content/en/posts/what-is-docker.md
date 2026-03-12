@@ -1,5 +1,6 @@
 ---
 title: What is Docker? A Beginner's Complete Guide to Containers
+description: 'Learn what Docker is and how containers differ from VMs. Covers images, containers, Dockerfile basics, docker-compose, and how Docker fits into modern DevOps workflows.'
 slug: what-is-docker
 date: 2018-04-01T00:00:00Z
 author: bmf-san

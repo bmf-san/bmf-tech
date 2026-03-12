@@ -1,5 +1,6 @@
 ---
 title: React＋marked＋highlight
+description: React＋marked＋highlightについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: react-marked-highlight-integration
 date: 2017-10-01T00:00:00Z
 author: bmf-san

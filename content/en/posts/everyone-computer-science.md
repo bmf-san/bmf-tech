@@ -1,5 +1,6 @@
 ---
 title: Everyone's Computer Science
+description: 'An in-depth look at Everyone''s Computer Science, covering key concepts and practical insights.'
 slug: everyone-computer-science
 date: 2019-03-25T00:00:00Z
 author: bmf-san

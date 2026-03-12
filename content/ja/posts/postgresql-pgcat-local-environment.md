@@ -1,5 +1,6 @@
 ---
 title: PostgreSQLとPgCatをローカルで素振りできる環境を作った
+description: PostgreSQLとPgCatをローカルで素振りできる環境を作ったについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: postgresql-pgcat-local-environment
 date: 2024-09-15T00:00:00Z
 author: bmf-san

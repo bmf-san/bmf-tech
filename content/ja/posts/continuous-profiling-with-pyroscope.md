@@ -1,5 +1,6 @@
 ---
 title: PyroscopeでContinuous Profiling
+description: PyroscopeでContinuous Profilingについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: continuous-profiling-with-pyroscope
 date: 2023-05-07T00:00:00Z
 author: bmf-san

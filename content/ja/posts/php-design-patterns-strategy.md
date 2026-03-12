@@ -1,5 +1,6 @@
 ---
 title: PHPで学ぶデザインパターン - Strategy
+description: PHPで学ぶデザインパターン - Strategyについて、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
 slug: php-design-patterns-strategy
 date: 2018-12-09T00:00:00Z
 author: bmf-san

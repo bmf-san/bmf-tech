@@ -1,5 +1,6 @@
 ---
 title: "Clean Architecture in Go: A Practical Implementation Guide"
+description: 'Learn how to implement Clean Architecture in Go with practical code. Covers layer separation, dependency rules, directory structure, and real-world trade-offs.'
 slug: golang-clean-architecture-introduction
 date: 2019-08-18T00:00:00Z
 author: bmf-san

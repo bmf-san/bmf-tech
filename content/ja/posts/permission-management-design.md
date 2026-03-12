@@ -1,5 +1,6 @@
 ---
 title: 権限管理の設計について調べてみた
+description: 権限管理の設計について調べてみたについて、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
 slug: permission-management-design
 date: 2024-05-22T00:00:00Z
 author: bmf-san

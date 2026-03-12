@@ -1,5 +1,6 @@
 ---
 title: "Deployment Strategies Explained: Blue-Green, Canary, Rolling, and More"
+description: 'Compare blue-green, canary, rolling, and recreate deployment strategies. Learn when to use each one and how they minimize downtime and reduce deployment risk.'
 slug: deployment-strategies
 date: 2023-06-03T00:00:00Z
 author: bmf-san

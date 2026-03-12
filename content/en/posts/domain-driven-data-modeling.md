@@ -1,5 +1,6 @@
 ---
 title: Driving Domain with Data Modeling - Towards Distributed and Loosely Coupled Core Systems
+description: An in-depth exploration of Driving Domain with Data Modeling - Towards Distributed and Loosely Coupled Core Systems, covering design principles, trade-offs, and practical applications.
 slug: domain-driven-data-modeling
 date: 2025-08-11T00:00:00Z
 author: bmf-san

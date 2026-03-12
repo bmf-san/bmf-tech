@@ -1,5 +1,6 @@
 ---
 title: dockerコマンドをcronで実行しようとしたらthe input device is not a TTY
+description: dockerコマンドをcronで実行しようとしたらthe input device is not a TTYについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: docker-cron-tty-issue
 date: 2023-03-17T00:00:00Z
 author: bmf-san

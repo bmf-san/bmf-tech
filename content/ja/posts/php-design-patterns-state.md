@@ -1,5 +1,6 @@
 ---
 title: PHPで学ぶデザインパターン - Stateパターン
+description: PHPで学ぶデザインパターン - Stateパターンについて、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
 slug: php-design-patterns-state
 date: 2019-04-20T00:00:00Z
 author: bmf-san

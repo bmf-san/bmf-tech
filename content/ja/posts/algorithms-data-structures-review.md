@@ -1,5 +1,6 @@
 ---
 title: アルゴリズムとデータ構造の基本の復習
+description: 「アルゴリズムとデータ構造の基本の復習」のまとめと読書メモ。重要なポイントと実践的な知見を整理します。
 slug: algorithms-data-structures-review
 date: 2023-06-28T00:00:00Z
 author: bmf-san

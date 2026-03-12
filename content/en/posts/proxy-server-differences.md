@@ -1,5 +1,6 @@
 ---
 title: "Forward Proxy vs Reverse Proxy vs API Gateway: A Clear Comparison"
+description: 'Understand the differences between forward proxies, reverse proxies, and API gateways. Learn what each one does and which is right for your network architecture.'
 slug: proxy-server-differences
 date: 2023-06-03T00:00:00Z
 author: bmf-san

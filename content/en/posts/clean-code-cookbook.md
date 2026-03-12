@@ -1,5 +1,6 @@
 ---
 title: 'Clean Code Cookbook: Recipes for Improving Code Design and Quality'
+description: 'A review and summary of "Clean Code Cookbook: Recipes for Improving Code Design and Quality", covering key takeaways and practical insights.'
 slug: clean-code-cookbook
 date: 2025-10-26T00:00:00Z
 author: bmf-san

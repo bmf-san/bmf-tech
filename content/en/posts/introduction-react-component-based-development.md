@@ -1,5 +1,6 @@
 ---
 title: 'Introduction to React: Component-Based Web Frontend Development'
+description: 'Research notes and a structured overview of Introduction to React: Component-Based Web Frontend Development, summarizing key concepts and findings.'
 slug: introduction-react-component-based-development
 date: 2016-08-04T00:00:00Z
 author: bmf-san

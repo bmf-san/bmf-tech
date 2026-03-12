@@ -1,5 +1,6 @@
 ---
 title: アーキテクチャ・アーキテクト・アーキテクティングについて
+description: アーキテクチャ・アーキテクト・アーキテクティングについてについて、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
 slug: architecture-architecting
 date: 2025-07-14T00:00:00Z
 author: bmf-san

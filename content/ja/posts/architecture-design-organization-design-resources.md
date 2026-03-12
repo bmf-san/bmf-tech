@@ -1,5 +1,6 @@
 ---
 title: アーキテクチャ設計と組織設計についての記事漁り
+description: アーキテクチャ設計と組織設計についての記事漁りについて、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
 slug: architecture-design-organization-design-resources
 date: 2023-12-27T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: Rubyの特異クラス・特異メソッドについて
+description: Rubyの特異クラス・特異メソッドについてについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: ruby-singleton-class-methods
 date: 2024-05-15T00:00:00Z
 author: bmf-san

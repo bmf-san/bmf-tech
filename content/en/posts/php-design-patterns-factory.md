@@ -1,5 +1,6 @@
 ---
 title: Learning Design Patterns with PHP - Factory, Factory Method, Abstract Factory
+description: An in-depth exploration of Learning Design Patterns with PHP - Factory, Factory Method, Abstract Factory, covering design principles, trade-offs, and practical applications.
 slug: php-design-patterns-factory
 date: 2018-12-01T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: Learning Software Testing Techniques for the First Time
+description: An in-depth look at Learning Software Testing Techniques for the First Time, covering key concepts and practical insights.
 slug: introduction-software-testing
 date: 2018-05-04T00:00:00Z
 author: bmf-san

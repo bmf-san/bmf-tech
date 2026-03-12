@@ -1,5 +1,6 @@
 ---
 title: Exploring Permission Management Design
+description: An in-depth exploration of Exploring Permission Management Design, covering design principles, trade-offs, and practical applications.
 slug: permission-management-design
 date: 2024-05-22T00:00:00Z
 author: bmf-san

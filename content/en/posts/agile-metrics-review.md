@@ -1,5 +1,6 @@
 ---
 title: Reading Agile Metrics
+description: 'A review and summary of "Reading Agile Metrics", covering key takeaways and practical insights.'
 slug: agile-metrics-review
 date: 2022-12-17T00:00:00Z
 author: bmf-san

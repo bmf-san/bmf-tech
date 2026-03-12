@@ -1,5 +1,6 @@
 ---
 title: ゼロからわかるUML超入門
+description: ゼロからわかるUML超入門について調査・整理したメモ。基本概念と重要ポイントを解説します。
 slug: uml-introduction-from-zero
 date: 2016-07-01T00:00:00Z
 author: bmf-san

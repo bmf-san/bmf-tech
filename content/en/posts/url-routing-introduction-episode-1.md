@@ -1,5 +1,6 @@
 ---
 title: Introduction to Building Your Own URL Routing - Episode 1
+description: Research notes and a structured overview of Introduction to Building Your Own URL Routing - Episode 1, summarizing key concepts and findings.
 slug: url-routing-introduction-episode-1
 date: 2019-12-14T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: 'Web Distribution Technology: Utilizing HTTP Cache, Reverse Proxy, and CDN'
+description: 'An in-depth look at Web Distribution Technology: Utilizing HTTP Cache, Reverse Proxy, and CDN, covering key concepts and practical insights.'
 slug: web-streaming-technology
 date: 2026-01-05T00:00:00Z
 author: bmf-san

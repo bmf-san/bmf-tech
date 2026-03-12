@@ -1,5 +1,6 @@
 ---
 title: ISUCON11に参加した
+description: ISUCON11に参加したについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: participated-in-isucon11
 date: 2021-10-21T00:00:00Z
 author: bmf-san

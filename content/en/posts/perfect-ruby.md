@@ -1,5 +1,6 @@
 ---
 title: Perfect Ruby
+description: An in-depth look at Perfect Ruby, covering key concepts and practical insights.
 slug: perfect-ruby
 date: 2024-05-04T00:00:00Z
 author: bmf-san

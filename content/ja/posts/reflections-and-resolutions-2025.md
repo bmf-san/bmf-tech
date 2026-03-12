@@ -1,5 +1,6 @@
 ---
 title: 2025年の振り返りと抱負
+description: 2025年の振り返りと抱負。個人的な振り返りとハイライトをまとめます。
 slug: reflections-and-resolutions-2025
 date: 2025-12-29T00:00:00Z
 author: bmf-san

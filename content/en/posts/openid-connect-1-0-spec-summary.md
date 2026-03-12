@@ -1,5 +1,6 @@
 ---
 title: Summary of OpenID Connect 1.0 Specifications
+description: Research notes and a structured overview of Summary of OpenID Connect 1.0 Specifications, summarizing key concepts and findings.
 slug: openid-connect-1-0-spec-summary
 date: 2026-01-23T00:00:00Z
 author: bmf-san

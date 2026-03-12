@@ -1,5 +1,6 @@
 ---
 title: Introduction to Building a Data Analysis Platform
+description: Research notes and a structured overview of Introduction to Building a Data Analysis Platform, summarizing key concepts and findings.
 slug: data-analysis-infrastructure-introduction
 date: 2020-06-19T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: 信頼性のパターンについて
+description: 信頼性のパターンについてについて、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
 slug: reliability-patterns
 date: 2024-10-30T00:00:00Z
 author: bmf-san

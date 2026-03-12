@@ -1,5 +1,6 @@
 ---
 title: パーフェクトRuby
+description: パーフェクトRubyについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: perfect-ruby
 date: 2024-05-04T00:00:00Z
 author: bmf-san

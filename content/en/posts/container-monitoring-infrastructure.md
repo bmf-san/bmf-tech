@@ -1,5 +1,6 @@
 ---
 title: Building a Monitoring Platform with Containers
+description: A step-by-step guide on Building a Monitoring Platform with Containers, with practical examples and configuration tips.
 slug: container-monitoring-infrastructure
 date: 2021-12-18T00:00:00Z
 author: bmf-san

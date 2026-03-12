@@ -1,5 +1,6 @@
 ---
 title: 開発者とアーキテクトのためのコミュニケーションガイド ―パターンで学ぶ情報伝達術
+description: 「開発者とアーキテクトのためのコミュニケーションガイド ―パターンで学ぶ情報伝達術」のまとめと読書メモ。重要なポイントと実践的な知見を整理します。
 slug: communication-guide-developers-architects
 date: 2025-05-10T00:00:00Z
 author: bmf-san

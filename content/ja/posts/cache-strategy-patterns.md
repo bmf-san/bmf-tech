@@ -1,5 +1,6 @@
 ---
 title: キャッシュ戦略の基本的なパターンについて
+description: 「キャッシュ戦略の基本的なパターンについて」のまとめと読書メモ。重要なポイントと実践的な知見を整理します。
 slug: cache-strategy-patterns
 date: 2025-08-03T00:00:00Z
 author: bmf-san

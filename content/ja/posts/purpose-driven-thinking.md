@@ -1,5 +1,6 @@
 ---
 title: 目的ドリブンの思考法
+description: 目的ドリブンの思考法について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: purpose-driven-thinking
 date: 2025-12-29T00:00:00Z
 author: bmf-san

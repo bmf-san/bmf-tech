@@ -1,5 +1,6 @@
 ---
 title: "Kubernetes Components Explained: Pods, Nodes, and the Control Plane"
+description: 'Understand the core Kubernetes components—pods, nodes, API server, scheduler, etcd, and kubelet—and how they work together to run containerized workloads.'
 slug: kubernetes-components
 date: 2024-03-27T00:00:00Z
 author: bmf-san

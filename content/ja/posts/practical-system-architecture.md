@@ -1,5 +1,6 @@
 ---
 title: システムアーキテクチャ構築の実践手法
+description: システムアーキテクチャ構築の実践手法の手順と実践例を詳しく解説します。
 slug: practical-system-architecture
 date: 2025-07-17T00:00:00Z
 author: bmf-san

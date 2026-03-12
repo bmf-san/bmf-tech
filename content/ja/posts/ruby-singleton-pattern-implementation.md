@@ -1,5 +1,6 @@
 ---
 title: Rubyにおけるシングルトンパターンの実装方法
+description: Rubyにおけるシングルトンパターンの実装方法の手順と実践例を詳しく解説します。
 slug: ruby-singleton-pattern-implementation
 date: 2025-01-31T00:00:00Z
 author: bmf-san

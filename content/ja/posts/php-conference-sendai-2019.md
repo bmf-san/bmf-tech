@@ -1,5 +1,6 @@
 ---
 title: PHPカンファレンス仙台2019に参加した
+description: PHPカンファレンス仙台2019に参加したについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: php-conference-sendai-2019
 date: 2019-01-27T00:00:00Z
 author: bmf-san

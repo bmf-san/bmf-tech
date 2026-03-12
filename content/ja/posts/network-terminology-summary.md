@@ -1,5 +1,6 @@
 ---
 title: ネットワーク用語まとめ
+description: ネットワーク用語まとめについて調査・整理したメモ。基本概念と重要ポイントを解説します。
 slug: network-terminology-summary
 date: 2020-11-02T00:00:00Z
 author: bmf-san

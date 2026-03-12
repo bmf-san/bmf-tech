@@ -1,5 +1,6 @@
 ---
 title: System Failure Terms Starting with 'F'
+description: 'An in-depth look at System Failure Terms Starting with ''F, covering key concepts and practical insights.'
 slug: system-failure-terms-starting-with-f
 date: 2021-06-05T00:00:00Z
 author: bmf-san

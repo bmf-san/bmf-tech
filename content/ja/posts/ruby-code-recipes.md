@@ -1,5 +1,6 @@
 ---
 title: Ruby コードレシピ集
+description: Ruby コードレシピ集について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: ruby-code-recipes
 date: 2024-10-20T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: Understand Properly Without Just Going by Feel! A Tutorial Guide to Using OAuth2.0
+description: An in-depth look at Understand Properly Without Just Going by Feel! A Tutorial Guide to Using OAuth2.0, covering key concepts and practical insights.
 slug: oauth2-tutorial-guide-for-understanding
 date: 2021-10-05T00:00:00Z
 author: bmf-san

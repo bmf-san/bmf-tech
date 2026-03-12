@@ -1,5 +1,6 @@
 ---
 title: Contextual Logging with slog
+description: An in-depth look at Contextual Logging with slog, covering key concepts and practical insights.
 slug: slog-contextual-logging
 date: 2023-10-08T00:00:00Z
 author: bmf-san

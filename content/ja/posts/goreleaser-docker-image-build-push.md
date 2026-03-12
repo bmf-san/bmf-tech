@@ -1,5 +1,6 @@
 ---
 title: GoReleaserを使ってDocker Imageをbuild&pushする
+description: GoReleaserを使ってDocker Imageをbuild&pushするについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: goreleaser-docker-image-build-push
 date: 2024-05-29T00:00:00Z
 author: bmf-san

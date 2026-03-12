@@ -1,5 +1,6 @@
 ---
 title: Cannot Start MySQL 8.0.17 Container on M1 Mac
+description: An in-depth look at Cannot Start MySQL 8.0.17 Container on M1 Mac, covering key concepts and practical insights.
 slug: mysql-container-not-starting-on-m1-mac
 date: 2021-09-05T00:00:00Z
 author: bmf-san

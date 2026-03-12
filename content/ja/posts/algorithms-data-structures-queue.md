@@ -1,5 +1,6 @@
 ---
 title: アルゴリズムとデータ構造 - キュー
+description: アルゴリズムとデータ構造 - キューについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: algorithms-data-structures-queue
 date: 2019-11-17T00:00:00Z
 author: bmf-san

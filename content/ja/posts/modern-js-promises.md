@@ -1,5 +1,6 @@
 ---
 title: モダンなJSの話──Promise
+description: モダンなJSの話──Promiseについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: modern-js-promises
 date: 2017-12-29T00:00:00Z
 author: bmf-san

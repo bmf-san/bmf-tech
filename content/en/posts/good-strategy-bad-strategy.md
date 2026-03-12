@@ -1,5 +1,6 @@
 ---
 title: Good Strategy, Bad Strategy
+description: An in-depth look at Good Strategy, Bad Strategy, covering key concepts and practical insights.
 slug: good-strategy-bad-strategy
 date: 2024-08-12T00:00:00Z
 author: bmf-san

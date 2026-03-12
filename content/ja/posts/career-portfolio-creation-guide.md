@@ -1,5 +1,6 @@
 ---
 title: キャリアポートフォリオ作成ガイド
+description: 「キャリアポートフォリオ作成ガイド」のまとめと読書メモ。重要なポイントと実践的な知見を整理します。
 slug: career-portfolio-creation-guide
 date: 2026-02-18T00:00:00Z
 author: bmf-san

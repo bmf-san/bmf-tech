@@ -1,5 +1,6 @@
 ---
 title: Notes on Building a Notification Platform
+description: Research notes and a structured overview of Notes on Building a Notification Platform, summarizing key concepts and findings.
 slug: notification-infrastructure-notes
 date: 2023-08-28T00:00:00Z
 author: bmf-san

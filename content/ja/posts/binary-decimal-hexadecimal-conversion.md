@@ -1,5 +1,6 @@
 ---
 title: 2進数、10進数、16進数の変換について
+description: 2進数、10進数、16進数の変換についてについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: binary-decimal-hexadecimal-conversion
 date: 2018-11-27T00:00:00Z
 author: bmf-san

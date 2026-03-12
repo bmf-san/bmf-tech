@@ -1,5 +1,6 @@
 ---
 title: 2022年の振り返りと来年の抱負
+description: 2022年の振り返りと来年の抱負。個人的な振り返りとハイライトをまとめます。
 slug: 2022-review-and-goals
 date: 2022-12-28T00:00:00Z
 author: bmf-san

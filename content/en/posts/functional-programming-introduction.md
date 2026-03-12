@@ -1,5 +1,6 @@
 ---
 title: Understand! Functional Programming
+description: An in-depth look at Understand! Functional Programming, covering key concepts and practical insights.
 slug: functional-programming-introduction
 date: 2025-08-31T00:00:00Z
 author: bmf-san

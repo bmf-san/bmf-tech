@@ -1,5 +1,6 @@
 ---
 title: How to Solve It
+description: An in-depth look at How to Solve It, covering key concepts and practical insights.
 slug: solving-problems
 date: 2024-11-04T00:00:00Z
 author: bmf-san

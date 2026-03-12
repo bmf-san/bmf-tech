@@ -1,5 +1,6 @@
 ---
 title: Algorithm and Data Structures - Insertion Sort
+description: An in-depth look at Algorithm and Data Structures - Insertion Sort, covering key concepts and practical insights.
 slug: algorithms-data-structures-insertion-sort
 date: 2020-02-01T00:00:00Z
 author: bmf-san

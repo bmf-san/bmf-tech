@@ -1,5 +1,6 @@
 ---
 title: vscodeでgoのLanguage Serverを有効にしたらコード定義元ジャンプができなくなった
+description: vscodeでgoのLanguage Serverを有効にしたらコード定義元ジャンプができなくなったについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: vscode-go-language-server-issue
 date: 2020-07-19T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: Resources Referenced for Creating an HTTP Router
+description: A step-by-step guide on Resources Referenced for Creating an HTTP Router, with practical examples and configuration tips.
 slug: http-router-resources
 date: 2023-10-30T00:00:00Z
 author: bmf-san

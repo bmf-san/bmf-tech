@@ -1,5 +1,6 @@
 ---
 title: ssh接続セットアップメモ
+description: ssh接続セットアップメモについて調査・整理したメモ。基本概念と重要ポイントを解説します。
 slug: ssh-connection-setup-notes
 date: 2018-09-18T00:00:00Z
 author: bmf-san

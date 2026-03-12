@@ -1,5 +1,6 @@
 ---
 title: Golangの開発環境を構築
+description: Golangの開発環境を構築の手順と実践例を詳しく解説します。
 slug: golang-development-environment
 date: 2018-04-07T00:00:00Z
 author: bmf-san

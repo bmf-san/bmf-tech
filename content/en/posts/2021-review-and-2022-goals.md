@@ -1,5 +1,6 @@
 ---
 title: Reflection on 2021 and Goals for Next Year
+description: Personal reflections and highlights from Reflection on 2021 and Goals for Next Year.
 slug: 2021-review-and-2022-goals
 date: 2021-12-30T00:00:00Z
 author: bmf-san

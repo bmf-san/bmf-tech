@@ -1,5 +1,6 @@
 ---
 title: Stress-Free Mastery
+description: An in-depth look at Stress-Free Mastery, covering key concepts and practical insights.
 slug: stress-free-guide
 date: 2023-02-06T00:00:00Z
 author: bmf-san

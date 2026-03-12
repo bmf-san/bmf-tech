@@ -1,5 +1,6 @@
 ---
 title: Template MethodパターンとStarategyパターンについて
+description: Template MethodパターンとStarategyパターンについてについて、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
 slug: template-method-strategy-patterns
 date: 2023-08-20T00:00:00Z
 author: bmf-san

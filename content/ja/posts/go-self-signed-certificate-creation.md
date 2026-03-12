@@ -1,5 +1,6 @@
 ---
 title: Goでオレオレ証明書がほしいときの一手
+description: Goでオレオレ証明書がほしいときの一手について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: go-self-signed-certificate-creation
 date: 2024-02-16T00:00:00Z
 author: bmf-san

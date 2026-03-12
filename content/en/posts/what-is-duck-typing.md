@@ -1,5 +1,6 @@
 ---
 title: What is Duck Typing? How Dynamic Type Checking Works in Python, Ruby, and Go
+description: 'Learn what duck typing is, how structural typing enables flexible code, and how Python, Ruby, and Go each implement duck typing—with real code examples for each language.'
 slug: what-is-duck-typing
 date: 2018-05-07T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: Globis MBA Critical Thinking
+description: An in-depth look at Globis MBA Critical Thinking, covering key concepts and practical insights.
 slug: globis-mba-critical-thinking
 date: 2015-05-19T00:00:00Z
 author: bmf-san
