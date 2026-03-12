@@ -73,9 +73,11 @@
   {{end}}
 
   {{/* Article Body */}}
+  {{template "ad-unit" $}}
   <article class="prose prose-full mb-12">
     {{.HTMLContent}}
   </article>
+  {{template "ad-unit" $}}
 
   {{/* Tags */}}
   {{if .FrontMatter.Tags}}
