@@ -230,14 +230,11 @@ description: "Kenta Takeuchi のプロフィールページ"
 
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bmf-san/sleyt@latest/docs/public/css/index.css">
-<link rel="stylesheet" href="/assets/css/custom.css">
 ```
 
 - **`sleyt`** (v1.3.2): CSS リセット・デザイントークン変数（`--color-slate-*` / `--text-primary` 等）・レイアウトユーティリティ（`container`, `flex`, `grid`, `gap-*`, `px-*` 等）・タイポグラフィ（`text-sm`, `font-bold` など）・ダークモード対応を提供。`pre[style]`（chroma シンタックスハイライト）と `.adsbygoogle` のダークモード補正も含む
-- **`assets/css/custom.css`**: sleyt ユーティリティクラスを付与できない要素（Markdown レンダリング後の `.article-content` 内 `pre/code/blockquote/table/img/h1-h6` 等）と、サイト固有クラス（`.article-row`, `.tag-badge`, `.site-main`, `.nav-brand`, `.footer-link` 等）を定義
+- CSS の追加が必要な場合は sleyt リポジトリ側に追加してバージョンを上げる（`assets/css/custom.css` は現在空）
 - インライン `style=""` は Google AdSense 必須属性 (`<ins style="display:block">`) のみ許容
-
-> `assets/css/custom.css` は gohan のビルド時に `assets/` の内容が `public/assets/css/custom.css` へ自動コピーされる。
 
 ### テンプレート一覧
 
