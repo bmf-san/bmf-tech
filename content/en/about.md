@@ -8,7 +8,7 @@ draft: false
 translation_key: about
 ---
 
-![Profile](/profile.png)
+![Profile](/assets/profile.png)
 
 ## Kenta Takeuchi
 
