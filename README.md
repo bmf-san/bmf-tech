@@ -133,6 +133,10 @@ translation_key: hello
 
 手動デプロイ: GitHub Actions の `workflow_dispatch` からトリガー可能。
 
+## コントリビューション
+
+[CONTRIBUTING.md](CONTRIBUTING.md) を参照。
+
 ## ライセンス
 
 コンテンツ (content/) は著作権保持。ソースコード (themes/) は MIT ライセンス。
