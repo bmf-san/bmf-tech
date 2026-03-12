@@ -20,6 +20,15 @@
 <meta property="og:url" content="{{.Config.Site.BaseURL}}{{$article.URL}}">
 <meta property="og:description" content="{{if $article.FrontMatter.Description}}{{$article.FrontMatter.Description}}{{else}}{{.Config.Site.Description}}{{end}}">
 <meta property="og:image" content="{{.Config.Site.BaseURL}}/ogp/{{$article.FrontMatter.Slug}}.png">
+<meta property="og:site_name" content="{{.Config.Site.Title}}">
+{{- $ogLocale := "en_US"}}{{if eq .CurrentLocale "ja"}}{{- $ogLocale = "ja_JP"}}{{end}}
+<meta property="og:locale" content="{{$ogLocale}}">
+{{- range $article.Translations}}{{- $altLocale := "en_US"}}{{if eq .Locale "ja"}}{{- $altLocale = "ja_JP"}}{{end}}
+<meta property="og:locale:alternate" content="{{$altLocale}}">
+{{end -}}
+<meta property="article:published_time" content="{{formatDate "2006-01-02" $article.FrontMatter.Date}}">
+<meta name="twitter:card" content="summary_large_image">
+{{- with index .Config.Theme.Params "twitter"}}<meta name="twitter:site" content="@{{.}}">{{- end}}
 {{if $article.URL -}}
 <link rel="canonical" href="{{.Config.Site.BaseURL}}{{$article.URL}}">
 {{if $article.Locale -}}
@@ -31,12 +40,29 @@
 <link rel="alternate" hreflang="x-default" href="{{.Config.Site.BaseURL}}{{$xdefault}}">
 {{- end}}
 {{- end}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{$article.FrontMatter.Title}}",
+  "datePublished": "{{formatDate "2006-01-02" $article.FrontMatter.Date}}",
+  "dateModified": "{{formatDate "2006-01-02" $article.FrontMatter.Date}}",
+  "url": "{{.Config.Site.BaseURL}}{{$article.URL}}",
+  "image": "{{.Config.Site.BaseURL}}/ogp/{{$article.FrontMatter.Slug}}.png",
+  "author": {"@type": "Person", "name": "{{index .Config.Theme.Params "author"}}"},
+  "publisher": {"@type": "Organization", "name": "{{.Config.Site.Title}}"}{{if $article.FrontMatter.Description}},
+  "description": "{{$article.FrontMatter.Description}}"{{end}}
+}
+</script>
 {{- else}}
 <meta property="og:title" content="{{.Config.Site.Title}}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{.Config.Site.BaseURL}}">
 <meta property="og:description" content="{{.Config.Site.Description}}">
 <meta property="og:image" content="{{.Config.Site.BaseURL}}/assets/images/ogp-default.png">
+<meta property="og:site_name" content="{{.Config.Site.Title}}">
+<meta name="twitter:card" content="summary">
+{{- with index .Config.Theme.Params "twitter"}}<meta name="twitter:site" content="@{{.}}">{{- end}}
 {{- end}}
 {{block "extra-style" .}}{{end}}
 {{- with index .Config.Theme.Params "ga_id"}}
