@@ -3,6 +3,8 @@
 [bmf-tech.com](https://bmf-tech.com) のソースリポジトリ。
 [gohan](https://github.com/bmf-san/gohan) 製の静的サイトで、Cloudflare Pages でホスティングしている。
 
+![OGP Default](assets/images/ogp-default.png)
+
 ## 技術スタック
 
 | レイヤー | 使用技術 |
