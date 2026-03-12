@@ -60,6 +60,7 @@
         {{if gt $i 0}}
         {{- $cardImg := index $a.FrontMatter.Extra "image"}}
         {{- if not $cardImg}}{{$cardImg = printf "/ogp/%s.png" $a.FrontMatter.Slug}}{{end}}
+        {{if eq $i 3}}{{template "ad-unit-list-mobile" $}}{{end}}
         <a href="{{$a.URL}}" class="card">
           <img src="{{$cardImg}}" alt="{{$a.FrontMatter.Title}}" class="w-full object-cover rounded-t max-h-40">
           <div class="card-body">
@@ -142,8 +143,6 @@
           </div>
         </div>
       </div>
-
-      {{template "ad-unit" $}}
 
     </aside>
 
