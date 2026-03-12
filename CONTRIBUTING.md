@@ -43,20 +43,10 @@ draft: false
 - CSS の追加が必要な場合は sleyt リポジトリ側に追加し、バージョンを上げる
 - テンプレートにインライン `<style>` タグは追加しない
 
-### ローカル確認
-
-```bash
-make build   # ビルド
-make serve   # http://localhost:1313 でプレビュー
-```
-
 ## ブランチ・PR
 
 - `main` への直接 push は禁止（ブランチ保護あり）
 - ブランチ名の目安: `feat/`, `fix/`, `docs/`, `design/`
 - PR はレビュー不要（セルフマージ可）
 
-## ライセンス
-
-- `content/` 以下の記事コンテンツは著作権保持・無断転載禁止
-- `themes/` 以下のソースコードは MIT ライセンス
+ライセンスについては [README.md](README.md#ライセンス) を参照。

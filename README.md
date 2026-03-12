@@ -59,49 +59,9 @@ make build
 
 # ローカルサーバーを起動 (http://localhost:1313)
 make serve
-
-# 新しい日本語記事を作成
-make new-ja TITLE="記事タイトル" SLUG=article-slug
-
-# 新しい英語記事を作成
-make new-en TITLE="Article Title" SLUG=article-slug
 ```
 
-## 記事の書き方
-
-日本語記事は `content/ja/posts/`、英語記事は `content/en/posts/` に Markdown ファイルを置く。
-
-フロントマターのフォーマット:
-
-```yaml
----
-title: "記事タイトル"
-slug: article-slug
-date: 2026-01-15
-author: bmf-san
-categories:
-  - カテゴリ名
-tags:
-  - タグ1
-  - タグ2
-description: "記事の説明"
-translation_key: article-slug  # 翻訳記事がある場合に設定
-draft: false
----
-```
-
-## 翻訳記事の紐付け
-
-`translation_key` を同じ値にすることで JA/EN 記事がリンクされる。
-`hreflang` タグは自動生成される。
-
-```yaml
-# content/ja/posts/hello.md
-translation_key: hello
-
-# content/en/posts/hello.md
-translation_key: hello
-```
+記事の作成・フロントマター・ブランチ運用については [CONTRIBUTING.md](CONTRIBUTING.md) を参照。
 
 ## URL 構造
 
