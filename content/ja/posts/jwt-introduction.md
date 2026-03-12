@@ -1,5 +1,5 @@
 ---
-title: JWTとは
+title: "JWTとは？安全なAPI認証のためのJSON Web Token解説"
 slug: jwt-introduction
 date: 2020-09-11T00:00:00Z
 author: bmf-san

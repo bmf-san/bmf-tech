@@ -1,5 +1,5 @@
 ---
-title: About Cursor Pagination and Offset Pagination
+title: "Cursor Pagination vs Offset Pagination: Which Should You Choose?"
 slug: cursor-pagination-offset-pagination
 date: 2024-10-08T00:00:00Z
 author: bmf-san

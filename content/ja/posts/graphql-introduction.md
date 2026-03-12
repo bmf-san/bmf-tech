@@ -1,5 +1,5 @@
 ---
-title: GraphQLについて
+title: "GraphQLとは？実例で学ぶ完全ガイド"
 slug: graphql-introduction
 date: 2023-11-09T00:00:00Z
 author: bmf-san

@@ -1,5 +1,5 @@
 ---
-title: What is an Index?
+title: What is a Database Index? How It Works and When You Need It
 slug: what-is-index
 date: 2024-04-01T00:00:00Z
 author: bmf-san

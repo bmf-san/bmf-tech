@@ -1,5 +1,5 @@
 ---
-title: Overview of Container Technology
+title: "Container Technology Explained: How Docker and OCI Containers Work"
 slug: container-technology-overview
 date: 2023-06-05T00:00:00Z
 author: bmf-san

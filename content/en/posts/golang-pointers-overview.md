@@ -1,5 +1,5 @@
 ---
-title: Overview of Golang Pointers
+title: "Go Pointers Explained: When to Use Them and Common Pitfalls"
 slug: golang-pointers-overview
 date: 2018-11-13T00:00:00Z
 author: bmf-san

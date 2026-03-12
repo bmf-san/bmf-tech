@@ -1,5 +1,5 @@
 ---
-title: What is Team Topologies?
+title: What is Team Topologies? How to Structure Engineering Teams
 slug: team-topologies-introduction
 date: 2026-01-09T00:00:00Z
 author: bmf-san

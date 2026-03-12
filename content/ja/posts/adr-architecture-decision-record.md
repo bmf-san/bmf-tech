@@ -1,5 +1,5 @@
 ---
-title: ADR（Architecture Decision Record）について
+title: "ADR（アーキテクチャ決定記録）とは？技術的意思決定の記録方法"
 slug: adr-architecture-decision-record
 date: 2022-10-10T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
-title: Open Policy Agentについて
-slug: about-open-policy-agent
+title: "Open Policy Agent (OPA)とは？ポリシー・アズ・コードの実践ガイド"
+slug: open-policy-agent
 date: 2025-05-13T00:00:00Z
 author: bmf-san
 categories:

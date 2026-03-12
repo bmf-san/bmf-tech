@@ -1,5 +1,5 @@
 ---
-title: CAP定理とPACELC定理について
+title: "CAP定理とは？分散データベースのトレードオフを解説"
 slug: cap-theorem-pacelc-theorem
 date: 2025-08-02T00:00:00Z
 author: bmf-san

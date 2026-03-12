@@ -1,5 +1,5 @@
 ---
-title: What is Duck Typing
+title: What is Duck Typing? How Dynamic Type Checking Works in Python, Ruby, and Go
 slug: what-is-duck-typing
 date: 2018-05-07T00:00:00Z
 author: bmf-san

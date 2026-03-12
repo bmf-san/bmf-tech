@@ -1,5 +1,5 @@
 ---
-title: About SLI, SLO, and SLA
+title: "SLI, SLO, and SLA Explained: A Practical Guide for Engineers"
 slug: sli-slo-sla-explained
 date: 2022-09-10T00:00:00Z
 author: bmf-san

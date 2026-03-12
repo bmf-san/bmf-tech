@@ -1,5 +1,5 @@
 ---
-title: What is Docker
+title: What is Docker? A Beginner's Complete Guide to Containers
 slug: what-is-docker
 date: 2018-04-01T00:00:00Z
 author: bmf-san

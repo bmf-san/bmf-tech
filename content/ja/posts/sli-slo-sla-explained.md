@@ -1,5 +1,5 @@
 ---
-title: SLI・SLO・SLAについて
+title: "SLI・SLO・SLAを解説：エンジニアのための実践ガイド"
 slug: sli-slo-sla-explained
 date: 2022-09-10T00:00:00Z
 author: bmf-san

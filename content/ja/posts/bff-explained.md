@@ -1,5 +1,5 @@
 ---
-title: BFFについて
+title: "BFF（Backend For Frontend）とは？メリットと実装ガイド"
 slug: bff-explained
 date: 2023-08-29T00:00:00Z
 author: bmf-san

@@ -1,5 +1,5 @@
 ---
-title: Differences Between Scrum Master and Product Owner
+title: "Scrum Master vs Product Owner: Roles and Responsibilities Compared"
 slug: scrum-master-product-owner-differences
 date: 2022-09-04T00:00:00Z
 author: bmf-san

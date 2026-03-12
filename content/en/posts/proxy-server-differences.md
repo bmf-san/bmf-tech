@@ -1,5 +1,5 @@
 ---
-title: Differences Between Forward Proxy, Reverse Proxy, and Gateway Server
+title: "Forward Proxy vs Reverse Proxy vs API Gateway: A Clear Comparison"
 slug: proxy-server-differences
 date: 2023-06-03T00:00:00Z
 author: bmf-san

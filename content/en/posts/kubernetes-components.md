@@ -1,5 +1,5 @@
 ---
-title: About Kubernetes Components
+title: "Kubernetes Components Explained: Pods, Nodes, and the Control Plane"
 slug: kubernetes-components
 date: 2024-03-27T00:00:00Z
 author: bmf-san

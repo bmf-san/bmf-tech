@@ -1,5 +1,5 @@
 ---
-title: What is JWT
+title: What is JWT? JSON Web Tokens Explained for Secure API Authentication
 slug: jwt-introduction
 date: 2020-09-11T00:00:00Z
 author: bmf-san

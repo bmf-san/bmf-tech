@@ -1,5 +1,5 @@
 ---
-title: About NULL in Database Design
+title: "NULL in Database Design: Common Pitfalls and Best Practices"
 slug: null-in-db-design
 date: 2024-03-30T00:00:00Z
 author: bmf-san

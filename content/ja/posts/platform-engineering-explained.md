@@ -1,5 +1,5 @@
 ---
-title: プラットフォーム・エンジニアリングとは何か
+title: "プラットフォームエンジニアリングとは？内部開発者プラットフォームの構築"
 slug: platform-engineering-explained
 date: 2025-12-26T00:00:00Z
 author: bmf-san

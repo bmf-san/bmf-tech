@@ -1,5 +1,5 @@
 ---
-title: About Service Mesh
+title: What is a Service Mesh? How Istio and Linkerd Work Explained
 slug: service-mesh-overview
 date: 2023-10-29T00:00:00Z
 author: bmf-san

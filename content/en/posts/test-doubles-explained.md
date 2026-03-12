@@ -1,5 +1,5 @@
 ---
-title: What is a Test Double?
+title: "Test Doubles Explained: Mocks, Stubs, Fakes, and Spies"
 slug: test-doubles-explained
 date: 2025-10-18T00:00:00Z
 author: bmf-san

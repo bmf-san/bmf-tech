@@ -1,5 +1,5 @@
 ---
-title: What is Platform Engineering?
+title: What is Platform Engineering? Building Internal Developer Platforms
 slug: platform-engineering-explained
 date: 2025-12-26T00:00:00Z
 author: bmf-san

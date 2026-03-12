@@ -1,5 +1,5 @@
 ---
-title: スクラムマスターとプロダクトオーナーの違いについて
+title: "スクラムマスター vs プロダクトオーナー：役割と責任の比較"
 slug: scrum-master-product-owner-differences
 date: 2022-09-04T00:00:00Z
 author: bmf-san

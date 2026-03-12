@@ -1,5 +1,5 @@
 ---
-title: N+1問題とは
+title: "N+1問題とは？Go/Railsでの検出と解決方法"
 slug: what-is-n-plus-one-problem
 date: 2018-05-12T00:00:00Z
 author: bmf-san

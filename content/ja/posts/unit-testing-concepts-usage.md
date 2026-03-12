@@ -1,5 +1,5 @@
 ---
-title: 単体テストの考え方／使い方
+title: "単体テストのベストプラクティス：開発者のための実践ガイド"
 slug: unit-testing-concepts-usage
 date: 2024-05-21T00:00:00Z
 author: bmf-san

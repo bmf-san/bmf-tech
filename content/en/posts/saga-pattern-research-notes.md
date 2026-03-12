@@ -1,6 +1,6 @@
 ---
-title: Notes on the Saga Pattern
-slug: saga-pattern-research-notes
+title: "The Saga Pattern Explained: Managing Distributed Transactions in Microservices"
+slug: saga-pattern
 date: 2023-09-17T00:00:00Z
 author: bmf-san
 categories:

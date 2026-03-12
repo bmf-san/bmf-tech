@@ -1,5 +1,5 @@
 ---
-title: ダック・タイピングとは
+title: "ダック・タイピングとは？Python・Ruby・Goの動的型付けを解説"
 slug: what-is-duck-typing
 date: 2018-05-07T00:00:00Z
 author: bmf-san
