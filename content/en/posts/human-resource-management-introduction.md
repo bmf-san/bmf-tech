@@ -8,8 +8,11 @@ categories:
 tags:
   - HR
   - Labor
-  - Books
+  - Book Review
 translation_key: human-resource-management-introduction
+books:
+  - asin: "4799326120"
+    title: "4799326120"
 ---
 
 

@@ -49,7 +49,7 @@
 - name: Binary Search Tree
 - name: Bitcoin
 - name: Book
-- name: Books
+- name: Book Review
 - name: Bridge Pattern
 - name: Bubble Sort
 - name: Burp Suite
@@ -156,7 +156,6 @@
 - name: GitHub Actions
 - name: Go
 - name: GoF
-- name: Goals
 - name: Golang
 - name: Google Analytics
 - name: Google Chrome Extension
@@ -223,7 +222,6 @@
 - name: Linear Search
 - name: Link Collection
 - name: Linked List
-- name: Links
 - name: Linux
 - name: Linux Capabilities
 - name: Liskov Substitution Principle
@@ -328,7 +326,6 @@
 - name: Recursion
 - name: Redis
 - name: Redux
-- name: Reflection
 - name: Reflection and Aspirations
 - name: Reflection and Goals
 - name: Reflection and Resolutions
@@ -471,7 +468,6 @@
 - name: google chrome extension
 - name: gopls
 - name: grep
-- name: heap
 - name: highlight.js
 - name: highlightjs
 - name: history-api
@@ -499,7 +495,6 @@
 - name: npm
 - name: os
 - name: phpunit
-- name: process
 - name: pundit
 - name: rbenv
 - name: react-router
@@ -516,12 +511,10 @@
 - name: sql
 - name: ssh
 - name: sshd
-- name: stack
 - name: superagent
 - name: tee
 - name: termios
 - name: textlint
-- name: thread
 - name: tidalcycles
 - name: tmux
 - name: union
@@ -534,7 +527,7 @@
 - name: Code Quality
 - name: Organizational Design
 - name: Singleton Pattern
-- name: 本
+- name: 書評
 - name: 会計
 - name: グラフ
 - name: 権限管理
@@ -588,7 +581,6 @@
 - name: unixコマンド
 - name: unix commands
 - name: URLルーティング
-- name: URL routing
 - name: さくらのVPS
 - name: Vulnerability
 - name: 設計

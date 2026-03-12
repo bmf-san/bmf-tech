@@ -6,12 +6,15 @@ author: bmf-san
 categories:
   - アーキテクチャ
 tags:
-  - 本
+  - 書評
   - 認証
   - 認可
   - OIDC
   - OAuth
 translation_key: digital-identity-overview
+books:
+  - asin: "4814400985"
+    title: "デジタルアイデンティティのすべて―安全かつユーザー中心のアイデンティティシステムを実現するための知識"
 ---
 
 

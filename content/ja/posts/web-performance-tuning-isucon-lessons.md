@@ -8,8 +8,11 @@ categories:
 tags:
   - システムパフォーマンス
   - ISUCON
-  - 本
+  - 書評
 translation_key: web-performance-tuning-isucon-lessons
+books:
+  - asin: "4297128462"
+    title: "達人が教えるWebパフォーマンスチューニング 〜ISUCONから学ぶ高速化の実践"
 ---
 
 

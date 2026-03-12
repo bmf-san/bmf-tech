@@ -6,8 +6,11 @@ author: bmf-san
 categories:
   - Business
 tags:
-  - Books
+  - Book Review
 translation_key: concrete-abstract-intelligence
+books:
+  - asin: "4907623100"
+    title: "具体と抽象 ―世界が変わって見える知性のしくみ"
 ---
 
 

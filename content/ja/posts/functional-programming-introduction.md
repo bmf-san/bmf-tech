@@ -7,8 +7,11 @@ categories:
   - アプリケーション
 tags:
   - 関数型
-  - 本
+  - 書評
 translation_key: functional-programming-introduction
+books:
+  - asin: "4798179809"
+    title: "なっとく！関数型プログラミング"
 ---
 
 

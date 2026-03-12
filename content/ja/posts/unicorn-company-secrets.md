@@ -6,10 +6,13 @@ author: bmf-san
 categories:
   - マネジメント
 tags:
-  - 本
+  - 書評
   - ユニコーン
   - スクラム
 translation_key: unicorn-company-secrets
+books:
+  - asin: "4873119464"
+    title: "ユニコーン企業のひみつ ―Spotifyで学んだソフトウェアづくりと働き方"
 ---
 
 

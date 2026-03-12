@@ -7,8 +7,11 @@ categories:
   - アーキテクチャ
 tags:
   - システム設計
-  - 本
+  - 書評
 translation_key: system-design-interview
+books:
+  - asin: "4802614063"
+    title: "システム設計の面接試験"
 ---
 
 

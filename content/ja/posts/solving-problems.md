@@ -6,9 +6,12 @@ author: bmf-san
 categories:
   - ビジネス
 tags:
-  - 本
+  - 書評
   - 思考法
 translation_key: solving-problems
+books:
+  - asin: "4621045938"
+    title: "いかにして問題をとくか"
 ---
 
 

@@ -7,8 +7,11 @@ categories:
   - アプリケーション
 tags:
   - ロジカルシンキング
-  - 本
+  - 書評
 translation_key: programming-brain-training
+books:
+  - asin: "4822297942"
+    title: "プログラミング脳をこれから鍛える本"
 ---
 
 

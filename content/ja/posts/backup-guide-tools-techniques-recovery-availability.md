@@ -6,9 +6,12 @@ author: bmf-san
 categories:
   - 運用
 tags:
-  - 本
+  - 書評
   - バックアップ
 translation_key: backup-guide-tools-techniques-recovery-availability
+books:
+  - asin: "4798188387"
+    title: "実務で役立つ バックアップの教科書 基本の考え方からツール活用・差分管理・世代管理・データ保全・リストア・リカバリー・可用性の確保まで"
 ---
 
 

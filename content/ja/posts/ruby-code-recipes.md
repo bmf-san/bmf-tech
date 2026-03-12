@@ -7,8 +7,11 @@ categories:
   - アプリケーション
 tags:
   - Ruby
-  - 本
+  - 書評
 translation_key: ruby-code-recipes
+books:
+  - asin: "B0DCBVWPP7"
+    title: "Ruby コードレシピ集"
 ---
 
 

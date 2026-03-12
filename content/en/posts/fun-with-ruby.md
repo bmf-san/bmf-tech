@@ -4,11 +4,14 @@ slug: fun-with-ruby
 date: 2024-05-04T00:00:00Z
 author: bmf-san
 categories:
-  - Applications
+  - Application
 tags:
   - Ruby
-  - Books
+  - Book Review
 translation_key: fun-with-ruby
+books:
+  - asin: "4797399848"
+    title: "たのしいRuby"
 ---
 
 

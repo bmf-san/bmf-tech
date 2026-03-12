@@ -7,9 +7,12 @@ categories:
   - ビジネス
 tags:
   - ロジカルシンキング
-  - 本
+  - 書評
   - クリティカルシンキング
 translation_key: logical-thinking
+books:
+  - asin: "4492531122"
+    title: "ロジカル・シンキング"
 ---
 
 

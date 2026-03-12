@@ -7,8 +7,11 @@ categories:
   - Operating Systems
 tags:
   - UNIX
-  - Books
+  - Book Review
 translation_key: thinking-unix
+books:
+  - asin: "4274064069"
+    title: "UNIXという考え方"
 ---
 
 

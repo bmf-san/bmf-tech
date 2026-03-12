@@ -8,8 +8,11 @@ categories:
 tags:
   - アジャイル
   - スクラム
-  - 本
+  - 書評
 translation_key: agile-samurai
+books:
+  - asin: "4274068560"
+    title: "アジャイルサムライ"
 ---
 
 

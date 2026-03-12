@@ -63,14 +63,14 @@ test.describe('Tags index /tags/', () => {
   });
 });
 
-test.describe('Tag page /tags/Golang/', () => {
+test.describe('Tag page /tags/golang/', () => {
   test('loads and has article list', async ({ page }) => {
-    await page.goto('/tags/Golang/');
+    await page.goto('/tags/golang/');
     await expect(page.locator('a.card').first()).toBeVisible();
   });
 
   test('article links point to /ja/posts/ or /posts/', async ({ page }) => {
-    await page.goto('/tags/Golang/');
+    await page.goto('/tags/golang/');
     const href = await page.locator('a.card').first().getAttribute('href');
     expect(href).toMatch(/\/posts\//);
   });
@@ -127,14 +127,14 @@ test.describe('Categories index /ja/categories/', () => {
   });
 });
 
-test.describe('Category page /ja/categories/OS/', () => {
+test.describe('Category page /ja/categories/os/', () => {
   test('loads and has article list', async ({ page }) => {
-    await page.goto('/ja/categories/OS/');
+    await page.goto('/ja/categories/os/');
     await expect(page.locator('a.card').first()).toBeVisible();
   });
 
   test('article links are present', async ({ page }) => {
-    await page.goto('/ja/categories/OS/');
+    await page.goto('/ja/categories/os/');
     const links = page.locator('a.card');
     expect(await links.count()).toBeGreaterThan(0);
   });
@@ -228,8 +228,8 @@ test.describe('JA article tag links use /ja/tags/ prefix', () => {
     expect(tagHref).toMatch(/^\/ja\/tags\//);
   });
 
-  test('/ja/tags/CTO/ returns 200', async ({ page }) => {
-    const res = await page.goto('/ja/tags/CTO/');
+  test('/ja/tags/cto/ returns 200', async ({ page }) => {
+    const res = await page.goto('/ja/tags/cto/');
     expect(res?.status()).toBe(200);
   });
 });

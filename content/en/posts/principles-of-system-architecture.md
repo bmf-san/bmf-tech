@@ -10,9 +10,12 @@ tags:
   - Architecture Strategy
   - Architecture
   - Architect
-  - Books
+  - Book Review
 description: A must-read book for those involved in architecture design.
 translation_key: principles-of-system-architecture
+books:
+  - asin: "4798116424"
+    title: "システムアーキテクチャ構築の原理~ITアーキテクトが持つべき3つの思考"
 ---
 
 

@@ -8,8 +8,11 @@ categories:
 tags:
   - DB
   - sql
-  - 本
+  - 書評
 translation_key: sql-master-guide-for-advanced-beginners
+books:
+  - asin: "4798157821"
+    title: "達人に学ぶSQL徹底指南書 第2版 初級者で終わりたくないあなたへ"
 ---
 
 

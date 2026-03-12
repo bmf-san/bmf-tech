@@ -8,8 +8,11 @@ categories:
 tags:
   - Organizational Theory
   - Organization Design
-  - Books
+  - Book Review
 translation_key: team-topologies-adaptive-organization-design
+books:
+  - asin: "4820729632"
+    title: "チームトポロジー 価値あるソフトウェアをすばやく届ける適応型組織設計"
 ---
 
 

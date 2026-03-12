@@ -10,7 +10,7 @@ tags:
   - OpenIDConnect
   - 認証
   - 認可
-  - 本
+  - 書評
 translation_key: understanding-oauth-oauth2-openid-connect-differences
 ---
 

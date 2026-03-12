@@ -6,12 +6,14 @@ author: bmf-san
 categories:
   - テスト
 tags:
-  - 本
+  - 書評
 translation_key: introduction-software-testing
+books:
+  - asin: "4822282511"
 ---
 
 
-[はじめて学ぶソフトウェアのテスト技法](https://amzn.to/3UM7CJ9を読んだ。
+[はじめて学ぶソフトウェアのテスト技法](https://amzn.to/3UM7CJ9)を読んだ。
 
 テストの方法について書かれている本で、ソフトウェアテストの基本パターンを学ぶことができる。
 

@@ -6,9 +6,12 @@ author: bmf-san
 categories:
   - Business
 tags:
-  - Books
+  - Book Review
   - Productivity Techniques
 translation_key: engineer-productive-learning
+books:
+  - asin: "4774198765"
+    title: "エンジニアの知的生産術 ──効率的に学び、整理し、アウトプットする"
 ---
 
 [Engineer’s Intellectual Productivity Techniques ── Learning, Organizing, and Outputting Efficiently](https://amzn.to/3UCJDuK) is a book I read.

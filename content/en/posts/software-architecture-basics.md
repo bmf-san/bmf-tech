@@ -7,8 +7,11 @@ categories:
   - Architecture
 tags:
   - System Design
-  - Books
+  - Book Review
 translation_key: software-architecture-basics
+books:
+  - asin: "4873119820"
+    title: "ソフトウェアアーキテクチャの基礎"
 ---
 
 

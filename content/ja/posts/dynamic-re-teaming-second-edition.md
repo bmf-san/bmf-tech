@@ -6,11 +6,14 @@ author: bmf-san
 categories:
   - マネジメント
 tags:
-  - 本
+  - 書評
   - 組織設計
   - 組織論
   - マネージャー
 translation_key: dynamic-re-teaming-second-edition
+books:
+  - asin: "4814401078"
+    title: "ダイナミックリチーミング 第2版―5つのパターンによる効果的なチーム編成"
 ---
 
 

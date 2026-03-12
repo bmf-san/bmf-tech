@@ -7,9 +7,12 @@ categories:
   - ビジネス
 tags:
   - セールス
-  - 本
+  - 書評
   - SaaS
 translation_key: the-model
+books:
+  - asin: "479815816X"
+    title: "ザ・モデル: マーケティング・インサイドセールス・営業・カスタマーサクセスの共業プロセス"
 ---
 
 

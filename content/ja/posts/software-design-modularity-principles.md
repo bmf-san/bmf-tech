@@ -6,9 +6,12 @@ author: bmf-san
 categories:
   - アーキテクチャ
 tags:
-  - 本
+  - 書評
   - 設計
 translation_key: software-design-modularity-principles
+books:
+  - asin: "4295022969"
+    title: "ソフトウェア設計の結合バランス　持続可能な成長を支えるモジュール化の原則"
 ---
 
 

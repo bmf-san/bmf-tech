@@ -1046,7 +1046,9 @@
 /posts/tags/%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A%E3%81%A8%E6%8A%B1%E8%B2%A0  /ja/tags/振り返りと抱負/  301
 /posts/tags/%E6%8C%BF%E5%85%A5%E3%82%BD%E3%83%BC%E3%83%88  /ja/tags/挿入ソート/  301
 /posts/tags/%E6%9C%A8%E6%A7%8B%E9%80%A0  /ja/tags/木構造/  301
-/posts/tags/%E6%9C%AC  /ja/tags/本/  301
+/posts/tags/%E6%9C%AC  /ja/tags/書評/  301
+/tags/本/              /tags/書評/    301
+/ja/tags/本/           /ja/tags/書評/ 301
 /posts/tags/%E6%A8%A9%E9%99%90%E7%AE%A1%E7%90%86  /ja/tags/権限管理/  301
 /posts/tags/%E6%A9%9F%E8%83%BD%E3%83%86%E3%82%B9%E3%83%88  /ja/tags/機能テスト/  301
 /posts/tags/%E6%AD%A3%E8%A6%8F%E5%8C%96  /ja/tags/正規化/  301

@@ -6,10 +6,13 @@ author: bmf-san
 categories:
   - 開発プロセス
 tags:
-  - 本
+  - 書評
   - アジャイル
   - スクラム
 translation_key: building-correctly
+books:
+  - asin: "4802511191"
+    title: "正しいものを正しくつくる プロダクトをつくるとはどういうことなのか、あるいはアジャイルのその先について"
 ---
 
 

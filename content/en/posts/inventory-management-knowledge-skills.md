@@ -7,8 +7,11 @@ categories:
   - Architecture
 tags:
   - Inventory Management
-  - Books
+  - Book Review
 translation_key: inventory-management-knowledge-skills
+books:
+  - asin: "4798176931"
+    title: "エンジニアが学ぶ在庫管理システムの「知識」と「技術」"
 ---
 
 [Knowledge and Skills of Inventory Management Systems for Engineers](https://amzn.to/3Qr0P54) was read.

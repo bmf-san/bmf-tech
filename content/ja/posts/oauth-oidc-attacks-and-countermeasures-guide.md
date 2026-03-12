@@ -8,7 +8,7 @@ categories:
 tags:
   - OAuth
   - OpenIDConnect
-  - 本
+  - 書評
 translation_key: oauth-oidc-attacks-and-countermeasures-guide
 ---
 

@@ -6,11 +6,14 @@ author: bmf-san
 categories:
   - アーキテクチャ
 tags:
-  - 本
+  - 書評
   - ソフトウェア
   - ソフトウェア開発
   - 設計
 translation_key: tidy-first-experiential-software-design
+books:
+  - asin: "4814400918"
+    title: "Tidy First? ―個人で実践する経験主義的ソフトウェア設計"
 ---
 
 

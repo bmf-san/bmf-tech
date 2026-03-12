@@ -7,8 +7,11 @@ categories:
   - Application
 tags:
   - Golang
-  - Books
+  - Book Review
 translation_key: programming-language-go
+books:
+  - asin: "4621300253"
+    title: "プログラミング言語Go"
 ---
 
 [Programming Language Go](https://amzn.to/3WrbznD) has been read.

@@ -7,8 +7,11 @@ categories:
   - アーキテクチャ
 tags:
   - システム設計
-  - 本
+  - 書評
 translation_key: data-oriented-application-design
+books:
+  - asin: "4873118700"
+    title: "データ指向アプリケーションデザイン"
 ---
 
 

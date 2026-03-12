@@ -7,9 +7,12 @@ categories:
   - Testing
 tags:
   - Design
-  - Books
+  - Book Review
 description: A summary of essential approaches and considerations for high-quality test design.
 translation_key: unit-testing-concepts-usage
+books:
+  - asin: "4839981728"
+    title: "単体テストの考え方/使い方"
 ---
 
 

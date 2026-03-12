@@ -7,8 +7,10 @@ categories:
   - インフラストラクチャ
 tags:
   - Amazon Web Service
-  - 本
+  - 書評
 translation_key: aws-container-design-introduction
+books:
+  - asin: "4815607656"
 ---
 
 

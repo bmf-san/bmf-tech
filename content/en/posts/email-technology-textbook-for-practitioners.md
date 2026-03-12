@@ -7,8 +7,11 @@ categories:
   - Network
 tags:
   - Email
-  - Books
+  - Book Review
 translation_key: email-technology-textbook-for-practitioners
+books:
+  - asin: "4798183938"
+    title: "実務で使える メール技術の教科書 基本のしくみからプロトコル・サーバー構築・送信ドメイン認証・添付ファイル・暗号化・セキュリティ対策まで"
 ---
 
 [Practical Email Technology Handbook: From Basic Mechanisms to Protocols, Server Setup, Sending Domain Authentication, Attachments, Encryption, and Security Measures](https://amzn.to/3wibKHq) was a very helpful read.

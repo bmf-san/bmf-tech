@@ -4,8 +4,7 @@ slug: backtracking-implementation
 date: 2023-06-23T00:00:00Z
 author: bmf-san
 categories:
-  - Algorithms
-  - Data Structures
+  - Algorithms and Data Structures
 tags:
   - Backtrack
 translation_key: backtracking-implementation

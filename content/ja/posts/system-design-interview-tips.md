@@ -8,8 +8,11 @@ categories:
 tags:
   - システム設計
   - アーキテクチャ
-  - 本
+  - 書評
 translation_key: system-design-interview-tips
+books:
+  - asin: "4798072796"
+    title: "システム設計面接の傾向と対策"
 ---
 
 

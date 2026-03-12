@@ -6,10 +6,13 @@ author: bmf-san
 categories:
   - Business
 tags:
-  - Books
+  - Book Review
   - Logical Thinking
   - Critical Thinking
 translation_key: globis-mba-critical-thinking
+books:
+  - asin: "4478020582"
+    title: "グロービスMBAクリティカル・シンキング"
 ---
 
 

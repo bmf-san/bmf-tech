@@ -22,7 +22,7 @@ jobs:
           cache-dependency-path: package-lock.json
 
       - name: Install textlint dependencies
-        run: npm ci
+        run: make install-lint
 
       - name: Lint changed posts
         run: make lint-content-diff

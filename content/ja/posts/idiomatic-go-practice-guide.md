@@ -7,8 +7,11 @@ categories:
   - アプリケーション
 tags:
   - Golang
-  - 本
+  - 書評
 translation_key: idiomatic-go-practice-guide
+books:
+  - asin: "4814401191"
+    title: "初めてのGo言語 第2版 ―他言語プログラマーのためのイディオマティックGo実践ガイド"
 ---
 
 

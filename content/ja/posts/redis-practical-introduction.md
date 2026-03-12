@@ -6,11 +6,14 @@ author: bmf-san
 categories:
   - データベース
 tags:
-  - 本
+  - 書評
   - Redis
   - キャッシュ
   - DB
 translation_key: redis-practical-introduction
+books:
+  - asin: "4297131420"
+    title: "実践Redis入門 技術の仕組みから現場の活用まで"
 ---
 
 

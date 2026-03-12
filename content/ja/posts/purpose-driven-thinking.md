@@ -6,8 +6,11 @@ author: bmf-san
 categories:
   - ビジネス
 tags:
-  - 本
+  - 書評
 translation_key: purpose-driven-thinking
+books:
+  - asin: "479932831X"
+    title: "目的ドリブンの思考法"
 ---
 
 

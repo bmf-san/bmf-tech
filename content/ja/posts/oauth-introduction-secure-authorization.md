@@ -7,8 +7,11 @@ categories:
   - アプリケーション
 tags:
   - OAuth
-  - 本
+  - 書評
 translation_key: oauth-introduction-secure-authorization
+books:
+  - asin: "B07L5M7DXS"
+    title: "OAuth徹底入門 セキュアな認可システムを適用するための原則と実践"
 ---
 
 

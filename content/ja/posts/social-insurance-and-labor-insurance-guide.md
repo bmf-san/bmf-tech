@@ -8,8 +8,11 @@ categories:
 tags:
   - 人事
   - 労務
-  - 本
+  - 書評
 translation_key: social-insurance-and-labor-insurance-guide
+books:
+  - asin: "4800720605"
+    title: "改訂2版 最新 知りたいことがパッとわかる 社会保険と労働保険の届け出・手続きができる本 "
 ---
 
 

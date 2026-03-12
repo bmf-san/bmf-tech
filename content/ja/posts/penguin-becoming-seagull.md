@@ -7,8 +7,11 @@ categories:
   - マネジメント
 tags:
   - 組織論
-  - 本
+  - 書評
 translation_key: penguin-becoming-seagull
+books:
+  - asin: "4478000344"
+    title: "カモメになったペンギン"
 ---
 
 

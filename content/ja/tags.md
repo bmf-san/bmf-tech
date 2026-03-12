@@ -10,6 +10,7 @@ translation_key: tags
 
 タグ一覧から記事を探せます。
 
-- [Golang](/ja/tags/Golang/)
+- [Golang](/ja/tags/golang/)
 - [アーキテクチャ](/ja/tags/アーキテクチャ/)
-- [Go](/ja/tags/Go/)
+- [Go](/ja/tags/go/)
+- [書評](/ja/tags/書評/)

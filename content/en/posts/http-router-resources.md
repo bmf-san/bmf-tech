@@ -6,10 +6,10 @@ author: bmf-san
 categories:
   - Application
 tags:
-  - router
+  - Router
   - HTTP
-  - URL routing
-  - link collection
+  - URL Routing
+  - Link Collection
 translation_key: http-router-resources
 ---
 

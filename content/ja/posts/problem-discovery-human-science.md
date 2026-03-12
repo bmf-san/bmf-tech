@@ -7,8 +7,11 @@ categories:
   - ビジネス
 tags:
   - ロジカルシンキング
-  - 本
+  - 書評
 translation_key: problem-discovery-human-science
+books:
+  - asin: "B09BDWRCXN"
+    title: "ライト、ついてますか　問題発見の人間学"
 ---
 
 

@@ -7,9 +7,12 @@ categories:
   - アプリケーション
 tags:
   - 認知科学
-  - 本
+  - 書評
   - コードリーディング
 translation_key: programmer-mindset
+books:
+  - asin: "4798068535"
+    title: "プログラマ脳"
 ---
 
 

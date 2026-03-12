@@ -9,8 +9,11 @@ tags:
   - スタートアップ
   - リーン
   - UX
-  - 本
+  - 書評
 translation_key: lean-ux-user-experience-design
+books:
+  - asin: "4873116619"
+    title: "Lean UX ―リーン思考によるユーザエクスペリエンス・デザイン"
 ---
 
 

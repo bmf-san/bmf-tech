@@ -8,8 +8,11 @@ categories:
 tags:
   - スタートアップ
   - リーン
-  - 本
+  - 書評
 translation_key: lean-startup
+books:
+  - asin: "4822248976"
+    title: "リーン・スタートアップ"
 ---
 
 

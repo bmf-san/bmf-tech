@@ -21,13 +21,13 @@ jobs:
           cache: false
 
       - name: Install gohan
-        run: go install github.com/bmf-san/gohan/cmd/gohan@latest
+        run: make install-gohan
 
       - name: Build site
-        run: gohan build
+        run: make build
 
       - name: Copy _redirects
-        run: cp _redirects public/
+        run: make copy-redirects
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3

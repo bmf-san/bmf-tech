@@ -7,8 +7,11 @@ categories:
   - Application
 tags:
   - Code Quality
-  - Books
+  - Book Review
 translation_key: readable-code-techniques
+books:
+  - asin: "4873115655"
+    title: "リーダブルコード ―より良いコードを書くためのシンプルで実践的なテクニック"
 ---
 
 [Readable Code - Simple and Practical Techniques for Writing Better Code](https://amzn.to/4abQaC9) is a book I read.

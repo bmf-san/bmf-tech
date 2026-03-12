@@ -7,8 +7,11 @@ categories:
   - アプリケーション
 tags:
   - Golang
-  - 本
+  - 書評
 translation_key: golang-100-tips-common-mistakes
+books:
+  - asin: "4295017531"
+    title: "Go言語100Tips 開発者にありがちな間違いへの対処法 (impress top gear)"
 ---
 
 

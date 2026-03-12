@@ -4,7 +4,7 @@ slug: memory-management-terminology-summary
 date: 2018-11-30T00:00:00Z
 author: bmf-san
 categories:
-  - OS
+  - Operating Systems
 tags:
   - Linux
   - Memory

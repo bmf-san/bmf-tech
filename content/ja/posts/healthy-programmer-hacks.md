@@ -6,9 +6,12 @@ author: bmf-san
 categories:
   - ヘルスケア
 tags:
-  - 本
+  - 書評
   - 健康
 translation_key: healthy-programmer-hacks
+books:
+  - asin: "4873117283"
+    title: "ヘルシープログラマ ―プログラミングを楽しく続けるための健康Hack"
 ---
 
 
