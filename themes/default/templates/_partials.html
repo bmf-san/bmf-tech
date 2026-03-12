@@ -70,8 +70,10 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', '{{.}}');
+  if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+    gtag('js', new Date());
+    gtag('config', '{{.}}');
+  }
 </script>
 {{- end}}
 {{- with index .Config.Theme.Params "adsense_id"}}
