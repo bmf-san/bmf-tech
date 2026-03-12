@@ -1,5 +1,5 @@
 ---
-title: MySQLのJOINとUNIONについて
+title: "MySQL JOIN vs UNION：違いと使い分けを実例で解説"
 slug: mysql-join-union
 date: 2018-07-18T00:00:00Z
 author: bmf-san

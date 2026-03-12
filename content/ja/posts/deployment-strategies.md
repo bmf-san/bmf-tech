@@ -1,5 +1,5 @@
 ---
-title: デプロイ戦略について
+title: "デプロイ戦略を解説：ブルーグリーン・カナリア・ローリング等の比較"
 slug: deployment-strategies
 date: 2023-06-03T00:00:00Z
 author: bmf-san

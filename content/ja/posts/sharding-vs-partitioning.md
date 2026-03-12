@@ -1,5 +1,5 @@
 ---
-title: シャーディングとパーティショニングの違い
+title: "シャーディング vs パーティショニング：違いと使い分け"
 slug: sharding-vs-partitioning
 date: 2023-06-03T00:00:00Z
 author: bmf-san

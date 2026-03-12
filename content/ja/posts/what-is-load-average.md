@@ -1,5 +1,5 @@
 ---
-title: Load Averageとは何か？
+title: "Linux Load Averageとは？読み方とパフォーマンス問題の診断"
 slug: what-is-load-average
 date: 2025-07-07T00:00:00Z
 author: bmf-san

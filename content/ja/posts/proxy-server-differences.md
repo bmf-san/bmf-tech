@@ -1,5 +1,5 @@
 ---
-title: プロキシサーバー（フォワードプロキシサーバー）・リバースプロキシサーバー・ゲートウェイサーバーの違いについて
+title: "フォワードプロキシ vs リバースプロキシ vs APIゲートウェイ：わかりやすい比較"
 slug: proxy-server-differences
 date: 2023-06-03T00:00:00Z
 author: bmf-san

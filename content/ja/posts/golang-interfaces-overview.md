@@ -1,5 +1,5 @@
 ---
-title: Golangのインターフェース概要
+title: "Goのインターフェースを解説：柔軟でテスタブルなコードの書き方"
 slug: golang-interfaces-overview
 date: 2018-11-15T00:00:00Z
 author: bmf-san

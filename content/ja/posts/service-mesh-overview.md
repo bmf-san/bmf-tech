@@ -1,5 +1,5 @@
 ---
-title: サービスメッシュについて
+title: "サービスメッシュとは？IstioとLinkerdの仕組みを解説"
 slug: service-mesh-overview
 date: 2023-10-29T00:00:00Z
 author: bmf-san

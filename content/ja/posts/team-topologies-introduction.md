@@ -1,5 +1,5 @@
 ---
-title: チームトポロジーとは何か
+title: "チームトポロジーとは？エンジニアリング組織の構成方法"
 slug: team-topologies-introduction
 date: 2026-01-09T00:00:00Z
 author: bmf-san

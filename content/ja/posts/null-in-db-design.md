@@ -1,5 +1,5 @@
 ---
-title: DB設計におけるNULLについて
+title: "DB設計におけるNULL：よくある落とし穴とベストプラクティス"
 slug: null-in-db-design
 date: 2024-03-30T00:00:00Z
 author: bmf-san

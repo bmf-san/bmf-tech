@@ -1,5 +1,5 @@
 ---
-title: テストダブルとは何か
+title: "テストダブル解説：モック・スタブ・フェイク・スパイの違い"
 slug: test-doubles-explained
 date: 2025-10-18T00:00:00Z
 author: bmf-san

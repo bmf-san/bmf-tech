@@ -1,5 +1,5 @@
 ---
-title: SAML 2.0 仕様まとめ
+title: "SAML 2.0とは？SSOとフェデレーテッドアイデンティティの仕組みを解説"
 slug: saml-2-0-spec-summary
 date: 2026-01-23T00:00:00Z
 author: bmf-san

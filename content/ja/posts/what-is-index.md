@@ -1,5 +1,5 @@
 ---
-title: Indexとはなにか
+title: "データベースインデックスとは？仕組みと必要なタイミング"
 slug: what-is-index
 date: 2024-04-01T00:00:00Z
 author: bmf-san

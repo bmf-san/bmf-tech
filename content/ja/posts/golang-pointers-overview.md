@@ -1,5 +1,5 @@
 ---
-title: Golangのポインタ概要
+title: "Goのポインタを解説：使うべき場面とよくある落とし穴"
 slug: golang-pointers-overview
 date: 2018-11-13T00:00:00Z
 author: bmf-san

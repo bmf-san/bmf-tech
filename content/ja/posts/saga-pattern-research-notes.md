@@ -1,5 +1,5 @@
 ---
-title: Sagaパターンについて調べたことをメモ
+title: "Sagaパターンとは？マイクロサービスでの分散トランザクション管理"
 slug: saga-pattern-research-notes
 date: 2023-09-17T00:00:00Z
 author: bmf-san

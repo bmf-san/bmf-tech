@@ -1,5 +1,5 @@
 ---
-title: OAuth 2.0 仕様まとめ
+title: "OAuth 2.0とは？フロー・トークン・実装の完全解説"
 slug: oauth-2-0-spec-summary
 date: 2026-01-23T00:00:00Z
 author: bmf-san
