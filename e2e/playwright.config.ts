@@ -6,7 +6,7 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: 1,
-  reporter: process.env.CI ? 'github' : 'html',
+  reporter: process.env.CI ? [['github'], ['html']] : 'html',
   use: {
     baseURL: 'http://localhost:1313',
     trace: 'on-first-retry',
@@ -21,6 +21,6 @@ export default defineConfig({
     command: 'npx http-server ../public -p 1313 -s --cors',
     url: 'http://localhost:1313',
     reuseExistingServer: !process.env.CI,
-    timeout: 10 * 1000,
+    timeout: 60 * 1000,
   },
 });
