@@ -1,5 +1,6 @@
 ---
 title: "フォワードプロキシ vs リバースプロキシ vs APIゲートウェイ：わかりやすい比較"
+description: 'フォワードプロキシ・リバースプロキシ・API ゲートウェイの違いをわかりやすく比較。それぞれの役割とユースケースを整理します。'
 slug: proxy-server-differences
 date: 2023-06-03T00:00:00Z
 author: bmf-san

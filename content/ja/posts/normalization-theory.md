@@ -1,5 +1,6 @@
 ---
 title: "データベース正規化を解説：1NFから3NFまで実例付き"
+description: 'データベース正規化を 1NF・2NF・3NF まで実例付きで解説。冗長性排除・更新anomaly防止のためのテーブル設計の考え方を学べます。'
 slug: normalization-theory
 date: 2024-04-02T00:00:00Z
 author: bmf-san

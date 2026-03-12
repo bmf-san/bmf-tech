@@ -1,5 +1,6 @@
 ---
 title: "スクラムマスター vs プロダクトオーナー：役割と責任の比較"
+description: 'スクラムマスターとプロダクトオーナーの役割・責任の違いを比較。それぞれがチームに何をもたらすかをスクラムの文脈で整理します。'
 slug: scrum-master-product-owner-differences
 date: 2022-09-04T00:00:00Z
 author: bmf-san

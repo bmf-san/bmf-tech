@@ -1,5 +1,6 @@
 ---
 title: "コンテナ技術とは？DockerとOCIコンテナの仕組みを解説"
+description: 'コンテナ技術の仕組みを解説。namespace・cgroup・OCI 標準がどのように機能するか、なぜコンテナが現代のアプリケーションデプロイに不可欠かを学べます。'
 slug: container-technology-overview
 date: 2023-06-05T00:00:00Z
 author: bmf-san

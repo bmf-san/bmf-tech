@@ -1,5 +1,6 @@
 ---
 title: "Kubernetesのコンポーネント解説：Pod・Node・コントロールプレーン"
+description: 'Kubernetes の各コンポーネントを解説。Pod・Node・コントロールプレーン（API Server / etcd / Scheduler / Controller Manager）の役割を学べます。'
 slug: kubernetes-components
 date: 2024-03-27T00:00:00Z
 author: bmf-san

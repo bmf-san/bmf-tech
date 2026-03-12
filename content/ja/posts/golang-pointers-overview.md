@@ -1,5 +1,6 @@
 ---
 title: "Goのポインタを解説：使うべき場面とよくある落とし穴"
+description: 'Go のポインタを解説。値型とポインタ型の使い分け・パフォーマンスへの影響・nil ポインタなどよくある落とし穴を具体例で学べます。'
 slug: golang-pointers-overview
 date: 2018-11-13T00:00:00Z
 author: bmf-san

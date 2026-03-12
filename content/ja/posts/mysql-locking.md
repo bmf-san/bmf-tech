@@ -1,5 +1,6 @@
 ---
 title: "MySQLのロック解説：デッドロックの防ぎ方とパフォーマンス改善"
+description: 'MySQL のロック（行ロック・テーブルロック・GAP ロック）を解説。デッドロックの防ぎ方とトランザクション設計のベストプラクティスを紹介します。'
 slug: mysql-locking
 date: 2024-04-05T00:00:00Z
 author: bmf-san

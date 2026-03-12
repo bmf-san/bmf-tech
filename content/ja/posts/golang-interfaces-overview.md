@@ -1,5 +1,6 @@
 ---
 title: "Goのインターフェースを解説：柔軟でテスタブルなコードの書き方"
+description: 'Go のインターフェースを実践的に解説。暗黙的実装・インターフェース合成・依存性の注入への活用・よくある設計上の落とし穴をカバーします。'
 slug: golang-interfaces-overview
 date: 2018-11-15T00:00:00Z
 author: bmf-san

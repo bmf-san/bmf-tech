@@ -1,5 +1,6 @@
 ---
 title: "サービスメッシュとは？IstioとLinkerdの仕組みを解説"
+description: 'サービスメッシュとは何か、Istio と Linkerd の仕組み・サイドカープロキシ・トラフィック管理・可観測性の実現方法を解説します。'
 slug: service-mesh-overview
 date: 2023-10-29T00:00:00Z
 author: bmf-san

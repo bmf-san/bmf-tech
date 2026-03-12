@@ -1,5 +1,6 @@
 ---
 title: "プラットフォームエンジニアリングとは？内部開発者プラットフォームの構築"
+description: 'プラットフォームエンジニアリングとは何か、内部開発者プラットフォーム（IDP）の構築方法と、DevOps・SRE との関係を解説します。'
 slug: platform-engineering-explained
 date: 2025-12-26T00:00:00Z
 author: bmf-san

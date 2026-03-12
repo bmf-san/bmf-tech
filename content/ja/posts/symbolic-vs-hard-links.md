@@ -1,5 +1,6 @@
 ---
 title: "シンボリックリンク vs ハードリンク：Linuxでの本質的な違い"
+description: 'シンボリックリンクとハードリンクの違いを Linux の仕組みから解説。inode・参照カウント・用途の使い分けを具体例で学べます。'
 slug: symbolic-vs-hard-links
 date: 2018-05-24T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: "CAP定理とは？分散データベースのトレードオフを解説"
+description: 'CAP 定理と PACELC 定理をわかりやすく解説。分散データベースにおける一貫性・可用性・分断耐性のトレードオフを具体例で学べます。'
 slug: cap-theorem-pacelc-theorem
 date: 2025-08-02T00:00:00Z
 author: bmf-san

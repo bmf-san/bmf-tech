@@ -1,5 +1,6 @@
 ---
 title: "Goでクリーンアーキテクチャを実装する実践ガイド"
+description: 'Go でクリーンアーキテクチャを実践する方法を解説。レイヤー分離・依存ルール・ディレクトリ構成・実際のトレードオフを具体的なコードで学べます。'
 slug: golang-clean-architecture-introduction
 date: 2019-08-18T00:00:00Z
 author: bmf-san

@@ -1,5 +1,6 @@
 ---
 title: "GraphQLとは？実例で学ぶ完全ガイド"
+description: 'GraphQL の完全入門ガイド。クエリ・ミューテーションの仕組み、REST との比較、実際に使い始めるための実践的なサンプルを解説します。'
 slug: graphql-introduction
 date: 2023-11-09T00:00:00Z
 author: bmf-san
