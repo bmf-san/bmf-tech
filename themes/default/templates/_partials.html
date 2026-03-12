@@ -206,3 +206,19 @@
   </div>
 </div>
 {{end}}
+
+{{define "ad-unit"}}
+{{- $id := index .Config.Theme.Params "adsense_id"}}
+{{- $slot := index .Config.Theme.Params "adsense_slot"}}
+{{- if and $id $slot}}
+<div class="my-6">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="{{$id}}"
+       data-ad-slot="{{$slot}}"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+{{- end}}
+{{end}}
