@@ -1,6 +1,6 @@
 ---
 title: Ubuntu Initial Setup Notes
-description: Research notes and a structured overview of Ubuntu Initial Setup Notes, summarizing key concepts and findings.
+description: "Set up Ubuntu servers with SSH key authentication, custom ports, and firewall rules for secure remote access management."
 slug: ubuntu-initial-setup-notes
 date: 2019-02-15T00:00:00Z
 author: bmf-san

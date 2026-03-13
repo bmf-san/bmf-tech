@@ -1,6 +1,6 @@
 ---
 title: SPA Boilerplate with React, react-redux, react-router, ES6, and webpack
-description: An in-depth look at SPA Boilerplate with React, react-redux, react-router, ES6, and webpack, covering key concepts and practical insights.
+description: 'Explore React SPA boilerplate architecture with Redux, React-router, webpack, and Babel for modern applications.'
 slug: react-ecosystem-spa-boilerplate
 date: 2017-10-01T00:00:00Z
 author: bmf-san

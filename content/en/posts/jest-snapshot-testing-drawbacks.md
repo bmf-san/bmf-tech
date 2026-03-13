@@ -1,6 +1,6 @@
 ---
 title: Disadvantages of Jest Snapshot Testing
-description: An in-depth look at Disadvantages of Jest Snapshot Testing, covering key concepts and practical insights.
+description: 'Understand the drawbacks of Jest snapshot testing including test fragility, unclear assertions, and why assertion tests are better.'
 slug: jest-snapshot-testing-drawbacks
 date: 2024-07-18T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: LLM Prompt Management and Evaluation Platform Using GitHub Agentic Workflow
-description: An in-depth look at LLM Prompt Management and Evaluation Platform Using GitHub Agentic Workflow, covering key concepts and practical insights.
+description: 'Manage LLM prompts as code using GitHub Agentic Workflows: Copilot-powered automation with golden datasets and evaluation.'
 slug: github-agentic-workflow-llm-prompt-management
 date: 2026-02-25T00:00:00Z
 author: bmf-san

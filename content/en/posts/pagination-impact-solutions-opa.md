@@ -1,6 +1,6 @@
 ---
 title: Considerations and Solutions for Pagination Impact in OPA
-description: An in-depth look at Considerations and Solutions for Pagination Impact in OPA, covering key concepts and practical insights.
+description: 'Master pagination with Open Policy Agent, offset pagination, cursor pagination, and access control filtering.'
 slug: pagination-impact-solutions-opa
 date: 2025-06-14T00:00:00Z
 author: bmf-san

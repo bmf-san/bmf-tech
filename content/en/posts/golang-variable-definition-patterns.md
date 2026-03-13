@@ -1,6 +1,6 @@
 ---
 title: Summary of Variable Definitions and Declarations in Golang
-description: Research notes and a structured overview of Summary of Variable Definitions and Declarations in Golang, summarizing key concepts and findings.
+description: 'Learn Go variable declaration patterns: var syntax, short declarations, type inference, and visibility rules for identifiers.'
 slug: golang-variable-definition-patterns
 date: 2018-11-13T00:00:00Z
 author: bmf-san

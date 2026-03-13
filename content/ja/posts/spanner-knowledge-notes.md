@@ -1,6 +1,6 @@
 ---
 title: Spannerの知見メモ
-description: Spannerの知見メモについて調査・整理したメモ。基本概念と重要ポイントを解説します。
+description: "Cloud Spannerのノード・スプリット・レプリケーション仕様、ホットスポット対策とインデックス最適化を実装・検証する知見"
 slug: spanner-knowledge-notes
 date: 2024-03-03T00:00:00Z
 author: bmf-san

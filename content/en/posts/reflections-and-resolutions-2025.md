@@ -1,6 +1,6 @@
 ---
 title: Reflections on 2025 and Aspirations for the Coming Year
-description: An in-depth look at Reflections on 2025 and Aspirations for the Coming Year, covering key concepts and practical insights.
+description: 'Understand 2025 career reflections on system design mastery, AI dependency, and tech skills growth through annual personal aspirations.'
 slug: reflections-and-resolutions-2025
 date: 2025-12-29T00:00:00Z
 author: bmf-san

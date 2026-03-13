@@ -1,6 +1,6 @@
 ---
 title: 'Modern JS Talk: Destructuring Assignment'
-description: 'An in-depth look at Modern JS Talk: Destructuring Assignment, covering key concepts and practical insights.'
+description: 'Master destructuring assignment for arrays and objects with default values and aliasing in modern JavaScript.'
 slug: modern-js-destructuring
 date: 2017-12-25T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Goのrune型について
-description: Goのrune型についてについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: "rune型がint32のエイリアスでUnicodeコードポイントを表現することを解説し、string型とのループ挙動の違いやマルチバイト文字処理を詳述。"
 slug: go-rune-type-explained
 date: 2024-02-21T00:00:00Z
 author: bmf-san

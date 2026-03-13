@@ -1,6 +1,6 @@
 ---
 title: Stateless and Stateful
-description: An in-depth look at Stateless and Stateful, covering key concepts and practical insights.
+description: 'Learn the difference between stateless and stateful protocols. HTTP, UDP, and IP are stateless; FTP, TCP, and SMTP are stateful. Covers session-based state management implications.'
 slug: stateless-vs-stateful
 date: 2018-04-17T00:00:00Z
 author: bmf-san

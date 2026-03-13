@@ -1,6 +1,6 @@
 ---
 title: 'PostgreSQL Complete Introduction 4th Edition: From Installation to Features, Mechanisms, App Development, and Management'
-description: 'A review and summary of "PostgreSQL Complete Introduction 4th Edition: From Installation to Features, Mechanisms, App Development, and Management", covering key takeaways and practical insights.'
+description: 'A review of PostgreSQL Complete Introduction (4th Edition). Covers PostgreSQL basics, SQL, internal mechanisms, app development examples, and administration — an ideal starting guide.'
 slug: postgresql-comprehensive-guide
 date: 2024-05-04T00:00:00Z
 author: bmf-san

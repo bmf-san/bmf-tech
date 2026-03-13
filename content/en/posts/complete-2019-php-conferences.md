@@ -1,6 +1,6 @@
 ---
 title: Completed All PHP Conferences in 2019
-description: An in-depth look at Completed All PHP Conferences in 2019, covering key concepts and practical insights.
+description: 'Complete guide to attending all Japanese PHP conferences in 2019: Sendai, Laravel JP, PHPerKaigi, Fukuoka, Hokkaido, Okinawa.'
 slug: complete-2019-php-conferences
 date: 2019-12-03T00:00:00Z
 author: bmf-san

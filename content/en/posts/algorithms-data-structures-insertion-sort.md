@@ -1,6 +1,6 @@
 ---
 title: Algorithm and Data Structures - Insertion Sort
-description: An in-depth look at Algorithm and Data Structures - Insertion Sort, covering key concepts and practical insights.
+description: 'Learn Insertion Sort, which divides the array into sorted and unsorted parts and builds the sorted sequence one element at a time. O(n²) time complexity with a Go implementation.'
 slug: algorithms-data-structures-insertion-sort
 date: 2020-02-01T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Algorithms and Data Structures - Heap
-description: An in-depth look at Algorithms and Data Structures - Heap, covering key concepts and practical insights.
+description: 'Learn how min-heaps and max-heaps work as priority queue data structures. Covers O(log n) insertion and deletion with a Go heap implementation.'
 slug: algorithms-data-structures-heap
 date: 2020-01-14T00:00:00Z
 author: bmf-san

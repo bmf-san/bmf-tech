@@ -1,6 +1,6 @@
 ---
 title: Web Application Development with Go
-description: An in-depth look at Web Application Development with Go, covering key concepts and practical insights.
+description: "Explore practical Golang web application development with HTTP servers, routing, and concurrent request handling techniques."
 slug: web-application-development-with-golang
 date: 2017-03-12T00:00:00Z
 author: bmf-san

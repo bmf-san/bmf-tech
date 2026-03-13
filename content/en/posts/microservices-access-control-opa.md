@@ -1,6 +1,6 @@
 ---
 title: Implementation of Access Control System for Microservices Using OPA
-description: A step-by-step guide on Implementation of Access Control System for Microservices Using OPA, with practical examples and configuration tips.
+description: 'Implement fine-grained access control for distributed microservices using Open Policy Agent and declarative Rego policy language.'
 slug: microservices-access-control-opa
 date: 2025-03-20T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: 'Modern JS: import and export'
-description: 'An in-depth look at Modern JS: import and export, covering key concepts and practical insights.'
+description: 'Master ES6 import/export statements, named exports, default exports, and module composition in JavaScript development.'
 slug: modern-js-import-export
 date: 2017-12-25T00:00:00Z
 author: bmf-san

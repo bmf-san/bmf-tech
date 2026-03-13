@@ -1,6 +1,6 @@
 ---
 title: Using VirtualHost with Vagrant
-description: An in-depth look at Using VirtualHost with Vagrant, covering key concepts and practical insights.
+description: "Configure VirtualHost with Vagrant using vagrant-hostupdater and Apache for multi-domain local development environments."
 slug: vagrant-virtualhost-usage
 date: 2017-10-01T00:00:00Z
 author: bmf-san

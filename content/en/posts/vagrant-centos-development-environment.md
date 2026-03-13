@@ -1,6 +1,6 @@
 ---
 title: Setting Up a CentOS 6.7 Development Environment with Vagrant
-description: An in-depth look at Setting Up a CentOS 6.7 Development Environment with Vagrant, covering key concepts and practical insights.
+description: "Build a CentOS development environment with Vagrant, VirtualBox networking, and Apache configuration for local projects."
 slug: vagrant-centos-development-environment
 date: 2017-10-01T00:00:00Z
 author: bmf-san

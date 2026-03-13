@@ -1,6 +1,6 @@
 ---
 title: Kubernetesドキュメントのリーディングーコンセプトのまとめ
-description: Kubernetesドキュメントのリーディングーコンセプトのまとめについて調査・整理したメモ。基本概念と重要ポイントを解説します。
+description: "理解するKubernetesの概念。コンテナ化、クラスタ管理、自動スケーリング、ストレージオーケストレーション、マイクロサービスアーキテクチャを実践的に解説"
 slug: kubernetes-documentation-concepts
 date: 2020-10-20T00:00:00Z
 author: bmf-san

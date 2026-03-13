@@ -1,6 +1,6 @@
 ---
 title: Goのresponse.WriteHeaderの副作用について
-description: Goのresponse.WriteHeaderの副作用についてについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: "response.WriteHeaderの複数回呼び出しによる副作用を解析し、bytes.Bufferを使った回避方法とtemplateのExecute処理の実装パターンを提示。"
 slug: go-response-writeheader-side-effects
 date: 2023-09-11T00:00:00Z
 author: bmf-san

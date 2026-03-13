@@ -1,6 +1,6 @@
 ---
 title: About Go's rune Type
-description: 'An in-depth look at About Go''s rune Type, covering key concepts and practical insights.'
+description: 'Learn what Go rune type is and how it represents Unicode code points (int32 alias). Covers string vs. rune differences, range loop behavior, and multi-byte character handling.'
 slug: go-rune-type-explained
 date: 2024-02-21T00:00:00Z
 author: bmf-san

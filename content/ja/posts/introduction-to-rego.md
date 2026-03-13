@@ -1,6 +1,6 @@
 ---
 title: Rego入門
-description: Rego入門について調査・整理したメモ。基本概念と重要ポイントを解説します。
+description: "掌握するRego言語。OPAのポリシー記述言語として、宣言型構文、ルール定義、内包表記、組み込み関数、テストデバッグ方法を完全網羅します。"
 slug: introduction-to-rego
 date: 2025-07-31T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Learning Ruby
-description: An in-depth look at Learning Ruby, covering key concepts and practical insights.
+description: 'Master Ruby fundamentals using official documentation, classic books, object-oriented design patterns and practical implementation practice.'
 slug: learning-ruby
 date: 2024-05-16T00:00:00Z
 author: bmf-san

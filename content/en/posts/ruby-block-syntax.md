@@ -1,6 +1,6 @@
 ---
 title: About Ruby Block Syntax
-description: An in-depth look at About Ruby Block Syntax, covering key concepts and practical insights.
+description: 'Learn Ruby block syntax with do..end and {} forms, passing blocks to methods, yield statements, and Proc/lambda closure behavior.'
 slug: ruby-block-syntax
 date: 2024-05-15T00:00:00Z
 author: bmf-san

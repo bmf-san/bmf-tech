@@ -1,6 +1,6 @@
 ---
 title: Created a URL Router called goblin in Golang
-description: A step-by-step guide on Created a URL Router called goblin in Golang, with practical examples and configuration tips.
+description: 'Implement a high-performance URL router in Go using trie trees with path parameters and regex pattern matching.'
 slug: goblin-url-router-in-golang
 date: 2020-01-26T00:00:00Z
 author: bmf-san

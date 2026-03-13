@@ -1,6 +1,6 @@
 ---
 title: Unixコマンドメモ
-description: Unixコマンドメモについて調査・整理したメモ。基本概念と重要ポイントを解説します。
+description: "Unixコマンド活用集、jqでJSON加工・teeで双方向出力・atでジョブスケジュール実行する実用的な例"
 slug: unix-command-memo
 date: 2018-07-07T00:00:00Z
 author: bmf-san

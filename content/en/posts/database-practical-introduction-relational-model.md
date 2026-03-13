@@ -1,6 +1,6 @@
 ---
 title: Learning Database Practice from Theory ~ Efficient SQL with the Relational Model
-description: An in-depth exploration of Learning Database Practice from Theory ~ Efficient SQL with the Relational Model, covering design principles, trade-offs, and practical applications.
+description: 'Master relational database design through SQL theory and set theory. Build efficient queries using the relational model.'
 slug: database-practical-introduction-relational-model
 date: 2024-04-01T00:00:00Z
 author: bmf-san

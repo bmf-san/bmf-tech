@@ -1,6 +1,6 @@
 ---
 title: Introduction to Prolog
-description: Research notes and a structured overview of Introduction to Prolog, summarizing key concepts and findings.
+description: 'Explore Prolog and declarative programming paradigms to understand logic-based problem solving and language design.'
 slug: introduction-to-prolog
 date: 2025-08-09T00:00:00Z
 author: bmf-san

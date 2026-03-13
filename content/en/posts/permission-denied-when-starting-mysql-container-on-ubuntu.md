@@ -1,6 +1,6 @@
 ---
 title: Encountered 'Permission denied' Error When Starting MySQL Container on Ubuntu 20.04.2 LTS
-description: 'A troubleshooting guide for Encountered ''Permission denied'' Error When Starting MySQL Container on Ubuntu 20.04.2 LTS, explaining the root cause and how to resolve it.'
+description: 'Fix MySQL container permission denied errors on Ubuntu 20.04 by properly configuring docker-compose user UID/GID mappings.'
 slug: permission-denied-when-starting-mysql-container-on-ubuntu
 date: 2021-09-12T00:00:00Z
 author: bmf-san

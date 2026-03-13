@@ -1,6 +1,6 @@
 ---
 title: 'Trying Out Laravel''s Deployment Tool: Laravel Envoy'
-description: 'A step-by-step guide on Trying Out Laravel''''s Deployment Tool: Laravel Envoy, with practical examples and configuration tips.'
+description: 'Deploy Laravel applications efficiently with Envoy including tasks, git hooks, and Slack deployment notifications.'
 slug: laravel-deployment-tool-envoy
 date: 2017-10-01T00:00:00Z
 author: bmf-san

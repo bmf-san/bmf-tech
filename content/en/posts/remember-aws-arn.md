@@ -1,6 +1,6 @@
 ---
 title: Remembering AWS ARNs
-description: An in-depth look at Remembering AWS ARNs, covering key concepts and practical insights.
+description: 'Understand AWS ARN format structure with partition, service, region, account-id, and resource-id components for resource naming.'
 slug: remember-aws-arn
 date: 2021-06-23T00:00:00Z
 author: bmf-san

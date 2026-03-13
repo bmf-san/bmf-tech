@@ -1,6 +1,6 @@
 ---
 title: Considering Engineering in the Age of AI
-description: An in-depth look at Considering Engineering in the Age of AI, covering key concepts and practical insights.
+description: 'Establish prompt governance with Golden Dataset validation, LLM-as-Judge evaluation, and prompt injection security.'
 slug: engineering-in-ai-reflections
 date: 2026-02-25T00:00:00Z
 author: bmf-san

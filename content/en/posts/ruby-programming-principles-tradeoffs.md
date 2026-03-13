@@ -1,6 +1,6 @@
 ---
 title: 'Mastering Ruby Programming: Principles and Trade-offs for Practical Code'
-description: 'An in-depth look at Mastering Ruby Programming: Principles and Trade-offs for Practical Code, covering key concepts and practical insights.'
+description: 'Master Ruby programming principles, practical code patterns, and trade-offs for effective professional Ruby development.'
 slug: ruby-programming-principles-tradeoffs
 date: 2024-10-28T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: HTTP and SSL/TLS
-description: An in-depth look at HTTP and SSL/TLS, covering key concepts and practical insights.
+description: 'Understand how HTTPS works: TLS handshake after TCP, confidentiality/integrity/authenticity, the history from SSL vulnerabilities to TLS 1.2/1.3, and why universal HTTPS adoption happened.'
 slug: http-ssl-tls
 date: 2018-04-18T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Learning Design Patterns with PHP - State Pattern
-description: An in-depth exploration of Learning Design Patterns with PHP - State Pattern, covering design principles, trade-offs, and practical applications.
+description: 'Learn the State pattern to switch behavior dynamically by encapsulating state-specific processing in separate classes.'
 slug: php-design-patterns-state
 date: 2019-04-20T00:00:00Z
 author: bmf-san

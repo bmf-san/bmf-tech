@@ -1,6 +1,6 @@
 ---
 title: Prologへの入門
-description: Prologへの入門について調査・整理したメモ。基本概念と重要ポイントを解説します。
+description: "理解するProlog言語。宣言型プログラミングの思想、論理プログラミングの基礎、OPAやRegoの背景となる言語仕様を詳しく解説します。"
 slug: introduction-to-prolog
 date: 2025-08-09T00:00:00Z
 author: bmf-san

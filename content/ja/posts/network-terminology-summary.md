@@ -1,6 +1,6 @@
 ---
 title: ネットワーク用語まとめ
-description: ネットワーク用語まとめについて調査・整理したメモ。基本概念と重要ポイントを解説します。
+description: "掌握するネットワーク用語。IPv4/IPv6、NAT/NAPT、CIDR表記、サブネットマスク、ロードバランシング、ルーティング基礎を網羅。"
 slug: network-terminology-summary
 date: 2020-11-02T00:00:00Z
 author: bmf-san

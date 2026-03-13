@@ -1,6 +1,6 @@
 ---
 title: Static Analysis of Clean Architecture Layers in Go
-description: An in-depth exploration of Static Analysis of Clean Architecture Layers in Go, covering design principles, trade-offs, and practical applications.
+description: 'Enforce clean architecture layer dependencies in Go using go-cleanarch for static analysis and architecture validation.'
 slug: go-clean-architecture-static-analysis
 date: 2022-09-04T00:00:00Z
 author: bmf-san

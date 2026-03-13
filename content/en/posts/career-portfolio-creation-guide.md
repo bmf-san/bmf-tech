@@ -1,6 +1,6 @@
 ---
 title: Career Portfolio Creation Guide
-description: An in-depth look at Career Portfolio Creation Guide, covering key concepts and practical insights.
+description: 'Create a strategic career portfolio to clarify skills, assess market value, set goals, and optimize daily decision-making.'
 slug: career-portfolio-creation-guide
 date: 2026-02-18T00:00:00Z
 author: bmf-san

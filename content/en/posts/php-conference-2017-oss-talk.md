@@ -1,6 +1,6 @@
 ---
 title: Presented at PHP Conference 2017 on "Starting OSS as a Third-Year Engineer"
-description: 'An in-depth look at Presented at PHP Conference 2017 on "Starting OSS as a Third-Year Engineer, covering key concepts and practical insights.'
+description: 'Discover insights from presenting OSS development as a third-year engineer at PHP Conference 2017 and gaining community stars.'
 slug: php-conference-2017-oss-talk
 date: 2017-10-11T00:00:00Z
 author: bmf-san

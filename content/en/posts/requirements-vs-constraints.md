@@ -1,6 +1,6 @@
 ---
 title: Difference Between Requirements and Constraints
-description: An in-depth look at Difference Between Requirements and Constraints, covering key concepts and practical insights.
+description: 'Distinguish requirements from constraints in software design using ISO 29148 definitions for effective architecture trade-offs.'
 slug: requirements-vs-constraints
 date: 2026-01-09T00:00:00Z
 author: bmf-san

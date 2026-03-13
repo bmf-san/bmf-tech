@@ -1,6 +1,6 @@
 ---
 title: Reflection on 2021 and Goals for Next Year
-description: Personal reflections and highlights from Reflection on 2021 and Goals for Next Year.
+description: 'Personal year-end reflection on 2021: engineer growth, what worked and what did not, plus goals set for 2022.'
 slug: 2021-review-and-2022-goals
 date: 2021-12-30T00:00:00Z
 author: bmf-san

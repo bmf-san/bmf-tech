@@ -1,6 +1,6 @@
 ---
 title: Programming Language Go
-description: An in-depth look at Programming Language Go, covering key concepts and practical insights.
+description: 'Master Go programming with canonical reference materials covering language fundamentals and development best practices.'
 slug: programming-language-go
 date: 2017-03-12T00:00:00Z
 author: bmf-san

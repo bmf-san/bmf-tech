@@ -1,6 +1,6 @@
 ---
 title: Building a Vagrant Development Environment (CentOS7.3) with Ansible
-description: A step-by-step guide on Building a Vagrant Development Environment (CentOS7.3) with Ansible, with practical examples and configuration tips.
+description: "Configure Vagrant development environments using Ansible automation with PHP, Ruby, Nginx, MySQL, and Redis infrastructure."
 slug: setup-vagrant-environment-ansible
 date: 2017-09-26T00:00:00Z
 author: bmf-san

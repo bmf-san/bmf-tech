@@ -1,6 +1,6 @@
 ---
 title: Modern JS Talk──Classes
-description: An in-depth look at Modern JS Talk──Classes, covering key concepts and practical insights.
+description: 'Explore ES6 class syntax, constructor definitions, getters/setters, and strict mode behavior in modern JavaScript.'
 slug: modern-js-classes
 date: 2017-12-25T00:00:00Z
 author: bmf-san

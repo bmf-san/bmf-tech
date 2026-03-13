@@ -1,6 +1,6 @@
 ---
 title: Learning Design Patterns with PHP - Bridge Pattern
-description: An in-depth exploration of Learning Design Patterns with PHP - Bridge Pattern, covering design principles, trade-offs, and practical applications.
+description: 'Understand the Bridge pattern to separate functional and implementation extensions using composition in PHP application design.'
 slug: php-design-patterns-bridge
 date: 2019-02-01T00:00:00Z
 author: bmf-san

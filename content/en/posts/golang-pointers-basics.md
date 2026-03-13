@@ -1,6 +1,6 @@
 ---
 title: Basics of Pointers in Golang
-description: An in-depth look at Basics of Pointers in Golang, covering key concepts and practical insights.
+description: 'Learn the basics of Go pointers: address operators (&), dereferencing (*), pass by value vs. reference, nil pointers, and when to use pointer receivers. Includes practical Go examples.'
 slug: golang-pointers-basics
 date: 2018-09-03T00:00:00Z
 author: bmf-san

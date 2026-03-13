@@ -1,6 +1,6 @@
 ---
 title: Exploring Processes, Goroutines, and Memory in Go
-description: An in-depth look at Exploring Processes, Goroutines, and Memory in Go, covering key concepts and practical insights.
+description: 'Explore Go virtual address spaces, process isolation, goroutine memory sharing, stack and heap behavior.'
 slug: exploring-go-process-goroutine-memory
 date: 2025-08-09T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Difference Between Orphan Processes and Zombie Processes
-description: An in-depth look at Difference Between Orphan Processes and Zombie Processes, covering key concepts and practical insights.
+description: 'Understand orphan and zombie processes in UNIX, process lifecycle, and system resource management implications.'
 slug: orphan-process-vs-zombie-process
 date: 2020-08-24T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Ansibleでcronを設定
-description: Ansibleでcronを設定の手順と実践例を詳しく解説します。
+description: "Ansibleでcron設定を自動化する方法を解説。cronモジュール、YAMLシンタックス、分単位バックスラッシュエスケープでcronジョブの定義を効率化する実装ガイドです。"
 slug: configure-cron-with-ansible
 date: 2017-09-26T00:00:00Z
 author: bmf-san

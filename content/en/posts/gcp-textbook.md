@@ -1,6 +1,6 @@
 ---
 title: Textbook of GCP
-description: 'A review and summary of "Textbook of GCP", covering key takeaways and practical insights.'
+description: 'Understand Google Cloud Platform services and architecture for passing the Associate Cloud Engineer exam and real deployments.'
 slug: gcp-textbook
 date: 2021-07-27T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Why and When to Write an Architecture Strategy
-description: An in-depth exploration of Why and When to Write an Architecture Strategy, covering design principles, trade-offs, and practical applications.
+description: "Develop architecture strategies to eliminate ad-hoc technology decisions and establish technology standards across teams."
 slug: when-why-write-architecture-strategy
 date: 2026-02-05T00:00:00Z
 author: bmf-san

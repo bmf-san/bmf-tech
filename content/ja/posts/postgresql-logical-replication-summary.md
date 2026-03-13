@@ -1,6 +1,6 @@
 ---
 title: PostgreSQL 論理レプリケーションの仕様まとめ
-description: PostgreSQL 論理レプリケーションの仕様まとめについて調査・整理したメモ。基本概念と重要ポイントを解説します。
+description: "理解するPostgreSQL論理レプリケーション。パブリッシャー・サブスクライバー構成、WAL設定、DML操作の複製メカニズムをDocker環境で実装するメモ。"
 slug: postgresql-logical-replication-summary
 date: 2025-05-23T00:00:00Z
 author: bmf-san

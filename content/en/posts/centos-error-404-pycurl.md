@@ -1,6 +1,6 @@
 ---
 title: 'Encountered [Errno 14] PYCURL ERROR 22 - "The requested URL returned error: 404 Not Found" on CentOS6.7'
-description: 'A troubleshooting guide for Encountered [Errno 14] PYCURL ERROR 22 - "The requested URL returned error: 404 Not Found" on CentOS6.7, explaining the root cause and how to resolve it.'
+description: 'Fix [Errno 14] PYCURL ERROR 22 — The requested URL returned error: 404 Not Found on CentOS 6.7 yum repository issue.'
 slug: centos-error-404-pycurl
 date: 2017-09-26T00:00:00Z
 author: bmf-san

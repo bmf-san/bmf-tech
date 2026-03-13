@@ -1,6 +1,6 @@
 ---
 title: Encountering 'Uncaught (in promise) error' with redux-form Server-side Validation
-description: 'A troubleshooting guide for Encountering ''Uncaught (in promise) error'' with redux-form Server-side Validation, explaining the root cause and how to resolve it.'
+description: "Fix 'Uncaught (in promise) error' in redux-form server-side validation by returning promises and properly throwing SubmissionError."
 slug: redux-form-promise-error
 date: 2017-10-01T00:00:00Z
 author: bmf-san

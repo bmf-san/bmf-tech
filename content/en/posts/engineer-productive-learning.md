@@ -1,6 +1,6 @@
 ---
 title: Engineer’s Intellectual Productivity Techniques ── Learning, Organizing, and Outputting Efficiently
-description: An in-depth look at Engineer’s Intellectual Productivity Techniques ── Learning, Organizing, and Outputting Efficiently, covering key concepts and practical insights.
+description: 'Develop effective learning workflows using knowledge management, note-taking systems, and knowledge outputting strategies.'
 slug: engineer-productive-learning
 date: 2019-05-14T00:00:00Z
 author: bmf-san

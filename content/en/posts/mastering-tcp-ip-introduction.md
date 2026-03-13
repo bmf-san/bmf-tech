@@ -1,6 +1,6 @@
 ---
 title: Mastering TCP/IP - Introduction (6th Edition)
-description: 'A review and summary of "Mastering TCP/IP - Introduction (6th Edition)", covering key takeaways and practical insights.'
+description: 'Learn TCP/IP networking protocol fundamentals with easy-to-understand examples and practical network communication knowledge for developers.'
 slug: mastering-tcp-ip-introduction
 date: 2024-05-13T00:00:00Z
 author: bmf-san

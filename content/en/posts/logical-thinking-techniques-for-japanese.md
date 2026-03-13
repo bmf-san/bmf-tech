@@ -1,6 +1,6 @@
 ---
 title: 'Introduction to Thinking and Writing Techniques: Practical Logical Thinking Methods for Japanese'
-description: 'Research notes and a structured overview of Introduction to Thinking and Writing Techniques: Practical Logical Thinking Methods for Japanese, summarizing key concepts and findings.'
+description: 'Learn practical logical thinking and structured writing techniques specifically designed for Japanese professionals.'
 slug: logical-thinking-techniques-for-japanese
 date: 2024-01-31T00:00:00Z
 author: bmf-san

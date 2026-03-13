@@ -1,6 +1,6 @@
 ---
 title: Adjacency List and Adjacency Matrix
-description: An in-depth look at Adjacency List and Adjacency Matrix, covering key concepts and practical insights.
+description: 'Compare adjacency lists (O(V+E) space, efficient for sparse graphs) and adjacency matrices (O(V²) space, O(1) edge lookup). Includes Go implementations for directed and undirected graphs.'
 slug: adjacency-list-matrix
 date: 2023-07-29T00:00:00Z
 author: bmf-san

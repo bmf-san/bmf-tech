@@ -1,6 +1,6 @@
 ---
 title: Running Lean ― Practical Lean Startup
-description: An in-depth look at Running Lean ― Practical Lean Startup, covering key concepts and practical insights.
+description: 'Apply lean startup methodology for validating business ideas, reducing waste, and building sustainable products through iterative learning.'
 slug: running-lean-practical-startup
 date: 2016-12-27T00:00:00Z
 author: bmf-san

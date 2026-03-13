@@ -1,6 +1,6 @@
 ---
 title: 'Common Mistakes in Software Architecture: Developing and Evaluating Non-Functional Requirements'
-description: 'An in-depth exploration of Common Mistakes in Software Architecture: Developing and Evaluating Non-Functional Requirements, covering design principles, trade-offs, and practical applications.'
+description: "Discover common software architecture mistakes and evaluate non-functional requirements for robust, maintainable system design."
 slug: software-architecture-mistakes
 date: 2024-05-24T00:00:00Z
 author: bmf-san

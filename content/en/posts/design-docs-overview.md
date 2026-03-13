@@ -1,6 +1,6 @@
 ---
 title: About Design Docs
-description: An in-depth exploration of About Design Docs, covering design principles, trade-offs, and practical applications.
+description: 'Write effective Design Docs for software architecture. Master documentation lifecycle, review process, and team collaboration strategies.'
 slug: design-docs-overview
 date: 2022-10-07T00:00:00Z
 author: bmf-san

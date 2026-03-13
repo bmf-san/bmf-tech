@@ -469,6 +469,57 @@ IdPとSPの設定情報を記述するXMLドキュメント。
 
 ---
 
+## よくある質問（FAQ）
+
+### SAMLとOAuth 2.0 / OIDCの違いは？
+
+| 観点 | SAML 2.0 | OAuth 2.0 / OIDC |
+|-----|----------|------------------|
+| 主な用途 | エンタープライズSSO | Webアプリ・モバイルAPI認可 |
+| データ形式 | XML（重い、署名付き） | JSON（軽量、JWT） |
+| 向いている場面 | 既存の社内IdP（Active Directory等）との連携 | 新規のWebサービス・モバイルアプリ開発 |
+| 実装の複雑さ | 高い（XML・署名・バインディング） | 低〜中 |
+
+SAML 2.0は2005年策定のエンタープライズ向け認証標準で、既存のActive DirectoryやLDAPとの連携に強みを持つ。新規のWebサービスやモバイルアプリには、シンプルなOAuth 2.0 + OIDCの採用が推奨される。
+
+---
+
+### SP-Initiated SSOとIdP-Initiated SSOの使い分けは？
+
+| 項目 | SP-Initiated | IdP-Initiated |
+|-----|--------------|----------------|
+| 開始起点 | ユーザーがSPのURLに直接アクセス | ユーザーがIdPのポータルからSPを選択 |
+| AuthnRequest | 必要（SPが送信） | 不要 |
+| セキュリティ | 高い（InResponseTo検証が可能） | 低い（リプレイ攻撃リスクあり） |
+| 一般的な用途 | 通常のSSOフロー | 社内ポータルのアプリ一覧 |
+
+セキュリティ上はSP-Initiated SSOが推奨される。IdP-InitiatedはAuthnRequestが存在せず、InResponseTo検証ができないため、リプレイ攻撃への耐性が低い。
+
+---
+
+### HTTP-POSTバインディングとHTTP-Redirectバインディングの使い分けは？
+
+| 項目 | HTTP Redirect | HTTP POST |
+|-----|---------------|-----------|
+| 転送方法 | URLクエリパラメータ（DEFLATE+Base64） | HTMLフォームBody（Base64） |
+| サイズ制限 | あり（URLの長さ制限 ~2KB程度） | なし |
+| 署名 | URLに含む（SigAlg・Signatureパラメータ） | フォームに含む |
+| 主な用途 | AuthnRequest送信 | SAMLResponse（Assertion）送信 |
+
+Assertionを含むResponseは`urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST`で送信するのが標準的（Assertionがサイズを超えるため）。AuthnRequestには`HTTP-Redirect`が多く使われる。
+
+---
+
+### SAML 2.0の代表的な脆弱性と対策は？
+
+| 脅威 | 説明 | 対策 |
+|-----|------|------|
+| **XML Signature Wrapping（XSW）攻撃** | 署名検証対象と処理対象のXML要素がずれることで偽造Assertionを通過させる | 署名検証後の要素のみ処理する |
+| **リプレイ攻撃** | 有効なAssertionを傍受して再利用する | `NotOnOrAfter`有効期限＋AssertionのID캐시でチェック |
+| **中間者攻撃** | 通信を傍受してAssertionを改ざん | TLS必須 + XML Signatureで署名検証 |
+
+---
+
 ## 参考資料
 
 - [SAML 2.0 Technical Overview](https://docs.oasis-open.org/security/saml/Post2.0/sstc-saml-tech-overview-2.0.html)

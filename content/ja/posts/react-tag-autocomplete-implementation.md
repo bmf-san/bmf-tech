@@ -1,6 +1,6 @@
 ---
 title: React Tag Autocompleteを使ってサジェスト付きタグ機能を実装する
-description: React Tag Autocompleteを使ってサジェスト付きタグ機能を実装するの手順と実践例を詳しく解説します。
+description: "実装するタグオートコンプリート機能。React Tag Autocompleteライブラリ、APIからのサジェスション取得、ハンドラー処理の実例。"
 slug: react-tag-autocomplete-implementation
 date: 2017-10-01T00:00:00Z
 author: bmf-san

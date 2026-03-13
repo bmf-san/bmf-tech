@@ -1,6 +1,6 @@
 ---
 title: Reflection on 2022 and Goals for Next Year
-description: Personal reflections and highlights from Reflection on 2022 and Goals for Next Year.
+description: 'Personal year-end reflection on 2022: major experiences, technology interests, and goals heading into 2023.'
 slug: 2022-review-and-goals
 date: 2022-12-28T00:00:00Z
 author: bmf-san

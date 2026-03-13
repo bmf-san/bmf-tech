@@ -1,6 +1,6 @@
 ---
 title: Open Addressing Hash Tables and Swiss Tables
-description: An in-depth look at Open Addressing Hash Tables and Swiss Tables, covering key concepts and practical insights.
+description: 'Explore open addressing, Swiss tables, collision resolution techniques, and cache-efficient hash table design.'
 slug: open-address-hash-table-swizzle-table
 date: 2025-02-27T00:00:00Z
 author: bmf-san

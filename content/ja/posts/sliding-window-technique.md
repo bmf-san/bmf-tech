@@ -1,6 +1,6 @@
 ---
 title: 尺取り法について
-description: 尺取り法についてについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: '尺取り法（Two Pointer Technique）とは何か。左右のインデックスを使った探索の仕組み、O(N²)からO(N log N)への計算量改善の仕組みをGoコードの例で解説します。'
 slug: sliding-window-technique
 date: 2023-08-01T00:00:00Z
 author: bmf-san

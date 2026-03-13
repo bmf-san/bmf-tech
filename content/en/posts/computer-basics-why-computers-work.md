@@ -1,6 +1,6 @@
 ---
 title: 'Why Computers Work: 2nd Edition - Essential Hardware & Software Knowledge'
-description: 'A review and summary of "Why Computers Work: 2nd Edition - Essential Hardware & Software Knowledge", covering key takeaways and practical insights.'
+description: 'Understand how computers work: the complete flow from hardware fundamentals to software, and essential computing knowledge.'
 slug: computer-basics-why-computers-work
 date: 2024-05-01T00:00:00Z
 author: bmf-san

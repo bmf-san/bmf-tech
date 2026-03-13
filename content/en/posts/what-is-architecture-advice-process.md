@@ -1,6 +1,6 @@
 ---
 title: What is the Architecture Advice Process (AAP)?
-description: An in-depth exploration of What is the Architecture Advice Process (AAP)?, covering design principles, trade-offs, and practical applications.
+description: "Implement Architecture Advice Process for decentralized decision-making with ADR and architectural governance frameworks."
 slug: what-is-architecture-advice-process
 date: 2025-08-16T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: TerraformとAnsibleを使ってKubernetes環境構築
-description: TerraformとAnsibleを使ってKubernetes環境構築の手順と実践例を詳しく解説します。
+description: "構築するKubernetes環境。TerraformとAnsibleを活用した自動化、kubeadmによるマスター・ワーカーノード構築、IaC実装の実践的テクニック"
 slug: kubernetes-setup-with-terraform-ansible
 date: 2021-04-06T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Knowledge and Technology of Financial Systems for Engineers
-description: An in-depth look at Knowledge and Technology of Financial Systems for Engineers, covering key concepts and practical insights.
+description: 'Understand financial systems for engineers: banking operations, payment processing, securities, and insurance.'
 slug: financial-system-knowledge-skills
 date: 2024-04-04T00:00:00Z
 author: bmf-san

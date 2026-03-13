@@ -1,6 +1,6 @@
 ---
 title: 'Web API: The Good Parts'
-description: 'An in-depth look at Web API: The Good Parts, covering key concepts and practical insights.'
+description: "Discover Web API design principles, REST architecture patterns, and best practices for scalable HTTP API development."
 slug: web-api-good-parts
 date: 2016-10-18T00:00:00Z
 author: bmf-san

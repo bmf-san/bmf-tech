@@ -1,6 +1,6 @@
 ---
 title: Installing Older Versions with Homebrew
-description: A step-by-step guide on Installing Older Versions with Homebrew, with practical examples and configuration tips.
+description: 'Install and downgrade to previous software versions using Homebrew tap extraction, with examples for vim and other tools.'
 slug: homebrew-installing-previous-versions
 date: 2022-10-30T00:00:00Z
 author: bmf-san

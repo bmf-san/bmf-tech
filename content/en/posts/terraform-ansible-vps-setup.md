@@ -1,6 +1,6 @@
 ---
 title: Building a VPS with Terraform and Ansible
-description: A step-by-step guide on Building a VPS with Terraform and Ansible, with practical examples and configuration tips.
+description: "Implement VPS infrastructure with Terraform and Ansible on ConoHa, combining IaC resource management and server configuration automation."
 slug: terraform-ansible-vps-setup
 date: 2020-12-20T00:00:00Z
 author: bmf-san

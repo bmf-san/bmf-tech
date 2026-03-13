@@ -1,6 +1,6 @@
 ---
 title: Measuring Scalability
-description: An in-depth look at Measuring Scalability, covering key concepts and practical insights.
+description: "Measure system scalability using throughput, latency, efficiency metrics, mathematical models like Amdahl's Law, and practical benchmarking."
 slug: measuring-scalability
 date: 2025-06-08T00:00:00Z
 author: bmf-san

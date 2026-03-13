@@ -1,6 +1,6 @@
 ---
 title: 継承より委譲について
-description: 継承より委譲についてについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: '継承より委譲が推奨される理由を解説。ダックタイピング・リスコフの置換原則（LSP）・Goのインターフェースを通じて、四角形と正方形の例から設計の落とし穴と委譲の利点を示します。'
 slug: delegation-over-inheritance
 date: 2025-10-20T00:00:00Z
 author: bmf-san

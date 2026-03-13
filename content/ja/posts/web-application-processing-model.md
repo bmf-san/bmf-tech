@@ -1,6 +1,6 @@
 ---
 title: Webアプリケーションの処理モデルについて
-description: Webアプリケーションの処理モデルについてについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: "Webアプリケーション処理モデル対比、イベントループ・マルチスレッド・マルチプロセスのメリット・デメリットと選定基準"
 slug: web-application-processing-model
 date: 2025-08-02T00:00:00Z
 author: bmf-san

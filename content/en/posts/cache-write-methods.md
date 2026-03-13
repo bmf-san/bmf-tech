@@ -1,6 +1,6 @@
 ---
 title: Cache Write Methods
-description: An in-depth look at Cache Write Methods, covering key concepts and practical insights.
+description: 'Learn the three cache write methods: Write-Through (sync writes to cache and memory), Write-Back (write to cache first, flush later), and Write-Around (bypass cache, write direct to memory).'
 slug: cache-write-methods
 date: 2023-06-03T00:00:00Z
 author: bmf-san

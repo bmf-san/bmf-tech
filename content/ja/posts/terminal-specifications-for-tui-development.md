@@ -1,6 +1,6 @@
 ---
 title: TUI開発で役立つターミナル仕様の理解
-description: TUI開発で役立つターミナル仕様の理解について調査・整理したメモ。基本概念と重要ポイントを解説します。
+description: "TUI開発の基盤となるターミナル仕様、Line Discipline・termios・ANSIエスケープシーケンスの動作原理とGo実装"
 slug: terminal-specifications-for-tui-development
 date: 2025-10-18T00:00:00Z
 author: bmf-san

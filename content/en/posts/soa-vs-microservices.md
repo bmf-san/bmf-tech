@@ -1,6 +1,6 @@
 ---
 title: Notes on Articles Read to Clarify the Differences Between SOA and Microservices
-description: Research notes and a structured overview of Notes on Articles Read to Clarify the Differences Between SOA and Microservices, summarizing key concepts and findings.
+description: "Compare SOA versus microservices architectures, ESB components, API gateways, and distributed system design trade-offs."
 slug: soa-vs-microservices
 date: 2022-11-21T00:00:00Z
 author: bmf-san

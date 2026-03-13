@@ -1,6 +1,6 @@
 ---
 title: Starting Live Coding with Atom×TidalCycles×SuperCollider
-description: An in-depth look at Starting Live Coding with Atom×TidalCycles×SuperCollider, covering key concepts and practical insights.
+description: 'Create music through live coding using Atom editor, TidalCycles language, Haskell functions, and SuperCollider sound synthesis engine.'
 slug: live-coding-atom-tidalcycles-supercollider
 date: 2018-06-11T00:00:00Z
 author: bmf-san

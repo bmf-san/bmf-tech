@@ -1,6 +1,6 @@
 ---
 title: Cannot Start MySQL 8.0.17 Container on M1 Mac
-description: An in-depth look at Cannot Start MySQL 8.0.17 Container on M1 Mac, covering key concepts and practical insights.
+description: 'Fix the MySQL container startup failure on Apple M1 Mac (failed to create new OS thread errno=22). Use MySQL 8.0.26+ with --platform=linux/amd64 in the Dockerfile for ARM architecture support.'
 slug: mysql-container-not-starting-on-m1-mac
 date: 2021-09-05T00:00:00Z
 author: bmf-san

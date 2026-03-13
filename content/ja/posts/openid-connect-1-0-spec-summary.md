@@ -1,6 +1,6 @@
 ---
 title: OpenID Connect 1.0 仕様まとめ
-description: OpenID Connect 1.0 仕様まとめについて調査・整理したメモ。基本概念と重要ポイントを解説します。
+description: "実装するOpenID Connect。OAuthレイヤー、IDToken、JWTクレーム、認証フロー、署名・暗号化、仕様書要点を詳細解説"
 slug: openid-connect-1-0-spec-summary
 date: 2026-01-23T00:00:00Z
 author: bmf-san

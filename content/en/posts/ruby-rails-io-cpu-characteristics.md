@@ -1,6 +1,6 @@
 ---
 title: Understanding IO and CPU Characteristics in Ruby and Rails
-description: An in-depth look at Understanding IO and CPU Characteristics in Ruby and Rails, covering key concepts and practical insights.
+description: 'Understand Ruby GVL, Puma concurrency, IO-bound vs CPU-bound workloads, thread/process tuning, and GC impact on Rails performance.'
 slug: ruby-rails-io-cpu-characteristics
 date: 2025-06-14T00:00:00Z
 author: bmf-san

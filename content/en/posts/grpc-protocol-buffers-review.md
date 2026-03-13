@@ -1,6 +1,6 @@
 ---
 title: A Collection of Links for Reviewing gRPC and Protocol Buffers
-description: Personal reflections and highlights from A Collection of Links for Reviewing gRPC and Protocol Buffers.
+description: 'Review essential gRPC and Protocol Buffers resources covering load balancing, Kubernetes deployment, and best practices.'
 slug: grpc-protocol-buffers-review
 date: 2024-01-25T00:00:00Z
 author: bmf-san

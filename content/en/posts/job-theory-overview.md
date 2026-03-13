@@ -1,6 +1,6 @@
 ---
 title: Jobs Theory
-description: An in-depth look at Jobs Theory, covering key concepts and practical insights.
+description: 'Explore Jobs Theory framework to understand customer needs and predict innovation patterns for product development.'
 slug: job-theory-overview
 date: 2024-03-20T00:00:00Z
 author: bmf-san

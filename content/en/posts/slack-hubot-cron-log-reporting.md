@@ -1,6 +1,6 @@
 ---
 title: Scheduled Server Log Reports with Slack, hubot, cron (node-cron), shell, and logwatch
-description: An in-depth look at Scheduled Server Log Reports with Slack, hubot, cron (node-cron), shell, and logwatch, covering key concepts and practical insights.
+description: "Automate Slack log reporting using hubot, node-cron, logwatch, and CoffeeScript for scheduled server monitoring and notifications."
 slug: slack-hubot-cron-log-reporting
 date: 2017-10-01T00:00:00Z
 author: bmf-san

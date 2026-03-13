@@ -1,6 +1,6 @@
 ---
 title: Implementation of Counting Sort
-description: A step-by-step guide on Implementation of Counting Sort, with practical examples and configuration tips.
+description: 'Implement counting sort using prefix sums in Go. Discover non-comparison sorting with efficient O(n) time complexity execution.'
 slug: counting-sort-implementation
 date: 2023-06-24T00:00:00Z
 author: bmf-san

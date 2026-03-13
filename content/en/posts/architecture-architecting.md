@@ -1,6 +1,6 @@
 ---
 title: About Architecture, Architects, and Architecting
-description: An in-depth exploration of About Architecture, Architects, and Architecting, covering design principles, trade-offs, and practical applications.
+description: 'Understand architecture as essential system structure, architect responsibilities, and architecting activities for building aligned systems.'
 slug: architecture-architecting
 date: 2025-07-14T00:00:00Z
 author: bmf-san

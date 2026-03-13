@@ -1,6 +1,6 @@
 ---
 title: Rubyのブロック構文について
-description: Rubyのブロック構文についてについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: "理解するRubyブロック構文。do..end形式、{}形式、yield、block_given?、&blockパラメータ、クロージャの特性を習得。"
 slug: ruby-block-syntax
 date: 2024-05-15T00:00:00Z
 author: bmf-san

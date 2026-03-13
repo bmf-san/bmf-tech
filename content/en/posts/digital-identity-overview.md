@@ -1,6 +1,6 @@
 ---
 title: 'All About Digital Identity: Knowledge for Implementing a Secure and User-Centric Identity System'
-description: 'A step-by-step guide on All About Digital Identity: Knowledge for Implementing a Secure and User-Centric Identity System, with practical examples and configuration tips.'
+description: 'Explore OAuth 2.0, OpenID Connect, SAML, Zero Trust architecture, and Decentralized ID for secure identity system design.'
 slug: digital-identity-overview
 date: 2026-02-20T00:00:00Z
 author: bmf-san

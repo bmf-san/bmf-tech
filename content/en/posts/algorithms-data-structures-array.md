@@ -1,6 +1,6 @@
 ---
 title: Algorithms and Data Structures - Arrays
-description: An in-depth look at Algorithms and Data Structures - Arrays, covering key concepts and practical insights.
+description: 'Understand arrays as a data structure: O(1) random access, O(n) insertion/deletion, static vs. dynamic memory allocation. Includes a Go array implementation.'
 slug: algorithms-data-structures-array
 date: 2019-10-31T00:00:00Z
 author: bmf-san

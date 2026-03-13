@@ -1,6 +1,6 @@
 ---
 title: Command to Generate ADR Template Files
-description: An in-depth look at Command to Generate ADR Template Files, covering key concepts and practical insights.
+description: 'Implement a Make command to auto-generate Architecture Decision Record templates with automatic numbering and status tracking capabilities.'
 slug: adr-template-command
 date: 2023-11-10T00:00:00Z
 author: bmf-san

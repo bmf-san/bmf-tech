@@ -1,6 +1,6 @@
 ---
 title: Starting Go Language
-description: An in-depth look at Starting Go Language, covering key concepts and practical insights.
+description: "Learn Go language fundamentals and core concepts through an introductory guide for beginning Go programming development."
 slug: starting-with-golang
 date: 2018-03-01T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Algorithms and Data Structures - Quick Sort
-description: An in-depth look at Algorithms and Data Structures - Quick Sort, covering key concepts and practical insights.
+description: 'Understand Quick Sort: O(n log n) average, O(n²) worst-case time complexity. Covers pivot selection, partitioning into low/high ranges, and a randomized Go implementation.'
 slug: algorithms-data-structures-quick-sort
 date: 2020-02-01T00:00:00Z
 author: bmf-san

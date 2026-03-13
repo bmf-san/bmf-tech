@@ -1,6 +1,6 @@
 ---
 title: Considering Architecture Strategy
-description: An in-depth exploration of Considering Architecture Strategy, covering design principles, trade-offs, and practical applications.
+description: 'Understand architecture strategy as systematic policy for building and evolving systems, covering vision, principles, and scalability planning.'
 slug: architecture-strategy-discussion
 date: 2025-02-16T00:00:00Z
 author: bmf-san

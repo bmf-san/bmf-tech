@@ -1,6 +1,6 @@
 ---
 title: One-liner to Unlock Password-Protected PDFs
-description: An in-depth look at One-liner to Unlock Password-Protected PDFs, covering key concepts and practical insights.
+description: "Decrypt password-protected PDFs using QPDF—a powerful command-line tool for removing PDF password restrictions securely."
 slug: unlock-password-protected-pdf
 date: 2024-03-29T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Encountering 'the input device is not a TTY' When Running Docker Command with Cron
-description: 'An in-depth look at Encountering ''the input device is not a TTY'' When Running Docker Command with Cron, covering key concepts and practical insights.'
+description: 'Fix the input device is not a TTY error when running docker exec via cron. The cause is the -it flags: cron has no TTY, so remove -t and -i and use plain docker exec.'
 slug: docker-cron-tty-issue
 date: 2023-03-17T00:00:00Z
 author: bmf-san

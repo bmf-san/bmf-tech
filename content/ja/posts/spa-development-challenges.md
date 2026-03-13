@@ -1,6 +1,6 @@
 ---
 title: SPAを構築したときにハマったこと
-description: SPAを構築したときにハマったことの手順と実践例を詳しく解説します。
+description: "SPAで History API を使う際のnginx設定、try_filesでindex.htmlへルーティングしながらjsファイルのパス管理を実装する方法"
 slug: spa-development-challenges
 date: 2018-06-06T00:00:00Z
 author: bmf-san

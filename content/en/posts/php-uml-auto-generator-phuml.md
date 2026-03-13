@@ -1,6 +1,6 @@
 ---
 title: Tool for Automatically Generating UML with PHP - phUML
-description: An in-depth look at Tool for Automatically Generating UML with PHP - phUML, covering key concepts and practical insights.
+description: 'Generate PHP class diagrams automatically using phUML to visualize design architecture and understand complex structures.'
 slug: php-uml-auto-generator-phuml
 date: 2020-06-26T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: The Art of Thought Organization
-description: An in-depth look at The Art of Thought Organization, covering key concepts and practical insights.
+description: 'Develop thinking and thought organization skills through practical reflection methods and mental frameworks.'
 slug: organizing-thoughts
 date: 2024-12-08T00:00:00Z
 author: bmf-san

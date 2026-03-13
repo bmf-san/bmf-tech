@@ -1,6 +1,6 @@
 ---
 title: Output PHPUnit Code Coverage with CircleCI 2.0
-description: An in-depth look at Output PHPUnit Code Coverage with CircleCI 2.0, covering key concepts and practical insights.
+description: 'Generate PHPUnit code coverage reports on CircleCI 2.0 using phpdbg and Docker for HTML coverage artifacts.'
 slug: circleci-phpunit-code-coverage
 date: 2018-08-13T00:00:00Z
 author: bmf-san

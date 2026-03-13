@@ -1,6 +1,6 @@
 ---
 title: Transaction Overview
-description: Research notes and a structured overview of Transaction Overview, summarizing key concepts and findings.
+description: "Understand database transaction fundamentals including ACID properties, concurrency control, and isolation for data integrity."
 slug: transaction-overview
 date: 2023-06-07T00:00:00Z
 author: bmf-san

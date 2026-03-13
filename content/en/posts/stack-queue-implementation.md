@@ -1,6 +1,6 @@
 ---
 title: Implementation of Stack and Queue
-description: A step-by-step guide on Implementation of Stack and Queue, with practical examples and configuration tips.
+description: "Implement stack and queue data structures in Go with linked lists and slices for O(1) operations and optimal performance."
 slug: stack-queue-implementation
 date: 2023-07-25T00:00:00Z
 author: bmf-san

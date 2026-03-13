@@ -1,6 +1,6 @@
 ---
 title: One-Liner for Self-Signed Certificates in Go
-description: An in-depth look at One-Liner for Self-Signed Certificates in Go, covering key concepts and practical insights.
+description: 'Generate a self-signed TLS certificate in Go with one command using the built-in generate_cert.go tool. Produces cert.pem and key.pem for local HTTPS without openssl or mkcert.'
 slug: go-self-signed-certificate-creation
 date: 2024-02-16T00:00:00Z
 author: bmf-san

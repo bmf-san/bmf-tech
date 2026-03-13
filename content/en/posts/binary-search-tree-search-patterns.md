@@ -1,6 +1,6 @@
 ---
 title: Search Patterns in Binary Search Trees
-description: An in-depth exploration of Search Patterns in Binary Search Trees, covering design principles, trade-offs, and practical applications.
+description: 'Learn DFS and BFS search patterns for binary search trees, including preorder, inorder, and postorder traversal methods.'
 slug: binary-search-tree-search-patterns
 date: 2023-08-04T00:00:00Z
 author: bmf-san

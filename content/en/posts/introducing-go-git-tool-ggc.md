@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Go-based Git Tool 'ggc'
-description: 'Research notes and a structured overview of Introduction to the Go-based Git Tool ''ggc, summarizing key concepts and findings.'
+description: 'Discover ggc, a Go-based Git tool offering composite commands and interactive mode to streamline everyday Git workflows.'
 slug: introducing-go-git-tool-ggc
 date: 2025-06-15T00:00:00Z
 author: bmf-san

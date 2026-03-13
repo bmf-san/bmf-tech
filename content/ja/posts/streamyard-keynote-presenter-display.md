@@ -1,6 +1,6 @@
 ---
 title: StreamYardでKeynoteの発表者ディスプレイを表示しながら配信する方法
-description: StreamYardでKeynoteの発表者ディスプレイを表示しながら配信する方法の手順と実践例を詳しく解説します。
+description: "StreamYardでKeynoteプレゼン配信時、発表者ディスプレイとスライド表示をウインドウ分割して同時に活用する実装手順"
 slug: streamyard-keynote-presenter-display
 date: 2021-11-03T00:00:00Z
 author: bmf-san

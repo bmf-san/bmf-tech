@@ -1,6 +1,6 @@
 ---
 title: Got Tired of Typing Directories with the cd Command, So I Made It Easier with a Shell Script
-description: An in-depth look at Got Tired of Typing Directories with the cd Command, So I Made It Easier with a Shell Script, covering key concepts and practical insights.
+description: "Simplify bash directory navigation using shell scripts with menu selection for faster command-line traversal and productivity."
 slug: simplify-directory-typing-shell-script
 date: 2017-09-26T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Participated as Core Staff and LT Speaker at Laravel JP Conference
-description: An in-depth look at Participated as Core Staff and LT Speaker at Laravel JP Conference, covering key concepts and practical insights.
+description: 'Learn about Laravel testing best practices and Dusk framework through a conference lightning talk experience.'
 slug: laravel-jp-conference-participation
 date: 2019-02-16T00:00:00Z
 author: bmf-san

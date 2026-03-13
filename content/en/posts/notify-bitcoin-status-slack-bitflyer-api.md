@@ -1,6 +1,6 @@
 ---
 title: Notify Bitcoin Asset Status on Slack Using bitFlyer's Private API
-description: 'An in-depth look at Notify Bitcoin Asset Status on Slack Using bitFlyer''s Private API, covering key concepts and practical insights.'
+description: 'Learn bitFlyer API integration with Node.js, HMAC-SHA256 signing, and Slack webhook message formatting.'
 slug: notify-bitcoin-status-slack-bitflyer-api
 date: 2017-09-26T00:00:00Z
 author: bmf-san

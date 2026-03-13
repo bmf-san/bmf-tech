@@ -1,6 +1,6 @@
 ---
 title: Vagrant+CentOS7.3+Ansible
-description: An in-depth look at Vagrant+CentOS7.3+Ansible, covering key concepts and practical insights.
+description: "Configure Vagrant with CentOS and Ansible provisioning using SSH connections and automated playbook deployment."
 slug: vagrant-centos-ansible-setup
 date: 2017-10-01T00:00:00Z
 author: bmf-san

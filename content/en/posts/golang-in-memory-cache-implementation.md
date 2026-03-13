@@ -1,6 +1,6 @@
 ---
 title: Implementing In-Memory Cache in Golang
-description: A step-by-step guide on Implementing In-Memory Cache in Golang, with practical examples and configuration tips.
+description: 'Build a lightweight in-memory cache in Go with TTL expiration and thread-safe access using sync.Map. Covers design requirements, expiration logic, and trade-offs vs. library solutions.'
 slug: golang-in-memory-cache-implementation
 date: 2020-09-29T00:00:00Z
 author: bmf-san
@@ -96,7 +96,7 @@ func main() {
 I thought `sync.Map` was convenient because I didn't have to worry about locking, but it was rejected because it did not meet the requirements in terms of data structure and functionality.
 
 ## Release Version
-*The version that meets the requirements is available at [github.com - bmf-san/go-snippets/architecture_design/cache/cache_with_goroutine.go](https://github.com/bmf-san/go-snippets/blob/master/architecture_design/cache/cache_with_goroutine.go).* 
+*The version that meets the requirements is available at [github.com - bmf-san/go-snippets/architecture_design/cache/cache_with_goroutine.go](https://github.com/bmf-san/go-snippets/blob/master/architecture_design/cache/cache_with_goroutine.go).*
 
 ```golang
 package main

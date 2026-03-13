@@ -1,6 +1,6 @@
 ---
 title: Readable Code - Simple and Practical Techniques for Writing Better Code
-description: An in-depth look at Readable Code - Simple and Practical Techniques for Writing Better Code, covering key concepts and practical insights.
+description: 'Master code readability through practical techniques, cognitive science insights, and professional writing standards.'
 slug: readable-code-techniques
 date: 2016-06-15T00:00:00Z
 author: bmf-san

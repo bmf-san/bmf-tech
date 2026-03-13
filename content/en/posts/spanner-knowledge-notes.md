@@ -1,6 +1,6 @@
 ---
 title: Notes on Spanner Insights
-description: Research notes and a structured overview of Notes on Spanner Insights, summarizing key concepts and findings.
+description: "Explore Cloud Spanner architecture, replication strategies, indexing, and performance optimization for distributed databases."
 slug: spanner-knowledge-notes
 date: 2024-03-03T00:00:00Z
 author: bmf-san

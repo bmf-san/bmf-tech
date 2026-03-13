@@ -1,6 +1,6 @@
 ---
 title: Logical Thinking
-description: An in-depth look at Logical Thinking, covering key concepts and practical insights.
+description: 'Master logical thinking and critical thinking fundamentals applicable to all technical and business decisions and problem-solving situations.'
 slug: logical-thinking
 date: 2015-05-19T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Books to Learn About API Design
-description: 'A review and summary of "Books to Learn About API Design", covering key takeaways and practical insights.'
+description: 'Discover recommended books on API design: fundamentals, design phases, testing strategies, and practical design patterns.'
 slug: books-on-api-design
 date: 2024-08-26T00:00:00Z
 author: bmf-san

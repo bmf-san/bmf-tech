@@ -1,6 +1,6 @@
 ---
 title: From Custom HTTP Router to New ServeMux
-description: An in-depth look at From Custom HTTP Router to New ServeMux, covering key concepts and practical insights.
+description: 'Migrate from a custom HTTP router goblin to Go 1.22 enhanced net/http ServeMux. Covers new routing patterns, performance comparison with third-party routers, and when ServeMux is enough.'
 slug: custom-http-router-to-new-servemux
 date: 2024-04-27T00:00:00Z
 author: bmf-san

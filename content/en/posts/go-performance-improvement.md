@@ -1,6 +1,6 @@
 ---
 title: Improving Code Performance with Go
-description: An in-depth look at Improving Code Performance with Go, covering key concepts and practical insights.
+description: 'Learn practical Go performance optimization: pprof profiling, benchmark tests, escape analysis, memory allocation reduction, and real examples from optimizing a custom HTTP router.'
 slug: go-performance-improvement
 date: 2023-06-12T00:00:00Z
 author: bmf-san

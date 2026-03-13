@@ -1,6 +1,6 @@
 ---
 title: OSメモ
-description: OSメモについて調査・整理したメモ。基本概念と重要ポイントを解説します。
+description: "理解するOS仕組み。スワップメモリ、ページキャッシュ、slabキャッシュ、dentry/inode構造、ハードリンク、シンボリックリンク知識"
 slug: os-memo
 date: 2018-05-11T00:00:00Z
 author: bmf-san

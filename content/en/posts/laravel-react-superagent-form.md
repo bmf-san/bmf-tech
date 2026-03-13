@@ -1,6 +1,6 @@
 ---
 title: Implementing Forms with Laravel, React, and Superagent
-description: A step-by-step guide on Implementing Forms with Laravel, React, and Superagent, with practical examples and configuration tips.
+description: 'Build AJAX forms combining Laravel APIs, React components, and Superagent for HTTP requests and validation.'
 slug: laravel-react-superagent-form
 date: 2017-09-26T00:00:00Z
 author: bmf-san

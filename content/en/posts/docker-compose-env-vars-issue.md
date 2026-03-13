@@ -1,6 +1,6 @@
 ---
 title: Environment Variables Specified in docker-compose.yml Not Accessible During Container Build
-description: Research notes and a structured overview of Environment Variables Specified in docker-compose.yml Not Accessible During Container Build, summarizing key concepts and findings.
+description: 'Fix environment variables in docker-compose.yml being unavailable during Docker image build. Use ARG in Dockerfile and build.args in docker-compose.yml to pass values at build time.'
 slug: docker-compose-env-vars-issue
 date: 2020-11-14T00:00:00Z
 author: bmf-san

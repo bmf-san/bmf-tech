@@ -1,6 +1,6 @@
 ---
 title: RSpec Code Reading
-description: 'A review and summary of "RSpec Code Reading", covering key takeaways and practical insights.'
+description: 'Analyze RSpec framework internals: runner invocation, test execution flow, and result reporting mechanisms for Ruby testing.'
 slug: rspec-code-reading
 date: 2024-10-20T00:00:00Z
 author: bmf-san

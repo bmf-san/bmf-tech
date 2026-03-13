@@ -1,6 +1,6 @@
 ---
 title: Controlling Container Startup Order with Dockerize in Docker Compose
-description: An in-depth look at Controlling Container Startup Order with Dockerize in Docker Compose, covering key concepts and practical insights.
+description: 'Control container startup order in Docker Compose using Dockerize. Learn why depends_on is insufficient, how Dockerize waits for tcp://host:port readiness, and a practical docker-compose example.'
 slug: dockerize-control-docker-compose-start-order
 date: 2019-09-17T00:00:00Z
 author: bmf-san
@@ -23,7 +23,7 @@ It is also possible to use a pure bash script called [wait-for-it](https://githu
 
 cf. [Docker-docs-ja - Controlling Startup Order](http://docs.docker.jp/compose/startup-order.html)
 
-The purpose of using Dockerize is when you want to intentionally control the startup order of multiple containers. 
+The purpose of using Dockerize is when you want to intentionally control the startup order of multiple containers.
 
 For example, if there is an application container and a test database container, the database container needs to start before the application container when the application container performs tests that use the DB.
 
@@ -87,7 +87,7 @@ volumes:
     driver: local
 ```
 
-gobel_app container wants to wait for the startup of gobel_test_db. 
+gobel_app container wants to wait for the startup of gobel_test_db.
 The entrypoint specifies the dockerize command.
 
 Dockerfile used for building the gobel_app container.

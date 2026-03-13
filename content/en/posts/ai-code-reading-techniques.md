@@ -1,6 +1,6 @@
 ---
 title: Steps for Code Reading Using AI
-description: 'A review and summary of "Steps for Code Reading Using AI", covering key takeaways and practical insights.'
+description: 'Master code reading procedures using AI by creating documentation, checklists, and improvement notes to accelerate comprehension and analysis.'
 slug: ai-code-reading-techniques
 date: 2025-11-02T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Learning Design Patterns with PHP - Adapter Pattern
-description: An in-depth exploration of Learning Design Patterns with PHP - Adapter Pattern, covering design principles, trade-offs, and practical applications.
+description: 'Master the Adapter pattern to change interfaces without modifying original classes using composition and wrappers in PHP.'
 slug: php-design-patterns-adapter
 date: 2019-02-01T00:00:00Z
 author: bmf-san

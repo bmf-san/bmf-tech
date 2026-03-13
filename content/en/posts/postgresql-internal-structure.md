@@ -1,6 +1,6 @@
 ---
 title: 'Learning PostgreSQL from the Inside: Design and Operation Principles'
-description: 'An in-depth exploration of Learning PostgreSQL from the Inside: Design and Operation Principles, covering design principles, trade-offs, and practical applications.'
+description: 'A review of Learning PostgreSQL from the Inside. Covers internal architecture, storage management, WAL, MVCC, vacuum, and key operational knowledge for running PostgreSQL in production.'
 slug: postgresql-internal-structure
 date: 2024-05-07T00:00:00Z
 author: bmf-san

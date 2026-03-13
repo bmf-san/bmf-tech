@@ -1,6 +1,6 @@
 ---
 title: Basics of Authentication and Authorization
-description: An in-depth look at Basics of Authentication and Authorization, covering key concepts and practical insights.
+description: 'Learn authentication and authorization fundamentals: identification, RBAC, ABAC, credential types, SSO, SAML 2.0, OAuth 2.0, and OpenID Connect with practical context.'
 slug: authentication-authorization-basics
 date: 2020-11-05T00:00:00Z
 author: bmf-san

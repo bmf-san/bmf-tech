@@ -1,6 +1,6 @@
 ---
 title: マスタリングTCP/IP―入門編―(第6版)
-description: マスタリングTCP/IP―入門編―(第6版)について調査・整理したメモ。基本概念と重要ポイントを解説します。
+description: "学習するTCP/IP基礎。ネットワーク階層、プロトコル仕様、通信メカニズム、実例による分かりやすい説明で入門から実践まで対応"
 slug: mastering-tcp-ip-introduction
 date: 2024-05-13T00:00:00Z
 author: bmf-san

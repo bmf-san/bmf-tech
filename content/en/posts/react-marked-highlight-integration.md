@@ -1,6 +1,6 @@
 ---
 title: React＋marked＋highlight
-description: An in-depth look at React＋marked＋highlight, covering key concepts and practical insights.
+description: 'Integrate React markdown editor with marked and highlight.js for syntax-highlighted code block rendering.'
 slug: react-marked-highlight-integration
 date: 2017-10-01T00:00:00Z
 author: bmf-san

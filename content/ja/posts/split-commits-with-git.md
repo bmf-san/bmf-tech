@@ -1,6 +1,6 @@
 ---
 title: Gitでコミットを分割する方法
-description: Gitでコミットを分割する方法の手順と実践例を詳しく解説します。
+description: "git rebase -i、reset、addコマンドを組み合わせてコミットを細粒度に分割し、レビュアーが読みやすい提案に整形する手法"
 slug: split-commits-with-git
 date: 2021-10-05T00:00:00Z
 author: bmf-san

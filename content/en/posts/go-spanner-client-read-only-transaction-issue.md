@@ -1,6 +1,6 @@
 ---
 title: Stuck with ReadOnlyTransaction in Go's Spanner Client
-description: 'An in-depth look at Stuck with ReadOnlyTransaction in Go''s Spanner Client, covering key concepts and practical insights.'
+description: 'Fix session pool exhaustion caused by missing tx.Close() on Cloud Spanner ReadOnlyTransaction in Go. Learn proper transaction lifecycle management and issue detection with zagane.'
 slug: go-spanner-client-read-only-transaction-issue
 date: 2021-02-08T00:00:00Z
 author: bmf-san
@@ -56,7 +56,7 @@ for {
 Without the transaction termination process, a new session is generated every time a transaction is executed, leading to exhaustion of the session pool. The reason processing stopped at the same record count each time was likely due to hitting the limit of `SPANNER_SESSION_POOL_MAX_OPEND`. When calculated, it adds up.
 
 # Countermeasures
-Aside from reading the documentation properly, there are also tool-based solutions available. 
+Aside from reading the documentation properly, there are also tool-based solutions available.
 [github.com - gcpug/zagane](https://github.com/gcpug/zagane)
 
 Additionally, monitoring the cloudspanner session count in GCP might also be a good idea.

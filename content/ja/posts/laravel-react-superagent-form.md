@@ -1,6 +1,6 @@
 ---
 title: Laravel+React+Superagentでフォームを実装
-description: Laravel+React+Superagentでフォームを実装の手順と実践例を詳しく解説します。
+description: "実装するLaravel+React+Superagentのフォーム。API設計、FormRequest、JSON応答、Promise/Ajaxの実装パターンを詳細に解説"
 slug: laravel-react-superagent-form
 date: 2017-09-26T00:00:00Z
 author: bmf-san

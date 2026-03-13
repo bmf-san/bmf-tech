@@ -1,6 +1,6 @@
 ---
 title: Multi-Product Development at freee
-description: An in-depth look at Multi-Product Development at freee, covering key concepts and practical insights.
+description: 'Discover how freee manages multi-product SaaS development using bounded contexts, service segmentation, and fitness functions.'
 slug: freee-technical-book-multi-product-development
 date: 2024-11-09T00:00:00Z
 author: bmf-san

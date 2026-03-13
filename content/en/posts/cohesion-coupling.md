@@ -1,6 +1,6 @@
 ---
 title: Cohesion and Coupling
-description: An in-depth look at Cohesion and Coupling, covering key concepts and practical insights.
+description: 'Understand cohesion and coupling as software design metrics. Learn the 7 levels of cohesion (coincidental to functional) and 6 levels of coupling (content to data) with practical examples.'
 slug: cohesion-coupling
 date: 2025-06-25T00:00:00Z
 author: bmf-san

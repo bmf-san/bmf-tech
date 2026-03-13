@@ -1,6 +1,6 @@
 ---
 title: The Importance of Explicitly Stating Constraints and Trade-offs in Technical Decision Making
-description: An in-depth look at The Importance of Explicitly Stating Constraints and Trade-offs in Technical Decision Making, covering key concepts and practical insights.
+description: 'Document technical decisions by explicitly stating constraints and trade-offs to enable future re-evaluation and org growth.'
 slug: importance-of-constraints-tradeoffs
 date: 2025-08-05T00:00:00Z
 author: bmf-san

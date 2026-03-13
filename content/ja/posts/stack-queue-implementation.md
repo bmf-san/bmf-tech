@@ -1,6 +1,6 @@
 ---
 title: スタックとキューの実装
-description: スタックとキューの実装の手順と実践例を詳しく解説します。
+description: "Go言語でスタック・キューをLIFO・FIFO実装、スライス・連結リストのパターン別に時間計算量O(1)で構築する方法"
 slug: stack-queue-implementation
 date: 2023-07-25T00:00:00Z
 author: bmf-san

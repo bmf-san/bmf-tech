@@ -1,6 +1,6 @@
 ---
 title: Web API Testing Techniques
-description: An in-depth look at Web API Testing Techniques, covering key concepts and practical insights.
+description: "Master API testing with 5W1H framework, 10 P model, and STRIDE threat modeling for comprehensive security testing."
 slug: web-api-testing-techniques
 date: 2024-07-08T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: How I Managed to Fix the Persistent Failure of Let's Encrypt Certificate Auto-Renewal
-description: 'A troubleshooting guide for How I Managed to Fix the Persistent Failure of Let''s Encrypt Certificate Auto-Renewal, explaining the root cause and how to resolve it.'
+description: "Fix Let's Encrypt certificate renewal failures with certbot-auto and force-renew options configured properly for nginx web servers."
 slug: letsencrypt-auto-renewal-failure-solution
 date: 2017-10-01T00:00:00Z
 author: bmf-san

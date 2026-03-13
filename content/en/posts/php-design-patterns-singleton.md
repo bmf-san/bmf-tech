@@ -1,6 +1,6 @@
 ---
 title: 'Learning Design Patterns with PHP - Singleton: Limiting Instances'
-description: 'An in-depth exploration of Learning Design Patterns with PHP - Singleton: Limiting Instances, covering design principles, trade-offs, and practical applications.'
+description: 'Understand the Singleton pattern to control instance creation, restrict access, and manage single object state in PHP.'
 slug: php-design-patterns-singleton
 date: 2017-10-01T00:00:00Z
 author: bmf-san

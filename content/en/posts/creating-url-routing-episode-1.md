@@ -1,6 +1,6 @@
 ---
 title: Creating URL Routing Episode 1
-description: A step-by-step guide on Creating URL Routing Episode 1, with practical examples and configuration tips.
+description: "Master URL routing using tree structures for HTTP request matching, path parameters, and efficient web application request handling."
 slug: creating-url-routing-episode-1
 date: 2018-12-19T00:00:00Z
 author: bmf-san

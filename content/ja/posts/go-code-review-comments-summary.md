@@ -1,6 +1,6 @@
 ---
 title: Go CodeReviewCommentsのまとめ
-description: Go CodeReviewCommentsのまとめについて調査・整理したメモ。基本概念と重要ポイントを解説します。
+description: "Go公式のCodeReviewCommentsからコードレビューのベストプラクティスを厳選し、レシーバー型・エラーハンドリング・メモリ効率について解説。"
 slug: go-code-review-comments-summary
 date: 2020-09-15T00:00:00Z
 author: bmf-san

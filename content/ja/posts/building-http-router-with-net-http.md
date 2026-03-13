@@ -1,6 +1,6 @@
 ---
 title: net／httpでつくるHTTPルーター自作入門
-description: net／httpでつくるHTTPルーター自作入門について調査・整理したメモ。基本概念と重要ポイントを解説します。
+description: "Golangのnet/httpでHTTPルーター自作を解説。ルートマップ、URLパス解析、メソッド別ルーティング、パスパラメータの仕組みをステップバイステップで実装ガイドします。"
 slug: building-http-router-with-net-http
 date: 2021-10-24T00:00:00Z
 author: bmf-san

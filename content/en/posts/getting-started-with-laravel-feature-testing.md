@@ -1,6 +1,6 @@
 ---
 title: Notes on Starting Functional Testing in Laravel
-description: Research notes and a structured overview of Notes on Starting Functional Testing in Laravel, summarizing key concepts and findings.
+description: 'Start feature testing in Laravel with browser kit testing API and HTTP assertions for beginners building robust applications.'
 slug: getting-started-with-laravel-feature-testing
 date: 2019-02-11T00:00:00Z
 author: bmf-san

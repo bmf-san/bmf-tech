@@ -1,6 +1,6 @@
 ---
 title: 'Understanding Finance Thinking from Scratch: Growth Strategies for Employees and Companies'
-description: 'An in-depth look at Understanding Finance Thinking from Scratch: Growth Strategies for Employees and Companies, covering key concepts and practical insights.'
+description: 'Learn finance thinking for maximizing corporate value, strategic decision-making, and long-term financial planning.'
 slug: finance-thinking-from-zero
 date: 2022-04-27T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: About Ruby's Proc and Lambda
-description: 'An in-depth look at About Ruby''s Proc and Lambda, covering key concepts and practical insights.'
+description: 'Compare Ruby Proc and Lambda differences in argument handling, return behavior, and jump statement semantics for closures.'
 slug: ruby-proc-lambda
 date: 2024-05-15T00:00:00Z
 author: bmf-san

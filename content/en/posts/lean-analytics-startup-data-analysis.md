@@ -1,6 +1,6 @@
 ---
 title: 'LEAN ANALYTICS: Data Analysis and Utilization for Startups'
-description: 'An in-depth look at LEAN ANALYTICS: Data Analysis and Utilization for Startups, covering key concepts and practical insights.'
+description: 'Learn data analysis techniques and metrics for startups using lean methodology to optimize web-based business decisions.'
 slug: lean-analytics-startup-data-analysis
 date: 2016-11-19T00:00:00Z
 author: bmf-san

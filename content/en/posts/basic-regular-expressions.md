@@ -1,6 +1,6 @@
 ---
 title: Basics of Regular Expressions
-description: An in-depth look at Basics of Regular Expressions, covering key concepts and practical insights.
+description: 'Master regular expression fundamentals using character classes, anchors, quantifiers, and grouping constructs for pattern matching.'
 slug: basic-regular-expressions
 date: 2018-12-01T00:00:00Z
 author: bmf-san

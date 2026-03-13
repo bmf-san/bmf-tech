@@ -1,6 +1,6 @@
 ---
 title: Summary of PostgreSQL Logical Replication Specifications
-description: Research notes and a structured overview of Summary of PostgreSQL Logical Replication Specifications, summarizing key concepts and findings.
+description: 'Learn PostgreSQL logical replication: how it differs from physical replication, publisher/subscriber setup with Docker, wal_level configuration, replication slots, and CREATE SUBSCRIPTION.'
 slug: postgresql-logical-replication-summary
 date: 2025-05-23T00:00:00Z
 author: bmf-san

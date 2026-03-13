@@ -1,6 +1,6 @@
 ---
 title: Relearning Go
-description: An in-depth look at Relearning Go, covering key concepts and practical insights.
+description: 'Strengthen Go coding skills by reviewing comprehensive language specifications, generics implementation, and Go 1.18+ features thoroughly.'
 slug: learning-go-again
 date: 2023-01-23T00:00:00Z
 author: bmf-san

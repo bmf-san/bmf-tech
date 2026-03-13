@@ -1,6 +1,6 @@
 ---
 title: RubyのProcとlamdaについて
-description: RubyのProcとlamdaについてについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: "区別するProcとlambda。引数の厳格性、returnとnext・breakの挙動差、手続きオブジェクト化によるコード再利用パターン。"
 slug: ruby-proc-lambda
 date: 2024-05-15T00:00:00Z
 author: bmf-san

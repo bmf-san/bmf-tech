@@ -1,6 +1,6 @@
 ---
 title: About Ruby Modules
-description: An in-depth look at About Ruby Modules, covering key concepts and practical insights.
+description: 'Understand Ruby modules for namespacing, mixin multiple inheritance, and providing common methods without class instantiation.'
 slug: ruby-modules
 date: 2024-05-15T00:00:00Z
 author: bmf-san

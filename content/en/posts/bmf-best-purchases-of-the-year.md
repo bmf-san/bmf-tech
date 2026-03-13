@@ -1,6 +1,6 @@
 ---
 title: Things I Bought This Year That Were Worth It
-description: An in-depth look at Things I Bought This Year That Were Worth It, covering key concepts and practical insights.
+description: "Review top 2017 purchases including Bluetooth audio gear, Cote&Ciel bags, and gym membership for enhanced personal performance."
 slug: bmf-best-purchases-of-the-year
 date: 2017-12-25T00:00:00Z
 author: bmf-san

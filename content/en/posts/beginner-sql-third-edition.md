@@ -1,6 +1,6 @@
 ---
 title: Beginning SQL, 3rd Edition
-description: 'A review and summary of "Beginning SQL, 3rd Edition", covering key takeaways and practical insights.'
+description: 'Master SQL fundamentals through comprehensive introduction covering query basics, joins, aggregations, and essential database operations.'
 slug: beginner-sql-third-edition
 date: 2024-04-01T00:00:00Z
 author: bmf-san

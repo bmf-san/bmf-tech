@@ -1,6 +1,6 @@
 ---
 title: Types of Relationships in ER Diagrams
-description: An in-depth look at Types of Relationships in ER Diagrams, covering key concepts and practical insights.
+description: 'Understand the three types of ER diagram relationships: dependent (parent-child, solid line), independent (dotted line), and many-to-many. Includes SQL table design examples for each.'
 slug: er-diagram-relationship-types
 date: 2018-07-31T00:00:00Z
 author: bmf-san

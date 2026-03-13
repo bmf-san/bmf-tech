@@ -1,6 +1,6 @@
 ---
 title: Introduction to grep
-description: Research notes and a structured overview of Introduction to grep, summarizing key concepts and findings.
+description: 'Master Linux grep command for text searching using patterns, wildcards, and practical techniques for file analysis.'
 slug: introduction-to-grep
 date: 2019-01-22T00:00:00Z
 author: bmf-san

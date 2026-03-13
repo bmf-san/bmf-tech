@@ -1,6 +1,6 @@
 ---
 title: Building a Monitoring Platform with Containers
-description: A step-by-step guide on Building a Monitoring Platform with Containers, with practical examples and configuration tips.
+description: 'Build a container-based monitoring platform using EFK stack and Prometheus for logs, metrics, visualization, and alerting.'
 slug: container-monitoring-infrastructure
 date: 2021-12-18T00:00:00Z
 author: bmf-san

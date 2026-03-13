@@ -1,6 +1,6 @@
 ---
 title: Eric Evans' Domain-Driven Design
-description: 'An in-depth exploration of Eric Evans'' Domain-Driven Design, covering design principles, trade-offs, and practical applications.'
+description: 'Master Domain-Driven Design: domain modeling, translating business domains into code, and managing complexity.'
 slug: eric-evans-domain-driven-design
 date: 2016-12-09T00:00:00Z
 author: bmf-san

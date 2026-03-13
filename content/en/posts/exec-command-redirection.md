@@ -1,6 +1,6 @@
 ---
 title: Redirect with exec Command
-description: An in-depth look at Redirect with exec Command, covering key concepts and practical insights.
+description: 'Master shell exec command for dynamic file descriptor redirection, input/output control, and terminal manipulation.'
 slug: exec-command-redirection
 date: 2019-05-08T00:00:00Z
 author: bmf-san

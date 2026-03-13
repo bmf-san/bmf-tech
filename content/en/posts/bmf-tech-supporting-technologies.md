@@ -1,6 +1,6 @@
 ---
 title: Technologies Supporting bmf-tech
-description: An in-depth look at Technologies Supporting bmf-tech, covering key concepts and practical insights.
+description: "Explore Docker, Golang, Vue.js, Nginx, Prometheus, and Grafana powering modern blogging infrastructure and monitoring systems."
 slug: bmf-tech-supporting-technologies
 date: 2022-08-08T00:00:00Z
 author: bmf-san

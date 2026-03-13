@@ -1,6 +1,6 @@
 ---
 title: カウントソートの実装
-description: カウントソートの実装の手順と実践例を詳しく解説します。
+description: "カウントソートを実装で学ぶ。比較なしソート、要素カウント、累積和計算で線形時間効率化を実現するアルゴリズムの数学的考え方を解説します。"
 slug: counting-sort-implementation
 date: 2023-06-24T00:00:00Z
 author: bmf-san

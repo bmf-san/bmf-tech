@@ -1,6 +1,6 @@
 ---
 title: About the Two Pointer Technique
-description: An in-depth look at About the Two Pointer Technique, covering key concepts and practical insights.
+description: "Master two-pointer technique for efficient array pair searching with O(N log N) complexity using sorting and index manipulation."
 slug: sliding-window-technique
 date: 2023-08-01T00:00:00Z
 author: bmf-san
