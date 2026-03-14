@@ -159,10 +159,10 @@ test.describe('Japanese article page /ja/posts/2018-review-2019-goals/', () => {
     expect(text?.trim().length).toBeGreaterThan(0);
   });
 
-  test('breadcrumbs show Home', async ({ page }) => {
+  test('breadcrumbs show Home in Japanese', async ({ page }) => {
     await page.goto(URL);
     await expect(page.locator('.breadcrumbs')).toBeVisible();
-    await expect(page.locator('.breadcrumbs-link').first()).toContainText('Home');
+    await expect(page.locator('.breadcrumbs-link').first()).toContainText('ホーム');
   });
 
   test('link to EN counterpart is present', async ({ page }) => {
