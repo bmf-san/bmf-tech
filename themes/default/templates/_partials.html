@@ -12,7 +12,9 @@
 <meta charset="utf-8">
 <meta name="color-scheme" content="light dark">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{if $isSingle}}{{$article.FrontMatter.Title}} | {{else if .CurrentTaxonomy}}{{.CurrentTaxonomy.Name}} | {{end}}{{.Config.Site.Title}}</title>
+{{- $pageTitle := .Config.Site.Title}}
+{{- if $isSingle}}{{$pageTitle = printf "%s | %s" $article.FrontMatter.Title .Config.Site.Title}}{{else if .CurrentTaxonomy}}{{$pageTitle = printf "%s | %s" .CurrentTaxonomy.Name .Config.Site.Title}}{{else if and .CurrentArchivePath $article}}{{- $ad := formatDate "2006" $article.FrontMatter.Date}}{{if gt (len .CurrentArchivePath) 15}}{{$ad = formatDate "2006/01" $article.FrontMatter.Date}}{{end}}{{$pageTitle = printf "%s | %s" $ad .Config.Site.Title}}{{end}}
+<title>{{$pageTitle}}</title>
 <meta name="description" content="{{if and $isSingle $article.FrontMatter.Description}}{{$article.FrontMatter.Description}}{{else if and .CurrentTaxonomy .CurrentTaxonomy.Description}}{{.CurrentTaxonomy.Description}}{{else}}{{.Config.Site.Description}}{{end}}">
 <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="{{.Config.Site.Title}}">
 <link rel="icon" href="/favicon.ico">
@@ -76,10 +78,20 @@
 }
 </script>
 {{- else}}
-<meta property="og:title" content="{{.Config.Site.Title}}">
+{{- $ogTitle := .Config.Site.Title}}{{- $ogURL := .Config.Site.BaseURL}}
+{{- if .CurrentTaxonomy}}
+  {{- $ogTitle = printf "%s | %s" .CurrentTaxonomy.Name .Config.Site.Title}}
+  {{- $ogURL = printf "%s%s" .Config.Site.BaseURL .CurrentTaxonomy.URL}}
+{{- else if and .CurrentArchivePath $article}}
+  {{- $ad := formatDate "2006" $article.FrontMatter.Date}}
+  {{- if gt (len .CurrentArchivePath) 15}}{{$ad = formatDate "2006/01" $article.FrontMatter.Date}}{{end}}
+  {{- $ogTitle = printf "%s | %s" $ad .Config.Site.Title}}
+  {{- $ogURL = printf "%s%s%s" .Config.Site.BaseURL $localePrefix .CurrentArchivePath}}
+{{- end}}
+<meta property="og:title" content="{{$ogTitle}}">
 <meta property="og:type" content="website">
-<meta property="og:url" content="{{.Config.Site.BaseURL}}">
-<meta property="og:description" content="{{.Config.Site.Description}}">
+<meta property="og:url" content="{{$ogURL}}">
+<meta property="og:description" content="{{if and .CurrentTaxonomy .CurrentTaxonomy.Description}}{{.CurrentTaxonomy.Description}}{{else}}{{.Config.Site.Description}}{{end}}">
 <meta property="og:image" content="{{.Config.Site.BaseURL}}/assets/images/ogp-default.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -129,7 +141,7 @@
 
 {{define "header"}}
 {{- $article := index .Articles 0}}
-{{- $isSingle := and $article (not .Pagination) (not .CurrentArchivePath)}}
+{{- $isSingle := and $article (not .Pagination) (not .CurrentArchivePath) (not .CurrentTaxonomy)}}
 {{- $altURL := "/ja/"}}
 {{- if eq .CurrentLocale "ja"}}{{$altURL = "/"}}{{end}}
 {{- if $isSingle}}

@@ -212,3 +212,54 @@ test.describe('listing pages have no hreflang links', () => {
     });
   }
 });
+
+// ── <title> on archive and taxonomy listing pages ─────────────────────────────
+
+test.describe('archive page <title> includes date', () => {
+  test('month archive /ja/archives/2015/05/ shows YYYY/MM | site', async ({ page }) => {
+    await page.goto('/ja/archives/2015/05/');
+    await expect(page).toHaveTitle(/^2015\/05 \| bmf-tech$/);
+  });
+
+  test('year archive /ja/archives/2015/ shows YYYY | site', async ({ page }) => {
+    await page.goto('/ja/archives/2015/');
+    await expect(page).toHaveTitle(/^2015 \| bmf-tech$/);
+  });
+
+  test('EN month archive /archives/2015/05/ shows YYYY/MM | site', async ({ page }) => {
+    await page.goto('/archives/2015/05/');
+    await expect(page).toHaveTitle(/^2015\/05 \| bmf-tech$/);
+  });
+});
+
+// ── OGP og:url on archive and taxonomy listing pages ─────────────────────────
+
+test.describe('og:url on listing pages points to page not homepage', () => {
+  test('JA month archive og:url points to archive URL', async ({ page }) => {
+    await page.goto('/ja/archives/2015/05/');
+    const ogUrl = page.locator('meta[property="og:url"]');
+    await expect(ogUrl).toHaveCount(1);
+    expect(await ogUrl.getAttribute('content')).toContain('/ja/archives/2015/05/');
+  });
+
+  test('JA year archive og:url points to archive URL', async ({ page }) => {
+    await page.goto('/ja/archives/2015/');
+    const ogUrl = page.locator('meta[property="og:url"]');
+    await expect(ogUrl).toHaveCount(1);
+    expect(await ogUrl.getAttribute('content')).toContain('/ja/archives/2015/');
+  });
+
+  test('JA tag page og:url points to tag URL', async ({ page }) => {
+    await page.goto('/ja/tags/abac/');
+    const ogUrl = page.locator('meta[property="og:url"]');
+    await expect(ogUrl).toHaveCount(1);
+    expect(await ogUrl.getAttribute('content')).toContain('/ja/tags/abac/');
+  });
+
+  test('JA tag page og:title includes tag name', async ({ page }) => {
+    await page.goto('/ja/tags/abac/');
+    const ogTitle = page.locator('meta[property="og:title"]');
+    await expect(ogTitle).toHaveCount(1);
+    expect(await ogTitle.getAttribute('content')).toContain('ABAC');
+  });
+});
