@@ -16,7 +16,7 @@
 {{- if $isSingle}}{{$pageTitle = printf "%s | %s" $article.FrontMatter.Title .Config.Site.Title}}{{else if .CurrentTaxonomy}}{{$pageTitle = printf "%s | %s" .CurrentTaxonomy.Name .Config.Site.Title}}{{else if and .CurrentArchivePath $article}}{{- $ad := formatDate "2006" $article.FrontMatter.Date}}{{if .CurrentArchiveIsMonth}}{{$ad = formatDate "2006/01" $article.FrontMatter.Date}}{{end}}{{$pageTitle = printf "%s | %s" $ad .Config.Site.Title}}{{end}}
 <title>{{$pageTitle}}</title>
 <meta name="description" content="{{if and $isSingle $article.FrontMatter.Description}}{{$article.FrontMatter.Description}}{{else if and .CurrentTaxonomy .CurrentTaxonomy.Description}}{{.CurrentTaxonomy.Description}}{{else}}{{.Config.Site.Description}}{{end}}">
-<link rel="alternate" type="application/atom+xml" href="/atom.xml" title="{{.Config.Site.Title}}">
+<link rel="alternate" type="application/atom+xml" href="{{$localePrefix}}/atom.xml" title="{{.Config.Site.Title}}">
 <link rel="icon" href="/favicon.ico">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bmf-san/sleyt@latest/docs/public/css/index.css">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/bmf-san/sleyt@latest/docs/public/css/index.css" as="style">
@@ -71,7 +71,7 @@
   "@type": "BreadcrumbList",
   "itemListElement": [
     {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{.Config.Site.BaseURL}}{{$homeURL}}"}{{if $article.FrontMatter.Categories}},
-    {"@type": "ListItem", "position": 2, "name": "{{index $article.FrontMatter.Categories 0}}", "item": "{{.Config.Site.BaseURL}}{{$localePrefix}}{{categoryURL (index $article.FrontMatter.Categories 0)}}"},
+    {"@type": "ListItem", "position": 2, "name": "{{index $article.FrontMatter.Categories 0}}", "item": "{{.Config.Site.BaseURL}}{{categoryURL .CurrentLocale (index $article.FrontMatter.Categories 0)}}"},
     {"@type": "ListItem", "position": 3, "name": "{{$article.FrontMatter.Title}}", "item": "{{.Config.Site.BaseURL}}{{$article.URL}}"}{{else}},
     {"@type": "ListItem", "position": 2, "name": "{{$article.FrontMatter.Title}}", "item": "{{.Config.Site.BaseURL}}{{$article.URL}}"}{{end}}
   ]
@@ -87,7 +87,10 @@
   {{- if .CurrentArchiveIsMonth}}{{$ad = formatDate "2006/01" $article.FrontMatter.Date}}{{end}}
   {{- $ogTitle = printf "%s | %s" $ad .Config.Site.Title}}
   {{- $ogURL = printf "%s%s" .Config.Site.BaseURL .CurrentArchivePath}}
+{{- else if and .Pagination (gt .Pagination.CurrentPage 1)}}
+  {{- $ogURL = printf "%s%s/page/%d/" .Config.Site.BaseURL .Pagination.BaseURL .Pagination.CurrentPage}}
 {{- end}}
+<link rel="canonical" href="{{$ogURL}}">
 <meta property="og:title" content="{{$ogTitle}}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{$ogURL}}">
@@ -129,9 +132,9 @@
   var p=localStorage.getItem('pref-locale');
   if(!p){
     var l=(navigator.languages&&navigator.languages[0])||navigator.language||'';
-    if(l.toLowerCase().startsWith('ja')&&!/^\/ja(\/|$)/.test(location.pathname)){
+    if(l.toLowerCase().startsWith('ja')){
       localStorage.setItem('pref-locale','ja');
-      location.replace('/ja/');
+      if(!/^\/ja(\/|$)/.test(location.pathname)){location.replace('/ja/');}
     }else{
       localStorage.setItem('pref-locale','en');
     }
@@ -178,7 +181,7 @@
     {{if eq .CurrentLocale "ja"}}
     <li><a href="/ja/" class="navbar-item">ホーム</a></li>
     <li><a href="/ja/about/" class="navbar-item">About</a></li>
-    <li><a href="/atom.xml" class="navbar-item">フィード</a></li>
+    <li><a href="/ja/atom.xml" class="navbar-item">フィード</a></li>
     {{else}}
     <li><a href="/" class="navbar-item">Home</a></li>
     <li><a href="/about/" class="navbar-item">About</a></li>
