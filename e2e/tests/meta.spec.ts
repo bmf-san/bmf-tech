@@ -499,6 +499,160 @@ test.describe('paginated tag/archive pages have correct hreflang page number', (
   });
 });
 
+// ── hreflang count: bilingual articles must have exactly 3 alternate links ────
+// Regression: confirms no duplicate or missing hreflang tags.
+
+test.describe('hreflang count on bilingual articles', () => {
+  test('EN article has exactly 3 hreflang links (en, ja, x-default)', async ({ page }) => {
+    await page.goto('/posts/2018-review-2019-goals/');
+    const links = page.locator('link[rel="alternate"][hreflang]');
+    expect(await links.count()).toBe(3);
+    expect(await page.locator('link[rel="alternate"][hreflang="en"]').count()).toBe(1);
+    expect(await page.locator('link[rel="alternate"][hreflang="ja"]').count()).toBe(1);
+    expect(await page.locator('link[rel="alternate"][hreflang="x-default"]').count()).toBe(1);
+  });
+
+  test('JA article has exactly 3 hreflang links (en, ja, x-default)', async ({ page }) => {
+    await page.goto('/ja/posts/2018-review-2019-goals/');
+    const links = page.locator('link[rel="alternate"][hreflang]');
+    expect(await links.count()).toBe(3);
+    expect(await page.locator('link[rel="alternate"][hreflang="en"]').count()).toBe(1);
+    expect(await page.locator('link[rel="alternate"][hreflang="ja"]').count()).toBe(1);
+    expect(await page.locator('link[rel="alternate"][hreflang="x-default"]').count()).toBe(1);
+  });
+});
+
+// ── JSON-LD BlogPosting field values ──────────────────────────────────────────
+
+test.describe('JSON-LD BlogPosting on EN article /posts/2018-review-2019-goals/', () => {
+  const URL = '/posts/2018-review-2019-goals/';
+
+  test('JSON-LD is present and parseable', async ({ page }) => {
+    await page.goto(URL);
+    const json = await page.evaluate(() => {
+      const scripts = Array.from(document.querySelectorAll('script[type="application/ld+json"]'));
+      return scripts.map(s => JSON.parse(s.textContent ?? '{}'));
+    });
+    const posting = json.find((j: any) => j['@type'] === 'BlogPosting');
+    expect(posting).toBeTruthy();
+  });
+
+  test('headline matches article title', async ({ page }) => {
+    await page.goto(URL);
+    const json = await page.evaluate(() =>
+      Array.from(document.querySelectorAll('script[type="application/ld+json"]'))
+        .map(s => JSON.parse(s.textContent ?? '{}'))
+    );
+    const posting = json.find((j: any) => j['@type'] === 'BlogPosting');
+    expect(posting.headline).toBe('Reflection on 2018 and Goals for 2019');
+  });
+
+  test('datePublished is present and non-empty', async ({ page }) => {
+    await page.goto(URL);
+    const json = await page.evaluate(() =>
+      Array.from(document.querySelectorAll('script[type="application/ld+json"]'))
+        .map(s => JSON.parse(s.textContent ?? '{}'))
+    );
+    const posting = json.find((j: any) => j['@type'] === 'BlogPosting');
+    expect(posting.datePublished).toBe('2018-12-31');
+  });
+
+  test('author.name is "Kenta Takeuchi"', async ({ page }) => {
+    await page.goto(URL);
+    const json = await page.evaluate(() =>
+      Array.from(document.querySelectorAll('script[type="application/ld+json"]'))
+        .map(s => JSON.parse(s.textContent ?? '{}'))
+    );
+    const posting = json.find((j: any) => j['@type'] === 'BlogPosting');
+    expect(posting.author?.name).toBe('Kenta Takeuchi');
+  });
+
+  test('url contains the article path', async ({ page }) => {
+    await page.goto(URL);
+    const json = await page.evaluate(() =>
+      Array.from(document.querySelectorAll('script[type="application/ld+json"]'))
+        .map(s => JSON.parse(s.textContent ?? '{}'))
+    );
+    const posting = json.find((j: any) => j['@type'] === 'BlogPosting');
+    expect(posting.url).toContain('/posts/2018-review-2019-goals/');
+  });
+
+  test('description is non-empty', async ({ page }) => {
+    await page.goto(URL);
+    const json = await page.evaluate(() =>
+      Array.from(document.querySelectorAll('script[type="application/ld+json"]'))
+        .map(s => JSON.parse(s.textContent ?? '{}'))
+    );
+    const posting = json.find((j: any) => j['@type'] === 'BlogPosting');
+    expect(posting.description?.trim().length).toBeGreaterThan(0);
+  });
+});
+
+test.describe('JSON-LD BlogPosting on JA article /ja/posts/2018-review-2019-goals/', () => {
+  const URL = '/ja/posts/2018-review-2019-goals/';
+
+  test('headline is Japanese', async ({ page }) => {
+    await page.goto(URL);
+    const json = await page.evaluate(() =>
+      Array.from(document.querySelectorAll('script[type="application/ld+json"]'))
+        .map(s => JSON.parse(s.textContent ?? '{}'))
+    );
+    const posting = json.find((j: any) => j['@type'] === 'BlogPosting');
+    expect(posting.headline).toBe('2018年の振り返りと2019年の目標');
+  });
+
+  test('url contains /ja/posts/ path', async ({ page }) => {
+    await page.goto(URL);
+    const json = await page.evaluate(() =>
+      Array.from(document.querySelectorAll('script[type="application/ld+json"]'))
+        .map(s => JSON.parse(s.textContent ?? '{}'))
+    );
+    const posting = json.find((j: any) => j['@type'] === 'BlogPosting');
+    expect(posting.url).toContain('/ja/posts/2018-review-2019-goals/');
+  });
+});
+
+// ── JSON-LD BreadcrumbList ────────────────────────────────────────────────────
+
+test.describe('JSON-LD BreadcrumbList on EN article', () => {
+  test('BreadcrumbList is present with ≥3 items', async ({ page }) => {
+    await page.goto('/posts/2018-review-2019-goals/');
+    const json = await page.evaluate(() =>
+      Array.from(document.querySelectorAll('script[type="application/ld+json"]'))
+        .map(s => JSON.parse(s.textContent ?? '{}'))
+    );
+    const crumbs = json.find((j: any) => j['@type'] === 'BreadcrumbList');
+    expect(crumbs).toBeTruthy();
+    expect(crumbs.itemListElement?.length).toBeGreaterThanOrEqual(3);
+  });
+
+  test('first breadcrumb is Home → /', async ({ page }) => {
+    await page.goto('/posts/2018-review-2019-goals/');
+    const json = await page.evaluate(() =>
+      Array.from(document.querySelectorAll('script[type="application/ld+json"]'))
+        .map(s => JSON.parse(s.textContent ?? '{}'))
+    );
+    const crumbs = json.find((j: any) => j['@type'] === 'BreadcrumbList');
+    const first = crumbs.itemListElement?.[0];
+    expect(first?.name).toBe('Home');
+    expect(first?.item).toContain('bmf-tech.com/');
+  });
+});
+
+test.describe('JSON-LD BreadcrumbList on JA article', () => {
+  test('first breadcrumb is ホーム → /ja/', async ({ page }) => {
+    await page.goto('/ja/posts/2018-review-2019-goals/');
+    const json = await page.evaluate(() =>
+      Array.from(document.querySelectorAll('script[type="application/ld+json"]'))
+        .map(s => JSON.parse(s.textContent ?? '{}'))
+    );
+    const crumbs = json.find((j: any) => j['@type'] === 'BreadcrumbList');
+    const first = crumbs.itemListElement?.[0];
+    expect(first?.name).toBe('ホーム');
+    expect(first?.item).toContain('bmf-tech.com/ja/');
+  });
+});
+
 // ── BUG-T8: BreadcrumbList item on paginated taxonomy pages points to page 1 ──
 
 test.describe('BreadcrumbList item URL on paginated taxonomy page points to page-1 URL', () => {

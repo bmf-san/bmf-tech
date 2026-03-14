@@ -81,3 +81,41 @@ test('sitemap.xml contains EN and JA homepage URLs', async ({ request }) => {
   expect(body).toContain('https://bmf-tech.com/</loc>');
   expect(body).toContain('https://bmf-tech.com/ja/</loc>');
 });
+
+test('sitemap.xml contains a known article URL', async ({ request }) => {
+  const res = await request.get('/sitemap.xml');
+  const body = await res.text();
+  expect(body).toContain('/posts/2018-review-2019-goals/</loc>');
+  expect(body).toContain('/ja/posts/2018-review-2019-goals/</loc>');
+});
+
+test('sitemap.xml article entry has xhtml:link hreflang alternates', async ({ request }) => {
+  const res = await request.get('/sitemap.xml');
+  const body = await res.text();
+  // Each bilingual article should have en and ja xhtml:link alternate entries
+  expect(body).toContain('hreflang="en"');
+  expect(body).toContain('hreflang="ja"');
+  expect(body).toContain('hreflang="x-default"');
+});
+
+test('sitemap.xml contains lastmod date on article entries', async ({ request }) => {
+  const res = await request.get('/sitemap.xml');
+  const body = await res.text();
+  expect(body).toMatch(/<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/);
+});
+
+// ── OGP images ────────────────────────────────────────────────────────────────
+
+const OGP_SLUGS = [
+  '2018-review-2019-goals',
+  'cto-thinking-strategy-leadership',
+  'engineering-in-ai-reflections',
+];
+
+for (const slug of OGP_SLUGS) {
+  test(`OGP image /ogp/${slug}.png returns HTTP 200`, async ({ request }) => {
+    const res = await request.get(`/ogp/${slug}.png`);
+    expect(res.status()).toBe(200);
+    expect(res.headers()['content-type']).toMatch(/image\/png/);
+  });
+}
