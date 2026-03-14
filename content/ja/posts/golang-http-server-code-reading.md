@@ -80,7 +80,7 @@ func (i *indexHandler) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 
 ServeHTTPは関数型のaliasであるHandlerFuncに置き換えることができる。
 
-cf. 
+cf.
 - [func (f HandlerFunc) ServeHTTP(w ResponseWriter, r *Request)](https://golang.org/src/net/http/server.go?s=64180#L2058)
 
 ```golang
@@ -117,7 +117,7 @@ DefaultServeMuxはServeMux型の構造体を持っている。
 
 HandlerFuncというmuxにルーティングを登録する関数を実装している。
 
-cf. 
+cf.
 - [DefaultServeMux](https://golang.org/src/net/http/server.go?s=77627:77714#L2269)
 - [func (mux *ServeMux) HandlerFunc(pattern string, handler func(ResponseWriter, *Request))](https://golang.org/src/net/http/server.go?s=77627:77714#L2497)
 
@@ -148,7 +148,7 @@ func indexHandler(w http.ResponseWriter, req *http.Request) {
 ## ListenAndServe()の利用
 Server構造体（http.Server{}）を作らずとも、ListenAndServe()を代用することができる。
 
-cf. 
+cf.
 - [func (*Server) ListenAndServe](https://golang.org/src/net/http/server.go?s=77627:77714#L2898)
 - [func ListenAndServe(addr string, handler Handler) error](https://golang.org/src/net/http/server.go?s=77627:77714#L3162)
 

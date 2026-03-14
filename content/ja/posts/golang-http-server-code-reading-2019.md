@@ -50,7 +50,7 @@ func (h *HelloHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 冗長に書いているこのコードを一行ずつ追ってコードを簡略化しつつ、リーディングしていきます。
 
-# ServeHttp(w ResponseWriter, r *Request) 
+# ServeHttp(w ResponseWriter, r *Request)
 まずは、
 
 ```golang
