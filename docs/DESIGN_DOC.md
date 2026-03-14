@@ -261,7 +261,6 @@ description: "Kenta Takeuchi のプロフィールページ"
 {{- end}}
 <link rel="alternate" type="application/atom+xml" href="/atom.xml" ...>
 {{block "seo" .}}{{end}}
-<style>@media(prefers-color-scheme:dark){html,body{background-color:hsl(0deg 0% 4%)}}</style>
 ```
 
 ### `article.html` — 記事フッターの GitHub リンク
