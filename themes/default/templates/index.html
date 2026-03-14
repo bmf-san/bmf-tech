@@ -18,7 +18,6 @@
 
   {{/* Featured hero post (first article) */}}
   {{- $featured := index .Articles 0}}
-  {{- $flp := ""}}{{if eq $featured.Locale "ja"}}{{$flp = "/ja"}}{{end}}
   <section class="mb-12">
     <a href="{{$featured.URL}}" class="card">
       {{- $featuredImg := index $featured.FrontMatter.Extra "image"}}

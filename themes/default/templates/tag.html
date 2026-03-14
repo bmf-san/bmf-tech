@@ -29,7 +29,6 @@
   {{if .Articles}}
   <div class="grid gap-4 mb-8">
     {{range .Articles}}
-    {{- $lp := ""}}{{if eq .Locale "ja"}}{{$lp = "/ja"}}{{end}}
     {{- $img := index .FrontMatter.Extra "image"}}
     {{- if not $img}}{{$img = printf "/ogp/%s.png" .FrontMatter.Slug}}{{end}}
     <a href="{{.URL}}" class="card no-underline">
