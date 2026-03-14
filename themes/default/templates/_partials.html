@@ -137,6 +137,12 @@
     {{- if and (eq $.CurrentLocale "ja") (eq .Locale "en")}}{{$altURL = .URL}}{{end}}
     {{- if and (ne $.CurrentLocale "ja") (eq .Locale "ja")}}{{$altURL = .URL}}{{end}}
   {{- end}}
+{{- else if .CurrentTaxonomy}}
+  {{- if eq .CurrentLocale "ja"}}
+    {{- $altURL = slice .CurrentTaxonomy.URL 3}}
+  {{- else}}
+    {{- $altURL = printf "/ja%s" .CurrentTaxonomy.URL}}
+  {{- end}}
 {{- end}}
 {{- $homeURL := "/"}}
 {{- if eq .CurrentLocale "ja"}}{{$homeURL = "/ja/"}}{{end}}
