@@ -1,6 +1,6 @@
 ---
 title: Modern JS Discussion ─ Proxy
-description: An in-depth look at Modern JS Discussion ─ Proxy, covering key concepts and practical insights.
+description: 'Master JavaScript Proxy objects, trap handlers, target wrapping, and value validation in ES2015 development.'
 slug: modern-js-proxy
 date: 2018-02-28T00:00:00Z
 author: bmf-san

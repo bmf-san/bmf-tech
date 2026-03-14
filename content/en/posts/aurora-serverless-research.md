@@ -1,6 +1,6 @@
 ---
 title: Exploring Aurora Serverless
-description: An in-depth look at Exploring Aurora Serverless, covering key concepts and practical insights.
+description: 'Explore Aurora Serverless v2 capabilities including multi-AZ support, auto-scaling, cost optimization, and deployment considerations for databases.'
 slug: aurora-serverless-research
 date: 2023-12-27T00:00:00Z
 author: bmf-san

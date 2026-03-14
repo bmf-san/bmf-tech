@@ -1,6 +1,6 @@
 ---
 title: Created Git Shortcut Commands in .bashrc
-description: A step-by-step guide on Created Git Shortcut Commands in .bashrc, with practical examples and configuration tips.
+description: 'Create powerful git aliases and bash functions for branch checkout, pull, and push operations using .bashrc configuration.'
 slug: create-git-shortcut-bashrc
 date: 2017-09-26T00:00:00Z
 author: bmf-san

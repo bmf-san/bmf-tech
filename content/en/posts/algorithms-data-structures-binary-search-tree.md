@@ -1,6 +1,6 @@
 ---
 title: Algorithms and Data Structures - Binary Search Trees
-description: An in-depth look at Algorithms and Data Structures - Binary Search Trees, covering key concepts and practical insights.
+description: 'Understand Binary Search Trees: O(log n) average search and insertion, DFS (preorder, inorder, postorder) and BFS traversal methods with a Go BST implementation.'
 slug: algorithms-data-structures-binary-search-tree
 date: 2020-01-15T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: SSH Connection Setup Memo
-description: A step-by-step guide on SSH Connection Setup Memo, with practical examples and configuration tips.
+description: "Implement secure SSH key-based authentication with proper sshd configuration and permission management for remote servers."
 slug: ssh-connection-setup-notes
 date: 2018-09-18T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Code Reading of irb
-description: 'A review and summary of "Code Reading of irb", covering key takeaways and practical insights.'
+description: "Explore the inner workings of Ruby's interactive shell (irb) and understand its startup process, history loading, and command execution."
 slug: irb-code-reading
 date: 2024-10-20T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Creating Custom Artisan Command in Laravel 5.3
-description: A step-by-step guide on Creating Custom Artisan Command in Laravel 5.3, with practical examples and configuration tips.
+description: 'Implement custom Laravel Artisan commands to automatically generate repository files and streamline development workflow patterns.'
 slug: laravel-5-3-custom-artisan-command
 date: 2017-09-26T00:00:00Z
 author: bmf-san

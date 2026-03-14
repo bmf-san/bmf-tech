@@ -1,6 +1,6 @@
 ---
 title: 'Introduction to New Relic, 2nd Edition: Fundamentals and Implementation of Observability'
-description: 'A review and summary of "Introduction to New Relic, 2nd Edition: Fundamentals and Implementation of Observability", covering key takeaways and practical insights.'
+description: 'Learn New Relic observability, telemetry data types, metrics aggregation, logs collection, and trace analysis.'
 slug: new-relic-observability-introduction
 date: 2024-08-10T00:00:00Z
 author: bmf-san

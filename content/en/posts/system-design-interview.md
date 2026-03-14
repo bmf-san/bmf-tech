@@ -1,6 +1,6 @@
 ---
 title: System Design Interview
-description: An in-depth exploration of System Design Interview, covering design principles, trade-offs, and practical applications.
+description: "Learn system design fundamentals and architecture patterns for building scalable distributed systems through proven interview knowledge."
 slug: system-design-interview
 date: 2023-02-27T00:00:00Z
 author: bmf-san

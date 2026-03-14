@@ -1,12 +1,14 @@
 ---
 title: System Failure Terms Starting with 'F'
-description: 'An in-depth look at System Failure Terms Starting with ''F, covering key concepts and practical insights.'
+description: "Understand fail-safe, failover, fault-tolerance, and failback mechanisms for designing robust and reliable infrastructure."
 slug: system-failure-terms-starting-with-f
 date: 2021-06-05T00:00:00Z
 author: bmf-san
 categories:
   - Infrastructure
-translation_key: system-failure-terms-starting-with-f
+tags:
+  - Reliability
+  - SRE
 ---
 
 

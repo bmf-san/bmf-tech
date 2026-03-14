@@ -1,6 +1,6 @@
 ---
 title: Types of AWS Services - AZ, Region, Global
-description: An in-depth look at Types of AWS Services - AZ, Region, Global, covering key concepts and practical insights.
+description: "Classify AWS services by deployment scope—Availability Zones, Regions, and Global services—with practical infrastructure examples."
 slug: types-of-aws-services-az-region-global
 date: 2021-06-23T00:00:00Z
 author: bmf-san

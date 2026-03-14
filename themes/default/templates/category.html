@@ -17,14 +17,6 @@
         {{end}}
         <span class="breadcrumbs-separator">/</span>
       </li>
-      <li class="breadcrumbs-item">
-        {{if eq .CurrentLocale "ja"}}
-        <a href="/ja/categories/" class="breadcrumbs-link">カテゴリ</a>
-        {{else}}
-        <a href="/categories/" class="breadcrumbs-link">Categories</a>
-        {{end}}
-        <span class="breadcrumbs-separator">/</span>
-      </li>
       <li class="breadcrumbs-item active">
         <span class="breadcrumbs-link">{{$catName}}</span>
       </li>
@@ -42,7 +34,7 @@
     {{- $img := index .FrontMatter.Extra "image"}}
     {{- if not $img}}{{$img = printf "/ogp/%s.png" .FrontMatter.Slug}}{{end}}
     <a href="{{.URL}}" class="card no-underline">
-      <img src="{{$img}}" alt="{{.FrontMatter.Title}}" class="w-full object-cover rounded-t max-h-40">
+      <img src="{{$img}}" alt="{{.FrontMatter.Title}}" class="w-full object-cover rounded-t max-h-40" loading="lazy">
       <div class="card-body">
         <div class="flex items-center gap-2 mb-2 flex-wrap">
           {{range .FrontMatter.Categories}}<span class="badge badge-info">{{.}}</span>{{end}}

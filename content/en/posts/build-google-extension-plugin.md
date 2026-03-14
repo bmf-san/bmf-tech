@@ -1,6 +1,6 @@
 ---
 title: Created a Google Extension Plugin
-description: A step-by-step guide on Created a Google Extension Plugin, with practical examples and configuration tips.
+description: 'Build a Google Chrome extension plugin with manifest.json and JavaScript: Complete guide to creating your first plugin.'
 slug: build-google-extension-plugin
 date: 2017-09-26T00:00:00Z
 author: bmf-san

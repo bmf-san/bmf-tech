@@ -11,7 +11,7 @@ tags:
   - PostgreSQL
   - Grafana
   - Prometheus
-description: Set up a local environment to experiment with PostgreSQL and PgCat.
+description: 'Set up a local PostgreSQL and PgCat connection pooler environment with Prometheus, Grafana monitoring, and Locust load testing to observe the performance impact of connection pooling.'
 translation_key: postgresql-pgcat-local-environment
 ---
 

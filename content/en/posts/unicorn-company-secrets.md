@@ -1,6 +1,6 @@
 ---
 title: 'The Secret of Unicorn Companies: Software Development and Work Styles Learned at Spotify'
-description: 'An in-depth look at The Secret of Unicorn Companies: Software Development and Work Styles Learned at Spotify, covering key concepts and practical insights.'
+description: "Discover organizational culture and development practices of unicorn companies like Spotify beyond traditional Scrum methodologies."
 slug: unicorn-company-secrets
 date: 2023-05-19T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Algorithms and Data Structures - Selection Sort
-description: An in-depth look at Algorithms and Data Structures - Selection Sort, covering key concepts and practical insights.
+description: 'Understand Selection Sort, which repeatedly finds the minimum element and swaps it into position. Covers O(n²) time complexity and a Go implementation.'
 slug: algorithms-data-structures-selection-sort
 date: 2020-02-01T00:00:00Z
 author: bmf-san

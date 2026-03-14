@@ -1,6 +1,6 @@
 ---
 title: Unix Command Notes
-description: Research notes and a structured overview of Unix Command Notes, summarizing key concepts and findings.
+description: "Master Unix commands including jq for JSON processing, lsof for monitoring, and nmap for network port analysis."
 slug: unix-command-memo
 date: 2018-07-07T00:00:00Z
 author: bmf-san

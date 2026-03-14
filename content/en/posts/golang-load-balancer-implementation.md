@@ -1,6 +1,6 @@
 ---
 title: Implementing a Load Balancer in Golang
-description: A step-by-step guide on Implementing a Load Balancer in Golang, with practical examples and configuration tips.
+description: 'Implement a round-robin L4 load balancer in Go from scratch. Covers reverse proxy with httputil, round-robin scheduling, and active and passive health checks.'
 slug: golang-load-balancer-implementation
 date: 2022-01-01T00:00:00Z
 author: bmf-san
@@ -127,7 +127,7 @@ var cfg Config
 // Serve serves a loadbalancer.
 func Serve() {
 	// ...
-	
+
 	data, err := ioutil.ReadFile("./config.json")
 	if err != nil {
 		log.Fatal(err.Error())

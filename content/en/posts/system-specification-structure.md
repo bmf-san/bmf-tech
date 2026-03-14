@@ -1,6 +1,6 @@
 ---
 title: Structure of My System Specification Document
-description: Research notes and a structured overview of Structure of My System Specification Document, summarizing key concepts and findings.
+description: "Learn to structure system specification documents with sections for architecture, data models, APIs, and sequence diagrams for design clarity."
 slug: system-specification-structure
 date: 2025-05-19T00:00:00Z
 author: bmf-san

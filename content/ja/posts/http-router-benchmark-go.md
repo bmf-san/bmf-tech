@@ -1,6 +1,6 @@
 ---
 title: GoのHTTP Routerを比較するベンチマーカーを実装した
-description: GoのHTTP Routerを比較するベンチマーカーを実装したの手順と実践例を詳しく解説します。
+description: "複数のGoルーターをベンチマーク比較し、静的ルート・パスパラメータなどのテストケース設計を通してパフォーマンス差分を測定。"
 slug: http-router-benchmark-go
 date: 2022-12-20T00:00:00Z
 author: bmf-san

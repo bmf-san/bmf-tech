@@ -1,6 +1,6 @@
 ---
 title: ES6のExportとImportについて
-description: ES6のExportとImportについてについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: "ES6のexport・importを解説。名前付きエクスポート、デフォルトエクスポート、ワイルドカード、エイリアスでJavaScriptモジュール化を構成し保守性を向上させる実装ガイドです。"
 slug: es6-export-import
 date: 2017-09-26T00:00:00Z
 author: bmf-san

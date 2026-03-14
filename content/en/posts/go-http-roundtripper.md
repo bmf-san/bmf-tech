@@ -1,6 +1,6 @@
 ---
 title: About Go's http.RoundTripper
-description: 'An in-depth look at About Go''s http.RoundTripper, covering key concepts and practical insights.'
+description: 'Learn what Go http.RoundTripper interface is and how to use it as HTTP client middleware. Includes a custom RoundTripper for request logging and response latency measurement.'
 slug: go-http-roundtripper
 date: 2023-08-22T00:00:00Z
 author: bmf-san

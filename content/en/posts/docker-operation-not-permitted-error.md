@@ -1,6 +1,6 @@
 ---
 title: Handling Docker 'Operation not permitted' Error
-description: 'A troubleshooting guide for Handling Docker ''Operation not permitted'' Error, explaining the root cause and how to resolve it.'
+description: 'Fix the Docker Operation not permitted error in docker-compose by adding privileged: true or using cap_add: SYS_ADMIN with seccomp:unconfined to grant required Linux capabilities.'
 slug: docker-operation-not-permitted-error
 date: 2019-09-27T00:00:00Z
 author: bmf-san

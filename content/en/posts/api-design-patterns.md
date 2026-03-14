@@ -1,6 +1,6 @@
 ---
 title: API Design Patterns
-description: An in-depth exploration of API Design Patterns, covering design principles, trade-offs, and practical applications.
+description: 'Explore API design patterns, resource-oriented vs RPC approaches, and design principles for building executable, predictable, and maintainable APIs.'
 slug: api-design-patterns
 date: 2024-08-26T00:00:00Z
 author: bmf-san

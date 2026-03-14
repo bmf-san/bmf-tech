@@ -9,7 +9,7 @@ tags:
   - Golang
   - Radix Tree
   - Trie
-description: Discussing the algorithm and implementation of a Trie.
+description: 'Learn how Trie (prefix tree) data structures work: O(m) search and insertion, applications in HTTP routing and IP lookups, and a Go implementation of insert and search operations.'
 translation_key: golang-tries-implementation
 ---
 
@@ -18,7 +18,7 @@ translation_key: golang-tries-implementation
 # Overview
 This post discusses the algorithm and implementation of a Trie.
 
-[bmf-san/road-to-algorithm-master](https://github.com/bmf-san/road-to-algorithm-master)  
+[bmf-san/road-to-algorithm-master](https://github.com/bmf-san/road-to-algorithm-master)
 
 # What is a Trie?
 A Trie (also known as a prefix tree) is a type of tree structure that handles a collection of strings.

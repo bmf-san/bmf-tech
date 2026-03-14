@@ -1,6 +1,6 @@
 ---
 title: Introduction to Building Your Own URL Routing - Episode 1
-description: Research notes and a structured overview of Introduction to Building Your Own URL Routing - Episode 1, summarizing key concepts and findings.
+description: "Learn URL routing fundamentals with tree data structures and trie algorithms for building custom application routers."
 slug: url-routing-introduction-episode-1
 date: 2019-12-14T00:00:00Z
 author: bmf-san

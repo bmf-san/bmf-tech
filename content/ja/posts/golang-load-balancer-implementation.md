@@ -1,6 +1,6 @@
 ---
 title: Golangでロードバランサーを実装する
-description: Golangでロードバランサーを実装するの手順と実践例を詳しく解説します。
+description: "L4ロードバランサーをGoで実装し、ラウンドロビンスケジューリング・ヘルスチェック・リバースプロキシの仕組みを構築例を通して解説。"
 slug: golang-load-balancer-implementation
 date: 2022-01-01T00:00:00Z
 author: bmf-san

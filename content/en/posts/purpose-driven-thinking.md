@@ -1,6 +1,6 @@
 ---
 title: Purpose-Driven Thinking
-description: An in-depth look at Purpose-Driven Thinking, covering key concepts and practical insights.
+description: 'Master purpose-driven thinking framework to improve decision-making quality through strategic goal alignment and cultural understanding.'
 slug: purpose-driven-thinking
 date: 2025-12-29T00:00:00Z
 author: bmf-san

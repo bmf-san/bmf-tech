@@ -1,6 +1,6 @@
 ---
 title: Large-Scale Data Management - Best Practices in Enterprise Architecture
-description: An in-depth exploration of Large-Scale Data Management - Best Practices in Enterprise Architecture, covering design principles, trade-offs, and practical applications.
+description: 'Learn large-scale data management best practices for building scalable enterprise architecture without siloed data.'
 slug: large-scale-data-management-best-practices
 date: 2024-06-30T00:00:00Z
 author: bmf-san

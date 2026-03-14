@@ -1,6 +1,6 @@
 ---
 title: ER図のリレーションシップの種類について
-description: ER図のリレーションシップの種類についてについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: "ER図リレーションシップの種類を解説。依存・非依存・多対多関係でテーブル間の親子関係を正確に把握し、効率的なDBスキーマ設計を実現する方法を紹介します。"
 slug: er-diagram-relationship-types
 date: 2018-07-31T00:00:00Z
 author: bmf-san

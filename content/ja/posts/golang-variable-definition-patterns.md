@@ -1,6 +1,6 @@
 ---
 title: Golangでの変数定義・宣言のパターンまとめ
-description: Golangでの変数定義・宣言のパターンまとめについて調査・整理したメモ。基本概念と重要ポイントを解説します。
+description: "Goの変数定義・宣言パターンをvar宣言・短縮形式別に整理し、型推論・複数変数宣言・可視性制御の規則を網羅。"
 slug: golang-variable-definition-patterns
 date: 2018-11-13T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Knowledge and Technology of Logistics Systems for Engineers
-description: An in-depth look at Knowledge and Technology of Logistics Systems for Engineers, covering key concepts and practical insights.
+description: 'Explore logistics system optimization, supply chain flow management, and essential business knowledge required for modern backend engineers.'
 slug: logistics-systems-knowledge-and-skills-for-engineers
 date: 2024-04-04T00:00:00Z
 author: bmf-san

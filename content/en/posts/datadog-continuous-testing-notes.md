@@ -1,6 +1,6 @@
 ---
 title: Notes on Datadog Continuous Testing
-description: Research notes and a structured overview of Notes on Datadog Continuous Testing, summarizing key concepts and findings.
+description: 'Configure Datadog continuous testing with no-code E2E browser tests. Master test recorder, assertions, and self-healing capabilities.'
 slug: datadog-continuous-testing-notes
 date: 2023-01-31T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: FuelPHP and PHP Update Project Report
-description: An in-depth look at FuelPHP and PHP Update Project Report, covering key concepts and practical insights.
+description: 'Learn how to update FuelPHP applications from PHP 7.3 to 8.1 with monolithic architecture strategies and compatibility tools.'
 slug: fuelphp-php-update-project-report
 date: 2024-01-26T00:00:00Z
 author: bmf-san

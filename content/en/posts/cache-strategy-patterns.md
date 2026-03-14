@@ -1,6 +1,6 @@
 ---
 title: Basic Patterns of Cache Strategies
-description: An in-depth exploration of Basic Patterns of Cache Strategies, covering design principles, trade-offs, and practical applications.
+description: 'Learn the five cache strategies: Cache Aside, Read Through, Write Through, Write Back, and Write Around. Covers read/write flows, consistency trade-offs, and mermaid diagram walkthroughs.'
 slug: cache-strategy-patterns
 date: 2025-08-03T00:00:00Z
 author: bmf-san

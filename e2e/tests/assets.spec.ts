@@ -1,19 +1,17 @@
 import { test, expect } from '@playwright/test';
 
 // ── CSS loading ───────────────────────────────────────────────────────────────
-// Regression: without content/ja/tags.md, gohan served a directory listing
-// (text/plain, no stylesheet). Verify sleyt CSS link is present in <head>
-// across every major page type.
+// Verify sleyt CSS link is present in <head> across every major page type.
 
 const PAGES_WITH_CSS = [
   '/',
   '/ja/',
   '/posts/2018-review-2019-goals/',
   '/ja/posts/2018-review-2019-goals/',
-  '/tags/',
-  '/ja/tags/',
-  '/categories/',
-  '/ja/categories/',
+  '/tags/golang/',
+  '/ja/tags/golang/',
+  '/categories/tools/',
+  '/ja/categories/ツール/',
   '/about/',
   '/archives/2024/03/',
 ];

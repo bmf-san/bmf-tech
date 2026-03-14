@@ -1,6 +1,6 @@
 ---
 title: 'Engineering in the AI Era: Evolution from Prompts to Autonomous Systems'
-description: 'An in-depth look at Engineering in the AI Era: Evolution from Prompts to Autonomous Systems, covering key concepts and practical insights.'
+description: 'Master Prompt as Code, PromptOps, LLM-as-Judge evaluation, Context Engineering, and Agentic Engineering for AI.'
 slug: engineering-in-ai-evolution-to-autonomous-systems
 date: 2026-02-25T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: ECS on Fargate環境でDatadog APMを導入
-description: ECS on Fargate環境でDatadog APMを導入の手順と実践例を詳しく解説します。
+description: "ECS on Fargate環境でDatadog APMを導入し、PHP-FPM設定・datadog-php-tracerインストール・タスク定義の設定手順を実装例で提示。"
 slug: introducing-datadog-apm-on-ecs-fargate
 date: 2021-10-19T00:00:00Z
 author: bmf-san

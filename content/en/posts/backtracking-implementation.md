@@ -1,6 +1,6 @@
 ---
 title: Implementing Backtracking
-description: A step-by-step guide on Implementing Backtracking, with practical examples and configuration tips.
+description: 'Implement backtracking algorithm to explore constraint-satisfying combinations using recursive tree structures and subsequence generation.'
 slug: backtracking-implementation
 date: 2023-06-23T00:00:00Z
 author: bmf-san

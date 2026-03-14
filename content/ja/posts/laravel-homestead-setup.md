@@ -1,6 +1,6 @@
 ---
 title: Laravel Homesteadを使ったLaravelの環境構築
-description: Laravel Homesteadを使ったLaravelの環境構築の手順と実践例を詳しく解説します。
+description: "構築するHomesteadによるLaravel環境。Vagarant、VirtualBox、composer、SSH鍵認証の設定から仮想環境の立ち上げまで。"
 slug: laravel-homestead-setup
 date: 2018-04-11T00:00:00Z
 author: bmf-san

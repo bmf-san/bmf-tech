@@ -1,6 +1,6 @@
 ---
 title: 自分的システムの仕様書の構成
-description: 自分的システムの仕様書の構成について調査・整理したメモ。基本概念と重要ポイントを解説します。
+description: "システム仕様書の9階層構成、概要・アーキテクチャ・データモデル・API・技術詳細をmermaidコード化して運用する方法"
 slug: system-specification-structure
 date: 2025-05-19T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: PostgreSQL徹底入門 第4版 インストールから機能・仕組み、アプリ作り、管理・運用まで
-description: PostgreSQL徹底入門 第4版 インストールから機能・仕組み、アプリ作り、管理・運用までについて調査・整理したメモ。基本概念と重要ポイントを解説します。
+description: "習得するPostgreSQL。インストール、機能・仕組み、アプリケーション開発、管理・運用まで、実務レベルの包括的な解説書"
 slug: postgresql-comprehensive-guide
 date: 2024-05-04T00:00:00Z
 author: bmf-san

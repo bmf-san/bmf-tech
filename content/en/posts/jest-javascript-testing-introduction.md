@@ -1,6 +1,6 @@
 ---
 title: Getting Started with JavaScript Testing using Jest
-description: An in-depth look at Getting Started with JavaScript Testing using Jest, covering key concepts and practical insights.
+description: 'Learn JavaScript testing with Jest, including ES module configuration, babel setup, and practical test file patterns.'
 slug: jest-javascript-testing-introduction
 date: 2018-09-20T00:00:00Z
 author: bmf-san

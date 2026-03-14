@@ -1,6 +1,6 @@
 ---
 title: コンテナで始めるモニタリング基盤構築
-description: コンテナで始めるモニタリング基盤構築の手順と実践例を詳しく解説します。
+description: "Docker環境のモニタリング基盤構築を解説。Prometheus・Grafana・Kibana・Fluentd・cadvisorでログとメトリクスを一元収集・可視化する実装ガイドです。"
 slug: container-monitoring-infrastructure
 date: 2021-12-18T00:00:00Z
 author: bmf-san

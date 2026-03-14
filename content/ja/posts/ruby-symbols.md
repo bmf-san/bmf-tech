@@ -1,6 +1,6 @@
 ---
 title: Rubyのシンボルについて
-description: Rubyのシンボルについてについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: "活用するRubyシンボル。文字列との効率性比較、イミュータブル性、ハッシュキー利用、enum的な状態管理パターン。"
 slug: ruby-symbols
 date: 2024-05-14T00:00:00Z
 author: bmf-san

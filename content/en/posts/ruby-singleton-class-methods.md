@@ -1,6 +1,6 @@
 ---
 title: About Ruby's Singleton Classes and Singleton Methods
-description: 'An in-depth look at About Ruby''s Singleton Classes and Singleton Methods, covering key concepts and practical insights.'
+description: 'Explore Ruby singleton classes, singleton methods, class methods, and object-specific method definitions for advanced metaprogramming.'
 slug: ruby-singleton-class-methods
 date: 2024-05-15T00:00:00Z
 author: bmf-san

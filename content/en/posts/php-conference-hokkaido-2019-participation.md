@@ -1,6 +1,6 @@
 ---
 title: Attended PHP Conference Hokkaido 2019
-description: An in-depth look at Attended PHP Conference Hokkaido 2019, covering key concepts and practical insights.
+description: 'Discover PHP fundamentals, CI/CD pipelines, microservices, testing frameworks, and CPU architecture concepts from sessions.'
 slug: php-conference-hokkaido-2019-participation
 date: 2019-10-06T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: バックトラッキングの実装
-description: バックトラッキングの実装の手順と実践例を詳しく解説します。
+description: "バックトラッキングアルゴリズムを実装で学ぶ。制約満たし探索、重複なし組み合わせ、再帰処理、木構造による考え方でGoの実装例から理解を深める実践ガイドです。"
 slug: backtracking-implementation
 date: 2023-06-23T00:00:00Z
 author: bmf-san

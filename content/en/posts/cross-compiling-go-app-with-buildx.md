@@ -1,6 +1,6 @@
 ---
 title: Cross-Compiling Go Application Images with buildx
-description: A step-by-step guide on Cross-Compiling Go Application Images with buildx, with practical examples and configuration tips.
+description: 'Learn Docker buildx multi-architecture compilation for Go apps. Build cross-platform images for Linux AMD64 and ARM64 targets.'
 slug: cross-compiling-go-app-with-buildx
 date: 2023-04-20T00:00:00Z
 author: bmf-san

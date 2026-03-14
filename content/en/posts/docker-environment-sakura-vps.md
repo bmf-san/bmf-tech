@@ -1,6 +1,6 @@
 ---
 title: Setting Up a Docker Environment on Sakura VPS
-description: An in-depth look at Setting Up a Docker Environment on Sakura VPS, covering key concepts and practical insights.
+description: 'Step-by-step guide to installing Docker CE on Sakura VPS running CentOS. Covers yum repository setup, stable vs. edge channel configuration, and Docker CE installation commands.'
 slug: docker-environment-sakura-vps
 date: 2018-06-09T00:00:00Z
 author: bmf-san

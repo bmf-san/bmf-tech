@@ -1,6 +1,6 @@
 ---
 title: Creating My Own Technology Radar
-description: A step-by-step guide on Creating My Own Technology Radar, with practical examples and configuration tips.
+description: 'Create your own Technology Radar using ThoughtWorks framework. Self-host with Docker or access radar.thoughtworks.com platform.'
 slug: create-technology-radar
 date: 2022-12-17T00:00:00Z
 author: bmf-san

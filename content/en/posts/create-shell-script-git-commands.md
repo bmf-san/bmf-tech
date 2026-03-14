@@ -1,6 +1,6 @@
 ---
 title: Created a Shell Script to Simplify Git Commands
-description: A step-by-step guide on Created a Shell Script to Simplify Git Commands, with practical examples and configuration tips.
+description: 'Build interactive shell scripts using select to manage git branch checkouts, remote branch pulls, and local branch deletion.'
 slug: create-shell-script-git-commands
 date: 2017-09-26T00:00:00Z
 author: bmf-san

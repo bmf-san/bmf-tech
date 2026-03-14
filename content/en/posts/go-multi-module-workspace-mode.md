@@ -7,7 +7,7 @@ categories:
   - Application
 tags:
   - Golang
-description: Exploring the Workspace mode introduced in Go 1.18.
+description: 'Learn how Go Workspace mode (Go 1.18+) simplifies multi-module development. Covers go work init, go.work file structure, and referencing local modules without editing go.mod.'
 translation_key: go-multi-module-workspace-mode
 ---
 

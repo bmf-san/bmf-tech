@@ -1,6 +1,6 @@
 ---
 title: モブプログラミングについて
-description: モブプログラミングについてについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: "実践するモブプログラミング。3人以上での同期開発、ドライバー・ナビゲーター役割分担、VS CodeLiveShare、チーム学習効果を解説"
 slug: mob-programming-introduction
 date: 2024-01-23T00:00:00Z
 author: bmf-san

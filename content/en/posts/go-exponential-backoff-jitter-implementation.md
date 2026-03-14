@@ -1,6 +1,6 @@
 ---
 title: Implementing Exponential Backoff and Jitter in Go
-description: A step-by-step guide on Implementing Exponential Backoff and Jitter in Go, with practical examples and configuration tips.
+description: 'Implement exponential backoff with jitter in Go for robust retry logic. Covers multiplying retry delays, adding randomness to prevent thundering herd, retry limits, and timeouts.'
 slug: go-exponential-backoff-jitter-implementation
 date: 2024-01-31T00:00:00Z
 author: bmf-san

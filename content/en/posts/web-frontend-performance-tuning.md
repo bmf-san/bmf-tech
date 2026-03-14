@@ -1,6 +1,6 @@
 ---
 title: Web Frontend High-Performance Tuning
-description: An in-depth look at Web Frontend High-Performance Tuning, covering key concepts and practical insights.
+description: "Optimize frontend performance through browser rendering techniques, measurement methods, and JavaScript-CSS optimization."
 slug: web-frontend-performance-tuning
 date: 2019-05-29T00:00:00Z
 author: bmf-san

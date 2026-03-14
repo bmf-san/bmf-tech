@@ -1,6 +1,6 @@
 ---
 title: RubyとRailsのIO・CPU特性について
-description: RubyとRailsのIO・CPU特性についてについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: "理解するRuby・RailsのI/O特性。GVL制約、Pumaスレッド・プロセス設計、見かけのI/O待ちの実態、計測による最適化指針。"
 slug: ruby-rails-io-cpu-characteristics
 date: 2025-06-14T00:00:00Z
 author: bmf-san

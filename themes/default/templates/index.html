@@ -23,7 +23,7 @@
     <a href="{{$featured.URL}}" class="card">
       {{- $featuredImg := index $featured.FrontMatter.Extra "image"}}
       {{- if not $featuredImg}}{{$featuredImg = printf "/ogp/%s.png" $featured.FrontMatter.Slug}}{{end}}
-      <img src="{{$featuredImg}}" alt="{{$featured.FrontMatter.Title}}" class="w-full object-cover rounded-t max-h-80">
+      <img src="{{$featuredImg}}" alt="{{$featured.FrontMatter.Title}}" class="w-full object-cover rounded-t max-h-80" loading="eager">
       <div class="card-body">
         <div class="flex items-center gap-3 mb-3 flex-wrap">
           {{range $featured.FrontMatter.Categories}}<span class="badge badge-info">{{.}}</span>{{end}}
@@ -62,7 +62,7 @@
         {{- if not $cardImg}}{{$cardImg = printf "/ogp/%s.png" $a.FrontMatter.Slug}}{{end}}
         {{if eq $i 3}}{{template "ad-unit-list-mobile" $}}{{end}}
         <a href="{{$a.URL}}" class="card">
-          <img src="{{$cardImg}}" alt="{{$a.FrontMatter.Title}}" class="w-full object-cover rounded-t max-h-40">
+          <img src="{{$cardImg}}" alt="{{$a.FrontMatter.Title}}" class="w-full object-cover rounded-t max-h-40" loading="lazy">
           <div class="card-body">
             <div class="flex items-center gap-2 mb-2 flex-wrap">
               {{range $a.FrontMatter.Categories}}<span class="badge badge-secondary">{{.}}</span>{{end}}

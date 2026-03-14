@@ -1,6 +1,6 @@
 ---
 title: Why the Singleton Pattern is an Anti-Pattern
-description: An in-depth exploration of Why the Singleton Pattern is an Anti-Pattern, covering design principles, trade-offs, and practical applications.
+description: "Examine why the Singleton pattern creates architectural problems and dependency injection provides superior design alternatives."
 slug: singleton-pattern-anti-pattern
 date: 2025-10-18T00:00:00Z
 author: bmf-san

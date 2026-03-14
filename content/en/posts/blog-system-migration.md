@@ -1,6 +1,6 @@
 ---
 title: Migrated the Blog System
-description: An in-depth look at Migrated the Blog System, covering key concepts and practical insights.
+description: 'Discover how bmf-tech evolved its blog platform across three major generations: WordPress, Laravel CMS, and Go CMS.'
 slug: blog-system-migration
 date: 2022-06-14T00:00:00Z
 author: bmf-san

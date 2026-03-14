@@ -1,6 +1,6 @@
 ---
 title: Agile Metrics
-description: An in-depth look at Agile Metrics, covering key concepts and practical insights.
+description: 'Learn agile metrics and measurement indicators to observe team performance improvements and drive continuous process optimization.'
 slug: agile-metrics
 date: 2022-11-23T00:00:00Z
 author: bmf-san

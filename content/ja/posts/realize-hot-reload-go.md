@@ -1,6 +1,6 @@
 ---
 title: Realizeを使ってgoでホットリロードを実現するメモ
-description: Realizeを使ってgoでホットリロードを実現するメモについて調査・整理したメモ。基本概念と重要ポイントを解説します。
+description: "実現するGoホットリロード。Realizeツール、.realize.yaml設定、監視サーバーの起動で開発効率を向上させるメモ。"
 slug: realize-hot-reload-go
 date: 2019-04-11T00:00:00Z
 author: bmf-san

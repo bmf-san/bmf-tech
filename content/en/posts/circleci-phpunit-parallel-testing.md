@@ -1,6 +1,6 @@
 ---
 title: Parallel Testing with PHPUnit on CircleCI
-description: An in-depth look at Parallel Testing with PHPUnit on CircleCI, covering key concepts and practical insights.
+description: 'Execute PHPUnit tests in parallel on CircleCI using shell scripts to generate dynamic configuration and split containers.'
 slug: circleci-phpunit-parallel-testing
 date: 2023-10-21T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Contextual Logging with slog
-description: An in-depth look at Contextual Logging with slog, covering key concepts and practical insights.
+description: 'Learn contextual structured logging in Go using log/slog (Go 1.21+). Covers custom slog.Handler, structured JSON output, and injecting trace IDs from context into every log entry.'
 slug: slog-contextual-logging
 date: 2023-10-08T00:00:00Z
 author: bmf-san

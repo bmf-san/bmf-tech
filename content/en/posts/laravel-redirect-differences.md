@@ -1,6 +1,6 @@
 ---
 title: Differences Between redirect('hoge') and redirect()->to('hoge') in Laravel
-description: 'An in-depth look at Differences Between redirect(''hoge'') and redirect()->to(''hoge'') in Laravel, covering key concepts and practical insights.'
+description: "Understand the differences between redirect() and redirect()->to() helper functions and when to use each."
 slug: laravel-redirect-differences
 date: 2017-10-01T00:00:00Z
 author: bmf-san

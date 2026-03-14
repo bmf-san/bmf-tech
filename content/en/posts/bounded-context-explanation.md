@@ -1,6 +1,6 @@
 ---
 title: Bounded Contexts
-description: An in-depth look at Bounded Contexts, covering key concepts and practical insights.
+description: 'Understand bounded contexts in domain-driven design to clarify word meanings, organize responsibilities, and improve system design.'
 slug: bounded-context-explanation
 date: 2025-05-19T00:00:00Z
 author: bmf-san

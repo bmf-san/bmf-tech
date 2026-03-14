@@ -1,6 +1,6 @@
 ---
 title: Start with the Issue [Revised Edition] - The Simple Essence of Intellectual Production
-description: 'A review and summary of "Start with the Issue [Revised Edition] - The Simple Essence of Intellectual Production", covering key takeaways and practical insights.'
+description: "Master intellectual production by formulating quality issues first before solving technical challenges and problems."
 slug: start-with-issues-revised
 date: 2024-11-13T00:00:00Z
 author: bmf-san

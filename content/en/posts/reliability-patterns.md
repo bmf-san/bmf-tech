@@ -1,6 +1,6 @@
 ---
 title: Reliability Patterns
-description: An in-depth exploration of Reliability Patterns, covering design principles, trade-offs, and practical applications.
+description: 'Learn cloud reliability patterns from AWS, Azure, and GCP. Covers Circuit Breaker, Bulkhead, Ambassador, Retry, Queue-Based Load Leveling, BFF, and other fault-tolerance design patterns.'
 slug: reliability-patterns
 date: 2024-10-30T00:00:00Z
 author: bmf-san

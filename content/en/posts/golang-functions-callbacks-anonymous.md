@@ -1,6 +1,6 @@
 ---
 title: About Golang Functions - Function Values / Callback Functions / Anonymous Functions
-description: An in-depth look at About Golang Functions - Function Values / Callback Functions / Anonymous Functions, covering key concepts and practical insights.
+description: 'Understand Go functions: function values, callbacks, anonymous functions, and closures with practical implementation patterns.'
 slug: golang-functions-callbacks-anonymous
 date: 2018-10-04T00:00:00Z
 author: bmf-san

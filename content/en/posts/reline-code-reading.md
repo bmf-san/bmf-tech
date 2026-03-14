@@ -1,6 +1,6 @@
 ---
 title: Code Reading of reline
-description: 'A review and summary of "Code Reading of reline", covering key takeaways and practical insights.'
+description: 'Examine reline Ruby library internals through code reading: readline calls, line editing, and text input buffering mechanics.'
 slug: reline-code-reading
 date: 2024-10-20T00:00:00Z
 author: bmf-san

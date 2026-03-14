@@ -1,6 +1,6 @@
 ---
 title: DI and Service Locator
-description: An in-depth look at DI and Service Locator, covering key concepts and practical insights.
+description: 'Implement dependency injection patterns. Compare DI and Service Locator with constructor injection examples for loosely coupled code.'
 slug: dependency-injection-service-locator
 date: 2018-06-05T00:00:00Z
 author: bmf-san

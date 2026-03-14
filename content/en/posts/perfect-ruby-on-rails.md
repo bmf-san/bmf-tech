@@ -1,6 +1,6 @@
 ---
 title: Perfect Ruby on Rails
-description: An in-depth look at Perfect Ruby on Rails, covering key concepts and practical insights.
+description: 'Learn comprehensive Ruby on Rails framework features, development patterns, and web application design techniques properly.'
 slug: perfect-ruby-on-rails
 date: 2024-05-04T00:00:00Z
 author: bmf-san

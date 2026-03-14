@@ -1,6 +1,6 @@
 ---
 title: Implementing Fan-In and Fan-Out in Go
-description: A step-by-step guide on Implementing Fan-In and Fan-Out in Go, with practical examples and configuration tips.
+description: 'Implement fan-in and fan-out concurrent patterns in Go using channels and goroutines. Fan-in aggregates multiple producer outputs; fan-out distributes one input across multiple workers.'
 slug: go-fan-in-fan-out-implementation
 date: 2023-08-21T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Algorithms and Data Structures - Lists
-description: An in-depth look at Algorithms and Data Structures - Lists, covering key concepts and practical insights.
+description: 'Learn how singly linked lists work: O(n) access vs. O(1) insertion/deletion, pointer-based node traversal, and a Go implementation of a linear linked list.'
 slug: algorithms-data-structures-list
 date: 2019-10-18T00:00:00Z
 author: bmf-san
@@ -140,7 +140,7 @@ func main() {
 ![singly_linked_list](/assets/images/posts/algorithms-data-structures-list/67028620-a0d79b00-f146-11e9-8d47-a5d0d933d15d.jpg)
 
 # References
-- [Naim Ibrahim - Golang singly linked list](https://www.naimibrahim.me/2019/06/08/golang-singly-linked-list/) 
+- [Naim Ibrahim - Golang singly linked list](https://www.naimibrahim.me/2019/06/08/golang-singly-linked-list/)
     - The implementation was easy to understand
 
 # Related

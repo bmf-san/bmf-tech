@@ -1,6 +1,6 @@
 ---
 title: GolangのHTTPサーバーのコードリーディング
-description: GolangのHTTPサーバーのコードリーディングについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: "goblinルーター開発時に調査したGoのHTTPサーバー内部実装を解説。http.Server構造体、ServeMux、Handler登録フロー、goroutineによるコネクション処理を実装コードから読み解く。"
 slug: golang-http-server-code-reading
 date: 2021-06-30T00:00:00Z
 author: bmf-san
@@ -80,7 +80,7 @@ func (i *indexHandler) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 
 ServeHTTPは関数型のaliasであるHandlerFuncに置き換えることができる。
 
-cf. 
+cf.
 - [func (f HandlerFunc) ServeHTTP(w ResponseWriter, r *Request)](https://golang.org/src/net/http/server.go?s=64180#L2058)
 
 ```golang
@@ -117,7 +117,7 @@ DefaultServeMuxはServeMux型の構造体を持っている。
 
 HandlerFuncというmuxにルーティングを登録する関数を実装している。
 
-cf. 
+cf.
 - [DefaultServeMux](https://golang.org/src/net/http/server.go?s=77627:77714#L2269)
 - [func (mux *ServeMux) HandlerFunc(pattern string, handler func(ResponseWriter, *Request))](https://golang.org/src/net/http/server.go?s=77627:77714#L2497)
 
@@ -148,7 +148,7 @@ func indexHandler(w http.ResponseWriter, req *http.Request) {
 ## ListenAndServe()の利用
 Server構造体（http.Server{}）を作らずとも、ListenAndServe()を代用することができる。
 
-cf. 
+cf.
 - [func (*Server) ListenAndServe](https://golang.org/src/net/http/server.go?s=77627:77714#L2898)
 - [func ListenAndServe(addr string, handler Handler) error](https://golang.org/src/net/http/server.go?s=77627:77714#L3162)
 

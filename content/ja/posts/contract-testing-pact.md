@@ -1,6 +1,6 @@
 ---
 title: 契約テストとPactについて
-description: 契約テストとPactについてについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: '契約テスト（Contract Testing）とPactの使い方を解説。コンシューマー駆動とプロバイダー駆動の違い、Pactの仕組み、マイクロサービス間でのテスト実践例を紹介します。'
 slug: contract-testing-pact
 date: 2024-07-21T00:00:00Z
 author: bmf-san

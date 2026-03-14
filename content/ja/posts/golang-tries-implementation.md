@@ -1,6 +1,6 @@
 ---
 title: Golangでトライ木を実装する
-description: Golangでトライ木を実装するの手順と実践例を詳しく解説します。
+description: "トライ木（プレフィックス木）のデータ構造をGoで実装し、O(m)の検索・挿入計算量とRadix Treeとの使い分けを解説。"
 slug: golang-tries-implementation
 date: 2019-09-24T00:00:00Z
 author: bmf-san

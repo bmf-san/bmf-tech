@@ -1,6 +1,6 @@
 ---
 title: Current Status of FuelPHP as of February 2025 by AI
-description: An in-depth look at Current Status of FuelPHP as of February 2025 by AI, covering key concepts and practical insights.
+description: "Understand FuelPHP's current status in 2025: EOL 1.x series, PHP8 compatibility with 1.9-dev, and community migration trends."
 slug: fuelphp-status-february-2025
 date: 2025-02-27T00:00:00Z
 author: bmf-san

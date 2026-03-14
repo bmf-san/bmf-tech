@@ -1,6 +1,6 @@
 ---
 title: Considering the Shelf Life of Design
-description: An in-depth exploration of Considering the Shelf Life of Design, covering design principles, trade-offs, and practical applications.
+description: 'Consider design shelf life across business, organization, product, and technical perspectives. Balance constraints and trade-offs.'
 slug: design-shelf-life-considerations
 date: 2025-06-08T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: 信頼性のパターンについて
-description: 信頼性のパターンについてについて、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
+description: "適用する信頼性パターン。サーキットブレーカー、補正トランザクション、イベントソーシング、Pub/Subから耐障害性・回復性を実現。"
 slug: reliability-patterns
 date: 2024-10-30T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: マルチテナントSaaSアーキテクチャの構築 ―原則、ベストプラクティス、AWSアーキテクチャパターン
-description: マルチテナントSaaSアーキテクチャの構築 ―原則、ベストプラクティス、AWSアーキテクチャパターンの手順と実践例を詳しく解説します。
+description: "マルチテナントSaaSアーキテクチャを解説。コントロールプレーン・アプリケーションプレーン、テナント認証、データパーティション、ノイジーネイバー対策でSaaS固有課題を解決する設計を紹介します。"
 slug: building-multitenant-saas-architecture
 date: 2025-04-20T00:00:00Z
 author: bmf-san

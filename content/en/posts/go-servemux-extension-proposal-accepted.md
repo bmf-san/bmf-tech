@@ -1,6 +1,6 @@
 ---
 title: Proposal to Extend ServeMux Functionality in Go Accepted
-description: An in-depth look at Proposal to Extend ServeMux Functionality in Go Accepted, covering key concepts and practical insights.
+description: 'The proposal to add dynamic routing and path parameters to Go net/http ServeMux was accepted. Learn what this means for third-party routers like goblin and the future of routing in Go.'
 slug: go-servemux-extension-proposal-accepted
 date: 2023-08-31T00:00:00Z
 author: bmf-san

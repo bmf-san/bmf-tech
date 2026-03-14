@@ -1,6 +1,6 @@
 ---
 title: Developing TUI Applications with x/term
-description: An in-depth look at Developing TUI Applications with x/term, covering key concepts and practical insights.
+description: "Develop TUI applications with Go's x/term package—master terminal state management, ANSI escape sequences, and interactive interfaces."
 slug: tui-application-development
 date: 2025-07-16T00:00:00Z
 author: bmf-san

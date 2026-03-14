@@ -1,6 +1,6 @@
 ---
 title: PostgreSQLにおけるCOLLATE（照合順序）について
-description: PostgreSQLにおけるCOLLATE（照合順序）についてについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: 'PostgreSQLのCOLLATE（照合順序）の仕組みを解説。LC_COLLATEの設定・列単位の指定・pg_databaseで照合順序を確認するクエリ・日本語ロケール環境での注意点を詳しく紹介します。'
 slug: postgresql-collate-explained
 date: 2025-03-05T00:00:00Z
 author: bmf-san

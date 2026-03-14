@@ -1,6 +1,6 @@
 ---
 title: Creating a Custom Report in Google Analytics
-description: A step-by-step guide on Creating a Custom Report in Google Analytics, with practical examples and configuration tips.
+description: 'Build custom Google Analytics reports to track metrics relevant to your site and refine marketing strategy based on data.'
 slug: google-analytics-custom-reports
 date: 2018-10-12T00:00:00Z
 author: bmf-san

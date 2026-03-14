@@ -1,6 +1,6 @@
 ---
 title: Access Control Patterns Using OPA
-description: An in-depth exploration of Access Control Patterns Using OPA, covering design principles, trade-offs, and practical applications.
+description: 'Explore four access control patterns using Open Policy Agent including Allow/Deny, SQL generation, and AST approaches with responsibility separation.'
 slug: access-control-patterns-using-opa
 date: 2025-06-22T00:00:00Z
 author: bmf-san

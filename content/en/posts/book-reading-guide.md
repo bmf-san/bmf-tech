@@ -1,6 +1,6 @@
 ---
 title: How to Read Books
-description: 'A review and summary of "How to Read Books", covering key takeaways and practical insights.'
+description: 'Master inspection reading techniques to improve book comprehension and understand how systematic reading methods enhance learning.'
 slug: book-reading-guide
 date: 2025-02-15T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Schema-Driven Development with OpenAPI
-description: An in-depth look at Schema-Driven Development with OpenAPI, covering key concepts and practical insights.
+description: 'Learn OpenAPI schema-driven development, REST API specification, code generation, and mock server benefits.'
 slug: openapi-schema-driven-development
 date: 2024-01-19T00:00:00Z
 author: bmf-san

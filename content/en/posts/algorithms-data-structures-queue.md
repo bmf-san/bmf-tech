@@ -1,6 +1,6 @@
 ---
 title: Algorithms and Data Structures - Queue
-description: An in-depth look at Algorithms and Data Structures - Queue, covering key concepts and practical insights.
+description: 'Learn how the Queue (FIFO) data structure works. Covers enqueue and dequeue operations, time complexity compared to stacks, and a Go implementation.'
 slug: algorithms-data-structures-queue
 date: 2019-11-17T00:00:00Z
 author: bmf-san

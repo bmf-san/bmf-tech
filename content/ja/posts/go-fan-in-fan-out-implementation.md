@@ -1,6 +1,6 @@
 ---
 title: Goでfan-inとfan-outを実装する
-description: Goでfan-inとfan-outを実装するの手順と実践例を詳しく解説します。
+description: "Goのchannelとgoroutineを活用したfan-in/fan-outパターンを実装し、複数入力を集約・分散する並行処理設計を解説。"
 slug: go-fan-in-fan-out-implementation
 date: 2023-08-21T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: 'Mastering API Architecture: Practical Methods for Evolving from Monolithic to Microservices'
-description: 'An in-depth exploration of Mastering API Architecture: Practical Methods for Evolving from Monolithic to Microservices, covering design principles, trade-offs, and practical applications.'
+description: 'Master API architecture design patterns covering microservices design, testing strategies, operations, security, and evolution practices.'
 slug: mastering-api-architecture
 date: 2024-11-01T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Implementing Sliding Window
-description: A step-by-step guide on Implementing Sliding Window, with practical examples and configuration tips.
+description: "Implement sliding window algorithms for efficient subarray searching with optimized time complexity and rate limiter applications."
 slug: sliding-window-implementation
 date: 2023-08-17T00:00:00Z
 author: bmf-san

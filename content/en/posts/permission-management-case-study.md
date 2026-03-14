@@ -1,6 +1,6 @@
 ---
 title: Case Study on Authorization Management Infrastructure
-description: An in-depth look at Case Study on Authorization Management Infrastructure, covering key concepts and practical insights.
+description: 'Explore authorization management infrastructure case studies from freee on team structure, microservices, and QA practices.'
 slug: permission-management-case-study
 date: 2024-09-08T00:00:00Z
 author: bmf-san

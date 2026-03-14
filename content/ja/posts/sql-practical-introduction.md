@@ -1,6 +1,6 @@
 ---
 title: SQL実践入門──高速でわかりやすいクエリの書き方
-description: SQL実践入門──高速でわかりやすいクエリの書き方について調査・整理したメモ。基本概念と重要ポイントを解説します。
+description: "高速でわかりやすいSQLクエリの実装、クエリ最適化の原則と実践的な設計パターンを初級者向けに解説する書評・知見"
 slug: sql-practical-introduction
 date: 2024-04-01T00:00:00Z
 author: bmf-san

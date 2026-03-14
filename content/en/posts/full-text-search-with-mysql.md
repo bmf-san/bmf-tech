@@ -1,6 +1,6 @@
 ---
 title: Full-Text Search with MySQL
-description: An in-depth look at Full-Text Search with MySQL, covering key concepts and practical insights.
+description: 'Implement MySQL full-text search with FULLTEXT INDEX, ngram parsing, and MATCH...AGAINST query patterns.'
 slug: full-text-search-with-mysql
 date: 2023-04-30T00:00:00Z
 author: bmf-san

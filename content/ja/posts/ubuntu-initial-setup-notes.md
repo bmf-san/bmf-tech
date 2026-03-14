@@ -1,6 +1,6 @@
 ---
 title: ubuntu初期設定メモ
-description: ubuntu初期設定メモについて調査・整理したメモ。基本概念と重要ポイントを解説します。
+description: "Ubuntuサーバー初期構築手順、アップデート・ユーザー作成・sudo権限付与・ホストネーム設定を実践的に解説"
 slug: ubuntu-initial-setup-notes
 date: 2019-02-15T00:00:00Z
 author: bmf-san

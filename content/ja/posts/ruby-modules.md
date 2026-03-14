@@ -1,6 +1,6 @@
 ---
 title: RubyのModuleについて
-description: RubyのModuleについてについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: "活用するRubyモジュール。共通メソッド提供、名前空間、Mixinによる多重継承、クラスメソッド・インスタンスメソッド定義方法。"
 slug: ruby-modules
 date: 2024-05-15T00:00:00Z
 author: bmf-san

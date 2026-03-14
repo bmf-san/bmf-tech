@@ -1,6 +1,6 @@
 ---
 title: Setting Up Elasticsearch and Kibana with Docker
-description: An in-depth look at Setting Up Elasticsearch and Kibana with Docker, covering key concepts and practical insights.
+description: 'Set up an Elasticsearch and Kibana environment using Docker Compose. Covers what ES clusters and nodes are, a working docker-compose.yml configuration, and initial connectivity setup.'
 slug: docker-elasticsearch-kibana-setup
 date: 2018-10-22T00:00:00Z
 author: bmf-san

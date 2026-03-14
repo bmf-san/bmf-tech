@@ -1,6 +1,6 @@
 ---
 title: What is a Critical User Journey
-description: An in-depth look at What is a Critical User Journey, covering key concepts and practical insights.
+description: 'Understand Critical User Journeys to identify essential user touchpoints, goals, and pain points for SLO-based service reliability.'
 slug: critical-user-journey
 date: 2024-08-15T00:00:00Z
 author: bmf-san

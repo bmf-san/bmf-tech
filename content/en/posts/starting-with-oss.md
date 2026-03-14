@@ -1,6 +1,6 @@
 ---
 title: My First Experience with OSS
-description: An in-depth look at My First Experience with OSS, covering key concepts and practical insights.
+description: "Discover open source software development on GitHub and learn collaborative coding fundamentals for public projects."
 slug: starting-with-oss
 date: 2017-07-17T00:00:00Z
 author: bmf-san

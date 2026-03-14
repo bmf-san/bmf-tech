@@ -1,6 +1,6 @@
 ---
 title: ssh接続セットアップメモ
-description: ssh接続セットアップメモについて調査・整理したメモ。基本概念と重要ポイントを解説します。
+description: "ssh-keygenで公開鍵認証を設定、authorized_keysの権限管理とsshd_configのセキュリティ調整を段階的に解説"
 slug: ssh-connection-setup-notes
 date: 2018-09-18T00:00:00Z
 author: bmf-san

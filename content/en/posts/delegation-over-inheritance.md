@@ -1,6 +1,6 @@
 ---
 title: Delegation Over Inheritance
-description: An in-depth look at Delegation Over Inheritance, covering key concepts and practical insights.
+description: 'Learn duck typing and Liskov Substitution Principle. Build resilient Go applications using delegation patterns over inheritance.'
 slug: delegation-over-inheritance
 date: 2025-10-20T00:00:00Z
 author: bmf-san

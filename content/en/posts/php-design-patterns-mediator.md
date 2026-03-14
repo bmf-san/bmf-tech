@@ -1,6 +1,6 @@
 ---
 title: Learning Design Patterns with PHP - Mediator Pattern
-description: An in-depth exploration of Learning Design Patterns with PHP - Mediator Pattern, covering design principles, trade-offs, and practical applications.
+description: 'Explore the Mediator pattern to coordinate complex interactions between objects and improve relationship visibility in PHP.'
 slug: php-design-patterns-mediator
 date: 2019-01-31T00:00:00Z
 author: bmf-san

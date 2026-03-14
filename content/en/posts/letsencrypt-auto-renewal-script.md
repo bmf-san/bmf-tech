@@ -1,6 +1,6 @@
 ---
 title: Let's Encrypt Certificate Auto-Renewal Script
-description: 'An in-depth look at Let''s Encrypt Certificate Auto-Renewal Script, covering key concepts and practical insights.'
+description: "Automate monthly Let's Encrypt certificate renewal using automated shell script execution with Slack notification integration support."
 slug: letsencrypt-auto-renewal-script
 date: 2017-10-01T00:00:00Z
 author: bmf-san

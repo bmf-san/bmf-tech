@@ -8,7 +8,7 @@ categories:
 tags:
   - Algorithm
   - Data Structure
-description: A review of the basics of algorithms and data structures as a rehabilitation before resuming the daily routine of solving coding quizzes.
+description: 'A comprehensive review of algorithms and data structures basics: arrays, strings, hash tables, linked lists, trees, stacks, queues, sorting, and time complexity for coding problems.'
 translation_key: algorithms-data-structures-review
 ---
 

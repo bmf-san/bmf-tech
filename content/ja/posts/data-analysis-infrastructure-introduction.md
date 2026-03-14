@@ -1,6 +1,6 @@
 ---
 title: データ分析基盤構築入門
-description: データ分析基盤構築入門について調査・整理したメモ。基本概念と重要ポイントを解説します。
+description: "データ分析基盤構築入門を紹介。ETL・ログ集約、Elasticsearch・Kibana・Fluentdで大規模ログ分析を実現する構築手法と知見をまとめた書評です。"
 slug: data-analysis-infrastructure-introduction
 date: 2020-06-19T00:00:00Z
 author: bmf-san

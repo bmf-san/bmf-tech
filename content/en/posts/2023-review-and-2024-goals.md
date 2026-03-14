@@ -1,6 +1,6 @@
 ---
 title: Reflection on 2023 and Goals for Next Year
-description: Personal reflections and highlights from Reflection on 2023 and Goals for Next Year.
+description: 'Personal year-end reflection on 2023: career highlights, side projects, books read, and goals set for 2024.'
 slug: 2023-review-and-2024-goals
 date: 2024-01-03T00:00:00Z
 author: bmf-san

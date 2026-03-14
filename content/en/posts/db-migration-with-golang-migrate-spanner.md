@@ -1,6 +1,6 @@
 ---
 title: Database Migration for Spanner Using golang-migrate
-description: An in-depth look at Database Migration for Spanner Using golang-migrate, covering key concepts and practical insights.
+description: 'Migrate databases using golang-migrate with Google Spanner. Execute SQL migrations in Docker with GCP authentication management.'
 slug: db-migration-with-golang-migrate-spanner
 date: 2021-03-17T00:00:00Z
 author: bmf-san

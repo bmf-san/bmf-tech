@@ -1,6 +1,6 @@
 ---
 title: Installing anyenv on Mac
-description: A step-by-step guide on Installing anyenv on Mac, with practical examples and configuration tips.
+description: 'Install and configure anyenv on Mac to manage multiple programming language versions with proper PATH and environment setup.'
 slug: installing-anyenv-on-mac
 date: 2017-10-01T00:00:00Z
 author: bmf-san

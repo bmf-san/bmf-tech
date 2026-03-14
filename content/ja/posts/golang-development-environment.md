@@ -1,6 +1,6 @@
 ---
 title: Golangの開発環境を構築
-description: Golangの開発環境を構築の手順と実践例を詳しく解説します。
+description: "Goの開発環境を構築する手順を解説し、GOPATHの設定・bin/pkg/srcのディレクトリ構成・パッケージ作成の流れを実装ガイドとして提示。"
 slug: golang-development-environment
 date: 2018-04-07T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: LaravelにbowerでReactを導入してみる
-description: LaravelにbowerでReactを導入してみるの手順と実践例を詳しく解説します。
+description: "統合するLaravelとReact。bowerパッケージマネージャー、Babel、JSX構文、gulp/elixirによるビルド環境構築の実装手法を解説"
 slug: laravel-bower-react-integration
 date: 2017-10-01T00:00:00Z
 author: bmf-san

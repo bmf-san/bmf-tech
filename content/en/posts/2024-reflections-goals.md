@@ -1,6 +1,6 @@
 ---
 title: Reflection on 2024 and Goals for Next Year
-description: Personal reflections and highlights from Reflection on 2024 and Goals for Next Year.
+description: 'Personal year-end reflection on 2024: highlights in engineering and learning, plus goals and resolutions for 2025.'
 slug: 2024-reflections-goals
 date: 2025-01-02T00:00:00Z
 author: bmf-san

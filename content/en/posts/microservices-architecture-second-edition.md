@@ -1,6 +1,6 @@
 ---
 title: Microservices Architecture Second Edition
-description: 'A review and summary of "Microservices Architecture Second Edition", covering key takeaways and practical insights.'
+description: 'Explore distributed system patterns, architectural characteristics, and comprehensive microservices design principles and best practices.'
 slug: microservices-architecture-second-edition
 date: 2024-06-16T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Side Effects of Go's response.WriteHeader
-description: 'An in-depth look at Side Effects of Go''s response.WriteHeader, covering key concepts and practical insights.'
+description: 'Learn why calling Go response.WriteHeader multiple times triggers the superfluous call warning. Covers how the first status code wins and how to fix duplicate WriteHeader in HTTP handlers.'
 slug: go-response-writeheader-side-effects
 date: 2023-09-11T00:00:00Z
 author: bmf-san

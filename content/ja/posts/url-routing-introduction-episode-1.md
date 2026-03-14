@@ -1,6 +1,6 @@
 ---
 title: URLルーティング自作入門　エピソード１
-description: URLルーティング自作入門　エピソード１について調査・整理したメモ。基本概念と重要ポイントを解説します。
+description: "URLルーティング自作の敷居と応用範囲、木構造アルゴリズムとWeb側フレームワークの参考実装を探索するモチベーション"
 slug: url-routing-introduction-episode-1
 date: 2019-12-14T00:00:00Z
 author: bmf-san

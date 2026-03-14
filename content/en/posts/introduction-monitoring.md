@@ -1,6 +1,6 @@
 ---
 title: Introduction to Monitoring
-description: Research notes and a structured overview of Introduction to Monitoring, summarizing key concepts and findings.
+description: 'Learn monitoring fundamentals and practical techniques for infrastructure observability, alerting, and performance optimization.'
 slug: introduction-monitoring
 date: 2019-01-26T00:00:00Z
 author: bmf-san

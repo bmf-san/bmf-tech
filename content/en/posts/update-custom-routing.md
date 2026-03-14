@@ -1,6 +1,6 @@
 ---
 title: Updated My Custom Router
-description: An in-depth look at Updated My Custom Router, covering key concepts and practical insights.
+description: "Discover middleware support and optimizations in the goblin Go HTTP router with performance benchmarks and HTTP routing features."
 slug: update-custom-routing
 date: 2021-06-18T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: 'Modern JS Talk: Arrow Functions'
-description: 'An in-depth look at Modern JS Talk: Arrow Functions, covering key concepts and practical insights.'
+description: 'Learn arrow function syntax, lexical this binding, and ES2015 function expressions for modern JavaScript development.'
 slug: modern-js-arrow-functions
 date: 2017-12-25T00:00:00Z
 author: bmf-san

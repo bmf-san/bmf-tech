@@ -1,6 +1,6 @@
 ---
 title: grep入門
-description: grep入門について調査・整理したメモ。基本概念と重要ポイントを解説します。
+description: "習得するgrepコマンド手法。正規表現による検索、オプション活用、OR検索・AND検索の実装、ディレクトリ除外など、テキスト検索とファイル操作の効率化を解説"
 slug: introduction-to-grep
 date: 2019-01-22T00:00:00Z
 author: bmf-san

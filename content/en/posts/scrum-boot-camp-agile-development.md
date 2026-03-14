@@ -1,6 +1,6 @@
 ---
 title: SCRUM BOOT CAMP THE BOOK [Revised Edition] Starting Agile Development with a Scrum Team
-description: 'A review and summary of "SCRUM BOOT CAMP THE BOOK [Revised Edition] Starting Agile Development with a Scrum Team", covering key takeaways and practical insights.'
+description: 'Learn Scrum framework fundamentals and agile development practices for effective team collaboration and iterative delivery.'
 slug: scrum-boot-camp-agile-development
 date: 2020-09-07T00:00:00Z
 author: bmf-san

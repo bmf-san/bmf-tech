@@ -1,6 +1,6 @@
 ---
 title: 2進数、10進数、16進数の変換について
-description: 2進数、10進数、16進数の変換についてについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: "基数変換の仕組みを解説。重み・基数の概念、2進数・10進数・16進数の変換計算、8進数変換で数値表現の本質を初級者向けに詳しく解説します。"
 slug: binary-decimal-hexadecimal-conversion
 date: 2018-11-27T00:00:00Z
 author: bmf-san

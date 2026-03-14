@@ -1,6 +1,6 @@
 ---
 title: About Template Method and Strategy Patterns
-description: An in-depth exploration of About Template Method and Strategy Patterns, covering design principles, trade-offs, and practical applications.
+description: "Master Template Method and Strategy patterns—two behavioral design patterns for controlling process flow and runtime method selection."
 slug: template-method-strategy-patterns
 date: 2023-08-20T00:00:00Z
 author: bmf-san

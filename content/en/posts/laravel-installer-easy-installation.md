@@ -1,6 +1,6 @@
 ---
 title: Easy Laravel Installation with Installer
-description: A step-by-step guide on Easy Laravel Installation with Installer, with practical examples and configuration tips.
+description: 'Install Laravel quickly using the global installer for faster project creation than traditional composer methods.'
 slug: laravel-installer-easy-installation
 date: 2016-05-15T00:00:00Z
 author: bmf-san

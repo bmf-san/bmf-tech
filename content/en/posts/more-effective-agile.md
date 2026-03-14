@@ -1,6 +1,6 @@
 ---
 title: More Effective Agile
-description: An in-depth look at More Effective Agile, covering key concepts and practical insights.
+description: 'Master agile development practices, sprint methodologies, and team productivity frameworks for modern development.'
 slug: more-effective-agile
 date: 2023-10-01T00:00:00Z
 author: bmf-san

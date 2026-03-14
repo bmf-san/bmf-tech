@@ -1,6 +1,6 @@
 ---
 title: Road to Vimmer
-description: An in-depth look at Road to Vimmer, covering key concepts and practical insights.
+description: 'Master vim navigation, editing, and text manipulation commands for efficient terminal-based text editing without GUI shortcuts.'
 slug: road-to-vimmer
 date: 2018-04-22T00:00:00Z
 author: bmf-san

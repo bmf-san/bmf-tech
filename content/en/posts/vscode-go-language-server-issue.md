@@ -1,6 +1,6 @@
 ---
 title: Code Definition Jump Disabled After Enabling Go Language Server in VSCode
-description: An in-depth look at Code Definition Jump Disabled After Enabling Go Language Server in VSCode, covering key concepts and practical insights.
+description: "Fix VSCode Go language server issues with gopls by placing go.mod file correctly for code definition jumping."
 slug: vscode-go-language-server-issue
 date: 2020-07-19T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: 'First Go Language, 2nd Edition: An Idiomatic Go Practical Guide for Programmers of Other Languages'
-description: 'A review and summary of "First Go Language, 2nd Edition: An Idiomatic Go Practical Guide for Programmers of Other Languages", covering key takeaways and practical insights.'
+description: 'Learn idiomatic Go programming patterns and philosophy from practical examples to write cleaner, more efficient code.'
 slug: idiomatic-go-practice-guide
 date: 2025-10-26T00:00:00Z
 author: bmf-san

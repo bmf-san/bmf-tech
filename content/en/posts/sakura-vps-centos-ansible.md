@@ -1,6 +1,6 @@
 ---
 title: Sakura VPS + CentOS7.3 + Ansible
-description: An in-depth look at Sakura VPS + CentOS7.3 + Ansible, covering key concepts and practical insights.
+description: 'Automate Sakura VPS initial setup with Ansible for user creation, SSH hardening, SELinux configuration, and security lockdown.'
 slug: sakura-vps-centos-ansible
 date: 2017-10-01T00:00:00Z
 author: bmf-san

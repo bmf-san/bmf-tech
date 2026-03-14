@@ -1,6 +1,6 @@
 ---
 title: Copy Local Files to Remote with Ansible
-description: An in-depth look at Copy Local Files to Remote with Ansible, covering key concepts and practical insights.
+description: 'Learn Ansible copy module syntax to transfer directory contents to remote servers with proper file permissions configuration.'
 slug: copy-local-file-to-remote-ansible
 date: 2017-09-26T00:00:00Z
 author: bmf-san

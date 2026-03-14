@@ -1,6 +1,6 @@
 ---
 title: The Art of Leadership - Attending to the Small Things
-description: An in-depth look at The Art of Leadership - Attending to the Small Things, covering key concepts and practical insights.
+description: 'Discover how engineering leaders shape culture through daily habits like feedback quality, meeting presence, and 1-on-1 effectiveness.'
 slug: leader-etiquette
 date: 2026-02-20T00:00:00Z
 author: bmf-san

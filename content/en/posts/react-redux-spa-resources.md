@@ -1,6 +1,6 @@
 ---
 title: Articles Referenced for Building an SPA with React and Redux
-description: A step-by-step guide on Articles Referenced for Building an SPA with React and Redux, with practical examples and configuration tips.
+description: 'Explore curated React Redux resources for SPA development, Redux middleware, and architectural patterns.'
 slug: react-redux-spa-resources
 date: 2017-10-01T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Distributed Services with Go
-description: An in-depth exploration of Distributed Services with Go, covering design principles, trade-offs, and practical applications.
+description: 'Master distributed service design patterns, microservice architecture, and Go concurrency model for building scalable systems.'
 slug: distributed-services-with-golang
 date: 2023-08-18T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Learning Design Patterns with PHP - Basics of Object-Oriented Programming
-description: An in-depth exploration of Learning Design Patterns with PHP - Basics of Object-Oriented Programming, covering design principles, trade-offs, and practical applications.
+description: 'Master OOP fundamentals including inheritance, interfaces, traits, static properties, and methods for design pattern study.'
 slug: php-design-patterns-object-oriented-basics
 date: 2017-10-01T00:00:00Z
 author: bmf-san

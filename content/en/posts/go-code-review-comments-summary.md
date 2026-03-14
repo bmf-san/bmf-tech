@@ -1,6 +1,6 @@
 ---
 title: Summary of Go CodeReviewComments
-description: Research notes and a structured overview of Summary of Go CodeReviewComments, summarizing key concepts and findings.
+description: 'Improve Go code quality with essential code review guidelines: receivers, error handling, goroutines, and naming conventions.'
 slug: go-code-review-comments-summary
 date: 2020-09-15T00:00:00Z
 author: bmf-san

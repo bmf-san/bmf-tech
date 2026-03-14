@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting 'configure' Errors During PostgreSQL Installation
-description: 'A step-by-step guide on Troubleshooting ''configure'' Errors During PostgreSQL Installation, with practical examples and configuration tips.'
+description: 'Fix the You need to run the configure program first error when compiling PostgreSQL from source. Covers ./configure options, re-running make, and common dependency issues on Ubuntu/CentOS.'
 slug: postgresql-install-configure-error-troubleshooting
 date: 2025-03-07T00:00:00Z
 author: bmf-san

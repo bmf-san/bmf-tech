@@ -1,6 +1,6 @@
 ---
 title: Kaizen Journey
-description: An in-depth look at Kaizen Journey, covering key concepts and practical insights.
+description: 'Discover Kaizen principles for continuous improvement and boundary-crossing team development in software projects.'
 slug: kaizen-journey
 date: 2024-04-16T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: 集合について
-description: 集合についてについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: "理解する集合論の基礎。要素・部分集合・和集合・積集合、データ構造・RDB理論、論理表現への応用と問題解決力養成。"
 slug: set-theory
 date: 2024-07-06T00:00:00Z
 author: bmf-san

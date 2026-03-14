@@ -1,6 +1,6 @@
 ---
 title: Reading Agile Metrics
-description: 'A review and summary of "Reading Agile Metrics", covering key takeaways and practical insights.'
+description: 'Discover how to measure agile team performance using data from project management, source control, and build systems for improvement.'
 slug: agile-metrics-review
 date: 2022-12-17T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Algorithms and Data Structures - Bubble Sort
-description: An in-depth look at Algorithms and Data Structures - Bubble Sort, covering key concepts and practical insights.
+description: 'Learn Bubble Sort, a comparison-based sorting algorithm with O(n²) time complexity. Covers the adjacent-element swap logic and a complete Go implementation.'
 slug: algorithms-data-structures-bubble-sort
 date: 2020-02-01T00:00:00Z
 author: bmf-san

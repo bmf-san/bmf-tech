@@ -1,5 +1,5 @@
 ---
-title: How to Split a Commit in Git
+title: "Git Commit Split: Shell Command Quick Reference"
 slug: split-commits-with-git
 date: 2021-10-05T00:00:00Z
 author: bmf-san
@@ -7,7 +7,7 @@ categories:
   - Application
 tags:
   - Git
-description: Notes on how to split a commit in Git. Occasionally needed.
+description: "Quick reference shell commands for splitting a Git commit using interactive rebase, reset, and staged re-commits for granular commit history."
 translation_key: split-commits-with-git
 ---
 

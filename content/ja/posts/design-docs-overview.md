@@ -1,6 +1,6 @@
 ---
 title: Design Docsについて
-description: Design Docsについてについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: "Design Docsを解説。設計課題の early detection、ステークホルダ合意形成、知見共有、ライフサイクル管理でアジャイル開発に適した設計ドキュメント方法を紹介します。"
 slug: design-docs-overview
 date: 2022-10-07T00:00:00Z
 author: bmf-san
