@@ -17,6 +17,26 @@ test.describe('page <title> tag', () => {
     await page.goto('/about/');
     await expect(page).toHaveTitle('About | bmf-tech');
   });
+
+  test('EN tag page shows "TagName | bmf-tech"', async ({ page }) => {
+    await page.goto('/tags/golang/');
+    await expect(page).toHaveTitle('Golang | bmf-tech');
+  });
+
+  test('JA tag page shows "TagName | bmf-tech"', async ({ page }) => {
+    await page.goto('/ja/tags/golang/');
+    await expect(page).toHaveTitle('Golang | bmf-tech');
+  });
+
+  test('EN category page shows "CategoryName | bmf-tech"', async ({ page }) => {
+    await page.goto('/categories/architecture/');
+    await expect(page).toHaveTitle('Architecture | bmf-tech');
+  });
+
+  test('JA category page shows "CategoryName | bmf-tech"', async ({ page }) => {
+    await page.goto('/ja/categories/os/');
+    await expect(page).toHaveTitle('OS | bmf-tech');
+  });
 });
 
 // ── meta description ──────────────────────────────────────────────────────────
@@ -276,6 +296,41 @@ test.describe('og:url on listing pages points to page not homepage', () => {
     const ogUrl = page.locator('meta[property="og:url"]');
     await expect(ogUrl).toHaveCount(1);
     expect(await ogUrl.getAttribute('content')).toContain('/tags/abac/');
+  });
+
+  test('EN tag page og:title includes tag name', async ({ page }) => {
+    await page.goto('/tags/abac/');
+    const ogTitle = page.locator('meta[property="og:title"]');
+    await expect(ogTitle).toHaveCount(1);
+    expect(await ogTitle.getAttribute('content')).toContain('ABAC');
+  });
+
+  test('JA category page og:url points to category URL', async ({ page }) => {
+    await page.goto('/ja/categories/os/');
+    const ogUrl = page.locator('meta[property="og:url"]');
+    await expect(ogUrl).toHaveCount(1);
+    expect(await ogUrl.getAttribute('content')).toContain('/ja/categories/os/');
+  });
+
+  test('JA category page og:title includes category name', async ({ page }) => {
+    await page.goto('/ja/categories/os/');
+    const ogTitle = page.locator('meta[property="og:title"]');
+    await expect(ogTitle).toHaveCount(1);
+    expect(await ogTitle.getAttribute('content')).toContain('OS');
+  });
+
+  test('EN category page og:url points to category URL', async ({ page }) => {
+    await page.goto('/categories/architecture/');
+    const ogUrl = page.locator('meta[property="og:url"]');
+    await expect(ogUrl).toHaveCount(1);
+    expect(await ogUrl.getAttribute('content')).toContain('/categories/architecture/');
+  });
+
+  test('EN category page og:title includes category name', async ({ page }) => {
+    await page.goto('/categories/architecture/');
+    const ogTitle = page.locator('meta[property="og:title"]');
+    await expect(ogTitle).toHaveCount(1);
+    expect(await ogTitle.getAttribute('content')).toContain('Architecture');
   });
 });
 
