@@ -14,6 +14,7 @@ const PAGES_WITH_CSS = [
   '/ja/categories/ツール/',
   '/about/',
   '/archives/2024/03/',
+  '/ja/archives/2026/02/',
 ];
 
 for (const path of PAGES_WITH_CSS) {
