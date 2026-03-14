@@ -18,7 +18,12 @@ jobs:
           cache: false
 
       - name: Install gohan
-        run: make install-gohan
+        # TODO: revert to `make install-gohan` once gohan PR #102 is merged into main.
+        # The templates depend on Taxonomy.URL (added in fix/taxonomy-url-for-locale-switcher).
+        run: |
+          git clone --depth 1 -b fix/taxonomy-url-for-locale-switcher \
+            https://github.com/bmf-san/gohan.git /tmp/gohan
+          cd /tmp/gohan && GOTOOLCHAIN=auto go install ./cmd/gohan
 
       - name: Build site
         run: make build
