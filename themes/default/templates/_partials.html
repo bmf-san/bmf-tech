@@ -2,7 +2,11 @@
 
 {{define "head"}}<!DOCTYPE html>
 {{- $article := index .Articles 0}}
-{{- $isSingle := and $article (not .Pagination) (not .CurrentArchivePath) (not .CurrentTaxonomy)}}
+{{- /* $isSingle: true only on single-article pages (article.html).
+     Without the len==1 guard, a listing page with ≤ per_page articles and
+     no Pagination would also satisfy the condition, receiving incorrect
+     article-level SEO (og:type=article, BlogPosting, og:url = article). */}}
+{{- $isSingle := and $article (not .Pagination) (not .CurrentArchivePath) (not .CurrentTaxonomy) (eq (len .Articles) 1)}}
 {{- $localePrefix := ""}}
 {{- if eq .CurrentLocale "ja"}}{{- $localePrefix = "/ja"}}{{- end}}
 {{- $homeURL := "/"}}
@@ -175,7 +179,7 @@
 
 {{define "header"}}
 {{- $article := index .Articles 0}}
-{{- $isSingle := and $article (not .Pagination) (not .CurrentArchivePath) (not .CurrentTaxonomy)}}
+{{- $isSingle := and $article (not .Pagination) (not .CurrentArchivePath) (not .CurrentTaxonomy) (eq (len .Articles) 1)}}
 {{- $altURL := "/ja/"}}
 {{- if eq .CurrentLocale "ja"}}{{$altURL = "/"}}{{end}}
 {{- if $isSingle}}
