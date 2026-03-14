@@ -130,6 +130,19 @@ test.describe('Archive page /archives/2024/03/', () => {
   });
 });
 
+test.describe('Archive page /ja/archives/2026/02/', () => {
+  test('loads and has article list', async ({ page }) => {
+    await page.goto('/ja/archives/2026/02/');
+    await expect(page.locator('a.card').first()).toBeVisible();
+  });
+
+  test('articles are from 2026-02', async ({ page }) => {
+    await page.goto('/ja/archives/2026/02/');
+    const firstDate = await page.locator('div.card-body .text-xs.text-secondary').first().textContent();
+    expect(firstDate).toMatch(/^2026-02/);
+  });
+});
+
 // ── JA nav labels ─────────────────────────────────────────────────────────────
 
 test.describe('Nav: JA locale shows Japanese labels', () => {
