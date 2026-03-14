@@ -4,9 +4,8 @@
 <main class="container mx-auto py-10">
 
   {{/* Page header */}}
-  {{$first := index .Articles 0}}
   {{$tagName := ""}}
-  {{if $first}}{{$tagName = index $first.FrontMatter.Tags 0}}{{end}}
+  {{if .CurrentTaxonomy}}{{$tagName = .CurrentTaxonomy.Name}}{{end}}
   <div class="mb-8">
     <ol class="breadcrumbs mb-4">
       <li class="breadcrumbs-item">
