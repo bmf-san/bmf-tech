@@ -23,7 +23,7 @@
     <h1 class="text-3xl font-bold mb-2">
       {{if $tagName}}<span class="badge badge-secondary badge-lg mr-2">#{{$tagName}}</span>{{end}}
     </h1>
-    <p class="text-secondary">{{len .Articles}} {{if eq .CurrentLocale "ja"}}件の記事{{else}}articles{{end}}</p>
+    <p class="text-secondary">{{if .Pagination}}{{.Pagination.TotalItems}}{{else}}{{len .Articles}}{{end}} {{if eq .CurrentLocale "ja"}}件の記事{{else}}articles{{end}}</p>
   </div>
 
   {{if .Articles}}

@@ -7,6 +7,9 @@
      no Pagination would also satisfy the condition, receiving incorrect
      article-level SEO (og:type=article, BlogPosting, og:url = article). */}}
 {{- $isSingle := and $article (not .Pagination) (not .CurrentArchivePath) (not .CurrentTaxonomy) (eq (len .Articles) 1)}}
+{{- /* $isPage: true for static pages rendered with page.html (e.g. About, Privacy Policy).
+     These must not receive article-specific OGP/JSON-LD metadata. */}}
+{{- $isPage := and $isSingle (eq $article.FrontMatter.Template "page.html")}}
 {{- $localePrefix := ""}}
 {{- if eq .CurrentLocale "ja"}}{{- $localePrefix = "/ja"}}{{- end}}
 {{- $homeURL := "/"}}
@@ -17,8 +20,16 @@
 {{- if eq .CurrentLocale "ja"}}{{$altURLHead = "/"}}{{end}}
 {{- if .CurrentTaxonomy}}
   {{- if eq .CurrentLocale "ja"}}{{$altURLHead = slice .CurrentTaxonomy.URL 3}}{{else}}{{$altURLHead = printf "/ja%s" .CurrentTaxonomy.URL}}{{end}}
+  {{- /* BUG-T7: for paginated taxonomy pages, alternate hreflang must match the current page number */}}
+  {{- if and .Pagination (gt .Pagination.CurrentPage 1)}}
+    {{- if eq .CurrentLocale "ja"}}{{$altURLHead = printf "%s/page/%d/" (slice .Pagination.BaseURL 3) .Pagination.CurrentPage}}{{else}}{{$altURLHead = printf "/ja%s/page/%d/" .Pagination.BaseURL .Pagination.CurrentPage}}{{end}}
+  {{- end}}
 {{- else if .CurrentArchivePath}}
   {{- if eq .CurrentLocale "ja"}}{{$altURLHead = slice .CurrentArchivePath 3}}{{else}}{{$altURLHead = printf "/ja%s" .CurrentArchivePath}}{{end}}
+  {{- /* BUG-T7: same fix for paginated archive pages */}}
+  {{- if and .Pagination (gt .Pagination.CurrentPage 1)}}
+    {{- if eq .CurrentLocale "ja"}}{{$altURLHead = printf "%s/page/%d/" (slice .Pagination.BaseURL 3) .Pagination.CurrentPage}}{{else}}{{$altURLHead = printf "/ja%s/page/%d/" .Pagination.BaseURL .Pagination.CurrentPage}}{{end}}
+  {{- end}}
 {{- else if and .Pagination (gt .Pagination.CurrentPage 1)}}
   {{- if eq .CurrentLocale "ja"}}{{$altURLHead = printf "/page/%d/" .Pagination.CurrentPage}}{{else}}{{$altURLHead = printf "/ja/page/%d/" .Pagination.CurrentPage}}{{end}}
 {{- end}}
@@ -37,7 +48,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bmf-san/sleyt@latest/docs/public/css/index.css">
 {{- if $isSingle}}
 <meta property="og:title" content="{{$article.FrontMatter.Title}}">
-<meta property="og:type" content="article">
+<meta property="og:type" content="{{if $isPage}}website{{else}}article{{end}}">
 <meta property="og:url" content="{{.Config.Site.BaseURL}}{{$article.URL}}">
 <meta property="og:description" content="{{if $article.FrontMatter.Description}}{{$article.FrontMatter.Description}}{{else}}{{.Config.Site.Description}}{{end}}">
 <meta property="og:image" content="{{.Config.Site.BaseURL}}/ogp/{{$article.FrontMatter.Slug}}.png">
@@ -50,9 +61,11 @@
 {{- range $article.Translations}}{{- $altLocale := "en_US"}}{{if eq .Locale "ja"}}{{- $altLocale = "ja_JP"}}{{end}}
 <meta property="og:locale:alternate" content="{{$altLocale}}">
 {{end -}}
-{{- /* BUG-T2: OGP spec requires ISO 8601 datetime with timezone for article times */}}
+{{- /* article:published/modified_time are only valid for og:type=article, not for static pages */}}
+{{- if not $isPage}}
 <meta property="article:published_time" content="{{formatDate "2006-01-02T15:04:05Z07:00" $article.FrontMatter.Date}}">
 <meta property="article:modified_time" content="{{formatDate "2006-01-02T15:04:05Z07:00" $article.FrontMatter.Date}}">
+{{- end}}
 <meta name="author" content="{{index .Config.Theme.Params "author"}}">
 <meta name="twitter:card" content="summary_large_image">
 {{- with index .Config.Theme.Params "twitter"}}<meta name="twitter:site" content="@{{.}}">{{- end}}
@@ -70,7 +83,7 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BlogPosting",
+  "@type": "{{if $isPage}}WebPage{{else}}BlogPosting{{end}}",
   "headline": "{{$article.FrontMatter.Title}}",
   "datePublished": "{{formatDate "2006-01-02" $article.FrontMatter.Date}}",
   "dateModified": "{{formatDate "2006-01-02" $article.FrontMatter.Date}}",
@@ -149,7 +162,7 @@
   "@type": "BreadcrumbList",
   "itemListElement": [
     {"@type": "ListItem", "position": 1, "name": "{{if eq .CurrentLocale "ja"}}ホーム{{else}}Home{{end}}", "item": "{{.Config.Site.BaseURL}}{{$homeURL}}"},
-    {"@type": "ListItem", "position": 2, "name": "{{if .CurrentTaxonomy}}{{.CurrentTaxonomy.Name}}{{else}}{{if eq .CurrentLocale "ja"}}アーカイブ{{else}}Archive{{end}}{{end}}", "item": "{{$ogURL}}"}
+    {"@type": "ListItem", "position": 2, "name": "{{if .CurrentTaxonomy}}{{.CurrentTaxonomy.Name}}{{else}}{{if eq .CurrentLocale "ja"}}アーカイブ{{else}}Archive{{end}}{{end}}", "item": "{{.Config.Site.BaseURL}}{{if .CurrentTaxonomy}}{{.CurrentTaxonomy.URL}}{{else}}{{.CurrentArchivePath}}{{end}}"}
   ]
 }
 </script>
@@ -203,11 +216,27 @@
   {{- else}}
     {{- $altURL = printf "/ja%s" .CurrentTaxonomy.URL}}
   {{- end}}
+  {{- /* BUG-T7a: for paginated taxonomy pages, locale-switcher link must match the current page number */}}
+  {{- if and .Pagination (gt .Pagination.CurrentPage 1)}}
+    {{- if eq .CurrentLocale "ja"}}
+      {{- $altURL = printf "%s/page/%d/" (slice .Pagination.BaseURL 3) .Pagination.CurrentPage}}
+    {{- else}}
+      {{- $altURL = printf "/ja%s/page/%d/" .Pagination.BaseURL .Pagination.CurrentPage}}
+    {{- end}}
+  {{- end}}
 {{- else if .CurrentArchivePath}}
   {{- if eq .CurrentLocale "ja"}}
     {{- $altURL = slice .CurrentArchivePath 3}}
   {{- else}}
     {{- $altURL = printf "/ja%s" .CurrentArchivePath}}
+  {{- end}}
+  {{- /* BUG-T7a: same fix for paginated archive pages */}}
+  {{- if and .Pagination (gt .Pagination.CurrentPage 1)}}
+    {{- if eq .CurrentLocale "ja"}}
+      {{- $altURL = printf "%s/page/%d/" (slice .Pagination.BaseURL 3) .Pagination.CurrentPage}}
+    {{- else}}
+      {{- $altURL = printf "/ja%s/page/%d/" .Pagination.BaseURL .Pagination.CurrentPage}}
+    {{- end}}
   {{- end}}
 {{- else if and .Pagination (gt .Pagination.CurrentPage 1)}}
   {{- if eq .CurrentLocale "ja"}}

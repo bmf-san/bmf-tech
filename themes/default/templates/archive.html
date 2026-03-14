@@ -22,7 +22,7 @@
       </li>
     </ol>
     <h1 class="text-3xl font-bold mb-2">{{if eq .CurrentLocale "ja"}}アーカイブ{{else}}Archive{{end}}{{if $year}} {{$year}}{{end}}</h1>
-    <p class="text-secondary">{{len .Articles}} {{if eq .CurrentLocale "ja"}}件の記事{{else}}articles{{end}}</p>
+    <p class="text-secondary">{{if .Pagination}}{{.Pagination.TotalItems}}{{else}}{{len .Articles}}{{end}} {{if eq .CurrentLocale "ja"}}件の記事{{else}}articles{{end}}</p>
   </div>
 
   {{if .Articles}}
