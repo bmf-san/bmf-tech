@@ -94,6 +94,7 @@ Contract web development across diverse clients and projects.
 | Applications | [gobel-example](https://github.com/bmf-san/gobel-example) | Gobel is a headless cms built with golang. |
 | Applications | [gogocoin](https://github.com/bmf-san/gogocoin) | A cryptocurrency trading bot for the bitFlyer exchange. |
 | Frameworks | [sleyt](https://github.com/bmf-san/sleyt) | A minimal and modern CSS framework. |
+| Libraries | [goblin](https://github.com/bmf-san/goblin) | A trie-based HTTP router for Go. |
 | Libraries | [go-bitflyer-api-client](https://github.com/bmf-san/go-bitflyer-api-client) | bitFlyer Lightning API client for Go. |
 | Templates | [go-clean-architecture-web-application-boilerplate](https://github.com/bmf-san/go-clean-architecture-web-application-boilerplate) | A web application boilerplate built with go and clean architecture. |
 | Templates | [resume-manager](https://github.com/bmf-san/resume-manager) | A template for managing career documents (resume, work history, portfolio, etc.) in Markdown with automated PDF generation. |
