@@ -3,10 +3,12 @@
 {{template "header" .}}
 <main class="container mx-auto py-8 max-w-4xl">
   {{range .Articles}}
+  {{- $homeURL := "/"}}
+  {{- if eq .Locale "ja"}}{{$homeURL = "/ja/"}}{{end}}
   <header class="mb-8">
     <ol class="breadcrumbs mb-4">
       <li class="breadcrumbs-item">
-        <a href="/" class="breadcrumbs-link">Home</a>
+        <a href="{{$homeURL}}" class="breadcrumbs-link">Home</a>
         <span class="breadcrumbs-separator">/</span>
       </li>
       <li class="breadcrumbs-item active">
