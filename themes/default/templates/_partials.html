@@ -2,7 +2,7 @@
 
 {{define "head"}}<!DOCTYPE html>
 {{- $article := index .Articles 0}}
-{{- $isSingle := and $article (not .Pagination)}}
+{{- $isSingle := and $article (not .Pagination) (not .CurrentArchivePath) (not .CurrentTaxonomy)}}
 {{- $localePrefix := ""}}
 {{- if eq .CurrentLocale "ja"}}{{- $localePrefix = "/ja"}}{{- end}}
 {{- $homeURL := "/"}}

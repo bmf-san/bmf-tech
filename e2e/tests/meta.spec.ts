@@ -176,12 +176,39 @@ test.describe('canonical on JA article', () => {
 // ── listing pages must have NO article-level canonical ────────────────────────
 
 test.describe('listing pages have no canonical link', () => {
-  const LISTING_PAGES = ['/', '/ja/', '/ja/page/2/'];
+  const LISTING_PAGES = [
+    '/',
+    '/ja/',
+    '/ja/page/2/',
+    // archive pages (no pagination; previously broken — head $isSingle was true)
+    '/ja/archives/2015/',
+    '/ja/archives/2015/05/',
+    // tag / category listing pages
+    '/tags/abac/',
+    '/ja/tags/abac/',
+    '/categories/application/',
+  ];
 
   for (const path of LISTING_PAGES) {
     test(`no canonical link on listing page ${path}`, async ({ page }) => {
       await page.goto(path);
       await expect(page.locator('link[rel="canonical"]')).toHaveCount(0);
+    });
+  }
+});
+
+test.describe('listing pages have no hreflang links', () => {
+  const LISTING_PAGES = [
+    '/ja/archives/2015/',
+    '/ja/archives/2015/05/',
+    '/tags/abac/',
+    '/ja/tags/abac/',
+  ];
+
+  for (const path of LISTING_PAGES) {
+    test(`no hreflang alternate on listing page ${path}`, async ({ page }) => {
+      await page.goto(path);
+      await expect(page.locator('link[rel="alternate"][hreflang]')).toHaveCount(0);
     });
   }
 });
