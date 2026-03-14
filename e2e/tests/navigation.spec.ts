@@ -199,3 +199,59 @@ test.describe('Footer sitemap link', () => {
     await expect(page.locator('footer').getByRole('link', { name: 'Sitemap' })).toBeVisible();
   });
 });
+
+// ── Locale switcher on tag/category/archive pages ────────────────────────────
+
+test.describe('Nav: locale toggle on tag pages', () => {
+  test('JA tag page toggle links to EN tag page', async ({ page }) => {
+    await page.goto('/ja/tags/2phase-commit/');
+    const href = await page.locator('nav.navbar a:has(.badge-primary)').getAttribute('href');
+    expect(href).toBe('/tags/2phase-commit/');
+  });
+
+  test('EN tag page toggle links to JA tag page', async ({ page }) => {
+    await page.goto('/tags/2phase-commit/');
+    const href = await page.locator('nav.navbar a:has(.badge-primary)').getAttribute('href');
+    expect(href).toBe('/ja/tags/2phase-commit/');
+  });
+});
+
+test.describe('Nav: locale toggle on category pages', () => {
+  test('JA category page toggle links to EN category page', async ({ page }) => {
+    await page.goto('/ja/categories/os/');
+    const href = await page.locator('nav.navbar a:has(.badge-primary)').getAttribute('href');
+    expect(href).toBe('/categories/os/');
+  });
+
+  test('EN category page toggle links to JA category page', async ({ page }) => {
+    await page.goto('/categories/architecture/');
+    const href = await page.locator('nav.navbar a:has(.badge-primary)').getAttribute('href');
+    expect(href).toBe('/ja/categories/architecture/');
+  });
+});
+
+test.describe('Nav: locale toggle on archive pages', () => {
+  test('JA archive month page toggle links to EN archive month page', async ({ page }) => {
+    await page.goto('/ja/archives/2024/01/');
+    const href = await page.locator('nav.navbar a:has(.badge-primary)').getAttribute('href');
+    expect(href).toBe('/archives/2024/01/');
+  });
+
+  test('EN archive month page toggle links to JA archive month page', async ({ page }) => {
+    await page.goto('/archives/2024/01/');
+    const href = await page.locator('nav.navbar a:has(.badge-primary)').getAttribute('href');
+    expect(href).toBe('/ja/archives/2024/01/');
+  });
+
+  test('JA archive year page toggle links to EN archive year page', async ({ page }) => {
+    await page.goto('/ja/archives/2024/');
+    const href = await page.locator('nav.navbar a:has(.badge-primary)').getAttribute('href');
+    expect(href).toBe('/archives/2024/');
+  });
+
+  test('EN archive year page toggle links to JA archive year page', async ({ page }) => {
+    await page.goto('/archives/2024/');
+    const href = await page.locator('nav.navbar a:has(.badge-primary)').getAttribute('href');
+    expect(href).toBe('/ja/archives/2024/');
+  });
+});

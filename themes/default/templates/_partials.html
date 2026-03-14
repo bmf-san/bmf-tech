@@ -129,7 +129,7 @@
 
 {{define "header"}}
 {{- $article := index .Articles 0}}
-{{- $isSingle := and $article (not .Pagination)}}
+{{- $isSingle := and $article (not .Pagination) (not .CurrentArchivePath)}}
 {{- $altURL := "/ja/"}}
 {{- if eq .CurrentLocale "ja"}}{{$altURL = "/"}}{{end}}
 {{- if $isSingle}}
@@ -142,6 +142,12 @@
     {{- $altURL = slice .CurrentTaxonomy.URL 3}}
   {{- else}}
     {{- $altURL = printf "/ja%s" .CurrentTaxonomy.URL}}
+  {{- end}}
+{{- else if .CurrentArchivePath}}
+  {{- if eq .CurrentLocale "ja"}}
+    {{- $altURL = .CurrentArchivePath}}
+  {{- else}}
+    {{- $altURL = printf "/ja%s" .CurrentArchivePath}}
   {{- end}}
 {{- end}}
 {{- $homeURL := "/"}}
