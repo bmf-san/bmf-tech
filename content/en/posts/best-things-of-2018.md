@@ -6,7 +6,9 @@ date: 2018-12-29T00:00:00Z
 author: bmf-san
 categories:
   - Poetry
-translation_key: best-things-of-2018
+tags:
+  - Life
+  - Gadgets
 ---
 
 This article has been transferred from my Hatena bookmark.

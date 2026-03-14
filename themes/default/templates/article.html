@@ -57,7 +57,7 @@
   <div class="flex flex-wrap justify-start gap-6 mb-8">
     {{range .books}}
     <a href="{{.LinkURL}}" target="_blank" rel="noopener noreferrer" class="flex flex-col items-start gap-2">
-      <img src="{{.ImageURL}}" alt="{{.Title}}" class="h-30 object-contain rounded shadow">
+      <img src="{{.ImageURL}}" alt="{{.Title}}" class="h-30 object-contain rounded shadow" loading="lazy">
       {{if .Title}}<span class="text-xs text-secondary text-left" style="max-width:8rem;word-break:break-word">{{.Title}}</span>{{end}}
     </a>
     {{end}}
@@ -68,7 +68,7 @@
   {{- $eyecatch := index .FrontMatter.Extra "image"}}
   {{- if not $eyecatch}}{{$eyecatch = printf "/ogp/%s.png" .FrontMatter.Slug}}{{end}}
   <div class="mb-8">
-    <img src="{{$eyecatch}}" alt="{{.FrontMatter.Title}}" class="w-full rounded max-h-96 object-cover">
+    <img src="{{$eyecatch}}" alt="{{.FrontMatter.Title}}" class="w-full rounded max-h-96 object-cover" loading="eager">
   </div>
   {{end}}
 
@@ -128,7 +128,7 @@
       {{range $.RelatedArticles}}
       <a href="{{.URL}}" class="card no-underline">
         {{- $relImg := printf "/ogp/%s.png" .FrontMatter.Slug}}
-        <img src="{{$relImg}}" alt="{{.FrontMatter.Title}}" class="w-full object-cover rounded-t max-h-40">
+        <img src="{{$relImg}}" alt="{{.FrontMatter.Title}}" class="w-full object-cover rounded-t max-h-40" loading="lazy">
         <div class="card-body">
           <div class="flex items-center gap-2 mb-2 flex-wrap">
             {{range .FrontMatter.Categories}}<span class="badge badge-secondary">{{.}}</span>{{end}}

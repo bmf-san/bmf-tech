@@ -151,6 +151,7 @@
 - name: Game
 - name: Gateway
 - name: Generative AI
+- name: Gadgets
 - name: Git
 - name: GitHub
 - name: GitHub Actions
@@ -221,6 +222,7 @@
 - name: Lightning Talk
 - name: Linear Search
 - name: Link Collection
+- name: Life
 - name: Linked List
 - name: Linux
 - name: Linux Capabilities
@@ -354,6 +356,7 @@
 - name: SLI
 - name: SLO
 - name: SPA
+- name: SRE
 - name: SQL
 - name: SQL Anti-pattern
 - name: SQLite
@@ -626,6 +629,7 @@
 - name: クラウドネイティブ
 - name: ゲートウェイ
 - name: ゲーム
+- name: ガジェット
 - name: コンテナ
 - name: コーディング
 - name: コードレビュー
@@ -696,6 +700,7 @@
 - name: ユニコーン
 - name: ラウンドロビン
 - name: ランナーテクニック
+- name: ライフスタイル
 - name: リスコフの置換原則
 - name: リトライ
 - name: リニアサーチ

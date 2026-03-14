@@ -6,7 +6,9 @@ date: 2017-12-25T00:00:00Z
 author: bmf-san
 categories:
   - Poetry
-translation_key: bmf-best-purchases-of-the-year
+tags:
+  - Life
+  - Gadgets
 ---
 
 This article has been transferred from a previously published post on Hatena.

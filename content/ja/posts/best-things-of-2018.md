@@ -6,7 +6,9 @@ date: 2018-12-29T00:00:00Z
 author: bmf-san
 categories:
   - ポエム
-translation_key: best-things-of-2018
+tags:
+  - ライフスタイル
+  - ガジェット
 ---
 
 

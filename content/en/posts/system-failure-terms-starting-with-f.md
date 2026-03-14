@@ -6,7 +6,9 @@ date: 2021-06-05T00:00:00Z
 author: bmf-san
 categories:
   - Infrastructure
-translation_key: system-failure-terms-starting-with-f
+tags:
+  - Reliability
+  - SRE
 ---
 
 
