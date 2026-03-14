@@ -166,6 +166,12 @@
   {{- else}}
     {{- $altURL = printf "/ja%s" .CurrentArchivePath}}
   {{- end}}
+{{- else if and .Pagination (gt .Pagination.CurrentPage 1)}}
+  {{- if eq .CurrentLocale "ja"}}
+    {{- $altURL = printf "/page/%d/" .Pagination.CurrentPage}}
+  {{- else}}
+    {{- $altURL = printf "/ja/page/%d/" .Pagination.CurrentPage}}
+  {{- end}}
 {{- end}}
 {{- $homeURL := "/"}}
 {{- if eq .CurrentLocale "ja"}}{{$homeURL = "/ja/"}}{{end}}
