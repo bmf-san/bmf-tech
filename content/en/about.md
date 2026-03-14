@@ -92,13 +92,13 @@ Contract web development across diverse clients and projects.
 | Applications | [gohan](https://github.com/bmf-san/gohan) | A simple, fast static site generator written in Go with differential builds. |
 | Applications | [gobel-api](https://github.com/bmf-san/gobel-api) | Gobel is a headless cms built with golang. |
 | Applications | [gobel-example](https://github.com/bmf-san/gobel-example) | Gobel is a headless cms built with golang. |
-| Applications | [gogocoin](https://github.com/bmf-san/gogocoin) | A cryptocurrency trading bot for the bitFlyer exchange. |
+| Applications | [gogocoin](https://github.com/bmf-san/gogocoin) | bitFlyer取引所向けの暗号通貨取引ボット |
 | Frameworks | [sleyt](https://github.com/bmf-san/sleyt) | A minimal and modern CSS framework. |
-| Libraries | [goblin](https://github.com/bmf-san/goblin) | A trie-based HTTP router for Go. |
+| Libraries | [goblin](https://github.com/bmf-san/goblin) | A golang http router based on trie tree. |
 | Libraries | [go-bitflyer-api-client](https://github.com/bmf-san/go-bitflyer-api-client) | bitFlyer Lightning API client for Go. |
 | Templates | [go-clean-architecture-web-application-boilerplate](https://github.com/bmf-san/go-clean-architecture-web-application-boilerplate) | A web application boilerplate built with go and clean architecture. |
-| Templates | [resume-manager](https://github.com/bmf-san/resume-manager) | A template for managing career documents (resume, work history, portfolio, etc.) in Markdown with automated PDF generation. |
-| Tools | [prompt-registry](https://github.com/bmf-san/prompt-registry) | A repository for categorized management of AI agent prompts. |
+| Templates | [resume-manager](https://github.com/bmf-san/resume-manager) | キャリア資料（履歴書・職務経歴書・ポートフォリオ等）をMarkdownで管理し、PDF生成まで自動化するためのテンプレート |
+| Tools | [prompt-registry](https://github.com/bmf-san/prompt-registry) | Personal prompts management system for AI agents. |
 | Tools | [ggc](https://github.com/bmf-san/ggc) | A modern Git CLI tool with both traditional command-line and interactive incremental-search UI. |
 | Tools | [go-router-benchmark](https://github.com/bmf-san/go-router-benchmark) | Benchmark tests for http router implemented in golang. |
 | Tools | [spec-by-bmf-san](https://github.com/bmf-san/spec-by-bmf-san) | A repository of original specifications created by bmf-san. |
