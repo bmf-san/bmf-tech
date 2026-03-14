@@ -31,7 +31,7 @@
 ### ナビゲーション
 
 ```
-bmf-tech | 日本語 | Tags | Categories | About | Feed
+bmf-tech | 日本語 | About | Feed
 ```
 
 ヘッダー: `themes/default/templates/_partials.html` の `{{define "header"}}` ブロック。
@@ -51,10 +51,14 @@ bmf-tech/
 │   │   ├── posts/           # 英語記事 Markdown ファイル
 │   │   ├── about.md         # About ページ
 │   │   ├── privacy-policy.md
-│   │   ├── categories.md    # /categories/ インデックスページ（http-server 用）
-│   │   └── tags.md          # /tags/ インデックスページ
+│   │   ├── categories.yaml  # カテゴリ定義
+│   │   └── tags.yaml        # タグ定義
 │   └── ja/
-│       └── posts/           # 日本語記事 Markdown ファイル（584件）
+│       ├── posts/           # 日本語記事 Markdown ファイル（584件）
+│       ├── about.md         # About ページ（JA）
+│       ├── privacy-policy.md
+│       ├── categories.yaml  # カテゴリ定義（JA）
+│       └── tags.yaml        # タグ定義（JA）
 ├── assets/
 │   ├── images/
 │   │   └── posts/{slug}/    # Phase 6 で移行した記事内画像
@@ -62,16 +66,13 @@ bmf-tech/
 ├── themes/
 │   └── default/
 │       └── templates/
-│           ├── _partials.html   # head / header / footer / pagination 共通ブロック（CSS インライン）
+│           ├── _partials.html   # head / header / footer / pagination 共通ブロック（CSS は CDN 経由）
 │           ├── index.html
 │           ├── article.html
 │           ├── page.html        # about / privacy-policy 等の固定ページ
 │           ├── tag.html
 │           ├── category.html
 │           └── archive.html
-├── taxonomies/
-│   ├── tags.yaml
-│   └── categories.yaml
 ├── tools/
 │   ├── populate_book_asins.py         # 書籍記事に ASIN を補完するスクリプト
 │   └── populate_en_book_asins_v2.py   # EN 書籍記事用 v2
@@ -216,7 +217,7 @@ description: "Kenta Takeuchi のプロフィールページ"
 ### 5.3 パフォーマンス（Core Web Vitals）
 
 - 静的 HTML + CSS のみ（JS 依存なし）→ LCP・FID・CLS を最小化
-- CSS はインライン（`_partials.html` の `<style>` タグ）。外部 CSS 依存なし
+- CSS は [sleyt](https://github.com/bmf-san/sleyt) を CDN 経由で読み込み（`cdn.jsdelivr.net`）
 - システムフォントスタック使用（Web フォント不使用）
 - 画像は `loading="lazy"` を付与
 
@@ -260,7 +261,7 @@ description: "Kenta Takeuchi のプロフィールページ"
 {{- end}}
 <link rel="alternate" type="application/atom+xml" href="/atom.xml" ...>
 {{block "seo" .}}{{end}}
-<style>/* インライン CSS */</style>
+<style>@media(prefers-color-scheme:dark){html,body{background-color:hsl(0deg 0% 4%)}}</style>
 ```
 
 ### `article.html` — 記事フッターの GitHub リンク

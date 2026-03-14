@@ -26,15 +26,18 @@
 │   ├── en/
 │   │   ├── posts/                # 英語記事
 │   │   ├── about.md              # About ページ
-│   │   └── privacy-policy.md     # プライバシーポリシー
+│   │   ├── privacy-policy.md     # プライバシーポリシー
+│   │   ├── categories.yaml       # カテゴリ定義
+│   │   └── tags.yaml             # タグ定義
 │   └── ja/
-│       └── posts/                # 日本語記事
+│       ├── posts/                # 日本語記事
+│       ├── about.md              # About ページ（JA）
+│       ├── privacy-policy.md     # プライバシーポリシー（JA）
+│       ├── categories.yaml       # カテゴリ定義（JA）
+│       └── tags.yaml             # タグ定義（JA）
 ├── docs/
 │   └── DESIGN_DOC.md             # 設計ドキュメント
 ├── public/                       # ビルド出力 (.gitignore済み)
-├── taxonomies/
-│   ├── categories.yaml           # カテゴリ一覧
-│   └── tags.yaml                 # タグ一覧
 ├── themes/default/
 │   └── templates/                # HTMLテンプレート
 ├── _redirects                    # Cloudflare Pages リダイレクトルール
@@ -72,8 +75,9 @@ make serve
 | 日本語記事 | `/ja/posts/{slug}/` |
 | About | `/about/` |
 | プライバシーポリシー | `/privacy-policy/` |
-| タグ一覧 | `/tags/` |
-| カテゴリ一覧 | `/categories/` |
+| タグ別記事一覧 | `/tags/{name}/` |
+| カテゴリ別記事一覧 | `/categories/{name}/` |
+| アーカイブ | `/archives/{year}/{month}/` |
 
 ## デプロイ
 
