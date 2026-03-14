@@ -128,18 +128,9 @@
         </div>
         <div class="card-body-compact">
           <div class="flex flex-wrap gap-2">
-            <a href="{{$locPfx}}/archives/2026/" class="badge badge-light text-secondary">2026</a>
-            <a href="{{$locPfx}}/archives/2025/" class="badge badge-light text-secondary">2025</a>
-            <a href="{{$locPfx}}/archives/2024/" class="badge badge-light text-secondary">2024</a>
-            <a href="{{$locPfx}}/archives/2023/" class="badge badge-light text-secondary">2023</a>
-            <a href="{{$locPfx}}/archives/2022/" class="badge badge-light text-secondary">2022</a>
-            <a href="{{$locPfx}}/archives/2021/" class="badge badge-light text-secondary">2021</a>
-            <a href="{{$locPfx}}/archives/2020/" class="badge badge-light text-secondary">2020</a>
-            <a href="{{$locPfx}}/archives/2019/" class="badge badge-light text-secondary">2019</a>
-            <a href="{{$locPfx}}/archives/2018/" class="badge badge-light text-secondary">2018</a>
-            <a href="{{$locPfx}}/archives/2017/" class="badge badge-light text-secondary">2017</a>
-            <a href="{{$locPfx}}/archives/2016/" class="badge badge-light text-secondary">2016</a>
-            <a href="{{$locPfx}}/archives/2015/" class="badge badge-light text-secondary">2015</a>
+            {{range .ArchiveYears}}
+            <a href="{{$locPfx}}/archives/{{.}}/" class="badge badge-light text-secondary">{{.}}</a>
+            {{end}}
           </div>
         </div>
       </div>
