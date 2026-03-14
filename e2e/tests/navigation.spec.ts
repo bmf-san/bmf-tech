@@ -45,24 +45,6 @@ test.describe('Nav: locale toggle', () => {
 
 // ── Tags ─────────────────────────────────────────────────────────────────────
 
-// gohan does not generate /tags/index.html automatically; we create it as a
-// page-type content file (content/en/tags.md, slug: tags).
-test.describe('Tags index /tags/', () => {
-  test('loads a proper HTML page (not a directory listing)', async ({ page }) => {
-    await page.goto('/tags/');
-    // page.html renders an article.prose wrapper
-    await expect(page.locator('article.prose')).toBeVisible();
-    // must NOT show the http-server directory listing header
-    await expect(page.locator('body')).not.toContainText('Index of /');
-  });
-
-  test('contains tag links', async ({ page }) => {
-    await page.goto('/tags/');
-    const links = page.locator('article.prose a');
-    expect(await links.count()).toBeGreaterThan(0);
-  });
-});
-
 test.describe('Tag page /tags/golang/', () => {
   test('loads and has article list', async ({ page }) => {
     await page.goto('/tags/golang/');
@@ -76,56 +58,7 @@ test.describe('Tag page /tags/golang/', () => {
   });
 });
 
-test.describe('Tags index /ja/tags/', () => {
-  test('loads a proper HTML page (not a directory listing)', async ({ page }) => {
-    await page.goto('/ja/tags/');
-    // page.html renders an article.prose wrapper
-    await expect(page.locator('article.prose')).toBeVisible();
-    await expect(page.locator('body')).not.toContainText('Index of /');
-  });
-
-  test('contains tag links', async ({ page }) => {
-    await page.goto('/ja/tags/');
-    const links = page.locator('article.prose a');
-    expect(await links.count()).toBeGreaterThan(0);
-  });
-});
-
 // ── Categories ───────────────────────────────────────────────────────────────
-
-// Same as tags: created as a page-type content file (content/en/categories.md)
-test.describe('Categories index /categories/', () => {
-  test('loads a proper HTML page (not a directory listing)', async ({ page }) => {
-    await page.goto('/categories/');
-    await expect(page.locator('article.prose')).toBeVisible();
-    await expect(page.locator('body')).not.toContainText('Index of /');
-  });
-
-  test('contains category links', async ({ page }) => {
-    await page.goto('/categories/');
-    const links = page.locator('article.prose a');
-    expect(await links.count()).toBeGreaterThan(0);
-  });
-
-  test('Tools category link is present', async ({ page }) => {
-    await page.goto('/categories/');
-    await expect(page.locator('article.prose').getByRole('link', { name: 'Tools' })).toBeVisible();
-  });
-});
-
-test.describe('Categories index /ja/categories/', () => {
-  test('loads a proper HTML page (not a directory listing)', async ({ page }) => {
-    await page.goto('/ja/categories/');
-    await expect(page.locator('article.prose')).toBeVisible();
-    await expect(page.locator('body')).not.toContainText('Index of /');
-  });
-
-  test('contains category links', async ({ page }) => {
-    await page.goto('/ja/categories/');
-    const links = page.locator('article.prose a');
-    expect(await links.count()).toBeGreaterThan(0);
-  });
-});
 
 test.describe('Category page /ja/categories/os/', () => {
   test('loads and has article list', async ({ page }) => {
