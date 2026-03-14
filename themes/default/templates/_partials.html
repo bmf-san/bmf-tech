@@ -78,7 +78,7 @@
 }
 </script>
 {{- else}}
-{{- $ogTitle := .Config.Site.Title}}{{- $ogURL := .Config.Site.BaseURL}}
+{{- $ogTitle := .Config.Site.Title}}{{- $ogURL := printf "%s%s" .Config.Site.BaseURL $homeURL}}
 {{- if .CurrentTaxonomy}}
   {{- $ogTitle = printf "%s | %s" .CurrentTaxonomy.Name .Config.Site.Title}}
   {{- $ogURL = printf "%s%s" .Config.Site.BaseURL .CurrentTaxonomy.URL}}
@@ -96,6 +96,8 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:site_name" content="{{.Config.Site.Title}}">
+{{- $ogListLocale := "en_US"}}{{if eq .CurrentLocale "ja"}}{{- $ogListLocale = "ja_JP"}}{{end}}
+<meta property="og:locale" content="{{$ogListLocale}}">
 <meta name="twitter:card" content="summary">
 {{- with index .Config.Theme.Params "twitter"}}<meta name="twitter:site" content="@{{.}}">{{- end}}
 <script type="application/ld+json">

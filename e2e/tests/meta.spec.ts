@@ -329,3 +329,53 @@ test.describe('archive page <h1> heading shows correct date', () => {
     expect(text).toMatch(/2015\/05/);
   });
 });
+
+// ── og:locale on listing pages ────────────────────────────────────────────────
+
+test.describe('og:locale on listing pages', () => {
+  const EN_PAGES = ['/', '/tags/golang/', '/categories/architecture/', '/archives/2024/01/'];
+  const JA_PAGES = ['/ja/', '/ja/tags/golang/', '/ja/categories/os/', '/ja/archives/2024/01/'];
+
+  for (const path of EN_PAGES) {
+    test(`og:locale is en_US on EN listing page ${path}`, async ({ page }) => {
+      await page.goto(path);
+      const ogLocale = page.locator('meta[property="og:locale"]');
+      await expect(ogLocale).toHaveCount(1);
+      expect(await ogLocale.getAttribute('content')).toBe('en_US');
+    });
+  }
+
+  for (const path of JA_PAGES) {
+    test(`og:locale is ja_JP on JA listing page ${path}`, async ({ page }) => {
+      await page.goto(path);
+      const ogLocale = page.locator('meta[property="og:locale"]');
+      await expect(ogLocale).toHaveCount(1);
+      expect(await ogLocale.getAttribute('content')).toBe('ja_JP');
+    });
+  }
+});
+
+// ── og:url on root index pages ────────────────────────────────────────────────
+
+test.describe('og:url on root index pages', () => {
+  test('EN root / og:url contains site base URL', async ({ page }) => {
+    await page.goto('/');
+    const ogUrl = page.locator('meta[property="og:url"]');
+    await expect(ogUrl).toHaveCount(1);
+    expect(await ogUrl.getAttribute('content')).toMatch(/bmf-tech\.com\//);
+  });
+
+  test('JA root /ja/ og:url contains /ja/', async ({ page }) => {
+    await page.goto('/ja/');
+    const ogUrl = page.locator('meta[property="og:url"]');
+    await expect(ogUrl).toHaveCount(1);
+    expect(await ogUrl.getAttribute('content')).toContain('/ja/');
+  });
+
+  test('JA paginated /ja/page/2/ og:url contains /ja/', async ({ page }) => {
+    await page.goto('/ja/page/2/');
+    const ogUrl = page.locator('meta[property="og:url"]');
+    await expect(ogUrl).toHaveCount(1);
+    expect(await ogUrl.getAttribute('content')).toContain('/ja/');
+  });
+});
