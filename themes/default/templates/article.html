@@ -10,7 +10,7 @@
   {{/* Breadcrumbs */}}
   <ol class="breadcrumbs mb-6">
     <li class="breadcrumbs-item">
-      <a href="{{$listURL}}" class="breadcrumbs-link">Home</a>
+      <a href="{{$listURL}}" class="breadcrumbs-link">{{if eq .Locale "ja"}}ホーム{{else}}Home{{end}}</a>
       <span class="breadcrumbs-separator">/</span>
     </li>
     {{if .FrontMatter.Categories}}

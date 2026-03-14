@@ -7,25 +7,37 @@
 {{- if eq .CurrentLocale "ja"}}{{- $localePrefix = "/ja"}}{{- end}}
 {{- $homeURL := "/"}}
 {{- if eq .CurrentLocale "ja"}}{{- $homeURL = "/ja/"}}{{- end}}
+{{- $siteDesc := .Config.Site.Description}}
+{{- if eq .CurrentLocale "ja"}}{{- with index .Config.Theme.Params "description_ja"}}{{$siteDesc = .}}{{end}}{{- end}}
+{{- $altURLHead := "/ja/"}}
+{{- if eq .CurrentLocale "ja"}}{{$altURLHead = "/"}}{{end}}
+{{- if .CurrentTaxonomy}}
+  {{- if eq .CurrentLocale "ja"}}{{$altURLHead = slice .CurrentTaxonomy.URL 3}}{{else}}{{$altURLHead = printf "/ja%s" .CurrentTaxonomy.URL}}{{end}}
+{{- else if .CurrentArchivePath}}
+  {{- if eq .CurrentLocale "ja"}}{{$altURLHead = slice .CurrentArchivePath 3}}{{else}}{{$altURLHead = printf "/ja%s" .CurrentArchivePath}}{{end}}
+{{- else if and .Pagination (gt .Pagination.CurrentPage 1)}}
+  {{- if eq .CurrentLocale "ja"}}{{$altURLHead = printf "/page/%d/" .Pagination.CurrentPage}}{{else}}{{$altURLHead = printf "/ja/page/%d/" .Pagination.CurrentPage}}{{end}}
+{{- end}}
 <html lang="{{if .CurrentLocale}}{{.CurrentLocale}}{{else}}{{.Config.Site.Language}}{{end}}">
 <head>
 <meta charset="utf-8">
 <meta name="color-scheme" content="light dark">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {{- $pageTitle := .Config.Site.Title}}
-{{- if $isSingle}}{{$pageTitle = printf "%s | %s" $article.FrontMatter.Title .Config.Site.Title}}{{else if .CurrentTaxonomy}}{{$pageTitle = printf "%s | %s" .CurrentTaxonomy.Name .Config.Site.Title}}{{else if and .CurrentArchivePath $article}}{{- $ad := formatDate "2006" $article.FrontMatter.Date}}{{if .CurrentArchiveIsMonth}}{{$ad = formatDate "2006/01" $article.FrontMatter.Date}}{{end}}{{$pageTitle = printf "%s | %s" $ad .Config.Site.Title}}{{end}}
+{{- if $isSingle}}{{$pageTitle = printf "%s | %s" $article.FrontMatter.Title .Config.Site.Title}}{{else if .CurrentTaxonomy}}{{$pageTitle = printf "%s | %s" .CurrentTaxonomy.Name .Config.Site.Title}}{{else if and .CurrentArchivePath $article}}{{- $ad := formatDate "2006" $article.FrontMatter.Date}}{{if .CurrentArchiveIsMonth}}{{$ad = formatDate "2006/01" $article.FrontMatter.Date}}{{end}}{{$pageTitle = printf "%s | %s" $ad .Config.Site.Title}}{{else if and .Pagination (gt .Pagination.CurrentPage 1)}}{{if eq .CurrentLocale "ja"}}{{$pageTitle = printf "%dページ目 | %s" .Pagination.CurrentPage .Config.Site.Title}}{{else}}{{$pageTitle = printf "Page %d | %s" .Pagination.CurrentPage .Config.Site.Title}}{{end}}{{end}}
 <title>{{$pageTitle}}</title>
-<meta name="description" content="{{if and $isSingle $article.FrontMatter.Description}}{{$article.FrontMatter.Description}}{{else if and .CurrentTaxonomy .CurrentTaxonomy.Description}}{{.CurrentTaxonomy.Description}}{{else}}{{.Config.Site.Description}}{{end}}">
+<meta name="description" content="{{if and $isSingle $article.FrontMatter.Description}}{{$article.FrontMatter.Description}}{{else if and .CurrentTaxonomy .CurrentTaxonomy.Description}}{{.CurrentTaxonomy.Description}}{{else}}{{$siteDesc}}{{end}}">
 <link rel="alternate" type="application/atom+xml" href="{{$localePrefix}}/atom.xml" title="{{.Config.Site.Title}}">
 <link rel="icon" href="/favicon.ico">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bmf-san/sleyt@latest/docs/public/css/index.css">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/bmf-san/sleyt@latest/docs/public/css/index.css" as="style">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bmf-san/sleyt@latest/docs/public/css/index.css">
 {{- if $isSingle}}
 <meta property="og:title" content="{{$article.FrontMatter.Title}}">
 <meta property="og:type" content="article">
 <meta property="og:url" content="{{.Config.Site.BaseURL}}{{$article.URL}}">
 <meta property="og:description" content="{{if $article.FrontMatter.Description}}{{$article.FrontMatter.Description}}{{else}}{{.Config.Site.Description}}{{end}}">
 <meta property="og:image" content="{{.Config.Site.BaseURL}}/ogp/{{$article.FrontMatter.Slug}}.png">
+<meta property="og:image:alt" content="{{$article.FrontMatter.Title}}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:site_name" content="{{.Config.Site.Title}}">
@@ -70,7 +82,7 @@
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{.Config.Site.BaseURL}}{{$homeURL}}"}{{if $article.FrontMatter.Categories}},
+    {"@type": "ListItem", "position": 1, "name": "{{if eq .CurrentLocale "ja"}}ホーム{{else}}Home{{end}}", "item": "{{.Config.Site.BaseURL}}{{$homeURL}}"}{{if $article.FrontMatter.Categories}},
     {"@type": "ListItem", "position": 2, "name": "{{index $article.FrontMatter.Categories 0}}", "item": "{{.Config.Site.BaseURL}}{{categoryURL .CurrentLocale (index $article.FrontMatter.Categories 0)}}"},
     {"@type": "ListItem", "position": 3, "name": "{{$article.FrontMatter.Title}}", "item": "{{.Config.Site.BaseURL}}{{$article.URL}}"}{{else}},
     {"@type": "ListItem", "position": 2, "name": "{{$article.FrontMatter.Title}}", "item": "{{.Config.Site.BaseURL}}{{$article.URL}}"}{{end}}
@@ -91,11 +103,16 @@
   {{- $ogURL = printf "%s%s/page/%d/" .Config.Site.BaseURL .Pagination.BaseURL .Pagination.CurrentPage}}
 {{- end}}
 <link rel="canonical" href="{{$ogURL}}">
-<meta property="og:title" content="{{$ogTitle}}">
+{{- $selfLocale := "en"}}{{if .CurrentLocale}}{{$selfLocale = .CurrentLocale}}{{end}}
+{{- $altLocale := "ja"}}{{if eq .CurrentLocale "ja"}}{{$altLocale = "en"}}{{end}}
+<link rel="alternate" hreflang="{{$selfLocale}}" href="{{$ogURL}}">
+<link rel="alternate" hreflang="{{$altLocale}}" href="{{.Config.Site.BaseURL}}{{$altURLHead}}">
+<link rel="alternate" hreflang="x-default" href="{{if eq .CurrentLocale "ja"}}{{.Config.Site.BaseURL}}{{$altURLHead}}{{else}}{{$ogURL}}{{end}}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{$ogURL}}">
-<meta property="og:description" content="{{if and .CurrentTaxonomy .CurrentTaxonomy.Description}}{{.CurrentTaxonomy.Description}}{{else}}{{.Config.Site.Description}}{{end}}">
+<meta property="og:description" content="{{if and .CurrentTaxonomy .CurrentTaxonomy.Description}}{{.CurrentTaxonomy.Description}}{{else}}{{$siteDesc}}{{end}}">
 <meta property="og:image" content="{{.Config.Site.BaseURL}}/assets/images/ogp-default.png">
+<meta property="og:image:alt" content="{{$ogTitle}}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:site_name" content="{{.Config.Site.Title}}">
@@ -111,6 +128,18 @@
   "url": "{{.Config.Site.BaseURL}}"
 }
 </script>
+{{- if or .CurrentTaxonomy .CurrentArchivePath}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "{{if eq .CurrentLocale "ja"}}ホーム{{else}}Home{{end}}", "item": "{{.Config.Site.BaseURL}}{{$homeURL}}"},
+    {"@type": "ListItem", "position": 2, "name": "{{if .CurrentTaxonomy}}{{.CurrentTaxonomy.Name}}{{else}}{{if eq .CurrentLocale "ja"}}アーカイブ{{else}}Archive{{end}}{{end}}", "item": "{{$ogURL}}"}
+  ]
+}
+</script>
+{{- end}}
 {{- end}}
 {{block "extra-style" .}}{{end}}
 {{- with index .Config.Theme.Params "ga_id"}}
@@ -204,14 +233,18 @@
 {{define "footer"}}
 <footer class="bg-slate-900 text-slate-300 py-8 mt-16">
   <div class="container mx-auto text-center">
-    <p class="text-sm mb-3">&copy; {{.Config.Site.Title}}</p>
+    <p class="text-sm mb-3">{{with index .Config.Theme.Params "footer_text"}}{{.}}{{else}}&copy; {{$.Config.Site.Title}}{{end}}</p>
     <div class="flex justify-center gap-4 mb-3">
-      <a href="https://github.com/bmf-san" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-100 transition-colors" aria-label="GitHub">
+      {{- with index .Config.Theme.Params "github"}}
+      <a href="https://github.com/{{.}}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-100 transition-colors" aria-label="GitHub">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
       </a>
-      <a href="https://x.com/bmf_san" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-100 transition-colors" aria-label="X (Twitter)">
+      {{- end}}
+      {{- with index .Config.Theme.Params "twitter"}}
+      <a href="https://x.com/{{.}}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-100 transition-colors" aria-label="X (Twitter)">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
       </a>
+      {{- end}}
     </div>
     <p class="flex justify-center gap-4">
       <a href="/sitemap.xml" class="text-slate-400 text-xs hover:text-slate-200">Sitemap</a>

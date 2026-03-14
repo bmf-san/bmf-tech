@@ -26,6 +26,7 @@ theme:
     zenn: "bmf_san"
     speaker_deck: "bmf_san"
     footer_text: "© 2026 Kenta Takeuchi"
+    description_ja: "bmf-sanの個人技術ブログです。Go・ソフトウェアアーキテクチャを中心に発信しています。"
     adsense_id: "ca-pub-5146230866088201"
     adsense_slot_article_top: "3773998823"
     adsense_slot_article_bottom: "2224967643"
