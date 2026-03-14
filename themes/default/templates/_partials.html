@@ -3,6 +3,10 @@
 {{define "head"}}<!DOCTYPE html>
 {{- $article := index .Articles 0}}
 {{- $isSingle := and $article (not .Pagination)}}
+{{- $localePrefix := ""}}
+{{- if eq .CurrentLocale "ja"}}{{- $localePrefix = "/ja"}}{{- end}}
+{{- $homeURL := "/"}}
+{{- if eq .CurrentLocale "ja"}}{{- $homeURL = "/ja/"}}{{- end}}
 <html lang="{{if .CurrentLocale}}{{.CurrentLocale}}{{else}}{{.Config.Site.Language}}{{end}}">
 <head>
 <meta charset="utf-8">
@@ -20,6 +24,8 @@
 <meta property="og:url" content="{{.Config.Site.BaseURL}}{{$article.URL}}">
 <meta property="og:description" content="{{if $article.FrontMatter.Description}}{{$article.FrontMatter.Description}}{{else}}{{.Config.Site.Description}}{{end}}">
 <meta property="og:image" content="{{.Config.Site.BaseURL}}/ogp/{{$article.FrontMatter.Slug}}.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:site_name" content="{{.Config.Site.Title}}">
 {{- $ogLocale := "en_US"}}{{if eq .CurrentLocale "ja"}}{{- $ogLocale = "ja_JP"}}{{end}}
 <meta property="og:locale" content="{{$ogLocale}}">
@@ -27,6 +33,8 @@
 <meta property="og:locale:alternate" content="{{$altLocale}}">
 {{end -}}
 <meta property="article:published_time" content="{{formatDate "2006-01-02" $article.FrontMatter.Date}}">
+<meta property="article:modified_time" content="{{formatDate "2006-01-02" $article.FrontMatter.Date}}">
+<meta name="author" content="{{index .Config.Theme.Params "author"}}">
 <meta name="twitter:card" content="summary_large_image">
 {{- with index .Config.Theme.Params "twitter"}}<meta name="twitter:site" content="@{{.}}">{{- end}}
 {{if $article.URL -}}
@@ -51,7 +59,20 @@
   "image": "{{.Config.Site.BaseURL}}/ogp/{{$article.FrontMatter.Slug}}.png",
   "author": {"@type": "Person", "name": "{{index .Config.Theme.Params "author"}}"},
   "publisher": {"@type": "Organization", "name": "{{.Config.Site.Title}}"}{{if $article.FrontMatter.Description}},
-  "description": "{{$article.FrontMatter.Description}}"{{end}}
+  "description": "{{$article.FrontMatter.Description}}"{{end}}{{if $article.FrontMatter.Tags}},
+  "keywords": "{{range $i, $t := $article.FrontMatter.Tags}}{{if $i}}, {{end}}{{$t}}{{end}}"{{end}}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{.Config.Site.BaseURL}}{{$homeURL}}"}{{if $article.FrontMatter.Categories}},
+    {"@type": "ListItem", "position": 2, "name": "{{index $article.FrontMatter.Categories 0}}", "item": "{{.Config.Site.BaseURL}}{{$localePrefix}}{{categoryURL (index $article.FrontMatter.Categories 0)}}"},
+    {"@type": "ListItem", "position": 3, "name": "{{$article.FrontMatter.Title}}", "item": "{{.Config.Site.BaseURL}}{{$article.URL}}"}{{else}},
+    {"@type": "ListItem", "position": 2, "name": "{{$article.FrontMatter.Title}}", "item": "{{.Config.Site.BaseURL}}{{$article.URL}}"}{{end}}
+  ]
 }
 </script>
 {{- else}}
@@ -60,9 +81,19 @@
 <meta property="og:url" content="{{.Config.Site.BaseURL}}">
 <meta property="og:description" content="{{.Config.Site.Description}}">
 <meta property="og:image" content="{{.Config.Site.BaseURL}}/assets/images/ogp-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:site_name" content="{{.Config.Site.Title}}">
 <meta name="twitter:card" content="summary">
 {{- with index .Config.Theme.Params "twitter"}}<meta name="twitter:site" content="@{{.}}">{{- end}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{.Config.Site.Title}}",
+  "url": "{{.Config.Site.BaseURL}}"
+}
+</script>
 {{- end}}
 {{block "extra-style" .}}{{end}}
 {{- with index .Config.Theme.Params "ga_id"}}

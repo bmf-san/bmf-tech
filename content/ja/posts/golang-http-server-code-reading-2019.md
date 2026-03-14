@@ -1,6 +1,6 @@
 ---
-title: GolangのHTTPサーバーのコードリーディング
-description: GolangのHTTPサーバーのコードリーディングについて、基本的な概念から実践的な知見まで詳しく解説します。
+title: "GolangのHTTPサーバーのコードリーディング (Go6 Advent Calendar 2019)"
+description: "Qiita Go6 Advent Calendar 2019向けにGolangのHTTPサーバー内部実装をコードリーディング。net/httpパッケージのListenAndServe、ServeMux、Handlerインターフェースの動作を詳細に解析。"
 slug: golang-http-server-code-reading-2019
 date: 2019-11-03T00:00:00Z
 author: bmf-san

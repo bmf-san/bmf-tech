@@ -1,6 +1,6 @@
 ---
 title: GolangのHTTPサーバーのコードリーディング
-description: GolangのHTTPサーバーのコードリーディングについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: "goblinルーター開発時に調査したGoのHTTPサーバー内部実装を解説。http.Server構造体、ServeMux、Handler登録フロー、goroutineによるコネクション処理を実装コードから読み解く。"
 slug: golang-http-server-code-reading
 date: 2021-06-30T00:00:00Z
 author: bmf-san
