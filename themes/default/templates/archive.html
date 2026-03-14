@@ -6,7 +6,7 @@
   {{/* Page header */}}
   {{$first := index .Articles 0}}
   {{$year := ""}}
-  {{if $first}}{{if gt (len .CurrentArchivePath) 15}}{{$year = formatDate "2006/01" $first.FrontMatter.Date}}{{else}}{{$year = formatDate "2006" $first.FrontMatter.Date}}{{end}}{{end}}
+  {{if $first}}{{if .CurrentArchiveIsMonth}}{{$year = formatDate "2006/01" $first.FrontMatter.Date}}{{else}}{{$year = formatDate "2006" $first.FrontMatter.Date}}{{end}}{{end}}
   <div class="mb-8">
     <ol class="breadcrumbs mb-4">
       <li class="breadcrumbs-item">

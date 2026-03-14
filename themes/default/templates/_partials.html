@@ -13,7 +13,7 @@
 <meta name="color-scheme" content="light dark">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {{- $pageTitle := .Config.Site.Title}}
-{{- if $isSingle}}{{$pageTitle = printf "%s | %s" $article.FrontMatter.Title .Config.Site.Title}}{{else if .CurrentTaxonomy}}{{$pageTitle = printf "%s | %s" .CurrentTaxonomy.Name .Config.Site.Title}}{{else if and .CurrentArchivePath $article}}{{- $ad := formatDate "2006" $article.FrontMatter.Date}}{{if gt (len .CurrentArchivePath) 15}}{{$ad = formatDate "2006/01" $article.FrontMatter.Date}}{{end}}{{$pageTitle = printf "%s | %s" $ad .Config.Site.Title}}{{end}}
+{{- if $isSingle}}{{$pageTitle = printf "%s | %s" $article.FrontMatter.Title .Config.Site.Title}}{{else if .CurrentTaxonomy}}{{$pageTitle = printf "%s | %s" .CurrentTaxonomy.Name .Config.Site.Title}}{{else if and .CurrentArchivePath $article}}{{- $ad := formatDate "2006" $article.FrontMatter.Date}}{{if .CurrentArchiveIsMonth}}{{$ad = formatDate "2006/01" $article.FrontMatter.Date}}{{end}}{{$pageTitle = printf "%s | %s" $ad .Config.Site.Title}}{{end}}
 <title>{{$pageTitle}}</title>
 <meta name="description" content="{{if and $isSingle $article.FrontMatter.Description}}{{$article.FrontMatter.Description}}{{else if and .CurrentTaxonomy .CurrentTaxonomy.Description}}{{.CurrentTaxonomy.Description}}{{else}}{{.Config.Site.Description}}{{end}}">
 <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="{{.Config.Site.Title}}">
@@ -84,9 +84,9 @@
   {{- $ogURL = printf "%s%s" .Config.Site.BaseURL .CurrentTaxonomy.URL}}
 {{- else if and .CurrentArchivePath $article}}
   {{- $ad := formatDate "2006" $article.FrontMatter.Date}}
-  {{- if gt (len .CurrentArchivePath) 15}}{{$ad = formatDate "2006/01" $article.FrontMatter.Date}}{{end}}
+  {{- if .CurrentArchiveIsMonth}}{{$ad = formatDate "2006/01" $article.FrontMatter.Date}}{{end}}
   {{- $ogTitle = printf "%s | %s" $ad .Config.Site.Title}}
-  {{- $ogURL = printf "%s%s%s" .Config.Site.BaseURL $localePrefix .CurrentArchivePath}}
+  {{- $ogURL = printf "%s%s" .Config.Site.BaseURL .CurrentArchivePath}}
 {{- end}}
 <meta property="og:title" content="{{$ogTitle}}">
 <meta property="og:type" content="website">
@@ -159,7 +159,7 @@
   {{- end}}
 {{- else if .CurrentArchivePath}}
   {{- if eq .CurrentLocale "ja"}}
-    {{- $altURL = .CurrentArchivePath}}
+    {{- $altURL = slice .CurrentArchivePath 3}}
   {{- else}}
     {{- $altURL = printf "/ja%s" .CurrentArchivePath}}
   {{- end}}
