@@ -262,4 +262,70 @@ test.describe('og:url on listing pages points to page not homepage', () => {
     await expect(ogTitle).toHaveCount(1);
     expect(await ogTitle.getAttribute('content')).toContain('ABAC');
   });
+
+  // EN locale
+  test('EN month archive og:url points to archive URL', async ({ page }) => {
+    await page.goto('/archives/2015/05/');
+    const ogUrl = page.locator('meta[property="og:url"]');
+    await expect(ogUrl).toHaveCount(1);
+    expect(await ogUrl.getAttribute('content')).toContain('/archives/2015/05/');
+  });
+
+  test('EN tag page og:url points to tag URL', async ({ page }) => {
+    await page.goto('/tags/abac/');
+    const ogUrl = page.locator('meta[property="og:url"]');
+    await expect(ogUrl).toHaveCount(1);
+    expect(await ogUrl.getAttribute('content')).toContain('/tags/abac/');
+  });
+});
+
+// ── og:type = "website" on archive and taxonomy listing pages ─────────────────
+
+test.describe('og:type is "website" on listing pages', () => {
+  const LISTING_PAGES = [
+    '/ja/archives/2015/',
+    '/ja/archives/2015/05/',
+    '/archives/2015/05/',
+    '/ja/tags/abac/',
+    '/tags/abac/',
+    '/categories/application/',
+  ];
+
+  for (const path of LISTING_PAGES) {
+    test(`og:type is "website" on ${path}`, async ({ page }) => {
+      await page.goto(path);
+      const ogType = page.locator('meta[property="og:type"]');
+      await expect(ogType).toHaveCount(1);
+      expect(await ogType.getAttribute('content')).toBe('website');
+    });
+  }
+});
+
+// ── archive page <h1> heading content ────────────────────────────────────────
+
+test.describe('archive page <h1> heading shows correct date', () => {
+  test('JA month archive h1 shows year/month', async ({ page }) => {
+    await page.goto('/ja/archives/2015/05/');
+    const h1 = page.locator('main h1');
+    await expect(h1).toHaveCount(1);
+    const text = await h1.textContent();
+    expect(text).toMatch(/2015\/05/);
+  });
+
+  test('JA year archive h1 shows year only (not year/month)', async ({ page }) => {
+    await page.goto('/ja/archives/2015/');
+    const h1 = page.locator('main h1');
+    await expect(h1).toHaveCount(1);
+    const text = await h1.textContent();
+    expect(text).toMatch(/2015/);
+    expect(text).not.toMatch(/2015\/\d{2}/);
+  });
+
+  test('EN month archive h1 shows year/month', async ({ page }) => {
+    await page.goto('/archives/2015/05/');
+    const h1 = page.locator('main h1');
+    await expect(h1).toHaveCount(1);
+    const text = await h1.textContent();
+    expect(text).toMatch(/2015\/05/);
+  });
 });
