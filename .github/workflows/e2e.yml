@@ -18,12 +18,7 @@ jobs:
           cache: false
 
       - name: Install gohan
-        # TODO: revert to `make install-gohan` once gohan PR #107 is merged into main.
-        # Requires FrontMatter.LastMod (added in feat/sitemap-lastmod-extra).
-        run: |
-          git clone --depth 1 -b feat/sitemap-lastmod-extra \
-            https://github.com/bmf-san/gohan.git /tmp/gohan
-          cd /tmp/gohan && GOTOOLCHAIN=auto go install ./cmd/gohan
+        run: make install-gohan
 
       - name: Build site
         run: make build
