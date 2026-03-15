@@ -113,6 +113,40 @@ sequenceDiagram
 
 手動デプロイ: GitHub Actions の `workflow_dispatch` からトリガー可能。
 
+## dev.to クロスポスト
+
+英語記事を [dev.to](https://dev.to) にクロスポストしてトラフィック向上を図る。
+`tools/devto/` 配下の Go CLI ツールで管理する。
+
+**スキップ対象**（投稿しない）:
+- カテゴリ `Poem` の記事
+- タグ `Book Review` の記事
+- `draft: true` の記事
+
+**投稿仕様**:
+- `canonical_url` に `https://bmf-tech.com/posts/{slug}/` を設定（SEO 重複コンテンツ対策）
+- カバー画像に `https://bmf-tech.com/ogp/{slug}.png` を設定
+- 記事 body 先頭に `bmf-tech.com` へのリンクを挿入してトラフィック誘導
+- 投稿済み slug は `tools/devto/posted.json` で管理（再実行時はスキップ）
+
+**GitHub Secrets に追加で必要**:
+- `DEV_TO_API_KEY` — dev.to API キー ([dev.to/settings/extensions](https://dev.to/settings/extensions) で発行)
+
+**使い方**:
+
+```bash
+# 全記事を一括投稿（約 12 分）
+make devto-post-all DEV_TO_API_KEY=xxx
+
+# 単一記事を投稿
+make devto-post-file FILE=content/en/posts/my-post.md DEV_TO_API_KEY=xxx
+
+# dry-run（API を呼ばずに内容を確認）
+make devto-post-all DRY_RUN=1
+```
+
+`main` ブランチへの push 時に `content/en/posts/` に新規追加された記事は `.github/workflows/devto-publish.yml` が自動投稿する。
+
 ## コントリビューション
 
 [CONTRIBUTING.md](CONTRIBUTING.md) を参照。
