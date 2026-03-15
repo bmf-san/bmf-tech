@@ -1,4 +1,4 @@
-.PHONY: help install-gohan install-e2e install-lint build serve clean copy-redirects test-e2e test-e2e-ui new-ja new-en lint-content lint-content-diff
+.PHONY: help install-gohan install-e2e install-lint build serve clean copy-redirects test-e2e test-e2e-ui new-ja new-en lint-content lint-content-diff devto-build devto-post-all devto-post-file
 
 TITLE   ?= untitled
 SLUG    ?= untitled
@@ -80,5 +80,25 @@ new-en: ## 英語記事を作成  例: make new-en TITLE="Title" SLUG=slug
 	@printf -- '---\ntitle: "$(TITLE)"\nslug: $(SLUG)\ndate: %s\nauthor: bmf-san\ncategories:\n  - \ntags:\n  - \ndescription: ""\ntranslation_key: $(SLUG)\ndraft: true\n---\n' \
 		$$(date +%Y-%m-%d) > content/en/posts/$(SLUG).md
 	@echo "created: content/en/posts/$(SLUG).md"
+
+DEV_TO_API_KEY ?=
+FILE          ?=
+DRY_RUN       ?=
+
+devto-build: ## dev.to 投稿ツールをビルド
+	cd tools/devto && go mod tidy && go build -o ../../bin/devto .
+
+devto-post-all: devto-build ## 全英語記事を dev.to に一括投稿  例: make devto-post-all DEV_TO_API_KEY=xxx
+	@if [ -z "$(DEV_TO_API_KEY)" ] && [ -z "$(DRY_RUN)" ]; then \
+		echo "error: DEV_TO_API_KEY is required (or pass DRY_RUN=1 for a dry run)"; exit 1; \
+	fi
+	$(if $(DRY_RUN),./bin/devto --all --dry-run,./bin/devto --all --api-key="$(DEV_TO_API_KEY)" --state=tools/devto/posted.json)
+
+devto-post-file: devto-build ## 単一記事を dev.to に投稿  例: make devto-post-file FILE=content/en/posts/my-post.md DEV_TO_API_KEY=xxx
+	@if [ -z "$(FILE)" ]; then echo "error: FILE is required"; exit 1; fi
+	@if [ -z "$(DEV_TO_API_KEY)" ] && [ -z "$(DRY_RUN)" ]; then \
+		echo "error: DEV_TO_API_KEY is required (or pass DRY_RUN=1 for a dry run)"; exit 1; \
+	fi
+	$(if $(DRY_RUN),./bin/devto --file="$(FILE)" --dry-run,./bin/devto --file="$(FILE)" --api-key="$(DEV_TO_API_KEY)" --state=tools/devto/posted.json)
 
 
