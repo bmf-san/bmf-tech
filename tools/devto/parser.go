@@ -16,6 +16,9 @@ const baseURL = "https://bmf-tech.com"
 // maxDevToTags is the maximum number of tags dev.to allows per article.
 const maxDevToTags = 4
 
+// reAbsoluteImage matches root-relative image paths in markdown: ![alt](/assets/...)
+var reAbsoluteImage = regexp.MustCompile(`(!\[[^\]]*\])\((/[^)]+)\)`)
+
 // Article holds the data needed to create a dev.to article.
 type Article struct {
 	Slug         string
@@ -63,9 +66,10 @@ func ParseArticle(path string) (*Article, error) {
 		slug = slugFromPath(path)
 	}
 
-	canonicalURL := fmt.Sprintf("%s/en/posts/%s", baseURL, slug)
+	canonicalURL := fmt.Sprintf("%s/posts/%s/", baseURL, slug)
 	notice := fmt.Sprintf("> This article was originally published on [bmf-tech.com](%s).\n\n", canonicalURL)
-	fullBody := notice + strings.TrimSpace(body)
+	absBody := reAbsoluteImage.ReplaceAllString(strings.TrimSpace(body), "$1("+baseURL+"$2)")
+	fullBody := notice + absBody
 
 	return &Article{
 		Slug:         slug,
