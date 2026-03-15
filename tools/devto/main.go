@@ -88,7 +88,7 @@ func postFile(path string, poster *Poster, state *State, stateFile string) error
 		return fmt.Errorf("parse: %w", err)
 	}
 	if article == nil {
-		fmt.Printf("[skip] %s (draft)\n", path)
+		fmt.Printf("[skip] %s (draft / poem / book review)\n", path)
 		return nil
 	}
 

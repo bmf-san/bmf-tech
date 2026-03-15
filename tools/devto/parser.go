@@ -34,6 +34,7 @@ type frontmatter struct {
 	Title       string   `yaml:"title"`
 	Slug        string   `yaml:"slug"`
 	Description string   `yaml:"description"`
+	Categories  []string `yaml:"categories"`
 	Tags        []string `yaml:"tags"`
 	Draft       bool     `yaml:"draft"`
 }
@@ -60,6 +61,16 @@ func ParseArticle(path string) (*Article, error) {
 
 	if meta.Draft {
 		return nil, nil
+	}
+	for _, c := range meta.Categories {
+		if strings.EqualFold(c, "poem") || c == "ポエム" {
+			return nil, nil // skip personal/poem posts
+		}
+	}
+	for _, t := range meta.Tags {
+		if strings.EqualFold(t, "book review") || t == "書評" {
+			return nil, nil // skip book review posts
+		}
 	}
 
 	slug := meta.Slug
