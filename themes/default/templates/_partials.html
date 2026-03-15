@@ -50,7 +50,7 @@
 <meta property="og:title" content="{{$article.FrontMatter.Title}}">
 <meta property="og:type" content="{{if $isPage}}website{{else}}article{{end}}">
 <meta property="og:url" content="{{.Config.Site.BaseURL}}{{$article.URL}}">
-<meta property="og:description" content="{{if $article.FrontMatter.Description}}{{$article.FrontMatter.Description}}{{else}}{{.Config.Site.Description}}{{end}}">
+<meta property="og:description" content="{{if $article.FrontMatter.Description}}{{$article.FrontMatter.Description}}{{else}}{{$siteDesc}}{{end}}">
 <meta property="og:image" content="{{.Config.Site.BaseURL}}/ogp/{{$article.FrontMatter.Slug}}.png">
 <meta property="og:image:alt" content="{{$article.FrontMatter.Title}}">
 <meta property="og:image:width" content="1200">
