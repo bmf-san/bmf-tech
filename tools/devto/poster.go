@@ -29,6 +29,7 @@ type devToArticlePayload struct {
 	Tags         []string `json:"tags"`
 	CanonicalURL string   `json:"canonical_url"`
 	Description  string   `json:"description,omitempty"`
+	MainImage    string   `json:"main_image,omitempty"`
 }
 
 type devToResponse struct {
@@ -47,6 +48,7 @@ func (p *Poster) Post(a *Article) (int, error) {
 			Tags:         a.Tags,
 			CanonicalURL: a.CanonicalURL,
 			Description:  a.Description,
+			MainImage:    a.MainImage,
 		},
 	}
 

@@ -25,6 +25,7 @@ type Article struct {
 	Title        string
 	Description  string
 	CanonicalURL string
+	MainImage    string
 	Tags         []string
 	Body         string // includes the prepended origin notice
 }
@@ -76,6 +77,7 @@ func ParseArticle(path string) (*Article, error) {
 		Title:        meta.Title,
 		Description:  meta.Description,
 		CanonicalURL: canonicalURL,
+		MainImage:    fmt.Sprintf("%s/ogp/%s.png", baseURL, slug),
 		Tags:         normalizeTags(meta.Tags),
 		Body:         fullBody,
 	}, nil

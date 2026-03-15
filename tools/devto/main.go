@@ -93,8 +93,8 @@ func postFile(path string, poster *Poster, state *State, stateFile string) error
 	}
 
 	if poster.DryRun {
-		fmt.Printf("[dry-run] %s\n  title:         %s\n  canonical_url: %s\n  tags:          %v\n  body (first 120 chars): %.120s\n\n",
-			path, article.Title, article.CanonicalURL, article.Tags, article.Body)
+		fmt.Printf("[dry-run] %s\n  title:         %s\n  canonical_url: %s\n  main_image:    %s\n  tags:          %v\n  body (first 120 chars): %.120s\n\n",
+			path, article.Title, article.CanonicalURL, article.MainImage, article.Tags, article.Body)
 		return nil
 	}
 
