@@ -1,0 +1,54 @@
+name: Publish new article to dev.to
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/en/posts/**.md"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # needed to commit posted.json back
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2 # need parent commit to detect new files
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: stable
+          cache: false
+
+      - name: Build devto tool
+        run: cd tools/devto && go mod tidy && go build -o ../../bin/devto .
+
+      - name: Detect newly added articles
+        id: detect
+        run: |
+          NEW_FILES=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'content/en/posts/*.md' | tr '\n' ' ')
+          echo "files=${NEW_FILES}" >> "$GITHUB_OUTPUT"
+
+      - name: Post new articles to dev.to
+        if: steps.detect.outputs.files != ''
+        env:
+          DEV_TO_API_KEY: ${{ secrets.DEV_TO_API_KEY }}
+        run: |
+          for f in ${{ steps.detect.outputs.files }}; do
+            echo "Posting: $f"
+            ./bin/devto \
+              --api-key="$DEV_TO_API_KEY" \
+              --file="$f" \
+              --state=tools/devto/posted.json
+          done
+
+      - name: Commit updated posted.json
+        if: steps.detect.outputs.files != ''
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add tools/devto/posted.json
+          git diff --cached --quiet || git commit -m "chore: update devto posted.json [skip ci]"
+          git push
