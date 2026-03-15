@@ -3,6 +3,7 @@ title: "CQRSとは？コマンドクエリ責務分離を使うべき場面"
 description: 'CQRS（コマンドクエリ責務分離）とは何か、CRUD との違い、スケーラビリティ改善につながる場面と適用すべきでない場面を解説します。'
 slug: cqrs
 date: 2023-09-18T00:00:00Z
+lastmod: 2026-03-15
 author: bmf-san
 categories:
   - アーキテクチャ

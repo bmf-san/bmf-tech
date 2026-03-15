@@ -3,6 +3,7 @@ title: "N+1問題とは？Go/Railsでの検出と解決方法"
 description: 'N+1 問題とは何か、なぜ発生するのか、Go や Rails での検出方法と Eager Loading・JOIN を使った解決策を解説します。'
 slug: what-is-n-plus-one-problem
 date: 2018-05-12T00:00:00Z
+lastmod: 2026-03-15
 author: bmf-san
 categories:
   - データベース

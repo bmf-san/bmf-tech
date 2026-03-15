@@ -3,6 +3,7 @@ title: Setting Up Resource Monitoring with Prometheus and Grafana
 description: 'Implement resource monitoring using Prometheus and Grafana with node_exporter for comprehensive infrastructure dashboards.'
 slug: prometheus-grafana-resource-monitoring
 date: 2018-09-15T00:00:00Z
+lastmod: 2026-03-15
 author: bmf-san
 categories:
   - Infrastructure

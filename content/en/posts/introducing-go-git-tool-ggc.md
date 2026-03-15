@@ -3,6 +3,7 @@ title: Introduction to the Go-based Git Tool 'ggc'
 description: 'Discover ggc, a Go-based Git tool offering composite commands and interactive mode to streamline everyday Git workflows.'
 slug: introducing-go-git-tool-ggc
 date: 2025-06-15T00:00:00Z
+lastmod: 2026-03-15
 author: bmf-san
 categories:
   - Application
@@ -199,3 +200,8 @@ By adding this to `.bashrc` or `.zshrc`, completion is enabled when the terminal
 
 * **GitHub Repository**: [https://github.com/bmf-san/ggc](https://github.com/bmf-san/ggc)
 * **Issues, Feature Requests, Bug Reports**: [https://github.com/bmf-san/ggc/issues](https://github.com/bmf-san/ggc/issues)
+
+## Related Posts
+
+- [Starting Code Performance Improvement in Go](/posts/go-performance-improvement/)
+- [From Custom HTTP Router to New ServeMux](/posts/custom-http-router-to-new-servemux/)

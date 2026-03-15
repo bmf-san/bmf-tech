@@ -2,6 +2,7 @@
 title: Implementing a Trie in Golang
 slug: golang-tries-implementation
 date: 2019-09-24T00:00:00Z
+lastmod: 2026-03-15
 author: bmf-san
 categories:
   - Algorithms and Data Structures
@@ -126,3 +127,10 @@ I'm trying to create routing using a Trie in Golang.
 [https://github.com/bmf-san/bmf-go-router](https://github.com/bmf-san/bmf-go-router)
 
 I feel like Tries could also be used for implementing simple suggestion features, so I'd like to try implementing one in JavaScript.
+
+## Related Posts
+
+- [Order Notation and How to Determine Algorithm Complexity](/posts/big-o-notation-algorithms/)
+- [Algorithms and Data Structures - Binary Search Tree](/posts/algorithms-data-structures-binary-search-tree/)
+- [Reviewing the Basics of Algorithms and Data Structures](/posts/algorithms-data-structures-review/)
+- [From Custom HTTP Router to New ServeMux](/posts/custom-http-router-to-new-servemux/)

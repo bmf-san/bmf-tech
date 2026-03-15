@@ -3,6 +3,7 @@ title: PrometheusとGrafanaでリソース監視環境を整える
 description: PrometheusとGrafanaでリソース監視環境を整えるについて、基本的な概念から実践的な知見まで詳しく解説します。
 slug: prometheus-grafana-resource-monitoring
 date: 2018-09-15T00:00:00Z
+lastmod: 2026-03-15
 author: bmf-san
 categories:
   - インフラストラクチャ

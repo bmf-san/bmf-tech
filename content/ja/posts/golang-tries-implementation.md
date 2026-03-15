@@ -3,6 +3,7 @@ title: Golangでトライ木を実装する
 description: "トライ木（プレフィックス木）のデータ構造をGoで実装し、O(m)の検索・挿入計算量とRadix Treeとの使い分けを解説。"
 slug: golang-tries-implementation
 date: 2019-09-24T00:00:00Z
+lastmod: 2026-03-15
 author: bmf-san
 categories:
   - アルゴリズムとデータ構造
@@ -126,4 +127,11 @@ GolangでTrieを使ってroutingを作ろうとしている。
 [https://github.com/bmf-san/bmf-go-router](https://github.com/bmf-san/bmf-go-router)
 
 トライ木はちょっとしたサジェスト機能なんかの実装とかにも使える気がするのでJavaScriptとかで実装してみたい。
+
+## 関連記事
+
+- [O（オーダー）記法とアルゴリズムの計算量の求め方](/ja/posts/big-o-notation-algorithms/)
+- [アルゴリズムとデータ構造 - 二分探索木](/ja/posts/algorithms-data-structures-binary-search-tree/)
+- [アルゴリズムとデータ構造の基本の復習](/ja/posts/algorithms-data-structures-review/)
+- [自作HTTPルーターから新しいServeMuxへ](/ja/posts/custom-http-router-to-new-servemux/)
 

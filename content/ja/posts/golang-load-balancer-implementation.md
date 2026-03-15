@@ -3,6 +3,7 @@ title: Golangでロードバランサーを実装する
 description: "L4ロードバランサーをGoで実装し、ラウンドロビンスケジューリング・ヘルスチェック・リバースプロキシの仕組みを構築例を通して解説。"
 slug: golang-load-balancer-implementation
 date: 2022-01-01T00:00:00Z
+lastmod: 2026-03-15
 author: bmf-san
 categories:
   - アプリケーション
@@ -139,7 +140,7 @@ var cfg Config
 // Serve serves a loadbalancer.
 func Serve() {
 	// ...
-	
+
 	data, err := ioutil.ReadFile("./config.json")
 	if err != nil {
 		log.Fatal(err.Error())
@@ -427,6 +428,13 @@ func Serve() {
 
 # 所感
 リトライの実装やパーシステンスの対応などができていませんが、Golangでは比較的簡単にロードバランサーを実装できることが分かったかと思います。
+
+## 関連記事
+
+- [Goで始めるコードのパフォーマンス改善](/ja/posts/go-performance-improvement/)
+- [Goの並行・並列処理モデルとgoroutineスケジューリング](/ja/posts/go-concurrency-parallelism-models/)
+- [GoのHTTP Routerを比較するベンチマーカーを実装した](/ja/posts/http-router-benchmark-go/)
+- [自作HTTPルーターから新しいServeMuxへ](/ja/posts/custom-http-router-to-new-servemux/)
 
 # 参考
 - [qiita.com - Goでリバースプロキシつくるときにつかえる net/http/httputil.ReverseProxy の紹介](https://qiita.com/convto/items/64e8f090198a4cf7a4fc)

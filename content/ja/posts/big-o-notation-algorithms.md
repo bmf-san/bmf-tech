@@ -3,6 +3,7 @@ title: O（オーダー）記法とアルゴリズムの計算量の求め方
 description: O（オーダー）記法とアルゴリズムの計算量の求め方について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: big-o-notation-algorithms
 date: 2018-04-18T00:00:00Z
+lastmod: 2026-03-15
 author: bmf-san
 categories:
   - アルゴリズムとデータ構造

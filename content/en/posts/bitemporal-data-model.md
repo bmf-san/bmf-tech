@@ -3,6 +3,7 @@ title: About Bitemporal Data Model
 description: 'Understand bitemporal data models with two timelines: transaction time and valid time, for temporal database management.'
 slug: bitemporal-data-model
 date: 2024-05-27T00:00:00Z
+lastmod: 2026-03-15
 author: bmf-san
 categories:
   - Database

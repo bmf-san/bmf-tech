@@ -20,13 +20,13 @@
 {{- if eq .CurrentLocale "ja"}}{{$altURLHead = "/"}}{{end}}
 {{- if .CurrentTaxonomy}}
   {{- if eq .CurrentLocale "ja"}}{{$altURLHead = slice .CurrentTaxonomy.URL 3}}{{else}}{{$altURLHead = printf "/ja%s" .CurrentTaxonomy.URL}}{{end}}
-  {{- /* for paginated taxonomy pages, alternate hreflang must match current page number */}}
+  {{- /* for paginated taxonomy pages, alternate hreflang must match the current page number */}}
   {{- if and .Pagination (gt .Pagination.CurrentPage 1)}}
     {{- if eq .CurrentLocale "ja"}}{{$altURLHead = printf "%s/page/%d/" (slice .Pagination.BaseURL 3) .Pagination.CurrentPage}}{{else}}{{$altURLHead = printf "/ja%s/page/%d/" .Pagination.BaseURL .Pagination.CurrentPage}}{{end}}
   {{- end}}
 {{- else if .CurrentArchivePath}}
   {{- if eq .CurrentLocale "ja"}}{{$altURLHead = slice .CurrentArchivePath 3}}{{else}}{{$altURLHead = printf "/ja%s" .CurrentArchivePath}}{{end}}
-  {{- /* same fix for paginated archive pages */}}
+  {{- /* for paginated archive pages, alternate hreflang must match the current page number */}}
   {{- if and .Pagination (gt .Pagination.CurrentPage 1)}}
     {{- if eq .CurrentLocale "ja"}}{{$altURLHead = printf "%s/page/%d/" (slice .Pagination.BaseURL 3) .Pagination.CurrentPage}}{{else}}{{$altURLHead = printf "/ja%s/page/%d/" .Pagination.BaseURL .Pagination.CurrentPage}}{{end}}
   {{- end}}
@@ -50,7 +50,7 @@
 <meta property="og:title" content="{{$article.FrontMatter.Title}}">
 <meta property="og:type" content="{{if $isPage}}website{{else}}article{{end}}">
 <meta property="og:url" content="{{.Config.Site.BaseURL}}{{$article.URL}}">
-<meta property="og:description" content="{{if $article.FrontMatter.Description}}{{$article.FrontMatter.Description}}{{else}}{{$siteDesc}}{{end}}">
+<meta property="og:description" content="{{if $article.FrontMatter.Description}}{{$article.FrontMatter.Description}}{{else}}{{.Config.Site.Description}}{{end}}">
 <meta property="og:image" content="{{.Config.Site.BaseURL}}/ogp/{{$article.FrontMatter.Slug}}.png">
 <meta property="og:image:alt" content="{{$article.FrontMatter.Title}}">
 <meta property="og:image:width" content="1200">
@@ -86,7 +86,7 @@
   "@type": "{{if $isPage}}WebPage{{else}}BlogPosting{{end}}",
   "headline": "{{$article.FrontMatter.Title}}",
   "datePublished": "{{formatDate "2006-01-02" $article.FrontMatter.Date}}",
-  "dateModified": "{{formatDate "2006-01-02" $article.FrontMatter.Date}}",
+  "dateModified": "{{if not $article.FrontMatter.LastMod.IsZero}}{{formatDate "2006-01-02" $article.FrontMatter.LastMod}}{{else}}{{formatDate "2006-01-02" $article.FrontMatter.Date}}{{end}}",
   "url": "{{.Config.Site.BaseURL}}{{$article.URL}}",
   "image": "{{.Config.Site.BaseURL}}/ogp/{{$article.FrontMatter.Slug}}.png",
   "author": {"@type": "Person", "name": "{{index .Config.Theme.Params "author"}}"},
@@ -215,7 +215,7 @@
   {{- else}}
     {{- $altURL = printf "/ja%s" .CurrentTaxonomy.URL}}
   {{- end}}
-  {{- /* for paginated taxonomy pages, locale-switcher link must match current page number */}}
+  {{- /* for paginated taxonomy pages, locale-switcher link must match the current page number */}}
   {{- if and .Pagination (gt .Pagination.CurrentPage 1)}}
     {{- if eq .CurrentLocale "ja"}}
       {{- $altURL = printf "%s/page/%d/" (slice .Pagination.BaseURL 3) .Pagination.CurrentPage}}
@@ -229,7 +229,7 @@
   {{- else}}
     {{- $altURL = printf "/ja%s" .CurrentArchivePath}}
   {{- end}}
-  {{- /* same fix for paginated archive pages */}}
+  {{- /* for paginated archive pages, locale-switcher link must match the current page number */}}
   {{- if and .Pagination (gt .Pagination.CurrentPage 1)}}
     {{- if eq .CurrentLocale "ja"}}
       {{- $altURL = printf "%s/page/%d/" (slice .Pagination.BaseURL 3) .Pagination.CurrentPage}}

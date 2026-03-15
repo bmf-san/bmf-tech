@@ -2,6 +2,7 @@
 title: Differences in Sorting Order Due to COLLATE and glibc Version Differences in PostgreSQL
 slug: postgresql-collate-glibc-version-differences
 date: 2025-03-05T00:00:00Z
+lastmod: 2026-03-15
 author: bmf-san
 categories:
   - Database
@@ -49,3 +50,10 @@ To use ICU, PostgreSQL must be built with ICU support. Additionally, specifying 
 ## Summary
 - **Sorting order can change with the same locale name due to differences in glibc versions**
 - To avoid glibc dependency, there is an option to use **ICU**
+
+## Related Posts
+
+- [About COLLATE in PostgreSQL](/posts/postgresql-collate-explained/)
+- [PostgreSQL Memory Configuration](/posts/postgresql-memory-settings/)
+- [About Row Level Security (RLS) in PostgreSQL](/posts/postgresql-row-level-security/)
+- [Learning PostgreSQL from the Inside: Design and Operation Principles](/posts/postgresql-internal-structure/)

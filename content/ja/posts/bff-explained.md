@@ -3,6 +3,7 @@ title: "BFF（Backend For Frontend）とは？メリットと実装ガイド"
 description: 'BFF（Backend For Frontend）とは何か、なぜ必要か、フロントエンドとバックエンドの間に BFF レイヤーを置くことで API 契約を簡素化する実装方法を解説します。'
 slug: bff-explained
 date: 2023-08-29T00:00:00Z
+lastmod: 2026-03-15
 author: bmf-san
 categories:
   - アーキテクチャ

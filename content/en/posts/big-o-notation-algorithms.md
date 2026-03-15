@@ -2,6 +2,7 @@
 title: Order Notation and How to Determine Algorithm Complexity
 slug: big-o-notation-algorithms
 date: 2018-04-18T00:00:00Z
+lastmod: 2026-03-15
 author: bmf-san
 categories:
   - Algorithms and Data Structures

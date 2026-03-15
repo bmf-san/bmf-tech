@@ -2,6 +2,7 @@
 title: Convert Markdown Files to PDF (Supports mermaid, emoji, toc)
 slug: markdown-to-pdf-conversion
 date: 2022-09-01T00:00:00Z
+lastmod: 2026-03-15
 author: bmf-san
 categories:
   - Application

@@ -3,6 +3,7 @@ title: Considering Architecture Strategy
 description: 'Understand architecture strategy as systematic policy for building and evolving systems, covering vision, principles, and scalability planning.'
 slug: architecture-strategy-discussion
 date: 2025-02-16T00:00:00Z
+lastmod: 2026-03-15
 author: bmf-san
 categories:
   - Architecture

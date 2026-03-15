@@ -3,6 +3,7 @@ title: Obtaining SSL Certificates from Let's Encrypt Using DNS-01 with Lego
 description: "Obtain Let's Encrypt SSL certificates efficiently using DNS-01 challenge method with Lego client tool and Conoha API provider integration."
 slug: lego-lets-encrypt-dns-01-ssl
 date: 2022-01-18T00:00:00Z
+lastmod: 2026-03-15
 author: bmf-san
 categories:
   - Infrastructure
