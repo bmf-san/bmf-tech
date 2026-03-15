@@ -158,10 +158,22 @@ test.describe('Nav: JA locale shows Japanese labels', () => {
     expect(href).toBe('/ja/');
   });
 
+  test('JA フィード link points to /ja/atom.xml', async ({ page }) => {
+    await page.goto('/ja/');
+    const href = await page.locator('nav.navbar').getByRole('link', { name: 'フィード' }).getAttribute('href');
+    expect(href).toBe('/ja/atom.xml');
+  });
+
   test('EN nav shows Home and Feed (not Japanese labels)', async ({ page }) => {
     await page.goto('/');
     await expect(page.locator('nav.navbar').getByRole('link', { name: 'Home' })).toBeVisible();
     await expect(page.locator('nav.navbar').getByRole('link', { name: 'Feed' })).toBeVisible();
+  });
+
+  test('EN Feed link points to /atom.xml', async ({ page }) => {
+    await page.goto('/');
+    const href = await page.locator('nav.navbar').getByRole('link', { name: 'Feed' }).getAttribute('href');
+    expect(href).toBe('/atom.xml');
   });
 });
 

@@ -62,7 +62,11 @@ bmf-tech/
 ├── assets/
 │   ├── images/
 │   │   └── posts/{slug}/    # Phase 6 で移行した記事内画像
-│   └── robots.txt           # gohan build 時に public/ へ自動コピー
+├── static/
+│   ├── 404.html             # カスタム 404 ページ（gohan の static_dir でコピー）
+│   ├── robots.txt           # gohan build 時に public/ へ自動コピー
+│   ├── ads.txt
+│   └── favicon.ico
 ├── themes/
 │   └── default/
 │       └── templates/
@@ -197,10 +201,10 @@ description: "Kenta Takeuchi のプロフィールページ"
 | Canonical URL | `<link rel="canonical">` を `article.html` に実装済み |
 | hreflang | 日英ペア記事に `hreflang="ja"` / `hreflang="en"` / `hreflang="x-default"` を出力（gohan が `translation_key` で自動処理） |
 | JSON-LD (Article) | 実装済み。`_partials.html` の `{{define "seo"}}` 内で `@type: BlogPosting`（headline / datePublished / dateModified / url / image / author / publisher / description）を出力 |
-| JSON-LD (BreadcrumbList) | **未実装** |
+| JSON-LD (BreadcrumbList) | 実装済み。記事・タグ・カテゴリー・アーカイブ各ページに出力 |
 | sitemap.xml | gohan が自動生成。記事・固定ページの URL + ロケール別インデックスページ（`/`・`/ja/`）を収録（タグ・カテゴリー・アーカイブ個別ページは含まれない） |
-| robots.txt | `assets/robots.txt` に配置済み。`Allow: /` + sitemap 参照 |
-| Atom フィード | gohan が自動生成 (`/atom.xml`) |
+| robots.txt | `static/robots.txt` に配置済み。gohan の `static_dir` 設定で `public/` ルートに自動コピー。`Allow: /` + sitemap 参照 |
+| Atom フィード | gohan が自動生成 (`/atom.xml`、`/ja/atom.xml`) |
 | noindex | DNS 移管完了後に削除済み。本番公開中（`config.yaml` から `noindex` 設定を除去した）|
 
 ### 5.2 コンテンツ SEO
@@ -259,7 +263,7 @@ description: "Kenta Takeuchi のプロフィールページ"
 {{- if index .Config.Theme.Params "noindex"}}
 <meta name="robots" content="noindex, nofollow">
 {{- end}}
-<link rel="alternate" type="application/atom+xml" href="/atom.xml" ...>
+<link rel="alternate" type="application/atom+xml" href="{{$localePrefix}}/atom.xml" ...>
 {{block "seo" .}}{{end}}
 ```
 
@@ -276,7 +280,7 @@ description: "Kenta Takeuchi のプロフィールページ"
 
 ### robots.txt
 
-`assets/robots.txt` に配置。gohan のビルド時に `assets/` の内容が `public/` ルートに直接コピーされるため、CI での手動コピーは不要。
+`static/robots.txt` に配置。gohan の `static_dir: "static"` 設定によりビルド時に `public/` ルートに自動コピーされる。
 
 ---
 
@@ -285,11 +289,10 @@ description: "Kenta Takeuchi のプロフィールページ"
 | 項目 | 内容 |
 |---|---|
 | sitemap.xml のタクソノミー・アーカイブ URL 欠落 | 個別タグ・カテゴリー・アーカイブページが含まれない（ロケール別インデックスページ `/` / `/ja/` は v0.1.7 で対応済み）。gohan 側 enhancement として対応予定 |
-| JSON-LD | `@type: BlogPosting` は実装済み。BreadcrumbList は未実装 |
+| JSON-LD | `@type: BlogPosting` と `BreadcrumbList` いずれも実装済み |
 | 検索機能 | Pagefind などのクライアントサイド全文検索の採用を検討 |
 | 広告 | Google AdSense 実装済み。`_partials.html` の head に AdSense スクリプトを配置。スロットは3種（`adsense_slot_article_top`: 3773998823 / `adsense_slot_article_bottom`: 2224967643 / `adsense_slot_list_mobile`: 4950844549）をテンプレートから参照 |
 | Google Analytics | GA4 実装済み。`_partials.html` の head に gtag.js スクリプトを配置（ID: `G-784B55NW88`） |
 | OGP 画像カスタマイズ | デフォルト画像（`assets/images/ogp-default.png`）はシンプルなテキストのみ。ブランドロゴや背景画像を使ったデザイン改善が可能 |
 | タグ・カテゴリーページの多言語混在 | `/tags/{name}/` / `/categories/{name}/` は en + ja の記事が混在して出力される（gohan の現仕様）。テンプレートでロケールラベルを表示するなど UX 面での対処が必要 |
 | カテゴリー英語化 | 既存カテゴリーは日本語（例: アーキテクチャ）。英語名（例: Architecture）への統一は段階的に実施予定 |
-| `site.title` / `site.description` の最終化 | 現在 `"bmf-tech"` / `"bmf-san's personal tech blog"` はプレースホルダー。DNS 移管前に正式値に更新する |
