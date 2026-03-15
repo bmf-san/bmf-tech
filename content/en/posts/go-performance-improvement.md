@@ -3,6 +3,7 @@ title: Improving Code Performance with Go
 description: 'Learn practical Go performance optimization: pprof profiling, benchmark tests, escape analysis, memory allocation reduction, and real examples from optimizing a custom HTTP router.'
 slug: go-performance-improvement
 date: 2023-06-12T00:00:00Z
+lastmod: 2026-03-15
 author: bmf-san
 categories:
   - Performance
@@ -591,3 +592,10 @@ I want to study other router implementations, advanced tree structures I previou
 - [tech.speee.jp - Goのロギングライブラリから見たゼロアロケーション](https://tech.speee.jp/entry/2022/07/12/134605)
 - [kawasin73.hatenablog.com - メモリアロケーションに対する罪悪感
 ](https://kawasin73.hatenablog.com/entry/2019/11/10/112301)
+
+## Related Posts
+
+- [Implementing a Load Balancer in Golang](/posts/golang-load-balancer-implementation/)
+- [How to Use pprof Without DefaultServeMux](/posts/using-pprof-without-defaultmux/)
+- [Continuous Profiling with Pyroscope](/posts/continuous-profiling-with-pyroscope/)
+- [Go's Concurrency and Parallelism Model and Goroutine Scheduling](/posts/go-concurrency-parallelism-models/)

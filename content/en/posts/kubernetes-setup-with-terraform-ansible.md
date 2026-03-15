@@ -2,6 +2,7 @@
 title: Building a Kubernetes Environment with Terraform and Ansible
 slug: kubernetes-setup-with-terraform-ansible
 date: 2021-04-06T00:00:00Z
+lastmod: 2026-03-15
 author: bmf-san
 categories:
   - Infrastructure

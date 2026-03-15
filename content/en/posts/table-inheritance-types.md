@@ -2,6 +2,7 @@
 title: Single Table Inheritance, Class Table Inheritance, and Concrete Class Inheritance
 slug: table-inheritance-types
 date: 2017-10-01T00:00:00Z
+lastmod: 2026-03-15
 author: bmf-san
 categories:
   - Application

@@ -3,6 +3,7 @@ title: "DockerのOperation not permittedというエラーに対応する"
 description: DockerのOperation not permittedというエラーに対応するの原因と解決方法について解説します。
 slug: docker-operation-not-permitted-error
 date: 2019-09-27T00:00:00Z
+lastmod: 2026-03-15
 author: bmf-san
 categories:
   - インフラストラクチャ

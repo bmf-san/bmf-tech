@@ -2,6 +2,7 @@
 title: Devoured System Design Resources
 slug: system-design-resources-review
 date: 2023-02-27T00:00:00Z
+lastmod: 2026-03-15
 author: bmf-san
 categories:
   - Architecture

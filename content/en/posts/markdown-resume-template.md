@@ -3,6 +3,7 @@ title: Created a Template to Manage Resumes and CVs with Markdown
 description: 'Manage professional resumes and CVs using Markdown format with Git version control, automated PDF generation, and AI-powered improvements.'
 slug: markdown-resume-template
 date: 2025-07-16T00:00:00Z
+lastmod: 2026-03-15
 author: bmf-san
 categories:
   - Career

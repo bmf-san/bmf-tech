@@ -3,6 +3,7 @@ title: Controlling Container Startup Order with Dockerize in Docker Compose
 description: 'Control container startup order in Docker Compose using Dockerize. Learn why depends_on is insufficient, how Dockerize waits for tcp://host:port readiness, and a practical docker-compose example.'
 slug: dockerize-control-docker-compose-start-order
 date: 2019-09-17T00:00:00Z
+lastmod: 2026-03-15
 author: bmf-san
 categories:
   - Infrastructure

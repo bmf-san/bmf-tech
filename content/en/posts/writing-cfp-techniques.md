@@ -3,6 +3,7 @@ title: The Art of Writing a CFP
 description: "Craft compelling conference CFPs using blog-writing, organization techniques, and structured presentation development methodology."
 slug: writing-cfp-techniques
 date: 2024-04-14T00:00:00Z
+lastmod: 2026-03-15
 author: bmf-san
 categories:
   - Business

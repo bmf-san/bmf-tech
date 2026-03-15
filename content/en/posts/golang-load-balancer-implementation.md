@@ -3,6 +3,7 @@ title: Implementing a Load Balancer in Golang
 description: 'Implement a round-robin L4 load balancer in Go from scratch. Covers reverse proxy with httputil, round-robin scheduling, and active and passive health checks.'
 slug: golang-load-balancer-implementation
 date: 2022-01-01T00:00:00Z
+lastmod: 2026-03-15
 author: bmf-san
 categories:
   - Application
@@ -429,3 +430,9 @@ Although retry implementation and persistence support are not covered, I hope yo
 - [github.com - kasvith/simplelb](https://github.com/kasvith/simplelb)
 - [github.com - arjunmahishi/loadbalancer-in-go](https://github.com/arjunmahishi/loadbalancer-in-go)
 - [github.com - arbazsiddiqui/anabranch](https://github.com/arbazsiddiqui/anabranch)
+
+## Related Posts
+
+- [Starting Code Performance Improvement in Go](/posts/go-performance-improvement/)
+- [Go's Concurrency and Parallelism Model and Goroutine Scheduling](/posts/go-concurrency-parallelism-models/)
+- [From Custom HTTP Router to New ServeMux](/posts/custom-http-router-to-new-servemux/)

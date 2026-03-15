@@ -3,6 +3,7 @@ title: Go製Git操作ツール「ggc」の紹介
 description: Go製Git操作ツール「ggc」の紹介について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: introducing-go-git-tool-ggc
 date: 2025-06-15T00:00:00Z
+lastmod: 2026-03-15
 author: bmf-san
 categories:
   - アプリケーション
@@ -198,3 +199,8 @@ source /path/to/ggc/tools/completions/ggc.bash
 
 * **GitHubリポジトリ**：[https://github.com/bmf-san/ggc](https://github.com/bmf-san/ggc)
 * **Issue・機能要望・バグ報告など**：[https://github.com/bmf-san/ggc/issues](https://github.com/bmf-san/ggc/issues)
+
+## 関連記事
+
+- [Goで始めるコードのパフォーマンス改善](/ja/posts/go-performance-improvement/)
+- [自作HTTPルーターから新しいServeMuxへ](/ja/posts/custom-http-router-to-new-servemux/)

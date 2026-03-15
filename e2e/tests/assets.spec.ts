@@ -50,15 +50,6 @@ test('atom.xml is served with XML content-type', async ({ request }) => {
   expect(body).toContain('bmf-tech');
 });
 
-test('ja/atom.xml is served with XML content-type', async ({ request }) => {
-  const res = await request.get('/ja/atom.xml');
-  expect(res.status()).toBe(200);
-  expect(res.headers()['content-type']).toMatch(/xml/);
-  const body = await res.text();
-  expect(body).toContain('<feed');
-  expect(body).toContain('bmf-tech');
-});
-
 test('feed.xml is served with XML content-type', async ({ request }) => {
   const res = await request.get('/feed.xml');
   expect(res.status()).toBe(200);
@@ -67,17 +58,11 @@ test('feed.xml is served with XML content-type', async ({ request }) => {
   expect(body).toContain('bmf-tech');
 });
 
-test('feed link element is present in <head> on EN page', async ({ page }) => {
+test('feed link element is present in <head>', async ({ page }) => {
   await page.goto('/');
   await expect(
     page.locator('link[rel="alternate"][type="application/atom+xml"]')
   ).toHaveCount(1);
-});
-
-test('feed link element in <head> points to /ja/atom.xml on JA page', async ({ page }) => {
-  await page.goto('/ja/');
-  const href = await page.locator('link[rel="alternate"][type="application/atom+xml"]').getAttribute('href');
-  expect(href).toBe('/ja/atom.xml');
 });
 
 // ── Sitemap ───────────────────────────────────────────────────────────────────

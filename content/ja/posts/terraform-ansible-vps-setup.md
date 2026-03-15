@@ -3,6 +3,7 @@ title: TerraformとAnsibleを使ってVPSを構築する
 description: "TerraformとAnsibleでConoHa VPS上にOpenStack IaC構築、サーバープロビジョニングとインフラ構成管理を自動化"
 slug: terraform-ansible-vps-setup
 date: 2020-12-20T00:00:00Z
+lastmod: 2026-03-15
 author: bmf-san
 categories:
   - インフラストラクチャ

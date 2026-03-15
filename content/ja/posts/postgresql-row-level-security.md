@@ -1,6 +1,6 @@
 ---
 title: PostgreSQLのRow Level Security（RLS）について
-description: "PostgreSQLのRow Level Security（RLS）を解説。PERMISSIVEとRESTRICTIVEポリシーの違い、USINGとWITH CHECKの動作原理をSQL例で詳しく説明します。"
+description: "適用するRow Level Security。PERMISSIVEポリシーとRESTRICTIVEポリシー、USINGとWITH CHECKの動作原理をSQL例で詳解。"
 slug: postgresql-row-level-security
 date: 2025-05-23T00:00:00Z
 author: bmf-san

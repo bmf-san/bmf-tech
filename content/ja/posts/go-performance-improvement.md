@@ -3,6 +3,7 @@ title: Goで始めるコードのパフォーマンス改善
 description: Goで始めるコードのパフォーマンス改善について、基本的な概念から実践的な知見まで詳しく解説します。
 slug: go-performance-improvement
 date: 2023-06-12T00:00:00Z
+lastmod: 2026-03-15
 author: bmf-san
 categories:
   - パフォーマンス
@@ -596,3 +597,10 @@ pprofのTop。
 - [tech.speee.jp - Goのロギングライブラリから見たゼロアロケーション](https://tech.speee.jp/entry/2022/07/12/134605)
 - [kawasin73.hatenablog.com - メモリアロケーションに対する罪悪感
 ](https://kawasin73.hatenablog.com/entry/2019/11/10/112301)
+
+## 関連記事
+
+- [Golangでロードバランサーを実装する](/ja/posts/golang-load-balancer-implementation/)
+- [DefaultServeMux以外でpprofを使う方法](/ja/posts/using-pprof-without-defaultmux/)
+- [PyroscopeでContinuous Profiling](/ja/posts/continuous-profiling-with-pyroscope/)
+- [Goの並行・並列処理モデルとgoroutineスケジューリング](/ja/posts/go-concurrency-parallelism-models/)

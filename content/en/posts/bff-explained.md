@@ -2,6 +2,7 @@
 title: What is BFF (Backend For Frontend)? Benefits and Implementation Guide
 slug: bff-explained
 date: 2023-08-29T00:00:00Z
+lastmod: 2026-03-15
 author: bmf-san
 categories:
   - Architecture
