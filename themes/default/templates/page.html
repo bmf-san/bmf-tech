@@ -8,7 +8,7 @@
   <header class="mb-8">
     <ol class="breadcrumbs mb-4">
       <li class="breadcrumbs-item">
-        <a href="{{$homeURL}}" class="breadcrumbs-link">Home</a>
+        <a href="{{$homeURL}}" class="breadcrumbs-link">{{if eq .Locale "ja"}}ホーム{{else}}Home{{end}}</a>
         <span class="breadcrumbs-separator">/</span>
       </li>
       <li class="breadcrumbs-item active">

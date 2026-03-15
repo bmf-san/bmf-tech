@@ -1,6 +1,6 @@
 ---
 title: PostgreSQL 論理レプリケーションの仕様まとめ
-description: "理解するPostgreSQL論理レプリケーション。パブリッシャー・サブスクライバー構成、WAL設定、DML操作の複製メカニズムをDocker環境で実装するメモ。"
+description: "PostgreSQL論理レプリケーションの仕様をまとめ。パブリッシャー・サブスクライバー構成とWAL設定、DML操作の複製メカニズムをDocker環境で実装する手順を解説します。"
 slug: postgresql-logical-replication-summary
 date: 2025-05-23T00:00:00Z
 author: bmf-san

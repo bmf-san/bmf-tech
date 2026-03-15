@@ -1,6 +1,6 @@
 ---
 title: Singletonパターンはなぜアンチパターンなのか
-description: Singletonパターンはなぜアンチパターンなのかについて、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
+description: 'Singletonパターンをアンチパターンとする理由をGoコードで解説。テスト容易性・並行処理・状態蓄積の問題点と、依存性注入を使った代替アプローチを紹介します。'
 slug: singleton-pattern-anti-pattern
 date: 2025-10-18T00:00:00Z
 author: bmf-san

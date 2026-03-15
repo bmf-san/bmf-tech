@@ -97,7 +97,7 @@
         <div class="card-body-compact">
           <div class="flex flex-wrap gap-2">
             {{range .Categories}}
-            <a href="{{$locPfx}}{{categoryURL .Name}}" class="badge badge-light text-secondary">{{.Name}}</a>
+            <a href="{{categoryURL $.CurrentLocale .Name}}" class="badge badge-light text-secondary">{{.Name}}</a>
             {{end}}
           </div>
         </div>
@@ -113,7 +113,7 @@
         <div class="card-body-compact">
           <div class="flex flex-wrap gap-2">
             {{range .Tags}}
-            <a href="{{$locPfx}}{{tagURL .Name}}" class="badge badge-light text-secondary">{{.Name}}</a>
+            <a href="{{tagURL $.CurrentLocale .Name}}" class="badge badge-light text-secondary">{{.Name}}</a>
             {{end}}
           </div>
         </div>

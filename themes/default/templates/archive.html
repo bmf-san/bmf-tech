@@ -6,12 +6,12 @@
   {{/* Page header */}}
   {{$first := index .Articles 0}}
   {{$year := ""}}
-  {{if $first}}{{$year = formatDate "2006" $first.FrontMatter.Date}}{{end}}
+  {{if $first}}{{if .CurrentArchiveIsMonth}}{{$year = formatDate "2006/01" $first.FrontMatter.Date}}{{else}}{{$year = formatDate "2006" $first.FrontMatter.Date}}{{end}}{{end}}
   <div class="mb-8">
     <ol class="breadcrumbs mb-4">
       <li class="breadcrumbs-item">
         {{if eq .CurrentLocale "ja"}}
-        <a href="/ja/" class="breadcrumbs-link">Home</a>
+        <a href="/ja/" class="breadcrumbs-link">ホーム</a>
         {{else}}
         <a href="/" class="breadcrumbs-link">Home</a>
         {{end}}
@@ -22,7 +22,7 @@
       </li>
     </ol>
     <h1 class="text-3xl font-bold mb-2">{{if eq .CurrentLocale "ja"}}アーカイブ{{else}}Archive{{end}}{{if $year}} {{$year}}{{end}}</h1>
-    <p class="text-secondary">{{len .Articles}} {{if eq .CurrentLocale "ja"}}件の記事{{else}}articles{{end}}</p>
+    <p class="text-secondary">{{if .Pagination}}{{.Pagination.TotalItems}}{{else}}{{len .Articles}}{{end}} {{if eq .CurrentLocale "ja"}}件の記事{{else}}articles{{end}}</p>
   </div>
 
   {{if .Articles}}

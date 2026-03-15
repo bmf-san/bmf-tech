@@ -3,20 +3,19 @@
 {{template "header" .}}
 <main class="container mx-auto py-8 max-w-4xl">
   {{range .Articles}}
-  {{- $localePrefix := ""}}
-  {{- if eq .Locale "ja"}}{{$localePrefix = "/ja"}}{{end}}
+  {{- $locale := .Locale}}
   {{- $listURL := "/"}}
   {{- if eq .Locale "ja"}}{{$listURL = "/ja/"}}{{end}}
 
   {{/* Breadcrumbs */}}
   <ol class="breadcrumbs mb-6">
     <li class="breadcrumbs-item">
-      <a href="{{$listURL}}" class="breadcrumbs-link">Home</a>
+      <a href="{{$listURL}}" class="breadcrumbs-link">{{if eq .Locale "ja"}}ホーム{{else}}Home{{end}}</a>
       <span class="breadcrumbs-separator">/</span>
     </li>
     {{if .FrontMatter.Categories}}
     <li class="breadcrumbs-item">
-      <a href="{{$localePrefix}}{{categoryURL (index .FrontMatter.Categories 0)}}" class="breadcrumbs-link">{{index .FrontMatter.Categories 0}}</a>
+      <a href="{{categoryURL $locale (index .FrontMatter.Categories 0)}}" class="breadcrumbs-link">{{index .FrontMatter.Categories 0}}</a>
       <span class="breadcrumbs-separator">/</span>
     </li>
     {{end}}
@@ -28,7 +27,7 @@
   {{/* Article Header */}}
   <header class="mb-8">
     <div class="flex items-center gap-2 mb-4 flex-wrap">
-      {{range .FrontMatter.Categories}}<a href="{{$localePrefix}}{{categoryURL .}}" class="badge badge-info">{{.}}</a>{{end}}
+      {{range .FrontMatter.Categories}}<a href="{{categoryURL $locale .}}" class="badge badge-info">{{.}}</a>{{end}}
       <span class="text-sm text-secondary">{{formatDate "2006-01-02" .FrontMatter.Date}}</span>
     </div>
     <h1 class="text-4xl font-bold mb-6 leading-tight">{{.FrontMatter.Title}}</h1>
@@ -84,7 +83,7 @@
   <div class="flex flex-wrap gap-2 mb-10">
     <span class="text-sm font-medium text-secondary mr-2">Tags:</span>
     {{range .FrontMatter.Tags}}
-    <a href="{{$localePrefix}}{{tagURL .}}" class="badge badge-light text-secondary">{{.}}</a>
+    <a href="{{tagURL $locale .}}" class="badge badge-light text-secondary">{{.}}</a>
     {{end}}
   </div>
   {{end}}

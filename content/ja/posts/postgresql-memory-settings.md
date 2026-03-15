@@ -1,6 +1,6 @@
 ---
 title: PostgreSQLのメモリ設定
-description: "設定するPostgreSQLメモリ管理。shared_buffers、work_mem、maintenance_work_memの指針からOOM回避、性能向上まで段階的に解説します。"
+description: "PostgreSQLのメモリ設定を解説。shared_buffers・work_mem・maintenance_work_memの設定指針から、OOM回避と性能向上のバランスを取る方法まで段階的に説明します。"
 slug: postgresql-memory-settings
 date: 2025-06-14T00:00:00Z
 author: bmf-san

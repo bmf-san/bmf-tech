@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light dark">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 Not Found | bmf-tech</title>
+<meta name="description" content="The page you are looking for could not be found.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bmf-san/sleyt@latest/docs/public/css/index.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/gh/bmf-san/sleyt@latest/docs/public/css/index.css" as="style">
+</head>
+<body class="bg-body">
+<nav class="navbar">
+  <a href="/" class="navbar-brand" id="nav-home">bmf-tech</a>
+</nav>
+<main class="container mx-auto py-20 text-center">
+  <h1 class="text-8xl font-bold mb-6 text-primary">404</h1>
+  <p class="text-2xl font-semibold mb-4" id="msg-title">Page Not Found</p>
+  <p class="text-secondary mb-10" id="msg-body">The page you are looking for could not be found.</p>
+  <div class="flex justify-center gap-4">
+    <a href="/" class="btn btn-primary" id="btn-home">Home</a>
+  </div>
+</main>
+<footer class="bg-slate-900 text-slate-300 py-8 mt-16">
+  <div class="container mx-auto text-center">
+    <p class="text-sm">&copy; bmf-tech</p>
+  </div>
+</footer>
+<script>
+(function(){
+  var locale = localStorage.getItem('pref-locale');
+  if (!locale) {
+    var l = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+    locale = l.toLowerCase().startsWith('ja') ? 'ja' : 'en';
+  }
+  if (locale === 'ja') {
+    document.documentElement.lang = 'ja';
+    document.getElementById('msg-title').textContent = 'ページが見つかりません';
+    document.getElementById('msg-body').textContent = 'お探しのページは見つかりませんでした。';
+    document.getElementById('btn-home').textContent = 'ホーム';
+    document.getElementById('btn-home').href = '/ja/';
+    document.getElementById('nav-home').href = '/ja/';
+  }
+})();
+</script>
+</body>
+</html>

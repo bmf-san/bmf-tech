@@ -199,3 +199,141 @@ test.describe('Footer sitemap link', () => {
     await expect(page.locator('footer').getByRole('link', { name: 'Sitemap' })).toBeVisible();
   });
 });
+
+// ── Locale switcher on tag/category/archive pages ────────────────────────────
+
+test.describe('Nav: locale toggle on tag pages', () => {
+  test('JA tag page toggle links to EN tag page', async ({ page }) => {
+    await page.goto('/ja/tags/2phase-commit/');
+    const href = await page.locator('nav.navbar a:has(.badge-primary)').getAttribute('href');
+    expect(href).toBe('/tags/2phase-commit/');
+  });
+
+  test('EN tag page toggle links to JA tag page', async ({ page }) => {
+    await page.goto('/tags/2phase-commit/');
+    const href = await page.locator('nav.navbar a:has(.badge-primary)').getAttribute('href');
+    expect(href).toBe('/ja/tags/2phase-commit/');
+  });
+});
+
+test.describe('Nav: locale toggle on category pages', () => {
+  test('JA category page toggle links to EN category page', async ({ page }) => {
+    await page.goto('/ja/categories/os/');
+    const href = await page.locator('nav.navbar a:has(.badge-primary)').getAttribute('href');
+    expect(href).toBe('/categories/os/');
+  });
+
+  test('EN category page toggle links to JA category page', async ({ page }) => {
+    await page.goto('/categories/architecture/');
+    const href = await page.locator('nav.navbar a:has(.badge-primary)').getAttribute('href');
+    expect(href).toBe('/ja/categories/architecture/');
+  });
+});
+
+test.describe('Nav: locale toggle on archive pages', () => {
+  test('JA archive month page toggle links to EN archive month page', async ({ page }) => {
+    await page.goto('/ja/archives/2024/01/');
+    const href = await page.locator('nav.navbar a:has(.badge-primary)').getAttribute('href');
+    expect(href).toBe('/archives/2024/01/');
+  });
+
+  test('EN archive month page toggle links to JA archive month page', async ({ page }) => {
+    await page.goto('/archives/2024/01/');
+    const href = await page.locator('nav.navbar a:has(.badge-primary)').getAttribute('href');
+    expect(href).toBe('/ja/archives/2024/01/');
+  });
+
+  test('JA archive year page toggle links to EN archive year page', async ({ page }) => {
+    await page.goto('/ja/archives/2024/');
+    const href = await page.locator('nav.navbar a:has(.badge-primary)').getAttribute('href');
+    expect(href).toBe('/archives/2024/');
+  });
+
+  test('EN archive year page toggle links to JA archive year page', async ({ page }) => {
+    await page.goto('/archives/2024/');
+    const href = await page.locator('nav.navbar a:has(.badge-primary)').getAttribute('href');
+    expect(href).toBe('/ja/archives/2024/');
+  });
+});
+
+// ── Locale toggle on paginated index pages ───────────────────────────────────
+
+test.describe('Nav: locale toggle on paginated root index pages', () => {
+  test('EN /page/2/ toggle links to /ja/page/2/', async ({ page }) => {
+    await page.goto('/page/2/');
+    const href = await page.locator('nav.navbar a:has(.badge-primary)').getAttribute('href');
+    expect(href).toBe('/ja/page/2/');
+  });
+
+  test('JA /ja/page/2/ toggle links to /page/2/', async ({ page }) => {
+    await page.goto('/ja/page/2/');
+    const href = await page.locator('nav.navbar a:has(.badge-primary)').getAttribute('href');
+    expect(href).toBe('/page/2/');
+  });
+});
+
+// ── Locale toggle on paginated tag/category pages ───────────────────────────
+
+test.describe('Nav: locale toggle on paginated tag pages', () => {
+  test('EN /tags/golang/page/2/ toggle links to /ja/tags/golang/page/2/', async ({ page }) => {
+    await page.goto('/tags/golang/page/2/');
+    const href = await page.locator('nav.navbar a:has(.badge-primary)').getAttribute('href');
+    expect(href).toBe('/ja/tags/golang/page/2/');
+  });
+
+  test('JA /ja/tags/golang/page/2/ toggle links to /tags/golang/page/2/', async ({ page }) => {
+    await page.goto('/ja/tags/golang/page/2/');
+    const href = await page.locator('nav.navbar a:has(.badge-primary)').getAttribute('href');
+    expect(href).toBe('/tags/golang/page/2/');
+  });
+});
+
+// ── Sidebar locale filtering ─────────────────────────────────────────────────
+// Regression: localeTaxonomyBase must not leak cross-locale links into the sidebar.
+
+test.describe('Sidebar: EN index has only /categories/ links (no /ja/categories/)', () => {
+  test('aside has no /ja/categories/ hrefs on EN index', async ({ page }) => {
+    await page.goto('/');
+    const jaLinks = page.locator('aside a[href*="/ja/categories/"]');
+    expect(await jaLinks.count()).toBe(0);
+  });
+
+  test('aside has no /ja/tags/ hrefs on EN index', async ({ page }) => {
+    await page.goto('/');
+    const jaLinks = page.locator('aside a[href*="/ja/tags/"]');
+    expect(await jaLinks.count()).toBe(0);
+  });
+
+  test('aside has at least one /categories/ link on EN index', async ({ page }) => {
+    await page.goto('/');
+    const links = page.locator('aside a[href^="/categories/"]');
+    expect(await links.count()).toBeGreaterThan(0);
+  });
+});
+
+test.describe('Sidebar: JA index has only /ja/categories/ links (no EN /categories/)', () => {
+  test('aside has no bare /categories/ hrefs on JA index', async ({ page }) => {
+    await page.goto('/ja/');
+    // A link starting with /categories/ (but not /ja/categories/) would be a locale leak.
+    const enLinks = page.locator('aside a[href^="/categories/"]');
+    expect(await enLinks.count()).toBe(0);
+  });
+
+  test('aside has no bare /tags/ hrefs on JA index', async ({ page }) => {
+    await page.goto('/ja/');
+    const enLinks = page.locator('aside a[href^="/tags/"]');
+    expect(await enLinks.count()).toBe(0);
+  });
+
+  test('aside has at least one /ja/categories/ link on JA index', async ({ page }) => {
+    await page.goto('/ja/');
+    const links = page.locator('aside a[href^="/ja/categories/"]');
+    expect(await links.count()).toBeGreaterThan(0);
+  });
+
+  test('aside has at least one /ja/tags/ link on JA index', async ({ page }) => {
+    await page.goto('/ja/');
+    const links = page.locator('aside a[href^="/ja/tags/"]');
+    expect(await links.count()).toBeGreaterThan(0);
+  });
+});
