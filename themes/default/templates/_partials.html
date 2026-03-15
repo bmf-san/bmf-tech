@@ -20,13 +20,13 @@
 {{- if eq .CurrentLocale "ja"}}{{$altURLHead = "/"}}{{end}}
 {{- if .CurrentTaxonomy}}
   {{- if eq .CurrentLocale "ja"}}{{$altURLHead = slice .CurrentTaxonomy.URL 3}}{{else}}{{$altURLHead = printf "/ja%s" .CurrentTaxonomy.URL}}{{end}}
-  {{- /* BUG-T7: for paginated taxonomy pages, alternate hreflang must match the current page number */}}
+  {{- /* for paginated taxonomy pages, alternate hreflang must match current page number */}}
   {{- if and .Pagination (gt .Pagination.CurrentPage 1)}}
     {{- if eq .CurrentLocale "ja"}}{{$altURLHead = printf "%s/page/%d/" (slice .Pagination.BaseURL 3) .Pagination.CurrentPage}}{{else}}{{$altURLHead = printf "/ja%s/page/%d/" .Pagination.BaseURL .Pagination.CurrentPage}}{{end}}
   {{- end}}
 {{- else if .CurrentArchivePath}}
   {{- if eq .CurrentLocale "ja"}}{{$altURLHead = slice .CurrentArchivePath 3}}{{else}}{{$altURLHead = printf "/ja%s" .CurrentArchivePath}}{{end}}
-  {{- /* BUG-T7: same fix for paginated archive pages */}}
+  {{- /* same fix for paginated archive pages */}}
   {{- if and .Pagination (gt .Pagination.CurrentPage 1)}}
     {{- if eq .CurrentLocale "ja"}}{{$altURLHead = printf "%s/page/%d/" (slice .Pagination.BaseURL 3) .Pagination.CurrentPage}}{{else}}{{$altURLHead = printf "/ja%s/page/%d/" .Pagination.BaseURL .Pagination.CurrentPage}}{{end}}
   {{- end}}
@@ -111,7 +111,7 @@
 {{- $ogTitle := .Config.Site.Title}}{{- $ogURL := printf "%s%s" .Config.Site.BaseURL $homeURL}}
 {{- if .CurrentTaxonomy}}
   {{- $ogTitle = printf "%s | %s" .CurrentTaxonomy.Name .Config.Site.Title}}
-  {{- /* BUG-T5: start with taxonomy base URL, then override for pages 2+ */}}
+  {{- /* start with taxonomy base URL, then override for pages 2+ */}}
   {{- $ogURL = printf "%s%s" .Config.Site.BaseURL .CurrentTaxonomy.URL}}
   {{- if and .Pagination (gt .Pagination.CurrentPage 1)}}
     {{- $ogURL = printf "%s%s/page/%d/" .Config.Site.BaseURL .Pagination.BaseURL .Pagination.CurrentPage}}
@@ -133,7 +133,6 @@
 <link rel="alternate" hreflang="{{$selfLocale}}" href="{{$ogURL}}">
 <link rel="alternate" hreflang="{{$altLocale}}" href="{{.Config.Site.BaseURL}}{{$altURLHead}}">
 <link rel="alternate" hreflang="x-default" href="{{if eq .CurrentLocale "ja"}}{{.Config.Site.BaseURL}}{{$altURLHead}}{{else}}{{$ogURL}}{{end}}">
-{{- /* BUG-T1: og:title was missing for all listing pages */}}
 <meta property="og:title" content="{{$ogTitle}}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{$ogURL}}">
@@ -216,7 +215,7 @@
   {{- else}}
     {{- $altURL = printf "/ja%s" .CurrentTaxonomy.URL}}
   {{- end}}
-  {{- /* BUG-T7a: for paginated taxonomy pages, locale-switcher link must match the current page number */}}
+  {{- /* for paginated taxonomy pages, locale-switcher link must match current page number */}}
   {{- if and .Pagination (gt .Pagination.CurrentPage 1)}}
     {{- if eq .CurrentLocale "ja"}}
       {{- $altURL = printf "%s/page/%d/" (slice .Pagination.BaseURL 3) .Pagination.CurrentPage}}
@@ -230,7 +229,7 @@
   {{- else}}
     {{- $altURL = printf "/ja%s" .CurrentArchivePath}}
   {{- end}}
-  {{- /* BUG-T7a: same fix for paginated archive pages */}}
+  {{- /* same fix for paginated archive pages */}}
   {{- if and .Pagination (gt .Pagination.CurrentPage 1)}}
     {{- if eq .CurrentLocale "ja"}}
       {{- $altURL = printf "%s/page/%d/" (slice .Pagination.BaseURL 3) .Pagination.CurrentPage}}
