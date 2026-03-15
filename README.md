@@ -115,7 +115,7 @@ sequenceDiagram
 
 ## dev.to クロスポスト
 
-英語記事を [dev.to](https://dev.to) にクロスポストしてトラフィック向上を図る。
+英語記事を [dev.to](https://dev.to) にクロスポストする。
 `tools/devto/` 配下の Go CLI ツールで管理する。
 
 **スキップ対象**（投稿しない）:
