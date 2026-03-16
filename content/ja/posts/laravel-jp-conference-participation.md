@@ -1,6 +1,6 @@
 ---
 title: Laravel JP Conferenceにコアスタッフ兼LTスピーカーとして参加してきました
-description: Laravel JP Conferenceにコアスタッフ兼LTスピーカーとして参加してきましたについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: Laravel JP Conferenceにコアスタッフ兼LTスピーカーとして参加してきました
 slug: laravel-jp-conference-participation
 date: 2019-02-16T00:00:00Z
 author: bmf-san

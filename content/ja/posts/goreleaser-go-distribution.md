@@ -1,6 +1,6 @@
 ---
 title: GoReleaserを使ってのGoのアプリケーションを配布する
-description: GoReleaserを使ってのGoのアプリケーションを配布するについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: GoReleaserを使ってのGoのアプリケーションを配布する
 slug: goreleaser-go-distribution
 date: 2023-11-11T00:00:00Z
 author: bmf-san

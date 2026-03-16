@@ -1,6 +1,6 @@
 ---
 title: Road to Vimmer
-description: Road to Vimmerについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: Road to Vimmer
 slug: road-to-vimmer
 date: 2018-04-22T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: アルゴリズムとデータ構造 - 配列
-description: アルゴリズムとデータ構造 - 配列について、基本的な概念から実践的な知見まで詳しく解説します。
+description: アルゴリズムとデータ構造 - 配列
 slug: algorithms-data-structures-array
 date: 2019-10-31T00:00:00Z
 author: bmf-san

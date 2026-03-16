@@ -1,6 +1,6 @@
 ---
 title: PHPのインターフェースとタイプヒンティング
-description: PHPのインターフェースとタイプヒンティングについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: PHPのインターフェースとタイプヒンティング
 slug: php-interfaces-type-hinting
 date: 2018-12-08T00:00:00Z
 author: bmf-san

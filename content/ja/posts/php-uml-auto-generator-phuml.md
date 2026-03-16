@@ -1,6 +1,6 @@
 ---
 title: PHPでUMLを自動生成してくれるツールーphUML
-description: PHPでUMLを自動生成してくれるツールーphUMLについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: PHPでUMLを自動生成してくれるツールーphUML
 slug: php-uml-auto-generator-phuml
 date: 2020-06-26T00:00:00Z
 author: bmf-san

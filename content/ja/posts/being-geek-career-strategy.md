@@ -1,6 +1,6 @@
 ---
 title: Being Geek ギークであり続けるためのキャリア戦略
-description: Being Geek ギークであり続けるためのキャリア戦略について、基本的な概念から実践的な知見まで詳しく解説します。
+description: Being Geek ギークであり続けるためのキャリア戦略
 slug: being-geek-career-strategy
 date: 2017-12-23T00:00:00Z
 author: bmf-san

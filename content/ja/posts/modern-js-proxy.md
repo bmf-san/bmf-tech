@@ -1,6 +1,6 @@
 ---
 title: モダンなJSの話──Proxy
-description: モダンなJSの話──Proxyについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: モダンなJSの話──Proxy
 slug: modern-js-proxy
 date: 2018-02-28T00:00:00Z
 author: bmf-san

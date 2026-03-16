@@ -1,6 +1,6 @@
 ---
 title: 2019年の全PHPカンファレンスをコンプリートした
-description: 2019年の全PHPカンファレンスをコンプリートしたについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: 2019年の全PHPカンファレンスをコンプリートした
 slug: complete-2019-php-conferences
 date: 2019-12-03T00:00:00Z
 author: bmf-san

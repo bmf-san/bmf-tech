@@ -1,6 +1,6 @@
 ---
 title: CircleCI2.0でPHPUnitのコードカバレッジを出力する
-description: CircleCI2.0でPHPUnitのコードカバレッジを出力するについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: CircleCI2.0でPHPUnitのコードカバレッジを出力する
 slug: circleci-phpunit-code-coverage
 date: 2018-08-13T00:00:00Z
 author: bmf-san

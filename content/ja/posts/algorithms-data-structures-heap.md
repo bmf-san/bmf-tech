@@ -1,6 +1,6 @@
 ---
 title: アルゴリズムとデータ構造 - ヒープ
-description: アルゴリズムとデータ構造 - ヒープについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: アルゴリズムとデータ構造 - ヒープ
 slug: algorithms-data-structures-heap
 date: 2020-01-14T00:00:00Z
 author: bmf-san

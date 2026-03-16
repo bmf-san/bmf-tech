@@ -1,6 +1,6 @@
 ---
 title: エンジニアの知的生産術 ──効率的に学び、整理し、アウトプットする
-description: エンジニアの知的生産術 ──効率的に学び、整理し、アウトプットするについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: エンジニアの知的生産術 ──効率的に学び、整理し、アウトプットする
 slug: engineer-productive-learning
 date: 2019-05-14T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: ソフトウェアテストの教科書
-description: ソフトウェアテストの教科書について、基本的な概念から実践的な知見まで詳しく解説します。
+description: ソフトウェアテストの教科書
 slug: software-testing-textbook
 date: 2022-11-22T00:00:00Z
 author: bmf-san

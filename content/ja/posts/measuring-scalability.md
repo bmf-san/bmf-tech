@@ -1,6 +1,6 @@
 ---
 title: スケーラビリティを計測する
-description: スケーラビリティを計測するについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: スケーラビリティを計測する
 slug: measuring-scalability
 date: 2025-06-08T00:00:00Z
 author: bmf-san

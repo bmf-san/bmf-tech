@@ -1,6 +1,6 @@
 ---
 title: Aurora Serverlessについて調べた
-description: Aurora Serverlessについて調べたについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: Aurora Serverlessについて調べた
 slug: aurora-serverless-research
 date: 2023-12-27T00:00:00Z
 author: bmf-san

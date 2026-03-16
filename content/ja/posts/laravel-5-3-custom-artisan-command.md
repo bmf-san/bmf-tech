@@ -1,6 +1,6 @@
 ---
 title: Laravel5.3で自作artisanコマンド.md
-description: Laravel5.3で自作artisanコマンド.mdについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: Laravel5.3で自作artisanコマンド.md
 slug: laravel-5-3-custom-artisan-command
 date: 2017-09-26T00:00:00Z
 author: bmf-san

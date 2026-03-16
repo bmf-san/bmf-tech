@@ -1,6 +1,6 @@
 ---
 title: php7をインストールした時にmysqlドライバーがなかった
-description: php7をインストールした時にmysqlドライバーがなかったについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: php7をインストールした時にmysqlドライバーがなかった
 slug: mysql-driver-php7-installation-issue
 date: 2017-10-01T00:00:00Z
 author: bmf-san

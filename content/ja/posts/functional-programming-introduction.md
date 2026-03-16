@@ -1,6 +1,6 @@
 ---
 title: なっとく！関数型プログラミング
-description: なっとく！関数型プログラミングについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: なっとく！関数型プログラミング
 slug: functional-programming-introduction
 date: 2025-08-31T00:00:00Z
 author: bmf-san

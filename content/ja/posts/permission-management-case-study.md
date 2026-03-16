@@ -1,6 +1,6 @@
 ---
 title: 権限管理基盤についての事例
-description: 権限管理基盤についての事例について、基本的な概念から実践的な知見まで詳しく解説します。
+description: 権限管理基盤についての事例
 slug: permission-management-case-study
 date: 2024-09-08T00:00:00Z
 author: bmf-san

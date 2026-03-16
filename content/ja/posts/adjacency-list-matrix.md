@@ -1,6 +1,6 @@
 ---
 title: 隣接リストと隣接行列
-description: 隣接リストと隣接行列について、基本的な概念から実践的な知見まで詳しく解説します。
+description: 隣接リストと隣接行列
 slug: adjacency-list-matrix
 date: 2023-07-29T00:00:00Z
 author: bmf-san

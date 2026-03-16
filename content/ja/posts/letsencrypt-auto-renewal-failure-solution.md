@@ -1,6 +1,6 @@
 ---
 title: Let'sEncryptの証明書自動更新に失敗し続けていたけど何とかした話
-description: 'Let''sEncryptの証明書自動更新に失敗し続けていたけど何とかした話について、基本的な概念から実践的な知見まで詳しく解説します。'
+description: 'Let''sEncryptの証明書自動更新に失敗し続けていたけど何とかした話'
 slug: letsencrypt-auto-renewal-failure-solution
 date: 2017-10-01T00:00:00Z
 author: bmf-san

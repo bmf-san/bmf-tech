@@ -1,6 +1,6 @@
 ---
 title: Webフロントエンド ハイパフォーマンス チューニング
-description: Webフロントエンド ハイパフォーマンス チューニングについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: Webフロントエンド ハイパフォーマンス チューニング
 slug: web-frontend-performance-tuning
 date: 2019-05-29T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Ubuntu 20.04.2 LTSでmysqlコンテナを起動するとPermission deniedで怒られた
-description: Ubuntu 20.04.2 LTSでmysqlコンテナを起動するとPermission deniedで怒られたについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: Ubuntu 20.04.2 LTSでmysqlコンテナを起動するとPermission deniedで怒られた
 slug: permission-denied-when-starting-mysql-container-on-ubuntu
 date: 2021-09-12T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: アルゴリズムとデータ構造 - 二分探索木
-description: アルゴリズムとデータ構造 - 二分探索木について、基本的な概念から実践的な知見まで詳しく解説します。
+description: アルゴリズムとデータ構造 - 二分探索木
 slug: algorithms-data-structures-binary-search-tree
 date: 2020-01-15T00:00:00Z
 lastmod: 2026-03-15

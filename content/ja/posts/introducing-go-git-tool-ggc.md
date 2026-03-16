@@ -1,6 +1,6 @@
 ---
 title: Go製Git操作ツール「ggc」の紹介
-description: Go製Git操作ツール「ggc」の紹介について、基本的な概念から実践的な知見まで詳しく解説します。
+description: Go製Git操作ツール「ggc」の紹介
 slug: introducing-go-git-tool-ggc
 date: 2025-06-15T00:00:00Z
 lastmod: 2026-03-15

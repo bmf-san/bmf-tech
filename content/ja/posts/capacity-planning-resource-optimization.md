@@ -1,6 +1,6 @@
 ---
 title: キャパシティプランニング ― リソースを最大限に活かすサイト分析・予測・配置
-description: キャパシティプランニング ― リソースを最大限に活かすサイト分析・予測・配置について、基本的な概念から実践的な知見まで詳しく解説します。
+description: キャパシティプランニング ― リソースを最大限に活かすサイト分析・予測・配置
 slug: capacity-planning-resource-optimization
 date: 2024-03-30T00:00:00Z
 author: bmf-san

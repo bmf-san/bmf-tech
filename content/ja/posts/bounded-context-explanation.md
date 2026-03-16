@@ -1,6 +1,6 @@
 ---
 title: 境界付けられたコンテキストとは
-description: 境界付けられたコンテキストとはについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: 境界付けられたコンテキストとは
 slug: bounded-context-explanation
 date: 2025-05-19T00:00:00Z
 author: bmf-san
