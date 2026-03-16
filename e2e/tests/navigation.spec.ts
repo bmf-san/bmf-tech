@@ -196,7 +196,7 @@ test.describe('Footer sitemap link', () => {
 
   test('JA footer also has sitemap link', async ({ page }) => {
     await page.goto('/ja/');
-    await expect(page.locator('footer').getByRole('link', { name: 'Sitemap' })).toBeVisible();
+    await expect(page.locator('footer').getByRole('link', { name: 'サイトマップ' })).toBeVisible();
   });
 });
 

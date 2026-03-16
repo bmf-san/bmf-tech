@@ -31,6 +31,8 @@
   {{- if and .Pagination (gt .Pagination.CurrentPage 1)}}
     {{- if eq .CurrentLocale "ja"}}{{$altURLHead = printf "%s/page/%d/" (slice .Pagination.BaseURL 3) .Pagination.CurrentPage}}{{else}}{{$altURLHead = printf "/ja%s/page/%d/" .Pagination.BaseURL .Pagination.CurrentPage}}{{end}}
   {{- end}}
+{{- else if .VirtualPageData}}
+  {{- if eq .CurrentLocale "ja"}}{{$altURLHead = "/bookshelf/"}}{{else}}{{$altURLHead = "/ja/bookshelf/"}}{{end}}
 {{- else if and .Pagination (gt .Pagination.CurrentPage 1)}}
   {{- if eq .CurrentLocale "ja"}}{{$altURLHead = printf "/page/%d/" .Pagination.CurrentPage}}{{else}}{{$altURLHead = printf "/ja/page/%d/" .Pagination.CurrentPage}}{{end}}
 {{- end}}
@@ -127,6 +129,14 @@
   {{- end}}
 {{- else if and .Pagination (gt .Pagination.CurrentPage 1)}}
   {{- $ogURL = printf "%s%s/page/%d/" .Config.Site.BaseURL .Pagination.BaseURL .Pagination.CurrentPage}}
+{{- else if .VirtualPageData}}
+  {{- if eq .CurrentLocale "ja"}}
+    {{- $ogTitle = printf "%s | %s" "本棚" .Config.Site.Title}}
+    {{- $ogURL = printf "%s/ja/bookshelf/" .Config.Site.BaseURL}}
+  {{- else}}
+    {{- $ogTitle = printf "%s | %s" "Bookshelf" .Config.Site.Title}}
+    {{- $ogURL = printf "%s/bookshelf/" .Config.Site.BaseURL}}
+  {{- end}}
 {{- end}}
 <link rel="canonical" href="{{$ogURL}}">
 {{- $selfLocale := "en"}}{{if .CurrentLocale}}{{$selfLocale = .CurrentLocale}}{{end}}
@@ -239,6 +249,13 @@
       {{- $altURL = printf "/ja%s/page/%d/" .Pagination.BaseURL .Pagination.CurrentPage}}
     {{- end}}
   {{- end}}
+{{- else if .VirtualPageData}}
+  {{- /* Virtual pages (e.g. bookshelf): toggle the locale prefix */}}
+  {{- if eq .CurrentLocale "ja"}}
+    {{- $altURL = "/bookshelf/"}}
+  {{- else}}
+    {{- $altURL = "/ja/bookshelf/"}}
+  {{- end}}
 {{- else if and .Pagination (gt .Pagination.CurrentPage 1)}}
   {{- if eq .CurrentLocale "ja"}}
     {{- $altURL = printf "/page/%d/" .Pagination.CurrentPage}}
@@ -293,7 +310,7 @@
       {{- end}}
     </div>
     <p class="flex justify-center gap-4">
-      <a href="/sitemap.xml" class="text-slate-400 text-xs hover:text-slate-200">Sitemap</a>
+      <a href="/sitemap.xml" class="text-slate-400 text-xs hover:text-slate-200">{{if eq .CurrentLocale "ja"}}サイトマップ{{else}}Sitemap{{end}}</a>
       {{if eq .CurrentLocale "ja"}}
       <a href="/ja/privacy-policy/" class="text-slate-400 text-xs hover:text-slate-200">プライバシーポリシー</a>
       {{else}}
