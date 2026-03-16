@@ -258,10 +258,12 @@
     {{if eq .CurrentLocale "ja"}}
     <li><a href="/ja/" class="navbar-item">ホーム</a></li>
     <li><a href="/ja/about/" class="navbar-item">About</a></li>
+    <li><a href="/ja/bookshelf/" class="navbar-item">本棚</a></li>
     <li><a href="/ja/atom.xml" class="navbar-item">フィード</a></li>
     {{else}}
     <li><a href="/" class="navbar-item">Home</a></li>
     <li><a href="/about/" class="navbar-item">About</a></li>
+    <li><a href="/bookshelf/" class="navbar-item">Bookshelf</a></li>
     <li><a href="/atom.xml" class="navbar-item">Feed</a></li>
     {{end}}
     <li><a href="{{$altURL}}" class="navbar-item" onclick="localStorage.setItem('pref-locale','{{$targetLocale}}')">

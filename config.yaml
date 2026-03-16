@@ -57,3 +57,6 @@ plugins:
   amazon_books:
     enabled: true
     tag: "bmf035-22"
+  bookshelf:
+    enabled: true
+    tag: "bmf035-22"

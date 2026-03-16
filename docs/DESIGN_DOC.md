@@ -17,6 +17,7 @@
 | `/archives/{year}/{month}/` | `archive.html` | 年月別アーカイブ |
 | `/about/` | `page.html` | プロフィール |
 | `/privacy-policy/` | `page.html` | プライバシーポリシー |
+| `/bookshelf/` | `bookshelf.html` | 書籍一覧（本棚・gohan bookshelf SitePlugin が自動生成） |
 | `/sitemap.xml` | gohan 自動生成 | XML サイトマップ |
 | `/atom.xml` | gohan 自動生成 | Atom フィード |
 
