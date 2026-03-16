@@ -1,0 +1,61 @@
+{{template "head" .}}
+<body class="bg-body">
+{{template "header" .}}
+<main class="container mx-auto py-8 max-w-5xl">
+  {{- $locale := .CurrentLocale}}
+  {{- $homeURL := "/"}}
+  {{- if eq $locale "ja"}}{{$homeURL = "/ja/"}}{{end}}
+
+  <header class="mb-8">
+    <ol class="breadcrumbs mb-4">
+      <li class="breadcrumbs-item">
+        <a href="{{$homeURL}}" class="breadcrumbs-link">{{if eq $locale "ja"}}ホーム{{else}}Home{{end}}</a>
+        <span class="breadcrumbs-separator">/</span>
+      </li>
+      <li class="breadcrumbs-item active">
+        <span class="breadcrumbs-link">{{if eq $locale "ja"}}本棚{{else}}Bookshelf{{end}}</span>
+      </li>
+    </ol>
+    <h1 class="text-4xl font-bold mb-2">{{if eq $locale "ja"}}本棚{{else}}Bookshelf{{end}}</h1>
+    <p class="text-secondary">
+      {{if eq $locale "ja"}}
+        読んだ本・おすすめ本の一覧です。書名をクリックすると Amazon へ、「書評を読む」をクリックするとブログ記事へ移動します。
+      {{else}}
+        Books I have read or recommend. Click the cover to view on Amazon, or "Read review" to open the blog post.
+      {{end}}
+    </p>
+  </header>
+
+  {{- $books := index .VirtualPageData "books"}}
+  {{if $books}}
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+    {{range $books}}
+    <div class="flex flex-col items-center text-center gap-2">
+      <a href="{{.LinkURL}}" target="_blank" rel="noopener noreferrer" class="block hover:opacity-80 transition-opacity" aria-label="{{.Title}} on Amazon">
+        <img
+          src="{{.ImageURL}}"
+          alt="{{.Title}}"
+          class="rounded shadow w-full max-w-[160px] object-cover"
+          loading="lazy"
+          width="250"
+          height="250"
+        >
+      </a>
+      <p class="text-sm font-medium leading-snug line-clamp-3">{{.Title}}</p>
+      {{if .ArticleURL}}
+      <a href="{{.ArticleURL}}" class="text-xs text-secondary underline hover:text-primary">
+        {{if eq $locale "ja"}}書評を読む{{else}}Read review{{end}}
+      </a>
+      {{end}}
+    </div>
+    {{end}}
+  </div>
+  {{else}}
+  <p class="text-secondary">
+    {{if eq $locale "ja"}}まだ本が登録されていません。{{else}}No books yet.{{end}}
+  </p>
+  {{end}}
+</main>
+{{template "footer" .}}
+</body>
+</html>
