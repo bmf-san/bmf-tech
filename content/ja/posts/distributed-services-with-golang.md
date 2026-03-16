@@ -1,6 +1,6 @@
 ---
 title: Go言語による分散サービス
-description: Go言語による分散サービスについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: Go言語による分散サービス
 slug: distributed-services-with-golang
 date: 2023-08-18T00:00:00Z
 author: bmf-san

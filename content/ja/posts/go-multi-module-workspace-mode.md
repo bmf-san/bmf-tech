@@ -1,6 +1,6 @@
 ---
 title: Goのマルチモジュール構成でWorkspace modeを使ってみる
-description: Goのマルチモジュール構成でWorkspace modeを使ってみるについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: Goのマルチモジュール構成でWorkspace modeを使ってみる
 slug: go-multi-module-workspace-mode
 date: 2024-01-19T00:00:00Z
 author: bmf-san

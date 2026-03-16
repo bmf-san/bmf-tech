@@ -1,6 +1,6 @@
 ---
 title: HTTPとSSL／TLS
-description: HTTPとSSL／TLSについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: HTTPとSSL／TLS
 slug: http-ssl-tls
 date: 2018-04-18T00:00:00Z
 author: bmf-san

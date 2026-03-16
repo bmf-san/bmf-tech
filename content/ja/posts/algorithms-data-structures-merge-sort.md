@@ -1,6 +1,6 @@
 ---
 title: アルゴリズムとデータ構造 - マージソート
-description: アルゴリズムとデータ構造 - マージソートについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: アルゴリズムとデータ構造 - マージソート
 slug: algorithms-data-structures-merge-sort
 date: 2020-02-01T00:00:00Z
 author: bmf-san

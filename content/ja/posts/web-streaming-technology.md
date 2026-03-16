@@ -1,6 +1,6 @@
 ---
 title: Web配信の技術―HTTPキャッシュ・リバースプロキシ・CDNを活用する
-description: Web配信の技術―HTTPキャッシュ・リバースプロキシ・CDNを活用するについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: Web配信の技術―HTTPキャッシュ・リバースプロキシ・CDNを活用する
 slug: web-streaming-technology
 date: 2026-01-05T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Cloud SQLとAlloyDBの比較
-description: Cloud SQLとAlloyDBの比較について、基本的な概念から実践的な知見まで詳しく解説します。
+description: Cloud SQLとAlloyDBの比較
 slug: cloud-sql-alloydb-comparison
 date: 2024-11-17T00:00:00Z
 author: bmf-san

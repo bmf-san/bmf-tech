@@ -1,6 +1,6 @@
 ---
 title: ゼロからわかるファイナンス思考 働く人と会社の成長戦略
-description: ゼロからわかるファイナンス思考 働く人と会社の成長戦略について、基本的な概念から実践的な知見まで詳しく解説します。
+description: ゼロからわかるファイナンス思考 働く人と会社の成長戦略
 slug: finance-thinking-from-zero
 date: 2022-04-27T00:00:00Z
 author: bmf-san

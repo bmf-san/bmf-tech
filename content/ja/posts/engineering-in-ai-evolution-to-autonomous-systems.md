@@ -1,6 +1,6 @@
 ---
 title: AI時代のエンジニアリング：プロンプトから自律型システムへの進化
-description: AI時代のエンジニアリング：プロンプトから自律型システムへの進化について、基本的な概念から実践的な知見まで詳しく解説します。
+description: AI時代のエンジニアリング：プロンプトから自律型システムへの進化
 slug: engineering-in-ai-evolution-to-autonomous-systems
 date: 2026-02-25T00:00:00Z
 author: bmf-san

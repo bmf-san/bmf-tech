@@ -1,6 +1,6 @@
 ---
 title: Web APIテスト技法
-description: Web APIテスト技法について、基本的な概念から実践的な知見まで詳しく解説します。
+description: Web APIテスト技法
 slug: web-api-testing-techniques
 date: 2024-07-08T00:00:00Z
 author: bmf-san

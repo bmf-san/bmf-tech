@@ -1,6 +1,6 @@
 ---
 title: ジョブ理論
-description: ジョブ理論について、基本的な概念から実践的な知見まで詳しく解説します。
+description: ジョブ理論
 slug: job-theory-overview
 date: 2024-03-20T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: AWS認定ソリューションアーキテクトアソシエイトを受験した
-description: AWS認定ソリューションアーキテクトアソシエイトを受験したについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: AWS認定ソリューションアーキテクトアソシエイトを受験した
 slug: took-aws-certified-solutions-architect-associate
 date: 2021-07-17T00:00:00Z
 author: bmf-san

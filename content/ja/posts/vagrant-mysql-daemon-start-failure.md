@@ -1,6 +1,6 @@
 ---
 title: Vagrant上のMySQLで"MySQL Daemon failed to start
-description: 'Vagrant上のMySQLで"MySQL Daemon failed to startについて、基本的な概念から実践的な知見まで詳しく解説します。'
+description: 'Vagrant上のMySQLで"MySQL Daemon failed to start'
 slug: vagrant-mysql-daemon-start-failure
 date: 2017-10-01T00:00:00Z
 author: bmf-san

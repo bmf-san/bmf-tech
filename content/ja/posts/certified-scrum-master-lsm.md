@@ -1,6 +1,6 @@
 ---
 title: 認定スクラムマスター（LSM）になった
-description: 認定スクラムマスター（LSM）になったについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: 認定スクラムマスター（LSM）になった
 slug: certified-scrum-master-lsm
 date: 2023-08-01T00:00:00Z
 author: bmf-san

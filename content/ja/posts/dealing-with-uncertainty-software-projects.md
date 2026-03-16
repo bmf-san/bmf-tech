@@ -1,6 +1,6 @@
 ---
 title: ソフトウェア開発のプロジェクトにおける不確実性への向き合い方
-description: ソフトウェア開発のプロジェクトにおける不確実性への向き合い方について、基本的な概念から実践的な知見まで詳しく解説します。
+description: ソフトウェア開発のプロジェクトにおける不確実性への向き合い方
 slug: dealing-with-uncertainty-software-projects
 date: 2023-12-22T00:00:00Z
 lastmod: 2026-03-15

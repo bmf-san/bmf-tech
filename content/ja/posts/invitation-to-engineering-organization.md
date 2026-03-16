@@ -1,6 +1,6 @@
 ---
 title: エンジニアリング組織論への招待 ~不確実性に向き合う思考と組織のリファクタリング
-description: エンジニアリング組織論への招待 ~不確実性に向き合う思考と組織のリファクタリングについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: エンジニアリング組織論への招待 ~不確実性に向き合う思考と組織のリファクタリング
 slug: invitation-to-engineering-organization
 date: 2024-11-17T00:00:00Z
 author: bmf-san

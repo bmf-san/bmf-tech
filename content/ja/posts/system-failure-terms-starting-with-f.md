@@ -1,6 +1,6 @@
 ---
 title: フから始まるシステム障害関連用語
-description: フから始まるシステム障害関連用語について、基本的な概念から実践的な知見まで詳しく解説します。
+description: フから始まるシステム障害関連用語
 slug: system-failure-terms-starting-with-f
 date: 2021-06-05T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Laravel+React+ES6+Browserify
-description: Laravel+React+ES6+Browserifyについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: Laravel+React+ES6+Browserify
 slug: laravel-react-es6-browserify
 date: 2017-09-26T00:00:00Z
 author: bmf-san

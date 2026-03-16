@@ -1,6 +1,6 @@
 ---
 title: DBドキュメント（ER図など）を自動生成してくれるツールーschemaspy, tbls
-description: DBドキュメント（ER図など）を自動生成してくれるツールーschemaspy, tblsについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: DBドキュメント（ER図など）を自動生成してくれるツールーschemaspy, tbls
 slug: db-documentation-tools-schemaspy-tbls
 date: 2020-07-09T00:00:00Z
 author: bmf-san

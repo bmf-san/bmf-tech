@@ -1,6 +1,6 @@
 ---
 title: anyenvでインストールしたrbenvでbundlerをinstallしたときにパスでハマった
-description: anyenvでインストールしたrbenvでbundlerをinstallしたときにパスでハマったについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: anyenvでインストールしたrbenvでbundlerをinstallしたときにパスでハマった
 slug: rbenv-bundler-install-path-issue
 date: 2018-12-04T00:00:00Z
 author: bmf-san

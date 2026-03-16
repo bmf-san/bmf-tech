@@ -1,6 +1,6 @@
 ---
 title: Letsencryptの証明書自動更新スクリプト
-description: Letsencryptの証明書自動更新スクリプトについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: Letsencryptの証明書自動更新スクリプト
 slug: letsencrypt-auto-renewal-script
 date: 2017-10-01T00:00:00Z
 author: bmf-san

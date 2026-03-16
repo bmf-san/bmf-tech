@@ -10,6 +10,9 @@ tags:
   - SaaS
   - アーキテクチャ
 translation_key: building-multitenant-saas-architecture
+books:
+  - asin: "4814401019"
+    title: "マルチテナントSaaSアーキテクチャの構築 ―原則、ベストプラクティス、AWSアーキテクチャパターン"
 ---
 
 

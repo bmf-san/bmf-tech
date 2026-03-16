@@ -1,6 +1,6 @@
 ---
 title: MySQLで全文検索
-description: MySQLで全文検索について、基本的な概念から実践的な知見まで詳しく解説します。
+description: MySQLで全文検索
 slug: full-text-search-with-mysql
 date: 2023-04-30T00:00:00Z
 author: bmf-san

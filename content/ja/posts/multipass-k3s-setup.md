@@ -1,6 +1,6 @@
 ---
 title: multipassでk3sを動かす
-description: multipassでk3sを動かすについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: multipassでk3sを動かす
 slug: multipass-k3s-setup
 date: 2023-08-17T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Rubyのインスタンス変数とクラス変数とクラスインスタンス変数の違い
-description: Rubyのインスタンス変数とクラス変数とクラスインスタンス変数の違いについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: Rubyのインスタンス変数とクラス変数とクラスインスタンス変数の違い
 slug: ruby-instance-class-variables
 date: 2025-01-31T00:00:00Z
 author: bmf-san

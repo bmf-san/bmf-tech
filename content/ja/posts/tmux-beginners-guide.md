@@ -1,6 +1,6 @@
 ---
 title: tmuxコトハジメ
-description: tmuxコトハジメについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: tmuxコトハジメ
 slug: tmux-beginners-guide
 date: 2018-05-22T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: MySQLでテストデータを生成するSQL
-description: MySQLでテストデータを生成するSQLについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: MySQLでテストデータを生成するSQL
 slug: mysql-test-data-generation-sql
 date: 2019-07-16T00:00:00Z
 author: bmf-san

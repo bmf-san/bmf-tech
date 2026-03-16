@@ -1,6 +1,6 @@
 ---
 title: ストリートコーダー
-description: ストリートコーダーについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: ストリートコーダー
 slug: street-coder
 date: 2025-09-20T00:00:00Z
 author: bmf-san

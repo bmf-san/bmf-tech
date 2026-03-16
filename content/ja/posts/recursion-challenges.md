@@ -1,6 +1,6 @@
 ---
 title: 再帰処理の苦手なところ
-description: 再帰処理の苦手なところについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: 再帰処理の苦手なところ
 slug: recursion-challenges
 date: 2023-07-08T00:00:00Z
 author: bmf-san

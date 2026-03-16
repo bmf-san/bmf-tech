@@ -11,6 +11,9 @@ tags:
   - OpenID Connect
   - Book
 translation_key: oauth-oidc-attacks-and-countermeasures-guide
+books:
+  - title: Understanding Attacks and Countermeasures on OAuth/OIDC (Redirect Attack Edition)
+    url: https://authya.booth.pm/items/1877818
 ---
 
 

@@ -1,6 +1,6 @@
 ---
 title: Goでmysqldumpツールをつくる
-description: Goでmysqldumpツールをつくるについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: Goでmysqldumpツールをつくる
 slug: creating-mysqldump-tool-with-go
 date: 2019-02-04T00:00:00Z
 author: bmf-san

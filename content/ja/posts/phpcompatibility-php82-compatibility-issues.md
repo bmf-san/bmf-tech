@@ -1,6 +1,6 @@
 ---
 title: PHPCompatibilityを使ってPHP8.2の互換性チェックを行う際にハマったこと
-description: PHPCompatibilityを使ってPHP8.2の互換性チェックを行う際にハマったことについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: PHPCompatibilityを使ってPHP8.2の互換性チェックを行う際にハマったこと
 slug: phpcompatibility-php82-compatibility-issues
 date: 2024-04-14T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: buildxを使ったGoアプリケーションイメージのクロスコンパイル
-description: buildxを使ったGoアプリケーションイメージのクロスコンパイルについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: buildxを使ったGoアプリケーションイメージのクロスコンパイル
 slug: cross-compiling-go-app-with-buildx
 date: 2023-04-20T00:00:00Z
 author: bmf-san

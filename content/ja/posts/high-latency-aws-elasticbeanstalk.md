@@ -1,6 +1,6 @@
 ---
 title: AWS(Elasticbeanstalk)のレイテンシーがやたら高いと思ったら・・・
-description: AWS(Elasticbeanstalk)のレイテンシーがやたら高いと思ったら・・・について、基本的な概念から実践的な知見まで詳しく解説します。
+description: AWS(Elasticbeanstalk)のレイテンシーがやたら高いと思ったら・・・
 slug: high-latency-aws-elasticbeanstalk
 date: 2017-09-26T00:00:00Z
 author: bmf-san

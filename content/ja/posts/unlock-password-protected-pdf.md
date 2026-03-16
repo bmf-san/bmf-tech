@@ -1,6 +1,6 @@
 ---
 title: パスワード付きPDFの解除をするワンライナー
-description: パスワード付きPDFの解除をするワンライナーについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: パスワード付きPDFの解除をするワンライナー
 slug: unlock-password-protected-pdf
 date: 2024-03-29T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: アルゴリズムとデータ構造 - ハッシュマップ
-description: アルゴリズムとデータ構造 - ハッシュマップについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: アルゴリズムとデータ構造 - ハッシュマップ
 slug: algorithms-data-structures-hashmap
 date: 2023-07-31T00:00:00Z
 author: bmf-san

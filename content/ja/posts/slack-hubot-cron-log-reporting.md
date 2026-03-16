@@ -1,6 +1,6 @@
 ---
 title: Slack＋hubot＋cron(node-cron)＋shell＋logwatchでサーバーログを定時報告
-description: Slack＋hubot＋cron(node-cron)＋shell＋logwatchでサーバーログを定時報告について、基本的な概念から実践的な知見まで詳しく解説します。
+description: Slack＋hubot＋cron(node-cron)＋shell＋logwatchでサーバーログを定時報告
 slug: slack-hubot-cron-log-reporting
 date: 2017-10-01T00:00:00Z
 author: bmf-san

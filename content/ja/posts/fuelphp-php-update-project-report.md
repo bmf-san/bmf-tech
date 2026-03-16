@@ -1,6 +1,6 @@
 ---
 title: FuelPHPとPHPのアップデートプロジェクトレポート
-description: FuelPHPとPHPのアップデートプロジェクトレポートについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: FuelPHPとPHPのアップデートプロジェクトレポート
 slug: fuelphp-php-update-project-report
 date: 2024-01-26T00:00:00Z
 author: bmf-san
