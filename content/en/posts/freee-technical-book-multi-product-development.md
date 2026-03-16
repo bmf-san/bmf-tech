@@ -11,6 +11,9 @@ tags:
   - System Design
   - Book
 translation_key: freee-technical-book-multi-product-development
+books:
+  - title: freee Technical Book - Multi-Product Development at freee
+    url: https://techbookfest.org/product/8UNZJF7Rs5AWuqReQuZZgs?productVariantID=fZvUHjHxH4hqG6wtAaAVWN
 ---
 
 [Read the book on freee's technology](https://techbookfest.org/product/8UNZJF7Rs5AWuqReQuZZgs?productVariantID=fZvUHjHxH4hqG6wtAaAVWN).
