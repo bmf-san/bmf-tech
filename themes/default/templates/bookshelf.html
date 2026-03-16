@@ -26,30 +26,37 @@
     </p>
   </header>
 
-  {{- $books := index .VirtualPageData "books"}}
-  {{if $books}}
-  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-    {{range $books}}
-    <div class="flex flex-col items-center text-center gap-2">
-      <a href="{{.LinkURL}}" target="_blank" rel="noopener noreferrer" class="block hover:opacity-80 transition-opacity" aria-label="{{.Title}} on Amazon">
-        <img
-          src="{{.ImageURL}}"
-          alt="{{.Title}}"
-          class="rounded shadow w-full max-w-[160px] object-cover"
-          loading="lazy"
-          width="250"
-          height="250"
-        >
-      </a>
-      <p class="text-sm font-medium leading-snug line-clamp-3">{{.Title}}</p>
-      {{if .ArticleURL}}
-      <a href="{{.ArticleURL}}" class="text-xs text-secondary underline hover:text-primary">
-        {{if eq $locale "ja"}}書評を読む{{else}}Read review{{end}}
-      </a>
+  {{- $categories := index .VirtualPageData "categories"}}
+  {{if $categories}}
+  {{- range $categories}}
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-6 pb-2 border-b border-border">
+      {{if .Name}}{{.Name}}{{else}}{{if eq $locale "ja"}}未分類{{else}}Uncategorized{{end}}{{end}}
+    </h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+      {{range .Books}}
+      <div class="flex flex-col items-center text-center gap-2">
+        <a href="{{.LinkURL}}" target="_blank" rel="noopener noreferrer" class="block hover:opacity-80 transition-opacity" aria-label="{{.Title}} on Amazon">
+          <img
+            src="{{.ImageURL}}"
+            alt="{{.Title}}"
+            class="rounded shadow w-full max-w-[160px] object-cover"
+            loading="lazy"
+            width="250"
+            height="250"
+          >
+        </a>
+        <p class="text-sm font-medium leading-snug line-clamp-3">{{.Title}}</p>
+        {{if .ArticleURL}}
+        <a href="{{.ArticleURL}}" class="text-xs text-secondary underline hover:text-primary">
+          {{if eq $locale "ja"}}書評を読む{{else}}Read review{{end}}
+        </a>
+        {{end}}
+      </div>
       {{end}}
     </div>
-    {{end}}
-  </div>
+  </section>
+  {{end}}
   {{else}}
   <p class="text-secondary">
     {{if eq $locale "ja"}}まだ本が登録されていません。{{else}}No books yet.{{end}}
