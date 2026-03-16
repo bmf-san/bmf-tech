@@ -35,7 +35,8 @@
   {{- if eq .CurrentLocale "ja"}}{{$altURLHead = "/bookshelf/"}}{{else}}{{$altURLHead = "/ja/bookshelf/"}}{{end}}
 {{- else if and .Pagination (gt .Pagination.CurrentPage 1)}}
   {{- if eq .CurrentLocale "ja"}}{{$altURLHead = printf "/page/%d/" .Pagination.CurrentPage}}{{else}}{{$altURLHead = printf "/ja/page/%d/" .Pagination.CurrentPage}}{{end}}
-{{- end}}>
+{{- end}}
+<html lang="{{if .CurrentLocale}}{{.CurrentLocale}}{{else}}{{.Config.Site.Language}}{{end}}">
 <head>
 <meta charset="utf-8">
 <meta name="color-scheme" content="light dark">
