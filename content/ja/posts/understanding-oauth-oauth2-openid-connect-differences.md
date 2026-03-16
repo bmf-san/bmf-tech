@@ -13,6 +13,9 @@ tags:
   - 認可
   - 書評
 translation_key: understanding-oauth-oauth2-openid-connect-differences
+books:
+  - title: OAuth、OAuth認証、OpenID Connectの違いを整理して理解できる本
+    url: https://authya.booth.pm/items/1550861
 ---
 
 

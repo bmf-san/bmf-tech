@@ -13,6 +13,9 @@ tags:
   - Authorization
   - Book
 translation_key: understanding-oauth-oauth2-openid-connect-differences
+books:
+  - title: A Book to Understand the Differences Between OAuth, OAuth Authentication, and OpenID Connect
+    url: https://authya.booth.pm/items/1550861
 ---
 
 

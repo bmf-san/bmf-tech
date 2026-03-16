@@ -11,6 +11,9 @@ tags:
   - OpenIDConnect
   - 書評
 translation_key: oauth-oidc-attacks-and-countermeasures-guide
+books:
+  - title: OAuth・OIDCへの攻撃と対策を整理して理解できる本（リダイレクトへの攻撃編）
+    url: https://authya.booth.pm/items/1877818
 ---
 
 
