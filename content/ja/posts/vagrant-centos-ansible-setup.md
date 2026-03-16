@@ -1,6 +1,6 @@
 ---
 title: Vagrant+CentOS7.3+Ansible
-description: Vagrant+CentOS7.3+Ansibleについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: Vagrant+CentOS7.3+Ansible
 slug: vagrant-centos-ansible-setup
 date: 2017-10-01T00:00:00Z
 author: bmf-san

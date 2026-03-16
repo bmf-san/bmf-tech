@@ -1,6 +1,6 @@
 ---
 title: アジャイルサムライ
-description: アジャイルサムライについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: アジャイルサムライ
 slug: agile-samurai
 date: 2020-09-12T00:00:00Z
 author: bmf-san

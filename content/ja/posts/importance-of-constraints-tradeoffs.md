@@ -1,6 +1,6 @@
 ---
 title: 技術的な意思決定において制約やトレードオフを明示することの重要性
-description: 技術的な意思決定において制約やトレードオフを明示することの重要性について、基本的な概念から実践的な知見まで詳しく解説します。
+description: 技術的な意思決定において制約やトレードオフを明示することの重要性
 slug: importance-of-constraints-tradeoffs
 date: 2025-08-05T00:00:00Z
 author: bmf-san

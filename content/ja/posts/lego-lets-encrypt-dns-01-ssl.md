@@ -1,6 +1,6 @@
 ---
 title: legoでLet's encryptのSSL証明書をDNS-01方式で取得する
-description: 'legoでLet''s encryptのSSL証明書をDNS-01方式で取得するについて、基本的な概念から実践的な知見まで詳しく解説します。'
+description: 'legoでLet''s encryptのSSL証明書をDNS-01方式で取得する'
 slug: lego-lets-encrypt-dns-01-ssl
 date: 2022-01-18T00:00:00Z
 lastmod: 2026-03-15

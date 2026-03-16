@@ -1,6 +1,6 @@
 ---
 title: 健康になる技術　大全
-description: 健康になる技術　大全について、基本的な概念から実践的な知見まで詳しく解説します。
+description: 健康になる技術　大全
 slug: health-technology-guide
 date: 2024-05-09T00:00:00Z
 author: bmf-san

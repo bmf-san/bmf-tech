@@ -1,6 +1,6 @@
 ---
 title: Atom×TidalCycles×SuperColliderでライブコーディングをはじめる
-description: Atom×TidalCycles×SuperColliderでライブコーディングをはじめるについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: Atom×TidalCycles×SuperColliderでライブコーディングをはじめる
 slug: live-coding-atom-tidalcycles-supercollider
 date: 2018-06-11T00:00:00Z
 author: bmf-san

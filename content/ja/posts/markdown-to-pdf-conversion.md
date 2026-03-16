@@ -1,6 +1,6 @@
 ---
 title: マークダウン形式のファイルをPDFファイルに変換する（mermaid・emoji・toc対応）
-description: マークダウン形式のファイルをPDFファイルに変換する（mermaid・emoji・toc対応）について、基本的な概念から実践的な知見まで詳しく解説します。
+description: マークダウン形式のファイルをPDFファイルに変換する（mermaid・emoji・toc対応）
 slug: markdown-to-pdf-conversion
 date: 2022-09-01T00:00:00Z
 lastmod: 2026-03-15

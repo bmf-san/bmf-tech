@@ -1,6 +1,6 @@
 ---
 title: PHPで学ぶデザインパターン - Template Method ~処理の穴埋め~
-description: PHPで学ぶデザインパターン - Template Method ~処理の穴埋め~について、基本的な概念から実践的な知見まで詳しく解説します。
+description: PHPで学ぶデザインパターン - Template Method ~処理の穴埋め~
 slug: php-design-patterns-template-method
 date: 2017-10-01T00:00:00Z
 author: bmf-san

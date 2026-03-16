@@ -1,6 +1,6 @@
 ---
 title: LEAN ANALYTICS スタートアップのためのデータ解析と活用法
-description: LEAN ANALYTICS スタートアップのためのデータ解析と活用法について、基本的な概念から実践的な知見まで詳しく解説します。
+description: LEAN ANALYTICS スタートアップのためのデータ解析と活用法
 slug: lean-analytics-startup-data-analysis
 date: 2016-11-19T00:00:00Z
 author: bmf-san

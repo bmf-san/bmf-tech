@@ -1,6 +1,6 @@
 ---
 title: ザ・モデル
-description: ザ・モデルについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: ザ・モデル
 slug: the-model
 date: 2024-04-16T00:00:00Z
 author: bmf-san

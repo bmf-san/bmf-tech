@@ -1,6 +1,6 @@
 ---
 title: SCRUM BOOT CAMP THE BOOK【増補改訂版】 スクラムチームではじめるアジャイル開発
-description: SCRUM BOOT CAMP THE BOOK【増補改訂版】 スクラムチームではじめるアジャイル開発について、基本的な概念から実践的な知見まで詳しく解説します。
+description: SCRUM BOOT CAMP THE BOOK【増補改訂版】 スクラムチームではじめるアジャイル開発
 slug: scrum-boot-camp-agile-development
 date: 2020-09-07T00:00:00Z
 author: bmf-san

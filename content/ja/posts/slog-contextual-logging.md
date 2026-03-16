@@ -1,6 +1,6 @@
 ---
 title: slogを使ったContextual Logging
-description: slogを使ったContextual Loggingについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: slogを使ったContextual Logging
 slug: slog-contextual-logging
 date: 2023-10-08T00:00:00Z
 author: bmf-san

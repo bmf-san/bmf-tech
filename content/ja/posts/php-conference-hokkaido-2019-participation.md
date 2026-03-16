@@ -1,6 +1,6 @@
 ---
 title: PHPカンファレンス北海道2019に参加してきた
-description: PHPカンファレンス北海道2019に参加してきたについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: PHPカンファレンス北海道2019に参加してきた
 slug: php-conference-hokkaido-2019-participation
 date: 2019-10-06T00:00:00Z
 author: bmf-san

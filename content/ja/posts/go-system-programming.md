@@ -1,6 +1,6 @@
 ---
 title: Goならわかるシステムプログラミング
-description: Goならわかるシステムプログラミングについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: Goならわかるシステムプログラミング
 slug: go-system-programming
 date: 2018-11-30T00:00:00Z
 author: bmf-san

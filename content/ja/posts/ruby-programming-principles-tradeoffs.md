@@ -1,6 +1,6 @@
 ---
 title: 研鑽Rubyプログラミング 実践的なコードのための原則とトレードオフ
-description: 研鑽Rubyプログラミング 実践的なコードのための原則とトレードオフについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: 研鑽Rubyプログラミング 実践的なコードのための原則とトレードオフ
 slug: ruby-programming-principles-tradeoffs
 date: 2024-10-28T00:00:00Z
 author: bmf-san

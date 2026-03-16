@@ -1,6 +1,6 @@
 ---
 title: FuelPHPの2025年2月現在の現況 by 生成AI
-description: FuelPHPの2025年2月現在の現況 by 生成AIについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: FuelPHPの2025年2月現在の現況 by 生成AI
 slug: fuelphp-status-february-2025
 date: 2025-02-27T00:00:00Z
 author: bmf-san

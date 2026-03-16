@@ -1,6 +1,6 @@
 ---
 title: ファイルシステムの容量不足によるサービスダウン
-description: ファイルシステムの容量不足によるサービスダウンについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: ファイルシステムの容量不足によるサービスダウン
 slug: service-outage-due-to-storage
 date: 2023-05-07T00:00:00Z
 author: bmf-san

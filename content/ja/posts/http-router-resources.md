@@ -1,6 +1,6 @@
 ---
 title: HTTP Routerの自作で参考にした資料
-description: HTTP Routerの自作で参考にした資料について、基本的な概念から実践的な知見まで詳しく解説します。
+description: HTTP Routerの自作で参考にした資料
 slug: http-router-resources
 date: 2023-10-30T00:00:00Z
 author: bmf-san

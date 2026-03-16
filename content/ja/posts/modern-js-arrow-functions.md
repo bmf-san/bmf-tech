@@ -1,6 +1,6 @@
 ---
 title: モダンなJSの話──アロー関数
-description: モダンなJSの話──アロー関数について、基本的な概念から実践的な知見まで詳しく解説します。
+description: モダンなJSの話──アロー関数
 slug: modern-js-arrow-functions
 date: 2017-12-25T00:00:00Z
 author: bmf-san

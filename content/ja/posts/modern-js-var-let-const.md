@@ -1,6 +1,6 @@
 ---
 title: モダンなJSの話──var/let/const
-description: モダンなJSの話──var/let/constについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: モダンなJSの話──var/let/const
 slug: modern-js-var-let-const
 date: 2017-12-25T00:00:00Z
 author: bmf-san

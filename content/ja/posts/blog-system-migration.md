@@ -1,6 +1,6 @@
 ---
 title: ブログのシステムを移行した
-description: ブログのシステムを移行したについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: ブログのシステムを移行した
 slug: blog-system-migration
 date: 2022-06-14T00:00:00Z
 author: bmf-san

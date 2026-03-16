@@ -1,6 +1,6 @@
 ---
 title: Goのhtml／templateでURLをエンコードさせない
-description: Goのhtml／templateでURLをエンコードさせないについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: Goのhtml／templateでURLをエンコードさせない
 slug: go-html-template-url-encoding
 date: 2023-04-23T00:00:00Z
 author: bmf-san

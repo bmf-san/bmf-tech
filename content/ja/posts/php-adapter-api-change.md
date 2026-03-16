@@ -1,6 +1,6 @@
 ---
 title: PHPで学ぶデザインパターン - Adapter ~APIを変更する~
-description: PHPで学ぶデザインパターン - Adapter ~APIを変更する~について、基本的な概念から実践的な知見まで詳しく解説します。
+description: PHPで学ぶデザインパターン - Adapter ~APIを変更する~
 slug: php-adapter-api-change
 date: 2017-10-01T00:00:00Z
 author: bmf-san

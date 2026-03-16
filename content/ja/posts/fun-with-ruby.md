@@ -1,6 +1,6 @@
 ---
 title: たのしいRuby
-description: たのしいRubyについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: たのしいRuby
 slug: fun-with-ruby
 date: 2024-05-04T00:00:00Z
 author: bmf-san

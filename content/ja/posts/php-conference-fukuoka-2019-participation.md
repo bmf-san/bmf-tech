@@ -1,6 +1,6 @@
 ---
 title: PHPカンファレンス福岡2019に参加・登壇してきました
-description: PHPカンファレンス福岡2019に参加・登壇してきましたについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: PHPカンファレンス福岡2019に参加・登壇してきました
 slug: php-conference-fukuoka-2019-participation
 date: 2019-07-04T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: アルゴリズムとデータ構造 - ヒープソート
-description: アルゴリズムとデータ構造 - ヒープソートについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: アルゴリズムとデータ構造 - ヒープソート
 slug: algorithms-data-structures-heap-sort
 date: 2020-02-01T00:00:00Z
 author: bmf-san

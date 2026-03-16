@@ -1,6 +1,6 @@
 ---
 title: テスト駆動開発
-description: テスト駆動開発について、基本的な概念から実践的な知見まで詳しく解説します。
+description: テスト駆動開発
 slug: test-driven-development
 date: 2017-10-08T00:00:00Z
 author: bmf-san

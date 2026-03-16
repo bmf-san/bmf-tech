@@ -1,6 +1,6 @@
 ---
 title: 'Web API: The Good Parts'
-description: 'Web API: The Good Partsについて、基本的な概念から実践的な知見まで詳しく解説します。'
+description: 'Web API: The Good Parts'
 slug: web-api-good-parts
 date: 2016-10-18T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: GCPについての覚え書き
-description: GCPについての覚え書きについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: GCPについての覚え書き
 slug: gcp-notes-and-resources
 date: 2023-05-22T00:00:00Z
 author: bmf-san

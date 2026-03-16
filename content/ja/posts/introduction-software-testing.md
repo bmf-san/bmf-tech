@@ -1,6 +1,6 @@
 ---
 title: はじめて学ぶソフトウェアのテスト技法
-description: はじめて学ぶソフトウェアのテスト技法について、基本的な概念から実践的な知見まで詳しく解説します。
+description: はじめて学ぶソフトウェアのテスト技法
 slug: introduction-software-testing
 date: 2018-05-04T00:00:00Z
 author: bmf-san
@@ -11,6 +11,7 @@ tags:
 translation_key: introduction-software-testing
 books:
   - asin: "4822282511"
+    title: "はじめて学ぶソフトウェアのテスト技法"
 ---
 
 

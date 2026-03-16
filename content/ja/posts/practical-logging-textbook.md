@@ -13,6 +13,7 @@ tags:
 translation_key: practical-logging-textbook
 books:
   - asin: "4798192120"
+    title: "実務で役立つ ログの教科書 基礎知識から収集方法・分析手法・トラブルシューティング・パフォーマンス最適化・機械学習での活用まで"
 ---
 
 

@@ -1,6 +1,6 @@
 ---
 title: More Effective Agile
-description: More Effective Agileについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: More Effective Agile
 slug: more-effective-agile
 date: 2023-10-01T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: PHPカンファレンス沖縄2019に参加してきた
-description: PHPカンファレンス沖縄2019に参加してきたについて、基本的な概念から実践的な知見まで詳しく解説します。
+description: PHPカンファレンス沖縄2019に参加してきた
 slug: php-conference-okinawa-2019-participation
 date: 2019-10-13T00:00:00Z
 author: bmf-san

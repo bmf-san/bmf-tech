@@ -1,6 +1,6 @@
 ---
 title: Laravelのredirect('hoge')とredirect()->to('hoge')の違い
-description: 'Laravelのredirect(''hoge'')とredirect()->to(''hoge'')の違いについて、基本的な概念から実践的な知見まで詳しく解説します。'
+description: 'Laravelのredirect(''hoge'')とredirect()->to(''hoge'')の違い'
 slug: laravel-redirect-differences
 date: 2017-10-01T00:00:00Z
 author: bmf-san

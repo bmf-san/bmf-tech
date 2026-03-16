@@ -1,6 +1,6 @@
 ---
 title: クネビンフレームワークを活用したストーリーポイントの考え方
-description: クネビンフレームワークを活用したストーリーポイントの考え方について、基本的な概念から実践的な知見まで詳しく解説します。
+description: クネビンフレームワークを活用したストーリーポイントの考え方
 slug: story-points-using-cynefin-framework
 date: 2025-02-26T00:00:00Z
 author: bmf-san
