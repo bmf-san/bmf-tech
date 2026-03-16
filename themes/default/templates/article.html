@@ -56,8 +56,8 @@
   <div class="flex flex-wrap justify-start gap-6 mb-8">
     {{range .books}}
     <a href="{{.LinkURL}}" target="_blank" rel="noopener noreferrer" class="flex flex-col items-start gap-2">
-      <img src="{{.ImageURL}}" alt="{{.Title}}" class="h-30 object-contain rounded shadow" loading="lazy">
-      {{if .Title}}<span class="text-xs text-secondary text-left" style="max-width:8rem;word-break:break-word">{{.Title}}</span>{{end}}
+      <img src="{{.ImageURL}}" alt="{{.Title}}" class="h-48 object-contain rounded shadow" loading="lazy">
+      {{if .Title}}<span class="text-xs text-secondary text-left" style="max-width:10rem;word-break:break-word">{{.Title}}</span>{{end}}
     </a>
     {{end}}
   </div>
