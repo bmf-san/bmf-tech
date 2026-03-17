@@ -8,8 +8,14 @@
 /sitemap  /sitemap.xml  301
 /feed  /atom.xml  301
 /posts/search  /  301
+/categories/:splat  /ja/categories/:splat  301
 /categories  /ja/  301
+/tags/:splat  /ja/tags/:splat  301
 /tags  /ja/  301
+/profiles  /ja/about/  301
+/posts/categories/  /ja/  301
+/posts/tags/  /ja/  301
+/posts/www.linkedin.com/in/bmf-san  https://www.linkedin.com/in/bmf-san  301
 
 # Articles: /posts/{japanese-title} -> /ja/posts/{slug}/
 /posts/OSS%E3%82%92%E3%81%AF%E3%81%98%E3%82%81%E3%81%A6%E3%81%BF%E3%81%9F%E8%A9%B1  /ja/posts/starting-with-oss/  301
@@ -617,6 +623,8 @@
 /posts/categories/%E9%81%8B%E7%94%A8  /ja/categories/運用/  301
 /posts/categories/%E9%96%8B%E7%99%BA%E3%83%97%E3%83%AD%E3%82%BB%E3%82%B9  /ja/categories/開発プロセス/  301
 /posts/categories/%E9%9A%9C%E5%AE%B3%E5%A0%B1%E5%91%8A  /ja/categories/障害報告/  301
+/posts/categories/%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2%E5%B7%A5%E5%AD%A6  /ja/categories/アプリケーション/  301
+/posts/categories/%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3  /ja/categories/アーキテクチャ/  301
 
 # Tags: /posts/tags/{name} -> /ja/tags/{name}/
 /posts/tags/2phase%20commit  /ja/tags/2phase-commit/  301
@@ -954,6 +962,7 @@
 /posts/tags/%E3%83%81%E3%83%BC%E3%83%A0%E3%83%88%E3%83%9D%E3%83%AD%E3%82%B8%E3%83%BC  /ja/tags/チームトポロジー/  301
 /posts/tags/%E3%83%81%E3%83%BC%E3%83%A0%E3%83%9E%E3%83%8D%E3%82%B8%E3%83%A1%E3%83%B3%E3%83%88  /ja/tags/チームマネジメント/  301
 /posts/tags/%E3%83%86%E3%82%AF%E3%83%8B%E3%82%AB%E3%83%AB%E3%83%A9%E3%82%A4%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0  /ja/tags/テクニカルライティング/  301
+/posts/tags/%E3%83%86%E3%82%B9%E3%83%88  /ja/tags/テスト/  301
 /posts/tags/%E3%83%86%E3%82%B9%E3%83%88%E3%83%80%E3%83%96%E3%83%AB  /ja/tags/テストダブル/  301
 /posts/tags/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3  /ja/tags/テンプレートメソッドパターン/  301
 /posts/tags/%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3  /ja/tags/デザインパターン/  301
@@ -1108,3 +1117,10 @@
 /posts/Docker%E3%81%AEOperation%20not%20permitted%E3%81%A8%E3%81%84%E3%81%86%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%AB%E5%AF%BE%E5%BF%9C%E3%81%99%E3%82%8B /ja/posts/docker-operation-not-permitted-error/ 301
 /posts/%E5%8D%98%E4%B8%80%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E7%B6%99%E6%89%BF%E3%83%BB%E3%82%AF%E3%83%A9%E3%82%B9%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E7%B6%99%E6%89%BF%E3%83%BB%E5%85%B7%E8%B1%A1%E3%82%AF%E3%83%A9%E3%82%B9%E7%B6%99%E6%89%BF%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6 /ja/posts/table-inheritance-types/ 301
 /posts/N%201%E5%95%8F%E9%A1%8C%E3%81%A8%E3%81%AF /ja/posts/what-is-n-plus-one-problem/ 301
+
+# Lowercase English tag aliases (Google indexed these before correct redirects were in place)
+/posts/tags/github  /ja/tags/GitHub/  301
+/posts/tags/prometheus  /ja/tags/Prometheus/  301
+/posts/tags/react  /ja/tags/React/  301
+/posts/tags/mysql  /ja/tags/MySQL/  301
+/posts/tags/api  /ja/tags/API/  301
