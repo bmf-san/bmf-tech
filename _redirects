@@ -10,6 +10,7 @@
 /posts/search  /  301
 /categories/:splat  /ja/categories/:splat  301
 /categories  /ja/  301
+/tags/:splat  /ja/tags/:splat  301
 /tags  /ja/  301
 /profiles  /ja/about/  301
 /posts/categories/  /ja/  301
