@@ -35,7 +35,6 @@
       <div class="card-body">
         <div class="flex items-center gap-2 mb-2 flex-wrap">
           {{range .FrontMatter.Categories}}<span class="badge badge-secondary">{{.}}</span>{{end}}
-          {{if .Locale}}<span class="badge {{if eq .Locale "ja"}}badge-warning{{else}}badge-info{{end}} text-xs">{{.Locale}}</span>{{end}}
           <span class="text-xs text-secondary">{{formatDate "2006-01-02" .FrontMatter.Date}}</span>
         </div>
         <h3 class="font-semibold text-primary mb-1">{{.FrontMatter.Title}}</h3>
