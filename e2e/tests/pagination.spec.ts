@@ -31,7 +31,8 @@ test.describe('JA root pagination', () => {
   });
 });
 
-// ── Tag pagination (/tags/golang/ has 4 pages) ────────────────────────────────
+// ── Tag pagination (/tags/golang/) ───────────────────────────────────────────
+// Note: exact page count grows as articles are added; test stable pages only.
 
 test.describe('Tag pagination /ja/tags/golang/', () => {
   test('page 1 loads with articles', async ({ page }) => {
@@ -44,18 +45,19 @@ test.describe('Tag pagination /ja/tags/golang/', () => {
     await expect(page.locator('a.card').first()).toBeVisible();
   });
 
-  test('page 4 (last) loads with articles', async ({ page }) => {
-    await page.goto('/ja/tags/golang/page/4/');
+  test('page 3 loads with articles', async ({ page }) => {
+    await page.goto('/ja/tags/golang/page/3/');
     await expect(page.locator('a.card').first()).toBeVisible();
   });
 
-  test('page 5 (beyond last) returns 404', async ({ page }) => {
-    const res = await page.goto('/ja/tags/golang/page/5/');
+  test('way beyond last page returns 404', async ({ page }) => {
+    const res = await page.goto('/ja/tags/golang/page/999/');
     expect(res?.status()).toBe(404);
   });
 });
 
-// ── Category pagination (/categories/アーキテクチャ/ has 5 pages) ──────────────
+// ── Category pagination (/categories/アーキテクチャ/) ─────────────────────────
+// Note: exact page count grows as articles are added; test stable pages only.
 
 test.describe('Category pagination /ja/categories/アーキテクチャ/', () => {
   const BASE = '/ja/categories/アーキテクチャ/';
@@ -70,13 +72,8 @@ test.describe('Category pagination /ja/categories/アーキテクチャ/', () =>
     await expect(page.locator('a.card').first()).toBeVisible();
   });
 
-  test('page 5 (last) loads with articles', async ({ page }) => {
-    await page.goto(`${BASE}page/5/`);
-    await expect(page.locator('a.card').first()).toBeVisible();
-  });
-
-  test('page 6 (beyond last) returns 404', async ({ page }) => {
-    const res = await page.goto(`${BASE}page/6/`);
+  test('way beyond last page returns 404', async ({ page }) => {
+    const res = await page.goto(`${BASE}page/999/`);
     expect(res?.status()).toBe(404);
   });
 });
