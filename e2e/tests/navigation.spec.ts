@@ -110,7 +110,7 @@ test.describe('About page /ja/about/', () => {
 
   test('JA nav About link points to /ja/about/', async ({ page }) => {
     await page.goto('/ja/');
-    const href = await page.locator('nav.navbar').getByRole('link', { name: 'About' }).getAttribute('href');
+    const href = await page.locator('nav.navbar').getByRole('link', { name: 'プロフィール' }).getAttribute('href');
     expect(href).toBe('/ja/about/');
   });
 });

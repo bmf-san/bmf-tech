@@ -16,8 +16,9 @@
 
   {{if .Articles}}
 
-  {{/* Featured hero post (first article) */}}
+  {{/* Featured hero post (first non-page article) */}}
   {{- $featured := index .Articles 0}}
+  {{if ne $featured.FrontMatter.Template "page.html"}}
   <section class="mb-12">
     <a href="{{$featured.URL}}" class="card">
       {{- $featuredImg := index $featured.FrontMatter.Extra "image"}}
@@ -40,6 +41,7 @@
       </div>
     </a>
   </section>
+  {{end}}
 
   {{/* Two-column layout: post list + sidebar */}}
   <div class="grid md:grid-cols-3 gap-8">
@@ -57,6 +59,7 @@
       <div class="grid gap-6">
         {{range $i, $a := .Articles}}
         {{if gt $i 0}}
+        {{if ne $a.FrontMatter.Template "page.html"}}
         {{- $cardImg := index $a.FrontMatter.Extra "image"}}
         {{- if not $cardImg}}{{$cardImg = printf "/ogp/%s.png" $a.FrontMatter.Slug}}{{end}}
         {{if eq $i 3}}{{template "ad-unit-list-mobile" $}}{{end}}
@@ -76,6 +79,7 @@
               </div>
           </div>
         </a>
+        {{end}}
         {{end}}
         {{end}}
       </div>
