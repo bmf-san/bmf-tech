@@ -1,4 +1,13 @@
-# Static redirects (migrated from bulk-redirects.txt)
+# Bulk Redirects for bmf-tech.com
+# Format: /source-path  /destination-path  status-code
+# These rules are synced to Cloudflare Bulk Redirects via GitHub Actions.
+# See .github/workflows/sync-bulk-redirects.yml
+#
+# Dynamic (wildcard) rules that cannot be expressed as Bulk Redirects
+# remain in static/_redirects:
+#   /categories/:splat  /ja/categories/:splat  301
+#   /tags/:splat        /ja/tags/:splat         301
+
 /profile/  /about/  301
 /profile  /about/  301
 /privacy_policy  /ja/privacy-policy/  301
@@ -1109,7 +1118,3 @@
 /posts/tags/react  /ja/tags/React/  301
 /posts/tags/mysql  /ja/tags/MySQL/  301
 /posts/tags/api  /ja/tags/API/  301
-
-# Dynamic redirects
-/categories/:splat  /ja/categories/:splat  301
-/tags/:splat  /ja/tags/:splat  301
