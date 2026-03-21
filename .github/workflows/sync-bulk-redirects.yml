@@ -13,8 +13,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/setup-go@v5
+        with:
+          go-version: stable
+          cache: false
+
+      - name: Build cfredirects
+        run: make cfredirects-build
+
       - name: Sync bulk redirects to Cloudflare
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: python3 .github/scripts/sync_bulk_redirects.py
+        run: ./bin/cfredirects
