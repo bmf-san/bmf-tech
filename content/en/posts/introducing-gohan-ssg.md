@@ -17,9 +17,9 @@ translation_key: introducing-gohan-ssg
 
 ## Why I Built It
 
-This very website (bmf-tech.com) is powered by gohan. The motivation was straightforward: I wanted a static site generator that I could fully understand, modify, and that would build only the pages that actually changed — not the entire site on every run.
+This very site (bmf-tech.com) runs on gohan. The motivation was straightforward: I wanted a static site generator that I could fully understand, change, and that would build only the pages that actually changed — not the entire site on every run.
 
-Most generators either rebuild everything unconditionally or rely on Git diff output, which breaks when you switch branches or do a fresh clone. gohan uses SHA-256 content hashing to produce a build manifest that is persisted between runs, making incremental builds reliable regardless of Git history.
+Most generators either rebuild everything unconditionally or rely on Git diff output, which breaks when you switch branches or do a fresh clone. gohan uses SHA-256 content hashing to produce a build manifest that it persists between runs, making incremental builds reliable regardless of Git history.
 
 ## Incremental Build Engine
 
@@ -57,13 +57,13 @@ func (g *GitDiffEngine) Detect(manifest *model.BuildManifest) (*model.ChangeSet,
 }
 ```
 
-`hashAllFiles()` walks the content directory and computes a SHA-256 hex digest for every file. On the first build (or when no manifest exists), every file is treated as `Added` — a clean full build. On subsequent builds, three change types are detected: `Added`, `Modified`, and `Deleted`. Only the affected HTML pages are regenerated.
+`hashAllFiles()` walks the content directory and computes a SHA-256 hex digest for every file. On the first build (or when no manifest exists), every file counts as `Added` — a clean full build. On later builds, gohan detects three change types: `Added`, `Modified`, and `Deleted`. Only the affected HTML pages regenerate.
 
 ## Feature Set
 
 Beyond incremental builds, gohan ships several features out of the box:
 
-- **i18n** — mirror directory structure for multiple locales (e.g. `content/en/` and `content/ja/`); locale switcher links generated automatically.
+- **i18n** — mirror directory structure for many locales (e.g. `content/en/` and `content/ja/`); locale switcher links generated automatically.
 - **Syntax highlighting** — code fences rendered server-side via Chroma, no runtime JavaScript.
 - **Mermaid diagrams** — fenced Mermaid blocks rendered as `<pre class="mermaid">` for client-side rendering, or as inline SVG at build time.
 - **OGP image generation** — Open Graph images generated at build time per article.
@@ -74,7 +74,7 @@ Beyond incremental builds, gohan ships several features out of the box:
 
 ## Plugin System
 
-Plugins are compiled into the gohan binary and enabled per-project via `config.yaml`. No recompilation is needed by callers. The plugin interface is defined in `internal/plugin/plugin.go`:
+Plugins compile into the gohan binary and each project enables them via `config.yaml`. Callers need no recompilation. Define the plugin interface in `internal/plugin/plugin.go`:
 
 ```go
 type Plugin interface {
@@ -90,7 +90,7 @@ type SitePlugin interface {
 }
 ```
 
-`Plugin` (per-article) enriches a single processed article with additional data exposed to the theme template via `.PluginData.<name>`. `SitePlugin` (site-level) runs after all articles are processed and can generate **VirtualPages** — pages with no corresponding Markdown source file.
+`Plugin` (per-article) enriches a single processed article with extra data exposed to the theme template via `.PluginData.<name>`. `SitePlugin` (site-level) runs after all articles finish processing and can generate **VirtualPages** — pages with no corresponding Markdown source file.
 
 The built-in registry ships two plugins out of the box:
 
