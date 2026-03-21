@@ -82,15 +82,6 @@ DEV_TO_API_KEY ?=
 FILE          ?=
 DRY_RUN       ?=
 
-cfredirects-build: ## cfredirects ツールをビルド
-	cd tools/cfredirects && go mod tidy && go build -o ../../bin/cfredirects .
-
-cfredirects-sync: cfredirects-build ## bulk-redirects.txt を Cloudflare Bulk Redirects に同期
-	@if [ -z "$(CLOUDFLARE_ACCOUNT_ID)" ] || [ -z "$(CLOUDFLARE_API_TOKEN)" ]; then \
-		echo "error: CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_API_TOKEN are required"; exit 1; \
-	fi
-	./bin/cfredirects
-
 devto-build: ## dev.to 投稿ツールをビルド
 	cd tools/devto && go mod tidy && go build -o ../../bin/devto .
 
