@@ -1,6 +1,6 @@
 ---
 title: '"Agile" Health Improvement Guide'
-description: "Agile" Health Improvement Guide"
+description: '"Agile" Health Improvement Guide'
 slug: agile-health-improvement-guide
 date: 2022-12-02T00:00:00Z
 author: bmf-san
