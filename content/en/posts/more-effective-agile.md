@@ -1,6 +1,6 @@
 ---
 title: More Effective Agile
-description: 'Master agile development practices, sprint methodologies, and team productivity frameworks for modern development.'
+description: "More Effective Agile"
 slug: more-effective-agile
 date: 2023-10-01T00:00:00Z
 author: bmf-san

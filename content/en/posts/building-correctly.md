@@ -1,6 +1,6 @@
 ---
 title: Building the Right Thing the Right Way
-description: 'Navigate product development through risk management and expectation management in Lean, Agile, and Scrum methodologies.'
+description: "Building the Right Thing the Right Way"
 slug: building-correctly
 date: 2024-04-16T00:00:00Z
 author: bmf-san

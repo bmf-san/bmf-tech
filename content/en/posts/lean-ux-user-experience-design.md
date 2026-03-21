@@ -1,6 +1,6 @@
 ---
 title: Lean UX - User Experience Design with Lean Thinking
-description: 'Apply lean thinking principles to user experience design for enabling faster iteration cycles and better user-centered design solutions.'
+description: "Lean UX - User Experience Design with Lean Thinking"
 slug: lean-ux-user-experience-design
 date: 2016-12-27T00:00:00Z
 author: bmf-san

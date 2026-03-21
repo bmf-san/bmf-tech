@@ -1,6 +1,6 @@
 ---
 title: Programming Language Go
-description: 'Master Go programming with canonical reference materials covering language fundamentals and development best practices.'
+description: "Programming Language Go"
 slug: programming-language-go
 date: 2017-03-12T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: The UNIX Philosophy
-description: "Understand Unix philosophy and design principles—timeless ideas applicable to coding and architecture that shape software design."
+description: "The UNIX Philosophy"
 slug: thinking-unix
 date: 2018-05-18T00:00:00Z
 author: bmf-san

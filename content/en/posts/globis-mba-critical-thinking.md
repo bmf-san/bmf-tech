@@ -1,6 +1,6 @@
 ---
 title: Globis MBA Critical Thinking
-description: 'Develop critical thinking skills with Globis MBA framework: logical reasoning, problem analysis, and decision-making exercises.'
+description: "Globis MBA Critical Thinking"
 slug: globis-mba-critical-thinking
 date: 2015-05-19T00:00:00Z
 author: bmf-san

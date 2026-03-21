@@ -1,6 +1,6 @@
 ---
 title: Customer Success
-description: 'Master Customer Success principles for SaaS businesses. Maximize LTV, reduce churn, and measure customer health metrics effectively.'
+description: "Customer Success"
 slug: customer-success
 date: 2024-04-16T00:00:00Z
 author: bmf-san

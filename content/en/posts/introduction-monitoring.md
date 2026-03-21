@@ -1,6 +1,6 @@
 ---
 title: Introduction to Monitoring
-description: 'Learn monitoring fundamentals and practical techniques for infrastructure observability, alerting, and performance optimization.'
+description: "Introduction to Monitoring"
 slug: introduction-monitoring
 date: 2019-01-26T00:00:00Z
 author: bmf-san

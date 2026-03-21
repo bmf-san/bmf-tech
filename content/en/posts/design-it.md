@@ -8,7 +8,7 @@ categories:
 tags:
   - Architect
   - Book Review
-description: Reflecting on the roles and responsibilities of a software architect.
+description: "Design It"
 translation_key: design-it
 books:
   - asin: "4873118956"

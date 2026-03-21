@@ -1,6 +1,6 @@
 ---
 title: Test-Driven Development
-description: "Master Test-Driven Development with Kent Beck's foundational methodology for writing tests first and building reliable software."
+description: "Test-Driven Development"
 slug: test-driven-development
 date: 2017-10-08T00:00:00Z
 author: bmf-san

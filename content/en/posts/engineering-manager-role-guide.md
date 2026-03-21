@@ -1,6 +1,6 @@
 ---
 title: 'The Work of an Engineering Manager: How to Become the Manager Your Team Needs'
-description: 'Learn effective 1-on-1 design, delegation strategies, feedback techniques, and team culture building for managers.'
+description: "The Work of an Engineering Manager: How to Become the Manager Your Team Needs"
 slug: engineering-manager-role-guide
 date: 2026-02-20T00:00:00Z
 author: bmf-san

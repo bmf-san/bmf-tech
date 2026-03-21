@@ -1,6 +1,6 @@
 ---
 title: The Penguin Who Became a Seagull
-description: 'Discover the eight-step transformation framework for solving problems and building effective teams in changing environments.'
+description: "The Penguin Who Became a Seagull"
 slug: penguin-becoming-seagull
 date: 2025-08-09T00:00:00Z
 author: bmf-san

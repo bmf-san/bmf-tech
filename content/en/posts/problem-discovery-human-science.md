@@ -1,6 +1,6 @@
 ---
 title: Is the Light On? The Human Science of Problem Discovery
-description: 'Understand the human science of problem discovery, recognizing that problem identification is more critical than solution implementation.'
+description: "Is the Light On? The Human Science of Problem Discovery"
 slug: problem-discovery-human-science
 date: 2023-05-19T00:00:00Z
 author: bmf-san

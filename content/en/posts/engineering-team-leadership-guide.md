@@ -1,6 +1,6 @@
 ---
 title: 'Leading Engineering Teams: A Practical Guide for Individual Contributors and Managers Learned from Google'
-description: 'Implement career ladders, code review practices, technical debt management, and project leadership for teams.'
+description: "Leading Engineering Teams: A Practical Guide for Individual Contributors and Managers Learned from Google"
 slug: engineering-team-leadership-guide
 date: 2026-02-20T00:00:00Z
 author: bmf-san

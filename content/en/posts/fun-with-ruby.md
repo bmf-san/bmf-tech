@@ -1,6 +1,6 @@
 ---
 title: Fun with Ruby
-description: 'Explore Ruby fundamentals through object-oriented programming concepts with this beginner-friendly interactive learning guide.'
+description: "Fun with Ruby"
 slug: fun-with-ruby
 date: 2024-05-04T00:00:00Z
 author: bmf-san
