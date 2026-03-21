@@ -1,6 +1,6 @@
 ---
 title: アジャイルサムライ
-description: アジャイルサムライ
+description: "アジャイルサムライ"
 slug: agile-samurai
 date: 2020-09-12T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: 脳に収まるコードの書き方 ―複雑さを避け持続可能にするための経験則とテクニック
-description: 脳に収まるコードの書き方 ―複雑さを避け持続可能にするための経験則とテクニック
+description: "脳に収まるコードの書き方 ―複雑さを避け持続可能にするための経験則とテクニック"
 slug: writing-sustainable-code
 date: 2025-02-15T00:00:00Z
 author: bmf-san

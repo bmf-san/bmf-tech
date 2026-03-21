@@ -1,6 +1,6 @@
 ---
 title: ゼロからわかるUML超入門
-description: "UML初心者向けの図法基礎、クラス図・オブジェクト図・シーケンス図の記法と関連性を丁寧に図解・解説"
+description: "ゼロからわかるUML超入門"
 slug: uml-introduction-from-zero
 date: 2016-07-01T00:00:00Z
 author: bmf-san

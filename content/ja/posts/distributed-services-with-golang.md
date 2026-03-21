@@ -1,6 +1,6 @@
 ---
 title: Go言語による分散サービス
-description: Go言語による分散サービス
+description: "Go言語による分散サービス"
 slug: distributed-services-with-golang
 date: 2023-08-18T00:00:00Z
 author: bmf-san

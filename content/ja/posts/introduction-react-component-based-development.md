@@ -1,6 +1,6 @@
 ---
 title: 入門 React ―コンポーネントベースのWebフロントエンド開発
-description: "解説するReactの基本。コンポーネント設計、JSX構文、状態管理、ライフサイクルメソッドなど、モダンなフロントエンド開発の必須知識を実務レベルまで習得できます。"
+description: "入門 React ―コンポーネントベースのWebフロントエンド開発"
 slug: introduction-react-component-based-development
 date: 2016-08-04T00:00:00Z
 author: bmf-san

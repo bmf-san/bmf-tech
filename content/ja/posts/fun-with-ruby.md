@@ -1,6 +1,6 @@
 ---
 title: たのしいRuby
-description: たのしいRuby
+description: "たのしいRuby"
 slug: fun-with-ruby
 date: 2024-05-04T00:00:00Z
 author: bmf-san

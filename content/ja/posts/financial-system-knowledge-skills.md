@@ -1,6 +1,6 @@
 ---
 title: エンジニアが学ぶ金融システムの「知識」と「技術」
-description: エンジニアが学ぶ金融システムの「知識」と「技術」
+description: "エンジニアが学ぶ金融システムの「知識」と「技術」"
 slug: financial-system-knowledge-skills
 date: 2024-04-04T00:00:00Z
 author: bmf-san

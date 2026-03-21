@@ -1,6 +1,6 @@
 ---
 title: Running Lean ―実践リーンスタートアップ
-description: Running Lean ―実践リーンスタートアップ
+description: "Running Lean ―実践リーンスタートアップ"
 slug: running-lean-practical-startup
 date: 2016-12-27T00:00:00Z
 author: bmf-san

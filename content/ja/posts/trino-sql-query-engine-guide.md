@@ -1,6 +1,6 @@
 ---
 title: '分散SQLクエリエンジンTrino徹底ガイド '
-description: 「分散SQLクエリエンジンTrino徹底ガイド 」のまとめと読書メモ。重要なポイントと実践的な知見を整理します。
+description: "分散SQLクエリエンジンTrino徹底ガイド"
 slug: trino-sql-query-engine-guide
 date: 2024-10-24T00:00:00Z
 author: bmf-san

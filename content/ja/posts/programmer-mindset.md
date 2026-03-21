@@ -1,6 +1,6 @@
 ---
 title: プログラマ脳
-description: プログラマ脳
+description: "プログラマ脳"
 slug: programmer-mindset
 date: 2023-06-26T00:00:00Z
 author: bmf-san

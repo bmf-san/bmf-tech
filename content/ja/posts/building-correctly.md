@@ -1,6 +1,6 @@
 ---
 title: 正しいものを正しくつくる
-description: 正しいものを正しくつくる
+description: "正しいものを正しくつくる"
 slug: building-correctly
 date: 2024-04-16T00:00:00Z
 author: bmf-san

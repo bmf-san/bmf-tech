@@ -1,6 +1,6 @@
 ---
 title: Goならわかるシステムプログラミング
-description: Goならわかるシステムプログラミング
+description: "Goならわかるシステムプログラミング"
 slug: go-system-programming
 date: 2018-11-30T00:00:00Z
 author: bmf-san

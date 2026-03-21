@@ -1,6 +1,6 @@
 ---
 title: 入門 考える技術・書く技術――日本人のロジカルシンキング実践法
-description: 「入門 考える技術・書く技術――日本人のロジカルシンキング実践法」のまとめと読書メモ。重要なポイントと実践的な知見を整理します。
+description: "入門 考える技術・書く技術――日本人のロジカルシンキング実践法"
 slug: logical-thinking-techniques-for-japanese
 date: 2024-01-31T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: システムアーキテクチャ構築の原理~ITアーキテクトが持つべき3つの思考
-description: "理解するアーキテクチャ設計の原理。アーキテクトが持つべき思考モデル、ステークホルダー対応、評価手法、設計テクニック体系を習得。"
+description: "システムアーキテクチャ構築の原理~ITアーキテクトが持つべき3つの思考"
 slug: principles-of-system-architecture
 date: 2025-07-07T00:00:00Z
 author: bmf-san

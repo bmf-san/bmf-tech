@@ -1,6 +1,6 @@
 ---
 title: 具体と抽象 ―世界が変わって見える知性のしくみ
-description: 具体と抽象 ―世界が変わって見える知性のしくみ
+description: "具体と抽象 ―世界が変わって見える知性のしくみ"
 slug: concrete-abstract-intelligence
 date: 2025-12-29T00:00:00Z
 author: bmf-san

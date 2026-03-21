@@ -1,6 +1,6 @@
 ---
 title: データモデリングでドメインを駆動する──分散／疎結合な基幹系システムに向けて
-description: データモデリングでドメインを駆動する──分散／疎結合な基幹系システムに向けて
+description: "データモデリングでドメインを駆動する──分散／疎結合な基幹系システムに向けて"
 slug: domain-driven-data-modeling
 date: 2025-08-11T00:00:00Z
 author: bmf-san

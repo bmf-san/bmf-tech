@@ -1,6 +1,6 @@
 ---
 title: 'レガシーコード改善ガイド: 保守開発のためのリファクタリング'
-description: '「レガシーコード改善ガイド: 保守開発のためのリファクタリング」のまとめと読書メモ。重要なポイントと実践的な知見を整理します。'
+description: "レガシーコード改善ガイド: 保守開発のためのリファクタリング"
 slug: legacy-code-improvement-guide
 date: 2017-03-12T00:00:00Z
 author: bmf-san
