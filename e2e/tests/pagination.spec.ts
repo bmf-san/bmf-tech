@@ -55,7 +55,7 @@ test.describe('Tag pagination /ja/tags/golang/', () => {
   });
 });
 
-// ── Category pagination (/categories/アーキテクチャ/ has 5 pages) ──────────────
+// ── Category pagination (/categories/アーキテクチャ/ has 6 pages) ──────────────
 
 test.describe('Category pagination /ja/categories/アーキテクチャ/', () => {
   const BASE = '/ja/categories/アーキテクチャ/';
@@ -70,13 +70,13 @@ test.describe('Category pagination /ja/categories/アーキテクチャ/', () =>
     await expect(page.locator('a.card').first()).toBeVisible();
   });
 
-  test('page 5 (last) loads with articles', async ({ page }) => {
-    await page.goto(`${BASE}page/5/`);
+  test('page 6 (last) loads with articles', async ({ page }) => {
+    await page.goto(`${BASE}page/6/`);
     await expect(page.locator('a.card').first()).toBeVisible();
   });
 
-  test('page 6 (beyond last) returns 404', async ({ page }) => {
-    const res = await page.goto(`${BASE}page/6/`);
+  test('page 7 (beyond last) returns 404', async ({ page }) => {
+    const res = await page.goto(`${BASE}page/7/`);
     expect(res?.status()).toBe(404);
   });
 });
