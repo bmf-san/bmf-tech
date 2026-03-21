@@ -2,7 +2,7 @@
 //
 // Usage:
 //
-//	cfredirects --file=bulk-redirects.txt --list=bmf-tech-redirects --domain=https://bmf-tech.com
+//	cfredirects --file=bulk-redirects.txt --list=bmf_tech_redirects --host=bmf-tech.com
 package main
 
 import (
@@ -35,7 +35,7 @@ type cfClient struct {
 func main() {
 	file := flag.String("file", "bulk-redirects.txt", "path to redirect rules file")
 	listName := flag.String("list", "bmf_tech_redirects", "Cloudflare Redirect List name")
-	domain := flag.String("domain", "https://bmf-tech.com", "base domain for relative source/target URLs")
+	host := flag.String("host", "bmf-tech.com", "hostname (no scheme) for source URLs")
 	flag.Parse()
 
 	accountID := os.Getenv("CLOUDFLARE_ACCOUNT_ID")
@@ -58,7 +58,7 @@ func main() {
 	}
 	log.Printf("Redirect List '%s': %s", *listName, listID)
 
-	items := buildItems(rules, *domain)
+	items := buildItems(rules, *host)
 	opID, err := c.putListItems(listID, items)
 	if err != nil {
 		log.Fatalf("PUT list items: %v", err)
@@ -102,16 +102,19 @@ func loadRules(path string) ([]redirect, error) {
 	return rules, sc.Err()
 }
 
-func buildItems(rules []redirect, domain string) []map[string]any {
+func buildItems(rules []redirect, host string) []map[string]any {
+	scheme := "https://"
 	items := make([]map[string]any, 0, len(rules))
 	for _, r := range rules {
+		// source_url: scheme-less (host + path), per Cloudflare API spec
 		src := r.Source
 		if !strings.HasPrefix(src, "http") {
-			src = domain + src
+			src = host + src
 		}
+		// target_url: full URL with scheme
 		dst := r.Target
 		if !strings.HasPrefix(dst, "http") {
-			dst = domain + dst
+			dst = scheme + host + dst
 		}
 		items = append(items, map[string]any{
 			"redirect": map[string]any{
