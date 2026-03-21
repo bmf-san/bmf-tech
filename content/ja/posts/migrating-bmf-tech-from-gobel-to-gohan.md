@@ -5,7 +5,7 @@ slug: migrating-bmf-tech-from-gobel-to-gohan
 date: 2026-03-20T00:00:00Z
 author: bmf-san
 categories:
-  - Architecture
+  - アーキテクチャ
 tags:
   - gohan
   - Migration
