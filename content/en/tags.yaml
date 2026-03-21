@@ -1,26 +1,28 @@
 - name: 2phase commit
 - name: ABAC
-- name: ACID
-- name: ACL
-- name: AI
-- name: AJAX
-- name: API
-- name: APM
 - name: Abstract Factory Pattern
 - name: Access Control
 - name: Access Management
 - name: Accounting
+- name: ACID
+- name: ACL
 - name: Adapter Pattern
 - name: Adjacency List
 - name: Adjacency Matrix
 - name: Agile
+- name: AI
+- name: AJAX
 - name: Algorithm
 - name: Algorithms
 - name: AlloyDB
 - name: Amazon Web Service
 - name: Anonymous Function
 - name: Ansible
+- name: anyenv
 - name: Apache
+- name: apache
+- name: API
+- name: APM
 - name: Architect
 - name: Architecting
 - name: Architecture
@@ -29,74 +31,88 @@
 - name: Architecture Review Board
 - name: Architecture Strategy
 - name: Arrays
+- name: artisan
+- name: async
 - name: Atom
 - name: Authentication
 - name: Authorization
 - name: Authorization Management
-- name: BASE
-- name: BFF
-- name: BFS
+- name: babel
+- name: babel-jest
 - name: Backtrack
 - name: Backup
+- name: BASE
+- name: bash
 - name: Basic IT Engineer
+- name: BFF
+- name: BFS
 - name: Bi-Temporal
 - name: Big O Notation
 - name: Binary Search
 - name: Binary Search Tree
 - name: Bitcoin
+- name: bitcoin
+- name: bitFlyer
+- name: bitflyer
+- name: boilerplate
 - name: Book
 - name: Book Review
 - name: Bridge Pattern
+- name: browserify
 - name: Bubble Sort
 - name: Burp Suite
 - name: Business Strategy
 - name: C4 Model
-- name: CAP
-- name: CDN
-- name: CLI
-- name: CMS
-- name: CORS
-- name: CPU
-- name: CQRS
-- name: CTO
 - name: Cache
+- name: cadvisor
 - name: Callback
+- name: CAP
 - name: Capacity Planning
 - name: Career Change
+- name: CDN
 - name: CentOS
 - name: Chrome
+- name: chromedp
 - name: CircleCI
 - name: CircleCI2.0
 - name: Clean Architecture
+- name: CLI
 - name: Cloud Functions
 - name: Cloud SQL
 - name: Cloud-Native
+- name: CMS
 - name: Code Quality
 - name: Code Reading
 - name: Code Review
 - name: Coding
 - name: CoffeeScript
 - name: Cognitive Science
+- name: composer
 - name: Constraints
 - name: Consumer-Driven Contract Testing
 - name: Container
 - name: Context Engineering
+- name: contextual logging
 - name: Continuous AI
 - name: Contract Testing
+- name: CORS
 - name: Counting Sort
+- name: CPU
+- name: CQRS
 - name: Critical Thinking
 - name: Critical User Journey
+- name: cron
 - name: Cross Join
+- name: CSS
+- name: CTO
 - name: Cursor Pagination
 - name: Customer Success
-- name: DB
-- name: DDD
-- name: DFS
-- name: DI
-- name: DIP
+- name: Dart
 - name: Data Structure
 - name: Data Structures
 - name: Datadog
+- name: DB
+- name: DDD
 - name: Debug
 - name: Delegation
 - name: Deployment
@@ -105,7 +121,10 @@
 - name: Design Pattern
 - name: Design Patterns
 - name: Development Productivity
+- name: DFS
+- name: DI
 - name: DigitalOcean
+- name: DIP
 - name: Discrete Mathematics
 - name: Distributed Systems
 - name: Distributed Transactions
@@ -115,24 +134,31 @@
 - name: Dockerize
 - name: Duck Typing
 - name: ECS
+- name: Editor
+- name: efk
+- name: Elastic Beanstalk
+- name: Elasticsearch
+- name: Email
+- name: Emoji
+- name: emoji
 - name: ER
 - name: ERE
 - name: ES5
 - name: ES6
 - name: ESModules
 - name: ETL
-- name: Editor
-- name: Elastic Beanstalk
-- name: Elasticsearch
-- name: Email
-- name: Emoji
 - name: Event Loop
+- name: exec
 - name: Exponential Backoff
-- name: FIDO
 - name: Factory Method Pattern
 - name: Factory Pattern
+- name: fan-in
+- name: fan-out
 - name: Fargate
+- name: FIDO
 - name: Finance
+- name: fluentd
+- name: Flutter
 - name: Forward Proxy
 - name: Frontend
 - name: FuelPHP
@@ -142,24 +168,26 @@
 - name: Gadgets
 - name: Game
 - name: Gateway
+- name: gem
 - name: Generative AI
 - name: Git
 - name: GitHub
 - name: GitHub Actions
+- name: gocode
 - name: GoF
+- name: gohan
 - name: Golang
 - name: Google Analytics
 - name: Google Chrome Extension
 - name: Google Cloud Platform
 - name: Google SpreadSheet
+- name: gopls
 - name: Grafana
 - name: Graph
 - name: GraphQL
 - name: GraphQL Federation
-- name: HR
-- name: HTTP
-- name: HTTP/2
-- name: HTTPS
+- name: grep
+- name: gRPC
 - name: Hard Links
 - name: Hardware
 - name: HashMap
@@ -167,42 +195,57 @@
 - name: Health
 - name: Heap
 - name: Heap Sort
+- name: highlightjs
 - name: History
 - name: History API
-- name: IAM
-- name: IP
-- name: ISUCON
-- name: ISUCON10
-- name: ISUCON8
+- name: homebrew
+- name: homestead
+- name: HR
+- name: HTTP
+- name: HTTP/2
+- name: HTTPS
+- name: hubot
 - name: IaaS
+- name: IAM
 - name: Index
+- name: Infrastructure
 - name: Inheritance
 - name: Insertion Sort
 - name: Intellectual Production
 - name: Interface
 - name: Inventory Management
-- name: JWT
+- name: iOS
+- name: IP
+- name: irb
+- name: ISUCON
+- name: ISUCON10
+- name: ISUCON8
+- name: iTerm
 - name: JavaScript
 - name: Jest
+- name: jest
 - name: Jitter
 - name: Job Change
 - name: Jobs Theory
-- name: KPT
+- name: join
+- name: jq
+- name: JWT
+- name: k3s
 - name: Kernel
 - name: Keynote
 - name: Kibana
+- name: KPT
+- name: kubeadm
 - name: Kubernetes
-- name: LDAP
-- name: LLM as Judge
-- name: LLM as judge
-- name: LT
 - name: Labor
 - name: Language Server
 - name: Laravel
+- name: LDAP
 - name: Leadership
 - name: Lean
 - name: Legacy Code
 - name: Let's Encrypt
+- name: libcontainer
 - name: Life
 - name: Lightning Talk
 - name: Linear Search
@@ -211,6 +254,8 @@
 - name: Linux
 - name: Linux Capabilities
 - name: Liskov Substitution Principle
+- name: LLM as Judge
+- name: LLM as judge
 - name: Load Average
 - name: Load Balancer
 - name: Load Testing
@@ -218,38 +263,48 @@
 - name: Log
 - name: Logical Thinking
 - name: Logistics
+- name: logwatch
 - name: Loki
+- name: LT
+- name: lxc
+- name: lxd
 - name: M1
 - name: Mackerel
 - name: Manager
 - name: Managers
+- name: markdown
+- name: marked
 - name: Mediator Pattern
 - name: Memory
 - name: Merge Sort
+- name: mermaid
 - name: Metrics
 - name: Microservices
+- name: Migration
 - name: Mob Programming
 - name: Modeling
 - name: Modular Monolith
 - name: Monitoring
 - name: Monolith
 - name: Monorepo
+- name: multipass
 - name: MySQL
+- name: mysqldump
 - name: N+1
 - name: New Relic
 - name: NewSQL
 - name: Nginx
+- name: node-exporter
 - name: Node.js
 - name: Non-Temporal
 - name: Normalization
 - name: Normalization Theory
 - name: Notification
+- name: npm
 - name: OAuth
+- name: Offset Pagination
 - name: OIDC
 - name: OOP
-- name: OS
-- name: OSS
-- name: Offset Pagination
 - name: Open Addressing Hash Table
 - name: Open Policy Agent
 - name: OpenAPI
@@ -259,21 +314,24 @@
 - name: Organization Theory
 - name: Organizational Design
 - name: Organizational Theory
+- name: OS
+- name: OSS
 - name: PACELC
+- name: Pact
+- name: Partitioning
+- name: Pass by Value
 - name: PDF
+- name: Performance Tuning
+- name: Permission Management
+- name: Permissions
+- name: PgCat
 - name: PHP
 - name: PHP CodeSniffer
 - name: PHP Conference
 - name: PHP7
 - name: PHPCompatibility
 - name: PHPerKaigi
-- name: Pact
-- name: Partitioning
-- name: Pass by Value
-- name: Performance Tuning
-- name: Permission Management
-- name: Permissions
-- name: PgCat
+- name: phpunit
 - name: Platform Engineering
 - name: PofEAA
 - name: Pointer
@@ -287,25 +345,27 @@
 - name: Profiling
 - name: Prolog
 - name: Prometheus
-- name: Prompt Engineering
-- name: Prompt Ops
 - name: Prompt as Code
 - name: Prompt as code
+- name: Prompt Engineering
+- name: Prompt Ops
 - name: Promtail
 - name: Protocol Buffers
 - name: Provider-Driven Contract Testing
+- name: pundit
 - name: Queue
 - name: Quick Sort
-- name: RBAC
-- name: REST
-- name: RPC
-- name: RSpec
 - name: Radix Conversion
 - name: Radix Tree
+- name: RBAC
+- name: rbenv
 - name: React
+- name: react-router
+- name: realize
 - name: Recursion
 - name: Redis
 - name: Redux
+- name: redux-form
 - name: Reference
 - name: Reflection and Goals
 - name: Reflection and Resolutions
@@ -313,35 +373,29 @@
 - name: Rego
 - name: Regular Expressions
 - name: Reliability
+- name: reline
 - name: Repository Pattern
 - name: Requests
 - name: Requirements
 - name: Resignation
+- name: REST
 - name: Resume
 - name: Retrospective
 - name: Retry
 - name: Reverse Proxy
+- name: Riverpod
 - name: Round Robin
 - name: Router
+- name: RPC
+- name: RSpec
 - name: Ruby
 - name: Ruby on Rails
 - name: Runner Technique
-- name: SAML
-- name: SLA
-- name: SLI
-- name: SLO
-- name: SPA
-- name: SQL
-- name: SQL Anti-pattern
-- name: SQLite
-- name: SRE
-- name: SSH
-- name: SSL
-- name: SSO
 - name: SaaS
 - name: Saga Pattern
 - name: Sakura VPS
 - name: Sales
+- name: SAML
 - name: Scalability
 - name: Schema-Driven
 - name: Scrum
@@ -353,16 +407,35 @@
 - name: Session
 - name: Sets
 - name: Sharding
+- name: shell
 - name: Shell Script
+- name: shell script
+- name: shellscript
 - name: Sidekiq
 - name: Singleton Pattern
 - name: Singly Linked List
+- name: SLA
 - name: Slack
 - name: Slack Bot
+- name: slack-bot
+- name: SLI
 - name: Sliding Window
+- name: SLO
+- name: slog
 - name: Software
 - name: Software Development
+- name: SPA
 - name: Spanner
+- name: SQL
+- name: SQL Anti-pattern
+- name: SQLite
+- name: SRE
+- name: SSG
+- name: SSH
+- name: ssh
+- name: sshd
+- name: SSL
+- name: SSO
 - name: Stack
 - name: Startup
 - name: State Pattern
@@ -372,124 +445,61 @@
 - name: Strategy Pattern
 - name: StreamYard
 - name: Superagent
+- name: superagent
 - name: Swiss Table
 - name: Symbolic Links
 - name: System Design
 - name: System Performance
 - name: TCC Pattern
 - name: TCP
-- name: TLS
-- name: TUI
 - name: Team Management
 - name: Team Topologies
 - name: Technical Writing
 - name: Technology Radar
+- name: tee
 - name: Template Method
 - name: Template Method Pattern
 - name: Temporal Data Model
 - name: Terminal
+- name: termios
 - name: Terraform
 - name: Test Double
+- name: textlint
 - name: Thinking
 - name: Thinking Methods
 - name: Thread
+- name: tidalcycles
 - name: Tips
+- name: TLS
+- name: tmux
+- name: Trading
 - name: Transaction
 - name: Tree Structure
 - name: Trello
 - name: Trie
 - name: Trino
+- name: TUI
 - name: Two-Pointer Approach
 - name: Two-Pointer Technique
 - name: Type Hinting
 - name: TypeScript
-- name: UML
-- name: UNIX
-- name: URL Routing
-- name: UX
 - name: Ubuntu
+- name: UML
 - name: Uni-Temporal
 - name: Unicorn
-- name: VPS
+- name: union
+- name: UNIX
+- name: unix commands
+- name: URL Routing
+- name: UX
 - name: Vagrant
+- name: vim
 - name: Virtual Environment
 - name: VirtualBox
+- name: VPS
+- name: vscode
 - name: Vue.js
 - name: Vulnerability
-- name: Zabbix
-- name: anyenv
-- name: apache
-- name: artisan
-- name: async
-- name: babel
-- name: babel-jest
-- name: bash
-- name: bitFlyer
-- name: bitcoin
-- name: bitflyer
-- name: boilerplate
-- name: browserify
-- name: cadvisor
-- name: chromedp
-- name: composer
-- name: contextual logging
-- name: cron
-- name: efk
-- name: emoji
-- name: exec
-- name: fan-in
-- name: fan-out
-- name: fluentd
-- name: gRPC
-- name: gem
-- name: gocode
-- name: gopls
-- name: grep
-- name: highlightjs
-- name: homebrew
-- name: homestead
-- name: hubot
-- name: iTerm
-- name: irb
-- name: jest
-- name: join
-- name: jq
-- name: k3s
-- name: kubeadm
-- name: libcontainer
-- name: logwatch
-- name: lxc
-- name: lxd
-- name: markdown
-- name: marked
-- name: mermaid
-- name: multipass
-- name: mysqldump
-- name: node-exporter
-- name: npm
-- name: phpunit
-- name: pundit
-- name: rbenv
-- name: react-router
-- name: realize
-- name: redux-form
-- name: reline
-- name: shell
-- name: shell script
-- name: shellscript
-- name: slack-bot
-- name: slog
-- name: ssh
-- name: sshd
-- name: superagent
-- name: tee
-- name: termios
-- name: textlint
-- name: tidalcycles
-- name: tmux
-- name: union
-- name: unix commands
-- name: vim
-- name: vscode
 - name: webpack
 - name: yum
+- name: Zabbix
