@@ -31,7 +31,7 @@ test.describe('JA root pagination', () => {
   });
 });
 
-// ── Tag pagination (/tags/golang/ has 3 pages) ────────────────────────────────
+// ── Tag pagination (/tags/golang/ has 4 pages) ────────────────────────────────
 
 test.describe('Tag pagination /ja/tags/golang/', () => {
   test('page 1 loads with articles', async ({ page }) => {
@@ -44,13 +44,13 @@ test.describe('Tag pagination /ja/tags/golang/', () => {
     await expect(page.locator('a.card').first()).toBeVisible();
   });
 
-  test('page 3 (last) loads with articles', async ({ page }) => {
-    await page.goto('/ja/tags/golang/page/3/');
+  test('page 4 (last) loads with articles', async ({ page }) => {
+    await page.goto('/ja/tags/golang/page/4/');
     await expect(page.locator('a.card').first()).toBeVisible();
   });
 
-  test('page 4 (beyond last) returns 404', async ({ page }) => {
-    const res = await page.goto('/ja/tags/golang/page/4/');
+  test('page 5 (beyond last) returns 404', async ({ page }) => {
+    const res = await page.goto('/ja/tags/golang/page/5/');
     expect(res?.status()).toBe(404);
   });
 });
