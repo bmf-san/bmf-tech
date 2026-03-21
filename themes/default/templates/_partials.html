@@ -276,12 +276,14 @@
   <ul class="navbar-nav">
     {{if eq .CurrentLocale "ja"}}
     <li><a href="/ja/" class="navbar-item">ホーム</a></li>
-    <li><a href="/ja/about/" class="navbar-item">About</a></li>
+    <li><a href="/ja/about/" class="navbar-item">プロフィール</a></li>
+    <li><a href="/ja/picks/" class="navbar-item">ピックアップ記事</a></li>
     <li><a href="/ja/bookshelf/" class="navbar-item">本棚</a></li>
     <li><a href="/ja/atom.xml" class="navbar-item">フィード</a></li>
     {{else}}
     <li><a href="/" class="navbar-item">Home</a></li>
     <li><a href="/about/" class="navbar-item">About</a></li>
+    <li><a href="/picks/" class="navbar-item">picks</a></li>
     <li><a href="/bookshelf/" class="navbar-item">Bookshelf</a></li>
     <li><a href="/atom.xml" class="navbar-item">Feed</a></li>
     {{end}}

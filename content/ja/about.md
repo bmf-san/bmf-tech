@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "プロフィール"
 slug: about
 date: 2024-01-01
 author: bmf-san
