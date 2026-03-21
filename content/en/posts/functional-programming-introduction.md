@@ -1,21 +1,23 @@
 ---
-title: Understand! Functional Programming
-description: 'Master functional programming principles using Scala with practical examples that apply across programming languages.'
+title: 'Understanding Functional Programming'
+description: 'Understanding Functional Programming'
 slug: functional-programming-introduction
 date: 2025-08-31T00:00:00Z
 author: bmf-san
 categories:
-  - Application
+  - Applications
 tags:
   - Functional
-  - Book
+  - Book Review
 translation_key: functional-programming-introduction
+books:
+  - asin: "4798179809"
+    title: "なっとく！関数型プログラミング"
 ---
 
 
+I read [Understanding Functional Programming](https://amzn.to/3IwNOpJ).
 
-[I read Understand! Functional Programming](https://amzn.to/3IwNOpJ).
+I felt that it is a great book that carefully explains functional programming using Scala.
 
-I felt it was a good book that explains functional programming in Scala thoroughly.
-
-There were parts where it seemed to focus a lot on Scala's language specifications, but it allows you to easily learn the essence of functional programming regardless of the language.
+There were parts where it seemed to focus heavily on the language specifications of Scala, but regardless of the language, it allows for an easy understanding of the essence of functional programming.

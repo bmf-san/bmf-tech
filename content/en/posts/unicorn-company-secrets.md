@@ -1,24 +1,26 @@
 ---
-title: 'The Secret of Unicorn Companies: Software Development and Work Styles Learned at Spotify'
-description: "Discover organizational culture and development practices of unicorn companies like Spotify beyond traditional Scrum methodologies."
+title: 'The Secrets of Unicorn Companies: Software Development and Work Culture Learned from Spotify'
+description: 'The Secrets of Unicorn Companies: Software Development and Work Culture Learned from Spotify'
 slug: unicorn-company-secrets
 date: 2023-05-19T00:00:00Z
 author: bmf-san
 categories:
   - Management
 tags:
-  - Book
+  - Book Review
   - Unicorn
   - Scrum
 translation_key: unicorn-company-secrets
+books:
+  - asin: "4873119464"
+    title: "ユニコーン企業のひみつ ―Spotifyで学んだソフトウェアづくりと働き方"
 ---
 
 
+I read [The Secrets of Unicorn Companies: Software Development and Work Culture Learned from Spotify](https://amzn.to/44PiyJp).
 
-[The Secret of Unicorn Companies: Software Development and Work Styles Learned at Spotify](https://amzn.to/44PiyJp) was an insightful read.
+You can learn about the organizational theory and culture of unicorn companies.
 
-It offers insights into the organizational theory and culture of unicorn companies.
+As mentioned in the afterword by the author, unicorn companies do not practice Scrum. How one interprets this may change the overall impression of the book.
 
-As mentioned in the actor's afterword, unicorn companies do not practice Scrum. Depending on how you perceive this, it might change your impression by the end of the book.
-
-Personally, I see it as moving beyond Scrum, reaching the 'Ri' stage of Shu-Ha-Ri. The book's main theme (the secret) seems to be about what kind of culture and qualities support growth, regardless of methodology.
+Personally, I view it as a perspective that has transcended Scrum, reaching the stage of "ri" in the concept of "shuhari." However, I believe the main theme (the secret) of this book is to explore what kind of culture and qualities support growth, regardless of the methodology used.

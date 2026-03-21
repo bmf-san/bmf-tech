@@ -1,23 +1,25 @@
 ---
-title: Ruby Code Recipe Collection
-description: 'Discover Ruby code patterns, common idioms, and practical recipes through clear explanations for beginning professional developers.'
+title: 'Ruby Code Recipe Collection'
+description: 'Ruby Code Recipe Collection'
 slug: ruby-code-recipes
 date: 2024-10-20T00:00:00Z
 author: bmf-san
 categories:
-  - Application
+  - Applications
 tags:
   - Ruby
-  - Book
+  - Book Review
 translation_key: ruby-code-recipes
+books:
+  - asin: "B0DCBVWPP7"
+    title: "Ruby コードレシピ集"
 ---
 
 
+I read the [Ruby Code Recipe Collection](https://amzn.to/4dVe5Yo).
 
-[I read the Ruby Code Recipe Collection](https://amzn.to/4dVe5Yo).
+This book is perfect for Ruby beginners to input what can be done with Ruby and common patterns.
 
-This book is perfect for Ruby beginners to learn what can be done with Ruby and common patterns.
+If you are going to learn Ruby, I think it would be beneficial to read this book.
 
-If you are about to learn Ruby, I think reading this book is definitely worthwhile.
-
-It's written clearly and concisely, making it easy to read.
+It is written clearly and concisely, making it easy to read.

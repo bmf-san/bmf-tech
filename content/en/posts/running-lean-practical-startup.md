@@ -1,6 +1,6 @@
 ---
-title: Running Lean ― Practical Lean Startup
-description: 'Apply lean startup methodology for validating business ideas, reducing waste, and building sustainable products through iterative learning.'
+title: 'Running Lean: Practical Lean Startup'
+description: 'Running Lean: Practical Lean Startup'
 slug: running-lean-practical-startup
 date: 2016-12-27T00:00:00Z
 author: bmf-san
@@ -8,11 +8,15 @@ categories:
   - Development Process
 tags:
   - Lean
-  - Book
+  - Book Review
   - Startup
 translation_key: running-lean-practical-startup
+books:
+  - asin: "4873115914"
+    title: "Running Lean ―実践リーンスタートアップ"
 ---
 
 
+I read [Running Lean ―実践リーンスタートアップ](https://amzn.to/3UFmmbx).
 
-[Running Lean ―実践リーンスタートアップ](https://amzn.to/3UFmmbx) is a must-read if you're involved in a startup. It's also useful when starting a new business.
+This is a must-read for anyone involved in startups. It is also helpful when starting a new business.

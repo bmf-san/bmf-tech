@@ -1,23 +1,22 @@
 ---
-title: Understanding Attacks and Countermeasures on OAuth/OIDC (Redirect Attack Edition)
-description: 'Learn OAuth and OIDC attack vectors including redirect injection and implement security countermeasures.'
+title: 'A Book to Understand Attacks and Countermeasures on OAuth and OIDC (Redirect Attack Edition)'
+description: 'A Book to Understand Attacks and Countermeasures on OAuth and OIDC (Redirect Attack Edition)'
 slug: oauth-oidc-attacks-and-countermeasures-guide
 date: 2021-10-05T00:00:00Z
 author: bmf-san
 categories:
-  - Application
+  - Applications
 tags:
   - OAuth
-  - OpenID Connect
-  - Book
+  - OpenIDConnect
+  - Book Review
 translation_key: oauth-oidc-attacks-and-countermeasures-guide
 books:
-  - title: Understanding Attacks and Countermeasures on OAuth/OIDC (Redirect Attack Edition)
+  - title: OAuth・OIDCへの攻撃と対策を整理して理解できる本（リダイレクトへの攻撃編）
     url: https://authya.booth.pm/items/1877818
 ---
 
 
+I read the [A Book to Understand Attacks and Countermeasures on OAuth and OIDC (Redirect Attack Edition)](https://authya.booth.pm/items/1877818).
 
-[I read "Understanding Attacks and Countermeasures on OAuth/OIDC (Redirect Attack Edition)"](https://authya.booth.pm/items/1877818).
-
-The book gently explains the basic security aspects of OAuth and OIDC.
+It provides a gentle explanation of the basic security aspects of OAuth and OIDC.

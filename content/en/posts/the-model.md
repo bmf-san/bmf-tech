@@ -1,6 +1,6 @@
 ---
-title: The Model
-description: "Discover how to systematize SaaS sales through marketing, inside sales, and customer success for reproducible business growth."
+title: 'The Model'
+description: 'The Model'
 slug: the-model
 date: 2024-04-16T00:00:00Z
 author: bmf-san
@@ -8,24 +8,24 @@ categories:
   - Business
 tags:
   - Sales
-  - Book
+  - Book Review
   - SaaS
 translation_key: the-model
+books:
+  - asin: "479815816X"
+    title: "ザ・モデル: マーケティング・インサイドセールス・営業・カスタマーサクセスの共業プロセス"
 ---
 
+I read [The Model: Marketing, Inside Sales, Sales, and Customer Success Collaborative Processes](https://amzn.to/4aBjHpS).
 
+I usually don't read books like this, so it's hard for me to write, but I wanted to leave my impressions.
 
-[The Model: The Collaborative Process of Marketing, Inside Sales, Sales, and Customer Success](https://amzn.to/4aBjHpS) is a book I read.
+The Model is a framework that systematizes various sales activities such as customer acquisition and customer success, and it seems to have been utilized at Salesforce.com.
 
-I don't usually read this type of book, so it's hard to write, but I'll leave my impressions.
+Although I had no sales experience and only a general understanding of the terminology, I felt that this book helped me somewhat grasp how sales can become reproducible from being labor-intensive.
 
-The Model is a systematization of various sales activities such as customer acquisition and customer success, and it seems to have been utilized at Salesforce.com.
+Most businesses have sales, which possess an indispensable power for business growth, and I wanted to understand this from an engineer's perspective as well. I was particularly interested in how sales analyze and approach customers.
 
-I have no sales experience and only had a general understanding of the terms, but through this book, I felt like I could somewhat see how sales can transition from being labor-intensive to achieving reproducibility.
+This book briefly touched on the SaaS business model, and I was reminded that SaaS does not scale solely through engineering; it is a business model that also relies on the power of sales.
 
-Most businesses have sales, which is an indispensable power for business growth, and I wanted to understand it from an engineer's perspective. I was particularly interested in how sales analyze and approach customers.
-
-The book briefly touched on the SaaS business model, and I was reminded that SaaS is not something that scales with engineering alone, but is a business model that also relies on the power of sales.
-
-I realized the importance of customer success through this book, so I'm thinking of reading [Customer Success: The 10 Principles of "Customer Success" Required in the Subscription Era](https://amzn.to/4aRSsas).
-
+I realized the importance of customer success through this book, so I am thinking of reading [Customer Success: 10 Principles for Customer Success in the Subscription Era](https://amzn.to/4aRSsas).

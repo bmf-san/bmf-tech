@@ -1,5 +1,5 @@
 ---
-title: 'CTO''s Thinking: Decision Making, Strategy, and Leadership to Drive Technology and Organization'
+title: "CTO''s Thinking: Decision Making, Strategy, and Leadership to Drive Technology and Organization"
 description: "CTO''s Thinking: Decision Making, Strategy, and Leadership to Drive Technology and Organization"
 slug: cto-thinking-strategy-leadership
 date: 2026-02-21T00:00:00Z

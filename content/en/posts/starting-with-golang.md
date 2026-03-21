@@ -1,19 +1,20 @@
 ---
-title: Starting Go Language
-description: "Learn Go language fundamentals and core concepts through an introductory guide for beginning Go programming development."
+title: 'Starting with Go Language'
+description: 'Starting with Go Language'
 slug: starting-with-golang
 date: 2018-03-01T00:00:00Z
 author: bmf-san
 categories:
-  - Application
+  - Applications
 tags:
   - Golang
-  - Book
+  - Book Review
 translation_key: starting-with-golang
+books:
+  - asin: "B01FH3KRTI"
+    title: "スターティングGo言語"
 ---
 
+I read [Starting with Go Language](https://amzn.to/3xY3SLw).
 
-
-[I read Starting Go Language](https://amzn.to/3xY3SLw).
-
-As an introductory book to Go, it contains relatively straightforward content.
+This book offers relatively easy-to-understand content as an introduction to Go.

@@ -1,29 +1,30 @@
 ---
-title: Tidy First? ― Practicing Empirical Software Design Individually
-description: "Master empirical software design by analyzing cost-benefit of tidying code, coupling, cohesion, and refactoring decisions."
+title: 'Tidy First? ―Experiential Software Design for Individuals'
+description: 'Tidy First? ―Experiential Software Design for Individuals'
 slug: tidy-first-experiential-software-design
 date: 2025-01-06T00:00:00Z
 author: bmf-san
 categories:
   - Architecture
 tags:
-  - Book
+  - Book Review
   - Software
   - Software Development
   - Design
 translation_key: tidy-first-experiential-software-design
+books:
+  - asin: "4814400918"
+    title: "Tidy First? ―個人で実践する経験主義的ソフトウェア設計"
 ---
 
+I read [Tidy First? ―Experiential Software Design for Individuals](https://amzn.to/4iXbNMp).
 
+With only 130 pages, it's a quick read.
 
-[Tidy First? ― Practicing Empirical Software Design Individually](https://amzn.to/4iXbNMp) is a book I read.
-
-It's only 130 pages, so you can read it quickly.
-
-The book makes you think about whether to "tidy up" from the perspectives of cost, revenue, coupling, and cohesion.
+The book prompts you to consider whether to "tidy up" from the perspectives of cost, revenue, coupling, and cohesion.
 
 I found the arguments to be concise and easy to understand.
 
-Personally, I find it challenging to estimate costs and revenues, which tests my skills as a technician.
+Personally, I think estimating costs and revenues is challenging, and it really tests one's skills as a technician.
 
-In particular, some chapters that present ideas through a monetary economy approach were interesting.
+In particular, I found several chapters that present ideas from a monetary economic approach to be quite interesting.

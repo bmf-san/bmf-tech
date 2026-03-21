@@ -1,6 +1,6 @@
 ---
-title: Kaizen Journey
-description: 'Discover Kaizen principles for continuous improvement and boundary-crossing team development in software projects.'
+title: 'Kaizen Journey'
+description: 'Kaizen Journey'
 slug: kaizen-journey
 date: 2024-04-16T00:00:00Z
 author: bmf-san
@@ -8,29 +8,31 @@ categories:
   - Development Process
 tags:
   - Agile
-  - Book
+  - Book Review
 translation_key: kaizen-journey
+books:
+  - asin: "4798153346"
+    title: "カイゼン・ジャーニー"
 ---
 
 
-
-[Kaizen Journey](https://amzn.to/44eW18J) - Here are my thoughts after reading it.
+I read [Kaizen Journey](https://amzn.to/44eW18J) and wanted to jot down my thoughts.
 
 # Thoughts
-I found the story-like format both easy and difficult to read at times, but by the end, I felt it was an effective way to experience "crossing boundaries."
+I had the impression that the story format was both easy and difficult to read, but upon finishing, I felt it was a clear way to experience the concept of "crossing boundaries."
 
-The Agile practices mentioned in the book were not new to me, as I had learned them elsewhere.
+The Agile practices presented in the book were not new to me, as I had learned about them elsewhere.
 
-However, this book strongly conveyed the purpose and significance of "crossing boundaries" rather than the details of those practices.
+However, what stood out in this book was the strong message regarding the purpose and significance of "crossing boundaries," rather than the details of those practices.
 
-Reflecting on my own experience, there were times when I considered what kind of Kaizen was necessary for a team to exceed its boundaries, improve results, and contribute to the organization.
+Reflecting on my own experiences, I have thought about what kind of Kaizen is necessary for a team to enhance its results beyond its own boundaries and contribute to the organization.
 
-I feel that "crossing boundaries" is a key concept in pursuing outcomes in software projects, whether it's achieving greater results, achieving them faster, or making it easier to achieve them.
+I feel that "crossing boundaries" is an important keyword in the pursuit of outcomes in software projects, whether it’s about achieving greater results, delivering results faster, or making it easier to achieve results.
 
-This book addresses themes such as expanding the field of value delivery from an individual to a team, and from a team to the entire organization, and improving development through process improvement.
+I believe this book addresses themes such as how to expand the field of value delivery from individuals to teams and from teams to the entire organization, and how to improve development through process enhancements.
 
 I read this book without any prior knowledge, but it might have been easier to read if I had looked at the Appendix first.
 
-Although the story is set in a contract development company, I think those with experience in business companies might find the content more relatable. (This might be influenced by my own biases and prejudices...)
+The story in this book is set in a contract development company, but I think those with experience in business companies might find the content resonates more with them. (I might be mixing in my own biases and prejudices based on my experiences...)
 
-So, perhaps Sodegaura-san could have collaborated with Ejima-san and others from the beginning, haha.
+So, I wonder if Sodekawara could have collaborated with Ejima and the others from the very beginning! Haha.

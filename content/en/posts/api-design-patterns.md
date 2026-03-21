@@ -1,32 +1,34 @@
 ---
-title: API Design Patterns
-description: 'Explore API design patterns, resource-oriented vs RPC approaches, and design principles for building executable, predictable, and maintainable APIs.'
+title: 'API Design Patterns'
+description: 'API Design Patterns'
 slug: api-design-patterns
 date: 2024-08-26T00:00:00Z
 author: bmf-san
 categories:
   - Architecture
 tags:
-  - Book
+  - Book Review
   - API
   - Design
 translation_key: api-design-patterns
+books:
+  - asin: "4839979391"
+    title: "API Design Patterns"
 ---
 
 
+I read [API Design Patterns](https://amzn.to/3AD3Vhr).
 
-[APIデザイン・パターン](https://amzn.to/3AD3Vhr)を読んだ。
+It starts with the principles of API design and introduces a wealth of API design patterns.
 
-APIの設計原則に始まり、豊富なAPIのデザイン・パターンを紹介している。
+- Resource-Oriented
+  - Processes are determined by combining standard methods (e.g., Create/Get/List/Delete/Update) for a single resource.
+- RPC-Oriented
+  - Processes are determined by specifying a method to invoke a specific procedure.
+- Considerations for Improving API Design
+  - Must be executable
+  - Must be expressive
+  - Must be simple
+  - Must be predictable
 
-- リソース指向
-  - 単一のリソースに対して、標準メソッド（ex, Create/Get/List/Delete/Update）をかけ合わせて処理を決める
-- RPC指向
-  - メソッドを指定して特定の手続きを呼び出して処理を決める
-- API設計を良くするため観点
-  - 実行可能であること
-  - 表現力があること
-  - シンプルであること
-  - 予測可能であること
-
-APIのデザイン・パターンは、APIの設計や運用をしていく中で直面しそうな課題に対するアプローチとして参考になりそうなものが多い。設計に迷ったら参照したい。
+API design patterns offer many approaches that could be useful for challenges you might face while designing and operating APIs. It's a great reference when you're unsure about your design.

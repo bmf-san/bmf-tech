@@ -1,5 +1,5 @@
 ---
-title: 'Understanding UML from Scratch: A Beginner''s Guide'
+title: "Understanding UML from Scratch: A Beginner''s Guide"
 description: "Understanding UML from Scratch: A Beginner''s Guide"
 slug: uml-introduction-from-zero
 date: 2016-07-01T00:00:00Z
