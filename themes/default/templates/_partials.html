@@ -32,7 +32,11 @@
     {{- if eq .CurrentLocale "ja"}}{{$altURLHead = printf "%s/page/%d/" (slice .Pagination.BaseURL 3) .Pagination.CurrentPage}}{{else}}{{$altURLHead = printf "/ja%s/page/%d/" .Pagination.BaseURL .Pagination.CurrentPage}}{{end}}
   {{- end}}
 {{- else if .VirtualPageData}}
-  {{- if eq .CurrentLocale "ja"}}{{$altURLHead = "/bookshelf/"}}{{else}}{{$altURLHead = "/ja/bookshelf/"}}{{end}}
+  {{- if eq (index .VirtualPageData "page_type") "picks"}}
+    {{- if eq .CurrentLocale "ja"}}{{$altURLHead = "/picks/"}}{{else}}{{$altURLHead = "/ja/picks/"}}{{end}}
+  {{- else}}
+    {{- if eq .CurrentLocale "ja"}}{{$altURLHead = "/bookshelf/"}}{{else}}{{$altURLHead = "/ja/bookshelf/"}}{{end}}
+  {{- end}}
 {{- else if and .Pagination (gt .Pagination.CurrentPage 1)}}
   {{- if eq .CurrentLocale "ja"}}{{$altURLHead = printf "/page/%d/" .Pagination.CurrentPage}}{{else}}{{$altURLHead = printf "/ja/page/%d/" .Pagination.CurrentPage}}{{end}}
 {{- end}}
@@ -42,7 +46,7 @@
 <meta name="color-scheme" content="light dark">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {{- $pageTitle := .Config.Site.Title}}
-{{- if $isSingle}}{{$pageTitle = printf "%s | %s" $article.FrontMatter.Title .Config.Site.Title}}{{else if .CurrentTaxonomy}}{{$pageTitle = printf "%s | %s" .CurrentTaxonomy.Name .Config.Site.Title}}{{else if and .CurrentArchivePath $article}}{{- $ad := formatDate "2006" $article.FrontMatter.Date}}{{if .CurrentArchiveIsMonth}}{{$ad = formatDate "2006/01" $article.FrontMatter.Date}}{{end}}{{$pageTitle = printf "%s | %s" $ad .Config.Site.Title}}{{else if and .Pagination (gt .Pagination.CurrentPage 1)}}{{if eq .CurrentLocale "ja"}}{{$pageTitle = printf "%dページ目 | %s" .Pagination.CurrentPage .Config.Site.Title}}{{else}}{{$pageTitle = printf "Page %d | %s" .Pagination.CurrentPage .Config.Site.Title}}{{end}}{{end}}
+{{- if $isSingle}}{{$pageTitle = printf "%s | %s" $article.FrontMatter.Title .Config.Site.Title}}{{else if .CurrentTaxonomy}}{{$pageTitle = printf "%s | %s" .CurrentTaxonomy.Name .Config.Site.Title}}{{else if and .CurrentArchivePath $article}}{{- $ad := formatDate "2006" $article.FrontMatter.Date}}{{if .CurrentArchiveIsMonth}}{{$ad = formatDate "2006/01" $article.FrontMatter.Date}}{{end}}{{$pageTitle = printf "%s | %s" $ad .Config.Site.Title}}{{else if and .Pagination (gt .Pagination.CurrentPage 1)}}{{if eq .CurrentLocale "ja"}}{{$pageTitle = printf "%dページ目 | %s" .Pagination.CurrentPage .Config.Site.Title}}{{else}}{{$pageTitle = printf "Page %d | %s" .Pagination.CurrentPage .Config.Site.Title}}{{end}}{{else if and .VirtualPageData (index .VirtualPageData "page_title")}}{{$pageTitle = printf "%s | %s" (index .VirtualPageData "page_title") .Config.Site.Title}}{{end}}
 <title>{{$pageTitle}}</title>
 <meta name="description" content="{{if and $isSingle $article.FrontMatter.Description}}{{$article.FrontMatter.Description}}{{else if and .CurrentTaxonomy .CurrentTaxonomy.Description}}{{.CurrentTaxonomy.Description}}{{else}}{{$siteDesc}}{{end}}">
 <link rel="alternate" type="application/atom+xml" href="{{$localePrefix}}/atom.xml" title="{{.Config.Site.Title}}">
@@ -130,7 +134,11 @@
 {{- else if and .Pagination (gt .Pagination.CurrentPage 1)}}
   {{- $ogURL = printf "%s%s/page/%d/" .Config.Site.BaseURL .Pagination.BaseURL .Pagination.CurrentPage}}
 {{- else if .VirtualPageData}}
-  {{- if eq .CurrentLocale "ja"}}
+  {{- if eq (index .VirtualPageData "page_type") "picks"}}
+    {{- $vpTitle := index .VirtualPageData "page_title"}}
+    {{- $ogTitle = printf "%s | %s" $vpTitle .Config.Site.Title}}
+    {{- $ogURL = printf "%s%s" .Config.Site.BaseURL (index .VirtualPageData "page_url")}}
+  {{- else if eq .CurrentLocale "ja"}}
     {{- $ogTitle = printf "%s | %s" "本棚" .Config.Site.Title}}
     {{- $ogURL = printf "%s/ja/bookshelf/" .Config.Site.BaseURL}}
   {{- else}}
@@ -147,7 +155,7 @@
 <meta property="og:title" content="{{$ogTitle}}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{$ogURL}}">
-<meta property="og:description" content="{{if and .CurrentTaxonomy .CurrentTaxonomy.Description}}{{.CurrentTaxonomy.Description}}{{else}}{{$siteDesc}}{{end}}">
+<meta property="og:description" content="{{if and .CurrentTaxonomy .CurrentTaxonomy.Description}}{{.CurrentTaxonomy.Description}}{{else if and .VirtualPageData (index .VirtualPageData "page_desc")}}{{index .VirtualPageData "page_desc"}}{{else}}{{$siteDesc}}{{end}}">
 <meta property="og:image" content="{{.Config.Site.BaseURL}}/assets/images/ogp-default.png">
 <meta property="og:image:alt" content="{{$ogTitle}}">
 <meta property="og:image:width" content="1200">
