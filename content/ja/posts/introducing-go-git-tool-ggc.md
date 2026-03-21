@@ -6,7 +6,7 @@ date: 2025-06-15T00:00:00Z
 lastmod: 2026-03-20
 author: bmf-san
 categories:
-  - Tools
+  - ツール
 tags:
   - Golang
   - Git
