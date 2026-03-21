@@ -14,6 +14,7 @@ import (
 	"io"
 	"log"
 	"net/http"
+	"net/url"
 	"os"
 	"strings"
 	"time"
@@ -102,6 +103,21 @@ func loadRules(path string) ([]redirect, error) {
 	return rules, sc.Err()
 }
 
+// encodeNonASCII percent-encodes non-ASCII characters in a URL path.
+// Source URLs in bulk-redirects.txt are already percent-encoded; target URLs
+// may contain raw Unicode (e.g. /ja/tags/金融/) which Cloudflare rejects.
+func encodeNonASCII(rawPath string) string {
+	var b strings.Builder
+	for _, r := range rawPath {
+		if r > 127 {
+			b.WriteString(url.PathEscape(string(r)))
+		} else {
+			b.WriteRune(r)
+		}
+	}
+	return b.String()
+}
+
 func buildItems(rules []redirect, host string) []map[string]any {
 	scheme := "https://"
 	items := make([]map[string]any, 0, len(rules))
@@ -111,20 +127,18 @@ func buildItems(rules []redirect, host string) []map[string]any {
 		if !strings.HasPrefix(src, "http") {
 			src = host + src
 		}
-		// target_url: full URL with scheme
+		// target_url: full URL with scheme; encode any non-ASCII chars in path
 		dst := r.Target
 		if !strings.HasPrefix(dst, "http") {
-			dst = scheme + host + dst
+			dst = scheme + host + encodeNonASCII(dst)
+		} else {
+			dst = encodeNonASCII(dst)
 		}
 		items = append(items, map[string]any{
 			"redirect": map[string]any{
-				"source_url":            src,
-				"target_url":            dst,
-				"status_code":           r.Code,
-				"preserve_query_string": false,
-				"include_subpaths":      false,
-				"subpath_matching":      false,
-				"preserve_path_suffix":  false,
+				"source_url":  src,
+				"target_url":  dst,
+				"status_code": r.Code,
 			},
 		})
 	}
