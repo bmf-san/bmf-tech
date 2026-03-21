@@ -5,7 +5,7 @@ slug: introducing-gohan-ssg
 date: 2026-03-20T00:00:00Z
 author: bmf-san
 categories:
-  - Tools
+  - ツール
 tags:
   - Golang
   - SSG
