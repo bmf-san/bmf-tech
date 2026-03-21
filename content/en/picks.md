@@ -7,7 +7,7 @@ author: bmf-san
 template: picks.html
 draft: false
 translation_key: picks
-picks_slugs:
+listing_slugs:
   - engineering-in-ai-reflections
   - github-agentic-workflow-llm-prompt-management
   - platform-engineering-explained

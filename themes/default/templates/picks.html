@@ -22,13 +22,13 @@
       {{if eq .CurrentLocale "ja"}}ピックアップ記事{{else}}picks{{end}}
     </h1>
     <p class="text-secondary">
-      {{len .Articles}} {{if eq .CurrentLocale "ja"}}件の記事{{else}}articles{{end}}
+      {{len .ListingArticles}} {{if eq .CurrentLocale "ja"}}件の記事{{else}}articles{{end}}
     </p>
   </div>
 
-  {{if .Articles}}
+  {{if .ListingArticles}}
   <div class="grid gap-4 mb-8">
-    {{range .Articles}}
+    {{range .ListingArticles}}
     {{- $img := index .FrontMatter.Extra "image"}}
     {{- if not $img}}{{$img = printf "/ogp/%s.png" .FrontMatter.Slug}}{{end}}
     <a href="{{.URL}}" class="card no-underline">

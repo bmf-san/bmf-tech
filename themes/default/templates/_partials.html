@@ -8,9 +8,10 @@
      no Pagination would also satisfy the condition, receiving incorrect
      article-level SEO (og:type=article, BlogPosting, og:url = article). */}}
 {{- $isSingle := and $article (not .Pagination) (not .CurrentArchivePath) (not .CurrentTaxonomy) (eq (len .Articles) 1)}}
-{{- /* $isPage: true for static pages rendered with page.html (e.g. About, Privacy Policy).
-     These must not receive article-specific OGP/JSON-LD metadata. */}}
-{{- $isPage := and $isSingle (eq $article.FrontMatter.Template "page.html")}}
+{{- /* $isPage: true for static pages rendered with a non-article template (e.g. page.html,
+     picks.html, any custom page template).  These must not receive article-specific
+     OGP/JSON-LD metadata (og:type=article, BlogPosting, article:published_time). */}}
+{{- $isPage := and $isSingle (ne $article.FrontMatter.Template "article.html")}}
 {{- $localePrefix := ""}}
 {{- if eq .CurrentLocale "ja"}}{{- $localePrefix = "/ja"}}{{- end}}
 {{- $homeURL := "/"}}
@@ -32,11 +33,7 @@
     {{- if eq .CurrentLocale "ja"}}{{$altURLHead = printf "%s/page/%d/" (slice .Pagination.BaseURL 3) .Pagination.CurrentPage}}{{else}}{{$altURLHead = printf "/ja%s/page/%d/" .Pagination.BaseURL .Pagination.CurrentPage}}{{end}}
   {{- end}}
 {{- else if .VirtualPageData}}
-  {{- if eq (index .VirtualPageData "page_type") "picks"}}
-    {{- if eq .CurrentLocale "ja"}}{{$altURLHead = "/picks/"}}{{else}}{{$altURLHead = "/ja/picks/"}}{{end}}
-  {{- else}}
-    {{- if eq .CurrentLocale "ja"}}{{$altURLHead = "/bookshelf/"}}{{else}}{{$altURLHead = "/ja/bookshelf/"}}{{end}}
-  {{- end}}
+  {{- if eq .CurrentLocale "ja"}}{{$altURLHead = "/bookshelf/"}}{{else}}{{$altURLHead = "/ja/bookshelf/"}}{{end}}
 {{- else if and .Pagination (gt .Pagination.CurrentPage 1)}}
   {{- if eq .CurrentLocale "ja"}}{{$altURLHead = printf "/page/%d/" .Pagination.CurrentPage}}{{else}}{{$altURLHead = printf "/ja/page/%d/" .Pagination.CurrentPage}}{{end}}
 {{- end}}
@@ -134,11 +131,7 @@
 {{- else if and .Pagination (gt .Pagination.CurrentPage 1)}}
   {{- $ogURL = printf "%s%s/page/%d/" .Config.Site.BaseURL .Pagination.BaseURL .Pagination.CurrentPage}}
 {{- else if .VirtualPageData}}
-  {{- if eq (index .VirtualPageData "page_type") "picks"}}
-    {{- $vpTitle := index .VirtualPageData "page_title"}}
-    {{- $ogTitle = printf "%s | %s" $vpTitle .Config.Site.Title}}
-    {{- $ogURL = printf "%s%s" .Config.Site.BaseURL (index .VirtualPageData "page_url")}}
-  {{- else if eq .CurrentLocale "ja"}}
+  {{- if eq .CurrentLocale "ja"}}
     {{- $ogTitle = printf "%s | %s" "本棚" .Config.Site.Title}}
     {{- $ogURL = printf "%s/ja/bookshelf/" .Config.Site.BaseURL}}
   {{- else}}
