@@ -34,7 +34,7 @@ type cfClient struct {
 
 func main() {
 	file := flag.String("file", "bulk-redirects.txt", "path to redirect rules file")
-	listName := flag.String("list", "bmf-tech-redirects", "Cloudflare Redirect List name")
+	listName := flag.String("list", "bmf_tech_redirects", "Cloudflare Redirect List name")
 	domain := flag.String("domain", "https://bmf-tech.com", "base domain for relative source/target URLs")
 	flag.Parse()
 
