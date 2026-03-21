@@ -23,7 +23,7 @@ test.describe('Japanese index /ja/', () => {
     const nav = page.locator('nav.navbar');
     await expect(nav).toBeVisible();
     await expect(nav.getByRole('link', { name: 'ホーム' })).toBeVisible();
-    await expect(nav.getByRole('link', { name: 'About' })).toBeVisible();
+    await expect(nav.getByRole('link', { name: 'プロフィール' })).toBeVisible();
     await expect(nav.getByRole('link', { name: 'フィード' })).toBeVisible();
   });
 
