@@ -8,10 +8,11 @@
      no Pagination would also satisfy the condition, receiving incorrect
      article-level SEO (og:type=article, BlogPosting, og:url = article). */}}
 {{- $isSingle := and $article (not .Pagination) (not .CurrentArchivePath) (not .CurrentTaxonomy) (eq (len .Articles) 1)}}
-{{- /* $isPage: true for static pages rendered with a non-article template (e.g. page.html,
-     picks.html, any custom page template).  These must not receive article-specific
-     OGP/JSON-LD metadata (og:type=article, BlogPosting, article:published_time). */}}
-{{- $isPage := and $isSingle (ne $article.FrontMatter.Template "article.html")}}
+{{- /* $isPage: true for static pages rendered with an explicit non-article template
+     (e.g. page.html, picks.html, custom page templates).  Regular articles leave
+     FrontMatter.Template empty (""), which is falsy in Go templates, so the middle
+     operand short-circuits and $isPage stays false for them. */}}
+{{- $isPage := and $isSingle $article.FrontMatter.Template (ne $article.FrontMatter.Template "article.html")}}
 {{- $localePrefix := ""}}
 {{- if eq .CurrentLocale "ja"}}{{- $localePrefix = "/ja"}}{{- end}}
 {{- $homeURL := "/"}}
