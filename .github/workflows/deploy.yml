@@ -26,9 +26,6 @@ jobs:
       - name: Build site
         run: make build
 
-      - name: Copy _redirects
-        run: make copy-redirects
-
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
