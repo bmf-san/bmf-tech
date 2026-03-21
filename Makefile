@@ -1,4 +1,4 @@
-.PHONY: help install-gohan install-e2e install-lint build serve clean copy-redirects test-e2e test-e2e-ui new-ja new-en lint-content lint-content-diff devto-build devto-post-all devto-post-file
+.PHONY: help install-gohan install-e2e install-lint build serve clean test-e2e test-e2e-ui new-ja new-en lint-content lint-content-diff devto-build devto-post-all devto-post-file
 
 TITLE   ?= untitled
 SLUG    ?= untitled
@@ -53,9 +53,6 @@ serve: ## ローカルサーバーを起動 (http://localhost:1313)
 
 clean: ## ビルド出力を削除
 	rm -rf public/*
-
-copy-redirects: ## _redirects を public/ にコピー
-	cp _redirects public/
 
 test-e2e: ## E2Eテストを実行 (make build を事前に実行すること)
 	cd e2e && npx playwright test
