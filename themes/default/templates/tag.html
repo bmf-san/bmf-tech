@@ -42,6 +42,11 @@
         {{if .FrontMatter.Description}}
         <p class="text-sm text-secondary leading-relaxed line-clamp-2">{{.FrontMatter.Description}}</p>
         {{end}}
+        {{if .FrontMatter.Tags}}
+        <div class="flex flex-wrap gap-1 mt-2">
+          {{range .FrontMatter.Tags}}<span class="badge badge-light text-secondary">#{{.}}</span>{{end}}
+        </div>
+        {{end}}
       </div>
     </a>
     {{end}}
