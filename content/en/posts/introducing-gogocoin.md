@@ -18,13 +18,13 @@ translation_key: introducing-gogocoin
 
 ## Why I Built It
 
-There is no shortage of open-source crypto bots and automated trading services. I built gogocoin anyway because I wanted the hands-on experience of implementing something that works exactly as I intend and actually earning returns with my own money. I had built a similar bot once before; this time I rebuilt it from scratch with the help of AI. Running it in production has been a continuous source of learning — it has become a hobby as much as a software project.
+Open-source crypto bots and automated trading services are everywhere. I built gogocoin anyway because I wanted the hands-on experience of implementing something that works exactly as I intend and actually earning returns with my own money. I had built a similar bot once before; this time I rebuilt it from scratch with the help of AI. Running it in production has been a continuous source of learning — it has become a hobby as much as a software project.
 
 The bot targets the [bitFlyer](https://bitflyer.com/) exchange via its official REST and WebSocket APIs. A sample EMA-based scalping strategy on XRP/JPY ships as a built-in implementation — a low-minimum pair suited to starting with small capital.
 
 ## Getting Started
 
-**gogocoin is bitFlyer-only.** All exchange communication goes through the author's own [`go-bitflyer-api-client`](https://github.com/bmf-san/go-bitflyer-api-client) library; no other exchange is supported. Orders are placed via bitFlyer's spot-only endpoint (`/v1/me/sendchildorder`), so **margin / futures trading (e.g. FX\_BTC\_JPY) is not supported**.
+**gogocoin is bitFlyer-only.** All exchange communication goes through the author's own [`go-bitflyer-api-client`](https://github.com/bmf-san/go-bitflyer-api-client) library; no other exchange works. The bot places orders via bitFlyer's spot-only endpoint (`/v1/me/sendchildorder`), so **margin / futures trading (e.g. FX\_BTC\_JPY) does not work**.
 
 All you need is a bitFlyer API key and Docker:
 
@@ -40,7 +40,7 @@ make init && make up
 # → Dashboard at http://localhost:8080
 ```
 
-Out of the box the bot runs an XRP/JPY scalping strategy with a 200 JPY order size. Adjust `config.yaml`'s `trading.symbols` and `strategy_params.scalping.order_notional` to trade different pairs or sizes. Trade data is persisted in SQLite (no external database needed).
+Out of the box the bot runs an XRP/JPY scalping strategy with a 200 JPY order size. Adjust `config.yaml`'s `trading.symbols` and `strategy_params.scalping.order_notional` to trade different pairs or sizes. The bot stores trade data in SQLite (no external database needed).
 
 ## Architecture
 
@@ -173,14 +173,14 @@ The outer `cache.mu` (a `sync.RWMutex`) allows concurrent reads of fresh cache d
 
 ## Web Dashboard
 
-The embedded web UI at `http://localhost:8080` is organized into four pages via sidebar navigation.
+The embedded web UI at `http://localhost:8080` has four pages, navigable via the sidebar.
 
 - **Dashboard** — Four summary cards (total P&L, today's P&L, win rate, daily trade count) plus a system status panel showing connection state, active strategy, uptime, and live prices for monitored currency pairs.
 - **Performance** — Per-currency balance table (total / available), three risk metrics (Sharpe ratio, profit factor, max drawdown), and a daily P&L history table.
 - **Trade History** — Full trade log with timestamp, currency pair, side, price, size, fee, and P&L columns.
-- **System Logs** — Log viewer filterable by level (DEBUG / INFO / WARN / ERROR) and category (system / trading / api / strategy).
+- **System Logs** — Log viewer filterable by level (DEBUG / INFO / WARN / ERROR) and category (system / trading / API / strategy).
 
-Start and stop buttons in the top bar control the bot in real time. Configuration (API credentials, trading parameters) lives in `config.yaml`. Data is stored in SQLite — no external database required.
+Start and stop buttons in the top bar control the bot in real time. Configuration (API credentials, trading parameters) lives in `config.yaml`. The bot writes data to SQLite — no external database required.
 
 ## VPS Deployment
 
