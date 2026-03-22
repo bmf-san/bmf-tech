@@ -57,7 +57,7 @@ func (g *GitDiffEngine) Detect(manifest *model.BuildManifest) (*model.ChangeSet,
 }
 ```
 
-`hashAllFiles()` walks the content directory and computes a SHA-256 hex digest for every file. On the first build (or when no manifest exists), all files count as `Added`. Subsequent builds detect three change types — `Added`, `Modified`, and `Deleted` — and regenerate only the affected HTML pages.
+`hashAllFiles()` walks the content directory and computes a SHA-256 hex digest for every file. On the first build (or when no manifest exists), all files count as `Added`. Later builds detect three change types — `Added`, `Modified`, and `Deleted` — and regenerate only the affected HTML pages.
 
 ## Features
 
@@ -90,7 +90,7 @@ type SitePlugin interface {
 }
 ```
 
-`Plugin` (article-level) exposes additional data for a single article through the template as `.PluginData.<name>`. `SitePlugin` (site-level) runs after all articles have processed and can produce **virtual pages** — pages with no Markdown source.
+`Plugin` (article-level) exposes extra data for a single article through the template as `.PluginData.<name>`. `SitePlugin` (site-level) runs after all articles have processed and can produce **virtual pages** — pages with no Markdown source.
 
 The built-in registry ships two plugins.
 
