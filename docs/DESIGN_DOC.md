@@ -50,13 +50,13 @@ bmf-tech/
 ├── _redirects               # Cloudflare Pages リダイレクトルール（CI で public/ へコピー）
 ├── content/
 │   ├── en/                  # 英語コンテンツ（デフォルトロケール）
-│   │   ├── posts/           # 英語記事 Markdown ファイル（589件）
+│   │   ├── posts/           # 英語記事 Markdown ファイル
 │   │   ├── about.md         # About ページ
 │   │   ├── privacy-policy.md
 │   │   ├── categories.yaml  # カテゴリ定義
 │   │   └── tags.yaml        # タグ定義
 │   └── ja/
-│       ├── posts/           # 日本語記事 Markdown ファイル（589件）
+│       ├── posts/           # 日本語記事 Markdown ファイル
 │       ├── about.md         # About ページ（JA）
 │       ├── privacy-policy.md
 │       ├── categories.yaml  # カテゴリ定義（JA）
@@ -170,7 +170,7 @@ categories:
 
 ### 書評記事（books: フィールドあり）
 
-書評記事は `books:` フィールドを持ち、gohan の `amazon_books` SitePlugin がサムネイルと Amazon リンクを自動生成する。JA/EN 両方に必ず対称的に設定する（JA 159件 = EN 159件）。
+書評記事は `books:` フィールドを持ち、gohan の `amazon_books` SitePlugin がサムネイルと Amazon リンクを自動生成する。JA/EN 両方に必ず対称的に設定する。
 
 ```yaml
 ---
@@ -227,7 +227,7 @@ description: "Kenta Takeuchi のプロフィールページ"
 | 施策 | 実装状況 |
 |---|---|
 | `<title>` タグ最適化 | `{記事タイトル} — {site.title}` 形式（`article.html` の `{{define "title"}}`） |
-| `<meta name="description">` | Front Matter の `description` フィールドを使用。EN/JA 全記事（各 584 件）に `description` 設定済み |
+| `<meta name="description">` | Front Matter の `description` フィールドを使用。EN/JA 全記事に `description` 設定済み |
 | OGP タグ | `og:title / og:type / og:url / og:description / og:image` を `_partials.html` の `{{define "head"}}` に実装済み。記事ページは `ogp/{slug}.png`（ビルド時自動生成）、一覧ページは `assets/images/ogp-default.png` を使用 |
 | Twitter Card | `twitter:card / twitter:site / twitter:creator` を実装済み |
 | Canonical URL | `<link rel="canonical">` を `article.html` に実装済み |
