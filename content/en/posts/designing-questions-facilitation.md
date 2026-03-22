@@ -7,7 +7,7 @@ categories:
   - Business
 tags:
   - Book Review
-description: A book about designing questions and facilitating creative dialogue.
+description: "Designing Questions: Facilitating Creative Dialogue"
 translation_key: designing-questions-facilitation
 books:
   - asin: "4761527439"

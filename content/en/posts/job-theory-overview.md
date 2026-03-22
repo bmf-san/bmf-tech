@@ -1,6 +1,6 @@
 ---
 title: Jobs Theory
-description: 'Explore Jobs Theory framework to understand customer needs and predict innovation patterns for product development.'
+description: "Jobs Theory"
 slug: job-theory-overview
 date: 2024-03-20T00:00:00Z
 author: bmf-san

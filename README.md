@@ -26,12 +26,14 @@
 │   ├── en/
 │   │   ├── posts/                # 英語記事
 │   │   ├── about.md              # About ページ
+│   │   ├── picks.md              # picks ページ（curated 記事インデックス）
 │   │   ├── privacy-policy.md     # プライバシーポリシー
 │   │   ├── categories.yaml       # カテゴリ定義
 │   │   └── tags.yaml             # タグ定義
 │   └── ja/
 │       ├── posts/                # 日本語記事
 │       ├── about.md              # About ページ（JA）
+│       ├── picks.md              # picks ページ（JA）
 │       ├── privacy-policy.md     # プライバシーポリシー（JA）
 │       ├── categories.yaml       # カテゴリ定義（JA）
 │       └── tags.yaml             # タグ定義（JA）
@@ -73,6 +75,7 @@ make serve
 |---|---|
 | 英語記事 | `/posts/{slug}/` |
 | 日本語記事 | `/ja/posts/{slug}/` |
+| picks | `/picks/` |
 | About | `/about/` |
 | プライバシーポリシー | `/privacy-policy/` |
 | タグ別記事一覧 | `/tags/{name}/` |

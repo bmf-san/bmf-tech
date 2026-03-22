@@ -1,6 +1,6 @@
 ---
 title: 要件最適アーキテクチャ戦略
-description: 要件最適アーキテクチャ戦略について、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
+description: "要件最適アーキテクチャ戦略"
 slug: architecture-strategy-requirements
 date: 2025-03-08T00:00:00Z
 author: bmf-san

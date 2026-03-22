@@ -1,6 +1,6 @@
 ---
-title: 'Comprehensive Introduction to OAuth: Principles and Practices for Applying a Secure Authorization System'
-description: 'Discover OAuth secure authorization principles, token management, and practical implementation strategies.'
+title: 'A Comprehensive Introduction to OAuth: Principles and Practices for Implementing a Secure Authorization System'
+description: 'A Comprehensive Introduction to OAuth: Principles and Practices for Implementing a Secure Authorization System'
 slug: oauth-introduction-secure-authorization
 date: 2021-10-05T00:00:00Z
 author: bmf-san
@@ -8,14 +8,16 @@ categories:
   - Application
 tags:
   - OAuth
-  - Book
+  - Book Review
 translation_key: oauth-introduction-secure-authorization
+books:
+  - asin: "B07L5M7DXS"
+    title: "OAuth徹底入門 セキュアな認可システムを適用するための原則と実践"
 ---
 
 
+I read [A Comprehensive Introduction to OAuth: Principles and Practices for Implementing a Secure Authorization System](https://amzn.to/3Wj8F4o).
 
-[Comprehensive Introduction to OAuth: Principles and Practices for Applying a Secure Authorization System](https://amzn.to/3Wj8F4o) was read.
+It is one of the few books that provides detailed information about OAuth.
 
-This is one of the few books that provides detailed information about OAuth.
-
-It's recommended to read this after introductory books and before diving into the specifications.
+After reading an introductory book, I want to read this to prepare for reading the specifications.

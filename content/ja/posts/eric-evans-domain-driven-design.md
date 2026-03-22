@@ -1,6 +1,6 @@
 ---
 title: エリック・エヴァンスのドメイン駆動設計
-description: エリック・エヴァンスのドメイン駆動設計について、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
+description: "エリック・エヴァンスのドメイン駆動設計"
 slug: eric-evans-domain-driven-design
 date: 2016-12-09T00:00:00Z
 author: bmf-san

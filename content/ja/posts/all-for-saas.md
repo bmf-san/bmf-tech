@@ -1,6 +1,6 @@
 ---
 title: All for SaaS
-description: All for SaaS
+description: "All for SaaS"
 slug: all-for-saas
 date: 2024-04-16T00:00:00Z
 author: bmf-san

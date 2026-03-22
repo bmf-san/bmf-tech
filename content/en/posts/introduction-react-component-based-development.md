@@ -1,6 +1,6 @@
 ---
 title: 'Introduction to React: Component-Based Web Frontend Development'
-description: 'Master React fundamentals through component-based development and learn modern patterns for building interactive web applications.'
+description: 'Introduction to React: Component-Based Web Frontend Development'
 slug: introduction-react-component-based-development
 date: 2016-08-04T00:00:00Z
 author: bmf-san
@@ -8,12 +8,14 @@ categories:
   - Application
 tags:
   - React
-  - Book
+  - Book Review
 translation_key: introduction-react-component-based-development
+books:
+  - asin: "4873117194"
+    title: "入門 React ―コンポーネントベースのWebフロントエンド開発"
 ---
 
 
+I read [Introduction to React: Component-Based Web Frontend Development](https://amzn.to/4aaEakw).
 
-[Introduction to React: Component-Based Web Frontend Development](https://amzn.to/4aaEakw) was read.
-
-You can learn the basics of React. For advanced practical matters, you may want to refer to additional resources.
+You can learn the basics of React. For more advanced practical topics, I would like to refer to additional resources.

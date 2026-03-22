@@ -1,6 +1,6 @@
 ---
 title: ソフトウェアアーキテクトのための意思決定術　リーダーシップ／技術／プロダクトマネジメントの活用
-description: ソフトウェアアーキテクトのための意思決定術　リーダーシップ／技術／プロダクトマネジメントの活用
+description: "ソフトウェアアーキテクトのための意思決定術　リーダーシップ／技術／プロダクトマネジメントの活用"
 slug: decision-making-software-architects
 date: 2024-12-26T00:00:00Z
 author: bmf-san

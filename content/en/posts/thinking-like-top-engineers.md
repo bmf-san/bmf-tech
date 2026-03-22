@@ -8,7 +8,7 @@ categories:
 tags:
   - Thinking Methods
   - Book Review
-description: Notes on the book about world-class engineers' thinking methods.
+description: "The Thinking Methods of World-Class Engineers"
 translation_key: thinking-like-top-engineers
 books:
   - asin: "4163917683"

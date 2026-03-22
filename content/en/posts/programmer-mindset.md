@@ -1,6 +1,6 @@
 ---
 title: Programmer Brain
-description: 'Explore how cognitive science enhances programmer performance through working memory optimization and code-reading fundamentals.'
+description: "Programmer Brain"
 slug: programmer-mindset
 date: 2023-06-26T00:00:00Z
 author: bmf-san

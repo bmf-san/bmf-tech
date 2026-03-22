@@ -1,6 +1,6 @@
 ---
 title: ソフトウェア設計の結合バランス　持続可能な成長を支えるモジュール化の原則
-description: ソフトウェア設計の結合バランス　持続可能な成長を支えるモジュール化の原則について、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
+description: "ソフトウェア設計の結合バランス　持続可能な成長を支えるモジュール化の原則"
 slug: software-design-modularity-principles
 date: 2025-12-29T00:00:00Z
 author: bmf-san

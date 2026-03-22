@@ -1,6 +1,6 @@
 ---
-title: 'Understanding UML from Scratch: A Beginner''s Guide'
-description: "Learn Unified Modeling Language fundamentals with a beginner-friendly guide to UML diagrams and system modeling."
+title: "Understanding UML from Scratch: A Beginner''s Guide"
+description: "Understanding UML from Scratch: A Beginner''s Guide"
 slug: uml-introduction-from-zero
 date: 2016-07-01T00:00:00Z
 author: bmf-san

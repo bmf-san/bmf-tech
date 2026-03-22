@@ -1,6 +1,6 @@
 ---
 title: コンピュータはなぜ動くのか 第２版 知っておきたいハードウエア＆ソフトウエアの基礎知識
-description: コンピュータはなぜ動くのか 第２版 知っておきたいハードウエア＆ソフトウエアの基礎知識
+description: "コンピュータはなぜ動くのか 第２版 知っておきたいハードウエア＆ソフトウエアの基礎知識"
 slug: computer-basics-why-computers-work
 date: 2024-05-01T00:00:00Z
 author: bmf-san

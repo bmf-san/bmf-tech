@@ -1,6 +1,6 @@
 ---
 title: All for SaaS
-description: 'Learn SaaS fundamentals including multi-tenancy, unit economics, LTV/CAC optimization, MVP definition, and sustainable pricing strategies.'
+description: "All for SaaS"
 slug: all-for-saas
 date: 2024-04-16T00:00:00Z
 author: bmf-san

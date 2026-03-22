@@ -12,6 +12,7 @@
 |---|---|---|
 | `/` | `index.html` | トップページ（記事一覧） |
 | `/posts/{slug}/` | `article.html` | 記事詳細 |
+| `/picks/` | `page.html` | curated 記事インデックス（`listing_slugs` で選定） |
 | `/categories/{name}/` | `category.html` | カテゴリー別記事一覧 |
 | `/tags/{name}/` | `tag.html` | タグ別記事一覧 |
 | `/archives/{year}/{month}/` | `archive.html` | 年月別アーカイブ |
@@ -55,7 +56,7 @@ bmf-tech/
 │   │   ├── categories.yaml  # カテゴリ定義
 │   │   └── tags.yaml        # タグ定義
 │   └── ja/
-│       ├── posts/           # 日本語記事 Markdown ファイル（584件）
+│       ├── posts/           # 日本語記事 Markdown ファイル
 │       ├── about.md         # About ページ（JA）
 │       ├── privacy-policy.md
 │       ├── categories.yaml  # カテゴリ定義（JA）
@@ -167,6 +168,40 @@ categories:
 ---
 ```
 
+### 書評記事（books: フィールドあり）
+
+書評記事は `books:` フィールドを持ち、gohan の `amazon_books` SitePlugin がサムネイルと Amazon リンクを自動生成する。JA/EN 両方に必ず対称的に設定する。
+
+```yaml
+---
+title: "SQL Anti-Patterns"
+slug: sql-anti-patterns
+translation_key: sql-anti-patterns
+books:
+  - asin: "4873115892"
+    title: "SQL Anti-Patterns"
+---
+```
+
+### picks ページ（content/en/picks.md、content/ja/picks.md）
+
+```yaml
+---
+title: "picks"
+slug: picks
+date: 2026-03-21T00:00:00Z
+author: "bmf-san"
+template: page.html
+draft: false
+translation_key: picks
+listing_slugs:
+  - article-slug-1
+  - article-slug-2
+---
+```
+
+> `listing_slugs` は gohan v1.1.0 で導入された汎用フィールド（旧 `picks_slugs` から変更）。`Site.ListingArticles` でスライスとして参照できる。
+
 ### 固定ページ（content/en/）
 
 ```yaml
@@ -192,7 +227,7 @@ description: "Kenta Takeuchi のプロフィールページ"
 | 施策 | 実装状況 |
 |---|---|
 | `<title>` タグ最適化 | `{記事タイトル} — {site.title}` 形式（`article.html` の `{{define "title"}}`） |
-| `<meta name="description">` | Front Matter の `description` フィールドを使用。EN/JA 全記事（各 584 件）に `description` 設定済み |
+| `<meta name="description">` | Front Matter の `description` フィールドを使用。EN/JA 全記事に `description` 設定済み |
 | OGP タグ | `og:title / og:type / og:url / og:description / og:image` を `_partials.html` の `{{define "head"}}` に実装済み。記事ページは `ogp/{slug}.png`（ビルド時自動生成）、一覧ページは `assets/images/ogp-default.png` を使用 |
 | Twitter Card | `twitter:card / twitter:site / twitter:creator` を実装済み |
 | Canonical URL | `<link rel="canonical">` を `article.html` に実装済み |
@@ -243,9 +278,10 @@ description: "Kenta Takeuchi のプロフィールページ"
 | ファイル | 用途 |
 |---|---|
 | `_partials.html` | `head` / `header` / `footer` / `pagination` の共通ブロック。CSS もここに集約 |
-| `index.html` | トップページ（記事一覧、ページネーション） |
+| `index.html` | トップページ（記事一覧、ページネーション）。`or (not Template) (eq Template "article.html")` のホワイトリストフィルターで picks 等のカスタムページを除外 |
 | `article.html` | 記事詳細。canonical / hreflang / GitHub ソースリンク / 関連記事（2カラムグリッド、OGP 画像・カテゴリ・タグ・説明文付き）を出力 |
-| `page.html` | 固定ページ（about, privacy-policy）。`{{define "htmllang"}}` で locale を設定 |
+| `page.html` | 固定ページ（about, privacy-policy, picks）。`{{define "htmllang"}}` で locale を設定 |
+| `bookshelf.html` | 書籍一覧（本棚）。gohan `bookshelf` SitePlugin が自動生成する書籍データを表示 |
 | `tag.html` | タグ別記事一覧 |
 | `category.html` | カテゴリー別記事一覧 |
 | `archive.html` | 年月別アーカイブ |
@@ -292,5 +328,4 @@ description: "Kenta Takeuchi のプロフィールページ"
 | Google Analytics | GA4 実装済み。`_partials.html` の head に gtag.js スクリプトを配置（ID: `G-784B55NW88`） |
 | OGP 画像カスタマイズ | デフォルト画像（`assets/images/ogp-default.png`）はシンプルなテキストのみ。ブランドロゴや背景画像を使ったデザイン改善が可能 |
 | タグ・カテゴリーページの多言語混在 | `/tags/{name}/` / `/categories/{name}/` は en + ja の記事が混在して出力される（gohan の現仕様）。テンプレートでロケールラベルを表示するなど UX 面での対処が必要 |
-| カテゴリー英語化 | 既存カテゴリーは日本語（例: アーキテクチャ）。英語名（例: Architecture）への統一は段階的に実施予定 |
-| `site.title` / `site.description` の最終化 | 現在 `"bmf-tech"` / `"bmf-san's personal tech blog"` はプレースホルダー。DNS 移管前に正式値に更新する |
+| カテゴリー英語化 | EN 記事のカテゴリーは英語名に統一済み（例: Architecture, Database, Infrastructure 等）。JA 記事は日本語名を維持 |

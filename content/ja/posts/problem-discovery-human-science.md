@@ -1,6 +1,6 @@
 ---
 title: ライト、ついてますか　問題発見の人間学
-description: ライト、ついてますか　問題発見の人間学の原因と解決方法について解説します。
+description: "ライト、ついてますか　問題発見の人間学"
 slug: problem-discovery-human-science
 date: 2023-05-19T00:00:00Z
 author: bmf-san

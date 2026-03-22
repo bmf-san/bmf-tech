@@ -1,6 +1,6 @@
 ---
 title: 'Illustrated Introduction to Human Resource Management: 100 Tips on Theory and Practice for Those Who Want to Master HR Basics from Scratch'
-description: 'Master HR fundamentals through practical tips covering people management theory, recruitment, and organizational development.'
+description: "Illustrated Introduction to Human Resource Management: 100 Tips on Theory and Practice for Those Who Want to Master HR Basics from Scratch"
 slug: human-resource-management-introduction
 date: 2024-04-18T00:00:00Z
 author: bmf-san

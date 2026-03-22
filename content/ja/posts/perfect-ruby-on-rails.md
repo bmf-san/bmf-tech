@@ -1,6 +1,6 @@
 ---
 title: パーフェクトRuby on Rails
-description: パーフェクトRuby on Rails
+description: "パーフェクトRuby on Rails"
 slug: perfect-ruby-on-rails
 date: 2024-05-04T00:00:00Z
 author: bmf-san

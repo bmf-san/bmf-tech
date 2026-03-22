@@ -1,6 +1,6 @@
 ---
 title: ヘルシープログラマ ―プログラミングを楽しく続けるための健康Hack
-description: ヘルシープログラマ ―プログラミングを楽しく続けるための健康Hack
+description: "ヘルシープログラマ ―プログラミングを楽しく続けるための健康Hack"
 slug: healthy-programmer-hacks
 date: 2024-07-29T00:00:00Z
 author: bmf-san

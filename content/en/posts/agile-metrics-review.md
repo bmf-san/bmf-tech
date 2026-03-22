@@ -11,36 +11,37 @@ tags:
 translation_key: agile-metrics-review
 ---
 
-[Makuake Advent Calendar 2022](https://adventar.org/calendars/8496)の6日目の記事です！
 
-# 概要
-最近スクラムチームのプロセス改善について頻繁に思いを馳せており、カイゼンのヒントが何か得られないだろうかと思ってアジャイルメトリクスを読んでみた。
+This is the sixth article of the [Makuake Advent Calendar 2022](https://adventar.org/calendars/8496)!
 
-[アジャイルメトリクス](https://www.shoeisha.co.jp/book/detail/9784798169415)
+# Overview
+Recently, I have been frequently contemplating process improvements for Scrum teams and thought I might find some hints for Kaizen by reading Agile Metrics.
 
-原著は多分[Agile Metrics in Action](https://www.amazon.co.jp/Agile-Metrics-Action-measure-performance/dp/1617292486)。何年か前に出版された本。
+[Agile Metrics](https://www.shoeisha.co.jp/book/detail/9784798169415)
 
-# アジャイルメトリクスとは？
-アジャイルメトリクスとは、アジャイルなチームのパフォーマンスを測定するためのメトリクスのこと。
+The original work is probably [Agile Metrics in Action](https://www.amazon.co.jp/Agile-Metrics-Action-measure-performance/dp/1617292486), a book published a few years ago.
 
-メトリクスは、チームにとってのパフォーマンスの定義に関連するデータをチームのプロセスから収集する。具体的にはチームの活動で利用しているプロジェクト管理、ソースコード管理、ビルドシステム、監視などのツールが持っているデータをソースとして収集するといった感じ。
+# What are Agile Metrics?
+Agile metrics are metrics used to measure the performance of agile teams.
 
-アジャイルメトリクスはパフォーマンスの改善を目的とするともあって、Weponaize（チームや個人を非難するために活用すること）やGaming（メトリクスを改善することだけに集中してしまうこと）といった活用は推奨されない。
+Metrics collect data related to the definition of performance for the team from the team's processes. Specifically, this involves gathering data from tools used in the team's activities, such as project management, source code management, build systems, and monitoring.
 
-メトリクスからはチームの状況や起きている変化を観察し、改善につなげていくという学習を繰り返すことが重要になる。
+Agile metrics aim to improve performance, and practices such as Weponaize (using metrics to blame teams or individuals) and Gaming (focusing solely on improving metrics) are not recommended.
 
-# 本書で語られていること
-[アジャイルメトリクス](https://www.shoeisha.co.jp/book/detail/9784798169415)では次のような問への答えがヒントが語られていた。
+It is important to observe the team's situation and the changes occurring from the metrics, and to engage in a cycle of learning that leads to improvement.
 
-- アジャイルなチームにおけるパフォーマンスをどのように測定するか？
-- メトリクスのデータをどこから収集するか？
-- プロジェクト管理、ソースコード管理、ビルドシステム、監視などのツールから取得できるデータの傾向や学びについて
-- 活用可能なメトリクスをどのように作成するか？
-- アジャイルな原則に基づいてチームのパフォーマンスを測定する方法
+# What is Discussed in This Book
+In [Agile Metrics](https://www.shoeisha.co.jp/book/detail/9784798169415), hints are provided in response to the following questions:
 
-# 所感
-チームのパフォーマンスを計測するには、チームのパフォーマンスの何を計測するのか？チームにとって良いパフォーマンスとは何か？など因数分解して考えることが大事なことで、まず最初に取り組むべきことだと思った。
+- How do you measure performance in an agile team?
+- Where do you collect data for metrics?
+- Trends and insights about the data that can be obtained from tools such as project management, source code management, build systems, and monitoring
+- How to create usable metrics?
+- How to measure team performance based on agile principles
 
-アクションにつながるようなメトリクスを定義するには、データからどんなインサイトが得られそうか？というある程度の予想を持つ必要がありそう。システムの監視と違ってアジャイルのメトリクスで一番難しいなと思う部分。経験から学ぶべき？これについてはもっと事例とか知りたいところ。
+# Impressions
+To measure team performance, it is essential to consider what aspects of performance to measure and what constitutes good performance for the team. I believe this is the first thing to tackle.
 
-単一のデータからでも分析の仕方次第で色々見えるのだろうが、あちこちからデータを収集するとなるとやはりその基盤を用意するのは面倒だなと再三思った。。。便利なサービスがあることにはあるみたいだが・・。
+To define metrics that lead to action, it seems necessary to have some predictions about what insights can be gained from the data. This is the part I find most challenging about agile metrics, as opposed to system monitoring. Should we learn from experience? I would like to know more about examples related to this.
+
+Even from a single data point, various insights can be revealed depending on the analysis method, but when it comes to collecting data from multiple sources, I often thought that preparing that foundation is quite cumbersome... It seems there are convenient services available, but...

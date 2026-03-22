@@ -1,6 +1,6 @@
 ---
 title: Understanding System Programming with Go
-description: 'Learn system programming with Go: low-level concepts, standard library internals, and OS interaction fundamentals.'
+description: "Understanding System Programming with Go"
 slug: go-system-programming
 date: 2018-11-30T00:00:00Z
 author: bmf-san

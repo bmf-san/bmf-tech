@@ -1,6 +1,6 @@
 ---
 title: プログラミング脳をこれから鍛える本
-description: 「プログラミング脳をこれから鍛える本」のまとめと読書メモ。重要なポイントと実践的な知見を整理します。
+description: "プログラミング脳をこれから鍛える本"
 slug: programming-brain-training
 date: 2023-06-24T00:00:00Z
 author: bmf-san

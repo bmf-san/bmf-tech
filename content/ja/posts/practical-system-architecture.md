@@ -1,6 +1,6 @@
 ---
 title: システムアーキテクチャ構築の実践手法
-description: "習得するシステムアーキテクチャ設計。要求定義から論理・物理設計、ビュー文書化、アセット再利用、判断記録の実務的手法を習得。"
+description: "システムアーキテクチャ構築の実践手法"
 slug: practical-system-architecture
 date: 2025-07-17T00:00:00Z
 author: bmf-san

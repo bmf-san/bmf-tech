@@ -1,6 +1,6 @@
 ---
 title: 本を読む本
-description: 「本を読む本」のまとめと読書メモ。重要なポイントと実践的な知見を整理します。
+description: "本を読む本"
 slug: book-reading-guide
 date: 2025-02-15T00:00:00Z
 author: bmf-san

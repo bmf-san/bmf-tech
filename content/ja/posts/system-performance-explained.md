@@ -1,6 +1,6 @@
 ---
 title: 絵で見てわかるシステムパフォーマンスの仕組み
-description: 絵で見てわかるシステムパフォーマンスの仕組み
+description: "絵で見てわかるシステムパフォーマンスの仕組み"
 slug: system-performance-explained
 date: 2018-07-12T00:00:00Z
 author: bmf-san

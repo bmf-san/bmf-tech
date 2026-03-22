@@ -1,6 +1,6 @@
 ---
 title: Fundamentals of Software Architecture
-description: "Master software architecture fundamentals including evaluation perspectives, patterns, trade-offs, and design principles."
+description: "Fundamentals of Software Architecture"
 slug: software-architecture-basics
 date: 2023-02-27T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: 世界一流エンジニアの思考法
-description: 世界一流エンジニアの思考法
+description: "世界一流エンジニアの思考法"
 slug: thinking-like-top-engineers
 date: 2024-01-18T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: リーン・スタートアップ
-description: リーン・スタートアップ
+description: "リーン・スタートアップ"
 slug: lean-startup
 date: 2017-06-01T00:00:00Z
 author: bmf-san

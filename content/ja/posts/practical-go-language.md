@@ -1,6 +1,6 @@
 ---
 title: 実用Go言語
-description: 実用Go言語
+description: "実用Go言語"
 slug: practical-go-language
 date: 2023-08-05T00:00:00Z
 author: bmf-san

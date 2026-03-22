@@ -1,5 +1,6 @@
 ---
-title: 'From Monolith to Microservices: A Practical Migration Guide to Evolving Monoliths'
+title: 'From Monolith to Microservices: A Practical Migration Guide to Evolve Monoliths'
+description: 'From Monolith to Microservices: A Practical Migration Guide to Evolve Monoliths'
 slug: monolith-to-microservices-migration-guide
 date: 2024-05-29T00:00:00Z
 author: bmf-san
@@ -9,20 +10,19 @@ tags:
   - Monolith
   - Modular Monolith
   - Microservices
-  - Book
-description: A review of a book on transitioning from monoliths to microservices.
+  - Book Review
 translation_key: monolith-to-microservices-migration-guide
+books:
+  - asin: "4873119316"
+    title: "モノリスからマイクロサービスへ ―モノリスを進化させる実践移行ガイド"
 ---
 
+I read [From Monolith to Microservices: A Practical Migration Guide to Evolve Monoliths](https://amzn.to/3VlOlyB).
 
+The book discusses approaches to migrating from monoliths to microservices.
 
-[From Monolith to Microservices: A Practical Migration Guide to Evolving Monoliths](https://amzn.to/3VlOlyB) is a book I read.
+The fourth chapter, which takes up the most pages, focuses on splitting databases, which is considered the biggest hurdle to achieving microservices. If you're short on time and just want a quick overview, be sure to check out this chapter.
 
-The book discusses approaches to transitioning from monoliths to microservices.
+As the title suggests, this book is specialized in approaches, so if you want to delve deeper into microservices, I recommend [Microservices Architecture](https://amzn.to/3R2FOhn), written by the same author.
 
-Chapter 4, which has the most pages dedicated to it, covers the division of databases, which seems to be the main challenge in microservices adoption. If you're short on time and just want a quick overview, this chapter is a must-read.
-
-As the title suggests, this book focuses on the approach, so if you want to delve deeper into microservices, I recommend [Microservices Architecture](https://amzn.to/3R2FOhn) by the same author.
-
-The book is written with the perspective that microservices are not always the optimal solution, allowing readers to consider microservices from a more detached viewpoint.
-
+The book is written with the perspective that microservices are not necessarily the optimal solution, allowing readers to think about microservices from a more detached standpoint.

@@ -11,9 +11,7 @@ tags:
 translation_key: remember-aws-arn
 ---
 
-
-
-AWSのリソースネーム（ARN)の形式を忘れないようにメモ。
+Make a note to remember the format of AWS Resource Names (ARN).
 
 ```
 arn:partition:service:region:account-id:resource-id
@@ -23,6 +21,6 @@ arn:partition:service:region:account-id:resource-type:resource-id
 
 *Apsrairr*
 
-最後のrは`/`か`:`。
+The last 'r' is either `/` or `:`.
 
-cf. [Amazon リソースネーム (ARN)](https://docs.aws.amazon.com/ja_jp/general/latest/gr/aws-arns-and-namespaces.html)
+cf. [Amazon Resource Names (ARN)](https://docs.aws.amazon.com/en_us/general/latest/gr/aws-arns-and-namespaces.html)

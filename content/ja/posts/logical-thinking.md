@@ -1,6 +1,6 @@
 ---
 title: ロジカル・シンキング
-description: ロジカル・シンキング
+description: "ロジカル・シンキング"
 slug: logical-thinking
 date: 2015-05-19T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: 'Being Geek: Career Strategies to Stay a Geek'
-description: 'Discover career strategies for engineers to maintain technical expertise, navigate organizational roles, and build sustainable professional growth.'
+description: "Being Geek: Career Strategies to Stay a Geek"
 slug: being-geek-career-strategy
 date: 2017-12-23T00:00:00Z
 author: bmf-san

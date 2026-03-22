@@ -8,7 +8,7 @@ categories:
 tags:
   - Book Review
   - Health
-description: Exploring health tips for programmers to maintain a healthy lifestyle while coding.
+description: "The Healthy Programmer: Health Hacks for Enjoyable Programming"
 translation_key: healthy-programmer-hacks
 books:
   - asin: "4873117283"

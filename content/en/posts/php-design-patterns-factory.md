@@ -16,13 +16,13 @@ tags:
 translation_key: php-design-patterns-factory
 ---
 
-This article is part of the [Learning Design Patterns with PHP Advent Calendar 2018](https://qiita.com/advent-calendar/2018/php-design-pattern).
+This article is part of the [PHP Design Patterns Advent Calendar 2018](https://qiita.com/advent-calendar/2018/php-design-pattern).
 
 # Overview
-This post will cover Factory, Factory Method, and Abstract Factory.
+I will write about Factory, Factory Method, and Abstract Factory.
 
 # Understanding the Factory Pattern
-First, let's briefly explain the Factory pattern.
+First, let’s briefly explain the Factory pattern.
 
 ```php
 interface Robot
@@ -92,14 +92,14 @@ try {
 }
 ```
 
-As the name suggests, a factory is responsible for the "creation" of objects. By separating the creation and usage of objects, the user can create objects without knowing the order or type of objects. This allows the creation location to be centralized, making it easier to change the order or type of objects.
+As the name suggests, a factory is responsible for the "creation" of objects. By separating the creation and usage of objects, the user can create objects without knowing the order or type of object being created. This allows for centralizing the creation of objects in one place, making it easier to change the order or type of creation.
 
 # Understanding the Factory Method Pattern
-In the Factory pattern mentioned above, as the number of classes of objects to be created increases, the conditional branches also increase, which could lead to a difficult future. The Factory Method pattern aims to create objects without specifying their classes.
+In the aforementioned Factory pattern, as the number of classes for the objects to be created increases, the number of conditional branches also increases, leading to a difficult future. Therefore, the Factory Method pattern aims to create objects without specifying the class of the object.
 
-By abstracting the factory and delegating the creation process to subclasses, conditional branches can be eliminated.
+By abstracting the factory and delegating the object creation process to subclasses, we can eliminate conditional branches.
 
-When changing the object to be created, it involves switching the factory.
+When changing the object to be created, we switch the factory.
 
 ```php
 interface Robot
@@ -159,12 +159,12 @@ $yellowRobot->do(); // yellow
 
 I modified the code from the Factory pattern to apply the Factory Method pattern.
 
-The part where the object to be created was switched based on arguments has changed significantly.
+The part that switched the created object based on the argument has changed significantly.
 
-Although the Factory pattern and Factory Method pattern have different object creation patterns, there are some articles that confuse the two, which I find troublesome.
+While the Factory pattern and Factory Method pattern differ in their object creation patterns, I noticed that some articles confuse the two, which can be troublesome.
 
 # Understanding the Abstract Factory Pattern
-The Abstract Factory pattern is a pattern that groups multiple factories based on a common theme.
+The Abstract Factory pattern is a pattern that groups multiple factories by a common theme.
 
 ```php
 interface Robot
@@ -197,7 +197,7 @@ class BlueRobotCreator implements RobotCreator
 {
     public function work()
     {
-        echo '青いロボットつくるよ';
+        echo 'I will create a blue robot';
     }
 }
 
@@ -205,7 +205,7 @@ class YellowRobotCreator implements RobotCreator
 {
     public function work()
     {
-        echo '黄色いロボットつくるよ';
+        echo 'I will create a yellow robot';
     }
 }
 
@@ -247,25 +247,25 @@ $blueRobot = $blueRobotFactory->createRobot();
 $blueRobotCreator = $blueRobotFactory->createRobotCreator();
 
 $blueRobot->say(); // blue
-$blueRobotCreator->work(); // 青いロボットつくるよ
+$blueRobotCreator->work(); // I will create a blue robot
 
 $yellowRobotFactory = new YellowRobotFactory();
 $yellowRobot = $yellowRobotFactory->createRobot();
 $yellowRobotCreator = $yellowRobotFactory->createRobotCreator();
 
 $yellowRobot->say(); // yellow
-$yellowRobotCreator->work(); // 青いロボットつくるよ
+$yellowRobotCreator->work(); // I will create a yellow robot
 ```
 
 The Abstract Factory feels like an evolved version of the Factory Method.
 
-By defining the interface of the factory, it allows for interpretation from a higher-level concept, but for now, I'll just grasp the nuance.
+In that it defines the interface for the factory, I think it can be interpreted from a higher-level concept, but for now, I will leave it at grasping the nuance.
 
-# Impressions
-I feel like I've understood the nuances of each pattern. If I knew more about the essence of object-oriented programming, I might be able to interpret it more deeply.
+# Personal Reflections
+I feel like I have understood the nuances of each pattern. If I knew a bit more about the essence of object-oriented programming, I could provide a deeper interpretation.
 
 # References
 - [DesignPatternsPHP](https://designpatternsphp.readthedocs.io/en/latest/README.html)
 - [PHP The Right Way = Design Patterns](https://laravel-taiwan.github.io/php-the-right-way/pages/Design-Patterns.html)
-- [Tech Racho - [保存版]人間が読んで理解できるデザインパターン解説#1: 作成系（翻訳）](https://techracho.bpsinc.jp/hachi8833/2017_10_02/46064)
-- [Object Thinking - Factory Pattern](https://think-on-object.blogspot.com/2011/11/factoryfactory-methodabstract-factory.html)
+- [Tech Racho - [Preserved Edition] An Explanation of Design Patterns That Humans Can Read and Understand #1: Creation Patterns (Translation)](https://techracho.bpsinc.jp/hachi8833/2017_10_02/46064)
+- [Object-Oriented Thinking - Factory Pattern](https://think-on-object.blogspot.com/2011/11/factoryfactory-methodabstract-factory.html)

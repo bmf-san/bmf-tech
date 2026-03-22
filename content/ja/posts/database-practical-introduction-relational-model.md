@@ -1,6 +1,6 @@
 ---
 title: 理論から学ぶデータベース実践入門 ~リレーショナルモデルによる効率的なSQL
-description: "リレーショナルモデルによるデータベース設計を解説。集合論・論理学の理論、効率的なSQL、RDB本質を理解して実践的な設計を実現するガイドです。"
+description: "理論から学ぶデータベース実践入門 ~リレーショナルモデルによる効率的なSQL"
 slug: database-practical-introduction-relational-model
 date: 2024-04-01T00:00:00Z
 author: bmf-san

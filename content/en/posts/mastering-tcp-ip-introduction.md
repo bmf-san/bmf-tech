@@ -1,6 +1,6 @@
 ---
-title: Mastering TCP/IP - Introduction (6th Edition)
-description: 'Learn TCP/IP networking protocol fundamentals with easy-to-understand examples and practical network communication knowledge for developers.'
+title: 'Mastering TCP/IP: Introduction (6th Edition)'
+description: 'Mastering TCP/IP: Introduction (6th Edition)'
 slug: mastering-tcp-ip-introduction
 date: 2024-05-13T00:00:00Z
 author: bmf-san
@@ -9,16 +9,18 @@ categories:
 tags:
   - TCP
   - IP
-  - Book
+  - Book Review
 translation_key: mastering-tcp-ip-introduction
+books:
+  - asin: "4274224473"
+    title: "マスタリングTCP/IP―入門編―(第6版)"
 ---
 
 
+I read [Mastering TCP/IP: Introduction (6th Edition)](https://amzn.to/44D5Jlm).
 
-[I read Mastering TCP/IP - Introduction (6th Edition)](https://amzn.to/44D5Jlm).
+The examples are easy to understand and the book is very readable.
 
-The examples are easy to understand and it's easy to read.
+I felt that it serves as a good textbook for advancing understanding of networks from the basics of TCP/IP.
 
-I felt it was a good textbook as an introductory book to advance understanding of networks from the basics of TCP/IP.
-
-I tend to have a mental block against networks and neglect them, but this book was easy to read and great.
+Although I tend to have a bit of a complex about networks and often neglect them, this book was easy to read and quite helpful.

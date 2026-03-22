@@ -1,6 +1,6 @@
 ---
 title: Web APIの設計
-description: Web APIの設計について、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
+description: "Web APIの設計"
 slug: web-api-design
 date: 2024-07-28T00:00:00Z
 author: bmf-san

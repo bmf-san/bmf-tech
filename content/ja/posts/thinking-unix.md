@@ -1,6 +1,6 @@
 ---
 title: UNIXという考え方
-description: UNIXという考え方
+description: "UNIXという考え方"
 slug: thinking-unix
 date: 2018-05-18T00:00:00Z
 author: bmf-san

@@ -8,7 +8,7 @@ categories:
 tags:
   - Design
   - Book Review
-description: A summary of essential approaches and considerations for high-quality test design.
+description: "Unit Testing Best Practices: A Practical Guide for Developers"
 translation_key: unit-testing-concepts-usage
 books:
   - asin: "4839981728"

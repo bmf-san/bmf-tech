@@ -1,6 +1,6 @@
 ---
 title: 良い戦略、悪い戦略
-description: 良い戦略、悪い戦略
+description: "良い戦略、悪い戦略"
 slug: good-strategy-bad-strategy
 date: 2024-08-12T00:00:00Z
 author: bmf-san

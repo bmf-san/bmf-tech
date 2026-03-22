@@ -1,6 +1,6 @@
 ---
 title: A Book to Train Your Programming Mind
-description: 'Develop your programming thinking through logical training exercises and foundational mental techniques with arithmetic methodology.'
+description: "A Book to Train Your Programming Mind"
 slug: programming-brain-training
 date: 2023-06-24T00:00:00Z
 author: bmf-san

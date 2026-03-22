@@ -1,6 +1,6 @@
 ---
 title: 'Algorithm Encyclopedia Revised Edition: 33 Algorithms Illustrated'
-description: 'Understand 33 core algorithms and data structures through detailed visual illustrations designed for intuitive learning and quick reference.'
+description: "Algorithm Encyclopedia Revised Edition: 33 Algorithms Illustrated"
 slug: algorithm-illustrated-guide
 date: 2021-05-16T00:00:00Z
 author: bmf-san

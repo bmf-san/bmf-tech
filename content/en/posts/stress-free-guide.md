@@ -1,6 +1,6 @@
 ---
 title: Stress-Free Mastery
-description: "Master stress management techniques and develop healthy coping strategies for improving work-life balance and productivity."
+description: "Stress-Free Mastery"
 slug: stress-free-guide
 date: 2023-02-06T00:00:00Z
 author: bmf-san
