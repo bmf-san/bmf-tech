@@ -26,7 +26,7 @@ I built Asset Trend Simulator to solve exactly that. Enter your household financ
 
 ## Architecture
 
-The app is organised in four directories, wired together by Riverpod providers:
+The app uses four directories, wired together by Riverpod providers:
 
 - **data** — Immutable Freezed models (`MonthlyIncome`, `MonthlyExpense`, `MonthlyInvestment`, `Loan`, `SimulationParameters`, `SavedCase`, `AppSettings`, etc.) and Hive persistence repositories
 - **domain** — Pure Dart calculation logic independent of Flutter and storage (`SimulatorEngine`, `RateConverter`, `AnnuityCalculator`)
@@ -43,7 +43,7 @@ The core of the app is the monthly simulation engine. At each time step $t$, the
 
 **Income growth and expense inflation (applied independently)**
 
-Income grows each month at the monthly equivalent of `defaultIncomeGrowthRate` (annual rate). Expenses grow at the monthly equivalent of `defaultInflationRate` (annual rate). The two rates are applied independently.
+Income grows each month by the monthly fraction of `defaultIncomeGrowthRate` (annual rate). Expenses grow by the monthly fraction of `defaultInflationRate` (annual rate). The two rates act independently.
 
 **Investment compounding**
 
