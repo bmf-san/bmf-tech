@@ -21,7 +21,7 @@ translation_key: migrating-bmf-tech-from-gobel-to-gohan
 bmf-tech.com has gone through three infrastructure generations.
 
 1. **WordPress** — Abandoned after maintenance overhead and security patches became unsustainable.
-2. **Rubel → gobel** — A headless CMS originally built in Laravel, later rewritten in Go as [gobel](https://github.com/bmf-san/gobel-api). I ran a Vue.js frontend with MySQL on a ConoHa VPS for several years, accumulating over 700 articles.
+2. **Rubel → gobel** — A headless CMS originally written in Laravel, later rewritten in Go as [gobel](https://github.com/bmf-san/gobel-api). I ran a Vue.js frontend with MySQL on a ConoHa VPS for several years, accumulating over 700 articles.
 3. **gohan on Cloudflare Pages** — The current setup, which this article covers.
 
 The goal was to bring server cost and operational load down to zero. I wanted a setup where pushing to GitHub triggers an automatic build and deploy, with the entire site built from Markdown files.
@@ -51,7 +51,7 @@ I planned the migration in 12 phases.
 
 The original gobel database had no `slug` column. URLs used URL-encoded Japanese titles — for example `/posts/Go%E3%81%A7HTTP%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E6%9B%B8%E3%81%8F`. After the migration, I wanted clean English slugs like `/posts/go-http-server/`.
 
-Writing slugs for 700+ articles by hand was not feasible, so I fed batches of `(id, title)` pairs to Claude to generate English slug candidates at scale. I exported the output to `slug_map.csv` for manual review, checking for duplicates and confirming meaning.
+Writing slugs for 700+ articles by hand was impractical, so I fed batches of `(id, title)` pairs to Claude to generate English slug candidates at scale. I exported the output to `slug_map.csv` for manual review, checking for duplicates and confirming meaning.
 
 ### Phase 4: Migration Script
 
