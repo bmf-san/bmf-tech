@@ -1,0 +1,216 @@
+---
+title: Introducing gogocoin — A Self-Hosted Crypto Trading Bot
+description: 'A deep dive into gogocoin, a Go-based self-hosted Bitcoin trading bot for bitFlyer. Covers the Strategy interface design, EMA scalping risk management, balance cache with double-checked locking, and VPS deployment via systemd.'
+slug: introducing-gogocoin
+date: 2026-03-20T00:00:00Z
+author: bmf-san
+categories:
+  - Tools
+tags:
+  - Golang
+  - Bitcoin
+  - Trading
+  - Infrastructure
+translation_key: introducing-gogocoin
+---
+
+# Introducing gogocoin — A Self-Hosted Crypto Trading Bot
+
+## Why I Built It
+
+There is no shortage of open-source crypto bots and automated trading services. I built gogocoin anyway because I wanted the hands-on experience of implementing something that works exactly as I intend and actually earning returns with my own money. I had built a similar bot once before; this time I rebuilt it from scratch with the help of AI. Running it in production has been a continuous source of learning — it has become a hobby as much as a software project.
+
+The bot targets the [bitFlyer](https://bitflyer.com/) exchange via its official REST and WebSocket APIs. A sample EMA-based scalping strategy on XRP/JPY ships as a built-in implementation — a low-minimum pair suited to starting with small capital.
+
+## Getting Started
+
+**gogocoin is bitFlyer-only.** All exchange communication goes through the author's own [`go-bitflyer-api-client`](https://github.com/bmf-san/go-bitflyer-api-client) library; no other exchange is supported. Orders are placed via bitFlyer's spot-only endpoint (`/v1/me/sendchildorder`), so **margin / futures trading (e.g. FX\_BTC\_JPY) is not supported**.
+
+All you need is a bitFlyer API key and Docker:
+
+```bash
+git clone https://github.com/bmf-san/gogocoin.git && cd gogocoin
+
+# Set API credentials (edit .env with your BITFLYER_API_KEY / BITFLYER_API_SECRET)
+cp .env.example .env
+
+# Generate config and start
+make init && make up
+
+# → Dashboard at http://localhost:8080
+```
+
+Out of the box the bot runs an XRP/JPY scalping strategy with a 200 JPY order size. Adjust `config.yaml`'s `trading.symbols` and `strategy_params.scalping.order_notional` to trade different pairs or sizes. Trade data is persisted in SQLite (no external database needed).
+
+## Architecture
+
+The codebase follows a layered architecture: `cmd/gogocoin` is the entry point; `internal/` houses domain logic, use cases, and infrastructure adapters; `pkg/strategy` is a public package that defines the strategy contract and ships the built-in scalping implementation.
+
+![Dashboard](/assets/images/posts/introducing-gogocoin/01_dashboard.png)
+
+## Strategy Interface
+
+Every trading strategy follows the `Strategy` interface defined in `pkg/strategy/strategy.go`. This keeps the engine decoupled from any specific algorithm:
+
+```go
+type Strategy interface {
+    // GenerateSignal generates a signal from the latest market data point and
+    // the historical series for the same symbol.
+    GenerateSignal(ctx context.Context, data *MarketData, history []MarketData) (*Signal, error)
+
+    // Analyze generates a signal from a batch of historical data.
+    Analyze(data []MarketData) (*Signal, error)
+
+    // Lifecycle
+    Start(ctx context.Context) error
+    Stop(ctx context.Context) error
+    IsRunning() bool
+    GetStatus() StrategyStatus
+    Reset() error
+
+    // Metrics & trade accounting
+    GetMetrics() StrategyMetrics
+    RecordTrade()
+    InitializeDailyTradeCount(count int)
+
+    // Configuration
+    Name() string
+    Description() string
+    Version() string
+    Initialize(config map[string]interface{}) error
+    UpdateConfig(config map[string]interface{}) error
+    GetConfig() map[string]interface{}
+}
+```
+
+`Initialize()` receives the `strategy_params.<name>` block from `config.yaml` as a `map[string]interface{}`. `UpdateConfig()` allows live parameter updates via the HTTP API without restarting the bot.
+
+## Scalping Strategy — Risk Management
+
+The built-in strategy (`pkg/strategy/scalping`) uses a dual-EMA crossover to generate buy/sell signals. Before the engine acts on a crossover signal, two risk-management guards run:
+
+```go
+func (s *Strategy) isInCooldown() bool {
+    s.mu.RLock()
+    defer s.mu.RUnlock()
+    if s.lastTradeTime.IsZero() {
+        return false
+    }
+    return time.Since(s.lastTradeTime).Seconds() < float64(s.cooldownSec)
+}
+
+func (s *Strategy) isDailyLimitReached() bool {
+    s.mu.RLock()
+    defer s.mu.RUnlock()
+    today := time.Now().UTC().Add(9 * time.Hour).Format("2006-01-02")
+    if s.lastTradeDate != today {
+        return false
+    }
+    return s.dailyTradeCount >= s.maxDailyTrades
+}
+```
+
+`isInCooldown()` prevents re-entering a position too quickly after the last trade. The default cooldown is 90 seconds. `isDailyLimitReached()` caps trades per JST calendar day at a configurable limit (default: 3).
+
+The strategy computes take-profit and stop-loss prices from the entry price using configurable percentages:
+
+```go
+func (s *Strategy) GetTakeProfitPrice(entry float64) float64 {
+    s.mu.RLock()
+    pct := s.takeProfitPct
+    s.mu.RUnlock()
+    return entry * (1.0 + pct/100.0)
+}
+
+func (s *Strategy) GetStopLossPrice(entry float64) float64 {
+    s.mu.RLock()
+    pct := s.stopLossPct
+    s.mu.RUnlock()
+    return entry * (1.0 - pct/100.0)
+}
+```
+
+A `sync.RWMutex` protects all mutable fields so that `UpdateConfig()` calls from the HTTP handler do not race with `GenerateSignal()` calls from the engine goroutine.
+
+## Balance Cache — Double-Checked Locking
+
+The trading loop polls account balance frequently. Calling the bitFlyer REST API on every tick would quickly exhaust the rate limit of 50 requests per minute. `BalanceService` caches the result with a 60-second TTL and uses a double-checked locking pattern to prevent thundering-herd API calls when the cache expires:
+
+```go
+func (s *BalanceService) GetBalance(ctx context.Context) ([]domain.Balance, error) {
+    // First check: read without write lock
+    s.cache.mu.RLock()
+    cacheTimestamp := s.cache.timestamp
+    cacheData := s.cache.data
+    s.cache.mu.RUnlock()
+
+    if time.Since(cacheTimestamp) < CacheDuration && len(cacheData) > 0 {
+        result := make([]domain.Balance, len(cacheData))
+        copy(result, cacheData)
+        return result, nil
+    }
+
+    // Serialize fetches: only one goroutine calls the API at a time
+    s.fetchMu.Lock()
+    defer s.fetchMu.Unlock()
+
+    // Second check: re-verify after acquiring the lock
+    s.cache.mu.RLock()
+    cacheTimestamp = s.cache.timestamp
+    cacheData = s.cache.data
+    s.cache.mu.RUnlock()
+    if time.Since(cacheTimestamp) < CacheDuration && len(cacheData) > 0 {
+        result := make([]domain.Balance, len(cacheData))
+        copy(result, cacheData)
+        return result, nil
+    }
+
+    // ... call API and update cache
+}
+```
+
+The outer `cache.mu` (a `sync.RWMutex`) allows concurrent reads of fresh cache data. The inner `fetchMu` (a `sync.Mutex`) serialises API calls so that exactly one goroutine fetches when the cache is stale.
+
+## Web Dashboard
+
+The embedded web UI at `http://localhost:8080` is organized into four pages via sidebar navigation.
+
+- **Dashboard** — Four summary cards (total P&L, today's P&L, win rate, daily trade count) plus a system status panel showing connection state, active strategy, uptime, and live prices for monitored currency pairs.
+- **Performance** — Per-currency balance table (total / available), three risk metrics (Sharpe ratio, profit factor, max drawdown), and a daily P&L history table.
+- **Trade History** — Full trade log with timestamp, currency pair, side, price, size, fee, and P&L columns.
+- **System Logs** — Log viewer filterable by level (DEBUG / INFO / WARN / ERROR) and category (system / trading / api / strategy).
+
+Start and stop buttons in the top bar control the bot in real time. Configuration (API credentials, trading parameters) lives in `config.yaml`. Data is stored in SQLite — no external database required.
+
+## VPS Deployment
+
+gogocoin ships as a single statically-linked binary. [gogocoin-vps-template](https://github.com/bmf-san/gogocoin-vps-template) is a sample reference for running it on ConoHa VPS, covering systemd configuration and deployment steps. The systemd unit file:
+
+```ini
+[Unit]
+Description=gogocoin - bitFlyer auto trading bot
+After=network.target
+
+[Service]
+Type=simple
+User=gogocoin
+WorkingDirectory=/opt/gogocoin
+EnvironmentFile=/opt/gogocoin/.env
+ExecStart=/opt/gogocoin/gogocoin
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
+```
+
+The binary reads API credentials from `/opt/gogocoin/.env` (not hard-coded in the binary or config file). Trigger deployment manually via `make deploy` or via a GitHub Actions workflow that builds the binary targeting the VPS architecture (linux/amd64) and transfers it with `scp`.
+
+## Summary
+
+gogocoin is a minimal self-hosted trading bot that prioritises transparency and control. The Strategy interface keeps strategies swappable; the risk management layer prevents runaway losses; the balance cache keeps API calls well within rate limits.
+
+- **GitHub**: [bmf-san/gogocoin](https://github.com/bmf-san/gogocoin)
+- **VPS Template**: [bmf-san/gogocoin-vps-template](https://github.com/bmf-san/gogocoin-vps-template)
