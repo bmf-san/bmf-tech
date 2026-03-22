@@ -32,7 +32,7 @@ The app follows Clean Architecture — Domain, Application, Infrastructure, and 
 
 The registration flow from scan to persistence is the most interesting technical piece in the app. The sequence is:
 
-1. **Scan** — `mobile_scanner` delivers a raw `BarcodeCapture` event with detected values. The app accepts both ISBN-13 (978/979 prefix, 13 digits) and ISBN-10 (10 digits); all other barcode formats are ignored.
+1. **Scan** — `mobile_scanner` delivers a raw `BarcodeCapture` event with detected values. The app accepts both ISBN-13 (978/979 prefix, 13 digits) and ISBN-10 (10 digits); the scanner rejects all other barcode formats.
 
 2. **Metadata fetch** — `OpenBdDatasource` calls the OpenBD endpoint `https://api.openbd.jp/v1/get?isbn={isbn}` with an `http.Client`. The response is a JSON array; the first element is either a full book object or `null` (not found). `OpenBdDatasource` parses the response and returns `OpenBdBookData` with `isbn`, `title`, `author`, `category`, and `coverImageUrl`.
 
