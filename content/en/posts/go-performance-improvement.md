@@ -12,50 +12,53 @@ tags:
 translation_key: go-performance-improvement
 ---
 
-[Makuake Advent Calendar 2022](https://adventar.org/calendars/8496) - Day 9!
+This is the 9th article of the [Makuake Advent Calendar 2022](https://adventar.org/calendars/8496)!
 
 # Improving Code Performance with Go
-When I decided to enhance the performance of my custom HTTP Router, [goblin](https://github.com/bmf-san/goblin), I delved into improving Go's performance. This post discusses the approaches and practices I implemented.
+When I thought about improving the performance of my custom HTTP Router, [goblin](https://github.com/bmf-san/goblin), I tackled performance improvements in Go, and I will write about the approaches and practices I implemented during that time.
 
-# Prerequisites
-While deeper tuning requires more knowledge, here are the essentials:
+# Prerequisite Knowledge
+I believe that deeper tuning requires more knowledge, but I will list only the minimum necessary information.
 
 - Garbage Collection
-  - Automatically frees up memory areas that are no longer needed during program execution.
+  - A feature that automatically frees up memory areas that are no longer needed from the memory space allocated by the program during execution.
 - Memory Areas
   - Text Area
-    - Area where machine code-translated programs are stored.
+    - The area where the program converted to machine language is allowed.
   - Stack Area
-    - Memory area allocated during program execution.
-    - Targets data with a predetermined size at runtime.
-    - Automatically freed (e.g., when a function execution ends and is no longer needed).
-    - ex. Arguments, return values, temporary variables, etc.
+    - The memory area allocated during program execution.
+    - It targets data whose size is determined at runtime.
+    - Automatically freed (when the function execution ends and it is no longer needed).
+    - e.g., arguments, return values, temporary variables, etc.
   - Heap Area
-    - Memory area allocated during program execution.
-    - Targets data with dynamically determined size.
+    - The memory area allocated during program execution.
+    - It targets data whose size is determined dynamically.
     - Subject to garbage collection.
   - Static Area
-    - Memory area allocated during program execution.
-    - Retained until the program ends.
-    - ex. Global variables, static variables, etc.
+    - The memory area allocated during program execution.
+    - Allocated until the program ends.
+    - e.g., global variables and static variables.
 
-# Performance Improvement Approach
-Before improving performance, it's crucial to determine if it's necessary (is it worth sacrificing readability, is the application a bottleneck, etc.). Assuming it's necessary, here are some methods:
+# Approach to Performance Improvement
+There is a premise that there is a necessity to improve performance (whether it is worth sacrificing readability, whether it can be definitively stated that the application is a bottleneck, etc.), but I will proceed with the discussion based on the assumption that there is a necessity.
 
-- Algorithm Optimization
-- Data Structure Optimization
-- Cache Utilization
-- Parallel Processing
-- Compile Optimization
+As methods to improve code performance, several ideas come to mind, such as:
 
-Before implementing improvements, conduct measurement and analysis. (The need for performance improvement is assumed, but this varies by individual needs, so it won't be discussed here.)
+- Algorithm optimization
+- Data structure optimization
+- Utilizing caches
+- Applying parallel processing
+- Compilation optimization
 
-Introducing packages and tools for measurement and analysis in Go.
+However, before implementing any improvements, measurements and analyses should be conducted.
+(I will not touch on the necessity of performance improvement as it varies by individual needs.)
+
+I will introduce packages and tools for measurement and analysis in Go.
 
 ## Benchmark
-Go includes [Benchmarks](https://pkg.go.dev/testing#hdr-Benchmarks) in its standard testing package for obtaining code benchmarks.
+In Go, benchmarks for obtaining code performance are included in the standard package `testing` as [Benchmarks](https://pkg.go.dev/testing#hdr-Benchmarks).
 
-For example, you can execute the following code with the command `go test -bench=. -benchmem` to obtain benchmarks.
+For example, executing the following code with the command `go test -bench=. -benchmem` will obtain benchmarks.
 
 ```go
 package main
@@ -66,8 +69,8 @@ import (
 )
 
 func BenchmarkRandIn(b *testing.B) {
-	for i := 0; i < b.N; i++ { // b.N automatically specifies a reliable number of benchmark iterations
-		rand.Int() // Function to be measured
+	for i := 0; i < b.N; i++ { // b.N automatically specifies the number of times the benchmark should run to be reliable
+		rand.Int() // The function to be measured
 	}
 }
 ```
@@ -83,28 +86,28 @@ PASS
 ok      bmf-san/go-perfomance-tips      1.381s
 ```
 
-The benchmark results can be interpreted as follows:
+From the benchmark results, we can read the following:
 - 87550500
-  - Number of function executions.
-  - More executions indicate better performance.
+  - The number of times the function was executed.
+  - The more times it is executed, the better the performance is considered.
 - 13.53 ns/op
-  - Time taken per function execution.
-  - Less time indicates better performance.
+  - The time taken for one execution of the function.
+  - The less time taken, the better the performance is considered.
 - 0 B/op
-  - Memory size allocated per function execution.
-  - Less memory indicates better performance.
+  - The size of memory allocated for each execution of the function.
+  - The less allocated, the better the performance is considered.
 - 0 allocs/op
-  - Number of memory allocations per function execution.
-  - Fewer allocations indicate better performance.
+  - The number of memory allocations made during one execution of the function.
+  - The fewer allocations, the better the performance is considered.
 
-In Go, benchmarks can be easily obtained like this.
+Go makes it easy to obtain benchmarks in this way.
 
-For more on Go's benchmark features, refer to the documentation.
+For more information on other Go benchmark features, refer to the documentation.
 [Benchmarks](https://pkg.go.dev/testing#hdr-Benchmarks)
 
-Using a tool like [benchstat](https://pkg.go.dev/golang.org/x/perf/cmd/benchstat#section-readme) to compare benchmark results can show the percentage of improvement.
+As a tool to compare benchmark results, the package [benchstat](https://pkg.go.dev/golang.org/x/perf/cmd/benchstat#section-readme) can be used, which displays the percentage of improvement in benchmark results.
 
-In my [bmf-san/goblin](https://github.com/bmf-san/goblin), I've integrated it into CI to compare results before and after commits.
+In my managed repository, [bmf-san/goblin](https://github.com/bmf-san/goblin), I have integrated it into CI to compare results before and after commits.
 
 ```sh
 // This is an example where nothing has improved...
@@ -122,9 +125,10 @@ Regexp5-36       4.30µs ± 0%    4.11µs ± 0%   ~     (p=1.000 n=1+1)
 Regexp10-36      7.66µs ± 0%    7.18µs ± 0%   ~     (p=1.000 n=1+1)
 ```
 
-If performance degradation is absolutely unacceptable, you might want to set up CI to fail in such cases.
+If you absolutely cannot allow performance degradation, it might be a good idea to implement a mechanism that fails the CI.
 
-To check actual memory allocation, you can specify build options and build. Increasing the number of `-m` in `-gcflags` provides more detailed results.
+If you want to see the actual memory allocation situation after looking at such benchmark results, you can confirm it by building with specified build options.
+By increasing the number of `-m` specified in `-gcflags`, you can obtain more detailed results.
 
 ```go
 package main
@@ -139,7 +143,7 @@ func main() {
 }
 ```
 
-Running `go build -o example -gcflags '-m' gcflagsexample.go` yields the following output:
+When you execute `go build -o example -gcflags '-m' gcflagsexample.go`, you will get the following output.
 
 ```sh
 # command-line-arguments
@@ -149,10 +153,10 @@ Running `go build -o example -gcflags '-m' gcflagsexample.go` yields the followi
 ./gcflagsexample.go:9:16: a + b escapes to heap
 ```
 
-This simple example clearly shows how heap allocation can be identified and reduced to improve memory allocation, making it a useful analysis method.
+This is a simple example, so it is obvious at a glance, but by identifying allocations to the heap in this way and reducing heap allocations, you can improve memory allocation, making it a useful method for analysis.
 
 ## Profiling
-To analyze where bottlenecks exist at the function level, Go offers a tool called [pprof](https://pkg.go.dev/net/http/pprof).
+Go has a tool called [pprof](https://pkg.go.dev/net/http/pprof) for analyzing where the bottlenecks are at the function level.
 
 ```go
 package main
@@ -174,48 +178,48 @@ func BenchmarkSortAlphabetically(b *testing.B) {
 }
 ```
 
-To view the CPU profile, execute:
+To see the CPU profile, execute the following:
 
 `go test -test.bench=BenchmarkSortAlphabetically -cpuprofile cpu.out && go tool pprof -http=":8888" cpu.out`
 
 ![cpu_profile](/assets/images/posts/go-performance-improvement/206718659-bc8b2df8-30d6-4d3c-819f-2846fd3b2c71.png)
 
-To view the memory profile, execute:
+To see the memory profile, execute the following:
 
 `go test -test.bench=BenchmarkSortAlphabetically profilingexample_test.go -memprofile mem.out && go tool pprof -http=":8889" mem.out`
 
 ![memory_profile](/assets/images/posts/go-performance-improvement/206716765-b62ab1a9-9bad-4cdb-8dd7-966c714fe940.png)
 
-Using [pprof](https://pkg.go.dev/net/http/pprof)'s UI makes it easier to identify where the bottlenecks are.
+By utilizing the UI of [pprof](https://pkg.go.dev/net/http/pprof), it becomes easier to identify where the bottlenecks are in the processing.
 
-# Practical Application
-An example of improving my custom HTTP Router, [goblin](https://github.com/bmf-san/goblin).
+# Practice
+I will provide an example of improvements made to my custom HTTP Router, [goblin](https://github.com/bmf-san/goblin).
 
 The PR in question is here.
 [Reduce the memory allocation by refactoring explodePath method #68](https://github.com/bmf-san/goblin/pull/68)
 
-[goblin](https://github.com/bmf-san/goblin) is an HTTP Router based on a trie tree, compatible with the net/http interface.
+[goblin](https://github.com/bmf-san/goblin) is an HTTP Router that works well with the net/http interface based on a trie.
 
-It has the minimum necessary features for routing.
+It has the minimum features that are thought necessary for routing.
 cf. [goblin#features](https://github.com/bmf-san/goblin#features)
 
 ## Benchmark
-First, execute a benchmark test to measure performance.
+First, I will run benchmark tests to measure performance.
 
 ```sh
 go test -bench=. -cpu=1 -benchmem
 ```
 
-The benchmark test includes static routing (e.g., /foo/bar), dynamic routing (e.g., /foo/:bar), and regex-based routing (e.g., /foo/:bar[^\d+$]) test cases.
+The benchmark tests have prepared about three test cases each for static routing (e.g., /foo/bar), dynamic routing (e.g., /foo/:bar), and routing using regular expressions (e.g., /foo/:bar[^\d+$]).
 
-The routing process involves:
+The flow of routing processing is as follows:
 
-1. Inserting data into the tree structure (≒ defining routing)
-2. Searching for data in the tree structure (returning data based on the requested path)
+1. Insert data into the tree structure (≒ define routing)
+2. Search for data from the tree structure (return data based on the requested path)
 
-This test case measures only the latter.
+However, this test case is set to measure only the latter.
 
-The output is as follows:
+The output results are as follows.
 
 ```sh
 goos: darwin
@@ -235,38 +239,38 @@ PASS
 ok      github.com/bmf-san/goblin       14.304s
 ```
 
-Trends can be observed in execution count, time per execution, memory size per execution, and memory allocation count.
+Trends can be observed in the number of executions, time per execution, memory size per execution, and the number of memory allocations.
 
-Even static routing incurs memory allocation, which is concerning (other HTTP Router benchmarks show 0 allocs).
+I personally find it concerning that memory allocations occur even with static routing. (Looking at benchmarks of other HTTP Routers, some show 0 allocs.)
 
 ## Profiling
-Next, obtain a profile using pprof.
+Next, I will use pprof to obtain profiles.
 
-Focus on memory profiling this time.
+This time, I will focus only on memory to obtain the profile.
 
 ```sh
 go test -bench . -memprofile mem.out && go tool pprof -http=":8889" mem.out
 ```
 
-Graph output:
+Graph output results.
 ![pprof_graph](/assets/images/posts/go-performance-improvement/206716778-8c5b2ad6-2e6a-444f-8f4c-7267a253446f.png)
 
-The largest box (most memory usage) is the `explodePath` process.
+It is clear that the process consuming the most memory is `explodePath`.
 
-The Top (list of longest execution times) also shows `explodePath` at the top.
+Looking at the Top (a list sorted by execution time), `explodePath` is at the top.
 
 ![pprof_top](/assets/images/posts/go-performance-improvement/206716793-08c464a8-db4c-4838-b872-dc6b2c51b154.png)
 
-Flat is the function's processing time, Cum is the processing time including wait time.
+Flat shows the processing time of the function, while Cum includes the processing time along with waiting time.
 
-Further, check the Source to see which part of the function is heavy.
+Furthermore, I will check which part of the processing within the function is heavy using Source.
 
 ![pprof_source](/assets/images/posts/go-performance-improvement/206716787-c1be565d-9364-40d1-b555-70836d056832.png)
 
-`Search` is the core process responsible for router matching, and `explodePath` is identified as the bottleneck within it.
+Since `Search` is the core processing responsible for the router's matching, I suspected that it would be the biggest bottleneck, and it turned out that a specific processing within it, `explodePath`, was the bottleneck.
 
 ## Tuning
-`explodePath` splits a received string by `/` and returns it as a []string.
+`explodePath` is a process that splits the received string by `/` and returns it as a []string type.
 
 ```go
 // explodePath removes an empty value in slice.
@@ -282,7 +286,7 @@ func explodePath(path string) []string {
 }
 ```
 
-Test code for clarity:
+For clarity, I also included test code.
 ```go
 func TestExplodePath(t *testing.T) {
 	cases := []struct {
@@ -331,9 +335,9 @@ func TestExplodePath(t *testing.T) {
 }
 ```
 
-The variable `r` defined as []string has no defined capacity, suggesting poor memory efficiency.
+The variable `r` defined as []string does not have a specified capacity, so it is presumed to be inefficient in terms of memory.
 
-Below is a benchmark test for appending to a slice, prepared for verification, and its results:
+Below is a benchmark test prepared to verify the effect of adding append to a slice and its results.
 ```go
 package main
 
@@ -380,12 +384,11 @@ BenchmarkSliceLenN      78467056                23.60 ns/op           65 B/op   
 BenchmarkSliceLen0CapN  616491007                5.057 ns/op           8 B/op          0 allocs/op
 PASS
 ok      example.com     6.898s
-bmf@bmfnoMacBook-Air:~/Desktop$
 ```
 
-This result suggests that specifying capacity can lead to more efficient code.
+From this result, it can be inferred that specifying the capacity will lead to more efficient code.
 
-Thus, `explodePath` is modified as follows:
+Therefore, I modified `explodePath` as follows.
 
 ```go
 func explodePath(path string) []string {
@@ -401,7 +404,7 @@ func explodePath(path string) []string {
 }
 ```
 
-Further implementation improvements:
+Going a bit further, I improved the implementation.
 ```go
 func explodePath(path string) []string {
 	splitFn := func(c rune) bool {
@@ -411,7 +414,7 @@ func explodePath(path string) []string {
 }
 ```
 
-Compare benchmarks for the original `explodePath`, the implementation with specified slice capacity, and the implementation using `strings.FieldFunc`.
+I will compare benchmarks of three patterns: the original `explodePath`, the implementation with specified slice capacity, and the implementation using `strings.FieldsFunc`.
 
 ```go
 package main
@@ -496,10 +499,10 @@ PASS
 ok      example.com     5.685s
 ```
 
-The implementation using `strings.PathFieldFunc` seems to perform best, so it is adopted.
+The implementation using `strings.FieldsFunc` seems to have the best performance, so I will adopt it.
 
 ## Effect Measurement
-Check the results after improving the `explodePath` implementation.
+Let’s check the results after improving the implementation of `explodePath`.
 
 ### Benchmark
 ```sh
@@ -539,7 +542,7 @@ PASS
 ok      github.com/bmf-san/goblin       13.666s
 ```
 
-Overall improvement trends can be observed when comparing before and after.
+Comparing before and after improvements, it seems that there is an overall trend of improvement.
 
 ### Profiling
 pprof Graph.
@@ -550,28 +553,28 @@ pprof Top.
 
 ![pprof_top_after](/assets/images/posts/go-performance-improvement/206716789-1ef3cbae-c638-4935-a6fa-22907fe30633.png)
 
-The bottleneck has shifted to `strings.FieldsFunc` called within `explodePath`.
+It can be seen that the bottleneck has moved to `strings.FieldsFunc` called within `explodePath`.
 
 ## Further Improvements
-Other improvements have been made to [goblin](https://github.com/bmf-san/goblin), resulting in this release tag.
+Other improvements have been made to [goblin](https://github.com/bmf-san/goblin), and the released tag is here.
 [6.0.0](https://github.com/bmf-san/goblin/releases/tag/6.0.0)
 
-These are minor improvements without major changes to data structures or algorithms, so unfortunately, no remarkable improvements are observed.
+Since there have not been significant improvements in data structures or algorithms, it is somewhat of a minor improvement, and unfortunately, there are no remarkable results.
 
-It seems challenging with the current data structures and algorithms. (Other routers use more advanced trees, so it's understandable.)
+I feel that it is indeed difficult with the current data structures and algorithms being adopted. (Looking at other routers, they seem to adopt more advanced trees, so that makes sense...)
 
-Although slightly off-topic, I created a benchmarker to compare with other routers for improvement hints.
+While it deviates slightly from the main topic, I created a benchmarker to see if I could gain insights for improvements by comparing with other routers.
 
 [bmf-san/go-router-benchmark](https://github.com/bmf-san/go-router-benchmark)
 
-It's interesting to compare, and it's clear that I'm losing badly. I cried.
+It is interesting to compare, and it becomes clear that I am losing badly. I cried.
 
-I want to study other router implementations, advanced tree structures I previously struggled with, and improve further.
+I want to study the implementations of other routers and improve my understanding of advanced tree structures, which I previously struggled with.
 
 # Summary
-- Benchmarking and profiling in Go are easy.
-- Don't guess, measure.
-- Minor improvements rarely yield significant results (that's true).
+- Benchmarking and profiling are easy to do in Go.
+- Do not guess; measure.
+- Minor improvements are unlikely to yield significant results (which is true).
 
 # References
 - [github.com - google/pprof](https://github.com/google/pprof/blob/main/doc/README.md)
@@ -583,19 +586,17 @@ I want to study other router implementations, advanced tree structures I previou
 - [segment.com - Allocation efficiency in high-performance Go services](https://segment.com/blog/allocation-efficiency-in-high-performance-go-services/)
 - [blog.logrocket.com - Benchmarking in Golang: Improving function performance](https://blog.logrocket.com/benchmarking-golang-improve-function-performance/)
 - [medium.com - Go code refactoring : the 23x performance hunt](https://medium.com/@val_deleplace/go-code-refactoring-the-23x-performance-hunt-156746b522f7)
-- [medium.com - Go言語のプロファイリングツール、pprofのWeb UIがめちゃくちゃ便利なので紹介する](https://medium.com/eureka-engineering/go%E8%A8%80%E8%AA%9E%E3%81%AE%E3%83%97%E3%83%AD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AA%E3%83%B3%E3%82%B0%E3%83%84%E3%83%BC%E3%83%AB-pprof%E3%81%AEweb-ui%E3%81%8C%E3%82%81%E3%81%A1%E3%82%83%E3%81%8F%E3%81%A1%E3%82%83%E4%BE%BF%E5%88%A9%E3%81%AA%E3%81%AE%E3%81%A7%E7%B4%B9%E4%BB%8B%E3%81%99%E3%82%8B-6a34a489c9ee)
-- [teivah.medium.com - Good Code vs Bad Code in Golang
-](https://teivah.medium.com/good-code-vs-bad-code-in-golang-84cb3c5da49d)
-- [hnakamur.github.io - goで書いたコードがヒープ割り当てになるかを確認する方法](https://hnakamur.github.io/blog/2018/01/30/go-heap-allocations/)
-- [glog.kazu69.net - Goのメモリ管理を眺めてみた](https://blog.kazu69.net/2017/08/20/memory-management-go/)
-- [dsas.blog.klab.org - Goでアロケーションに気をつけたコードを書く方法](http://dsas.blog.klab.org/archives/52191778.html)
-- [tech.speee.jp - Goのロギングライブラリから見たゼロアロケーション](https://tech.speee.jp/entry/2022/07/12/134605)
-- [kawasin73.hatenablog.com - メモリアロケーションに対する罪悪感
-](https://kawasin73.hatenablog.com/entry/2019/11/10/112301)
+- [medium.com - Introducing the incredibly convenient web UI of the Go profiling tool, pprof](https://medium.com/eureka-engineering/go%E8%A8%80%E8%AA%9E%E3%81%AE%E3%83%97%E3%83%AD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AA%E3%83%B3%E3%82%B0%E3%83%84%E3%83%BC%E3%83%AB-pprof%E3%81%AEweb-ui%E3%81%8C%E3%82%81%E3%81%A1%E3%82%83%E3%81%8F%E3%81%A1%E3%82%83%E4%BE%BF%E5%88%A9%E3%81%AA%E3%81%AE%E3%81%A7%E7%B4%B9%E4%BB%8B%E3%81%99%E3%82%8B-6a34a489c9ee)
+- [teivah.medium.com - Good Code vs Bad Code in Golang](https://teivah.medium.com/good-code-vs-bad-code-in-golang-84cb3c5da49d)
+- [hnakamur.github.io - How to check if your Go code results in heap allocation](https://hnakamur.github.io/blog/2018/01/30/go-heap-allocations/)
+- [glog.kazu69.net - Observing Memory Management in Go](https://blog.kazu69.net/2017/08/20/memory-management-go/)
+- [dsas.blog.klab.org - How to write code in Go that pays attention to allocations](http://dsas.blog.klab.org/archives/52191778.html)
+- [tech.speee.jp - Zero Allocation from the Perspective of Go Logging Libraries](https://tech.speee.jp/entry/2022/07/12/134605)
+- [kawasin73.hatenablog.com - Guilt over Memory Allocation](https://kawasin73.hatenablog.com/entry/2019/11/10/112301)
 
-## Related Posts
+## Related Articles
 
-- [Implementing a Load Balancer in Golang](/posts/golang-load-balancer-implementation/)
-- [How to Use pprof Without DefaultServeMux](/posts/using-pprof-without-defaultmux/)
-- [Continuous Profiling with Pyroscope](/posts/continuous-profiling-with-pyroscope/)
-- [Go's Concurrency and Parallelism Model and Goroutine Scheduling](/posts/go-concurrency-parallelism-models/)
+- [Implementing a Load Balancer in Golang](/ja/posts/golang-load-balancer-implementation/)
+- [How to Use pprof without DefaultServeMux](/ja/posts/using-pprof-without-defaultmux/)
+- [Continuous Profiling with Pyroscope](/ja/posts/continuous-profiling-with-pyroscope/)
+- [Go's Concurrency and Parallelism Models and Goroutine Scheduling](/ja/posts/go-concurrency-parallelism-models/)

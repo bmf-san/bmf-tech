@@ -1,6 +1,6 @@
 ---
 title: Knowledge and Skills of Production Management Systems for Engineers
-description: 'Understand production management systems and how deep knowledge of business flows improves system design quality.'
+description: "Knowledge and Skills of Production Management Systems for Engineers"
 slug: knowledge-and-skills-in-production-management-for-engineers
 date: 2024-04-04T00:00:00Z
 author: bmf-san

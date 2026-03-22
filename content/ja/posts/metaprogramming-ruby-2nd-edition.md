@@ -1,6 +1,6 @@
 ---
 title: メタプログラミングRuby 第2版
-description: メタプログラミングRuby 第2版
+description: "メタプログラミングRuby 第2版"
 slug: metaprogramming-ruby-2nd-edition
 date: 2025-01-06T00:00:00Z
 author: bmf-san

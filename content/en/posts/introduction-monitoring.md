@@ -1,6 +1,6 @@
 ---
 title: Introduction to Monitoring
-description: 'Learn monitoring fundamentals and practical techniques for infrastructure observability, alerting, and performance optimization.'
+description: "Introduction to Monitoring"
 slug: introduction-monitoring
 date: 2019-01-26T00:00:00Z
 author: bmf-san
@@ -16,9 +16,8 @@ books:
 ---
 
 
+I read [Introduction to Monitoring](https://amzn.to/44ASkKm).
 
-[入門監視](https://amzn.to/44ASkKm)を読んだ。
+You can learn the basics and practices of monitoring.
 
-監視の基本と実践について学ぶことができる。
-
-監視について学んでみたいときの入門書。
+It's a beginner's book when you want to learn about monitoring.

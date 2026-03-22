@@ -1,6 +1,6 @@
 ---
 title: リーダーの作法―ささいなことをていねいに
-description: リーダーの作法―ささいなことをていねいに
+description: "リーダーの作法―ささいなことをていねいに"
 slug: leader-etiquette
 date: 2026-02-20T00:00:00Z
 author: bmf-san

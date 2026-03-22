@@ -1,6 +1,6 @@
 ---
 title: Data-Oriented Application Design
-description: 'Explore data-oriented design principles for distributed systems. Master system architecture trade-offs and design patterns.'
+description: "Data-Oriented Application Design"
 slug: data-oriented-application-design
 date: 2023-02-27T00:00:00Z
 author: bmf-san

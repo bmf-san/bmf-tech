@@ -1,6 +1,6 @@
 ---
 title: みんなのコンピュータサイエンス
-description: みんなのコンピュータサイエンス
+description: "みんなのコンピュータサイエンス"
 slug: everyone-computer-science
 date: 2019-03-25T00:00:00Z
 author: bmf-san

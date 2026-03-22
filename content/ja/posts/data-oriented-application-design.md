@@ -1,6 +1,6 @@
 ---
 title: データ指向アプリケーションデザイン
-description: データ指向アプリケーションデザイン
+description: "データ指向アプリケーションデザイン"
 slug: data-oriented-application-design
 date: 2023-02-27T00:00:00Z
 author: bmf-san

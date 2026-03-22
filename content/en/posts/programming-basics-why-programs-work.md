@@ -1,6 +1,6 @@
 ---
 title: 'Why Programs Work, 3rd Edition: Essential Programming Knowledge'
-description: 'Learn programming fundamentals including CPU operations, memory management, and core knowledge essential for every developer.'
+description: "Why Programs Work, 3rd Edition: Essential Programming Knowledge"
 slug: programming-basics-why-programs-work
 date: 2024-05-01T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Software Architecture Hardparts
-description: "Navigate software architecture hardparts including distributed systems challenges, trade-offs, and evolutionary reconstruction."
+description: "Software Architecture Hardparts"
 slug: software-architecture-hardparts
 date: 2023-02-27T00:00:00Z
 author: bmf-san

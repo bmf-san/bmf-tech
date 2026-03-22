@@ -1,6 +1,6 @@
 ---
 title: リーダブルコード ―より良いコードを書くためのシンプルで実践的なテクニック
-description: リーダブルコード ―より良いコードを書くためのシンプルで実践的なテクニック
+description: "リーダブルコード ―より良いコードを書くためのシンプルで実践的なテクニック"
 slug: readable-code-techniques
 date: 2016-06-15T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Driving Domain with Data Modeling - Towards Distributed and Loosely Coupled Core Systems
-description: 'Master data modeling for distributed systems using ledger patterns, Activity/Management Systems, and DDD principles.'
+description: "Driving Domain with Data Modeling - Towards Distributed and Loosely Coupled Core Systems"
 slug: domain-driven-data-modeling
 date: 2025-08-11T00:00:00Z
 author: bmf-san

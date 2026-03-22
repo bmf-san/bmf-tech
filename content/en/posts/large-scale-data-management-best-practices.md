@@ -1,25 +1,28 @@
 ---
-title: Large-Scale Data Management - Best Practices in Enterprise Architecture
-description: 'Learn large-scale data management best practices for building scalable enterprise architecture without siloed data.'
+title: 'Large-Scale Data Management: Best Practices for Enterprise Architecture'
+description: 'Large-Scale Data Management: Best Practices for Enterprise Architecture'
 slug: large-scale-data-management-best-practices
 date: 2024-06-30T00:00:00Z
 author: bmf-san
 categories:
   - Architecture
 tags:
-  - Book
+  - Book Review
   - Architecture
 translation_key: large-scale-data-management-best-practices
+books:
+  - asin: "481440008X"
+    title: "大規模データ管理 ―エンタープライズアーキテクチャのベストプラクティス"
 ---
 
-[Large-Scale Data Management - Best Practices in Enterprise Architecture](https://amzn.to/4cmSsAj) was read.
+I read [Large-Scale Data Management: Best Practices for Enterprise Architecture](https://amzn.to/4cmSsAj).
 
-I picked it up because I was more interested in the architecture discussion than data management itself.
+I picked it up because I was more interested in the architecture aspect than data management itself.
 
-The idea is that if data management is done centrally, it becomes difficult to keep up with changes in data management trends, so we should aim for a scalable architecture.
+The book discusses how centralizing data management makes it difficult to keep up with changes in data management trends, and advocates for a scalable architecture to address this issue.
 
-I learned that data warehouses tend to become siloed, so it's better to avoid them. (I was quite unaware...)
+I learned that it's better to avoid data warehouses as they tend to become siloed. (I was quite unaware of this...)
 
-The first half discusses architecture that is not limited to data management, while the second half talks about practices in data management architecture, but I felt the content was somewhat vague. It might be easier to read if you have some background knowledge or experience in data analysis infrastructure.
+The first half of the book focuses on architecture that isn't confined to data management, while the latter half discusses practices related to data management architecture. However, I felt the content was somewhat vague. Having prior knowledge or experience in data analysis infrastructure might make it easier to read.
 
-It seems that the [2nd edition of Large-Scale Data Management](https://www.oreilly.co.jp/books/9784814400713/) is being published, and if you're going to buy it now, this might be the better option. The content seems to be updated, and the table of contents looks interesting.
+It seems that a second edition of [Large-Scale Data Management](https://www.oreilly.co.jp/books/9784814400713/) is set to be published, and if you're considering buying it now, that might be the better option. The content appears to be updated, and the table of contents looks interesting.

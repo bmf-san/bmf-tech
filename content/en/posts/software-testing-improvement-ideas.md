@@ -1,18 +1,20 @@
 ---
-title: 50 Ideas to Improve Software Testing
-description: "Learn 50 practical techniques to improve software testing quality and strengthen test coverage for production applications."
+title: '50 Ideas to Improve Software Testing'
+description: '50 Ideas to Improve Software Testing'
 slug: software-testing-improvement-ideas
 date: 2022-11-22T00:00:00Z
 author: bmf-san
 categories:
   - Testing
 tags:
-  - Book
+  - Book Review
 translation_key: software-testing-improvement-ideas
+books:
+  - asin: "4798176060"
+    title: "ソフトウェアテストをカイゼンする50のアイデア"
 ---
 
 
+I read [50 Ideas to Improve Software Testing](https://amzn.to/3JWDsN1).
 
-[I read 50 Ideas to Improve Software Testing](https://amzn.to/3JWDsN1).
-
-A book where you can learn ideas to improve test quality.
+This book provides insights on ideas to enhance the quality of testing.

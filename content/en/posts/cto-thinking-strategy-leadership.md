@@ -1,6 +1,6 @@
 ---
-title: 'CTO''s Thinking: Decision Making, Strategy, and Leadership to Drive Technology and Organization'
-description: 'Understand CTO decision-making strategies for aligning technology investments with business goals and organizational leadership.'
+title: "CTO''s Thinking: Decision Making, Strategy, and Leadership to Drive Technology and Organization"
+description: "CTO''s Thinking: Decision Making, Strategy, and Leadership to Drive Technology and Organization"
 slug: cto-thinking-strategy-leadership
 date: 2026-02-21T00:00:00Z
 author: bmf-san

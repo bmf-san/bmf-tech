@@ -1,6 +1,6 @@
 ---
 title: More Effective Agile
-description: 'Master agile development practices, sprint methodologies, and team productivity frameworks for modern development.'
+description: "More Effective Agile"
 slug: more-effective-agile
 date: 2023-10-01T00:00:00Z
 author: bmf-san
@@ -16,9 +16,8 @@ books:
 ---
 
 
+I read [More Effective Agile](https://amzn.to/3JYYieN).
 
-[More Effective Agile](https://amzn.to/3JYYieN)を読んだ。
+It is a book that summarizes practices for implementing Agile.
 
-アジャイルを実践するためのプラクティスがまとめられた本。
-
-[アジャイルワークショップ](https://speakerdeck.com/bmf_san/aziyairuwakusiyotupu)の教科書として活用させてもらった。
+I used it as a textbook for the [Agile Workshop](https://speakerdeck.com/bmf_san/aziyairuwakusiyotupu).

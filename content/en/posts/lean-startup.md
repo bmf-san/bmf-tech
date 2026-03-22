@@ -1,6 +1,6 @@
 ---
 title: Lean Startup
-description: 'Understand lean startup principles derived from lean production systems for building and iteratively testing new product ideas.'
+description: "Lean Startup"
 slug: lean-startup
 date: 2017-06-01T00:00:00Z
 author: bmf-san

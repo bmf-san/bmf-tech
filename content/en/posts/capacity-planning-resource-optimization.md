@@ -1,6 +1,6 @@
 ---
 title: Capacity Planning - Maximizing Resources through Site Analysis, Forecasting, and Placement
-description: 'Understand fundamental concepts of capacity planning for site analysis, resource forecasting, and optimization strategies.'
+description: "Capacity Planning - Maximizing Resources through Site Analysis, Forecasting, and Placement"
 slug: capacity-planning-resource-optimization
 date: 2024-03-30T00:00:00Z
 author: bmf-san

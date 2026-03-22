@@ -1,6 +1,6 @@
 ---
 title: ストレスフリー超大全
-description: ストレスフリー超大全
+description: "ストレスフリー超大全"
 slug: stress-free-guide
 date: 2023-02-06T00:00:00Z
 author: bmf-san

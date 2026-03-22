@@ -1,6 +1,6 @@
 ---
-title: 'Learning PostgreSQL from the Inside: Design and Operation Principles'
-description: 'A review of Learning PostgreSQL from the Inside. Covers internal architecture, storage management, WAL, MVCC, vacuum, and key operational knowledge for running PostgreSQL in production.'
+title: 'Learning PostgreSQL from Its Internal Structure: Principles of Design and Operation Planning'
+description: 'Learning PostgreSQL from Its Internal Structure: Principles of Design and Operation Planning'
 slug: postgresql-internal-structure
 date: 2024-05-07T00:00:00Z
 author: bmf-san
@@ -8,14 +8,16 @@ categories:
   - Database
 tags:
   - PostgreSQL
-  - Book
+  - Book Review
 translation_key: postgresql-internal-structure
+books:
+  - asin: "4297132060"
+    title: "内部構造から学ぶPostgreSQL―設計・運用計画の鉄則"
 ---
 
 
+I read [Learning PostgreSQL from Its Internal Structure: Principles of Design and Operation Planning](https://amzn.to/3JP16uL).
 
-[Learning PostgreSQL from the Inside: Design and Operation Principles](https://amzn.to/3JP16uL) was a great read.
+It covers everything you want to know about operating PostgreSQL from the perspective of design and operation, which is great.
 
-It comprehensively covers what you need to know about operating PostgreSQL from a design and operational perspective.
-
-I wonder if there's a similar book for MySQL. Seems like there should be.
+I wonder if there’s a similar book for MySQL. There probably is.

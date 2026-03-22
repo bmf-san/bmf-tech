@@ -1,6 +1,6 @@
 ---
 title: 'Legacy Code Improvement Guide: Refactoring for Maintenance Development'
-description: 'Refactor legacy code using seam models to enable behavior changes without direct editing and improve maintainability.'
+description: "Legacy Code Improvement Guide: Refactoring for Maintenance Development"
 slug: legacy-code-improvement-guide
 date: 2017-03-12T00:00:00Z
 author: bmf-san

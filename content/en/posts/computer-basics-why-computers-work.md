@@ -1,6 +1,6 @@
 ---
-title: 'Why Computers Work: 2nd Edition - Essential Hardware & Software Knowledge'
-description: 'Understand how computers work: the complete flow from hardware fundamentals to software, and essential computing knowledge.'
+title: 'Why Computers Work: 2nd Edition - Essential Knowledge of Hardware and Software'
+description: 'Why Computers Work: 2nd Edition - Essential Knowledge of Hardware and Software'
 slug: computer-basics-why-computers-work
 date: 2024-05-01T00:00:00Z
 author: bmf-san
@@ -9,16 +9,17 @@ categories:
 tags:
   - Software
   - Hardware
-  - Book
+  - Book Review
 translation_key: computer-basics-why-computers-work
+books:
+  - asin: "429600123X"
+    title: "コンピュータはなぜ動くのか 第２版 知っておきたいハードウエア＆ソフトウエアの基礎知識"
 ---
 
+I read [Why Computers Work: 2nd Edition - Essential Knowledge of Hardware and Software](https://amzn.to/3yb21TH).
 
+I revisited it since a revised edition was released.
 
-[Why Computers Work: 2nd Edition - Essential Hardware & Software Knowledge](https://amzn.to/3yb21TH) was read.
+It helps to understand the flow from hardware to software.
 
-I reread it because a revised edition was released.
-
-You can understand the flow from hardware to software.
-
-It seems good to read [Why Programs Work: 3rd Edition - Essential Programming Knowledge](https://amzn.to/4afy0zD) as a set.
+I feel that reading it alongside [Why Programs Work: 3rd Edition - Essential Knowledge of Programming](https://amzn.to/4afy0zD) would be beneficial.

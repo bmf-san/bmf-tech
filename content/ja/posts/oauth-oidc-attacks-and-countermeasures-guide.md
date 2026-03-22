@@ -1,6 +1,6 @@
 ---
 title: OAuth・OIDCへの攻撃と対策を整理して理解できる本（リダイレクトへの攻撃編）
-description: 「OAuth・OIDCへの攻撃と対策を整理して理解できる本（リダイレクトへの攻撃編）」のまとめと読書メモ。重要なポイントと実践的な知見を整理します。
+description: "OAuth・OIDCへの攻撃と対策を整理して理解できる本（リダイレクトへの攻撃編）"
 slug: oauth-oidc-attacks-and-countermeasures-guide
 date: 2021-10-05T00:00:00Z
 author: bmf-san

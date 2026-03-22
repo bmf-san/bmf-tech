@@ -1,6 +1,6 @@
 ---
 title: Good Strategy, Bad Strategy
-description: 'Discover how to craft effective business strategy by diagnosing constraints, setting guiding policies, and avoiding common pitfalls.'
+description: "Good Strategy, Bad Strategy"
 slug: good-strategy-bad-strategy
 date: 2024-08-12T00:00:00Z
 author: bmf-san

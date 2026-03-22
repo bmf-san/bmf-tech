@@ -1,6 +1,6 @@
 ---
 title: Five Dialogues to Transform Organizations - Creating an Agile Organizational Culture Through Dialogue
-description: 'Explore how dialogue-based organizational transformation creates agile culture through five conversation formats for teams and managers.'
+description: "Five Dialogues to Transform Organizations - Creating an Agile Organizational Culture Through Dialogue"
 slug: five-dialogues-for-organizational-change
 date: 2026-02-20T00:00:00Z
 author: bmf-san

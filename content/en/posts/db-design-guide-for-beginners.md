@@ -1,6 +1,6 @@
 ---
-title: 'Mastering Database Design: A Comprehensive Guide for Beginners Who Want to Advance'
-description: 'Learn systematic database design fundamentals. Master SQL concepts and relational database principles for scalable applications.'
+title: 'A Comprehensive Guide to Database Design: For Those Who Don’t Want to Stop at Beginner Level'
+description: 'A Comprehensive Guide to Database Design: For Those Who Don’t Want to Stop at Beginner Level'
 slug: db-design-guide-for-beginners
 date: 2024-04-11T00:00:00Z
 author: bmf-san
@@ -9,12 +9,13 @@ categories:
 tags:
   - DB
   - SQL
-  - Book
+  - Book Review
 translation_key: db-design-guide-for-beginners
+books:
+  - asin: "4798124702"
+    title: "達人に学ぶDB設計徹底指南書: 初級者で終わりたくないあなたへ"
 ---
 
-
-
-[Mastering Database Design: A Comprehensive Guide for Beginners Who Want to Advance](https://amzn.to/3U9lQU1) was read.
+I read [A Comprehensive Guide to Database Design: For Those Who Don’t Want to Stop at Beginner Level](https://amzn.to/3U9lQU1).
 
 It is systematically explained and easy to understand.

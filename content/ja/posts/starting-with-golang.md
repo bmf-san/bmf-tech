@@ -1,6 +1,6 @@
 ---
 title: スターティングGo言語
-description: スターティングGo言語
+description: "スターティングGo言語"
 slug: starting-with-golang
 date: 2018-03-01T00:00:00Z
 author: bmf-san

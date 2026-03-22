@@ -1,6 +1,6 @@
 ---
 title: 思考の整理学
-description: 思考の整理学
+description: "思考の整理学"
 slug: organizing-thoughts
 date: 2024-12-08T00:00:00Z
 author: bmf-san

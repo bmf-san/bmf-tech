@@ -1,6 +1,6 @@
 ---
 title: アルゴリズム図鑑 増補改訂版 絵で見てわかる33のアルゴリズム
-description: アルゴリズム図鑑 増補改訂版 絵で見てわかる33のアルゴリズム
+description: "アルゴリズム図鑑 増補改訂版 絵で見てわかる33のアルゴリズム"
 slug: algorithm-illustrated-guide
 date: 2021-05-16T00:00:00Z
 author: bmf-san

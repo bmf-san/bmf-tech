@@ -1,6 +1,6 @@
 ---
 title: Everyone's Computer Science
-description: 'Understand fundamental computer science concepts including algorithms, data structures, and computational thinking.'
+description: "Everyone's Computer Science"
 slug: everyone-computer-science
 date: 2019-03-25T00:00:00Z
 author: bmf-san
