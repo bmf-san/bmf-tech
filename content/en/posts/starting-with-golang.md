@@ -5,7 +5,7 @@ slug: starting-with-golang
 date: 2018-03-01T00:00:00Z
 author: bmf-san
 categories:
-  - Applications
+  - Application
 tags:
   - Golang
   - Book Review

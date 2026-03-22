@@ -8,7 +8,7 @@ categories:
   - Database
 tags:
   - DB
-  - sql
+  - SQL
   - Book Review
 translation_key: database-practical-introduction-relational-model
 books:

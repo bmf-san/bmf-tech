@@ -8,8 +8,8 @@ categories:
   - Operations
 tags:
   - Book Review
-  - Logging
-  - Debugging
+  - Log
+  - Debug
 translation_key: practical-logging-textbook
 books:
   - asin: "4798192120"

@@ -5,7 +5,7 @@ slug: idiomatic-go-practice-guide
 date: 2025-10-26T00:00:00Z
 author: bmf-san
 categories:
-  - Applications
+  - Application
 tags:
   - Golang
   - Book Review

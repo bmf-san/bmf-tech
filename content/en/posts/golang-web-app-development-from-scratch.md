@@ -5,7 +5,7 @@ slug: golang-web-app-development-from-scratch
 date: 2022-11-23T00:00:00Z
 author: bmf-san
 categories:
-  - Applications
+  - Application
 tags:
   - Golang
   - Book Review

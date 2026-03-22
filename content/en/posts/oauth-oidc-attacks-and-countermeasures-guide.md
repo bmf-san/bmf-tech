@@ -5,10 +5,10 @@ slug: oauth-oidc-attacks-and-countermeasures-guide
 date: 2021-10-05T00:00:00Z
 author: bmf-san
 categories:
-  - Applications
+  - Application
 tags:
   - OAuth
-  - OpenIDConnect
+  - OpenID Connect
   - Book Review
 translation_key: oauth-oidc-attacks-and-countermeasures-guide
 books:

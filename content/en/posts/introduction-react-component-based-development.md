@@ -5,7 +5,7 @@ slug: introduction-react-component-based-development
 date: 2016-08-04T00:00:00Z
 author: bmf-san
 categories:
-  - Applications
+  - Application
 tags:
   - React
   - Book Review

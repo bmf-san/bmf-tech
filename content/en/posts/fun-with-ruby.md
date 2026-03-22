@@ -15,8 +15,6 @@ books:
     title: "たのしいRuby"
 ---
 
+I read [Fun with Ruby](https://amzn.to/3UV14YP).
 
-
-[たのしいRuby](https://amzn.to/3UV14YP)を読んだ。
-
-オブジェクト志向の経験や他言語の経験があるほうが読みやすい部分も多いが、Ruby初心者向けの本。
+While it is easier to read for those with experience in object-oriented programming or other languages, it is a book for Ruby beginners.

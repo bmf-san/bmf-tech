@@ -5,7 +5,7 @@ slug: practical-go-language
 date: 2023-08-05T00:00:00Z
 author: bmf-san
 categories:
-  - Applications
+  - Application
 tags:
   - Golang
   - Book Review

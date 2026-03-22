@@ -5,7 +5,7 @@ slug: ruby-code-recipes
 date: 2024-10-20T00:00:00Z
 author: bmf-san
 categories:
-  - Applications
+  - Application
 tags:
   - Ruby
   - Book Review

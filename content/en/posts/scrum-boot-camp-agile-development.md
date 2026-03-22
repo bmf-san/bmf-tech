@@ -17,6 +17,7 @@ books:
 ---
 
 
-I read [SCRUM BOOT CAMP THE BOOK【増補改訂版】 スクラムチームではじめるアジャイル開発](https://amzn.to/3wwns1b).
 
-It is a good book to learn about Scrum development as a first introduction.
+[SCRUM BOOT CAMP THE BOOK [Revised Edition] Starting Agile Development with a Scrum Team](https://amzn.to/3wwns1b) was read.
+
+It's a good first book to learn about Scrum development.

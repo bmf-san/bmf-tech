@@ -8,7 +8,7 @@ categories:
   - Database
 tags:
   - DB
-  - sql
+  - SQL
   - Book Review
 translation_key: db-design-guide-for-beginners
 books:

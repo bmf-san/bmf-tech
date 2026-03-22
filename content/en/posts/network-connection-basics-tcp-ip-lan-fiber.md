@@ -5,7 +5,7 @@ slug: network-connection-basics-tcp-ip-lan-fiber
 date: 2024-05-09T00:00:00Z
 author: bmf-san
 categories:
-  - Networking
+  - Network
 tags:
   - Book Review
   - IP

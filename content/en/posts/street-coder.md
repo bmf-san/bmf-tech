@@ -5,7 +5,7 @@ slug: street-coder
 date: 2025-09-20T00:00:00Z
 author: bmf-san
 categories:
-  - Applications
+  - Application
 tags:
   - Coding
   - Book Review

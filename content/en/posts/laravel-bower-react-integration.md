@@ -12,42 +12,41 @@ description: A guide on integrating React into a Laravel project using Bower.
 translation_key: laravel-bower-react-integration
 ---
 
+Recently, it seems that Laravel 5.3 has decided to adopt Vue.js as the default front-end framework.
 
-Recently, it seems that Laravel 5.3 has decided to adopt Vue.js as the default frontend framework.
+I usually develop the front end with jQuery, but I decided to try using React, riding the recent trend. While I thought it might be safer to stick with Vue.js for Laravel, I chose React because it seems to be the most rapidly growing option (or so I've heard). I was torn between AngularJS and React, but since I was primarily looking for something to replace jQuery and handle only the view, I opted for React.
 
-I usually develop the frontend with jQuery, but I decided to try React to keep up with the latest trends. Although I thought sticking with Vue.js would be safer with Laravel, I chose React because it seems to be growing the most right now. I was torn between AngularJS and React, but since I was looking for something to replace jQuery and only handle the View, I chose React.
+I can't really explain the technical value of each framework, as I'm not a front-end expert, so to be honest, I'm not entirely sure... lol
 
-I'm not a frontend expert who can explain the technical value of each framework, so honestly, I don't really understand... lol
+The official recommendation for installing React seems to be npm, but since I feel more familiar with Bower, I will install it using Bower this time. (Is npm richer in packages than Bower??)
 
-The official recommendation for installing React seems to be npm, but I feel more familiar with Bower, so I'll install it with Bower this time. (Is npm richer in packages than Bower??)
-
-After some research, it seems that npm is more standard.
+Postscript: After doing some research, it seems that npm has a more standard feel.
 
 # Environment
 * Laravel 5.2
-* React... the latest version at the time of writing (v15.3.0)
-* babel... a JavaScript compiler. **With babel, you can write React in JSX syntax as it interprets jsx.**
-* bower... Refer to [laravelでbowerのセットアップ](hogehoge.com) for setup.
-* gulp (elixir)
+* React... for now, the latest version (as of writing v15.3.0)
+* Babel... a JavaScript compiler. **By introducing Babel, you can write React using JSX syntax, as it interprets JSX.**
+* Bower... refer to [setting up Bower with Laravel](hogehoge.com).
+* Gulp (Elixir)
 
 # Required Knowledge
 * Knowledge of setting up Bower.
-* Knowledge of gulp (elixir).
+* Knowledge of Gulp (Elixir).
 
-By looking at tutorials on the official site or sources available online, you might get a sense of it, but it's good to be aware of the recent chaotic frontend landscape, including babel, jsx, and browserify.
+I think you can get a general understanding by looking at the official website's tutorials or copying code from various sources, but it would be good to be aware of recent chaotic front-end topics like Babel, JSX, and Browserify.
 
 # Setting Up React
 `bower install react --save`
 `bower install babel --save`
 
-Use the following files:
-* react.min.js (react)
-* react-dom.js (react)
-* browser.min.js (babel)
+We will use the following files:
+* react.min.js (React)
+* react-dom.js (React)
+* browser.min.js (Babel)
 
-※ If you want to use animations, **load react-with-addons.js instead of react.js.**
+*If you want to use animations, please load **react-with-addons.js** instead of react.js.*
 
-This is all you need to prepare to use React.
+That's all you need to prepare to use React.
 
 # Trying Out React
 ```html
@@ -65,23 +64,21 @@ This is all you need to prepare to use React.
 
 ```js
 ReactDOM.render(
-   <h1>Hello React Boy and Girl!</h1>
-   document.getElementId("example")
+   <h1>Hello React Boy and Girl!</h1>,
+   document.getElementById("example")
 );
 ```
 
-You can also write the js before the closing body tag.
+You can also write the JS before the closing body tag.
 
-# Impressions
-It seems there is less information about React in Japanese compared to Laravel. (Laravel seems to have increased rapidly this year...)
-However, since it seems to be gaining attention, I have high hopes for the future.
+# Thoughts
+I felt that there is less information in Japanese about React compared to Laravel. (I feel that the amount of information for Laravel has increased rapidly this year...) However, it seems to be gaining attention, so I look forward to what comes next.
 
-# Additional Notes
-If you want to use require() with React, use browserify or webpack. [What is require()?](http://qiita.com/uryyyyyyy/items/b10b012703b5396ded5a)
-Since Laravel comes with browserify by default, it might be easier to use that, but choose according to your environment.
+# Addendum
+If you want to use require() with React, you can use Browserify or Webpack. [What is require()?](http://qiita.com/uryyyyyyy/items/b10b012703b5396ded5a) Since Laravel has Browserify built-in by default, I think it would be easier to use that, but please choose according to your environment.
 
 # References
-* [Laravel5 ベースのプロジェクトに React が爆速で導入できた話](http://blog.mudatobunka.org/entry/2016/01/21/231546)
-* [React.jsでLaravelから情報をもらってみよう](http://blog.comnect.jp.net/blog/98)
-* [React入門 - Part2: Browserify/Reactify/Gulpを使う](http://qiita.com/masato/items/35b0900e3a7282b33bf8)
-* [[Sy] bowerを使ってReactの開発環境を構築する方法](https://utano.jp/entry/2016/07/react-js-install-use-bower/)
+* [How to Quickly Integrate React into a Laravel 5 Based Project](http://blog.mudatobunka.org/entry/2016/01/21/231546)
+* [Let's Get Information from Laravel with React.js](http://blog.comnect.jp.net/blog/98)
+* [Introduction to React - Part 2: Using Browserify/Reactify/Gulp](http://qiita.com/masato/items/35b0900e3a7282b33bf8)
+* [[Sy] How to Set Up a Development Environment for React Using Bower](https://utano.jp/entry/2016/07/react-js-install-use-bower/)

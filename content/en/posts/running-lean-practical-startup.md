@@ -17,6 +17,6 @@ books:
 ---
 
 
-I read [Running Lean ―実践リーンスタートアップ](https://amzn.to/3UFmmbx).
+I read [Running Lean ― Practical Lean Startup](https://amzn.to/3UFmmbx).
 
-This is a must-read for anyone involved in startups. It is also helpful when starting a new business.
+This is a must-read for anyone involved in startups. It's also useful when starting a new business.

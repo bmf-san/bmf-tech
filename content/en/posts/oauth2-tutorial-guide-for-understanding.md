@@ -5,7 +5,7 @@ slug: oauth2-tutorial-guide-for-understanding
 date: 2021-10-05T00:00:00Z
 author: bmf-san
 categories:
-  - Applications
+  - Application
 tags:
   - OAuth
   - Authentication

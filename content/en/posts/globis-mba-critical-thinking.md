@@ -16,8 +16,6 @@ books:
     title: "グロービスMBAクリティカル・シンキング"
 ---
 
+I read [GLOBIS MBA Critical Thinking](https://amzn.to/3yotEc5).
 
-
-[グロービスMBAクリティカル・シンキング](https://amzn.to/3yotEc5)を読んだ。
-
-A book where you can learn about critical thinking along with exercises.
+This book allows you to learn about critical thinking along with exercises.

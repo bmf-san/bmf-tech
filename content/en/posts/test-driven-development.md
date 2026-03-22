@@ -15,7 +15,6 @@ books:
 ---
 
 
+I read [Test-Driven Development](https://amzn.to/3WwNITP).
 
-[テスト駆動開発](https://amzn.to/3WwNITP)を読んだ。
-
-Kent Beck's TDD book. If you want to learn about TDD, this is the one to pick up first.
+This is Kent Beck's TDD book. If you want to learn about TDD, this is the one you should pick up first.

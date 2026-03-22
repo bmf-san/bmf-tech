@@ -16,19 +16,21 @@ translation_key: react-marked-highlight-integration
 ---
 
 
-I created a markdown editor using React instead of a WYSIWYG editor.
+I created a Markdown editor in React instead of a WYSIWYG editor.
 
-Most of the source code was referenced from [React入門](http://yusuke-aono.hatenablog.com/entry/20150503/1430661392).
+Most of the source code is based on [Introduction to React](http://yusuke-aono.hatenablog.com/entry/20150503/1430661392).
 
-Here's a rough gif sample _(:3」∠)_
+
+Here is a rough GIF sample _(:3」∠)_
 ![markdown.gif](/assets/images/posts/react-marked-highlight-integration/a60a6293-1345-ae00-942c-e544e6e526a6.gif)
+
 
 
 # Environment
 * React
-* marked([github](https://github.com/chjj/marked)) - Markdown parser
-* highlight.js([highlightjs.org](https://highlightjs.org/)) - Syntax highlighting
-* bower - Used for managing all the above packages
+* marked ([github](https://github.com/chjj/marked)) ... Markdown parser
+* highlight.js ([highlightjs.org](https://highlightjs.org/)) ... Syntax highlighting
+* bower ... Used for managing all of the above packages
 
 
 # Preparation
@@ -37,14 +39,13 @@ Install marked and highlight.js using bower
 `bower install marked`
 `bower install highlightjs`
 
-Please install each in your environment and set the paths.
-It's highlightjs, not bower install highlight.
-They seem to be different, and I got stuck for about an hour because I made this mistake... (cry)
+Please install them in your own environment and set the paths accordingly.
+Make sure to use highlightjs, not highlight. They are different, and I got stuck for about an hour because of this mistake... (cry)
 
 
 # Implementation
 
-The HTML looks like this:
+The HTML looks like this↓
 
 index.html
 
@@ -81,12 +82,14 @@ index.html
 </html>
 ```
 
-I like the monokai color theme for syntax highlighting, so I set the monokai stylesheet.
-Regarding babel, I'm using a CDN this time, but you can also install it with bower.
+I like the Monokai color theme for syntax highlighting, so I set the Monokai stylesheet.
+For Babel, I am using a CDN this time, but you can also install it via bower.
 
-Now, let's create the React components. As mentioned at the beginning, most of it is referenced from [React入門](http://yusuke-aono.hatenablog.com/entry/20150503/1430661392), so it might be good to read through it.
 
-I just added the highlight.js setting code to the reference source. (Not much work done lol)
+Now, let's create the React components. As mentioned earlier, most of the code is based on [Introduction to React](http://yusuke-aono.hatenablog.com/entry/20150503/1430661392), so I recommend reading it first.
+
+I just added the configuration code for highlight.js to the reference source. (Not doing much work, lol)
+
 
 
 markdown.js
@@ -108,8 +111,8 @@ var App = React.createClass({
     render: function() {
         return (
             <div>
-                <TextInput onChange = {this.updateMarkdown}/>
-                <Markdown markdown = {this.state.markdown}/>
+                <TextInput onChange={this.updateMarkdown}/>
+                <Markdown markdown={this.state.markdown}/>
             </div>
         );
     }
@@ -126,7 +129,7 @@ var TextInput = React.createClass({
 
     render: function() {
         return (
-            <textarea onChange = {this._onChange}></textarea>
+            <textarea onChange={this._onChange}></textarea>
         );
     }
 });
@@ -159,21 +162,21 @@ ReactDOM.render(
 );
 ```
 
-The components are divided into three: the text input component, the markdown output component, and the component that integrates them.
+The components are divided into three parts: the text input component, the Markdown output component, and the component that integrates them.
 
-Markdown parsing is done with a function called marked.
-The options for this marked function are set to use highlight.js in componentDidUpdate.
-The method for setting options is written in the highlight.js README.
+The parsing of Markdown is done using the marked function.
+In the componentDidUpdate section, I set the options to use highlight.js.
+You can find the method for setting options in the highlight.js README.
 
-dangerouslySetInnerHTML is a property that sanitizes data for XSS protection.
+dangerouslySetInnerHTML is a property used to sanitize data for XSS prevention.
 
 
-# Impressions
-This was my first time creating an editor, and it can be done quickly with libraries~ _(:3」∠)_
+# Thoughts
+This is my first time creating an editor, and it’s amazing how quickly it can be done with libraries~ _(:3」∠)_
 
 
 # ES6 Version
-I recently studied ES6, so I rewrote it. I wasn't sure how to handle propsType, so I omitted it lol
+Recently, I studied ES6, so I rewrote it. I wasn’t sure how to handle propTypes, so I omitted that part, lol.
 
 ```markdown.js
 /**
@@ -251,4 +254,3 @@ class Markdown extends React.Component{
     );
   }
 };
-```

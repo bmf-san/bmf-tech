@@ -5,7 +5,7 @@ slug: functional-programming-introduction
 date: 2025-08-31T00:00:00Z
 author: bmf-san
 categories:
-  - Applications
+  - Application
 tags:
   - Functional
   - Book Review

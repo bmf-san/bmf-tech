@@ -5,7 +5,7 @@ slug: metaprogramming-ruby-2nd-edition
 date: 2025-01-06T00:00:00Z
 author: bmf-san
 categories:
-  - Applications
+  - Application
 tags:
   - Book Review
   - Ruby

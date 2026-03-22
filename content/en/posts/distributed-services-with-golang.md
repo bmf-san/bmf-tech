@@ -5,7 +5,7 @@ slug: distributed-services-with-golang
 date: 2023-08-18T00:00:00Z
 author: bmf-san
 categories:
-  - Applications
+  - Application
 tags:
   - Golang
   - Book Review

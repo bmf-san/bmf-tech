@@ -5,7 +5,7 @@ slug: mastering-tcp-ip-introduction
 date: 2024-05-13T00:00:00Z
 author: bmf-san
 categories:
-  - Applications
+  - Application
 tags:
   - TCP
   - IP

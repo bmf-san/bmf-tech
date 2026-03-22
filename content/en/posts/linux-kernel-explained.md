@@ -5,7 +5,7 @@ slug: linux-kernel-explained
 date: 2025-01-31T00:00:00Z
 author: bmf-san
 categories:
-  - OS
+  - Operating Systems
 tags:
   - Linux
   - Book Review
