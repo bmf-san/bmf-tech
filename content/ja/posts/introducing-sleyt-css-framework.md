@@ -40,7 +40,7 @@ sleytは4つのディレクトリに20以上のコンポーネントを整備す
 
 ### データ可視化
 
-`charts.css`は**CSSだけ**の棒グラフ、折れ線グラフ、ドーナツチャートを提供する。JavaScriptのグラフライブラリ不要。棒グラフはCSSの高さでデータを表現する純CSS実装、折れ線グラフはSVG `<path>`要素をCSSでスタイリング、ドーナツチャートはSVG `<circle>`の`stroke-dasharray`と`stroke-dashoffset`でセグメントを描画する。データ対応はCSSカスタムプロパティ経由で行う。
+`charts.css`は**CSSだけ**の棒グラフ、折れ線グラフ、ドーナツチャートを提供する。JavaScriptのグラフライブラリ不要。棒グラフはCSSの高さでデータを表現する純CSS実装だ。折れ線グラフはSVG `<path>`要素をCSSでスタイリングし、ドーナツチャートはSVG `<circle>`の`stroke-dasharray`と`stroke-dashoffset`でセグメントを描画する。データ対応はCSSカスタムプロパティ経由で行う。
 
 ![ダッシュボードデモ](/assets/images/posts/introducing-sleyt-css-framework/05_demo_dashboard.png)
 

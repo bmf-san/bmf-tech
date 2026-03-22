@@ -38,7 +38,7 @@ sleyt ships 20+ ready-to-use components split across four directories:
 
 ### Data Visualisation
 
-`charts.css` provides CSS-only bar charts, line charts, and donut charts — no JavaScript chart library required. Bar charts are pure CSS, using element height to represent data values. Line charts use SVG `<path>` elements styled with CSS. Donut chart segments are SVG `<circle>` elements drawn with `stroke-dasharray` and `stroke-dashoffset`. Data values are passed via CSS custom properties.
+`charts.css` provides CSS-only bar charts, line charts, and donut charts — no JavaScript chart library required. Bar charts are pure CSS, using element height to represent data values. Line charts use SVG `<path>` elements styled with CSS. Donut chart segments are SVG `<circle>` elements drawn with `stroke-dasharray` and `stroke-dashoffset`. Data values flow in via CSS custom properties.
 
 ![Dashboard demo](/assets/images/posts/introducing-sleyt-css-framework/05_demo_dashboard.png)
 
