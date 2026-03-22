@@ -1,6 +1,6 @@
 ---
 title: Knowledge and Skills of Accounting Systems for Engineers
-description: 'Understand accounting system architecture and financial knowledge essential for engineers building sophisticated booking and accounting infrastructure.'
+description: "Knowledge and Skills of Accounting Systems for Engineers"
 slug: accounting-system-knowledge-skills
 date: 2024-04-04T00:00:00Z
 author: bmf-san

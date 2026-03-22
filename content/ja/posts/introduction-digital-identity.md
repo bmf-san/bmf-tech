@@ -1,6 +1,6 @@
 ---
 title: はじめてのデジタルアイデンティティ―Webサービスに欠かせない認証・認可・ID管理
-description: はじめてのデジタルアイデンティティ―Webサービスに欠かせない認証・認可・ID管理
+description: "はじめてのデジタルアイデンティティ―Webサービスに欠かせない認証・認可・ID管理"
 slug: introduction-digital-identity
 date: 2026-02-20T00:00:00Z
 author: bmf-san

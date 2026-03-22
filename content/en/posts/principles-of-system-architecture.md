@@ -11,7 +11,7 @@ tags:
   - Architecture
   - Architect
   - Book Review
-description: A must-read book for those involved in architecture design.
+description: "Principles of Building System Architecture: Three Mindsets IT Architects Should Have"
 translation_key: principles-of-system-architecture
 books:
   - asin: "4798116424"

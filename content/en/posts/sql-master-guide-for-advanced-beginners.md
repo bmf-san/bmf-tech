@@ -1,6 +1,6 @@
 ---
-title: 'Mastering SQL: A Comprehensive Guide 2nd Edition - For Those Who Don''t Want to Remain Beginners'
-description: "Master advanced SQL query techniques and optimization patterns for writing faster and more efficient database queries."
+title: 'Mastering SQL: A Comprehensive Guide for Advanced Beginners, 2nd Edition'
+description: 'Mastering SQL: A Comprehensive Guide for Advanced Beginners, 2nd Edition'
 slug: sql-master-guide-for-advanced-beginners
 date: 2024-04-01T00:00:00Z
 author: bmf-san
@@ -9,12 +9,13 @@ categories:
 tags:
   - DB
   - SQL
-  - Book
+  - Book Review
 translation_key: sql-master-guide-for-advanced-beginners
+books:
+  - asin: "4798157821"
+    title: "達人に学ぶSQL徹底指南書 第2版 初級者で終わりたくないあなたへ"
 ---
 
+I read [Mastering SQL: A Comprehensive Guide for Advanced Beginners, 2nd Edition](https://amzn.to/3PZYnSS).
 
-
-[Mastering SQL: A Comprehensive Guide 2nd Edition - For Those Who Don't Want to Remain Beginners](https://amzn.to/3PZYnSS) was an enlightening read.
-
-I felt like my SQL toolbox expanded with insights like, "Ah, so this is how you can write it!"
+I feel like my SQL skills have expanded with thoughts like, "Oh, so this is how you can write it!"

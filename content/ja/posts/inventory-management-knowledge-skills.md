@@ -1,6 +1,6 @@
 ---
 title: エンジニアが学ぶ在庫管理システムの「知識」と「技術」
-description: エンジニアが学ぶ在庫管理システムの「知識」と「技術」
+description: "エンジニアが学ぶ在庫管理システムの「知識」と「技術」"
 slug: inventory-management-knowledge-skills
 date: 2024-04-04T00:00:00Z
 author: bmf-san

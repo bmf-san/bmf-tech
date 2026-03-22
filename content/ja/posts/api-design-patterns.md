@@ -1,6 +1,6 @@
 ---
 title: APIデザイン・パターン
-description: APIデザイン・パターンについて、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
+description: "APIデザイン・パターン"
 slug: api-design-patterns
 date: 2024-08-26T00:00:00Z
 author: bmf-san

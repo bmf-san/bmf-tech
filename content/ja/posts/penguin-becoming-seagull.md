@@ -1,6 +1,6 @@
 ---
 title: カモメになったペンギン
-description: カモメになったペンギン
+description: "カモメになったペンギン"
 slug: penguin-becoming-seagull
 date: 2025-08-09T00:00:00Z
 author: bmf-san

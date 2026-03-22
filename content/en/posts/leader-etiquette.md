@@ -1,6 +1,6 @@
 ---
 title: The Art of Leadership - Attending to the Small Things
-description: 'Discover how engineering leaders shape culture through daily habits like feedback quality, meeting presence, and 1-on-1 effectiveness.'
+description: "The Art of Leadership - Attending to the Small Things"
 slug: leader-etiquette
 date: 2026-02-20T00:00:00Z
 author: bmf-san

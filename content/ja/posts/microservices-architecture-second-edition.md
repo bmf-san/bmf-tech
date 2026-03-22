@@ -1,6 +1,6 @@
 ---
 title: マイクロサービスアーキテクチャ 第2版
-description: マイクロサービスアーキテクチャ 第2版について、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
+description: "マイクロサービスアーキテクチャ 第2版"
 slug: microservices-architecture-second-edition
 date: 2024-06-16T00:00:00Z
 author: bmf-san

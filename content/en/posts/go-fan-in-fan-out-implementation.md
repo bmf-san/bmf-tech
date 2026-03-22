@@ -13,10 +13,10 @@ translation_key: go-fan-in-fan-out-implementation
 ---
 
 # Overview
-Implement the concurrent processing patterns fan-in and fan-out in Go.
+Implementing the fan-in and fan-out patterns in Go for concurrent processing.
 
-# What is fan-in/fan-out?
-Fan-in is a process that combines multiple inputs into one, while fan-out is a process that splits one input into multiple outputs.
+# What are Fan-In and Fan-Out?
+Fan-in is the process of aggregating multiple inputs into one, while fan-out is the process of distributing a single input into multiple outputs.
 
 Fan-in aggregates data, and fan-out distributes data.
 
@@ -94,18 +94,17 @@ func main() {
 }
 ```
 
-In the fan-out process, data is distributed, and in the fan-in process, data is aggregated.
+Data is distributed in the fan-out process and aggregated in the fan-in process.
 
 # Thoughts
 I lack confidence in concurrent processing, so I need to study more...
 
 # References
-- [ludwig125.hatenablog.com - go言語のpipeline、fan-in、fan-out](https://ludwig125.hatenablog.com/entry/2019/10/01/052011)
-- [devlights.hatenablog.com - Goメモ-73 (fan-in パターンでデータを集約するチャネル, FanIn)](https://devlights.hatenablog.com/entry/2020/03/23/015027)
-- [devlights.hatenablog.com - Goメモ-79 (指定されたワーカー数でファンアウトさせる関数, FanOut)
-](https://devlights.hatenablog.com/entry/2020/03/27/165236)
-- [tech-up.hatenablog.com - fan-out、fan-inパターン【Go】](https://tech-up.hatenablog.com/entry/2018/12/03/170013)
-- [selfnote.work - [Golang]アルゴリズムにチャレンジ \~ChannelでFan In/Fan Outを実装しよう!\~](https://selfnote.work/20211004/programming/golang-binary-tree/)
+- [ludwig125.hatenablog.com - Go Language Pipeline, Fan-In, Fan-Out](https://ludwig125.hatenablog.com/entry/2019/10/01/052011)
+- [devlights.hatenablog.com - Go Memo-73 (Channel for Aggregating Data with Fan-In Pattern)](https://devlights.hatenablog.com/entry/2020/03/23/015027)
+- [devlights.hatenablog.com - Go Memo-79 (Function for Fan-Out with Specified Number of Workers)](https://devlights.hatenablog.com/entry/2020/03/27/165236)
+- [tech-up.hatenablog.com - Fan-Out, Fan-In Pattern [Go]](https://tech-up.hatenablog.com/entry/2018/12/03/170013)
+- [selfnote.work - [Golang] Challenge with Algorithms ~ Let's Implement Fan In/Fan Out with Channels! ~](https://selfnote.work/20211004/programming/golang-binary-tree/)
 - [go.dev - Go Concurrency Patterns: Pipelines and cancellation](https://go.dev/blog/pipelines)
 - [kapoorrahul.medium.com - Golang Fan-In Fan-Out Concurrency Pattern](https://kapoorrahul.medium.com/golang-fan-in-fan-out-concurrency-pattern-f5a29ff1f93b)
 - [mariocarrion.com - LEARNING GO: FAN-IN/FAN-OUT CONCURRENCY PATTERN](https://mariocarrion.com/2021/08/19/learning-golang-concurrency-patterns-fan-in-fan-out.html)

@@ -1,6 +1,6 @@
 ---
 title: 入門監視
-description: "監視・モニタリングの基本概念と実践手法を学習できる入門書で、システム安定性向上と運用効率化に必要な監視戦略を習得。"
+description: "入門監視"
 slug: introduction-monitoring
 date: 2019-01-26T00:00:00Z
 author: bmf-san

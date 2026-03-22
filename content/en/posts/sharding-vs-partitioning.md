@@ -14,16 +14,16 @@ translation_key: sharding-vs-partitioning
 
 
 # Overview
-Sometimes I get confused about which is which, so I'm leaving a note.
+Sometimes it gets confusing which is which, so I’ll leave a note.
 
 # Differences Between Sharding and Partitioning
 |          Item          |                               Sharding                               |                            Partitioning                            |
-| ---------------------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| Data Division Method   | Horizontal (≒ Horizontal Partitioning) ex. Rows                                 | Vertical ex. Tables, Databases, Columns                              |
-| Benefits               | Improved performance, enhanced scalability                               | Improved performance, enhanced data searchability                                 |
-| Drawbacks              | Increased complexity of data and management                                                       | Issues with data separation and integrity                                               |
-| Suitable Applications  | Applications where the database size is large and performance is degrading | Applications where database access patterns are biased towards specific columns |
+| ---------------------- | ------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| Method of Data Division | Horizontal (≈ horizontal partitioning) ex. Row                     | Vertical ex. Table, Database, Column                              |
+| Advantages             | Improved performance, enhanced scalability                          | Improved performance, better data searchability                   |
+| Disadvantages          | Increased complexity of data and management                          | Issues with data separation and consistency                       |
+| Suitable Applications   | Applications with large database sizes and declining performance     | Applications where database access patterns are biased towards specific columns |
 
 # References
 - [Database sharding vs partitioning](https://stackoverflow.com/questions/20771435/database-sharding-vs-partitioning)
-- [shardingとpartitioningの違いは？【分散データベース】](https://engineer.yeele.net/dev/db/understanding-term-partitioning-correctly-led-you-understand-sharding/)
+- [What is the difference between sharding and partitioning? 【Distributed Database】](https://engineer.yeele.net/dev/db/understanding-term-partitioning-correctly-led-you-understand-sharding/)

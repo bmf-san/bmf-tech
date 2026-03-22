@@ -1,6 +1,6 @@
 ---
-title: 'Mastering Ruby Programming: Principles and Trade-offs for Practical Code'
-description: 'Master Ruby programming principles, practical code patterns, and trade-offs for effective professional Ruby development.'
+title: 'Practical Ruby Programming: Principles and Trade-offs for Effective Code'
+description: 'Practical Ruby Programming: Principles and Trade-offs for Effective Code'
 slug: ruby-programming-principles-tradeoffs
 date: 2024-10-28T00:00:00Z
 author: bmf-san
@@ -8,17 +8,17 @@ categories:
   - Application
 tags:
   - Ruby
-  - Book
+  - Book Review
 translation_key: ruby-programming-principles-tradeoffs
+books:
+  - asin: "4908686173"
+    title: "研鑽Rubyプログラミング 実践的なコードのための原則とトレードオフ"
 ---
 
+I read [Practical Ruby Programming: Principles and Trade-offs for Effective Code](https://amzn.to/3YlKRfO).
 
+Having started using Ruby at work and having read a variety of introductory books, I reached a point where I wanted to learn more practical aspects, so I decided to give this book a try.
 
-[Mastering Ruby Programming: Principles and Trade-offs for Practical Code](https://amzn.to/3YlKRfO) was a book I read.
+I felt that I could grasp not only practical knowledge of Ruby but also the charm of Ruby through this book.
 
-After starting to use Ruby at work and going through various introductory books, I reached a stage where I had acquired a certain level of knowledge and wanted to learn more practical aspects, so I decided to read this book.
-
-I felt that I could grasp not only practical knowledge of Ruby but also the charm of Ruby from this book.
-
-From a programming perspective, I was able to pick up concepts that are not dependent on Ruby as well.
-
+From a programming perspective, I was able to pick up ideas that are not limited to Ruby itself.

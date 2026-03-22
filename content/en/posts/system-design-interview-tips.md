@@ -1,6 +1,6 @@
 ---
 title: Trends and Strategies for System Design Interviews
-description: "Explore system design patterns and architecture techniques for understanding scalability trade-offs and practical solutions."
+description: "Trends and Strategies for System Design Interviews"
 slug: system-design-interview-tips
 date: 2025-09-29T00:00:00Z
 author: bmf-san

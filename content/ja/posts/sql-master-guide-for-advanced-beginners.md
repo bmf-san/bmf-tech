@@ -1,6 +1,6 @@
 ---
 title: 達人に学ぶSQL徹底指南書 第2版 初級者で終わりたくないあなたへ
-description: 達人に学ぶSQL徹底指南書 第2版 初級者で終わりたくないあなたへ
+description: "達人に学ぶSQL徹底指南書 第2版 初級者で終わりたくないあなたへ"
 slug: sql-master-guide-for-advanced-beginners
 date: 2024-04-01T00:00:00Z
 author: bmf-san

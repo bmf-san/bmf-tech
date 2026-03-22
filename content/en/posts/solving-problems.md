@@ -1,6 +1,6 @@
 ---
 title: How to Solve It
-description: "Master problem-solving through iterative experimentation and analytical thinking for tackling complex technical challenges."
+description: "How to Solve It"
 slug: solving-problems
 date: 2024-11-04T00:00:00Z
 author: bmf-san

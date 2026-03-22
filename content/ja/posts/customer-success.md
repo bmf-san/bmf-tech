@@ -1,6 +1,6 @@
 ---
 title: カスタマーサクセス
-description: カスタマーサクセス
+description: "カスタマーサクセス"
 slug: customer-success
 date: 2024-04-16T00:00:00Z
 author: bmf-san

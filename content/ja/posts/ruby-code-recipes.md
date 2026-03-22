@@ -1,6 +1,6 @@
 ---
 title: Ruby コードレシピ集
-description: Ruby コードレシピ集
+description: "Ruby コードレシピ集"
 slug: ruby-code-recipes
 date: 2024-10-20T00:00:00Z
 author: bmf-san

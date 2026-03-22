@@ -1,6 +1,6 @@
 ---
 title: Design It
-description: Design It
+description: "Design It"
 slug: design-it
 date: 2019-11-25T00:00:00Z
 author: bmf-san

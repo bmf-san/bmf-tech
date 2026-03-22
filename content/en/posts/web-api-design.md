@@ -1,5 +1,6 @@
 ---
-title: Designing Web APIs
+title: 'Web API Design'
+description: 'Web API Design'
 slug: web-api-design
 date: 2024-07-28T00:00:00Z
 author: bmf-san
@@ -9,9 +10,11 @@ tags:
   - API
   - OpenAPI
   - Design
-  - Book
-description: A book that provides perspectives on API design.
+  - Book Review
 translation_key: web-api-design
+books:
+  - asin: "4798167010"
+    title: "Web APIの設計"
 ---
 
 

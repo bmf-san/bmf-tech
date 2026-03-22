@@ -1,6 +1,6 @@
 ---
 title: ジョブ理論
-description: ジョブ理論
+description: "ジョブ理論"
 slug: job-theory-overview
 date: 2024-03-20T00:00:00Z
 author: bmf-san

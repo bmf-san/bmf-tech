@@ -1,30 +1,32 @@
 ---
 title: 'Secure by Design: Safe Software Design'
+description: 'Secure by Design: Safe Software Design'
 slug: secure-by-design-software
 date: 2024-09-07T00:00:00Z
 author: bmf-san
 categories:
   - Architecture
 tags:
-  - Book
+  - Book Review
   - Security
   - Design
   - DDD
-description: A book about improving security through software design.
 translation_key: secure-by-design-software
+books:
+  - asin: "B09F697K2V"
+    title: "セキュア・バイ・デザイン: 安全なソフトウェア設計"
 ---
 
 
+I read [Secure by Design: Safe Software Design](https://amzn.to/3MCk5KA).
 
-[Secure by Design: Safe Software Design](https://amzn.to/3MCk5KA) is a book I read.
+This book discusses an approach to enhancing security from software design.
 
-The book discusses an approach to enhancing security through software design.
+What stands out is its focus on Domain-Driven Design (DDD) as a central design approach.
 
-What is notable is that it centers on DDD as a design approach.
+I believe that security is one of the risks that can arise from incorrect domain modeling, and the importance of this is emphasized.
 
-Security is one of the risks that can arise from incorrect domain modeling, and its importance is emphasized.
+However, it does not delve deeply into specific methods for addressing vulnerabilities.
 
-There is not much discussion on specific methods for addressing vulnerabilities.
-
-- View security not as a feature to be implemented but as a concern to be addressed
-- By being conscious of design, naturally incorporate security into software
+- Treat security not as a feature to be implemented but as a concern to be addressed.
+- By being conscious of design, naturally incorporate security into the software.

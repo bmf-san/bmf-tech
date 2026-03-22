@@ -1,6 +1,6 @@
 ---
 title: '達人に学ぶDB設計徹底指南書: 初級者で終わりたくないあなたへ'
-description: '達人に学ぶDB設計徹底指南書: 初級者で終わりたくないあなたへについて、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。'
+description: "達人に学ぶDB設計徹底指南書: 初級者で終わりたくないあなたへ"
 slug: db-design-guide-for-beginners
 date: 2024-04-11T00:00:00Z
 author: bmf-san

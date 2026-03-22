@@ -1,6 +1,6 @@
 ---
 title: '問いのデザイン: 創造的対話のファシリテーション'
-description: '問いのデザイン: 創造的対話のファシリテーション'
+description: "問いのデザイン: 創造的対話のファシリテーション"
 slug: designing-questions-facilitation
 date: 2025-12-29T00:00:00Z
 author: bmf-san

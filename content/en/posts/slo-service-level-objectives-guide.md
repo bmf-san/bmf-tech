@@ -1,6 +1,6 @@
 ---
 title: 'SLO Service Level Objectives: A Practical Guide to Implementing SLI, SLO, and Error Budgets'
-description: "Master SLI, SLO, and error budgets for measuring service reliability, driving operational improvements, and aligning team expectations."
+description: 'SLO Service Level Objectives: A Practical Guide to Implementing SLI, SLO, and Error Budgets'
 slug: slo-service-level-objectives-guide
 date: 2024-07-20T00:00:00Z
 author: bmf-san
@@ -8,19 +8,20 @@ categories:
   - Operations
 tags:
   - SLO
-  - Book
+  - Book Review
 translation_key: slo-service-level-objectives-guide
+books:
+  - asin: "4814400349"
+    title: "SLO サービスレベル目標 ―SLI、SLO、エラーバジェット導入の実践ガイド"
 ---
 
+I read the [SLO Service Level Objectives: A Practical Guide to Implementing SLI, SLO, and Error Budgets](https://amzn.to/4bWd6WW).
 
-
-[I read SLO Service Level Objectives: A Practical Guide to Implementing SLI, SLO, and Error Budgets](https://amzn.to/4bWd6WW).
-
-- The book discusses the definition of services and users.
-- When considering SLOs, I thought it was particularly important to enhance the resolution regarding users.
-  - If the resolution is low, there is a tendency to excessively enhance the reliability of the service or end up with meaningless metrics.
-- Whether a service is reliable is equivalent to whether the service performs the actions required by the user.
-- SLOs are goals and are subject to change. Discussions for change are valuable.
-- SLOs are not just simple metrics for improving reliability; they provide insights for development and operational improvements by collecting data based on these metrics.
-- Error budgets are challenging to operate, but if implemented, they can provide data and opportunities for discussion to improve teams, organizations, companies, and services.
-- To introduce SLOs into an organization, you need the consent of superiors, expectation adjustments, explanations of time investment effects, and the resolve to take on a cross-functional role.
+- It discusses the definitions of services and users.
+- I thought it was especially important to enhance the resolution regarding users when considering SLOs.
+  - With a low resolution, there's a tendency to overly enhance the reliability of the service or to create meaningless metrics.
+- The question of whether a service is reliable is equivalent to whether the service performs the actions that users need.
+- SLOs are goals and changes are permissible. Discussions around changes are useful.
+- SLOs are not just mere metrics for reliability improvement; by collecting data based on these metrics, they provide insights for development and operational improvements.
+- While implementing error budgets can be challenging, if successful, they can provide data and discussion opportunities to improve teams, organizations, companies, and services.
+- To implement SLOs in an organization, it is necessary to obtain agreement from superiors, adjust expectations, explain the time investment benefits, and be prepared to take on cross-functional roles.

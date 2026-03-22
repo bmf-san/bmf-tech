@@ -1,6 +1,6 @@
 ---
 title: エンジニアが学ぶ生産管理システムの「知識」と「技術」
-description: エンジニアが学ぶ生産管理システムの「知識」と「技術」
+description: "エンジニアが学ぶ生産管理システムの「知識」と「技術」"
 slug: knowledge-and-skills-in-production-management-for-engineers
 date: 2024-04-04T00:00:00Z
 author: bmf-san

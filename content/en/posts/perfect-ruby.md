@@ -1,6 +1,6 @@
 ---
 title: Perfect Ruby
-description: 'Master Ruby programming fundamentals, language concepts, and best practices from the Perfect Ruby reference guide series.'
+description: "Perfect Ruby"
 slug: perfect-ruby
 date: 2024-05-04T00:00:00Z
 author: bmf-san

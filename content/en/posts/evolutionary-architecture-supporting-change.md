@@ -1,6 +1,6 @@
 ---
 title: 'Evolving Architecture: Supporting Continuous Change'
-description: 'Design evolutionary architectures with fitness functions and patterns that continuously support system change.'
+description: "Evolving Architecture: Supporting Continuous Change"
 slug: evolutionary-architecture-supporting-change
 date: 2018-08-23T00:00:00Z
 author: bmf-san

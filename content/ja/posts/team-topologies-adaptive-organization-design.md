@@ -1,6 +1,6 @@
 ---
 title: チームトポロジー 価値あるソフトウェアをすばやく届ける適応型組織設計
-description: チームトポロジー 価値あるソフトウェアをすばやく届ける適応型組織設計について、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
+description: "チームトポロジー 価値あるソフトウェアをすばやく届ける適応型組織設計"
 slug: team-topologies-adaptive-organization-design
 date: 2024-11-28T00:00:00Z
 author: bmf-san

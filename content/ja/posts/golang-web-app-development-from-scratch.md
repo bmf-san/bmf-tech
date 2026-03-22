@@ -1,6 +1,6 @@
 ---
 title: Goプログラミング実践入門 標準ライブラリでゼロからWebアプリを作る
-description: "Go標準ライブラリを使ったWebアプリケーション開発の実践手法を解説し、フレームワークに頼らない実装アプローチを紹介。"
+description: "Goプログラミング実践入門 標準ライブラリでゼロからWebアプリを作る"
 slug: golang-web-app-development-from-scratch
 date: 2022-11-23T00:00:00Z
 author: bmf-san

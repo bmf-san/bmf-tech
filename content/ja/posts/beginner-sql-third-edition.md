@@ -1,6 +1,6 @@
 ---
 title: 初めてのSQL 第3版
-description: 初めてのSQL 第3版
+description: "初めてのSQL 第3版"
 slug: beginner-sql-third-edition
 date: 2024-04-01T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Distributed System Design Patterns
-description: 'A review of Distributed System Design Patterns. Learn container-based patterns: sidecar, ambassador, adapter, and multi-node patterns for building distributed services with Kubernetes.'
+description: "Distributed System Design Patterns"
 slug: distributed-system-design-patterns
 date: 2021-08-17T00:00:00Z
 author: bmf-san
