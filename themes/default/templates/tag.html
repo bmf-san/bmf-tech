@@ -28,28 +28,7 @@
 
   {{if .Articles}}
   <div class="grid gap-4 mb-8">
-    {{range .Articles}}
-    {{- $img := index .FrontMatter.Extra "image"}}
-    {{- if not $img}}{{$img = printf "/ogp/%s.png" .FrontMatter.Slug}}{{end}}
-    <a href="{{.URL}}" class="card no-underline">
-      <img src="{{$img}}" alt="{{.FrontMatter.Title}}" class="w-full object-cover rounded-t max-h-40" loading="lazy">
-      <div class="card-body">
-        <div class="flex items-center gap-2 mb-2 flex-wrap">
-          {{range .FrontMatter.Categories}}<span class="badge badge-secondary">{{.}}</span>{{end}}
-          <span class="text-xs text-secondary">{{formatDate "2006-01-02" .FrontMatter.Date}}</span>
-        </div>
-        <h3 class="font-semibold text-primary mb-1">{{.FrontMatter.Title}}</h3>
-        {{if .FrontMatter.Description}}
-        <p class="text-sm text-secondary leading-relaxed line-clamp-2">{{.FrontMatter.Description}}</p>
-        {{end}}
-        {{if .FrontMatter.Tags}}
-        <div class="flex flex-wrap gap-1 mt-2">
-          {{range .FrontMatter.Tags}}<span class="badge badge-light text-secondary">#{{.}}</span>{{end}}
-        </div>
-        {{end}}
-      </div>
-    </a>
-    {{end}}
+    {{range .Articles}}{{template "article-card" .}}{{end}}
   </div>
   {{template "pagination" .}}
   {{template "ad-unit-list-mobile" .}}
