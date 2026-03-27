@@ -24,16 +24,20 @@ The actual motivation was different. I had been collecting financial data in a s
 
 I built Asset Trend Simulator to solve exactly that. Enter your household finances once, tweak a few macro parameters with a slider, and instantly see how your net worth evolves month by month over the coming decades. No account linking, no server, no subscription.
 
-## Architecture
+## Specs and Use Cases
 
-The app uses four directories, wired together by Riverpod providers:
+The app takes two kinds of input.
 
-- **data** — Immutable Freezed models (`MonthlyIncome`, `MonthlyExpense`, `MonthlyInvestment`, `Loan`, `SimulationParameters`, `SavedCase`, `AppSettings`, etc.) and Hive persistence repositories
-- **domain** — Pure Dart calculation logic independent of Flutter and storage (`SimulatorEngine`, `RateConverter`, `AnnuityCalculator`)
-- **presentation** — Flutter widgets consuming Riverpod providers (`AppSettingsNotifier` and `SavedCaseList` as `AsyncNotifier`; household and parameter providers as sync `Notifier`)
-- **core** — Theme, constants, and shared utilities
+**Household finances** break into income, expenses, and investments. Each category supports many line items registered as monthly amounts. Loans take principal, interest rate, and remaining term; the app computes the equal-installment monthly payment automatically. Initial cash balance and investment balance set the starting values.
 
-Riverpod serves dual purposes: dependency injection and reactive state management. Overriding providers via `ProviderScope` makes swapping implementations straightforward.
+**Simulation parameters** — inflation rate, income growth rate, investment return rate, dividend reinvestment toggle, and simulation period in years — are adjustable with sliders.
+
+Typical use cases look like this.
+
+- **Retirement estimate** — Enter current income, expenses, assets, and loans; check projected net worth at age 65.
+- **Sensitivity analysis** — Compare net worth trajectories at 3%, 5%, and 7% annual investment returns.
+- **Scenario comparison** — Save an "aggressive" and a "conservative" case, then switch between them on the chart.
+- **Loan impact** — See how adding a mortgage or car loan shifts the net worth peak.
 
 ![Home screen](/assets/images/posts/introducing-asset-trend-simulator/01_home.png)
 
