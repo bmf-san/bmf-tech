@@ -18,11 +18,13 @@ translation_key: introducing-asset-trend-simulator
 
 ## Why I Built It
 
-I wanted to answer a simple question: "How much will I have saved by retirement?" But the moment I tried to work it out, I realised how tangled the variables are — income, expenses, investment returns, loan repayments, inflation, salary growth. Doing the maths manually is tedious, and existing apps either oversimplify or require connecting bank accounts.
+When thinking about life planning, I wanted a tool that could answer questions like "How much can I spend each year?", "How much will I have at a given point in the future?", and "How much will I have left in retirement?" without much friction.
 
-The actual motivation was different. I had been collecting financial data in a spreadsheet for years — some entered manually, some semi-automated — to forecast my future assets. The accuracy was fine, but the upkeep was tedious. I wanted something simpler that did the same thing. Projecting future assets connects to thinking about future spending; a life plan becomes concrete numbers.
+I had been collecting financial data in a spreadsheet — some entered manually, some semi-automated — to forecast my future assets. The accuracy was fine, but the upkeep was tedious. I also had a financial planner draw up life-planning tables a few times, but the detailed setup was cumbersome and the bar was too high for casual what-if simulations.
 
-I built Asset Trend Simulator to solve exactly that. Enter your household finances once, tweak a few macro parameters with a slider, and instantly see how your net worth evolves month by month over the coming decades. No account linking, no server, no subscription.
+So I built Asset Trend Simulator: enter your household finances and a few simulation parameters, and instantly see how your net worth evolves. The calculation is not perfectly precise, but roughly on par with what I was doing in my spreadsheet, and good enough for personal use.
+
+If you want to casually simulate your own asset trends, the app is on the App Store — give it a try.
 
 ## Specs
 
