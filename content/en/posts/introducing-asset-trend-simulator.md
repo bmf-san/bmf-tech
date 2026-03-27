@@ -24,7 +24,7 @@ The actual motivation was different. I had been collecting financial data in a s
 
 I built Asset Trend Simulator to solve exactly that. Enter your household finances once, tweak a few macro parameters with a slider, and instantly see how your net worth evolves month by month over the coming decades. No account linking, no server, no subscription.
 
-## Specs and Use Cases
+## Specs
 
 The app takes two kinds of input.
 
@@ -32,7 +32,7 @@ The app takes two kinds of input.
 
 **Simulation parameters** — inflation rate, income growth rate, investment return rate, dividend reinvestment toggle, and simulation period in years — are adjustable with sliders.
 
-Typical use cases look like this.
+## Use Cases
 
 - **Retirement estimate** — Enter current income, expenses, assets, and loans; check projected net worth at age 65.
 - **Sensitivity analysis** — Compare net worth trajectories at 3%, 5%, and 7% annual investment returns.
