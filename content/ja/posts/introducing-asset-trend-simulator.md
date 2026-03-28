@@ -35,9 +35,9 @@ translation_key: introducing-asset-trend-simulator
 - **シナリオ比較** — 積極投資ケースと保守的ケースの2パターンを保存し、切り替えて見比べる
 - **ローンの影響確認** — 住宅ローンや車ローンを加えたときに純資産のピークがどう変わるかを確認する
 
-![ホーム画面](/assets/images/posts/introducing-asset-trend-simulator/01_home.png)
-
 ## 主な機能
+
+![ホーム画面](/assets/images/posts/introducing-asset-trend-simulator/01_home.png)
 
 ### 収支・資産入力
 

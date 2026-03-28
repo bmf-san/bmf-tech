@@ -33,9 +33,9 @@ If you want to casually simulate your own asset trends, the app is on the App St
 - **Scenario comparison** — Save an "aggressive" and a "conservative" case, then switch between them on the chart.
 - **Loan impact** — See how adding a mortgage or car loan shifts the net worth peak.
 
-![Home screen](/assets/images/posts/introducing-asset-trend-simulator/01_home.png)
-
 ## Key Features
+
+![Home screen](/assets/images/posts/introducing-asset-trend-simulator/01_home.png)
 
 ### Cash Flow and Asset Input
 
