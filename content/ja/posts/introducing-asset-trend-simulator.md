@@ -37,39 +37,39 @@ translation_key: introducing-asset-trend-simulator
 
 ## 主な機能
 
-![ホーム画面](/assets/images/posts/introducing-asset-trend-simulator/01_home.png)
+![ホーム画面](/assets/images/posts/introducing-asset-trend-simulator/ja/01_home.png)
 
 ### 収支・資産入力
 
 収入・支出・投資の3カテゴリで項目を管理する。収入と支出はそれぞれ複数の項目を月次金額で登録できる。投資は毎月の積立額を登録する。ローンは元本・金利・残期間を入力すると元利均等方式で月返済額を自動計算する。現預金残高と運用資産残高は初期値として設定する。
 
-![収支入力](/assets/images/posts/introducing-asset-trend-simulator/02_cash_flow.png)
-![資産入力](/assets/images/posts/introducing-asset-trend-simulator/03_assets.png)
+![収支入力](/assets/images/posts/introducing-asset-trend-simulator/ja/02_cash_flow.png)
+![資産入力](/assets/images/posts/introducing-asset-trend-simulator/ja/03_assets.png)
 
 ### シミュレーションパラメータ
 
 インフレ率・収入成長率・運用利率・配当再投資の有無・シミュレーション期間（年）をスライダーで調整できる。
 
-![シミュレーション設定](/assets/images/posts/introducing-asset-trend-simulator/04_params.png)
+![シミュレーション設定](/assets/images/posts/introducing-asset-trend-simulator/ja/04_params.png)
 
 ### 資産推移グラフ
 
 純資産・現預金・運用資産・負債の4系列をfl_chartの `LineChart` に描画する。年次・月次の粒度切り替えに対応している。
 
-![結果グラフ](/assets/images/posts/introducing-asset-trend-simulator/06_result_chart.png)
-![結果テーブル](/assets/images/posts/introducing-asset-trend-simulator/07_result_table.png)
+![結果グラフ](/assets/images/posts/introducing-asset-trend-simulator/ja/06_result_chart.png)
+![結果テーブル](/assets/images/posts/introducing-asset-trend-simulator/ja/07_result_table.png)
 
 ### シナリオ保存・比較
 
 任意の名前で入力状態を `SavedCase` としてHiveに保存できる。保存済みケースをタップすると、すべての入力が復元されてシミュレーションが再実行される。積極投資ケースと保守的ケースを並べて比較するといった使い方が可能だ。
 
-![保存済みケース](/assets/images/posts/introducing-asset-trend-simulator/05_saved_cases.png)
+![保存済みケース](/assets/images/posts/introducing-asset-trend-simulator/ja/05_saved_cases.png)
 
 ### 多通貨・ダークモード対応
 
 JPY・USD・EURの3通貨を切り替えられ、表示値はロケールに従ってフォーマットされる。テーマはシステム設定に自動的に連動する。
 
-![設定](/assets/images/posts/introducing-asset-trend-simulator/08_settings.png)
+![設定](/assets/images/posts/introducing-asset-trend-simulator/ja/08_settings.png)
 
 ## 技術スタック
 

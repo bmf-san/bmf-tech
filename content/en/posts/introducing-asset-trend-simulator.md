@@ -35,39 +35,39 @@ If you want to casually simulate your own asset trends, the app is on the App St
 
 ## Key Features
 
-![Home screen](/assets/images/posts/introducing-asset-trend-simulator/01_home.png)
+![Home screen](/assets/images/posts/introducing-asset-trend-simulator/en/01_home.png)
 
 ### Cash Flow and Asset Input
 
 Income, expenses, and investments each support many line items registered as monthly amounts. Loans take principal, interest rate, and remaining term; the app computes the equal-installment monthly payment automatically. Initial cash balance and investment balance set the starting values.
 
-![Cash flow input](/assets/images/posts/introducing-asset-trend-simulator/02_cash_flow.png)
-![Asset input](/assets/images/posts/introducing-asset-trend-simulator/03_assets.png)
+![Cash flow input](/assets/images/posts/introducing-asset-trend-simulator/en/02_cash_flow.png)
+![Asset input](/assets/images/posts/introducing-asset-trend-simulator/en/03_assets.png)
 
 ### Simulation Parameters
 
 Inflation rate, income growth rate, investment return rate, dividend reinvestment toggle, and simulation period in years are adjustable with sliders.
 
-![Simulation parameters](/assets/images/posts/introducing-asset-trend-simulator/04_params.png)
+![Simulation parameters](/assets/images/posts/introducing-asset-trend-simulator/en/04_params.png)
 
 ### Asset Trend Graph
 
 Four data series — net worth, cash, investments, and liabilities — appear in a single fl_chart `LineChart`. A toggle switches between annual and monthly granularity.
 
-![Result chart](/assets/images/posts/introducing-asset-trend-simulator/06_result_chart.png)
-![Result table](/assets/images/posts/introducing-asset-trend-simulator/07_result_table.png)
+![Result chart](/assets/images/posts/introducing-asset-trend-simulator/en/06_result_chart.png)
+![Result table](/assets/images/posts/introducing-asset-trend-simulator/en/07_result_table.png)
 
 ### Scenario Save and Compare
 
 Save any combination of inputs and parameters under a custom name as a `SavedCase` in Hive. Tapping a saved case instantly restores all inputs and re-runs the simulation. This makes it easy to compare an aggressive investment plan against a conservative one.
 
-![Saved cases](/assets/images/posts/introducing-asset-trend-simulator/05_saved_cases.png)
+![Saved cases](/assets/images/posts/introducing-asset-trend-simulator/en/05_saved_cases.png)
 
 ### Multi-Currency and Dark Mode
 
 Switch the currency between JPY, USD, and EUR in settings; the app reformats all displayed values for the selected locale. The theme follows the system setting automatically.
 
-![Settings](/assets/images/posts/introducing-asset-trend-simulator/08_settings.png)
+![Settings](/assets/images/posts/introducing-asset-trend-simulator/en/08_settings.png)
 
 ## Tech Stack
 
