@@ -37,29 +37,34 @@ If you want to casually simulate your own asset trends, the app is on the App St
 
 ![Home screen](/assets/images/posts/introducing-asset-trend-simulator/en/01_home.png)
 
-### Cash Flow and Asset Input
+### Cash Flow and Investment Input
 
-Income, expenses, and investments each support many line items registered as monthly amounts. Loans take principal, interest rate, and remaining term; the app computes the equal-installment monthly payment automatically. Initial cash balance and investment balance set the starting values.
+Income, expenses, and investments each support many line items registered as monthly amounts.
 
 ![Cash flow input](/assets/images/posts/introducing-asset-trend-simulator/en/02_cash_flow.png)
+
+### Asset and Liability Input
+
+Initial cash balance and investment balance set the starting values. Loans take principal, interest rate, and remaining term; the app computes the equal-installment monthly payment automatically.
+
 ![Asset input](/assets/images/posts/introducing-asset-trend-simulator/en/03_assets.png)
 
 ### Simulation Parameters
 
-Inflation rate, income growth rate, investment return rate, dividend reinvestment toggle, and simulation period in years are adjustable with sliders.
+Simulation period, income growth rate, inflation rate, investment return rate, and dividend reinvestment toggle are adjustable with sliders.
 
 ![Simulation parameters](/assets/images/posts/introducing-asset-trend-simulator/en/04_params.png)
 
 ### Asset Trend Graph
 
-Four data series — net worth, cash, investments, and liabilities — appear in a single fl_chart `LineChart`. A toggle switches between annual and monthly granularity.
+Four data series — net worth, cash, investments, and liabilities — render as a line chart. A toggle switches between annual and monthly granularity.
 
 ![Result chart](/assets/images/posts/introducing-asset-trend-simulator/en/06_result_chart.png)
 ![Result table](/assets/images/posts/introducing-asset-trend-simulator/en/07_result_table.png)
 
-### Scenario Save and Compare
+### Scenario Save and Restore
 
-Save any combination of inputs and parameters under a custom name as a `SavedCase` in Hive. Tapping a saved case instantly restores all inputs and re-runs the simulation. This makes it easy to compare an aggressive investment plan against a conservative one.
+Save any combination of inputs and parameters under a custom name as a `SavedCase` in Hive. Tapping a saved case restores all inputs.
 
 ![Saved cases](/assets/images/posts/introducing-asset-trend-simulator/en/05_saved_cases.png)
 
@@ -85,17 +90,19 @@ The app follows a four-layer layout: data, domain, presentation, and core. The d
 
 ## How the Simulation Engine Works
 
-The simulation steps through one month at a time, repeating for the configured period. Each month involves four steps.
+The simulation steps through one month at a time, repeating for the configured period. The engine converts all annual rate parameters to monthly rates using the compound formula `(1 + r/100)^(1/12) - 1`. Each month involves four steps.
 
-1. **Update income and expenses** — Income rises each month by a monthly slice of the annual growth rate; expenses rise by a monthly slice of the inflation rate. This captures the long-term shift in purchasing power.
+1. **Update income and expenses** — Income rises each month by the compounded monthly rate derived from the annual income growth rate; expenses rise by the monthly rate from the inflation rate. The monthly investment contribution stays fixed throughout the simulation.
 
-2. **Compound the investment portfolio** — The previous month's investment balance earns the monthly fraction of the annual return, then the month's contribution gets added. With dividend reinvestment on, dividends fold back into the portfolio rather than flowing into cash.
+2. **Compound the investment portfolio** — The engine adds the month's contribution to the portfolio first, then computes returns on the updated balance. With dividend reinvestment on, returns fold back into the portfolio; with it off, returns flow into cash instead.
 
-3. **Deduct loan repayments** — Each loan's monthly payment follows the equal-installment formula and gets subtracted from income until the loan term ends.
+3. **Deduct loan repayments** — Each loan's monthly payment follows the equal-installment (annuity) formula and the engine deducts it from the monthly cash flow until the loan term ends. Each repayment reduces the outstanding principal.
 
-4. **Compute end-of-month net worth** — Net worth for the month is cash accumulated (income − expenses − loan payments) plus investment balance minus outstanding loan balances.
+4. **Compute end-of-month net worth** — Net worth for the month equals cash (income − expenses − investment contribution − loan payments) plus investment balance minus outstanding loan balances.
 ## Summary
 
-Asset Trend Simulator is available on the App Store.
+I built Asset Trend Simulator because I wanted a quick way to explore life-planning questions without spreadsheets or professional planners. The calculation accuracy has limits, but for sensitivity analysis — "what happens if I change the return rate?" — it does the job well enough that I use it regularly.
+
+If you find yourself asking similar questions, give it a try via the link below.
 
 - **App Store**: [Asset Trend Simulator](https://apps.apple.com/jp/app/%E8%B3%87%E7%94%A3%E6%8E%A8%E7%A7%BB%E3%82%B7%E3%83%A5%E3%83%9F%E3%83%AC%E3%83%BC%E3%82%BF%E3%83%BC/id6759601487)
