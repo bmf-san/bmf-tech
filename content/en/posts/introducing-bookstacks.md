@@ -18,55 +18,78 @@ translation_key: introducing-bookstacks
 
 ## Why I Built It
 
-Managing a personal book collection sounds trivial — until you are standing in a bookshop wondering whether you already own a particular title, or you have accumulated a stack of books you intended to read but keep forgetting about. Existing apps either require manual entry or rely on services that need accounts and internet connections.
+Managing a personal book collection sounds trivial — until you are standing in a bookshop wondering whether you already own a particular title, or you have accumulated a stack of unread books you keep forgetting about. Existing apps often require an account or tedious manual entry.
 
-Bookstacks takes a different approach: scan the barcode, get the book. No account, no subscription. The app uses the ISBN barcode to look up metadata from the OpenBD API (a free Japanese book data service), makes duplicate detection automatic, and organises books with flexible labels.
+Bookstacks takes a different approach: scan the barcode, get the book. No account, no subscription. The app uses the ISBN barcode to look up metadata from the OpenBD API (a free Japanese book data service), makes duplicate detection automatic, and lets you organise books with flexible labels.
 
-## Architecture
+The app is on the [App Store](https://apps.apple.com/jp/app/bookstacks-%E6%9C%AC%E6%A3%9A%E7%AE%A1%E7%90%86/id6760252143) — give it a try.
 
-The app follows Clean Architecture — Domain, Application, Infrastructure, and Presentation — wired together by Riverpod providers. Hive handles local persistence; the app runs fully offline once it caches the book data. The OpenBD API is the only external dependency.
+## Use Cases
 
-![Home screen](/assets/images/posts/introducing-bookstacks/01_home.png)
-
-## ISBN Barcode Scan × OpenBD API — The Async Flow
-
-The registration flow from scan to persistence is the most interesting technical piece in the app. The sequence is:
-
-1. **Scan** — `mobile_scanner` delivers a raw `BarcodeCapture` event with detected values. The app accepts both ISBN-13 (978/979 prefix, 13 digits) and ISBN-10 (10 digits); the scanner rejects all other barcode formats.
-
-2. **Metadata fetch** — `OpenBdDatasource` calls the OpenBD endpoint `https://api.openbd.jp/v1/get?isbn={isbn}` with an `http.Client`. The response is a JSON array; the first element is either a full book object or `null` (not found). `OpenBdDatasource` parses the response and returns `OpenBdBookData` with `isbn`, `title`, `author`, `category`, and `coverImageUrl`.
-
-3. **Duplicate check** — The confirm screen watches the `booksNotifierProvider` and checks whether a book with the same ISBN already exists. On a match, the screen disables the register button and alerts the user.
-
-4. **Persist** — The app passes the validated `Book` entity through the `AddBook` use case to the `BookRepository` interface, writing it to Hive. `BooksNotifier` reloads the list, triggering a rebuild of the bookshelf grid.
-
-The scan screen calls `OpenBdDatasource` directly for metadata retrieval. Persistence flows through the `AddBook` use case, so the presentation layer never touches Hive directly.
-
-![Book detail](/assets/images/posts/introducing-bookstacks/02_detail.png)
+- **Duplicate check** — Scan a book in the shop to see whether you already own it before buying
+- **Tsundoku management** — Tag unread books with "Tsundoku" and pick the next one from the list
+- **Reading log** — Mark finished books as "Read" to keep your shelves organised
+- **Wish list** — Collect buying candidates under a "Want to Buy" label
 
 ## Key Features
 
+![Home screen](/assets/images/posts/introducing-bookstacks/en/01_home.png)
+
+### Register Books by Barcode
+
+Scanning an ISBN barcode fetches title, author, category, and cover image automatically from the OpenBD API. Both ISBN-13 (978/979 prefix) and ISBN-10 work. If a book with the same ISBN already exists, the app detects the duplicate and blocks re-registration.
+
+![Book detail](/assets/images/posts/introducing-bookstacks/en/02_detail.png)
+
+### Organise with Labels
+
+Five preset labels ship with the app: "Read", "Reading", "Tsundoku", "Read Later", and "Want to Buy". Users can also add custom labels with any name. Tapping a label chip filters the list instantly.
+
+![Labels](/assets/images/posts/introducing-bookstacks/en/05_labels.png)
+
 ### Bookshelf View — Grid and List
 
-The app displays books in a three-column grid by default, with cover images loaded lazily via `cached_network_image`. A toggle switches to a list view for denser browsing.
+Books appear in a three-column grid with cover images by default. A toggle switches to a list view for denser browsing.
 
-![Grid view](/assets/images/posts/introducing-bookstacks/01_home.png)
-![List view](/assets/images/posts/introducing-bookstacks/03_list.png)
-
-### Label System
-
-Bookstacks ships with five preset labels: “Read”, “Reading”, “Tsundoku” (to-read pile), “Read Later”, and “Want to Buy”. Users can create custom labels with a free-form name. Hive stores labels and links them to books via a many-to-one association; tapping a label chip filters the list instantly.
-
-![Labels](/assets/images/posts/introducing-bookstacks/05_labels.png)
+![Grid view](/assets/images/posts/introducing-bookstacks/en/01_home.png)
+![List view](/assets/images/posts/introducing-bookstacks/en/03_list.png)
 
 ### Settings
 
-The settings screen provides label management, version info, privacy policy, and bibliographic data provider details. The app theme follows the system setting automatically. The home screen displays an AdMob banner ad with an auto-retry mechanism (up to three attempts, five seconds apart) to handle temporary load failures.
+The settings screen provides label management, version info, privacy policy, and bibliographic data provider details. The theme follows the system setting automatically.
 
-![Settings](/assets/images/posts/introducing-bookstacks/04_settings.png)
+![Settings](/assets/images/posts/introducing-bookstacks/en/04_settings.png)
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| UI | Flutter (iOS) |
+| State management / DI | Riverpod + riverpod_generator |
+| Persistence | Hive |
+| Barcode scanning | mobile_scanner |
+| Book metadata | OpenBD API (http) |
+| Image caching | cached_network_image |
+| Testing | flutter_test / mocktail |
+
+The app uses a four-layer Clean Architecture: Domain, Application, Infrastructure, and Presentation. Riverpod handles dependency injection and state management. Hive stores all data locally, so the app runs fully offline once book data loads.
+
+## How ISBN Scanning and Book Registration Work
+
+The registration flow from scan to persistence involves four steps.
+
+1. **Scan** — `mobile_scanner` reads the barcode. Only ISBN-13 (978/979 prefix, 13 digits) and ISBN-10 (10 digits) continue to the next step; all other formats get discarded.
+
+2. **Metadata fetch** — `OpenBdDatasource` calls `https://api.openbd.jp/v1/get?isbn={isbn}`. The response is a JSON array; the first element is either a full book object or `null` (not found). The app extracts `isbn`, `title`, `author`, `category`, and `coverImageUrl`.
+
+3. **Duplicate check** — The confirm screen watches the `booksNotifierProvider` and checks whether a book with the same ISBN exists. On a match, the app disables the register button and alerts the user.
+
+4. **Persist** — The validated `Book` entity passes through the `AddBook` use case to the `BookRepository` interface and gets written to Hive. `BooksNotifier` then reloads the list and rebuilds the bookshelf grid.
 
 ## Summary
 
-Bookstacks is available on the App Store.
+Bookstacks is an app I built to make managing a book collection as frictionless as possible. Scanning a barcode to register a book is something I find genuinely useful in everyday use.
+
+Feel free to download it.
 
 - **App Store**: [Bookstacks](https://apps.apple.com/jp/app/bookstacks-%E6%9C%AC%E6%A3%9A%E7%AE%A1%E7%90%86/id6760252143)
