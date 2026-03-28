@@ -80,13 +80,13 @@ The app uses a four-layer Clean Architecture: Domain, Application, Infrastructur
 
 The registration flow from scan to persistence involves four steps.
 
-1. **Scan** — `mobscanner reads the barcode. Only ISBN-13 (978/979 prefix, 13 digits) and ISBN-10 (10 digits) pass through; all other formats get discarded.
+1. **Scan** — The barcode is read. Only ISBN-13 (978/979 prefix, 13 digits) and ISBN-10 (10 digits) are accepted; all other formats are ignored.
 
 2. **Metadata fetch** — The app calls [openBD](https://openbd.jp/). The response is a JSON array; the first element is either a book object or `null` (not found). The app extracts title, author, category, and cover image URL.
 
-3. **Duplicate check** — The confirm screen checks whether a book with the same ISBN already exists. On a match, the app disables the register button and alerts the user.
+3. **Duplicate check** — The confirm screen checks whether a book with the same ISBN is already registered. If a match is found, the register button is disabled and the user is notified.
 
-4. **Persist** — The use case writes the validated book entity to Hive. The app then reloads the list and redraws the bookshelf gridNotifier` then reloads the list and rebuilds the bookshelf grid.
+4. **Persist** — The validated book entity is written to Hive via the use case. After writing, the list is reloaded and the bookshelf grid is redrawn.
 
 ## Summary
 

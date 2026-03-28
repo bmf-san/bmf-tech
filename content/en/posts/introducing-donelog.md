@@ -18,7 +18,9 @@ translation_key: introducing-donelog
 
 ## Why I Built It
 
-General-purpose task managers like a to-do app are great for projects, but they are overkill for checking whether you took your medication this morning or locked the front door tonight. Done Log focuses on a single job: record daily routine tasks with one tap, and automatically reset them according to a recurrence rule so there is nothing to manage.
+I had been managing routine tasks in Google Keep, but there was no way to track daily completion, so I built a task management app focused specifically on routine tasks.
+
+It records task completion with one tap and automatically resets tasks according to a recurrence rule. The focus was on reducing management overhead and making logging as easy as possible.
 
 The app is on the [App Store](https://apps.apple.com/jp/app/done-log/id6759606196) — give it a try.
 
@@ -33,7 +35,7 @@ The app is on the [App Store](https://apps.apple.com/jp/app/done-log/id675960619
 
 ![Today's task list](/assets/images/posts/introducing-donelog/en/01_today.png)
 
-### Today View
+### Today's Task View
 
 Tasks that match the current date and recurrence rule appear under "Today". The app shows completed tasks with a strikethrough and a checkmark, giving an instant visual progress indicator.
 
@@ -73,11 +75,11 @@ The app uses a four-layer Clean Architecture: Domain, Application, Infrastructur
 
 ## The Recurrence Rule Engine
 
-The most technically interesting part of the app is the `RecurrenceRule` domain entity and its `shouldShowToday()` method. This pure-Dart function determines whether a task should appear on today's list — no framework involvement, no side effects. It receives the current timestamp and the time the task was last completed, and returns a boolean.
+The recurrence rule engine decides whether a given task should appear on today's list. It supports four rule types — daily, every N days, specific weekdays, and once — so each task can follow its own rhythm and reset automatically.
 
-By keeping this logic in the domain layer as a plain function, testing it in isolation requires no infrastructure mocks. All four recurrence types — `daily`, `everyNDays`, `weekdays`, and `once` — resolve within a single `switch` expression with no shared mutable state.
+The rule logic lives entirely in the domain layer, separate from the database and UI. This makes it straightforward to change a rule or add a new type without affecting the rest of the app.
 
-Reset happens at app startup via the `CheckAndResetTasks` use case: it iterates every task, calls `shouldShowToday()`, and updates completion state in Hive if the rule says the task is ready again.
+Reset runs automatically at app startup. The next morning, tasks are already reset and ready to go — no manual intervention needed.
 
 ## Summary
 
