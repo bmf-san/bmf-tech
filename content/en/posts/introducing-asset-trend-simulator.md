@@ -101,8 +101,8 @@ The simulation steps through one month at a time, repeating for the configured p
 4. **Compute end-of-month net worth** — Net worth for the month equals cash (income − expenses − investment contribution − loan payments) plus investment balance minus outstanding loan balances.
 ## Summary
 
-I built Asset Trend Simulator because I wanted a quick way to explore life-planning questions without spreadsheets or professional planners. The calculation accuracy has limits, but for sensitivity analysis — "what happens if I change the return rate?" — it does the job well enough that I use it regularly.
+I built Asset Trend Simulator because I wanted a simple way to start exploring life-planning questions. The calculation accuracy has limits, but for sensitivity analysis — "what happens if I change the return rate?" — it does the job well enough that I use it regularly.
 
-If you find yourself asking similar questions, give it a try via the link below.
+Feel free to download it.
 
 - **App Store**: [Asset Trend Simulator](https://apps.apple.com/jp/app/%E8%B3%87%E7%94%A3%E6%8E%A8%E7%A7%BB%E3%82%B7%E3%83%A5%E3%83%9F%E3%83%AC%E3%83%BC%E3%82%BF%E3%83%BC/id6759601487)
