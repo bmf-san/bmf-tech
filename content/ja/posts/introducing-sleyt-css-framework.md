@@ -14,11 +14,13 @@ translation_key: introducing-sleyt-css-framework
 
 # sleyt — グラスモーフィズムを活用したミニマルCSSフレームワークの紹介
 
-## 作った理由
+## なぜ作ったか
 
-多くのCSSFWはインタラクティブコンポーネントのためにランタイムJavaScriptを必要としたり、学習コストの高い大きなAPI展面を伴ったりする。sleytは「小さい、読みやすさ、純粋CSS」を実現する。ランタイムJavaScript不要、ビルドステップ不要。スタイルシートを読み込んでセマンティックHTMLを書けばすぐ使い始められる。
+自分のプロジェクトで使うための軽量でシンプルなCSSフレームワークが欲しかったので自作した。
 
-ビジュアル言語は**グラスモーフィズム**を中心に構成されている。透明感、バックドロップブラー、微妙なシャドウの重ね合わせにより、フラットデザインや過剰に鮮やかなパレットに頼らずモダンな印象を与える。
+軽量で、JavaScriptなし、モダンなデザインを意識して実装している。
+
+UIコンポーネントや柔軟性が足りていない部分があるが、最低限利用できる状態になっている。
 
 ![ドキュメントサイト](/assets/images/posts/introducing-sleyt-css-framework/01_docs_home.png)
 
@@ -36,6 +38,8 @@ sleytは4つのディレクトリに20以上のコンポーネントを整備す
 
 **Utilities** (`src/utilities/`): spacing、colors、typography、borders、effects、glass、display、position、transforms、transitions。
 
+![コンポーネント一覧](/assets/images/posts/introducing-sleyt-css-framework/06_demo_components.png)
+
 ![ブログデモ](/assets/images/posts/introducing-sleyt-css-framework/03_demo_blog.png)
 
 ### データ可視化
@@ -43,6 +47,14 @@ sleytは4つのディレクトリに20以上のコンポーネントを整備す
 `charts.css`は**CSSだけ**の棒グラフ、折れ線グラフ、ドーナツチャートを提供する。JavaScriptのグラフライブラリ不要。棒グラフはCSSの高さでデータを表現する純CSS実装だ。折れ線グラフはSVG `<path>`要素をCSSでスタイリングし、ドーナツチャートはSVG `<circle>`の`stroke-dasharray`と`stroke-dashoffset`でセグメントを描画する。データ対応はCSSカスタムプロパティ経由で行う。
 
 ![ダッシュボードデモ](/assets/images/posts/introducing-sleyt-css-framework/05_demo_dashboard.png)
+
+![チャートデモ](/assets/images/posts/introducing-sleyt-css-framework/08_demo_charts.png)
+
+### グラスモーフィズム
+
+`.glass`、`.glass-light`、`.glass-heavy`、`.frosted`のユーティリティクラスで透明感とバックドロップブラーを付与できる。`backdrop-blur`ユーティリティも複数段階用意されており、細かいブラー強度の調整が可能だ。
+
+![グラスモーフィズムユーティリティ](/assets/images/posts/introducing-sleyt-css-framework/07_docs_glass.png)
 
 ### ダークモード
 

@@ -16,9 +16,11 @@ translation_key: introducing-sleyt-css-framework
 
 ## Why I Built It
 
-Most CSS frameworks either carry significant runtime JavaScript requirements (e.g. for interactive components) or ship with an imposing API surface that takes time to learn. sleyt sets out to be small, readable, and pure CSS: no runtime JavaScript dependency, no build step required by the consumer. Add the style sheet and start writing semantic HTML.
+I wanted a lightweight, simple CSS framework for my own projects, so I built one.
 
-sleyt builds its visual language around glass morphism — transparency, backdrop blur, and subtle shadow layering — which gives components a modern feel without resorting to flat or over-saturated palettes.
+It focuses on being small, pure CSS with no JavaScript runtime dependency, and a modern visual design.
+
+Some components and flexibility gaps remain, but it works well enough for practical use.
 
 ![Documentation site](/assets/images/posts/introducing-sleyt-css-framework/01_docs_home.png)
 
@@ -34,6 +36,8 @@ sleyt ships 20+ ready-to-use components split across four directories:
 
 **Utilities** (`src/utilities/`): spacing, colours, typography, borders, effects, glass, display, position, transforms, transitions.
 
+![Component library — Buttons](/assets/images/posts/introducing-sleyt-css-framework/06_demo_components.png)
+
 ![Blog demo](/assets/images/posts/introducing-sleyt-css-framework/03_demo_blog.png)
 
 ### Data Visualisation
@@ -41,6 +45,14 @@ sleyt ships 20+ ready-to-use components split across four directories:
 `charts.css` provides CSS-only bar charts, line charts, and donut charts — no JavaScript chart library required. Bar charts are pure CSS, using element height to represent data values. Line charts use SVG `<path>` elements styled with CSS. Donut chart segments are SVG `<circle>` elements drawn with `stroke-dasharray` and `stroke-dashoffset`. Data values flow in via CSS custom properties.
 
 ![Dashboard demo](/assets/images/posts/introducing-sleyt-css-framework/05_demo_dashboard.png)
+
+![Dashboard charts demo](/assets/images/posts/introducing-sleyt-css-framework/08_demo_charts.png)
+
+### Glass Morphism
+
+Use `.glass`, `.glass-light`, `.glass-heavy`, and `.frosted` utility classes to add transparency and backdrop blur to any element. Stepped `backdrop-blur` utilities give fine-grained control over blur intensity.
+
+![Glass morphism utilities](/assets/images/posts/introducing-sleyt-css-framework/07_docs_glass.png)
 
 ### Dark Mode
 
