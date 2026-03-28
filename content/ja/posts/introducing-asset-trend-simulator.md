@@ -45,6 +45,20 @@ translation_key: introducing-asset-trend-simulator
 
 ![ホーム画面](/assets/images/posts/introducing-asset-trend-simulator/01_home.png)
 
+## 技術スタック
+
+| 層 | 技術 |
+|---|---|
+| UI | Flutter (iOS) |
+| 状態管理 / DI | Riverpod + riverpod_generator |
+| モデル | Freezed + json_serializable |
+| 永続化 | Hive |
+| グラフ | fl_chart |
+| ルーティング | go_router |
+| テスト | flutter_test / mocktail |
+
+アーキテクチャはdata / domain / presentation / coreの4層構成だ。domain層はFlutter・ストレージに依存しない純粋な計算ロジックを包み、RiverpodがDIと状態管理の2役を担う。
+
 ## シミュレーションエンジンの概要
 
 シミュレーションは1ヶ月ごとに純資産を計算し、設定した期間分だけ繰り返す仕組みだ。各月の計算は大きく4ステップで成り立っている。

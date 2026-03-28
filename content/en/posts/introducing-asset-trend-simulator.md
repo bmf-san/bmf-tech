@@ -43,6 +43,20 @@ The app takes two kinds of input.
 
 ![Home screen](/assets/images/posts/introducing-asset-trend-simulator/01_home.png)
 
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| UI | Flutter (iOS) |
+| State management / DI | Riverpod + riverpod_generator |
+| Models | Freezed + json_serializable |
+| Persistence | Hive |
+| Charts | fl_chart |
+| Routing | go_router |
+| Testing | flutter_test / mocktail |
+
+The app follows a four-layer layout: data, domain, presentation, and core. The domain layer holds pure calculation logic with no dependency on Flutter or storage. Riverpod handles both dependency injection and reactive state.
+
 ## How the Simulation Engine Works
 
 The simulation steps through one month at a time, repeating for the configured period. Each month involves four steps.
