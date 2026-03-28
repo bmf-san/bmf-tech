@@ -18,9 +18,11 @@ translation_key: introducing-bookstacks
 
 ## Why I Built It
 
-Managing a personal book collection sounds trivial — until you are standing in a bookshop wondering whether you already own a particular title, or you have accumulated a stack of unread books you keep forgetting about. Existing apps often require an account or tedious manual entry.
+I wanted an easy way to manage the physical books on my shelves — to answer questions like "Do I already own this one?" when browsing a bookshop, or "Have I finished reading this?" without having to think too hard.
 
-Bookstacks takes a different approach: scan the barcode, get the book. No account, no subscription. The app uses the ISBN barcode to look up metadata from the OpenBD API (a free Japanese book data service), makes duplicate detection automatic, and lets you organise books with flexible labels.
+So I built a book management app focused on one experience: scan a barcode and the rest takes care of itself.
+
+It uses ISBN barcodes to fetch metadata automatically, checks for duplicates, organises books with labels, and lets you record notes about each book.
 
 The app is on the [App Store](https://apps.apple.com/jp/app/bookstacks-%E6%9C%AC%E6%A3%9A%E7%AE%A1%E7%90%86/id6760252143) — give it a try.
 
@@ -37,7 +39,7 @@ The app is on the [App Store](https://apps.apple.com/jp/app/bookstacks-%E6%9C%AC
 
 ### Register Books by Barcode
 
-Scanning an ISBN barcode fetches title, author, category, and cover image automatically from the OpenBD API. The app accepts both ISBN-13 (978/979 prefix) and ISBN-10. If a book with the same ISBN already exists, the app detects the duplicate and blocks re-registration.
+Scanning an ISBN barcode fetches title, author, category, and cover image automatically from [openBD](https://openbd.jp/) (a book data API used with permission). The app accepts both ISBN-13 (978/979 prefix) and ISBN-10. If a book with the same ISBN already exists, the app detects the duplicate and blocks re-registration.
 
 ![Book detail](/assets/images/posts/introducing-bookstacks/en/02_detail.png)
 
@@ -68,7 +70,7 @@ The settings screen provides label management, version info, privacy policy, and
 | State management / DI | Riverpod + riverpod_generator |
 | Persistence | Hive |
 | Barcode scanning | mobile_scanner |
-| Book metadata | OpenBD API (http) |
+| Book metadata | [openBD](https://openbd.jp/) (http) |
 | Image caching | cached_network_image |
 | Testing | flutter_test / mocktail |
 
@@ -80,7 +82,7 @@ The registration flow from scan to persistence involves four steps.
 
 1. **Scan** — `mobile_scanner` reads the barcode. Only ISBN-13 (978/979 prefix, 13 digits) and ISBN-10 (10 digits) pass through; all other formats get discarded.
 
-2. **Metadata fetch** — `OpenBdDatasource` calls `https://api.openbd.jp/v1/get?isbn={isbn}`. The response is a JSON array; the first element is either a full book object or `null` (not found). The app extracts `isbn`, `title`, `author`, `category`, and `coverImageUrl`.
+2. **Metadata fetch** — The app calls the [openBD](https://openbd.jp/) API. The response is a JSON array; the first element is either a full book object or `null` (not found). The app extracts `isbn`, `title`, `author`, `category`, and `coverImageUrl`.
 
 3. **Duplicate check** — The confirm screen watches the `booksNotifierProvider` and checks whether a book with the same ISBN exists. On a match, the register button becomes disabled and the app alerts the user.
 
