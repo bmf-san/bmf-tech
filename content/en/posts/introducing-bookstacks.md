@@ -29,7 +29,7 @@ The app is on the [App Store](https://apps.apple.com/jp/app/bookstacks-%E6%9C%AC
 - **Duplicate check** — Scan a book in the shop to see whether you already own it before buying
 - **Tsundoku management** — Tag unread books with "Tsundoku" and pick the next one from the list
 - **Reading log** — Mark finished books as "Read" to keep your shelves organised
-- **Wish list** — Collect buying candidates under a "Want to Buy" label
+- **Wish list** — Collect candidates under a "Want to Buy" label
 
 ## Key Features
 
@@ -37,13 +37,13 @@ The app is on the [App Store](https://apps.apple.com/jp/app/bookstacks-%E6%9C%AC
 
 ### Register Books by Barcode
 
-Scanning an ISBN barcode fetches title, author, category, and cover image automatically from the OpenBD API. Both ISBN-13 (978/979 prefix) and ISBN-10 work. If a book with the same ISBN already exists, the app detects the duplicate and blocks re-registration.
+Scanning an ISBN barcode fetches title, author, category, and cover image automatically from the OpenBD API. The app accepts both ISBN-13 (978/979 prefix) and ISBN-10. If a book with the same ISBN already exists, the app detects the duplicate and blocks re-registration.
 
 ![Book detail](/assets/images/posts/introducing-bookstacks/en/02_detail.png)
 
 ### Organise with Labels
 
-Five preset labels ship with the app: "Read", "Reading", "Tsundoku", "Read Later", and "Want to Buy". Users can also add custom labels with any name. Tapping a label chip filters the list instantly.
+Five preset labels ship with the app: "Read", "Reading", "Tsundoku", "Read Later", and "Want to Buy". Users can create custom labels with any name. Tapping a label chip filters the list instantly.
 
 ![Labels](/assets/images/posts/introducing-bookstacks/en/05_labels.png)
 
@@ -72,17 +72,17 @@ The settings screen provides label management, version info, privacy policy, and
 | Image caching | cached_network_image |
 | Testing | flutter_test / mocktail |
 
-The app uses a four-layer Clean Architecture: Domain, Application, Infrastructure, and Presentation. Riverpod handles dependency injection and state management. Hive stores all data locally, so the app runs fully offline once book data loads.
+The app uses a four-layer Clean Architecture: Domain, Application, Infrastructure, and Presentation. Riverpod handles dependency injection and state management. Hive stores all data locally, so the app runs fully offline once the book data is in the local store.
 
 ## How ISBN Scanning and Book Registration Work
 
 The registration flow from scan to persistence involves four steps.
 
-1. **Scan** — `mobile_scanner` reads the barcode. Only ISBN-13 (978/979 prefix, 13 digits) and ISBN-10 (10 digits) continue to the next step; all other formats get discarded.
+1. **Scan** — `mobile_scanner` reads the barcode. Only ISBN-13 (978/979 prefix, 13 digits) and ISBN-10 (10 digits) pass through; all other formats get discarded.
 
 2. **Metadata fetch** — `OpenBdDatasource` calls `https://api.openbd.jp/v1/get?isbn={isbn}`. The response is a JSON array; the first element is either a full book object or `null` (not found). The app extracts `isbn`, `title`, `author`, `category`, and `coverImageUrl`.
 
-3. **Duplicate check** — The confirm screen watches the `booksNotifierProvider` and checks whether a book with the same ISBN exists. On a match, the app disables the register button and alerts the user.
+3. **Duplicate check** — The confirm screen watches the `booksNotifierProvider` and checks whether a book with the same ISBN exists. On a match, the register button becomes disabled and the app alerts the user.
 
 4. **Persist** — The validated `Book` entity passes through the `AddBook` use case to the `BookRepository` interface and gets written to Hive. `BooksNotifier` then reloads the list and rebuilds the bookshelf grid.
 
