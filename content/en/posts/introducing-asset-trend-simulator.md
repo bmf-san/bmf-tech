@@ -26,14 +26,6 @@ So I built Asset Trend Simulator: enter your household finances and a few simula
 
 If you want to casually simulate your own asset trends, the app is on the App Store — give it a try.
 
-## Specs
-
-The app takes two kinds of input.
-
-**Household finances** break into income, expenses, and investments. Each category supports many line items registered as monthly amounts. Loans take principal, interest rate, and remaining term; the app computes the equal-installment monthly payment automatically. Initial cash balance and investment balance set the starting values.
-
-**Simulation parameters** — inflation rate, income growth rate, investment return rate, dividend reinvestment toggle, and simulation period in years — are adjustable with sliders.
-
 ## Use Cases
 
 - **Retirement estimate** — Enter current income, expenses, assets, and loans; check projected net worth at age 65.
@@ -42,6 +34,40 @@ The app takes two kinds of input.
 - **Loan impact** — See how adding a mortgage or car loan shifts the net worth peak.
 
 ![Home screen](/assets/images/posts/introducing-asset-trend-simulator/01_home.png)
+
+## Key Features
+
+### Cash Flow and Asset Input
+
+Income, expenses, and investments each support many line items registered as monthly amounts. Loans take principal, interest rate, and remaining term; the app computes the equal-installment monthly payment automatically. Initial cash balance and investment balance set the starting values.
+
+![Cash flow input](/assets/images/posts/introducing-asset-trend-simulator/02_cash_flow.png)
+![Asset input](/assets/images/posts/introducing-asset-trend-simulator/03_assets.png)
+
+### Simulation Parameters
+
+Inflation rate, income growth rate, investment return rate, dividend reinvestment toggle, and simulation period in years are adjustable with sliders.
+
+![Simulation parameters](/assets/images/posts/introducing-asset-trend-simulator/04_params.png)
+
+### Asset Trend Graph
+
+Four data series — net worth, cash, investments, and liabilities — appear in a single fl_chart `LineChart`. A toggle switches between annual and monthly granularity.
+
+![Result chart](/assets/images/posts/introducing-asset-trend-simulator/06_result_chart.png)
+![Result table](/assets/images/posts/introducing-asset-trend-simulator/07_result_table.png)
+
+### Scenario Save and Compare
+
+Save any combination of inputs and parameters under a custom name as a `SavedCase` in Hive. Tapping a saved case instantly restores all inputs and re-runs the simulation. This makes it easy to compare an aggressive investment plan against a conservative one.
+
+![Saved cases](/assets/images/posts/introducing-asset-trend-simulator/05_saved_cases.png)
+
+### Multi-Currency and Dark Mode
+
+Switch the currency between JPY, USD, and EUR in settings; the app reformats all displayed values for the selected locale. The theme follows the system setting automatically.
+
+![Settings](/assets/images/posts/introducing-asset-trend-simulator/08_settings.png)
 
 ## Tech Stack
 
@@ -63,42 +89,11 @@ The simulation steps through one month at a time, repeating for the configured p
 
 1. **Update income and expenses** — Income rises each month by a monthly slice of the annual growth rate; expenses rise by a monthly slice of the inflation rate. This captures the long-term shift in purchasing power.
 
-2. **Compound the investment portfolio** — The previous month’s investment balance earns the monthly fraction of the annual return, then the month’s contribution gets added. With dividend reinvestment on, dividends fold back into the portfolio rather than flowing into cash.
+2. **Compound the investment portfolio** — The previous month's investment balance earns the monthly fraction of the annual return, then the month's contribution gets added. With dividend reinvestment on, dividends fold back into the portfolio rather than flowing into cash.
 
-3. **Deduct loan repayments** — Each loan’s monthly payment follows the equal-installment formula and gets subtracted from income until the loan term ends.
+3. **Deduct loan repayments** — Each loan's monthly payment follows the equal-installment formula and gets subtracted from income until the loan term ends.
 
 4. **Compute end-of-month net worth** — Net worth for the month is cash accumulated (income − expenses − loan payments) plus investment balance minus outstanding loan balances.
-
-![Simulation parameters](/assets/images/posts/introducing-asset-trend-simulator/04_params.png)
-
-## Key Features
-
-### Cash Flow and Asset Input
-
-The app manages income, expenses, and investment items across three tabs. It splits assets into cash holdings and investment holdings; loans expose principal, interest rate, and remaining term for full equal-installment modelling.
-
-![Cash flow input](/assets/images/posts/introducing-asset-trend-simulator/02_cash_flow.png)
-![Asset input](/assets/images/posts/introducing-asset-trend-simulator/03_assets.png)
-
-### Asset Trend Graph
-
-Four data series — net worth, cash, investments, and liabilities — appear in a single fl_chart `LineChart`. A toggle switches between annual and monthly granularity.
-
-![Result chart](/assets/images/posts/introducing-asset-trend-simulator/06_result_chart.png)
-![Result table](/assets/images/posts/introducing-asset-trend-simulator/07_result_table.png)
-
-### Scenario Save and Compare
-
-Save any combination of inputs and parameters under a custom name as a `SavedCase` in Hive. Tapping a saved case instantly restores all inputs and re-runs the simulation. This makes it easy to compare “aggressive investment” vs “conservative” scenarios side by side.
-
-![Saved cases](/assets/images/posts/introducing-asset-trend-simulator/05_saved_cases.png)
-
-### Multi-Currency and Dark Mode
-
-Switch the currency between JPY, USD, and EUR in settings; the app reformats all displayed values for the selected locale. The theme follows the system setting automatically.
-
-![Settings](/assets/images/posts/introducing-asset-trend-simulator/08_settings.png)
-
 ## Summary
 
 Asset Trend Simulator is available on the App Store.

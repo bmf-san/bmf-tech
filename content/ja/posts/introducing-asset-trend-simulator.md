@@ -28,14 +28,6 @@ translation_key: introducing-asset-trend-simulator
 
 似たような気持ちで気軽に資産推移をシミュレーションしてみたい人がいればと思い、[App Store](https://apps.apple.com/jp/app/%E8%B3%87%E7%94%A3%E6%8E%A8%E7%A7%BB%E3%82%B7%E3%83%A5%E3%83%9F%E3%83%AC%E3%83%BC%E3%82%BF%E3%83%BC/id6759601487)で公開しているので、興味があればぜひ試してみてほしい。
 
-## 仕様
-
-アプリに入力する情報は大きく2種類だ。
-
-**家計情報**は収入・支出・投資の3カテゴリで管理する。収入と支出はそれぞれ複数の項目を月次金額で登録できる。投資は毎月の積立額を登録する。ローンは元本・金利・残期間を入力すると元利均等方式で月返済額を自動計算する。現預金残高と運用資産残高は初期値として設定する。
-
-**シミュレーションパラメータ**はインフレ率・収入成長率・運用利率・配当再投資の有無・シミュレーション期間（年）をスライダーで調整できる。
-
 ## ユースケース
 
 - **老後資産の概算** — 現在の収支・資産・ローンを入力し、65歳時点の純資産を確認する
@@ -44,6 +36,40 @@ translation_key: introducing-asset-trend-simulator
 - **ローンの影響確認** — 住宅ローンや車ローンを加えたときに純資産のピークがどう変わるかを確認する
 
 ![ホーム画面](/assets/images/posts/introducing-asset-trend-simulator/01_home.png)
+
+## 主な機能
+
+### 収支・資産入力
+
+収入・支出・投資の3カテゴリで項目を管理する。収入と支出はそれぞれ複数の項目を月次金額で登録できる。投資は毎月の積立額を登録する。ローンは元本・金利・残期間を入力すると元利均等方式で月返済額を自動計算する。現預金残高と運用資産残高は初期値として設定する。
+
+![収支入力](/assets/images/posts/introducing-asset-trend-simulator/02_cash_flow.png)
+![資産入力](/assets/images/posts/introducing-asset-trend-simulator/03_assets.png)
+
+### シミュレーションパラメータ
+
+インフレ率・収入成長率・運用利率・配当再投資の有無・シミュレーション期間（年）をスライダーで調整できる。
+
+![シミュレーション設定](/assets/images/posts/introducing-asset-trend-simulator/04_params.png)
+
+### 資産推移グラフ
+
+純資産・現預金・運用資産・負債の4系列をfl_chartの `LineChart` に描画する。年次・月次の粒度切り替えに対応している。
+
+![結果グラフ](/assets/images/posts/introducing-asset-trend-simulator/06_result_chart.png)
+![結果テーブル](/assets/images/posts/introducing-asset-trend-simulator/07_result_table.png)
+
+### シナリオ保存・比較
+
+任意の名前で入力状態を `SavedCase` としてHiveに保存できる。保存済みケースをタップすると、すべての入力が復元されてシミュレーションが再実行される。積極投資ケースと保守的ケースを並べて比較するといった使い方が可能だ。
+
+![保存済みケース](/assets/images/posts/introducing-asset-trend-simulator/05_saved_cases.png)
+
+### 多通貨・ダークモード対応
+
+JPY・USD・EURの3通貨を切り替えられ、表示値はロケールに従ってフォーマットされる。テーマはシステム設定に自動的に連動する。
+
+![設定](/assets/images/posts/introducing-asset-trend-simulator/08_settings.png)
 
 ## 技術スタック
 
@@ -70,36 +96,6 @@ translation_key: introducing-asset-trend-simulator
 3. **ローン返済** — 各ローンの月返済額は元利均等方式で自動計算され、返済完了月まで収入から差し引かれる。
 
 4. **月末純資産の確定** — その月の「現預金（収入−支出−ローン返済額）＋運用資産−ローン残高」が純資産になる。
-
-![シミュレーション設定](/assets/images/posts/introducing-asset-trend-simulator/04_params.png)
-
-## 主な機能
-
-### 収支・資産入力
-
-収入・支出・投資の3タブで項目を管理する。資産は現預金と運用資産に分類し、ローンは元本・金利・残期間を入力して元利均等計算に対応する。
-
-![収支入力](/assets/images/posts/introducing-asset-trend-simulator/02_cash_flow.png)
-![資産入力](/assets/images/posts/introducing-asset-trend-simulator/03_assets.png)
-
-### 資産推移グラフ
-
-純資産・現預金・運用資産・負債の4系列をfl_chartの `LineChart` に描画する。年次・月次の粒度切り替えに対応している。
-
-![結果グラフ](/assets/images/posts/introducing-asset-trend-simulator/06_result_chart.png)
-![結果テーブル](/assets/images/posts/introducing-asset-trend-simulator/07_result_table.png)
-
-### シナリオ保存・比較
-
-任意の名前で入力状態を `SavedCase` としてHiveに保存できる。保存済みケースをタップすると、すべての入力が復元されてシミュレーションが再実行される。「積極投資」と「保守的」の2ケースを並べて比較するといった使い方が可能だ。
-
-![保存済みケース](/assets/images/posts/introducing-asset-trend-simulator/05_saved_cases.png)
-
-### 多通貨・ダークモード対応
-
-JPY・USD・EURの3通貨を切り替えられ、表示値はロケールに従ってフォーマットされる。テーマはシステム設定に自動的に連動する。
-
-![設定](/assets/images/posts/introducing-asset-trend-simulator/08_settings.png)
 
 ## まとめ
 
