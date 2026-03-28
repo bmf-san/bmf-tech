@@ -43,33 +43,17 @@ The app takes two kinds of input.
 
 ![Home screen](/assets/images/posts/introducing-asset-trend-simulator/01_home.png)
 
-## Compound Interest Simulation Logic
+## How the Simulation Engine Works
 
-The core of the app is the monthly simulation engine. At each time step $t$, the engine computes:
+The simulation steps through one month at a time, repeating for the configured period. Each month involves four steps.
 
-**Income growth and expense inflation (applied independently)**
+1. **Update income and expenses** — Income rises each month by a monthly slice of the annual growth rate; expenses rise by a monthly slice of the inflation rate. This captures the long-term shift in purchasing power.
 
-Income grows each month by the monthly fraction of `defaultIncomeGrowthRate` (annual rate). Expenses grow by the monthly fraction of `defaultInflationRate` (annual rate). The two rates act independently.
+2. **Compound the investment portfolio** — The previous month’s investment balance earns the monthly fraction of the annual return, then the month’s contribution gets added. With dividend reinvestment on, dividends fold back into the portfolio rather than flowing into cash.
 
-**Investment compounding**
+3. **Deduct loan repayments** — Each loan’s monthly payment follows the equal-installment formula and gets subtracted from income until the loan term ends.
 
-$$I_{t} = I_{t-1} \times (1 + r_{\text{investment}} / 12) + \text{monthly\_investment}_{t}$$
-
-When dividend reinvestment is on, the simulation folds dividends back into $I_t$ rather than routing them into cash.
-
-**Loan repayment (equal-installment method)**
-
-For each loan, the monthly repayment $P$ follows:
-
-$$P = \frac{L_0 \cdot r_m}{1 - (1 + r_m)^{-n}}$$
-
-where $L_0$ is the principal, $r_m$ is the monthly interest rate, and $n$ is the remaining term in months. Each loan disappears from the simulation when its term ends.
-
-**Net worth at month $t$**
-
-$$\text{NW}_t = C_t + I_t - \sum \text{LoanBalance}_t$$
-
-where $C_t$ accumulates cash (income − expenses − loan payments) and $I_t$ is the investment asset value. The simulation runs from month 1 through `periodYears × 12`, producing a data series consumed directly by fl_chart.
+4. **Compute end-of-month net worth** — Net worth for the month is cash accumulated (income − expenses − loan payments) plus investment balance minus outstanding loan balances.
 
 ![Simulation parameters](/assets/images/posts/introducing-asset-trend-simulator/04_params.png)
 
