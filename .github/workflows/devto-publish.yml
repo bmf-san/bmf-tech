@@ -5,6 +5,16 @@ on:
     branches: [main]
     paths:
       - "content/en/posts/**.md"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "diff: publish only files added in the last commit (default); all: publish every article not yet in posted.json"
+        required: false
+        default: "diff"
+        type: choice
+        options:
+          - diff
+          - all
 
 jobs:
   publish:
@@ -25,27 +35,45 @@ jobs:
       - name: Build devto tool
         run: cd tools/devto && go mod tidy && go build -o ../../bin/devto .
 
-      - name: Detect newly added articles
-        id: detect
-        run: |
-          NEW_FILES=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'content/en/posts/*.md' | tr '\n' ' ')
-          echo "files=${NEW_FILES}" >> "$GITHUB_OUTPUT"
-
-      - name: Post new articles to dev.to
-        if: steps.detect.outputs.files != ''
+      - name: Check API key
         env:
           DEV_TO_API_KEY: ${{ secrets.DEV_TO_API_KEY }}
         run: |
-          for f in ${{ steps.detect.outputs.files }}; do
-            echo "Posting: $f"
+          if [[ -z "${DEV_TO_API_KEY}" ]]; then
+            echo "::error::DEV_TO_API_KEY secret is not set. Please add it under Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+          echo "DEV_TO_API_KEY is configured."
+
+      - name: Publish articles
+        env:
+          DEV_TO_API_KEY: ${{ secrets.DEV_TO_API_KEY }}
+          MODE: ${{ github.event.inputs.mode || 'diff' }}
+        run: |
+          if [[ "${MODE}" == "all" ]]; then
+            echo "Mode: all — publishing every article not yet in posted.json"
             ./bin/devto \
               --api-key="$DEV_TO_API_KEY" \
-              --file="$f" \
+              --all \
               --state=tools/devto/posted.json
-          done
+          else
+            echo "Mode: diff — detecting files added in the last commit"
+            NEW_FILES=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'content/en/posts/*.md' | tr '\n' ' ')
+            echo "Detected files: ${NEW_FILES}"
+            if [[ -z "${NEW_FILES}" ]]; then
+              echo "No new articles detected. Skipping."
+              exit 0
+            fi
+            for f in ${NEW_FILES}; do
+              echo "Posting: $f"
+              ./bin/devto \
+                --api-key="$DEV_TO_API_KEY" \
+                --file="$f" \
+                --state=tools/devto/posted.json
+            done
+          fi
 
       - name: Commit updated posted.json
-        if: steps.detect.outputs.files != ''
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
