@@ -7,10 +7,14 @@ on:
       - "content/en/posts/**.md"
   workflow_dispatch:
     inputs:
-      files:
-        description: "Space-separated list of markdown files to post (e.g. content/en/posts/my-article.md)"
+      mode:
+        description: "diff: publish only files added in the last commit (default); all: publish every article not yet in posted.json"
         required: false
-        default: ""
+        default: "diff"
+        type: choice
+        options:
+          - diff
+          - all
 
 jobs:
   publish:
@@ -31,19 +35,7 @@ jobs:
       - name: Build devto tool
         run: cd tools/devto && go mod tidy && go build -o ../../bin/devto .
 
-      - name: Detect newly added articles
-        id: detect
-        run: |
-          if [[ -n "${{ github.event.inputs.files }}" ]]; then
-            NEW_FILES="${{ github.event.inputs.files }}"
-          else
-            NEW_FILES=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'content/en/posts/*.md' | tr '\n' ' ')
-          fi
-          echo "files=${NEW_FILES}" >> "$GITHUB_OUTPUT"
-          echo "Detected files: ${NEW_FILES}"
-
       - name: Check API key
-        if: steps.detect.outputs.files != ''
         env:
           DEV_TO_API_KEY: ${{ secrets.DEV_TO_API_KEY }}
         run: |
@@ -53,22 +45,35 @@ jobs:
           fi
           echo "DEV_TO_API_KEY is configured."
 
-      - name: Post new articles to dev.to
-        if: steps.detect.outputs.files != ''
+      - name: Publish articles
         env:
           DEV_TO_API_KEY: ${{ secrets.DEV_TO_API_KEY }}
-          TARGET_FILES: ${{ steps.detect.outputs.files }}
+          MODE: ${{ github.event.inputs.mode || 'diff' }}
         run: |
-          for f in ${TARGET_FILES}; do
-            echo "Posting: $f"
+          if [[ "${MODE}" == "all" ]]; then
+            echo "Mode: all — publishing every article not yet in posted.json"
             ./bin/devto \
               --api-key="$DEV_TO_API_KEY" \
-              --file="$f" \
+              --all \
               --state=tools/devto/posted.json
-          done
+          else
+            echo "Mode: diff — detecting files added in the last commit"
+            NEW_FILES=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'content/en/posts/*.md' | tr '\n' ' ')
+            echo "Detected files: ${NEW_FILES}"
+            if [[ -z "${NEW_FILES}" ]]; then
+              echo "No new articles detected. Skipping."
+              exit 0
+            fi
+            for f in ${NEW_FILES}; do
+              echo "Posting: $f"
+              ./bin/devto \
+                --api-key="$DEV_TO_API_KEY" \
+                --file="$f" \
+                --state=tools/devto/posted.json
+            done
+          fi
 
       - name: Commit updated posted.json
-        if: steps.detect.outputs.files != ''
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
