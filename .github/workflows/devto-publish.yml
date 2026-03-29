@@ -5,6 +5,12 @@ on:
     branches: [main]
     paths:
       - "content/en/posts/**.md"
+  workflow_dispatch:
+    inputs:
+      files:
+        description: "Space-separated list of markdown files to post (e.g. content/en/posts/my-article.md)"
+        required: false
+        default: ""
 
 jobs:
   publish:
@@ -28,15 +34,32 @@ jobs:
       - name: Detect newly added articles
         id: detect
         run: |
-          NEW_FILES=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'content/en/posts/*.md' | tr '\n' ' ')
+          if [[ -n "${{ github.event.inputs.files }}" ]]; then
+            NEW_FILES="${{ github.event.inputs.files }}"
+          else
+            NEW_FILES=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'content/en/posts/*.md' | tr '\n' ' ')
+          fi
           echo "files=${NEW_FILES}" >> "$GITHUB_OUTPUT"
+          echo "Detected files: ${NEW_FILES}"
+
+      - name: Check API key
+        if: steps.detect.outputs.files != ''
+        env:
+          DEV_TO_API_KEY: ${{ secrets.DEV_TO_API_KEY }}
+        run: |
+          if [[ -z "${DEV_TO_API_KEY}" ]]; then
+            echo "::error::DEV_TO_API_KEY secret is not set. Please add it under Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+          echo "DEV_TO_API_KEY is configured."
 
       - name: Post new articles to dev.to
         if: steps.detect.outputs.files != ''
         env:
           DEV_TO_API_KEY: ${{ secrets.DEV_TO_API_KEY }}
+          TARGET_FILES: ${{ steps.detect.outputs.files }}
         run: |
-          for f in ${{ steps.detect.outputs.files }}; do
+          for f in ${TARGET_FILES}; do
             echo "Posting: $f"
             ./bin/devto \
               --api-key="$DEV_TO_API_KEY" \
