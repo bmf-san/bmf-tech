@@ -22,39 +22,31 @@ translation_key: introducing-sleyt-css-framework
 
 UIコンポーネントや柔軟性が足りていない部分があるが、最低限利用できる状態になっている。
 
-![ドキュメントサイト](/assets/images/posts/introducing-sleyt-css-framework/01_docs_home.png)
+詳細は[ドキュメントサイト](https://bmf-san.github.io/sleyt/)を参照。
 
 ## コンポーネントライブラリ
 
 sleytは4つのディレクトリに20以上のコンポーネントを整備する。
 
 <!-- textlint-disable ja-technical-writing/sentence-length -->
-**Components** (`src/components/`): accordion、alerts、badges、buttons、cards、charts、code、forms、modals、navbar、navigation、progress、prose、sidebar、spinners、showcase、swatch、tables、tabs、tooltip。
+**Components** (`src/components/`): accordion、alerts、badges、buttons、cards、charts、code、forms、modals、navbar、navigation、progress、prose、sidebar、spinners、showcase、swatch、tables、tabs、tooltip
 <!-- textlint-enable ja-technical-writing/sentence-length -->
 
-**Layout** (`src/layout/`): container、dashboard、flexbox、grid。
+**Layout** (`src/layout/`): container、dashboard、flexbox、grid
 
-**Base** (`src/base/`): reset、themes、variables。
+**Base** (`src/base/`): reset、themes、variables
 
-**Utilities** (`src/utilities/`): spacing、colors、typography、borders、effects、glass、display、position、transforms、transitions。
-
-![コンポーネント一覧](/assets/images/posts/introducing-sleyt-css-framework/06_demo_components.png)
-
-![ブログデモ](/assets/images/posts/introducing-sleyt-css-framework/03_demo_blog.png)
+**Utilities** (`src/utilities/`): spacing、colors、typography、borders、effects、glass、display、position、transforms、transitions
 
 ### データ可視化
 
-`charts.css`は**CSSだけ**の棒グラフ、折れ線グラフ、ドーナツチャートを提供する。JavaScriptのグラフライブラリ不要。棒グラフはCSSの高さでデータを表現する純CSS実装だ。折れ線グラフはSVG `<path>`要素をCSSでスタイリングし、ドーナツチャートはSVG `<circle>`の`stroke-dasharray`と`stroke-dashoffset`でセグメントを描画する。データ対応はCSSカスタムプロパティ経由で行う。
-
-![ダッシュボードデモ](/assets/images/posts/introducing-sleyt-css-framework/05_demo_dashboard.png)
+`charts.css`は**CSSだけ**の棒グラフ、折れ線グラフ、ドーナツチャートを提供する。JavaScriptのグラフライブラリ不要。棒グラフはCSSの高さでデータを表現する純CSS実装となっている。
 
 ![チャートデモ](/assets/images/posts/introducing-sleyt-css-framework/08_demo_charts.png)
 
 ### グラスモーフィズム
 
-`.glass`、`.glass-light`、`.glass-heavy`、`.frosted`のユーティリティクラスで透明感とバックドロップブラーを付与できる。`backdrop-blur`ユーティリティも複数段階用意されており、細かいブラー強度の調整が可能だ。
-
-![グラスモーフィズムユーティリティ](/assets/images/posts/introducing-sleyt-css-framework/07_docs_glass.png)
+`.glass`、`.glass-light`、`.glass-heavy`、`.frosted`のユーティリティクラスで透明感とバックドロップブラーを付与できる。`backdrop-blur`ユーティリティも複数段階用意されており、細かいブラー強度の調整も可能となっている。
 
 ### ダークモード
 
@@ -62,7 +54,7 @@ sleytは4つのディレクトリに20以上のコンポーネントを整備す
 
 ### アクセシビリティ
 
-コンポーネントのマークアップはセマンティックHTML5パターンに準拠する。ボタンはネイティブの`<button>`要素、ナビゲーションは`<nav>`を使用する。色彩コントラストはWCAG AAを目標としている。
+コンポーネントのマークアップはセマンティックHTML5パターンに準拠する。色彩コントラストはWCAG AAを目標としている。
 
 ## インストール
 
@@ -82,17 +74,19 @@ CDN経由で使う場合は、HTMLの`<head>`に直接追加できる。
 <link rel="stylesheet" href="https://unpkg.com/sleyt@latest/dist/css/index.css">
 ```
 
-## デモとドキュメント
+## デモ
 
-[デモページ](https://bmf-san.github.io/sleyt/demo.html)で全コンポーネントをダークモードバリアントやグラフ種別も含めて確認できる。ブログレイアウト・記事詳細・管理ダッシュボードの3つの実用的なデモページも用意されており、実際のUIパターンを確認できる。
+[デモページ](https://bmf-san.github.io/sleyt/demo.html)で全コンポーネントをダークモードバリアントやグラフ種別も含めて確認できる。ブログレイアウト・記事詳細・管理ダッシュボードの3つの実用的なデモページも用意しており、実際のUIパターンを確認できる。
+
+![ブログデモ](/assets/images/posts/introducing-sleyt-css-framework/03_demo_blog.png)
 
 ![記事詳細デモ](/assets/images/posts/introducing-sleyt-css-framework/04_demo_blog_detail.png)
 
-[ドキュメントサイト](https://bmf-san.github.io/sleyt/)はインストール、CSS変数によるカスタマイズ、コンポーネント使用例を解説する。
+![ダッシュボードデモ](/assets/images/posts/introducing-sleyt-css-framework/05_demo_dashboard.png)
 
 ## まとめ
 
-sleytは読みやすさとモダンなビジュアルスタイルに特化した軽量CSS専用フレームワークである。JavaScriptランタイムコストなし。
+sleytは読みやすさとモダンなビジュアルスタイルに特化した軽量CSS専用フレームワークである。JavaScriptランタイムに依存せず、CSSだけで動作する。
 
 - **npm**: [sleyt](https://www.npmjs.com/package/sleyt)
 - **GitHub**: [bmf-san/sleyt](https://github.com/bmf-san/sleyt)
