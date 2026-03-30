@@ -117,60 +117,13 @@ type Strategy interface {
 
 戦略はグローバルレジストリへの自己登録で動作する。`database/sql`パッケージのドライバ登録と同じ仕組みで、各戦略パッケージの`register.go`が`init()`内で`strategy.Register("name", constructor)`を呼び出し、`main.go`はブランクインポート（`_ "github.com/bmf-san/gogocoin/pkg/strategy/scalping"`）で戦略を取り込む。新しい戦略の追加は`main.go`への`import`行の追加だけで済み、エンジンコードの変更は不要となっている。
 
-## スキャルピング戦略 — リスク管理
+## エンジンのリスク管理
 
-スキャルピング戦略はデュアルEMAクロスオーバーにより買・売シグナルを生成する。クロスオーバーシグナルが発生する前に、2つのリスク管理ガードが動作する。
-
-```go
-func (s *Strategy) isInCooldown(cooldownSec int) bool {
-    s.mu.RLock()
-    defer s.mu.RUnlock()
-    if s.lastTradeTime.IsZero() || cooldownSec == 0 {
-        return false
-    }
-    return time.Since(s.lastTradeTime).Seconds() < float64(cooldownSec)
-}
-
-func (s *Strategy) isDailyLimitReached(maxDailyTrades int) bool {
-    s.mu.RLock()
-    defer s.mu.RUnlock()
-    if s.lastTradeDate != jstToday() {
-        return false
-    }
-    return s.dailyTradeCount >= maxDailyTrades
-}
-```
-
-`isInCooldown()`は直前の取引から一定時間が経つ前に再ポジションを取るのを防ぐ。デフォルトのクールダウンは90秒となっている。`isDailyLimitReached()`はJSTカレンダー日当たりの取引数を設定値（デフォルト3回）以内に抑制する。
-
-利確・損切り価格はエントリー価格から設定パーセンテージを使って計算する。
-
-```go
-func (s *Strategy) GetTakeProfitPrice(entry float64) float64 {
-    s.mu.RLock()
-    pct := s.takeProfitPct
-    s.mu.RUnlock()
-    return entry * (1.0 + pct/100.0)
-}
-
-func (s *Strategy) GetStopLossPrice(entry float64) float64 {
-    s.mu.RLock()
-    pct := s.stopLossPct
-    s.mu.RUnlock()
-    return entry * (1.0 - pct/100.0)
-}
-```
-
-すべての可変フィールドは`sync.RWMutex`で保護されており、HTTPハンドラからの`UpdateConfig()`とエンジンゴルーチンからの`GenerateSignal()`が競合しない。
-
-損切り・利確はEMAクロスオーバーシグナルとは独立して、エンジン（`StrategyWorker`）が毎ティックで強制適用する。エンジンはティックのたびに`GetStopLossPrice` / `GetTakeProfitPrice`を呼び出し、価格が閾値を超えた瞬間にポジションをクローズする。EMAシグナルは不要となっている。
+エンジン（`StrategyWorker`）は戦略から独立して、毎ティックで損切り・利確を強制適用する。ティックのたびに`GetStopLossPrice` / `GetTakeProfitPrice`を呼び出し、価格が閾値を超えた瞬間にポジションをクローズする。シグナル発生を待つ必要はない。
 
 `config.yaml`の`max_open_positions_per_symbol: 1`ガードはポジションの積み上がりを防ぐ。このガードがないと、下降トレンド中に複数のBUYシグナルが同一シンボルに積み上がり、損切り発動時にすべてが一度にクローズされて損失が倍増する。`1`に設定することで、同シンボルにオープンポジションが存在する場合はBUYを拒否する。
 
-スキャルピング戦略は`strategy_params.scalping`で設定できるオプションのシグナルフィルタも持つ。
-
-- **RSIフィルタ**（`rsi_period`、`rsi_overbought`、`rsi_oversold`）: RSIが買われ過ぎ状態のときにBUYを、売られ過ぎ状態のときにSELLを抑制する。`rsi_period: 0`で無効化。
-- **自動スケール**: エンジンは`GetAutoScaleConfig()`を通じた残高比例注文サイジングをフレームワーク機能として持つ。`example/`のスキャルピング実装はデフォルトで無効（空の`AutoScaleConfig`を返す）。有効化するには、自分の戦略実装で`GetAutoScaleConfig()`をオーバーライドして`Enabled: true`と割合・上限を返すよう実装する。
+エンジンは`GetAutoScaleConfig()`を通じた残高比例注文サイジングもフレームワーク機能として持つ。有効化するには、自分の戦略実装で`GetAutoScaleConfig()`をオーバーライドして`Enabled: true`と割合・上限を返すよう実装する。
 
 ## 残高キャッシュ — ダブルチェックロック
 

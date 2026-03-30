@@ -120,60 +120,13 @@ type Strategy interface {
 
 Strategies self-register via the global registry using the same mechanism as `database/sql` driver registration. A `register.go` file in each strategy package calls `strategy.Register("name", constructor)` inside `init()`, and `main.go` pulls the strategy in with a blank import (`_ "github.com/bmf-san/gogocoin/pkg/strategy/scalping"`). Adding a new strategy is an `import` change in `main.go` — no engine code needs to change.
 
-## Scalping Strategy — Risk Management
+## Engine Risk Management
 
-The scalping strategy uses a dual-EMA crossover to generate buy/sell signals. Before the engine acts on a crossover signal, two risk-management guards run:
-
-```go
-func (s *Strategy) isInCooldown(cooldownSec int) bool {
-    s.mu.RLock()
-    defer s.mu.RUnlock()
-    if s.lastTradeTime.IsZero() || cooldownSec == 0 {
-        return false
-    }
-    return time.Since(s.lastTradeTime).Seconds() < float64(cooldownSec)
-}
-
-func (s *Strategy) isDailyLimitReached(maxDailyTrades int) bool {
-    s.mu.RLock()
-    defer s.mu.RUnlock()
-    if s.lastTradeDate != jstToday() {
-        return false
-    }
-    return s.dailyTradeCount >= maxDailyTrades
-}
-```
-
-`isInCooldown()` prevents re-entering a position too quickly after the last trade. The default cooldown is 90 seconds. `isDailyLimitReached()` caps trades per JST calendar day at a configurable limit (default: 3).
-
-The strategy computes take-profit and stop-loss prices from the entry price using configurable percentages:
-
-```go
-func (s *Strategy) GetTakeProfitPrice(entry float64) float64 {
-    s.mu.RLock()
-    pct := s.takeProfitPct
-    s.mu.RUnlock()
-    return entry * (1.0 + pct/100.0)
-}
-
-func (s *Strategy) GetStopLossPrice(entry float64) float64 {
-    s.mu.RLock()
-    pct := s.stopLossPct
-    s.mu.RUnlock()
-    return entry * (1.0 - pct/100.0)
-}
-```
-
-A `sync.RWMutex` protects all mutable fields so that `UpdateConfig()` calls from the HTTP handler do not race with `GenerateSignal()` calls from the engine goroutine.
-
-Stop-loss and take-profit are also enforced on every market tick directly by the engine (`StrategyWorker`), independent of EMA crossover signals. The engine calls `GetStopLossPrice` / `GetTakeProfitPrice` on each tick and closes the position immediately when the price crosses the threshold — no EMA signal is required.
+The engine (`StrategyWorker`) enforces stop-loss and take-profit on every market tick, independently of any signal. It calls `GetStopLossPrice` / `GetTakeProfitPrice` on each tick and closes the position immediately when the price crosses the threshold — no signal required.
 
 A `max_open_positions_per_symbol: 1` guard in `config.yaml` prevents position stacking. Without it, consecutive BUY signals during a downtrend accumulate multiple open positions on the same symbol, and when stop-loss fires all of them close simultaneously, multiplying the loss. With the guard set to 1, any BUY is rejected if the symbol already has an open position.
 
-The strategy also supports two optional signal filters configurable in `strategy_params.scalping`:
-
-- **RSI filter** (`rsi_period`, `rsi_overbought`, `rsi_oversold`): suppresses BUY when RSI is overbought and SELL when RSI is oversold, avoiding entries at exhausted price extremes. Set `rsi_period: 0` to disable.
-- **Auto-scale**: The engine supports balance-proportional order sizing via `GetAutoScaleConfig()` as a framework feature. The example scalping implementation returns a disabled `AutoScaleConfig` by default. To enable it, override `GetAutoScaleConfig()` in your own strategy to return `Enabled: true` with a `BalancePct` and optional `MaxNotional`.
+The engine also supports balance-proportional order sizing as a framework feature via `GetAutoScaleConfig()`. To enable it, override `GetAutoScaleConfig()` in your own strategy to return `Enabled: true` with a `BalancePct` and optional `MaxNotional`.
 
 ## Balance Cache — Double-Checked Locking
 
