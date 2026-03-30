@@ -62,7 +62,7 @@ make init && make up
 
 ## Architecture
 
-The codebase follows a layered modular architecture: `cmd/gogocoin` is the entry point; `internal/` houses domain logic, use cases, and infrastructure adapters; `pkg/strategy` is a public package that defines the strategy contract and ships the built-in scalping implementation.
+The codebase follows a layered modular architecture: `cmd/gogocoin` is the entry point; `internal/` houses domain logic, use cases, and external adapters (bitFlyer client, SQLite repository, HTTP handlers, etc.); `pkg/strategy` is a public package providing the Strategy interface definition and a scalping reference implementation (registered via blank import).
 
 ## Strategy Interface
 
