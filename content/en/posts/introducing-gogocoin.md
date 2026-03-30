@@ -20,7 +20,7 @@ translation_key: introducing-gogocoin
 
 Open-source crypto bots and automated trading services are everywhere. I built gogocoin anyway because I wanted the hands-on experience of implementing something that works exactly as I intend and actually earning returns with my own money. I had built a similar bot once before; this time I rebuilt it from scratch with the help of AI. Running it in production has been a continuous source of learning — it has become a hobby as much as a software project.
 
-The bot targets the [bitFlyer](https://bitflyer.com/) exchange via its official REST and WebSocket APIs. A sample EMA-based scalping strategy on XRP/JPY ships as a built-in implementation — a low-minimum pair suited to starting with small capital. See [gogocoin](https://github.com/bmf-san/gogocoin) for the full source.
+[gogocoin](https://github.com/bmf-san/gogocoin)
 
 ## Getting Started
 
