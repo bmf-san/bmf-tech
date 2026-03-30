@@ -180,32 +180,9 @@ The embedded web UI at `http://localhost:8080` has four pages, navigable via the
 
 Start and stop buttons in the top bar control the bot in real time. Configuration (API credentials, trading parameters) lives in `config.yaml`. The bot writes data to SQLite — no external database required.
 
-## VPS Deployment
+## Running in Production
 
-gogocoin ships as a single statically-linked binary. [gogocoin-vps-template](https://github.com/bmf-san/gogocoin-vps-template) is a sample reference for running it on ConoHa VPS, covering systemd configuration and deployment steps. The systemd unit file:
-
-```ini
-[Unit]
-Description=gogocoin - bitFlyer auto trading bot
-After=network.target
-
-[Service]
-Type=simple
-User=gogocoin
-WorkingDirectory=/opt/gogocoin
-EnvironmentFile=/opt/gogocoin/.env
-ExecStart=/opt/gogocoin/gogocoin
-Restart=always
-RestartSec=5
-StandardOutput=journal
-StandardError=journal
-SyslogIdentifier=gogocoin
-NoNewPrivileges=true
-PrivateTmp=true
-
-[Install]
-WantedBy=multi-user.target
-```
+gogocoin ships as a single statically-linked binary. [gogocoin-vps-template](https://github.com/bmf-san/gogocoin-vps-template) is a sample reference for running it on ConoHa VPS, covering systemd configuration and deployment steps.
 
 Initial VPS setup (systemd service installation, etc.) uses `make setup`. Ongoing deployment is automated via the included GitHub Actions workflow (`workflow_dispatch`), which builds for linux/amd64 and transfers the binary to the VPS with `rsync`.
 
