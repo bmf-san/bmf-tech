@@ -62,7 +62,109 @@ make init && make up
 
 ## Architecture
 
-The codebase follows a layered modular architecture: `cmd/gogocoin` is the entry point; `internal/` houses domain logic, use cases, and external adapters (bitFlyer client, SQLite repository, HTTP handlers, etc.); `pkg/strategy` is a public package providing the Strategy interface definition and a scalping reference implementation (registered via blank import).
+The codebase follows a four-layer architecture. `cmd/gogocoin` is the entry point; `internal/` houses domain logic, use cases, and external adapters (bitFlyer client, SQLite repository, HTTP handlers, etc.); `pkg/strategy` is a public package providing the Strategy interface definition and a scalping reference implementation (registered via blank import).
+
+```mermaid
+graph LR
+    cmd[cmd/gogocoin]
+    http[adapter/http]
+    worker[adapter/worker]
+    bf[infra/bitflyer]
+    db[infra/persistence]
+    uc[usecase/]
+    domain[domain/]
+
+    cmd --> http
+    cmd --> worker
+    cmd --> bf
+    cmd --> db
+    http --> uc
+    worker --> uc
+    uc --> domain
+    bf --> domain
+    db --> domain
+```
+
+Dependency rules are enforced in CI:
+
+| Rule | Detail |
+|---|---|
+| `domain/` has zero internal imports | stdlib only; knows nothing of infra or usecase |
+| `usecase/` does not import `infra/` | depends only on `domain/` interfaces |
+| `adapter/` holds no concrete infra types | uses `domain/` interfaces only |
+| `infra/` implements `domain/` | knows nothing of `usecase/` or `adapter/` |
+| Only `cmd/` combines all packages | the sole Composition Root |
+
+The public API (subject to semantic versioning) lives under `pkg/`. `pkg/engine` is the engine entry point; `pkg/strategy` provides the Strategy interface and registry.
+
+## Use Cases
+
+```mermaid
+graph LR
+    OP(Operator)
+    SYS(System)
+    BF(bitFlyer)
+
+    subgraph gogocoin
+        UC1[Start / Stop trading]
+        UC2[Check status, balance, positions]
+        UC3[Check performance and trade history]
+        UC4[Check logs]
+        UC5[Live-update strategy parameters]
+        UC6[Signal detection to risk check to order]
+        UC7[Post-fill P&L calculation and balance update]
+        UC8[Clean up old data]
+    end
+
+    OP --> UC1
+    OP --> UC2
+    OP --> UC3
+    OP --> UC4
+    OP --> UC5
+    SYS --> UC6
+    SYS --> UC7
+    SYS --> UC8
+    BF -.->|fill notification| UC7
+```
+
+The operator controls and monitors the bot via the HTTP API (including the web dashboard). Signal generation, order placement, P&L calculation, and data cleanup run autonomously.
+
+## Trading Flow
+
+The following shows the main path from receiving a WebSocket tick to filling an order and recording P&L.
+
+```mermaid
+sequenceDiagram
+    participant MW as MarketDataWorker
+    participant SW as StrategyWorker
+    participant SigW as SignalWorker
+    participant RM as risk.Manager
+    participant TR as BitflyerTrader
+    participant BF as bitFlyer API
+    participant OM as OrderMonitor
+    participant PNL as PnLCalculator
+    participant DB as persistence
+
+    MW->>SW: tick (WebSocket)
+    SW->>SW: GenerateSignal to BUY
+    SW-)SigW: signalCh <- BUY (channel)
+    SigW->>RM: CheckRiskManagement
+    RM-->>SigW: OK
+    SigW->>TR: PlaceOrder
+    TR->>BF: POST /v1/me/sendchildorder
+    BF-->>TR: order_id
+    TR-)OM: go MonitorExecution (goroutine)
+    loop Polling up to 90s every 15s
+        OM->>BF: GET /v1/me/getchildorders
+        BF-->>OM: ACTIVE
+    end
+    BF-->>OM: COMPLETED
+    OM->>PNL: CalculateAndSave
+    PNL->>DB: BeginTx then SavePosition and SaveTrade then Commit
+    OM->>DB: SaveBalance (balance snapshot)
+```
+
+`StrategyWorker` and `SignalWorker` are connected asynchronously via a Go channel. `PlaceOrder()` returns immediately after placing the order; `OrderMonitor` handles fill monitoring in a goroutine. `PnLCalculator` saves position and trade records within the same transaction; `OrderMonitor` appends the balance snapshot separately after that completes.
 
 ## Strategy Interface
 
@@ -166,6 +268,68 @@ func (s *BalanceService) GetBalance(ctx context.Context) ([]domain.Balance, erro
 ```
 
 The outer `cache.mu` (a `sync.RWMutex`) allows concurrent reads of fresh cache data. The inner `fetchMu` (a `sync.Mutex`) serialises API calls so that exactly one goroutine fetches when the cache is stale.
+
+## Data Model
+
+Trade data is persisted in SQLite. The table-to-domain-model mapping:
+
+| Table | Content | Notes |
+|---|---|---|
+| `trades` | Filled order records | `order_id UNIQUE` for idempotency. Immutable (no UPDATE) |
+| `positions` | FIFO positions | 3 states: OPEN / PARTIAL / CLOSED. Created on BUY, updated on SELL |
+| `balances` | Balance snapshots | Append-only (no overwrites). Latest row per currency |
+| `market_data` | WebSocket tick data | UNIQUE(symbol, timestamp) |
+| `performance_metrics` | Daily performance metrics | Snapshot appended after each fill |
+| `logs` | Structured log entries | `fields` column is JSON |
+| `app_state` | Runtime flag KV store | e.g. `trading_enabled` |
+
+```mermaid
+erDiagram
+    TRADES {
+        TEXT symbol
+        TEXT side
+        REAL size
+        REAL price
+        REAL pnl
+        TEXT order_id
+        DATETIME executed_at
+        TEXT strategy_name
+    }
+    POSITIONS {
+        TEXT symbol
+        REAL size
+        REAL remaining_size
+        REAL entry_price
+        TEXT status
+        DATETIME created_at
+    }
+    BALANCES {
+        TEXT currency
+        REAL available
+        REAL amount
+        DATETIME timestamp
+    }
+    MARKET_DATA {
+        TEXT symbol
+        DATETIME timestamp
+        REAL open
+        REAL high
+        REAL low
+        REAL close
+        REAL volume
+    }
+    PERFORMANCE_METRICS {
+        DATETIME date
+        REAL win_rate
+        REAL sharpe_ratio
+        REAL profit_factor
+        REAL max_drawdown
+        REAL total_pnl
+    }
+    POSITIONS ||--o{ TRADES : "FIFO"
+```
+
+No foreign key constraints are defined. `PnLCalculator` writes both `positions` and `trades` within the same transaction, providing atomicity at the application layer.
 
 ## Web Dashboard
 

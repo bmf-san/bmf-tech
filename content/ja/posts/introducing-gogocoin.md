@@ -62,7 +62,109 @@ make init && make up
 
 ## アーキテクチャ
 
-コードベースはレイヤー分離されたモジュラーアーキテクチャを採用している。`cmd/gogocoin`がエントリーポイント、`internal/`にドメインロジック・ユースケース・外部アダプター（bitFlyerクライアント・SQLiteリポジトリ・HTTPハンドラ等）、`pkg/strategy`がStrategyインターフェース定義とスキャルピングリファレンス実装（ブランクインポートで登録）を提供する公開パッケージとなっている。
+コードベースは4層のレイヤードアーキテクチャを採用している。`cmd/gogocoin`がエントリーポイント、`internal/`にドメインロジック・ユースケース・外部アダプター（bitFlyerクライアント・SQLiteリポジトリ・HTTPハンドラ等）、`pkg/strategy`がStrategyインターフェース定義とスキャルピングリファレンス実装（ブランクインポートで登録）を提供する公開パッケージとなっている。
+
+```mermaid
+graph LR
+    cmd[cmd/gogocoin]
+    http[adapter/http]
+    worker[adapter/worker]
+    bf[infra/bitflyer]
+    db[infra/persistence]
+    uc[usecase/]
+    domain[domain/]
+
+    cmd --> http
+    cmd --> worker
+    cmd --> bf
+    cmd --> db
+    http --> uc
+    worker --> uc
+    uc --> domain
+    bf --> domain
+    db --> domain
+```
+
+依存ルールはCIで強制している。
+
+| ルール | 詳細 |
+|---|---|
+| `domain/` は内部importゼロ | stdlibのみ。インフラも usecase も知らない |
+| `usecase/` は `infra/` をimportしない | `domain/` インターフェースにのみ依存する |
+| `adapter/` は `infra/` の具体型を持たない | `domain/` インターフェースのみ使用 |
+| `infra/` は `domain/` を実装する | `usecase/` や `adapter/` は知らない |
+| `cmd/` のみが全パッケージを組み合わせる | Composition Root として唯一の例外 |
+
+公開API（セマンティックバージョニング対象）は `pkg/` 以下に分離している。`pkg/engine` がエンジン起動のエントリーポイント、`pkg/strategy` がStrategyインターフェースとレジストリを提供する。
+
+## ユースケース
+
+```mermaid
+graph LR
+    OP(オペレーター)
+    SYS(システム)
+    BF(bitFlyer)
+
+    subgraph gogocoin
+        UC1[取引開始・停止]
+        UC2[状態・残高・ポジション確認]
+        UC3[パフォーマンス・取引履歴確認]
+        UC4[ログ確認]
+        UC5[戦略パラメータのライブ更新]
+        UC6[シグナル→リスクチェック→注文]
+        UC7[約定後の損益計算・残高更新]
+        UC8[古いデータのクリーンアップ]
+    end
+
+    OP --> UC1
+    OP --> UC2
+    OP --> UC3
+    OP --> UC4
+    OP --> UC5
+    SYS --> UC6
+    SYS --> UC7
+    SYS --> UC8
+    BF -.->|約定通知| UC7
+```
+
+オペレーターはHTTP API（WebダッシュボードのUIを含む）を通じて取引の制御と状態確認を行う。シグナル生成・注文・損益計算・データクリーンアップはシステムが自律的に実行する。
+
+## 取引フロー
+
+WebSocketでティックを受信してから注文が約定・損益記録されるまでの主なフローを示す。
+
+```mermaid
+sequenceDiagram
+    participant MW as MarketDataWorker
+    participant SW as StrategyWorker
+    participant SigW as SignalWorker
+    participant RM as risk.Manager
+    participant TR as BitflyerTrader
+    participant BF as bitFlyer API
+    participant OM as OrderMonitor
+    participant PNL as PnLCalculator
+    participant DB as persistence
+
+    MW->>SW: tick（WebSocket受信）
+    SW->>SW: GenerateSignal → BUY
+    SW-)SigW: signalCh <- BUY（チャネル）
+    SigW->>RM: CheckRiskManagement
+    RM-->>SigW: OK
+    SigW->>TR: PlaceOrder
+    TR->>BF: POST /v1/me/sendchildorder
+    BF-->>TR: order_id
+    TR-)OM: go MonitorExecution（非同期goroutine）
+    loop ポーリング（最大90秒・15秒間隔）
+        OM->>BF: GET /v1/me/getchildorders
+        BF-->>OM: ACTIVE
+    end
+    BF-->>OM: COMPLETED
+    OM->>PNL: CalculateAndSave
+    PNL->>DB: BeginTx → SavePosition + SaveTrade → Commit
+    OM->>DB: SaveBalance（残高スナップショット追記）
+```
+
+`StrategyWorker` と `SignalWorker` はGoチャネル経由で非同期に連結している。`PlaceOrder()` は発注後すぐにreturnし、約定監視は `OrderMonitor` がgoroutineで行う。`PnLCalculator` はポジションと取引を同一トランザクション内で保存し、完了後に `OrderMonitor` が残高スナップショットを追記する。
 
 ## Strategyインターフェース
 
@@ -163,6 +265,68 @@ func (s *BalanceService) GetBalance(ctx context.Context) ([]domain.Balance, erro
 ```
 
 外側の`cache.mu`（`sync.RWMutex`）がフレッシュなキャッシュデータの同時読み取りを許可する。内側の`fetchMu`（`sync.Mutex`）がAPI呼び出しをシリアライズし、キャッシュ失効時に正確に1つのゴルーチンのみが取得する。
+
+## データモデル
+
+取引データはSQLiteに保存する。テーブルとドメインモデルの対応は次の通りとなっている。
+
+| テーブル | 内容 | 備考 |
+|---|---|---|
+| `trades` | 約定レコード | `order_id UNIQUE`で冪等性保証。不変（UPDATEなし） |
+| `positions` | FIFOポジション | OPEN / PARTIAL / CLOSED の3状態。BUYで生成・SELLで更新 |
+| `balances` | 残高スナップショット | 追記のみ（上書きなし）。通貨ごとに最新行を取得 |
+| `market_data` | WebSocketティックデータ | UNIQUE(symbol, timestamp) |
+| `performance_metrics` | 日次パフォーマンス指標 | 取引完了ごとにスナップショットを追記 |
+| `logs` | 構造化ログ | `fields` カラムはJSON |
+| `app_state` | 実行時フラグのKVストア | `trading_enabled`等 |
+
+```mermaid
+erDiagram
+    TRADES {
+        TEXT symbol
+        TEXT side
+        REAL size
+        REAL price
+        REAL pnl
+        TEXT order_id
+        DATETIME executed_at
+        TEXT strategy_name
+    }
+    POSITIONS {
+        TEXT symbol
+        REAL size
+        REAL remaining_size
+        REAL entry_price
+        TEXT status
+        DATETIME created_at
+    }
+    BALANCES {
+        TEXT currency
+        REAL available
+        REAL amount
+        DATETIME timestamp
+    }
+    MARKET_DATA {
+        TEXT symbol
+        DATETIME timestamp
+        REAL open
+        REAL high
+        REAL low
+        REAL close
+        REAL volume
+    }
+    PERFORMANCE_METRICS {
+        DATETIME date
+        REAL win_rate
+        REAL sharpe_ratio
+        REAL profit_factor
+        REAL max_drawdown
+        REAL total_pnl
+    }
+    POSITIONS ||--o{ TRADES : "FIFO（論理結合）"
+```
+
+外部キー制約は持たない。`PnLCalculator` が `positions` と `trades` を同一トランザクション内で書き込むため整合性はアプリケーション層でアトミックに保証する設計となっている。
 
 ## Webダッシュボード
 ![ダッシュボード](/assets/images/posts/introducing-gogocoin/01_dashboard.png)
