@@ -19,7 +19,13 @@ translation_key: introducing-go-git-tool-ggc
 
 ## What is ggc?
 
-[ggc](https://github.com/bmf-san/ggc) is a Git workflow tool written in Go. It wraps everyday Git sub-commands under a consistent surface and adds an interactive fuzzy-search TUI so you can find and execute commands without memorising their exact names. Version 8 introduced Workflow Mode, customisable aliases with placeholder support, and a layered keybinding profile system — this article covers them all.
+[ggc](https://github.com/bmf-san/ggc) is a Git workflow tool written in Go. It wraps everyday Git sub-commands under a consistent surface and adds an interactive fuzzy-search TUI so you can find and execute commands without memorising their exact names. Version 8 introduced Workflow Mode, customisable aliases with placeholder support, and a layered keybinding profile system — this article covers them all. ggc is listed on [Awesome Go](https://github.com/avelino/awesome-go).
+
+## Demo
+
+| Branch Management | CLI Workflow | Interactive Overview |
+|---|---|---|
+| ![Branch management demo](https://raw.githubusercontent.com/bmf-san/ggc/main/docs/demos/generated/branch-management.gif) | ![CLI workflow demo](https://raw.githubusercontent.com/bmf-san/ggc/main/docs/demos/generated/cli-workflow.gif) | ![Interactive overview demo](https://raw.githubusercontent.com/bmf-san/ggc/main/docs/demos/generated/interactive-overview.gif) |
 
 ## Why use ggc?
 
@@ -150,6 +156,112 @@ func (we *WorkflowExecutor) Execute(workflow *Workflow) error {
 ```
 
 Before each step, `resolveStepPlaceholders()` scans the step arguments for `<name>` tokens and prompts you interactively if any turn up. A workflow step like `commit -m <message>` will pause and ask for the commit message at runtime.
+
+## Available Commands
+
+A full reference of every ggc command. All of these can be called directly from the CLI or discovered via the interactive fuzzy-search UI using the same names.
+
+| Command | Description |
+|---------|-------------|
+| `add .` | Add all changes to the index |
+| `add <file>` | Add a specific file to the index |
+| `add interactive` | Add changes interactively |
+| `add patch` | Add changes interactively (patch mode) |
+| `help` | Show main help message |
+| `help <command>` | Show help for a specific command |
+| `reset` | Hard reset to origin/<branch> and clean working directory |
+| `reset hard <commit>` | Hard reset to specified commit |
+| `reset soft <commit>` | Soft reset: move HEAD but keep changes staged |
+| `branch checkout` | Switch to an existing branch |
+| `branch checkout remote` | Create and checkout a local branch from the remote |
+| `branch contains <commit>` | Show branches containing a commit |
+| `branch create` | Create and checkout a new branch |
+| `branch current` | Show current branch name |
+| `branch delete` | Delete local branch |
+| `branch delete merged` | Delete local merged branches |
+| `branch info <branch>` | Show detailed branch information |
+| `branch list local` | List local branches |
+| `branch list remote` | List remote branches |
+| `branch list verbose` | Show detailed branch listing |
+| `branch move <branch> <commit>` | Move branch to specified commit |
+| `branch rename <old> <new>` | Rename a branch |
+| `branch set upstream <branch> <upstream>` | Set upstream for a branch |
+| `branch sort [date\|name]` | List branches sorted by date or name |
+| `commit <message>` | Create commit with a message |
+| `commit allow empty` | Create an empty commit |
+| `commit amend` | Amend previous commit (editor) |
+| `commit amend no-edit` | Amend without editing commit message |
+| `commit fixup <commit>` | Create a fixup commit targeting `<commit>` |
+| `log graph` | Show log with graph |
+| `log simple` | Show simple historical log |
+| `fetch` | Fetch from the remote |
+| `fetch prune` | Fetch and clean stale references |
+| `pull current` | Pull current branch from remote |
+| `pull rebase` | Pull and rebase |
+| `push current` | Push current branch to remote |
+| `push force` | Force push current branch |
+| `remote add <name> <url>` | Add remote repository |
+| `remote list` | List all remote repositories |
+| `remote remove <name>` | Remove remote repository |
+| `remote set-url <name> <url>` | Change remote URL |
+| `status` | Show working tree status |
+| `status short` | Show concise status (porcelain format) |
+| `clean dirs` | Clean untracked directories |
+| `clean files` | Clean untracked files |
+| `clean interactive` | Clean files interactively |
+| `restore .` | Restore all files in working directory from index |
+| `restore <commit> <file>` | Restore file from specific commit |
+| `restore <file>` | Restore file in working directory from index |
+| `restore staged .` | Unstage all files |
+| `restore staged <file>` | Unstage file (restore from HEAD to index) |
+| `diff` | Show changes (git diff HEAD) |
+| `diff head` | Alias for default diff against HEAD |
+| `diff staged` | Show staged changes |
+| `diff unstaged` | Show unstaged changes |
+| `tag annotated <tag> <message>` | Create annotated tag |
+| `tag create <tag>` | Create tag |
+| `tag delete <tag>` | Delete tag |
+| `tag list` | List all tags |
+| `tag push` | Push tags to remote |
+| `tag show <tag>` | Show tag information |
+| `config get <key>` | Get a specific config value |
+| `config list` | List all configuration |
+| `config set <key> <value>` | Set a configuration value |
+| `hook disable <hook>` | Disable a hook |
+| `hook edit <hook>` | Edit a hook's contents |
+| `hook enable <hook>` | Enable a hook |
+| `hook install <hook>` | Install a hook |
+| `hook list` | List all hooks |
+| `hook uninstall <hook>` | Uninstall an existing hook |
+| `rebase <upstream>` | Rebase current branch onto `<upstream>` |
+| `rebase abort` | Abort an in-progress rebase |
+| `rebase autosquash` | Interactive rebase with `--autosquash` |
+| `rebase continue` | Continue an in-progress rebase |
+| `rebase interactive` | Interactive rebase |
+| `rebase skip` | Skip current patch and continue |
+| `stash` | Stash current changes |
+| `stash apply` | Apply stash without removing it |
+| `stash apply <stash>` | Apply specific stash without removing it |
+| `stash branch <branch>` | Create branch from stash |
+| `stash branch <branch> <stash>` | Create branch from specific stash |
+| `stash clear` | Remove all stashes |
+| `stash create` | Create stash and return object name |
+| `stash drop` | Remove the latest stash |
+| `stash drop <stash>` | Remove specific stash |
+| `stash list` | List all stashes |
+| `stash pop` | Apply and remove the latest stash |
+| `stash pop <stash>` | Apply and remove specific stash |
+| `stash push` | Save changes to new stash |
+| `stash push -m <message>` | Save changes to new stash with message |
+| `stash save <message>` | Save changes to new stash with message |
+| `stash show` | Show changes in stash |
+| `stash show <stash>` | Show changes in specific stash |
+| `stash store <object>` | Store stash object |
+| `debug-keys` | Show current keybindings |
+| `debug-keys raw` | Capture key sequences interactively |
+| `debug-keys raw <file>` | Capture key sequences and save to a file |
+| `quit` | Exit interactive mode |
+| `version` | Display current ggc version |
 
 ## Other Features
 

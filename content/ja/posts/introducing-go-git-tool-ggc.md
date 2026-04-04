@@ -19,7 +19,13 @@ translation_key: introducing-go-git-tool-ggc
 
 ## ggcとは
 
-[ggc](https://github.com/bmf-san/ggc)はGo製のGitワークフローツールだ。日常的なGitサブコマンドを一貫したインターフェースで提供し、コマンド名を暗記せずとも操作できるインタラクティブFuzzy検索TUIを搭載する。v8ではWorkflow Mode、プレースホルダー対応のカスタムエイリアス、階層型キーバインドプロファイルシステムが新たに導入された。本記事ではその全てを解説する。
+[ggc](https://github.com/bmf-san/ggc)はGo製のGitワークフローツールだ。日常的なGitサブコマンドを一貫したインターフェースで提供し、コマンド名を暗記せずとも操作できるインタラクティブFuzzy検索TUIを搭載する。v8ではWorkflow Mode、プレースホルダー対応のカスタムエイリアス、階層型キーバインドプロファイルシステムが新たに導入された。本記事ではその全てを解説する。[Awesome Go](https://github.com/avelino/awesome-go)にも掲載されているツールだ。
+
+## デモ
+
+| ブランチ管理 | CLIワークフロー | インタラクティブ概要 |
+|---|---|---|
+| ![ブランチ管理デモ](https://raw.githubusercontent.com/bmf-san/ggc/main/docs/demos/generated/branch-management.gif) | ![CLIワークフローデモ](https://raw.githubusercontent.com/bmf-san/ggc/main/docs/demos/generated/cli-workflow.gif) | ![インタラクティブ概要デモ](https://raw.githubusercontent.com/bmf-san/ggc/main/docs/demos/generated/interactive-overview.gif) |
 
 ## ggcを使うメリット
 
@@ -154,6 +160,112 @@ func (we *WorkflowExecutor) Execute(workflow *Workflow) error {
 ```
 
 各ステップの前に`resolveStepPlaceholders()`が引数内の`<name>`トークンをスキャンし、存在する場合はインタラクティブに入力を求める。事前にコミットメッセージをハードコードする必要はなく、実行時にプロンプトで單やかに入力できる。
+
+## 利用可能なコマンド一覧
+
+ggcが提供する全コマンドのリファレンスだ。CLIから直接呼び出せるほか、インタラクティブモードのFuzzy検索で同じ名前を入力して検索できる。
+
+| コマンド | 説明 |
+|---------|------|
+| `add .` | すべての変更をインデックスに追加 |
+| `add <file>` | 指定ファイルをインデックスに追加 |
+| `add interactive` | インタラクティブに変更を追加 |
+| `add patch` | インタラクティブに変更を追加（パッチモード） |
+| `help` | メインヘルプメッセージを表示 |
+| `help <command>` | 指定コマンドのヘルプを表示 |
+| `reset` | origin/<ブランチ>へハードリセットし作業ディレクトリをクリーン |
+| `reset hard <commit>` | 指定コミットへハードリセット |
+| `reset soft <commit>` | ソフトリセット：HEADを移動し変更はステージに保持 |
+| `branch checkout` | 既存ブランチへ切り替え |
+| `branch checkout remote` | リモートからローカル追跡ブランチを作成してチェックアウト |
+| `branch contains <commit>` | 指定コミットを含むブランチを表示 |
+| `branch create` | 新しいブランチを作成してチェックアウト |
+| `branch current` | 現在のブランチ名を表示 |
+| `branch delete` | ローカルブランチを削除 |
+| `branch delete merged` | マージ済みローカルブランチを削除 |
+| `branch info <branch>` | ブランチの詳細情報を表示 |
+| `branch list local` | ローカルブランチを一覧表示 |
+| `branch list remote` | リモートブランチを一覧表示 |
+| `branch list verbose` | ブランチの詳細一覧を表示 |
+| `branch move <branch> <commit>` | ブランチを指定コミットへ移動 |
+| `branch rename <old> <new>` | ブランチをリネーム |
+| `branch set upstream <branch> <upstream>` | ブランチのアップストリームを設定 |
+| `branch sort [date\|name]` | 日付またはアルファベット順にブランチを一覧表示 |
+| `commit <message>` | メッセージ付きでコミット作成 |
+| `commit allow empty` | 空コミットを作成 |
+| `commit amend` | 前のコミットを修正（エディタ起動） |
+| `commit amend no-edit` | コミットメッセージを編集せずに修正 |
+| `commit fixup <commit>` | 指定コミットを対象にfixupコミットを作成 |
+| `log graph` | グラフ付きでログを表示 |
+| `log simple` | シンプルな履歴ログを表示 |
+| `fetch` | リモートからフェッチ |
+| `fetch prune` | フェッチして古い参照を削除 |
+| `pull current` | 現在のブランチをリモートからプル |
+| `pull rebase` | プルしてリベース |
+| `push current` | 現在のブランチをリモートへプッシュ |
+| `push force` | 現在のブランチを強制プッシュ |
+| `remote add <name> <url>` | リモートリポジトリを追加 |
+| `remote list` | すべてのリモートリポジトリを一覧表示 |
+| `remote remove <name>` | リモートリポジトリを削除 |
+| `remote set-url <name> <url>` | リモートURLを変更 |
+| `status` | 作業ツリーの状態を表示 |
+| `status short` | 簡潔なステータスを表示（porcelain形式） |
+| `clean dirs` | 追跡されていないディレクトリを削除 |
+| `clean files` | 追跡されていないファイルを削除 |
+| `clean interactive` | インタラクティブにファイルを削除 |
+| `restore .` | 作業ディレクトリのすべてのファイルをインデックスから復元 |
+| `restore <commit> <file>` | 指定コミットからファイルを復元 |
+| `restore <file>` | 作業ディレクトリのファイルをインデックスから復元 |
+| `restore staged .` | すべてのファイルをアンステージ |
+| `restore staged <file>` | ファイルをアンステージ（HEADからインデックスへ復元） |
+| `diff` | 変更を表示（git diff HEAD） |
+| `diff head` | HEADとの差分を表示 |
+| `diff staged` | ステージ済みの変更を表示 |
+| `diff unstaged` | ステージされていない変更を表示 |
+| `tag annotated <tag> <message>` | 注釈付きタグを作成 |
+| `tag create <tag>` | タグを作成 |
+| `tag delete <tag>` | タグを削除 |
+| `tag list` | すべてのタグを一覧表示 |
+| `tag push` | タグをリモートへプッシュ |
+| `tag show <tag>` | タグ情報を表示 |
+| `config get <key>` | 設定値を取得 |
+| `config list` | すべての設定を一覧表示 |
+| `config set <key> <value>` | 設定値をセット |
+| `hook disable <hook>` | フックを無効化 |
+| `hook edit <hook>` | フックの内容を編集 |
+| `hook enable <hook>` | フックを有効化 |
+| `hook install <hook>` | フックをインストール |
+| `hook list` | すべてのフックを一覧表示 |
+| `hook uninstall <hook>` | 既存のフックをアンインストール |
+| `rebase <upstream>` | 現在のブランチを`<upstream>`にリベース |
+| `rebase abort` | 進行中のリベースを中止 |
+| `rebase autosquash` | `--autosquash`オプション付きインタラクティブリベース |
+| `rebase continue` | 進行中のリベースを継続 |
+| `rebase interactive` | インタラクティブリベース |
+| `rebase skip` | 現在のパッチをスキップして継続 |
+| `stash` | 現在の変更をスタッシュ |
+| `stash apply` | スタッシュを削除せずに適用 |
+| `stash apply <stash>` | 指定スタッシュを削除せずに適用 |
+| `stash branch <branch>` | スタッシュからブランチを作成 |
+| `stash branch <branch> <stash>` | 指定スタッシュからブランチを作成 |
+| `stash clear` | すべてのスタッシュを削除 |
+| `stash create` | スタッシュを作成してオブジェクト名を返す |
+| `stash drop` | 最新のスタッシュを削除 |
+| `stash drop <stash>` | 指定スタッシュを削除 |
+| `stash list` | すべてのスタッシュを一覧表示 |
+| `stash pop` | 最新のスタッシュを適用して削除 |
+| `stash pop <stash>` | 指定スタッシュを適用して削除 |
+| `stash push` | 変更を新しいスタッシュに保存 |
+| `stash push -m <message>` | メッセージ付きで変更を新しいスタッシュに保存 |
+| `stash save <message>` | メッセージ付きで変更を新しいスタッシュに保存 |
+| `stash show` | スタッシュ内の変更を表示 |
+| `stash show <stash>` | 指定スタッシュ内の変更を表示 |
+| `stash store <object>` | スタッシュオブジェクトを保存 |
+| `debug-keys` | 現在のキーバインドを表示 |
+| `debug-keys raw` | ターミナルのキーシーケンスをインタラクティブにキャプチャ |
+| `debug-keys raw <file>` | キーシーケンスをキャプチャしてファイルに保存 |
+| `quit` | インタラクティブモードを終了 |
+| `version` | ggcの現在バージョンを表示 |
 
 ## その他の機能
 
