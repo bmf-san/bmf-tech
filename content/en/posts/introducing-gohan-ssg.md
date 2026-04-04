@@ -31,11 +31,30 @@ site:
   title: My Blog
   base_url: https://example.com
   language: en
+  github_repo: https://github.com/owner/repo  # enables "Edit this page" links
+  github_branch: main
+
 build:
   content_dir: content
   output_dir: public
+  static_dir: static    # copied as-is to the output root
+  per_page: 20          # articles per page (0 = pagination disabled)
+
 theme:
   name: default
+
+syntax_highlight:
+  theme: github
+  line_numbers: false
+
+ogp:
+  enabled: true
+  width: 1200
+  height: 630
+
+i18n:
+  locales: [en]
+  default_locale: en
 EOF
 
 # 3. Create your first article

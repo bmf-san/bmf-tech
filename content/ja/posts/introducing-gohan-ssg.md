@@ -31,11 +31,30 @@ site:
   title: My Blog
   base_url: https://example.com
   language: ja
+  github_repo: https://github.com/owner/repo  # 「このページを編集」リンクに使用
+  github_branch: main
+
 build:
   content_dir: content
   output_dir: public
+  static_dir: static    # output_dir のルートにそのままコピーする静的ファイル
+  per_page: 20          # ページネーション記事数（0 = 無効）
+
 theme:
   name: default
+
+syntax_highlight:
+  theme: github
+  line_numbers: false
+
+ogp:
+  enabled: true
+  width: 1200
+  height: 630
+
+i18n:
+  locales: [ja]
+  default_locale: ja
 EOF
 
 # 3. 最初の記事を作成
