@@ -3,7 +3,7 @@ title: Introducing ggc — A Go-Based Git Tool (2026 Edition)
 description: 'A complete walkthrough of ggc v8: the CLI/interactive split architecture, fuzzy-search engine implementation, Workflow Mode internals, customisable aliases, and cross-platform keybinding profiles.'
 slug: introducing-go-git-tool-ggc
 date: 2025-06-15T00:00:00Z
-lastmod: 2026-03-20
+lastmod: 2026-04-04
 author: bmf-san
 categories:
   - Tools
@@ -153,6 +153,24 @@ Before each step, `resolveStepPlaceholders()` scans the step arguments for `<nam
 
 ## Other New Features in v8
 
+### Config-Based Workflows
+
+Separate from aliases, the `workflows:` section of `~/.ggcconfig.yaml` lets you pre-register workflows that load automatically into Workflow Mode when the TUI starts. They sit alongside any workflows you build interactively with `Tab`.
+
+```yaml
+workflows:
+  daily:
+    - "add ."
+    - "commit -m <message>"
+    - "push current"
+  deploy:
+    - "branch checkout <branch>"
+    - "pull current"
+    - "push <branch>"
+```
+
+Any `<name>` token in a step is prompted interactively at execution time. The key difference from aliases (shorthand invoked from the CLI) is that config-based workflows are multi-step sequences that live in Workflow Mode and are reusable across sessions.
+
 ### Command Aliases
 
 ggc defines aliases in `~/.ggcconfig.yaml`. Both simple and sequence formats work:
@@ -195,7 +213,10 @@ ggc distributes pre-built binaries for Linux, macOS, and Windows (amd64 / arm64 
 
 ```bash
 # Homebrew (macOS/Linux)
-brew install bmf-san/tap/ggc
+brew install ggc
+
+# Install script (easiest)
+curl -sSL https://raw.githubusercontent.com/bmf-san/ggc/main/install.sh | bash
 
 # Go install
 go install github.com/bmf-san/ggc/v8@latest
