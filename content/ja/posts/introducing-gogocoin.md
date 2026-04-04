@@ -234,7 +234,7 @@ type Strategy interface {
 
 ## 残高キャッシュ — ダブルチェックロック
 
-取引ループは残高情報を頻繁に問い合わせる。ティックごとにレート制限付きのREST API呼び出しは適切でない。`BalanceService`は60秒TTLのキャッシュを保持し、ダブルチェックロックパターンでthundering herd問題を防ぐ。
+取引ループは残高情報を頻繁に問い合わせる。ティックごとにbitFlyer REST APIを呼び出すと、分あたり50リクエストのレート制限をすぐに使い果たしてしまう。`BalanceService`は60秒TTLのキャッシュを保持し、ダブルチェックロックパターンでthundering herd問題を防ぐ。
 
 ```go
 func (s *BalanceService) GetBalance(ctx context.Context) ([]domain.Balance, error) {
@@ -344,32 +344,9 @@ erDiagram
 
 トップバーの「開始」「停止」ボタンでボットをその場で制御できる。設定（API資格情報、取引パラメータ）は`config.yaml`で行う—外部データベース不要（データはSQLiteに記録）。
 
-## VPSデプロイ
+## 運用例
 
-gogocoinは単一の静的リンクバイナリ一本で配布する。[gogocoin-vps-template](https://github.com/bmf-san/gogocoin-vps-template)はConoHa VPSでの運用を想定したセットアップサンプルで、systemd設定やデプロイ手順の参考に使える。systemdユニットファイルは次の通りとなっている。
-
-```ini
-[Unit]
-Description=gogocoin - bitFlyer 自動取引ボット
-After=network.target
-
-[Service]
-Type=simple
-User=gogocoin
-WorkingDirectory=/opt/gogocoin
-EnvironmentFile=/opt/gogocoin/.env
-ExecStart=/opt/gogocoin/gogocoin
-Restart=always
-RestartSec=5
-StandardOutput=journal
-StandardError=journal
-SyslogIdentifier=gogocoin
-NoNewPrivileges=true
-PrivateTmp=true
-
-[Install]
-WantedBy=multi-user.target
-```
+gogocoinは単一の静的リンクバイナリ一本で配布する。[gogocoin-vps-template](https://github.com/bmf-san/gogocoin-vps-template)はConoHa VPSでの運用を想定したセットアップサンプルで、systemd設定やデプロイ手順の参考に使える。
 
 `make setup`でVPSの初期セットアップ（systemdサービスのインストール等）を行い、デプロイは付属のGitHub Actionsワークフロー（`workflow_dispatch`）で自動化されており、linux/amd64向けにビルドして`rsync`でVPSへ転送する。
 
