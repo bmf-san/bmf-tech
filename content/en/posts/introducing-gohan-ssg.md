@@ -19,8 +19,6 @@ translation_key: introducing-gohan-ssg
 
 This site (bmf-tech.com) runs on gohan. The motivation was simple: I wanted a static site generator I could fully understand, one that regenerates only the pages that change.
 
-Most generators rebuild everything unconditionally or depend on `git diff` output. Git diff becomes unreliable after branch switches or fresh clones. gohan creates and persists a build manifest using SHA-256 content hashing. Incremental builds stay accurate without relying on Git history.
-
 Looking at the existing options, each had drawbacks:
 
 | Tool | Pain point |
@@ -29,7 +27,9 @@ Looking at the existing options, each had drawbacks:
 | Jekyll | Ruby dependency; slow builds |
 | Gatsby / Next.js | Heavy Node.js ecosystem; overkill for a simple blog |
 
-Go-native, single binary, simple configuration, and reliable incremental builds — gohan was built to check those boxes.
+Beyond those, most generators either rebuild everything unconditionally or depend on `git diff` output. Git diff becomes unreliable after branch switches or fresh clones.
+
+Go-native, single binary, simple configuration, and reliable SHA-256 manifest-driven incremental builds — gohan was built to check those boxes.
 
 ## Quick Start
 
