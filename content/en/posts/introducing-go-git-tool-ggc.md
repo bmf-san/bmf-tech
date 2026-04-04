@@ -1,5 +1,5 @@
 ---
-title: Introducing ggc — A Go-Based Git Tool (2026 Edition)
+title: Introducing ggc — A Go-Based Git Tool
 description: 'A complete walkthrough of ggc v8: the CLI/interactive split architecture, fuzzy-search engine implementation, Workflow Mode internals, customisable aliases, and cross-platform keybinding profiles.'
 slug: introducing-go-git-tool-ggc
 date: 2025-06-15T00:00:00Z
@@ -15,7 +15,7 @@ tags:
 translation_key: introducing-go-git-tool-ggc
 ---
 
-# Introducing ggc — A Go-Based Git Tool (2026 Edition)
+# Introducing ggc — A Go-Based Git Tool
 
 ## What is ggc?
 

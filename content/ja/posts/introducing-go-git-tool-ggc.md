@@ -1,5 +1,5 @@
 ---
-title: "Go製Git操作ツール『ggc』の紹介（2026年版）"
+title: "Go製Git操作ツール『ggc』の紹介"
 description: 'ggc v8の全機能完全解説。CLI/インタラクティブ分離アーキテクチャ、Fuzzyサーチエンジンの実装、Workflow Mode内部構造、カスタマイズ可能なエイリアス、階層型キーバインドプロファイルシステム。'
 slug: introducing-go-git-tool-ggc
 date: 2025-06-15T00:00:00Z
@@ -15,7 +15,7 @@ tags:
 translation_key: introducing-go-git-tool-ggc
 ---
 
-# Go製Git操作ツール『ggc』の紹介（2026年版）
+# Go製Git操作ツール『ggc』の紹介
 
 ## ggcとは
 
