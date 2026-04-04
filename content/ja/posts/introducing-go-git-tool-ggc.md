@@ -1,12 +1,12 @@
 ---
-title: Go製Git操作ツール「ggc」の紹介
-description: Go製Git操作ツール「ggc」の紹介
+title: "Go製Git操作ツール『ggc』の紹介"
+description: 'ggcの全機能解説。CLI/インタラクティブ分離アーキテクチャ、Fuzzyサーチエンジンの実装、Workflow Mode内部構造、カスタマイズ可能なエイリアス、階層型キーバインドプロファイルシステム。'
 slug: introducing-go-git-tool-ggc
 date: 2025-06-15T00:00:00Z
-lastmod: 2026-03-15
+lastmod: 2026-04-04
 author: bmf-san
 categories:
-  - アプリケーション
+  - ツール
 tags:
   - Golang
   - Git
@@ -15,192 +15,394 @@ tags:
 translation_key: introducing-go-git-tool-ggc
 ---
 
+# Go製Git操作ツール『ggc』の紹介
 
-# Go製Git操作ツール「ggc」の紹介
+## ggcとは
 
-## ggcとは何か
+[ggc](https://github.com/bmf-san/ggc)はGo製のGitワークフローツールだ。日常的なGitサブコマンドを一貫したインターフェースで提供し、コマンド名を暗記せずとも操作できるインタラクティブFuzzy検索TUIを搭載する。Workflow Mode、プレースホルダー対応のカスタムエイリアス、階層型キーバインドプロファイルシステムなど多くの機能を持つ。本記事ではその全てを解説する。[Awesome Go](https://github.com/avelino/awesome-go)にも掲載されているツールだ。
 
-[ggc](https://github.com/bmf-san/ggc)は、Go言語で実装されたGit操作支援ツールである。「覚えやすく、使いやすく、作業効率の向上を図る」ことを目的としており、日常的なGit操作をより快適にすることを意図している。
+## デモ
 
-既存のGitクライアントツールには、機能が豊富すぎて学習コストが高いもの、あるいはシンプルすぎて実用に耐えないものが存在する。ggcはこのギャップを埋めるべく、**日常的に使用する機能に特化し、シンプルかつ記憶しやすいコマンド体系**を提供する。
+| ブランチ管理 | CLIワークフロー | インタラクティブ概要 |
+|---|---|---|
+| ![ブランチ管理デモ](https://raw.githubusercontent.com/bmf-san/ggc/main/docs/demos/generated/branch-management.gif) | ![CLIワークフローデモ](https://raw.githubusercontent.com/bmf-san/ggc/main/docs/demos/generated/cli-workflow.gif) | ![インタラクティブ概要デモ](https://raw.githubusercontent.com/bmf-san/ggc/main/docs/demos/generated/interactive-overview.gif) |
 
-### 特徴
+## ggcを使うメリット
 
-1. **二重インターフェース**：CLIによる高速操作、直感的操作
-2. **複合コマンド**：複数のGit操作を一つのコマンドで実行可能
-3. **インクリメンタルサーチ**：コマンドを暗記せずに選択可能
+### コマンドを覚えなくていい
 
-### 利便性の比較
+Gitには200以上のサブコマンドがある。日常的に使うもの以外は「`stash apply`のIDの書き方がわからない」「`amend --no-edit`のフラグ名を思い出せない」と手が止まる。ggcのインタラクティブモードなら、`bd`と打つだけで`branch delete`が絞り込まれ、`ca`で`commit amend`も見つかる。探索コストがゼロになる。
 
-| 通常のGit操作                                         | ggcによる操作                     |
-| ------------------------------------------------ | ---------------------------- |
-| `git add .` → `git commit -m "..."` → `git push` | `ggc add-commit-push`        |
-| `git branch` → `git checkout ブランチ名`              | `ggc branch checkout`（対話的選択） |
-| `git stash` → `git pull` → `git stash pop`       | `ggc stash-pull-pop`         |
+### 代表的なユースケース
 
-上記のように、一般的な操作を1コマンドで簡潔に実行可能である。
+**毎日のadd → commit → push**: Workflow Modeで3コマンドをキューに積んでおけば、次回以降は`x`を押すだけで完結する。コミットメッセージはプレースホルダーとして実行時に入力できるため、毎回ワークフローを組み直す必要はない。
 
-## 主な機能
+**ブランチ管理**: `branch checkout remote`でリモートから追跡ブランチを作成、`branch delete merged`でマージ済みブランチを一括削除など、複合操作をわかりやすい名前のコマンドとして提供している。gitのフラグを調べる必要がない。
 
-* **二重インターフェース**：引数ありでコマンドを直接実行、引数なしでインタラクティブモードの起動
-* **対話的操作**：ブランチ・ファイル選択やコミットメッセージ入力などに対応
-* **豊富なコマンド群**：Gitの基本操作を網羅
-* **複合コマンド**：`add-commit-push`、`stash-pull-pop`等を提供
-* **軽量設計**：Go標準ライブラリと `golang.org/x/term` のみを使用
-* **動作環境**：macOS（Apple Silicon/Intel）にて確認済み
+**Fixupワークフロー**: `commit fixup <commit>` → `rebase autosquash`のシーケンスをエイリアスに登録しておけば、fixupコミットの適用をコマンド1つで実行できる。
 
-## 使用例
+**hookの管理**: `hook list` / `hook enable` / `hook disable`でプロジェクトのGit hookをGUIなしで手軽に管理できる。
+
+### 他のGitツールとの比較
+
+<!-- textlint-disable ja-technical-writing/sentence-length -->
+
+| ツール | 方式 | 強み | ggcとの違い |
+|--------|------|------|-------------|
+| `git`（素） | CLI | 完全な機能・フラグで細かく制御 | コマンド名・フラグの記憶が必要 |
+| `lazygit` | TUI専用 | 豊富なパネルUI | TUIのみ、スクリプトへの組み込みが難しい |
+| `tig` | TUI（読み取り） | ログ・差分の視覚化 | 操作機能なし |
+| `gh` | CLI | GitHub連携 | ローカルGit操作は対象外 |
+| gitエイリアス | CLI | 完全にカスタム可能 | 発見性なし・全部自分で書く必要あり |
+
+<!-- textlint-enable ja-technical-writing/sentence-length -->
+
+ggcの強みは**CLI／TUIを自由に使い分けられること**だ。スクリプトからは`ggc push force`をそのまま呼び出せる。インタラクティブに使いたければ`ggc`と打つだけでfuzzy検索が起動する。どちらのパスも同じ`Route()`で処理するため挙動が一致する。
+
+## CLI/インタラクティブモードのアーキテクチャ
+
+ggcには2つの実行パスがある。直接コマンドを実行する**CLIパス**と、フルスクリーンTUIを起動する**インタラクティブパス**だ。`cmd/execute.go`の`Execute()`メソッドがどちらのパスを連るかを決定する唯一のエントリーポイントだ。
+
+```go
+func (c *Cmd) Execute(args []string) error {
+    if len(args) == 0 {
+        c.Interactive()
+        return nil
+    }
+
+    cmdName, cmdArgs := args[0], args[1:]
+
+    // エイリアスかチェック
+    if c.configManager != nil && c.configManager.GetConfig().IsAlias(cmdName) {
+        return c.executeAlias(cmdName, cmdArgs)
+    }
+
+    // 通常コマンド
+    return c.Route(args)
+}
+```
+
+引数がゼロの場合は`Interactive()`でTUIを起動する。エイリアス名を検出した場合は`executeAlias()`で展開し実行する。それ以外は`Route()`に渡す。この`Route()`関数はCLIパス、エイリアス展開、Workflow実行エンジンの3つすべてが共有する実装だ。
+
+## インタラクティブモードの設計
+
+インタラクティブTUIは1つのターミナル画面を共有する2つのサブモードに分かれている。`Ctrl+t`でトグルする。
+
+### Search Mode — Fuzzy Search
+
+Search Modeがデフォルトだ。全コマンドの一覧を表示し、入力に応じてリアルタイムにフィルタリングする。スコアリングは`internal/interactive/fuzzy.go`の`matchPattern()`関数が担当する。
+
+```go
+func matchPattern(textRunes, patternRunes []rune) (bool, matchMetadata) {
+    meta := matchMetadata{firstIndex: -1, lastIndex: -1}
+    textIdx := 0
+    patternIdx := 0
+
+    for textIdx < len(textRunes) && patternIdx < len(patternRunes) {
+        if textRunes[textIdx] == patternRunes[patternIdx] {
+            if meta.firstIndex == -1 {
+                meta.firstIndex = textIdx
+            }
+            if meta.lastIndex != -1 {
+                meta.gapScore += textIdx - meta.lastIndex - 1
+            }
+            meta.lastIndex = textIdx
+            patternIdx++
+        }
+        textIdx++
+    }
+
+    if patternIdx != len(patternRunes) {
+        return false, meta
+    }
+    return true, meta
+}
+```
+
+アルゴリズムは古典的な**部分列マッチング**だ。パターンの全文字がテキスト内に順序通り現れればマッチと判定する（連続不要）。`matchMetadata`構造体は3つのシグナル—`firstIndex`（マッチ開始位置）、`gapScore`（文字間の距離合計）、`lastIndex`—を蓄積し、`matchScore`としてソートに利用する。致密で早い位置のマッチが、散在した遅いマッチより高くランク付けされる。
+
+### Workflow Mode
+
+`Ctrl+t`を押すと`internal/interactive/ui_mode.go`の`ToggleWorkflowView()`が呼び出される。
+
+```go
+func (ui *UI) ToggleWorkflowView() {
+    if ui.state.IsWorkflowMode() {
+        ui.enterSearchMode()
+        return
+    }
+    ui.enterWorkflowMode()
+}
+```
+
+Workflow Modeでは、検索リストの任意アイテムで`Tab`を押すことでggcコマンドのシーケンス（例：`add` → `commit` → `push`）を組み立てられる。`x`を押すと`WorkflowExecutor.Execute()`が順次実行する。
+
+```go
+func (we *WorkflowExecutor) Execute(workflow *Workflow) error {
+    steps := workflow.GetSteps()
+    if len(steps) == 0 {
+        return fmt.Errorf("workflow is empty")
+    }
+
+    for i, step := range steps {
+        resolvedArgs, canceled := resolveStepPlaceholders(we.ui, step)
+        if canceled {
+            return ErrWorkflowCanceled
+        }
+
+        parts := append([]string{step.Command}, resolvedArgs...)
+        if err := we.router.Route(parts); err != nil {
+            return fmt.Errorf("step %d/%d failed: %w", i+1, len(steps), err)
+        }
+    }
+    return nil
+}
+```
+
+各ステップの前に`resolveStepPlaceholders()`が引数内の`<name>`トークンをスキャンし、存在する場合はインタラクティブに入力を求める。事前にコミットメッセージをハードコードする必要はなく、実行時にプロンプトで單やかに入力できる。
+
+## 利用可能なコマンド一覧
+
+ggcが提供する全コマンドのリファレンスだ。CLIから直接呼び出せるほか、インタラクティブモードのFuzzy検索で同じ名前を入力して検索できる。
+
+| コマンド | 説明 |
+|---------|------|
+| `add .` | すべての変更をインデックスに追加 |
+| `add <file>` | 指定ファイルをインデックスに追加 |
+| `add interactive` | インタラクティブに変更を追加 |
+| `add patch` | インタラクティブに変更を追加（パッチモード） |
+| `help` | メインヘルプメッセージを表示 |
+| `help <command>` | 指定コマンドのヘルプを表示 |
+| `reset` | origin/<ブランチ>へハードリセットし作業ディレクトリをクリーン |
+| `reset hard <commit>` | 指定コミットへハードリセット |
+| `reset soft <commit>` | ソフトリセット：HEADを移動し変更はステージに保持 |
+| `branch checkout` | 既存ブランチへ切り替え |
+| `branch checkout remote` | リモートからローカル追跡ブランチを作成してチェックアウト |
+| `branch contains <commit>` | 指定コミットを含むブランチを表示 |
+| `branch create` | 新しいブランチを作成してチェックアウト |
+| `branch current` | 現在のブランチ名を表示 |
+| `branch delete` | ローカルブランチを削除 |
+| `branch delete merged` | マージ済みローカルブランチを削除 |
+| `branch info <branch>` | ブランチの詳細情報を表示 |
+| `branch list local` | ローカルブランチを一覧表示 |
+| `branch list remote` | リモートブランチを一覧表示 |
+| `branch list verbose` | ブランチの詳細一覧を表示 |
+| `branch move <branch> <commit>` | ブランチを指定コミットへ移動 |
+| `branch rename <old> <new>` | ブランチをリネーム |
+| `branch set upstream <branch> <upstream>` | ブランチのアップストリームを設定 |
+| `branch sort [date\|name]` | 日付またはアルファベット順にブランチを一覧表示 |
+| `commit <message>` | メッセージ付きでコミット作成 |
+| `commit allow empty` | 空コミットを作成 |
+| `commit amend` | 前のコミットを修正（エディタ起動） |
+| `commit amend no-edit` | コミットメッセージを編集せずに修正 |
+| `commit fixup <commit>` | 指定コミットを対象にfixupコミットを作成 |
+| `log graph` | グラフ付きでログを表示 |
+| `log simple` | シンプルな履歴ログを表示 |
+| `fetch` | リモートからフェッチ |
+| `fetch prune` | フェッチして古い参照を削除 |
+| `pull current` | 現在のブランチをリモートからプル |
+| `pull rebase` | プルしてリベース |
+| `push current` | 現在のブランチをリモートへプッシュ |
+| `push force` | 現在のブランチを強制プッシュ |
+| `remote add <name> <url>` | リモートリポジトリを追加 |
+| `remote list` | すべてのリモートリポジトリを一覧表示 |
+| `remote remove <name>` | リモートリポジトリを削除 |
+| `remote set-url <name> <url>` | リモートURLを変更 |
+| `status` | 作業ツリーの状態を表示 |
+| `status short` | 簡潔なステータスを表示（porcelain形式） |
+| `clean dirs` | 追跡されていないディレクトリを削除 |
+| `clean files` | 追跡されていないファイルを削除 |
+| `clean interactive` | インタラクティブにファイルを削除 |
+| `restore .` | 作業ディレクトリのすべてのファイルをインデックスから復元 |
+| `restore <commit> <file>` | 指定コミットからファイルを復元 |
+| `restore <file>` | 作業ディレクトリのファイルをインデックスから復元 |
+| `restore staged .` | すべてのファイルをアンステージ |
+| `restore staged <file>` | ファイルをアンステージ（HEADからインデックスへ復元） |
+| `diff` | 変更を表示（git diff HEAD） |
+| `diff head` | HEADとの差分を表示 |
+| `diff staged` | ステージ済みの変更を表示 |
+| `diff unstaged` | ステージされていない変更を表示 |
+| `tag annotated <tag> <message>` | 注釈付きタグを作成 |
+| `tag create <tag>` | タグを作成 |
+| `tag delete <tag>` | タグを削除 |
+| `tag list` | すべてのタグを一覧表示 |
+| `tag push` | タグをリモートへプッシュ |
+| `tag show <tag>` | タグ情報を表示 |
+| `config get <key>` | 設定値を取得 |
+| `config list` | すべての設定を一覧表示 |
+| `config set <key> <value>` | 設定値をセット |
+| `hook disable <hook>` | フックを無効化 |
+| `hook edit <hook>` | フックの内容を編集 |
+| `hook enable <hook>` | フックを有効化 |
+| `hook install <hook>` | フックをインストール |
+| `hook list` | すべてのフックを一覧表示 |
+| `hook uninstall <hook>` | 既存のフックをアンインストール |
+| `rebase <upstream>` | 現在のブランチを`<upstream>`にリベース |
+| `rebase abort` | 進行中のリベースを中止 |
+| `rebase autosquash` | `--autosquash`オプション付きインタラクティブリベース |
+| `rebase continue` | 進行中のリベースを継続 |
+| `rebase interactive` | インタラクティブリベース |
+| `rebase skip` | 現在のパッチをスキップして継続 |
+| `stash` | 現在の変更をスタッシュ |
+| `stash apply` | スタッシュを削除せずに適用 |
+| `stash apply <stash>` | 指定スタッシュを削除せずに適用 |
+| `stash branch <branch>` | スタッシュからブランチを作成 |
+| `stash branch <branch> <stash>` | 指定スタッシュからブランチを作成 |
+| `stash clear` | すべてのスタッシュを削除 |
+| `stash create` | スタッシュを作成してオブジェクト名を返す |
+| `stash drop` | 最新のスタッシュを削除 |
+| `stash drop <stash>` | 指定スタッシュを削除 |
+| `stash list` | すべてのスタッシュを一覧表示 |
+| `stash pop` | 最新のスタッシュを適用して削除 |
+| `stash pop <stash>` | 指定スタッシュを適用して削除 |
+| `stash push` | 変更を新しいスタッシュに保存 |
+| `stash push -m <message>` | メッセージ付きで変更を新しいスタッシュに保存 |
+| `stash save <message>` | メッセージ付きで変更を新しいスタッシュに保存 |
+| `stash show` | スタッシュ内の変更を表示 |
+| `stash show <stash>` | 指定スタッシュ内の変更を表示 |
+| `stash store <object>` | スタッシュオブジェクトを保存 |
+| `debug-keys` | 現在のキーバインドを表示 |
+| `debug-keys raw` | ターミナルのキーシーケンスをインタラクティブにキャプチャ |
+| `debug-keys raw <file>` | キーシーケンスをキャプチャしてファイルに保存 |
+| `quit` | インタラクティブモードを終了 |
+| `version` | ggcの現在バージョンを表示 |
+
+## その他の機能
+
+### YAMLによるWorkflow事前定義
+
+エイリアスとは別に、`~/.ggcconfig.yaml`の`workflows:`セクションにワークフローを事前登録できる。TUI起動時に自動でWorkflow Modeに読み込まれ、`n`キーで作成したワークフローと并列して管理できる。
+
+```yaml
+workflows:
+  daily:
+    - "add ."
+    - "commit -m <message>"
+    - "push current"
+  deploy:
+    - "branch checkout <branch>"
+    - "pull current"
+    - "push <branch>"
+```
+
+各ステップの`<name>`トークンは実行時にプロンプトで入力を求める。`x`で実行するとその場でメッセージやブランチ名を入力できる。エイリアス（CLIから呼び出す短縮形）との違いは、Workflow Modeで複数コマンドを順次定義・再利用する点にある。
+
+### コマンドエイリアス
+
+エイリアスは`~/.ggcconfig.yaml`で定義する。シンプル形式とシーケンス形式の両方をサポートする。
+
+```yaml
+aliases:
+  br: branch          # シンプル — ggc br list
+  ci: commit
+
+  quick:              # シーケンス
+    - status
+    - add .
+    - commit
+
+  deploy:             # プレースホルダー付きシーケンス
+    - "branch checkout {0}"
+    - "pull current"
+    - "push {0}"
+```
+
+### キーバインドプロファイル
+
+インタラクティブUIは4つのビルトインキーバインドプロファイル（`default`、`emacs`、`vi`、`readline`）をサポートする。キーバインドは6層の優先順に解決される—デフォルト → プロファイル → プラットフォーム → ターミナル → ユーザー設定 → 環境変数オーバーライド。
+
+```yaml
+interactive:
+  profile: emacs
+  keybindings:
+    move_up: "ctrl+p"
+    move_down: "ctrl+n"
+    toggle_workflow_view: "ctrl+t"
+    add_to_workflow: "tab"
+```
+
+### クロスプラットフォーム対応
+
+GoReleaserを介してLinux、macOS、Windows（amd64 / arm64 / 386）すべてのpresetバイナリを配布している。インタラクティブTUIの全機能が3プラットフォームで動作する。
+
+### シェル補完
+
+ggcはBash、Zsh、Fishのシェル補完スクリプトを同梱している。`tools/completions/`に生成済みスクリプトが収録されており、`make completions`でコマンドレジストリから再生成できる。
 
 ```bash
-# 最新の状態に更新
-ggc pull current
+# Bash（~/.bash_profile または ~/.bashrc に追記）
+if [ -f ~/.ggc-completion.bash ]; then
+  . ~/.ggc-completion.bash
+fi
 
-# 新しいブランチで作業開始（対話的に選択）
-ggc branch checkout
+# Zsh（~/.zshrc に追記）
+if [ -f ~/.ggc-completion.zsh ]; then
+  . ~/.ggc-completion.zsh
+fi
+
+# Fish（~/.config/fish/config.fish に追記）
+if test -f ~/.ggc-completion.fish
+    source ~/.ggc-completion.fish
+end
 ```
+
+有効化すると`ggc b<Tab>`で`branch`に補完され、`ggc branch <Tab>`でサブコマンド一覧が展開される。
+
+### 統一構文と`--`セパレーター
+
+ggcは`-x`/`--long`形式のフラグを持たない統一構文を採用している。全操作はスペース区切りのサブコマンドで表現する（例: `ggc fetch prune`、`ggc commit allow empty`）。`--`以降の引数はコマンドではなくデータとして扱われるため、先頭に`-`が付く文字列も安全に渡せる。
 
 ```bash
-# 一括で変更をプッシュ
-ggc add-commit-push
+# 先頭に - がある引数を渡す場合
+ggc commit -- "-fix leading dash"
 ```
+
+この設計はCLIの挙動を予測可能にし、スクリプトへの埋め込みを容易にする。
+
+### Soft cancel
+
+インタラクティブモードを終了せず、現在の操作を中断してSearch Modeに戻るには`Ctrl+G`（または特殊文字が続かない`Esc`）を使う。`Ctrl+C`がインタラクティブモードごと終了するのに対し、`Ctrl+G`はモードを維持したまま検索画面に戻る。
+
+### debug-keysコマンド
+
+キーバインドの動作確認やトラブルシューティングに使える組み込みコマンドだ。
 
 ```bash
-# 安全にマージ
-ggc stash-pull-pop
+# 現在のキーバインド設定を一覧表示
+ggc debug-keys
+
+# ターミナルが送出するキーシーケンスをリアルタイムでキャプチャ
+ggc debug-keys raw
+
+# キーシーケンスをファイルに保存
+ggc debug-keys raw keydump.txt
 ```
 
-## インストール手順
+`ggc debug-keys raw`を実行してキーを押すと、ターミナルが実際に送信しているバイト列が表示される。キーバインドが期待どおりに動作しない場合の原因特定に役立つ。
 
-### `go install`による導入
+### tmuxサポート
 
-最も簡単な導入方法は以下の通りである：
-
-```sh
-go install github.com/bmf-san/ggc@latest
-```
-
-必要に応じてPATHを設定する：
-
-```sh
-export PATH=$PATH:$(go env GOBIN)
-```
-
-### ソースコードからのビルド
-
-```sh
-git clone https://github.com/bmf-san/ggc
-cd ggc
-make build
-```
-
-ビルド後、生成されたバイナリをPATHの通ったディレクトリに配置する。
-
-## 使い方
-
-### CLI とインタラクティブモードの切り替え
-
-引数の有無により自動的にCLIまたはインタラクティブモードが起動される。
-
-```sh
-# CLI（コマンドを直接指定）
-ggc branch current
-
-# インタラクティブモード
-ggc
-```
-
-1つのバイナリで両モードをサポートしており、用途に応じた柔軟な操作が可能である。
-
-### インタラクティブモードでのコマンド選択
-
-`ggc`を引数なしで実行すると、インクリメンタルサーチによるコマンド選択画面が表示される。
-
-```sh
-ggc
-```
-
-表示例：
+tmux環境でキー入力が正しく処理されない場合、`.tmux.conf`に以下を追加する。
 
 ```
-コマンドを選択してください（インクリメンタルサーチ：文字入力で絞り込み、ctrl+n:下移動, ctrl+p:上移動, enter:実行, ctrl+c:終了）
-Search: branch
-
-> branch current
-  branch checkout
-  branch checkout-remote
-  branch delete
-  branch delete-merged
+set -g xterm-keys on
 ```
 
-操作手順：
+## インストール
 
-* 文字を入力することで候補が絞り込まれる
-* `Ctrl+n`/`Ctrl+p`で上下移動
-* `Enter`で実行
-* 引数が必要な場合はプロンプト表示
-* 実行後、結果確認後に選択画面へ復帰
+```bash
+# Homebrew (macOS/Linux)
+brew install ggc
 
-コマンドを記憶する必要はなく、入力に応じて候補が表示されるため、直感的な操作が可能である。
+# インストールスクリプト（最もかんたん）
+curl -sSL https://raw.githubusercontent.com/bmf-san/ggc/main/install.sh | bash
 
-### 代表的なコマンド
-
-| ggcコマンド                      | 実際のgitコマンド                                                          | 説明                     |
-| ---------------------------- | ------------------------------------------------------------------- | ---------------------- |
-| `ggc add <file>`             | `git add <file>`                                                    | ファイルをステージング            |
-| `ggc add .`                  | `git add .`                                                         | 全ファイルをステージング           |
-| `ggc add -p`                 | `git add -p`                                                        | 対話的ステージング              |
-| `ggc branch current`         | `git rev-parse --abbrev-ref HEAD`                                   | 現在のブランチ名取得             |
-| `ggc branch checkout`        | `git branch ... → git checkout <選択>`                                | 対話的ブランチ切り替え            |
-| `ggc branch checkout-remote` | `git branch -r ... → git checkout -b <n> --track <remote>/<branch>` | リモートブランチから新規作成・切り替え    |
-| `ggc branch delete`          | `git branch ... → git branch -d <選択>`                               | 対話的にローカルブランチ削除         |
-| `ggc push current`           | `git push origin <branch>`                                          | 現在のブランチをプッシュ           |
-| `ggc pull current`           | `git pull origin <branch>`                                          | 現在のブランチをプル             |
-| `ggc log simple`             | `git log --oneline`                                                 | シンプルなログ表示              |
-| `ggc commit <message>`       | `git commit -m <message>`                                           | コミット作成                 |
-| `ggc fetch --prune`          | `git fetch --prune`                                                 | 古いリモート追跡ブランチを削除しつつフェッチ |
-| `ggc clean files`            | `git clean -f`                                                      | ファイルのクリーンアップ           |
-| `ggc remote add <n> <url>`   | `git remote add <n> <url>`                                          | リモート追加                 |
-| `ggc stash`                  | `git stash`                                                         | 作業内容を一時退避              |
-| `ggc rebase interactive`     | `git rebase -i`                                                     | 対話的リベース                |
-
-### 複合コマンドの例
-
-| ggcコマンド                       | 実行されるGit操作                             | 説明                      |
-| ----------------------------- | -------------------------------------- | ----------------------- |
-| `ggc add-commit-push`         | `git add . → git commit → git push`    | ステージ → コミット → プッシュを一括実行 |
-| `ggc commit-push-interactive` | 対話的ステージ → コミット → プッシュ                  |                         |
-| `ggc pull-rebase-push`        | `git pull → git rebase → git push`     | プル → リベース → プッシュを一括実行   |
-| `ggc stash-pull-pop`          | `git stash → git pull → git stash pop` | 一時退避 → プル → 復元の一括操作     |
-
-## 補完スクリプト
-
-BashおよびZsh向けの補完スクリプトが同梱されている。
-
-### 設定方法
-
-```sh
-# bashの場合
-source /path/to/ggc/tools/completions/ggc.bash
-
-# zshの場合（同一スクリプトを使用可能）
-source /path/to/ggc/tools/completions/ggc.bash
+# Go install
+go install github.com/bmf-san/ggc/v8@latest
 ```
-
-これを`.bashrc`や`.zshrc`に追記することで、ターミナル起動時に補完が有効化される。
 
 ## まとめ
 
-* コマンドを暗記せずに直感的操作が可能
-* 定型作業を1コマンドで実行できる
-* ブランチやファイルの選択も対話的に対応
-* 複合コマンドによる作業効率の向上が期待できる
+ggcは、明確な設計思想に基づく柔軟なGitワークフローツールだ。CLIパスとインタラクティブパスは同じ`Route()`層を共有しており、挙動が一貫している。Fuzzyサーチスコアラーは依存性ゼロの純粋関数であり、Workflow実行エンジンはコマンドディスパッチロジックを重複定義せずに`Route()`を再利用する。
 
-### 関連リンク
-
-* **GitHubリポジトリ**：[https://github.com/bmf-san/ggc](https://github.com/bmf-san/ggc)
-* **Issue・機能要望・バグ報告など**：[https://github.com/bmf-san/ggc/issues](https://github.com/bmf-san/ggc/issues)
-
-## 関連記事
-
-- [Goで始めるコードのパフォーマンス改善](/ja/posts/go-performance-improvement/)
-- [自作HTTPルーターから新しいServeMuxへ](/ja/posts/custom-http-router-to-new-servemux/)
+- **GitHub**: [bmf-san/ggc](https://github.com/bmf-san/ggc)
