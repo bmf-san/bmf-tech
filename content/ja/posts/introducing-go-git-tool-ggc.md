@@ -155,7 +155,7 @@ func (we *WorkflowExecutor) Execute(workflow *Workflow) error {
 
 各ステップの前に`resolveStepPlaceholders()`が引数内の`<name>`トークンをスキャンし、存在する場合はインタラクティブに入力を求める。事前にコミットメッセージをハードコードする必要はなく、実行時にプロンプトで單やかに入力できる。
 
-## v8のその他の新機能
+## その他の機能
 
 ### YAMLによるWorkflow事前定義
 
@@ -212,6 +212,69 @@ interactive:
 ### クロスプラットフォーム対応
 
 GoReleaserを介してLinux、macOS、Windows（amd64 / arm64 / 386）すべてのpresetバイナリを配布している。インタラクティブTUIの全機能が3プラットフォームで動作する。
+
+### シェル補完
+
+ggcはBash、Zsh、Fishのシェル補完スクリプトを同梱している。`tools/completions/`に生成済みスクリプトが収録されており、`make completions`でコマンドレジストリから再生成できる。
+
+```bash
+# Bash（~/.bash_profile または ~/.bashrc に追記）
+if [ -f ~/.ggc-completion.bash ]; then
+  . ~/.ggc-completion.bash
+fi
+
+# Zsh（~/.zshrc に追記）
+if [ -f ~/.ggc-completion.zsh ]; then
+  . ~/.ggc-completion.zsh
+fi
+
+# Fish（~/.config/fish/config.fish に追記）
+if test -f ~/.ggc-completion.fish
+    source ~/.ggc-completion.fish
+end
+```
+
+有効化すると`ggc b<Tab>`で`branch`に補完され、`ggc branch <Tab>`でサブコマンド一覧が展開される。
+
+### 統一構文と`--`セパレーター
+
+ggcは`-x`/`--long`形式のフラグを持たない統一構文を採用している。全操作はスペース区切りのサブコマンドで表現する（例: `ggc fetch prune`、`ggc commit allow empty`）。`--`以降の引数はコマンドではなくデータとして扱われるため、先頭に`-`が付く文字列も安全に渡せる。
+
+```bash
+# 先頭に - がある引数を渡す場合
+ggc commit -- "-fix leading dash"
+```
+
+この設計はCLIの挙動を予測可能にし、スクリプトへの埋め込みを容易にする。
+
+### Soft cancel
+
+インタラクティブモードを終了せず、現在の操作を中断してSearch Modeに戻るには`Ctrl+G`（または特殊文字が続かない`Esc`）を使う。`Ctrl+C`がインタラクティブモードごと終了するのに対し、`Ctrl+G`はモードを維持したまま検索画面に戻る。
+
+### debug-keysコマンド
+
+キーバインドの動作確認やトラブルシューティングに使える組み込みコマンドだ。
+
+```bash
+# 現在のキーバインド設定を一覧表示
+ggc debug-keys
+
+# ターミナルが送出するキーシーケンスをリアルタイムでキャプチャ
+ggc debug-keys raw
+
+# キーシーケンスをファイルに保存
+ggc debug-keys raw keydump.txt
+```
+
+`ggc debug-keys raw`を実行してキーを押すと、ターミナルが実際に送信しているバイト列が表示される。キーバインドが期待どおりに動作しない場合の原因特定に役立つ。
+
+### tmuxサポート
+
+tmux環境でキー入力が正しく処理されない場合、`.tmux.conf`に以下を追加する。
+
+```
+set -g xterm-keys on
+```
 
 ## インストール
 

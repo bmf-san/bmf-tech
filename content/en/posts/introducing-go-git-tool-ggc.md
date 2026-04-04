@@ -151,7 +151,7 @@ func (we *WorkflowExecutor) Execute(workflow *Workflow) error {
 
 Before each step, `resolveStepPlaceholders()` scans the step arguments for `<name>` tokens and prompts you interactively if any turn up. A workflow step like `commit -m <message>` will pause and ask for the commit message at runtime.
 
-## Other New Features in v8
+## Other Features
 
 ### Config-Based Workflows
 
@@ -208,6 +208,69 @@ interactive:
 ### Cross-Platform Builds
 
 ggc distributes pre-built binaries for Linux, macOS, and Windows (amd64 / arm64 / 386) via GoReleaser. All interactive TUI features work on all three platforms.
+
+### Shell Completion
+
+ggc ships completion scripts for Bash, Zsh, and Fish. Pre-built scripts live in `tools/completions/` and can be regenerated from the command registry with `make completions`.
+
+```bash
+# Bash (add to ~/.bash_profile or ~/.bashrc)
+if [ -f ~/.ggc-completion.bash ]; then
+  . ~/.ggc-completion.bash
+fi
+
+# Zsh (add to ~/.zshrc)
+if [ -f ~/.ggc-completion.zsh ]; then
+  . ~/.ggc-completion.zsh
+fi
+
+# Fish (add to ~/.config/fish/config.fish)
+if test -f ~/.ggc-completion.fish
+    source ~/.ggc-completion.fish
+end
+```
+
+Once enabled, `ggc b<Tab>` completes to `branch`, and `ggc branch <Tab>` expands into the full list of subcommands.
+
+### Unified Syntax and `--` Separator
+
+ggc uses a flagless, space-separated syntax — no `-x`/`--long` options exist. All operations are expressed as subcommands (e.g. `ggc fetch prune`, `ggc commit allow empty`). Arguments after `--` are treated as data rather than commands, so strings starting with `-` can be passed safely.
+
+```bash
+# Passing an argument that starts with -
+ggc commit -- "-fix leading dash"
+```
+
+This keeps CLI behaviour predictable and easy to embed in scripts.
+
+### Soft Cancel
+
+To abandon the current interactive operation and return to Search Mode *without* exiting the TUI, press `Ctrl+G` (or `Esc` when no escape sequence follows). `Ctrl+C` exits interactive mode entirely; `Ctrl+G` returns you to the search screen while staying inside the TUI.
+
+### debug-keys Command
+
+A built-in command for verifying and troubleshooting keybindings:
+
+```bash
+# Display all current keybinding settings
+ggc debug-keys
+
+# Capture key sequences sent by the terminal in real time
+ggc debug-keys raw
+
+# Save captured key sequences to a file
+ggc debug-keys raw keydump.txt
+```
+
+Running `ggc debug-keys raw` and pressing a key shows the exact byte sequence your terminal sends — useful for diagnosing why a keybinding is not triggering as expected.
+
+### tmux Support
+
+If key input behaves unexpectedly inside tmux, add the following to `.tmux.conf`:
+
+```
+set -g xterm-keys on
+```
 
 ## Installation
 
