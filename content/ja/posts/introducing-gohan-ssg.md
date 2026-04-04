@@ -140,6 +140,8 @@ func (g *GitDiffEngine) Detect(manifest *model.BuildManifest) (*model.ChangeSet,
 
 `hashAllFiles()`がコンテンツディレクトリをウォークして全ファイルのSHA-256 hexダイジェストを計算する。初回ビルド（またはマニフェストが存在しない場合）は全ファイルが`Added`とみなされる。以降のビルドでは`Added`、`Modified`、`Deleted`の3種類の変更を検出する。影響を受けたHTMLページだけを再生成する。
 
+`config.yaml`自体もビルドごとにハッシュされており、変更を検知すると自動的にキャッシュをクリアしてフルビルドに切り替わる。`--full`フラグで明示的に強制することもできる。
+
 キャッシュは `.gohan/cache/manifest.json` に保存される。
 
 ```text
