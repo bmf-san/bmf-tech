@@ -69,25 +69,112 @@ Dockerfileのビルドコンテキストはリポジトリルートなので、`
 
 コードベースは4層のレイヤードアーキテクチャを採用している。`internal/`にドメインロジック・ユースケース・外部アダプター（bitFlyerクライアント・SQLiteリポジトリ・HTTPハンドラ等）、`pkg/strategy`がStrategyインターフェース定義とスキャルピングリファレンス実装を提供する公開パッケージになっている。Composition Root（全サービスの指定・組み立て）は呼び出し側のリポジトリに存在する（`example/cmd/main.go`がそのサンプル）。
 
+### C4 Context — システム全体像
+
+```mermaid
+C4Context
+    Person(operator, "オペレーター", "取引ボットの管理者")
+    System(gogocoin, "gogocoin", "自動スキャルピング取引ボット")
+    System_Ext(bitflyer, "bitFlyer", "仮想通貨取引所 REST / WebSocket API")
+    System_Ext(sqlite, "SQLite", "ローカルデータベース")
+
+    Rel(operator, gogocoin, "REST API で取引制御・状態確認")
+    Rel(gogocoin, bitflyer, "注文発注・残高取得・マーケットデータ受信")
+    Rel(gogocoin, sqlite, "取引記録・ポジション・パフォーマンス保存")
+```
+
+### C4 Container — 主要コンテナ
+
+```mermaid
+C4Container
+    Person(operator, "オペレーター")
+
+    System_Boundary(gogocoin, "gogocoin") {
+        Container(example, "example/cmd", "Go", "Composition Root・起動/終了（呼び元が指定）")
+        Container(http, "adapter/http", "Go net/http", "REST API サーバー")
+        Container(worker, "adapter/worker", "Go goroutine", "バックグラウンドワーカー群")
+        Container(usecase, "usecase/", "Go", "業務ロジック（trading / strategy / risk / analytics）")
+        Container(domain, "domain/", "Go", "ドメインモデル・インターフェース定義")
+        Container(infra_bf, "infra/exchange/bitflyer", "Go", "bitFlyer API クライアント")
+        Container(infra_db, "infra/persistence", "Go + SQLite", "SQLite 永続化")
+    }
+
+    System_Ext(bitflyer_api, "bitFlyer API", "REST / WebSocket")
+    SystemDb_Ext(sqlite, "SQLite")
+
+    Rel(operator, http, "HTTP/JSON")
+    Rel(example, http, "起動")
+    Rel(example, worker, "起動")
+    Rel(http, usecase, "uses")
+    Rel(worker, usecase, "uses")
+    Rel(usecase, domain, "uses")
+    Rel(infra_bf, domain, "implements IFs")
+    Rel(infra_db, domain, "implements IFs")
+    Rel(infra_bf, bitflyer_api, "HTTPS / WSS")
+    Rel(infra_db, sqlite, "SQL")
+```
+
+### C4 Component — usecase/trading
+
+```mermaid
+C4Component
+    Container_Boundary(trading, "usecase/trading") {
+        Component(trader, "BitflyerTrader", "Go", "注文発注・キャンセル・残高取得")
+        Component(monitor, "OrderMonitor", "Go goroutine", "注文状態のポーリング監視")
+        Component(pnl, "PnLCalculator", "Go", "約定後の損益計算・永続化")
+        Component(balance, "BalanceService", "Go", "残高取得・キャッシュ")
+        Component(order, "OrderService", "Go", "注文バリデーション・発注")
+        Component(validator, "OrderValidator", "Go", "注文サイズ検証・残高チェック")
+    }
+
+    ComponentDb(tradeRepo, "TradeRepository", "domain.TradeRepository")
+    ComponentDb(positionRepo, "PositionRepository", "domain.PositionRepository")
+    ComponentDb(balanceRepo, "BalanceRepository", "domain.BalanceRepository")
+
+    Rel(trader, monitor, "starts / watches")
+    Rel(trader, order, "delegates PlaceOrder")
+    Rel(trader, validator, "ValidateOrder / CheckBalance")
+    Rel(monitor, order, "GetOrders（OrderGetter IF）")
+    Rel(monitor, pnl, "saveTradeToDB → CalculateAndSave")
+    Rel(monitor, balance, "UpdateBalanceToDB after fill")
+    Rel(pnl, tradeRepo, "SaveTrade")
+    Rel(pnl, positionRepo, "GetOpenPositions / UpdatePosition / SavePosition")
+    Rel(trader, balance, "GetBalance")
+    Rel(balance, balanceRepo, "SaveBalance / GetLatestBalances")
+```
+
+### 依存グラフ
+
 ```mermaid
 graph LR
-    caller[caller/cmd]
-    http[adapter/http]
-    worker[adapter/worker]
-    bf[infra/bitflyer]
-    db[infra/persistence]
-    uc[usecase/]
-    domain[domain/]
+    cmd([cmd])
 
-    caller --> http
-    caller --> worker
-    caller --> bf
-    caller --> db
-    http --> uc
-    worker --> uc
-    uc --> domain
-    bf --> domain
-    db --> domain
+    cmd --> adp_http[adapter/http]
+    cmd --> adp_worker[adapter/worker]
+    cmd --> infra_bf[infra/exchange/bitflyer]
+    cmd --> infra_db[infra/persistence]
+    cmd --> domain([domain])
+
+    adp_http --> uc_trading[usecase/trading]
+    adp_http --> uc_analytics[usecase/analytics]
+    adp_http --> domain
+    adp_worker --> uc_trading
+    adp_worker --> uc_strategy[usecase/strategy]
+    adp_worker --> uc_risk[usecase/risk]
+    adp_worker --> domain
+
+    uc_trading --> domain
+    uc_strategy --> domain
+    uc_risk --> domain
+    uc_analytics[usecase/analytics] --> domain
+
+    adp_worker --> uc_analytics
+
+    infra_bf --> domain
+    infra_db --> domain
+    logger --> domain
+    cmd --> config[config]
+    cmd --> logger
 ```
 
 依存ルールはCIで強制している。
@@ -106,19 +193,31 @@ graph LR
 
 ```mermaid
 graph LR
-    OP(オペレーター)
-    SYS(システム)
-    BF(bitFlyer)
+    OP(["👤 オペレーター"])
+    BF(["🏦 bitFlyer"])
+    SYS(["⚙️ システム"])
 
-    subgraph gogocoin
-        UC1[取引開始・停止]
-        UC2[状態・残高・ポジション確認]
-        UC3[パフォーマンス・取引履歴確認]
-        UC4[ログ確認]
-        UC5[戦略パラメータのライブ更新]
-        UC6[シグナル→リスクチェック→注文]
-        UC7[約定後の損益計算・残高更新]
-        UC8[古いデータのクリーンアップ]
+    subgraph sys["gogocoin システム境界"]
+        UC1(取引を開始する)
+        UC2(取引を停止する)
+        UC3(取引状態を確認する)
+        UC4(ポジションを確認する)
+        UC5(パフォーマンスを確認する)
+        UC6(マーケットデータを確認する)
+        UC7(残高を確認する)
+        UC8(取引履歴を確認する)
+        UC9(注文一覧を確認する)
+        UC10(ログを確認する)
+        UC11(設定を確認する)
+        UC12(戦略をリセットする)
+        UC13(スキャルピング戦略でシグナルを検知する)
+        UC14(リスクをチェックする)
+        UC15(注文を発注する)
+        UC16(注文状態を監視する)
+        UC17(損益を計算・記録する)
+        UC18(古いデータをメンテナンスする)
+        UC19(戦略パラメータを監視・更新する)
+        UC20(注文タイムアウト・キャンセルを処理する)
     end
 
     OP --> UC1
@@ -126,50 +225,236 @@ graph LR
     OP --> UC3
     OP --> UC4
     OP --> UC5
-    SYS --> UC6
-    SYS --> UC7
-    SYS --> UC8
-    BF -.->|約定通知| UC7
+    OP --> UC6
+    OP --> UC7
+    OP --> UC8
+    OP --> UC9
+    OP --> UC10
+    OP --> UC11
+    OP --> UC12
+    UC13 --> UC14
+    UC14 --> UC15
+    UC15 --> UC16
+    UC16 --> UC17
+    BF -.->|"約定通知（ポーリング）"| UC16
+    SYS --> UC13
+    SYS --> UC18
+    SYS --> UC19
+    SYS --> UC20
 ```
 
 オペレーターはHTTP API（WebダッシュボードのUIを含む）を通じて取引の制御と状態確認を行う。シグナル生成・注文・損益計算・データクリーンアップはシステムが自律的に実行する。
 
 ## 取引フロー
 
-WebSocketでティックを受信してから注文が約定・損益記録されるまでの主なフローを示す。
+WebSocketでティックを受信してから注文が約定・損益記録されるまでの、システムの主要なシーケンスを示す。
+
+### 6.1 スキャルピング取引フロー
 
 ```mermaid
 sequenceDiagram
-    participant MW as MarketDataWorker
     participant SW as StrategyWorker
+    participant ST as Strategy
     participant SigW as SignalWorker
+    participant TC as TradingController
     participant RM as risk.Manager
+    participant BP as balanceProvider
+    participant TR as BitflyerTrader
+    participant BF as bitFlyer API
+    participant OM as OrderMonitor
+    participant PNL as PnLCalculator
+    participant BS as BalanceService
+    participant DB as persistence
+    participant CB as callback
+
+    note over RM,BP: risk.Manager は balanceProvider ローカルIFに依存する。<br/>BP は BitflyerTrader が実装する。BitflyerTrader.GetBalance() は<br/>内部で BalanceService（TTL キャッシュ）に委譲する。
+    note over SW,SigW: StrategyWorker はシグナルをチャネルに書き込む。<br/>SignalWorker がチャネルから受信してリスクチェック・発注を行う。
+
+    SW->>ST: Analyze(history []MarketData)
+    ST-->>SW: Signal(BUY)
+    SW-)SigW: signalCh <- signal（チャネル送信）
+    SigW->>TC: IsTradingEnabled()
+    TC-->>SigW: true
+    SigW->>RM: CheckRiskManagement(ctx, signal)
+    RM->>BP: GetBalance(ctx)
+    BP->>BS: GetBalance(ctx)
+    note over BS: TTL キャッシュ確認（10秒）。<br/>キャッシュヒット時は BF を呼び出さない。
+    alt キャッシュミス
+        BS->>BF: GET /v1/me/getbalance
+        BF-->>BS: balance
+    end
+    BS-->>BP: balance
+    BP-->>RM: balance
+    alt リスク違反（残高不足・ポジション過多）
+        RM-->>SigW: non-nil error（残高不足・制限超過等）
+        SigW->>SigW: skip（次のティックまで待機）
+    else リスクOK
+        RM-->>SigW: nil
+        note over SigW: createOrderFromSignal() で domain.OrderRequest を生成
+        SigW->>TR: PlaceOrder(ctx, order)
+        TR->>BF: POST /v1/me/sendchildorder
+        BF-->>TR: order_id
+        note over TR,OM: MonitorExecution はgoroutineで起動。<br/>PlaceOrder は即座にreturnする（非同期）。
+        TR-)OM: go MonitorExecution(ctx, result)
+
+        loop ポーリング（最大90秒・15秒間隔）
+            OM->>BF: GET /v1/me/getchildorders
+            BF-->>OM: status=ACTIVE
+        end
+
+        BF-->>OM: status=COMPLETED
+        note over OM,PNL: OrderMonitor.saveTradeToDB() が PnL を直接呼び出す。<br/>onOrderCompleted コールバックより前。
+        OM->>PNL: CalculateAndSave(result)
+        note over PNL,DB: SELL の場合 GetOpenPositions はトランザクション外（事前読み取り）。<br/>SQLite はデフォルトで serializable 相当の isolation を持つため<br/>phantom read リスクは実質なく、tx 開始前に読み取ることで<br/>tx 内の処理を最小化しデッドロックリスクを下げる。
+        PNL->>DB: GetOpenPositions() [SELLのみ・tx外]
+        PNL->>DB: BeginTx()
+        PNL->>DB: SavePosition() [BUY] / UpdatePosition() [SELL]
+        PNL->>DB: SaveTrade()
+        PNL->>DB: Commit()
+        PNL-->>OM: (pnl float64)
+        OM->>BS: InvalidateBalanceCache()
+        OM->>BS: UpdateBalanceToDB(ctx)
+        BS->>BF: GET /v1/me/getbalance
+        BS->>DB: SaveBalance(balance)
+        OM->>CB: onOrderCompleted(result)
+    end
+```
+
+`StrategyWorker` と `SignalWorker` はGoチャネル経由で非同期に連結している。`PlaceOrder()` は発注後すぐにreturnし、約定監視は `OrderMonitor` がgoroutineで行う。`PnLCalculator` はポジションと取引を同一トランザクション内で保存し、完了後に `OrderMonitor` が残高スナップショットを追記する。
+
+### 6.2 REST API 取引制御フロー
+
+```mermaid
+sequenceDiagram
+    participant C as HTTP Client
+    participant H as adapter/http
+    participant TC as TradingController
+    participant DB as AppStateRepository
+
+    C->>H: POST /api/trading/start
+    H->>TC: SetTradingEnabled(ctx, true)
+    TC->>DB: SaveAppState("trading_enabled", "true")
+    DB-->>TC: nil
+    TC-->>H: nil
+    H-->>C: 200 OK
+
+    C->>H: POST /api/trading/stop
+    H->>TC: SetTradingEnabled(ctx, false)
+    TC->>DB: SaveAppState("trading_enabled", "false")
+    DB-->>TC: nil
+    TC-->>H: nil
+    H-->>C: 200 OK
+```
+
+### 6.3 マーケットデータ収集フロー
+
+```mermaid
+sequenceDiagram
+    participant BS as bootstrap
+    participant WM as WorkerManager
+    participant WS as bitflyer WebSocket
+    participant MW as MarketDataWorker
+    participant DB as MarketDataRepository
+
+    BS->>WS: Connect()
+    BS->>WM: StartAll(ctx)
+    WM-)MW: Run(ctx)
+
+    loop ティックデータ受信
+        WS-->>MW: Tick(price, volume, ...)
+        MW->>DB: SaveMarketData(tick)
+    end
+
+    note over BS,WS: 切断時は bootstrap が再接続（WorkerManager のワーカーライフサイクルとは別）
+```
+
+### 6.4 注文タイムアウト / CANCELED・EXPIRED フロー
+
+```mermaid
+sequenceDiagram
     participant TR as BitflyerTrader
     participant BF as bitFlyer API
     participant OM as OrderMonitor
     participant PNL as PnLCalculator
     participant DB as persistence
+    participant LOG as Logger
 
-    MW->>SW: tick（WebSocket受信）
-    SW->>SW: GenerateSignal → BUY
-    SW-)SigW: signalCh <- BUY（チャネル）
-    SigW->>RM: CheckRiskManagement
-    RM-->>SigW: OK
-    SigW->>TR: PlaceOrder
     TR->>BF: POST /v1/me/sendchildorder
     BF-->>TR: order_id
-    TR-)OM: go MonitorExecution（非同期goroutine）
-    loop ポーリング（最大90秒・15秒間隔）
+    note over TR,OM: MonitorExecution はgoroutineで起動（戻り値なし）。<br/>結果はonOrderCompletedコールバックで通知。
+    TR-)OM: go MonitorExecution(ctx, result)
+
+    alt タイムアウト（90秒経過）
+        loop ポーリング継続中
+            OM->>BF: GET /v1/me/getchildorders
+            BF-->>OM: status=ACTIVE
+        end
+        OM->>BF: GET /v1/me/getchildorders（saveFinalOrderState）
+        BF-->>OM: 最終ステータス確認
+        OM->>LOG: Warn("Order monitoring timeout", order_id)
+        note over OM: goroutine終了。PlaceOrderへの戻り値なし。
+    else ターミナル状態（CANCELED / EXPIRED / REJECTED）
         OM->>BF: GET /v1/me/getchildorders
-        BF-->>OM: ACTIVE
+        BF-->>OM: status=CANCELED
+        OM->>LOG: Warn("order terminal", status, order_id)
+        note over OM,PNL: saveTradeToDB はCANCELED でも呼ばれてトレードを記録する。<br/>残高更新・onOrderCompleted コールバックは呼ばない。
+        OM->>PNL: CalculateAndSave(result) [キャンセル記録]
+        PNL->>DB: BeginTx()
+        PNL->>DB: SaveTrade() [status=CANCELED]
+        PNL->>DB: Commit()
     end
-    BF-->>OM: COMPLETED
-    OM->>PNL: CalculateAndSave
-    PNL->>DB: BeginTx → SavePosition + SaveTrade → Commit
-    OM->>DB: SaveBalance（残高スナップショット追記）
 ```
 
-`StrategyWorker` と `SignalWorker` はGoチャネル経由で非同期に連結している。`PlaceOrder()` は発注後すぐにreturnし、約定監視は `OrderMonitor` がgoroutineで行う。`PnLCalculator` はポジションと取引を同一トランザクション内で保存し、完了後に `OrderMonitor` が残高スナップショットを追記する。
+### 6.5 レート制限時のリトライフロー
+
+```mermaid
+sequenceDiagram
+    participant UC as usecase
+    participant BF as infra/exchange/bitflyer
+    participant API as bitFlyer API
+
+    UC->>BF: PlaceOrder(req)
+    note over BF: Client.WithRetry() がリトライを管理する。<br/>usecase 層はリトライの存在を知らない。
+    BF->>API: POST /v1/me/sendchildorder
+    API-->>BF: 429 Too Many Requests
+    loop MaxRetries 回まで（指数バックオフ）
+        BF->>BF: exponential backoff 待機
+        BF->>API: POST /v1/me/sendchildorder（retry）
+    end
+    alt リトライ成功
+        API-->>BF: 200 OK
+        BF-->>UC: order_id
+    else リトライ上限超過
+        BF-->>UC: domain.ErrRateLimitExceeded
+        note over UC: errors.As(err, &apiErr) で *domain.Error に変換し<br/>apiErr.Type == domain.ErrTypeRateLimit で判定して上位に伝播させる
+    end
+```
+
+### 6.6 MaintenanceWorker フロー
+
+```mermaid
+sequenceDiagram
+    participant BS as bootstrap
+    participant WM as WorkerManager
+    participant MW as MaintenanceWorker
+    participant DB as MaintenanceRepository
+    participant LOG as Logger
+
+    BS->>WM: StartAll(ctx)
+    WM-)MW: Run(ctx)
+
+    loop 定期実行（毎日深夜）
+        MW->>DB: GetDatabaseSize()
+        DB-->>MW: size bytes
+        MW->>DB: CleanupOldData(retentionDays)
+        DB-->>MW: deleted rows
+        MW->>DB: GetTableStats()
+        DB-->>MW: stats
+        MW->>LOG: Info("maintenance done", stats)
+    end
+
+    note over MW: ctx.Done() 受信で即座に終了
+```
 
 ## Strategyインターフェース
 
@@ -288,50 +573,99 @@ func (s *BalanceService) GetBalance(ctx context.Context) ([]domain.Balance, erro
 ```mermaid
 erDiagram
     TRADES {
-        TEXT symbol
-        TEXT side
-        REAL size
-        REAL price
-        REAL pnl
-        TEXT order_id
+        INTEGER id PK
+        TEXT    symbol
+        TEXT    side
+        TEXT    type
+        REAL    size
+        REAL    price
+        REAL    fee
+        TEXT    status
+        TEXT    order_id "UNIQUE"
         DATETIME executed_at
-        TEXT strategy_name
+        DATETIME created_at
+        DATETIME updated_at
+        TEXT    strategy_name
+        REAL    pnl
     }
+
     POSITIONS {
-        TEXT symbol
-        REAL size
-        REAL remaining_size
-        REAL entry_price
-        TEXT status
+        INTEGER id PK
+        TEXT    symbol
+        TEXT    side
+        REAL    size
+        REAL    used_size
+        REAL    remaining_size
+        REAL    entry_price
+        REAL    current_price
+        REAL    unrealized_pl
+        REAL    pnl
+        TEXT    status
+        TEXT    order_id
+        DATETIME created_at
+        DATETIME updated_at
+    }
+
+    BALANCES {
+        INTEGER  id PK
+        TEXT     currency
+        REAL     available
+        REAL     amount
+        DATETIME timestamp
+    }
+
+    MARKET_DATA {
+        INTEGER  id PK
+        TEXT     symbol
+        DATETIME timestamp
+        REAL     open
+        REAL     high
+        REAL     low
+        REAL     close
+        REAL     volume
         DATETIME created_at
     }
-    BALANCES {
-        TEXT currency
-        REAL available
-        REAL amount
-        DATETIME timestamp
-    }
-    MARKET_DATA {
-        TEXT symbol
-        DATETIME timestamp
-        REAL open
-        REAL high
-        REAL low
-        REAL close
-        REAL volume
-    }
+
     PERFORMANCE_METRICS {
+        INTEGER  id PK
         DATETIME date
-        REAL win_rate
-        REAL sharpe_ratio
-        REAL profit_factor
-        REAL max_drawdown
-        REAL total_pnl
+        REAL     total_return
+        REAL     daily_return
+        REAL     win_rate
+        REAL     max_drawdown
+        REAL     sharpe_ratio
+        REAL     profit_factor
+        INTEGER  total_trades
+        INTEGER  winning_trades
+        INTEGER  losing_trades
+        REAL     average_win
+        REAL     average_loss
+        REAL     largest_win
+        REAL     largest_loss
+        INTEGER  consecutive_wins
+        INTEGER  consecutive_loss
+        REAL     total_pnl
     }
-    POSITIONS ||--o{ TRADES : "FIFO（論理結合）"
+
+    LOGS {
+        INTEGER  id PK
+        TEXT     level
+        TEXT     category
+        TEXT     message
+        TEXT     fields
+        DATETIME timestamp
+    }
+
+    APP_STATE {
+        TEXT     key PK
+        TEXT     value
+        DATETIME updated_at
+    }
+
+    POSITIONS ||--o{ TRADES : "symbol（FIFO・論理結合）"
 ```
 
-外部キー制約は持たない。`PnLCalculator` が `positions` と `trades` を同一トランザクション内で書き込むため整合性はアプリケーション層でアトミックに保証する設計となっている。
+外部キー制約は持たない。`positions` と `trades` の間が唯一のクロステーブル論理参照だが、`PnLCalculator` が両者を**同一トランザクション内**で書き込む（BeginTx → SavePosition/UpdatePosition → SaveTrade → Commit）。トランザクションのアトミック性が整合性を保証するため、DBレベルのFK制約は不要となっている。
 
 ## Webダッシュボード
 ![ダッシュボード](/assets/images/posts/introducing-gogocoin/01_dashboard.png)
