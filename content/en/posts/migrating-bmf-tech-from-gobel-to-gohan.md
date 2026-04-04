@@ -18,11 +18,12 @@ translation_key: migrating-bmf-tech-from-gobel-to-gohan
 
 ## Background
 
-bmf-tech.com has gone through three infrastructure generations.
+bmf-tech.com has gone through four infrastructure generations.
 
 1. **WordPress** — Abandoned after maintenance overhead and security patches became unsustainable.
-2. **Rubel → gobel** — A headless CMS originally written in Laravel, later rewritten in Go as [gobel](https://github.com/bmf-san/gobel-api). I ran a Vue.js frontend with MySQL on a ConoHa VPS for several years, accumulating over 700 articles.
-3. **gohan on Cloudflare Pages** — The current setup, which this article covers.
+2. **[Rubel](https://github.com/bmf-san/Rubel)** — A headless CMS built with Laravel. Ran a React frontend with MySQL on a ConoHa VPS.
+3. **[gobel](https://github.com/bmf-san/gobel-api)** — A full rewrite of Rubel in Go. Ran for several years and accumulated over 700 articles. The backend used nginx, MySQL, and Redis via Docker Compose; the frontend used Vue.js. A monitoring stack with Prometheus, Grafana, Loki, and Pyroscope was also in place.
+4. **[gohan](https://github.com/bmf-san/gohan)** — A Go-based SSG. Builds from Markdown files in `content/en/` and `content/ja/`, with GitHub Actions running the build and Cloudflare Pages serving the output. Serverless with zero running cost.
 
 The goal was to bring server cost and operational load down to zero. I wanted a setup where pushing to GitHub triggers an automatic build and deploy, with the entire site built from Markdown files.
 
@@ -82,7 +83,26 @@ After confirming index coverage trends in Google Search Console, I shut down the
 
 gohan now generates the site from Markdown files in `content/en/` and `content/ja/`. Pushing to GitHub triggers GitHub Actions to build and deploy to Cloudflare Pages. A full build of 584+ EN and 584+ JA articles, including OGP image generation, completes in under 60 seconds.
 
-SEO continuity held through the permanent 301 redirect chain in `_redirects`. Index coverage stayed stable in Google Search Console after the DNS migration.
+Defining 301 redirects from old URLs to new ones in `_redirects` kept the SEO impact low. Index coverage remained stable in Google Search Console after the DNS migration.
+
+### What Changed
+
+- **Writing environment** — Switched from a custom web admin panel to local editing in VS Code. Articles are now version-controlled in Git.
+- **Quality control** — textlint runs in CI via GitHub Actions, catching inconsistent phrasing and style rule violations on every push.
+- **Metadata management** — Front Matter now explicitly sets `title`, `description`, `categories`, `tags`, and OGP fields for every article. gobel saw none of this.
+- **Self-hosted images** — Images depended on external CDNs such as Qiita Image Store. They are now managed as static assets under `assets/images/posts/{slug}/`, eliminating the risk of losing images if an external service shuts down.
+- **Slug-based URLs** — Article URLs changed from percent-encoded Japanese titles to English slug format (e.g., `/posts/go-http-server/`), improving readability and shareability.
+- **i18n** — The site now has a two-language structure with `content/ja/` and `content/en/`, with articles linked via `translation_key`.
+- **Hosting** — Moved from a self-managed ConoHa VPS to Cloudflare Pages. Static content comes from a CDN with a generous free tier, so there are no ongoing server costs.
+- **Custom pages** — Added a bookshelf page for tracking books read and an Amazon Associate link generator page.
+
+## Summary
+
+Since the migration, the site has been running stably and comfortably. Writing and pushing an article is all it takes to deploy — no server maintenance required. Looking back, I wish I had made the switch to an SSG sooner.
+
+I made heavy use of AI throughout the development. The project had been sitting idle for a long time despite having a rough design in place, but with AI help I was able to move through both the blog system development and the migration at a pace I would not have managed otherwise. The small scale of the system helped, but without AI the effort would have been far greater. I almost feel glad I waited until AI was available before starting.
+
+Both the source code and the articles are fully public.
 
 - **bmf-tech source**: [bmf-san/bmf-tech](https://github.com/bmf-san/bmf-tech)
 - **gohan**: [bmf-san/gohan](https://github.com/bmf-san/gohan)
