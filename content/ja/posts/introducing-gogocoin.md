@@ -1,6 +1,6 @@
 ---
 title: "gogocoin — セルフホスティング暗号資産の自動取引ボットの紹介"
-description: 'Go製セルフホスティング型ビットコイン自動取引ボット『gogocoin』の詳細解説。Strategyインターフェース設計、EMAスキャルピングのリスク管理、ダブルチェックロックの残高キャッシュ、VPSへのsystemdデプロイ。'
+description: 'Go製セルフホスティング型ビットコイン自動取引ボット「gogocoin」の詳細解説。プラガブル戦略アーキテクチャ、レイヤー構成と依存ルール、取引フロー・データモデル・残高キャッシュの詳解。'
 slug: introducing-gogocoin
 date: 2026-03-20T00:00:00Z
 author: bmf-san
@@ -50,23 +50,28 @@ make run
 
 `go get github.com/bmf-san/gogocoin@latest`で自分のリポジトリに組み込んで使うこともできる。
 
-**B. Dockerで素早く試す（動作確認・開発向け）**
+**B. Dockerで素早く試す**
 
-> **注意**: `cmd/gogocoin`は戦略が登録されていないため、この方法で起動したボットは実際のトレードは行えない。API・エンジンの動作確認用・開発目的専用。
+`example/`に`Dockerfile`と`docker-compose.yml`が入っている。Aと同じEMA+RSIスキャルピング戦略が登録済みのバイナリをビルドして起動する。
 
 ```bash
-git clone https://github.com/bmf-san/gogocoin.git && cd gogocoin
-cp .env.example .env  # APIキーを記入
-make init && make up
+git clone https://github.com/bmf-san/gogocoin.git && cd gogocoin/example
+cp configs/config.example.yaml configs/config.yaml
+# configs/config.yaml にAPIキーを記入
+make up
+
+# → http://localhost:8080 でダッシュボードが開く
 ```
+
+Dockerfileのビルドコンテキストはリポジトリルートなので、`example/`ディレクトリから実行すること。
 
 ## アーキテクチャ
 
-コードベースは4層のレイヤードアーキテクチャを採用している。`cmd/gogocoin`がエントリーポイント、`internal/`にドメインロジック・ユースケース・外部アダプター（bitFlyerクライアント・SQLiteリポジトリ・HTTPハンドラ等）、`pkg/strategy`がStrategyインターフェース定義とスキャルピングリファレンス実装（ブランクインポートで登録）を提供する公開パッケージとなっている。
+コードベースは4層のレイヤードアーキテクチャを採用している。`internal/`にドメインロジック・ユースケース・外部アダプター（bitFlyerクライアント・SQLiteリポジトリ・HTTPハンドラ等）、`pkg/strategy`がStrategyインターフェース定義とスキャルピングリファレンス実装を提供する公開パッケージになっている。Composition Root（全サービスの指定・組み立て）は呼び出し側のリポジトリに存在する（`example/cmd/main.go`がそのサンプル）。
 
 ```mermaid
 graph LR
-    cmd[cmd/gogocoin]
+    caller[caller/cmd]
     http[adapter/http]
     worker[adapter/worker]
     bf[infra/bitflyer]
@@ -74,10 +79,10 @@ graph LR
     uc[usecase/]
     domain[domain/]
 
-    cmd --> http
-    cmd --> worker
-    cmd --> bf
-    cmd --> db
+    caller --> http
+    caller --> worker
+    caller --> bf
+    caller --> db
     http --> uc
     worker --> uc
     uc --> domain
@@ -93,7 +98,7 @@ graph LR
 | `usecase/` は `infra/` をimportしない | `domain/` インターフェースにのみ依存する |
 | `adapter/` は `infra/` の具体型を持たない | `domain/` インターフェースのみ使用 |
 | `infra/` は `domain/` を実装する | `usecase/` や `adapter/` は知らない |
-| `cmd/` のみが全パッケージを組み合わせる | Composition Root として唯一の例外 |
+| Composition Root は呼び出し側リポジトリに存在する | `internal/` はwiring不要 |
 
 公開API（セマンティックバージョニング対象）は `pkg/` 以下に分離している。`pkg/engine` がエンジン起動のエントリーポイント、`pkg/strategy` がStrategyインターフェースとレジストリを提供する。
 

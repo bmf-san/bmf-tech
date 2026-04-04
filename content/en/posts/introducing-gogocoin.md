@@ -1,6 +1,6 @@
 ---
 title: Introducing gogocoin — A Self-Hosted Crypto Trading Bot
-description: 'A deep dive into gogocoin, a Go-based self-hosted Bitcoin trading bot for bitFlyer. Covers the Strategy interface design, EMA scalping risk management, balance cache with double-checked locking, and VPS deployment via systemd.'
+description: 'A deep dive into gogocoin, a Go-based self-hosted Bitcoin trading bot for bitFlyer. Covers the pluggable strategy architecture, layered design and dependency rules, trading flow, data model, and balance cache.'
 slug: introducing-gogocoin
 date: 2026-03-20T00:00:00Z
 author: bmf-san
@@ -50,23 +50,28 @@ Using `example/configs/config.example.yaml` as-is, the bot runs an XRP/JPY scalp
 
 You can also integrate gogocoin into your own module via `go get github.com/bmf-san/gogocoin@latest`.
 
-**B. Docker for quick testing (development / verification only)**
+**B. Docker for quick testing**
 
-> **Note**: `cmd/gogocoin` has no strategy registered, so a bot started this way cannot trade. Use only for API / engine behaviour verification during development.
+`example/` includes a `Dockerfile` and `docker-compose.yml` that build a fully working binary with the same EMA+RSI scalping strategy registered.
 
 ```bash
-git clone https://github.com/bmf-san/gogocoin.git && cd gogocoin
-cp .env.example .env  # fill in API credentials
-make init && make up
+git clone https://github.com/bmf-san/gogocoin.git && cd gogocoin/example
+cp configs/config.example.yaml configs/config.yaml
+# Edit configs/config.yaml and set your API credentials
+make up
+
+# → Dashboard at http://localhost:8080
 ```
+
+The Dockerfile build context is the repo root, so run `make up` from the `example/` directory.
 
 ## Architecture
 
-The codebase follows a four-layer architecture. `cmd/gogocoin` is the entry point; `internal/` houses domain logic, use cases, and external adapters (bitFlyer client, SQLite repository, HTTP handlers, etc.); `pkg/strategy` is a public package providing the Strategy interface definition and a scalping reference implementation (registered via blank import).
+The codebase follows a four-layer architecture. `internal/` houses domain logic, use cases, and external adapters (bitFlyer client, SQLite repository, HTTP handlers, etc.); `pkg/strategy` is a public package providing the Strategy interface definition and a scalping reference implementation. The Composition Root (wiring all services together) lives in the caller's repository — `example/cmd/main.go` is a working sample.
 
 ```mermaid
 graph LR
-    cmd[cmd/gogocoin]
+    caller[caller/cmd]
     http[adapter/http]
     worker[adapter/worker]
     bf[infra/bitflyer]
@@ -74,10 +79,10 @@ graph LR
     uc[usecase/]
     domain[domain/]
 
-    cmd --> http
-    cmd --> worker
-    cmd --> bf
-    cmd --> db
+    caller --> http
+    caller --> worker
+    caller --> bf
+    caller --> db
     http --> uc
     worker --> uc
     uc --> domain
@@ -93,7 +98,7 @@ Dependency rules are enforced in CI:
 | `usecase/` does not import `infra/` | depends only on `domain/` interfaces |
 | `adapter/` holds no concrete infra types | uses `domain/` interfaces only |
 | `infra/` implements `domain/` | knows nothing of `usecase/` or `adapter/` |
-| Only `cmd/` combines all packages | the sole Composition Root |
+| Composition Root lives in the caller's repository | `internal/` needs no wiring |
 
 The public API (subject to semantic versioning) lives under `pkg/`. `pkg/engine` is the engine entry point; `pkg/strategy` provides the Strategy interface and registry.
 
