@@ -21,6 +21,99 @@ translation_key: introducing-gohan-ssg
 
 ほとんどのジェネレータは無条件全てのページを再生成するか、Git diff出力に依存するかのどちらかだ。Git diffはブランチ切り替えやフレッシュclone後に信頼性が落ちる。gohanはSHA-256コンテンツハッシングでビルドマニフェストを作成・永続化する。Git履歴に依存せず差分ビルドが常に正確に動作する。
 
+既存の選択肢を調べたところ、それぞれ一長一短だった。
+
+| ツール | 難点 |
+|---|---|
+| Hugo | 設定が複雑でカスタマイズの学習コストが高い |
+| Jekyll | Ruby依存でビルドが遅い |
+| Gatsby / Next.js | Node.jsエコシステムが重く、シンプルなブログには過剰 |
+
+Go製でシングルバイナリ、設定はシンプル、差分ビルドは信頼性が高い——gohanはその要件を満たすために作った。
+
+## クイックスタート
+
+```bash
+# 1. プロジェクトディレクトリを作成
+mkdir myblog && cd myblog
+
+# 2. config.yaml を追加
+cat > config.yaml << 'EOF'
+site:
+  title: My Blog
+  base_url: https://example.com
+  language: ja
+build:
+  content_dir: content
+  output_dir: public
+theme:
+  name: default
+EOF
+
+# 3. 最初の記事を作成
+gohan new --title="Hello, World!" hello-world
+
+# 4. サイトをビルド
+gohan build
+
+# 5. ライブリロード付きでプレビュー
+gohan serve   # http://127.0.0.1:1313 を開く
+```
+
+## アーキテクチャ
+
+### システム構成
+
+```mermaid
+graph TB
+    A[コンテンツソース] --> B[パーサー層]
+    B --> C[処理層]
+    C --> D[テンプレートエンジン]
+    D --> E[出力ジェネレーター]
+
+    B --> F[差分エンジン]
+    F --> C
+
+    G[設定] --> C
+    H[テンプレート] --> D
+    I[アセット] --> E
+```
+
+### ディレクトリ構造
+
+入力:
+
+```text
+.
+├── config.yaml
+├── content/
+│   ├── posts/        # ブログ記事（一覧・タグ・アーカイブ対象）
+│   └── pages/        # 静的ページ（About, Contact など）
+├── themes/
+│   └── default/
+│       └── layouts/  # テンプレートファイル
+├── assets/           # CSS・画像などの静的ファイル
+└── taxonomies/
+    ├── tags.yaml
+    └── categories.yaml
+```
+
+出力（`public/`）:
+
+```text
+public/
+├── index.html
+├── posts/
+├── pages/
+├── tags/
+├── categories/
+├── archives/
+├── feed.xml
+├── atom.xml
+├── sitemap.xml
+└── assets/
+```
+
 ## インクリメンタルビルドエンジン
 
 インクリメンタルビルドのコアは`internal/diff/git.go`にある。`Detect()`メソッドが現在のワーキングツリーを永続化した`BuildManifest`と比較する。
@@ -58,6 +151,84 @@ func (g *GitDiffEngine) Detect(manifest *model.BuildManifest) (*model.ChangeSet,
 ```
 
 `hashAllFiles()`がコンテンツディレクトリをウォークして全ファイルのSHA-256 hexダイジェストを計算する。初回ビルド（またはマニフェストが存在しない場合）は全ファイルが`Added`とみなされる。以降のビルドでは`Added`、`Modified`、`Deleted`の3種類の変更を検出する。影響を受けたHTMLページだけを再生成する。
+
+キャッシュは `.gohan/cache/` に保存される。
+
+```text
+.gohan/
+└── cache/
+    ├── manifest.json   # ファイルハッシュ一覧
+    ├── ast/            # パース済み中間表現
+    └── html/           # HTMLキャッシュ
+```
+
+### ビルドシーケンス（`gohan build`）
+
+```mermaid
+sequenceDiagram
+    participant User as ユーザー
+    participant CLI as gohan CLI
+    participant Config as Config Loader
+    participant Diff as Diff Engine
+    participant Cache as Cache Manager
+    participant Parser as パーサー
+    participant Processor as プロセッサー
+    participant Generator as ジェネレーター
+    participant FS as ファイルシステム
+
+    User->>CLI: gohan build
+    CLI->>Config: config.yaml を読み込む
+    Config-->>CLI: cfg
+    CLI->>Cache: ReadManifest(.gohan/cache/manifest.json)
+    Cache-->>CLI: 前回マニフェスト
+    CLI->>Diff: DetectChanges(contentDir, manifest)
+    Diff->>FS: git diff / mtime 比較
+    FS-->>Diff: 変更ファイルリスト
+    Diff-->>CLI: changedFiles
+    CLI->>Parser: Parse(changedFiles)
+    Parser-->>CLI: []Article
+    CLI->>Processor: BuildDependencyGraph([]Article)
+    Processor-->>CLI: impactSet
+    CLI->>Generator: GenerateHTML(impactSet)
+    Generator->>FS: HTMLファイル書き出し
+    CLI->>Generator: GenerateSitemap / GenerateFeeds
+    Generator->>FS: sitemap.xml, atom.xml 書き出し
+    CLI->>Cache: WriteManifest(newManifest)
+    CLI-->>User: ビルド完了（X秒、N記事）
+```
+
+### 開発サーバー・ライブリロード（`gohan serve`）
+
+```mermaid
+sequenceDiagram
+    participant User as ユーザー
+    participant CLI as gohan CLI
+    participant Builder as ビルドパイプライン
+    participant Watcher as fsnotify Watcher
+    participant HTTP as HTTP サーバー
+    participant SSE as SSE ハンドラー
+    participant Browser as ブラウザ
+
+    User->>CLI: gohan serve
+    CLI->>Builder: フルビルド（初回）
+    Builder-->>CLI: 完了
+    CLI->>HTTP: HTTP サーバー起動（静的ファイル + /sse）
+    CLI->>Watcher: content/, themes/, config.yaml を監視
+    User->>Browser: http://localhost:<port> を開く
+    Browser->>HTTP: GET /
+    HTTP-->>Browser: index.html
+    Browser->>SSE: GET /sse（EventSource 接続）
+    SSE-->>Browser: 接続確立
+    Note over User: article.md を保存
+    Watcher->>CLI: FileChanged イベント
+    CLI->>Builder: 差分ビルド
+    Builder-->>CLI: 完了
+    CLI->>SSE: "reload" イベント送信
+    SSE-->>Browser: data: reload
+    Browser->>Browser: location.reload()
+    Browser->>HTTP: GET /（再読み込み）
+    HTTP-->>Browser: 更新済み index.html
+```
 
 ## 機能一覧
 
@@ -119,6 +290,39 @@ plugins:
   bookshelf:
     enabled: true
 ```
+
+## CLI リファレンス
+
+### `gohan build`
+
+```bash
+gohan build [--full] [--config=path] [--output=dir] [--parallel=N] [--dry-run]
+```
+
+| フラグ | 説明 |
+|---|---|
+| `--full` | 前回マニフェストを無視してフルビルドを強制 |
+| `--config` | 設定ファイルのパス（デフォルト: `./config.yaml`） |
+| `--output` | 出力ディレクトリの上書き |
+| `--parallel` | 並列ワーカー数（デフォルト: CPU数） |
+| `--dry-run` | ファイルを書き出さずに変更対象を表示 |
+
+### `gohan new`
+
+```bash
+gohan new [--title="タイトル"] [--type=page] <slug>
+```
+
+### `gohan serve`
+
+```bash
+gohan serve [--port=N] [--host=addr]
+```
+
+| フラグ | 説明 |
+|---|---|
+| `--port` | ポート番号（デフォルト: `1313`） |
+| `--host` | ホストアドレス（デフォルト: `127.0.0.1`） |
 
 ## インストールと基本操作
 

@@ -21,6 +21,99 @@ This site (bmf-tech.com) runs on gohan. The motivation was simple: I wanted a st
 
 Most generators rebuild everything unconditionally or depend on `git diff` output. Git diff becomes unreliable after branch switches or fresh clones. gohan creates and persists a build manifest using SHA-256 content hashing. Incremental builds stay accurate without relying on Git history.
 
+Looking at the existing options, each had drawbacks:
+
+| Tool | Pain point |
+|---|---|
+| Hugo | Complex configuration with a steep customisation learning curve |
+| Jekyll | Ruby dependency; slow builds |
+| Gatsby / Next.js | Heavy Node.js ecosystem; overkill for a simple blog |
+
+Go-native, single binary, simple configuration, and reliable incremental builds — gohan was built to check those boxes.
+
+## Quick Start
+
+```bash
+# 1. Create a project directory
+mkdir myblog && cd myblog
+
+# 2. Add config.yaml
+cat > config.yaml << 'EOF'
+site:
+  title: My Blog
+  base_url: https://example.com
+  language: en
+build:
+  content_dir: content
+  output_dir: public
+theme:
+  name: default
+EOF
+
+# 3. Create your first article
+gohan new --title="Hello, World!" hello-world
+
+# 4. Build the site
+gohan build
+
+# 5. Preview locally with live reload
+gohan serve   # open http://127.0.0.1:1313
+```
+
+## Architecture
+
+### System Design
+
+```mermaid
+graph TB
+    A[Content Source] --> B[Parser Layer]
+    B --> C[Processing Layer]
+    C --> D[Template Engine]
+    D --> E[Output Generator]
+
+    B --> F[Diff Engine]
+    F --> C
+
+    G[Config] --> C
+    H[Templates] --> D
+    I[Assets] --> E
+```
+
+### Directory Structure
+
+Input:
+
+```text
+.
+├── config.yaml
+├── content/
+│   ├── posts/        # Blog posts (list, tag, archive pages)
+│   └── pages/        # Static pages (About, Contact, etc.)
+├── themes/
+│   └── default/
+│       └── layouts/  # Template files
+├── assets/           # CSS, images, and other static files
+└── taxonomies/
+    ├── tags.yaml
+    └── categories.yaml
+```
+
+Output (`public/`):
+
+```text
+public/
+├── index.html
+├── posts/
+├── pages/
+├── tags/
+├── categories/
+├── archives/
+├── feed.xml
+├── atom.xml
+├── sitemap.xml
+└── assets/
+```
+
 ## Incremental Build Engine
 
 The core of the incremental build lives in `internal/diff/git.go`. The `Detect()` method compares the current working tree against a persisted `BuildManifest`.
@@ -58,6 +151,84 @@ func (g *GitDiffEngine) Detect(manifest *model.BuildManifest) (*model.ChangeSet,
 ```
 
 `hashAllFiles()` walks the content directory and computes a SHA-256 hex digest for every file. On the first build (or when no manifest exists), all files count as `Added`. Later builds detect three change types — `Added`, `Modified`, and `Deleted` — and regenerate only the affected HTML pages.
+
+Cache data is stored under `.gohan/cache/`.
+
+```text
+.gohan/
+└── cache/
+    ├── manifest.json   # file hash registry
+    ├── ast/            # parsed intermediate representation
+    └── html/           # HTML cache
+```
+
+### Build Sequence (`gohan build`)
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant CLI as gohan CLI
+    participant Config as Config Loader
+    participant Diff as Diff Engine
+    participant Cache as Cache Manager
+    participant Parser
+    participant Processor
+    participant Generator
+    participant FS as File System
+
+    User->>CLI: gohan build
+    CLI->>Config: load config.yaml
+    Config-->>CLI: cfg
+    CLI->>Cache: ReadManifest(.gohan/cache/manifest.json)
+    Cache-->>CLI: previous manifest
+    CLI->>Diff: DetectChanges(contentDir, manifest)
+    Diff->>FS: git diff / mtime comparison
+    FS-->>Diff: changed file list
+    Diff-->>CLI: changedFiles
+    CLI->>Parser: Parse(changedFiles)
+    Parser-->>CLI: []Article
+    CLI->>Processor: BuildDependencyGraph([]Article)
+    Processor-->>CLI: impactSet
+    CLI->>Generator: GenerateHTML(impactSet)
+    Generator->>FS: write HTML files
+    CLI->>Generator: GenerateSitemap / GenerateFeeds
+    Generator->>FS: write sitemap.xml, atom.xml
+    CLI->>Cache: WriteManifest(newManifest)
+    CLI-->>User: build complete (Xs, N articles)
+```
+
+### Dev Server — Live Reload (`gohan serve`)
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant CLI as gohan CLI
+    participant Builder as Build Pipeline
+    participant Watcher as fsnotify Watcher
+    participant HTTP as HTTP Server
+    participant SSE as SSE Handler
+    participant Browser
+
+    User->>CLI: gohan serve
+    CLI->>Builder: full build (initial)
+    Builder-->>CLI: done
+    CLI->>HTTP: start HTTP server (static files + /sse)
+    CLI->>Watcher: watch content/, themes/, config.yaml
+    User->>Browser: open http://localhost:<port>
+    Browser->>HTTP: GET /
+    HTTP-->>Browser: index.html
+    Browser->>SSE: GET /sse (EventSource connect)
+    SSE-->>Browser: connected
+    Note over User: save article.md
+    Watcher->>CLI: FileChanged event
+    CLI->>Builder: incremental build
+    Builder-->>CLI: done
+    CLI->>SSE: send "reload" event
+    SSE-->>Browser: data: reload
+    Browser->>Browser: location.reload()
+    Browser->>HTTP: GET / (reload)
+    HTTP-->>Browser: updated index.html
+```
 
 ## Features
 
@@ -119,6 +290,39 @@ plugins:
   bookshelf:
     enabled: true
 ```
+
+## CLI Reference
+
+### `gohan build`
+
+```bash
+gohan build [--full] [--config=path] [--output=dir] [--parallel=N] [--dry-run]
+```
+
+| Flag | Description |
+|---|---|
+| `--full` | Force a full rebuild, ignoring the previous manifest |
+| `--config` | Path to the config file (default: `./config.yaml`) |
+| `--output` | Override the output directory |
+| `--parallel` | Number of parallel workers (default: number of CPUs) |
+| `--dry-run` | Print files that would be rebuilt without writing any output |
+
+### `gohan new`
+
+```bash
+gohan new [--title="Title"] [--type=page] <slug>
+```
+
+### `gohan serve`
+
+```bash
+gohan serve [--port=N] [--host=addr]
+```
+
+| Flag | Description |
+|---|---|
+| `--port` | Port number (default: `1313`) |
+| `--host` | Host address (default: `127.0.0.1`) |
 
 ## Install and Usage
 
