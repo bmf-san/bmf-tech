@@ -154,33 +154,39 @@ Cache data is stored in `.gohan/cache/manifest.json`.
 sequenceDiagram
     participant User
     participant CLI as gohan CLI
-    participant Config as Config Loader
-    participant Diff as Diff Engine
     participant Cache as Cache Manager
+    participant Diff as Diff Engine
     participant Parser
     participant Processor
+    participant Plugin
     participant Generator
     participant FS as File System
 
     User->>CLI: gohan build
-    CLI->>Config: load config.yaml
-    Config-->>CLI: cfg
+    CLI->>CLI: load config.yaml
     CLI->>Cache: ReadManifest(.gohan/cache/manifest.json)
     Cache-->>CLI: previous manifest
-    CLI->>Diff: DetectChanges(contentDir, manifest)
-    Diff->>FS: git diff / mtime comparison
-    FS-->>Diff: changed file list
-    Diff-->>CLI: changedFiles
-    CLI->>Parser: Parse(changedFiles)
+    alt --full or config changed
+        CLI->>Cache: ClearCache()
+        Note over CLI: treat all files as full build
+    else incremental build
+        CLI->>Diff: Detect(manifest)
+        Diff->>FS: compute & compare SHA-256 hashes
+        FS-->>Diff: hash map
+        Diff-->>CLI: changeSet
+    end
+    CLI->>Parser: ParseAll(contentDir)
     Parser-->>CLI: []Article
-    CLI->>Processor: BuildDependencyGraph([]Article)
-    Processor-->>CLI: impactSet
-    CLI->>Generator: GenerateHTML(impactSet)
-    Generator->>FS: write HTML files
+    CLI->>Processor: Process(articles)
+    Processor-->>CLI: []ProcessedArticle
+    CLI->>Plugin: Enrich(site) / EnrichVirtual(site)
+    Plugin-->>CLI: done
+    CLI->>Generator: Generate(site, changeSet)
+    Generator->>FS: write HTML files (changeSet only)
     CLI->>Generator: GenerateSitemap / GenerateFeeds
     Generator->>FS: write sitemap.xml, atom.xml
     CLI->>Cache: WriteManifest(newManifest)
-    CLI-->>User: build complete (Xs, N articles)
+    CLI-->>User: build: N articles, 0 errors, Xs
 ```
 
 ### Dev Server — Live Reload (`gohan serve`)

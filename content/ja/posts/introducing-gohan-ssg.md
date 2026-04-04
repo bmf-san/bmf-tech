@@ -154,33 +154,39 @@ func (g *GitDiffEngine) Detect(manifest *model.BuildManifest) (*model.ChangeSet,
 sequenceDiagram
     participant User as ユーザー
     participant CLI as gohan CLI
-    participant Config as Config Loader
-    participant Diff as Diff Engine
     participant Cache as Cache Manager
+    participant Diff as Diff Engine
     participant Parser as パーサー
     participant Processor as プロセッサー
+    participant Plugin as プラグイン
     participant Generator as ジェネレーター
     participant FS as ファイルシステム
 
     User->>CLI: gohan build
-    CLI->>Config: config.yaml を読み込む
-    Config-->>CLI: cfg
+    CLI->>CLI: config.yaml を読み込む
     CLI->>Cache: ReadManifest(.gohan/cache/manifest.json)
     Cache-->>CLI: 前回マニフェスト
-    CLI->>Diff: DetectChanges(contentDir, manifest)
-    Diff->>FS: git diff / mtime 比較
-    FS-->>Diff: 変更ファイルリスト
-    Diff-->>CLI: changedFiles
-    CLI->>Parser: Parse(changedFiles)
+    alt --full または config 変更
+        CLI->>Cache: ClearCache()
+        Note over CLI: 全記事をフルビルド対象とする
+    else 差分ビルド
+        CLI->>Diff: Detect(manifest)
+        Diff->>FS: SHA-256 ハッシュ計算・比較
+        FS-->>Diff: ハッシュ一覧
+        Diff-->>CLI: changeSet
+    end
+    CLI->>Parser: ParseAll(contentDir)
     Parser-->>CLI: []Article
-    CLI->>Processor: BuildDependencyGraph([]Article)
-    Processor-->>CLI: impactSet
-    CLI->>Generator: GenerateHTML(impactSet)
-    Generator->>FS: HTMLファイル書き出し
+    CLI->>Processor: Process(articles)
+    Processor-->>CLI: []ProcessedArticle
+    CLI->>Plugin: Enrich(site) / EnrichVirtual(site)
+    Plugin-->>CLI: 完了
+    CLI->>Generator: Generate(site, changeSet)
+    Generator->>FS: HTML ファイル書き出し（changeSet 対象のみ）
     CLI->>Generator: GenerateSitemap / GenerateFeeds
     Generator->>FS: sitemap.xml, atom.xml 書き出し
     CLI->>Cache: WriteManifest(newManifest)
-    CLI-->>User: ビルド完了（X秒、N記事）
+    CLI-->>User: build: N articles, 0 errors, Xs
 ```
 
 ### 開発サーバー・ライブリロード（`gohan serve`）
