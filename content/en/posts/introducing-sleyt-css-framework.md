@@ -22,7 +22,7 @@ It focuses on being small, pure CSS with no JavaScript runtime dependency, and a
 
 Some components and flexibility gaps remain, but it works well enough for practical use.
 
-![Documentation site](/assets/images/posts/introducing-sleyt-css-framework/01_docs_home.png)
+See the [documentation site](https://bmf-san.github.io/sleyt/) for full details.
 
 ## Component Library
 
@@ -36,15 +36,9 @@ sleyt ships 20+ ready-to-use components split across four directories:
 
 **Utilities** (`src/utilities/`): spacing, colours, typography, borders, effects, glass, display, position, transforms, transitions.
 
-![Component library — Buttons](/assets/images/posts/introducing-sleyt-css-framework/06_demo_components.png)
-
-![Blog demo](/assets/images/posts/introducing-sleyt-css-framework/03_demo_blog.png)
-
 ### Data Visualisation
 
-`charts.css` provides CSS-only bar charts, line charts, and donut charts — no JavaScript chart library required. Bar charts are pure CSS, using element height to represent data values. Line charts use SVG `<path>` elements styled with CSS. Donut chart segments are SVG `<circle>` elements drawn with `stroke-dasharray` and `stroke-dashoffset`. Data values flow in via CSS custom properties.
-
-![Dashboard demo](/assets/images/posts/introducing-sleyt-css-framework/05_demo_dashboard.png)
+`charts.css` provides CSS-only bar charts, line charts, and donut charts — no JavaScript chart library required. Bar charts are pure CSS, using element height to represent data values.
 
 ![Dashboard charts demo](/assets/images/posts/introducing-sleyt-css-framework/08_demo_charts.png)
 
@@ -52,15 +46,13 @@ sleyt ships 20+ ready-to-use components split across four directories:
 
 Use `.glass`, `.glass-light`, `.glass-heavy`, and `.frosted` utility classes to add transparency and backdrop blur to any element. Stepped `backdrop-blur` utilities give fine-grained control over blur intensity.
 
-![Glass morphism utilities](/assets/images/posts/introducing-sleyt-css-framework/07_docs_glass.png)
-
 ### Dark Mode
 
 sleyt includes dark mode built-in, activating automatically via `@media (prefers-color-scheme: dark)`. Component colours use CSS custom properties (variables), so overriding a palette takes a single-file change.
 
 ### Accessibility
 
-Component markup follows semantic HTML5 patterns. Buttons use real `<button>` elements, navigation uses `<nav>`, colour contrast ratios target WCAG AA.
+Component markup follows semantic HTML5 patterns. Colour contrast ratios target WCAG AA.
 
 ## Installation
 
@@ -80,17 +72,19 @@ Or use the CDN — add this to your HTML `<head>`:
 <link rel="stylesheet" href="https://unpkg.com/sleyt@latest/dist/css/index.css">
 ```
 
-## Demo and Documentation
+## Demo
 
 The [demo page](https://bmf-san.github.io/sleyt/demo.html) shows every component in context, including dark-mode variants and chart types. Three full-page demos — a blog listing, an article detail, and an admin dashboard — show how sleyt looks in realistic UI patterns.
 
+![Blog demo](/assets/images/posts/introducing-sleyt-css-framework/03_demo_blog.png)
+
 ![Blog article detail demo](/assets/images/posts/introducing-sleyt-css-framework/04_demo_blog_detail.png)
 
-The [documentation](https://bmf-san.github.io/sleyt/) covers installation, customisation via CSS variables, and component usage examples.
+![Dashboard demo](/assets/images/posts/introducing-sleyt-css-framework/05_demo_dashboard.png)
 
 ## Summary
 
-sleyt is a lightweight CSS-only framework focused on readability and modern visual style with no JavaScript runtime cost.
+sleyt is a lightweight CSS-only framework focused on readability and modern visual style. It runs on CSS alone, with no JavaScript runtime dependency.
 
 - **npm**: [sleyt](https://www.npmjs.com/package/sleyt)
 - **GitHub**: [bmf-san/sleyt](https://github.com/bmf-san/sleyt)
