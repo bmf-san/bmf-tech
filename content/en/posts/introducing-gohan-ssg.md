@@ -341,6 +341,18 @@ gohan build
 gohan serve
 ```
 
+## User Guide
+
+For detailed configuration options and template usage, see the documentation.
+
+| Guide | Description |
+|---|---|
+| [Getting Started](https://github.com/bmf-san/gohan/blob/main/docs/guide/getting-started.md) | Installation, first site, build & preview |
+| [Configuration](https://github.com/bmf-san/gohan/blob/main/docs/guide/configuration.md) | All `config.yaml` fields and Front Matter |
+| [Templates](https://github.com/bmf-san/gohan/blob/main/docs/guide/templates.md) | Theme templates, variables, built-in functions |
+| [Taxonomy](https://github.com/bmf-san/gohan/blob/main/docs/guide/taxonomy.md) | Tags, categories, and archive pages |
+| [CLI Reference](https://github.com/bmf-san/gohan/blob/main/docs/guide/cli.md) | All commands and flags |
+
 ## Closing
 
 gohan is the engine behind this site. SHA-256 manifest-driven incremental builds keep iteration fast. The compiled plugin system keeps the binary self-contained. From i18n to OGP to Mermaid, everything runs at build time with no client-side JavaScript required.

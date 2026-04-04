@@ -341,6 +341,18 @@ gohan build
 gohan serve
 ```
 
+## ユーザーガイド
+
+詳細な設定やテンプレートの使い方はドキュメントを参照されたい。
+
+| ガイド | 内容 |
+|---|---|
+| [Getting Started](https://github.com/bmf-san/gohan/blob/main/docs/guide/getting-started.ja.md) | インストール、最初のサイト作成、ビルド、プレビュー |
+| [Configuration](https://github.com/bmf-san/gohan/blob/main/docs/guide/configuration.ja.md) | `config.yaml` の全フィールドと Front Matter |
+| [Templates](https://github.com/bmf-san/gohan/blob/main/docs/guide/templates.ja.md) | テーマテンプレート・変数・組み込み関数 |
+| [Taxonomy](https://github.com/bmf-san/gohan/blob/main/docs/guide/taxonomy.ja.md) | タグ・カテゴリー・アーカイブページ |
+| [CLI リファレンス](https://github.com/bmf-san/gohan/blob/main/docs/guide/cli.ja.md) | 全コマンドとフラグ |
+
 ## まとめ
 
 gohanはこのサイトを動かすエンジンだ。SHA-256マニフェストによるインクリメンタルビルドがイテレーションを速く保ち、コンパイル済みプラグインシステムがバイナリを自由に保つ。i18nからOGP、Mermaidまで、ビルド時はクライアントサイドJavaScript不要で動作する。
