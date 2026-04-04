@@ -1,6 +1,6 @@
 ---
 title: "Go製Git操作ツール『ggc』の紹介"
-description: 'ggc v8の全機能完全解説。CLI/インタラクティブ分離アーキテクチャ、Fuzzyサーチエンジンの実装、Workflow Mode内部構造、カスタマイズ可能なエイリアス、階層型キーバインドプロファイルシステム。'
+description: 'ggcの全機能解説。CLI/インタラクティブ分離アーキテクチャ、Fuzzyサーチエンジンの実装、Workflow Mode内部構造、カスタマイズ可能なエイリアス、階層型キーバインドプロファイルシステム。'
 slug: introducing-go-git-tool-ggc
 date: 2025-06-15T00:00:00Z
 lastmod: 2026-04-04
@@ -19,7 +19,7 @@ translation_key: introducing-go-git-tool-ggc
 
 ## ggcとは
 
-[ggc](https://github.com/bmf-san/ggc)はGo製のGitワークフローツールだ。日常的なGitサブコマンドを一貫したインターフェースで提供し、コマンド名を暗記せずとも操作できるインタラクティブFuzzy検索TUIを搭載する。v8ではWorkflow Mode、プレースホルダー対応のカスタムエイリアス、階層型キーバインドプロファイルシステムが新たに導入された。本記事ではその全てを解説する。[Awesome Go](https://github.com/avelino/awesome-go)にも掲載されているツールだ。
+[ggc](https://github.com/bmf-san/ggc)はGo製のGitワークフローツールだ。日常的なGitサブコマンドを一貫したインターフェースで提供し、コマンド名を暗記せずとも操作できるインタラクティブFuzzy検索TUIを搭載する。Workflow Mode、プレースホルダー対応のカスタムエイリアス、階層型キーバインドプロファイルシステムなど多くの機能を持つ。本記事ではその全てを解説する。[Awesome Go](https://github.com/avelino/awesome-go)にも掲載されているツールだ。
 
 ## デモ
 
@@ -403,6 +403,6 @@ go install github.com/bmf-san/ggc/v8@latest
 
 ## まとめ
 
-ggc v8は、明確な設計思想に基づく柔軟なGitワークフローツールだ。CLIパスとインタラクティブパスは同じ`Route()`層を共有しており、挙動が一貫している。Fuzzyサーチスコアラーは依存性ゼロの純粋関数であり、Workflow実行エンジンはコマンドディスパッチロジックを重複定義せずに`Route()`を再利用する。
+ggcは、明確な設計思想に基づく柔軟なGitワークフローツールだ。CLIパスとインタラクティブパスは同じ`Route()`層を共有しており、挙動が一貫している。Fuzzyサーチスコアラーは依存性ゼロの純粋関数であり、Workflow実行エンジンはコマンドディスパッチロジックを重複定義せずに`Route()`を再利用する。
 
 - **GitHub**: [bmf-san/ggc](https://github.com/bmf-san/ggc)

@@ -1,6 +1,6 @@
 ---
 title: Introducing ggc — A Go-Based Git Tool
-description: 'A complete walkthrough of ggc v8: the CLI/interactive split architecture, fuzzy-search engine implementation, Workflow Mode internals, customisable aliases, and cross-platform keybinding profiles.'
+description: 'A complete walkthrough of ggc: the CLI/interactive split architecture, fuzzy-search engine implementation, Workflow Mode internals, customisable aliases, and cross-platform keybinding profiles.'
 slug: introducing-go-git-tool-ggc
 date: 2025-06-15T00:00:00Z
 lastmod: 2026-04-04
@@ -19,7 +19,7 @@ translation_key: introducing-go-git-tool-ggc
 
 ## What is ggc?
 
-[ggc](https://github.com/bmf-san/ggc) is a Git workflow tool written in Go. It wraps everyday Git sub-commands under a consistent surface and adds an interactive fuzzy-search TUI so you can find and execute commands without memorising their exact names. Version 8 introduced Workflow Mode, customisable aliases with placeholder support, and a layered keybinding profile system — this article covers them all. ggc is listed on [Awesome Go](https://github.com/avelino/awesome-go).
+[ggc](https://github.com/bmf-san/ggc) is a Git workflow tool written in Go. It wraps everyday Git sub-commands under a consistent surface and adds an interactive fuzzy-search TUI so you can find and execute commands without memorising their exact names. It includes Workflow Mode, customisable aliases with placeholder support, and a layered keybinding profile system — this article covers them all. ggc is listed on [Awesome Go](https://github.com/avelino/awesome-go).
 
 ## Demo
 
@@ -399,6 +399,6 @@ go install github.com/bmf-san/ggc/v8@latest
 
 ## Summary
 
-ggc v8 is an opinionated but flexible Git workflow tool. The CLI path and the interactive path share the same `Route()` layer, keeping behaviours consistent. The fuzzy-search scorer is a pure function with no dependencies, and the Workflow executor reuses `Route()` rather than duplicating command dispatch logic.
+ggc is an opinionated but flexible Git workflow tool. The CLI path and the interactive path share the same `Route()` layer, keeping behaviours consistent. The fuzzy-search scorer is a pure function with no dependencies, and the Workflow executor reuses `Route()` rather than duplicating command dispatch logic.
 
 - **GitHub**: [bmf-san/ggc](https://github.com/bmf-san/ggc)
