@@ -140,14 +140,12 @@ func (g *GitDiffEngine) Detect(manifest *model.BuildManifest) (*model.ChangeSet,
 
 `hashAllFiles()` walks the content directory and computes a SHA-256 hex digest for every file. On the first build (or when no manifest exists), all files count as `Added`. Later builds detect three change types — `Added`, `Modified`, and `Deleted` — and regenerate only the affected HTML pages.
 
-Cache data is stored under `.gohan/cache/`.
+Cache data is stored in `.gohan/cache/manifest.json`.
 
 ```text
 .gohan/
 └── cache/
-    ├── manifest.json   # file hash registry
-    ├── ast/            # parsed intermediate representation
-    └── html/           # HTML cache
+    └── manifest.json   # file hash registry
 ```
 
 ### Build Sequence (`gohan build`)
