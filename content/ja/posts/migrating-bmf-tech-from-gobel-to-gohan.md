@@ -22,7 +22,7 @@ bmf-tech.comはインフラ的に4世代を経てきた。
 
 1. **WordPress** — 独自のテンプレートを実装して運用していたが、メンテナンスコストとセキュリティパッチに音を上げて破棄。
 2. **[Rubel](https://github.com/bmf-san/Rubel)** — Laravelで実装したヘッドレスCMS。Reactフロントエンド + MySQLをConoHa VPS上で運用。
-3. **[gobel](https://github.com/bmf-san/gobel-api)** — RubelをGo製にリライト。数年間運用し700件超の記事を蓄積。インフラはNginx + MySQL + Redis + Vue.jsフロントエンドをdocker-composeで構成し、Prometheus・Grafana・Loki・Pyroscopeによる監視スタックも整備していた。
+3. **[gobel](https://github.com/bmf-san/gobel-api)** — RubelをGo製にリライト。数年間運用し700件超の記事を蓄積。バックエンドはNginx + MySQL + Redisをdocker-composeで構成し、フロントエンドはVue.jsで実装した。Prometheus・Grafana・Loki・Pyroscopeによる監視スタックも整備していた。
 4. **gohan** — 本記事で説明する現在の構成。
 
 目標はサーバーコストと運用負荷をゼロにすること。GitHubPushで自動ビルド＆デプロイされるMarkdownファイルのみでサイトを組む構成を実現したいと思った。
