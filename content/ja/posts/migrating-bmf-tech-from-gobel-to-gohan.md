@@ -21,7 +21,7 @@ translation_key: migrating-bmf-tech-from-gobel-to-gohan
 bmf-tech.comはインフラ的に4世代を経てきた。
 
 1. **WordPress** — 独自のテンプレートを実装して運用していたが、メンテナンスコストとセキュリティパッチに音を上げて破棄。
-2. **[Rubel](https://github.com/bmf-san/Rubel)** — Laravelで実装したヘッドレスCMS。Vue.jsフロントエンド + MySQLをConoHa VPS上で運用。
+2. **[Rubel](https://github.com/bmf-san/Rubel)** — Laravelで実装したヘッドレスCMS。Reactフロントエンド + MySQLをConoHa VPS上で運用。
 3. **[gobel](https://github.com/bmf-san/gobel-api)** — RubelをGo製にリライト。数年間運用し700件超の記事を蓄積。インフラはNginx + MySQL + Redis + Vue.jsフロントエンドをdocker-composeで構成し、Prometheus・Grafana・Loki・Pyroscopeによる監視スタックも整備していた。
 4. **gohan on Cloudflare Pages** — 本記事で説明する現在の構成。
 
