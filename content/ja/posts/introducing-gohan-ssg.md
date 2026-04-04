@@ -300,11 +300,12 @@ gohan build [--full] [--config=path] [--output=dir] [--parallel=N] [--dry-run]
 | `--output` | 出力ディレクトリの上書き |
 | `--parallel` | 並列ワーカー数（デフォルト: CPU数） |
 | `--dry-run` | ファイルを書き出さずに変更対象を表示 |
+| `--draft` | ドラフト記事（`draft: true`）もビルド対象に含める |
 
 ### `gohan new`
 
 ```bash
-gohan new [--title="タイトル"] [--type=page] <slug>
+gohan new [--title="タイトル"] [--type=post|page] <slug>
 ```
 
 ### `gohan serve`
@@ -336,6 +337,6 @@ gohan serve
 
 ## まとめ
 
-gohanはこのサイトを動かすエンジンだ。SHA-256マニフェストによるインクリメンタルビルドがイテレーションを速く保ち、コンパイル済みプラグインシステムがバイナリを自山に保つ。i18nからOGP、Mermaidまで、ビルド時はクライアントサイドJavaScript不要で動作する。
+gohanはこのサイトを動かすエンジンだ。SHA-256マニフェストによるインクリメンタルビルドがイテレーションを速く保ち、コンパイル済みプラグインシステムがバイナリを自由に保つ。i18nからOGP、Mermaidまで、ビルド時はクライアントサイドJavaScript不要で動作する。
 
 - **GitHub**: [bmf-san/gohan](https://github.com/bmf-san/gohan)

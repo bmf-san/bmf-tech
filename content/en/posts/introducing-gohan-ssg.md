@@ -300,11 +300,12 @@ gohan build [--full] [--config=path] [--output=dir] [--parallel=N] [--dry-run]
 | `--output` | Override the output directory |
 | `--parallel` | Number of parallel workers (default: number of CPUs) |
 | `--dry-run` | Print files that would be rebuilt without writing any output |
+| `--draft` | Include draft articles (`draft: true`) in the build |
 
 ### `gohan new`
 
 ```bash
-gohan new [--title="Title"] [--type=page] <slug>
+gohan new [--title="Title"] [--type=post|page] <slug>
 ```
 
 ### `gohan serve`
