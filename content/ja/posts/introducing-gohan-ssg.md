@@ -228,7 +228,11 @@ sequenceDiagram
 
 インクリメンタルビルドに加え、gohanは標準で多くの機能を提供する。
 
-- **i18n** — `content/en/`と`content/ja/`のようなロケールメラーディレクトリ構造。ロケール切り替えリンクを自動生成。
+- **Markdown + Front Matter** — GFM (GitHub Flavored Markdown) + YAMLメタデータ対応。
+- **タクソノミー** — タグ・カテゴリーページを自動生成。
+- **Atomフィード / サイトマップ** — `atom.xml`・`sitemap.xml` を自動生成。
+- **カスタマイズ可能なテーマ** — Go `html/template` による完全制御。
+- **i18n** — `content/en/`と`content/ja/`のようなロケールミラーディレクトリ構造。ロケール切り替えリンクを自動生成。
 - **シンタックスハイライト** — Chromaによるサーバーサイドレンダリング。クライアントサイドJavaScript不要。
 - **Mermaid図** — ビルド時にSVG変換またはクライアントサイドレンダリング用の`<pre class="mermaid">`として出力。
 - **OGP画像生成** — 記事ごとにOpen Graph画像をビルド時に生成。

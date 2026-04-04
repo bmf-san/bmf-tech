@@ -228,6 +228,10 @@ sequenceDiagram
 
 Beyond incremental builds, gohan ships with many capabilities out of the box.
 
+- **Markdown + Front Matter** — GitHub Flavored Markdown with YAML metadata.
+- **Taxonomy** — Tag and category pages generated automatically.
+- **Atom feed & sitemap** — `atom.xml` and `sitemap.xml` generated automatically.
+- **Customisable themes** — Full control via Go `html/template`.
 - **i18n** — Mirror directory layout such as `content/en/` and `content/ja/`. Locale-switch links generate automatically.
 - **Syntax highlighting** — Server-side rendering via Chroma. No client-side JavaScript needed.
 - **Mermaid diagrams** — Output as SVG at build time or as `<pre class="mermaid">` for client-side rendering.
