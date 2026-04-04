@@ -20,7 +20,7 @@ translation_key: migrating-bmf-tech-from-gobel-to-gohan
 
 bmf-tech.comはインフラ的に3世代を経てきた。
 
-1. **WordPress** — メンテナンスコストとセキュリティパッチに音を上げて破棄。
+1. **WordPress** — 独自のテンプレートを実装して運用していたが、メンテナンスコストとセキュリティパッチに音を上げて破棄。
 2. **Rubel → gobel** — Laravelで実装のヘッドレスCMS（後にGo製の[gobel](https://github.com/bmf-san/gobel-api)にリライト）。Vue.jsフロントエンド + MySQLをConoHa VPS上で幾年間運用し700件超の記事を蓄積。
 3. **gohan on Cloudflare Pages** — 本記事で説明する現在の構成。
 
