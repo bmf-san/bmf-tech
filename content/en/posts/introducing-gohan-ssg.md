@@ -88,7 +88,7 @@ graph TB
 
 ### Directory Structure
 
-Input:
+#### Input
 
 ```text
 .
@@ -105,7 +105,7 @@ Input:
     └── categories.yaml
 ```
 
-Output (`public/`):
+#### Output
 
 ```text
 public/
