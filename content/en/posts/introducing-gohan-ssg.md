@@ -237,6 +237,8 @@ Beyond incremental builds, gohan ships with many capabilities out of the box.
 
 ## Plugin System
 
+gohan deliberately avoids Go's standard `plugin` package and a library-style design, instead opting for a **compiled-in approach**. The reason is straightforward: the priority is the simplest, shortest path to a working SSG. Dynamic loading or external library dependencies add friction to installation, builds, and distribution. The compiled-in model serves well enough until there is a concrete reason to change it.
+
 Plugins compile into the gohan binary and activate per-project via `config.yaml`. No recompilation needed by users. The plugin interfaces live in `internal/plugin/plugin.go`.
 
 ```go
