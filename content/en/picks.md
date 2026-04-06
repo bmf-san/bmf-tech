@@ -43,6 +43,7 @@ listing_slugs:
   - custom-http-router-to-new-servemux
   - ruby-rails-io-cpu-characteristics
   - pagination-impact-solutions-opa
+  - product-development-vs-platform-development
   - team-topologies-introduction
   - mvv-importance-software-teams
   - dealing-with-uncertainty-software-projects
