@@ -129,9 +129,10 @@ All slides are available on [Speaker Deck](https://speakerdeck.com/bmf_san).
 
 ## Volunteer
 
-- Technical reviewer for *Software Architecture: The Hard Parts* (Japanese edition)
-- Technical reviewer for *The Staff Engineer's Path* (Japanese edition)
-- Technical reviewer for *Decision-Making for Software Architects* (Japanese edition)
+- Translation reviewer for *Fundamentals of Software Architecture, 2nd Edition* (Japanese edition)
+- Translation reviewer for *Software Architecture: The Hard Parts* (Japanese edition)
+- Translation reviewer for *The Staff Engineer's Path* (Japanese edition)
+- Translation reviewer for *Decision-Making for Software Architects* (Japanese edition)
 
 ---
 
