@@ -14,9 +14,9 @@ translation_key: about
 
 Senior Platform Engineer.
 
-Started my career as a freelance web developer, then gained experience launching new businesses at a startup and handling diverse projects at a software agency. Later joined a crowdfunding company as a software engineer, working on foundational systems including notification infrastructure and authentication/authorization platforms. Currently at an HR tech company as a Senior Platform Engineer, working on product platform development.
+Started my career as a freelance web engineer, then gained experience developing job services at a startup and handling diverse projects at a contract development company. Later joined a company operating a crowdfunding service as a software engineer, working on the design and development of foundational systems including notification infrastructure and authentication/authorization infrastructure. Currently at a company operating an HR/labor management SaaS as a Senior Platform Engineer, working on product infrastructure development.
 
-My goal is to continuously improve the long-term value of the organizations and software I'm involved with. I'm particularly interested in system architecture. Hobbies include OSS development, the gym, and houseplants.
+Aspiring to be an architect who improves the long-term value of organizations and software. I value technology that scales through teams, and through my experience designing and developing cross-cutting infrastructure such as authentication, notification, and authorization systems, I've seen firsthand the impact a single foundational system can have on an entire organization's development efficiency and quality. I want to contribute to building sustainable engineering organizations that support business growth through technical strategy and execution. Hobbies include OSS development, the gym, and houseplants.
 
 | Key | Value |
 |---|---|
@@ -26,6 +26,8 @@ My goal is to continuously improve the long-term value of the organizations and 
 | LinkedIn | [bmf-san](https://www.linkedin.com/in/bmf-san) |
 | Zenn | [bmf_san](https://zenn.dev/bmf_san) |
 | Speaker Deck | [bmf_san](https://speakerdeck.com/bmf_san) |
+| Findy | [bmf-san](https://findy-code.io/skills-share/4bgFBcxEN7EA7) |
+| LAPRAS | [bmf san](https://lapras.com/public/YCDKRXI) |
 
 ---
 
@@ -34,7 +36,7 @@ My goal is to continuously improve the long-term value of the organizations and 
 ### Technical & Architecture
 
 - Distributed systems and microservices architecture design
-- Platform and foundational systems development
+- Platform development
 - Cloud infrastructure construction and operation
 - System performance optimization
 - Large-scale backend development with Go and PHP
@@ -62,7 +64,7 @@ My goal is to continuously improve the long-term value of the organizations and 
 
 **SmartHR / Senior Platform Engineer** — Jun 2024–present
 
-Platform development and operations in the HR tech space, system architecture design and re-architecting, performance optimization.
+Platform development in the HR tech space, system architecture design and re-architecting, performance optimization.
 
 **Makuake / Senior Software Engineer & Lead Engineer** — Dec 2018–May 2024
 
@@ -76,7 +78,7 @@ New service development (planning and prototyping) for job-related services, CMS
 
 Feature development and UI implementation for a job service, service growth through analytics.
 
-**Freelance / Web Developer** — Jun 2015–May 2016
+**Freelance / Web Engineer** — Jun 2015–May 2016
 
 Contract web development across diverse clients and projects.
 
