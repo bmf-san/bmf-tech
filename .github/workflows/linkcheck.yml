@@ -34,6 +34,5 @@ jobs:
             --no-progress
             --root-dir ${{ github.workspace }}/public
             --accept 200,206,403,429
-            --exclude-mail
             'public/**/*.html'
           fail: true
