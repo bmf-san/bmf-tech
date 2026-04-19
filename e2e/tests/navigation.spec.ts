@@ -110,7 +110,10 @@ test.describe('About page /ja/about/', () => {
 
   test('JA nav About link points to /ja/about/', async ({ page }) => {
     await page.goto('/ja/');
-    const href = await page.locator('nav.navbar').getByRole('link', { name: 'プロフィール' }).getAttribute('href');
+    const href = await page
+      .locator('nav.navbar')
+      .getByRole('link', { name: 'プロフィール' })
+      .getAttribute('href');
     expect(href).toBe('/ja/about/');
   });
 });
@@ -125,7 +128,10 @@ test.describe('Archive page /archives/2024/03/', () => {
 
   test('articles are from 2024-03', async ({ page }) => {
     await page.goto('/archives/2024/03/');
-    const firstDate = await page.locator('div.card-body .text-xs.text-secondary').first().textContent();
+    const firstDate = await page
+      .locator('div.card-body .text-xs.text-secondary')
+      .first()
+      .textContent();
     expect(firstDate).toMatch(/^2024-03/);
   });
 });
@@ -138,7 +144,10 @@ test.describe('Archive page /ja/archives/2026/02/', () => {
 
   test('articles are from 2026-02', async ({ page }) => {
     await page.goto('/ja/archives/2026/02/');
-    const firstDate = await page.locator('div.card-body .text-xs.text-secondary').first().textContent();
+    const firstDate = await page
+      .locator('div.card-body .text-xs.text-secondary')
+      .first()
+      .textContent();
     expect(firstDate).toMatch(/^2026-02/);
   });
 });
@@ -154,7 +163,10 @@ test.describe('Nav: JA locale shows Japanese labels', () => {
 
   test('JA ホーム link points to /ja/', async ({ page }) => {
     await page.goto('/ja/');
-    const href = await page.locator('nav.navbar').getByRole('link', { name: 'ホーム' }).getAttribute('href');
+    const href = await page
+      .locator('nav.navbar')
+      .getByRole('link', { name: 'ホーム' })
+      .getAttribute('href');
     expect(href).toBe('/ja/');
   });
 
@@ -190,7 +202,10 @@ test.describe('Footer sitemap link', () => {
 
   test('sitemap link points to /sitemap.xml', async ({ page }) => {
     await page.goto('/');
-    const href = await page.locator('footer').getByRole('link', { name: 'Sitemap' }).getAttribute('href');
+    const href = await page
+      .locator('footer')
+      .getByRole('link', { name: 'Sitemap' })
+      .getAttribute('href');
     expect(href).toBe('/sitemap.xml');
   });
 

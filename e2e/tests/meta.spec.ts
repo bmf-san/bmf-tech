@@ -167,12 +167,16 @@ test.describe('canonical on EN article /posts/2018-review-2019-goals/', () => {
 
   test('hreflang="en" link is present', async ({ page }) => {
     await page.goto(URL);
-    expect(await page.locator('link[rel="alternate"][hreflang="en"]').count()).toBeGreaterThanOrEqual(1);
+    expect(
+      await page.locator('link[rel="alternate"][hreflang="en"]').count(),
+    ).toBeGreaterThanOrEqual(1);
   });
 
   test('hreflang="x-default" link is present', async ({ page }) => {
     await page.goto(URL);
-    expect(await page.locator('link[rel="alternate"][hreflang="x-default"]').count()).toBeGreaterThanOrEqual(1);
+    expect(
+      await page.locator('link[rel="alternate"][hreflang="x-default"]').count(),
+    ).toBeGreaterThanOrEqual(1);
   });
 });
 
@@ -189,7 +193,9 @@ test.describe('canonical on JA article', () => {
 
   test('hreflang="ja" link is present', async ({ page }) => {
     await page.goto(URL);
-    expect(await page.locator('link[rel="alternate"][hreflang="ja"]').count()).toBeGreaterThanOrEqual(1);
+    expect(
+      await page.locator('link[rel="alternate"][hreflang="ja"]').count(),
+    ).toBeGreaterThanOrEqual(1);
   });
 });
 
@@ -232,15 +238,19 @@ test.describe('listing pages have hreflang alternate links', () => {
   for (const [path, selfLocale, altFragment] of CASES) {
     test(`hreflang self=${selfLocale} and alternate present on ${path}`, async ({ page }) => {
       await page.goto(path);
-      expect(await page.locator(`link[rel="alternate"][hreflang="${selfLocale}"]`).count()).toBeGreaterThanOrEqual(1);
+      expect(
+        await page.locator(`link[rel="alternate"][hreflang="${selfLocale}"]`).count(),
+      ).toBeGreaterThanOrEqual(1);
       const altLinks = page.locator('link[rel="alternate"][hreflang]');
       const count = await altLinks.count();
       expect(count).toBeGreaterThanOrEqual(2); // at least self + one alternate
       // x-default must be present
       expect(await page.locator('link[rel="alternate"][hreflang="x-default"]').count()).toBe(1);
       // alternate locale link must contain expected fragment
-      const hrefs = await Promise.all(Array.from({length: count}, (_, i) => altLinks.nth(i).getAttribute('href')));
-      expect(hrefs.some(h => h?.includes(altFragment))).toBe(true);
+      const hrefs = await Promise.all(
+        Array.from({ length: count }, (_, i) => altLinks.nth(i).getAttribute('href')),
+      );
+      expect(hrefs.some((h) => h?.includes(altFragment))).toBe(true);
     });
   }
 });
@@ -531,7 +541,7 @@ test.describe('JSON-LD BlogPosting on EN article /posts/2018-review-2019-goals/'
     await page.goto(URL);
     const json = await page.evaluate(() => {
       const scripts = Array.from(document.querySelectorAll('script[type="application/ld+json"]'));
-      return scripts.map(s => JSON.parse(s.textContent ?? '{}'));
+      return scripts.map((s) => JSON.parse(s.textContent ?? '{}'));
     });
     const posting = json.find((j: any) => j['@type'] === 'BlogPosting');
     expect(posting).toBeTruthy();
@@ -540,8 +550,9 @@ test.describe('JSON-LD BlogPosting on EN article /posts/2018-review-2019-goals/'
   test('headline matches article title', async ({ page }) => {
     await page.goto(URL);
     const json = await page.evaluate(() =>
-      Array.from(document.querySelectorAll('script[type="application/ld+json"]'))
-        .map(s => JSON.parse(s.textContent ?? '{}'))
+      Array.from(document.querySelectorAll('script[type="application/ld+json"]')).map((s) =>
+        JSON.parse(s.textContent ?? '{}'),
+      ),
     );
     const posting = json.find((j: any) => j['@type'] === 'BlogPosting');
     expect(posting.headline).toBe('Reflection on 2018 and Goals for 2019');
@@ -550,8 +561,9 @@ test.describe('JSON-LD BlogPosting on EN article /posts/2018-review-2019-goals/'
   test('datePublished is present and non-empty', async ({ page }) => {
     await page.goto(URL);
     const json = await page.evaluate(() =>
-      Array.from(document.querySelectorAll('script[type="application/ld+json"]'))
-        .map(s => JSON.parse(s.textContent ?? '{}'))
+      Array.from(document.querySelectorAll('script[type="application/ld+json"]')).map((s) =>
+        JSON.parse(s.textContent ?? '{}'),
+      ),
     );
     const posting = json.find((j: any) => j['@type'] === 'BlogPosting');
     expect(posting.datePublished).toBe('2018-12-31');
@@ -560,8 +572,9 @@ test.describe('JSON-LD BlogPosting on EN article /posts/2018-review-2019-goals/'
   test('author.name is "Kenta Takeuchi"', async ({ page }) => {
     await page.goto(URL);
     const json = await page.evaluate(() =>
-      Array.from(document.querySelectorAll('script[type="application/ld+json"]'))
-        .map(s => JSON.parse(s.textContent ?? '{}'))
+      Array.from(document.querySelectorAll('script[type="application/ld+json"]')).map((s) =>
+        JSON.parse(s.textContent ?? '{}'),
+      ),
     );
     const posting = json.find((j: any) => j['@type'] === 'BlogPosting');
     expect(posting.author?.name).toBe('Kenta Takeuchi');
@@ -570,8 +583,9 @@ test.describe('JSON-LD BlogPosting on EN article /posts/2018-review-2019-goals/'
   test('url contains the article path', async ({ page }) => {
     await page.goto(URL);
     const json = await page.evaluate(() =>
-      Array.from(document.querySelectorAll('script[type="application/ld+json"]'))
-        .map(s => JSON.parse(s.textContent ?? '{}'))
+      Array.from(document.querySelectorAll('script[type="application/ld+json"]')).map((s) =>
+        JSON.parse(s.textContent ?? '{}'),
+      ),
     );
     const posting = json.find((j: any) => j['@type'] === 'BlogPosting');
     expect(posting.url).toContain('/posts/2018-review-2019-goals/');
@@ -580,8 +594,9 @@ test.describe('JSON-LD BlogPosting on EN article /posts/2018-review-2019-goals/'
   test('description is non-empty', async ({ page }) => {
     await page.goto(URL);
     const json = await page.evaluate(() =>
-      Array.from(document.querySelectorAll('script[type="application/ld+json"]'))
-        .map(s => JSON.parse(s.textContent ?? '{}'))
+      Array.from(document.querySelectorAll('script[type="application/ld+json"]')).map((s) =>
+        JSON.parse(s.textContent ?? '{}'),
+      ),
     );
     const posting = json.find((j: any) => j['@type'] === 'BlogPosting');
     expect(posting.description?.trim().length).toBeGreaterThan(0);
@@ -594,8 +609,9 @@ test.describe('JSON-LD BlogPosting on JA article /ja/posts/2018-review-2019-goal
   test('headline is Japanese', async ({ page }) => {
     await page.goto(URL);
     const json = await page.evaluate(() =>
-      Array.from(document.querySelectorAll('script[type="application/ld+json"]'))
-        .map(s => JSON.parse(s.textContent ?? '{}'))
+      Array.from(document.querySelectorAll('script[type="application/ld+json"]')).map((s) =>
+        JSON.parse(s.textContent ?? '{}'),
+      ),
     );
     const posting = json.find((j: any) => j['@type'] === 'BlogPosting');
     expect(posting.headline).toBe('2018年の振り返りと2019年の目標');
@@ -604,8 +620,9 @@ test.describe('JSON-LD BlogPosting on JA article /ja/posts/2018-review-2019-goal
   test('url contains /ja/posts/ path', async ({ page }) => {
     await page.goto(URL);
     const json = await page.evaluate(() =>
-      Array.from(document.querySelectorAll('script[type="application/ld+json"]'))
-        .map(s => JSON.parse(s.textContent ?? '{}'))
+      Array.from(document.querySelectorAll('script[type="application/ld+json"]')).map((s) =>
+        JSON.parse(s.textContent ?? '{}'),
+      ),
     );
     const posting = json.find((j: any) => j['@type'] === 'BlogPosting');
     expect(posting.url).toContain('/ja/posts/2018-review-2019-goals/');
@@ -618,8 +635,9 @@ test.describe('JSON-LD BreadcrumbList on EN article', () => {
   test('BreadcrumbList is present with ≥3 items', async ({ page }) => {
     await page.goto('/posts/2018-review-2019-goals/');
     const json = await page.evaluate(() =>
-      Array.from(document.querySelectorAll('script[type="application/ld+json"]'))
-        .map(s => JSON.parse(s.textContent ?? '{}'))
+      Array.from(document.querySelectorAll('script[type="application/ld+json"]')).map((s) =>
+        JSON.parse(s.textContent ?? '{}'),
+      ),
     );
     const crumbs = json.find((j: any) => j['@type'] === 'BreadcrumbList');
     expect(crumbs).toBeTruthy();
@@ -629,8 +647,9 @@ test.describe('JSON-LD BreadcrumbList on EN article', () => {
   test('first breadcrumb is Home → /', async ({ page }) => {
     await page.goto('/posts/2018-review-2019-goals/');
     const json = await page.evaluate(() =>
-      Array.from(document.querySelectorAll('script[type="application/ld+json"]'))
-        .map(s => JSON.parse(s.textContent ?? '{}'))
+      Array.from(document.querySelectorAll('script[type="application/ld+json"]')).map((s) =>
+        JSON.parse(s.textContent ?? '{}'),
+      ),
     );
     const crumbs = json.find((j: any) => j['@type'] === 'BreadcrumbList');
     const first = crumbs.itemListElement?.[0];
@@ -643,8 +662,9 @@ test.describe('JSON-LD BreadcrumbList on JA article', () => {
   test('first breadcrumb is ホーム → /ja/', async ({ page }) => {
     await page.goto('/ja/posts/2018-review-2019-goals/');
     const json = await page.evaluate(() =>
-      Array.from(document.querySelectorAll('script[type="application/ld+json"]'))
-        .map(s => JSON.parse(s.textContent ?? '{}'))
+      Array.from(document.querySelectorAll('script[type="application/ld+json"]')).map((s) =>
+        JSON.parse(s.textContent ?? '{}'),
+      ),
     );
     const crumbs = json.find((j: any) => j['@type'] === 'BreadcrumbList');
     const first = crumbs.itemListElement?.[0];
@@ -656,7 +676,9 @@ test.describe('JSON-LD BreadcrumbList on JA article', () => {
 // ── BUG-T8: BreadcrumbList item on paginated taxonomy pages points to page 1 ──
 
 test.describe('BreadcrumbList item URL on paginated taxonomy page points to page-1 URL', () => {
-  test('JA tag page 2: JSON-LD breadcrumb item points to /ja/tags/golang/ (page 1)', async ({ page }) => {
+  test('JA tag page 2: JSON-LD breadcrumb item points to /ja/tags/golang/ (page 1)', async ({
+    page,
+  }) => {
     await page.goto('/ja/tags/golang/page/2/');
     const content = await page.content();
     // Breadcrumb item must reference the tag base URL, not /page/2/
@@ -678,4 +700,3 @@ test.describe('article count on tag/category pages shows total', () => {
     expect(parseInt(match![1])).toBeGreaterThan(20);
   });
 });
-

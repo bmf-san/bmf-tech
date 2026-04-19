@@ -32,6 +32,12 @@ jobs:
       - name: Install E2E npm dependencies
         run: cd e2e && npm ci
 
+      - name: Lint E2E sources
+        run: cd e2e && npm run lint
+
+      - name: Check E2E formatting
+        run: cd e2e && npm run format:check
+
       - name: Cache Playwright browsers
         id: playwright-cache
         uses: actions/cache@v4

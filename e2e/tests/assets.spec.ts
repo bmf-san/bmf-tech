@@ -60,9 +60,7 @@ test('feed.xml is served with XML content-type', async ({ request }) => {
 
 test('feed link element is present in <head>', async ({ page }) => {
   await page.goto('/');
-  await expect(
-    page.locator('link[rel="alternate"][type="application/atom+xml"]')
-  ).toHaveCount(1);
+  await expect(page.locator('link[rel="alternate"][type="application/atom+xml"]')).toHaveCount(1);
 });
 
 // ── Sitemap ───────────────────────────────────────────────────────────────────
