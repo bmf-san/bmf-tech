@@ -49,4 +49,8 @@ draft: false
 - ブランチ名の目安: `feat/`, `fix/`, `docs/`, `design/`
 - PR はレビュー不要（セルフマージ可）
 
+## 運用ドキュメント
+
+デプロイ・dev.to 自動投稿・CI ワークフロー・必要な Secrets などは [docs/OPERATIONS.md](docs/OPERATIONS.md) を参照。
+
 ライセンスについては [README.md](README.md#ライセンス) を参照。
