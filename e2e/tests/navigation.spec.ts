@@ -246,7 +246,9 @@ test.describe('Nav: locale toggle on category pages', () => {
   test('EN category page toggle links to JA counterpart (URL-encoded)', async ({ page }) => {
     await page.goto('/categories/architecture/');
     const href = await page.locator('nav.navbar a:has(.badge-primary)').getAttribute('href');
-    expect(href).toBe('/ja/categories/%e3%82%a2%e3%83%bc%e3%82%ad%e3%83%86%e3%82%af%e3%83%81%e3%83%a3/');
+    expect(href).toBe(
+      '/ja/categories/%e3%82%a2%e3%83%bc%e3%82%ad%e3%83%86%e3%82%af%e3%83%81%e3%83%a3/',
+    );
   });
 
   test('EN-only category (Poetry, no translation_key) falls back to JA home', async ({ page }) => {
