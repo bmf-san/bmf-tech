@@ -26,7 +26,7 @@ Postscript: After doing some research, it seems that npm has a more standard fee
 * Laravel 5.2
 * React... for now, the latest version (as of writing v15.3.0)
 * Babel... a JavaScript compiler. **By introducing Babel, you can write React using JSX syntax, as it interprets JSX.**
-* Bower... refer to [setting up Bower with Laravel](hogehoge.com).
+* Bower... refer to setting up Bower with Laravel.
 * Gulp (Elixir)
 
 # Required Knowledge

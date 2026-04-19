@@ -31,7 +31,7 @@ Reactのインストールは公式ではnpmが推奨？されているようで
 * Laravel5.2・
 * React・・・とりあえず最新バージョン（執筆時 v15.3.0）
 * babel・・・JavaScriptのコンパイラ。**jsxを解釈してくれるのでbabel導入でjsxのシンタックスでReactをかくことができます。**
-* bower・・・[laravelでbowerのセットアップ](hogehoge.com)をご参考に。
+* bower・・・laravelでbowerのセットアップをご参考に。
 * gulp（elixir）
 
 # 必要な知識
