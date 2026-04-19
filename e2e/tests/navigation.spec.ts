@@ -232,18 +232,27 @@ test.describe('Nav: locale toggle on tag pages', () => {
 });
 
 test.describe('Nav: locale toggle on category pages', () => {
-  // Category slugs differ across locales (EN "application" vs JA "アプリケーション")
-  // and gohan exposes no cross-locale taxonomy mapping, so the locale switcher on
-  // category pages falls back to the opposite locale's home rather than emitting
-  // a URL that may not exist.
-  test('JA category page toggle links to EN home', async ({ page }) => {
+  // Category names differ across locales (EN "Operating Systems" vs JA "OS";
+  // EN "Architecture" vs JA "アーキテクチャ"). The explicit translation_key in
+  // content/{en,ja}/categories.yaml lets gohan expose cross-locale URLs via
+  // .CurrentTaxonomy.Translations, so the switcher emits the matching URL
+  // rather than falling back to home.
+  test('JA category page toggle links to EN counterpart', async ({ page }) => {
     await page.goto('/ja/categories/os/');
     const href = await page.locator('nav.navbar a:has(.badge-primary)').getAttribute('href');
-    expect(href).toBe('/');
+    expect(href).toBe('/categories/operating-systems/');
   });
 
-  test('EN category page toggle links to JA home', async ({ page }) => {
+  test('EN category page toggle links to JA counterpart (URL-encoded)', async ({ page }) => {
     await page.goto('/categories/architecture/');
+    const href = await page.locator('nav.navbar a:has(.badge-primary)').getAttribute('href');
+    expect(href).toBe(
+      '/ja/categories/%e3%82%a2%e3%83%bc%e3%82%ad%e3%83%86%e3%82%af%e3%83%81%e3%83%a3/',
+    );
+  });
+
+  test('EN-only category (Poetry, no translation_key) falls back to JA home', async ({ page }) => {
+    await page.goto('/categories/poetry/');
     const href = await page.locator('nav.navbar a:has(.badge-primary)').getAttribute('href');
     expect(href).toBe('/ja/');
   });
@@ -294,16 +303,18 @@ test.describe('Nav: locale toggle on paginated root index pages', () => {
 // ── Locale toggle on paginated tag/category pages ───────────────────────────
 
 test.describe('Nav: locale toggle on paginated tag pages', () => {
-  test('EN /tags/golang/page/2/ toggle links to /ja/tags/golang/page/2/', async ({ page }) => {
+  // Page counts may differ per locale, so switcher always lands on page 1
+  // of the opposite-locale taxonomy to avoid broken URLs.
+  test('EN /tags/golang/page/2/ toggle links to /ja/tags/golang/', async ({ page }) => {
     await page.goto('/tags/golang/page/2/');
     const href = await page.locator('nav.navbar a:has(.badge-primary)').getAttribute('href');
-    expect(href).toBe('/ja/tags/golang/page/2/');
+    expect(href).toBe('/ja/tags/golang/');
   });
 
-  test('JA /ja/tags/golang/page/2/ toggle links to /tags/golang/page/2/', async ({ page }) => {
+  test('JA /ja/tags/golang/page/2/ toggle links to /tags/golang/', async ({ page }) => {
     await page.goto('/ja/tags/golang/page/2/');
     const href = await page.locator('nav.navbar a:has(.badge-primary)').getAttribute('href');
-    expect(href).toBe('/tags/golang/page/2/');
+    expect(href).toBe('/tags/golang/');
   });
 });
 

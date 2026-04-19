@@ -484,24 +484,31 @@ test.describe('static pages (About, Privacy Policy) have website OGP, not articl
   }
 });
 
-// ── BUG-T7: paginated taxonomy/archive pages have correct hreflang page number ─
+// ── BUG-T7: paginated taxonomy/archive pages have correct hreflang ─────────
+// Taxonomy switcher lands on page 1 of the opposite locale (page counts may
+// differ per locale). Archive pages preserve page number (same structure
+// across locales).
 
-test.describe('paginated tag/archive pages have correct hreflang page number', () => {
-  test('JA tag page 2 hreflang "en" points to EN page 2', async ({ page }) => {
+test.describe('paginated tag/archive pages have correct hreflang', () => {
+  test('JA tag page 2 hreflang "en" points to EN tag root (page 1)', async ({ page }) => {
     await page.goto('/ja/tags/golang/page/2/');
     const enLink = page.locator('link[rel="alternate"][hreflang="en"]');
     await expect(enLink).toHaveCount(1);
-    expect(await enLink.getAttribute('href')).toContain('/tags/golang/page/2/');
+    const href = await enLink.getAttribute('href');
+    expect(href).toContain('/tags/golang/');
+    expect(href).not.toContain('/page/');
   });
 
-  test('EN tag page 2 hreflang "ja" points to JA page 2', async ({ page }) => {
+  test('EN tag page 2 hreflang "ja" points to JA tag root (page 1)', async ({ page }) => {
     await page.goto('/tags/golang/page/2/');
     const jaLink = page.locator('link[rel="alternate"][hreflang="ja"]');
     await expect(jaLink).toHaveCount(1);
-    expect(await jaLink.getAttribute('href')).toContain('/ja/tags/golang/page/2/');
+    const href = await jaLink.getAttribute('href');
+    expect(href).toContain('/ja/tags/golang/');
+    expect(href).not.toContain('/page/');
   });
 
-  test('JA archive page 2 hreflang "en" points to EN page 2', async ({ page }) => {
+  test('JA archive page 2 hreflang "en" points to EN archive page 2', async ({ page }) => {
     await page.goto('/ja/archives/2024/page/2/');
     const enLink = page.locator('link[rel="alternate"][hreflang="en"]');
     await expect(enLink).toHaveCount(1);
