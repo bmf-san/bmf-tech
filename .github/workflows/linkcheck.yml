@@ -32,7 +32,7 @@ jobs:
         with:
           args: >-
             --no-progress
-            --base public
+            --root-dir ${{ github.workspace }}/public
             --accept 200,206,403,429
             --exclude-mail
             'public/**/*.html'
