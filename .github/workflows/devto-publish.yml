@@ -23,7 +23,7 @@ jobs:
       contents: write # needed to commit posted.json back
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 2 # need parent commit to detect new files
 

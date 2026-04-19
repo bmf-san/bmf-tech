@@ -13,6 +13,6 @@ jobs:
   parity:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Check en/ja translation_key parity
         run: bash scripts/check-translation-parity.sh
