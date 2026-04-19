@@ -301,5 +301,5 @@ I feel like I didn't need to use chromedp. I wonder how I should fix the bugs...
 - [qiita.com - Creating a Slack Bot with Go (March 2020 Edition)](https://qiita.com/frozenbonito/items/cf75dadce12ef9a048e9)
 - [qiita.com - Creating an Interactive Slack Bot with Go (May 2020 Edition)](https://qiita.com/frozenbonito/items/1df9bb685e6173160991#%E3%81%BE%E3%81%A8%E3%82%81)
 - [dev.to - Created a bot that returns text sent on Slack as an image](https://dev.to/amotarao/slackbot-376)
-- [lab.syncer.jp - How to Draw Multiple Lines of Text](https://lab.syncer.jp/Web/JavaScript/Canvas/8)
+- [lab.syncer.jp - How to Draw Multiple Lines of Text](http://web.archive.org/web/20230315103219/https://lab.syncer.jp/Web/JavaScript/Canvas/8/)
 - [Stackoverflow - Size to fit font on a canvas](https://stackoverflow.com/questions/20551534/size-to-fit-font-on-a-canvas)

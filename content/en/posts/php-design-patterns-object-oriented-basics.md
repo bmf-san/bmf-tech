@@ -17,7 +17,7 @@ translation_key: php-design-patterns-object-oriented-basics
 
 We will learn design patterns using PHP, using the now out-of-print [Introduction to Design Patterns with PHP](https://www.amazon.co.jp/PHP%E3%81%AB%E3%82%88%E3%82%8B%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E5%85%A5%E9%96%80-%E4%B8%8B%E5%B2%A1-%E7%A7%80%E5%B9%B8/dp/4798015164) as our textbook. (Note: It is available second-hand on Amazon, but it seems to be priced at more than double the original price.)
 
-The code covered in this series will be compiled on [GitHub](https://github.com/bmf-san/design-patterns-php).
+The code covered in this series will be compiled on ~~GitHub~~.
 
 Ideally, I would have liked to learn design patterns in a language that pioneered OOP, but due to my lack of familiarity with languages other than PHP and encountering a book explaining design patterns in PHP, I decided to learn design patterns with PHP.
 
@@ -156,7 +156,7 @@ echo $super_human_instance->run(); // Run
 echo $super_human_instance->getAbility(); // Fly
 ```
 
-Abstract classes, like interfaces, require all defined abstract methods to be implemented in derived classes. Unlike interfaces, abstract classes can have implementations. The distinction between abstract classes and interfaces is well explained in [Understanding and Using PHP Interfaces and Abstracts Correctly](https://havelog.ayumusato.com/develop/php/e166-php-interface-abstract.html).
+Abstract classes, like interfaces, require all defined abstract methods to be implemented in derived classes. Unlike interfaces, abstract classes can have implementations. The distinction between abstract classes and interfaces is well explained in ~~Understanding and Using PHP Interfaces and Abstracts Correctly~~.
 
 # Interfaces
 

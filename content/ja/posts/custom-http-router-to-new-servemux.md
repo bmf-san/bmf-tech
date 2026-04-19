@@ -145,7 +145,7 @@ ServeMuxでは次のようなルーティングのパターンでも定義する
 
 ServeMuxの競合検知については以下の記事が詳しい。
 
-cf. [rhumie.github.io - ServeMuxの競合検知と性能](https://rhumie.github.io/go122party/1)
+cf. ~~rhumie.github.io - ServeMuxの競合検知と性能~~
 
 サードパーティのHTTPルーターであっても、競合検知は考慮されており、例えば[httprouter](https://github.com/julienschmidt/httprouter)だと、1つのパターンに一致するかしないかのどちらかになるという仕様になっている。
 
@@ -313,7 +313,7 @@ ServeMuxを使うか、サードパーティを使うか簡易的なフローチ
 - [zenn.dev - Go 1.22の新しいrouterについて](https://zenn.dev/catatsuy/scraps/37e3b52bca7d13)
 - [zenn.dev - Go 1.22のEnhanced ServeMuxに合わせて設計されたルーティングライブラリmichi](https://zenn.dev/sonatard/articles/831b761a27b230)
 - [future-architect.github.io - Go1.22リリースパーティに「ServeMuxの競合検知と性能」というタイトルで登壇しました](https://future-architect.github.io/articles/20240408b/)
-- [rhumie.github.io - ServeMuxの競合検知と性能](https://rhumie.github.io/go122party/1)
+- ~~rhumie.github.io - ServeMuxの競合検知と性能~~
 - [eli.thegreenplace.net - Better HTTP server routing in Go 1.22](https://eli.thegreenplace.net/2023/better-http-server-routing-in-go-122/)
 - [shijuvar.medium.com - Building REST APIs With Go 1.22 http.ServeMux](https://shijuvar.medium.com/building-rest-apis-with-go-1-22-http-servemux-2115f242f02b)
 - [www.calhoun.io - Go's 1.22+ ServeMux vs Chi Router](https://www.calhoun.io/go-servemux-vs-chi/)

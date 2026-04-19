@@ -170,7 +170,7 @@ Logical replication is suitable for the following use cases:
 - **Multi-Tenant Isolation**: Distribute data from multiple tenants in one DB to separate DBs for each tenant.
 - **Event-Driven Architecture**: Build processes integrated with external systems using database changes as triggers.
 
-> Reference: [Logical Replication Use Cases](https://www.postgresql.org/docs/current/logical-replication-use-cases.html)
+> Reference: ~~Logical Replication Use Cases~~
 
 # Major Feature Additions by Version
 
@@ -191,7 +191,7 @@ When implementing logical replication, consider the following points:
 - DDL changes are not replicated, so synchronize manually.
 - Subscribers default to `session_replication_role = replica`, so statement triggers do not fire.
 
-> Reference: [Logical Replication Setup](https://www.postgresql.org/docs/current/logical-replication-setup.html)
+> Reference: ~~Logical Replication Setup~~
 
 Thus, PostgreSQL's logical replication is a highly flexible feature that requires design and configuration based on specifications. While it effectively meets a wide range of needs such as migration, data aggregation, and multi-tenant support, attention should be paid to limitations and version differences for proper operation.
 
@@ -203,6 +203,6 @@ Thus, PostgreSQL's logical replication is a highly flexible feature that require
 - [www.postgresql.org - CREATE SUBSCRIPTION](https://www.postgresql.org/docs/current/sql-createsubscription.html)
 - [www.postgresql.org - Replication Conflicts](https://www.postgresql.org/docs/current/logical-replication-conflicts.html)
 - [www.postgresql.org - Row and Column Filtering](https://www.postgresql.org/docs/current/logical-replication-row-filter.html)
-- [www.postgresql.org - Logical Replication Use Cases](https://www.postgresql.org/docs/current/logical-replication-use-cases.html)
+- ~~www.postgresql.org - Logical Replication Use Cases~~
 - [www.postgresql.org - Release Notes](https://www.postgresql.org/docs/release/)
-- [www.postgresql.org - Logical Replication Setup](https://www.postgresql.org/docs/current/logical-replication-setup.html)
+- ~~www.postgresql.org - Logical Replication Setup~~

@@ -176,6 +176,6 @@ Ans. 100010110110
 ```
 
 # 参考
-- [基数変換：10進数、2進数、16進数の双方向変換の方法](http://share-answers.com/category1/entry4.html)
+- [基数変換：10進数、2進数、16進数の双方向変換の方法](http://web.archive.org/web/20190122080312/http://share-answers.com/category1/entry4.html)
 - [コツさえ覚えれば意外と簡単！2進数を「10進数」「8進数」「16進数」に変換する方法](http://challengdirector.hatenablog.com/entry/2017/06/25/154349)
 

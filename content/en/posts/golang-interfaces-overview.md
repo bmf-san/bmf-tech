@@ -172,9 +172,9 @@ func main() {
 
 # References
 - [golang.org - Interface types](https://golang.org/ref/spec#Interface_types)
-- [Go Language - Empty Interface and Type Assertion](https://blog.y-yuki.net/entry/2017/05/08/000000)
-- [First Go Language - Interfaces](http://cuto.unirita.co.jp/gostudy/post/interface/)
-- [Easy Go Language Programming Introduction](http://www.geocities.jp/m_hiroi/golang/abcgo09.html)
+- [Go Language - Empty Interface and Type Assertion](http://web.archive.org/web/20240624191918/https://blog.y-yuki.net/entry/2017/05/08/000000)
+- [First Go Language - Interfaces](http://web.archive.org/web/20200611051104/http://cuto.unirita.co.jp:80/gostudy/post/interface/)
+- [Easy Go Language Programming Introduction](http://web.archive.org/web/20190331142501/http://www.geocities.jp/m_hiroi/golang/abcgo09.html)
 - [Type Casting and Type Conversion via Type Assertion](https://maku77.github.io/hugo/go/cast.html)
 - [Understanding the Handling of Interfaces in Go Language](http://maku77.github.io/hugo/go/interface.html)
 - [astaxie/build-web-application-with-golang](https://github.com/astaxie/build-web-application-with-golang/blob/master/ja/02.6.md)

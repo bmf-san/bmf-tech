@@ -100,7 +100,7 @@ Salesforce、Braze、Airship、OneSignal、SendGridなど色々ある。
   - AWS Pinpointのようにマルチチャンネルをサポートしつつ、MA要素も含んだ基盤を構築している事例
 - [techblog.zozo.com - マーケティングオートメーションシステムを支えるリアルタイムデータ連携基盤をリプレイスした話](https://techblog.zozo.com/entry/ma-realtime-data-infrastructure-replacement)
   - 上記の続きで、その後リプレースした話
-- [techblog.zozo.com - パーソナライズ配信におけるルールベースの最適化改善](https://techblog.zozo.com/entry/improving-optimization-for-personalized-marketing)
+- ~~techblog.zozo.com - パーソナライズ配信におけるルールベースの最適化改善~~
   - すごい。これが通知の真髄だ〜と思った。
   - ここまで到達するには通知がビジネスに与える影響が十分見積もられているだろうし、通知の工夫でビジネスインパクトを大きく出せるのだろうと思う
   - "真の目的である「ユーザーが本当にほしい通知だけの配信」の実現までには改善の余地が多く残されています。"とのこと
@@ -154,8 +154,8 @@ Salesforce、Braze、Airship、OneSignal、SendGridなど色々ある。
 - [onetech.jp - AWS PINPOINTとは？機能や料金、メリットを徹底解説！](https://onetech.jp/blog/what-is-aws-pinpoint-15773)
 - [tec.tecotec.co.jp - Amazon Pinpoint とは(プッシュ通知編)](https://tec.tecotec.co.jp/entry/2021/01/28/090000)
 - [coffee-tech-blog.com - Amazon PinpointでのMA基盤構築の話](https://coffee-tech-blog.com/email-newsletter-automation-aws/)
-- [www.ragate.co.jp - Amazon Pinpoint をAWS エキスパートが解説　AWSでマーケティングを簡単・手早く効率化させましょう
-](https://www.ragate.co.jp/blog/articles/11830)
+- ~~www.ragate.co.jp - Amazon Pinpoint をAWS エキスパートが解説　AWSでマーケティングを簡単・手早く効率化させましょう
+~~
 
 # 所感
 誰が（運営、管理者、マーケティング担当者、開発者・・etc）、何を（メッセージ内容）、誰に、どの通知チャンネルで、いつ（いつまでに）通知したいのか、通知の総量はどれくらいなのか、ということあたりがまず整理されている必要があると思った。（そりゃそうだという感じだけど・・）

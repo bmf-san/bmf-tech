@@ -143,5 +143,5 @@ A' = {4, 5}
 
 # 参考
 - [ja.wikipedia.org - 集合論](https://ja.wikipedia.org/wiki/%E9%9B%86%E5%90%88%E8%AB%96)
-- [www2.toyo.ac.jp - 集合に関する記号](http://www2.toyo.ac.jp/~y-mizuno/Lang/appendix/symbols.pdf)
+- ~~www2.toyo.ac.jp - 集合に関する記号~~
 - [juken-mikata.net - 【集合】必ず覚えなくてはならない６つの記号と３つの法則](https://juken-mikata.net/how-to/mathematics/shugou.html)

@@ -21,7 +21,7 @@ cf. [docs.docker.com - Compose CLI Tech Preview](https://docs.docker.com/compose
 Since it's a Tech Preview, it's not yet recommended for production use.
 
 For compatibility details, see here.
-[docs.docker.com - Compose command compatibility with docker-compose](https://docs.docker.com/compose/cli-command-compatibility/)
+~~docs.docker.com - Compose command compatibility with docker-compose~~
 
 Docker Compose is implemented in Python, but the supported Docker Compose this time is apparently made with Golang.
 

@@ -35,4 +35,4 @@ This task copies all contents of a directory to the remote `/usr/local/bin` dire
 There don't seem to be any tricky points; it works as documented.
 
 # References
-+ [copy - Copies files to remote locations.](http://docs.ansible.com/ansible/copy_module.html)
++ [copy - Copies files to remote locations.](http://web.archive.org/web/20170711212356/http://docs.ansible.com:80/ansible/copy_module.html)

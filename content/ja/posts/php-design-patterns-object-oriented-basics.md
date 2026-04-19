@@ -18,7 +18,7 @@ translation_key: php-design-patterns-object-oriented-basics
 
 今は絶版になっている[PHPによるデザインパターン入門](https://www.amazon.co.jp/PHP%E3%81%AB%E3%82%88%E3%82%8B%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E5%85%A5%E9%96%80-%E4%B8%8B%E5%B2%A1-%E7%A7%80%E5%B9%B8/dp/4798015164)を教科書にして、PHPでデザインパターンを学びます。（※Amazonで中古がありますが、定価の倍以上の値段が付いているようです。）
 
-本連載で扱うコードは[github](https://github.com/bmf-san/design-patterns-php)にまとめていきます。
+本連載で扱うコードは~~github~~にまとめていきます。
 
 本来であれば、OOPの先駆けである言語でデザインパターンを学びたいところでしたが、PHP以外の言語の素養がなかったことと、PHPでデザインパターンを解説している本に出会ったことから、PHPでデザインパターンを学んでみることにしました。
 
@@ -167,7 +167,7 @@ echo $super_human_instance->getAbility(); // Fly
 
 抽象クラスはインターフェースと同じく、全ての定義済み抽象メソッドを派生クラスで実装する必要があります。
 インターフェースでは実装を記述できませんが、抽象クラスでは実装を記述することができます。
-抽象クラスとインターフェースの使い分けは[PHPのinterfaceとabstractを正しく理解して使い分けたいぞー](https://havelog.ayumusato.com/develop/php/e166-php-interface-abstract.html)がわかりやすく解説されています。
+抽象クラスとインターフェースの使い分けは~~PHPのinterfaceとabstractを正しく理解して使い分けたいぞー~~がわかりやすく解説されています。
 
 
 # インターフェース（Interface）

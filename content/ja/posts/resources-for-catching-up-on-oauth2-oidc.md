@@ -75,7 +75,7 @@ OAuth2、OIDCのキャッチアップで読み漁った資料など。
 - [OAuth & OpenID Connect の不適切実装まとめ](https://qiita.com/TakahikoKawasaki/items/efbbd2c5875577c911a3)
 - [Authlete の OAuth 2.0 / OIDC 実装ナレッジ 完全に理解した](https://ritou.hatenablog.com/entry/2018/10/02/013902)
 - [OAuth 2.0 / OIDC 実装の新アーキテクチャー](https://qiita.com/TakahikoKawasaki/items/b2a4fc39e0c1a1949aab)
-- [ID連携の歴史とOpenID-Connect概要](https://speakerdeck.com/auth0japan/idlian-xi-falseli-shi-toopenid-connectgai-yao)
+- ~~ID連携の歴史とOpenID-Connect概要~~
 - [OpenID Connect 入門 〜コンシューマーにおけるID連携のトレンド〜](https://www.slideshare.net/kura_lab/openid-connect-id)
 - [OpenID Connect 全フロー解説](https://qiita.com/TakahikoKawasaki/items/4ee9b55db9f7ef352b47)
 - [一番分かりやすい OpenID Connect の説明](https://qiita.com/TakahikoKawasaki/items/498ca08bbfcc341691fe)
@@ -91,7 +91,7 @@ OAuth2、OIDCのキャッチアップで読み漁った資料など。
 - [openid.net/wg/](https://openid.net/wg/)
 
 ## 動画
-- [「OAuth & OIDC 勉強会」録画公開と資料ダウンロード](https://www.authlete.com/ja/news/20200703_oauth_oidc_study/)
+- ~~「OAuth & OIDC 勉強会」録画公開と資料ダウンロード~~
 
 ## 勉強会
 - [conpass.com - Authlete, Inc.](https://authlete.connpass.com/)

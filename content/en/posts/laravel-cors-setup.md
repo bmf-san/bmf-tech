@@ -114,9 +114,9 @@ I haven't resolved why the custom middleware didn't work well, which is unsatisf
 
 
 # References
-+ [Laravel 5.1 - easily enable CORS](http://en.vedovelli.com.br/2015/web-development/Laravel-5-1-enable-CORS/)
++ [Laravel 5.1 - easily enable CORS](http://web.archive.org/web/20180826221406/http://en.vedovelli.com.br:80/2015/web-development/Laravel-5-1-enable-CORS/)
 
-+ [cors - Building SPA with Laravel5 + AngularJS](http://qiita.com/fluke8259/items/c884bada22ccd286cf48)
++ ~~cors - Building SPA with Laravel5 + AngularJS~~
 
 + [Organizing CORS (Cross-Origin Resource Sharing)
 cors-004](http://dev.classmethod.jp/etc/about-cors/)

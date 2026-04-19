@@ -168,10 +168,10 @@ I gave a talk at the Makuake LT Party (internal LT competition).
 
 ### References
 - [Algorithm visualization - Radix Tree](https://www.cs.usfca.edu/~galles/visualization/RadixTree.html)
-- [github - [Japanese] Patricia Tree](https://github.com/ethereum/wiki/wiki/%5BJapanese%5D-Patricia-Tree)
+- [github - [Japanese] Patricia Tree](~~https://github.com/ethereum/wiki/wiki/%5BJapanese%5D-Patricia-Tree~~)
 - [WhiteDog@Blog](http://takao.blogspot.com/2012/03/patriciatrie.html)
 - [404 Blog Not Found - algorithm - Patricia Trie (Radix Trie) in JavaScript](http://blog.livedoor.jp/dankogai/archives/51766842.html)
-- [http request multiplexer and string matching](https://persol-pt.github.io/posts/tech-workshop1222/)
+- [http request multiplexer and string matching](http://web.archive.org/web/20201109013417/https://persol-pt.github.io/posts/tech-workshop1222/)
 - [@IT - The difference between heaven and hell depends on the choice of data structure (3/3)](http://www.atmarkit.co.jp/ait/articles/0809/01/news163_3.html)
 - [Basic Data Structures: How to Traverse Tree Structures](http://www.sb.ecei.tohoku.ac.jp/lab/wp-content/uploads/2012/11/2012_d12.pdf)
 - [pixiv inside - Trying to create a fast URL routing system in PHP](https://devpixiv.hatenablog.com/entry/2015/12/13/145741)

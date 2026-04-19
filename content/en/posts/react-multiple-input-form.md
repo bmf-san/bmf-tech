@@ -15,7 +15,7 @@ translation_key: react-multiple-input-form
 
 Implementing a form in React can be a bit tricky.
 
-First, it might be helpful to understand that there are two patterns in React forms: controlled forms and uncontrolled forms. Reference: [React Documentation](https://facebook.github.io/react/docs/forms-ja-JP.html)
+First, it might be helpful to understand that there are two patterns in React forms: controlled forms and uncontrolled forms. Reference: ~~React Documentation~~
 
 I still have many areas where my understanding is lacking, but since there are few examples of React implementations, I hope this article can provide some inspiration.
 (If you have suggestions for easier methods or improvements, I'd appreciate it.)

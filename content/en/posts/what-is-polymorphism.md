@@ -33,6 +33,6 @@ Summarizing polymorphism
   - Handling multiple types with a common supertype under a single name
 
 # References
-- [Feeling like you understand object-oriented? [Polymorphism] java](https://qiita.com/lrf141/items/a2f764c8d87de26b6f45)
+- [Feeling like you understand object-oriented? [Polymorphism] java](~~https://qiita.com/lrf141/items/a2f764c8d87de26b6f45~~)
 - [Wikipedia - Polymorphism](https://ja.wikipedia.org/wiki/%E3%83%9D%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%95%E3%82%A3%E3%82%BA%E3%83%A0)
-- [Understanding Polymorphism Better](http://noiselessworld.hatenablog.jp/entry/2017/01/30/002252)
+- ~~Understanding Polymorphism Better~~

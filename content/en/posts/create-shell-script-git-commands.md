@@ -13,7 +13,7 @@ translation_key: create-shell-script-git-commands
 ---
 
 # Overview
-I created git alias commands in [.bashrc](http://qiita.com/bmf_san/items/d41bc8d5c5677c69a1e4), but since it was incomplete, I improved it.
+I created git alias commands in ~~.bashrc~~, but since it was incomplete, I improved it.
 
 While the previous alias made using git commands somewhat comfortable, I thought it was necessary to improve the requirement of typing the branch name every time I executed a git command, so I solved it using `select`.
 

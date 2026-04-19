@@ -235,7 +235,7 @@ class AuthenticateOfApi
 Creating and using APIs with Laravel is easy, but API design seems quite deep. It's quite fun to use the API you created yourself, so I'll try to put in some effort.
 
 # References
-* [Creating an API with Authentication in Laravel 5.2](http://satobukuro.net/173/)
-* [Developing a Rest API with Laravel](http://dim5.net/laravel/developing-rest-api.html)
-* [Getting Information from Laravel with React.js](http://blog.comnect.jp.net/blog/98) ... Laravel+API+React!
+* [Creating an API with Authentication in Laravel 5.2](http://web.archive.org/web/20210417022405/https://satobukuro.net/173/)
+* ~~Developing a Rest API with Laravel~~
+* [Getting Information from Laravel with React.js](http://web.archive.org/web/20200130035136/http://blog.comnect.jp.net:80/blog/98) ... Laravel+API+React!
 * [Laravel Expert Training Book](https://www.amazon.co.jp/Laravel%E3%82%A8%E3%82%AD%E3%82%B9%E3%83%91%E3%83%BC%E3%83%88%E9%A4%8A%E6%88%90%E8%AA%AD%E6%9C%AC-%E3%83%A2%E3%83%80%E3%83%B3%E3%81%AA%E9%96%8B%E7%99%BA%E3%82%92%E5%AE%9F%E7%8F%BE%E3%81%99%E3%82%8BPHP%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF%EF%BC%81-Software-Design-plus/dp/4774173134)

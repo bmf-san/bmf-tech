@@ -45,7 +45,7 @@ cf. [conoha.jp - API](https://www.conoha.jp/vps/function/api/)
 
 今回はTerraformでOpenStackのproviderを使いますが、AnsibleにもOpenStack Ansibleモジュールというのがあるので、同様のことはAnsibleだけでも実現可能だとは思います。試してはいないですが・・
 
-cf. [docs.ansible.com - OpenStack Ansible モジュール](https://docs.ansible.com/ansible/2.9_ja/dev_guide/platforms/openstack_guidelines.html)
+cf. [docs.ansible.com - OpenStack Ansible モジュール](http://web.archive.org/web/20240423000004/https://docs.ansible.com/ansible/2.9_ja/dev_guide/platforms/openstack_guidelines.html)
 
 # ソースコード
 今回作成したソースコードは、[github.com - bmf-san/terraform-ansible-openstack-boilerplate](https://github.com/bmf-san/terraform-ansible-openstack-boilerplate)に置いてあります。

@@ -100,6 +100,6 @@ The differences between processes and threads when executing a program in parall
 - It is possible to specify the size dynamically when allocating memory.
 
 # References
-- [Differences Between Processes and Threads](https://imokuri123.com/blog/2013/12/difference-between-process-and-thread.html)
+- [Differences Between Processes and Threads](http://web.archive.org/web/20171003125513/https://imokuri123.com/blog/2013/12/difference-between-process-and-thread.html)
 - [Let's Become Cool Engineers Series - Memory, Processes, and Threads Edition](http://moro-archive.hatenablog.com/entry/2014/09/11/013520)
-- [Heap and Stack](https://www.uquest.co.jp/embedded/learning/lecture16.html)
+- ~~Heap and Stack~~

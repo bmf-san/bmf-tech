@@ -122,7 +122,7 @@ I was able to output the coverage, so I would like to try integrating with vario
 
 # References
 - [circleci - Collecting Test Metadata](https://phpunit.de/manual/6.5/en/appendixes.configuration.html#appendixes.configuration.logging)
-- [circleci - Storing and Accessing Build Artifacts](https://circleci.com/docs/2.0/artifacts/)
+- ~~circleci - Storing and Accessing Build Artifacts~~
 - [phpunit - Appendix C. The XML Configuration File](https://phpunit.de/manual/6.5/en/appendixes.configuration.html#appendixes.configuration.logging)
-- [phpunit - Chapter 3. The Command-Line Test Runner](https://phpunit.de/manual/6.5/ja/textui.html)
+- ~~phpunit - Chapter 3. The Command-Line Test Runner~~
 - [docker docs - docker cp](https://docs.docker.com/engine/reference/commandline/cp/)

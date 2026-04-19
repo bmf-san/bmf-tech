@@ -26,7 +26,7 @@ Since the acquisition, it seems the official name is Grafana Pyroscope?
 
 There is a plugin available for Grafana, so integration is possible, but Pyroscope also has its own UI.
 
-A [Demo](https://demo.pyroscope.io/?name=hotrod.python.frontend%7B%7D&query=) is available, which might make it easier to understand what you can see.
+A [Demo](http://web.archive.org/web/20240529104412/https://demo.pyroscope.io/?name=hotrod.python.frontend%7B%7D&query=) is available, which might make it easier to understand what you can see.
 
 The code is open-source, so if you're interested in the implementation, you can check it out.
 

@@ -80,7 +80,7 @@ Of course, just because I read them doesn't mean my abilities have improved, and
   - An approach to interviews using examples of system design on YouTube.
 - [The complete guide to cracking the System Design interview](https://towardsdatascience.com/the-complete-guide-to-the-system-design-interview-ba118f48bdfc) 
   - An approach to system design interviews and a collection of example links.
-- [System design interview prep (relax, start here)](https://igotanoffer.com/blogs/tech/system-design-interview-prep)
+- [System design interview prep (relax, start here)](http://web.archive.org/web/20250916043557/https://igotanoffer.com/blogs/tech/system-design-interview-prep)
   - Basic preparation for system design interviews.
 - [System Design Interview Preparation Tips](https://www.interviewkickstart.com/blog/system-design-interview-preparation-tips)
   - Tips for system design interviews.

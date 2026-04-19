@@ -193,6 +193,6 @@ describe('Calc - esmodules', () => {
 # 参考
 - [jest](https://jestjs.io/docs/ja/getting-started)
 - [babel-preset-es2015](https://babeljs.io/docs/en/babel-preset-es2015)
-- [github - dooburt/jest-test](https://github.com/dooburt/jest-test)
-- [github - LarsBergqvist/jest_playground](https://github.com/LarsBergqvist/jest_playground)
+- ~~github - dooburt/jest-test~~
+- ~~github - LarsBergqvist/jest_playground~~
 

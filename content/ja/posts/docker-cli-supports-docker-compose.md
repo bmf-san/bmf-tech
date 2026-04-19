@@ -20,7 +20,7 @@ cf. [docs.docker.com - Compose CLI Tech Preview](https://docs.docker.com/compose
 Tech Previewなのでまだプロダクションでの利用推奨されていないとのこと。
 
 互換性についてはこちら。
-[docs.docker.com - Compose command compatibility with docker-compose](https://docs.docker.com/compose/cli-command-compatibility/)
+~~docs.docker.com - Compose command compatibility with docker-compose~~
 
 Docker composeはpythonで実装されているが、今回はサポートされるDocker Composeはgolang製らしい。
 

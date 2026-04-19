@@ -40,6 +40,6 @@ While working with Docker, I learned about the existence of orphan processes, so
 - [Hibariya - About Forking Processes](https://note.hibariya.org/articles/20120326/a0.html)
 - [tutorialspoint.com - Zombie and Orphan Processes in Linux](https://www.tutorialspoint.com/zombie-and-orphan-processes-in-linux)
 - [Nikkei XTECH - Zombie Process](https://xtech.nikkei.com/it/article/Keyword/20070727/278487/)
-- [geekride.com - Orphan Process](http://www.geekride.com/orphan-zombie-process/)
+- [geekride.com - Orphan Process](http://web.archive.org/web/20211025203533/http://www.geekride.com/orphan-zombie-process/)
 - [makiuchi-d.gihub.io - How to Ensure Killing Child Processes in Go](http://makiuchi-d.github.io/2020/05/10/go-kill-child-process.ja.html)
   - Includes code to reproduce orphan processes in Go

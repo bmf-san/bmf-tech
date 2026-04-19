@@ -57,6 +57,6 @@ TLSというプロトコルが提供する機能
 
 # 参考
 
--   [今なぜHTTPSかなのか？インターネットの陰雷性のために、技術者が知っておきたいTLSの歴史と技術背景](https://employment.en-japan.com/engineerhub/entry/2018/02/14/110000)
+-   ~~今なぜHTTPSかなのか？インターネットの陰雷性のために、技術者が知っておきたいTLSの歴史と技術背景~~
 -   [SSLとTLSの違いとは](https://ssl.sakura.ad.jp/column/ssl_tls/)
 

@@ -21,7 +21,7 @@ To seriously catch up with Kubernetes, I read the documentation and left my pers
 [kubernetes.io](https://kubernetes.io/ja/docs/home/)
 
 # What is Kubernetes?
-cf. [What is Kubernetes?](https://kubernetes.io/ja/docs/concepts/overview/what-is-kubernetes/)
+cf. ~~What is Kubernetes?~~
 
 ## What is Kubernetes?
 - Declarative configuration management
@@ -231,7 +231,7 @@ cf. [Nodes](https://kubernetes.io/ja/docs/concepts/architecture/nodes/)
 
 # Pod Overview
 
-cf. [Pod Overview](https://kubernetes.io/ja/docs/concepts/workloads/pods/pod-overview/)
+cf. ~~Pod Overview~~
 
 - The smallest deployable unit in the Kubernetes object model
 

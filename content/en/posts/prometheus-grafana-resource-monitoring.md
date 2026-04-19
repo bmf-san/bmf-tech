@@ -70,7 +70,7 @@ I mistakenly thought the URL in the HTTP settings was the default due to the pla
 ## Preparing Dashboard Template
 Prepare a dashboard template for Prometheus from Grafana Labs.
 
-Click `Copy ID to Clipboard` on [Prometheus system by Thomas Cheronneau](https://grafana.com/dashboards/159).
+Click `Copy ID to Clipboard` on ~~Prometheus system by Thomas Cheronneau~~.
 
 Select the + icon in the left menu → Dashboards → Import.
 

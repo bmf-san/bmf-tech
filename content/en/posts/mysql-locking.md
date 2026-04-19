@@ -238,7 +238,7 @@ It's beneficial to first focus on what is being locked (row or table) and the ex
 - [devsakaso.com - About MySQL Locks and Deadlocks](https://devsakaso.com/mysql-about-lock-and-deadlock/)
 - [nishinatoshiharu.com - Overview and Behavior Verification of InnoDB Shared and Exclusive Locks](https://nishinatoshiharu.com/db-lock-overview/)
 - [www.wakuwakubank.com - Exclusive Lock (FOR UPDATE) and Shared Lock (LOCK IN SHARE MODE)](https://www.wakuwakubank.com/posts/201-mysql-lock/)
-- [free-engineer.life - MySQL (InnoDB) Shared, Exclusive, and Intention Locks](https://free-engineer.life/mysql-innodb-lock-mode/)
-- [free-engineer.life - MySQL (InnoDB) Row Locks](https://free-engineer.life/mysql-innodb-record-locks/)
+- ~~free-engineer.life - MySQL (InnoDB) Shared, Exclusive, and Intention Locks~~
+- [free-engineer.life - MySQL (InnoDB) Row Locks](http://web.archive.org/web/20250429114556/https://free-engineer.life/mysql-innodb-record-locks/)
 - [github.com - Investigation of InnoDB Lock Behavior in MySQL](https://github.com/ichirin2501/doc/blob/master/innodb.md)
 - [github.com - Deadlock Analysis Method Using Thread ID in MySQL](https://github.com/ichirin2501/doc/blob/master/innodb-deadlock-thread-id.md)

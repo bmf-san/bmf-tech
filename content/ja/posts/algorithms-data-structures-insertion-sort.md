@@ -59,5 +59,5 @@ func main() {
 - 要素を順番に処理していって、スワップするだけなので単純。
 
 # 参考
-- [アルゴリズムとデータ構造](http://www-ikn.ist.hokudai.ac.jp/~arim/pub/algo/algo6.pdf)
+- ~~アルゴリズムとデータ構造~~
 

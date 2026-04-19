@@ -144,7 +144,7 @@ By the way, in my custom [goblin](https://github.com/bmf-san/goblin), the first 
 
 For more details on ServeMux's conflict detection, refer to the following article.
 
-cf. [rhumie.github.io - ServeMux Conflict Detection and Performance](https://rhumie.github.io/go122party/1)
+cf. ~~rhumie.github.io - ServeMux Conflict Detection and Performance~~
 
 Even third-party HTTP routers consider conflict detection. For example, in [httprouter](https://github.com/julienschmidt/httprouter), the specification is such that a request can either match one pattern or none at all.
 
@@ -312,7 +312,7 @@ I presented at [Go Conference 2024](https://gocon.jp/2024/).
 - [zenn.dev - New Router in Go 1.22](https://zenn.dev/catatsuy/scraps/37e3b52bca7d13)
 - [zenn.dev - Routing Library michi Designed for Enhanced ServeMux in Go 1.22](https://zenn.dev/sonatard/articles/831b761a27b230)
 - [future-architect.github.io - I presented on "ServeMux Conflict Detection and Performance" at the Go 1.22 Release Party](https://future-architect.github.io/articles/20240408b/)
-- [rhumie.github.io - ServeMux Conflict Detection and Performance](https://rhumie.github.io/go122party/1)
+- ~~rhumie.github.io - ServeMux Conflict Detection and Performance~~
 - [eli.thegreenplace.net - Better HTTP server routing in Go 1.22](https://eli.thegreenplace.net/2023/better-http-server-routing-in-go-122/)
 - [shijuvar.medium.com - Building REST APIs With Go 1.22 http.ServeMux](https://shijuvar.medium.com/building-rest-apis-with-go-1-22-http-servemux-2115f242f02b)
 - [www.calhoun.io - Go's 1.22+ ServeMux vs Chi Router](https://www.calhoun.io/go-servemux-vs-chi/)

@@ -14,7 +14,7 @@ translation_key: laravel-jp-conference-participation
 ---
 
 
-[Laravel JP Conference](https://conference2019.laravel.jp/)のコアスタッフとLT登壇してきました。
+[Laravel JP Conference](http://web.archive.org/web/20260117100821/https://conference2019.laravel.jp/)のコアスタッフとLT登壇してきました。
 
 # コアスタッフとして参加してみて
 普段、カンファレンスは参加者側なのですが、PHPのコミュニュティに対して微力でも貢献する機会であり、自分の好きなFWのカンファレンスでもあったので、コアスタッフとして参加しました。

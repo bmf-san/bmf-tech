@@ -26,7 +26,7 @@ Continous Profilingについてはこちら参照。
 
 Grafanaにプラグインが用意されているので連携することもできるが、Pyroscope単体にもUIが用意されている。
 
-[Demo](https://demo.pyroscope.io/?name=hotrod.python.frontend%7B%7D&query=)が用意されているので触ってみると何が見れるか分かりやすいかも。
+[Demo](http://web.archive.org/web/20240529104412/https://demo.pyroscope.io/?name=hotrod.python.frontend%7B%7D&query=)が用意されているので触ってみると何が見れるか分かりやすいかも。
 
 OSSとしてコードが公開されているので実装が気になる場合は見に行くこともできる。
 

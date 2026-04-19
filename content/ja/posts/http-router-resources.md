@@ -37,7 +37,7 @@ HTTP Routerの開発で参考にした資料リスト。
 - [MarkBaker/Tries](https://github.com/MarkBaker/Tries)
 - [razonyang/routing](https://github.com/razonyang/routing)
 - [ethereum/wiki - [Japanese] Patricia Tree
-](https://github.com/ethereum/wiki/wiki/%5BJapanese%5D-Patricia-Tree)
+](~~https://github.com/ethereum/wiki/wiki/%5BJapanese%5D-Patricia-Tree~~)
 - [neo-nanikaka - CommonPrefixTrieRouter.php](https://gist.github.com/neo-nanikaka/c2e2f7742b311696d50b)
 - [golang/go - proposal: net/http: enhanced ServeMux routing](https://github.com/golang/go/issues/61410)
 
@@ -51,7 +51,7 @@ PHPで高速に動作するURLルーティングを自作してみた](https://d
 世界最速だった URL ルーターをリリースしました](https://kuune.org/text/2014/06/12/denco/)
 - [takao.blogspot.com - JavaでPatriciaTrieを実装してみた](https://takao.blogspot.com/2012/03/patriciatrie.html)
 - [dankogai.livedoor.blog - algorithm - Patricia Trie (Radix Trie) を JavaScript で](https://dankogai.livedoor.blog/archives/51766842.html)
-- [persol-pt.github.io - 勉強会[http request multiplexerと文字列マッチング]](https://persol-pt.github.io/posts/tech-workshop1222/)
+- [persol-pt.github.io - 勉強会[http request multiplexerと文字列マッチング]](http://web.archive.org/web/20201109013417/https://persol-pt.github.io/posts/tech-workshop1222/)
 - [atmarkit.itmedia.co.jp - データ構造の選択次第で天国と地獄の差](https://atmarkit.itmedia.co.jp/ait/articles/0809/01/news163_3.html)
 - [www.sb.ecei.tohoku.ac.jp - 基本データ構造：木構造のたどり方](http://www.sb.ecei.tohoku.ac.jp/lab/wp-content/uploads/2012/11/2012_d12.pdf)
 - [noranuk0.hatenablog.com - PHPでフレームワークを使わずURLのルーティングをいい感じにやる](https://noranuk0.hatenablog.com/entry/2018/01/20/114933)

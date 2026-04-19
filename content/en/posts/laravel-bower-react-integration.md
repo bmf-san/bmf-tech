@@ -79,6 +79,6 @@ If you want to use require() with React, you can use Browserify or Webpack. [Wha
 
 # References
 * [How to Quickly Integrate React into a Laravel 5 Based Project](http://blog.mudatobunka.org/entry/2016/01/21/231546)
-* [Let's Get Information from Laravel with React.js](http://blog.comnect.jp.net/blog/98)
+* [Let's Get Information from Laravel with React.js](http://web.archive.org/web/20200130035136/http://blog.comnect.jp.net:80/blog/98)
 * [Introduction to React - Part 2: Using Browserify/Reactify/Gulp](http://qiita.com/masato/items/35b0900e3a7282b33bf8)
 * [[Sy] How to Set Up a Development Environment for React Using Bower](https://utano.jp/entry/2016/07/react-js-install-use-bower/)

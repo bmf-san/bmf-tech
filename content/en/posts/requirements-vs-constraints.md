@@ -88,4 +88,4 @@ By clearly distinguishing these two at the start of a project, you can correctly
 
 # References
 - [tracery.jp - What is a Requirement](https://tracery.jp/articles/entry/what-is-a-requirement)
-- [drkasbokar.com - ISO/IEC/IEEE 29148](https://drkasbokar.com/wp-content/uploads/2024/09/29148-2018-ISOIECIEEE.pdf)
+- ~~drkasbokar.com - ISO/IEC/IEEE 29148~~

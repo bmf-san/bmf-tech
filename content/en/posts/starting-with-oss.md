@@ -103,8 +103,8 @@ I want to fulfill the above desires.
 
 v1.0.0 has been released.
 
-- [Rubel Demo](https://rubel.bmf-tech.com/)
-- [Rubel Admin Demo](https://rubel-admin.bmf-tech.com/login)
+- ~~Rubel Demo~~
+- ~~Rubel Admin Demo~~
     - EMAIL: rubel@example.com / PASSWORD: rubel
 
 There are still many bugs, but I plan to update it in the future.
@@ -116,7 +116,7 @@ I'd be happy if you could throw any small thing at me, whether it's an ISSUE or 
 Also, if **you are also doing OSS and have your source open**, please feel free to leave a link in the comments, let's become OSS friends.
 
 # Links
-- [How to Do Personal Development by r7kamura](https://speakerdeck.com/r7kamura/ge-ren-kai-fa-falseyatuteikifang)
+- ~~How to Do Personal Development by r7kamura~~
  - A slide with many relatable points.
 
 # Side Note

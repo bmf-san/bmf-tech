@@ -101,6 +101,6 @@ translation_key: process-vs-thread
 - メモリを確保する際に動的にサイズを指定することが可能
 
 # 参考
-- [プロセスとスレッドの違い](https://imokuri123.com/blog/2013/12/difference-between-process-and-thread.html)
+- [プロセスとスレッドの違い](http://web.archive.org/web/20171003125513/https://imokuri123.com/blog/2013/12/difference-between-process-and-thread.html)
 - [イケてるエンジニアになろうシリーズ 〜メモリとプロセスとスレッド編〜](http://moro-archive.hatenablog.com/entry/2014/09/11/013520)
-- [ヒープとスタック](https://www.uquest.co.jp/embedded/learning/lecture16.html)
+- ~~ヒープとスタック~~

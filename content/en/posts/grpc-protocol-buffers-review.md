@@ -30,7 +30,7 @@ I wanted to review gRPC and Protocol Buffers again.
   - About load balancing for gRPC servers
 - [hakobe932.hatenablog.com - gRPC Load Balancing](https://hakobe932.hatenablog.com/entry/2018/04/11/123000)
   - Explanation about load balancing for gRPC servers
-- [deeeet.com - Running gRPC Services on Kubernetes](https://deeeet.com/writing/2018/03/30/kubernetes-grpc/)
+- ~~deeeet.com - Running gRPC Services on Kubernetes~~
   - Considerations for handling gRPC on K8S
 - [scrapbox.io - Best Practices for gRPC](https://scrapbox.io/dojineko/gRPC%E3%81%AE%E3%83%99%E3%82%B9%E3%83%88%E3%83%97%E3%83%A9%E3%82%AF%E3%83%86%E3%82%A3%E3%82%B9)
   - Best practices for gRPC and Protocol Buffers

@@ -34,14 +34,14 @@ Originally, I wanted to compare several NewSQL databases, but I realized I neede
 - [Understanding the Distributed Consensus Algorithm Raft - Qiita](https://qiita.com/torao@github/items/5e2c0b7b0ea59b475cce)
 - [4 Data Sharding Strategies We Analyzed When Building YugabyteDB](https://www.yugabyte.com/blog/four-data-sharding-strategies-we-analyzed-in-building-a-distributed-sql-database/)
 - [CockroachDB's Consistency Model](https://www.cockroachlabs.com/blog/consistency-model/)
-- [Spanner vs. Calvin: Distributed Consistency at Scale](https://fauna.com/blog/distributed-consistency-at-scale-spanner-vs-calvin)
-- [Fauna | The Distributed Serverless Database](https://fauna.com/)
+- [Spanner vs. Calvin: Distributed Consistency at Scale](http://web.archive.org/web/20250604205200/https://fauna.com/blog/distributed-consistency-at-scale-spanner-vs-calvin)
+- ~~Fauna | The Distributed Serverless Database~~
 - [Introduction to Fauna (Temporal Database) Why Use FQL Instead of Standard SQL? - Qiita](https://qiita.com/masakinihirota/items/c232832bd72ae11905e7)
 - [Living Without Atomic Clocks: Where CockroachDB and Spanner Diverge](https://www.cockroachlabs.com/blog/living-without-atomic-clocks/)
-- [How an Open Source Distributed NewSQL Database Delivers Time Services - TiDB - PingCAP](https://pingcap.co.jp/how-an-open-source-distributed-newsql-database-delivers-time-services/)
+- ~~How an Open Source Distributed NewSQL Database Delivers Time Services - TiDB - PingCAP~~
 - [The Vitess Docs | What Is Vitess](https://vitess.io/docs/17.0/overview/whatisvitess/)
 - [Can NewSQL Be Used for Financial Transactions? - Distributed Database PingCAP](https://pingcap.co.jp/project/customer-story-tis/)
-- [Using TiDB in Mission-Critical Scenarios of the Financial Industry (Part 1) - PingCAP](https://pingcap.co.jp/blog-using-tidb-in-mission-critical-scenarios-of-the-financial-industry-part-1/)
+- ~~Using TiDB in Mission-Critical Scenarios of the Financial Industry (Part 1) - PingCAP~~
 - [The CAP Theorem Wall: The Path to NewSQL | Database Access Performance Blog](https://www.climb.co.jp/blog_dbmoto/archives/5077)
 - [Consistency of Distributed Nodes: The Path to NewSQL | Database Access Performance Blog](https://www.climb.co.jp/blog_dbmoto/archives/5193)
 - [LSM-Tree and RocksDB, TiDB, CockroachDB Are Interesting · hnakamur's blog](https://hnakamur.github.io/blog/2016/06/20/lsm-tree-and-rocksdb/)

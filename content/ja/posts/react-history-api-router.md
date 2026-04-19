@@ -285,7 +285,7 @@ EventEmitterやObserverをつかったらもっと綺麗になる気が・・（
 - [Routing in React, the uncomplicated way](https://hackernoon.com/routing-in-react-the-uncomplicated-way-b2c5ffaee997)
 - [MDN - History](https://developer.mozilla.org/ja/docs/Web/API/History)
 - [MDN - ブラウザの履歴を操作する](https://developer.mozilla.org/ja/docs/Web/Guide/DOM/Manipulating_the_browser_history)
-- [History API を使ってみる](http://www.allinthemind.biz/markup/javascript/history_api.html)
+- ~~History API を使ってみる~~
 - [JavaScriptでURLを操作するメモ](https://qiita.com/PianoScoreJP/items/fa66f357419fece0e531)
 
 ## 参考ソース

@@ -123,20 +123,20 @@ Although I was able to build it, I struggled to access the IP specified in the V
 + [[Vagrant] How to deal with not being able to access the IP address specified in the Vagrantfile](http://to-developer.com/blog/?p=1827)
 + [Vagrant cannot ping! Therefore, I had to relearn Vagrant networking](http://www.kaasan.info/archives/3665)
 + [Cannot connect to the IP set in private_network with vagrant + centos7](http://qiita.com/junqiq/items/a19d3ea48b072a1b28d3)
-+ [Building a virtual environment with CentOS 7 + PHP + MySQL using Vagrant](http://fnya.cocolog-nifty.com/blog/2015/12/vagrant-centos7.html)
++ ~~Building a virtual environment with CentOS 7 + PHP + MySQL using Vagrant~~
 
 # Impressions
 CentOS 7 has quite a few differences from previous OS versions, but I didn't struggle too much with those adjustments. Instead, I had more trouble with the compatibility of MySQL 5.7. It works for now, but I think there is still room for improvement.
 
 # References
-+ [github - MiyaseTakurou/vagrant_ansible_laravel](https://github.com/MiyaseTakurou/vagrant_ansible_laravel) - The directory structure for best practices was easy to understand.
++ [github - MiyaseTakurou/vagrant_ansible_laravel](http://web.archive.org/web/20180611161928/https://github.com/MiyaseTakurou/vagrant_ansible_laravel) - The directory structure for best practices was easy to understand.
 + [Initializing a virtual machine nicely in a vagrant + ansible + CentOS 7.0 + VirtualBox environment](http://qiita.com/omochimetaru/items/94bda388dbd05d782f7a)
 + [Building nginx + wordpress with ansible on CentOS 7](http://qiita.com/tamanugi/items/2a7fa9701f414ed663c0)
 + [Building a LAMP environment with Vagrant + ansible (Part 4)](http://qiita.com/k-serenade/items/0ab59f9563493f0cf293)
-+ [Installing PHP 7 and Nginx on an ubuntu 16.04 environment with Ansible](http://koltatt.net/programing/ansible_ubuntu_php/)
++ ~~Installing PHP 7 and Nginx on an ubuntu 16.04 environment with Ansible~~
 + [Setting up a Ruby environment on CentOS with Vagrant + Ansible](http://qiita.com/yoshiokaCB/items/772bfadf6b7505cb8ba9)
 + [ansible mysql5.7](http://astail.net/?p=1178)
-+ [Mysql 5.7 on Ansible](https://www.rennetti.com/howto/139/mysql-5-7-on-ansible)
++ ~~Mysql 5.7 on Ansible~~
 + [Building an environment to manipulate Redis with Vagrant + Ansible](http://qiita.com/master-of-sugar/items/e78b173553f5233cd8bd)
 + [Ansible playbook to install Redis version 2.5 and later](http://qiita.com/joytomo/items/d0cb45074c61dd8935fd)
-+ [github - heybigname/ansible](https://github.com/heybigname/ansible/blob/master/tasks/mailcatcher.yml)
++ ~~github - heybigname/ansible~~

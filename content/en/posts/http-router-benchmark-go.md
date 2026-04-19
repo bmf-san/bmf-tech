@@ -30,7 +30,7 @@ Currently, the following HTTP Routers are included in the comparison:
 - [gorilla/mux](https://github.com/gorilla/mux)
 - [nissy/bon](https://github.com/nissy/bon)
 - [naoina/denco](https://github.com/naoina/denco)
-- [labstack/echo](https://github.com/labstack/echo/v4)
+- ~~labstack/echo~~
 - [gocraft/web](https://github.com/gocraft/web)
 - [vardius/gorouter](https://github.com/vardius/gorouter)
 - [go-ozzo/ozzo-routing](https://github.com/go-ozzo/ozzo-routing)

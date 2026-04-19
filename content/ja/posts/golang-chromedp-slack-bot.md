@@ -305,5 +305,5 @@ chromedp使わなくても良かった気はする。バグはどうやって直
 - [qiita.com - Go で Slack Bot を作る (2020年3月版)](https://qiita.com/frozenbonito/items/cf75dadce12ef9a048e9)
 - [qiita.com - Go で Interactive な Slack Bot を作る (2020年5月版)](https://qiita.com/frozenbonito/items/1df9bb685e6173160991#%E3%81%BE%E3%81%A8%E3%82%81)
 - [dev.to - Slackで送った文字を画像で返すbot作った](https://dev.to/amotarao/slackbot-376)
-- [lab.syncer.jp - 複数行のテキストを描く方法](https://lab.syncer.jp/Web/JavaScript/Canvas/8)
+- [lab.syncer.jp - 複数行のテキストを描く方法](http://web.archive.org/web/20230315103219/https://lab.syncer.jp/Web/JavaScript/Canvas/8/)
 - [Stackoverflow - Size to fit font on a canvas](https://stackoverflow.com/questions/20551534/size-to-fit-font-on-a-canvas)

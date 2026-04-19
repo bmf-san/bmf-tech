@@ -14,7 +14,7 @@ translation_key: create-shell-script-git-commands
 
 
 # 概要
-[.bashrcにgitのショートカットコマンドをつくった](http://qiita.com/bmf_san/items/d41bc8d5c5677c69a1e4)でgitのエイリアスコマンドをつくったのですが、中途半端だったので改良しました。
+~~.bashrcにgitのショートカットコマンドをつくった~~でgitのエイリアスコマンドをつくったのですが、中途半端だったので改良しました。
 
 前回のエイリアスでもそこそこにgitコマンドが快適になりましたが、gitコマンドを叩く度にブランチ名をタイプしないといけない仕様は改善すべき点だと思ったので、`select`を使って解決しました。
 

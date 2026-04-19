@@ -17,7 +17,7 @@ translation_key: notify-bitcoin-status-slack-bitflyer-api-part2
 
 
 
-[Last time](http://qiita.com/bmf_san/items/7ae9fc2c83d563291671), I just hit the bitFlyer API and left it at that, so this time I'll format the response data and send it to Slack as asset information data.
+~~Last time~~, I just hit the bitFlyer API and left it at that, so this time I'll format the response data and send it to Slack as asset information data.
 
 # Asynchronous Processing with async
 

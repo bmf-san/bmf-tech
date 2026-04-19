@@ -28,7 +28,7 @@ It seems related to the file system API of MacOS.
 - Use Windows or Linux
 - docker-sync
 - Set up a virtual environment built on an OS different from MacOS (like Vagrant)
-- Utilize options like cached, delegated, consistent ([Docker - Performance tuning for volume mounts (shared filesystems)](https://docs.docker.com/docker-for-mac/osxfs-caching/#performance-implications-of-host-container-file-system-consistency))
+- Utilize options like cached, delegated, consistent (~~Docker - Performance tuning for volume mounts (shared filesystems)~~)
 
 # Thoughts
 I feel like I want to use Linux.

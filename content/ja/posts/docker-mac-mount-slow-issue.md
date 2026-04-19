@@ -29,7 +29,7 @@ MacOSのファイルシステムのAPIが関連しているらしい。
 - WindowsやLinuxを使う
 - docker-sync
 - MacOSとは異なるOSで構築した仮想環境を用意する（Vagrantとか）
-- cached、delegated、consistentといったオプションを活用する（[Docker - Performance tuning for volume mounts (shared filesystems)](https://docs.docker.com/docker-for-mac/osxfs-caching/#performance-implications-of-host-container-file-system-consistency)）
+- cached、delegated、consistentといったオプションを活用する（~~Docker - Performance tuning for volume mounts (shared filesystems)~~）
 
 # 所感
 Linux使いたいなという気持ちになった。

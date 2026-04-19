@@ -21,11 +21,11 @@ translation_key: complete-2019-php-conferences
 東京以外のカンファレンスは全て初参加。
 
 - [PHPカンファレンス仙台2019に参加した](https://bmf-tech.com/posts/PHP%E3%82%AB%E3%83%B3%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9%E4%BB%99%E5%8F%B02019%E3%81%AB%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%9F)
-- [Laravel JP Conference](https://conference2019.laravel.jp/)
+- [Laravel JP Conference](http://web.archive.org/web/20260117100821/https://conference2019.laravel.jp/)
 国内初開催のLaravelカンファレンス。
 スタッフ兼スピーカーとして参加した。
 来年度もスタッフとして参加予定。
-cf. [Laravel JP Conference 2020](https://conference2020.laravel.jp/)
+cf. [Laravel JP Conference 2020](http://web.archive.org/web/20250126161113/http://conference2020.laravel.jp/)
 - [PHPerKaigi2019に参加・登壇してきました](https://bmf-tech.com/posts/PHPerKaigi2019%E3%81%AB%E5%8F%82%E5%8A%A0%E3%83%BB%E7%99%BB%E5%A3%87%E3%81%97%E3%81%A6%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F)
 -  [PHPカンファレンス福岡2019に参加・登壇してきました](https://bmf-tech.com/posts/PHP%E3%82%AB%E3%83%B3%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9%E7%A6%8F%E5%B2%A12019%E3%81%AB%E5%8F%82%E5%8A%A0%E3%83%BB%E7%99%BB%E5%A3%87%E3%81%97%E3%81%A6%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F)
 過去2回くらいCFPを提出していたが、落選続きだった福岡。
@@ -40,7 +40,7 @@ cf. [Laravel JP Conference 2020](https://conference2020.laravel.jp/)
 -  [PHP CONFERENCE JAPAN 2019](https://phpcon.php.gr.jp/2019/)
 今年のPHPカンファレンス東京は20周年ということもあり、特別感があった。
 これまで3年連続で参加しているが、今年はPHPUnitの作者である[Sebastian Bergmann](https://twitter.com/s_bergmann)氏が登壇していたのもあって特に印象的だった。
-- [Laravel JP Conference](https://conference2019.laravel.jp/)と[CakeFest](https://cakefest.org/)と[PHP CONFERENCE JAPAN 2019](https://phpcon.php.gr.jp/2019/)はフルで参加できなかったのもあってレポートサボってしまった..
+- [Laravel JP Conference](http://web.archive.org/web/20260117100821/https://conference2019.laravel.jp/)と[CakeFest](https://cakefest.org/)と[PHP CONFERENCE JAPAN 2019](https://phpcon.php.gr.jp/2019/)はフルで参加できなかったのもあってレポートサボってしまった..
 
 各カンファレンスのセッションを振り返ってみると、今年はアプリケーション設計やテストについてセッションが比較的多かったのではないかと思う。
 

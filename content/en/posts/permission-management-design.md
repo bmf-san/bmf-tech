@@ -125,9 +125,9 @@ I feel like I've identified the perspectives to consider, but the particularly c
 - [ja.wikipedia.org - Role-Based Access Control](https://ja.wikipedia.org/wiki/%E3%83%AD%E3%83%BC%E3%83%AB%E3%83%99%E3%83%BC%E3%82%B9%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E5%88%B6%E5%BE%A1)
 - [ja.wikpedia.org - Access Control List](https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E5%88%B6%E5%BE%A1%E3%83%AA%E3%82%B9%E3%83%88)
 - [kenfdev.hateblo.jp - Challenges in Application Permission Design](https://kenfdev.hateblo.jp/entry/2020/01/13/115032)
-- [knooto.info - Access Control Design in Systems](https://knooto.info/software-design-access-control/#top)
+- ~~knooto.info - Access Control Design in Systems~~
 - [waterlow2013.hatenablog.com - Key Points for Permission Management DB Design Patterns](https://waterlow2013.hatenablog.com/entry/2017/01/27/233405)
-- [www.lyricrime.com - About System Permission Methods](https://www.lyricrime.com/posts/access-control/)
+- ~~www.lyricrime.com - About System Permission Methods~~
 - [zenn.dev/she_techblog - Considerations on Authorization Architecture (Reading Authorization Academy II)](https://zenn.dev/she_techblog/articles/6eff1f28d107be?redirected=1)
 - [www.osohq.com - Authorization Academy](https://www.osohq.com/academy)
 - [dzone.com - Access Control Acronyms: ACL, RBAC, ABAC, PBAC, RAdAC, and a Dash of CBAC](https://dzone.com/articles/acl-rbac-abac-pbac-radac-and-a-dash-of-cbac)

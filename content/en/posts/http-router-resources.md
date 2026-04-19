@@ -35,7 +35,7 @@ A list of materials referenced in the development of the HTTP Router.
 - [kkdai/radix](https://github.com/kkdai/radix)
 - [MarkBaker/Tries](https://github.com/MarkBaker/Tries)
 - [razonyang/routing](https://github.com/razonyang/routing)
-- [ethereum/wiki - [Japanese] Patricia Tree](https://github.com/ethereum/wiki/wiki/%5BJapanese%5D-Patricia-Tree)
+- [ethereum/wiki - [Japanese] Patricia Tree](~~https://github.com/ethereum/wiki/wiki/%5BJapanese%5D-Patricia-Tree~~)
 - [neo-nanikaka - CommonPrefixTrieRouter.php](https://gist.github.com/neo-nanikaka/c2e2f7742b311696d50b)
 - [golang/go - proposal: net/http: enhanced ServeMux routing](https://github.com/golang/go/issues/61410)
 
@@ -46,7 +46,7 @@ A list of materials referenced in the development of the HTTP Router.
 - [kuune.org - Released the world's fastest URL router](https://kuune.org/text/2014/06/12/denco/)
 - [takao.blogspot.com - Implemented Patricia Trie in Java](https://takao.blogspot.com/2012/03/patriciatrie.html)
 - [dankogai.livedoor.blog - algorithm - Patricia Trie (Radix Trie) in JavaScript](https://dankogai.livedoor.blog/archives/51766842.html)
-- [persol-pt.github.io - Study Group [http request multiplexer and string matching]](https://persol-pt.github.io/posts/tech-workshop1222/)
+- [persol-pt.github.io - Study Group [http request multiplexer and string matching]](http://web.archive.org/web/20201109013417/https://persol-pt.github.io/posts/tech-workshop1222/)
 - [atmarkit.itmedia.co.jp - The difference between heaven and hell depends on the choice of data structure](https://atmarkit.itmedia.co.jp/ait/articles/0809/01/news163_3.html)
 - [www.sb.ecei.tohoku.ac.jp - Basic Data Structures: Traversing Tree Structures](http://www.sb.ecei.tohoku.ac.jp/lab/wp-content/uploads/2012/11/2012_d12.pdf)
 - [noranuk0.hatenablog.com - Doing URL routing nicely without using a framework in PHP](https://noranuk0.hatenablog.com/entry/2018/01/20/114933)

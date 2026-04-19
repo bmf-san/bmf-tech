@@ -85,7 +85,7 @@ December 20, 2021](https://viglucci.io/introduction-to-system-design-interviews)
   - Youtubeのシステム設計を例題としたインタビューのアプローチ方法
 - [The complete guide to cracking the System Design interview](https://towardsdatascience.com/the-complete-guide-to-the-system-design-interview-ba118f48bdfc) 
   - システム設計インタビューのアプローチ方法と例題リンク集
-- [System design interview prep (relax, start here)](https://igotanoffer.com/blogs/tech/system-design-interview-prep)
+- [System design interview prep (relax, start here)](http://web.archive.org/web/20250916043557/https://igotanoffer.com/blogs/tech/system-design-interview-prep)
   - システム設計インタビューの準備、基本について
 - [System Design Interview Preparation Tips](https://www.interviewkickstart.com/blog/system-design-interview-preparation-tips)
   - システム設計インタビューのtips
