@@ -232,16 +232,20 @@ test.describe('Nav: locale toggle on tag pages', () => {
 });
 
 test.describe('Nav: locale toggle on category pages', () => {
-  test('JA category page toggle links to EN category page', async ({ page }) => {
+  // Category slugs differ across locales (EN "application" vs JA "アプリケーション")
+  // and gohan exposes no cross-locale taxonomy mapping, so the locale switcher on
+  // category pages falls back to the opposite locale's home rather than emitting
+  // a URL that may not exist.
+  test('JA category page toggle links to EN home', async ({ page }) => {
     await page.goto('/ja/categories/os/');
     const href = await page.locator('nav.navbar a:has(.badge-primary)').getAttribute('href');
-    expect(href).toBe('/categories/os/');
+    expect(href).toBe('/');
   });
 
-  test('EN category page toggle links to JA category page', async ({ page }) => {
+  test('EN category page toggle links to JA home', async ({ page }) => {
     await page.goto('/categories/architecture/');
     const href = await page.locator('nav.navbar a:has(.badge-primary)').getAttribute('href');
-    expect(href).toBe('/ja/categories/architecture/');
+    expect(href).toBe('/ja/');
   });
 });
 

@@ -22,10 +22,19 @@
 {{- $altURLHead := "/ja/"}}
 {{- if eq .CurrentLocale "ja"}}{{$altURLHead = "/"}}{{end}}
 {{- if .CurrentTaxonomy}}
-  {{- if eq .CurrentLocale "ja"}}{{$altURLHead = slice .CurrentTaxonomy.URL 3}}{{else}}{{$altURLHead = printf "/ja%s" .CurrentTaxonomy.URL}}{{end}}
-  {{- /* for paginated taxonomy pages, alternate hreflang must match the current page number */}}
-  {{- if and .Pagination (gt .Pagination.CurrentPage 1)}}
-    {{- if eq .CurrentLocale "ja"}}{{$altURLHead = printf "%s/page/%d/" (slice .Pagination.BaseURL 3) .Pagination.CurrentPage}}{{else}}{{$altURLHead = printf "/ja%s/page/%d/" .Pagination.BaseURL .Pagination.CurrentPage}}{{end}}
+  {{- /* Taxonomy slugs differ per locale (e.g. EN "application" vs JA "アプリケーション").
+     gohan exposes no cross-locale taxonomy mapping. Categories are fully disjoint across
+     locales, so always fall back to the opposite locale's home. Tags may share ASCII
+     slugs (e.g. "golang"); swap /ja only when the current tag URL is pure ASCII. */}}
+  {{- $taxFallback := or (contains .CurrentTaxonomy.URL "/categories/") (hasNonASCII .CurrentTaxonomy.URL)}}
+  {{- if $taxFallback}}
+    {{- if eq .CurrentLocale "ja"}}{{$altURLHead = "/"}}{{else}}{{$altURLHead = "/ja/"}}{{end}}
+  {{- else}}
+    {{- if eq .CurrentLocale "ja"}}{{$altURLHead = slice .CurrentTaxonomy.URL 3}}{{else}}{{$altURLHead = printf "/ja%s" .CurrentTaxonomy.URL}}{{end}}
+    {{- /* for paginated taxonomy pages, alternate hreflang must match the current page number */}}
+    {{- if and .Pagination (gt .Pagination.CurrentPage 1)}}
+      {{- if eq .CurrentLocale "ja"}}{{$altURLHead = printf "%s/page/%d/" (slice .Pagination.BaseURL 3) .Pagination.CurrentPage}}{{else}}{{$altURLHead = printf "/ja%s/page/%d/" .Pagination.BaseURL .Pagination.CurrentPage}}{{end}}
+    {{- end}}
   {{- end}}
 {{- else if .CurrentArchivePath}}
   {{- if eq .CurrentLocale "ja"}}{{$altURLHead = slice .CurrentArchivePath 3}}{{else}}{{$altURLHead = printf "/ja%s" .CurrentArchivePath}}{{end}}
@@ -224,17 +233,28 @@
     {{- if and (ne $.CurrentLocale "ja") (eq .Locale "ja")}}{{$altURL = .URL}}{{end}}
   {{- end}}
 {{- else if .CurrentTaxonomy}}
-  {{- if eq .CurrentLocale "ja"}}
-    {{- $altURL = slice .CurrentTaxonomy.URL 3}}
-  {{- else}}
-    {{- $altURL = printf "/ja%s" .CurrentTaxonomy.URL}}
-  {{- end}}
-  {{- /* for paginated taxonomy pages, locale-switcher link must match the current page number */}}
-  {{- if and .Pagination (gt .Pagination.CurrentPage 1)}}
+  {{- /* See $altURLHead above: categories and non-ASCII tag slugs fall back to the
+     opposite locale's home; shared ASCII tag slugs toggle the /ja prefix. */}}
+  {{- $taxFallback := or (contains .CurrentTaxonomy.URL "/categories/") (hasNonASCII .CurrentTaxonomy.URL)}}
+  {{- if $taxFallback}}
     {{- if eq .CurrentLocale "ja"}}
-      {{- $altURL = printf "%s/page/%d/" (slice .Pagination.BaseURL 3) .Pagination.CurrentPage}}
+      {{- $altURL = "/"}}
     {{- else}}
-      {{- $altURL = printf "/ja%s/page/%d/" .Pagination.BaseURL .Pagination.CurrentPage}}
+      {{- $altURL = "/ja/"}}
+    {{- end}}
+  {{- else}}
+    {{- if eq .CurrentLocale "ja"}}
+      {{- $altURL = slice .CurrentTaxonomy.URL 3}}
+    {{- else}}
+      {{- $altURL = printf "/ja%s" .CurrentTaxonomy.URL}}
+    {{- end}}
+    {{- /* for paginated taxonomy pages, locale-switcher link must match the current page number */}}
+    {{- if and .Pagination (gt .Pagination.CurrentPage 1)}}
+      {{- if eq .CurrentLocale "ja"}}
+        {{- $altURL = printf "%s/page/%d/" (slice .Pagination.BaseURL 3) .Pagination.CurrentPage}}
+      {{- else}}
+        {{- $altURL = printf "/ja%s/page/%d/" .Pagination.BaseURL .Pagination.CurrentPage}}
+      {{- end}}
     {{- end}}
   {{- end}}
 {{- else if .CurrentArchivePath}}
