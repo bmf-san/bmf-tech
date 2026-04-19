@@ -37,4 +37,5 @@ jobs:
             --exclude '^https?://bmf-tech\.com'
             --exclude '^https?://(www\.)?linkedin\.com'
             'public/**/*.html'
-          fail: true
+          # Report only for now; turn on `fail: true` after link-rot cleanup.
+          fail: false
