@@ -1,0 +1,27 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "version": "0.2",
+  "language": "en",
+  "files": ["content/en/posts/**/*.md"],
+  "ignorePaths": [
+    "node_modules/**",
+    "public/**",
+    "test-results/**"
+  ],
+  "ignoreRegExpList": [
+    "/```[\\s\\S]+?```/",
+    "/`[^`]+`/",
+    "/\\[[^\\]]+\\]\\([^)]+\\)/",
+    "/https?:\\/\\/\\S+/",
+    "/<[^>]+>/"
+  ],
+  "dictionaryDefinitions": [
+    {
+      "name": "project-words",
+      "path": "./.cspell-words.txt",
+      "addWords": true
+    }
+  ],
+  "dictionaries": ["project-words"],
+  "allowCompoundWords": true
+}

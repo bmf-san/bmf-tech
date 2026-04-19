@@ -6,6 +6,8 @@ on:
     paths:
       - 'content/ja/posts/**'
       - 'content/en/posts/**'
+      - '.cspell.json'
+      - '.cspell-words.txt'
 
 jobs:
   lint:
@@ -26,3 +28,6 @@ jobs:
 
       - name: Lint changed posts
         run: make lint-content-diff
+
+      - name: Spell-check English posts
+        run: npm run spell:en

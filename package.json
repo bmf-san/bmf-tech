@@ -3,9 +3,11 @@
   "private": true,
   "scripts": {
     "lint:ja": "textlint --config .textlintrc-ja.json",
-    "lint:en": "textlint --config .textlintrc-en.json"
+    "lint:en": "textlint --config .textlintrc-en.json",
+    "spell:en": "cspell --config .cspell.json --no-progress \"content/en/posts/**/*.md\""
   },
   "devDependencies": {
+    "cspell": "^8.17.1",
     "textlint": "^14.4.1",
     "textlint-filter-rule-comments": "^1.3.0",
     "textlint-rule-preset-ja-spacing": "^2.4.3",
