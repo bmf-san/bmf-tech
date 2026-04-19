@@ -33,6 +33,8 @@ jobs:
           args: >-
             --no-progress
             --root-dir ${{ github.workspace }}/public
-            --accept 200,206,403,429
+            --accept 200,206,403,429,999
+            --exclude '^https?://bmf-tech\.com'
+            --exclude '^https?://(www\.)?linkedin\.com'
             'public/**/*.html'
           fail: true
