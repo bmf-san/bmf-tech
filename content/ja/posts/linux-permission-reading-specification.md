@@ -133,7 +133,7 @@ chmod a+rw hoge.md
 ```
 
 # 参考
-- [Linuxの権限確認と変更](Linuxの権限確認と変更（超初心者向け）)
+- Linuxの権限確認と変更（超初心者向け）
 - [Linuxのファイル管理 パーミッションの設定](http://proengineer.internous.co.jp/content/columnfeature/8843)
 
 # 余談

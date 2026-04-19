@@ -24,7 +24,7 @@ Automate the initial setup of Sakura VPS using Ansible.
 
 # Prerequisites
 + Understand the initial setup flow of Sakura VPS.
-  + [Initial setup of Sakura VPS](google.com)
+  + Initial setup of Sakura VPS
 
 # Install CentOS7 on Sakura VPS
 From the Sakura VPS console screen, select `OS Installation > Custom OS Installation` to install CentOS7. Once the installation starts, you can open the CentOS7 installation console screen (either the HTML5 version of the VNC console or the Java Applet version), and choose the one that suits your environment.

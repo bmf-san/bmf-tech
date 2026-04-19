@@ -55,7 +55,7 @@ There are many features that make you want to use DigitalOcean even without usin
 - Support is quite good (personal opinion)
   - I created a support ticket regarding the credit issue at the beginning, and they responded within a day. It might have been a coincidence, but it seems promising.
   - There are some negative reviews about support.
-     - [www.websiteplanet.com - digitalocean/#support](www.websiteplanet.com/ja/web-hosting/digitalocean/#support)
+     - [www.websiteplanet.com - digitalocean/#support](https://www.websiteplanet.com/ja/web-hosting/digitalocean/#support)
 - I have grown fond of the shark icon. (personal opinion)
 
 # Overview of DigitalOcean's Managed Kubernetes
