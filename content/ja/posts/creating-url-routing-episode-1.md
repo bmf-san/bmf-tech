@@ -187,7 +187,7 @@ Makuake LT Party（社内LT大会）にてLTをした。
 
 ### 参考
 - [Algorithm visualization - Radix Tree](https://www.cs.usfca.edu/~galles/visualization/RadixTree.html)
-- [github - [Japanese] Patricia Tree](~~https://github.com/ethereum/wiki/wiki/%5BJapanese%5D-Patricia-Tree~~)
+- ~~github - [Japanese] Patricia Tree~~
 - [WhiteDog@Blog](http://takao.blogspot.com/2012/03/patriciatrie.html)
 - [404 Blog Not Found - algorithm - Patricia Trie (Radix Trie) を JavaScript で](http://blog.livedoor.jp/dankogai/archives/51766842.html)
 - [http request multiplexerと文字列マッチング](http://web.archive.org/web/20201109013417/https://persol-pt.github.io/posts/tech-workshop1222/)

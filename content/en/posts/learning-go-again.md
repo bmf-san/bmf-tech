@@ -46,7 +46,7 @@ I haven’t been exposed to many languages, so I can’t provide deep insights i
 
 - [zenn.dev - Revisiting the Features of Go](https://zenn.dev/nobonobo/scraps/cec2259ac330a8)
 - [zenn.dev - Reasons for Go Language's Success](https://zenn.dev/takehiro0740/articles/b5ef4fc26e9ba6)
-- ~~www.mobulous.com - GoLang: A Complete Details of All The Pros and Cons in Programming~~
+- ~~mobulous - GoLang: A Complete Details of All The Pros and Cons in Programming~~
 - [www.scalefocus.com - Why You Should Go with Go for Your Next Software Project](https://www.scalefocus.com/blog/why-you-should-go-with-go-for-your-next-software-project)
 - [www.uptech.team - Best Practices: Why Use Golang For Your Project](https://www.uptech.team/blog/why-use-golang-for-your-project)
 - [https://medium.com - Why Go: The benefits of Golang](https://medium.com/@julienetienne/why-go-the-benefits-of-golang-6c39ea6cff7e)

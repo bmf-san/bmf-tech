@@ -36,8 +36,7 @@ HTTP Routerの開発で参考にした資料リスト。
 - [kkdai/radix](https://github.com/kkdai/radix)
 - [MarkBaker/Tries](https://github.com/MarkBaker/Tries)
 - [razonyang/routing](https://github.com/razonyang/routing)
-- [ethereum/wiki - [Japanese] Patricia Tree
-](~~https://github.com/ethereum/wiki/wiki/%5BJapanese%5D-Patricia-Tree~~)
+- ~~ethereum/wiki - [Japanese] Patricia Tree~~
 - [neo-nanikaka - CommonPrefixTrieRouter.php](https://gist.github.com/neo-nanikaka/c2e2f7742b311696d50b)
 - [golang/go - proposal: net/http: enhanced ServeMux routing](https://github.com/golang/go/issues/61410)
 

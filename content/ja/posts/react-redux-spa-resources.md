@@ -33,7 +33,7 @@ github - rajaraodv/react-redux-blog
 https://github.com/rajaraodv/react-redux-blog
 
 github - mustafawm/blogapp
-~~https://github.com/mustafawm/blogapp~~
+~~(dead link)~~
 
 github - mzabriskie/axios
 https://github.com/mzabriskie/axios#handling-errors
@@ -48,7 +48,7 @@ Reduxでコンポーネントを再利用する
 http://qiita.com/kuy/items/869aeb7b403ea7a8fd8a
 
 【Redux入門】 React + Redux の考え方を理解する
-~~http://okakacacao.wpblog.jp/technology/what-is-redux~~
+~~(dead link)~~
 
 Redux入門 6日目 ReduxとReactの連携(公式ドキュメント和訳)
 http://qiita.com/kiita312/items/d769c85f446994349b52
@@ -81,19 +81,19 @@ React-Reduxを使った開発でのディレクトリ構成をどうしたらい
 http://watanabeyu.blogspot.jp/2016/08/react-redux.html
 
 Connecting Mapdisptachtoprops in V6 reduxForm()
-~~https://github.com/erikras/redux-form/issues/1050~~
+~~(dead link)~~
 
 react-routerでURLパラメータを指定した際、URL直打ちだと404になります
 https://teratail.com/questions/26245
 
 redux-form Multiple field errors?
-~~https://github.com/erikras/redux-form/issues/639~~
+~~(dead link)~~
 
 Redux Form -Submit Validation Example
 http://redux-form.com/6.0.0-alpha.4/examples/submitValidation/
 
 throw new SubmissionError() causing Uncaught (in promise) error
-~~https://github.com/erikras/redux-form/issues/2269~~
+~~(dead link)~~
 
 redux-form textarea value not updating
 http://stackoverflow.com/questions/40970691/redux-form-textarea-value-not-updating

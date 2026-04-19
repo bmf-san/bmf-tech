@@ -47,8 +47,8 @@ The adjacency list is an efficient data structure for graphs with a small number
 The source code can be found at [adjacency_list](https://github.com/bmf-san/road-to-algorithm-master/tree/master/data_structures/graph/adjacency_list).
 
 ```go
-// See: ~~https://www.youtube.com/watch?v=JDP1OVgoa0Q~~
-// See: ~~https://www.youtube.com/watch?v=bSZ57h7GN2w~~
+// See: ~~(dead link)~~
+// See: ~~(dead link)~~
 package main
 
 import "fmt"

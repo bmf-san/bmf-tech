@@ -33,10 +33,12 @@ jobs:
           args: >-
             --no-progress
             --root-dir ${{ github.workspace }}/public
-            --accept 200,206,301,302,304,400,401,402,403,429,500,503,999
+            --accept 200,202,206,301,302,304,400,401,402,403,429,500,503,999
             --timeout 30
             --max-retries 3
             --exclude '^https?://bmf-tech\.com'
             --exclude '^https?://(www\.)?linkedin\.com'
+            --exclude '^https?://web\.archive\.org/'
+            --exclude '^https?://region-name-project-id\.cloudfunctions\.net/'
             'public/**/*.html'
           fail: true

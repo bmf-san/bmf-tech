@@ -168,7 +168,7 @@ I gave a talk at the Makuake LT Party (internal LT competition).
 
 ### References
 - [Algorithm visualization - Radix Tree](https://www.cs.usfca.edu/~galles/visualization/RadixTree.html)
-- [github - [Japanese] Patricia Tree](~~https://github.com/ethereum/wiki/wiki/%5BJapanese%5D-Patricia-Tree~~)
+- ~~github - [Japanese] Patricia Tree~~
 - [WhiteDog@Blog](http://takao.blogspot.com/2012/03/patriciatrie.html)
 - [404 Blog Not Found - algorithm - Patricia Trie (Radix Trie) in JavaScript](http://blog.livedoor.jp/dankogai/archives/51766842.html)
 - [http request multiplexer and string matching](http://web.archive.org/web/20201109013417/https://persol-pt.github.io/posts/tech-workshop1222/)

@@ -126,7 +126,7 @@ translation_key: permission-management-design
 - [kenfdev.hateblo.jp - アプリケーションにおける権限設計の課題](https://kenfdev.hateblo.jp/entry/2020/01/13/115032)
 - ~~knooto.info - システムのアクセス制御 (操作権限管理) 設計~~
 - [waterlow2013.hatenablog.com - これだけ抑えればOK!権限管理のDB設計デザインパターン](https://waterlow2013.hatenablog.com/entry/2017/01/27/233405)
-- ~~www.lyricrime.com - システムの権限方式について~~
+- ~~システムの権限方式について (lyricrime)~~
 - [zenn.dev/she_techblog - 認可のアーキテクチャに関する考察（Authorization Academy IIを読んで）](https://zenn.dev/she_techblog/articles/6eff1f28d107be?redirected=1)
 - [www.osohq.com - Authorization Academy](https://www.osohq.com/academy)
 - [dzone.com - Access Control Acronyms: ACL, RBAC, ABAC, PBAC, RAdAC, and a Dash of CBAC](https://dzone.com/articles/acl-rbac-abac-pbac-radac-and-a-dash-of-cbac)

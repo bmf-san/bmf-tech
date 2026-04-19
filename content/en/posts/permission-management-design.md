@@ -127,7 +127,7 @@ I feel like I've identified the perspectives to consider, but the particularly c
 - [kenfdev.hateblo.jp - Challenges in Application Permission Design](https://kenfdev.hateblo.jp/entry/2020/01/13/115032)
 - ~~knooto.info - Access Control Design in Systems~~
 - [waterlow2013.hatenablog.com - Key Points for Permission Management DB Design Patterns](https://waterlow2013.hatenablog.com/entry/2017/01/27/233405)
-- ~~www.lyricrime.com - About System Permission Methods~~
+- ~~lyricrime - About System Permission Methods~~
 - [zenn.dev/she_techblog - Considerations on Authorization Architecture (Reading Authorization Academy II)](https://zenn.dev/she_techblog/articles/6eff1f28d107be?redirected=1)
 - [www.osohq.com - Authorization Academy](https://www.osohq.com/academy)
 - [dzone.com - Access Control Acronyms: ACL, RBAC, ABAC, PBAC, RAdAC, and a Dash of CBAC](https://dzone.com/articles/acl-rbac-abac-pbac-radac-and-a-dash-of-cbac)
