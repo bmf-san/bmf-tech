@@ -1,4 +1,4 @@
-.PHONY: help install-gohan install-e2e install-lint build serve clean test-e2e test-e2e-ui new-ja new-en lint-content lint-content-diff devto-build devto-post-all devto-post-file
+.PHONY: help install-gohan install-e2e install-lint build serve clean test-e2e test-e2e-ui new-ja new-en lint-content lint-content-diff check-parity devto-build devto-post-all devto-post-file
 
 TITLE   ?= untitled
 SLUG    ?= untitled
@@ -19,6 +19,9 @@ install-lint: ## textlint 依存をインストール
 lint-content: ## 全記事を textlint でチェック (JA + EN)
 	npx textlint --config .textlintrc-ja.json "content/ja/posts/*.md"
 	npx textlint --config .textlintrc-en.json "content/en/posts/*.md"
+
+check-parity: ## 日英記事の translation_key 対応をチェック
+	bash scripts/check-translation-parity.sh
 
 lint-content-diff: ## origin/main との差分ファイルのうち本文変更があるもののみ textlint でチェック
 	@ALL_JA=$$(git diff --name-only --diff-filter=ACM origin/main...HEAD -- 'content/ja/posts/*.md'); \
