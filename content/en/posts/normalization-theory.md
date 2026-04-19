@@ -285,5 +285,5 @@ I am not very confident in my understanding beyond BCNF...
 - [koseki2580.github.io - Normalization](https://koseki2580.github.io/study-docs/docs/Database/normalization/#:~:text=%E8%87%AA%E6%98%8E%E3%81%AA%E9%96%A2%E6%95%B0%E5%BE%93%E5%B1%9E%E6%80%A7%20%E3%81%A8%E3%81%AF%20X%20%E2%86%92%20Y,%E3%82%AD%E3%83%BC%E3%81%AE%E3%81%93%E3%81%A8%E3%82%92%E3%81%84%E3%81%86%E3%80%82)
 - [zenn.dev - Understanding Database Normalization with Illustrations](https://zenn.dev/keisuke90/articles/66ecb7956a6816#%E7%AC%AC%EF%BC%95%E6%AD%A3%E8%A6%8F%E5%BD%A2)
 - [youtube.com - Database Normalization (1NF, 2NF, 3NF)](https://www.youtube.com/watch?app=desktop&v=zcLCZKOAOjE)
-- [tabibou.com - Database Normalization from 1NF to 5NF, Boyce-Codd Normal Form Examples](https://tapibou.com/seikika)
+- ~~tabibou.com - Database Normalization from 1NF to 5NF, Boyce-Codd Normal Form Examples~~
 - [poppingcarp.com - Various Keys like Primary Key, Candidate Key, Foreign Key, Super Key | Database Basics](https://poppingcarp.com/various_key/)

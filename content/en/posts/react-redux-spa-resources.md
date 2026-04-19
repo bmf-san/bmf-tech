@@ -58,7 +58,7 @@ Where should client-side validation be done in Redux?
 http://qiita.com/inuscript/items/5bed7812b3c1447b7b60
 
 Explaining Redux implementation and React integration using a super simple sample
-http://mae.chab.in/archives/2885
+(dead link)
 
 React-Redux explained clearly and partially implemented practically
 http://ma3tk.hateblo.jp/entry/2016/06/20/182232
@@ -67,7 +67,7 @@ Redux Introduction Day 3: Basics of Redux and Reducers (Official Document Transl
 http://qiita.com/kiita312/items/7fdce94912d6d9c801f8
 
 [React/Redux] What I'm watching | Container Components
-http://kenjimorita.jp/read1/
+(dead link)
 
 Why do you need to use Middleware for asynchronous processing in Redux?
 http://qiita.com/enshi/items/557dcd7df60e6128249e

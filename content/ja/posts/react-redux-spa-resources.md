@@ -57,7 +57,7 @@ Reduxでのクライアントサイドvalidationをどこでやるべきか？
 http://qiita.com/inuscript/items/5bed7812b3c1447b7b60
 
 Reduxの実装とReactとの連携を超シンプルなサンプルを使って解説
-http://mae.chab.in/archives/2885
+(dead link)
 
 React-Redux をわかりやすく解説しつつ実践的に一部実装してみる
 http://ma3tk.hateblo.jp/entry/2016/06/20/182232
@@ -66,7 +66,7 @@ Redux入門 3日目 Reduxの基本・Reducers(公式ドキュメント和訳)
 http://qiita.com/kiita312/items/7fdce94912d6d9c801f8
 
 【React/Redux】わたしもみている | Container Components
-http://kenjimorita.jp/read1/
+(dead link)
 
 Reduxで非同期処理をしたいときに、なぜMiddlewareを使わないといけないのか
 http://qiita.com/enshi/items/557dcd7df60e6128249e
