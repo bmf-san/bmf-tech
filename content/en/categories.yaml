@@ -1,21 +1,41 @@
 - name: Algorithms and Data Structures
+  translation_key: algorithms-and-data-structures
 - name: Application
+  translation_key: application
 - name: Architecture
+  translation_key: architecture
 - name: Business
+  translation_key: business
 - name: Career
+  translation_key: career
 - name: Computer Architecture
+  translation_key: computer-architecture
 - name: Database
+  translation_key: database
 - name: Development Process
+  translation_key: development-process
 - name: Healthcare
+  translation_key: healthcare
 - name: Incident Report
+  translation_key: incident-report
 - name: Infrastructure
+  translation_key: infrastructure
 - name: Management
+  translation_key: management
 - name: Mathematics
+  translation_key: mathematics
 - name: Network
+  translation_key: network
 - name: Operating Systems
+  translation_key: operating-systems
 - name: Operations
+  translation_key: operations
 - name: Performance
+  translation_key: performance
 - name: Poem
+  translation_key: poem
 - name: Poetry
 - name: Testing
+  translation_key: testing
 - name: Tools
+  translation_key: tools
