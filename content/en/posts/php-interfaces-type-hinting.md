@@ -146,4 +146,4 @@ class Bot
 
 # References
 - [PHP - Object Interfaces](http://php.net/manual/ja/language.oop5.interfaces.php)
-- [A Discussion on Interfaces in PHP](http://blog.anatoo.jp/entry/20080517/1211029059)
+- ~~A Discussion on Interfaces in PHP~~

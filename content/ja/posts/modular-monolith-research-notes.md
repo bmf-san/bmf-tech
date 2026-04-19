@@ -46,7 +46,7 @@ translation_key: modular-monolith-research-notes
 
 > しかし、ここで注目しなければいけないのは、両者のライフサイクルの違いです。 組織やチーム配置は、その気になれば会社の方針次第で翌日から変更できます。 しかしアーキテクチャやシステムは、組織のようにすぐ変更することが困難です。
 
-cf. [eh-career.com - モジュラモノリスに移行する理由 ─ マイクロサービスの自律性とモノリスの一貫性を両立させるアソビューの取り組み大規模](https://eh-career.com/engineerhub/entry/2022/07/25/093000)
+cf. ~~eh-career.com - モジュラモノリスに移行する理由 ─ マイクロサービスの自律性とモノリスの一貫性を両立させるアソビューの取り組み大規模~~
 
 # 参考
 - [microservices.io - How modular can your monolith go? Part 1 - the basics](https://microservices.io/post/architecture/2023/07/31/how-modular-can-your-monolith-go-part-1.html)
@@ -64,7 +64,7 @@ cf. [eh-career.com - モジュラモノリスに移行する理由 ─ マイク
 - [モジュラモノリスにおけるトランザクション設計の考え方](https://speakerdeck.com/nazonohito51/transaction-design-on-modular-monolith)
 - [dev.classmethod.jp - [レポート] モノリスかマイクロサービスか、その選択に迷っている人へ届けたい話 #devio_day1 #main](https://dev.classmethod.jp/articles/20230411-developersio-day-one-monolithandmicroservices/)
 - [engineering.mercari.com - メルカリの取引ドメインにおけるモジュラーモノリス化の取り組み](https://engineering.mercari.com/blog/entry/20220913-modular-monolithization-in-mercari-transaction-domain/)
-- [eh-career.com - モジュラモノリスに移行する理由 ─ マイクロサービスの自律性とモノリスの一貫性を両立させるアソビューの取り組み大規模](https://eh-career.com/engineerhub/entry/2022/07/25/093000)
+- ~~eh-career.com - モジュラモノリスに移行する理由 ─ マイクロサービスの自律性とモノリスの一貫性を両立させるアソビューの取り組み大規模~~
 - [logmi.jp - 重要なのは「先を見据えた柔軟なアーキテクチャ構成」3チームの並列開発を実現したモジュラモノリスの採用](https://logmi.jp/tech/articles/328130)
 - [medium.com - The Modular Monolith: Rails Architecture](https://medium.com/@dan_manges/the-modular-monolith-rails-architecture-fb1023826fc4)
 

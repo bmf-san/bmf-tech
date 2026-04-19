@@ -35,7 +35,7 @@ It is also possible to change the number of generated instances to two or more.
 
 # When to Use
 
-# Implementation Example (※Repository available on [github](https://github.com/bmf-san/design-patterns-php).)
+# Implementation Example (※Repository available on ~~github~~.)
 
 ```SingletonConfig.php
 <?php

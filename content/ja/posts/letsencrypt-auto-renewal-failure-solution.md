@@ -15,7 +15,7 @@ translation_key: letsencrypt-auto-renewal-failure-solution
 ---
 
 
-[letsencryptの証明書自動更新(cron)とちょっとだけSlack連携](http://qiita.com/bmf_san/items/9a072023df9ca6fab354) でかいたスクリプトは、手動で実行する場合は更新成功するのですが、cronで実行すると何故か毎回失敗するという問題作でした。
+~~letsencryptの証明書自動更新(cron)とちょっとだけSlack連携~~ でかいたスクリプトは、手動で実行する場合は更新成功するのですが、cronで実行すると何故か毎回失敗するという問題作でした。
 
 そこでスクリプトを見直し、何とか正しく動作するように改良してみました。
 
@@ -94,5 +94,5 @@ fi
 
 
 # 参考
-[Let's Encrypt ユーザーガイド](https://letsencrypt.jp/docs/using.html)
+~~Let's Encrypt ユーザーガイド~~
 

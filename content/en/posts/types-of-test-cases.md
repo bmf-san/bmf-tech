@@ -43,4 +43,4 @@ A concise summary of the basic types of test cases and how to identify them.
 Identifying test cases for unit tests and integration tests should consider the above perspectives, along with business factors such as quality and effort.
 
 # Reference
-- [How to Identify and Write Test Cases](http://post.simplie.jp/posts/41)
+- ~~How to Identify and Write Test Cases~~

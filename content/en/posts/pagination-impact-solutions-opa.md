@@ -139,6 +139,6 @@ Applying OPA naively to list retrieval results in complex issues such as indeter
 There are trade-offs in applying OPA to pagination. It is necessary to clarify "what to prioritize (ease of implementation, performance, expressiveness, consistency)" and consider implementation accordingly.
 
 ## References
-- [Write Policy in OPA, Enforce in SQL](https://blog.openpolicyagent.org/write-policy-in-opa-enforce-policy-in-sql-d9d24db93bf4)
+- ~~Write Policy in OPA, Enforce in SQL~~
 - [GitHub Issue #1252: Pagination in OPA](https://github.com/open-policy-agent/opa/issues/1252)
 - [AWS Prescriptive Guidance: Multi-Tenant API Access Authorization](https://docs.aws.amazon.com/ja_jp/prescriptive-guidance/latest/saas-multitenant-api-access-authorization/introduction.html)

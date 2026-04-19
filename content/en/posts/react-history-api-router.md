@@ -281,7 +281,7 @@ I feel like it could be cleaner if I used EventEmitter or Observer... (lack of s
 - [Routing in React, the uncomplicated way](https://hackernoon.com/routing-in-react-the-uncomplicated-way-b2c5ffaee997)
 - [MDN - History](https://developer.mozilla.org/ja/docs/Web/API/History)
 - [MDN - Manipulating the Browser History](https://developer.mozilla.org/ja/docs/Web/Guide/DOM/Manipulating_the_browser_history)
-- [Trying out the History API](http://www.allinthemind.biz/markup/javascript/history_api.html)
+- ~~Trying out the History API~~
 - [Notes on manipulating URLs with JavaScript](https://qiita.com/PianoScoreJP/items/fa66f357419fece0e531)
 
 ## Reference Sources

@@ -172,6 +172,6 @@ class UserController extends Controller
 
 # 参考
 * [Laravel4.2のリポジトリパターン](http://tech.aainc.co.jp/archives/10227)
-* [【Laravel5.1 チュートリアル】中級者向けタスクリスト第4回](http://laravel-room.com/tutorial-intermediate-4)
+* ~~【Laravel5.1 チュートリアル】中級者向けタスクリスト第4回~~
 * [Laravelにおける後悔しないためのアプリケーション設計](https://speakerdeck.com/localdisk/laravelniokeruhou-hui-sinaitamefalseapurikesiyonshe-ji)
 

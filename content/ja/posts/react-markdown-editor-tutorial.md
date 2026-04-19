@@ -149,7 +149,7 @@ export default App;
 - [super - MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/super#Description)
 
 # リポジトリ
-ソースコードは[bmf-san/til/javascript/md-editor/ - github](https://github.com/bmf-san/til/tree/master/javascript/md-editor)に置いてあります。
+ソースコードは~~bmf-san/til/javascript/md-editor/ - github~~に置いてあります。
 
 # 所感
 Reactは素のJSに近い形でコーディングできるので、フレームワークに知識がロックインされづらいので好きです。

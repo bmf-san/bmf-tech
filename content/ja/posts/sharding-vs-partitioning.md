@@ -26,4 +26,4 @@ translation_key: sharding-vs-partitioning
 
 # 参考
 - [Database sharding vs partitioning](https://stackoverflow.com/questions/20771435/database-sharding-vs-partitioning)
-- [shardingとpartitioningの違いは？【分散データベース】](https://engineer.yeele.net/dev/db/understanding-term-partitioning-correctly-led-you-understand-sharding/)
+- ~~shardingとpartitioningの違いは？【分散データベース】~~

@@ -23,10 +23,10 @@ translation_key: development-productivity-resources
 - [www.atlassian.com - 5 つの役立つアジャイル KPI 指標](https://www.atlassian.com/ja/agile/project-management/metrics)
 - [bliki-ja.github.io - 生産性は計測不能](https://bliki-ja.github.io/CannotMeasureProductivity)
 - [findy-code.io - 技術的負債や開発生産性の可視化・計測ができている職場の割合は◯％！エンジニア377人に調査](https://findy-code.io/blog/market-report_202308/)
-- [blog.findy-team.io - 【メルカリ×DeNA】何を計測すべき？開発生産性可視化のWhy-What-How
-](https://blog.findy-team.io/posts/mercari_dena/)
+- ~~blog.findy-team.io - 【メルカリ×DeNA】何を計測すべき？開発生産性可視化のWhy-What-How
+~~
 - [codezine.jp - PR数から「SPACEフレームワーク」へ、技術組織の成長と共に進化した開発生産性の計測手法](https://codezine.jp/article/detail/17470)
-- [seleck.cc - 「開発生産性」とは？ Four KeysやSPACEの活用法、企業の生産性向上【事例5選】も公開！](https://seleck.cc/development_productivity)
+- ~~seleck.cc - 「開発生産性」とは？ Four KeysやSPACEの活用法、企業の生産性向上【事例5選】も公開！~~
 - [levtech.jp - 正しい指標を追跡して開発者体験を向上。開発者の生産性を計測する「SPACEメトリクス」とは【テッククランチ】](https://levtech.jp/media/article/news/detail_261/)
 - [note.com - チームカルチャーに基づくパフォーマンスを開発生産性として効果的に引き出す](https://note.com/tamago3keran/n/nc8efc8c952cc)
 - [dev.classmethod.jp - 開発生産性の未来：世界と日本の最前線事例から培うFour Keys向上〜ハイブリッドカンファレンス〜 に登壇、参加しました #開発生産性con_findy](https://dev.classmethod.jp/articles/shuntaka-findy-award-after-party/)

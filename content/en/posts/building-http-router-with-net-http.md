@@ -1313,9 +1313,9 @@ If you have any questions, requests for corrections, or feedback, please let me 
 # Afterword
 - [zenn.dev - Introduction to Building an HTTP Router with net/http](https://zenn.dev/bmf_san/books/3f41c5cd34ec3f)
   - The content of this article is made into a book.
-- [dev.to - Introduction to Golang HTTP router made with net/http](https://dev.to/bmf_san/introduction-to-golang-http-router-made-with-nethttp-3nmb)
+- [dev.to - Introduction to Golang HTTP router made with net/http](http://web.archive.org/web/20250815231536/https://dev.to/bmf_san/introduction-to-golang-http-router-made-with-nethttp-3nmb)
   - Translated into English.
-- [github.com - bmf-san/book-introduction-to-golang-http-router-made-with-net-http](https://github.com/bmf-san/book-introduction-to-golang-http-router-made-with-net-http)
+- ~~github.com - bmf-san/book-introduction-to-golang-http-router-made-with-net-http~~
   - Repository for managing the original text.
 - [Introduction to Building an HTTP Router with net/http](https://speakerdeck.com/bmf_san/httpdetukuruhttprutazi-zuo-ru-men)
   - Presented at Go Conference 2021

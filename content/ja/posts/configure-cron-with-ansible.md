@@ -39,5 +39,5 @@ Ansibleでcronを設定するタスクです。
 cronの設定も問題なくすんなりいけました。
 
 # 参考
-+ [cron - Manage cron.d and crontab entries.](http://docs.ansible.com/ansible/cron_module.html)
++ [cron - Manage cron.d and crontab entries.](http://web.archive.org/web/20170703134251/http://docs.ansible.com:80/ansible/cron_module.html)
 

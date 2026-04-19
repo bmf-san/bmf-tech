@@ -58,5 +58,5 @@ Functions provided by the TLS protocol
 
 # References
 
--   [Why HTTPS Now? The History and Technical Background of TLS That Engineers Should Know for Internet Reliability](https://employment.en-japan.com/engineerhub/entry/2018/02/14/110000)
+-   ~~Why HTTPS Now? The History and Technical Background of TLS That Engineers Should Know for Internet Reliability~~
 -   [What are the Differences Between SSL and TLS](https://ssl.sakura.ad.jp/column/ssl_tls/)

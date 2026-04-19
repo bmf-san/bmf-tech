@@ -144,5 +144,5 @@ A' = {4, 5}
 
 # References
 - [ja.wikipedia.org - Set Theory](https://ja.wikipedia.org/wiki/%E9%9B%86%E5%90%88%E8%AB%96)
-- [www2.toyo.ac.jp - Symbols Related to Sets](http://www2.toyo.ac.jp/~y-mizuno/Lang/appendix/symbols.pdf)
+- ~~www2.toyo.ac.jp - Symbols Related to Sets~~
 - [juken-mikata.net - 6 Symbols and 3 Laws You Must Remember for Sets](https://juken-mikata.net/how-to/mathematics/shugou.html)

@@ -87,7 +87,7 @@ mysql> SELECT table_name, engine, table_rows, avg_row_length, floor((data_length
 - [ISUCONの勝ち方動画メモ](https://wiki.infra-workshop.tech/user/kameneko/ISUCON8/ISUCON%E3%81%AE%E5%8B%9D%E3%81%A1%E6%96%B9%E5%8B%95%E7%94%BB%E3%83%A1%E3%83%A2)
 - [ISUCON7(予選)過去問環境をConoHaで構築する手順](https://nishinatoshiharu.com/how-to-create-isucon-conoha/)
 - [YAPC::Asia Tokyo 2015 「ISUCONの勝ち方」メモ](http://kobtea.net/posts/2015/08/22/yapc-isucon/)
-- [来年の isucon で泣かずに予選を終える為のメモ（1）](https://cloudpack.media/25281)
+- ~~来年の isucon で泣かずに予選を終える為のメモ（1）~~
 
 # ISUconに向けて読んだ本
 - [詳解 システムパフォーマンス](https://www.oreilly.co.jp/books/9784873117904/)

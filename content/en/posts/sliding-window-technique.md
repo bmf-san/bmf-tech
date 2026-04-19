@@ -75,7 +75,7 @@ Although `r-l` might seem counterintuitive, since the code is for finding pairs,
 - [www.codingninjas.com - Two Pointer Approach](https://www.codingninjas.com/studio/library/what-is-a-two-pointer-technique)
 - [jaigotec.com - [Algorithm(Ruby)] Explanation of the Two Pointer Technique](https://jaigotec.com/algorithm_two-pointer-techinique/)
 - [qiita.com - Explanation of the Two Pointer Technique and Problems Using It](https://qiita.com/drken/items/ecd1a472d3a0e7db8dce)
-- [na.fuis.u-fukui.ac.jp - Two Pointer Technique](https://na.fuis.u-fukui.ac.jp/~hirota/course/2022_Exp2_Programming/03-1_Shakutori.pdf)
+- ~~na.fuis.u-fukui.ac.jp - Two Pointer Technique~~
 - [paiza.hatenablog.com - [Cumulative Sum, Two Pointer Technique] Algorithm Diagram for Beginners](https://paiza.hatenablog.com/entry/2015/01/21/%E3%80%90%E7%B4%AF%E7%A9%8D%E5%92%8C%E3%80%81%E3%81%97%E3%82%83%E3%81%8F%E3%81%A8%E3%82%8A%E6%B3%95%E3%80%91%E5%88%9D%E7%B4%9A%E8%80%85%E3%81%A7%E3%82%82%E8%A7%A3%E3%82%8B%E3%82%A2%E3%83%AB%E3%82%B4)
 - [www.kumilog.net - Two Pointer Technique](https://www.kumilog.net/entry/two-pointers)
 - [scrapbox.io - Two Pointer Technique](https://scrapbox.io/pocala-kyopro/%E3%81%97%E3%82%83%E3%81%8F%E3%81%A8%E3%82%8A%E6%B3%95)

@@ -75,7 +75,7 @@ BFF can solve the problem of addressing the diversity of clients (the callers of
 - [Five Convenient Use Cases of BFF (Backends For Frontends)](https://atmarkit.itmedia.co.jp/ait/articles/1805/18/news022.html)
 - [Reconsidering Backends for Frontends (BFF)](https://zenn.dev/morinokami/scraps/20a4eab9415a50)
 - [More Coverage on BFFs](https://samnewman.io/blog/2016/02/14/more-coverage-on-bffs/)
-- [Embracing the Differences: Inside the Netflix API Redesign](https://netflixtechblog.com/embracing-the-differences-inside-the-netflix-api-redesign-15fd8b3dc49d)
+- ~~Embracing the Differences: Inside the Netflix API Redesign~~
 - [BFF @ SoundCloud](https://www.thoughtworks.com/insights/blog/bff-soundcloud)
 - [Moving to Microservices at SoundCloud with Lukasz Plotnicki](https://softwareengineeringdaily.com/2016/02/04/moving-to-microservices-at-soundcloud-with-lukasz-plotnicki/)
 - [Started Backends For Frontends (BFF)](https://techblog.zozo.com/entry/zozo-aggregation-api-bff)

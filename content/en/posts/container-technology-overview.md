@@ -120,7 +120,7 @@ Gave a lightning talk at Makuake LT Party (an internal LT event).
 - [gihyo.jp - Learning Containers with LXC - Technology for Realizing Lightweight Virtualization Environments](https://gihyo.jp/admin/serial/01/linux_containers/0001)
 - [Yuuki Blog - The Era of DIY Linux Containers](https://blog.yuuk.io/entry/diy-container)
 - [Think IT - Basic Knowledge of Container Technology](https://thinkit.co.jp/story/2015/08/11/6285)
-- [Linux Containers - What is LXD?](https://linuxcontainers.org/ja/lxd/introduction/)
+- ~~Linux Containers - What is LXD?~~
 - [Hewlett Packard Enterprise - What is the Difference Between Docker Containers and Virtualization? Synergy and DevOps](https://community.hpe.com/t5/Enterprise-Topics/Docker%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%81%A8%E4%BB%AE%E6%83%B3%E5%8C%96%E3%81%AE%E9%81%95%E3%81%84%E3%81%A8%E3%81%AF-Synergy%E3%81%A8DevOps/ba-p/6980068?profile.language=ja#.XD6Zks8zZTY)
 - [www.publickey1.jp - Mechanism of Container Runtime and Why Firecracker, gVisor, and Unikernel are Attracting Attention. Container Runtime Meetup #2](https://www.publickey1.jp/blog/20/firecrackergvisorunikernel_container_runtime_meetup_2.html)
 - [thinkit.co.jp - Prepare for the Deprecation of Docker Runtime Starting from Kubernetes 1.20! What We Should Know and Do](https://thinkit.co.jp/article/18024)
@@ -131,7 +131,7 @@ Gave a lightning talk at Makuake LT Party (an internal LT event).
 - [The End of Docker's Dominance: Key Container Trends](https://zenn.dev/ttnt_1013/articles/f36e251a0cd24e)
 - [gkuga.hatenablog.com - I Read the OCI Runtime Specification and Wrote an Overview](https://gkuga.hatenablog.com/entry/2020/01/24/032122)
 - [yohgami.hateblo.jp - Using chroot and unshare, Create a Simple Container with 7 Commands on Shell](https://yohgami.hateblo.jp/entry/20161215/1481755818)
-- [Introduction to Container Technology - Learn the Differences with Virtualization and Explore the Elemental Technologies](https://eh-career.com/engineerhub/entry/2019/02/05/103000)
+- ~~Introduction to Container Technology - Learn the Differences with Virtualization and Explore the Elemental Technologies~~
 - [Creating a Container Without Using Docker Commands - Part 1](https://zenn.dev/chemimotty/articles/51788231854a5e)
 - [kaminashi-developer.hatenablog.jp - [Go Language] DIY Container Swamp. Let's Create a Mini Docker from Scratch](https://kaminashi-developer.hatenablog.jp/entry/dive-into-swamp-container-scratch)
 - [www.youtube.com - Building a Container from Scratch in Go - Liz Rice (Microscaling Systems)](https://www.youtube.com/watch?v=Utf-A4rODH8)

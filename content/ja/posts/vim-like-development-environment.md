@@ -41,7 +41,7 @@ translation_key: vim-like-development-environment
 	- ゴリゴリコマンドラインを使っていくには必須かもしれない
 
 # 参考
-- [github - bmf-san/my-dotfiles](https://github.com/bmf-san/my-dotfiles)
+- ~~github - bmf-san/my-dotfiles~~
 	- 現在設定しているatomやvimの設定など
 
 # 所感

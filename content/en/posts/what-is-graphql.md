@@ -119,9 +119,9 @@ configs {
 
 # References
 - [graphql.org](https://graphql.org/)
-- [facebook/graphql rfcs](https://github.com/facebook/graphql/blob/master/rfcs/Subscriptions.md)
+- ~~facebook/graphql rfcs~~
 - [A small rebuttal to "What is GraphQL suitable for"](http://yamitzky.hatenablog.com/entry/graphql)
 - [Compared "GraphQL" that changes the flow of app development with REST](https://www.webprofessional.jp/rest-2-0-graphql/)
 - [GraphQL is not a replacement for REST](https://note.mu/konpyu/n/nc4fd122644a1)
 - [Memo when implementing GraphQL API in Rails app](https://blog.qnyp.com/2017/06/08/graphql-resources/)
-- [Explaining GraphQL from a beginner's perspective! ~ What is the difference from REST, the same Web API? ~](https://vitalify.jp/app-lab/20171006-graphql/)
+- [Explaining GraphQL from a beginner's perspective! ~ What is the difference from REST, the same Web API? ~](http://web.archive.org/web/20200808063325/https://vitalify.jp/app-lab/20171006-graphql/)

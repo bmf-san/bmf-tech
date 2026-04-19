@@ -29,7 +29,7 @@ Here is a rough GIF sample _(:3」∠)_
 # Environment
 * React
 * marked ([github](https://github.com/chjj/marked)) ... Markdown parser
-* highlight.js ([highlightjs.org](https://highlightjs.org/)) ... Syntax highlighting
+* highlight.js (~~highlightjs.org~~) ... Syntax highlighting
 * bower ... Used for managing all of the above packages
 
 

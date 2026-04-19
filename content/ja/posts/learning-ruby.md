@@ -53,7 +53,7 @@ Tips関連の記事を読み漁った。
 - [RubyのちょとしたTips](https://gist.github.com/kyohei-shimada/9aa61358abdc10e38bfa)
 - [Ruby競プロTips(基本・罠・高速化108 2.7x2.7)](https://zenn.dev/universato/articles/20201210-z-ruby)
   - 内容が充実している
-- [Ruby特有の作法](https://norix.tokyo/ruby-tips/16/#outline__4)
+- [Ruby特有の作法](http://web.archive.org/web/20250814105230/https://norix.tokyo/ruby-tips/16/)
 - [[Ruby, Rails] リファクタリングに役立つTips集 (初心者向け)](https://qiita.com/NaokiKotani/items/36283ca922d9f96c4a11)
 - [Ruby の引数の種類をまとめてみた](https://qiita.com/pink_bangbi/items/f85456db344b468ef758#%E8%AB%B8%E6%B3%A8%E6%84%8F)
   - 引数の種類が多い・・！

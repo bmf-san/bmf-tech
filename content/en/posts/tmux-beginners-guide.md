@@ -75,7 +75,7 @@ Swap panes (backward)
 `prefix+}`
 
 Copy mode
-`prefix+[`
+`prefix+~~`
 
 Select copy range (in copy mode)
 `v` or `space`
@@ -87,5 +87,5 @@ Copy (in copy mode)
 When using tmux in macOS Terminal, you cannot copy text by selecting it with the mouse (cmd+c) due to tmux's vim-like shortcuts. To copy the selected range with the mouse, you need to toggle the Terminal's Allow mouse reporting setting with `cmd+r`.
 
 # References
-- [github - bmf-san/dotfiles](https://github.com/bmf-san/dotfiles)
+- [github - bmf-san/dotfiles~~
   - Contains tmux configurations

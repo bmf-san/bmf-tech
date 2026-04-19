@@ -24,6 +24,6 @@ A method where data is held in the cache after being written, and is only writte
 A method where data is written directly to main memory, bypassing the cache. This reduces the write load on the cache. The cache is used only for reading.
 
 # References
-- [Let's investigate the differences between Write-Through and Write-Back!](https://itmanabi.com/write-through-back/)
+- ~~Let's investigate the differences between Write-Through and Write-Back!~~
 - [Where and how? Latest trends in cache technology/products](https://techtarget.itmedia.co.jp/tt/news/1407/28/news01.html)
 - [Storage Magazine translated article](https://www.jdsf.gr.jp/sms/stm/201610.html)

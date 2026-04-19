@@ -58,7 +58,7 @@ cf.
 cf.
 - [wikipedia - ネットワークアドレス変換](https://ja.wikipedia.org/wiki/%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E5%A4%89%E6%8F%9B)
 - [www.infraexpert.com - NAT（Network Address Translation)](https://www.infraexpert.com/study/ip10.html)
-- [locked.jp](https://locked.jp/blog/what-is-nat/)
+- ~~locked.jp~~
 - [milestone-of-se.nesuke.com - 【図解】初心者にも分かるNATの仕組みと種類 ~静的/動的NAT/NAPT(PAT),セキュリティ等メリット/デメリット～](https://milestone-of-se.nesuke.com/nw-basic/nat/nat-summary/)
 
 ## NAPT
@@ -74,7 +74,7 @@ cf.
 
 cf.
 - [wikipedia - ネットワークアドレス変換](https://ja.wikipedia.org/wiki/%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E5%A4%89%E6%8F%9B)
-- [locked.jp](https://locked.jp/blog/what-is-nat/)
+- ~~locked.jp~~
 - [milestone-of-se.nesuke.com - 【図解】初心者にも分かるNATの仕組みと種類 ~静的/動的NAT/NAPT(PAT),セキュリティ等メリット/デメリット～](https://milestone-of-se.nesuke.com/nw-basic/nat/nat-summary/)
 
 ## CIDR

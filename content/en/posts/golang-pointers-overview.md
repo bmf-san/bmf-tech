@@ -283,7 +283,7 @@ When you want to change the values of struct fields within a function, use a poi
 Recall the definition of pointer types and the roles of operators described in the first half.
 
 # References
-- [Go Pointers](http://cuto.unirita.co.jp/gostudy/post/pointer/)
+- ~~Go Pointers~~
 - [Qiita - Learning Pointers and Addresses in Go](https://qiita.com/Sekky0905/items/447efa04a95e3fec217f)
 - [Qiita - Differences Between & and * in Go](https://qiita.com/tmzkysk/items/1b73eaf415fee91aaad3)
 - [Qiita - Research on Go Structs](https://qiita.com/kmtr/items/1e7caf92aa8bb587906d)

@@ -26,4 +26,4 @@ Sometimes it gets confusing which is which, so I’ll leave a note.
 
 # References
 - [Database sharding vs partitioning](https://stackoverflow.com/questions/20771435/database-sharding-vs-partitioning)
-- [What is the difference between sharding and partitioning? 【Distributed Database】](https://engineer.yeele.net/dev/db/understanding-term-partitioning-correctly-led-you-understand-sharding/)
+- ~~What is the difference between sharding and partitioning? 【Distributed Database】~~

@@ -90,4 +90,4 @@ const apiClient = axios.create({
 
 # References
 - [docs.docker.jp - Environment Variables in Compose](https://docs.docker.jp/compose/environment-variables.html)
-- [qiita.com - Environment Variables Not Recognized During docker-compose Build](https://qiita.com/katoosky/items/422c183cf5cabb789030)
+- [qiita.com - Environment Variables Not Recognized During docker-compose Build](http://web.archive.org/web/20201114042453/https://qiita.com/katoosky/items/422c183cf5cabb789030)

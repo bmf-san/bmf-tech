@@ -121,7 +121,7 @@ MONTHLY RATE $20.00/month $0.03/hour
 
 ## Installing kubectl and doctl on Local Environment
 Refer to the following for kubectl.
-[kubernetes.io - install-kubectl](https://kubernetes.io/ja/docs/tasks/tools/install-kubectl/)
+~~kubernetes.io - install-kubectl~~
 
 ```sh
 brew install doctl

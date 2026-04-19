@@ -46,11 +46,11 @@ I haven’t been exposed to many languages, so I can’t provide deep insights i
 
 - [zenn.dev - Revisiting the Features of Go](https://zenn.dev/nobonobo/scraps/cec2259ac330a8)
 - [zenn.dev - Reasons for Go Language's Success](https://zenn.dev/takehiro0740/articles/b5ef4fc26e9ba6)
-- [www.mobulous.com - GoLang: A Complete Details of All The Pros and Cons in Programming](https://www.mobulous.com/blog/golang-a-complete-details-of-all-the-pros-and-cons-in-programming/)
+- ~~mobulous - GoLang: A Complete Details of All The Pros and Cons in Programming~~
 - [www.scalefocus.com - Why You Should Go with Go for Your Next Software Project](https://www.scalefocus.com/blog/why-you-should-go-with-go-for-your-next-software-project)
 - [www.uptech.team - Best Practices: Why Use Golang For Your Project](https://www.uptech.team/blog/why-use-golang-for-your-project)
 - [https://medium.com - Why Go: The benefits of Golang](https://medium.com/@julienetienne/why-go-the-benefits-of-golang-6c39ea6cff7e)
-- [www.infoworld.com - What’s the Go programming language really good for?](https://www.infoworld.com/article/3198928/whats-the-go-programming-language-really-good-for.html)
+- [www.infoworld.com - What’s the Go programming language really good for?](http://web.archive.org/web/20231127182234/https://www.infoworld.com/article/3198928/whats-the-go-programming-language-really-good-for.html)
 - [builtin.com - Why Go? 8 Engineers Discuss Golang’s Advantages and How They Use It.](https://builtin.com/software-engineering-perspectives/golang-advantages)
 - [madappgang.com - When and Why Use Go in Software Development](https://madappgang.com/blog/why-golang/)
 

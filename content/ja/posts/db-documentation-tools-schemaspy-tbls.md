@@ -57,7 +57,7 @@ depでもrpmでもbrewでもgoでもdockerでもインストールできる。
 
 
 # 参考
-- [ベジプロ - SchemaSpyでER図を出力できない](https://www.blog.v41.me/posts/749a3607-aa12-47d6-9441-8f7497602325)
+- ~~ベジプロ - SchemaSpyでER図を出力できない~~
 - [sys-guard.com - SchemaSpyでER図を自動作成 on Docker
 2019年7月22日 2019年7月22日 AWS, Linux/UNIX 129view
 ](https://sys-guard.com/post-17119/)

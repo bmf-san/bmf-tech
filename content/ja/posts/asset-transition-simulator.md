@@ -15,7 +15,7 @@ translation_key: asset-transition-simulator
 # 概要
 個人の資産形成を考えるためのツールとして、資産推移シミュレーターを開発したので、それについて紹介したい。
 
-[asset-trend-simulator](https://asset-trend-simulator.netlify.app/)
+[asset-trend-simulator](http://web.archive.org/web/20250622150217/https://asset-trend-simulator.netlify.app/)
 
 # 背景
 私はMoney Forwardを使って資産管理をしているが、将来の資産推移のシュミレーションにはSpreadsheetを使ったものを利用していた。

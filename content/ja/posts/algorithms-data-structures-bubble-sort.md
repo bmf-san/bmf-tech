@@ -54,5 +54,5 @@ func main() {
 - 全要素をループさせて、その中で隣合う要素同士をループ、比較する
 
 # 参考
-- [アルゴリズムとデータ構造](http://www-ikn.ist.hokudai.ac.jp/~arim/pub/algo/algo6.pdf)
+- ~~アルゴリズムとデータ構造~~
 

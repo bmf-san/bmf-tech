@@ -101,6 +101,6 @@ translation_key: team-topologies-introduction
 自分のチームがどのタイプに当てはまるのか、そして「認知負荷」によってオーナーシップが損なわれていないか、メンバーと話し合うところから始めてみると良い発見が得られるかもしれない。
 
 ## 参考
-- [teamtopologies.com](https://teamtopologies.com/)
+- ~~teamtopologies.com~~
 - [チームトポロジー 価値あるソフトウェアをすばやく届ける適応型組織設計](https://www.amazon.co.jp/%E3%83%81%E3%83%BC%E3%83%A0%E3%83%88%E3%83%9D%E3%83%AD%E3%82%B8%E3%83%BC-%E4%BE%A1%E5%80%A4%E3%81%82%E3%82%8B%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2%E3%82%92%E3%81%99%E3%81%B0%E3%82%84%E3%81%8F%E5%B1%8A%E3%81%91%E3%82%8B%E9%81%A9%E5%BF%9C%E5%9E%8B%E7%B5%84%E7%B9%94%E8%A8%AD%E8%A8%88-%E3%83%9E%E3%82%B7%E3%83%A5%E3%83%BC%E3%83%BB%E3%82%B9%E3%82%B1%E3%83%AB%E3%83%88%E3%83%B3/dp/4820729632?_encoding=UTF8&dib_tag=se&dib=eyJ2IjoiMSJ9.4p_dyd_ycwKiOCaBXACsm_H0YFaWOznzU5VKtO1npXOxvNgSHMJRDp8heUUdnJCXAEYo4UlMISyBRyKDMlTzQNEAY-NtY18xpR7-QXGfquTDSknKdiUu4NcF4F3aTb0gZU61_0bTV7aBpqpTsR56MzGU0Jk67jQZ7LV_l0Pj4sQ-tmgMUqKxPUW84gDxjKHPRgB8orcYOcJIN-RTQCaTst6vzZiOj4l6DpUsqLBbop0.yCQPemK2CN8V4V5nwxW-I3QpH4sHWdfVHt-mb-kbv-M&qid=1732807586&sr=8-2-spons&linkCode=sl1&tag=bmf035-22&linkId=81bdb0e94f0d9c515a2c24dfed8835dc&language=ja_JP&ref_=as_li_ss_tl)
 

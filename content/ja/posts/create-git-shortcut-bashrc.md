@@ -81,8 +81,7 @@ alias git-set=gitSet
 # トラブルシューティング
 * .bashrcが読み込まれない
   * .bash_profileで.bashrcを読み込んでいるか確認
-     * cf. [[bash] ターミナルを起動しても.bashrcが読み込まれていない時に確認すること](http://programming-log.tumblr.com/post/102419333247/bash-%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB%E3%82%92%E8%B5%B7%E5%8B%95%E3%81%97%E3%81%A6%E3%82%82bashrc%E3%81%8C%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%81%BE%E3%82%8C%E3%81%A6%E3%81%84%E3%81%AA%E3%81%84%E6%99%82%E3%81%AB%E7%A2%BA%E8%AA%8D%E3%81%99%E3%82%8B%E3%81%93%E3%81%A8
-)
+     * cf. ~~[bash] ターミナルを起動しても.bashrcが読み込まれていない時に確認すること~~
 
 * エイリアスコマンド実行後の入力受付時にでbackspace(delete)キーが変な文字列に変換されてしまう
   * キーボードがUS配列→.bashrcの^Hのまま

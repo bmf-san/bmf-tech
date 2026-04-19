@@ -38,7 +38,7 @@ By defining the framework in the superclass, the specific processing content can
 "Hmm... I feel like I've created a similar class before..."
 In such cases, you might be able to apply the pattern by extracting methods that can be commonized.
 
-# Implementation Example (※[github](https://github.com/bmf-san/design-patterns-php) repository available.)
+# Implementation Example (※~~github~~ repository available.)
 
 ```AbstractArticle.php
 <?php

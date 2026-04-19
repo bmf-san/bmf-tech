@@ -180,7 +180,7 @@ If you want to add an event, you can generate it with the artisan command as bef
 ## Register Event Subscription Class in EventServiceProvider
 It might seem complicated with all the registrations, but this is the last step. Use the EventServiceProvider that exists by default in app\Providers.
 
-A service provider is a class that performs the initial startup process of an application. For more details, see the [documentation](https://readouble.com/laravel/5/1/ja/providers.html)
+A service provider is a class that performs the initial startup process of an application. For more details, see the ~~documentation~~
 
 ```
 <?php

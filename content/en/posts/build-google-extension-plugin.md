@@ -44,7 +44,7 @@ First, create the folder and files.
 
 *Please prepare the icons as needed.*
 
-The background.js is the JavaScript that runs in the background. For more details, please refer to the [Developer's Guide](https://developer.chrome.com/extensions/devguide).
+The background.js is the JavaScript that runs in the background. For more details, please refer to the [Developer's Guide](http://web.archive.org/web/20201118040743/https://developer.chrome.com/extensions/devguide).
 
 # Edit manifest.json
 
@@ -72,7 +72,7 @@ manifest.json
 }
 ```
 
-The description varies depending on the type of plugin. It's not particularly difficult, so for details, please refer to the [Developer's Guide](https://developer.chrome.com/extensions/devguide).
+The description varies depending on the type of plugin. It's not particularly difficult, so for details, please refer to the [Developer's Guide](http://web.archive.org/web/20201118040743/https://developer.chrome.com/extensions/devguide).
 
 # Edit background.js
 
@@ -80,7 +80,7 @@ background.js
 
 I referred to the code from [Chrome extension: open link in new tab?](http://stackoverflow.com/questions/16503879/chrome-extension-open-link-in-new-tab). You should get a general idea by looking at it.
 
-For more details, please refer to the documentation (ry) [Developer's Guide](https://developer.chrome.com/extensions/devguide).
+For more details, please refer to the documentation (ry) [Developer's Guide](http://web.archive.org/web/20201118040743/https://developer.chrome.com/extensions/devguide).
 
 ```
 chrome.browserAction.onClicked.addListener(function(activeTab){

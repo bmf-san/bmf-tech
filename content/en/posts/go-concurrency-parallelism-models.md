@@ -196,7 +196,7 @@ The Go runtime provides a lightweight goroutine generation and advanced scheduli
 
 ## References
 - [Go Memory Model Reference](https://go.dev/ref/mem)
-- [Go Blog: Go Scheduler (Official Runtime Scheduler Explanation)](https://go.dev/blog/goroutine-scheduler)
+- ~~Go Blog: Go Scheduler (Official Runtime Scheduler Explanation)~~
 - [Go Source Code: runtime/proc.go (Scheduler Implementation Part)](https://go.googlesource.com/go/+/refs/heads/master/src/runtime/proc.go)
 - [Ardan Labs: Scheduling in Go (Part 1)](https://www.ardanlabs.com/blog/2018/08/scheduling-in-go-part1.html)
 - [Ardan Labs: Scheduling in Go (Part 2)](https://www.ardanlabs.com/blog/2018/08/scheduling-in-go-part2.html)

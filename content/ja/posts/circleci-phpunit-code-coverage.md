@@ -127,7 +127,7 @@ jobs:
 
 # 参考
 - [circleci - Collecting Test Metadata](https://phpunit.de/manual/6.5/en/appendixes.configuration.html#appendixes.configuration.logging)
-- [circleci - Storing and Accessing Build Artifacts](https://circleci.com/docs/2.0/artifacts/)
+- ~~circleci - Storing and Accessing Build Artifacts~~
 - [phpunit - Appendix C. The XML Configuration File](https://phpunit.de/manual/6.5/en/appendixes.configuration.html#appendixes.configuration.logging)
-- [phpunit - 第3章 コマンドラインのテストランナー](https://phpunit.de/manual/6.5/ja/textui.html)
+- ~~phpunit - 第3章 コマンドラインのテストランナー~~
 - [docker docs - docker cp](https://docs.docker.com/engine/reference/commandline/cp/)

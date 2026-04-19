@@ -166,4 +166,4 @@ puts [1, 2, 3].select(&:my_even?)  # => [2]
 - [mickey24.hatenablog.com - Rubyのブロック構文の書き分け(do end，{})](https://mickey24.hatenablog.com/entry/20100914/1284475769)
 - [Ruby のブロックをちゃんと理解する](https://zenn.dev/hayaokimura/articles/ruby-block-reintroduction)
 - [active.nikkeibp.co.jp - Ruby開発者のまつもとゆきひろが深く解説、「ブロック構文」発想の経緯](https://active.nikkeibp.co.jp/atcl/act/19/00484/090100004/)
-- [musclecoding.com -【Ruby】「ブロック」を初心者向けにとにかく丁寧に解説！ブロック変数とは？](https://musclecoding.com/ruby-block/)
+- ~~musclecoding.com -【Ruby】「ブロック」を初心者向けにとにかく丁寧に解説！ブロック変数とは？~~

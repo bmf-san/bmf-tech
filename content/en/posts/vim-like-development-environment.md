@@ -40,7 +40,7 @@ To enhance development efficiency, I integrated Vim and revamped various aspects
   - Essential for heavy command line usage
 
 # References
-- [github - bmf-san/my-dotfiles](https://github.com/bmf-san/my-dotfiles)
+- ~~github - bmf-san/my-dotfiles~~
   - Current settings for Atom and Vim
 
 # Impressions

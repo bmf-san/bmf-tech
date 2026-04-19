@@ -31,6 +31,6 @@ translation_key: cache-write-methods
 キャッシュは読み取りのみ使われるパターン。
 
 # 参考
-- [ライトスルーとライトバックの違いを調べよう！](https://itmanabi.com/write-through-back/)
+- ~~ライトスルーとライトバックの違いを調べよう！~~
 - [どこでどのように？　キャッシュ技術／製品最新動向](https://techtarget.itmedia.co.jp/tt/news/1407/28/news01.html)
 - [Storage Magazine翻訳記事](https://www.jdsf.gr.jp/sms/stm/201610.html)

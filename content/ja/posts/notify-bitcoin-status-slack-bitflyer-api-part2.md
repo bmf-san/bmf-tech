@@ -16,7 +16,7 @@ translation_key: notify-bitcoin-status-slack-bitflyer-api-part2
 ---
 
 
-[前回](http://qiita.com/bmf_san/items/7ae9fc2c83d563291671)、bitflyerのAPIを叩くだけ叩いてポイーしてたので、今回はレスポンスデータを整形して資産情報データとしてslackに投げれるようにします。
+~~前回~~、bitflyerのAPIを叩くだけ叩いてポイーしてたので、今回はレスポンスデータを整形して資産情報データとしてslackに投げれるようにします。
 
 # とりあえずasyncで非同期処理
 

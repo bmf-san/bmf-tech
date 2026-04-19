@@ -205,7 +205,7 @@ The [Introduction to OPA/Rego](https://zenn.dev/mizutani/books/d2f1440cfbba94/vi
 # Performance
 OPA is optimized internally using a rule indexing mechanism based on Trie.
 
-cf. [Optimizing OPA: Rule Indexing](https://blog.openpolicyagent.org/optimizing-opa-rule-indexing-59f03f17caf3)
+cf. ~~Optimizing OPA: Rule Indexing~~
 
 By writing policies with the Trie data structure in mind, you can prevent performance degradation (probably).
 

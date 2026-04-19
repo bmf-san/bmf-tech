@@ -110,7 +110,7 @@ Contract web development across diverse clients and projects.
 
 ## Books
 
-**[net/http で つくる HTTP ルーター自作入門](https://zenn.dev/books/3f41c5cd34ec3f)** (2022)
+**~~net/http で つくる HTTP ルーター自作入門~~** (2022)
 
 A book on implementing an HTTP router using only Go's standard library, based on the experience of developing [goblin](https://github.com/bmf-san/goblin).
 

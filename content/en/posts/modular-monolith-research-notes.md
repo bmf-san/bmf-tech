@@ -46,7 +46,7 @@ I wanted to quote a passage related to this topic, so I'll include it here to co
 
 > However, what we need to focus on here is the difference in lifecycle between the two. Organizational and team configurations can be changed the next day depending on the company's policy if desired. However, architecture and systems are difficult to change quickly like an organization.
 
-cf. [eh-career.com - Reasons for Transitioning to a Modular Monolith ─ Asoview's Large-Scale Efforts to Balance Microservice Autonomy and Monolith Consistency](https://eh-career.com/engineerhub/entry/2022/07/25/093000)
+cf. ~~eh-career.com - Reasons for Transitioning to a Modular Monolith ─ Asoview's Large-Scale Efforts to Balance Microservice Autonomy and Monolith Consistency~~
 
 # References
 - [microservices.io - How modular can your monolith go? Part 1 - the basics](https://microservices.io/post/architecture/2023/07/31/how-modular-can-your-monolith-go-part-1.html)
@@ -64,6 +64,6 @@ cf. [eh-career.com - Reasons for Transitioning to a Modular Monolith ─ Asoview
 - [Transaction Design in Modular Monoliths](https://speakerdeck.com/nazonohito51/transaction-design-on-modular-monolith)
 - [dev.classmethod.jp - [Report] For Those Hesitating Between Monoliths and Microservices #devio_day1 #main](https://dev.classmethod.jp/articles/20230411-developersio-day-one-monolithandmicroservices/)
 - [engineering.mercari.com - Mercari's Efforts in Modular Monolithization of the Transaction Domain](https://engineering.mercari.com/blog/entry/20220913-modular-monolithization-in-mercari-transaction-domain/)
-- [eh-career.com - Reasons for Transitioning to a Modular Monolith ─ Asoview's Large-Scale Efforts to Balance Microservice Autonomy and Monolith Consistency](https://eh-career.com/engineerhub/entry/2022/07/25/093000)
+- ~~eh-career.com - Reasons for Transitioning to a Modular Monolith ─ Asoview's Large-Scale Efforts to Balance Microservice Autonomy and Monolith Consistency~~
 - [logmi.jp - The Importance of "Flexible Architecture Design for the Future" - Adopting Modular Monoliths for Parallel Development by Three Teams](https://logmi.jp/tech/articles/328130)
 - [medium.com - The Modular Monolith: Rails Architecture](https://medium.com/@dan_manges/the-modular-monolith-rails-architecture-fb1023826fc4)

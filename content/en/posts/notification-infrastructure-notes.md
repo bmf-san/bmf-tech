@@ -101,7 +101,7 @@ I explored domestic and international case studies.
   - A case of building a platform supporting multichannel like AWS Pinpoint, including MA elements
 - [techblog.zozo.com - Story of Replacing Real-time Data Integration Platform Supporting Marketing Automation System](https://techblog.zozo.com/entry/ma-realtime-data-infrastructure-replacement)
   - Continuation of the above, discussing the replacement
-- [techblog.zozo.com - Rule-based Optimization Improvement in Personalized Distribution](https://techblog.zozo.com/entry/improving-optimization-for-personalized-marketing)
+- ~~techblog.zozo.com - Rule-based Optimization Improvement in Personalized Distribution~~
   - Impressive. This is the essence of notifications.
   - To reach this level, the business impact of notifications must be well estimated, and notifications can significantly impact business
   - "There is still much room for improvement to achieve the true goal of delivering only the notifications users truly want."
@@ -155,7 +155,7 @@ I personally researched AWS Pinpoint.
 - [onetech.jp - What is AWS PINPOINT? Thorough Explanation of Features, Pricing, and Benefits!](https://onetech.jp/blog/what-is-aws-pinpoint-15773)
 - [tec.tecotec.co.jp - What is Amazon Pinpoint (Push Notification Edition)](https://tec.tecotec.co.jp/entry/2021/01/28/090000)
 - [coffee-tech-blog.com - Building an MA Platform with Amazon Pinpoint](https://coffee-tech-blog.com/email-newsletter-automation-aws/)
-- [www.ragate.co.jp - Amazon Pinpoint Explained by AWS Experts: Simplify and Streamline Marketing with AWS](https://www.ragate.co.jp/blog/articles/11830)
+- ~~www.ragate.co.jp - Amazon Pinpoint Explained by AWS Experts: Simplify and Streamline Marketing with AWS~~
 
 # Impressions
 I thought it is necessary to first organize who (operators, administrators, marketers, developers, etc.), what (message content), to whom, through which notification channel, when (by when) they want to notify, and the total volume of notifications. (It's obvious, but...)

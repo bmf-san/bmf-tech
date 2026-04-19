@@ -32,6 +32,6 @@ translation_key: what-is-polymorphism
   - 共通の上位型を持つ複数の型を1つの名前で扱う場合
 
 # 参考
-- [オブジェクト指向わかった気になっている?[ポリモーフィズム] java](https://qiita.com/lrf141/items/a2f764c8d87de26b6f45)
+- ~~オブジェクト指向わかった気になっている?[ポリモーフィズム] java~~
 - [Wikipedia - ポリモーフィズム](https://ja.wikipedia.org/wiki/%E3%83%9D%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%95%E3%82%A3%E3%82%BA%E3%83%A0)
-- [ポリモーフィズムをもっと理解する](http://noiselessworld.hatenablog.jp/entry/2017/01/30/002252)
+- ~~ポリモーフィズムをもっと理解する~~

@@ -80,7 +80,7 @@ alias git-set=gitSet
 # Troubleshooting
 * .bashrc is not being loaded
   * Check if .bash_profile is loading .bashrc
-     * cf. [[bash] Things to check when .bashrc is not loaded after starting the terminal](http://programming-log.tumblr.com/post/102419333247/bash-%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB%E3%82%92%E8%B5%B7%E5%8B%95%E3%81%97%E3%81%A6%E3%82%82bashrc%E3%81%8C%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%81%BE%E3%82%8C%E3%81%A6%E3%81%84%E3%81%AA%E3%81%84%E6%99%82%E3%81%AB%E7%A2%BA%E8%AA%8D%E3%81%99%E3%82%8B%E3%81%93%E3%81%A8)
+     * cf. ~~[bash] Things to check when .bashrc is not loaded after starting the terminal~~
 
 * The backspace (delete) key is converting to strange characters after executing the alias command
   * Keyboard is US layout → remains as ^H in .bashrc

@@ -188,7 +188,7 @@ class UserAuthEventListener
 登録ばっかりでややこしいかと思いますが、これで最後です。
 app\Providersにデフォルトで存在しているEventServiceProviderを使用します。
 
-サービスプロバイダというのはアプリケーションの初期起動処理を行うクラスです。詳しくは[ドキュメント](https://readouble.com/laravel/5/1/ja/providers.html)
+サービスプロバイダというのはアプリケーションの初期起動処理を行うクラスです。詳しくは~~ドキュメント~~
 
 
 ```

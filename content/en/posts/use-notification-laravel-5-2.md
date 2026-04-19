@@ -21,7 +21,7 @@ Laravel 5.3 has been released, but this post discusses using Notifications in La
 What is Notification?
 
 [Laravel.com - Notifications](https://laravel.com/docs/5.3/notifications)
-[Laravel Notification Channel](http://laravel-notification-channels.com/)
+[Laravel Notification Channel](http://web.archive.org/web/20251112051552/https://laravel-notification-channels.com/)
 
 Before Laravel 5.3, notification management was somewhat handled using Events and Listeners. However, with Notifications, managing notifications has become more convenient. Note that Notifications are specialized for notifications and are not a "replacement" for Events or Listeners.
 
@@ -116,7 +116,7 @@ public function toMail($notifiable)
     }
 ```
 
-For method details, see the Notification [API](https://laravel.com/api/5.3/search.html?search=Notification).
+For method details, see the Notification ~~API~~.
 
 Email template reference:
 
@@ -186,4 +186,4 @@ I forgot from which version, but it seems that from Laravel 5.3, the handling of
 
 # References
 [Laravel.com - Notifications](https://laravel.com/docs/5.3/notifications)
-[Laravel Notification Channel](http://laravel-notification-channels.com/)
+[Laravel Notification Channel](http://web.archive.org/web/20251112051552/https://laravel-notification-channels.com/)

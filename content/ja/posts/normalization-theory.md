@@ -284,6 +284,6 @@ BCNF以降の理解が浅いのでちょっと自信がない。。。
 - [koseki2580.github.io - 正規化](https://koseki2580.github.io/study-docs/docs/Database/normalization/#:~:text=%E8%87%AA%E6%98%8E%E3%81%AA%E9%96%A2%E6%95%B0%E5%BE%93%E5%B1%9E%E6%80%A7%20%E3%81%A8%E3%81%AF%20X%20%E2%86%92%20Y,%E3%82%AD%E3%83%BC%E3%81%AE%E3%81%93%E3%81%A8%E3%82%92%E3%81%84%E3%81%86%E3%80%82)
 - [zenn.dev - イラストで理解するデータベースの正規化](https://zenn.dev/keisuke90/articles/66ecb7956a6816#%E7%AC%AC%EF%BC%95%E6%AD%A3%E8%A6%8F%E5%BD%A2)
 - [youtube.com - データベースの正規化（第1正規形、第2正規形、第3正規形）](https://www.youtube.com/watch?app=desktop&v=zcLCZKOAOjE)
-- [tabibou.com - 【データベース】第１正規化～第5正規化、ボイスコッド正規化例](https://tapibou.com/seikika)
+- ~~tabibou.com - 【データベース】第１正規化～第5正規化、ボイスコッド正規化例~~
 - [poppingcarp.com - 主キー、候補キー、外部キー、スーパーキーなどのいろんなキーについて｜データベースの基礎](https://poppingcarp.com/various_key/)
 

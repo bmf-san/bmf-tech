@@ -338,7 +338,7 @@ user.go・・・Domain
 - [github - ponzu-cms/ponzu](https://github.com/ponzu-cms/ponzu)
 - [クリーンアーキテクチャの書籍を読んだのでAPIサーバを実装してみた](https://qiita.com/yoshinori_hisakawa/items/f934178d4bd476c8da32)
 - [Go × Clean Architectureのサンプル実装](http://nakawatch.hatenablog.com/entry/2018/07/11/181453)
-- [Uncle Bob – Payroll Case Study (A full implementation)](http://cleancodejava.com/uncle-bob-payroll-case-study-full-implementation/)
+- [Uncle Bob – Payroll Case Study (A full implementation)](http://web.archive.org/web/20240106141740/http://cleancodejava.com/uncle-bob-payroll-case-study-full-implementation/)
 
 
 

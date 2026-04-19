@@ -122,8 +122,8 @@ Bazel、Nx、Pants辺りが有力候補なのかなといった印象。
 - [times.hrbrain.co.jp - 30近いリポジトリを一つのリポジトリにまとめました](https://times.hrbrain.co.jp/entry/monorepo)
 - [docs.aws.amazon.com - モノレポのビルドの設定](https://docs.aws.amazon.com/ja_jp/amplify/latest/userguide/monorepo-configuration.html)
 - [postd.cc - モノリシックなバージョン管理の利点](https://postd.cc/monorepo/)
-- [kk-web.link - モノレポ？いらんでしょ](https://kk-web.link/blog/20210507)
+- ~~kk-web.link - モノレポ？いらんでしょ~~
 - [www.atlassian.com - Gitでmonorepoを扱う際の課題とヒント](https://www.atlassian.com/ja/blog/monorepos-in-git)
 - [cybozu.github.io - フロントエンドのモノレポ構成はスケーリングの夢を見るか](https://cybozu.github.io/frontend-expert/posts/considerations-for-monorepo)
-- [kiyobl.com - モノレポとは ？ | yarn workspace を使ったモノレポ開発](https://kiyobl.com/monorepo-basic/)
+- ~~kiyobl.com - モノレポとは ？ | yarn workspace を使ったモノレポ開発~~
 - [speakerdeck.com - モノレポによるマイクロサービスアーキテクチャの開発運用](https://speakerdeck.com/bananaumai/monorehoniyorumaikurosahisuakitekutiyanokai-fa-yun-yong)

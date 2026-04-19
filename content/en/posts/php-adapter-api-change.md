@@ -44,7 +44,7 @@ You can restrict access to the API when adapting it.
 # When to Use
 When you want to reuse existing, proven classes.
 
-# Implementation Example (※Repository available on [github](https://github.com/bmf-san/design-patterns-php).)
+# Implementation Example (※Repository available on ~~github~~.)
 
 ## Pattern Using Inheritance
 ```ShowData.php

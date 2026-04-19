@@ -38,4 +38,4 @@ A point to note is that if you want to write `*/1`, you need to enclose it in do
 The cron setup went smoothly without any issues.
 
 # Reference
-+ [cron - Manage cron.d and crontab entries.](http://docs.ansible.com/ansible/cron_module.html)
++ [cron - Manage cron.d and crontab entries.](http://web.archive.org/web/20170703134251/http://docs.ansible.com:80/ansible/cron_module.html)

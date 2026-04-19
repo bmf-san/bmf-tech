@@ -152,8 +152,8 @@ $application = new Applicaion($container);
 
 # References
 - [Notes on DI (Dependency Injection)](http://blog.shin1x1.com/entry/di-memo)
-- [Learn DI Container by Creating with PHP - Part 1 - What is DI](https://qiita.com/zeriyoshi/items/e26daccd59669b623a41)
-- [Learn DI Container by Creating with PHP - Part 2 - DI Container and ServiceLocator](https://qiita.com/zeriyoshi/items/ef71bec08441877ca219)
+- ~~Learn DI Container by Creating with PHP - Part 1 - What is DI~~
+- [Learn DI Container by Creating with PHP - Part 2 - DI Container and ServiceLocator](http://web.archive.org/web/20170825203230/http://qiita.com:80/zeriyoshi/items/ef71bec08441877ca219)
 - [Design PatternsPHP - Service Locator](http://designpatternsphp.readthedocs.io/en/latest/More/ServiceLocator/README.html)
 - [PHP The Right Way](http://ja.phptherightway.com/#containers)
 - [How to avoid becoming a service locator when trying to use a DI container, I don't understand specific examples](https://teratail.com/questions/49143)

@@ -87,4 +87,4 @@ ISO 29148でも、"Stakeholder Needs"（利害関係者ニーズ＝要求）と 
 
 # 参考
 - [tracery.jp - 要件とは何か](https://tracery.jp/articles/entry/what-is-a-requirement)
-- [drkasbokar.com - ISO/IEC/IEEE 29148](https://drkasbokar.com/wp-content/uploads/2024/09/29148-2018-ISOIECIEEE.pdf)
+- ~~drkasbokar.com - ISO/IEC/IEEE 29148~~

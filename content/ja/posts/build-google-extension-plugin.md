@@ -52,7 +52,7 @@ translation_key: build-google-extension-plugin
 
 
 background.jsというのはbackgroundで動作するJavaScriptです（）
-詳しくは[Developer's Guide](https://developer.chrome.com/extensions/devguide)をご覧ください。
+詳しくは[Developer's Guide](http://web.archive.org/web/20201118040743/https://developer.chrome.com/extensions/devguide)をご覧ください。
 
 
 
@@ -82,7 +82,7 @@ manifest.json
 }
 ```
 
-プラグインの種類によって記述が変わります。これといって難しいものではないので詳細は[Developer's Guide](https://developer.chrome.com/extensions/devguide)をご覧ください。
+プラグインの種類によって記述が変わります。これといって難しいものではないので詳細は[Developer's Guide](http://web.archive.org/web/20201118040743/https://developer.chrome.com/extensions/devguide)をご覧ください。
 
 # background.jsを編集
 
@@ -91,7 +91,7 @@ background.js
 コードは[Chrome extension: open link in new tab?](http://stackoverflow.com/questions/16503879/chrome-extension-open-link-in-new-tab)を参考にさせて頂きました。
 見ると何となくわかるかと思います。
 
-詳しくはドキュメン(ry  [Developer's Guide](https://developer.chrome.com/extensions/devguide)
+詳しくはドキュメン(ry  [Developer's Guide](http://web.archive.org/web/20201118040743/https://developer.chrome.com/extensions/devguide)
 
 ```
 chrome.browserAction.onClicked.addListener(function(activeTab){

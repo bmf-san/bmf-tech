@@ -47,8 +47,8 @@ The adjacency list is an efficient data structure for graphs with a small number
 The source code can be found at [adjacency_list](https://github.com/bmf-san/road-to-algorithm-master/tree/master/data_structures/graph/adjacency_list).
 
 ```go
-// See: https://www.youtube.com/watch?v=JDP1OVgoa0Q
-// See: https://www.youtube.com/watch?v=bSZ57h7GN2w
+// See: ~~(dead link)~~
+// See: ~~(dead link)~~
 package main
 
 import "fmt"
@@ -228,5 +228,5 @@ The conditions for adding edges may be a bit complicated.
 
 # References
 - [mathwords.net - Data Structures for Graphs (Adjacency Matrix and Adjacency List)](https://mathwords.net/gurahu)
-- [Graph data structure and graph representation (Part 1 of 2)](https://www.youtube.com/watch?v=JDP1OVgoa0Q)
-- [Graph data structure and graph representation in Golang (Part 2 of 2)](https://www.youtube.com/watch?v=bSZ57h7GN2w)
+- ~~Graph data structure and graph representation (Part 1 of 2)~~
+- ~~Graph data structure and graph representation in Golang (Part 2 of 2)~~

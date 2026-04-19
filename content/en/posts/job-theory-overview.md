@@ -46,11 +46,11 @@ I thought this is a theory I want to keep in mind and refer to during such times
 
 ## Reference Links for a Quick Overview
 - [ja.wikipedia.org - Jobs Theory](https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A7%E3%83%96%E7%90%86%E8%AB%96)
-- [cs2.toray.co.jp - Overview of Jobs Theory](https://cs2.toray.co.jp/news/tbr/newsrrs01.nsf/0/285AD02B86FEBEF249258329002CDAFF/$FILE/K1810_035_040.pdf)
+- ~~cs2.toray.co.jp - Overview of Jobs Theory~~
 - [www.indee-jp.com - Jobs Theory: A System to Unravel the "Needs" That Were a Mystery Until Now](https://www.indee-jp.com/jobs-to-be-done/)
 - [www.peaks-media.com - What is Jobs Theory? Explained Clearly with Frameworks and Examples](https://www.peaks-media.com/910/)
 - [www.sbbit.jp - A Gentle Explanation of 'Jobs Theory', There is a "Pattern of Success" in Innovation](https://www.sbbit.jp/article/cont1/38180)
-- [www.crescent-acc.com - Jobs Theory – What Customers Really Want, Even if They Don't Know It Themselves](https://www.crescent-acc.com/post/jobs-to-be-done)
+- ~~crescent-acc - Jobs Theory – What Customers Really Want, Even if They Don't Know It Themselves~~
 - [ds-note.net - Summary of 'Jobs Theory' in 10 Minutes](https://ds-note.net/books/jobs-theory/#toc10)
 
 ## Impressions

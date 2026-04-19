@@ -119,8 +119,8 @@ I have the impression that Bazel, Nx, and Pants are strong candidates.
 - [times.hrbrain.co.jp - Consolidating Nearly 30 Repositories into One Repository](https://times.hrbrain.co.jp/entry/monorepo)
 - [docs.aws.amazon.com - Configuration for Monorepo Builds](https://docs.aws.amazon.com/ja_jp/amplify/latest/userguide/monorepo-configuration.html)
 - [postd.cc - Advantages of Monolithic Version Control](https://postd.cc/monorepo/)
-- [kk-web.link - Monorepo? Not Needed](https://kk-web.link/blog/20210507)
+- ~~kk-web.link - Monorepo? Not Needed~~
 - [www.atlassian.com - Challenges and Tips for Handling Monorepos in Git](https://www.atlassian.com/ja/blog/monorepos-in-git)
 - [cybozu.github.io - Does the Frontend Monorepo Structure Dream of Scaling?](https://cybozu.github.io/frontend-expert/posts/considerations-for-monorepo)
-- [kiyobl.com - What is a Monorepo? | Monorepo Development Using Yarn Workspace](https://kiyobl.com/monorepo-basic/)
+- ~~kiyobl.com - What is a Monorepo? | Monorepo Development Using Yarn Workspace~~
 - [speakerdeck.com - Development and Operations of Microservices Architecture Using Monorepos](https://speakerdeck.com/bananaumai/monorehoniyorumaikurosahisuakitekutiyanokai-fa-yun-yong)

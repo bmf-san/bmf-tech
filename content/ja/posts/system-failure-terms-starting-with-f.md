@@ -48,7 +48,7 @@ tags:
 # 所感
 同じような気持ちの記事があった。
 
-[zenn.dev - 混ざりやすい専門用語 〜 フェール〇〇、フォールト〇〇](https://zenn.dev/ryoatsuta/articles/eb51b995e81ee7)
+[zenn.dev - 混ざりやすい専門用語 〜 フェール〇〇、フォールト〇〇](http://web.archive.org/web/20210514020403/https://zenn.dev/ryoatsuta/articles/eb51b995e81ee7)
 [qiita.comm - フォールトトレラント、フェールソフト、諸々の違い](https://qiita.com/nanatsu/items/e900841a9f678fa07296)
 
 # 参考

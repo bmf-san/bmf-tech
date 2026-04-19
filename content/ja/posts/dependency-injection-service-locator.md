@@ -156,8 +156,8 @@ $application = new Applicaion($container);
 
 # 参考
 - [DI（Dependency Injection）に関するメモ](http://blog.shin1x1.com/entry/di-memo)
-- [PHPで作って覚えるDI Container - その1 - DI is 何](https://qiita.com/zeriyoshi/items/e26daccd59669b623a41)
-- [PHPで作って覚えるDI コンテナ - その2 - DI コンテナとServiceLocator](https://qiita.com/zeriyoshi/items/ef71bec08441877ca219)
+- ~~PHPで作って覚えるDI Container - その1 - DI is 何~~
+- [PHPで作って覚えるDI コンテナ - その2 - DI コンテナとServiceLocator](http://web.archive.org/web/20170825203230/http://qiita.com:80/zeriyoshi/items/ef71bec08441877ca219)
 - [Design PatternsPHP - Service Locator](http://designpatternsphp.readthedocs.io/en/latest/More/ServiceLocator/README.html)
 - [PHP The Right Way](http://ja.phptherightway.com/#containers)
 - [DIコンテナを使おうとしてサービスロケータにならないようにするにはどうしたらよいのでしょうか、具体例がわかりません](https://teratail.com/questions/49143)
