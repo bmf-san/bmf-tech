@@ -1,506 +1,1012 @@
 - name: 2phase commit
+  translation_key: 2phase-commit
 - name: ABAC
+  translation_key: abac
 - name: Abstract Factory Pattern
+  translation_key: abstract-factory-pattern
 - name: Access Control
+  translation_key: access-control
 - name: Access Management
+  translation_key: access-management
 - name: Accounting
+  translation_key: accounting
 - name: ACID
+  translation_key: acid
 - name: ACL
+  translation_key: acl
 - name: Adapter Pattern
+  translation_key: adapter-pattern
 - name: Adjacency List
+  translation_key: adjacency-list
 - name: Adjacency Matrix
+  translation_key: adjacency-matrix
 - name: Agile
+  translation_key: agile
 - name: AI
+  translation_key: ai
 - name: AJAX
+  translation_key: ajax
 - name: Algorithm
+  translation_key: algorithm
 - name: Algorithms
+  translation_key: algorithms
 - name: AlloyDB
+  translation_key: alloydb
 - name: Amazon Web Service
+  translation_key: amazon-web-service
 - name: Anonymous Function
+  translation_key: anonymous-function
 - name: Ansible
+  translation_key: ansible
 - name: anyenv
+  translation_key: anyenv
 - name: Apache
+  translation_key: apache-2
 - name: apache
+  translation_key: apache
 - name: API
+  translation_key: api
 - name: APM
+  translation_key: apm
 - name: Architect
+  translation_key: architect
 - name: Architecting
+  translation_key: architecting
 - name: Architecture
+  translation_key: architecture
 - name: Architecture Advice Process
+  translation_key: architecture-advice-process
 - name: Architecture Decision Record
+  translation_key: architecture-decision-record
 - name: Architecture Review Board
+  translation_key: architecture-review-board
 - name: Architecture Strategy
+  translation_key: architecture-strategy
 - name: Arrays
+  translation_key: arrays
 - name: artisan
+  translation_key: artisan
 - name: async
+  translation_key: async
 - name: Atom
+  translation_key: atom
 - name: Authentication
+  translation_key: authentication
 - name: Authorization
+  translation_key: authorization
 - name: Authorization Management
+  translation_key: authorization-management
 - name: babel
+  translation_key: babel
 - name: babel-jest
+  translation_key: babel-jest
 - name: Backtrack
+  translation_key: backtrack
 - name: Backup
+  translation_key: backup
 - name: BASE
+  translation_key: base
 - name: bash
+  translation_key: bash
 - name: Basic IT Engineer
+  translation_key: basic-it-engineer
 - name: BFF
+  translation_key: bff
 - name: BFS
+  translation_key: bfs
 - name: Bi-Temporal
+  translation_key: bi-temporal
 - name: Big O Notation
+  translation_key: big-o-notation
 - name: Binary Search
+  translation_key: binary-search
 - name: Binary Search Tree
+  translation_key: binary-search-tree
 - name: Bitcoin
+  translation_key: bitcoin
 - name: bitcoin
+  translation_key: bitcoin
 - name: bitFlyer
+  translation_key: bitflyer-2
 - name: bitflyer
+  translation_key: bitflyer
 - name: boilerplate
+  translation_key: boilerplate
 - name: Book
+  translation_key: book
 - name: Book Review
+  translation_key: book-review
 - name: Bridge Pattern
+  translation_key: bridge-pattern
 - name: browserify
+  translation_key: browserify
 - name: Bubble Sort
+  translation_key: bubble-sort
 - name: Burp Suite
+  translation_key: burp-suite
 - name: Business Strategy
+  translation_key: business-strategy
 - name: C4 Model
+  translation_key: c4-model
 - name: Cache
+  translation_key: cache
 - name: cadvisor
+  translation_key: cadvisor
 - name: Callback
+  translation_key: callback
 - name: CAP
+  translation_key: cap
 - name: Capacity Planning
+  translation_key: capacity-planning
 - name: Career Change
+  translation_key: career-change
 - name: CDN
+  translation_key: cdn
 - name: CentOS
+  translation_key: centos
 - name: Chrome
+  translation_key: chrome
 - name: chromedp
+  translation_key: chromedp
 - name: CircleCI
+  translation_key: circleci
 - name: CircleCI2.0
+  translation_key: circleci2-0
 - name: Clean Architecture
+  translation_key: clean-architecture
 - name: CLI
+  translation_key: cli
 - name: Cloud Functions
+  translation_key: cloud-functions
 - name: Cloud SQL
+  translation_key: cloud-sql
 - name: Cloud-Native
+  translation_key: cloud-native
 - name: CMS
+  translation_key: cms
 - name: Code Quality
+  translation_key: code-quality
 - name: Code Reading
+  translation_key: code-reading
 - name: Code Review
+  translation_key: code-review
 - name: Coding
+  translation_key: coding
 - name: CoffeeScript
+  translation_key: coffeescript
 - name: Cognitive Science
+  translation_key: cognitive-science
 - name: composer
+  translation_key: composer
 - name: Constraints
+  translation_key: constraints
 - name: Consumer-Driven Contract Testing
+  translation_key: consumer-driven-contract-testing
 - name: Container
+  translation_key: container
 - name: Context Engineering
+  translation_key: context-engineering
 - name: contextual logging
+  translation_key: contextual-logging
 - name: Continuous AI
+  translation_key: continuous-ai
 - name: Contract Testing
+  translation_key: contract-testing
 - name: CORS
+  translation_key: cors
 - name: Counting Sort
+  translation_key: counting-sort
 - name: CPU
+  translation_key: cpu
 - name: CQRS
+  translation_key: cqrs
 - name: Critical Thinking
+  translation_key: critical-thinking
 - name: Critical User Journey
+  translation_key: critical-user-journey
 - name: cron
+  translation_key: cron
 - name: Cross Join
+  translation_key: cross-join
 - name: CSS
+  translation_key: css
 - name: CTO
+  translation_key: cto
 - name: Cursor Pagination
+  translation_key: cursor-pagination
 - name: Customer Success
+  translation_key: customer-success
 - name: Dart
+  translation_key: dart
 - name: Data Structure
+  translation_key: data-structure
 - name: Data Structures
+  translation_key: data-structures
 - name: Datadog
+  translation_key: datadog
 - name: DB
+  translation_key: db
 - name: DDD
+  translation_key: ddd
 - name: Debug
+  translation_key: debug
 - name: Delegation
+  translation_key: delegation
 - name: Deployment
+  translation_key: deployment
 - name: Design
+  translation_key: design
 - name: Design Docs
+  translation_key: design-docs
 - name: Design Pattern
+  translation_key: design-pattern
 - name: Design Patterns
+  translation_key: design-patterns
 - name: Development Productivity
+  translation_key: development-productivity
 - name: DFS
+  translation_key: dfs
 - name: DI
+  translation_key: di
 - name: DigitalOcean
+  translation_key: digitalocean
 - name: DIP
+  translation_key: dip
 - name: Discrete Mathematics
+  translation_key: discrete-mathematics
 - name: Distributed Systems
+  translation_key: distributed-systems
 - name: Distributed Transactions
+  translation_key: distributed-transactions
 - name: Docker
+  translation_key: docker
 - name: Docker Compose
+  translation_key: docker-compose
 - name: Docker Machine
+  translation_key: docker-machine
 - name: Dockerize
+  translation_key: dockerize
 - name: Duck Typing
+  translation_key: duck-typing
 - name: ECS
+  translation_key: ecs
 - name: Editor
+  translation_key: editor
 - name: efk
+  translation_key: efk
 - name: Elastic Beanstalk
+  translation_key: elastic-beanstalk
 - name: Elasticsearch
+  translation_key: elasticsearch
 - name: Email
+  translation_key: email
 - name: Emoji
+  translation_key: emoji
 - name: emoji
+  translation_key: emoji-2
 - name: ER
+  translation_key: er
 - name: ERE
+  translation_key: ere
 - name: ES5
+  translation_key: es5
 - name: ES6
+  translation_key: es6
 - name: ESModules
+  translation_key: esmodules
 - name: ETL
+  translation_key: etl
 - name: Event Loop
+  translation_key: event-loop
 - name: exec
+  translation_key: exec
 - name: Exponential Backoff
+  translation_key: exponential-backoff
 - name: Factory Method Pattern
+  translation_key: factory-method-pattern
 - name: Factory Pattern
+  translation_key: factory-pattern
 - name: fan-in
+  translation_key: fan-in
 - name: fan-out
+  translation_key: fan-out
 - name: Fargate
+  translation_key: fargate
 - name: FIDO
+  translation_key: fido
 - name: Finance
+  translation_key: finance
 - name: fluentd
+  translation_key: fluentd
 - name: Flutter
+  translation_key: flutter
 - name: Forward Proxy
+  translation_key: forward-proxy
 - name: Frontend
+  translation_key: frontend
 - name: FuelPHP
+  translation_key: fuelphp
 - name: Function
+  translation_key: function
 - name: Functional
+  translation_key: functional
 - name: Functional Testing
+  translation_key: functional-testing
 - name: Fundamental Information Technology Engineer
+  translation_key: fundamental-information-technology-engineer
 - name: Gadgets
+  translation_key: gadgets
 - name: Game
+  translation_key: game
 - name: Gateway
+  translation_key: gateway
 - name: gem
+  translation_key: gem
 - name: Generative AI
+  translation_key: generative-ai
 - name: Git
+  translation_key: git
 - name: GitHub
+  translation_key: github
 - name: GitHub Actions
+  translation_key: github-actions
 - name: gocode
+  translation_key: gocode
 - name: GoF
+  translation_key: gof
 - name: gohan
+  translation_key: gohan
 - name: Golang
+  translation_key: golang
 - name: Google Analytics
+  translation_key: google-analytics
 - name: Google Chrome Extension
+  translation_key: google-chrome-extension
 - name: Google Cloud Platform
+  translation_key: google-cloud-platform
 - name: Google SpreadSheet
+  translation_key: google-spreadsheet
 - name: gopls
+  translation_key: gopls
 - name: Grafana
+  translation_key: grafana
 - name: Graph
+  translation_key: graph
 - name: GraphQL
+  translation_key: graphql
 - name: GraphQL Federation
+  translation_key: graphql-federation
 - name: grep
+  translation_key: grep
 - name: gRPC
+  translation_key: grpc
 - name: Hard Links
+  translation_key: hard-links
 - name: Hardware
+  translation_key: hardware
 - name: HashMap
+  translation_key: hashmap
 - name: Haskell
+  translation_key: haskell
 - name: Health
+  translation_key: health
 - name: Heap
+  translation_key: heap
 - name: Heap Sort
+  translation_key: heap-sort
 - name: highlightjs
+  translation_key: highlightjs
 - name: History
+  translation_key: history
 - name: History API
+  translation_key: history-api
 - name: homebrew
+  translation_key: homebrew
 - name: homestead
+  translation_key: homestead
 - name: HR
+  translation_key: hr
 - name: HTTP
+  translation_key: http
 - name: HTTP/2
+  translation_key: http-2
 - name: HTTPS
+  translation_key: https
 - name: hubot
+  translation_key: hubot
 - name: IaaS
+  translation_key: iaas
 - name: IAM
+  translation_key: iam
 - name: Index
+  translation_key: index
 - name: Infrastructure
+  translation_key: infrastructure
 - name: Inheritance
+  translation_key: inheritance
 - name: Insertion Sort
+  translation_key: insertion-sort
 - name: Intellectual Production
+  translation_key: intellectual-production
 - name: Interface
+  translation_key: interface
 - name: Inventory Management
+  translation_key: inventory-management
 - name: iOS
+  translation_key: ios
 - name: IP
+  translation_key: ip
 - name: irb
+  translation_key: irb
 - name: ISUCON
+  translation_key: isucon
 - name: ISUCON10
+  translation_key: isucon10
 - name: ISUCON8
+  translation_key: isucon8
 - name: iTerm
+  translation_key: iterm
 - name: JavaScript
+  translation_key: javascript
 - name: Jest
+  translation_key: jest-2
 - name: jest
+  translation_key: jest
 - name: Jitter
+  translation_key: jitter
 - name: Job Change
+  translation_key: job-change
 - name: Jobs Theory
+  translation_key: jobs-theory
 - name: join
+  translation_key: join
 - name: jq
+  translation_key: jq
 - name: JWT
+  translation_key: jwt
 - name: k3s
+  translation_key: k3s
 - name: Kernel
+  translation_key: kernel
 - name: Keynote
+  translation_key: keynote
 - name: Kibana
+  translation_key: kibana
 - name: KPT
+  translation_key: kpt
 - name: kubeadm
+  translation_key: kubeadm
 - name: Kubernetes
+  translation_key: kubernetes
 - name: Labor
+  translation_key: labor
 - name: Language Server
+  translation_key: language-server
 - name: Laravel
+  translation_key: laravel
 - name: LDAP
+  translation_key: ldap
 - name: Leadership
+  translation_key: leadership
 - name: Lean
+  translation_key: lean
 - name: Legacy Code
+  translation_key: legacy-code
 - name: Let's Encrypt
+  translation_key: let-s-encrypt
 - name: libcontainer
+  translation_key: libcontainer
 - name: Life
+  translation_key: life
 - name: Lightning Talk
+  translation_key: lightning-talk
 - name: Linear Search
+  translation_key: linear-search
 - name: Link Collection
+  translation_key: link-collection
 - name: Linked List
+  translation_key: linked-list
 - name: Linux
+  translation_key: linux
 - name: Linux Capabilities
+  translation_key: linux-capabilities
 - name: Liskov Substitution Principle
+  translation_key: liskov-substitution-principle
 - name: LLM as Judge
+  translation_key: llm-as-judge
 - name: LLM as judge
+  translation_key: llm-as-judge-2
 - name: Load Average
+  translation_key: load-average
 - name: Load Balancer
+  translation_key: load-balancer
 - name: Load Testing
+  translation_key: load-testing
 - name: Lock
+  translation_key: lock
 - name: Log
+  translation_key: log
 - name: Logical Thinking
+  translation_key: logical-thinking
 - name: Logistics
+  translation_key: logistics
 - name: logwatch
+  translation_key: logwatch
 - name: Loki
+  translation_key: loki
 - name: LT
+  translation_key: lt
 - name: lxc
+  translation_key: lxc
 - name: lxd
+  translation_key: lxd
 - name: M1
+  translation_key: m1
 - name: Mackerel
+  translation_key: mackerel
 - name: Manager
+  translation_key: manager
 - name: Managers
+  translation_key: managers
 - name: markdown
+  translation_key: markdown
 - name: marked
+  translation_key: marked
 - name: Mediator Pattern
+  translation_key: mediator-pattern
 - name: Memory
+  translation_key: memory
 - name: Merge Sort
+  translation_key: merge-sort
 - name: mermaid
+  translation_key: mermaid
 - name: Metrics
+  translation_key: metrics
 - name: Microservices
+  translation_key: microservices
 - name: Migration
+  translation_key: migration
 - name: Mob Programming
+  translation_key: mob-programming
 - name: Modeling
+  translation_key: modeling
 - name: Modular Monolith
+  translation_key: modular-monolith
 - name: Monitoring
+  translation_key: monitoring
 - name: Monolith
+  translation_key: monolith
 - name: Monorepo
+  translation_key: monorepo
 - name: multipass
+  translation_key: multipass
 - name: MySQL
+  translation_key: mysql
 - name: mysqldump
+  translation_key: mysqldump
 - name: N+1
+  translation_key: n-1
 - name: New Relic
+  translation_key: new-relic
 - name: NewSQL
+  translation_key: newsql
 - name: Nginx
+  translation_key: nginx
 - name: node-exporter
+  translation_key: node-exporter
 - name: Node.js
+  translation_key: node-js
 - name: Non-Temporal
+  translation_key: non-temporal
 - name: Normalization
+  translation_key: normalization
 - name: Normalization Theory
+  translation_key: normalization-theory
 - name: Notification
+  translation_key: notification
 - name: npm
+  translation_key: npm
 - name: OAuth
+  translation_key: oauth
 - name: Offset Pagination
+  translation_key: offset-pagination
 - name: OIDC
+  translation_key: oidc
 - name: OOP
+  translation_key: oop
 - name: Open Addressing Hash Table
+  translation_key: open-addressing-hash-table
 - name: Open Policy Agent
+  translation_key: open-policy-agent
 - name: OpenAPI
+  translation_key: openapi
 - name: OpenID Connect
+  translation_key: openid-connect
 - name: OpenStack
+  translation_key: openstack
 - name: Organization Design
+  translation_key: organization-design
 - name: Organization Theory
+  translation_key: organization-theory
 - name: Organizational Design
+  translation_key: organizational-design
 - name: Organizational Theory
+  translation_key: organizational-theory
 - name: OS
+  translation_key: os
 - name: OSS
+  translation_key: oss
 - name: PACELC
+  translation_key: pacelc
 - name: Pact
+  translation_key: pact
 - name: Partitioning
+  translation_key: partitioning
 - name: Pass by Value
+  translation_key: pass-by-value
 - name: PDF
+  translation_key: pdf
 - name: Performance Tuning
+  translation_key: performance-tuning
 - name: Permission Management
+  translation_key: permission-management
 - name: Permissions
+  translation_key: permissions
 - name: PgCat
+  translation_key: pgcat
 - name: PHP
+  translation_key: php
 - name: PHP CodeSniffer
+  translation_key: php-codesniffer
 - name: PHP Conference
+  translation_key: php-conference
 - name: PHP7
+  translation_key: php7
 - name: PHPCompatibility
+  translation_key: phpcompatibility
 - name: PHPerKaigi
+  translation_key: phperkaigi
 - name: phpunit
+  translation_key: phpunit
 - name: Platform Engineering
+  translation_key: platform-engineering
 - name: PofEAA
+  translation_key: pofeaa
 - name: Pointer
+  translation_key: pointer
 - name: Polymorphic
+  translation_key: polymorphic
 - name: Polymorphism
+  translation_key: polymorphism
 - name: PostgreSQL
+  translation_key: postgresql
 - name: Postmortem
+  translation_key: postmortem
 - name: Process
+  translation_key: process
 - name: Production Management
+  translation_key: production-management
 - name: Productivity Techniques
+  translation_key: productivity-techniques
 - name: Profiling
+  translation_key: profiling
 - name: Prolog
+  translation_key: prolog
 - name: Prometheus
+  translation_key: prometheus
 - name: Prompt as Code
+  translation_key: prompt-as-code
 - name: Prompt as code
+  translation_key: prompt-as-code-2
 - name: Prompt Engineering
+  translation_key: prompt-engineering
 - name: Prompt Ops
+  translation_key: prompt-ops
 - name: Promtail
+  translation_key: promtail
 - name: Protocol Buffers
+  translation_key: protocol-buffers
 - name: Provider-Driven Contract Testing
+  translation_key: provider-driven-contract-testing
 - name: pundit
+  translation_key: pundit
 - name: Queue
+  translation_key: queue
 - name: Quick Sort
+  translation_key: quick-sort
 - name: Radix Conversion
+  translation_key: radix-conversion
 - name: Radix Tree
+  translation_key: radix-tree
 - name: RBAC
+  translation_key: rbac
 - name: rbenv
+  translation_key: rbenv
 - name: React
+  translation_key: react
 - name: react-router
+  translation_key: react-router
 - name: realize
+  translation_key: realize
 - name: Recursion
+  translation_key: recursion
 - name: Redis
+  translation_key: redis
 - name: Redux
+  translation_key: redux
 - name: redux-form
+  translation_key: redux-form
 - name: Reference
+  translation_key: reference
 - name: Reflection and Goals
+  translation_key: reflection-and-goals
 - name: Reflection and Resolutions
+  translation_key: reflection-and-resolutions
 - name: Reflections and Aspirations
+  translation_key: reflections-and-aspirations
 - name: Rego
+  translation_key: rego
 - name: Regular Expressions
+  translation_key: regular-expressions
 - name: Reliability
+  translation_key: reliability
 - name: reline
+  translation_key: reline
 - name: Repository Pattern
+  translation_key: repository-pattern
 - name: Requests
+  translation_key: requests
 - name: Requirements
+  translation_key: requirements
 - name: Resignation
+  translation_key: resignation
 - name: REST
+  translation_key: rest
 - name: Resume
+  translation_key: resume
 - name: Retrospective
+  translation_key: retrospective
 - name: Retry
+  translation_key: retry
 - name: Reverse Proxy
+  translation_key: reverse-proxy
 - name: Riverpod
+  translation_key: riverpod
 - name: Round Robin
+  translation_key: round-robin
 - name: Router
+  translation_key: router
 - name: RPC
+  translation_key: rpc
 - name: RSpec
+  translation_key: rspec
 - name: Ruby
+  translation_key: ruby
 - name: Ruby on Rails
+  translation_key: ruby-on-rails
 - name: Runner Technique
+  translation_key: runner-technique
 - name: SaaS
+  translation_key: saas
 - name: Saga Pattern
+  translation_key: saga-pattern
 - name: Sakura VPS
+  translation_key: sakura-vps
 - name: Sales
+  translation_key: sales
 - name: SAML
+  translation_key: saml
 - name: Scalability
+  translation_key: scalability
 - name: Schema-Driven
+  translation_key: schema-driven
 - name: Scrum
+  translation_key: scrum
 - name: Seccomp
+  translation_key: seccomp
 - name: Security
+  translation_key: security
 - name: Selection Sort
+  translation_key: selection-sort
 - name: Service Locator
+  translation_key: service-locator
 - name: Service Mesh
+  translation_key: service-mesh
 - name: Session
+  translation_key: session
 - name: Sets
+  translation_key: sets
 - name: Sharding
+  translation_key: sharding
 - name: shell
+  translation_key: shell
 - name: Shell Script
+  translation_key: shell-script-2
 - name: shell script
+  translation_key: shell-script
 - name: shellscript
+  translation_key: shellscript
 - name: Sidekiq
+  translation_key: sidekiq
 - name: Singleton Pattern
+  translation_key: singleton-pattern
 - name: Singly Linked List
+  translation_key: singly-linked-list
 - name: SLA
+  translation_key: sla
 - name: Slack
+  translation_key: slack
 - name: Slack Bot
+  translation_key: slack-bot
 - name: slack-bot
+  translation_key: slack-bot-2
 - name: SLI
+  translation_key: sli
 - name: Sliding Window
+  translation_key: sliding-window
 - name: SLO
+  translation_key: slo
 - name: slog
+  translation_key: slog
 - name: Software
+  translation_key: software
 - name: Software Development
+  translation_key: software-development
 - name: SPA
+  translation_key: spa
 - name: Spanner
+  translation_key: spanner
 - name: SQL
+  translation_key: sql
 - name: SQL Anti-pattern
+  translation_key: sql-anti-pattern
 - name: SQLite
+  translation_key: sqlite
 - name: SRE
+  translation_key: sre
 - name: SSG
+  translation_key: ssg
 - name: SSH
+  translation_key: ssh-2
 - name: ssh
+  translation_key: ssh
 - name: sshd
+  translation_key: sshd
 - name: SSL
+  translation_key: ssl
 - name: SSO
+  translation_key: sso
 - name: Stack
+  translation_key: stack
 - name: Startup
+  translation_key: startup
 - name: State Pattern
+  translation_key: state-pattern
 - name: Stateful
+  translation_key: stateful
 - name: Stateless
+  translation_key: stateless
 - name: Strategy
+  translation_key: strategy
 - name: Strategy Pattern
+  translation_key: strategy-pattern
 - name: StreamYard
+  translation_key: streamyard
 - name: Superagent
+  translation_key: superagent-2
 - name: superagent
+  translation_key: superagent
 - name: Swiss Table
+  translation_key: swiss-table
 - name: Symbolic Links
+  translation_key: symbolic-links
 - name: System Design
+  translation_key: system-design
 - name: System Performance
+  translation_key: system-performance
 - name: TCC Pattern
+  translation_key: tcc-pattern
 - name: TCP
+  translation_key: tcp
 - name: Team Management
+  translation_key: team-management
 - name: Team Topologies
+  translation_key: team-topologies
 - name: Technical Writing
+  translation_key: technical-writing
 - name: Technology Radar
+  translation_key: technology-radar
 - name: tee
+  translation_key: tee
 - name: Template Method
+  translation_key: template-method
 - name: Template Method Pattern
+  translation_key: template-method-pattern
 - name: Temporal Data Model
+  translation_key: temporal-data-model
 - name: Terminal
+  translation_key: terminal
 - name: termios
+  translation_key: termios
 - name: Terraform
+  translation_key: terraform
 - name: Test Double
+  translation_key: test-double
 - name: textlint
+  translation_key: textlint
 - name: Thinking
+  translation_key: thinking
 - name: Thinking Methods
+  translation_key: thinking-methods
 - name: Thread
+  translation_key: thread
 - name: tidalcycles
+  translation_key: tidalcycles
 - name: Tips
+  translation_key: tips
 - name: TLS
+  translation_key: tls
 - name: tmux
+  translation_key: tmux
 - name: Trading
+  translation_key: trading
 - name: Transaction
+  translation_key: transaction
 - name: Tree Structure
+  translation_key: tree-structure
 - name: Trello
+  translation_key: trello
 - name: Trie
+  translation_key: trie
 - name: Trino
+  translation_key: trino
 - name: TUI
+  translation_key: tui
 - name: Two-Pointer Approach
+  translation_key: two-pointer-approach
 - name: Two-Pointer Technique
+  translation_key: two-pointer-technique
 - name: Type Hinting
+  translation_key: type-hinting
 - name: TypeScript
+  translation_key: typescript
 - name: Ubuntu
+  translation_key: ubuntu
 - name: UML
+  translation_key: uml
 - name: Uni-Temporal
+  translation_key: uni-temporal
 - name: Unicorn
+  translation_key: unicorn
 - name: union
+  translation_key: union
 - name: UNIX
+  translation_key: unix
 - name: unix commands
+  translation_key: unix-commands
 - name: URL Routing
+  translation_key: url-routing
 - name: UX
+  translation_key: ux
 - name: Vagrant
+  translation_key: vagrant
 - name: vim
+  translation_key: vim
 - name: Virtual Environment
+  translation_key: virtual-environment
 - name: VirtualBox
+  translation_key: virtualbox
 - name: VPS
+  translation_key: vps
 - name: vscode
+  translation_key: vscode
 - name: Vue.js
+  translation_key: vue-js
 - name: Vulnerability
+  translation_key: vulnerability
 - name: webpack
+  translation_key: webpack
 - name: yum
+  translation_key: yum
 - name: Zabbix
+  translation_key: zabbix
