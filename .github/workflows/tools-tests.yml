@@ -1,0 +1,34 @@
+name: Tools Tests
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "tools/devto/**"
+      - ".github/workflows/tools-tests.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "tools/devto/**"
+      - ".github/workflows/tools-tests.yml"
+
+jobs:
+  devto:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tools/devto
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: tools/devto/go.mod
+          cache-dependency-path: tools/devto/go.sum
+      - name: Tidy check
+        run: |
+          go mod tidy
+          git diff --exit-code go.mod go.sum
+      - name: Test
+        run: go test ./...
+      - name: Build
+        run: go build ./...
