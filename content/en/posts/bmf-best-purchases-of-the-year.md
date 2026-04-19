@@ -21,7 +21,7 @@ I picked out items that I personally feel have improved my quality of life.
 
 # Bluetooth Headphones
 
-[Mpow Bluetooth Earphones](https://www.amazon.co.jp/gp/product/B07289Q3F1/ref=oh_aui_detailpage_o07_s00?ie=UTF8&psc=1:title:title])
+[Mpow Bluetooth Earphones](https://www.amazon.co.jp/gp/product/B07289Q3F1/)
 
 These are Bluetooth-compatible earphones.
 
