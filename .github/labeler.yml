@@ -1,0 +1,65 @@
+# Configuration for actions/labeler
+# Automatically applies labels to pull requests based on changed file paths.
+# Note: `dependencies` is intentionally omitted here because Dependabot attaches it directly.
+
+documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - docs/**
+          - README*
+          - LICENSE
+          - CONTRIBUTING.md
+
+github_actions:
+  - changed-files:
+      - any-glob-to-any-file:
+          - .github/**
+
+content:
+  - changed-files:
+      - any-glob-to-any-file:
+          - content/**
+
+content_ja:
+  - changed-files:
+      - any-glob-to-any-file:
+          - content/ja/**
+
+content_en:
+  - changed-files:
+      - any-glob-to-any-file:
+          - content/en/**
+
+theme:
+  - changed-files:
+      - any-glob-to-any-file:
+          - themes/**
+          - assets/**
+          - static/**
+
+config:
+  - changed-files:
+      - any-glob-to-any-file:
+          - config.yaml
+          - bulk-redirects.txt
+          - Makefile
+          - taxonomies/**
+
+test:
+  - changed-files:
+      - any-glob-to-any-file:
+          - e2e/**
+          - "**/*.spec.ts"
+          - "**/*.test.ts"
+          - "**/*.test.js"
+
+tools:
+  - changed-files:
+      - any-glob-to-any-file:
+          - tools/**
+
+deps:
+  - changed-files:
+      - any-glob-to-any-file:
+          - package.json
+          - package-lock.json

@@ -44,6 +44,7 @@ listing_slugs:
   - ruby-rails-io-cpu-characteristics
   - pagination-impact-solutions-opa
   - product-development-vs-platform-development
+  - platform-viability-conditions
   - team-topologies-introduction
   - mvv-importance-software-teams
   - dealing-with-uncertainty-software-projects
