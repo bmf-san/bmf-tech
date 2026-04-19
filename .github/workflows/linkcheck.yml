@@ -1,0 +1,39 @@
+name: Broken Link Check
+
+on:
+  pull_request:
+    branches: [main]
+  schedule:
+    # weekly Monday 00:00 UTC; catches link rot on already-merged content
+    - cron: "0 0 * * 1"
+  workflow_dispatch:
+
+jobs:
+  linkcheck:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: stable
+          cache: false
+
+      - name: Install gohan
+        run: make install-gohan
+
+      - name: Build site
+        run: make build
+
+      - name: Run lychee on built site
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --base public
+            --accept 200,206,403,429
+            --exclude-mail
+            'public/**/*.html'
+          fail: true
