@@ -27,7 +27,7 @@ jobs:
         with:
           fetch-depth: 2 # need parent commit to detect new files
 
-      - uses: actions/setup-go@v5
+      - uses: actions/setup-go@v6
         with:
           go-version: stable
           cache: false
