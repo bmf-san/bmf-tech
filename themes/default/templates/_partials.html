@@ -22,10 +22,22 @@
 {{- $altURLHead := "/ja/"}}
 {{- if eq .CurrentLocale "ja"}}{{$altURLHead = "/"}}{{end}}
 {{- if .CurrentTaxonomy}}
-  {{- if eq .CurrentLocale "ja"}}{{$altURLHead = slice .CurrentTaxonomy.URL 3}}{{else}}{{$altURLHead = printf "/ja%s" .CurrentTaxonomy.URL}}{{end}}
-  {{- /* for paginated taxonomy pages, alternate hreflang must match the current page number */}}
-  {{- if and .Pagination (gt .Pagination.CurrentPage 1)}}
-    {{- if eq .CurrentLocale "ja"}}{{$altURLHead = printf "%s/page/%d/" (slice .Pagination.BaseURL 3) .Pagination.CurrentPage}}{{else}}{{$altURLHead = printf "/ja%s/page/%d/" .Pagination.BaseURL .Pagination.CurrentPage}}{{end}}
+  {{- /* Cross-locale taxonomy URL resolution (gohan v1.1.6+).
+     .CurrentTaxonomy.Translations is map[locale]URL populated only when
+     the opposite locale actually has articles referencing the same
+     taxonomy (matched by explicit translation_key or shared Name). When
+     absent, fall back to the opposite locale's home — never emit a link
+     to a taxonomy page that does not exist. */}}
+  {{- $altLoc := "ja"}}{{if eq .CurrentLocale "ja"}}{{$altLoc = "en"}}{{end}}
+  {{- $taxAlt := ""}}
+  {{- with .CurrentTaxonomy.Translations}}{{with index . $altLoc}}{{$taxAlt = .}}{{end}}{{end}}
+  {{- if $taxAlt}}
+    {{- $altURLHead = $taxAlt}}
+    {{- /* Paginated taxonomy pages: always link to page 1 of the opposite
+       locale. The counterpart may have a different number of pages, so
+       propagating the current page number can produce broken URLs. */}}
+  {{- else}}
+    {{- if eq .CurrentLocale "ja"}}{{$altURLHead = "/"}}{{else}}{{$altURLHead = "/ja/"}}{{end}}
   {{- end}}
 {{- else if .CurrentArchivePath}}
   {{- if eq .CurrentLocale "ja"}}{{$altURLHead = slice .CurrentArchivePath 3}}{{else}}{{$altURLHead = printf "/ja%s" .CurrentArchivePath}}{{end}}
@@ -224,17 +236,19 @@
     {{- if and (ne $.CurrentLocale "ja") (eq .Locale "ja")}}{{$altURL = .URL}}{{end}}
   {{- end}}
 {{- else if .CurrentTaxonomy}}
-  {{- if eq .CurrentLocale "ja"}}
-    {{- $altURL = slice .CurrentTaxonomy.URL 3}}
+  {{- /* See cross-locale resolution note above. */}}
+  {{- $altLoc := "ja"}}{{if eq .CurrentLocale "ja"}}{{$altLoc = "en"}}{{end}}
+  {{- $taxAlt := ""}}
+  {{- with .CurrentTaxonomy.Translations}}{{with index . $altLoc}}{{$taxAlt = .}}{{end}}{{end}}
+  {{- if $taxAlt}}
+    {{- $altURL = $taxAlt}}
+    {{- /* Paginated taxonomy pages: always link to page 1 of the opposite
+       locale; see note in <head> block above. */}}
   {{- else}}
-    {{- $altURL = printf "/ja%s" .CurrentTaxonomy.URL}}
-  {{- end}}
-  {{- /* for paginated taxonomy pages, locale-switcher link must match the current page number */}}
-  {{- if and .Pagination (gt .Pagination.CurrentPage 1)}}
     {{- if eq .CurrentLocale "ja"}}
-      {{- $altURL = printf "%s/page/%d/" (slice .Pagination.BaseURL 3) .Pagination.CurrentPage}}
+      {{- $altURL = "/"}}
     {{- else}}
-      {{- $altURL = printf "/ja%s/page/%d/" .Pagination.BaseURL .Pagination.CurrentPage}}
+      {{- $altURL = "/ja/"}}
     {{- end}}
   {{- end}}
 {{- else if .CurrentArchivePath}}
