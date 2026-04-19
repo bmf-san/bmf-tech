@@ -33,10 +33,9 @@
   {{- with .CurrentTaxonomy.Translations}}{{with index . $altLoc}}{{$taxAlt = .}}{{end}}{{end}}
   {{- if $taxAlt}}
     {{- $altURLHead = $taxAlt}}
-    {{- /* for paginated taxonomy pages, alternate hreflang must match the current page number */}}
-    {{- if and .Pagination (gt .Pagination.CurrentPage 1)}}
-      {{- $altURLHead = printf "%spage/%d/" $taxAlt .Pagination.CurrentPage}}
-    {{- end}}
+    {{- /* Paginated taxonomy pages: always link to page 1 of the opposite
+       locale. The counterpart may have a different number of pages, so
+       propagating the current page number can produce broken URLs. */}}
   {{- else}}
     {{- if eq .CurrentLocale "ja"}}{{$altURLHead = "/"}}{{else}}{{$altURLHead = "/ja/"}}{{end}}
   {{- end}}
@@ -243,10 +242,8 @@
   {{- with .CurrentTaxonomy.Translations}}{{with index . $altLoc}}{{$taxAlt = .}}{{end}}{{end}}
   {{- if $taxAlt}}
     {{- $altURL = $taxAlt}}
-    {{- /* for paginated taxonomy pages, locale-switcher link must match the current page number */}}
-    {{- if and .Pagination (gt .Pagination.CurrentPage 1)}}
-      {{- $altURL = printf "%spage/%d/" $taxAlt .Pagination.CurrentPage}}
-    {{- end}}
+    {{- /* Paginated taxonomy pages: always link to page 1 of the opposite
+       locale; see note in <head> block above. */}}
   {{- else}}
     {{- if eq .CurrentLocale "ja"}}
       {{- $altURL = "/"}}

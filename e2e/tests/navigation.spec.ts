@@ -303,16 +303,18 @@ test.describe('Nav: locale toggle on paginated root index pages', () => {
 // ── Locale toggle on paginated tag/category pages ───────────────────────────
 
 test.describe('Nav: locale toggle on paginated tag pages', () => {
-  test('EN /tags/golang/page/2/ toggle links to /ja/tags/golang/page/2/', async ({ page }) => {
+  // Page counts may differ per locale, so switcher always lands on page 1
+  // of the opposite-locale taxonomy to avoid broken URLs.
+  test('EN /tags/golang/page/2/ toggle links to /ja/tags/golang/', async ({ page }) => {
     await page.goto('/tags/golang/page/2/');
     const href = await page.locator('nav.navbar a:has(.badge-primary)').getAttribute('href');
-    expect(href).toBe('/ja/tags/golang/page/2/');
+    expect(href).toBe('/ja/tags/golang/');
   });
 
-  test('JA /ja/tags/golang/page/2/ toggle links to /tags/golang/page/2/', async ({ page }) => {
+  test('JA /ja/tags/golang/page/2/ toggle links to /tags/golang/', async ({ page }) => {
     await page.goto('/ja/tags/golang/page/2/');
     const href = await page.locator('nav.navbar a:has(.badge-primary)').getAttribute('href');
-    expect(href).toBe('/tags/golang/page/2/');
+    expect(href).toBe('/tags/golang/');
   });
 });
 
