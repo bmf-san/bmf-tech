@@ -14,7 +14,7 @@ tags:
 translation_key: letsencrypt-auto-renewal-failure-solution
 ---
 
-[Script for Let's Encrypt certificate auto-renewal (cron) with a bit of Slack integration](http://qiita.com/bmf_san/items/9a072023df9ca6fab354) was successful when executed manually, but for some reason, it failed every time when run via cron.
+~~Script for Let's Encrypt certificate auto-renewal (cron) with a bit of Slack integration~~ was successful when executed manually, but for some reason, it failed every time when run via cron.
 
 Therefore, I reviewed the script and managed to modify it to work correctly.
 
@@ -91,4 +91,4 @@ Additionally, I added a sleep command to pause the operation for a specified tim
 If these were done carefully, I feel like it could have been resolved a bit sooner.
 
 # References
-[Let's Encrypt User Guide](https://letsencrypt.jp/docs/using.html)
+~~Let's Encrypt User Guide~~

@@ -46,7 +46,7 @@ cf. [conoha.jp - API](https://www.conoha.jp/vps/function/api/)
 
 This time, I will use the OpenStack provider with Terraform, but there is also an OpenStack Ansible module in Ansible, so I think the same can be achieved with Ansible alone. I haven't tried it, though...
 
-cf. [docs.ansible.com - OpenStack Ansible Module](https://docs.ansible.com/ansible/2.9_ja/dev_guide/platforms/openstack_guidelines.html)
+cf. [docs.ansible.com - OpenStack Ansible Module](http://web.archive.org/web/20240423000004/https://docs.ansible.com/ansible/2.9_ja/dev_guide/platforms/openstack_guidelines.html)
 
 # Source Code
 The source code created this time is available at [github.com - bmf-san/terraform-ansible-openstack-boilerplate](https://github.com/bmf-san/terraform-ansible-openstack-boilerplate).

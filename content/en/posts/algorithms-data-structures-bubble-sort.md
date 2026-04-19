@@ -55,4 +55,4 @@ func main() {
 - Loop through all elements, and within that, loop and compare adjacent elements
 
 # References
-- [Algorithms and Data Structures](http://www-ikn.ist.hokudai.ac.jp/~arim/pub/algo/algo6.pdf)
+- ~~Algorithms and Data Structures~~

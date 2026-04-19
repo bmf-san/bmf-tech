@@ -207,7 +207,7 @@ Regoの仕様については、[Policy Language](https://www.openpolicyagent.org
 # パフォーマンス
 OPAは内部的にはTrieを活用したルールのインデックスにより最適化が図られている。
 
-cf. [Optimizing OPA: Rule Indexing](https://blog.openpolicyagent.org/optimizing-opa-rule-indexing-59f03f17caf3)
+cf. ~~Optimizing OPA: Rule Indexing~~
 
 Trieのデータ構造を意識してポリシーを記述することで、性能劣化の要因を防ぐことができる。（たぶん）
 

@@ -71,7 +71,7 @@ I want to participate again next year, so I will start preparing from the beginn
 
 ## Study Group (Community Activities)
 I held LaraCafe several times.
-   [https://laracafe.connpass.com/:title]
+   [~~https://laracafe.connpass.com/~~:title]
 
 Regarding the management of LaraCafe, I plan to have a meeting with the management team at the beginning of the year, so future activities are currently undecided.
 

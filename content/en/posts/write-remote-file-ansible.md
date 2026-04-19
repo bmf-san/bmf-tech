@@ -36,4 +36,4 @@ A task to write to remote files using Ansible. Frequently used.
 It's easy to write.
 
 # References
-+ [lineinfile - Ensure a particular line is in a file, or replace an existing line using a back-referenced regular expression.](http://docs.ansible.com/ansible/lineinfile_module.html)
++ ~~lineinfile - Ensure a particular line is in a file, or replace an existing line using a back-referenced regular expression.~~

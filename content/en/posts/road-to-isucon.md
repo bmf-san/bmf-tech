@@ -83,7 +83,7 @@ Participating for the first time was a humbling experience. Despite the lack of 
 - [ISUCON Winning Strategy Video Notes](https://wiki.infra-workshop.tech/user/kameneko/ISUCON8/ISUCON%E3%81%AE%E5%8B%9D%E3%81%A1%E6%96%B9%E5%8B%95%E7%94%BB%E3%83%A1%E3%83%A2)
 - [Steps to Build ISUCON7 (Preliminary) Environment on ConoHa](https://nishinatoshiharu.com/how-to-create-isucon-conoha/)
 - [YAPC::Asia Tokyo 2015 "ISUCON Winning Strategy" Notes](http://kobtea.net/posts/2015/08/22/yapc-isucon/)
-- [Notes for Completing ISUCON Preliminaries Without Tears Next Year (1)](https://cloudpack.media/25281)
+- ~~Notes for Completing ISUCON Preliminaries Without Tears Next Year (1)~~
 
 # Books Read for ISUcon
 - [Systems Performance: Enterprise and the Cloud](https://www.oreilly.co.jp/books/9784873117904/)

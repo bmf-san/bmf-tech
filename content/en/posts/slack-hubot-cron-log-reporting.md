@@ -21,7 +21,7 @@ translation_key: slack-hubot-cron-log-reporting
 
 
 Previously, I wrote an article about executing ShellScript from Slack using slack and hubot.
-[Creating a Slack Bot with Sakura VPS, hubot, and Slack](http://qiita.com/BMF_Engineer/items/1f04032b05c22de062af)
+~~Creating a Slack Bot with Sakura VPS, hubot, and Slack~~
 
 This time, instead of executing commands interactively, I aim to periodically run ShellScript with cron and report the output to Slack.
 
@@ -37,8 +37,8 @@ There was a safe method of hitting the API and running it with crontab, but I wa
 * CentOS 6
 * slack
 * hubot
-* hubot-slack 3.4.2 ... This is an adapter for using hubot with slack. When you specify the adapter as slack during hubot installation, it gets added to package.json and installed automatically. For more details, see [Creating a Slack Bot with Sakura VPS, hubot, and Slack](http://qiita.com/BMF_Engineer/items/1f04032b05c22de062af). By the way, the channel specification and the availability of Attachments differ between v2 and v3 series, so please check that on your own.
-* pm2 ... For daemon persistence of hubot. For more details, see [Creating a Slack Bot with Sakura VPS, hubot, and Slack](http://qiita.com/BMF_Engineer/items/1f04032b05c22de062af).
+* hubot-slack 3.4.2 ... This is an adapter for using hubot with slack. When you specify the adapter as slack during hubot installation, it gets added to package.json and installed automatically. For more details, see ~~Creating a Slack Bot with Sakura VPS, hubot, and Slack~~. By the way, the channel specification and the availability of Attachments differ between v2 and v3 series, so please check that on your own.
+* pm2 ... For daemon persistence of hubot. For more details, see ~~Creating a Slack Bot with Sakura VPS, hubot, and Slack~~.
 * node-cron ... A package used to execute cron with CoffeeScript.
 * logwatch ... It doesn't have to be logwatch. You can prepare any ShellScript you want to output to slack.
 
@@ -90,13 +90,13 @@ Additional Note to the Additional Note: It seems that Attachments can be used fr
 [Using attachments with hubot-slack](http://buty4649.hatenablog.com/entry/2015/12/04/011829)
 
 # Bonus: Stopping logwatch Email Sending
-[GMO Cloud Support Guide](https://help.gmocloud.com/app/answers/detail/a_id/148/~/logwatch%E3%81%AE%E3%83%A1%E3%83%BC%E3%83%AB%E9%85%8D%E9%80%81%E3%82%92%E6%AD%A2%E3%82%81%E3%81%9F%E3%81%84%E3%80%82) kindly explains this.
+~~GMO Cloud Support Guide~~ kindly explains this.
 
 By setting Print=Yes in the logwatch configuration file, email sending is stopped. I saw an article somewhere that changing execution permissions is not very good because permissions might change unexpectedly, so I stopped emails using this method.
 
 
 # Others
-* [Monitoring URLs every minute with hubot and notifying Slack.](https://blog.yug1224.com/archives/563d9b67bf652a600632d060)
+* ~~Monitoring URLs every minute with hubot and notifying Slack.~~
 
 # Impressions
 I kind of dislike CoffeeScript (cry)

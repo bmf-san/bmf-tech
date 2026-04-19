@@ -108,4 +108,4 @@ There is an explanation for when the window size is fixed and when it is dynamic
 
 # References
 - [www.techinterviewhandbook.org - Array cheatsheet for coding interviews](https://www.techinterviewhandbook.org/algorithms/array/)
-- [itnext.io - Sliding Window Algorithm Technique](https://itnext.io/sliding-window-algorithm-technique-6001d5fbe8b3)
+- ~~itnext.io - Sliding Window Algorithm Technique~~

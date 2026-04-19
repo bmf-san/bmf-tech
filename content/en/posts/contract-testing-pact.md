@@ -37,7 +37,7 @@ cf.
 - [ipsj.ixsq.nii.ac.jp - Consumer-Driven Contract Testing Patterns and Challenges](https://ipsj.ixsq.nii.ac.jp/ej/?action=repository_uri&item_id=193867&file_id=1&file_no=1)
 - [www.ibm.com - Contract Testing](https://www.ibm.com/docs/ja/devops-test-workbench/11.0.0?topic=tasks-contract-testing)
 - [gitlab-docs.creationline.com - Contract Testing](https://gitlab-docs.creationline.com/ee/development/testing_guide/contract/)
-- [docs.pactflow.io - Bi-Directional Contract Testing Guide](https://docs.pactflow.io/docs/bi-directional-contract-testing)
+- ~~docs.pactflow.io - Bi-Directional Contract Testing Guide~~
 - [pactflow.io - Bi-Directional Contract Testing](https://pactflow.io/bi-directional-contract-testing/)
 - [pactflow.io - Pact is dead, long live Pact](https://pactflow.io/blog/bi-directional-contracts/)
 - [www.thoughtworks.com - Pactflow](https://www.thoughtworks.com/radar/tools/pactflow)

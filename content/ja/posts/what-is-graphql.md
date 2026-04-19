@@ -118,10 +118,10 @@ configs {
 
 # 参考
 - [graphql.org](https://graphql.org/)
-- [facebook/graphql rfcs](https://github.com/facebook/graphql/blob/master/rfcs/Subscriptions.md)
+- ~~facebook/graphql rfcs~~
 - [「GraphQLは何に向いているか」に対してのちょっとした反論](http://yamitzky.hatenablog.com/entry/graphql)
 - [アプリ開発の流れを変える「GraphQL」はRESTとどう違うのか比較してみた](https://www.webprofessional.jp/rest-2-0-graphql/) 
 - [GraphQLはRESTの置き換えではない](https://note.mu/konpyu/n/nc4fd122644a1)
 - [GraphQL APIをRailsアプリに実装した時のメモ](https://blog.qnyp.com/2017/06/08/graphql-resources/)
-- [初心者目線で分かりやすく解くGraphQLを解説！～同じWebAPIのRESTとの違いは？～](https://vitalify.jp/app-lab/20171006-graphql/)
+- [初心者目線で分かりやすく解くGraphQLを解説！～同じWebAPIのRESTとの違いは？～](http://web.archive.org/web/20200808063325/https://vitalify.jp/app-lab/20171006-graphql/)
 

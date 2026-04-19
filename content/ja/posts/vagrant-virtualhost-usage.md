@@ -112,5 +112,5 @@ aliasesにdevとhogeを設定したのでそれぞれ設定ファイルを作成
 # 参考
 * [Vagrantでバーチャルホストを設定してみたｗ
 ](http://raichel.hatenablog.com/entry/2015/06/06/205958)
-* [Vagrantを利用したVirtualHostの設定](http://sk51.jp/how-to-setup-virtualhost-using-vagrant/)
+* [Vagrantを利用したVirtualHostの設定](http://web.archive.org/web/20180830201418/http://sk51.jp/how-to-setup-virtualhost-using-vagrant/)
 

@@ -70,10 +70,10 @@ class Categories extends Component {
 # 所感
 jsむずい。promissまだ良くわかっていない。（コールバックを楽にするためのもの程度の認識。。。）
 
-Laravel×ReactでSPAつくっているよーという方、ぜひ[Lara Cafe](https://laracafe.connpass.com/)
+Laravel×ReactでSPAつくっているよーという方、ぜひ~~Lara Cafe~~
 にご参加ください！（助けてぇ）
 
 # 参考
 [Redux Form -Submit Validation Example](http://redux-form.com/6.0.0-alpha.4/examples/submitValidation/)
-[throw new SubmissionError() causing Uncaught (in promise) error](https://github.com/erikras/redux-form/issues/2269)
+~~throw new SubmissionError() causing Uncaught (in promise) error~~
 

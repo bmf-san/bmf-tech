@@ -22,9 +22,9 @@ I explored articles on development productivity.
 - [www.atlassian.com - 5 Useful Agile KPI Metrics](https://www.atlassian.com/ja/agile/project-management/metrics)
 - [bliki-ja.github.io - Productivity Cannot Be Measured](https://bliki-ja.github.io/CannotMeasureProductivity)
 - [findy-code.io - Percentage of Workplaces Visualizing and Measuring Technical Debt and Development Productivity! Survey of 377 Engineers](https://findy-code.io/blog/market-report_202308/)
-- [blog.findy-team.io - 【Mercari×DeNA】What Should Be Measured? The Why-What-How of Visualizing Development Productivity](https://blog.findy-team.io/posts/mercari_dena/)
+- ~~blog.findy-team.io - 【Mercari×DeNA】What Should Be Measured? The Why-What-How of Visualizing Development Productivity~~
 - [codezine.jp - From PR Numbers to the "SPACE Framework", Evolving Development Productivity Measurement Methods with the Growth of Technical Organizations](https://codezine.jp/article/detail/17470)
-- [seleck.cc - What is "Development Productivity"? Utilization of Four Keys and SPACE, and 5 Case Studies on Improving Corporate Productivity!](https://seleck.cc/development_productivity)
+- ~~seleck.cc - What is "Development Productivity"? Utilization of Four Keys and SPACE, and 5 Case Studies on Improving Corporate Productivity!~~
 - [levtech.jp - Tracking the Right Metrics to Improve Developer Experience. What is the "SPACE Metrics" for Measuring Developer Productivity? 【TechCrunch】](https://levtech.jp/media/article/news/detail_261/)
 - [note.com - Effectively Drawing Out Performance Based on Team Culture as Development Productivity](https://note.com/tamago3keran/n/nc8efc8c952cc)
 - [dev.classmethod.jp - The Future of Development Productivity: Learning from Global and Japanese Leading Cases to Improve Four Keys ~Hybrid Conference~ Participated and Presented #DevelopmentProductivitycon_findy](https://dev.classmethod.jp/articles/shuntaka-findy-award-after-party/)

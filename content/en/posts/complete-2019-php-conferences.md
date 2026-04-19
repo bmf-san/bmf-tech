@@ -22,11 +22,11 @@ The journey from starting in Sendai to ending in Tokyo.
 All conferences outside of Tokyo were my first time attending.
 
 - [Participated in PHP Conference Sendai 2019](https://bmf-tech.com/posts/PHP%E3%82%AB%E3%83%B3%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9%E4%BB%99%E5%8F%B02019%E3%81%AB%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%9F)
-- [Laravel JP Conference](https://conference2019.laravel.jp/)
+- [Laravel JP Conference](http://web.archive.org/web/20260117100821/https://conference2019.laravel.jp/)
 The first Laravel conference held in Japan.
 I participated as both staff and speaker.
 I plan to participate as staff next year as well.
-cf. [Laravel JP Conference 2020](https://conference2020.laravel.jp/)
+cf. [Laravel JP Conference 2020](http://web.archive.org/web/20250126161113/http://conference2020.laravel.jp/)
 - [Participated and Spoke at PHPerKaigi 2019](https://bmf-tech.com/posts/PHPerKaigi2019%E3%81%AB%E5%8F%82%E5%8A%A0%E3%83%BB%E7%99%BB%E5%A3%87%E3%81%97%E3%81%A6%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F)
 - [Participated and Spoke at PHP Conference Fukuoka 2019](https://bmf-tech.com/posts/PHP%E3%82%AB%E3%83%B3%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9%E7%A6%8F%E5%B2%A12019%E3%81%AB%E5%8F%82%E5%8A%A0%E3%83%BB%E7%99%BB%E5%A3%87%E3%81%97%E3%81%A6%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F)
 I had submitted CFPs about twice before but was not selected for Fukuoka.
@@ -41,7 +41,7 @@ The sessions covered not only CakePHP but also general PHP web development topic
 - [PHP CONFERENCE JAPAN 2019](https://phpcon.php.gr.jp/2019/)
 This year's PHP Conference Tokyo had a special feel as it was the 20th anniversary.
 I have participated for three consecutive years, but this year was particularly memorable as [Sebastian Bergmann](https://twitter.com/s_bergmann), the creator of PHPUnit, was a speaker.
-- I couldn't fully participate in [Laravel JP Conference](https://conference2019.laravel.jp/), [CakeFest](https://cakefest.org/), and [PHP CONFERENCE JAPAN 2019](https://phpcon.php.gr.jp/2019/), so I skipped writing reports...
+- I couldn't fully participate in [Laravel JP Conference](http://web.archive.org/web/20260117100821/https://conference2019.laravel.jp/), [CakeFest](https://cakefest.org/), and [PHP CONFERENCE JAPAN 2019](https://phpcon.php.gr.jp/2019/), so I skipped writing reports...
 
 Reflecting on the sessions of each conference, I think there were relatively many sessions on application design and testing this year.
 

@@ -16,7 +16,7 @@ translation_key: asset-transition-simulator
 # Overview
 As a tool for considering personal asset formation, I developed an asset trend simulator, which I would like to introduce.
 
-[asset-trend-simulator](https://asset-trend-simulator.netlify.app/)
+[asset-trend-simulator](http://web.archive.org/web/20250622150217/https://asset-trend-simulator.netlify.app/)
 
 # Background
 I use Money Forward for asset management, but for future asset trend simulation, I had been using a spreadsheet.

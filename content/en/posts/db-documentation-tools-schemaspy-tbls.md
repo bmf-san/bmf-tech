@@ -56,6 +56,6 @@ I want to manage all documentation in Markdown, so I have adopted it for my pers
 
 
 # References
-- [Vegipro - Unable to Output ER Diagram with SchemaSpy](https://www.blog.v41.me/posts/749a3607-aa12-47d6-9441-8f7497602325)
+- ~~Vegipro - Unable to Output ER Diagram with SchemaSpy~~
 - [sys-guard.com - Automatically Creating ER Diagrams with SchemaSpy on Docker
 July 22, 2019 129 views](https://sys-guard.com/post-17119/)

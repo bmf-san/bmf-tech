@@ -143,5 +143,5 @@ class PostTest extends TestCase
 This is just a rough memo for a lightning talk.
 
 # References
-- [Laravel API - Illuminate\Foundation\Testing](https://laravel.com/api/5.7/Illuminate/Foundation/Testing.html)
+- ~~Laravel API - Illuminate\Foundation\Testing~~
 - [github - laravel/browser-kit-testing](https://github.com/laravel/browser-kit-testing#interacting-with-links)

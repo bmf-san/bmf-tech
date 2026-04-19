@@ -244,7 +244,7 @@ MySQLには明示的・暗黙的にロックされるパターンがある。
 - [devsakaso.com - 【MySQL】ロックとデッドロックについて](https://devsakaso.com/mysql-about-lock-and-deadlock/)
 - [nishinatoshiharu.com - 【MySQL】InnoDBの共有ロックと排他ロックの概要と挙動検証](https://nishinatoshiharu.com/db-lock-overview/)
 - [www.wakuwakubank.com - 占有ロック(FOR UPDATE)と共有ロック(LOCK IN SHARE MODE)](https://www.wakuwakubank.com/posts/201-mysql-lock/)
-- [free-engineer.life - MySQL(InnoDB)共有ロックと排他ロックとインテンションロック（テーブルロック）](https://free-engineer.life/mysql-innodb-lock-mode/)
-- [free-engineer.life - MySQL(InnoDB)の行ロック](https://free-engineer.life/mysql-innodb-record-locks/)
+- ~~free-engineer.life - MySQL(InnoDB)共有ロックと排他ロックとインテンションロック（テーブルロック）~~
+- [free-engineer.life - MySQL(InnoDB)の行ロック](http://web.archive.org/web/20250429114556/https://free-engineer.life/mysql-innodb-record-locks/)
 - [github.com - MySQLのInnoDBのロック挙動調査](https://github.com/ichirin2501/doc/blob/master/innodb.md)
 - [github.com - スレッドIDを利用したMySQLのデッドロック解析手法](https://github.com/ichirin2501/doc/blob/master/innodb-deadlock-thread-id.md)

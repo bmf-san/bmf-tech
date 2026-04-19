@@ -60,7 +60,7 @@ Repositories that I referred to for design and implementation.
 - [github - importcjj/trie-go](https://github.com/importcjj/trie-go)
 - [github - julienschmidt/httprouter](https://github.com/julienschmidt/httprouter)
 - [github - gorilla/mux](https://github.com/gorilla/mux)
-- [github - xhallix/go-router](https://github.com/xhallix/go-router/tree/master)
+- ~~github - xhallix/go-router~~
 - [github - gowww/router](https://github.com/gowww/router)
 - [github - go-chi/chi](https://github.com/go-chi/chi)
 - [github - go-ozzo/ozzo-routing](https://github.com/go-ozzo/ozzo-routing)
@@ -68,9 +68,9 @@ Repositories that I referred to for design and implementation.
 ## Others
 Articles referenced during implementation.
 
-- [How to not use an http-router in go](https://blog.merovius.de/2017/06/18/how-not-to-use-an-http-router.html)
-- [Understanding the Atmosphere of Go's HTTP Server](https://himetani.cafe/posts/go-http-server-overview/)
+- ~~How to not use an http-router in go~~
+- ~~Understanding the Atmosphere of Go's HTTP Server~~
 - [HTTP Server and context.Context](https://medium.com/@agatan/http%E3%82%B5%E3%83%BC%E3%83%90%E3%81%A8context-context-7211433d11e6)
-- [Testing with httptest in golang](https://www.write-ahead-log.net/entry/2016/04/18/002638)
+- ~~Testing with httptest in golang~~
 - [Created a Fast URL Router in PHP](https://devpixiv.hatenablog.com/entry/2015/12/13/145741)
 - [Released the Fastest URL Router](https://kuune.org/text/2014/06/12/denco/)

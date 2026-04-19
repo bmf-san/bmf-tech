@@ -166,4 +166,4 @@ Since this can also depend on coding conventions, it's best to consider this as 
 - [mickey24.hatenablog.com - Distinguishing Ruby Block Syntax (do end, {})](https://mickey24.hatenablog.com/entry/20100914/1284475769)
 - [Understanding Ruby Blocks Properly](https://zenn.dev/hayaokimura/articles/ruby-block-reintroduction)
 - [active.nikkeibp.co.jp - Yukihiro Matsumoto, Ruby Developer, Deeply Explains the Concept of Block Syntax](https://active.nikkeibp.co.jp/atcl/act/19/00484/090100004/)
-- [musclecoding.com - A Detailed Explanation of Ruby Blocks for Beginners! What are Block Variables?](https://musclecoding.com/ruby-block/)
+- ~~musclecoding.com - A Detailed Explanation of Ruby Blocks for Beginners! What are Block Variables?~~

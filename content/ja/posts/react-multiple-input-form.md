@@ -14,7 +14,7 @@ translation_key: react-multiple-input-form
 
 Reactでフォームを実装するのはちょっと癖があります。
 
-まずReactのフォームにはcontrolled formとuncontrolled formという２つのパターンがあることを先に理解しておくと良いかもしれません。参考：[React ドキュメント](https://facebook.github.io/react/docs/forms-ja-JP.html)
+まずReactのフォームにはcontrolled formとuncontrolled formという２つのパターンがあることを先に理解しておくと良いかもしれません。参考：~~React ドキュメント~~
 
 私はまだ理解が及んでいないところも多々ありますが、Reactの実装例が少ないので少しでも刺激になればという感じで記事を公開したいと思います。
 （もっと楽なやり方とかこうした方がいいといった指摘があると幸いです。）

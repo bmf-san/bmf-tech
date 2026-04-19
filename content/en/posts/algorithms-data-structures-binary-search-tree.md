@@ -269,4 +269,4 @@ func main() {
 - Insertion and search are relatively easy, but deletion is complex.
 
 # References
-- [Algorithms and Data Structures](http://www-ikn.ist.hokudai.ac.jp/~arim/pub/algo/algo6.pdf)
+- ~~Algorithms and Data Structures~~

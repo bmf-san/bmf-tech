@@ -75,7 +75,7 @@ Be cautious as some blog posts are old and not updated.
 - [Summary of Improper Implementations of OAuth & OpenID Connect](https://qiita.com/TakahikoKawasaki/items/efbbd2c5875577c911a3)
 - [Complete Understanding of Authlete's OAuth 2.0 / OIDC Implementation Knowledge](https://ritou.hatenablog.com/entry/2018/10/02/013902)
 - [New Architecture for OAuth 2.0 / OIDC Implementation](https://qiita.com/TakahikoKawasaki/items/b2a4fc39e0c1a1949aab)
-- [History of ID Federation and Overview of OpenID-Connect](https://speakerdeck.com/auth0japan/idlian-xi-falseli-shi-toopenid-connectgai-yao)
+- ~~History of ID Federation and Overview of OpenID-Connect~~
 - [Introduction to OpenID Connect ~Trends in ID Federation for Consumers~](https://www.slideshare.net/kura_lab/openid-connect-id)
 - [Full Explanation of OpenID Connect Flows](https://qiita.com/TakahikoKawasaki/items/4ee9b55db9f7ef352b47)
 - [The Most Understandable Explanation of OpenID Connect](https://qiita.com/TakahikoKawasaki/items/498ca08bbfcc341691fe)
@@ -91,7 +91,7 @@ Be cautious as some blog posts are old and not updated.
 - [openid.net/wg/](https://openid.net/wg/)
 
 ## Videos
-- [Recording and Material Download of "OAuth & OIDC Study Session"](https://www.authlete.com/ja/news/20200703_oauth_oidc_study/)
+- ~~Recording and Material Download of "OAuth & OIDC Study Session"~~
 
 ## Study Sessions
 - [conpass.com - Authlete, Inc.](https://authlete.connpass.com/)

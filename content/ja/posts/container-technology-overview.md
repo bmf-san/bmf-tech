@@ -121,7 +121,7 @@ Makuake LT Party（社内LT大会）にてLTをした。
 - [gihyo.jp - LXCで学ぶコンテナ入門 －軽量仮想化環境を実現する技術](https://gihyo.jp/admin/serial/01/linux_containers/0001)
 - [ゆううきブログ - 自作Linuxコンテナの時代](https://blog.yuuk.io/entry/diy-container)
 - [Think IT - コンテナ技術の基礎知識](https://thinkit.co.jp/story/2015/08/11/6285)
-- [Linux Containers - LXDとは？](https://linuxcontainers.org/ja/lxd/introduction/)
+- ~~Linux Containers - LXDとは？~~
 - [Hewlett Packard Enterprise - Dockerコンテナと仮想化の違いとは？SynergyとDevOps   ](https://community.hpe.com/t5/Enterprise-Topics/Docker%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%81%A8%E4%BB%AE%E6%83%B3%E5%8C%96%E3%81%AE%E9%81%95%E3%81%84%E3%81%A8%E3%81%AF-Synergy%E3%81%A8DevOps/ba-p/6980068?profile.language=ja#.XD6Zks8zZTY)
 - [www.publickey1.jp - コンテナランタイムの仕組みと、Firecracker、gVisor、Unikernelが注目されている理由。 Container Runtime Meetup #2
 ](https://www.publickey1.jp/blog/20/firecrackergvisorunikernel_container_runtime_meetup_2.html)
@@ -133,7 +133,7 @@ Makuake LT Party（社内LT大会）にてLTをした。
 - [Docker一強の終焉にあたり、押さえるべきContainer事情](https://zenn.dev/ttnt_1013/articles/f36e251a0cd24e)
 - [gkuga.hatenablog.com - OCI Runtime Specificationを読んだので概要を書く](https://gkuga.hatenablog.com/entry/2020/01/24/032122)
 - [yohgami.hateblo.jp - chrootとunshareを使い、シェル上でコマンド7つで簡易コンテナ](https://yohgami.hateblo.jp/entry/20161215/1481755818)
-- [コンテナ技術入門 - 仮想化との違いを知り、要素技術を触って学ぼう](https://eh-career.com/engineerhub/entry/2019/02/05/103000)
+- ~~コンテナ技術入門 - 仮想化との違いを知り、要素技術を触って学ぼう~~
 - [dockerコマンドを使わずにコンテナを作る - 1](https://zenn.dev/chemimotty/articles/51788231854a5e)
 - [kaminashi-developer.hatenablog.jp - 【Go言語】自作コンテナ沼。スクラッチでミニDockerを作ろう
 ](https://kaminashi-developer.hatenablog.jp/entry/dive-into-swamp-container-scratch)

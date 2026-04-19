@@ -110,7 +110,7 @@ Ex. /etc/httpd/conf.d/hoge.com.conf
 # Nginx側でリバースプロキシの設定をする
 
 
-[ApacheとNginxを共存して徐々に移行する](http://concrete5.tomo.ac/developer/nginx%E3%81%A7concrete5/apache%E3%81%A8nginx%E3%82%92%E5%85%B1%E5%AD%98%E3%81%97%E3%81%A6%E5%BE%90%E3%80%85%E3%81%AB%E7%A7%BB%E8%A1%8C%E3%81%99%E3%82%8B)を参考にさせていただきました。
+[ApacheとNginxを共存して徐々に移行する](http://web.archive.org/web/20150917084807/http://concrete5.tomo.ac:80/developer/nginx%E3%81%A7concrete5/apache%E3%81%A8nginx%E3%82%92%E5%85%B1%E5%AD%98%E3%81%97%E3%81%A6%E5%BE%90%E3%80%85%E3%81%AB%E7%A7%BB%E8%A1%8C%E3%81%99%E3%82%8B)を参考にさせていただきました。
 
 
 /etc/nginx/conf.d/reverse_proxy.conf

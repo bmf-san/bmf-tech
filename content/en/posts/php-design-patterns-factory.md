@@ -265,7 +265,7 @@ In that it defines the interface for the factory, I think it can be interpreted 
 I feel like I have understood the nuances of each pattern. If I knew a bit more about the essence of object-oriented programming, I could provide a deeper interpretation.
 
 # References
-- [DesignPatternsPHP](https://designpatternsphp.readthedocs.io/en/latest/README.html)
+- ~~DesignPatternsPHP~~
 - [PHP The Right Way = Design Patterns](https://laravel-taiwan.github.io/php-the-right-way/pages/Design-Patterns.html)
 - [Tech Racho - [Preserved Edition] An Explanation of Design Patterns That Humans Can Read and Understand #1: Creation Patterns (Translation)](https://techracho.bpsinc.jp/hachi8833/2017_10_02/46064)
 - [Object-Oriented Thinking - Factory Pattern](https://think-on-object.blogspot.com/2011/11/factoryfactory-methodabstract-factory.html)

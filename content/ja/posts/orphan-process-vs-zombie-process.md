@@ -97,7 +97,7 @@ services:
 - [Hibariya - プロセスをforkするときのこと](https://note.hibariya.org/articles/20120326/a0.html)
 - [tutorialspoint.com - zombie-and-orphan-processes-in-linux](https://www.tutorialspoint.com/zombie-and-orphan-processes-in-linux)
 - [日経XTECH - ゾンビ・プロセス](https://xtech.nikkei.com/it/article/Keyword/20070727/278487/)
-- [geekride.com - Orphan Process](http://www.geekride.com/orphan-zombie-process/)
+- [geekride.com - Orphan Process](http://web.archive.org/web/20211025203533/http://www.geekride.com/orphan-zombie-process/)
 - [makiuchi-d.gihub.io - Goで子プロセスを確実にKillする方法](http://makiuchi-d.github.io/2020/05/10/go-kill-child-process.ja.html)
   - Goで孤児プロセスを生むコードの再現がある
 

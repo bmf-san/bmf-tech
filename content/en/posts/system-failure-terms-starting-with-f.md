@@ -47,7 +47,7 @@ Creating a mechanism that prevents the spread of impact even if a failure occurs
 # Thoughts
 There was an article with similar sentiments.
 
-[zenn.dev - Confusing Technical Terms: Fail〇〇, Fault〇〇](https://zenn.dev/ryoatsuta/articles/eb51b995e81ee7)
+[zenn.dev - Confusing Technical Terms: Fail〇〇, Fault〇〇](http://web.archive.org/web/20210514020403/https://zenn.dev/ryoatsuta/articles/eb51b995e81ee7)
 [qiita.com - Differences between Fault-tolerant, Fail-soft, and others](https://qiita.com/nanatsu/items/e900841a9f678fa07296)
 
 # References

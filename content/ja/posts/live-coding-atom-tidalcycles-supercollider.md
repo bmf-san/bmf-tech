@@ -44,7 +44,7 @@ cabal install tidal
 [Atom - tidalcycles](https://atom.io/packages/tidalcycles)をAtomにインストール。
 
 # SuperColliderをインストールする
-[SuperCollider](https://supercollider.github.io/download)からCurrent Versionをインストール。
+[SuperCollider](http://web.archive.org/web/20211203165527/https://supercollider.github.io/download)からCurrent Versionをインストール。
 
 インストールが完了したら、SuperColliderを起動して以下のコマンドを実行する。（command+enter）
 

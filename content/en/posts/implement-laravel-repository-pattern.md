@@ -166,5 +166,5 @@ Both the model and the controller have become cleaner. I would like to take this
 
 # References
 * [Laravel4.2 Repository Pattern](http://tech.aainc.co.jp/archives/10227)
-* [Intermediate Task List Tutorial for Laravel5.1](http://laravel-room.com/tutorial-intermediate-4)
+* ~~Intermediate Task List Tutorial for Laravel5.1~~
 * [Application Design in Laravel to Avoid Regrets](https://speakerdeck.com/localdisk/laravelniokeruhou-hui-sinaitamefalseapurikesiyonshe-ji)

@@ -73,7 +73,7 @@ If the design is wrong, Spanner's scalability cannot be utilized, and sufficient
 - [Overview and Key Design Points of Cloud Spanner](https://qiita.com/pa_pa_geno/items/c5fc5ea0d5daf415080d#%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%AA%E3%83%BC%E3%83%96)
 - [High-Level Architecture Explanation of Cloud Spanner](https://medium.com/google-cloud-jp/cloud-spanner-%E3%81%AE%E3%83%8F%E3%82%A4%E3%83%AC%E3%83%99%E3%83%AB%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3%E8%A7%A3%E8%AA%AC-fee62c17f7ed)
 - [Behind the Scenes of Colossus: Google's Scalable Storage System](https://cloud.google.com/blog/ja/products/storage-data-transfer/a-peek-behind-colossus-googles-file-system)
-- [Explaining Spanner Turned into a Lecture](https://cloudpack.media/52502)
+- [Explaining Spanner Turned into a Lecture](http://web.archive.org/web/20220701112241/https://cloudpack.media/52502)
 - [Current State of NewSQL as of 2020](https://qiita.com/tzkoba/items/5316c6eac66510233115)
 - [Understanding Cloud Spanner's Multi-Region Configuration](https://cloud.google.com/blog/ja/topics/developers-practitioners/demystifying-cloud-spanner-multi-region-configurations)
 - [Days of Battle with Spanner at Merpay](https://engineering.mercari.com/blog/entry/2019-04-18-090000/)

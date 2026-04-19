@@ -147,5 +147,5 @@ class Bot
 
 # 参考
 - [PHP - オブジェクト インターフェイス](http://php.net/manual/ja/language.oop5.interfaces.php)
-- [PHPにはインターフェイスというものがありますよ、という話](http://blog.anatoo.jp/entry/20080517/1211029059)
+- ~~PHPにはインターフェイスというものがありますよ、という話~~
 

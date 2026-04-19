@@ -175,5 +175,5 @@ Ans. 100010110110
 ```
 
 # References
-- [Radix Conversion: Methods for Bidirectional Conversion Between Decimal, Binary, and Hexadecimal](http://share-answers.com/category1/entry4.html)
+- [Radix Conversion: Methods for Bidirectional Conversion Between Decimal, Binary, and Hexadecimal](http://web.archive.org/web/20190122080312/http://share-answers.com/category1/entry4.html)
 - [Surprisingly Easy Once You Know the Trick! How to Convert Binary to "Decimal", "Octal", "Hexadecimal"](http://challengdirector.hatenablog.com/entry/2017/06/25/154349)

@@ -44,6 +44,6 @@ yum -y install --enablerepo=remi-php70 php php-mbstring php-pear php-fpm php-mcr
 ```
 
 Reference
-* [Updated from PHP5.6 to PHP7](https://monochrome-design.jp/126)
+* ~~Updated from PHP5.6 to PHP7~~
 
 After switching to PHP7, it might just be my imagination, but it feels faster. No, the perceived speed has clearly changed...

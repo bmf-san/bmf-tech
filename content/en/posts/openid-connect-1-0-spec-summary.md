@@ -424,5 +424,5 @@ Authorization: Bearer SlAV32hkKG
 ## References
 
 - [OpenID Connect Core 1.0](https://openid-foundation-japan.github.io/openid-connect-core-1_0.ja.html)
-- [OpenID Connect Discovery 1.0](https://openid-foundation-japan.github.io/openid-connect-discovery-1_0.ja.html)
-- [OpenID Connect Dynamic Client Registration 1.0](https://openid-foundation-japan.github.io/openid-connect-registration-1_0.ja.html)
+- ~~OpenID Connect Discovery 1.0~~
+- ~~OpenID Connect Dynamic Client Registration 1.0~~

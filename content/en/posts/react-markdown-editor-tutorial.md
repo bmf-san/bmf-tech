@@ -142,7 +142,7 @@ If you want to highlight the source code, you can customize marked using [isagal
 - [super - MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/super#Description)
 
 # Repository
-The source code is available at [bmf-san/til/javascript/md-editor/ - github](https://github.com/bmf-san/til/tree/master/javascript/md-editor).
+The source code is available at ~~bmf-san/til/javascript/md-editor/ - github~~.
 
 # Thoughts
 I like React because it allows coding in a way that is close to raw JS, making it less likely to lock you into knowledge of the framework.

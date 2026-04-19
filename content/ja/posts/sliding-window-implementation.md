@@ -107,4 +107,4 @@ SlidingWindow関数の処理の流れとしてはこんな感じ。
 
 # 参考
 - [www.techinterviewhandbook.org - Array cheatsheet for coding interviews](https://www.techinterviewhandbook.org/algorithms/array/)
-- [itnext.io - Sliding Window Algorithm Technique](https://itnext.io/sliding-window-algorithm-technique-6001d5fbe8b3)
+- ~~itnext.io - Sliding Window Algorithm Technique~~

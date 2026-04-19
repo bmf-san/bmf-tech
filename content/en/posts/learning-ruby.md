@@ -54,7 +54,7 @@ Read through articles related to tips.
 - [Some Ruby Tips](https://gist.github.com/kyohei-shimada/9aa61358abdc10e38bfa)
 - [Ruby Competitive Programming Tips (Basics, Traps, Speedup 108 2.7x2.7)](https://zenn.dev/universato/articles/20201210-z-ruby)
   - The content is substantial.
-- [Ruby's Unique Practices](https://norix.tokyo/ruby-tips/16/#outline__4)
+- [Ruby's Unique Practices](http://web.archive.org/web/20250814105230/https://norix.tokyo/ruby-tips/16/)
 - [[Ruby, Rails] Tips for Refactoring (Beginner)](https://qiita.com/NaokiKotani/items/36283ca922d9f96c4a11)
 - [Summary of Ruby Argument Types](https://qiita.com/pink_bangbi/items/f85456db344b468ef758#%E8%AB%B8%E6%B3%A8%E6%84%8F)
   - There are many types of arguments!

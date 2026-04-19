@@ -13,7 +13,7 @@ tags:
 translation_key: laravel-jp-conference-participation
 ---
 
-[Laravel JP Conference](https://conference2019.laravel.jp/) core staff and LT speaker.
+[Laravel JP Conference](http://web.archive.org/web/20260117100821/https://conference2019.laravel.jp/) core staff and LT speaker.
 
 # Participating as Core Staff
 Usually, I attend conferences as a participant, but this was an opportunity to contribute, even in a small way, to the PHP community, and it was a conference for a framework I love, so I participated as core staff.  

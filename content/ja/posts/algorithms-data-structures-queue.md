@@ -63,6 +63,6 @@ func (s *Queue) dequeue() {
   - ![Image from iOS](/assets/images/posts/algorithms-data-structures-queue/69003840-2b7d0700-094c-11ea-996e-c116235a1dbe.jpg)
 
 # 参考
-- [flaviocopes.com - Go Data Structures: Queue](https://flaviocopes.com/golang-data-structure-queue/)
+- [flaviocopes.com - Go Data Structures: Queue](http://web.archive.org/web/20231207171516/https://flaviocopes.com/golang-data-structure-queue)
 - [Wikipedia - キュー](https://ja.wikipedia.org/wiki/%E3%82%AD%E3%83%A5%E3%83%BC_(%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%82%BF))
 

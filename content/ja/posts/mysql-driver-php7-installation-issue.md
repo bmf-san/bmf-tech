@@ -44,7 +44,7 @@ yum -y install --enablerepo=remi-php70 php php-mbstring php-pear php-fpm php-mcr
 ```
 
 参考
-* [PHP5.6からPHP7にアップデートしました](https://monochrome-design.jp/126)
+* ~~PHP5.6からPHP7にアップデートしました~~
 
 php7にしたら気の所為かもしれないけど早くなった気がします。いやあきらかに体感速度が変わったような。。
 

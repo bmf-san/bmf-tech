@@ -117,9 +117,9 @@ export function createCategory(props) {
 
 
 # 参考
-+ [Laravel 5.1 - easily enable CORS](http://en.vedovelli.com.br/2015/web-development/Laravel-5-1-enable-CORS/)
++ [Laravel 5.1 - easily enable CORS](http://web.archive.org/web/20180826221406/http://en.vedovelli.com.br:80/2015/web-development/Laravel-5-1-enable-CORS/)
 
-+ [cors - Laravel5 + AngularJS で作るSPA](http://qiita.com/fluke8259/items/c884bada22ccd286cf48)
++ ~~cors - Laravel5 + AngularJS で作るSPA~~
 
 + [CORS(Cross-Origin Resource Sharing)について整理してみた
 cors-004](http://dev.classmethod.jp/etc/about-cors/)

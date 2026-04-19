@@ -174,9 +174,9 @@ func main() {
 
 # 参考
 - [golang.org - Interface types](https://golang.org/ref/spec#Interface_types)
-- [Go言語 - 空インターフェースと型アサーション](https://blog.y-yuki.net/entry/2017/05/08/000000)
-- [はじめてのGo言語 - インタフェース](http://cuto.unirita.co.jp/gostudy/post/interface/)
-- [お気楽 Go 言語プログラミング入門](http://www.geocities.jp/m_hiroi/golang/abcgo09.html)
+- [Go言語 - 空インターフェースと型アサーション](http://web.archive.org/web/20240624191918/https://blog.y-yuki.net/entry/2017/05/08/000000)
+- [はじめてのGo言語 - インタフェース](http://web.archive.org/web/20200611051104/http://cuto.unirita.co.jp:80/gostudy/post/interface/)
+- [お気楽 Go 言語プログラミング入門](http://web.archive.org/web/20190331142501/http://www.geocities.jp/m_hiroi/golang/abcgo09.html)
 - [
 型のキャストと、型アサーションによる型変換](https://maku77.github.io/hugo/go/cast.html)
 - [Go 言語のインタフェースの扱いを理解する](http://maku77.github.io/hugo/go/interface.html)

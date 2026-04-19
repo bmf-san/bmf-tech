@@ -31,7 +31,7 @@ gRPCとProtocol Buffersについて改めておさらいしておきたかった
   - gRPCサーバーのロードバランシングについて
 - [hakobe932.hatenablog.com - gRPCのロードバランシング](https://hakobe932.hatenablog.com/entry/2018/04/11/123000)
   - gRPCサーバーのロードバランシングについて解説
-- [deeeet.com - Kubernetes上でgRPCサービスを動かす](https://deeeet.com/writing/2018/03/30/kubernetes-grpc/)
+- ~~deeeet.com - Kubernetes上でgRPCサービスを動かす~~
   - K8S上でgRPCを扱う上での観点
 - [scrapbox.io - gRPCのベストプラクティス](https://scrapbox.io/dojineko/gRPC%E3%81%AE%E3%83%99%E3%82%B9%E3%83%88%E3%83%97%E3%83%A9%E3%82%AF%E3%83%86%E3%82%A3%E3%82%B9)
   - gRPCおよびProtocol Buffersのベストプラクティス

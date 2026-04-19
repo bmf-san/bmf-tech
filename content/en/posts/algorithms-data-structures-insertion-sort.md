@@ -60,4 +60,4 @@ func main() {
 - Simply processes elements in order and swaps them.
 
 # References
-- [Algorithms and Data Structures](http://www-ikn.ist.hokudai.ac.jp/~arim/pub/algo/algo6.pdf)
+- ~~Algorithms and Data Structures~~

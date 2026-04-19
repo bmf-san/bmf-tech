@@ -127,5 +127,5 @@ It seems that when you run `vagrant destroy` and then `vagrant up` to rebuild, t
 If one day you suddenly find that provisioning is not working, it might be a good idea to check the SSH connection information.
 
 # References
-+ [Ansible Documentation](http://docs.ansible.com/ansible/intro_installation.html)
-+ [Getting Started with Ansible on CentOS 7](http://centos.sabakan.red/entry/2015/07/01/140000)
++ ~~Ansible Documentation~~
++ ~~Getting Started with Ansible on CentOS 7~~

@@ -45,11 +45,11 @@ books:
 
 ## 手短に概要を理解するための参考リンク
 - [ja.wikipedia.org - ジョブ理論](https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A7%E3%83%96%E7%90%86%E8%AB%96)
-- [cs2.toray.co.jp - ジョブ理論概](https://cs2.toray.co.jp/news/tbr/newsrrs01.nsf/0/285AD02B86FEBEF249258329002CDAFF/$FILE/K1810_035_040.pdf)
+- ~~cs2.toray.co.jp - ジョブ理論概~~
 - [www.indee-jp.com - ジョブ理論とは、これまで謎だった「ニーズ」を紐解く体系](https://www.indee-jp.com/jobs-to-be-done/)
 - [www.peaks-media.com - ジョブ理論とは？フレームワークと事例を交えてわかりやすく解説](https://www.peaks-media.com/910/)
 - [www.sbbit.jp - 『ジョブ理論』をやさしく解説、イノベーションには「成功のパターン」がある](https://www.sbbit.jp/article/cont1/38180)
-- [www.crescent-acc.com - ジョブ理論 – 顧客自身すら知らない、本当に欲しいモノとは](https://www.crescent-acc.com/post/jobs-to-be-done)
+- ~~www.crescent-acc.com - ジョブ理論 – 顧客自身すら知らない、本当に欲しいモノとは~~
 - [ds-note.net - 10分でわかる『ジョブ理論』まとめ](https://ds-note.net/books/jobs-theory/#toc10)
 
 ## 所感
