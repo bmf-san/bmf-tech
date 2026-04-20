@@ -41,5 +41,6 @@ jobs:
             --exclude '^https?://web\.archive\.org/'
             --exclude '^https?://region-name-project-id\.cloudfunctions\.net/'
             --exclude '^https?://www\.cs\.cmu\.edu/'
+            --exclude '^https?://wa3\.i-3-i\.info/'
             'public/**/*.html'
           fail: true
