@@ -22,7 +22,7 @@ tags:
 
 # Bluetooth対応イヤホン
 
-[Mpow Bluetooth イヤホン](https://www.amazon.co.jp/gp/product/B07289Q3F1/ref=oh_aui_detailpage_o07_s00?ie=UTF8&psc=1:title:title])
+[Mpow Bluetooth イヤホン](https://www.amazon.co.jp/gp/product/B07289Q3F1/)
 
 
 Bluetoothに対応したイヤホンです。

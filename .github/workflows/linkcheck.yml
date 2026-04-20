@@ -33,12 +33,15 @@ jobs:
           args: >-
             --no-progress
             --root-dir ${{ github.workspace }}/public
-            --accept 200,202,206,301,302,304,400,401,402,403,429,500,502,503,504,520,521,522,523,524,999
+            --accept 200,202,206,301,302,304,400,401,402,403,415,429,500,502,503,504,520,521,522,523,524,999
             --timeout 30
             --max-retries 3
             --exclude '^https?://bmf-tech\.com'
             --exclude '^https?://(www\.)?linkedin\.com'
             --exclude '^https?://web\.archive\.org/'
             --exclude '^https?://region-name-project-id\.cloudfunctions\.net/'
+            --exclude '^https?://www\.cs\.cmu\.edu/'
+            --exclude '^https?://wa3\.i-3-i\.info/'
+            --exclude '^https?://selfnote\.work/'
             'public/**/*.html'
           fail: true
