@@ -23,6 +23,7 @@ listing_slugs:
   - writing-architecture-documentation
   - bounded-context-explanation
   - cohesion-coupling
+  - abstraction-trap-in-architecture
   - design-shelf-life-considerations
   - access-control-patterns-using-opa
   - microservices-access-control-opa
