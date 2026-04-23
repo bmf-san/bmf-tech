@@ -47,7 +47,7 @@ It is fine, even desirable, to share technical concerns aggressively — but **d
 
 Here is the point this article wants to emphasize most: **sharing logic that belongs to a specific domain is a major architectural trap**.
 
-It is common for the same model — "Customer", "Order", "Price" — to appear across several subsystems, looking structurally similar. That resemblance tempts us into merging them into a common model or a common service. In most cases, that collapses over time.
+It is common for the same model — "Customer", "Order", "Price" — to appear across several subsystems, looking structurally similar. That resemblance tempts us into merging them into a common model or a common service. More often than not, that tends to create friction over time.
 
 Borrowing DDD's vocabulary: even if the word is identical, **when the Bounded Context differs, it is a different thing**. In the sales domain, "Customer" may be an entity with a purchase history and a shipping address. In the credit domain, "Customer" is an entity with a credit score and a review status. In marketing, "Customer" carries segments and campaign responses. Only the name and identifier are the same. The invariants, the lifecycle, and the reasons to change all differ.
 
