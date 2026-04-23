@@ -6,7 +6,12 @@
         "max": 120
       },
       "max-comma": false,
-      "no-mix-dearu-desumasu": true,
+      "no-mix-dearu-desumasu": {
+        "preferInHeader": "",
+        "preferInBody": "である",
+        "preferInList": "である",
+        "strict": false
+      },
       "ja-no-mixed-period": true,
       "no-double-negative-ja": true,
       "no-dropping-the-ra": true,
