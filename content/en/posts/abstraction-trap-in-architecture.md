@@ -21,7 +21,7 @@ In architecture design, some forms of sharing are perfectly safe to pursue, whil
 
 Note that this is not a microservices-specific discussion. The real question is not about **physical boundaries (service split)** but about **logical boundaries (Bounded Contexts)**. The same trap occurs in modular monoliths and package-level decomposition just as readily.
 
-# Things That Are Safe to Share — Technical Concerns
+# Technical Concerns Are Safe to Share
 
 There is an area where sharing works relatively well: **technical concerns** such as logging, metrics, distributed tracing, HTTP infrastructure, error notification, and configuration loading.
 
@@ -33,7 +33,7 @@ These share some useful properties:
 
 Extracting them as cross-cutting concerns into a shared library or platform service — and letting them evolve independently — is generally reasonable. Tolerating too much duplication here tends to hurt overall maintainability.
 
-# The Gray Zone — When Domain Leaks Into Technical Concerns
+# When Domain Leaks Into Technical Concerns
 
 That said, "technical concerns" is a coarse label. If we fail to separate the truly technical parts from the parts where domain knowledge has quietly leaked in, we fall into a different kind of trap.
 
@@ -43,7 +43,7 @@ Logging has the same pattern. "Which fields count as PII and must be masked?" "W
 
 It is fine, even desirable, to share technical concerns aggressively — but **do not miss the domain judgment hiding inside them**.
 
-# Things That Should Not Be Shared — Domain Logic
+# Domain Logic Should Not Be Shared
 
 Here is the point this article wants to emphasize most: **sharing logic that belongs to a specific domain is a major architectural trap**.
 
@@ -70,7 +70,7 @@ When deciding whether to share, the following questions are useful:
 
 Structural similarity in code is not, by itself, a valid reason to share. The real question is whether that similarity is **incidental** or **essential**.
 
-# A Caveat — Separation Is Not Always the Right Call
+# Separation Is Not Always the Right Call
 
 Everything above argues against reckless sharing of domain logic, but that is not the same as saying things must always be split.
 
