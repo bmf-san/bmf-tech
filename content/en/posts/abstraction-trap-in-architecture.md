@@ -57,7 +57,7 @@ When domain logic is forced into a shared abstraction, several forces push back:
 
 - **Conflicting invariants across contexts**: An attribute that must be present in one context is irrelevant in another. A state transition that is permitted in one is forbidden in another. A unified model forces you to either obey the strictest constraint everywhere, or patch everything with flags and branches.
 - **Change velocity bottleneck**: A shared component is dragged down to the cadence of its most cautious consumer. Domains that could have evolved independently start blocking each other.
-- **Lost ownership**: Shared-kernel-style domain code belongs to no team completely. Everyone can touch it; no one is clearly accountable. By Conway's Law, code that crosses organizational boundaries tends to generate friction.
+- **Lost ownership**: Shared-kernel-style domain code (the DDD pattern where multiple contexts jointly own the same domain model) belongs to no team completely. Everyone can touch it; no one is clearly accountable. By Conway's Law, code that crosses organizational boundaries tends to generate friction.
 - **Cost of unwinding**: Once "the shared domain model" has taken root, a great deal of code depends on it. Later attempts to re-split it along contexts turn into an enormous mesh of data migration, API compatibility, testing, and cross-team negotiation.
 
 # Questions That Help Separate Safe Sharing From Dangerous Sharing
