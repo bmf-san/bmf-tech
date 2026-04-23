@@ -17,7 +17,7 @@ translation_key: abstraction-trap-in-architecture
 
 In architecture design, some forms of sharing are perfectly safe to pursue, while others quietly turn into major traps.
 
-**Technical concerns** — logging, monitoring, authentication infrastructure, and the like — are usually worth sharing aggressively. On the other hand, sharing **logic that belongs to a specific domain**, just because it "looks similar", tends to create a trap you cannot pull apart later. This article examines that asymmetry through the lens of Bounded Contexts.
+**Technical concerns** — logging, monitoring, authentication infrastructure, and the like — are usually worth sharing aggressively. On the other hand, sharing **logic that belongs to a specific domain**, just because it "looks similar", tends to create a trap that is hard to pull apart later. This article examines that asymmetry through the lens of Bounded Contexts.
 
 Note that this is not a microservices-specific discussion. The real question is not about **physical boundaries (service split)** but about **logical boundaries (Bounded Contexts)**. The same trap occurs in modular monoliths and package-level decomposition just as readily.
 
@@ -57,7 +57,7 @@ When domain logic is forced into a shared abstraction, several forces push back:
 
 - **Conflicting invariants across contexts**: An attribute that must be present in one context is irrelevant in another. A state transition that is permitted in one is forbidden in another. A unified model forces you to either obey the strictest constraint everywhere, or patch everything with flags and branches.
 - **Change velocity bottleneck**: A shared component is dragged down to the cadence of its most cautious consumer. Domains that could have evolved independently start blocking each other.
-- **Lost ownership**: Shared-kernel-style domain code (the DDD pattern where multiple contexts jointly own the same domain model) belongs to no team completely. Everyone can touch it; no one is clearly accountable. By Conway's Law, code that crosses organizational boundaries tends to generate friction.
+- **Lost ownership**: Shared-kernel-style domain code (the DDD pattern where multiple contexts jointly own the same domain model) belongs to no team completely. Everyone can touch it; accountability tends to blur. By Conway's Law, code that crosses organizational boundaries tends to generate friction.
 - **Cost of unwinding**: Once "the shared domain model" has taken root, a great deal of code depends on it. Later attempts to re-split it along contexts turn into an enormous mesh of data migration, API compatibility, testing, and cross-team negotiation.
 
 # Questions That Help Separate Safe Sharing From Dangerous Sharing
@@ -66,7 +66,7 @@ When deciding whether to share, the following questions are useful:
 
 - **Where does the reason to change come from?** Does change originate on the platform side (library, operations, security), or on the domain side (business rules, trade practices)?
 - **Is ownership aligned?** Is the code owned, and are change decisions made, by a single team and a single context?
-- **Could the contexts diverge in the future?** Even if they look identical today, is it plausible that evolving business requirements will split them apart?
+- **Could the contexts diverge in the future?** Even if they look identical today, if evolving business requirements might split them apart, sharing is likely to become a future constraint.
 
 Structural similarity in code is not, by itself, a valid reason to share. The real question is whether that similarity is **incidental** or **essential**.
 
@@ -86,4 +86,4 @@ Sharing looks like a purely technical decision, but it is not. It carries judgme
 - Structural similarity in domain code is not enough justification to share. If the Bounded Contexts differ, treat them as different things
 - The real axis of judgment is not "does the code look similar?" but "**are the reasons to change and the domain context the same?**"
 
-Sharing is not always a virtue. Careless sharing generates the quietest and deepest form of architectural debt.
+Sharing is not always a virtue. Careless sharing tends to generate a quiet, deep form of architectural debt.
