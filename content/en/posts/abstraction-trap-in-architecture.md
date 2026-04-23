@@ -31,7 +31,7 @@ These share some useful properties:
 - Their change drivers live on the platform side (library upgrades, SRE requirements, security patches)
 - Even when used from many business contexts, their behavior rarely needs to differ per context
 
-Extracting them as cross-cutting concerns into a shared library or platform service — and letting them evolve independently — is generally reasonable. In fact, tolerating excessive duplication here tends to cause more harm than good.
+Extracting them as cross-cutting concerns into a shared library or platform service — and letting them evolve independently — is generally reasonable. Tolerating too much duplication here tends to hurt overall maintainability.
 
 # The Gray Zone — When Domain Leaks Into Technical Concerns
 
