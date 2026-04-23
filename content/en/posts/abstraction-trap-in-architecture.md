@@ -15,9 +15,9 @@ translation_key: abstraction-trap-in-architecture
 
 # Overview
 
-In software development, "sharing" and "deduplication" are treated almost as self-evident virtues. Reduce repetition, improve maintainability, confine change to a single place — relentless application of the DRY principle is widely regarded as a basic engineering habit.
+In architecture design, some forms of sharing are perfectly safe to pursue, while others quietly turn into major traps.
 
-However, once we look at deduplication through the lens of **architecture**, this intuition becomes dangerous. There are things that should be shared and things that should not, and misreading that line can turn a codebase that looked clean for a while into a pile of debt that is impossible to untangle years later.
+**Technical concerns** — logging, monitoring, authentication infrastructure, and the like — are usually worth sharing aggressively. On the other hand, sharing **logic that belongs to a specific domain**, just because it "looks similar", tends to create a trap you cannot pull apart later. This article examines that asymmetry through the lens of Bounded Contexts.
 
 Note that this is not a microservices-specific discussion. The real question is not about **physical boundaries (service split)** but about **logical boundaries (Bounded Contexts)**. The same trap occurs in modular monoliths and package-level decomposition just as readily.
 
