@@ -1,6 +1,6 @@
 ---
 title: The Abstraction Trap in Architecture Design
-description: Why deduplicating domain logic is architecturally dangerous, while technical concerns can be safely shared — with nuance around authorization and PII-sensitive logging.
+description: Why sharing domain logic can quietly turn into architectural debt, while technical concerns can safely be shared — with nuance around authorization and PII-sensitive logging.
 slug: abstraction-trap-in-architecture
 date: 2026-04-23T00:00:00Z
 author: bmf-san
@@ -13,77 +13,124 @@ translation_key: abstraction-trap-in-architecture
 ---
 
 
-# Overview
+## Introduction
 
-In architecture design, some forms of sharing are perfectly safe to pursue, while others quietly turn into major traps.
+Sharing in architecture design has sharply different effects depending on what we share. Sharing helps reduce duplication and improves maintainability, yet bundling things together does not always pay off. Sharing domain logic in particular can turn a clean-looking codebase into a pile of debt that resists untangling years later.
 
-**Technical concerns** — logging, monitoring, authentication infrastructure, and the like — are usually worth sharing aggressively. On the other hand, sharing **logic that belongs to a specific domain**, just because it "looks similar", tends to create a trap that is hard to pull apart later. This article examines that asymmetry through the lens of Bounded Contexts.
+This article organizes the asymmetry between "safe to share" and "dangerous to share" through the lens of Bounded Contexts.
 
-Note that this is not a microservices-specific discussion. The real question is not about **physical boundaries (service split)** but about **logical boundaries (Bounded Contexts)**. The same trap occurs in modular monoliths and package-level decomposition just as readily.
+The discussion here does not focus on microservices. The real question lives at the logical boundary, not the physical one. The same trap appears in modular monoliths and package-level decomposition.
 
-# Technical Concerns Are Safe to Share
+---
 
-There is an area where sharing works relatively well: **technical concerns** such as logging, metrics, distributed tracing, HTTP infrastructure, error notification, and configuration loading.
+## 1. Safe to Share: Technical Concerns
 
-These share some useful properties:
+One relatively safe area to share covers **technical concerns**. Examples include:
 
-- They do not directly carry business meaning
-- Their change drivers live on the platform side (library upgrades, SRE requirements, security patches)
-- Even when used from many business contexts, their behavior rarely needs to differ per context
+- Logging
+- Metrics collection and distributed tracing
+- HTTP infrastructure
+- Error notification
+- Configuration loading
 
-Extracting them as cross-cutting concerns into a shared library or platform service — and letting them evolve independently — is generally reasonable. Tolerating too much duplication here tends to hurt overall maintainability.
+These share the following properties:
 
-# When Domain Leaks Into Technical Concerns
+- **They carry no direct business meaning**
+- **Change drivers live on the platform side**: library upgrades, SRE requirements, security patches
+- **Behavior rarely needs to differ per context**: they work as-is across many business contexts
 
-That said, "technical concerns" is a coarse label. If we fail to separate the truly technical parts from the parts where domain knowledge has quietly leaked in, we fall into a different kind of trap.
+Extracting them as cross-cutting concerns and letting them evolve independently as a shared library or platform service makes sense. Tolerating too much duplication here tends to hurt maintainability across the system.
 
-A classic example is **authentication and authorization**. Authentication (verifying identity) is reasonable to share as a platform capability. Authorization (deciding what a given user is allowed to do), on the other hand, tends to be a dense collection of domain rules: "A sales rep can only view orders belonging to their own division." "A credit officer can only access cases currently in approval flow." If you stuff all of this into a single "auth library," you end up touching the platform every time the domain changes, creating a mismatch between platform cadence and business cadence.
+---
 
-Logging has the same pattern. "Which fields count as PII and must be masked?" "Which events must be persisted as audit logs?" — these are domain questions. A shared logger should only own formatting and transport; **the decision of what to log and how to treat it should stay on the domain side**.
+## 2. The Gray Zone: When Domain Leaks Into Technical Concerns
 
-It is fine, even desirable, to share technical concerns aggressively — but **do not miss the domain judgment hiding inside them**.
+That said, "technical concerns" can become a coarse label. Separating the truly technical parts from parts where domain knowledge has leaked in matters a lot. Mixing them up leads to a different kind of trap.
 
-# Domain Logic Should Not Be Shared
+### Authentication and Authorization
 
-Here is the point this article wants to emphasize most: **sharing logic that belongs to a specific domain is a major architectural trap**.
+- **Authentication** (verifying identity): easy to share as a platform capability
+- **Authorization** (deciding what a user can do): a dense collection of domain rules
 
-It is common for the same model — "Customer", "Order", "Price" — to appear across several subsystems, looking structurally similar. That resemblance tempts us into merging them into a common model or a common service. More often than not, that tends to create friction over time.
+Rules such as "a sales rep can view orders only from their own division" or "a credit officer can view cases only while under review" embody authorization policy that belongs to the domain. Folding this into a single "auth library" forces every domain change to touch the platform and creates a mismatch between platform cadence and business cadence.
 
-Borrowing DDD's vocabulary: even if the word is identical, **when the Bounded Context differs, it is a different thing**. In the sales domain, "Customer" may be an entity with a purchase history and a shipping address. In the credit domain, "Customer" is an entity with a credit score and a review status. In marketing, "Customer" carries segments and campaign responses. Only the name and identifier are the same. The invariants, the lifecycle, and the reasons to change all differ.
+### Logging
 
-# Why Sharing Domain Logic Becomes a Trap
+- **Formatting and transport**: safe to share
+- **Which fields qualify as PII to redact, and which events to persist as audit logs**: domain-level judgment
 
-When domain logic is forced into a shared abstraction, several forces push back:
+A shared logger should own formatting and transport. The judgment about what to log and how to treat it should stay on the domain side.
 
-- **Conflicting invariants across contexts**: An attribute that must be present in one context is irrelevant in another. A state transition that is permitted in one is forbidden in another. A unified model forces you to either obey the strictest constraint everywhere, or patch everything with flags and branches.
-- **Change velocity bottleneck**: A shared component is dragged down to the cadence of its most cautious consumer. Domains that could have evolved independently start blocking each other.
-- **Lost ownership**: Shared-kernel-style domain code (the DDD pattern where multiple contexts jointly own the same domain model) belongs to no team completely. Everyone can touch it; accountability tends to blur. By Conway's Law, code that crosses organizational boundaries tends to generate friction.
-- **Cost of unwinding**: Once "the shared domain model" has taken root, a great deal of code depends on it. Later attempts to re-split it along contexts turn into an enormous mesh of data migration, API compatibility, testing, and cross-team negotiation.
+Sharing technical concerns makes sense, but missing the domain judgment hiding inside them leads to trouble.
 
-# Questions That Help Separate Safe Sharing From Dangerous Sharing
+---
 
-When deciding whether to share, the following questions are useful:
+## 3. Dangerous to Share: Domain Logic
 
-- **Where does the reason to change come from?** Does change originate on the platform side (library, operations, security), or on the domain side (business rules, trade practices)?
-- **Is ownership aligned?** Is the code owned, and are change decisions made, by a single team and a single context?
-- **Could the contexts diverge in the future?** Even if they look identical today, if evolving business requirements might split them apart, sharing is likely to become a future constraint.
+This article argues most strongly for the following point: **sharing logic that belongs to a specific domain becomes a major architectural trap**.
 
-Structural similarity in code is not, by itself, a valid reason to share. The real question is whether that similarity is **incidental** or **essential**.
+The same model — "Customer", "Order", "Price" — often shows up across several subsystems with similar structure. That resemblance tempts teams to merge them into a common model or service. Doing so tends to produce friction over time.
 
-# Separation Is Not Always the Right Call
+To borrow from DDD: when the Bounded Context differs, the thing itself differs.
 
-Everything above argues against reckless sharing of domain logic, but that is not the same as saying things must always be split.
+- **"Customer" in the sales domain**: an entity with buying history and a shipping address
+- **"Customer" in the credit domain**: an entity with a credit score and a review state
+- **"Customer" in marketing**: an entity with segments and campaign response history
 
-In early product phases, or inside a small monolith, trying to predict future Bounded Contexts and pre-splitting everything is a different flavor of the same trap. When domain contours are still forming, it is often safer to let the code evolve in one place and carve out boundaries only once they become visible.
+Only the name and the identifier match. Invariants, lifecycle, and the drivers of change all diverge.
 
-The important point is to stop treating the "share / don't share" decision as a one-off. It should be **revisited continuously as organization size, product phase, and domain maturity evolve**.
+---
 
-# Summary
+## 4. Why Sharing Domain Logic Becomes a Trap
 
-Sharing looks like a purely technical decision, but it is not. It carries judgment about organization and domain.
+Forcing domain logic into a shared abstraction triggers several pushbacks.
+
+### Conflicting invariants across contexts
+
+An attribute that must exist in one context becomes irrelevant in another. A state transition that a context permits turns forbidden in the next. A unified model leaves two options only: obey the strictest constraint everywhere, or patch everything with flags and branches.
+
+### Change velocity bottleneck
+
+A shared component inherits the cadence of the most cautious consumer. Domains that could have evolved independently start blocking each other.
+
+### Lost ownership
+
+Shared-kernel-style domain code (the DDD pattern where several contexts jointly own the same domain model) belongs to no team completely. Everyone can touch it, while accountability tends to blur. By Conway's Law, code that crosses organizational boundaries tends to generate friction.
+
+### Cost of unwinding
+
+Once "the shared domain model" takes root, a great deal of code depends on it. Later attempts to re-split it along contexts turn into an enormous mesh of data migration, API compatibility, testing, and cross-team negotiation.
+
+---
+
+## 5. Questions That Help Separate Safe Sharing From Dangerous Sharing
+
+When deciding whether to share, the following questions help.
+
+- **Where does the reason to change come from?** Platform drivers (library, operations, security), or domain drivers (business rules, trade practices)?
+- **Is ownership aligned?** Does a single team and a single context own the code and drive change decisions?
+- **Could the contexts diverge in the future?** If evolving business requirements might split them apart, sharing turns into a future constraint.
+
+Structural similarity in code does not justify sharing by itself. What matters is whether the similarity is **incidental** or **essential**.
+
+---
+
+## 6. Separation Is Not Always the Right Call
+
+The arguments above warn against reckless sharing of domain logic, yet they do not imply that teams must always split everything.
+
+In early product phases, or inside a small monolith, pre-splitting for future Bounded Contexts becomes a different flavor of the same trap. When domain contours are still forming, letting the code evolve in one place and carving out boundaries once they become visible tends to work better.
+
+The key is to stop treating "share or not" as a one-off decision. **Revisit the call as organization size, product phase, and domain maturity evolve.**
+
+---
+
+## Conclusion
+
+Sharing looks like a purely technical decision, though in practice it carries judgment about organization and domain.
 
 - Share technical concerns aggressively — but watch for domain logic that has quietly leaked in
-- Structural similarity in domain code is not enough justification to share. If the Bounded Contexts differ, treat them as different things
-- The real axis of judgment is not "does the code look similar?" but "**are the reasons to change and the domain context the same?**"
+- Structural similarity in domain code does not justify sharing. If the Bounded Contexts differ, treat them as different things
+- The axis of judgment lives at "**do the reasons to change and the domain context match?**" rather than at "does the code look similar?"
 
 Sharing is not always a virtue. Careless sharing tends to generate a quiet, deep form of architectural debt.
