@@ -104,6 +104,7 @@ Contract web development across diverse clients and projects.
 | Tools | [prompt-registry](https://github.com/bmf-san/prompt-registry) | Personal prompt management system for AI agents. |
 | Tools | [go-router-benchmark](https://github.com/bmf-san/go-router-benchmark) | Benchmark tests for HTTP routers in Go. |
 | Documentation | [spec-by-bmf-san](https://github.com/bmf-san/spec-by-bmf-san) | Repository for original specifications created by bmf-san. |
+| Documentation | [career-prompts](https://github.com/bmf-san/career-prompts) | A prompt collection for supporting engineers' career development and job searching. |
 | PoC | [poc-opa-access-control-system](https://github.com/bmf-san/poc-opa-access-control-system) | Proof of Concept for an access control system using Open Policy Agent. |
 
 ---
