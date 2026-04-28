@@ -30,6 +30,8 @@
   translation_key: poem
 - name: マネジメント
   translation_key: management
+- name: 育児
+  translation_key: parenting
 - name: 数学
   translation_key: mathematics
 - name: 運用

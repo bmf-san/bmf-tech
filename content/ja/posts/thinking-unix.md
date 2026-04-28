@@ -5,7 +5,7 @@ slug: thinking-unix
 date: 2018-05-18T00:00:00Z
 author: bmf-san
 categories:
-  - OS
+  - アーキテクチャ
 tags:
   - UNIX
   - 書評

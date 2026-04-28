@@ -16,6 +16,7 @@
 - name: OS
 - name: Operating Systems
 - name: Operations
+- name: Parenting
 - name: Performance
 - name: Poem
 - name: Poetry
@@ -37,6 +38,7 @@
 - name: ヘルスケア
 - name: ポエム
 - name: マネジメント
+- name: 育児
 - name: 数学
 - name: 運用
 - name: 開発プロセス
