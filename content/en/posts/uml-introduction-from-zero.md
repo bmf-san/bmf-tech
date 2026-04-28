@@ -5,7 +5,7 @@ slug: uml-introduction-from-zero
 date: 2016-07-01T00:00:00Z
 author: bmf-san
 categories:
-  - Tools
+  - Architecture
 tags:
   - UML
   - Book Review

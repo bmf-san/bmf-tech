@@ -30,6 +30,8 @@
   translation_key: operating-systems
 - name: Operations
   translation_key: operations
+- name: Parenting
+  translation_key: parenting
 - name: Performance
   translation_key: performance
 - name: Poem
