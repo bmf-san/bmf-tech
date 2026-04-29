@@ -1,7 +1,7 @@
 ---
 title: パスキーのすべて ―導入・UX設計・実装
 description: "パスキーのすべて ―導入・UX設計・実装"
-slug: passkeys-no-subete
+slug: passkeys-adoption-ux-implementation
 date: 2026-04-29T00:00:00Z
 author: bmf-san
 categories:
@@ -12,7 +12,7 @@ tags:
   - パスキー
   - WebAuthn
   - FIDO
-translation_key: passkeys-no-subete
+translation_key: passkeys-adoption-ux-implementation
 books:
   - asin: "4297146533"
     title: "パスキーのすべて ―導入・UX設計・実装"
