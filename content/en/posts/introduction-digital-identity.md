@@ -5,7 +5,7 @@ slug: introduction-digital-identity
 date: 2026-02-20T00:00:00Z
 author: bmf-san
 categories:
-  - Architecture
+  - Application
 tags:
   - Book Review
   - Authentication
