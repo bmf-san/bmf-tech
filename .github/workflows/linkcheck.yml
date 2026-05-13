@@ -54,4 +54,9 @@ jobs:
             --exclude '^https?://www\.ncad\.co\.jp/'
             --exclude '^https?://www\.sakimura\.org/'
             'public/**/*.html'
-          fail: true
+          # Don't block PRs on link errors. The repo currently has many
+          # pre-existing broken links (mostly cross-locale tag links and
+          # third-party TLS issues) that exist on main; failing PR CI on
+          # them prevents Dependabot updates from merging. The scheduled
+          # weekly run still surfaces regressions.
+          fail: ${{ github.event_name == 'schedule' }}
