@@ -42,7 +42,7 @@ A protocol in which a coordinator decides, in two phases, **either "everyone COM
 
 - **Blocking**: If the coordinator dies after Prepare, participants are stuck holding locks.
 - **Low availability**: A single slow or down node halts everything.
-- **No support for heterogeneous resources**: It assumes XA support; Pub/Sub, Kafka, HTTP APIs, etc. are out of scope.
+- **Poor fit with heterogeneous resources**: Participants must be 2PC-capable resource managers like XA; Pub/Sub, Kafka, HTTP APIs, etc. are typically outside that scope (Kafka has its own transaction API, but it is distinct from XA).
 - **At odds with the design philosophy of microservices**: "We split the services, but one failure halts the whole thing" is self-defeating.
 
 ### From an ACID Perspective
@@ -58,7 +58,7 @@ On paper this looks perfect — the price you pay is **availability**.
 
 ### When to Use It
 
-Almost never. **Between microservices, the rule of thumb is to avoid it.** Consider it only in narrow cases like aligning multiple databases on the same DB engine.
+Almost never. **Between microservices, the rule of thumb is to avoid it.** Consider it only in narrow, legacy-leaning cases where you need to align heterogeneous resources (multiple DBs, DB + MQ, etc.) under an XA-style transaction manager.
 
 ## 2. The Saga Pattern
 
@@ -122,7 +122,7 @@ A DB transaction can only bundle operations **inside the same DB**. `queue.publi
 - If the app dies right after COMMIT, the publish never happens → **lost event**.
 - If you publish first and the COMMIT fails, the notification has fired but the business data doesn't exist → **phantom event**.
 
-This is the **dual write problem**.
+**No matter which order you choose, you cannot escape the mismatch.** This is the **dual write problem**.
 
 ### How It Works: write a "send reservation" to a table in the same DB
 
