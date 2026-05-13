@@ -624,6 +624,8 @@
   translation_key: openid-connect
 - name: OpenStack
   translation_key: openstack
+- name: Outbox Pattern
+  translation_key: outbox-pattern
 - name: Organization Design
   translation_key: organization-design
 - name: Organization Theory

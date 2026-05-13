@@ -36,6 +36,7 @@ listing_slugs:
   - cap-theorem-pacelc-theorem
   - bmf-tech-supporting-technologies
   - transaction-overview
+  - distributed-transaction-patterns-2pc-saga-outbox
   - mysql-transaction-anomalies
   - mysql-locking
   - what-is-index
