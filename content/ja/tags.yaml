@@ -966,3 +966,23 @@
   translation_key: sets
 - name: 離散数学
   translation_key: discrete-mathematics
+- name: アルゴリズムトレード
+  translation_key: algorithmic-trading
+- name: エンジニアリングマネジメント
+  translation_key: engineering-management
+- name: パスキー
+  translation_key: passkeys
+- name: プロダクトマネジメント
+  translation_key: product-management
+- name: 子育て
+  translation_key: parenting
+- name: 戦略
+  translation_key: business-strategy
+- name: 教育
+  translation_key: education
+- name: 機械学習
+  translation_key: machine-learning
+- name: python
+  translation_key: python
+- name: webauthn
+  translation_key: webauthn
