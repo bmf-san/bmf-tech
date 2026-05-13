@@ -43,7 +43,7 @@ A protocol in which a coordinator decides, in two phases, **either "everyone COM
 - **Blocking**: If the coordinator dies after Prepare, participants are stuck holding locks.
 - **Low availability**: A single slow or down node halts everything.
 - **No support for heterogeneous resources**: It assumes XA support; Pub/Sub, Kafka, HTTP APIs, etc. are out of scope.
-- **Against the spirit of microservices**: "We split the services, but one failure halts the whole thing" is self-defeating.
+- **At odds with the design philosophy of microservices**: "We split the services, but one failure halts the whole thing" is self-defeating.
 
 ### When to Use It
 
