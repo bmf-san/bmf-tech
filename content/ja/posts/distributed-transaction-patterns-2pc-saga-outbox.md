@@ -1,5 +1,5 @@
 ---
-title: 分散トランザクションの三種の神器 — 2PC・Saga・Outbox
+title: 分散トランザクションの代表的3パターン — 2PC・Saga・Outbox
 description: マイクロサービスにおける分散トランザクション設計の代表的パターン、2PC・Saga・Outboxを比較し、それぞれの仕組み・長所短所・使い分けを整理する。
 slug: distributed-transaction-patterns-2pc-saga-outbox
 date: 2026-05-13T00:00:00Z
