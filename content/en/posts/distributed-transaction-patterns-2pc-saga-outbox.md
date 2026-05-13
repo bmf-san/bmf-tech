@@ -116,7 +116,7 @@ COMMIT;                     -- one COMMIT, both atomic
 1. The app INSERTs a message into the `outbox` table within the same transaction as the business data.
 2. The COMMIT atomically finalizes both the business data and the "send reservation" in a single COMMIT.
 3. A separate relay process reads the `outbox` via polling or CDC and sends it externally.
-4. On successful send, the `outbox` record is marked sent or deleted.
+4. On successful send, the `outbox` record is marked as sent (e.g., flipping a status column) or deleted.
 
 The key point is that **the outbox must live somewhere that can be committed together with the business data in a single transaction**. In practice that's almost always "a table in the same DB as the business data" (Kafka transactions or CDC-based variants exist, but the essence is the same boundary).
 
