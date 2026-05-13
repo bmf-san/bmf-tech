@@ -50,5 +50,8 @@ jobs:
             --exclude '^https?://dius\.com\.au/'
             --exclude '^https?://wiki\.infra-workshop\.tech/'
             --exclude '^https?://www\.apollographql\.com/docs'
+            --exclude '^https?://fi\.ort\.edu\.uy/'
+            --exclude '^https?://www\.ncad\.co\.jp/'
+            --exclude '^https?://www\.sakimura\.org/'
             'public/**/*.html'
           fail: true
