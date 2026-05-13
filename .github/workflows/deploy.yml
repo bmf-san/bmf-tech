@@ -31,4 +31,8 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy public --project-name=bmf-tech
+          # NOTE: --commit-message / --commit-hash を明示するのは、
+          # Cloudflare Pages API が一部の UTF-8 文字を含むコミットメッセージを
+          # `Invalid commit message [code: 8000111]` で弾くケースがあるため。
+          # wrangler が git から自動取得した値をそのまま投げるのを避け、ASCII で固定する。
+          command: pages deploy public --project-name=bmf-tech --branch=main --commit-hash=${{ github.sha }} --commit-message="Deploy ${{ github.sha }}"
