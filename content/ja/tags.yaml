@@ -430,6 +430,8 @@
   translation_key: ruby-on-rails
 - name: SaaS
   translation_key: saas
+- name: Outboxパターン
+  translation_key: outbox-pattern
 - name: Sagaパターン
   translation_key: saga-pattern
 - name: SAML
