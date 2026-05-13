@@ -45,6 +45,17 @@ A protocol in which a coordinator decides, in two phases, **either "everyone COM
 - **No support for heterogeneous resources**: It assumes XA support; Pub/Sub, Kafka, HTTP APIs, etc. are out of scope.
 - **At odds with the design philosophy of microservices**: "We split the services, but one failure halts the whole thing" is self-defeating.
 
+### From an ACID Perspective
+
+| ACID | What 2PC gives you |
+|---|---|
+| **A**tomicity | ◎ All participants either COMMIT or ROLLBACK together |
+| **C**onsistency | ◎ All resources are aligned the moment COMMIT completes (immediate consistency) |
+| **I**solation | ◎ Locks held during Prepare isolate the transaction from others |
+| **D**urability | ◎ Each participant durably persists the result after COMMIT |
+
+On paper this looks perfect — the price you pay is **availability**.
+
 ### When to Use It
 
 Almost never. **Between microservices, the rule of thumb is to avoid it.** Consider it only in narrow cases like aligning multiple databases on the same DB engine.
@@ -75,6 +86,17 @@ A pattern that composes a long-running transaction as a chain of **local transac
 - **Sacrifices the "I" of ACID (Isolation)**: Intermediate states are visible externally, so the UI must be designed to show "setting up" states.
 - **High cost of compensation logic**: You must design an undo for every step.
 - **Hard to handle non-undoable side effects** (sending emails, notifying external APIs, etc.).
+
+### From an ACID Perspective
+
+| ACID | What Saga gives you |
+|---|---|
+| **A**tomicity | ○ Eventually preserved as either "all steps succeeded" or "compensated to a business-equivalent of nothing happened" |
+| **C**onsistency | ○ Each step commits locally; the whole flow is eventually consistent |
+| **I**solation | ✕ **This is what Saga gives up.** Intermediate states are visible to other services and users |
+| **D**urability | ◎ Each step's local COMMIT is durable |
+
+**Saga gives up the "I" of ACID and recovers "A" through compensation** — that is its essence.
 
 ### When to Use It
 
@@ -132,6 +154,17 @@ The key point is that **the outbox must live somewhere that can be committed tog
 - Weak ordering guarantees (parallel relays can reorder).
 - You need a strategy for `outbox` growth (partitioning, periodic deletion).
 - Polling-based designs have latency tied to the poll interval (CDC can bring this under tens of ms).
+
+### From an ACID Perspective
+
+| ACID | What Outbox gives you |
+|---|---|
+| **A**tomicity | ◎ **This is the core.** Business data and the "send reservation" either both land or both don't, in one COMMIT |
+| **C**onsistency | ○ "The business data was written" ⇔ "an event will eventually fire" is preserved (eventual consistency) |
+| **I**solation | △ The INSERTs themselves are isolated inside the DB, but external systems can observe the intermediate state (DB written, event not yet delivered) |
+| **D**urability | ◎ Once written, it stays. No matter how many times the relay dies, the `outbox` row survives and is eventually published |
+
+The only genuinely *new* guarantee Outbox introduces is **Atomicity**. Consistency and Durability follow as side effects on top of it.
 
 ### Where Outbox Sits on the "Looseness" Spectrum
 
