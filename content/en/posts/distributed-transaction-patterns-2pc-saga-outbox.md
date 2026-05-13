@@ -82,30 +82,72 @@ Any business flow that crosses multiple services — tenant onboarding, order pr
 
 ## 3. The Outbox Pattern
 
-A pattern for atomically aligning **"writing to the DB" with "notifying an external system" within the same transaction**. It's not a big flow design like Saga — it's a smaller mechanism for **making the fact of a write and the emission of an event agree**.
+A pattern for reliably aligning **"writing the business data" with "notifying an external system"** so that the two cannot drift apart. It's not a big flow design like Saga — it's a smaller mechanism for **making the fact of a write and the emission of an event agree**.
 
-### How It Works
+### The Problem It Solves: dual write
 
-1. The app INSERTs a message into an `outbox` table within the same transaction as the business data.
-2. The COMMIT atomically finalizes both the business data and the "send reservation."
+The naive version looks like this:
+
+```
+BEGIN;
+INSERT INTO orders ...;   -- business data
+COMMIT;                    -- the DB is durable here
+queue.publish(event);      -- a call into a different system
+```
+
+A DB transaction can only bundle operations **inside the same DB**. `queue.publish` lives outside the DB, so:
+
+- If the app dies right after COMMIT, the publish never happens → **lost event**.
+- If you publish first and the COMMIT fails, the notification has fired but the business data doesn't exist → **phantom event**.
+
+This is the **dual write problem**.
+
+### How It Works: write a "send reservation" to a table in the same DB
+
+Instead of publishing directly, the Outbox pattern **INSERTs into an `outbox` table inside the same DB**, in the same transaction:
+
+```sql
+BEGIN;
+INSERT INTO orders ...;    -- business data
+INSERT INTO outbox ...;    -- "please publish this later"
+COMMIT;                     -- one COMMIT, both atomic
+```
+
+1. The app INSERTs a message into the `outbox` table within the same transaction as the business data.
+2. The COMMIT atomically finalizes both the business data and the "send reservation" in a single COMMIT.
 3. A separate relay process reads the `outbox` via polling or CDC and sends it externally.
 4. On successful send, the `outbox` record is marked sent or deleted.
 
+The key point is that **the outbox must live somewhere that can be committed together with the business data in a single transaction**. In practice that's almost always "a table in the same DB as the business data" (Kafka transactions or CDC-based variants exist, but the essence is the same boundary).
+
 ### Pros
 
-- **Messages cannot, in principle, be lost**: If it's written to the DB, it will be sent eventually.
+- **Events cannot, in principle, be lost**: if it made it to the DB, it will be sent eventually.
 - Simple to implement (just add a table and a relay).
 - Easy to plug in as the substrate for inter-step notifications in a Saga.
 
 ### Cons
 
-- **At-least-once delivery**: Duplicates can occur; receivers need to be idempotent.
+- **At-least-once delivery**: duplicates can occur; receivers need to be idempotent.
+- Weak ordering guarantees (parallel relays can reorder).
 - You need a strategy for `outbox` growth (partitioning, periodic deletion).
 - Polling-based designs have latency tied to the poll interval (CDC can bring this under tens of ms).
 
+### Where Outbox Sits on the "Looseness" Spectrum
+
+Outbox is not a strong-consistency device — it's an **eventual-consistency** design. The trade-offs line up like this:
+
+| Requirement | What to use |
+|---|---|
+| It's OK to lose events (logs, metrics, best-effort) | Publish right after COMMIT |
+| You can't lose events, but duplicates / delay / reordering are acceptable | **Outbox** |
+| You need strong, immediate consistency | 2PC (adopt with care) |
+
+Outbox is best understood as **a minimal device for people who simply must not get hit by the dual write problem**.
+
 ### When to Use It
 
-Any time you need to reliably notify some external system (Pub/Sub, webhooks, another service's API) about a fact written to your DB. Pairing it with Saga is the standard play.
+Any time you need to **losslessly** notify some external system (Pub/Sub, webhooks, another service's API) about a fact written to your DB. Pairing it with Saga is the standard play.
 
 ## How the Three Relate
 
