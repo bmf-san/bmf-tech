@@ -44,5 +44,11 @@ jobs:
             --exclude '^https?://www\.cs\.cmu\.edu/'
             --exclude '^https?://wa3\.i-3-i\.info/'
             --exclude '^https?://selfnote\.work/'
+            --exclude '^https?://(www|docs)\.styra\.com/'
+            --exclude '^https?://selinuxproject\.org/'
+            --exclude '^https?://alexromanov\.github\.io/'
+            --exclude '^https?://dius\.com\.au/'
+            --exclude '^https?://wiki\.infra-workshop\.tech/'
+            --exclude '^https?://www\.apollographql\.com/docs'
             'public/**/*.html'
           fail: true
