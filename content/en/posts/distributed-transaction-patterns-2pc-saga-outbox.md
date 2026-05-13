@@ -205,7 +205,7 @@ Saga (the whole business flow)
 | Strong consistency is a hard requirement; availability can be sacrificed | 2PC (adopt with care) |
 | Single DB is enough | A plain transaction is fine |
 
-In practice, **"Saga + Outbox" as the base set**, with 2PC reserved for cases where there's an explicit reason, is the default stance of modern microservices design.
+In practice, **placing Saga and Outbox at the center** and reserving 2PC for cases where there's an explicit reason is the stance widely adopted in modern microservices design.
 
 ## Summary
 
@@ -213,4 +213,4 @@ In practice, **"Saga + Outbox" as the base set**, with 2PC reserved for cases wh
 - **Saga**: A business flow design that achieves eventual consistency via compensation. High availability and works with heterogeneous resources.
 - **Outbox**: A device for reliably aligning DB writes with external notifications. The foundation for Saga's reliability.
 
-"In a distributed system, give up the Isolation of ACID and recover Atomicity through compensation" — that is the essence of Saga + Outbox. Before reaching for 2PC, start by asking whether this combination can do the job.
+"In a distributed system, give up the Isolation of ACID and recover Atomicity through compensation" — that is the essence of **Saga**, and Outbox is the foundation that reliably drives each of its steps. Before reaching for 2PC, start by asking whether this combination can do the job.
