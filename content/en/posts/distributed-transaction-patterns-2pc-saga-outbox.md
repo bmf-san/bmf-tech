@@ -16,7 +16,7 @@ translation_key: distributed-transaction-patterns-2pc-saga-outbox
 ---
 
 
-Once you adopt microservices, you almost inevitably run into the question: **how do you keep updates consistent when they span multiple databases or message brokers?** This article summarizes the three canonical approaches — 2PC, Saga, and Outbox.
+Once you adopt microservices, you almost inevitably run into the question: **how do you keep writes consistent when they span multiple databases, or span a database and a message broker?** This article summarizes the three canonical approaches — 2PC, Saga, and Outbox.
 
 ## Premise: Why It Wasn't a Problem in a Monolith
 
