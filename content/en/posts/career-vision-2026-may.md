@@ -25,13 +25,13 @@ Thoughts naturally evolve over time, but writing them down at milestones lets me
 >
 > To this end, I place "what others can achieve through the systems I build" — rather than the code I write myself — at the center of my values. I anchor my work in architectural design and decision-making while stepping into hands-on leadership or organizational work as needed to deliver results. I always explain technical decisions in connection with business and user value. Ultimately, I aim to **leave value at the DNA level of the organization**.
 
-This vision is built on past experience (freelance web development → startup → in-house infrastructure design at a business company) and current strengths (structured thinking, hands-on experience in cross-cutting domains, team lead experience), and stems from a desire to deliver greater impact to the organization.
+This vision builds on past experience (freelance web development → startup → in-house infrastructure design at a business company) and current strengths (structured thinking, hands-on experience in cross-cutting domains, team lead experience), and stems from a desire to deliver greater impact to the organization.
 
 # Purpose
 
 **To improve the long-term value of organizations and software, and contribute to the business, as an architect.**
 
-Not just to demonstrate technical skills, but to **produce greater outcomes through teams**.
+Not just to show technical skills, but to **produce greater outcomes through teams**.
 
 # Core Values
 
@@ -66,7 +66,7 @@ The longer the horizon, the more dominant "design quality" becomes. I see the ar
 
 - Idealizing only the architecture without changing the organization causes design and reality to diverge until things get pulled back to the original shape
 - Even good design becomes obsolete if the operating organization can't sustain it
-- Even a good organization will reinvent the wheel across teams if shared foundations don't scale
+- Even a good organization will redo the same work across teams if shared foundations don't scale
 - **People who can design both axes simultaneously are rare, and that is the essential value of the architect role**
 
 ## The Value of Technology that Scales Through Teams
@@ -93,11 +93,11 @@ I'm interested in surveying system components and designing for reusability, sca
 
 ## 3. I've Internalized the Value of Cross-Cutting Foundations
 
-I've designed and built foundational areas — authentication, notifications, permission management — that affect multiple teams and products. From that, I've experienced how a single foundational system can affect the development efficiency and quality of an entire organization, and I've internalized that cross-cutting technical foundations underpin long-term organizational value.
+I've designed and built foundational areas — authentication, notifications, permission management — that affect many teams and products. From that, I've experienced how a single foundational system can affect the development efficiency and quality of an entire organization, and I've internalized that cross-cutting technical foundations underpin long-term organizational value.
 
 ## 4. I Want to Design Both the Organizational and Software Axes
 
-As Conway's Law shows, organizational and software structures influence each other. Optimizing only one collapses. The role that can see both axes simultaneously and drive their evolution in sync is rare, and I see it as a place where my structured thinking, foundational experience, and team lead experience can be applied together.
+As Conway's Law shows, organizational and software structures influence each other. Optimizing only one collapses. The role that can see both axes simultaneously and drive their evolution in sync is rare, and I see it as a place where I can bring my structured thinking, foundational experience, and team lead experience together.
 
 ## 5. I Want to Produce Bigger Outcomes
 
@@ -110,14 +110,14 @@ I want to take part in high-impact decisions and support, in a position that sha
 - **Have interest in and understanding of the business**
   - Aim for a state where I can explain why a design contributes to the business, not just optimize technology in isolation
 - **Be conscious of organizational propagation**
-  - Prioritize horizontal spread over local optimization. Design the flow: improvement in one team → systematization → rollout to other teams
+  - Favor horizontal spread over local optimization. Design the flow: improvement in one team → systematization → rollout to other teams
 
 # What I Want to Work On
 
 ## Technical Contributions
 
 1. **Designing technical foundations that span the organization**
-   - Design foundations that integrate concerns shared across multiple products and teams (authentication, notifications, permission management, etc.) to lift development efficiency and quality
+   - Design foundations that integrate concerns shared across many products and teams (authentication, notifications, permission management, etc.) to lift development efficiency and quality
    - Aim for reproducible, accountable architecture grounded in standard specifications and design principles
 
 2. **Removing business growth bottlenecks through technology**
@@ -131,7 +131,7 @@ I want to take part in high-impact decisions and support, in a position that sha
    - Decide how to handle technical debt in a way that balances short-term development speed with long-term maintainability
 
 2. **Systematizing decision-making and knowledge inheritance**
-   - Make clear who decides what and when, and leave design decisions in a form that can be inherited
+   - Make clear who decides what and when, and document design decisions in a form that successors can inherit
    - Design processes that standardize individual successes and propagate them across the organization
 
 3. **Building a sustainable engineering organization**
@@ -141,7 +141,7 @@ I want to take part in high-impact decisions and support, in a position that sha
 ## Business Contributions
 
 1. **Connect technical decisions to business value**
-   - Explain the effect of technical initiatives — and the "cost of not doing them" — in business indicators and cost terms, so they can be discussed as management decisions
+   - Explain the effect of technical initiatives — and the "cost of not doing them" — in business indicators and cost terms, so management can discuss them as decisions
    - Choose the right architecture for the business phase (with the premise that "always-correct design" doesn't exist)
 
 2. **Expand business options from a technical starting point**
