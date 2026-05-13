@@ -176,7 +176,7 @@ Outbox is not a strong-consistency device — it's an **eventual-consistency** d
 | You can't lose events, but duplicates / delay / reordering are acceptable | **Outbox** |
 | You need strong, immediate consistency | 2PC (adopt with care) |
 
-Outbox is best understood as **a minimal device for people who simply must not get hit by the dual write problem**.
+Outbox is best understood not as a tool for strong consistency, but as **a simple pattern focused on one job: avoiding the dual write problem**.
 
 ### When to Use It
 
