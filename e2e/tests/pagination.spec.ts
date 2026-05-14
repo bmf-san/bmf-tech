@@ -4,8 +4,8 @@ import { test, expect } from '@playwright/test';
 // (e.g. https://bmf-tech.com/ja/page/2/) so we cannot click them during tests.
 // Instead we navigate directly to paginated URLs and assert content.
 
-// JA: 584 articles / 20 per page = 30 pages
-const JA_LAST_PAGE = 30;
+// JA: 605 articles / 20 per page = 31 pages
+const JA_LAST_PAGE = 31;
 
 // ── JA root pagination ────────────────────────────────────────────────────────
 
@@ -25,8 +25,11 @@ test.describe('JA root pagination', () => {
     await expect(page.locator('a.card').first()).toBeVisible();
   });
 
-  test('beyond last page returns 404', async ({ page }) => {
-    const res = await page.goto(`/ja/page/${JA_LAST_PAGE + 1}/`);
+  test('way beyond last page returns 404', async ({ page }) => {
+    // Use a page number well beyond any plausible content count instead of
+    // JA_LAST_PAGE + 1, so adding articles doesn't silently turn this into
+    // a 200 and break unrelated PRs (e.g. Dependabot).
+    const res = await page.goto('/ja/page/9999/');
     expect(res?.status()).toBe(404);
   });
 });

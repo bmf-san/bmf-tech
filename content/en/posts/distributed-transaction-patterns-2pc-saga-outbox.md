@@ -1,5 +1,5 @@
 ---
-title: "The Three Pillars of Distributed Transactions — 2PC, Saga, and Outbox"
+title: "Three Common Patterns for Distributed Transactions — 2PC, Saga, and Outbox"
 description: A concise comparison of the three canonical distributed transaction patterns in microservices — 2PC, Saga, and Outbox — covering their mechanics, trade-offs, and when to use each.
 slug: distributed-transaction-patterns-2pc-saga-outbox
 date: 2026-05-13T00:00:00Z

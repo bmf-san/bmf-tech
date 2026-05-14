@@ -1012,3 +1012,21 @@
   translation_key: yum
 - name: Zabbix
   translation_key: zabbix
+- name: Algorithmic Trading
+  translation_key: algorithmic-trading
+- name: Education
+  translation_key: education
+- name: Engineering Management
+  translation_key: engineering-management
+- name: Machine Learning
+  translation_key: machine-learning
+- name: Parenting
+  translation_key: parenting
+- name: Passkeys
+  translation_key: passkeys
+- name: Product Management
+  translation_key: product-management
+- name: Python
+  translation_key: python
+- name: WebAuthn
+  translation_key: webauthn
