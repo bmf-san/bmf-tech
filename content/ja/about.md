@@ -86,8 +86,9 @@ HR テック領域のプラットフォーム開発、システムアーキテ�
 
 ## 制作物
 
-| カテゴリ | リポジトリ | 説明 |
+| カテゴリ | リンク | 説明 |
 |---|---|---|
+| モバイルアプリ | [Notifify](https://apps.apple.com/jp/app/notifify/id6762620021) | 完了管理のない、通知だけのシンプルなリマインダーiOSアプリ。 |
 | モバイルアプリ | [Bookstacks](https://apps.apple.com/jp/app/bookstacks-%E6%9C%AC%E6%A3%9A%E7%AE%A1%E7%90%86/id6760252143#information) | ISBNバーコードスキャンで書籍を登録・管理するiOSアプリ。ラベルで整理、書影を自動取得。|
 | モバイルアプリ | [Done Log](https://apps.apple.com/jp/app/done-log/id6759606196) | シンプルな習慣・行動ログアプリ。 |
 | モバイルアプリ | [Asset Transition Simulator](https://apps.apple.com/jp/app/%E8%B3%87%E7%94%A3%E6%8E%A8%E7%A7%BB%E3%82%B7%E3%83%A5%E3%83%9F%E3%83%AC%E3%83%BC%E3%82%BF%E3%83%BC/id6759601487) | 将来の資産推移をシミュレーションするアプリ。 |
