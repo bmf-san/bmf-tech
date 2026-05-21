@@ -15,9 +15,9 @@ translation_key: accidental-complexity-and-missing-decision-records
 
 ## Introduction
 
-When you read a long-running system, you eventually run into the question: "Is this complexity actually necessary, or is it a side effect of something?" Software complexity is often split into **essential complexity** — coming from the problem itself, and unavoidable no matter how you implement it — and **accidental complexity** — the kind that just bleeds out of implementation choices and historical circumstances, and is removable in principle.
+When you read a long-running system, you eventually run into the question: "Is this complexity actually necessary, or is it a side effect of something?" Software complexity often splits into **essential complexity** — coming from the problem itself, and unavoidable no matter how you build it — and **accidental complexity** — the kind that just bleeds out of implementation choices and historical circumstances, and is removable in principle.
 
-Some of these are easy to tell apart. Others can't be distinguished from code or specs alone. This post organizes the typical sources of accidental complexity, and argues that **the lack of recorded decisions is itself one of the things that makes essential and accidental hard to separate**.
+Some of these are easy to tell apart. Others, you can't tell from code or specs alone. This post organizes the typical sources of accidental complexity, and argues that **the lack of recorded decisions is itself one of the things that makes essential and accidental hard to separate**.
 
 ---
 
@@ -27,11 +27,11 @@ Accidental complexity does not have a single origin. Looking at it through the l
 
 ### Business Requirements and Operational Convenience
 
-Things that were "decided that way for business reasons." They were shaped to fit stakeholders or operational convenience at the time, but they aren't necessarily universal requirements.
+Things that were "decided that way for business reasons." They fit stakeholders or operational convenience at the time, but they aren't necessarily universal needs.
 
 - A particular screen has a special permission check that exists nowhere else
-- An aggregation is sliced as "minimum across the whole" or "sum over the last 30 days" — granularities tailored to a specific organization's operations
-- Features A and B are wired to run in sequence, and using only one of them isn't a supported case
+- An aggregation slices data as "the min across the whole" or "sum over the last 30 days" — granularities tailored to a specific organization's operations
+- Features A and B run in sequence by design, and using only one of them isn't a supported case
 
 These don't disappear when you move to a new architecture, unless you re-negotiate with the stakeholders. They are "redesignable" technically, but in practice **they only disappear after a human-side agreement**.
 
@@ -41,7 +41,7 @@ Complexity that bleeds out of the framework, middleware, or protocol you picked.
 
 - Subdomain-by-subdomain separate sessions, forced by the cookie domain rules of the auth scheme
 - "Soft-delete column + unique constraint" combinations contorted to fit ORM limitations
-- A job queue that's been pulled into doing more than queueing, to compensate for a single-process-bound framework
+- A job queue that quietly grew beyond queueing, to compensate for a single-process-bound framework
 
 These have a high chance of **disappearing structurally if you change the architectural choice**. Switching to a different protocol, adopting a different middleware, or rewriting in a different language can make "this problem no longer exists" a real outcome.
 
@@ -58,22 +58,22 @@ These can look like business requirements, or like technical constraints. But th
 
 ---
 
-UX-level distortions (being asked to log in repeatedly, double notifications, the context breaking mid-flow) are **observed phenomena** of the three above, not independent causes. Fixing the cause axis usually fixes the UX as a side effect, so this post focuses on causes.
+UX-level distortions (having to log in repeatedly, double notifications, the context breaking mid-flow) are **observed phenomena** of the three above, not independent causes. Fixing the cause axis usually fixes the UX as a side effect, so this post focuses on causes.
 
 ---
 
 ## Why Telling Essential From Accidental Is Hard
 
-"Essential or accidental" can't be decided by reading code alone. Without knowing why things are the way they are, you can't tell whether a structure in front of you is "this has to be this way for business reasons" or "this is just bent to fit the framework constraints of the time."
+"Essential or accidental" doesn't fall out of code alone. Without knowing why things are the way they are, you can't tell whether a structure in front of you is "this has to be this way for business reasons" or "this is just bent to fit the framework constraints of the time."
 
 Separating them requires **the context of the decisions made at the time**. Concretely, things like:
 
-- What options were on the table
-- Why this option was chosen (performance? schedule? compatibility with existing assets? ease of hiring?)
-- What was accepted as a constraint
-- What was deferred as "we might revisit this later"
+- What options sat on the table
+- Why we picked this option (performance? schedule? compatibility with existing assets? ease of hiring?)
+- Which constraints we accepted
+- Which items we deferred as "we might revisit later"
 
-If those records exist, a future designer can say, "this complexity comes from constraint X at the time. X is gone now, so we can throw the whole structure out." If they don't, every structure becomes a black box of "there must be a reason," and gets preserved on the safe side.
+If those records exist, a future designer can say, "this complexity comes from constraint X at the time. X no longer applies now, so we can throw the whole structure out." If they don't, every structure becomes a black box of "there must be a reason," and stays on the safe side.
 
 ---
 
@@ -81,11 +81,11 @@ If those records exist, a future designer can say, "this complexity comes from c
 
 ### Accidental Gets Promoted to Essential
 
-The most typical failure: an accidental structure starts being treated as an essential requirement over time.
+The most typical failure: an accidental structure starts looking like an essential trait over time.
 
 > "That's the spec."
 
-Much of the behavior described that way is, in reality, just accidental complexity that fit the constraints at initial implementation. But without records, you can't refute it, so when you build a new system, "please preserve the same behavior as the current one" gets baked in as a requirement. As a result, the next generation system inherits the same accidental complexity.
+Much of the behavior described that way is, in reality, just accidental complexity that fit the constraints at initial implementation. But without records, you can't refute it, so when you build a new system, "please preserve the same behavior as the current one" gets baked in as a spec. As a result, the next generation system inherits the same accidental complexity.
 
 ### The "Don't Touch" Zone Expands
 
@@ -95,7 +95,7 @@ That's reasonable in the short term, but if you keep doing it for 5 or 10 years,
 
 ### Discussions Collapse Into "Match the Current Behavior or Not"
 
-When designing a new system, the conversation tends to center on "do we replicate the current behavior or not." What you should actually be discussing is "what business properties do we want to guarantee," but without primary sources for that question (the original decisions), copying the current behavior becomes the safest move.
+When designing a new system, the conversation tends to center on "do we replicate the current behavior or not." What you should actually discuss is "what business properties do we want to guarantee," but without primary sources for that question (the original decisions), copying the current behavior becomes the safest move.
 
 The result: the new system gets close to **"the same accidental complexity as before, just on a newer tech stack."** Which makes the rewrite barely worth doing.
 
@@ -108,11 +108,11 @@ There's no silver bullet here. But leaving an ADR or Design Doc at each design d
 ADRs and Design Docs are not about "recording the right answer." Their value is closer to:
 
 - **Marking accidental as accidental**
-  Writing "this structure was shaped by constraint X" gives a future reader the basis to throw the structure away once X is gone.
+  Writing "constraint X shaped this structure" gives a future reader the basis to throw the structure away once X no longer applies.
 - **Pinning down what's essential**
-  Writing "this requirement is non-negotiable from the business side" lets a new system inherit it as something that must be preserved.
+  Writing "this property is non-negotiable from the business side" lets a new system inherit it as something that must persist.
 - **Forwarding deferred options to the future**
-  Writing "we didn't take this option this time, but it should be reconsidered if conditions change" lets a future generation reevaluate.
+  Writing "we didn't take this option this time, but we should revisit if conditions change" lets a future generation reevaluate.
 
 Conversely, not writing ADRs or Design Docs is close to **stripping your future self (or successor) of the means to separate accidental from essential**.
 
@@ -123,17 +123,17 @@ Conversely, not writing ADRs or Design Docs is close to **stripping your future 
 "Record every decision" isn't realistic. Writing ADRs and Design Docs has a cost, and so does maintaining them. It's enough to focus on things like:
 
 - **Decisions likely to be questioned later as "why is it this way"** (especially when picking a non-obvious option from several alternatives)
-- **Decisions where it's ambiguous whether they came from business requirements or from technical constraints**
-- **Decisions likely to be revisited when assumptions change** (framework refresh, scale change, organizational change)
+- **Decisions where it's ambiguous whether they came from business needs or from technical constraints**
+- **Decisions likely to need revisiting when assumptions change** (framework refresh, scale change, organizational change)
 
-Decisions that are obvious applications of best practice, or that anyone would have made the same way, don't need an ADR. The principle is: **"what should be recorded is the decision, not the result."**
+Decisions that obviously apply best practice, or that anyone would have made the same way, don't need an ADR. The principle is: **"what you should record is the decision, not the result."**
 
 ---
 
 ## Summary
 
 - Software complexity splits into essential and accidental, but some pairs are easy to tell apart and others aren't.
-- Accidental complexity comes from three causes — business requirements & operational convenience / technology choices & implementation means / organizational & time constraints — and each disappears under different conditions.
+- Accidental complexity comes from three causes — business needs & operational convenience / technology choices & implementation means / organizational & time constraints — and each disappears under different conditions.
 - Separating them requires the context of past decisions, but that context is often missing.
-- As a result, accidental complexity gets promoted to essential and is carried over into the new system.
+- As a result, accidental complexity gets promoted to essential and survives into the new system.
 - ADRs and Design Docs are not about recording the right answer; they work as **aids for passing accidental as accidental, and essential as essential, on to the next generation**.
