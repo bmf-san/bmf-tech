@@ -18,6 +18,7 @@ listing_slugs:
   - requirements-vs-constraints
   - importance-of-constraints-tradeoffs
   - adr-writing-key-points
+  - accidental-complexity-and-missing-decision-records
   - what-is-architecture-advice-process
   - system-specification-structure
   - writing-architecture-documentation
