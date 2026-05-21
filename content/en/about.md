@@ -86,8 +86,9 @@ Contract web development across diverse clients and projects.
 
 ## Works
 
-| Category | Repository | Description |
+| Category | Link | Description |
 |---|---|---|
+| Mobile Apps | [Notifify](https://apps.apple.com/jp/app/notifify/id6762620021) | A minimal notification-only reminder app for iOS — no completion tracking, just reminds you. |
 | Mobile Apps | [Bookstacks](https://apps.apple.com/jp/app/bookstacks-%E6%9C%AC%E6%A3%9A%E7%AE%A1%E7%90%86/id6760252143#information) | iOS app for managing your bookshelf — scan ISBN barcodes, organize with labels, and fetch cover images automatically. |
 | Mobile Apps | [Done Log](https://apps.apple.com/jp/app/done-log/id6759606196) | A simple habit and activity logging app. |
 | Mobile Apps | [Asset Transition Simulator](https://apps.apple.com/jp/app/%E8%B3%87%E7%94%A3%E6%8E%A8%E7%A7%BB%E3%82%B7%E3%83%A5%E3%83%9F%E3%83%AC%E3%83%BC%E3%82%BF%E3%83%BC/id6759601487) | An app for simulating future asset transitions. |
@@ -111,7 +112,7 @@ Contract web development across diverse clients and projects.
 
 ## Books
 
-**~~net/http で つくる HTTP ルーター自作入門~~** (2022)
+**net/http で つくる HTTP ルーター自作入門** (2022)
 
 A book on implementing an HTTP router using only Go's standard library, based on the experience of developing [goblin](https://github.com/bmf-san/goblin).
 
