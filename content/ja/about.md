@@ -112,7 +112,7 @@ HR テック領域のプラットフォーム開発、システムアーキテ�
 
 ## 著書
 
-**~~net/http で つくる HTTP ルーター自作入門~~** (2022)
+**net/http で つくる HTTP ルーター自作入門** (2022)
 
 Go の標準ライブラリのみで HTTP ルーターを実装する本。[goblin](https://github.com/bmf-san/goblin) 開発の知見をもとに執筆。
 
