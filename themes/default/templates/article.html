@@ -29,6 +29,11 @@
     <div class="flex items-center gap-2 mb-4 flex-wrap">
       {{range .FrontMatter.Categories}}<a href="{{categoryURL $locale .}}" class="badge badge-info">{{.}}</a>{{end}}
       <span class="text-sm text-secondary">{{formatDate "2006-01-02" .FrontMatter.Date}}</span>
+      {{if .ReadingTime}}
+      <span class="text-sm text-secondary" aria-label="{{if eq .Locale "ja"}}推定読了時間{{else}}Estimated reading time{{end}}">
+        ⏱ {{if eq .Locale "ja"}}約 {{.ReadingTime}} 分{{else}}{{.ReadingTime}} min read{{end}}
+      </span>
+      {{end}}
     </div>
     <h1 class="text-4xl font-bold mb-6 leading-tight">{{.FrontMatter.Title}}</h1>
     <div class="flex items-center justify-between flex-wrap gap-4">
@@ -73,6 +78,17 @@
 
   {{/* Article Body */}}
   {{template "ad-unit-article-top" $}}
+  {{/* Table of contents (gohan v1.3.0+): rendered only when the article has >= 2 top-level headings */}}
+  {{if and .TOC (ge (len .TOC) 2)}}
+  <nav class="toc card mb-8" aria-label="{{if eq .Locale "ja"}}目次{{else}}Table of contents{{end}}">
+    <div class="card-header">
+      <span class="font-semibold text-base">{{if eq .Locale "ja"}}目次{{else}}Table of contents{{end}}</span>
+    </div>
+    <div class="card-body">
+      {{template "toc-list" .TOC}}
+    </div>
+  </nav>
+  {{end}}
   <article class="prose prose-full mb-12">
     {{.HTMLContent}}
   </article>

@@ -413,6 +413,20 @@
 {{- end}}
 {{end}}
 
+{{define "toc-list"}}
+{{- /* Recursive renderer for ProcessedArticle.TOC (gohan v1.3.0+).
+     Called with a []TOCEntry. Emits nested <ul> using heading anchor IDs
+     that match the rendered HTML, so links jump to in-article headings. */}}
+<ul class="list-disc pl-5 space-y-1 text-sm">
+  {{- range .}}
+  <li>
+    <a href="#{{.ID}}" class="text-primary hover:underline">{{.Text}}</a>
+    {{- if .Children}}{{template "toc-list" .Children}}{{end}}
+  </li>
+  {{- end}}
+</ul>
+{{end}}
+
 {{define "support-links"}}
 {{- $p := .Config.Theme.Params}}
 {{- $github := index $p "github"}}
