@@ -36,6 +36,7 @@ listing_slugs:
   - acid-vs-base
   - cap-theorem-pacelc-theorem
   - bmf-tech-supporting-technologies
+  - migrating-bmf-tech-from-gobel-to-gohan
   - transaction-overview
   - distributed-transaction-patterns-2pc-saga-outbox
   - mysql-transaction-anomalies
