@@ -59,7 +59,9 @@ test.describe('English root index /', () => {
 
   test('sidebar has Categories section', async ({ page }) => {
     await page.goto('/');
-    await expect(page.locator('aside')).toBeVisible();
+    // Use the outer sidebar column; multiple <aside> elements exist
+    // (sponsors-sidebar is also rendered as <aside>).
+    await expect(page.locator('aside.md\\:col-span-1')).toBeVisible();
   });
 
   test('pagination is present on page 1', async ({ page }) => {
