@@ -1,4 +1,6 @@
-.PHONY: help install-gohan install-e2e install-lint build serve clean test-e2e test-e2e-ui new-ja new-en lint-content lint-content-diff check-parity devto-build devto-post-all devto-post-file
+.PHONY: help install-gohan install-e2e install-lint build serve clean test-e2e test-e2e-ui new-ja new-en lint-content lint-content-diff check-parity check-content devto-build devto-post-all devto-post-file
+
+GOHAN_VERSION ?= v1.3.0
 
 TITLE   ?= untitled
 SLUG    ?= untitled
@@ -7,8 +9,8 @@ help: ## ヘルプを表示
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | \
 		awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-15s\033[0m %s\n", $$1, $$2}'
 
-install-gohan: ## gohanをインストール
-	GOTOOLCHAIN=auto go install github.com/bmf-san/gohan/cmd/gohan@latest
+install-gohan: ## gohanをインストール (GOHAN_VERSION で固定)
+	GOTOOLCHAIN=auto go install github.com/bmf-san/gohan/cmd/gohan@$(GOHAN_VERSION)
 
 install-e2e: ## Playwright依存をインストール
 	cd e2e && npm ci && npx playwright install --with-deps chromium
@@ -22,6 +24,9 @@ lint-content: ## 全記事を textlint でチェック (JA + EN)
 
 check-parity: ## 日英記事の translation_key 対応をチェック
 	bash scripts/check-translation-parity.sh
+
+check-content: ## gohan check で重複スラッグ・必須フロントマター・孤立 translation_key を検証
+	GOTOOLCHAIN=auto gohan check
 
 lint-content-diff: ## origin/main との差分ファイルのうち本文変更があるもののみ textlint でチェック
 	@ALL_JA=$$(git diff --name-only --diff-filter=ACM origin/main...HEAD -- 'content/ja/posts/*.md'); \

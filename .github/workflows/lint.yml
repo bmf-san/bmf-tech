@@ -21,8 +21,19 @@ jobs:
           cache: 'npm'
           cache-dependency-path: package-lock.json
 
+      - uses: actions/setup-go@v6
+        with:
+          go-version: stable
+          cache: false
+
       - name: Install textlint dependencies
         run: make install-lint
+
+      - name: Install gohan
+        run: make install-gohan
+
+      - name: gohan check (duplicate slugs / required front matter / orphan translation_key)
+        run: make check-content
 
       - name: Lint changed posts
         run: make lint-content-diff
