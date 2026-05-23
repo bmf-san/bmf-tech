@@ -73,6 +73,9 @@
     {{/* Sidebar (1/3 width) */}}
     <aside class="md:col-span-1">
 
+      {{/* Sponsors (PR枠) */}}
+      {{template "sponsors-sidebar" .}}
+
       {{/* Categories */}}
       {{- $locPfx := ""}}
       {{- if eq .CurrentLocale "ja"}}{{$locPfx = "/ja"}}{{end}}

@@ -34,6 +34,10 @@ theme:
     ga_id: "G-784B55NW88"
     paypal: "bmfsan"
     amazon_wishlist: "7UKXW63I8NEK"
+    # Sponsor inquiry form (Google Form). Use prefill URL so the
+    # "category" field is pre-selected to 広告掲載のご相談.
+    # See: https://docs.google.com/forms/d/e/<form_id>/viewform?usp=pp_url&entry.<id>=<value>
+    sponsor_inquiry_url: "https://docs.google.com/forms/d/e/1FAIpQLSeYThU8Mq7GXa-bLzr2i71AhaKVhT_-gLfeQFYZ04tFZ3OO3A/viewform"
 
 syntax_highlight:
   theme: "github"
