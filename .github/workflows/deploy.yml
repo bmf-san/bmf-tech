@@ -3,6 +3,12 @@ name: Deploy to Cloudflare Pages
 on:
   push:
     branches: [main]
+  # Daily rebuild at 00:00 UTC so posts whose `date` falls after the most
+  # recent push become published once their date is reached. gohan v1.3.0
+  # excludes future-dated posts from the build by default, so without a
+  # scheduled run, scheduled posts would only appear on the next push.
+  schedule:
+    - cron: '0 0 * * *'
   workflow_dispatch:
 
 jobs:
@@ -23,8 +29,8 @@ jobs:
       - name: Install gohan
         run: make install-gohan
 
-      - name: Build site
-        run: make build
+      - name: Build site (with phase timings and rebuild explanation)
+        run: GOTOOLCHAIN=auto gohan build --stats --explain
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v4
