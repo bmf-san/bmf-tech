@@ -34,6 +34,34 @@ theme:
     ga_id: "G-784B55NW88"
     paypal: "bmfsan"
     amazon_wishlist: "7UKXW63I8NEK"
+    # Sponsor inquiry form (Google Form). Use prefill URL so the
+    # "category" field is pre-selected to 広告掲載のご相談.
+    # See: https://docs.google.com/forms/d/e/<form_id>/viewform?usp=pp_url&entry.<id>=<value>
+    sponsor_inquiry_url: "https://docs.google.com/forms/d/e/1FAIpQLSeYThU8Mq7GXa-bLzr2i71AhaKVhT_-gLfeQFYZ04tFZ3OO3A/viewform"
+    # Sidebar sponsor slots (rendered by the "sponsors-sidebar" template).
+    # Order matters: the first entry appears at the top of the slot. The
+    # inquiry CTA card is always appended at the bottom by the template.
+    # Each entry must define ja/en variants for image/url/name/description/cta/alt.
+    sponsors:
+      - id: "asset-trend-simulator"
+        image:
+          ja: "/assets/sponsors/asset-trend-simulator-ja.png"
+          en: "/assets/sponsors/asset-trend-simulator-en.png"
+        url:
+          ja: "https://apps.apple.com/jp/app/id6759601487"
+          en: "https://apps.apple.com/us/app/id6759601487"
+        name:
+          ja: "資産推移シミュレーター"
+          en: "Asset Trend Simulator"
+        description:
+          ja: "長期キャッシュフロー＆ネットワース推移を可視化する iOS アプリ。FIRE・住宅ローン・老後資金の検討に。"
+          en: "iOS app for long-term cash-flow & net-worth simulation. Built for FIRE, mortgage, and retirement planning."
+        cta:
+          ja: "App Store で見る →"
+          en: "View on the App Store →"
+        alt:
+          ja: "資産推移シミュレーター — 将来の純資産を月次で予測する iOS アプリ"
+          en: "Asset Trend Simulator — iOS app for long-term net-worth simulation"
 
 syntax_highlight:
   theme: "github"

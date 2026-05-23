@@ -415,6 +415,50 @@
 {{- end}}
 {{end}}
 
+{{define "sponsors-sidebar"}}
+{{- /* Sidebar sponsor slots for the top page (right column, above other widgets).
+     - Entries are loaded from `theme.params.sponsors` in config.yaml. Each entry
+       must define ja/en variants for image, url, name, description, cta, alt.
+     - Labels: 「PR」 (ja) / 「Sponsored」 (en) for 景表法（ステマ規制）対応.
+     - External links use rel="sponsored noopener noreferrer" per Google Search policy.
+     - The "Looking for sponsors" CTA card is always appended at the bottom
+       and links to `theme.params.sponsor_inquiry_url`. */ -}}
+{{- $isJA := eq .CurrentLocale "ja"}}
+{{- $loc := .CurrentLocale}}
+{{- $inquiryURL := index .Config.Theme.Params "sponsor_inquiry_url"}}
+{{- $sponsors := index .Config.Theme.Params "sponsors"}}
+{{- if or $sponsors $inquiryURL}}
+<aside class="card mb-6" aria-label="{{if $isJA}}スポンサー{{else}}Sponsors{{end}}">
+  <div class="card-header flex items-center justify-between">
+    <span class="font-semibold text-base">{{if $isJA}}スポンサー{{else}}Sponsors{{end}}</span>
+    <span class="badge badge-light text-secondary text-xs uppercase">{{if $isJA}}PR{{else}}Sponsored{{end}}</span>
+  </div>
+  <div class="card-body-compact divide-y divide-slate-200">
+
+    {{- range $sponsors}}
+    <a href="{{index .url $loc}}" target="_blank" rel="sponsored noopener noreferrer" class="block py-3 first:pt-0 hover:opacity-90 transition-opacity">
+      <img src="{{index .image $loc}}"
+           alt="{{index .alt $loc}}"
+           class="w-full h-auto rounded-md mb-2 shadow-sm"
+           loading="lazy" width="600" height="315">
+      <p class="text-sm font-semibold text-primary">{{index .name $loc}}</p>
+      <p class="text-xs text-secondary leading-relaxed">{{index .description $loc}}</p>
+      <p class="text-xs text-primary mt-1">{{index .cta $loc}}</p>
+    </a>
+    {{- end}}
+
+    {{- if $inquiryURL}}
+    <div class="pt-3">
+      <a href="{{$inquiryURL}}" target="_blank" rel="noopener noreferrer" class="block text-xs text-secondary hover:text-primary border border-dashed rounded p-3 text-center">
+        {{if $isJA}}広告掲載募集中 →{{else}}Looking for sponsors →{{end}}
+      </a>
+    </div>
+    {{- end}}
+  </div>
+</aside>
+{{- end}}
+{{end}}
+
 {{define "toc-list"}}
 {{- /* Recursive renderer for ProcessedArticle.TOC (gohan v1.3.0+).
      Called with a []TOCEntry. Emits nested <ul> using heading anchor IDs
