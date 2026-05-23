@@ -9,8 +9,6 @@ translation_key: bmf-as-a-service
 description: "Overview of services offered by bmf-san as an individual: consulting, mentoring, sponsorships, and speaking & writing (media inquiries). All inquiries via the contact form."
 ---
 
-# bmf as a Service
-
 A list of services I offer as an individual. All requests go through the contact form.
 
 | Service | Scope |
