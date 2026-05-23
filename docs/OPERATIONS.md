@@ -6,10 +6,16 @@
 
 ### フロー
 
-1. `main` ブランチへ push
+1. `main` ブランチへ push (もしくは毎日 00:00 UTC の schedule 実行)
 2. `.github/workflows/deploy.yml` が走る
-3. `gohan build` で `public/` を生成
+3. `gohan build --stats --explain` で `public/` を生成 (フェーズ別タイミングとリビルド理由をログ出力)
 4. `cloudflare/wrangler-action@v3` が `public/` を Cloudflare Pages プロジェクト `bmf-tech` にアップロード
+
+### 予約投稿 (gohan v1.3.0+)
+
+`date` を未来日時に設定した記事は、その日付に到達するまで build から除外される (gohan v1.3.0 のデフォルト挙動)。`main` にマージしても即時公開されず、毎日 00:00 UTC の scheduled deploy で `date <= now` を満たした時点で自動的に公開される。
+
+プレビュー目的で未来日付の記事を含めてビルドしたい場合のみ、ローカルで `gohan build --future` を使う。
 
 ### 必要な GitHub Secrets
 
@@ -82,3 +88,19 @@
 | `lighthouse.yml` | PR | Lighthouse CI |
 | `devto-publish.yml` | push main (`content/en/posts/**`) / 手動 | dev.to 投稿 |
 | `tools-tests.yml` | push main / PR (tools/devto/) | tools の unit test |
+
+## ローカル開発
+
+### サーバー
+
+`make serve` で `http://localhost:1313` に gohan dev server を起動する。ファイル変更を検知して自動リビルド + ブラウザリロードする。
+
+#### CSS-only HMR (gohan v1.3.0+)
+
+テーマや `assets/` 配下の `.css` ファイルのみを変更した場合、フルリロードではなく `<link rel="stylesheet">` の `?_gohan=<ts>` クエリ更新によるホットスワップが行われる。スクロール位置や開発中の DOM 状態を保ったままスタイル調整できるため、テーマ調整時のフィードバックループが短い。
+
+HTML テンプレートや Markdown を変更した場合は従来通りフルリロード。
+
+### コンテンツ整合性チェック
+
+`make check-content` で gohan の組み込みリンタ (重複スラッグ・必須フロントマター・孤立 `translation_key`) を実行できる。CI でも `lint.yml` 経由で PR ごとに実行される。
