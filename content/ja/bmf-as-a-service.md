@@ -96,7 +96,7 @@ bmf-san が個人として提供しているサービスの一覧です。ご依
 
 得意領域: Go / プラットフォーム基盤 / アーキテクチャ / 個人 OSS 活動 / キャリア論。
 
-[取材・登壇・寄稿を相談する](https://docs.google.com/forms/d/e/1FAIpQLSeYThU8Mq7GXa-bLzr2i71AhaKVhT_-gLfeQFYZ04tFZ3OO3A/viewform) — フォーム内の「カテゴリ」欄で **取材・登壇・寄稿のご依頼** を選択してください。
+[メディア対応を相談する](https://docs.google.com/forms/d/e/1FAIpQLSeYThU8Mq7GXa-bLzr2i71AhaKVhT_-gLfeQFYZ04tFZ3OO3A/viewform) — フォーム内の「カテゴリ」欄で **メディア対応（取材・登壇・寄稿）のご相談** を選択してください。
 
 ---
 
