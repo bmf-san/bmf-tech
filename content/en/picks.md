@@ -8,52 +8,53 @@ template: picks.html
 draft: false
 translation_key: picks
 listing_slugs:
+  - accidental-complexity-and-missing-decision-records
+  - distributed-transaction-patterns-2pc-saga-outbox
+  - abstraction-trap-in-architecture
+  - platform-viability-conditions
+  - product-development-vs-platform-development
+  - migrating-bmf-tech-from-gobel-to-gohan
   - engineering-in-ai-reflections
   - github-agentic-workflow-llm-prompt-management
-  - platform-engineering-explained
-  - architecture-strategy-discussion
+  - career-portfolio-creation-guide
   - good-bad-architecture-strategies
   - when-why-write-architecture-strategy
   - architecture-strategy-tactics-design
   - requirements-vs-constraints
-  - importance-of-constraints-tradeoffs
   - adr-writing-key-points
-  - accidental-complexity-and-missing-decision-records
-  - what-is-architecture-advice-process
-  - system-specification-structure
-  - writing-architecture-documentation
-  - bounded-context-explanation
-  - cohesion-coupling
-  - abstraction-trap-in-architecture
-  - design-shelf-life-considerations
-  - access-control-patterns-using-opa
-  - microservices-access-control-opa
-  - cache-strategy-patterns
-  - web-application-processing-model
-  - measuring-scalability
-  - load-testing-start-guide
-  - system-design-resources-review
-  - acid-vs-base
-  - cap-theorem-pacelc-theorem
-  - bmf-tech-supporting-technologies
-  - transaction-overview
-  - distributed-transaction-patterns-2pc-saga-outbox
-  - mysql-transaction-anomalies
-  - mysql-locking
-  - what-is-index
-  - terminal-specifications-for-tui-development
-  - building-http-router-with-net-http
-  - custom-http-router-to-new-servemux
-  - ruby-rails-io-cpu-characteristics
-  - pagination-impact-solutions-opa
-  - product-development-vs-platform-development
-  - platform-viability-conditions
   - team-topologies-introduction
   - mvv-importance-software-teams
-  - dealing-with-uncertainty-software-projects
-  - story-points-using-cynefin-framework
+  - platform-engineering-explained
+  - terminal-specifications-for-tui-development
+  - what-is-architecture-advice-process
+  - importance-of-constraints-tradeoffs
+  - cache-strategy-patterns
+  - web-application-processing-model
+  - acid-vs-base
+  - cap-theorem-pacelc-theorem
   - reflection-framework-bmf
-  - career-portfolio-creation-guide
-  - go-performance-improvement
+  - cohesion-coupling
+  - access-control-patterns-using-opa
+  - ruby-rails-io-cpu-characteristics
+  - pagination-impact-solutions-opa
+  - design-shelf-life-considerations
+  - measuring-scalability
+  - writing-architecture-documentation
+  - system-specification-structure
+  - bounded-context-explanation
+  - microservices-access-control-opa
+  - story-points-using-cynefin-framework
+  - architecture-strategy-discussion
+  - load-testing-start-guide
   - set-theory
+  - custom-http-router-to-new-servemux
+  - mysql-locking
+  - what-is-index
+  - dealing-with-uncertainty-software-projects
+  - go-performance-improvement
+  - mysql-transaction-anomalies
+  - transaction-overview
+  - system-design-resources-review
+  - bmf-tech-supporting-technologies
+  - building-http-router-with-net-http
 ---
