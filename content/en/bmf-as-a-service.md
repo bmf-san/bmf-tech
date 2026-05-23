@@ -15,8 +15,8 @@ A list of services I offer as an individual. All requests go through the contact
 
 Available services:
 
-- **Consulting** — spot engagements (resume review, architecture review, etc.)
-- **Mentoring** — recurring 1on1s (career / engineering)
+- **Consulting** — technical advisory (tech stack consultation / architecture review, etc.)
+- **Mentoring** — career topics (career advice / interview prep / resume review)
 - **Sponsorship** — sponsor slot on this blog
 - **Speaking & Writing** — media interviews, talks, contributed articles
 
@@ -26,21 +26,20 @@ Details below.
 
 ## Consulting
 
-Spot-style engagements scoped to one to a few sessions on a specific topic.
+Technical advisory engagements. Both spot (single session) and a few recurring sessions are supported.
 
 Please describe your request through the contact form first. After hearing the details, I will respond with whether I can take it on, the suggested format, and pricing.
 
-### Resume / CV review
-
-- Review and improvement suggestions on your existing resume
-- Help articulating outcomes and scope of responsibility
-- Anticipating likely interview questions
-
-### Tech stack consultation / Architecture review
+### Tech stack consultation
 
 - Third-party review of product technology choices (language / framework / infrastructure)
+- Comparing and validating candidate technologies
+
+### Architecture review
+
 - Identifying issues in existing architecture and discussing improvement directions
-- Strongest areas: Go and platform foundations (auth / notifications / observability)
+- Design Doc review
+- Strongest areas: Go and platform foundations (auth / notifications / observability, etc.)
 
 **Pricing**: negotiable, quoted based on scope and effort.
 
@@ -50,21 +49,26 @@ Please describe your request through the contact form first. After hearing the d
 
 ## Mentoring
 
-Recurring 1on1s (e.g. monthly) for ongoing support.
+Career-related support. Engagements can range from a single spot session to ongoing 1on1s (monthly, etc.) — whatever suits you.
 
-### Career mentoring
+### Career advice
 
-- Continuous sparring on career direction / skill inventory
+- Sparring on career direction / skill inventory
 - Mid- to long-term career design ("becoming an architect", "moving into platform engineering", etc.)
 - Decision support during job changes
 
-### Engineering mentoring
+### Interview preparation
 
-- Design reviews and learning plans for personal projects / OSS
-- Support for engineers who want to grow technically outside their day job
-- Strongest areas: Go and platform foundations
+- Anticipating likely interview questions and structuring answers
+- Mock interviews (technical / cultural / management) with feedback
+- Help articulating outcomes and scope of responsibility
 
-**Pricing**: negotiable (monthly subscription or per-session — both possible).
+### Resume / CV review
+
+- Review and improvement suggestions on your existing resume
+- Tailoring advice for specific target positions
+
+**Pricing**: negotiable (per-session or monthly — both possible).
 
 [Request a mentoring engagement](https://docs.google.com/forms/d/e/1FAIpQLSeYThU8Mq7GXa-bLzr2i71AhaKVhT_-gLfeQFYZ04tFZ3OO3A/viewform) — please choose **Mentoring inquiry** in the form's *Category* field.
 
