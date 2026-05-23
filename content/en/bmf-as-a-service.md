@@ -9,16 +9,14 @@ translation_key: bmf-as-a-service
 description: "Overview of services offered by bmf-san as an individual: consulting, mentoring, sponsorships, and speaking & writing (media inquiries). All inquiries via the contact form."
 ---
 
-# bmf as a Service
-
 A list of services I offer as an individual. All requests go through the contact form.
 
-Available services:
-
-- **Consulting** — technical advisory (tech stack consultation / architecture review, etc.)
-- **Mentoring** — career topics (career advice / interview prep / resume review)
-- **Sponsorship** — sponsor slot on this blog
-- **Speaking & Writing** — media interviews, talks, contributed articles
+| Service | Scope |
+| --- | --- |
+| Consulting | Technical advisory (tech stack consultation / architecture review, etc.) |
+| Mentoring | Career advice / interview preparation / resume review |
+| Sponsorship | Sponsor slot on this blog |
+| Speaking & Writing | Media interviews, talks, contributed articles |
 
 Details below.
 
@@ -39,7 +37,6 @@ Please describe your request through the contact form first. After hearing the d
 
 - Identifying issues in existing architecture and discussing improvement directions
 - Design Doc review
-- Strongest areas: Go and platform foundations (auth / notifications / observability, etc.)
 
 **Pricing**: negotiable, quoted based on scope and effort.
 
@@ -98,25 +95,7 @@ Media interviews, conference / event talks, and contributed articles are welcome
 - **Talks**: conferences, internal study sessions, hiring events
 - **Contributed articles**: tech media, company blogs
 
-Areas of focus: Go / platform foundations / architecture / personal OSS / career topics.
-
 [Inquire about speaking & writing](https://docs.google.com/forms/d/e/1FAIpQLSeYThU8Mq7GXa-bLzr2i71AhaKVhT_-gLfeQFYZ04tFZ3OO3A/viewform) — please choose **Speaking & Writing inquiry** in the form's *Category* field.
-
----
-
-## FAQ
-
-**Q. Where / how do we meet?**
-Online by default (Google Meet / Zoom). Chat-only engagements are also negotiable.
-
-**Q. Availability?**
-Because I have a full-time job, I primarily respond on weekday evenings and weekends. Replies can take a few days.
-
-**Q. Confidentiality?**
-NDAs are available on request. Please mention this up front.
-
-**Q. Can companies engage you?**
-Yes — a quasi-mandate (準委任) business contract is possible.
 
 ---
 
