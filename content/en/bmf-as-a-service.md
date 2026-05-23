@@ -6,32 +6,29 @@ author: bmf-san
 template: page.html
 draft: false
 translation_key: bmf-as-a-service
-description: "Overview of consulting and sponsorship services offered by bmf-san: career consultation, resume review, technical stack and architecture review, plus sponsorship slots on bmf-tech."
+description: "Overview of services offered by bmf-san as an individual: consulting, mentoring, sponsorships, and speaking & writing (media inquiries). All inquiries via the contact form."
 ---
 
 # bmf as a Service
 
-A landing page for the services I offer as an individual.
-Because these are run alongside my day job, capacity is limited — but please feel free to get in touch.
+A list of services I offer as an individual. All requests go through the contact form.
 
-## Who this is for
+Available services:
 
-- Engineers who want to think through their next career move with a third party
-- People who would like a review of their resume / CV and help articulating their experience
-- Companies and individuals looking for an outside sounding board on technical stack selection or architecture decisions
-- Individuals and companies who would like to place a sponsorship on this blog (bmf-tech)
+- **Consulting** — spot engagements (resume review, architecture review, etc.)
+- **Mentoring** — recurring 1on1s (career / engineering)
+- **Sponsorship** — sponsor slot on this blog
+- **Speaking & Writing** — media interviews, talks, contributed articles
+
+Details below.
 
 ---
 
 ## Consulting
 
-The initial chat is always free. After hearing the details, we'll discuss scope, format, and pricing together.
+Spot-style engagements scoped to one to a few sessions on a specific topic.
 
-### Career consultation
-
-- Reflecting on your current role / planning a job change / skill inventory
-- Reading between the lines of job descriptions and interview processes
-- Mid- to long-term career design ("I want to grow into an architect role", "I want to move into platform engineering", etc.)
+Please describe your request through the contact form first. After hearing the details, I will respond with whether I can take it on, the suggested format, and pricing.
 
 ### Resume / CV review
 
@@ -45,52 +42,77 @@ The initial chat is always free. After hearing the details, we'll discuss scope,
 - Identifying issues in existing architecture and discussing improvement directions
 - Strongest areas: Go and platform foundations (auth / notifications / observability)
 
-### Pricing
+**Pricing**: negotiable, quoted based on scope and effort.
 
-Negotiable based on scope. Please start with a free intro chat.
-
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSeYThU8Mq7GXa-bLzr2i71AhaKVhT_-gLfeQFYZ04tFZ3OO3A/viewform" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-Request a consultation →
-</a>
-
-> In the form's **Category** field, please choose one of *Career consultation*, *Resume review*, or *Architecture review*.
+[Request a consulting engagement](https://docs.google.com/forms/d/e/1FAIpQLSeYThU8Mq7GXa-bLzr2i71AhaKVhT_-gLfeQFYZ04tFZ3OO3A/viewform) — please choose **Consulting inquiry** in the form's *Category* field.
 
 ---
 
-## Sponsorship / Advertising
+## Mentoring
+
+Recurring 1on1s (e.g. monthly) for ongoing support.
+
+### Career mentoring
+
+- Continuous sparring on career direction / skill inventory
+- Mid- to long-term career design ("becoming an architect", "moving into platform engineering", etc.)
+- Decision support during job changes
+
+### Engineering mentoring
+
+- Design reviews and learning plans for personal projects / OSS
+- Support for engineers who want to grow technically outside their day job
+- Strongest areas: Go and platform foundations
+
+**Pricing**: negotiable (monthly subscription or per-session — both possible).
+
+[Request a mentoring engagement](https://docs.google.com/forms/d/e/1FAIpQLSeYThU8Mq7GXa-bLzr2i71AhaKVhT_-gLfeQFYZ04tFZ3OO3A/viewform) — please choose **Mentoring inquiry** in the form's *Category* field.
+
+---
+
+## Sponsorship
 
 This blog (bmf-tech) has a sponsor slot in the top-page right sidebar.
 
-- **Placement**: Top of the right sidebar on the index page (desktop and mobile)
-- **Localization**: Separate image and URL can be set per Japanese / English page
+- **Placement**: top of the right sidebar on the index page (desktop and mobile)
+- **Localization**: separate image and URL can be set per Japanese / English page
 - **Image size**: 600 × 315 (same aspect ratio as an OG card)
-- **Labeling**: A 「PR」/ Sponsored label is always shown (compliant with JFTC stealth-marketing rules)
+- **Labeling**: a 「PR」/ Sponsored label is always shown (compliant with JFTC stealth-marketing rules)
 - **rel attribute**: `sponsored noopener noreferrer` is always applied (per Google Search quality guidelines)
 
-Duration and pricing are negotiable depending on the product or service being promoted.
-Individual app / SaaS / OSS-sponsor links are also welcome.
+Duration and pricing are negotiable depending on the product or service being promoted. Individual app / SaaS / OSS-sponsor links are also welcome.
 
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSeYThU8Mq7GXa-bLzr2i71AhaKVhT_-gLfeQFYZ04tFZ3OO3A/viewform" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-Inquire about sponsorship →
-</a>
+[Inquire about sponsorship](https://docs.google.com/forms/d/e/1FAIpQLSeYThU8Mq7GXa-bLzr2i71AhaKVhT_-gLfeQFYZ04tFZ3OO3A/viewform) — please choose **Sponsorship inquiry** in the form's *Category* field.
 
-> In the form's **Category** field, please choose *Sponsorship inquiry*.
+---
+
+## Speaking & Writing
+
+Media interviews, conference / event talks, and contributed articles are welcome.
+
+- **Interviews**: web media, books, etc.
+- **Talks**: conferences, internal study sessions, hiring events
+- **Contributed articles**: tech media, company blogs
+
+Areas of focus: Go / platform foundations / architecture / personal OSS / career topics.
+
+[Inquire about speaking & writing](https://docs.google.com/forms/d/e/1FAIpQLSeYThU8Mq7GXa-bLzr2i71AhaKVhT_-gLfeQFYZ04tFZ3OO3A/viewform) — please choose **Speaking & Writing inquiry** in the form's *Category* field.
 
 ---
 
 ## FAQ
 
 **Q. Where / how do we meet?**
-A. Online only (Google Meet / Zoom). Chat-only engagements are also negotiable.
+Online by default (Google Meet / Zoom). Chat-only engagements are also negotiable.
 
 **Q. Availability?**
-A. Because I have a full-time job, I primarily respond on weekday evenings and weekends. Replies can take a few days.
+Because I have a full-time job, I primarily respond on weekday evenings and weekends. Replies can take a few days.
 
 **Q. Confidentiality?**
-A. NDAs are available on request. Please mention this up front.
+NDAs are available on request. Please mention this up front.
 
 **Q. Can companies engage you?**
-A. Yes — a quasi-mandate (準委任) business contract is possible.
+Yes — a quasi-mandate (準委任) business contract is possible.
 
 ---
 
@@ -98,6 +120,4 @@ A. Yes — a quasi-mandate (準委任) business contract is possible.
 
 All inquiries go through this Google Form.
 
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSeYThU8Mq7GXa-bLzr2i71AhaKVhT_-gLfeQFYZ04tFZ3OO3A/viewform" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
-Open the contact form →
-</a>
+[Open the contact form](https://docs.google.com/forms/d/e/1FAIpQLSeYThU8Mq7GXa-bLzr2i71AhaKVhT_-gLfeQFYZ04tFZ3OO3A/viewform)
