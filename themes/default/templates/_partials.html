@@ -416,42 +416,53 @@
 {{end}}
 
 {{define "sponsors-sidebar"}}
-{{- /* Sidebar sponsor slot for the top page (right column, above other widgets).
-     - Active sponsors are listed inline below. To add a sponsor, copy one of the
-       commented sample blocks and fill in name / url / image / text.
+{{- /* Sidebar sponsor slots for the top page (right column, above other widgets).
+     - Two slots are rendered, separated by a divider:
+       Slot 1 — self-promo (currently: Asset Trend Simulator iOS app)
+       Slot 2 — external sponsor / inquiry CTA placeholder
      - Labels: 「PR」 (ja) / 「Sponsored」 (en) for 景表法（ステマ規制）対応.
      - External links use rel="sponsored noopener noreferrer" per Google Search policy.
-     - When no sponsors are active, the inquiry CTA card is shown alone. */ -}}
+     - To swap a slot, edit the corresponding block below. The empty slot shows
+       the "Looking for sponsors" CTA when no sponsor is configured. */ -}}
 {{- $isJA := eq .CurrentLocale "ja"}}
 {{- $inquiryURL := index .Config.Theme.Params "sponsor_inquiry_url"}}
+{{- $atsURL := "https://apps.apple.com/us/app/id6759601487"}}
+{{- $atsImage := "/assets/sponsors/asset-trend-simulator-en.png"}}
+{{- if $isJA}}{{$atsURL = "https://apps.apple.com/jp/app/id6759601487"}}{{$atsImage = "/assets/sponsors/asset-trend-simulator-ja.png"}}{{end}}
 <aside class="card mb-6" aria-label="{{if $isJA}}スポンサー{{else}}Sponsors{{end}}">
   <div class="card-header flex items-center justify-between">
     <span class="font-semibold text-base">{{if $isJA}}スポンサー{{else}}Sponsors{{end}}</span>
     <span class="badge badge-light text-secondary text-xs uppercase">{{if $isJA}}PR{{else}}Sponsored{{end}}</span>
   </div>
-  <div class="card-body-compact space-y-4">
+  <div class="card-body-compact divide-y divide-slate-200">
 
-    {{- /* ===== Active sponsors (edit below) =====
+    {{- /* ===== Slot 1: Asset Trend Simulator (self-promo) ===== */}}
+    <a href="{{$atsURL}}" target="_blank" rel="sponsored noopener noreferrer" class="block py-3 first:pt-0 hover:opacity-90 transition-opacity">
+      <img src="{{$atsImage}}"
+           alt="{{if $isJA}}資産推移シミュレーター — 将来の純資産を月次で予測する iOS アプリ{{else}}Asset Trend Simulator — iOS app for long-term net-worth simulation{{end}}"
+           class="w-full h-auto rounded-md mb-2 shadow-sm"
+           loading="lazy" width="600" height="315">
+      <p class="text-sm font-semibold text-primary">{{if $isJA}}資産推移シミュレーター{{else}}Asset Trend Simulator{{end}}</p>
+      <p class="text-xs text-secondary leading-relaxed">
+        {{if $isJA}}長期キャッシュフロー＆ネットワース推移を可視化する iOS アプリ。FIRE・住宅ローン・老後資金の検討に。{{else}}iOS app for long-term cash-flow & net-worth simulation. Built for FIRE, mortgage, and retirement planning.{{end}}
+      </p>
+      <p class="text-xs text-primary mt-1">{{if $isJA}}App Store で見る →{{else}}View on the App Store →{{end}}</p>
+    </a>
 
-    Sample: image + text
-    <a href="https://example.com" target="_blank" rel="sponsored noopener noreferrer" class="block hover:opacity-90 transition-opacity">
-      <img src="/assets/sponsors/example.png" alt="Example Co." class="w-full h-auto rounded mb-2" loading="lazy">
+    {{- /* ===== Slot 2: external sponsor placeholder ===== */}}
+    {{- /* To activate, replace the inquiry CTA below with:
+    <a href="https://example.com" target="_blank" rel="sponsored noopener noreferrer" class="block py-3 hover:opacity-90 transition-opacity">
+      <img src="/assets/sponsors/example.png" alt="Example Co." class="w-full h-auto rounded-md mb-2 shadow-sm" loading="lazy">
       <p class="text-sm font-semibold text-primary">Example Co.</p>
       <p class="text-xs text-secondary leading-relaxed">高速で使える SaaS。無料枠あり。</p>
     </a>
-
-    Sample: text-only
-    <a href="https://example.com" target="_blank" rel="sponsored noopener noreferrer" class="block hover:opacity-90 transition-opacity">
-      <p class="text-sm font-semibold text-primary">Example Co.</p>
-      <p class="text-xs text-secondary leading-relaxed">高速で使える SaaS。無料枠あり。</p>
-    </a>
-
-    ===== End of active sponsors ===== */ -}}
-
+    */ -}}
     {{- if $inquiryURL}}
-    <a href="{{$inquiryURL}}" target="_blank" rel="noopener noreferrer" class="block text-xs text-secondary hover:text-primary border border-dashed rounded p-3 text-center">
-      {{if $isJA}}広告掲載募集中 →{{else}}Looking for sponsors →{{end}}
-    </a>
+    <div class="pt-3">
+      <a href="{{$inquiryURL}}" target="_blank" rel="noopener noreferrer" class="block text-xs text-secondary hover:text-primary border border-dashed rounded p-3 text-center">
+        {{if $isJA}}広告掲載募集中 →{{else}}Looking for sponsors →{{end}}
+      </a>
+    </div>
     {{- end}}
   </div>
 </aside>
