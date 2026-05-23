@@ -1,4 +1,6 @@
-.PHONY: help install-gohan install-e2e install-lint build serve clean test-e2e test-e2e-ui new-ja new-en lint-content lint-content-diff check-parity devto-build devto-post-all devto-post-file
+.PHONY: help install-gohan install-e2e install-lint build serve clean test-e2e test-e2e-ui new-ja new-en lint-content lint-content-diff check-parity check-content devto-build devto-post-all devto-post-file
+
+GOHAN_VERSION ?= v1.3.0
 
 TITLE   ?= untitled
 SLUG    ?= untitled
@@ -7,8 +9,8 @@ help: ## ヘルプを表示
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | \
 		awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-15s\033[0m %s\n", $$1, $$2}'
 
-install-gohan: ## gohanをインストール
-	GOTOOLCHAIN=auto go install github.com/bmf-san/gohan/cmd/gohan@latest
+install-gohan: ## gohanをインストール (GOHAN_VERSION で固定)
+	GOTOOLCHAIN=auto go install github.com/bmf-san/gohan/cmd/gohan@$(GOHAN_VERSION)
 
 install-e2e: ## Playwright依存をインストール
 	cd e2e && npm ci && npx playwright install --with-deps chromium
@@ -22,6 +24,9 @@ lint-content: ## 全記事を textlint でチェック (JA + EN)
 
 check-parity: ## 日英記事の translation_key 対応をチェック
 	bash scripts/check-translation-parity.sh
+
+check-content: ## gohan check で重複スラッグ・必須フロントマター・孤立 translation_key を検証
+	GOTOOLCHAIN=auto gohan check
 
 lint-content-diff: ## origin/main との差分ファイルのうち本文変更があるもののみ textlint でチェック
 	@ALL_JA=$$(git diff --name-only --diff-filter=ACM origin/main...HEAD -- 'content/ja/posts/*.md'); \
@@ -64,22 +69,10 @@ test-e2e-ui: ## E2EテストをPlaywright UI モードで実行 (make build を�
 	cd e2e && npx playwright test --ui
 
 new-ja: ## 日本語記事を作成  例: make new-ja TITLE="タイトル" SLUG=slug
-	@mkdir -p content/ja/posts
-	@if [ -f "content/ja/posts/$(SLUG).md" ]; then \
-		echo "error: content/ja/posts/$(SLUG).md already exists"; exit 1; \
-	fi
-	@printf -- '---\ntitle: "$(TITLE)"\nslug: $(SLUG)\ndate: %s\nauthor: bmf-san\ncategories:\n  - \ntags:\n  - \ndescription: ""\ntranslation_key: $(SLUG)\ndraft: true\n---\n' \
-		$$(date +%Y-%m-%d) > content/ja/posts/$(SLUG).md
-	@echo "created: content/ja/posts/$(SLUG).md"
+	GOTOOLCHAIN=auto gohan new --type=ja/posts --archetype=ja-post --title="$(TITLE)" $(SLUG)
 
 new-en: ## 英語記事を作成  例: make new-en TITLE="Title" SLUG=slug
-	@mkdir -p content/en/posts
-	@if [ -f "content/en/posts/$(SLUG).md" ]; then \
-		echo "error: content/en/posts/$(SLUG).md already exists"; exit 1; \
-	fi
-	@printf -- '---\ntitle: "$(TITLE)"\nslug: $(SLUG)\ndate: %s\nauthor: bmf-san\ncategories:\n  - \ntags:\n  - \ndescription: ""\ntranslation_key: $(SLUG)\ndraft: true\n---\n' \
-		$$(date +%Y-%m-%d) > content/en/posts/$(SLUG).md
-	@echo "created: content/en/posts/$(SLUG).md"
+	GOTOOLCHAIN=auto gohan new --type=en/posts --archetype=en-post --title="$(TITLE)" $(SLUG)
 
 DEV_TO_API_KEY ?=
 FILE          ?=
