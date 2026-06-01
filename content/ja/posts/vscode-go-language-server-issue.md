@@ -1,6 +1,6 @@
 ---
 title: vscodeでgoのLanguage Serverを有効にしたらコード定義元ジャンプができなくなった
-description: vscodeでgoのLanguage Serverを有効にしたらコード定義元ジャンプができなくなった
+description: VSCodeでgoのLanguage Server（gopls）を有効にしたらコード定義元ジャンプができなくなった問題の原因と、go.modの配置を見直して解決する方法を解説します。
 slug: vscode-go-language-server-issue
 date: 2020-07-19T00:00:00Z
 author: bmf-san

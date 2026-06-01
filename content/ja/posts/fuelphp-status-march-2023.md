@@ -1,6 +1,6 @@
 ---
 title: FuelPHPの2023年3月現在の現況
-description: FuelPHPの2023年3月現在の現況
+description: 2023年3月時点のFuelPHPの開発状況・リリース動向・コミュニティの現況を整理してまとめました。
 slug: fuelphp-status-march-2023
 date: 2023-03-01T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: AWSサービスの種類ーAZ・リージョン・グローバル
-description: AWSサービスの種類ーAZ・リージョン・グローバル
+description: AWSのサービスをAZ・リージョン・グローバルというデプロイ範囲の観点で分類。インフラ構成の実例とともに整理して解説します。
 slug: types-of-aws-services-az-region-global
 date: 2021-06-23T00:00:00Z
 author: bmf-san

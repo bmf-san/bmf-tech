@@ -1,6 +1,6 @@
 ---
 title: FuelPHPとPHPのアップデートプロジェクトレポート
-description: FuelPHPとPHPのアップデートプロジェクトレポート
+description: FuelPHPアプリケーションをPHP7.3から8.1へアップデートした実践記録。モノリス構成での進め方と互換性チェックツールの活用を解説します。
 slug: fuelphp-php-update-project-report
 date: 2024-01-26T00:00:00Z
 author: bmf-san
