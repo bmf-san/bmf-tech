@@ -1,6 +1,6 @@
 ---
 title: DIとサービスロケーター
-description: DIとサービスロケーター
+description: DI（依存性注入）の実装パターンを解説。DIとサービスロケーターをコンストラクタインジェクションの例で比較し、疎結合なコードの書き方を紹介します。
 slug: dependency-injection-service-locator
 date: 2018-06-05T00:00:00Z
 author: bmf-san

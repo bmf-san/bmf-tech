@@ -1,6 +1,6 @@
 ---
 title: PHPCompatibilityを使ってPHP8.2の互換性チェックを行う際にハマったこと
-description: PHPCompatibilityを使ってPHP8.2の互換性チェックを行う際にハマったこと
+description: PHPCompatibility（CodeSniffer）でPHP8.2の互換性チェックを行う手順と、ツールの制限やdevelopブランチ利用でハマった点を解説します。
 slug: phpcompatibility-php82-compatibility-issues
 date: 2024-04-14T00:00:00Z
 author: bmf-san

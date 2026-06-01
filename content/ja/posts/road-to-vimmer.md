@@ -1,6 +1,6 @@
 ---
 title: Road to Vimmer
-description: Road to Vimmer
+description: GUIに頼らず、vimのカーソル移動・編集・テキスト操作コマンドを習得し、ターミナル上で効率的にテキスト編集する方法を解説します。
 slug: road-to-vimmer
 date: 2018-04-22T00:00:00Z
 author: bmf-san

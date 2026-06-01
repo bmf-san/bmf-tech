@@ -1,6 +1,6 @@
 ---
 title: モニタリングシステムにおけるPull型とPush型のアプローチの違い
-description: モニタリングシステムにおけるPull型とPush型のアプローチの違い
+description: モニタリングシステムにおけるPull型とPush型のアーキテクチャの違いを、それぞれのメリット・デメリットと代表的なツールとともに整理して解説します。
 slug: monitoring-pull-push-approaches
 date: 2023-12-13T00:00:00Z
 author: bmf-san

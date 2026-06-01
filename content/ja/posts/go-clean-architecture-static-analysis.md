@@ -1,6 +1,6 @@
 ---
 title: GoでClean Architectureのレイヤーを静的解析する
-description: GoでClean Architectureのレイヤーを静的解析する
+description: go-cleanarchを使い、GoでClean Architectureのレイヤー依存関係を静的解析で検証・強制する方法を解説します。
 slug: go-clean-architecture-static-analysis
 date: 2022-09-04T00:00:00Z
 author: bmf-san

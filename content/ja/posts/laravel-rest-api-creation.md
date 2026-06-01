@@ -1,6 +1,6 @@
 ---
 title: LaravelでRestAPIをつくる
-description: LaravelでRestAPIをつくる
+description: LaravelのResourceControllerと認証ミドルウェアを使い、JSONレスポンスを返すREST APIをつくる方法を解説します。
 slug: laravel-rest-api-creation
 date: 2017-09-26T00:00:00Z
 author: bmf-san

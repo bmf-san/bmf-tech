@@ -1,6 +1,6 @@
 ---
 title: homebrewで過去バージョンをインストールする
-description: homebrewで過去バージョンをインストールする
+description: Homebrewで過去バージョンのソフトウェアをインストール・ダウングレードする方法を、vimなどの具体例とともに解説します。
 slug: homebrew-installing-previous-versions
 date: 2022-10-30T00:00:00Z
 author: bmf-san

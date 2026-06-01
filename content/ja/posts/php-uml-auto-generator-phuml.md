@@ -1,6 +1,6 @@
 ---
 title: PHPでUMLを自動生成してくれるツールーphUML
-description: PHPでUMLを自動生成してくれるツールーphUML
+description: phUMLを使ってPHPのクラス図を自動生成する方法を解説。設計構造を可視化し、複雑なコードベースの理解に役立てます。
 slug: php-uml-auto-generator-phuml
 date: 2020-06-26T00:00:00Z
 author: bmf-san

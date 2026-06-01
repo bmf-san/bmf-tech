@@ -1,6 +1,6 @@
 ---
 title: Goのマルチモジュール構成でWorkspace modeを使ってみる
-description: Goのマルチモジュール構成でWorkspace modeを使ってみる
+description: Go 1.18以降のWorkspace modeでマルチモジュール開発を簡単にする方法。go work init、go.workファイルの構成、go.modを編集せずにローカルモジュールを参照する手順を解説します。
 slug: go-multi-module-workspace-mode
 date: 2024-01-19T00:00:00Z
 author: bmf-san

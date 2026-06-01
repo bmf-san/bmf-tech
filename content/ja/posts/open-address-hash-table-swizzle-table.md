@@ -1,6 +1,6 @@
 ---
 title: オープンアドレスハッシュテーブルとスイステーブル
-description: オープンアドレスハッシュテーブルとスイステーブル
+description: オープンアドレス法とスイステーブルを解説。衝突解決の手法や、キャッシュ効率の高いハッシュテーブル設計のポイントを紹介します。
 slug: open-address-hash-table-swizzle-table
 date: 2025-02-27T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: クネビンフレームワークを活用したストーリーポイントの考え方
-description: クネビンフレームワークを活用したストーリーポイントの考え方
+description: クネビンフレームワークを活用し、ストーリーポイントの見積もり基準をどう考えるかについてのアイデアを紹介します。
 slug: story-points-using-cynefin-framework
 date: 2025-02-26T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: PostgreSQLのCOLLATEとglibcのバージョン差によるソート順の違い
-description: PostgreSQLのCOLLATEとglibcのバージョン差によるソート順の違い
+description: 同じCOLLATE設定でもソート順が変わる問題に遭遇。原因となるglibcのバージョン差とPostgreSQLの照合順序の挙動を調査した記録です。
 slug: postgresql-collate-glibc-version-differences
 date: 2025-03-05T00:00:00Z
 lastmod: 2026-03-15

@@ -1,6 +1,6 @@
 ---
 title: FuelPHP1.8.0→1.8.2、PHP5.6→PHP7.3へのバージョンアップした
-description: FuelPHP1.8.0→1.8.2、PHP5.6→PHP7.3へのバージョンアップした
+description: FuelPHP 1.8.0から1.8.2、PHP 5.6から7.3へアプリケーションをバージョンアップした際の作業内容と対応ポイントをまとめます。
 slug: fuelphp-version-upgrade-1-8-0-to-1-8-2
 date: 2019-10-05T00:00:00Z
 author: bmf-san

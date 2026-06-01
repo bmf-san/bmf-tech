@@ -1,6 +1,6 @@
 ---
 title: React＋marked＋highlight
-description: React＋marked＋highlight
+description: Reactのマークダウンエディタにmarkedとhighlight.jsを組み合わせ、シンタックスハイライト付きのコードブロックを描画する方法を解説します。
 slug: react-marked-highlight-integration
 date: 2017-10-01T00:00:00Z
 author: bmf-san

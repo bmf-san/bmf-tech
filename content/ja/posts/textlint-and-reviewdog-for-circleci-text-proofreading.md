@@ -1,6 +1,6 @@
 ---
 title: textlintとreviewdogを使ってCircleCIでテキスト校正する
-description: textlintとreviewdogを使ってCircleCIでテキスト校正する
+description: textlintとreviewdogを使い、CircleCI上でテキスト校正を自動化する方法を解説します。
 slug: textlint-and-reviewdog-for-circleci-text-proofreading
 date: 2021-10-09T00:00:00Z
 author: bmf-san

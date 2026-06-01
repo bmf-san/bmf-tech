@@ -1,6 +1,6 @@
 ---
 title: ゴリラで学ぶソフトウェアの法則10選
-description: ゴリラで学ぶソフトウェアの法則10選
+description: パーキンソンの法則、ブルックスの法則、コンウェイの法則など、プロジェクト管理に役立つソフトウェア開発の法則10選をゴリラとともに学びます。
 slug: gorilla-software-principles
 date: 2019-04-17T00:00:00Z
 author: bmf-san

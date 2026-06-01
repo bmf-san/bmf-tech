@@ -1,6 +1,6 @@
 ---
 title: 隣接リストと隣接行列
-description: 隣接リストと隣接行列
+description: 隣接リスト（O(V+E)の空間・疎グラフに有利）と隣接行列（O(V²)の空間・O(1)の辺判定）を比較。有向・無向グラフのGo実装例とともにグラフの表現方法を解説します。
 slug: adjacency-list-matrix
 date: 2023-07-29T00:00:00Z
 author: bmf-san

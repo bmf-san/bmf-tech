@@ -1,6 +1,6 @@
 ---
 title: Ruby on Railsのコードリーディング第1回-Railsの起動
-description: Ruby on Railsのコードリーディング第1回-Railsの起動
+description: Ruby on Railsの起動シーケンスを、コマンド実行からRackup、Pumaサーバーの初期化、リクエスト処理までコードリーディングで追います。
 slug: ruby-on-rails-code-reading-1
 date: 2024-09-02T00:00:00Z
 author: bmf-san

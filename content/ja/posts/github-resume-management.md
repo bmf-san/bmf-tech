@@ -1,6 +1,6 @@
 ---
 title: Githubでレジュメを管理するようにした
-description: Githubでレジュメを管理するようにした
+description: レジュメの管理をGoogle DriveからGitHubに切り替えた経緯と方法を紹介します。
 slug: github-resume-management
 date: 2023-06-07T00:00:00Z
 author: bmf-san

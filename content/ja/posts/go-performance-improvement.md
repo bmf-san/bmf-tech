@@ -1,6 +1,6 @@
 ---
 title: Goで始めるコードのパフォーマンス改善
-description: Goで始めるコードのパフォーマンス改善
+description: Goのパフォーマンス改善の実践。pprofによるプロファイリング、ベンチマーク、エスケープ解析、メモリアロケーション削減を、自作HTTPルーターの最適化事例とともに解説します。
 slug: go-performance-improvement
 date: 2023-06-12T00:00:00Z
 lastmod: 2026-03-15

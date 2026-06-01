@@ -1,6 +1,6 @@
 ---
 title: Atom×TidalCycles×SuperColliderでライブコーディングをはじめる
-description: Atom×TidalCycles×SuperColliderでライブコーディングをはじめる
+description: AtomエディタとTidalCycles、Haskell、SuperColliderの音響合成エンジンを使って、ライブコーディングで音楽をつくる方法を解説します。
 slug: live-coding-atom-tidalcycles-supercollider
 date: 2018-06-11T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: アルゴリズムとデータ構造 - リスト
-description: アルゴリズムとデータ構造 - リスト
+description: 単方向連結リストの仕組みを解説。O(n)のアクセスとO(1)の挿入・削除、ポインタによるノードの走査、Goでの線形連結リスト実装を紹介します。
 slug: algorithms-data-structures-list
 date: 2019-10-18T00:00:00Z
 author: bmf-san

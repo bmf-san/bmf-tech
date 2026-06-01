@@ -1,6 +1,6 @@
 ---
 title: PHPで学ぶデザインパターン - Template Method ~処理の穴埋め~
-description: PHPで学ぶデザインパターン - Template Method ~処理の穴埋め~
+description: PHPで学ぶデザインパターン「Template Method」。共通処理を親クラスにまとめ、固有の実装をサブクラスに委ねる設計を解説します。
 slug: php-design-patterns-template-method
 date: 2017-10-01T00:00:00Z
 author: bmf-san

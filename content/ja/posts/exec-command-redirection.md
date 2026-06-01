@@ -1,6 +1,6 @@
 ---
 title: execコマンドによるリダイレクト
-description: execコマンドによるリダイレクト
+description: シェルのexecコマンドによるファイルディスクリプタのリダイレクトを解説。入出力の制御や端末操作の仕組みを紹介します。
 slug: exec-command-redirection
 date: 2019-05-08T00:00:00Z
 author: bmf-san

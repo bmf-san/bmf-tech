@@ -1,6 +1,6 @@
 ---
 title: オレオレTechnology Radarを作る
-description: オレオレTechnology Radarを作る
+description: ThoughtWorksのフレームワークを使って自分用のTechnology Radarを作る方法を解説。Dockerでのセルフホストや公式プラットフォームの活用を紹介します。
 slug: create-technology-radar
 date: 2022-12-17T00:00:00Z
 lastmod: 2026-03-15

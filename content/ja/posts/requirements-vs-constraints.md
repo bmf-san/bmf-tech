@@ -1,6 +1,6 @@
 ---
 title: 要件と制約の違い
-description: 要件と制約の違い
+description: ソフトウェア設計における要件と制約の違いを、ISO 29148の定義をもとに整理し、アーキテクチャのトレードオフ判断に役立てます。
 slug: requirements-vs-constraints
 date: 2026-01-09T00:00:00Z
 author: bmf-san

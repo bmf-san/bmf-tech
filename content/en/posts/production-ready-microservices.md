@@ -7,7 +7,7 @@ categories:
   - Architecture
 tags:
   - Microservices
-  - BookReview
+  - Book Review
 description: A book that organizes the requirements microservices must satisfy to be production-ready, presented as a standardization checklist.
 translation_key: production-ready-microservices
 ---

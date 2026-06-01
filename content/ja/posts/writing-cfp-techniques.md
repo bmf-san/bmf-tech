@@ -1,6 +1,6 @@
 ---
 title: CFPを書く技術
-description: CFPを書く技術
+description: 登壇のためのCFP（Call for Proposals）を書く技術。ブログ執筆や思考整理のテクニックを応用し、構造的に発表を組み立てる方法を解説します。
 slug: writing-cfp-techniques
 date: 2024-04-14T00:00:00Z
 lastmod: 2026-03-15

@@ -1,6 +1,6 @@
 ---
 title: ADRを書くときに抑えておくべきポイント
-description: ADRを書くときに抑えておくべきポイント
+description: ADRを書く際のポイントを解説。アトミックな意思決定、トレードオフの記録、チームでの議論、テクニカルライティングの原則に焦点を当てます。
 slug: adr-writing-key-points
 date: 2026-01-09T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: 境界付けられたコンテキストとは
-description: 境界付けられたコンテキストとは
+description: ドメイン駆動設計における境界付けられたコンテキストを解説。言葉の意味を明確にし、責務を整理してシステム設計を改善する考え方を紹介します。
 slug: bounded-context-explanation
 date: 2025-05-19T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: 再帰処理の苦手なところ
-description: 再帰処理の苦手なところ
+description: 再帰処理でつまずきやすいreturn文やコールスタックの評価について、克服のための考え方とともに解説します。
 slug: recursion-challenges
 date: 2023-07-08T00:00:00Z
 author: bmf-san

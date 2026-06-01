@@ -1,6 +1,6 @@
 ---
 title: 自作HTTPルーターから新しいServeMuxへ
-description: 自作HTTPルーターから新しいServeMuxへ
+description: 自作HTTPルーターgoblinからGo 1.22で強化されたnet/http ServeMuxへ移行。新しいルーティングパターンや他ルーターとの性能比較、ServeMuxで十分なケースを解説します。
 slug: custom-http-router-to-new-servemux
 date: 2024-04-27T00:00:00Z
 lastmod: 2026-03-15

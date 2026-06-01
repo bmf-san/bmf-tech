@@ -8,8 +8,8 @@ categories:
   - Architecture
 tags:
   - Design
-  - ADR
-  - DesignDoc
+  - Architecture Decision Record
+  - Design Docs
 translation_key: accidental-complexity-and-missing-decision-records
 ---
 

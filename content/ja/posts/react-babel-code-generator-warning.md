@@ -1,6 +1,6 @@
 ---
 title: 'Reactでrequireしてたら、[BABEL] Note: The code generator has deoptimised the styling of '
-description: 'Reactでrequireしてたら、[BABEL] Note: The code generator has deoptimised the styling of '
+description: Reactでrequireした際に出るBabelの「code generator has deoptimised」警告の原因と、ファイルサイズ最適化による解消方法を解説します。
 slug: react-babel-code-generator-warning
 date: 2017-10-01T00:00:00Z
 author: bmf-san

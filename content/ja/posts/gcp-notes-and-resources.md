@@ -1,6 +1,6 @@
 ---
 title: GCPについての覚え書き
-description: GCPについての覚え書き
+description: Google Cloud認定アソシエイトクラウドエンジニア試験の学習中にまとめた、GCPの各種サービスに関する覚え書きです。
 slug: gcp-notes-and-resources
 date: 2023-05-22T00:00:00Z
 author: bmf-san

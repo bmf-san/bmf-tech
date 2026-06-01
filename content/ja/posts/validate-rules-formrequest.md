@@ -1,6 +1,6 @@
 ---
 title: FormRequestのrulesメソッド内でバリデーションルールを振り分ける
-description: FormRequestのrulesメソッド内でバリデーションルールを振り分ける
+description: LaravelのFormRequestで、複数フォームやREST APIのリクエストに応じて条件付きのバリデーションルールを振り分ける方法を解説します。
 slug: validate-rules-formrequest
 date: 2017-09-26T00:00:00Z
 author: bmf-san

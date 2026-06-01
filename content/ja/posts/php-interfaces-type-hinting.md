@@ -1,6 +1,6 @@
 ---
 title: PHPのインターフェースとタイプヒンティング
-description: PHPのインターフェースとタイプヒンティング
+description: PHPのインターフェースとタイプヒンティングを解説。機能と実装を分離し、コードの再利用性と柔軟性を高める方法を紹介します。
 slug: php-interfaces-type-hinting
 date: 2018-12-08T00:00:00Z
 author: bmf-san

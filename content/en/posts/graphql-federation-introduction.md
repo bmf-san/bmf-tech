@@ -1,5 +1,5 @@
 ---
-title: About GraphQL Federation
+title: What is GraphQL Federation? How It Unifies Microservices
 slug: graphql-federation-introduction
 date: 2025-02-02T00:00:00Z
 author: bmf-san
@@ -8,7 +8,7 @@ categories:
 tags:
   - GraphQL
   - GraphQL Federation
-description: A summary of what I researched about GraphQL federation.
+description: Learn what GraphQL Federation is and how subgraphs, a gateway, and schema composition unify multiple microservices into a single graph.
 translation_key: graphql-federation-introduction
 ---
 

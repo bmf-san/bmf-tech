@@ -1,6 +1,6 @@
 ---
 title: ステートレスとステートフル
-description: ステートレスとステートフル
+description: ステートレスとステートフルなプロトコルの違いを解説。HTTP・UDP・IPはステートレス、FTP・TCP・SMTPはステートフルであることや、セッションによる状態管理への影響を整理します。
 slug: stateless-vs-stateful
 date: 2018-04-17T00:00:00Z
 author: bmf-san
