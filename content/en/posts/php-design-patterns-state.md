@@ -9,7 +9,7 @@ categories:
 tags:
   - GoF
   - PHP
-  - Design Pattern
+  - Design Patterns
   - State Pattern
 translation_key: php-design-patterns-state
 ---

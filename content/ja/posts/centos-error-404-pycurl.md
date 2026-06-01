@@ -8,7 +8,7 @@ categories:
   - インフラストラクチャ
 tags:
   - CentOS
-  - os
+  - OS
   - zabbix
   - Tips
 translation_key: centos-error-404-pycurl

@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - Infrastructure
 tags:
-  - ssh
+  - SSH
   - sshd
 translation_key: ssh-connection-setup-notes
 ---

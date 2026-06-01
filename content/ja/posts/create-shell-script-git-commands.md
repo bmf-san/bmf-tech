@@ -8,7 +8,7 @@ categories:
   - アプリケーション
 tags:
   - Git
-  - shellscript
+  - Shell Script
 translation_key: create-shell-script-git-commands
 ---
 

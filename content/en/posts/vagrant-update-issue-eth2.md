@@ -6,7 +6,7 @@ author: bmf-san
 categories:
   - Application
 tags:
-  - apache
+  - Apache
   - Vagrant
   - VirtualBox
   - Tips

@@ -18,7 +18,6 @@
 - name: Adjacency List
 - name: Adjacency Matrix
 - name: Agile
-- name: Algorithm
 - name: Algorithms
 - name: AlloyDB
 - name: Amazon Web Service
@@ -110,7 +109,6 @@
 - name: DI
 - name: DIP
 - name: DNS
-- name: Data Structure
 - name: Data Structures
 - name: Datadog
 - name: Debug
@@ -119,7 +117,6 @@
 - name: Deployment
 - name: Design
 - name: Design Docs
-- name: Design Pattern
 - name: Design Patterns
 - name: Development Productivity
 - name: DigitalOcean
@@ -220,7 +217,6 @@
 - name: Kubernetes
 - name: LDAP
 - name: LLM as Judge
-- name: LLM as judge
 - name: LT
 - name: Labor
 - name: Language Server
@@ -325,7 +321,6 @@
 - name: Prompt Engineering
 - name: Prompt Ops
 - name: Prompt as Code
-- name: Prompt as code
 - name: Prompt engineering
 - name: Promtail
 - name: Protocol Buffers
@@ -469,15 +464,12 @@
 - name: Year in Review
 - name: Zabbix
 - name: anyenv
-- name: apache
 - name: artisan
 - name: async
 - name: babel
 - name: babel-jest
 - name: bash
 - name: bitFlyer
-- name: bitcoin
-- name: bitflyer
 - name: boilerplate
 - name: browerify
 - name: browserify
@@ -489,7 +481,6 @@
 - name: cron
 - name: cross join
 - name: efk
-- name: emoji
 - name: exec
 - name: fan-in
 - name: fan-out
@@ -509,7 +500,6 @@
 - name: hubot
 - name: iTerm
 - name: irb
-- name: jest
 - name: join
 - name: jq
 - name: k3s
@@ -528,7 +518,6 @@
 - name: node-exporter
 - name: npm
 - name: operating systems
-- name: os
 - name: phpunit
 - name: processes
 - name: pundit
@@ -540,14 +529,9 @@
 - name: router
 - name: seccomp
 - name: shell
-- name: shell script
-- name: shellscript
-- name: slack-bot
 - name: slog
 - name: sql
-- name: ssh
 - name: sshd
-- name: superagent
 - name: tee
 - name: termios
 - name: textlint

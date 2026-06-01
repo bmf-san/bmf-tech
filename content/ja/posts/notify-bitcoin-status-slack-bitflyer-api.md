@@ -8,9 +8,9 @@ categories:
   - アプリケーション
 tags:
   - API
-  - bitcoin
+  - Bitcoin
   - Node.js
-  - bitflyer
+  - bitFlyer
 translation_key: notify-bitcoin-status-slack-bitflyer-api
 ---
 

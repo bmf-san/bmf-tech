@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - Application
 tags:
-  - Design Pattern
+  - Design Patterns
   - PHP
   - GoF
   - Strategy Pattern

@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - Infrastructure
 tags:
-  - apache
+  - Apache
   - CentOS
   - Vagrant
 translation_key: vagrant-centos-development-environment

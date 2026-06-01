@@ -9,7 +9,7 @@ categories:
 tags:
   - DI
   - Service Locator
-  - Design Pattern
+  - Design Patterns
 translation_key: dependency-injection-service-locator
 ---
 

@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - Application
 tags:
-  - Design Pattern
+  - Design Patterns
   - PHP
   - Template Method Pattern
 translation_key: php-design-patterns-template-method

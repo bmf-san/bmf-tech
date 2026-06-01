@@ -26,10 +26,8 @@
   translation_key: ai
 - name: AJAX
   translation_key: ajax
-- name: Algorithm
-  translation_key: algorithm
 - name: Algorithms
-  translation_key: algorithms
+  translation_key: algorithm
 - name: AlloyDB
   translation_key: alloydb
 - name: Amazon Web Service
@@ -41,8 +39,6 @@
 - name: anyenv
   translation_key: anyenv
 - name: Apache
-  translation_key: apache-2
-- name: apache
   translation_key: apache
 - name: API
   translation_key: api
@@ -104,11 +100,7 @@
   translation_key: binary-search-tree
 - name: Bitcoin
   translation_key: bitcoin
-- name: bitcoin
-  translation_key: bitcoin
 - name: bitFlyer
-  translation_key: bitflyer-2
-- name: bitflyer
   translation_key: bitflyer
 - name: boilerplate
   translation_key: boilerplate
@@ -218,10 +210,8 @@
   translation_key: customer-success
 - name: Dart
   translation_key: dart
-- name: Data Structure
-  translation_key: data-structure
 - name: Data Structures
-  translation_key: data-structures
+  translation_key: data-structure
 - name: Datadog
   translation_key: datadog
 - name: DB
@@ -238,10 +228,8 @@
   translation_key: design
 - name: Design Docs
   translation_key: design-docs
-- name: Design Pattern
-  translation_key: design-pattern
 - name: Design Patterns
-  translation_key: design-patterns
+  translation_key: design-pattern
 - name: Development Productivity
   translation_key: development-productivity
 - name: DFS
@@ -282,8 +270,6 @@
   translation_key: email
 - name: Emoji
   translation_key: emoji
-- name: emoji
-  translation_key: emoji-2
 - name: ER
   translation_key: er
 - name: ERE
@@ -449,8 +435,6 @@
 - name: JavaScript
   translation_key: javascript
 - name: Jest
-  translation_key: jest-2
-- name: jest
   translation_key: jest
 - name: Jitter
   translation_key: jitter
@@ -514,8 +498,6 @@
   translation_key: liskov-substitution-principle
 - name: LLM as Judge
   translation_key: llm-as-judge
-- name: LLM as judge
-  translation_key: llm-as-judge-2
 - name: Load Average
   translation_key: load-average
 - name: Load Balancer
@@ -698,8 +680,6 @@
   translation_key: prometheus
 - name: Prompt as Code
   translation_key: prompt-as-code
-- name: Prompt as code
-  translation_key: prompt-as-code-2
 - name: Prompt Engineering
   translation_key: prompt-engineering
 - name: Prompt Ops
@@ -823,11 +803,7 @@
 - name: shell
   translation_key: shell
 - name: Shell Script
-  translation_key: shell-script-2
-- name: shell script
   translation_key: shell-script
-- name: shellscript
-  translation_key: shellscript
 - name: Sidekiq
   translation_key: sidekiq
 - name: Singleton Pattern
@@ -840,8 +816,6 @@
   translation_key: slack
 - name: Slack Bot
   translation_key: slack-bot
-- name: slack-bot
-  translation_key: slack-bot-2
 - name: SLI
   translation_key: sli
 - name: Sliding Window
@@ -869,8 +843,6 @@
 - name: SSG
   translation_key: ssg
 - name: SSH
-  translation_key: ssh-2
-- name: ssh
   translation_key: ssh
 - name: sshd
   translation_key: sshd
@@ -895,8 +867,6 @@
 - name: StreamYard
   translation_key: streamyard
 - name: Superagent
-  translation_key: superagent-2
-- name: superagent
   translation_key: superagent
 - name: Swiss Table
   translation_key: swiss-table

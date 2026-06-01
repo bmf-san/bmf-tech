@@ -9,7 +9,7 @@ categories:
 tags:
   - PHP
   - Adapter Pattern
-  - Design Pattern
+  - Design Patterns
 translation_key: php-adapter-api-change
 ---
 

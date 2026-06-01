@@ -10,7 +10,7 @@ categories:
 tags:
   - markdown
   - marked
-  - emoji
+  - Emoji
   - mermaid
   - JavaScript
 translation_key: markdown-to-pdf-conversion

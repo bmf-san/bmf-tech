@@ -7,8 +7,8 @@ author: bmf-san
 categories:
   - Architecture
 tags:
-  - LLM as judge
-  - Prompt as code
+  - LLM as Judge
+  - Prompt as Code
   - Prompt Ops
   - Context Engineering
   - Prompt Engineering

@@ -9,7 +9,7 @@ categories:
 tags:
   - CentOS
   - Nginx
-  - apache
+  - Apache
   - さくらのVPS
 translation_key: nginx-reverse-proxy-configuration
 ---

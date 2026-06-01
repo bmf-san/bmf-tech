@@ -18,7 +18,7 @@
   translation_key: ansible
 - name: anyenv
   translation_key: anyenv
-- name: apache
+- name: Apache
   translation_key: apache
 - name: API
   translation_key: api
@@ -48,11 +48,9 @@
   translation_key: bfs
 - name: Bi-Temporal
   translation_key: bi-temporal
-- name: bitcoin
-  translation_key: bitcoin
 - name: Bitcoin
   translation_key: bitcoin
-- name: bitflyer
+- name: bitFlyer
   translation_key: bitflyer
 - name: boilerplate
   translation_key: boilerplate
@@ -144,7 +142,7 @@
   translation_key: elastic-beanstalk
 - name: Elasticsearch
   translation_key: elasticsearch
-- name: emoji
+- name: Emoji
   translation_key: emoji
 - name: ER
   translation_key: er
@@ -252,7 +250,7 @@
   translation_key: iterm
 - name: JavaScript
   translation_key: javascript
-- name: jest
+- name: Jest
   translation_key: jest
 - name: join
   translation_key: join
@@ -286,7 +284,7 @@
   translation_key: linux
 - name: linux capabilities
   translation_key: linux-capabilities
-- name: LLM as judge
+- name: LLM as Judge
   translation_key: llm-as-judge
 - name: Load Average
   translation_key: load-average
@@ -348,7 +346,7 @@
   translation_key: openid-connect
 - name: OpenStack
   translation_key: openstack
-- name: os
+- name: OS
   translation_key: os
 - name: OSS
   translation_key: oss
@@ -384,7 +382,7 @@
   translation_key: prolog
 - name: Prometheus
   translation_key: prometheus
-- name: Prompt as code
+- name: Prompt as Code
   translation_key: prompt-as-code
 - name: Prompt Ops
   translation_key: prompt-ops
@@ -440,7 +438,7 @@
   translation_key: seccomp
 - name: shell
   translation_key: shell
-- name: shellscript
+- name: Shell Script
   translation_key: shell-script
 - name: Sidekiq
   translation_key: sidekiq
@@ -448,7 +446,7 @@
   translation_key: sla
 - name: Slack
   translation_key: slack
-- name: slack-bot
+- name: Slack Bot
   translation_key: slack-bot
 - name: SLI
   translation_key: sli
@@ -470,7 +468,7 @@
   translation_key: ja-a1659538
 - name: SSG
   translation_key: ssg
-- name: ssh
+- name: SSH
   translation_key: ssh
 - name: sshd
   translation_key: sshd
@@ -482,7 +480,7 @@
   translation_key: strategy
 - name: StreamYard
   translation_key: streamyard
-- name: superagent
+- name: Superagent
   translation_key: superagent
 - name: TCCパターン
   translation_key: tcc-pattern
