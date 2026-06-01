@@ -1,5 +1,5 @@
 ---
-title: カモメになったペンギン
+title: "カモメになったペンギン｜組織変革の寓話を読んだ感想"
 description: "カモメになったペンギン"
 slug: penguin-becoming-seagull
 date: 2025-08-09T00:00:00Z

@@ -1,5 +1,5 @@
 ---
-title: Goで指数バックオフとジッターを実装してみる
+title: "Goで指数バックオフとジッターを実装する｜リトライ設計"
 description: "指数バックオフとジッターを組み合わせたリトライ実装をGoで実装し、Full・Equal・Decorrelated Jitterの3種類のアルゴリズムを比較。"
 slug: go-exponential-backoff-jitter-implementation
 date: 2024-01-31T00:00:00Z

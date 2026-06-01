@@ -105,6 +105,8 @@
   "datePublished": "{{formatDate "2006-01-02" $article.FrontMatter.Date}}",
   "dateModified": "{{if not $article.FrontMatter.LastMod.IsZero}}{{formatDate "2006-01-02" $article.FrontMatter.LastMod}}{{else}}{{formatDate "2006-01-02" $article.FrontMatter.Date}}{{end}}",
   "url": "{{.Config.Site.BaseURL}}{{$article.URL}}",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "{{.Config.Site.BaseURL}}{{$article.URL}}"},
+  "inLanguage": "{{if $article.Locale}}{{$article.Locale}}{{else}}en{{end}}",
   "image": "{{.Config.Site.BaseURL}}/ogp/{{$article.FrontMatter.Slug}}.png",
   "author": {"@type": "Person", "name": "{{index .Config.Theme.Params "author"}}"},
   "publisher": {"@type": "Organization", "name": "{{.Config.Site.Title}}"}{{if $article.FrontMatter.Description}},

@@ -1,5 +1,5 @@
 ---
-title: 権限管理の設計について調べてみた
+title: "権限管理の設計｜アクセス制御の考え方を整理する"
 description: 権限管理の設計手法を解説。ACL・RBAC・ABACの違いや、機能スコープ・データスコープ、制御対象と運用上の制約をふまえた設計のトレードオフを整理します。
 slug: permission-management-design
 date: 2024-05-22T00:00:00Z
