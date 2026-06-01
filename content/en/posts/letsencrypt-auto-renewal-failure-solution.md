@@ -10,7 +10,7 @@ tags:
   - cron
   - Let's Encrypt
   - Slack
-  - shell script
+  - Shell Script
 translation_key: letsencrypt-auto-renewal-failure-solution
 ---
 

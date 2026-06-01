@@ -9,7 +9,7 @@ categories:
 tags:
   - bash
   - Git
-  - shell script
+  - Shell Script
 translation_key: create-git-shortcut-bashrc
 ---
 

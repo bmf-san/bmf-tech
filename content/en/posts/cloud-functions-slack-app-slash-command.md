@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - Application
 tags:
-  - slack-bot
+  - Slack Bot
   - Slack
   - Golang
   - Google Cloud Platform

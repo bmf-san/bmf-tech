@@ -12,7 +12,7 @@ tags:
   - babel
   - babel-jest
   - ESModules
-  - jest
+  - Jest
 translation_key: jest-javascript-testing-introduction
 ---
 

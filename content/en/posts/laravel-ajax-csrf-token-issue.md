@@ -10,7 +10,7 @@ tags:
   - AJAX
   - Laravel
   - React
-  - superagent
+  - Superagent
 translation_key: laravel-ajax-csrf-token-issue
 ---
 

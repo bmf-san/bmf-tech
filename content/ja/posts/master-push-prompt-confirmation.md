@@ -8,7 +8,7 @@ categories:
   - アプリケーション
 tags:
   - Git
-  - shellscript
+  - Shell Script
 translation_key: master-push-prompt-confirmation
 ---
 

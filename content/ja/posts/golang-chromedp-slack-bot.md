@@ -11,8 +11,8 @@ tags:
   - Slack
   - chrome
   - chromedp
-  - emoji
-  - slack-bot
+  - Emoji
+  - Slack Bot
 translation_key: golang-chromedp-slack-bot
 ---
 

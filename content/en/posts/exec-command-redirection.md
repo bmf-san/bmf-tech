@@ -8,7 +8,7 @@ categories:
   - Application
 tags:
   - bash
-  - shell script
+  - Shell Script
   - exec
 translation_key: exec-command-redirection
 ---

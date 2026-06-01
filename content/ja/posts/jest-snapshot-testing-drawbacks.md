@@ -8,7 +8,7 @@ categories:
   - テスト
 tags:
   - JavaScript
-  - jest
+  - Jest
 translation_key: jest-snapshot-testing-drawbacks
 ---
 

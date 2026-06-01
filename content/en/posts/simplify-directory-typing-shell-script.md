@@ -8,7 +8,7 @@ categories:
   - Application
 tags:
   - bash
-  - shell script
+  - Shell Script
 translation_key: simplify-directory-typing-shell-script
 ---
 

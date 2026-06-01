@@ -6,8 +6,8 @@ author: bmf-san
 categories:
   - Algorithms and Data Structures
 tags:
-  - Algorithm
-  - Data Structure
+  - Algorithms
+  - Data Structures
   - Runner Technique
   - Tips
 description: Summarizing the runner technique useful for traversing linked lists.

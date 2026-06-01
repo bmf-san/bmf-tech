@@ -9,7 +9,7 @@ categories:
 tags:
   - GoF
   - PHP
-  - Design Pattern
+  - Design Patterns
   - Bridge Pattern
 translation_key: php-design-patterns-bridge
 ---

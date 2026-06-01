@@ -7,10 +7,10 @@ author: bmf-san
 categories:
   - Application
 tags:
-  - bitflyer
+  - bitFlyer
   - API
   - async
-  - bitcoin
+  - Bitcoin
   - Node.js
 translation_key: notify-bitcoin-status-slack-bitflyer-api-part2
 ---

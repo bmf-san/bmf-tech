@@ -9,7 +9,7 @@ categories:
 tags:
   - markdown
   - marked
-  - emoji
+  - Emoji
   - mermaid
   - JavaScript
 description: A simple document management tool to convert Markdown files to PDF, supporting mermaid, emoji, and toc.

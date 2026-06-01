@@ -10,7 +10,7 @@ tags:
   - Laravel
   - React
   - AJAX
-  - superagent
+  - Superagent
 translation_key: laravel-react-superagent-form
 ---
 

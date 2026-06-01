@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - インフラストラクチャ
 tags:
-  - shellscript
+  - Shell Script
   - anyenv
 translation_key: installing-anyenv-on-mac
 ---

@@ -8,7 +8,7 @@ categories:
   - アプリケーション
 tags:
   - bash
-  - shellscript
+  - Shell Script
 translation_key: simplify-directory-typing-shell-script
 ---
 

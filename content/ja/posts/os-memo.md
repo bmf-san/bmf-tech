@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - OS
 tags:
-  - os
+  - OS
 translation_key: os-memo
 ---
 

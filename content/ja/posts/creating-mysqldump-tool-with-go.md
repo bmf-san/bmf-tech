@@ -9,7 +9,7 @@ categories:
 tags:
   - Golang
   - MySQL
-  - ssh
+  - SSH
   - mysqldump
 translation_key: creating-mysqldump-tool-with-go
 ---

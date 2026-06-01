@@ -6,8 +6,8 @@ author: bmf-san
 categories:
   - Algorithms and Data Structures
 tags:
-  - Algorithm
-  - Data Structure
+  - Algorithms
+  - Data Structures
 description: 'A comprehensive review of algorithms and data structures basics: arrays, strings, hash tables, linked lists, trees, stacks, queues, sorting, and time complexity for coding problems.'
 translation_key: algorithms-data-structures-review
 ---

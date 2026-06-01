@@ -9,7 +9,7 @@ categories:
 tags:
   - cron
   - Let's Encrypt
-  - shellscript
+  - Shell Script
   - Slack
 translation_key: letsencrypt-auto-renewal-script
 ---
