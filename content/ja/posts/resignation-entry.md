@@ -1,6 +1,6 @@
 ---
 title: 退職エントリ
-description: 退職エントリ
+description: アプリケーション・インフラエンジニアとして5年半働いた振り返りとして、キャリアの成長や節目、感謝をつづった退職エントリです。
 slug: resignation-entry
 date: 2024-04-30T00:00:00Z
 author: bmf-san

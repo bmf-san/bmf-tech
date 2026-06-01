@@ -1,6 +1,6 @@
 ---
 title: アルゴリズムとデータ構造 - ハッシュマップ
-description: アルゴリズムとデータ構造 - ハッシュマップ
+description: ハッシュマップの仕組みを解説。平均O(1)のアクセス、衝突解決のオープンアドレス法とチェイン法、Goでの基本的な実装を紹介します。
 slug: algorithms-data-structures-hashmap
 date: 2023-07-31T00:00:00Z
 author: bmf-san

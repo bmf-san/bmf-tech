@@ -1,6 +1,6 @@
 ---
 title: Laravel5.3で自作artisanコマンド.md
-description: Laravel5.3で自作artisanコマンド.md
+description: Laravel 5.3で自作のArtisanコマンドを実装し、リポジトリファイルを自動生成して開発ワークフローを効率化する方法を解説します。
 slug: laravel-5-3-custom-artisan-command
 date: 2017-09-26T00:00:00Z
 author: bmf-san

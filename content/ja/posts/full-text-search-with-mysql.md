@@ -20,7 +20,7 @@ MySQLで全文検索を利用するのはElasticSearchよりも圧倒的に手�
 
 検索対象としたいカラムに**FULLTEXT INDEX**を付与、**MATCH (col1,col2,...) AGAINST (expr [search_modifier])** で検索クエリを投げるだけで全文検索がお手軽にできてしまう。
 
-ex. 
+ex.
 ```sql
 // FULLTEXT INDEX付与対象のカラムを持つテーブル
 CREATE TABLE `posts` (
@@ -52,7 +52,7 @@ MySQLの全文検索のパーサーにはngramとMeCabに対応している。
 デフォルトではngramが設定される。
 
 MeCabを使いたい場合はプラグインの導入が必要。
- 
+
 # 全文検索のモード
 3つのモードがあり、使いたいモードを指定することができる。
 

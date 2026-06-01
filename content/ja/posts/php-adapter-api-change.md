@@ -1,6 +1,6 @@
 ---
 title: PHPで学ぶデザインパターン - Adapter ~APIを変更する~
-description: PHPで学ぶデザインパターン - Adapter ~APIを変更する~
+description: PHPで学ぶデザインパターン「Adapter」。既存コードを変更せずに、互換性のないインターフェースを柔軟に適合させる方法を解説します。
 slug: php-adapter-api-change
 date: 2017-10-01T00:00:00Z
 author: bmf-san

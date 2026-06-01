@@ -1,6 +1,6 @@
 ---
 title: 権限管理基盤についての事例
-description: 権限管理基盤についての事例
+description: freeeの認可管理基盤の事例をもとに、チーム構成・マイクロサービス・QAの取り組みを紹介します。
 slug: permission-management-case-study
 date: 2024-09-08T00:00:00Z
 author: bmf-san

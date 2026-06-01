@@ -1,6 +1,6 @@
 ---
 title: Goでオレオレ証明書がほしいときの一手
-description: Goでオレオレ証明書がほしいときの一手
+description: Go標準のgenerate_cert.goを使い、opensslやmkcertなしでローカルHTTPS用の自己署名証明書（cert.pem/key.pem）をワンコマンドで生成する方法を解説します。
 slug: go-self-signed-certificate-creation
 date: 2024-02-16T00:00:00Z
 lastmod: 2026-03-15

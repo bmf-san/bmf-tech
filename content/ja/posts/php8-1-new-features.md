@@ -99,7 +99,7 @@ namedFunc(baz: "baz", foo: 'foo', bar: "bar"); // bazfoobar
 class Person
 {
   public $name;
-  
+
   public function __construct($name)
   {
     $this->name = $name;
@@ -172,7 +172,7 @@ null安全なコードが書きやすくなる。
 class User
 {
   public $name;
-  
+
   public function __construct()
   {
     $this->name = $name;
@@ -217,8 +217,8 @@ enum ColorCode: string
 }
 
 function enumFunc(ColorCode $color) {
-  echo $color->name; 
-  echo $color->value; 
+  echo $color->name;
+  echo $color->value;
 }
 
 enumFunc(ColorCode::BLUE); // BLUE blue
@@ -248,7 +248,7 @@ class Baz{}
 $foo = new Foo();
 $foo->check(new Foo());
 $foo->check(new Bar());
-// $foo->check(new Baz()); // PHP Fatal error:  Uncaught Error: Call to undefined method Foo::check() 
+// $foo->check(new Baz()); // PHP Fatal error:  Uncaught Error: Call to undefined method Foo::check()
 ?>
 ```
 

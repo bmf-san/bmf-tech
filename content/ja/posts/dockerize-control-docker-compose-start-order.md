@@ -89,7 +89,7 @@ volumes:
     driver: local
 ```
 
-gobel_appコンテナはgobel_test_dbの起動を待ちたい。 
+gobel_appコンテナはgobel_test_dbの起動を待ちたい。
 entrypointにはdockerizeのコマンドを指定している。
 
 gobel_appコンテナのビルドに使用しているDockerfile。

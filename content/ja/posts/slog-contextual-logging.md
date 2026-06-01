@@ -1,6 +1,6 @@
 ---
 title: slogを使ったContextual Logging
-description: slogを使ったContextual Logging
+description: Go 1.21以降のlog/slogを使ったコンテキスト付き構造化ログを解説。カスタムslog.HandlerやcontextからのトレースID注入、JSON出力を紹介します。
 slug: slog-contextual-logging
 date: 2023-10-08T00:00:00Z
 author: bmf-san

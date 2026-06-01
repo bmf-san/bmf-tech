@@ -1,6 +1,6 @@
 ---
 title: golang-migrateを使ってspannerのDBマイグレーションをする
-description: golang-migrateを使ってspannerのDBマイグレーションをする
+description: golang-migrateとGoogle Spannerを使い、Dockerとgcp認証管理のもとでDBマイグレーションを実行する方法を解説します。
 slug: db-migration-with-golang-migrate-spanner
 date: 2021-03-17T00:00:00Z
 author: bmf-san

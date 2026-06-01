@@ -1,6 +1,6 @@
 ---
 title: Ruby on Railsのコードリーディング第3回-WelcomeControllerの呼び出し
-description: Ruby on Railsのコードリーディング第3回-WelcomeControllerの呼び出し
+description: Ruby on RailsのコードリーディングでWelcomeControllerの呼び出しまでの流れを追います。
 slug: ruby-on-rails-code-reading-3
 date: 2024-09-04T00:00:00Z
 author: bmf-san

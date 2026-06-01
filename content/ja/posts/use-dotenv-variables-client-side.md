@@ -1,6 +1,6 @@
 ---
 title: dotEnvの環境変数をクライアントサイドでも使えるようにする - dotenv-webpack
-description: dotEnvの環境変数をクライアントサイドでも使えるようにする - dotenv-webpack
+description: dotenv-webpackを使い、webpackでdotEnvの環境変数をクライアントサイドでも利用する方法と、セキュリティ上の注意点を解説します。
 slug: use-dotenv-variables-client-side
 date: 2017-09-26T00:00:00Z
 author: bmf-san

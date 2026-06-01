@@ -1,6 +1,6 @@
 ---
 title: ReactとHistory APIを使ってrouterを自作する
-description: ReactとHistory APIを使ってrouterを自作する
+description: ReactとHistory APIのpushState・popstateを使い、ライブラリに頼らずSPAのルーターを自作する方法を解説します。
 slug: react-history-api-router
 date: 2018-01-03T00:00:00Z
 author: bmf-san

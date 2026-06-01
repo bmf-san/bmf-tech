@@ -1,6 +1,6 @@
 ---
 title: bitflyerのprivate apiを使ってビットコイン資産状況をslackに通知する Part2
-description: bitflyerのprivate apiを使ってビットコイン資産状況をslackに通知する Part2
+description: async/awaitとbitFlyer private APIの認証、Slack連携を使い、ビットコインの資産状況を監視・通知する方法を解説します。
 slug: notify-bitcoin-status-slack-bitflyer-api-part2
 date: 2017-09-26T00:00:00Z
 author: bmf-san

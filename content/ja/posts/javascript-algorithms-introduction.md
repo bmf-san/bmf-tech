@@ -1,6 +1,6 @@
 ---
 title: JavaScriptで始めるアルゴリズム
-description: JavaScriptで始めるアルゴリズム
+description: JavaScriptで線形探索・二分探索、選択ソート・バブルソートなど基本的なアルゴリズムを実装しながら学びます。
 slug: javascript-algorithms-introduction
 date: 2018-07-13T00:00:00Z
 author: bmf-san

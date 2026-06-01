@@ -1,5 +1,5 @@
 ---
-title: Goの並行・並列処理モデルとgoroutineスケジューリング
+title: "Goの並行・並列処理モデル｜goroutineスケジューリング"
 description: Goの並行処理と並列処理の違いを解説。goroutineのスケジューリング、GOMAXPROCS、GMPモデル、OSスレッドとの関係、プリエンプションの仕組みをシーケンス図つきで紹介します。
 slug: go-concurrency-parallelism-models
 date: 2025-06-14T00:00:00Z

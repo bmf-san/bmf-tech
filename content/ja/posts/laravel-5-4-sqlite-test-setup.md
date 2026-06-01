@@ -1,6 +1,6 @@
 ---
 title: Laravel5.4でsqliteを使ってテストをかく準備
-description: Laravel5.4でsqliteを使ってテストをかく準備
+description: Laravel 5.4でインメモリSQLiteを使ったテスト環境を、phpunit設定やマイグレーション自動化とあわせて構築する方法を解説します。
 slug: laravel-5-4-sqlite-test-setup
 date: 2017-09-26T00:00:00Z
 author: bmf-san

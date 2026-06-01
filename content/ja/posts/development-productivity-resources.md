@@ -1,6 +1,6 @@
 ---
 title: 開発生産性についての記事漁り
-description: 開発生産性についての記事漁り
+description: DORAのFour KeysやSPACEフレームワークを使った開発生産性の計測を解説。デプロイ頻度やリードタイムなどの指標を紹介します。
 slug: development-productivity-resources
 date: 2023-12-30T00:00:00Z
 author: bmf-san

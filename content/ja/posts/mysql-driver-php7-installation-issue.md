@@ -1,6 +1,6 @@
 ---
 title: php7をインストールした時にmysqlドライバーがなかった
-description: php7をインストールした時にmysqlドライバーがなかった
+description: PHP7をインストールした際にMySQLドライバーがない問題を、REMI yumリポジトリからphp-mysqlndを入れて解決する方法を解説します。
 slug: mysql-driver-php7-installation-issue
 date: 2017-10-01T00:00:00Z
 author: bmf-san

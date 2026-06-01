@@ -1,5 +1,5 @@
 ---
-title: 2分探索木の探索パターンについて
+title: "2分探索木の探索パターンを図解で理解する"
 description: "2分探索木の探索パターンを解説。DFS（先行順・中間順・後行順）、BFS、一筆書き法による走査で木構造の走査順序をマスターする実践ガイドです。"
 slug: binary-search-tree-search-patterns
 date: 2023-08-04T00:00:00Z

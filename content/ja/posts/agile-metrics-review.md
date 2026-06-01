@@ -1,6 +1,6 @@
 ---
 title: アジャイルメトリクスを読んだ
-description: アジャイルメトリクスを読んだ
+description: プロジェクト管理・ソース管理・ビルドシステムのデータを使い、アジャイルチームのパフォーマンスを計測して改善につなげる方法を紹介します。
 slug: agile-metrics-review
 date: 2022-12-17T00:00:00Z
 author: bmf-san

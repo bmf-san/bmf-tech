@@ -1,6 +1,6 @@
 ---
 title: PHPカンファレンス仙台2019に参加した
-description: PHPカンファレンス仙台2019に参加した
+description: PHPカンファレンス仙台2019で聞いた、TDD、レガシーPHPの移行、PSR、ミドルウェア設計、テストの課題解決などのセッションを紹介します。
 slug: php-conference-sendai-2019
 date: 2019-01-27T00:00:00Z
 author: bmf-san

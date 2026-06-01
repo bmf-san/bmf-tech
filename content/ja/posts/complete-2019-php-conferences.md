@@ -1,6 +1,6 @@
 ---
 title: 2019年の全PHPカンファレンスをコンプリートした
-description: 2019年の全PHPカンファレンスをコンプリートした
+description: 2019年の日本のPHPカンファレンス（仙台・Laravel JP・PHPerKaigi・福岡・北海道・沖縄）を全制覇した記録を紹介します。
 slug: complete-2019-php-conferences
 date: 2019-12-03T00:00:00Z
 author: bmf-san

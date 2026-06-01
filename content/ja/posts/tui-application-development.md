@@ -1,6 +1,6 @@
 ---
 title: x／termで作るTUIアプリケーション開発
-description: x／termで作るTUIアプリケーション開発
+description: Goのx/termパッケージで、ターミナルの状態管理やANSIエスケープシーケンスを扱い、対話的なTUIアプリケーションを開発する方法を解説します。
 slug: tui-application-development
 date: 2025-07-16T00:00:00Z
 author: bmf-san

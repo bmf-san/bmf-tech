@@ -1,6 +1,6 @@
 ---
 title: アルゴリズムとデータ構造 - スタック
-description: アルゴリズムとデータ構造 - スタック
+description: スタック（LIFO）データ構造の仕組みを解説。push・pop・peek操作と計算量、Goのスライスを使った実装を紹介します。
 slug: algorithms-data-structures-stack
 date: 2019-11-17T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: GrafanaでContact PointsとPoliciesをプロビジョニングするようにする
-description: GrafanaでContact PointsとPoliciesをプロビジョニングするようにする
+description: GrafanaのContact Pointsとアラートポリシーを、YAML設定ファイルでプロビジョニングしてSlack通知を自動化する方法を解説します。
 slug: grafana-contact-points-policies-provisioning
 date: 2023-12-27T00:00:00Z
 author: bmf-san

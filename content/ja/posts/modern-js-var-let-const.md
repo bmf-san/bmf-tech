@@ -1,6 +1,6 @@
 ---
 title: モダンなJSの話──var/let/const
-description: モダンなJSの話──var/let/const
+description: JavaScriptのvar・let・const宣言を解説。スコープの種類、巻き上げ（hoisting）、Temporal Dead Zoneの挙動を紹介します。
 slug: modern-js-var-let-const
 date: 2017-12-25T00:00:00Z
 author: bmf-san

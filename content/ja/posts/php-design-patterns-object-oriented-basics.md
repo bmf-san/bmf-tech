@@ -1,6 +1,6 @@
 ---
 title: PHPで学ぶデザインパターン - オブジェクト指向の基礎
-description: PHPで学ぶデザインパターン - オブジェクト指向の基礎
+description: PHPで学ぶデザインパターンの前提として、継承・インターフェース・トレイト・静的プロパティ/メソッドといったオブジェクト指向の基礎を解説します。
 slug: php-design-patterns-object-oriented-basics
 date: 2017-10-01T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: URLルーティングをつくる　エピソード1
-description: URLルーティングをつくる　エピソード1
+description: ツリー構造を使ったURLルーティングで、HTTPリクエストのマッチング、パスパラメータ、効率的なリクエスト処理を実現する方法を解説します。
 slug: creating-url-routing-episode-1
 date: 2018-12-19T00:00:00Z
 author: bmf-san

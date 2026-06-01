@@ -1,5 +1,5 @@
 ---
-title: Gitでcommitを分割する方法
+title: "Gitでcommitを分割する方法｜rebase -iで履歴整理"
 description: "Gitのrebase -iを使ってcommitを分割する手順を解説し、edit指定による粒度調整とforce pushまでの流れを示す。"
 slug: git-split-commit
 date: 2021-06-01T00:00:00Z

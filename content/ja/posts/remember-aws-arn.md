@@ -1,6 +1,6 @@
 ---
 title: AWSのARNを覚える
-description: AWSのARNを覚える
+description: AWSのARNのフォーマット構造を、partition・service・region・account-id・resource-idといった要素の観点から解説します。
 slug: remember-aws-arn
 date: 2021-06-23T00:00:00Z
 author: bmf-san

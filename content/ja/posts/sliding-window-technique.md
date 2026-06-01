@@ -1,5 +1,5 @@
 ---
-title: 尺取り法について
+title: "尺取り法とは｜計算量を落とすアルゴリズムを図解"
 description: '尺取り法（Two Pointer Technique）とは何か。左右のインデックスを使った探索の仕組み、O(N²)からO(N log N)への計算量改善の仕組みをGoコードの例で解説します。'
 slug: sliding-window-technique
 date: 2023-08-01T00:00:00Z

@@ -1,6 +1,6 @@
 ---
 title: VagrantでVirtualHostを使う
-description: VagrantでVirtualHostを使う
+description: vagrant-hostupdaterとApacheを使い、Vagrantで複数ドメインのローカル開発環境を作るVirtualHostの設定を解説します。
 slug: vagrant-virtualhost-usage
 date: 2017-10-01T00:00:00Z
 author: bmf-san

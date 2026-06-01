@@ -1,6 +1,6 @@
 ---
 title: 自作ルーティングをアップデートした
-description: 自作ルーティングをアップデートした
+description: 自作のGo製HTTPルーターgoblinに追加したミドルウェア対応や最適化を、パフォーマンスベンチマークとともに紹介します。
 slug: update-custom-routing
 date: 2021-06-18T00:00:00Z
 author: bmf-san

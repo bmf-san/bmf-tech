@@ -1,6 +1,6 @@
 ---
 title: Rubyを学ぶ
-description: Rubyを学ぶ
+description: 公式ドキュメントや定番書籍、オブジェクト指向の設計パターン、実践を通じてRubyの基礎を学ぶ方法を紹介します。
 slug: learning-ruby
 date: 2024-05-16T00:00:00Z
 author: bmf-san

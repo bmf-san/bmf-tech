@@ -1,6 +1,6 @@
 ---
 title: PostgreSQLとPgCatをローカルで素振りできる環境を作った
-description: PostgreSQLとPgCatをローカルで素振りできる環境を作った
+description: PostgreSQLとコネクションプーラーPgCatをローカルで素振りできる環境を構築。Prometheus/Grafana監視やLocust負荷試験で、プーリングの性能影響を観察します。
 slug: postgresql-pgcat-local-environment
 date: 2024-09-15T00:00:00Z
 author: bmf-san

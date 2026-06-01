@@ -1,5 +1,5 @@
 ---
-title: Spannerの知見メモ
+title: "Cloud Spannerの知見メモ｜設計・運用のポイント"
 description: "Cloud Spannerのノード・スプリット・レプリケーション仕様、ホットスポット対策とインデックス最適化を実装・検証する知見"
 slug: spanner-knowledge-notes
 date: 2024-03-03T00:00:00Z

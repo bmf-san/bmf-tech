@@ -1,6 +1,6 @@
 ---
 title: さくらVPS+CentOS7.3+Ansible
-description: さくらVPS+CentOS7.3+Ansible
+description: さくらVPSの初期設定を、Ansibleでユーザー作成・SSH強化・SELinux設定などのセキュリティ対策とあわせて自動化する方法を解説します。
 slug: sakura-vps-centos-ansible
 date: 2017-10-01T00:00:00Z
 author: bmf-san

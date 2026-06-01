@@ -1,5 +1,5 @@
 ---
-title: Rubyの特異クラス・特異メソッドについて
+title: "Rubyの特異クラス・特異メソッドとは｜仕組みを解説"
 description: "実装するRuby特異クラス・メソッド。class << objectパターン、オブジェクト特有のメソッド定義、singleton_methodsの活用法。"
 slug: ruby-singleton-class-methods
 date: 2024-05-15T00:00:00Z

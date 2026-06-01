@@ -1,6 +1,6 @@
 ---
 title: GoでServeMuxの機能拡張を提案するProposalがAcceptedになった
-description: GoでServeMuxの機能拡張を提案するProposalがAcceptedになった
+description: Goのnet/http ServeMuxに動的ルーティングとパスパラメータを追加するProposalがAcceptedに。goblinなどサードパーティルーターやGoのルーティングの今後への意味を解説します。
 slug: go-servemux-extension-proposal-accepted
 date: 2023-08-31T00:00:00Z
 author: bmf-san

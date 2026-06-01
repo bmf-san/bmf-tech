@@ -1,6 +1,6 @@
 ---
 title: 生成AIとソフトウェアエンジニアのキャリア
-description: 生成AIとソフトウェアエンジニアのキャリア
+description: 生成AIの急速な進化が社会にもたらす変化をふまえ、ソフトウェアエンジニアとして技術変化をどう先読みすべきかを考察します。
 slug: generative-ai-software-engineer-career
 date: 2025-02-12T00:00:00Z
 author: bmf-san

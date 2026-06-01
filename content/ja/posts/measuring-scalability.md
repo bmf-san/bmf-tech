@@ -1,6 +1,6 @@
 ---
 title: スケーラビリティを計測する
-description: スケーラビリティを計測する
+description: スループット・レイテンシ・効率といった指標やアムダールの法則などの数理モデル、実践的なベンチマークで、システムのスケーラビリティを計測する方法を解説します。
 slug: measuring-scalability
 date: 2025-06-08T00:00:00Z
 author: bmf-san

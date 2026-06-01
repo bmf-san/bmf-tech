@@ -1,6 +1,6 @@
 ---
 title: PHPカンファレンス2018のLT枠で登壇してきた
-description: PHPカンファレンス2018のLT枠で登壇してきた
+description: PHPカンファレンス2018のLT枠で、20代の視点からエンジニアのキャリア論を語った登壇内容を紹介します。
 slug: php-conference-2018-presentation
 date: 2018-12-16T00:00:00Z
 author: bmf-san

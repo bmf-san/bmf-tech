@@ -1,5 +1,5 @@
 ---
-title: Google Cloud認定アソシエイトクラウドエンジニアを受験した
+title: "Google Cloud認定 Associate Cloud Engineer 合格体験記｜勉強法"
 description: Google Cloud認定アソシエイトクラウドエンジニア試験を受験した際の学習方法や所感を振り返ります。
 slug: google-cloud-associate-engineer-exam
 date: 2023-06-07T00:00:00Z
@@ -66,7 +66,7 @@ GCPの教科書は3も出版されているが、Cloud AIプロダクトにつ�
 まず入門したいという感じであれば読んでも良いが、最短で試験勉強ということであれば読まなくても良いかなと思う。
 
 ## ドキュメント
-- [ドキュメント](https://cloud.google.com/docs?hl=ja) 
+- [ドキュメント](https://cloud.google.com/docs?hl=ja)
   - ある程度目を通しておいた。
   - AWS認定の方も同様だが、試験に最短で合格するなら全部目を通さず、模擬試験を問いて足りないところを埋めていく形で参照するくらいで十分だと思う。自分は興味があったので一通り読んだ。
 - [クラウドアーキテクチャのガイダンス](https://cloud.google.com/architecture?hl=ja)

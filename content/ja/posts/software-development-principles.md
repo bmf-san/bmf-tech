@@ -1,6 +1,6 @@
 ---
 title: ソフトウェア開発の法則
-description: ソフトウェア開発の法則
+description: ポステルの法則、パーキンソンの法則、パレートの法則など、より良いアーキテクチャ・設計判断に役立つソフトウェア開発の法則を紹介します。
 slug: software-development-principles
 date: 2018-05-07T00:00:00Z
 author: bmf-san

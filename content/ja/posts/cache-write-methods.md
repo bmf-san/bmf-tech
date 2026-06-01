@@ -1,6 +1,6 @@
 ---
 title: キャッシュの書き込み方式
-description: キャッシュの書き込み方式
+description: キャッシュの3つの書き込み方式を解説。Write-Through（同期書き込み）、Write-Back（後でフラッシュ）、Write-Around（キャッシュを迂回）の違いを紹介します。
 slug: cache-write-methods
 date: 2023-06-03T00:00:00Z
 author: bmf-san

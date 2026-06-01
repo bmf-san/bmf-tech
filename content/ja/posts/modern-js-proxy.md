@@ -1,6 +1,6 @@
 ---
 title: モダンなJSの話──Proxy
-description: モダンなJSの話──Proxy
+description: JavaScriptのProxyオブジェクトを解説。トラップハンドラ、対象のラップ、値のバリデーションといったES2015の使い方を紹介します。
 slug: modern-js-proxy
 date: 2018-02-28T00:00:00Z
 author: bmf-san

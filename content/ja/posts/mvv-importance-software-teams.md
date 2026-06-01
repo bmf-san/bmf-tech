@@ -1,6 +1,6 @@
 ---
 title: ソフトウェア開発チームがMVVを定めるべき理由
-description: ソフトウェア開発チームがMVVを定めるべき理由
+description: ソフトウェア開発チームがMVV（ミッション・ビジョン・バリュー）を定めるべき理由を、目的の明確化やチームの方向性の観点から解説します。
 slug: mvv-importance-software-teams
 date: 2026-01-07T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: 開発環境を見直してvimライクにした
-description: 開発環境を見直してvimライクにした
+description: Vimを取り入れて開発環境を見直し、開発効率を高めた取り組みを紹介します。
 slug: vim-like-development-environment
 date: 2018-05-22T00:00:00Z
 author: bmf-san

@@ -1,5 +1,5 @@
 ---
-title: アルゴリズムとデータ構造 - 二分探索木
+title: "二分探索木（BST）とは｜計算量とGoでの実装"
 description: 二分探索木（BST）を解説。平均O(log n)の探索・挿入、DFS（先行順・中間順・後行順）とBFSによる走査を、GoでのBST実装例とともに紹介します。
 slug: algorithms-data-structures-binary-search-tree
 date: 2020-01-15T00:00:00Z

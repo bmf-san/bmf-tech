@@ -1,6 +1,6 @@
 ---
 title: PHPerKaigi2019に参加・登壇してきました
-description: PHPerKaigi2019に参加・登壇してきました
+description: PHPerKaigi 2019に参加・登壇した際の所感や、URLルーティング設計の発表内容を紹介します。
 slug: phperkaigi-2019-participation
 date: 2019-04-01T00:00:00Z
 author: bmf-san

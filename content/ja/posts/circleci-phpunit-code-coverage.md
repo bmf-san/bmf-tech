@@ -1,6 +1,6 @@
 ---
 title: CircleCI2.0でPHPUnitのコードカバレッジを出力する
-description: CircleCI2.0でPHPUnitのコードカバレッジを出力する
+description: CircleCI 2.0でphpdbgとDockerを使い、PHPUnitのコードカバレッジをHTMLレポートとして出力する方法を解説します。
 slug: circleci-phpunit-code-coverage
 date: 2018-08-13T00:00:00Z
 author: bmf-san

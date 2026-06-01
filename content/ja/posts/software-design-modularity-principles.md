@@ -1,5 +1,5 @@
 ---
-title: ソフトウェア設計の結合バランス　持続可能な成長を支えるモジュール化の原則
+title: "ソフトウェア設計のモジュール化の原則｜結合バランスと持続可能な成長"
 description: "ソフトウェア設計の結合バランス　持続可能な成長を支えるモジュール化の原則"
 slug: software-design-modularity-principles
 date: 2025-12-29T00:00:00Z

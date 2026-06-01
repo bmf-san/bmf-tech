@@ -1,6 +1,6 @@
 ---
 title: HTTPとSSL／TLS
-description: HTTPとSSL／TLS
+description: HTTPSの仕組みを解説。TCP後のTLSハンドシェイク、機密性・完全性・真正性、SSLの脆弱性からTLS 1.2/1.3への歴史、常時HTTPS化が進んだ理由を紹介します。
 slug: http-ssl-tls
 date: 2018-04-18T00:00:00Z
 author: bmf-san

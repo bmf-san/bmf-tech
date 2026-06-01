@@ -1,6 +1,6 @@
 ---
 title: Reactでマークダウンエディタをシャッとつくる
-description: Reactでマークダウンエディタをシャッとつくる
+description: markedライブラリを使い、ライブプレビューに対応したReactのマークダウンエディタをサクッとつくる方法を解説します。
 slug: react-markdown-editor-tutorial
 date: 2017-12-25T00:00:00Z
 author: bmf-san

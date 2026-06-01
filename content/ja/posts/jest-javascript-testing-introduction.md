@@ -1,6 +1,6 @@
 ---
 title: Jestで始めるJavaScriptのテスト
-description: Jestで始めるJavaScriptのテスト
+description: JestでJavaScriptのテストを始める方法を解説。ESモジュール設定、babelのセットアップ、実践的なテストファイルの書き方を紹介します。
 slug: jest-javascript-testing-introduction
 date: 2018-09-20T00:00:00Z
 author: bmf-san

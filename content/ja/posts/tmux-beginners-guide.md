@@ -1,6 +1,6 @@
 ---
 title: tmuxコトハジメ
-description: tmuxコトハジメ
+description: ターミナルマルチプレクサtmuxの基本を解説。セッション・ウィンドウ・ペイン・コピーモードのキーバインドを紹介します。
 slug: tmux-beginners-guide
 date: 2018-05-22T00:00:00Z
 author: bmf-san

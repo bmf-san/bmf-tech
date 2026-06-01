@@ -1,6 +1,6 @@
 ---
 title: Road to ISUcon
-description: Road to ISUcon
+description: ISUCON参加に向けた準備について紹介します。
 slug: road-to-isucon
 date: 2023-06-07T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: ISUCON11に参加した
-description: ISUCON11に参加した
+description: ISUCON11参加を通じて、pprof、alpログ、N+1クエリ、MySQL最適化などのパフォーマンスチューニング戦略を紹介します。
 slug: participated-in-isucon11
 date: 2021-10-21T00:00:00Z
 author: bmf-san

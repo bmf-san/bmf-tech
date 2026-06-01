@@ -1,6 +1,6 @@
 ---
 title: アルゴリズムとデータ構造 - キュー
-description: アルゴリズムとデータ構造 - キュー
+description: キュー（FIFO）データ構造の仕組みを解説。enqueue・dequeue操作、スタックとの計算量比較、Goでの実装を紹介します。
 slug: algorithms-data-structures-queue
 date: 2019-11-17T00:00:00Z
 author: bmf-san

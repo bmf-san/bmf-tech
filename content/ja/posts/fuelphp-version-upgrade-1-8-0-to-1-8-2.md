@@ -13,7 +13,7 @@ translation_key: fuelphp-version-upgrade-1-8-0-to-1-8-2
 ---
 
 
-# 概要 
+# 概要
 FuelPHP1.8.0→1.8.2、PHP5.6→PHP7.3へのバージョンアップ対応をした。
 業務でアプリケーションのバージョンアップ対応を行ったので、取り組みをまとめておく。
 
@@ -123,7 +123,7 @@ Laravelとかと違い頻繁にアップデートされているFWではない�
 
 v3.1.30→v3.1.33へのマイナーアップデートで発生した問題が2つほどあった。
 
-- [Large template parsing error in smarty 3.1.33 #488](https://github.com/smarty-php/smarty/issues/488) 
+- [Large template parsing error in smarty 3.1.33 #488](https://github.com/smarty-php/smarty/issues/488)
     - tplのサイズによっては{leteral}タグを不用意に挟むハックをしないとテンプレートのパースが正しくされないというバグを踏んだ
 - date_formatタグの仕様変更によるバグ
   - nullを渡されたときはnullが返却されるような仕様だったが、現在日時が返却されるような仕様に変更され、UI上で不適切な値を出力するバグが生じた
@@ -149,7 +149,7 @@ PHP7系から1年ほど離れていたせいか、割と忘れている機能と
     - 演算必要箇所はintへのキャストで対応
 - count()の引数で配列またはオブジェクト以外を適用している箇所でエラー
   - `count(null)`でもWarningになる
-  - [php.net - Countableインタフェース](https://www.php.net/manual/ja/class.countable.php) 
+  - [php.net - Countableインタフェース](https://www.php.net/manual/ja/class.countable.php)
   - →`isset`や`!empty`でnullをチェックしたり、該当箇所の引数を配列またはオブジェクトに変更するなどして対応
 
 # インフラ

@@ -1,5 +1,5 @@
 ---
-title: Linuxのパーミッションの読み方と指定方法について
+title: "Linuxのパーミッションの読み方と指定方法｜chmodと数値表記"
 description: "理解するLinuxのパーミッション。rwx権限、ユーザー・グループ・その他の区別、数値指定、chmodコマンドの実践的活用方法。"
 slug: linux-permission-reading-specification
 date: 2018-07-18T00:00:00Z

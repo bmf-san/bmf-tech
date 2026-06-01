@@ -1,6 +1,6 @@
 ---
 title: GitHub Agentic Workflowを使ったLLMプロンプト管理・評価基盤
-description: GitHub Agentic Workflowを使ったLLMプロンプト管理・評価基盤
+description: GitHub Agentic Workflowを使い、LLMプロンプトをコードとして管理する基盤を解説。Copilotによる自動化、golden dataset、評価の仕組みを紹介します。
 slug: github-agentic-workflow-llm-prompt-management
 date: 2026-02-25T00:00:00Z
 author: bmf-san

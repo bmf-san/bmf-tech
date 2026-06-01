@@ -1,6 +1,6 @@
 ---
 title: RSpecのコードリーディング
-description: RSpecのコードリーディング
+description: RubyのテストフレームワークRSpecの内部を、runnerの起動・テスト実行フロー・結果レポートの観点からコードリーディングで読み解きます。
 slug: rspec-code-reading
 date: 2024-10-20T00:00:00Z
 author: bmf-san

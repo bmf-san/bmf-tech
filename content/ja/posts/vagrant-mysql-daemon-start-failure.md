@@ -1,6 +1,6 @@
 ---
 title: Vagrant上のMySQLで"MySQL Daemon failed to start
-description: 'Vagrant上のMySQLで"MySQL Daemon failed to start'
+description: Vagrant上でMySQLが「MySQL Daemon failed to start」で起動しない問題を、innodb_log_file_sizeなどInnoDB設定の調整で解決する方法を解説します。
 slug: vagrant-mysql-daemon-start-failure
 date: 2017-10-01T00:00:00Z
 author: bmf-san
