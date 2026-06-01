@@ -1,6 +1,6 @@
 ---
 title: irbのコードリーディング
-description: irbのコードリーディング
+description: Rubyの対話シェルirbの内部構造を、起動処理・履歴読み込み・コマンド実行の観点からコードリーディングで読み解きます。
 slug: irb-code-reading
 date: 2024-10-20T00:00:00Z
 author: bmf-san

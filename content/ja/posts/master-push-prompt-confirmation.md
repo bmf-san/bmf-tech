@@ -1,6 +1,6 @@
 ---
 title: master直プッシュの際にプロンプトで確認するようにする
-description: master直プッシュの際にプロンプトで確認するようにする
+description: gitでmasterブランチへの直プッシュを防ぐため、プロンプトで確認するセーフティネットを作る方法を解説します。
 slug: master-push-prompt-confirmation
 date: 2019-05-08T00:00:00Z
 author: bmf-san

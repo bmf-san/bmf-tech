@@ -1,6 +1,6 @@
 ---
 title: ISUCON10に参加してきた
-description: ISUCON10に参加してきた
+description: ISUCON10参加を通じて、クエリチューニング・MySQLアップグレード・インデックス設計などパフォーマンス最適化の戦略を紹介します。
 slug: isucon10-participation
 date: 2020-05-21T00:00:00Z
 author: bmf-san

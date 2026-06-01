@@ -1,6 +1,6 @@
 ---
 title: Laravelのデバッグツールlaravel-debugbarをつかってみる
-description: Laravelのデバッグツールlaravel-debugbarをつかってみる
+description: Laravelのデバッグツールlaravel-debugbarの導入と使い方を紹介します。
 slug: laravel-debugging-tool-usage
 date: 2016-06-26T00:00:00Z
 author: bmf-san

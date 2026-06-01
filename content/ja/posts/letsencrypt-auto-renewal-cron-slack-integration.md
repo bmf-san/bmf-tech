@@ -1,6 +1,6 @@
 ---
 title: letsencryptの証明書自動更新(cron)とちょっとだけSlack連携
-description: letsencryptの証明書自動更新(cron)とちょっとだけSlack連携
+description: cronによるLet's Encrypt証明書の自動更新と、成功・失敗を通知するSlack連携を解説します。
 slug: letsencrypt-auto-renewal-cron-slack-integration
 date: 2017-10-01T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: HTTP Routerの自作で参考にした資料
-description: HTTP Routerの自作で参考にした資料
+description: Goでのradix木やトライ木、ベンチマーク比較など、HTTPルーターを自作する際に参考になる資料を紹介します。
 slug: http-router-resources
 date: 2023-10-30T00:00:00Z
 author: bmf-san

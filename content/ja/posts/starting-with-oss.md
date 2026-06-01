@@ -1,6 +1,6 @@
 ---
 title: OSSをはじめてみた話
-description: OSSをはじめてみた話
+description: GitHubでのオープンソース開発を始め、公開プロジェクトでの協働開発の基礎を学んだ話を紹介します。
 slug: starting-with-oss
 date: 2017-07-17T00:00:00Z
 author: bmf-san

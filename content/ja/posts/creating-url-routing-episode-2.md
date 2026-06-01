@@ -1,6 +1,6 @@
 ---
 title: URLルーティングをつくる　エピソード2
-description: URLルーティングをつくる　エピソード2
+description: ツリー構造を洗練させたURLルーティングを実装。エンドポイントのマッピングやスケーラブルなルーティングロジックを解説します。
 slug: creating-url-routing-episode-2
 date: 2019-01-06T00:00:00Z
 author: bmf-san

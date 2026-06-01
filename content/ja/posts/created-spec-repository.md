@@ -1,6 +1,6 @@
 ---
 title: specリポジトリを作った
-description: specリポジトリを作った
+description: bmf Frameworkやクネビンに基づくストーリーポイント見積もりなど、コミュニティ向けの仕様をまとめたspecリポジトリを作った話を紹介します。
 slug: created-spec-repository
 date: 2025-08-11T00:00:00Z
 author: bmf-san

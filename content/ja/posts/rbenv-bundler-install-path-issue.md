@@ -1,6 +1,6 @@
 ---
 title: anyenvでインストールしたrbenvでbundlerをinstallしたときにパスでハマった
-description: anyenvでインストールしたrbenvでbundlerをinstallしたときにパスでハマった
+description: anyenvでインストールしたrbenvでbundlerを入れた際の/usr/local/binパス問題を、rbenv exec gem installで解決する方法を解説します。
 slug: rbenv-bundler-install-path-issue
 date: 2018-12-04T00:00:00Z
 author: bmf-san

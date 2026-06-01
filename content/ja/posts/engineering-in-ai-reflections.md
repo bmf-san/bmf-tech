@@ -1,6 +1,6 @@
 ---
 title: AI時代のエンジニアリングについて考える
-description: AI時代のエンジニアリングについて考える
+description: AI時代のエンジニアリングを考察。Golden Datasetによる検証、LLM-as-Judge評価、プロンプトインジェクション対策といったプロンプトガバナンスを紹介します。
 slug: engineering-in-ai-reflections
 date: 2026-02-25T00:00:00Z
 author: bmf-san

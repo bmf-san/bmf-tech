@@ -1,6 +1,6 @@
 ---
 title: gitコマンドを楽にするシェルスクリプトをかいた
-description: gitコマンドを楽にするシェルスクリプトをかいた
+description: selectを使ったインタラクティブなシェルスクリプトで、gitのブランチチェックアウト・リモートpull・ローカルブランチ削除を楽にする方法を解説します。
 slug: create-shell-script-git-commands
 date: 2017-09-26T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: AWS(Elasticbeanstalk)のレイテンシーがやたら高いと思ったら・・・
-description: AWS(Elasticbeanstalk)のレイテンシーがやたら高いと思ったら・・・
+description: AWS Elastic BeanstalkのELBノードで発生した高レイテンシーを、体系的な調査と監視で診断・解消した過程を解説します。
 slug: high-latency-aws-elasticbeanstalk
 date: 2017-09-26T00:00:00Z
 author: bmf-san
