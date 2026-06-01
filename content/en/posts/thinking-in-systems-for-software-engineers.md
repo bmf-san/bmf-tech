@@ -6,8 +6,8 @@ author: bmf-san
 categories:
   - Architecture
 tags:
-  - SystemsThinking
-  - BookReview
+  - Systems Thinking
+  - Book Review
 description: A book that introduces systems thinking from the perspective of how software engineers can apply it to their own work.
 translation_key: thinking-in-systems-for-software-engineers
 ---
