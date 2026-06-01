@@ -1,6 +1,6 @@
 ---
 title: Golangの勉強で参考にした資料
-description: Golangの勉強で参考にした資料
+description: Goの学習に役立つおすすめ書籍、公式チュートリアル、コミュニティガイドなど、レベルを問わず参考になる資料を紹介します。
 slug: golang-study-resources
 date: 2018-03-01T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: モダンなJSの話──Promise
-description: モダンなJSの話──Promise
+description: モダンなJavaScriptのPromiseを解説。非同期処理、.then()によるチェーン、エラーハンドリング、コールバック地獄の回避を紹介します。
 slug: modern-js-promises
 date: 2017-12-29T00:00:00Z
 author: bmf-san

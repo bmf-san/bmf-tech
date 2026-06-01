@@ -1,6 +1,6 @@
 ---
 title: PyroscopeでContinuous Profiling
-description: PyroscopeでContinuous Profiling
+description: Pyroscopeを使った継続的プロファイリングを解説。サーバー構築、pull型プロファイリング、保持期間の設定、Grafana連携の方法を紹介します。
 slug: continuous-profiling-with-pyroscope
 date: 2023-05-07T00:00:00Z
 author: bmf-san

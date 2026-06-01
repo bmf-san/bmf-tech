@@ -1,6 +1,6 @@
 ---
 title: AI時代のエンジニアリング：プロンプトから自律型システムへの進化
-description: AI時代のエンジニアリング：プロンプトから自律型システムへの進化
+description: AI時代のエンジニアリングを考察。Prompt as Code、PromptOps、LLM-as-Judge評価、Context Engineering、Agentic Engineeringへの進化を紹介します。
 slug: engineering-in-ai-evolution-to-autonomous-systems
 date: 2026-02-25T00:00:00Z
 author: bmf-san

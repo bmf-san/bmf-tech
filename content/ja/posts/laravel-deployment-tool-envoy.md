@@ -1,6 +1,6 @@
 ---
 title: Laravelのデプロイツール Laravel Envoy を使ってみる
-description: Laravelのデプロイツール Laravel Envoy を使ってみる
+description: Laravelのデプロイツール「Laravel Envoy」を解説。タスク定義、git hooks、Slackへのデプロイ通知などを使って効率的にデプロイする方法を紹介します。
 slug: laravel-deployment-tool-envoy
 date: 2017-10-01T00:00:00Z
 author: bmf-san

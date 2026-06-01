@@ -1,6 +1,6 @@
 ---
 title: トランザクション概観
-description: トランザクション概観
+description: データベーストランザクションの基礎を解説。ACID特性、並行性制御、分離レベルといったデータ整合性の仕組みを紹介します。
 slug: transaction-overview
 date: 2023-06-07T00:00:00Z
 author: bmf-san

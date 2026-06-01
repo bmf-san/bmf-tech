@@ -1,6 +1,6 @@
 ---
 title: gRPCとProtocol Buffersについて復習するためのリンク集
-description: gRPCとProtocol Buffersについて復習するためのリンク集
+description: gRPCとProtocol Buffersを、ロードバランシングやKubernetesデプロイ、ベストプラクティスの観点から復習するためのリンク集を紹介します。
 slug: grpc-protocol-buffers-review
 date: 2024-01-25T00:00:00Z
 author: bmf-san

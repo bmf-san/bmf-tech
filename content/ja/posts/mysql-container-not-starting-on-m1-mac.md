@@ -1,6 +1,6 @@
 ---
 title: M1 MacでMySQL8.0.17のコンテナが起動できない
-description: M1 MacでMySQL8.0.17のコンテナが起動できない
+description: Apple M1 MacでMySQL 8.0.17のコンテナが起動しない問題（failed to create new OS thread errno=22）を、MySQL 8.0.26+と--platform=linux/amd64で解決する方法を解説します。
 slug: mysql-container-not-starting-on-m1-mac
 date: 2021-09-05T00:00:00Z
 author: bmf-san

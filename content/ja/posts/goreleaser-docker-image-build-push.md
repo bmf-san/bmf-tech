@@ -1,6 +1,6 @@
 ---
 title: GoReleaserを使ってDocker Imageをbuild&pushする
-description: GoReleaserを使ってDocker Imageをbuild&pushする
+description: GoReleaserとGitHub Actionsを使い、複数プラットフォーム向けのDockerイメージのbuild&pushを自動化する方法を解説します。
 slug: goreleaser-docker-image-build-push
 date: 2024-05-29T00:00:00Z
 author: bmf-san
