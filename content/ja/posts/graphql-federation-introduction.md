@@ -1,5 +1,5 @@
 ---
-title: GraphQL federationについて
+title: GraphQL Federationとは？マイクロサービス統合の仕組みを解説
 description: "GraphQL Federationでマイクロサービスを統合し、Subgraph・Gateway・スキーマ合成の概念からマイクロサービスとの相違点を体系的に解説。"
 slug: graphql-federation-introduction
 date: 2025-02-02T00:00:00Z
@@ -8,7 +8,7 @@ categories:
   - アーキテクチャ
 tags:
   - GraphQL
-  - GraphQL federation
+  - GraphQL Federation
 translation_key: graphql-federation-introduction
 ---
 
