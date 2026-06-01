@@ -1,6 +1,6 @@
 ---
 title: Cloud SQLとAlloyDBの比較
-description: Cloud SQLとAlloyDBの比較
+description: Cloud SQLとAlloyDBを比較し、AlloyDBが優位となるユースケースや性能・互換性のポイントを整理します。
 slug: cloud-sql-alloydb-comparison
 date: 2024-11-17T00:00:00Z
 author: bmf-san

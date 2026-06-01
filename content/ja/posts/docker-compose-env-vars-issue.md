@@ -1,6 +1,6 @@
 ---
 title: docker-compose.ymlで指定した環境変数がコンテナビルド中に参照できない
-description: docker-compose.ymlで指定した環境変数がコンテナビルド中に参照できない
+description: docker-compose.ymlで指定した環境変数がDockerイメージのビルド中に参照できない問題の対処法。DockerfileのARGとdocker-composeのbuild.argsでビルド時に値を渡す方法を解説します。
 slug: docker-compose-env-vars-issue
 date: 2020-11-14T00:00:00Z
 author: bmf-san

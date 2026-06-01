@@ -1,6 +1,6 @@
 ---
 title: 凝集度と結合度
-description: 凝集度と結合度
+description: ソフトウェア設計の指標である凝集度と結合度を解説。凝集度の7段階（偶発的〜機能的）と結合度の6段階（内容〜データ）を、具体例とともに整理します。
 slug: cohesion-coupling
 date: 2025-06-25T00:00:00Z
 author: bmf-san

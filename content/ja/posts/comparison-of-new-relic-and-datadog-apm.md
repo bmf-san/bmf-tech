@@ -1,6 +1,6 @@
 ---
 title: New RelicとDatadog APMの比較
-description: New RelicとDatadog APMの比較
+description: New RelicからDatadog APMへの移行を検討する際に比較した、両者の機能や使い勝手の違いをまとめます。
 slug: comparison-of-new-relic-and-datadog-apm
 date: 2021-08-10T00:00:00Z
 author: bmf-san
