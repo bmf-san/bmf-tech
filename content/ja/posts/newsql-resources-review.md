@@ -1,6 +1,6 @@
 ---
 title: NewSQL関連の資料を読み漁った
-description: NewSQL関連の資料を読み漁った
+description: NewSQLに関するさまざまな資料を読み込み、要点をまとめます。
 slug: newsql-resources-review
 date: 2023-03-29T00:00:00Z
 author: bmf-san

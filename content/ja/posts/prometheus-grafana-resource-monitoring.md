@@ -1,6 +1,6 @@
 ---
 title: PrometheusとGrafanaでリソース監視環境を整える
-description: PrometheusとGrafanaでリソース監視環境を整える
+description: PrometheusとGrafana、node_exporterを使ってリソース監視環境を構築し、インフラのダッシュボードを整える方法を解説します。
 slug: prometheus-grafana-resource-monitoring
 date: 2018-09-15T00:00:00Z
 lastmod: 2026-03-15

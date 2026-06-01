@@ -1,6 +1,6 @@
 ---
 title: MySQLで全文検索
-description: MySQLで全文検索
+description: MySQLでの全文検索を解説。FULLTEXT INDEX、ngramパーサー、MATCH...AGAINSTによるクエリの書き方を紹介します。
 slug: full-text-search-with-mysql
 date: 2023-04-30T00:00:00Z
 author: bmf-san

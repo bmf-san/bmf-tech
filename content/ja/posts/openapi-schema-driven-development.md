@@ -1,6 +1,6 @@
 ---
 title: OpenAPIを使ったスキーマ駆動開発
-description: OpenAPIを使ったスキーマ駆動開発
+description: OpenAPIを使ったスキーマ駆動開発を解説。REST APIの仕様定義、コード生成、モックサーバーの活用といったメリットを紹介します。
 slug: openapi-schema-driven-development
 date: 2024-01-19T00:00:00Z
 author: bmf-san
