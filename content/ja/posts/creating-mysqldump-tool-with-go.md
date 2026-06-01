@@ -1,6 +1,6 @@
 ---
 title: Goでmysqldumpツールをつくる
-description: Goでmysqldumpツールをつくる
+description: SSHとTOML設定ファイルを使い、リモートサーバーのデータベースを自動バックアップするGo製mysqldumpツールをつくる方法を解説します。
 slug: creating-mysqldump-tool-with-go
 date: 2019-02-04T00:00:00Z
 author: bmf-san

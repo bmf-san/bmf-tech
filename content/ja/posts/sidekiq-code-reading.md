@@ -1,6 +1,6 @@
 ---
 title: Sidekiqのコードリーディング
-description: Sidekiqのコードリーディング
+description: Sidekiqのアーキテクチャを、RedisベースのジョブキューやRubyアプリでのジョブ登録・実行フローの観点からコードリーディングで読み解きます。
 slug: sidekiq-code-reading
 date: 2024-09-21T00:00:00Z
 author: bmf-san

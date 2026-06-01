@@ -1,6 +1,6 @@
 ---
 title: ファイルシステムの容量不足によるサービスダウン
-description: ファイルシステムの容量不足によるサービスダウン
+description: ファイルシステムの容量不足によるサービスダウンの調査と対処を解説。Dockerログの肥大化やディスク容量の管理方法を紹介します。
 slug: service-outage-due-to-storage
 date: 2023-05-07T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: LaravelでEventを使う
-description: LaravelでEventを使う
+description: Laravelのイベントリスナーを使い、ユーザー登録や退会など特定のイベント発生時に実行したい処理を管理する方法を解説します。
 slug: laravel-event-usage
 date: 2017-09-26T00:00:00Z
 author: bmf-san

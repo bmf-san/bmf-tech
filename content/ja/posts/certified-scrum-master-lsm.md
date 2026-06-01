@@ -1,6 +1,6 @@
 ---
 title: 認定スクラムマスター（LSM）になった
-description: 認定スクラムマスター（LSM）になった
+description: Scrum Inc. JapanのトレーニングとExamを経て認定スクラムマスター（LSM）になった際の所感とメモを紹介します。
 slug: certified-scrum-master-lsm
 date: 2023-08-01T00:00:00Z
 author: bmf-san

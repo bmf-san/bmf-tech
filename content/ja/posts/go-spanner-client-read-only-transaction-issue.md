@@ -1,6 +1,6 @@
 ---
 title: goのspannerクライアントのReadOnlyTransactionでハマった
-description: goのspannerクライアントのReadOnlyTransactionでハマった
+description: GoのCloud Spannerクライアントで、ReadOnlyTransactionのtx.Close()漏れによるセッションプール枯渇を解消。トランザクションのライフサイクル管理とzaganeによる検出方法を解説します。
 slug: go-spanner-client-read-only-transaction-issue
 date: 2021-02-08T00:00:00Z
 author: bmf-san
