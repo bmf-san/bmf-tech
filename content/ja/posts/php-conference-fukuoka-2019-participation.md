@@ -1,6 +1,6 @@
 ---
 title: PHPカンファレンス福岡2019に参加・登壇してきました
-description: PHPカンファレンス福岡2019に参加・登壇してきました
+description: PHPカンファレンス福岡2019に参加・登壇。PHPでのURLルーティング作成の発表や、クリーンアーキテクチャ、コード削除のベストプラクティスを紹介します。
 slug: php-conference-fukuoka-2019-participation
 date: 2019-07-04T00:00:00Z
 author: bmf-san

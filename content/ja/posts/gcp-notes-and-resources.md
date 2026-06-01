@@ -352,7 +352,7 @@ cf. https://blog.g-gen.co.jp/entry/associate-cloud-engineer
   - インスタンスを管理する権限のみで、ネットワークやセキュリティ等の権限はない
 - Computeインスタンス管理者（roles/compute.instanceAdmin.v1）
   - v1
-  - Compute Engineインスタンス、インスタンスグループ、ディスク、スナップショット、イメージの全てを管理する権限 
+  - Compute Engineインスタンス、インスタンスグループ、ディスク、スナップショット、イメージの全てを管理する権限
 - Compute閲覧者（roles/compute.viewer）
   - Compute Engineリソースを取得して表示する読み取りアクセス権
 
@@ -370,11 +370,11 @@ cf. https://blog.g-gen.co.jp/entry/associate-cloud-engineer
   - スケジュール
     - 容量・スケジュールを指定して、予想される負荷に対してスケーリングできる
 - 予測オートスケーリング
-  - 有効にすると、過去のデータに基づいて予測してスケールアウトする 
+  - 有効にすると、過去のデータに基づいて予測してスケールアウトする
 - MIG内の全てのインスタンスを対象にローリングアップデートを適用
   - gcloud compute instance-groups managed rolling-action start-update INSTANCE_GROUP_NAME -version=template=INSTANCE_TEMPLATE_NAME [--zone=ZONE | --region=REGION]
 - MIGの自動オートスケーリングを有効化する
-  - gcloud compute instance-groups managed set-autoscaling INSTANCE_GROUP_NAME 
+  - gcloud compute instance-groups managed set-autoscaling INSTANCE_GROUP_NAME
   - ex. 平均CPU使用率70%で、最大インスタンス数が3
     - gcloud compute instance-groups managed set-autoscaling INSTANCE_GROUP_NAME --max-num-replicas 3 --target-cpu-utilization 0.70
 
@@ -1136,7 +1136,7 @@ Standard < Nearline < Coldline < Archive
   - アクセスの透明性ログ
     - Googleサポートなどがユーザーコンテンツにアクセスした際に出力されるログ
 - マルチクラウド・ハイブリッドクラウドのログ
-  - 他クラウドサービスから取り込んだログやオンプレミスから取り込んだログ 
+  - 他クラウドサービスから取り込んだログやオンプレミスから取り込んだログ
 
 ## ログの保存先
 - ログバケット

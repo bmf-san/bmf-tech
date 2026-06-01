@@ -1,6 +1,6 @@
 ---
 title: アルゴリズムとデータ構造 - 挿入ソート
-description: アルゴリズムとデータ構造 - 挿入ソート
+description: 配列をソート済みと未ソートに分け、1要素ずつ並べていく挿入ソートを解説。O(n²)の計算量とGoでの実装を紹介します。
 slug: algorithms-data-structures-insertion-sort
 date: 2020-02-01T00:00:00Z
 author: bmf-san

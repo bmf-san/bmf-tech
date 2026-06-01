@@ -31,7 +31,7 @@ PrometheusとGrafanaでリソース監視の環境を構築したのでメモ。
 # node_exporterをインストール
 [Prometheus - node_exporter
 ](https://prometheus.io/download/#node_exporter)からnode_exporterをダウンロード。
- 
+
 こちらも起動しておく。
 
 ポートの確認も同様。

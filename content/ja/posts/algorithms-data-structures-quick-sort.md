@@ -1,6 +1,6 @@
 ---
 title: アルゴリズムとデータ構造 - クイックソート
-description: アルゴリズムとデータ構造 - クイックソート
+description: クイックソートを解説。平均O(n log n)・最悪O(n²)の計算量、ピボット選択、low/highへの分割、ランダム化したGo実装を紹介します。
 slug: algorithms-data-structures-quick-sort
 date: 2020-02-01T00:00:00Z
 author: bmf-san

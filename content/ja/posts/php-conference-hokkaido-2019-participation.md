@@ -1,6 +1,6 @@
 ---
 title: PHPカンファレンス北海道2019に参加してきた
-description: PHPカンファレンス北海道2019に参加してきた
+description: PHPカンファレンス北海道2019で聞いた、PHPの基礎、CI/CD、マイクロサービス、テスト、CPUアーキテクチャなどのセッションを紹介します。
 slug: php-conference-hokkaido-2019-participation
 date: 2019-10-06T00:00:00Z
 author: bmf-san

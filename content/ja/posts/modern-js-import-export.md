@@ -1,6 +1,6 @@
 ---
 title: モダンなJSの話──importとexport
-description: モダンなJSの話──importとexport
+description: JavaScriptのES6 import/export文を解説。名前付きエクスポート、デフォルトエクスポート、モジュールの構成方法を紹介します。
 slug: modern-js-import-export
 date: 2017-12-25T00:00:00Z
 author: bmf-san

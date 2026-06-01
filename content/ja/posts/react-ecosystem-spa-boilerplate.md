@@ -1,6 +1,6 @@
 ---
 title: React+react-redux+react-router+ES6+webpackで作るSPAボイラープレート
-description: React+react-redux+react-router+ES6+webpackで作るSPAボイラープレート
+description: React・Redux・React-router・webpack・Babelで構成する、モダンなSPAボイラープレートのアーキテクチャを紹介します。
 slug: react-ecosystem-spa-boilerplate
 date: 2017-10-01T00:00:00Z
 author: bmf-san

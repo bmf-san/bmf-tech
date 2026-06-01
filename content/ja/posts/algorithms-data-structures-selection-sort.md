@@ -1,6 +1,6 @@
 ---
 title: アルゴリズムとデータ構造 - 選択ソート
-description: アルゴリズムとデータ構造 - 選択ソート
+description: 最小要素を繰り返し探して所定の位置に入れ替える選択ソートを解説。O(n²)の計算量とGoでの実装を紹介します。
 slug: algorithms-data-structures-selection-sort
 date: 2020-02-01T00:00:00Z
 author: bmf-san

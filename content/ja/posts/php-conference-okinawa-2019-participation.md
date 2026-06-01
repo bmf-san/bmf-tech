@@ -1,6 +1,6 @@
 ---
 title: PHPカンファレンス沖縄2019に参加してきた
-description: PHPカンファレンス沖縄2019に参加してきた
+description: PHPカンファレンス沖縄2019で聞いた、PHPのメタプログラミング、OOP、クリーンアーキテクチャ、DDD、Webセキュリティ、ミューテーションテストなどのセッションを紹介します。
 slug: php-conference-okinawa-2019-participation
 date: 2019-10-13T00:00:00Z
 author: bmf-san

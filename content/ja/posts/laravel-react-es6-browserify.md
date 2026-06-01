@@ -1,6 +1,6 @@
 ---
 title: Laravel+React+ES6+Browserify
-description: Laravel+React+ES6+Browserify
+description: BrowserifyとBabelのトランスパイルでReactをLaravelに組み込み、モジュール対応のモダンなES6コードを書く方法を解説します。
 slug: laravel-react-es6-browserify
 date: 2017-09-26T00:00:00Z
 author: bmf-san

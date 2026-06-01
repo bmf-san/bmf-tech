@@ -1,6 +1,6 @@
 ---
 title: アルゴリズムとデータ構造 - 配列
-description: アルゴリズムとデータ構造 - 配列
+description: データ構造としての配列を解説。O(1)のランダムアクセス、O(n)の挿入・削除、静的・動的なメモリ確保の違いと、Goでの実装を紹介します。
 slug: algorithms-data-structures-array
 date: 2019-10-31T00:00:00Z
 author: bmf-san

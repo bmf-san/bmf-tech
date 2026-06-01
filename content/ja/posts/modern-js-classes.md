@@ -1,6 +1,6 @@
 ---
 title: モダンなJSの話──クラス
-description: モダンなJSの話──クラス
+description: JavaScriptのES6クラス構文を解説。コンストラクタ定義、getter/setter、strictモードの挙動を紹介します。
 slug: modern-js-classes
 date: 2017-12-25T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Google Analyticsのカスタムレポートをつくってみた
-description: Google Analyticsのカスタムレポートをつくってみた
+description: Google Analyticsのカスタムレポートを作り、サイトに合った指標を計測してデータに基づきマーケティング戦略を磨く方法を解説します。
 slug: google-analytics-custom-reports
 date: 2018-10-12T00:00:00Z
 author: bmf-san
