@@ -34,13 +34,9 @@ theme:
     ga_id: "G-784B55NW88"
     paypal: "bmfsan"
     amazon_wishlist: "7UKXW63I8NEK"
-    # Sponsor inquiry form (Google Form). Use prefill URL so the
-    # "category" field is pre-selected to 広告掲載のご相談.
-    # See: https://docs.google.com/forms/d/e/<form_id>/viewform?usp=pp_url&entry.<id>=<value>
-    sponsor_inquiry_url: "https://docs.google.com/forms/d/e/1FAIpQLSeYThU8Mq7GXa-bLzr2i71AhaKVhT_-gLfeQFYZ04tFZ3OO3A/viewform"
-    # Sidebar sponsor slots (rendered by the "sponsors-sidebar" template).
-    # Order matters: the first entry appears at the top of the slot. The
-    # inquiry CTA card is always appended at the bottom by the template.
+    # Sidebar PR slots (rendered by the "sponsors-sidebar" template).
+    # Order matters: the first entry appears at the top of the slot.
+    # These are bmf-san's own products/services (self-promotion), labeled 「PR」.
     # Each entry must define ja/en variants for image/url/name/description/cta/alt.
     sponsors:
       - id: "asset-trend-simulator"
