@@ -1,6 +1,6 @@
 ---
 title: アルゴリズムとデータ構造 - ヒープ
-description: アルゴリズムとデータ構造 - ヒープ
+description: 優先度付きキューを実現するmin-heap/max-heapの仕組みを解説。O(log n)の挿入・削除と、Goでのヒープ実装を紹介します。
 slug: algorithms-data-structures-heap
 date: 2020-01-14T00:00:00Z
 author: bmf-san

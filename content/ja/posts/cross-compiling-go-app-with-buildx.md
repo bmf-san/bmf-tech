@@ -1,6 +1,6 @@
 ---
 title: buildxを使ったGoアプリケーションイメージのクロスコンパイル
-description: buildxを使ったGoアプリケーションイメージのクロスコンパイル
+description: Docker buildxのマルチアーキテクチャビルドで、GoアプリをLinux AMD64とARM64向けにクロスコンパイルしてイメージ化する方法を解説します。
 slug: cross-compiling-go-app-with-buildx
 date: 2023-04-20T00:00:00Z
 author: bmf-san

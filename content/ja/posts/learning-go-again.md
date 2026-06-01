@@ -1,6 +1,6 @@
 ---
 title: Goを学びなおす
-description: Goを学びなおす
+description: 言語仕様やジェネリクスの実装、Go 1.18以降の機能をひと通り見直し、Goのコーディング力を鍛えなおす方法を紹介します。
 slug: learning-go-again
 date: 2023-01-23T00:00:00Z
 author: bmf-san

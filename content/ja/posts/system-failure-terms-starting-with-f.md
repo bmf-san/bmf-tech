@@ -1,6 +1,6 @@
 ---
 title: フから始まるシステム障害関連用語
-description: フから始まるシステム障害関連用語
+description: フェイルセーフ、フェイルオーバー、フォールトトレランス、フェイルバックなど、堅牢で信頼性の高いインフラ設計に役立つ「フ」から始まる障害関連用語を解説します。
 slug: system-failure-terms-starting-with-f
 date: 2021-06-05T00:00:00Z
 author: bmf-san

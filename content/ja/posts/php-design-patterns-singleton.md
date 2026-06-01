@@ -1,6 +1,6 @@
 ---
 title: PHPで学ぶデザインパターン - Singleton ~いくつ作るかを制限~
-description: PHPで学ぶデザインパターン - Singleton ~いくつ作るかを制限~
+description: PHPで学ぶデザインパターン「Singleton」。インスタンス生成数を制限し、アクセスを制御して単一オブジェクトの状態を管理する方法を解説します。
 slug: php-design-patterns-singleton
 date: 2017-10-01T00:00:00Z
 author: bmf-san

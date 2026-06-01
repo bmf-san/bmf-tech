@@ -1,6 +1,6 @@
 ---
 title: Jestのスナップショットテストのデメリット
-description: Jestのスナップショットテストのデメリット
+description: Jestのスナップショットテストのデメリットを解説。テストの脆さやアサーションの不明瞭さ、なぜアサーションテストの方が良いのかを紹介します。
 slug: jest-snapshot-testing-drawbacks
 date: 2024-07-18T00:00:00Z
 author: bmf-san

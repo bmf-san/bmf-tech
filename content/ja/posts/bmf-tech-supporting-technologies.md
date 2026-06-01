@@ -1,6 +1,6 @@
 ---
 title: bmf-techを支える技術
-description: bmf-techを支える技術
+description: Docker、Golang、Vue.js、Nginx、Prometheus、Grafanaなど、このブログのインフラと監視を支える技術を紹介します。
 slug: bmf-tech-supporting-technologies
 date: 2022-08-08T00:00:00Z
 author: bmf-san

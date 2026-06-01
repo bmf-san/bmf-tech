@@ -1,6 +1,6 @@
 ---
 title: Laravelのフォームリクエストでバリデーションされる値をカスタマイズする
-description: Laravelのフォームリクエストでバリデーションされる値をカスタマイズする
+description: Laravelのフォームリクエストでバリデーション対象の値をカスタマイズする方法を解説します。
 slug: laravel-form-request-validation-customization
 date: 2017-10-01T00:00:00Z
 author: bmf-san

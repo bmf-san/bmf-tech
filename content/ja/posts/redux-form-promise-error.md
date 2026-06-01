@@ -1,6 +1,6 @@
 ---
 title: redux-formのサーバーサイドバリデーションでpromissをいじってたら「Uncaught (in promise) error」
-description: redux-formのサーバーサイドバリデーションでpromissをいじってたら「Uncaught (in promise) error」
+description: redux-formのサーバーサイドバリデーションで発生する「Uncaught (in promise) error」を、Promiseを返してSubmissionErrorを正しくthrowすることで解決する方法を解説します。
 slug: redux-form-promise-error
 date: 2017-10-01T00:00:00Z
 author: bmf-san
