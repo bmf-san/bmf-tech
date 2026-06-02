@@ -23,7 +23,7 @@
     <a href="{{$featured.URL}}" class="card">
       {{- $featuredImg := index $featured.FrontMatter.Extra "image"}}
       {{- if not $featuredImg}}{{$featuredImg = printf "/ogp/%s.png" $featured.FrontMatter.Slug}}{{end}}
-      <img src="{{$featuredImg}}" alt="{{$featured.FrontMatter.Title}}" class="w-full object-cover rounded-t max-h-80" loading="eager">
+      <img src="{{$featuredImg}}" alt="{{$featured.FrontMatter.Title}}" class="w-full object-cover rounded-t max-h-80" loading="eager" fetchpriority="high" decoding="async">
       <div class="card-body">
         <div class="flex items-center gap-3 mb-3 flex-wrap">
           {{range $featured.FrontMatter.Categories}}<span class="badge badge-info">{{.}}</span>{{end}}
