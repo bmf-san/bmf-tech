@@ -72,7 +72,7 @@
   {{- $eyecatch := index .FrontMatter.Extra "image"}}
   {{- if not $eyecatch}}{{$eyecatch = printf "/ogp/%s.png" .FrontMatter.Slug}}{{end}}
   <div class="mb-8">
-    <img src="{{$eyecatch}}" alt="{{.FrontMatter.Title}}" class="w-full rounded max-h-96 object-cover" loading="eager">
+    <img src="{{$eyecatch}}" alt="{{.FrontMatter.Title}}" class="w-full rounded max-h-96 object-cover" loading="eager" fetchpriority="high" decoding="async">
   </div>
   {{end}}
 
@@ -143,7 +143,7 @@
       {{range $.RelatedArticles}}
       <a href="{{.URL}}" class="card no-underline">
         {{- $relImg := printf "/ogp/%s.png" .FrontMatter.Slug}}
-        <img src="{{$relImg}}" alt="{{.FrontMatter.Title}}" class="w-full object-cover rounded-t max-h-40" loading="lazy">
+        <img src="{{$relImg}}" alt="{{.FrontMatter.Title}}" class="w-full object-cover rounded-t max-h-40" loading="lazy" decoding="async">
         <div class="card-body">
           <div class="flex items-center gap-2 mb-2 flex-wrap">
             {{range .FrontMatter.Categories}}<span class="badge badge-secondary">{{.}}</span>{{end}}
