@@ -204,7 +204,7 @@
   translation_key: grafana
 - name: GraphQL
   translation_key: graphql
-- name: GraphQL federation
+- name: GraphQL Federation
   translation_key: graphql-federation
 - name: grep
   translation_key: grep
@@ -980,7 +980,9 @@
   translation_key: education
 - name: 機械学習
   translation_key: machine-learning
-- name: python
+- name: Python
   translation_key: python
-- name: webauthn
+- name: WebAuthn
   translation_key: webauthn
+- name: システム思考
+  translation_key: systems-thinking
