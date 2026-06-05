@@ -85,3 +85,4 @@ plugins:
   bookshelf:
     enabled: true
     tag: "bmf035-22"
+    recent_limit: 6

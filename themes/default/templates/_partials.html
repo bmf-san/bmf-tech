@@ -566,6 +566,46 @@
 {{- end}}
 {{end}}
 
+{{define "recent-books-sidebar"}}
+{{- /* Sidebar widget: the most recently read books, auto-populated by gohan's
+     bookshelf plugin via .SiteData.bookshelf.recent.<locale> (newest first,
+     capped by plugins.bookshelf.recent_limit in config.yaml). Updates
+     automatically whenever a new 書評記事 with `books:` front-matter is added.
+     Affiliate links use rel="sponsored noopener noreferrer" per Google's
+     qualifying-links guidelines; labeled 「PR」 for 景表法（ステマ規制）対応. */ -}}
+{{- $loc := .CurrentLocale}}
+{{- $isJA := eq $loc "ja"}}
+{{- $books := false}}
+{{- $bs := index .SiteData "bookshelf"}}
+{{- if $bs}}{{$recent := index $bs "recent"}}{{if $recent}}{{$books = index $recent $loc}}{{end}}{{end}}
+{{- if $books}}
+<aside class="card mb-6" aria-label="PR">
+  <div class="card-header flex items-center justify-between">
+    <span class="font-semibold text-base">{{if $isJA}}📚 最近読んだ本{{else}}📚 Recently read{{end}}</span>
+    <span class="badge badge-light text-secondary text-xs uppercase">PR</span>
+  </div>
+  <div class="card-body-compact">
+    <div class="grid grid-cols-3 gap-3">
+      {{- range $books}}
+      {{- if .ImageURL}}
+      <a href="{{.LinkURL}}" target="_blank" rel="sponsored noopener noreferrer"
+         class="block hover:opacity-80 transition-opacity"
+         title="{{.Title}}" aria-label="{{.Title}}{{if $isJA}}（Amazon）{{else}} on Amazon{{end}}">
+        <img src="{{.ImageURL}}" alt="{{.Title}}"
+             class="w-full h-auto rounded shadow-sm" loading="lazy" width="120" height="160">
+      </a>
+      {{- end}}
+      {{- end}}
+    </div>
+    <a href="{{if $isJA}}/ja/bookshelf/{{else}}/bookshelf/{{end}}"
+       class="block text-xs text-primary mt-3 hover:underline">
+      {{if $isJA}}本棚をすべて見る →{{else}}View full bookshelf →{{end}}
+    </a>
+  </div>
+</aside>
+{{- end}}
+{{end}}
+
 {{define "article-card"}}
 {{- $img := index .FrontMatter.Extra "image"}}
 {{- if not $img}}{{$img = printf "/ogp/%s.png" .FrontMatter.Slug}}{{end}}
