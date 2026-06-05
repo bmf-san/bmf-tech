@@ -60,7 +60,7 @@
   {{with index .PluginData "amazon_books"}}
   <div class="flex flex-wrap justify-start gap-6 mb-8">
     {{range .books}}
-    <a href="{{.LinkURL}}" target="_blank" rel="noopener noreferrer" class="flex flex-col items-start gap-2">
+    <a href="{{.LinkURL}}" target="_blank" rel="sponsored noopener noreferrer" class="flex flex-col items-start gap-2">
       <img src="{{.ImageURL}}" alt="{{.Title}}" class="h-48 object-contain rounded shadow" loading="lazy">
       {{if .Title}}<span class="text-xs text-secondary text-left" style="max-width:10rem;word-break:break-word">{{.Title}}</span>{{end}}
     </a>
@@ -92,6 +92,11 @@
   <article class="prose prose-full mb-12">
     {{.HTMLContent}}
   </article>
+  {{template "ad-unit-article-mid" $}}
+
+  {{/* Amazon affiliate CTA (book-review posts): second touch point after content */}}
+  {{template "amazon-books-card" .}}
+
   {{template "ad-unit-article-bottom" $}}
 
   {{/* Tags */}}

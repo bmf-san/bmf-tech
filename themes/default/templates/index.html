@@ -76,6 +76,9 @@
       {{/* Sponsors (PR枠) */}}
       {{template "sponsors-sidebar" .}}
 
+      {{/* Sidebar ad (desktop only) */}}
+      {{template "ad-unit-sidebar" .}}
+
       {{/* Categories */}}
       {{- $locPfx := ""}}
       {{- if eq .CurrentLocale "ja"}}{{$locPfx = "/ja"}}{{end}}
