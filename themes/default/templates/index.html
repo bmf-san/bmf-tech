@@ -76,7 +76,7 @@
       {{/* Sponsors (PR枠) */}}
       {{template "sponsors-sidebar" .}}
 
-      {{/* Sidebar ad — directly below the PR card, top (first) page only, desktop */}}
+      {{/* Sidebar ad — directly below the PR card, top (first) page only */}}
       {{if or (not .Pagination) (le .Pagination.CurrentPage 1)}}
       {{template "ad-unit-sidebar" .}}
       {{end}}

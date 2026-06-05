@@ -420,15 +420,15 @@
 {{end}}
 
 {{define "ad-unit-sidebar"}}
-{{- /* Desktop sidebar display ad styled to match the PR (sponsors) card and
-     shown directly below it. Desktop-only via `hidden md:block`; the caller
+{{- /* Sidebar display ad styled to match the PR (sponsors) card and shown
+     directly below it on every device (same as the PR card). The caller
      limits it to the first list page. Labeled per AdSense policy
      (「広告」/「Sponsored」). Guarded by the slot param. */ -}}
 {{- $id := index .Config.Theme.Params "adsense_id"}}
 {{- $slot := index .Config.Theme.Params "adsense_slot_sidebar"}}
 {{- if and $id $slot}}
 {{- $isJA := eq .CurrentLocale "ja"}}
-<aside class="card mb-6 hidden md:block" aria-label="{{if $isJA}}広告{{else}}Advertisement{{end}}">
+<aside class="card mb-6" aria-label="{{if $isJA}}広告{{else}}Advertisement{{end}}">
   <div class="card-header flex items-center justify-between">
     <span class="font-semibold text-base">{{if $isJA}}広告{{else}}Sponsored{{end}}</span>
     <span class="badge badge-light text-secondary text-xs uppercase">Ad</span>
