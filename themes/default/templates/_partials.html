@@ -420,37 +420,23 @@
 {{end}}
 
 {{define "ad-unit-article-mid"}}
-{{- /* In-content ad inserted at the middle of the article body. Uses the
-     AdSense "in-article" (fluid) format so it renders as a native unit that
-     blends into the prose. The body is a single HTMLContent blob, so a small
-     first-party script relocates this unit to a heading boundary near the 50%
-     point. Skipped on short posts so the mid and bottom ads never stack.
-     Guarded by the slot param. */ -}}
+{{- /* In-article (fluid) ad rendered statically right after the article body.
+     The body is a single HTMLContent blob, so without JS this is the closest
+     in-content boundary we can target. The bottom (autorelaxed) unit is placed
+     further down (after tags/share) so the two never stack. Guarded by the
+     slot param. */ -}}
 {{- $id := index .Config.Theme.Params "adsense_id"}}
 {{- $slot := index .Config.Theme.Params "adsense_slot_article_mid"}}
 {{- if and $id $slot}}
-<div id="ad-article-mid" class="my-8" hidden>
+<div class="my-8">
   <ins class="adsbygoogle"
        style="display:block; text-align:center;"
        data-ad-layout="in-article"
        data-ad-format="fluid"
        data-ad-client="{{$id}}"
        data-ad-slot="{{$slot}}"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
-<script>
-(function(){
-  var ad=document.getElementById('ad-article-mid');
-  var art=document.querySelector('article.prose');
-  if(!ad||!art){return;}
-  var kids=Array.prototype.slice.call(art.children);
-  if(kids.length<6){ad.parentNode.removeChild(ad);return;}
-  var mid=Math.floor(kids.length/2),target=kids[mid];
-  for(var i=mid;i<kids.length;i++){if(/^H[23]$/.test(kids[i].tagName)){target=kids[i];break;}}
-  art.insertBefore(ad,target);
-  ad.hidden=false;
-  (adsbygoogle=window.adsbygoogle||[]).push({});
-})();
-</script>
 {{- end}}
 {{end}}
 
