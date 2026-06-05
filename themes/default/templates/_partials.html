@@ -419,6 +419,33 @@
 {{- end}}
 {{end}}
 
+{{define "ad-unit-sidebar"}}
+{{- /* Sidebar display ad styled to match the PR (sponsors) card and shown
+     directly below it on every device (same as the PR card). The caller
+     limits it to the first list page. Labeled per AdSense policy
+     (「広告」/「Sponsored」). Guarded by the slot param. */ -}}
+{{- $id := index .Config.Theme.Params "adsense_id"}}
+{{- $slot := index .Config.Theme.Params "adsense_slot_sidebar"}}
+{{- if and $id $slot}}
+{{- $isJA := eq .CurrentLocale "ja"}}
+<aside class="card mb-6" aria-label="{{if $isJA}}広告{{else}}Advertisement{{end}}">
+  <div class="card-header flex items-center justify-between">
+    <span class="font-semibold text-base">{{if $isJA}}広告{{else}}Sponsored{{end}}</span>
+    <span class="badge badge-light text-secondary text-xs uppercase">Ad</span>
+  </div>
+  <div class="card-body-compact">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="{{$id}}"
+         data-ad-slot="{{$slot}}"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</aside>
+{{- end}}
+{{end}}
+
 {{define "sponsors-sidebar"}}
 {{- /* Sidebar PR slot for the top page (right column, above other widgets).
      - Shows bmf-san's own products/services from `theme.params.sponsors` in
@@ -497,6 +524,86 @@
     </div>
   </div>
 </div>
+{{end}}
+
+{{define "amazon-books-card"}}
+{{- /* Bottom-of-article CTA for Amazon affiliate books (amazon_books plugin).
+     Acts as a second touch point in addition to the top book cover, so readers
+     who finished the post get a clear "View on Amazon" call to action.
+     Affiliate links use rel="sponsored noopener noreferrer" per Google's
+     qualifying-links guidelines. Labeled 「PR」 for 景表法（ステマ規制）対応. */ -}}
+{{- $isJA := eq .Locale "ja"}}
+{{- $hasBooks := false}}
+{{- with index .PluginData "amazon_books"}}{{if .books}}{{$hasBooks = true}}{{end}}{{end}}
+{{- if $hasBooks}}
+{{- with index .PluginData "amazon_books"}}
+<aside class="card my-10" aria-label="PR">
+  <div class="card-header flex items-center justify-between">
+    <span class="font-semibold text-base">{{if $isJA}}📚 この記事で紹介した本{{else}}📚 Books in this post{{end}}</span>
+    <span class="badge badge-light text-secondary text-xs uppercase">PR</span>
+  </div>
+  <div class="card-body">
+    <div class="flex flex-col gap-6">
+      {{- range .books}}
+      <div class="flex items-start gap-4">
+        {{if .ImageURL}}
+        <a href="{{.LinkURL}}" target="_blank" rel="sponsored noopener noreferrer" class="shrink-0 hover:opacity-80 transition-opacity">
+          <img src="{{.ImageURL}}" alt="{{.Title}}" class="h-32 w-auto object-contain rounded shadow" loading="lazy">
+        </a>
+        {{end}}
+        <div class="flex flex-col gap-2">
+          {{if .Title}}<p class="text-sm font-semibold leading-snug">{{.Title}}</p>{{end}}
+          <a href="{{.LinkURL}}" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-outline-primary btn-sm self-start">
+            {{if $isJA}}📕 Amazonで見る →{{else}}📕 View on Amazon →{{end}}
+          </a>
+        </div>
+      </div>
+      {{- end}}
+    </div>
+  </div>
+</aside>
+{{- end}}
+{{- end}}
+{{end}}
+
+{{define "recent-books-sidebar"}}
+{{- /* Sidebar widget: the most recently read books, auto-populated by gohan's
+     bookshelf plugin via .SiteData.bookshelf.recent.<locale> (newest first,
+     capped by plugins.bookshelf.recent_limit in config.yaml). Updates
+     automatically whenever a new 書評記事 with `books:` front-matter is added.
+     Affiliate links use rel="sponsored noopener noreferrer" per Google's
+     qualifying-links guidelines; labeled 「PR」 for 景表法（ステマ規制）対応. */ -}}
+{{- $loc := .CurrentLocale}}
+{{- $isJA := eq $loc "ja"}}
+{{- $books := false}}
+{{- $bs := index .SiteData "bookshelf"}}
+{{- if $bs}}{{$recent := index $bs "recent"}}{{if $recent}}{{$books = index $recent $loc}}{{end}}{{end}}
+{{- if $books}}
+<aside class="card mb-6" aria-label="PR">
+  <div class="card-header flex items-center justify-between">
+    <span class="font-semibold text-base">{{if $isJA}}📚 最近読んだ本{{else}}📚 Recently read{{end}}</span>
+    <span class="badge badge-light text-secondary text-xs uppercase">PR</span>
+  </div>
+  <div class="card-body-compact">
+    <div class="grid grid-cols-3 gap-3">
+      {{- range $books}}
+      {{- if .ImageURL}}
+      <a href="{{.LinkURL}}" target="_blank" rel="sponsored noopener noreferrer"
+         class="block hover:opacity-80 transition-opacity"
+         title="{{.Title}}" aria-label="{{.Title}}{{if $isJA}}（Amazon）{{else}} on Amazon{{end}}">
+        <img src="{{.ImageURL}}" alt="{{.Title}}"
+             class="w-full h-auto rounded shadow-sm" loading="lazy" width="120" height="160">
+      </a>
+      {{- end}}
+      {{- end}}
+    </div>
+    <a href="{{if $isJA}}/ja/bookshelf/{{else}}/bookshelf/{{end}}"
+       class="block text-xs text-primary mt-3 hover:underline">
+      {{if $isJA}}本棚をすべて見る →{{else}}View full bookshelf →{{end}}
+    </a>
+  </div>
+</aside>
+{{- end}}
 {{end}}
 
 {{define "article-card"}}

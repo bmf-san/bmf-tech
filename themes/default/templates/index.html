@@ -76,6 +76,17 @@
       {{/* Sponsors (PR枠) */}}
       {{template "sponsors-sidebar" .}}
 
+      {{/* Recently read books (PR / Amazonアフィリエイト) — auto-updates from
+           書評記事. Top (first) page only to avoid repetition across pagination. */}}
+      {{if or (not .Pagination) (le .Pagination.CurrentPage 1)}}
+      {{template "recent-books-sidebar" .}}
+      {{end}}
+
+      {{/* Sidebar ad — directly below the PR card, top (first) page only */}}
+      {{if or (not .Pagination) (le .Pagination.CurrentPage 1)}}
+      {{template "ad-unit-sidebar" .}}
+      {{end}}
+
       {{/* Categories */}}
       {{- $locPfx := ""}}
       {{- if eq .CurrentLocale "ja"}}{{$locPfx = "/ja"}}{{end}}
