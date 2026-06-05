@@ -92,10 +92,11 @@
   <article class="prose prose-full mb-12">
     {{.HTMLContent}}
   </article>
-  {{template "ad-unit-article-mid" $}}
 
   {{/* Amazon affiliate CTA (book-review posts): second touch point after content */}}
   {{template "amazon-books-card" .}}
+
+  {{template "ad-unit-article-bottom" $}}
 
   {{/* Tags */}}
   {{if .FrontMatter.Tags}}
@@ -133,8 +134,6 @@
     </a>
   </div>
   {{end}}
-
-  {{template "ad-unit-article-bottom" $}}
 
   {{template "support-links" $}}
 

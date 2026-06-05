@@ -419,27 +419,6 @@
 {{- end}}
 {{end}}
 
-{{define "ad-unit-article-mid"}}
-{{- /* In-article (fluid) ad rendered statically right after the article body.
-     The body is a single HTMLContent blob, so without JS this is the closest
-     in-content boundary we can target. The bottom (autorelaxed) unit is placed
-     further down (after tags/share) so the two never stack. Guarded by the
-     slot param. */ -}}
-{{- $id := index .Config.Theme.Params "adsense_id"}}
-{{- $slot := index .Config.Theme.Params "adsense_slot_article_mid"}}
-{{- if and $id $slot}}
-<div class="my-8">
-  <ins class="adsbygoogle"
-       style="display:block; text-align:center;"
-       data-ad-layout="in-article"
-       data-ad-format="fluid"
-       data-ad-client="{{$id}}"
-       data-ad-slot="{{$slot}}"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
-{{- end}}
-{{end}}
-
 {{define "ad-unit-sidebar"}}
 {{- /* Desktop sidebar display ad (responsive auto). Desktop-only via
      `hidden md:block` since list pages stack the sidebar below content on
