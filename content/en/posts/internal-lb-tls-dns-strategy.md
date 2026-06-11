@@ -40,7 +40,7 @@ The question "couldn't a Cloud DNS private zone have worked?" is mainly about (B
 
 This is the crux. When issuing a managed certificate (one signed by a public CA), Google's CA looks up the `_acme-challenge` record **from the public internet DNS** to verify domain ownership.
 
-A private zone can only be resolved from inside the VPC, so it is invisible to an external CA. In other words, **you cannot issue a managed certificate for a domain in a private zone.**
+A private zone resolves only from inside the VPC, so an external CA cannot see it. In other words, **you cannot issue a managed certificate for a domain in a private zone.**
 
 | Zone type | Resolvable by an external CA? | Managed certificate |
 | --- | --- | --- |
@@ -52,7 +52,7 @@ A private zone can only be resolved from inside the VPC, so it is invisible to a
 If you insist on HTTPS with a private zone (a VPC-only domain), your options change.
 
 - Use a **self-managed certificate**. Stand up a private CA (GCP's [Certificate Authority Service](https://cloud.google.com/certificate-authority-service), AWS's [ACM Private CA](https://docs.aws.amazon.com/privateca/)) and upload the certificate it issues to the LB.
-- However, the caller must add that private CA's root certificate to its trust store.
+- The caller must also add that private CA's root certificate to its trust store.
 - You lose the convenience of "it's a public CA, so it's trusted without any extra setup."
 
 # The compromise we adopted: public domain + private IP
@@ -63,7 +63,7 @@ This time, we avoided a private zone and went with the following.
 - But the value the A record returns is a **private IP (the internal LB's VIP)**
 - The certificate is a public managed certificate
 
-Putting a private-IP A record in public DNS looks odd at first, but because the domain is public, both validation (A) and name resolution (B) can be consolidated in the same public zone, and the certificate stays managed. Actual reachability is via VPC Peering, so even though the IP is visible in public DNS, it isn't reachable from the outside.
+Putting a private-IP A record in public DNS looks odd at first, but because the domain is public, the same public zone holds both validation (A) and name resolution (B), and the certificate stays managed. Actual reachability is via VPC Peering, so even though the IP is visible in public DNS, it isn't reachable from the outside.
 
 ```mermaid
 flowchart LR
