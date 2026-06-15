@@ -8,6 +8,8 @@
   translation_key: acl
 - name: AI
   translation_key: ai
+- name: AI-DLC
+  translation_key: ai-dlc
 - name: AJAX
   translation_key: ajax
 - name: AlloyDB
@@ -434,6 +436,8 @@
   translation_key: saga-pattern
 - name: SAML
   translation_key: saml
+- name: SDLC
+  translation_key: sdlc
 - name: seccomp
   translation_key: seccomp
 - name: shell

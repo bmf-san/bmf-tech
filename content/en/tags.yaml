@@ -24,6 +24,8 @@
   translation_key: agile
 - name: AI
   translation_key: ai
+- name: AI-DLC
+  translation_key: ai-dlc
 - name: AJAX
   translation_key: ajax
 - name: Algorithms
@@ -784,6 +786,8 @@
   translation_key: schema-driven
 - name: Scrum
   translation_key: scrum
+- name: SDLC
+  translation_key: sdlc
 - name: Seccomp
   translation_key: seccomp
 - name: Security
