@@ -16,7 +16,7 @@ draft: false
 
 ## Introduction
 
-**AI-DLC (AI-Driven Development Life Cycle)**, proposed by AWS, is a new development methodology that positions AI as a central collaborator in the development process. This article briefly summarizes its ideas and mechanics.
+**AI-DLC (AI-Driven Development Lifecycle)**, proposed by AWS, is a new development approach that positions AI as a central collaborator in the development process. This article briefly summarizes its ideas and mechanics.
 
 Traditionally, many organizations have bolted AI onto their existing processes as an "assistant." AWS argues that this usage constrains AI's capabilities and preserves outdated inefficiencies. AI-DLC instead aims to embed AI into the very fabric of software development.
 
@@ -27,7 +27,7 @@ AI-DLC, as an AI-centric approach, emphasizes two points.
 - **AI executes, humans supervise**: AI creates detailed work plans and proactively asks for intent alignment and guidance, while humans—who understand the business context—make the critical decisions.
 - **Dynamic team collaboration**: While AI handles routine tasks, the team focuses on real-time problem solving, creative thinking, and fast decision making.
 
-These two principles are meant to increase development speed without sacrificing quality.
+These two principles aim to increase development speed without sacrificing quality.
 
 ## The Underlying Mental Model
 
@@ -35,9 +35,9 @@ At the heart of AI-DLC is a mental model in which AI initiates and drives the wo
 
 1. AI creates a plan.
 2. AI asks clarifying questions to understand the context.
-3. Only after human validation does AI implement the solution.
+3. Only after human validation does AI build the solution.
 
-By rapidly repeating this pattern across every activity in the SDLC (Software Development Life Cycle), a unified vision and approach is applied throughout development.
+By rapidly repeating this pattern across every activity in the SDLC (Software Development Lifecycle), the team applies a unified vision and approach throughout development.
 
 ## The Three Phases
 
@@ -49,7 +49,7 @@ AI-DLC organizes development into three simple phases.
 | Construction | Based on the context validated during Inception, AI proposes the logical architecture, domain model, implementation, and tests through "Mob Construction." |
 | Operation | Applying the accumulated context, AI manages Infrastructure as Code and deployment under the team's supervision. |
 
-Each phase hands richer context to the next. AI stores plans, requirements, and design artifacts in the project repository, maintaining persistent context across multiple sessions.
+Each phase hands richer context to the next. AI stores plans, requirements, and design artifacts in the project repository, maintaining persistent context across many sessions.
 
 ## Renamed Terminology
 
@@ -72,9 +72,9 @@ AWS highlights the following benefits of AI-DLC.
 
 ## Conclusion
 
-AI-DLC reframes AI not as a mere assistant but as a primary actor in development. Its defining feature is applying the mental model—"AI plans, humans validate, AI implements"—consistently across the Inception, Construction, and Operation phases. When adopting it, it helps to reference the AWS white paper, Amazon Q Developer rules, and Kiro custom workflows while tailoring the approach to your own organization's process.
+AI-DLC reframes AI not as a mere assistant but as a primary actor in development. Its defining feature is applying the mental model—"AI plans, humans verify, AI builds"—consistently across all three phases. When adopting it, it helps to reference the AWS white paper, Amazon Q Developer rules, and Kiro custom workflows while tailoring the approach to your own organization's process.
 
 ## References
 
-- [AI-Driven Development Life Cycle: Reimagining Software Engineering (AWS Blog, JP)](https://aws.amazon.com/jp/blogs/news/ai-driven-development-life-cycle/)
+- [AI-Driven Development Lifecycle: Reimagining Software Engineering (AWS Blog, JP)](https://aws.amazon.com/jp/blogs/news/ai-driven-development-life-cycle/)
 - [AI-Driven Development Lifecycle (AI-DLC) Method Definition (Raja SP, AWS)](https://prod.d13rzhkk8cj2z0.amplifyapp.com/)
