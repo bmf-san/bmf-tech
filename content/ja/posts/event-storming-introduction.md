@@ -7,6 +7,7 @@ categories:
   - アーキテクチャ
 tags:
   - DDD
+  - EventStorming
 description: "ドメイン駆動設計の文脈で生まれたイベントストーミングを解説。付箋を使ったワークショップで業務ドメインを高速に可視化し、開発者と業務担当者の共通理解を作る手法を紹介する。"
 translation_key: event-storming-introduction
 draft: false

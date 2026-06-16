@@ -7,6 +7,7 @@ categories:
   - Architecture
 tags:
   - DDD
+  - EventStorming
 description: "Learn EventStorming, a workshop technique born from domain-driven design that uses sticky notes to rapidly map a business domain and build shared understanding between developers and domain experts."
 translation_key: event-storming-introduction
 draft: false

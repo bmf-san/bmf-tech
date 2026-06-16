@@ -282,6 +282,8 @@
   translation_key: es6
 - name: ESModules
   translation_key: esmodules
+- name: EventStorming
+  translation_key: eventstorming
 - name: ETL
   translation_key: etl
 - name: Event Loop
