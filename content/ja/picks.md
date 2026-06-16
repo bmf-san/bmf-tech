@@ -42,6 +42,7 @@ listing_slugs:
   - writing-architecture-documentation
   - system-specification-structure
   - bounded-context-explanation
+  - event-storming-introduction
   - microservices-access-control-opa
   - story-points-using-cynefin-framework
   - architecture-strategy-discussion
