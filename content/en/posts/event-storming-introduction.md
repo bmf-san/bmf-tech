@@ -23,13 +23,13 @@ If we keep designing in this state, gaps in understanding surface later and beco
 
 One technique to dissolve this "split in business knowledge" is **EventStorming**.
 
-In this article, I will organize what EventStorming is, what elements it is built from, and how to run it, in a way that is understandable to non-developers as well.
+In this article, I explain EventStorming, its core elements, and how to run it in terms that non-developers can follow.
 
 # What Is EventStorming
 
 EventStorming is a **workshop-style modeling technique that visualizes the flow of a business using sticky notes and a wall**.
 
-It was created in 2012 by Alberto Brandolini in the context of domain-driven design (DDD). Note that the official spelling is a single word: "EventStorming".
+Alberto Brandolini created it in 2012 in the context of domain-driven design (DDD). Note that the official spelling is a single word: "EventStorming".
 
 Its characteristics are as follows.
 
@@ -39,17 +39,17 @@ Its characteristics are as follows.
 
 The important point is that EventStorming is **not a technique for producing a design document itself**.
 
-Its goal is for stakeholders to discover the flow of the business and align their understanding while working together hands-on. More than leaving behind a clean diagram, the value lies in the shared understanding built in the participants' minds during the process.
+Its goal is for stakeholders to discover the flow of the business and align their understanding while working together hands-on. More than leaving behind a clean diagram, the value lies in the shared understanding built-in the participants' minds during the process.
 
 # Why Focus on "Events"
 
 EventStorming starts from **domain events**.
 
-A domain event is **something that actually happened in the business—a fact**. Examples include "an order was placed", "stock was allocated", and "a payment was completed". They are always written in the **past tense**.
+A domain event is **something that actually happened in the business—a fact**. Examples include "a customer placed an order", "the system allocated stock", and "the customer completed payment". They are always written in the **past tense**.
 
 Why start from events? Because events **tend to become a shared language across departments and roles**.
 
-For example, the fact "an order was placed" can be shared as "something that happened" regardless of whether you are in sales, the warehouse, or accounting. By contrast, if a conversation starts from table structures or class designs, business people find it hard to join in.
+For example, teams in sales, the warehouse, and accounting can all share the fact "a customer placed an order" as something that happened. By contrast, if a conversation starts from table structures or class designs, business people find it hard to join in.
 
 By starting from the universally understandable unit of "a fact that happened", people with different backgrounds can discuss things on a level playing field.
 
@@ -82,7 +82,7 @@ flowchart LR
 
 In other words, you visualize the chain of cause and effect—"someone (Actor) performs an action (Command), and as a result a fact happens (Domain Event); that fact triggers the next move (Policy)"—as a sequence of sticky notes.
 
-The red **Hotspot** is especially important. By posting points raised during discussion—"we are not sure how this part works" or "different departments interpret this differently"—and not erasing them on the spot, you make the **gaps in understanding and the issues within the organization visible**.
+The red **Hotspot** is especially important. By posting points raised during discussion—"we are not sure how this part works" or "different departments interpret this differently"—and keeping them visible during the session, you make the **gaps in understanding and the issues within the organization visible**.
 
 # Three Levels (Formats)
 
@@ -94,7 +94,7 @@ EventStorming uses different levels of detail depending on the purpose. The thre
 | Process Modelling | Design and improve an individual business process | Commands, Policies, Read Models, External Systems |
 | Software Design | Design event-driven software in detail | Aggregates, aggregate boundaries |
 
-It is common to raise the resolution step by step: first grasp the overall picture and issues with the **Big Picture**, then refine individual flows with **Process Modelling**, and finally translate them into implementation with **Software Design**.
+A common sequence is to raise resolution step by step: first grasp the full picture and issues with the **Big Picture**, then refine individual flows with **Process Modelling**, and finally translate them into implementation with **Software Design**.
 
 ```mermaid
 flowchart LR
@@ -116,7 +116,7 @@ flowchart TD
 
 ### 1. Invite the Right People
 
-You could say the success of EventStorming is decided by the participants.
+You could say participants decide whether EventStorming succeeds.
 
 You need both **the people who ask questions** (often developers) and **the people who have the answers** (domain experts and product owners who know the business). With only one side, you cannot depict the reality of the business correctly.
 
@@ -130,7 +130,7 @@ First, write the events that occur in the business on orange sticky notes, **in 
 
 ### 4. Flesh Out Commands, Policies, and External Systems
 
-For the events lined up, add "what triggered this event (Command)", "who performs it (Actor)", "what always happens after this event (Policy)", and "which external service is involved".
+For the events lined up, add "what triggered this event (Command)", "who performs it (Actor)", "what always happens after this event (Policy)", and "which external service takes part".
 
 ### 5. Discover Aggregates and Boundaries
 
@@ -148,11 +148,11 @@ For bounded contexts, see also the separate article "[Bounded Contexts](/en/post
 
 # Pitfalls
 
-It is a useful technique, but there are a few caveats.
+This useful technique still has a few caveats.
 
 * **Without the right people, the value fades**: If those who know the business are absent, the model becomes one built on guesswork alone
-* **The completeness of the diagram is not the goal**: The essence is the shared understanding built in the participants' minds during the process. Do not make producing a clean artifact an end in itself
-* **Big Picture is best done in person**: Broad exploration is hard to run online, and in-person sessions are considered more effective
+* **The completeness of the diagram is not the goal**: The essence is the shared understanding built-in the participants' minds during the process. Do not make producing a clean artifact an end in itself
+* **Big Picture is best done in person**: Broad exploration is hard to run online, and teams generally consider in-person sessions more effective
 
 # Summary
 
@@ -166,4 +166,3 @@ It is a useful technique, but there are a few caveats.
 
 * [EventStorming official site](https://www.eventstorming.com/)
 * [Learning Domain-Driven Design](https://www.oreilly.com/library/view/learning-domain-driven-design/9781098100124/) by Vlad Khononov (O'Reilly)
-
