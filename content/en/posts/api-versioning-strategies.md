@@ -58,7 +58,7 @@ GET /users?version=1
 
 The base URI stays stable, and you can define a default version when the client omits the parameter.
 
-It is simple to add, but the parameter easily becomes optional, so clients forget it and trigger unexpected behavior.
+The parameter is simple to add, but it easily becomes optional, so clients forget it and trigger unexpected behavior.
 
 A gateway that routes by path handles a query-based version less easily, and a cache that drops the query from its key can return stale data.
 
@@ -85,7 +85,7 @@ Media-type negotiation through the `Accept` header also lets a client pick the r
 
 GitHub's REST API handles versions through both an `Accept` media type and the date-based `X-GitHub-Api-Version` header.
 
-The version disappears from the URL, however, so it hides from discovery and complicates manual checks and debugging.
+The version disappears from the URL, so it hides from discovery and complicates manual checks and debugging.
 
 Caching requires careful handling of the `Vary` header, which adds operational overhead.
 
