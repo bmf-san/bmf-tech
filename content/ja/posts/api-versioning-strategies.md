@@ -11,7 +11,7 @@ tags:
   - REST
   - HTTP
 translation_key: api-versioning-strategies
-draft: true
+draft: false
 ---
 
 

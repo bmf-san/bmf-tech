@@ -11,7 +11,7 @@ tags:
   - DNS
 description: "VPC内部通信をHTTPS化する際、Cloud DNSのprivate zoneではマネージド証明書が使えない理由と、公開ドメイン＋private IPという落とし所について整理する。"
 translation_key: internal-lb-tls-dns-strategy
-draft: true
+draft: false
 ---
 
 
