@@ -138,6 +138,8 @@
   translation_key: cdn
 - name: CentOS
   translation_key: centos
+- name: Certificate Manager
+  translation_key: certificate-manager
 - name: Chrome
   translation_key: chrome
 - name: chromedp
@@ -172,6 +174,8 @@
   translation_key: cognitive-science
 - name: composer
   translation_key: composer
+- name: Compression
+  translation_key: compression
 - name: Constraints
   translation_key: constraints
 - name: Consumer-Driven Contract Testing
@@ -214,6 +218,8 @@
   translation_key: dart
 - name: Data Structures
   translation_key: data-structure
+- name: Data Transformation
+  translation_key: data-transformation
 - name: Datadog
   translation_key: datadog
 - name: DB
@@ -248,6 +254,8 @@
   translation_key: distributed-systems
 - name: Distributed Transactions
   translation_key: distributed-transactions
+- name: DNS
+  translation_key: dns
 - name: Docker
   translation_key: docker
 - name: Docker Compose
@@ -272,6 +280,10 @@
   translation_key: email
 - name: Emoji
   translation_key: emoji
+- name: Encoding
+  translation_key: encoding
+- name: Encryption
+  translation_key: encryption
 - name: ER
   translation_key: er
 - name: ERE
@@ -374,6 +386,8 @@
   translation_key: hard-links
 - name: Hardware
   translation_key: hardware
+- name: Hashing
+  translation_key: hashing
 - name: HashMap
   translation_key: hashmap
 - name: Haskell
@@ -796,6 +810,8 @@
   translation_key: security
 - name: Selection Sort
   translation_key: selection-sort
+- name: Serialization
+  translation_key: serialization
 - name: Service Locator
   translation_key: service-locator
 - name: Service Mesh

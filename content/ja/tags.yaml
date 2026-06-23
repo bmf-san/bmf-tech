@@ -70,6 +70,8 @@
   translation_key: cdn
 - name: CentOS
   translation_key: centos
+- name: Certificate Manager
+  translation_key: certificate-manager
 - name: chrome
   translation_key: chrome
 - name: chromedp
@@ -128,6 +130,8 @@
   translation_key: digitalocean
 - name: DIP
   translation_key: dip
+- name: DNS
+  translation_key: dns
 - name: Docker
   translation_key: docker
 - name: Docker Compose
@@ -992,3 +996,15 @@
   translation_key: webauthn
 - name: システム思考
   translation_key: systems-thinking
+- name: データ変換
+  translation_key: data-transformation
+- name: エンコード
+  translation_key: encoding
+- name: シリアライズ
+  translation_key: serialization
+- name: 暗号化
+  translation_key: encryption
+- name: ハッシュ
+  translation_key: hashing
+- name: 圧縮
+  translation_key: compression

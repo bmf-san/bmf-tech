@@ -11,7 +11,7 @@ tags:
   - DNS
 description: "Why a Cloud DNS private zone cannot use managed certificates when securing internal VPC traffic with HTTPS, and the practical compromise of a public domain backed by a private IP."
 translation_key: internal-lb-tls-dns-strategy
-draft: true
+draft: false
 ---
 
 
