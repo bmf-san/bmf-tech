@@ -11,7 +11,7 @@ tags:
   - HTTP
 description: "A concise comparison of four API versioning strategies — path, query parameter, header, and message payload — covering their pros, cons, and best fit."
 translation_key: api-versioning-strategies
-draft: true
+draft: false
 ---
 
 
