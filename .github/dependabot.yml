@@ -14,13 +14,6 @@ updates:
     labels:
       - dependencies
 
-  - package-ecosystem: gomod
-    directory: "/tools/devto"
-    schedule:
-      interval: weekly
-    labels:
-      - dependencies
-
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
