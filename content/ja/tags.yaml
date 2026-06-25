@@ -470,6 +470,8 @@
   translation_key: spanner
 - name: sql
   translation_key: sql
+- name: sqlc
+  translation_key: sqlc
 - name: SQLite
   translation_key: sqlite
 - name: SQLアンチパターン
@@ -642,6 +644,8 @@
   translation_key: code-review
 - name: コード品質
   translation_key: code-quality
+- name: コード生成
+  translation_key: code-generation
 - name: コールバック
   translation_key: callback
 - name: サービスメッシュ
@@ -1008,3 +1012,13 @@
   translation_key: hashing
 - name: 圧縮
   translation_key: compression
+- name: 公開鍵暗号
+  translation_key: public-key-cryptography
+- name: デジタル署名
+  translation_key: digital-signature
+- name: 証明書
+  translation_key: certificate
+- name: RSA
+  translation_key: rsa
+- name: PKI
+  translation_key: pki

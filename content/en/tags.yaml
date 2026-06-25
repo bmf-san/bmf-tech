@@ -138,6 +138,8 @@
   translation_key: cdn
 - name: CentOS
   translation_key: centos
+- name: Certificate
+  translation_key: certificate
 - name: Certificate Manager
   translation_key: certificate-manager
 - name: Chrome
@@ -160,6 +162,8 @@
   translation_key: cloud-native
 - name: CMS
   translation_key: cms
+- name: Code Generation
+  translation_key: code-generation
 - name: Code Quality
   translation_key: code-quality
 - name: Code Reading
@@ -244,6 +248,8 @@
   translation_key: dfs
 - name: DI
   translation_key: di
+- name: Digital Signature
+  translation_key: digital-signature
 - name: DigitalOcean
   translation_key: digitalocean
 - name: DIP
@@ -670,6 +676,8 @@
   translation_key: phperkaigi
 - name: phpunit
   translation_key: phpunit
+- name: PKI
+  translation_key: pki
 - name: Platform Engineering
   translation_key: platform-engineering
 - name: PofEAA
@@ -708,6 +716,8 @@
   translation_key: protocol-buffers
 - name: Provider-Driven Contract Testing
   translation_key: provider-driven-contract-testing
+- name: Public Key Cryptography
+  translation_key: public-key-cryptography
 - name: pundit
   translation_key: pundit
 - name: Queue
@@ -778,6 +788,8 @@
   translation_key: router
 - name: RPC
   translation_key: rpc
+- name: RSA
+  translation_key: rsa
 - name: RSpec
   translation_key: rspec
 - name: Ruby
@@ -858,6 +870,8 @@
   translation_key: sql
 - name: SQL Anti-pattern
   translation_key: sql-anti-pattern
+- name: sqlc
+  translation_key: sqlc
 - name: SQLite
   translation_key: sqlite
 - name: SRE
