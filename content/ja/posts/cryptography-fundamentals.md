@@ -34,6 +34,7 @@ HTTPS、SSH、JWTなど、日々使う仕組みの安全性は暗号技術が支
 - 第1回（本記事）: 暗号の基礎部品
 - 第2回: [鍵交換とPKI](https://bmf-tech.com/ja/posts/cryptography-key-exchange-and-pki)
 - 第3回: [暗号技術の応用：TLS・JWT・SSH](https://bmf-tech.com/ja/posts/cryptography-in-practice)
+- 実践編: [公開鍵の3つの使い道](https://bmf-tech.com/ja/posts/public-key-three-uses)
 
 なお、暗号化やハッシュ化を他のデータ変換と並べて比較した整理は[データ変換方式の比較](https://bmf-tech.com/ja/posts/data-transformation-methods)にまとめている。本記事はその仕組みを掘り下げる位置づけである。
 

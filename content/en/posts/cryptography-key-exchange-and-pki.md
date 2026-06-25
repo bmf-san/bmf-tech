@@ -21,7 +21,14 @@ This is Part 2 of the cryptography series.
 
 Part 1 covered the building blocks: symmetric and asymmetric encryption, one-way functions, hashing, and digital signatures.
 
-If you have not read Part 1 ([Cryptography Fundamentals](https://bmf-tech.com/posts/cryptography-fundamentals)), start there for an easier read.
+The series runs as follows.
+
+- Part 1: [Cryptography Fundamentals](https://bmf-tech.com/posts/cryptography-fundamentals)
+- Part 2 (this article): Key Exchange and PKI
+- Part 3: [Cryptography in Practice: TLS, JWT, and SSH](https://bmf-tech.com/posts/cryptography-in-practice)
+- Practical: [Three Uses of a Public Key](https://bmf-tech.com/posts/public-key-three-uses)
+
+If you have not read Part 1, start there for an easier read.
 
 This part explains two of the three uses of a public key: key exchange, which shares a symmetric key safely, and PKI, which vouches for a public key.
 

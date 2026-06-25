@@ -34,6 +34,7 @@ Across the series, we group the uses of a public key into three: signing, encryp
 - Part 1 (this article): the building blocks
 - Part 2: [Key Exchange and PKI](https://bmf-tech.com/posts/cryptography-key-exchange-and-pki)
 - Part 3: [Cryptography in Practice: TLS, JWT, and SSH](https://bmf-tech.com/posts/cryptography-in-practice)
+- Practical: [Three Uses of a Public Key](https://bmf-tech.com/posts/public-key-three-uses)
 
 To see how encryption and hashing compare with other data transformations, read [Comparing Data Transformation Methods](https://bmf-tech.com/posts/data-transformation-methods). Here we dig into how they work.
 

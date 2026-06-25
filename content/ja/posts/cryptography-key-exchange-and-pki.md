@@ -21,7 +21,14 @@ draft: false
 
 第1回では、共通鍵暗号・公開鍵暗号・一方向性関数・ハッシュ・デジタル署名という基礎部品を扱った。
 
-第1回（[暗号の基礎](https://bmf-tech.com/ja/posts/cryptography-fundamentals)）を読んでいない場合は、先に目を通すと理解しやすい。
+本シリーズの構成は次のとおりである。
+
+- 第1回: [暗号の基礎](https://bmf-tech.com/ja/posts/cryptography-fundamentals)
+- 第2回（本記事）: 鍵交換とPKI
+- 第3回: [暗号技術の応用：TLS・JWT・SSH](https://bmf-tech.com/ja/posts/cryptography-in-practice)
+- 実践編: [公開鍵の3つの使い道](https://bmf-tech.com/ja/posts/public-key-three-uses)
+
+第1回を読んでいない場合は、先に目を通すと理解しやすい。
 
 今回は、公開鍵がもつ3つの用途のうち「鍵交換」と、公開鍵の正しさを保証する「PKI」を解説する。
 

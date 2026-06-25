@@ -27,6 +27,8 @@ The key lens is the three uses of a public key from Part 1: signing, encryption,
 
 - Part 1: [Cryptography Fundamentals](https://bmf-tech.com/posts/cryptography-fundamentals)
 - Part 2: [Key Exchange and PKI](https://bmf-tech.com/posts/cryptography-key-exchange-and-pki)
+- Part 3 (this article): Cryptography in Practice
+- Practical: [Three Uses of a Public Key](https://bmf-tech.com/posts/public-key-three-uses)
 
 # TLS (the Foundation of HTTPS)
 TLS encrypts traffic for HTTPS and other protocols.
