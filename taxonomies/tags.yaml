@@ -81,6 +81,7 @@
 - name: Cloud Native
 - name: Cloud SQL
 - name: Cloud-Native
+- name: Code Generation
 - name: Code Quality
 - name: Code Reading
 - name: Code Review
@@ -531,6 +532,7 @@
 - name: shell
 - name: slog
 - name: sql
+- name: sqlc
 - name: sshd
 - name: tee
 - name: termios
@@ -592,6 +594,7 @@
 - name: コードリーディング
 - name: コードレビュー
 - name: コード品質
+- name: コード生成
 - name: コールバック
 - name: サービスメッシュ
 - name: サービスロケーター

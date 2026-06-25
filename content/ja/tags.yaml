@@ -470,6 +470,8 @@
   translation_key: spanner
 - name: sql
   translation_key: sql
+- name: sqlc
+  translation_key: sqlc
 - name: SQLite
   translation_key: sqlite
 - name: SQLアンチパターン
@@ -642,6 +644,8 @@
   translation_key: code-review
 - name: コード品質
   translation_key: code-quality
+- name: コード生成
+  translation_key: code-generation
 - name: コールバック
   translation_key: callback
 - name: サービスメッシュ

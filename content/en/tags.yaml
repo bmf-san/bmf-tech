@@ -160,6 +160,8 @@
   translation_key: cloud-native
 - name: CMS
   translation_key: cms
+- name: Code Generation
+  translation_key: code-generation
 - name: Code Quality
   translation_key: code-quality
 - name: Code Reading
@@ -858,6 +860,8 @@
   translation_key: sql
 - name: SQL Anti-pattern
   translation_key: sql-anti-pattern
+- name: sqlc
+  translation_key: sqlc
 - name: SQLite
   translation_key: sqlite
 - name: SRE
