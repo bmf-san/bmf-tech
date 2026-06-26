@@ -30,13 +30,14 @@ HTTPS、SSH、JWT、パスキーなど、現代の認証やセキュリティは
 
 世の中の応用は、ほぼこの3つの組み合わせである。本記事では、実際の技術をこの3分類で整理する。
 
-なお、公開鍵暗号そのものの仕組みは別シリーズで解説している。
+本シリーズの構成は次のとおりである。本記事は実践編にあたる。
 
-- [暗号の基礎](https://bmf-tech.com/ja/posts/cryptography-fundamentals)（共通鍵/公開鍵・トラップドア関数・ハッシュ・署名）
-- [鍵交換とPKI](https://bmf-tech.com/ja/posts/cryptography-key-exchange-and-pki)
-- [暗号技術の応用](https://bmf-tech.com/ja/posts/cryptography-in-practice)（TLS・JWT・SSH）
+- 第1回: [暗号の基礎](https://bmf-tech.com/ja/posts/cryptography-fundamentals)（共通鍵/公開鍵・トラップドア関数・ハッシュ・署名）
+- 第2回: [鍵交換とPKI](https://bmf-tech.com/ja/posts/cryptography-key-exchange-and-pki)
+- 第3回: [暗号技術の応用](https://bmf-tech.com/ja/posts/cryptography-in-practice)（TLS・JWT・SSH）
+- 実践編（本記事）: 公開鍵の3つの使い道
 
-本記事はその実践編として、用途別に応用を俯瞰する位置づけである。
+用途別に応用を俯瞰するのが本記事の位置づけである。
 
 # 公開鍵の3つの使い道
 まず全体像を示す。

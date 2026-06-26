@@ -30,13 +30,14 @@ These technologies look scattered, yet through one lens, the use of a public key
 
 Almost every application combines these three. This article sorts real technologies into the three.
 
-For how public-key cryptography itself works, see the companion series.
+The series runs as follows, and this article is the practical part.
 
-- [Cryptography Fundamentals](https://bmf-tech.com/posts/cryptography-fundamentals) (symmetric/asymmetric keys, trapdoor functions, hashing, signatures)
-- [Key Exchange and PKI](https://bmf-tech.com/posts/cryptography-key-exchange-and-pki)
-- [Cryptography in Practice](https://bmf-tech.com/posts/cryptography-in-practice) (TLS, JWT, SSH)
+- Part 1: [Cryptography Fundamentals](https://bmf-tech.com/posts/cryptography-fundamentals) (symmetric/asymmetric keys, trapdoor functions, hashing, signatures)
+- Part 2: [Key Exchange and PKI](https://bmf-tech.com/posts/cryptography-key-exchange-and-pki)
+- Part 3: [Cryptography in Practice](https://bmf-tech.com/posts/cryptography-in-practice) (TLS, JWT, SSH)
+- Practical (this article): Three Uses of a Public Key
 
-This article serves as the practical follow-up, surveying applications by use.
+It surveys applications by use.
 
 # The Three Uses of a Public Key
 Here is the overview.

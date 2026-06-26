@@ -27,6 +27,8 @@ draft: false
 
 - 第1回: [暗号の基礎](https://bmf-tech.com/ja/posts/cryptography-fundamentals)
 - 第2回: [鍵交換とPKI](https://bmf-tech.com/ja/posts/cryptography-key-exchange-and-pki)
+- 第3回（本記事）: 暗号技術の応用：TLS・JWT・SSH
+- 実践編: [公開鍵の3つの使い道](https://bmf-tech.com/ja/posts/public-key-three-uses)
 
 # TLS（HTTPSの土台）
 TLSは、HTTPSをはじめとする通信を暗号化するプロトコルである。
