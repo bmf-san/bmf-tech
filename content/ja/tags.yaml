@@ -1022,3 +1022,9 @@
   translation_key: rsa
 - name: PKI
   translation_key: pki
+- name: WebSocket
+  translation_key: websocket
+- name: Webhook
+  translation_key: webhook
+- name: メッセージング
+  translation_key: messaging
