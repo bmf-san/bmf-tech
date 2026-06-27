@@ -1044,3 +1044,13 @@
   translation_key: webhook
 - name: WebSocket
   translation_key: websocket
+- name: Polling
+  translation_key: polling
+- name: SSE
+  translation_key: sse
+- name: WebRTC
+  translation_key: webrtc
+- name: WebTransport
+  translation_key: webtransport
+- name: Real-time
+  translation_key: real-time
