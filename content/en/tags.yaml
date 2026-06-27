@@ -1038,3 +1038,9 @@
   translation_key: webauthn
 - name: Systems Thinking
   translation_key: systems-thinking
+- name: Messaging
+  translation_key: messaging
+- name: Webhook
+  translation_key: webhook
+- name: WebSocket
+  translation_key: websocket
