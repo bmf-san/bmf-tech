@@ -4,7 +4,7 @@ slug: thinking-in-systems-for-software-engineers
 date: 2026-05-22T00:00:00Z
 author: bmf-san
 categories:
-  - Architecture
+  - Business
 tags:
   - Systems Thinking
   - Book Review
