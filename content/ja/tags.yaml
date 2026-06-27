@@ -1028,3 +1028,13 @@
   translation_key: webhook
 - name: メッセージング
   translation_key: messaging
+- name: ポーリング
+  translation_key: polling
+- name: SSE
+  translation_key: sse
+- name: WebRTC
+  translation_key: webrtc
+- name: WebTransport
+  translation_key: webtransport
+- name: リアルタイム
+  translation_key: real-time
