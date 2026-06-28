@@ -307,6 +307,11 @@
     <li><a href="/bmf-as-a-service/" class="navbar-item">bmf as a Service</a></li>
     <li><a href="/atom.xml" class="navbar-item">Feed</a></li>
     {{end}}
+    <li class="navbar-item navbar-search">
+      <form action="{{if eq .CurrentLocale "ja"}}/ja/search/{{else}}/search/{{end}}" method="get" role="search">
+        <input type="search" name="q" class="navbar-search-input" placeholder="{{if eq .CurrentLocale "ja"}}検索{{else}}Search{{end}}" aria-label="{{if eq .CurrentLocale "ja"}}記事を検索{{else}}Search articles{{end}}" autocomplete="off" />
+      </form>
+    </li>
     <li><a href="{{$altURL}}" class="navbar-item" onclick="localStorage.setItem('pref-locale','{{$targetLocale}}')">
       <span class="badge badge-primary">{{if eq .CurrentLocale "ja"}}EN{{else}}JA{{end}}</span>
     </a></li>

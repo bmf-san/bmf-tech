@@ -1,6 +1,6 @@
 .PHONY: help install-gohan install-e2e install-lint build serve clean test-e2e test-e2e-ui new-ja new-en lint-content lint-content-diff check-parity check-content
 
-GOHAN_VERSION ?= v1.5.0
+GOHAN_VERSION ?= v1.6.0
 
 TITLE   ?= untitled
 SLUG    ?= untitled

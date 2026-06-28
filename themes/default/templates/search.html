@@ -1,0 +1,149 @@
+{{template "head" .}}
+<body class="bg-body">
+{{template "header" .}}
+<main class="container mx-auto py-10">
+
+  {{- $isJA := eq .CurrentLocale "ja"}}
+
+  {{/* Breadcrumbs + page header */}}
+  <div class="mb-8">
+    <ol class="breadcrumbs mb-4">
+      <li class="breadcrumbs-item">
+        {{if $isJA}}<a href="/ja/" class="breadcrumbs-link">ホーム</a>{{else}}<a href="/" class="breadcrumbs-link">Home</a>{{end}}
+        <span class="breadcrumbs-separator">/</span>
+      </li>
+      <li class="breadcrumbs-item active">
+        <span class="breadcrumbs-link">{{if $isJA}}検索{{else}}Search{{end}}</span>
+      </li>
+    </ol>
+    <h1 class="text-3xl font-bold mb-2">{{if $isJA}}検索{{else}}Search{{end}}</h1>
+    <p class="text-secondary">{{if $isJA}}タイトル・説明・タグ・カテゴリから記事を検索します。{{else}}Search articles by title, description, tags, and categories.{{end}}</p>
+  </div>
+
+  {{/* Search box (submit disabled — filtering is live via JS) */}}
+  <form class="search-page-form mb-6" role="search" onsubmit="return false;">
+    <input
+      type="search"
+      id="search-input"
+      class="search-page-input"
+      placeholder="{{if $isJA}}キーワードを入力{{else}}Type to search…{{end}}"
+      aria-label="{{if $isJA}}記事を検索{{else}}Search articles{{end}}"
+      autocomplete="off"
+      autofocus
+    />
+  </form>
+
+  <noscript>
+    <p class="search-noscript">{{if $isJA}}検索には JavaScript を有効にしてください。{{else}}Search requires JavaScript to be enabled.{{end}}</p>
+  </noscript>
+
+  <p id="search-status" class="text-secondary mb-4" aria-live="polite"></p>
+  <ul id="search-results" class="search-results"></ul>
+
+  <script>
+  (function () {
+    var input = document.getElementById('search-input');
+    var results = document.getElementById('search-results');
+    var status = document.getElementById('search-status');
+    var isJa = location.pathname.indexOf('/ja/') === 0;
+    var indexURL = isJa ? '/ja/search-index.json' : '/search-index.json';
+    var MAX = 100;
+    var labels = isJa
+      ? {
+          count: function (n) { return n + ' 件'; },
+          capped: function (n) { return n + ' 件（上位 ' + MAX + ' 件を表示）'; },
+          none: '該当する記事がありません。',
+          loading: '読み込み中…',
+          error: '検索インデックスを読み込めませんでした。'
+        }
+      : {
+          count: function (n) { return n + (n === 1 ? ' result' : ' results'); },
+          capped: function (n) { return n + ' results (showing top ' + MAX + ')'; },
+          none: 'No matching articles.',
+          loading: 'Loading…',
+          error: 'Could not load the search index.'
+        };
+    var articles = [];
+
+    // Pre-fill from ?q= and run the initial search once the index loads.
+    var params = new URLSearchParams(location.search);
+    input.value = (params.get('q') || '').trim();
+    status.textContent = labels.loading;
+
+    fetch(indexURL)
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        articles = (data && data.articles) || [];
+        render(input.value);
+      })
+      .catch(function () { status.textContent = labels.error; });
+
+    function render(q) {
+      q = q.trim().toLowerCase();
+      results.replaceChildren();
+      if (!q) { status.textContent = ''; return; }
+
+      var matches = articles.filter(function (a) {
+        var hay = [
+          a.title || '',
+          a.description || '',
+          a.summary || '',
+          (a.tags || []).join(' '),
+          (a.categories || []).join(' ')
+        ].join(' ').toLowerCase();
+        return hay.indexOf(q) !== -1;
+      });
+
+      if (!matches.length) { status.textContent = labels.none; return; }
+      status.textContent = matches.length > MAX ? labels.capped(matches.length) : labels.count(matches.length);
+
+      var frag = document.createDocumentFragment();
+      matches.slice(0, MAX).forEach(function (a) { frag.appendChild(buildItem(a)); });
+      results.appendChild(frag);
+    }
+
+    // Build result nodes with the DOM API (textContent / property assignment)
+    // so article fields can never inject HTML.
+    function buildItem(a) {
+      var li = document.createElement('li');
+      li.className = 'search-result-item';
+
+      var link = document.createElement('a');
+      link.href = a.url;
+      link.className = 'search-result-link';
+      link.textContent = a.title || a.url;
+      li.appendChild(link);
+
+      if (a.description) {
+        var p = document.createElement('p');
+        p.className = 'search-result-desc';
+        p.textContent = a.description;
+        li.appendChild(p);
+      }
+
+      if (a.tags && a.tags.length) {
+        var tags = document.createElement('div');
+        tags.className = 'search-result-tags';
+        a.tags.forEach(function (t) {
+          var span = document.createElement('span');
+          span.className = 'search-result-tag';
+          span.textContent = t;
+          tags.appendChild(span);
+        });
+        li.appendChild(tags);
+      }
+      return li;
+    }
+
+    var debounce;
+    input.addEventListener('input', function () {
+      clearTimeout(debounce);
+      debounce = setTimeout(function () { render(input.value); }, 120);
+    });
+  })();
+  </script>
+
+</main>
+{{template "footer" .}}
+</body>
+</html>
