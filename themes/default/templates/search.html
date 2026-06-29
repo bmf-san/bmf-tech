@@ -38,7 +38,7 @@
   </noscript>
 
   <p id="search-status" class="text-secondary mb-4" aria-live="polite"></p>
-  <ul id="search-results" class="search-results"></ul>
+  <div id="search-results" class="grid gap-4 mb-8"></div>
 
   <script>
   (function () {
@@ -103,36 +103,69 @@
     }
 
     // Build result nodes with the DOM API (textContent / property assignment)
-    // so article fields can never inject HTML.
+    // so article fields can never inject HTML. Mirrors the "article-card"
+    // partial so search results match the rest of the article listings.
     function buildItem(a) {
-      var li = document.createElement('li');
-      li.className = 'search-result-item';
+      var card = document.createElement('a');
+      card.href = a.url;
+      card.className = 'card no-underline';
 
-      var link = document.createElement('a');
-      link.href = a.url;
-      link.className = 'search-result-link';
-      link.textContent = a.title || a.url;
-      li.appendChild(link);
+      var slug = (a.url || '').replace(/\/+$/, '').split('/').pop();
+      if (slug) {
+        var img = document.createElement('img');
+        img.src = '/ogp/' + slug + '.png';
+        img.alt = a.title || '';
+        img.className = 'w-full object-cover rounded-t max-h-40';
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        card.appendChild(img);
+      }
+
+      var body = document.createElement('div');
+      body.className = 'card-body';
+
+      var meta = document.createElement('div');
+      meta.className = 'flex items-center gap-2 mb-2 flex-wrap';
+      (a.categories || []).forEach(function (c) {
+        var badge = document.createElement('span');
+        badge.className = 'badge badge-secondary';
+        badge.textContent = c;
+        meta.appendChild(badge);
+      });
+      if (a.date) {
+        var date = document.createElement('span');
+        date.className = 'text-xs text-secondary';
+        date.textContent = a.date.slice(0, 10);
+        meta.appendChild(date);
+      }
+      body.appendChild(meta);
+
+      var title = document.createElement('h3');
+      title.className = 'font-semibold text-primary mb-1';
+      title.textContent = a.title || a.url;
+      body.appendChild(title);
 
       if (a.description) {
         var p = document.createElement('p');
-        p.className = 'search-result-desc';
+        p.className = 'text-sm text-secondary leading-relaxed line-clamp-2';
         p.textContent = a.description;
-        li.appendChild(p);
+        body.appendChild(p);
       }
 
       if (a.tags && a.tags.length) {
         var tags = document.createElement('div');
-        tags.className = 'search-result-tags';
+        tags.className = 'flex flex-wrap gap-1 mt-2';
         a.tags.forEach(function (t) {
           var span = document.createElement('span');
-          span.className = 'search-result-tag';
-          span.textContent = t;
+          span.className = 'badge badge-light text-secondary';
+          span.textContent = '#' + t;
           tags.appendChild(span);
         });
-        li.appendChild(tags);
+        body.appendChild(tags);
       }
-      return li;
+
+      card.appendChild(body);
+      return card;
     }
 
     var debounce;
