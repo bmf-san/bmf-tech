@@ -4,7 +4,7 @@ slug: platform-engineering-and-systems-thinking
 date: 2026-06-29
 author: bmf-san
 categories:
-  -
+  - Business
 tags:
   - Platform Engineering
   - Systems Thinking
