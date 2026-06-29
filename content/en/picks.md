@@ -8,6 +8,7 @@ template: picks.html
 draft: false
 translation_key: picks
 listing_slugs:
+  - systems-thinking-basics
   - accidental-complexity-and-missing-decision-records
   - distributed-transaction-patterns-2pc-saga-outbox
   - abstraction-trap-in-architecture
