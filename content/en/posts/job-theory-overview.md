@@ -13,6 +13,7 @@ translation_key: job-theory-overview
 books:
   - asin: "4596551227"
     title: "ジョブ理論 イノベーションを予測可能にする消費のメカニズム"
+draft: false
 ---
 
 

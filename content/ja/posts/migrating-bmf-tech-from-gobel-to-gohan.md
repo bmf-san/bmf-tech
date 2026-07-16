@@ -12,6 +12,7 @@ tags:
   - SSG
   - Golang
 translation_key: migrating-bmf-tech-from-gobel-to-gohan
+draft: false
 ---
 
 # bmf-tech.comの gobel → gohan 移行記

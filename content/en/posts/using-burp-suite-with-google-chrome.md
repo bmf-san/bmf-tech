@@ -11,6 +11,7 @@ tags:
   - Vulnerability
 description: Steps to configure Burp Suite for use with Chrome.
 translation_key: using-burp-suite-with-google-chrome
+draft: false
 ---
 
 # Overview

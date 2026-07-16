@@ -11,6 +11,7 @@ tags:
   - Shell Script
   - exec
 translation_key: exec-command-redirection
+draft: false
 ---
 
 # Overview

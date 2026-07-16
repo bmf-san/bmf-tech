@@ -10,6 +10,7 @@ categories:
 tags:
   - Golang
 translation_key: go-performance-improvement
+draft: false
 ---
 
 

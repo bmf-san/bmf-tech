@@ -11,6 +11,7 @@ tags:
   - Resume
   - Job Change
 translation_key: markdown-resume-template
+draft: false
 ---
 
 ## Introduction

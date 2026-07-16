@@ -9,6 +9,7 @@ categories:
 tags:
   - Vagrant
 translation_key: vagrant-virtualhost-usage
+draft: false
 ---
 
 

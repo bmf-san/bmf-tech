@@ -9,6 +9,7 @@ categories:
 tags:
   - 振り返りと抱負
 translation_key: 2021-review-and-2022-goals
+draft: false
 ---
 
 

@@ -10,6 +10,7 @@ tags:
   - Laravel
   - CORS
 translation_key: laravel-cors-setup
+draft: false
 ---
 
 

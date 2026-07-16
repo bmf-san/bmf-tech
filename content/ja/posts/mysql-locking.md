@@ -11,6 +11,7 @@ tags:
   - トランザクション
   - ロック
 translation_key: mysql-locking
+draft: false
 ---
 
 

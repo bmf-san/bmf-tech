@@ -13,6 +13,7 @@ translation_key: penguin-becoming-seagull
 books:
   - asin: "4478000344"
     title: "カモメになったペンギン"
+draft: false
 ---
 
 

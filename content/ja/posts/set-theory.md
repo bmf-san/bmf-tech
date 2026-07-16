@@ -10,6 +10,7 @@ tags:
   - 離散数学
   - 集合
 translation_key: set-theory
+draft: false
 ---
 
 

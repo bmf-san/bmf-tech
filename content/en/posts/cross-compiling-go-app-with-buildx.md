@@ -10,6 +10,7 @@ tags:
   - Golang
   - Docker
 translation_key: cross-compiling-go-app-with-buildx
+draft: false
 ---
 
 # Overview

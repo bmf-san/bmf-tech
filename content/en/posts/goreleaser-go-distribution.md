@@ -10,6 +10,7 @@ tags:
   - GitHub Actions
 description: Using GoReleaser to cross-compile and distribute Go application binaries.
 translation_key: goreleaser-go-distribution
+draft: false
 ---
 
 

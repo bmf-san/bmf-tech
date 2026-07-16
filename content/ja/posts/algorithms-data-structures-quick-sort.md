@@ -9,6 +9,7 @@ categories:
 tags:
   - クイックソート
 translation_key: algorithms-data-structures-quick-sort
+draft: false
 ---
 
 

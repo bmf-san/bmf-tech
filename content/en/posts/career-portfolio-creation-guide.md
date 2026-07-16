@@ -10,6 +10,7 @@ tags:
   - Job Change
   - Resume
 translation_key: career-portfolio-creation-guide
+draft: false
 ---
 
 # Creating a Career Portfolio

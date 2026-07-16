@@ -11,6 +11,7 @@ tags:
   - Authorization
 description: Summary based on RFC 6749 (OAuth 2.0 Authorization Framework) and RFC 6750 (Bearer Token Usage).
 translation_key: oauth-2-0-spec-summary
+draft: false
 ---
 
 

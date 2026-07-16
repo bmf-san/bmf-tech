@@ -14,6 +14,7 @@ translation_key: unicorn-company-secrets
 books:
   - asin: "4873119464"
     title: "ユニコーン企業のひみつ ―Spotifyで学んだソフトウェアづくりと働き方"
+draft: false
 ---
 
 

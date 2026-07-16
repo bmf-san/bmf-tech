@@ -11,6 +11,7 @@ tags:
   - プラットフォーム・エンジニアリング
   - DDD
 translation_key: platform-viability-conditions
+draft: false
 ---
 
 # はじめに

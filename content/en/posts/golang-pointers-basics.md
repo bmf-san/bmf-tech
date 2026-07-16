@@ -12,6 +12,7 @@ tags:
   - Pass by Value
   - Reference
 translation_key: golang-pointers-basics
+draft: false
 ---
 
 

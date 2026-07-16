@@ -11,6 +11,7 @@ tags:
   - Router
   - HTTP
 translation_key: go-servemux-extension-proposal-accepted
+draft: false
 ---
 
 I have been watching the [net/http: enhanced ServeMux routing #61410](https://github.com/golang/go/issues/61410), and it has been accepted, so I want to write a little about it.

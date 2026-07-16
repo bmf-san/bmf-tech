@@ -14,6 +14,7 @@ translation_key: web-api-good-parts
 books:
   - asin: "4873116864"
     title: "Web API: The Good Parts"
+draft: false
 ---
 
 

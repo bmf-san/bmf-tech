@@ -9,6 +9,7 @@ tags:
   - PostgreSQL
 description: Guidelines for optimizing PostgreSQL memory settings for performance and stability.
 translation_key: postgresql-memory-settings
+draft: false
 ---
 
 

@@ -11,6 +11,7 @@ tags:
   - アーキテクチャ
   - 設計
 translation_key: good-bad-architecture-strategies
+draft: false
 ---
 
 

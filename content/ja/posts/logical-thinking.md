@@ -14,6 +14,7 @@ translation_key: logical-thinking
 books:
   - asin: "4492531122"
     title: "ロジカル・シンキング"
+draft: false
 ---
 
 

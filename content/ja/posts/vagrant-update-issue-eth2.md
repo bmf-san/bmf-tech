@@ -12,6 +12,7 @@ tags:
   - VirtualBox
   - Tips
 translation_key: vagrant-update-issue-eth2
+draft: false
 ---
 
 

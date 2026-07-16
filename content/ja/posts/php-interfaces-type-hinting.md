@@ -11,6 +11,7 @@ tags:
   - インターフェース
   - タイプヒンティング
 translation_key: php-interfaces-type-hinting
+draft: false
 ---
 
 

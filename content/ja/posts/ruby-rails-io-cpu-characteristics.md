@@ -10,6 +10,7 @@ tags:
   - Ruby
   - Ruby on Rails
 translation_key: ruby-rails-io-cpu-characteristics
+draft: false
 ---
 
 

@@ -11,6 +11,7 @@ tags:
   - npm
   - textlint
 translation_key: textlint-and-reviewdog-for-circleci-text-proofreading
+draft: false
 ---
 
 

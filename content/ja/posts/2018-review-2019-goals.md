@@ -9,6 +9,7 @@ categories:
 tags:
   - 振り返りと抱負
 translation_key: 2018-review-2019-goals
+draft: false
 ---
 
 

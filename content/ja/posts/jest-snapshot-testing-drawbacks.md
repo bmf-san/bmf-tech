@@ -10,6 +10,7 @@ tags:
   - JavaScript
   - Jest
 translation_key: jest-snapshot-testing-drawbacks
+draft: false
 ---
 
 

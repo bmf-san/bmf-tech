@@ -9,6 +9,7 @@ categories:
 tags:
   - スクラム
 translation_key: scrum-master-product-owner-differences
+draft: false
 ---
 
 

@@ -14,6 +14,7 @@ translation_key: scrum-boot-camp-agile-development
 books:
   - asin: "4798163686"
     title: "SCRUM BOOT CAMP THE BOOK【増補改訂版】 スクラムチームではじめるアジャイル開発"
+draft: false
 ---
 
 

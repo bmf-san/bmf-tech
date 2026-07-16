@@ -14,6 +14,7 @@ translation_key: freee-technical-book-multi-product-development
 books:
   - title: freee 技術の本 freeeにおけるマルチプロダクト開発
     url: https://techbookfest.org/product/8UNZJF7Rs5AWuqReQuZZgs?productVariantID=fZvUHjHxH4hqG6wtAaAVWN
+draft: false
 ---
 
 I read the [freee Technical Book: Multi-Product Development at freee](https://techbookfest.org/product/8UNZJF7Rs5AWuqReQuZZgs?productVariantID=fZvUHjHxH4hqG6wtAaAVWN).

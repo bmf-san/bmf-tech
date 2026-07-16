@@ -10,6 +10,7 @@ tags:
   - UNIX
   - プロセス
 translation_key: orphan-process-vs-zombie-process
+draft: false
 ---
 
 

@@ -11,6 +11,7 @@ tags:
   - Golang
   - Tips
 translation_key: go-self-signed-certificate-creation
+draft: false
 ---
 
 A handy one-liner for when you need a self-signed certificate while writing an HTTP server in Go.

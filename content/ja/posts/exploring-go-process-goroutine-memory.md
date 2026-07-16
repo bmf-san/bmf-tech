@@ -14,6 +14,7 @@ tags:
   - プロセス
   - スレッド
 translation_key: exploring-go-process-goroutine-memory
+draft: false
 ---
 
 

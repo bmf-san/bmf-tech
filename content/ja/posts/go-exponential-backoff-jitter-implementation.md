@@ -11,6 +11,7 @@ tags:
   - リトライ
   - ジッター
 translation_key: go-exponential-backoff-jitter-implementation
+draft: false
 ---
 
 

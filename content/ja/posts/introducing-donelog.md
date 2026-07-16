@@ -12,6 +12,7 @@ tags:
   - Riverpod
   - Dart
 translation_key: introducing-donelog
+draft: false
 ---
 
 # Done Log — 毎日のルーティンタスクを管理するiPhoneアプリの紹介

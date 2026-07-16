@@ -14,6 +14,7 @@ tags:
   - vscode
   - Tips
 translation_key: vscode-go-language-server-issue
+draft: false
 ---
 
 # Overview

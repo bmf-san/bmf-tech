@@ -11,6 +11,7 @@ tags:
   - VPS
   - DigitalOcean
 translation_key: managed-kubernetes-on-digitalocean
+draft: false
 ---
 
 

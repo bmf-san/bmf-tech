@@ -11,6 +11,7 @@ tags:
   - Code Reading
   - Router
 translation_key: golang-http-server-code-reading-2019
+draft: false
 ---
 
 # Overview

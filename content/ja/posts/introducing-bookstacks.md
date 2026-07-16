@@ -12,6 +12,7 @@ tags:
   - Riverpod
   - Dart
 translation_key: introducing-bookstacks
+draft: false
 ---
 
 # Bookstacks — ISBNバーコードで本を管理するiPhoneアプリの紹介

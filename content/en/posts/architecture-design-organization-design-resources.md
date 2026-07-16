@@ -11,6 +11,7 @@ tags:
   - Architecture
   - Link Collection
 translation_key: architecture-design-organization-design-resources
+draft: false
 ---
 
 

@@ -9,6 +9,7 @@ categories:
 tags:
   - Ruby
 translation_key: ruby-block-syntax
+draft: false
 ---
 
 # Overview

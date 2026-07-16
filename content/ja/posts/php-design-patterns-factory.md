@@ -14,6 +14,7 @@ tags:
   - ファクトリーパターン
   - ファクトリーメソッドパターン
 translation_key: php-design-patterns-factory
+draft: false
 ---
 
 

@@ -14,6 +14,7 @@ translation_key: agile-health-improvement-guide
 books:
   - asin: "4798170704"
     title: "「アジャイル式」健康カイゼンガイド"
+draft: false
 ---
 
 ["Agile" Health Improvement Guide](https://amzn.to/3y3fFZb) has been read.

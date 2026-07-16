@@ -13,6 +13,7 @@ translation_key: writing-sustainable-code
 books:
   - asin: "4814400799"
     title: "脳に収まるコードの書き方 ―複雑さを避け持続可能にするための経験則とテクニック"
+draft: false
 ---
 
 

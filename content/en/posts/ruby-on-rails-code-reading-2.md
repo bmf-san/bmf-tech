@@ -10,6 +10,7 @@ tags:
   - Ruby on Rails
 description: Recording the code reading work of Ruby on Rails.
 translation_key: ruby-on-rails-code-reading-2
+draft: false
 ---
 
 # Overview

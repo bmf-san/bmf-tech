@@ -13,6 +13,7 @@ tags:
   - アーキテクト
   - アーキテクティング
 translation_key: architecture-architecting
+draft: false
 ---
 
 

@@ -11,6 +11,7 @@ tags:
   - システム設計
   - リンク集
 translation_key: system-design-resources-review
+draft: false
 ---
 
 

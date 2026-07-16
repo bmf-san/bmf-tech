@@ -12,6 +12,7 @@ tags:
   - React
   - Superagent
 translation_key: laravel-ajax-csrf-token-issue
+draft: false
 ---
 
 

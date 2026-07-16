@@ -9,6 +9,7 @@ tags:
   - Git
 description: "Quick reference shell commands for splitting a Git commit using interactive rebase, reset, and staged re-commits for granular commit history."
 translation_key: split-commits-with-git
+draft: false
 ---
 
 

@@ -14,6 +14,7 @@ tags:
   - Prompt Engineering
   - Continuous AI
 translation_key: engineering-in-ai-evolution-to-autonomous-systems
+draft: false
 ---
 
 ## Introduction: Overview of the Paradigm Shift

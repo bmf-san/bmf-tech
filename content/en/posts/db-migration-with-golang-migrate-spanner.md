@@ -11,6 +11,7 @@ tags:
   - Golang
   - Spanner
 translation_key: db-migration-with-golang-migrate-spanner
+draft: false
 ---
 
 

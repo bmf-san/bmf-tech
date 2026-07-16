@@ -11,6 +11,7 @@ tags:
   - SSG
   - Architecture
 translation_key: introducing-gohan-ssg
+draft: false
 ---
 
 # Introducing gohan — A Go Static Site Generator with Incremental Builds

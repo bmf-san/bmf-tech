@@ -10,6 +10,7 @@ tags:
   - Architecture
   - System Design
 translation_key: importance-of-constraints-tradeoffs
+draft: false
 ---
 
 When making technology selections and design decisions, it is extremely important to explicitly state the constraints and trade-offs involved.

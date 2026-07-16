@@ -9,6 +9,7 @@ categories:
 tags:
   - Amazon Web Service
 translation_key: took-aws-certified-solutions-architect-associate
+draft: false
 ---
 
 

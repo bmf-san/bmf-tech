@@ -10,6 +10,7 @@ tags:
   - Code Reading
   - AI
 translation_key: ai-code-reading-techniques
+draft: false
 ---
 
 Miscellaneous notes on the steps for code reading utilizing AI.

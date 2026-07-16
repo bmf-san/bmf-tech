@@ -13,6 +13,7 @@ translation_key: aws-container-design-introduction
 books:
   - asin: "4815607656"
     title: "AWSコンテナ設計・構築[本格]入門"
+draft: false
 ---
 
 

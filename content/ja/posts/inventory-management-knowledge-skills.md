@@ -13,6 +13,7 @@ translation_key: inventory-management-knowledge-skills
 books:
   - asin: "4798176931"
     title: "エンジニアが学ぶ在庫管理システムの「知識」と「技術」"
+draft: false
 ---
 
 

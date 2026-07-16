@@ -18,6 +18,7 @@ translation_key: practical-system-architecture
 books:
   - asin: "4798121649"
     title: "Practical Techniques for Building System Architecture"
+draft: false
 ---
 
 I read [Practical Techniques for Building System Architecture](https://amzn.to/46f3iID).

@@ -10,6 +10,7 @@ tags:
   - Golang
   - GitHub Actions
 translation_key: goreleaser-docker-image-build-push
+draft: false
 ---
 
 

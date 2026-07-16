@@ -13,6 +13,7 @@ translation_key: organizing-thoughts
 books:
   - asin: "4480815783"
     title: "ワイド新版　思考の整理学"
+draft: false
 ---
 
 

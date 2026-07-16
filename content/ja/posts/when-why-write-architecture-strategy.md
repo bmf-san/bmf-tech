@@ -11,6 +11,7 @@ tags:
   - アーキテクチャ
   - 設計
 translation_key: when-why-write-architecture-strategy
+draft: false
 ---
 
 

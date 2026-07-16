@@ -9,6 +9,7 @@ categories:
 tags:
   - ソフトウェア開発
 translation_key: gorilla-software-principles
+draft: false
 ---
 
 

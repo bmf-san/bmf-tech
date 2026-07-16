@@ -9,6 +9,7 @@ categories:
 tags:
   - Reflection and Goals
 translation_key: 2021-review-and-2022-goals
+draft: false
 ---
 
 # Reflection on 2021 and Goals for Next Year

@@ -12,6 +12,7 @@ tags:
   - Slack
   - Shell Script
 translation_key: letsencrypt-auto-renewal-failure-solution
+draft: false
 ---
 
 ~~Script for Let's Encrypt certificate auto-renewal (cron) with a bit of Slack integration~~ was successful when executed manually, but for some reason, it failed every time when run via cron.

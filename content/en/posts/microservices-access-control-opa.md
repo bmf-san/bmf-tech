@@ -12,6 +12,7 @@ tags:
   - RBAC
   - Microservices
 translation_key: microservices-access-control-opa
+draft: false
 ---
 
 # Implementation of Access Control System for Microservices Using OPA

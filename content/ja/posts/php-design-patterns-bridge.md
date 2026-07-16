@@ -12,6 +12,7 @@ tags:
   - デザインパターン
   - ブリッジパターン
 translation_key: php-design-patterns-bridge
+draft: false
 ---
 
 

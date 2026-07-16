@@ -10,6 +10,7 @@ tags:
   - 基数変換
   - 離散数学
 translation_key: binary-decimal-hexadecimal-conversion
+draft: false
 ---
 
 

@@ -9,6 +9,7 @@ categories:
 tags:
   - React
 translation_key: react-follow-button-implementation
+draft: false
 ---
 
 ![react_follow_button.gif](/assets/images/posts/react-follow-button-implementation/f532fbdd-45bb-93b4-aacf-d6220f58663a.gif)

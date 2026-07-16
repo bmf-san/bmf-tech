@@ -10,6 +10,7 @@ tags:
   - HTTP
 description: This article explains how to create a custom HTTP router using Golang's standard package net/http.
 translation_key: building-http-router-with-net-http
+draft: false
 ---
 
 

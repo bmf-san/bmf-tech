@@ -13,6 +13,7 @@ translation_key: clean-code-cookbook
 books:
   - asin: "4814400977"
     title: "クリーンコードクックブック ―コードの設計と品質を改善するためのレシピ集"
+draft: false
 ---
 
 

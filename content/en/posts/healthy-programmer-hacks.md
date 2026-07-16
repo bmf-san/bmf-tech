@@ -13,6 +13,7 @@ translation_key: healthy-programmer-hacks
 books:
   - asin: "4873117283"
     title: "ヘルシープログラマ ―プログラミングを楽しく続けるための健康Hack"
+draft: false
 ---
 
 

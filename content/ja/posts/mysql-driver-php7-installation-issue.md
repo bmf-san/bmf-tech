@@ -14,6 +14,7 @@ tags:
   - さくらのVPS
   - yum
 translation_key: mysql-driver-php7-installation-issue
+draft: false
 ---
 
 

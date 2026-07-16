@@ -9,6 +9,7 @@ categories:
 tags:
   - Ruby
 translation_key: ruby-modules
+draft: false
 ---
 
 

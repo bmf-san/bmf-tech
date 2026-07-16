@@ -10,6 +10,7 @@ tags:
   - Laravel
   - Functional Testing
 translation_key: getting-started-with-laravel-feature-testing
+draft: false
 ---
 
 # Overview

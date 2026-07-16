@@ -15,6 +15,7 @@ tags:
   - Docker Machine
   - VPS
 translation_key: vps-docker-compose-golang-nginx-lets-encrypt
+draft: false
 ---
 
 

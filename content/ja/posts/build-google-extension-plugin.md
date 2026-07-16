@@ -10,6 +10,7 @@ tags:
   - JavaScript
   - google chrome extension
 translation_key: build-google-extension-plugin
+draft: false
 ---
 
 

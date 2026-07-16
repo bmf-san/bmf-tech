@@ -10,6 +10,7 @@ tags:
   - Linux
   - メモリ
 translation_key: memory-management-terminology-summary
+draft: false
 ---
 
 

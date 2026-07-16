@@ -11,6 +11,7 @@ tags:
   - レジュメ
   - 転職
 translation_key: markdown-resume-template
+draft: false
 ---
 
 

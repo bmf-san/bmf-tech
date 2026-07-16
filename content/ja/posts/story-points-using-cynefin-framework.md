@@ -10,6 +10,7 @@ tags:
   - アジャイル
   - スクラム
 translation_key: story-points-using-cynefin-framework
+draft: false
 ---
 
 

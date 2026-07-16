@@ -13,6 +13,7 @@ translation_key: starting-with-golang
 books:
   - asin: "B01FH3KRTI"
     title: "スターティングGo言語"
+draft: false
 ---
 
 I read [Starting with Go Language](https://amzn.to/3xY3SLw).

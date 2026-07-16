@@ -10,6 +10,7 @@ tags:
   - NewSQL
   - リンク集
 translation_key: newsql-resources-review
+draft: false
 ---
 
 

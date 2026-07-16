@@ -15,6 +15,7 @@ translation_key: cto-thinking-strategy-leadership
 books:
   - asin: "4839987793"
     title: "CTOの思考法　技術と組織を動かす意思決定・戦略・リーダーシップ"
+draft: false
 ---
 
 

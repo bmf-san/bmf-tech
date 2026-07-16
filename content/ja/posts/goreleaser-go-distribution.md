@@ -10,6 +10,7 @@ tags:
   - Golang
   - GitHub Actions
 translation_key: goreleaser-go-distribution
+draft: false
 ---
 
 

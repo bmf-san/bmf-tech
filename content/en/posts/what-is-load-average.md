@@ -10,6 +10,7 @@ tags:
   - Load Average
 description: Understanding the concept of Load Average in system performance.
 translation_key: what-is-load-average
+draft: false
 ---
 
 

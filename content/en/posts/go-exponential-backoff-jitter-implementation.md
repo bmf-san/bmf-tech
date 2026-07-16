@@ -11,6 +11,7 @@ tags:
   - Retry
   - Jitter
 translation_key: go-exponential-backoff-jitter-implementation
+draft: false
 ---
 
 # Exponential Backoff

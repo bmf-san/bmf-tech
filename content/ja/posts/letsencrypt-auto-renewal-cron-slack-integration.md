@@ -12,6 +12,7 @@ tags:
   - Shell Script
   - Slack
 translation_key: letsencrypt-auto-renewal-cron-slack-integration
+draft: false
 ---
 
 

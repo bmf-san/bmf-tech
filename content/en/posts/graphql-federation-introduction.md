@@ -10,6 +10,7 @@ tags:
   - GraphQL Federation
 description: Learn what GraphQL Federation is and how subgraphs, a gateway, and schema composition unify multiple microservices into a single graph.
 translation_key: graphql-federation-introduction
+draft: false
 ---
 
 

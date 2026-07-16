@@ -12,6 +12,7 @@ tags:
   - Bubble Sort
   - Selection Sort
 translation_key: javascript-algorithms-introduction
+draft: false
 ---
 
 # Overview

@@ -13,6 +13,7 @@ translation_key: distributed-services-with-golang
 books:
   - asin: "4873119979"
     title: "Go言語による分散サービス"
+draft: false
 ---
 
 

@@ -9,6 +9,7 @@ categories:
 tags:
   - バブルソート
 translation_key: algorithms-data-structures-bubble-sort
+draft: false
 ---
 
 

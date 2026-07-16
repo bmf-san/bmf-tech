@@ -12,6 +12,7 @@ translation_key: purpose-driven-thinking
 books:
   - asin: "479932831X"
     title: "目的ドリブンの思考法"
+draft: false
 ---
 
 

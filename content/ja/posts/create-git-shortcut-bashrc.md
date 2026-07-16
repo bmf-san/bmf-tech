@@ -11,6 +11,7 @@ tags:
   - Git
   - Shell Script
 translation_key: create-git-shortcut-bashrc
+draft: false
 ---
 
 

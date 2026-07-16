@@ -12,6 +12,7 @@ tags:
   - ロードバランサー
   - ラウンドロビン
 translation_key: golang-load-balancer-implementation
+draft: false
 ---
 
 

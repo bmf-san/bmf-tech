@@ -13,6 +13,7 @@ translation_key: introduction-to-prolog
 books:
   - asin: "476490165X"
     title: "Prologへの入門"
+draft: false
 ---
 
 

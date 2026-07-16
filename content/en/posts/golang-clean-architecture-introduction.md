@@ -11,6 +11,7 @@ tags:
   - Golang
   - DIP
 translation_key: golang-clean-architecture-introduction
+draft: false
 ---
 
 # Overview

@@ -9,6 +9,7 @@ categories:
 tags:
   - Ruby
 translation_key: ruby-proc-lambda
+draft: false
 ---
 
 

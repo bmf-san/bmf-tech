@@ -11,6 +11,7 @@ tags:
   - サービスロケーター
   - デザインパターン
 translation_key: dependency-injection-service-locator
+draft: false
 ---
 
 

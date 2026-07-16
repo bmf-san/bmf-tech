@@ -10,6 +10,7 @@ tags:
   - トランザクション
   - MySQL
 translation_key: mysql-transaction-anomalies
+draft: false
 ---
 
 

@@ -13,6 +13,7 @@ tags:
   - Stack
   - Heap
 translation_key: process-vs-thread
+draft: false
 ---
 
 # Overview

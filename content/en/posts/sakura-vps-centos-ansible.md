@@ -12,6 +12,7 @@ tags:
   - Sakura VPS
   - IaaS
 translation_key: sakura-vps-centos-ansible
+draft: false
 ---
 
 # Overview

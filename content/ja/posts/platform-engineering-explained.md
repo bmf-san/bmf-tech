@@ -9,6 +9,7 @@ categories:
 tags:
   - プラットフォーム・エンジニアリング
 translation_key: platform-engineering-explained
+draft: false
 ---
 
 

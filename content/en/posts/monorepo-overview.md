@@ -9,6 +9,7 @@ categories:
 tags:
   - Monorepo
 translation_key: monorepo-overview
+draft: false
 ---
 
 # Overview

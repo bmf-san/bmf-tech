@@ -10,6 +10,7 @@ tags:
   - PHP
   - FuelPHP
 translation_key: fuelphp-php-update-project-report
+draft: false
 ---
 
 This article is the 24th entry of the [Makuake Advent Calendar 2023](https://adventar.org/calendars/8992).

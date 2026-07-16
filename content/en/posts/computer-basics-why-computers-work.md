@@ -14,6 +14,7 @@ translation_key: computer-basics-why-computers-work
 books:
   - asin: "429600123X"
     title: "コンピュータはなぜ動くのか 第２版 知っておきたいハードウエア＆ソフトウエアの基礎知識"
+draft: false
 ---
 
 I read [Why Computers Work: 2nd Edition - Essential Knowledge of Hardware and Software](https://amzn.to/3yb21TH).

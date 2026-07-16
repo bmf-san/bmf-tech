@@ -11,6 +11,7 @@ tags:
   - CQRS
   - マイクロサービス
 translation_key: cqrs-research-notes
+draft: false
 ---
 
 

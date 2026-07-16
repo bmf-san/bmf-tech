@@ -13,6 +13,7 @@ tags:
   - Distributed Transactions
   - 2phase commit
 translation_key: saga-pattern-research-notes
+draft: false
 ---
 
 

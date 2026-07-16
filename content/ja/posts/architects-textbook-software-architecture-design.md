@@ -16,6 +16,7 @@ translation_key: architects-textbook-software-architecture-design
 books:
   - asin: "B0D4CSNF71"
     title: "アーキテクトの教科書 価値を生むソフトウェアのアーキテクチャ構築"
+draft: false
 ---
 
 

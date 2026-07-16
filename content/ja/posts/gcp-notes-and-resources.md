@@ -9,6 +9,7 @@ categories:
 tags:
   - Google Cloud Platform
 translation_key: gcp-notes-and-resources
+draft: false
 ---
 
 

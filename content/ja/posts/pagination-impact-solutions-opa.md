@@ -12,6 +12,7 @@ tags:
   - カーソルページネーション
   - 権限管理
 translation_key: pagination-impact-solutions-opa
+draft: false
 ---
 
 

@@ -10,6 +10,7 @@ tags:
   - アーキテクチャ戦略
   - アーキテクチャ
 translation_key: writing-architecture-documentation
+draft: false
 ---
 
 

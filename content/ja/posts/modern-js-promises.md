@@ -11,6 +11,7 @@ tags:
   - ES6
   - JavaScript
 translation_key: modern-js-promises
+draft: false
 ---
 
 

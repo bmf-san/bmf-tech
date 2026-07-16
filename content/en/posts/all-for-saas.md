@@ -13,6 +13,7 @@ translation_key: all-for-saas
 books:
   - asin: "4798167355"
     title: "ALL for SaaS SaaS立ち上げのすべて"
+draft: false
 ---
 
 

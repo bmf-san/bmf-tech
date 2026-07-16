@@ -14,6 +14,7 @@ translation_key: api-design-patterns
 books:
   - asin: "4839979391"
     title: "API Design Patterns"
+draft: false
 ---
 
 

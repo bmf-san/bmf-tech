@@ -10,6 +10,7 @@ tags:
   - Link Collection
 description: A summary of various resources related to NewSQL.
 translation_key: newsql-resources-review
+draft: false
 ---
 
 

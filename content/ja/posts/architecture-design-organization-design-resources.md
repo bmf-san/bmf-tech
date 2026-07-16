@@ -11,6 +11,7 @@ tags:
   - アーキテクチャ
   - リンク集
 translation_key: architecture-design-organization-design-resources
+draft: false
 ---
 
 

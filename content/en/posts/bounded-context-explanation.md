@@ -9,6 +9,7 @@ categories:
 tags:
   - DDD
 translation_key: bounded-context-explanation
+draft: false
 ---
 
 # Overview

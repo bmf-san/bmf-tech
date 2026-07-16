@@ -11,6 +11,7 @@ tags:
   - アーキテクチャレビューボード
   - アーキテクチャ
 translation_key: what-is-architecture-advice-process
+draft: false
 ---
 
 

@@ -11,6 +11,7 @@ tags:
   - React
   - Redux
 translation_key: react-redux-directory-structure
+draft: false
 ---
 
 

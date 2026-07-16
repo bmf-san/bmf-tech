@@ -14,6 +14,7 @@ translation_key: architecture-strategy-requirements
 books:
   - asin: "4798176303"
     title: "要件最適アーキテクチャ戦略"
+draft: false
 ---
 
 

@@ -11,6 +11,7 @@ tags:
   - ES6
   - JavaScript
 translation_key: modern-js-classes
+draft: false
 ---
 
 ※This article is a reprint from the [Innovator Japan Engineers’ Blog](http://tech.innovator.jp.net/).

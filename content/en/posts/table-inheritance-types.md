@@ -10,6 +10,7 @@ tags:
   - PofEAA
 description: 'Explaining three patterns to represent object inheritance in databases: Single Table Inheritance, Class Table Inheritance, and Concrete Class Inheritance.'
 translation_key: table-inheritance-types
+draft: false
 ---
 
 # Overview

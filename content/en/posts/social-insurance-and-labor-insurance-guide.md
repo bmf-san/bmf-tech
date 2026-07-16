@@ -14,6 +14,7 @@ translation_key: social-insurance-and-labor-insurance-guide
 books:
   - asin: "4800720605"
     title: "改訂2版 最新 知りたいことがパッとわかる 社会保険と労働保険の届け出・手続きができる本 "
+draft: false
 ---
 
 I read the [Revised 2nd Edition: A Quick Guide to Social Insurance and Labor Insurance Procedures](https://amzn.to/49GchQW).

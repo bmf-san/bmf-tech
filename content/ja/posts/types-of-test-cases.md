@@ -9,6 +9,7 @@ categories:
 tags:
   - 設計
 translation_key: types-of-test-cases
+draft: false
 ---
 
 

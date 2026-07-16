@@ -10,6 +10,7 @@ tags:
   - Golang
   - Clean Architecture
 translation_key: go-clean-architecture-static-analysis
+draft: false
 ---
 
 

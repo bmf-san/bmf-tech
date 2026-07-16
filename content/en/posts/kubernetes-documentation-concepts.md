@@ -11,6 +11,7 @@ tags:
   - Container
   - Kubernetes
 translation_key: kubernetes-documentation-concepts
+draft: false
 ---
 
 

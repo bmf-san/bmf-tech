@@ -10,6 +10,7 @@ tags:
   - Architecture
   - Design
 translation_key: architecture-design-approach
+draft: false
 ---
 
 

@@ -9,6 +9,7 @@ categories:
 tags:
   - アジャイル
 translation_key: agile-metrics-review
+draft: false
 ---
 
 

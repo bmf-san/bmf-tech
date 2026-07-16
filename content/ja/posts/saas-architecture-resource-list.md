@@ -10,6 +10,7 @@ tags:
   - アーキテクチャ
   - SaaS
 translation_key: saas-architecture-resource-list
+draft: false
 ---
 
 

@@ -12,6 +12,7 @@ tags:
   - Trading
   - Infrastructure
 translation_key: introducing-gogocoin
+draft: false
 ---
 
 # Introducing gogocoin — A Self-Hosted Crypto Trading Bot

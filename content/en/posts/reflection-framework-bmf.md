@@ -10,6 +10,7 @@ tags:
   - KPT
 description: Introducing a new retrospective framework to enhance focus and selection.
 translation_key: reflection-framework-bmf
+draft: false
 ---
 
 When it comes to retrospectives, KPT (Keep / Problem / Try) is the standard, but I wanted to come up with a framework full of my own originality, so I'm writing down this idea.

@@ -9,6 +9,7 @@ categories:
 tags:
   - Profiling
 translation_key: continuous-profiling-with-pyroscope
+draft: false
 ---
 
 

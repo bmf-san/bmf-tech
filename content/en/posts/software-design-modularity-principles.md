@@ -13,6 +13,7 @@ translation_key: software-design-modularity-principles
 books:
   - asin: "4295022969"
     title: "ソフトウェア設計の結合バランス　持続可能な成長を支えるモジュール化の原則"
+draft: false
 ---
 
 I read [Balancing Coupling in Software Design: Principles of Modularity for Sustainable Growth](https://amzn.to/4q8HN2Y).

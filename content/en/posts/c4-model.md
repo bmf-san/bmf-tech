@@ -11,6 +11,7 @@ tags:
   - C4 Model
   - Architecture
 translation_key: c4-model
+draft: false
 ---
 
 # Overview

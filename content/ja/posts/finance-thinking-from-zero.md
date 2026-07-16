@@ -13,6 +13,7 @@ translation_key: finance-thinking-from-zero
 books:
   - asin: "4065235030"
     title: "ゼロからわかるファイナンス思考 働く人と会社の成長戦略"
+draft: false
 ---
 
 

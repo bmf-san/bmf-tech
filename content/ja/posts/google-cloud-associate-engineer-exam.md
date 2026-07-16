@@ -9,6 +9,7 @@ categories:
 tags:
   - Google Cloud Platform
 translation_key: google-cloud-associate-engineer-exam
+draft: false
 ---
 
 

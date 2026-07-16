@@ -14,6 +14,7 @@ tags:
   - ESModules
   - Jest
 translation_key: jest-javascript-testing-introduction
+draft: false
 ---
 
 

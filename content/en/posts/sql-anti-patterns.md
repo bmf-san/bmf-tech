@@ -14,6 +14,7 @@ translation_key: sql-anti-patterns
 books:
   - asin: "4873115892"
     title: "SQLアンチパターン"
+draft: false
 ---
 
 

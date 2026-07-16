@@ -11,6 +11,7 @@ tags:
   - Tips
 description: A guide on streaming Keynote presentations using StreamYard while displaying the presenter view.
 translation_key: streamyard-keynote-presenter-display
+draft: false
 ---
 
 

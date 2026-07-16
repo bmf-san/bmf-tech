@@ -11,6 +11,7 @@ tags:
   - URLルーティング
   - router
 translation_key: url-routing-introduction-episode-1
+draft: false
 ---
 
 

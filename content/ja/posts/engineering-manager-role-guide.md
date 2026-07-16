@@ -15,6 +15,7 @@ translation_key: engineering-manager-role-guide
 books:
   - asin: "4873119944"
     title: "エンジニアリングマネージャーのしごと―チームが必要とするマネージャーになる方法"
+draft: false
 ---
 
 

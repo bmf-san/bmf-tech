@@ -9,6 +9,7 @@ categories:
 tags:
   - TypeScript
 translation_key: typescript-basics-review
+draft: false
 ---
 
 

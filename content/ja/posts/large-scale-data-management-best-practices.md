@@ -13,6 +13,7 @@ translation_key: large-scale-data-management-best-practices
 books:
   - asin: "481440008X"
     title: "大規模データ管理 ―エンタープライズアーキテクチャのベストプラクティス"
+draft: false
 ---
 
 

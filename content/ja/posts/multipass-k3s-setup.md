@@ -10,6 +10,7 @@ tags:
   - multipass
   - k3s
 translation_key: multipass-k3s-setup
+draft: false
 ---
 
 

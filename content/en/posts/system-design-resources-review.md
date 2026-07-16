@@ -11,6 +11,7 @@ tags:
   - Link Collection
 description: A compilation of resources related to system design.
 translation_key: system-design-resources-review
+draft: false
 ---
 
 I have reviewed several resources related to system design, and I will summarize them in a resource link format. There are many videos that I haven't been able to watch. Additionally, some content may include topics that seem somewhat unrelated.

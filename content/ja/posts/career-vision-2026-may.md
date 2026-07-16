@@ -11,6 +11,7 @@ tags:
   - リーダーシップ
   - 思考法
 translation_key: career-vision-2026-may
+draft: false
 ---
 
 # はじめに

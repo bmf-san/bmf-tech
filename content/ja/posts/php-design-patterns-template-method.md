@@ -11,6 +11,7 @@ tags:
   - PHP
   - テンプレートメソッドパターン
 translation_key: php-design-patterns-template-method
+draft: false
 ---
 
 

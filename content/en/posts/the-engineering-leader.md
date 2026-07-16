@@ -14,6 +14,7 @@ translation_key: the-engineering-leader
 books:
   - asin: "4814401353"
     title: "エンジニアリングリーダー ―技術組織を育てるリーダーシップとセルフマネジメント"
+draft: false
 ---
 
 

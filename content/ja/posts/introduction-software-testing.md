@@ -12,6 +12,7 @@ translation_key: introduction-software-testing
 books:
   - asin: "4822282511"
     title: "はじめて学ぶソフトウェアのテスト技法"
+draft: false
 ---
 
 

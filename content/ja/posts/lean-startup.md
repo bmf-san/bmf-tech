@@ -14,6 +14,7 @@ translation_key: lean-startup
 books:
   - asin: "4822248976"
     title: "リーン・スタートアップ"
+draft: false
 ---
 
 

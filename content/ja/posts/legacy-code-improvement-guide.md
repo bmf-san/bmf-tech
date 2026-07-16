@@ -13,6 +13,7 @@ translation_key: legacy-code-improvement-guide
 books:
   - asin: "4798116831"
     title: "レガシーコード改善ガイド: 保守開発のためのリファクタリング"
+draft: false
 ---
 
 

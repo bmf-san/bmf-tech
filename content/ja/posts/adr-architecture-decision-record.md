@@ -9,6 +9,7 @@ categories:
 tags:
   - Architecture Decision Record
 translation_key: adr-architecture-decision-record
+draft: false
 ---
 
 
