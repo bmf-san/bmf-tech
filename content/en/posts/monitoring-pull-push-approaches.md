@@ -9,6 +9,7 @@ tags:
   - Monitoring
 description: An overview of the differences between pull and push approaches in monitoring systems.
 translation_key: monitoring-pull-push-approaches
+draft: false
 ---
 
 

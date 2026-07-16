@@ -13,6 +13,7 @@ translation_key: ruby-introduction-for-beginners
 books:
   - asin: "4297124378"
     title: "プロを目指す人のためのRuby入門"
+draft: false
 ---
 
 

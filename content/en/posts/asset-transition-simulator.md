@@ -9,6 +9,7 @@ tags:
   - JavaScript
 description: Introducing a tool for personal asset formation, the Asset Trend Simulator.
 translation_key: asset-transition-simulator
+draft: false
 ---
 
 

@@ -10,6 +10,7 @@ tags:
   - irb
   - Ruby
 translation_key: irb-code-reading
+draft: false
 ---
 
 # Overview

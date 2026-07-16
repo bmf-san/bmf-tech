@@ -9,6 +9,7 @@ categories:
 tags:
   - アーキテクト
 translation_key: communication-guide-developers-architects
+draft: false
 ---
 
 

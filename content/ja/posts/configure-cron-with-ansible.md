@@ -10,6 +10,7 @@ tags:
   - Ansible
   - cron
 translation_key: configure-cron-with-ansible
+draft: false
 ---
 
 

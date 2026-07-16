@@ -9,6 +9,7 @@ categories:
 tags:
   - GitHub
 translation_key: created-spec-repository
+draft: false
 ---
 
 

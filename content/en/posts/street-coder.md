@@ -13,6 +13,7 @@ translation_key: street-coder
 books:
   - asin: "4798073458"
     title: "ストリートコーダー"
+draft: false
 ---
 
 

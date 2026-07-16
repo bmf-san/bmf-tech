@@ -16,6 +16,7 @@ translation_key: engineering-cto-leadership-guide
 books:
   - asin: "4814401140"
     title: "エンジニアリング統括責任者の手引き―組織を成功に導く技術リーダーシップ"
+draft: false
 ---
 
 

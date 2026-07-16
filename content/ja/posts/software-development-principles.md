@@ -9,6 +9,7 @@ categories:
 tags:
   - ソフトウェア開発
 translation_key: software-development-principles
+draft: false
 ---
 
 

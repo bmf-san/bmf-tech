@@ -9,6 +9,7 @@ categories:
 tags:
   - Laravel
 translation_key: laravel-redirect-differences
+draft: false
 ---
 
 

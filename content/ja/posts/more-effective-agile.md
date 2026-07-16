@@ -13,6 +13,7 @@ translation_key: more-effective-agile
 books:
   - asin: "B089KFKB5H"
     title: "More Effective Agile"
+draft: false
 ---
 
 

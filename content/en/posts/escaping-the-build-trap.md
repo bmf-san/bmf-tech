@@ -13,6 +13,7 @@ translation_key: escaping-the-build-trap
 books:
   - asin: "4873119251"
     title: "プロダクトマネジメント ―ビルドトラップを避け顧客に価値を届ける"
+draft: false
 ---
 
 

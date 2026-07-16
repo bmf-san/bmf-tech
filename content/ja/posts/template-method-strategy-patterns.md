@@ -10,6 +10,7 @@ tags:
   - Strategy
   - Template Method
 translation_key: template-method-strategy-patterns
+draft: false
 ---
 
 

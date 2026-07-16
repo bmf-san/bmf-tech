@@ -10,6 +10,7 @@ tags:
   - Docker
   - Docker Compose
 translation_key: docker-cli-supports-docker-compose
+draft: false
 ---
 
 

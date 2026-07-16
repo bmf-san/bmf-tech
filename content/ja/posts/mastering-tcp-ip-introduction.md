@@ -14,6 +14,7 @@ translation_key: mastering-tcp-ip-introduction
 books:
   - asin: "4274224473"
     title: "マスタリングTCP/IP―入門編―(第6版)"
+draft: false
 ---
 
 

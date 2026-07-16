@@ -9,6 +9,7 @@ tags:
   - GraphQL
 description: Summarizing what I researched while practicing GraphQL.
 translation_key: graphql-introduction
+draft: false
 ---
 
 # Overview

@@ -11,6 +11,7 @@ tags:
   - CentOS
   - Vagrant
 translation_key: vagrant-centos-ansible-setup
+draft: false
 ---
 
 

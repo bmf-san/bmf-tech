@@ -13,6 +13,7 @@ translation_key: software-architecture-basics-second-edition
 books:
   - asin: "4814401558"
     title: "ソフトウェアアーキテクチャの基礎 第2版 ―エンジニアリングに基づく体系的アプローチ"
+draft: false
 ---
 
 

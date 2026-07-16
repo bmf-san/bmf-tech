@@ -12,6 +12,7 @@ tags:
   - ECS
   - Fargate
 translation_key: introducing-datadog-apm-on-ecs-fargate
+draft: false
 ---
 
 

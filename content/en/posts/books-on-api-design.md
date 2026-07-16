@@ -10,6 +10,7 @@ tags:
   - API
   - Design
 translation_key: books-on-api-design
+draft: false
 ---
 
 Recently, I decided to revisit API design and picked up a few books to read, so I will list the books I've read.

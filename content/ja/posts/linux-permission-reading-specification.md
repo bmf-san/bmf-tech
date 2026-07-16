@@ -10,6 +10,7 @@ tags:
   - Linux
   - パーミッション
 translation_key: linux-permission-reading-specification
+draft: false
 ---
 
 

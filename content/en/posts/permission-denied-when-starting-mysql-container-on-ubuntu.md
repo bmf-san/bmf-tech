@@ -11,6 +11,7 @@ tags:
   - MySQL
   - Tips
 translation_key: permission-denied-when-starting-mysql-container-on-ubuntu
+draft: false
 ---
 
 

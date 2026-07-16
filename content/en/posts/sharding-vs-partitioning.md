@@ -10,6 +10,7 @@ tags:
   - Partitioning
   - Sharding
 translation_key: sharding-vs-partitioning
+draft: false
 ---
 
 

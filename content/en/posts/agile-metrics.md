@@ -13,6 +13,7 @@ translation_key: agile-metrics
 books:
   - asin: "4798169412"
     title: "アジャイルメトリクス"
+draft: false
 ---
 
 [Agile Metrics](https://amzn.to/3QDOGJW) is a book that teaches measurement indicators in agile development.

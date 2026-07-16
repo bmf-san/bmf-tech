@@ -10,6 +10,7 @@ tags:
   - JavaScript
   - Google Chrome Extension
 translation_key: build-google-extension-plugin
+draft: false
 ---
 
 When I wanted to search in English on Google, I used bookmarks to access it, but I thought it would be convenient to do it with a plugin, so I created one.

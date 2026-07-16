@@ -10,6 +10,7 @@ tags:
   - SaaS
 description: A compilation of resources to transition from knowing nothing about SaaS to fully understanding it.
 translation_key: saas-architecture-resource-list
+draft: false
 ---
 
 To move from "I don't understand anything about SaaS!" to "I completely understand SaaS!", here is a compilation of useful resources.

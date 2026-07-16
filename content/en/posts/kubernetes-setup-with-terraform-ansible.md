@@ -13,6 +13,7 @@ tags:
   - kubeadm
 description: A journey of setting up a Kubernetes environment using Terraform and Ansible.
 translation_key: kubernetes-setup-with-terraform-ansible
+draft: false
 ---
 
 # Overview

@@ -11,6 +11,7 @@ tags:
   - ステートレス
   - セッション
 translation_key: stateless-vs-stateful
+draft: false
 ---
 
 

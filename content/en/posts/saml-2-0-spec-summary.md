@@ -11,6 +11,7 @@ tags:
   - Authentication
   - Authorization
 translation_key: saml-2-0-spec-summary
+draft: false
 ---
 
 OASIS Security Assertion Markup Language (SAML) 2.0 key points summary.

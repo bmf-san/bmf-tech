@@ -14,6 +14,7 @@ translation_key: globis-mba-critical-thinking
 books:
   - asin: "4478020582"
     title: "グロービスMBAクリティカル・シンキング"
+draft: false
 ---
 
 I read [GLOBIS MBA Critical Thinking](https://amzn.to/3yotEc5).

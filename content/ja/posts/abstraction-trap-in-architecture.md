@@ -10,6 +10,7 @@ tags:
   - 設計
   - DDD
 translation_key: abstraction-trap-in-architecture
+draft: false
 ---
 
 

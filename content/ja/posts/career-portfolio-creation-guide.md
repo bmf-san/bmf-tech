@@ -10,6 +10,7 @@ tags:
   - 転職
   - レジュメ
 translation_key: career-portfolio-creation-guide
+draft: false
 ---
 
 

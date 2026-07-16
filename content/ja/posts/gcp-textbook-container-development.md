@@ -13,6 +13,7 @@ translation_key: gcp-textbook-container-development
 books:
   - asin: "4865942416"
     title: "GCPの教科書II 【コンテナ開発編】 KubernetesとGKE、Cloud Run、サービスメッシュを詳解"
+draft: false
 ---
 
 

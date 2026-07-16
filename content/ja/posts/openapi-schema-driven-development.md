@@ -10,6 +10,7 @@ tags:
   - OpenAPI
   - スキーマ駆動
 translation_key: openapi-schema-driven-development
+draft: false
 ---
 
 

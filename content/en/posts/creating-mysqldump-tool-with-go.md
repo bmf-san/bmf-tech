@@ -12,6 +12,7 @@ tags:
   - SSH
   - mysqldump
 translation_key: creating-mysqldump-tool-with-go
+draft: false
 ---
 
 # Overview

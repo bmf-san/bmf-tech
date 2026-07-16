@@ -11,6 +11,7 @@ tags:
   - C4モデル
   - アーキテクチャ
 translation_key: c4-model
+draft: false
 ---
 
 

@@ -9,6 +9,7 @@ tags:
   - FuelPHP
 description: A summary of the current status of FuelPHP as of March 2023.
 translation_key: fuelphp-status-march-2023
+draft: false
 ---
 
 # Overview

@@ -13,6 +13,7 @@ tags:
   - Architect
   - Architecting
 translation_key: architecture-architecting
+draft: false
 ---
 
 

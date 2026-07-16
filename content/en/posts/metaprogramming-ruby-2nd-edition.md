@@ -13,6 +13,7 @@ translation_key: metaprogramming-ruby-2nd-edition
 books:
   - asin: "4873117437"
     title: "メタプログラミングRuby 第2版"
+draft: false
 ---
 
 

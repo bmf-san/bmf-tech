@@ -15,6 +15,7 @@ translation_key: python-for-algorithmic-trading
 books:
   - asin: "4873119790"
     title: "Pythonからはじめるアルゴリズムトレード ―自動売買の基礎と機械学習の本格導入に向けたPythonプログラミング"
+draft: false
 ---
 
 

@@ -10,6 +10,7 @@ tags:
   - ER
 description: Exploring and reviewing open-source tools for automatically generating DB documents.
 translation_key: db-documentation-tools-schemaspy-tbls
+draft: false
 ---
 
 

@@ -10,6 +10,7 @@ tags:
   - k3s
 description: Exploring the use of multipass to run k3s for personal development applications.
 translation_key: multipass-k3s-setup
+draft: false
 ---
 
 

@@ -11,6 +11,7 @@ tags:
   - sql
   - cross join
 translation_key: mysql-test-data-generation-sql
+draft: false
 ---
 
 

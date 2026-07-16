@@ -13,6 +13,7 @@ tags:
   - HTTP/2
   - RPC
 translation_key: grpc-introduction-golang
+draft: false
 ---
 
 # Overview

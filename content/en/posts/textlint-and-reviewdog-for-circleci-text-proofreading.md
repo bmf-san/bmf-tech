@@ -11,6 +11,7 @@ tags:
   - textlint
 description: Automating text proofreading using textlint and reviewdog on CircleCI.
 translation_key: textlint-and-reviewdog-for-circleci-text-proofreading
+draft: false
 ---
 
 # Overview

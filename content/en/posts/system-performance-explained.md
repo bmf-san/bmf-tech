@@ -14,6 +14,7 @@ translation_key: system-performance-explained
 books:
   - asin: "B00LHFOTF4"
     title: "絵で見てわかるシステムパフォーマンスの仕組み"
+draft: false
 ---
 
 

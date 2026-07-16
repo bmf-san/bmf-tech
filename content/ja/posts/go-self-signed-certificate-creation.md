@@ -11,6 +11,7 @@ tags:
   - Golang
   - Tips
 translation_key: go-self-signed-certificate-creation
+draft: false
 ---
 
 

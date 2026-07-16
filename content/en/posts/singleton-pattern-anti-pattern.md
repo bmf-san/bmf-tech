@@ -10,6 +10,7 @@ tags:
   - Singleton Pattern
   - Golang
 translation_key: singleton-pattern-anti-pattern
+draft: false
 ---
 
 ## Introduction

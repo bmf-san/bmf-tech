@@ -9,6 +9,7 @@ categories:
 tags:
   - Reflection and Resolutions
 translation_key: 2020-reflection-and-goals
+draft: false
 ---
 
 # Reflection on 2020 and Resolutions for Next Year

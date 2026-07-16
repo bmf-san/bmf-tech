@@ -15,6 +15,7 @@ translation_key: mastering-api-architecture
 books:
   - asin: "4814400896"
     title: "マスタリングAPIアーキテクチャ ―モノリシックからマイクロサービスへとアーキテクチャを進化させるための実践的手法"
+draft: false
 ---
 
 I read [Mastering API Architecture: Practical Techniques for Evolving Architecture from Monolithic to Microservices](https://amzn.to/3Uw15l6).

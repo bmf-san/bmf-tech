@@ -9,6 +9,7 @@ categories:
 tags:
   - 振り返りと抱負
 translation_key: 2020-reflection-and-goals
+draft: false
 ---
 
 

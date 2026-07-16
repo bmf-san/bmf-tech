@@ -13,6 +13,7 @@ tags:
   - Code Generation
 description: "Learn what sqlc is and how it generates type-safe Go code from SQL. A hands-on introduction using SQLite that covers the schema-to-code workflow, the benefits, and common pitfalls."
 translation_key: sqlc-introduction-golang
+draft: false
 ---
 
 # Overview

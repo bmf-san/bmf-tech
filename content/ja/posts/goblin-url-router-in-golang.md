@@ -11,6 +11,7 @@ tags:
   - URLルーティング
   - router
 translation_key: goblin-url-router-in-golang
+draft: false
 ---
 
 

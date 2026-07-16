@@ -9,6 +9,7 @@ categories:
 tags:
   - Golang
 translation_key: go1-22rc-changes-servemux-spec
+draft: false
 ---
 
 This article is the 19th entry in the [Makuake Advent Calendar 2023](https://adventar.org/calendars/8992).

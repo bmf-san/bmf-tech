@@ -10,6 +10,7 @@ tags:
   - PHP
   - FuelPHP
 translation_key: fuelphp-php-update-project-report
+draft: false
 ---
 
 

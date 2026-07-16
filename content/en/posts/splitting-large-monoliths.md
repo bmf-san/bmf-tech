@@ -11,6 +11,7 @@ tags:
   - Microservices
 description: 'This article organizes useful points for considering service division from a monolith, based on chapters 1 to 4 of ''Software Architecture: The Hard Parts''.'
 translation_key: splitting-large-monoliths
+draft: false
 ---
 
 

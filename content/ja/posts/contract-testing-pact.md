@@ -12,6 +12,7 @@ tags:
   - プロデューサー駆動契約テスト
   - コンシューマー駆動契約テスト
 translation_key: contract-testing-pact
+draft: false
 ---
 
 

@@ -14,6 +14,7 @@ translation_key: software-architecture-mistakes
 books:
   - asin: "477414343X"
     title: "Mistakes in Software Architecture: Development and Evaluation of Non-Functional Requirements"
+draft: false
 ---
 
 

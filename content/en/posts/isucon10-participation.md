@@ -10,6 +10,7 @@ tags:
   - ISUCON
   - ISUCON10
 translation_key: isucon10-participation
+draft: false
 ---
 
 [ISUCON10](http://isucon.net/archives/54704557.html) was held, and I participated. It was my second time participating in ISUCON after two years.

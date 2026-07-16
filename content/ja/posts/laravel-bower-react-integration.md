@@ -10,6 +10,7 @@ tags:
   - Laravel
   - React
 translation_key: laravel-bower-react-integration
+draft: false
 ---
 
 

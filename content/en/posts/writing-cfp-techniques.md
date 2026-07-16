@@ -10,6 +10,7 @@ categories:
 tags:
   - Technical Writing
 translation_key: writing-cfp-techniques
+draft: false
 ---
 
 

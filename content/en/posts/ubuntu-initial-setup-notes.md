@@ -9,6 +9,7 @@ categories:
 tags:
   - Ubuntu
 translation_key: ubuntu-initial-setup-notes
+draft: false
 ---
 
 

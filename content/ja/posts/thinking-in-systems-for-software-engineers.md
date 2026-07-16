@@ -13,6 +13,7 @@ translation_key: thinking-in-systems-for-software-engineers
 books:
   - asin: "4814401566"
     title: "システム思考の世界へ ―複雑化する時代で考え続けるソフトウェア技術者のために"
+draft: false
 ---
 
 

@@ -10,6 +10,7 @@ tags:
   - Authorization Management
   - Design
 translation_key: permission-management-case-study
+draft: false
 ---
 
 

@@ -11,6 +11,7 @@ tags:
   - Google Cloud Platform
   - クラウドネイティブ
 translation_key: cloud-native-architecture-principles
+draft: false
 ---
 
 

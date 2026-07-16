@@ -9,6 +9,7 @@ categories:
 tags:
   - スクラム
 translation_key: certified-scrum-master-lsm
+draft: false
 ---
 
 

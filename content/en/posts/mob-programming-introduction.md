@@ -10,6 +10,7 @@ tags:
   - Agile
 description: Recently, I experienced mob programming for the first time in my life, so I'm jotting down notes to remember the benefits of the experience.
 translation_key: mob-programming-introduction
+draft: false
 ---
 
 

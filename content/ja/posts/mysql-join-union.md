@@ -11,6 +11,7 @@ tags:
   - join
   - union
 translation_key: mysql-join-union
+draft: false
 ---
 
 

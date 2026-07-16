@@ -10,6 +10,7 @@ categories:
 tags:
   - テクニカルライティング
 translation_key: writing-cfp-techniques
+draft: false
 ---
 
 

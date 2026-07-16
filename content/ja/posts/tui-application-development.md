@@ -11,6 +11,7 @@ tags:
   - CLI
   - ゲーム
 translation_key: tui-application-development
+draft: false
 ---
 
 

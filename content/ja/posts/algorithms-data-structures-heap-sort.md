@@ -9,6 +9,7 @@ categories:
 tags:
   - ヒープソート
 translation_key: algorithms-data-structures-heap-sort
+draft: false
 ---
 
 

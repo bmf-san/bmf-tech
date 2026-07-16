@@ -11,6 +11,7 @@ tags:
   - Lightning Talk
   - PHP
 translation_key: laravel-jp-conference-participation
+draft: false
 ---
 
 [Laravel JP Conference](http://web.archive.org/web/20260117100821/https://conference2019.laravel.jp/) core staff and LT speaker.

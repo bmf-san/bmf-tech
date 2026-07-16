@@ -13,6 +13,7 @@ tags:
   - 継承
   - Golang
 translation_key: delegation-over-inheritance
+draft: false
 ---
 
 

@@ -9,6 +9,7 @@ tags:
   - Golang
 description: A benchmark tool to compare the performance of various Go HTTP Routers.
 translation_key: http-router-benchmark-go
+draft: false
 ---
 
 [Makuake Advent Calendar 2022](https://adventar.org/calendars/8496) - Day 5!

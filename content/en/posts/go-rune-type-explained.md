@@ -9,6 +9,7 @@ categories:
 tags:
   - Golang
 translation_key: go-rune-type-explained
+draft: false
 ---
 
 # What is the rune Type

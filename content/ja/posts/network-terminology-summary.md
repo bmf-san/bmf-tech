@@ -10,6 +10,7 @@ tags:
   - IP
   - ロードバランサー
 translation_key: network-terminology-summary
+draft: false
 ---
 
 

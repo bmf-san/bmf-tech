@@ -9,6 +9,7 @@ tags:
   - Generative AI
 description: The rapid evolution of generative AI is bringing significant changes to society. As a software engineer, anticipating these technological changes is crucial.
 translation_key: generative-ai-software-engineer-career
+draft: false
 ---
 
 

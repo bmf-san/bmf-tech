@@ -14,6 +14,7 @@ translation_key: running-lean-practical-startup
 books:
   - asin: "4873115914"
     title: "Running Lean ―実践リーンスタートアップ"
+draft: false
 ---
 
 

@@ -12,6 +12,7 @@ translation_key: software-testing-improvement-ideas
 books:
   - asin: "4798176060"
     title: "ソフトウェアテストをカイゼンする50のアイデア"
+draft: false
 ---
 
 

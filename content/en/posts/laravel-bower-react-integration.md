@@ -10,6 +10,7 @@ tags:
   - React
 description: A guide on integrating React into a Laravel project using Bower.
 translation_key: laravel-bower-react-integration
+draft: false
 ---
 
 Recently, it seems that Laravel 5.3 has decided to adopt Vue.js as the default front-end framework.

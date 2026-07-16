@@ -9,6 +9,7 @@ categories:
 tags:
   - モノレポ
 translation_key: monorepo-overview
+draft: false
 ---
 
 

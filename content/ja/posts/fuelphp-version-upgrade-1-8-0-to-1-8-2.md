@@ -10,6 +10,7 @@ tags:
   - PHP
   - FuelPHP
 translation_key: fuelphp-version-upgrade-1-8-0-to-1-8-2
+draft: false
 ---
 
 

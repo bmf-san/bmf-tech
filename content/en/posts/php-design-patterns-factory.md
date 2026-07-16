@@ -14,6 +14,7 @@ tags:
   - Factory Pattern
   - Factory Method Pattern
 translation_key: php-design-patterns-factory
+draft: false
 ---
 
 This article is part of the [PHP Design Patterns Advent Calendar 2018](https://qiita.com/advent-calendar/2018/php-design-pattern).

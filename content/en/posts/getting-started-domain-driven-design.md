@@ -14,6 +14,7 @@ translation_key: getting-started-domain-driven-design
 books:
   - asin: "481440073X"
     title: "Getting Started with Domain-Driven Design: Practical Techniques for Connecting Software Implementation and Business Strategy"
+draft: false
 ---
 
 

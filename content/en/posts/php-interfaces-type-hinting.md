@@ -11,6 +11,7 @@ tags:
   - Interface
   - Type Hinting
 translation_key: php-interfaces-type-hinting
+draft: false
 ---
 
 # Overview

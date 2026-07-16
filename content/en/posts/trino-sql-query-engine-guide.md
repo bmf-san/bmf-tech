@@ -13,6 +13,7 @@ translation_key: trino-sql-query-engine-guide
 books:
   - asin: "4798071676"
     title: "A Comprehensive Guide to the Distributed SQL Query Engine Trino"
+draft: false
 ---
 
 

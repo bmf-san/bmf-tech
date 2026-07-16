@@ -11,6 +11,7 @@ tags:
   - PACELC
   - Distributed Systems
 translation_key: cap-theorem-pacelc-theorem
+draft: false
 ---
 
 This post discusses the important theories of the CAP theorem and PACELC theorem in distributed systems.

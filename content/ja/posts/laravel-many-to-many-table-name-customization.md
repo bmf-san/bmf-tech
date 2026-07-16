@@ -9,6 +9,7 @@ categories:
 tags:
   - Laravel
 translation_key: laravel-many-to-many-table-name-customization
+draft: false
 ---
 
 

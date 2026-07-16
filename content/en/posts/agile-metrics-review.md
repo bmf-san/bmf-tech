@@ -9,6 +9,7 @@ categories:
 tags:
   - Agile
 translation_key: agile-metrics-review
+draft: false
 ---
 
 

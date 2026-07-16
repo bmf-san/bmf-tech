@@ -10,6 +10,7 @@ tags:
   - Authorization
 description: A comprehensive comparison and explanation of session-based and token-based authentication methods, covering technical details and implementation considerations.
 translation_key: session-token-authentication
+draft: false
 ---
 
 

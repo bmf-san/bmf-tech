@@ -10,6 +10,7 @@ tags:
   - PHP
   - PHPカンファレンス
 translation_key: complete-2019-php-conferences
+draft: false
 ---
 
 

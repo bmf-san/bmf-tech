@@ -17,6 +17,7 @@ tags:
   - 認可
   - 認証
 translation_key: authentication-authorization-basics
+draft: false
 ---
 
 

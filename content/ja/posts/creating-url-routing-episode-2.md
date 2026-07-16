@@ -12,6 +12,7 @@ tags:
   - 木構造
   - router
 translation_key: creating-url-routing-episode-2
+draft: false
 ---
 
 

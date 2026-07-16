@@ -9,6 +9,7 @@ categories:
 tags:
   - OS
 translation_key: os-memo
+draft: false
 ---
 
 

@@ -12,6 +12,7 @@ tags:
   - Platform Engineering
   - Organization Design
 translation_key: product-development-vs-platform-development
+draft: false
 ---
 
 # Introduction

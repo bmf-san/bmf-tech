@@ -9,6 +9,7 @@ tags:
   - PostgreSQL
 description: 'Learn how COLLATE works in PostgreSQL for string sorting and comparison. Covers database-level and column-level settings, checking collation with pg_database, and tips for Japanese locale.'
 translation_key: postgresql-collate-explained
+draft: false
 ---
 
 

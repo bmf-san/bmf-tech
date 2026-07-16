@@ -10,6 +10,7 @@ tags:
   - ERE
   - Regular Expressions
 translation_key: basic-regular-expressions
+draft: false
 ---
 
 # Overview

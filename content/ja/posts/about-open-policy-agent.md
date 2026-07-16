@@ -10,6 +10,7 @@ tags:
   - Open Policy Agent
   - 権限管理
 translation_key: about-open-policy-agent
+draft: false
 ---
 
 

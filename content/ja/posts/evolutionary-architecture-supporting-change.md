@@ -13,6 +13,7 @@ translation_key: evolutionary-architecture-supporting-change
 books:
   - asin: "4873118565"
     title: "進化的アーキテクチャ 絶え間ない変化を支える"
+draft: false
 ---
 
 

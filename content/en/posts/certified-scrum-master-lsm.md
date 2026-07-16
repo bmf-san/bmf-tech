@@ -9,6 +9,7 @@ tags:
   - Scrum
 description: Reflections and notes on becoming a Registered Scrum Master after attending the training and exam by scruminc.japan.
 translation_key: certified-scrum-master-lsm
+draft: false
 ---
 
 scruminc.japan's [Registered Scrum Master](https://scruminc.jp/training/master/) training and exam led me to become a Registered Scrum Master, so here are my reflections and notes.

@@ -12,6 +12,7 @@ tags:
   - REST
   - GraphQL
 translation_key: what-is-graphql
+draft: false
 ---
 
 

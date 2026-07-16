@@ -14,6 +14,7 @@ tags:
   - システム設計
   - リンク集
 translation_key: permission-management-design
+draft: false
 ---
 
 

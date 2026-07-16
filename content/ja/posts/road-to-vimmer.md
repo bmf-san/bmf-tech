@@ -10,6 +10,7 @@ tags:
   - vim
   - エディタ
 translation_key: road-to-vimmer
+draft: false
 ---
 
 

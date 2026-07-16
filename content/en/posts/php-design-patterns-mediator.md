@@ -12,6 +12,7 @@ tags:
   - Mediator Pattern
   - GoF
 translation_key: php-design-patterns-mediator
+draft: false
 ---
 
 

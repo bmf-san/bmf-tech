@@ -11,6 +11,7 @@ tags:
   - Reverse Proxy
   - Gateway
 translation_key: proxy-server-differences
+draft: false
 ---
 
 # Overview

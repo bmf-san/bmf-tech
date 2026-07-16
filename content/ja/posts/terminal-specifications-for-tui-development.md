@@ -13,6 +13,7 @@ tags:
   - UNIX
   - Golang
 translation_key: terminal-specifications-for-tui-development
+draft: false
 ---
 
 

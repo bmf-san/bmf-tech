@@ -10,6 +10,7 @@ tags:
   - Ruby
   - Ruby on Rails
 translation_key: ruby-on-rails-code-reading-1
+draft: false
 ---
 
 

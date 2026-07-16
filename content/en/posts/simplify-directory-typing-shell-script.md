@@ -10,6 +10,7 @@ tags:
   - bash
   - Shell Script
 translation_key: simplify-directory-typing-shell-script
+draft: false
 ---
 
 

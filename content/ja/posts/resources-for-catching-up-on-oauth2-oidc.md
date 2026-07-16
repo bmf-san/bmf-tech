@@ -18,6 +18,7 @@ tags:
   - 認証
   - リンク集
 translation_key: resources-for-catching-up-on-oauth2-oidc
+draft: false
 ---
 
 

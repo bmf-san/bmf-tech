@@ -14,6 +14,7 @@ translation_key: customer-success
 books:
   - asin: "B07D7V5R8H"
     title: "カスタマーサクセス――サブスクリプション時代に求められる「顧客の成功」10の原則"
+draft: false
 ---
 
 

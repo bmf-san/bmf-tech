@@ -11,6 +11,7 @@ tags:
   - Let's Encrypt
   - Tips
 translation_key: lego-lets-encrypt-dns-01-ssl
+draft: false
 ---
 
 I was trying to obtain SSL certificates from Let's Encrypt using Ansible on a Conoha VPS.

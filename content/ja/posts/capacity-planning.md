@@ -9,6 +9,7 @@ categories:
 tags:
   - キャパシティプランニング
 translation_key: capacity-planning
+draft: false
 ---
 
 

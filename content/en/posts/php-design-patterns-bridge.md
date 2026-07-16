@@ -12,6 +12,7 @@ tags:
   - Design Patterns
   - Bridge Pattern
 translation_key: php-design-patterns-bridge
+draft: false
 ---
 
 # Overview

@@ -12,6 +12,7 @@ tags:
   - Trie
 description: 'Learn how Trie (prefix tree) data structures work: O(m) search and insertion, applications in HTTP routing and IP lookups, and a Go implementation of insert and search operations.'
 translation_key: golang-tries-implementation
+draft: false
 ---
 
 

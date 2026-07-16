@@ -11,6 +11,7 @@ tags:
   - インデックス
   - MySQL
 translation_key: what-is-index
+draft: false
 ---
 
 

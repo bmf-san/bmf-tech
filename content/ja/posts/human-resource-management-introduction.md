@@ -14,6 +14,7 @@ translation_key: human-resource-management-introduction
 books:
   - asin: "4799326120"
     title: "図解 人材マネジメント 入門 人事の基礎をゼロからおさえておきたい人のための「理論と実践」100のツボ"
+draft: false
 ---
 
 

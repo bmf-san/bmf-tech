@@ -16,6 +16,7 @@ translation_key: data-analysis-infrastructure-introduction
 books:
   - asin: "477419218X"
     title: "データ分析基盤構築入門"
+draft: false
 ---
 
 

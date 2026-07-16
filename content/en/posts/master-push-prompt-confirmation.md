@@ -10,6 +10,7 @@ tags:
   - Shell Script
 description: How to create a safety net to prevent direct pushes to the master branch in git.
 translation_key: master-push-prompt-confirmation
+draft: false
 ---
 
 # Overview

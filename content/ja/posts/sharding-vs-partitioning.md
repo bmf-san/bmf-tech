@@ -10,6 +10,7 @@ tags:
   - パーティショニング
   - シャーディング
 translation_key: sharding-vs-partitioning
+draft: false
 ---
 
 

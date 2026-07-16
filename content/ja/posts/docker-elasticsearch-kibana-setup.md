@@ -10,6 +10,7 @@ tags:
   - Elasticsearch
   - Kibana
 translation_key: docker-elasticsearch-kibana-setup
+draft: false
 ---
 
 

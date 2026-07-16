@@ -10,6 +10,7 @@ tags:
   - Scrum
 description: An idea on how to think about the criteria for story points.
 translation_key: story-points-using-cynefin-framework
+draft: false
 ---
 
 

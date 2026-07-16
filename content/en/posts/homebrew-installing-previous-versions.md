@@ -10,6 +10,7 @@ tags:
   - homebrew
   - vim
 translation_key: homebrew-installing-previous-versions
+draft: false
 ---
 
 # Overview

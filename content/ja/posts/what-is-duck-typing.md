@@ -9,6 +9,7 @@ categories:
 tags:
   - ダック・タイピング
 translation_key: what-is-duck-typing
+draft: false
 ---
 
 

@@ -9,6 +9,7 @@ categories:
 tags:
   - Ansible
 translation_key: write-remote-file-ansible
+draft: false
 ---
 
 

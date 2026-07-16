@@ -9,6 +9,7 @@ categories:
 tags:
   - CMS
 translation_key: blog-system-migration
+draft: false
 ---
 
 

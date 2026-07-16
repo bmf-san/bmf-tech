@@ -9,6 +9,7 @@ categories:
 tags:
   - Life
   - Gadgets
+draft: false
 ---
 
 This article has been transferred from a previously published post on Hatena.

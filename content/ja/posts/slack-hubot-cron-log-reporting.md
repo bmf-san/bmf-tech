@@ -16,6 +16,7 @@ tags:
   - logwatch
   - shell
 translation_key: slack-hubot-cron-log-reporting
+draft: false
 ---
 
 

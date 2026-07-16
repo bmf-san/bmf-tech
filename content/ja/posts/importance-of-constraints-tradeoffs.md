@@ -10,6 +10,7 @@ tags:
   - アーキテクチャ
   - システム設計
 translation_key: importance-of-constraints-tradeoffs
+draft: false
 ---
 
 

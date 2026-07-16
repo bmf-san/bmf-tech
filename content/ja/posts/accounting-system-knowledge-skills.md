@@ -13,6 +13,7 @@ translation_key: accounting-system-knowledge-skills
 books:
   - asin: "4798162949"
     title: "エンジニアが学ぶ会計システムの「知識」と「技術」"
+draft: false
 ---
 
 

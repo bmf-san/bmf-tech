@@ -10,6 +10,7 @@ categories:
 tags:
   - Golang
 translation_key: go-performance-improvement
+draft: false
 ---
 
 This is the 9th article of the [Makuake Advent Calendar 2022](https://adventar.org/calendars/8496)!

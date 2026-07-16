@@ -11,6 +11,7 @@ tags:
   - Design
   - Architecture
 translation_key: adr-writing-key-points
+draft: false
 ---
 
 ADR (Architecture Decision Record) is a document used to record important decisions regarding software architecture.

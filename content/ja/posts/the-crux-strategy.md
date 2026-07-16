@@ -13,6 +13,7 @@ translation_key: the-crux-strategy
 books:
   - asin: "4296117521"
     title: "戦略の要諦"
+draft: false
 ---
 
 

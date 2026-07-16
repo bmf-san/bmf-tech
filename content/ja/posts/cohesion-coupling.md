@@ -10,6 +10,7 @@ tags:
   - 設計
   - システム設計
 translation_key: cohesion-coupling
+draft: false
 ---
 
 

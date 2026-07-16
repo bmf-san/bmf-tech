@@ -9,6 +9,7 @@ tags:
   - Amazon Web Service
 description: Documenting my efforts and experiences after passing the AWS Certified Solutions Architect Associate exam.
 translation_key: took-aws-certified-solutions-architect-associate
+draft: false
 ---
 
 

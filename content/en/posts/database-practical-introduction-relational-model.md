@@ -14,6 +14,7 @@ translation_key: database-practical-introduction-relational-model
 books:
   - asin: "4774171972"
     title: "理論から学ぶデータベース実践入門 ~リレーショナルモデルによる効率的なSQL (WEB+DB PRESS plus)"
+draft: false
 ---
 
 I read [Practical Introduction to Databases: Efficient SQL through the Relational Model (WEB+DB PRESS plus)](https://amzn.to/3PZYdLg).

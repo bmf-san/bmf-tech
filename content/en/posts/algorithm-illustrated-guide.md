@@ -14,6 +14,7 @@ translation_key: algorithm-illustrated-guide
 books:
   - asin: "479817243X"
     title: "アルゴリズム図鑑 増補改訂版 絵で見てわかる33のアルゴリズム"
+draft: false
 ---
 
 

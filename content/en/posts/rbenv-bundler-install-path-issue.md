@@ -13,6 +13,7 @@ tags:
   - Ruby
   - Tips
 translation_key: rbenv-bundler-install-path-issue
+draft: false
 ---
 
 # Overview

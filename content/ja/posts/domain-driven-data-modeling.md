@@ -15,6 +15,7 @@ translation_key: domain-driven-data-modeling
 books:
   - asin: "4297140101"
     title: "データモデリングでドメインを駆動する──分散／疎結合な基幹系システムに向けて"
+draft: false
 ---
 
 

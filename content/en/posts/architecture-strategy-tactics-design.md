@@ -11,6 +11,7 @@ tags:
   - Architecture
   - Design
 translation_key: architecture-strategy-tactics-design
+draft: false
 ---
 
 

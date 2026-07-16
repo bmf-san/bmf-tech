@@ -10,6 +10,7 @@ tags:
   - PostgreSQL
 description: Encountered an issue where sorting order differs despite specifying the same COLLATE setting, and documented the investigation.
 translation_key: postgresql-collate-glibc-version-differences
+draft: false
 ---
 
 # Differences in Sorting Order Due to COLLATE and glibc Version Differences in PostgreSQL

@@ -11,6 +11,7 @@ tags:
   - ISUCON
   - ISUCON8
 translation_key: road-to-isucon
+draft: false
 ---
 
 

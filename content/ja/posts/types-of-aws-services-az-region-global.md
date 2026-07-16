@@ -9,6 +9,7 @@ categories:
 tags:
   - Amazon Web Service
 translation_key: types-of-aws-services-az-region-global
+draft: false
 ---
 
 

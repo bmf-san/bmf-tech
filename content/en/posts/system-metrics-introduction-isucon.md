@@ -9,6 +9,7 @@ tags:
   - ISUCON
 description: A summary of regular study sessions using the ISUCON environment to properly understand system metrics.
 translation_key: system-metrics-introduction-isucon
+draft: false
 ---
 
 # Overview

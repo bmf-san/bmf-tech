@@ -14,6 +14,7 @@ tags:
   - プロンプトエンジニアリング
   - Continuous AI
 translation_key: engineering-in-ai-evolution-to-autonomous-systems
+draft: false
 ---
 
 

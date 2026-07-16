@@ -10,6 +10,7 @@ categories:
 tags:
   - BFF
 translation_key: bff-explained
+draft: false
 ---
 
 

@@ -10,6 +10,7 @@ tags:
   - FuelPHP
 description: Summary of the application version upgrade from FuelPHP 1.8.0 to 1.8.2 and PHP 5.6 to PHP 7.3.
 translation_key: fuelphp-version-upgrade-1-8-0-to-1-8-2
+draft: false
 ---
 
 # Overview

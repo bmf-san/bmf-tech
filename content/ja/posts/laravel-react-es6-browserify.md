@@ -15,6 +15,7 @@ tags:
   - browerify
   - ES5
 translation_key: laravel-react-es6-browserify
+draft: false
 ---
 
 

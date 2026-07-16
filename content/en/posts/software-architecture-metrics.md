@@ -14,6 +14,7 @@ translation_key: software-architecture-metrics
 books:
   - asin: "4814400608"
     title: "Software Architecture Metrics: 10 Tips for Improving Architecture Quality"
+draft: false
 ---
 
 

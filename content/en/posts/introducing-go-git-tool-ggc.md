@@ -13,6 +13,7 @@ tags:
   - CLI
   - TUI
 translation_key: introducing-go-git-tool-ggc
+draft: false
 ---
 
 # Introducing ggc — A Go-Based Git Tool

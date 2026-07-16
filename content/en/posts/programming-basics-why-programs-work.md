@@ -14,6 +14,7 @@ translation_key: programming-basics-why-programs-work
 books:
   - asin: "4296000195"
     title: "プログラムはなぜ動くのか 第3版 知っておきたいプログラミングの基礎知識"
+draft: false
 ---
 
 [Why Programs Work, 3rd Edition: Essential Programming Knowledge](https://amzn.to/4afy0zD) was read.

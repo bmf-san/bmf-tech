@@ -14,6 +14,7 @@ translation_key: microservices-architecture-second-edition
 books:
   - asin: "4814400012"
     title: "マイクロサービスアーキテクチャ 第2版 "
+draft: false
 ---
 
 I read [Microservices Architecture, 2nd Edition](https://amzn.to/3RRUcJV).

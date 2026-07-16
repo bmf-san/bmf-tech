@@ -11,6 +11,7 @@ tags:
   - アダプターパターン
   - デザインパターン
 translation_key: php-adapter-api-change
+draft: false
 ---
 
 

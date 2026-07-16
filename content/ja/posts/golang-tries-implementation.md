@@ -12,6 +12,7 @@ tags:
   - 基数木
   - トライ木
 translation_key: golang-tries-implementation
+draft: false
 ---
 
 

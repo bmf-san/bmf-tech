@@ -9,6 +9,7 @@ tags:
   - Laravel
 description: Introducing the laravel-debugbar debug tool for Laravel.
 translation_key: laravel-debugging-tool-usage
+draft: false
 ---
 
 

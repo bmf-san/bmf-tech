@@ -12,6 +12,7 @@ tags:
   - Architecture Strategy
   - Architecture
 translation_key: design-shelf-life-considerations
+draft: false
 ---
 
 # Overview

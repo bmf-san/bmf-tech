@@ -10,6 +10,7 @@ tags:
   - Open Policy Agent
   - Access Control
 translation_key: about-open-policy-agent
+draft: false
 ---
 
 I wanted to learn more about Open Policy Agent, so I referred to the official documentation.

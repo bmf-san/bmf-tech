@@ -12,6 +12,7 @@ tags:
   - iTerm
 description: Streamlining development efficiency by integrating Vim and refreshing the development environment.
 translation_key: vim-like-development-environment
+draft: false
 ---
 
 

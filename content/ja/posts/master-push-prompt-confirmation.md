@@ -10,6 +10,7 @@ tags:
   - Git
   - Shell Script
 translation_key: master-push-prompt-confirmation
+draft: false
 ---
 
 

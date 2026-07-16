@@ -11,6 +11,7 @@ tags:
   - Cross Join
 description: A note on generating test data using only MySQL.
 translation_key: mysql-test-data-generation-sql
+draft: false
 ---
 
 

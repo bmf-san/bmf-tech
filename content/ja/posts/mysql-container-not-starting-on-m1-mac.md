@@ -13,6 +13,7 @@ tags:
   - M1
   - Tips
 translation_key: mysql-container-not-starting-on-m1-mac
+draft: false
 ---
 
 

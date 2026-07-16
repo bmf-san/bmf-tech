@@ -9,6 +9,7 @@ tags:
   - Health
 description: Documenting my habits for health. Partly poetic, with the hope of future reflection and improvement.
 translation_key: healthy-habits
+draft: false
 ---
 
 

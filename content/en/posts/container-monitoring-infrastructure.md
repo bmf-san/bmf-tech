@@ -18,6 +18,7 @@ tags:
   - fluentd
   - node-exporter
 translation_key: container-monitoring-infrastructure
+draft: false
 ---
 
 This article is the 17th day entry for the [Makuake Advent Calendar 2021](https://adventar.org/calendars/6822).

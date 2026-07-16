@@ -14,6 +14,7 @@ translation_key: oauth2-tutorial-guide-for-understanding
 books:
   - asin: "B07XT8H2YG"
     title: "雰囲気で使わずきちんと理解する！整理してOAuth2.0を使うためのチュートリアルガイド"
+draft: false
 ---
 
 

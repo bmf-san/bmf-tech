@@ -10,6 +10,7 @@ tags:
   - Shell Script
   - anyenv
 translation_key: installing-anyenv-on-mac
+draft: false
 ---
 
 This is the procedure for installing anyenv on Mac. I encountered a few issues, so here are my notes.
