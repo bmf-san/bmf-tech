@@ -8,6 +8,15 @@ template: picks.html
 draft: false
 translation_key: picks
 listing_slugs:
+  - jose-overview
+  - oauth-2-1-security-bcp
+  - oidc-discovery-metadata
+  - access-token-validation-revocation
+  - oidc-logout-security-event-token
+  - dynamic-client-registration
+  - sender-constrained-tokens-mtls-dpop
+  - service-to-service-authentication
+  - spa-token-storage-bff
   - platform-engineering-and-systems-thinking
   - systems-thinking-basics
   - accidental-complexity-and-missing-decision-records
