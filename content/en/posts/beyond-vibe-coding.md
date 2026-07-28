@@ -12,13 +12,13 @@ tags:
   - Generative AI
 translation_key: beyond-vibe-coding
 books:
-  - asin: "TODO-ASIN-03"
+  - asin: "4814401426"
     title: "バイブコーディングを超えて"
 draft: false
 ---
 
 
-I read [Beyond Vibe Coding](https://amzn.to/TODO-03).
+I read [Beyond Vibe Coding](https://amzn.to/4pRepze).
 
 This book looks past "vibe coding"—letting AI write code on a hunch—toward how to use AI well in real work. Throwing a prompt and running with the vibe cannot sustain the continuous development and maintenance of complex software.
 

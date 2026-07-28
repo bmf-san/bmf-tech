@@ -11,13 +11,13 @@ tags:
   - 子育て
 translation_key: the-book-you-wish-your-parents-had-read
 books:
-  - asin: "TODO-ASIN-10"
+  - asin: "429611767X"
     title: "自分の親に読んでほしかった本"
 draft: false
 ---
 
 
-[自分の親に読んでほしかった本](https://amzn.to/TODO-10)を読んだ。
+[自分の親に読んでほしかった本](https://amzn.to/4x58qsP)を読んだ。
 
 イギリスの心理療法士フィリッパ・ペリーによる、子育てと親子関係についての一冊。しつけのテクニック集ではなく、子どもとの関係をどう築くか、親自身の感情とどう向き合うかに重きを置いている。
 

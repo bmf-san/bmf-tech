@@ -11,13 +11,13 @@ tags:
   - Design
 translation_key: simplicity
 books:
-  - asin: "TODO-ASIN-09"
+  - asin: "481440171X"
     title: "シンプリシティ ―持続可能かつ人間的で効果的なソフトウェア開発"
 draft: false
 ---
 
 
-I read [Simplicity: Sustainable, Humane, and Effective Software Development](https://amzn.to/TODO-09).
+I read [Simplicity: Sustainable, Humane, and Effective Software Development](https://amzn.to/4x7sD1k).
 
 This book asks how to keep software development simple when complexity threatens to swallow it. It goes past technical tricks and writes from a larger view: what sustainable and humane development looks like.
 

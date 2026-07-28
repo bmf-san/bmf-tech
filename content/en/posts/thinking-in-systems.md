@@ -12,13 +12,13 @@ tags:
   - Thinking Methods
 translation_key: thinking-in-systems
 books:
-  - asin: "TODO-ASIN-01"
+  - asin: "4862761801"
     title: "世界はシステムで動く ―いま起きていることの本質をつかむ考え方"
 draft: false
 ---
 
 
-I read [Thinking in Systems: A Primer](https://amzn.to/TODO-01).
+I read [Thinking in Systems: A Primer](https://amzn.to/4wmhbyF).
 
 Donella Meadows wrote this classic on systems thinking. She reframes the world not as a collection of parts but as a web of interconnected relationships, using concepts such as stocks, flows, feedback loops, and delays.
 

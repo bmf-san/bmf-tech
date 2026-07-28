@@ -12,13 +12,13 @@ tags:
   - Design
 translation_key: api-hands-on-learning
 books:
-  - asin: "TODO-ASIN-02"
+  - asin: "4814401620"
     title: "APIハンズオンラーニング"
 draft: false
 ---
 
 
-I read [Hands-On API Learning](https://amzn.to/TODO-02).
+I read [Hands-On API Learning](https://amzn.to/3Tp7EIL).
 
 This practical book walks through API design, implementation, testing, and operation while you build things yourself. It goes past abstract principles and deepens your understanding as you actually create an API.
 

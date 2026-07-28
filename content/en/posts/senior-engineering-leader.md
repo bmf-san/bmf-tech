@@ -12,13 +12,13 @@ tags:
   - Leadership
 translation_key: senior-engineering-leader
 books:
-  - asin: "TODO-ASIN-07"
+  - asin: "481440168X"
     title: "シニアエンジニアリングリーダーのしごと"
 draft: false
 ---
 
 
-I read [The Work of a Senior Engineering Leader](https://amzn.to/TODO-07).
+I read [The Work of a Senior Engineering Leader](https://amzn.to/4wYFMJY).
 
 This book speaks to leaders who have stepped up from hands-on engineering into a role that shapes teams and organizations. It addresses the challenges you meet when you shift from delivering as an individual to delivering through others.
 

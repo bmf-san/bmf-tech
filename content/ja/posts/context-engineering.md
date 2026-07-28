@@ -12,13 +12,13 @@ tags:
   - 生成AI
 translation_key: context-engineering
 books:
-  - asin: "TODO-ASIN-04"
+  - asin: "4297154196"
     title: "コンテキストエンジニアリング"
 draft: false
 ---
 
 
-[コンテキストエンジニアリング](https://amzn.to/TODO-04)を読んだ。
+[コンテキストエンジニアリング](https://amzn.to/4fCkdHR)を読んだ。
 
 LLMに与える文脈（コンテキスト）をどう設計するかに焦点を当てた一冊。プロンプトの言い回しを工夫するだけでなく、モデルに渡す情報の選び方や構造化、検索や記憶との組み合わせまでを扱っている。
 

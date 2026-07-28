@@ -11,13 +11,13 @@ tags:
   - 設計
 translation_key: good-code-bad-code
 books:
-  - asin: "TODO-ASIN-06"
+  - asin: "4798068160"
     title: "Good Code, Bad Code"
 draft: false
 ---
 
 
-[Good Code, Bad Code](https://amzn.to/TODO-06)を読んだ。
+[Good Code, Bad Code](https://amzn.to/44Xjuwa)を読んだ。
 
 良いコードと悪いコードの違いを、抽象化やモジュール性、エラーハンドリング、テストといった観点から具体的に示してくれる一冊。「なんとなく良さそう」で片づけがちなコードの品質を、判断できる基準に落とし込んでくれる。
 

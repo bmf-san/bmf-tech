@@ -12,13 +12,13 @@ tags:
   - 生成AI
 translation_key: prompt-engineering-for-llms
 books:
-  - asin: "TODO-ASIN-05"
+  - asin: "4814401132"
     title: "LLMのプロンプトエンジニアリング"
 draft: false
 ---
 
 
-[LLMのプロンプトエンジニアリング](https://amzn.to/TODO-05)を読んだ。
+[LLMのプロンプトエンジニアリング](https://amzn.to/3TmcN4h)を読んだ。
 
 プロンプトエンジニアリングを体系的に整理したオライリーの一冊。思いつきのテクニック集ではなく、なぜそのプロンプトが効くのかという原理から解説してくれる。
 

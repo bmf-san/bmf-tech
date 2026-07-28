@@ -12,13 +12,13 @@ tags:
   - 戦略
 translation_key: engineering-strategy
 books:
-  - asin: "TODO-ASIN-08"
+  - asin: "4814401701"
     title: "エンジニアリング戦略の作り方"
 draft: false
 ---
 
 
-[エンジニアリング戦略の作り方](https://amzn.to/TODO-08)を読んだ。
+[エンジニアリング戦略の作り方](https://amzn.to/3RCnVcz)を読んだ。
 
 エンジニアリング組織における「戦略」を、抽象論ではなく作り方の手順として示してくれる一冊。多くの現場でありがちな、掛け声だけで中身のない戦略や、現実と噛み合わない理想論を避けるための考え方が詰まっている。
 

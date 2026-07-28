@@ -12,13 +12,13 @@ tags:
   - リーダーシップ
 translation_key: senior-engineering-leader
 books:
-  - asin: "TODO-ASIN-07"
+  - asin: "481440168X"
     title: "シニアエンジニアリングリーダーのしごと"
 draft: false
 ---
 
 
-[シニアエンジニアリングリーダーのしごと](https://amzn.to/TODO-07)を読んだ。
+[シニアエンジニアリングリーダーのしごと](https://amzn.to/4wYFMJY)を読んだ。
 
 エンジニアリングの現場から一段上がり、組織やチームへ影響を与える立場になったリーダーのための一冊。個人として手を動かす働き方から、他者を通じて成果を出す働き方へと軸を移すときに直面する課題を扱っている。
 

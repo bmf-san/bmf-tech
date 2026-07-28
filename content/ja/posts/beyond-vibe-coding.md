@@ -12,13 +12,13 @@ tags:
   - 生成AI
 translation_key: beyond-vibe-coding
 books:
-  - asin: "TODO-ASIN-03"
+  - asin: "4814401426"
     title: "バイブコーディングを超えて"
 draft: false
 ---
 
 
-[バイブコーディングを超えて](https://amzn.to/TODO-03)を読んだ。
+[バイブコーディングを超えて](https://amzn.to/4pRepze)を読んだ。
 
 AIにコードを書かせる「バイブコーディング」の先を見据えて、実務でAIを使いこなすための考え方を扱った一冊。プロンプトを投げて雰囲気で動かすだけでは、複雑なソフトウェアを継続的に開発・保守しつづけるのは難しい。
 

@@ -12,13 +12,13 @@ tags:
   - Generative AI
 translation_key: prompt-engineering-for-llms
 books:
-  - asin: "TODO-ASIN-05"
+  - asin: "4814401132"
     title: "LLMのプロンプトエンジニアリング"
 draft: false
 ---
 
 
-I read [Prompt Engineering for LLMs](https://amzn.to/TODO-05).
+I read [Prompt Engineering for LLMs](https://amzn.to/3TmcN4h).
 
 This O'Reilly book organizes prompt engineering in a systematic way. Rather than collecting ad-hoc tricks, it explains the principles behind why a given prompt works.
 

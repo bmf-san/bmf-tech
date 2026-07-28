@@ -12,13 +12,13 @@ tags:
   - Business Strategy
 translation_key: engineering-strategy
 books:
-  - asin: "TODO-ASIN-08"
+  - asin: "4814401701"
     title: "エンジニアリング戦略の作り方"
 draft: false
 ---
 
 
-I read [How to Craft an Engineering Strategy](https://amzn.to/TODO-08).
+I read [How to Craft an Engineering Strategy](https://amzn.to/3RCnVcz).
 
 This book presents "strategy" in an engineering organization as a concrete procedure rather than an abstract idea. It packs in ways to avoid the hollow slogans and disconnected ideals that many teams fall into.
 

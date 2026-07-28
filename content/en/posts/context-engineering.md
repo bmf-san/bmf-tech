@@ -12,13 +12,13 @@ tags:
   - Generative AI
 translation_key: context-engineering
 books:
-  - asin: "TODO-ASIN-04"
+  - asin: "4297154196"
     title: "コンテキストエンジニアリング"
 draft: false
 ---
 
 
-I read [Context Engineering](https://amzn.to/TODO-04).
+I read [Context Engineering](https://amzn.to/4fCkdHR).
 
 This book focuses on how to design the context you feed to an LLM. It goes past tweaking prompt wording and covers how you select and structure the information you hand to the model, along with how you combine it with retrieval and memory.
 

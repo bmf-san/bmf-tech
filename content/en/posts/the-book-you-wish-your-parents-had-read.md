@@ -11,13 +11,13 @@ tags:
   - Parenting
 translation_key: the-book-you-wish-your-parents-had-read
 books:
-  - asin: "TODO-ASIN-10"
+  - asin: "429611767X"
     title: "自分の親に読んでほしかった本"
 draft: false
 ---
 
 
-I read [The Book You Wish Your Parents Had Read](https://amzn.to/TODO-10).
+I read [The Book You Wish Your Parents Had Read](https://amzn.to/4x58qsP).
 
 British psychotherapist Philippa Perry wrote this book about parenting and the parent-child relationship. Rather than collecting discipline techniques, it puts weight on how you build a relationship with your child and how you face your own emotions.
 
