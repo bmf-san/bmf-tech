@@ -11,7 +11,7 @@
     "format:check": "prettier --check \"**/*.{ts,js,json,md}\""
   },
   "devDependencies": {
-    "@playwright/test": "^1.61.1",
+    "@playwright/test": "^1.62.0",
     "eslint": "^10.7.0",
     "eslint-config-prettier": "^10.1.8",
     "http-server": "^14.1.1",
