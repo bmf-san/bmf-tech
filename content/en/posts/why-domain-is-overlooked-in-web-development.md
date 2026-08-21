@@ -86,7 +86,7 @@ Frameworks such as Ruby on Rails and Laravel mapped database tables directly ont
 
 That was a success, not a mistake. This productivity fueled the explosive growth of the web.
 
-The trouble is that the success invites an illusion: the database schema is the domain. A schema reflects persistence concerns above all. Normalization, indexes, and foreign keys serve storage and retrieval, not the business.
+The trouble is that the success invites an illusion: the database schema is the domain. A schema reflects persistence concerns above all. Normalization, indices, and foreign keys serve storage and retrieval, not the business.
 
 If a product grows while that illusion holds, concepts that the business treats as entirely separate end up fused, for no better reason than sharing a table.
 
