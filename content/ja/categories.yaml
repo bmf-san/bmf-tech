@@ -12,6 +12,8 @@
   translation_key: career
 - name: コンピューターアーキテクチャ
   translation_key: computer-architecture
+- name: セキュリティ
+  translation_key: security
 - name: ツール
   translation_key: tools
 - name: テスト
