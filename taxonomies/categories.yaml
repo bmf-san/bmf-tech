@@ -21,6 +21,7 @@
 - name: Poem
 - name: Poetry
 - name: Reflection
+- name: Security
 - name: Testing
 - name: Tools
 - name: アプリケーション
@@ -29,6 +30,7 @@
 - name: インフラストラクチャ
 - name: キャリア
 - name: コンピューターアーキテクチャ
+- name: セキュリティ
 - name: ツール
 - name: テスト
 - name: データベース

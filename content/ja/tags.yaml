@@ -112,6 +112,8 @@
   translation_key: css
 - name: CTO
   translation_key: cto
+- name: CVSS
+  translation_key: cvss
 - name: Dart
   translation_key: dart
 - name: Datadog
@@ -332,6 +334,8 @@
   translation_key: newsql
 - name: Nginx
   translation_key: nginx
+- name: NIST
+  translation_key: nist
 - name: node-exporter
   translation_key: node-exporter
 - name: Node.js
@@ -358,6 +362,8 @@
   translation_key: os
 - name: OSS
   translation_key: oss
+- name: OWASP
+  translation_key: owasp
 - name: O記法
   translation_key: big-o-notation
 - name: PACELC
@@ -816,6 +822,8 @@
   translation_key: round-robin
 - name: ランナーテクニック
   translation_key: runner-technique
+- name: リスクアセスメント
+  translation_key: risk-assessment
 - name: リスコフの置換原則
   translation_key: liskov-substitution-principle
 - name: リトライ

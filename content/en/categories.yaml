@@ -37,6 +37,8 @@
 - name: Poem
   translation_key: poem
 - name: Poetry
+- name: Security
+  translation_key: security
 - name: Testing
   translation_key: testing
 - name: Tools
