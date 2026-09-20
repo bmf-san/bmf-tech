@@ -218,6 +218,8 @@
   translation_key: cursor-pagination
 - name: Customer Success
   translation_key: customer-success
+- name: CVSS
+  translation_key: cvss
 - name: Dart
   translation_key: dart
 - name: Data Structures
@@ -598,6 +600,8 @@
   translation_key: newsql
 - name: Nginx
   translation_key: nginx
+- name: NIST
+  translation_key: nist
 - name: node-exporter
   translation_key: node-exporter
 - name: Node.js
@@ -644,6 +648,8 @@
   translation_key: os
 - name: OSS
   translation_key: oss
+- name: OWASP
+  translation_key: owasp
 - name: PACELC
   translation_key: pacelc
 - name: Pact
@@ -780,6 +786,8 @@
   translation_key: retry
 - name: Reverse Proxy
   translation_key: reverse-proxy
+- name: Risk Assessment
+  translation_key: risk-assessment
 - name: Riverpod
   translation_key: riverpod
 - name: Round Robin

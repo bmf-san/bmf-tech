@@ -66,6 +66,7 @@
 - name: CQRS
 - name: CTO
 - name: CUI
+- name: CVSS
 - name: Cache
 - name: Callback
 - name: Capacity Planning
@@ -265,6 +266,7 @@
 - name: New Relic
 - name: NewSQL
 - name: Nginx
+- name: NIST
 - name: Node.js
 - name: Non-Temporal
 - name: Normalization
@@ -275,6 +277,7 @@
 - name: OOP
 - name: OS
 - name: OSS
+- name: OWASP
 - name: Offset Pagination
 - name: Open Addressing Hash Table
 - name: Open Policy Agent
@@ -362,6 +365,7 @@
 - name: Retrospective
 - name: Retry
 - name: Reverse Proxy
+- name: Risk Assessment
 - name: Round Robin
 - name: Router
 - name: Ruby
@@ -680,6 +684,7 @@
 - name: ユニコーン
 - name: ラウンドロビン
 - name: ランナーテクニック
+- name: リスクアセスメント
 - name: リスコフの置換原則
 - name: リトライ
 - name: リニアサーチ
