@@ -7,7 +7,6 @@ author: bmf-san
 categories:
   - アーキテクチャ
 tags:
-  - アーキテクチャ
   - 書評
 translation_key: evolutionary-architecture-supporting-change
 books:

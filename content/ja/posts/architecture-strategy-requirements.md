@@ -9,7 +9,6 @@ categories:
 tags:
   - 書評
   - アーキテクチャ戦略
-  - アーキテクチャ
 translation_key: architecture-strategy-requirements
 books:
   - asin: "4798176303"

@@ -7,7 +7,6 @@ author: bmf-san
 categories:
   - セキュリティ
 tags:
-  - セキュリティ
   - 書評
   - 信頼性
 translation_key: secure-reliable-system-design-google-sre

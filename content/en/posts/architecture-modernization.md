@@ -8,7 +8,6 @@ categories:
   - Architecture
 tags:
   - Book Review
-  - Architecture
   - DDD
   - Team Topologies
 translation_key: architecture-modernization

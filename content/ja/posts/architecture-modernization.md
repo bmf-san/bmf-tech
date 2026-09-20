@@ -8,7 +8,6 @@ categories:
   - アーキテクチャ
 tags:
   - 書評
-  - アーキテクチャ
   - DDD
   - チームトポロジー
 translation_key: architecture-modernization

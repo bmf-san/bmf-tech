@@ -8,7 +8,6 @@ categories:
   - Security
 tags:
   - Book Review
-  - Security
   - Design
   - DDD
 translation_key: secure-by-design-software

@@ -8,7 +8,6 @@ categories:
   - Architecture
 tags:
   - Architect
-  - Architecture
   - Design
   - Fundamental Information Technology Engineer
   - Book Review

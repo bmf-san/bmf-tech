@@ -7,7 +7,6 @@ author: bmf-san
 categories:
   - Architecture
 tags:
-  - Architecture
   - System Design
   - Book Review
 translation_key: software-architecture-mistakes

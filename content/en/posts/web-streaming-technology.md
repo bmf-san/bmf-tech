@@ -10,6 +10,7 @@ tags:
   - Cache
   - Reverse Proxy
   - CDN
+  - Book Review
 translation_key: web-streaming-technology
 books:
   - asin: "4297119250"

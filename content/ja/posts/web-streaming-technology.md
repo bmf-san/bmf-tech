@@ -10,6 +10,7 @@ tags:
   - キャッシュ
   - リバースプロキシ
   - CDN
+  - 書評
 translation_key: web-streaming-technology
 books:
   - asin: "4297119250"

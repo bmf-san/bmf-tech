@@ -7,7 +7,6 @@ author: bmf-san
 categories:
   - Architecture
 tags:
-  - Architecture
   - Book Review
 translation_key: software-architect-97-things
 books:

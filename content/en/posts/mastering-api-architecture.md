@@ -10,7 +10,6 @@ tags:
   - Book Review
   - API
   - Microservices
-  - Architecture
 translation_key: mastering-api-architecture
 books:
   - asin: "4814400896"

@@ -9,7 +9,6 @@ categories:
 tags:
   - システム設計
   - アーキテクチャ戦略
-  - アーキテクチャ
   - アーキテクト
   - 書評
 translation_key: principles-of-system-architecture

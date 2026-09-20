@@ -8,7 +8,7 @@ categories:
   - アーキテクチャ
 tags:
   - SaaS
-  - アーキテクチャ
+  - 書評
 translation_key: building-multitenant-saas-architecture
 books:
   - asin: "4814401019"

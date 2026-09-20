@@ -8,7 +8,6 @@ categories:
 tags:
   - System Design
   - Architecture Strategy
-  - Architecture
   - Architect
   - Book Review
 description: "Principles of Building System Architecture: Three Mindsets IT Architects Should Have"

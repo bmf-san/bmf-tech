@@ -9,7 +9,6 @@ categories:
 tags:
   - Book Review
   - Architecture Strategy
-  - Architecture
 translation_key: architecture-strategy-requirements
 books:
   - asin: "4798176303"

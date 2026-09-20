@@ -9,7 +9,6 @@ categories:
 tags:
   - 書評
   - API
-  - セキュリティ
 translation_key: secure-api-design-principles
 books:
   - asin: "4798196339"

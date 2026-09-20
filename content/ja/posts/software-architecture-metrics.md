@@ -8,7 +8,6 @@ categories:
   - アーキテクチャ
 tags:
   - 書評
-  - アーキテクチャ
   - メトリクス
 translation_key: software-architecture-metrics
 books:
