@@ -5,7 +5,7 @@ slug: logistics-systems-knowledge-and-skills-for-engineers
 date: 2024-04-04T00:00:00Z
 author: bmf-san
 categories:
-  - アーキテクチャ
+  - ビジネス
 tags:
   - 書評
   - 物流

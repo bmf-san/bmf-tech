@@ -5,7 +5,7 @@ slug: legacy-code-improvement-guide
 date: 2017-03-12T00:00:00Z
 author: bmf-san
 categories:
-  - アーキテクチャ
+  - アプリケーション
 tags:
   - レガシーコード
   - 書評

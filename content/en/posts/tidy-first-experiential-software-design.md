@@ -5,7 +5,7 @@ slug: tidy-first-experiential-software-design
 date: 2025-01-06T00:00:00Z
 author: bmf-san
 categories:
-  - Architecture
+  - Application
 tags:
   - Book Review
   - Software

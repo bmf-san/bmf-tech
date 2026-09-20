@@ -5,7 +5,7 @@ slug: knowledge-and-skills-in-production-management-for-engineers
 date: 2024-04-04T00:00:00Z
 author: bmf-san
 categories:
-  - Architecture
+  - Business
 tags:
   - Production Management
   - Book Review

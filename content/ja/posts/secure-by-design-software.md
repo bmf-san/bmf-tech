@@ -5,7 +5,7 @@ slug: secure-by-design-software
 date: 2024-09-07T00:00:00Z
 author: bmf-san
 categories:
-  - アーキテクチャ
+  - セキュリティ
 tags:
   - 書評
   - セキュリティ

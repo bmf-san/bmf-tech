@@ -5,7 +5,7 @@ slug: digital-identity-overview
 date: 2026-02-20T00:00:00Z
 author: bmf-san
 categories:
-  - Architecture
+  - Security
 tags:
   - Book Review
   - Authentication

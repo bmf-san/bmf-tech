@@ -5,7 +5,7 @@ slug: financial-system-knowledge-skills
 date: 2024-04-04T00:00:00Z
 author: bmf-san
 categories:
-  - Architecture
+  - Business
 tags:
   - Finance
   - Book Review

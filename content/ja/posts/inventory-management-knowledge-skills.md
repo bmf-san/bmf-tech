@@ -5,7 +5,7 @@ slug: inventory-management-knowledge-skills
 date: 2024-04-04T00:00:00Z
 author: bmf-san
 categories:
-  - アーキテクチャ
+  - ビジネス
 tags:
   - 在庫管理
   - 書評

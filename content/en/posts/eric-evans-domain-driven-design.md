@@ -5,7 +5,7 @@ slug: eric-evans-domain-driven-design
 date: 2016-12-09T00:00:00Z
 author: bmf-san
 categories:
-  - Application
+  - Architecture
 tags:
   - DDD
   - Book Review

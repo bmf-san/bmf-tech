@@ -5,7 +5,7 @@ slug: knowledge-and-skills-in-production-management-for-engineers
 date: 2024-04-04T00:00:00Z
 author: bmf-san
 categories:
-  - アーキテクチャ
+  - ビジネス
 tags:
   - 生産管理
   - 書評
