@@ -7,7 +7,6 @@ author: bmf-san
 categories:
   - Architecture
 tags:
-  - Architecture
   - Design
   - System Design
   - Book Review

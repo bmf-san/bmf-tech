@@ -8,7 +8,6 @@ categories:
   - Architecture
 tags:
   - Clean Architecture
-  - Architecture
   - Book Review
 translation_key: clean-architecture-software-structure-design
 books:

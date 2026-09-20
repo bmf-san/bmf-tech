@@ -10,7 +10,6 @@ tags:
   - 書評
   - API
   - マイクロサービス
-  - アーキテクチャ
 translation_key: mastering-api-architecture
 books:
   - asin: "4814400896"

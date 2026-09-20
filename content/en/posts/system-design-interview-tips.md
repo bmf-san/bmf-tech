@@ -8,7 +8,6 @@ categories:
   - Architecture
 tags:
   - System Design
-  - Architecture
   - Book Review
 translation_key: system-design-interview-tips
 books:

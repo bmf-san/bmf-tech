@@ -8,7 +8,6 @@ categories:
   - アーキテクチャ
 tags:
   - 書評
-  - アーキテクチャ
 translation_key: large-scale-data-management-best-practices
 books:
   - asin: "481440008X"

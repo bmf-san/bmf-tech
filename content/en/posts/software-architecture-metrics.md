@@ -8,7 +8,6 @@ categories:
   - Architecture
 tags:
   - Book Review
-  - Architecture
   - Metrics
 translation_key: software-architecture-metrics
 books:

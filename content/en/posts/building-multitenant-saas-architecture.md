@@ -8,7 +8,7 @@ categories:
   - Architecture
 tags:
   - SaaS
-  - Architecture
+  - Book Review
 translation_key: building-multitenant-saas-architecture
 books:
   - asin: "4814401019"

@@ -8,7 +8,6 @@ categories:
   - アーキテクチャ
 tags:
   - システム設計
-  - アーキテクチャ
   - 書評
 translation_key: system-design-interview-tips
 books:

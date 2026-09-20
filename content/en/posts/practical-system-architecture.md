@@ -7,9 +7,7 @@ author: bmf-san
 categories:
   - Architecture
 tags:
-  - Architecting
   - Architecture Strategy
-  - Architecture
   - Architect
   - Design
   - System Design

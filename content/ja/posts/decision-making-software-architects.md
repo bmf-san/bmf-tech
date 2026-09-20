@@ -7,7 +7,6 @@ author: bmf-san
 categories:
   - アーキテクチャ
 tags:
-  - アーキテクチャ
   - アーキテクト
   - システム設計
   - 設計

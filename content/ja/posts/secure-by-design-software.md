@@ -8,7 +8,6 @@ categories:
   - セキュリティ
 tags:
   - 書評
-  - セキュリティ
   - 設計
   - DDD
 translation_key: secure-by-design-software

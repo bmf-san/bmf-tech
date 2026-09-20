@@ -7,7 +7,6 @@ author: bmf-san
 categories:
   - Architecture
 tags:
-  - Architecture
   - Architect
   - System Design
   - Design

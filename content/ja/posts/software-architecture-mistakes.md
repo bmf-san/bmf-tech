@@ -7,7 +7,6 @@ author: bmf-san
 categories:
   - アーキテクチャ
 tags:
-  - アーキテクチャ
   - システム設計
   - 書評
 translation_key: software-architecture-mistakes
