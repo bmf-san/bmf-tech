@@ -24,6 +24,7 @@ listing_slugs:
   - abstraction-trap-in-architecture
   - platform-viability-conditions
   - product-development-vs-platform-development
+  - engineering-management-as-a-deck
   - migrating-bmf-tech-from-gobel-to-gohan
   - engineering-in-ai-reflections
   - github-agentic-workflow-llm-prompt-management
