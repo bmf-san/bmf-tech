@@ -1,6 +1,6 @@
 ---
 title: 'Clean Code Cookbook: A Recipe Collection for Improving Code Design and Quality'
-description: 'Clean Code Cookbook: A Recipe Collection for Improving Code Design and Quality'
+description: "A review of the Clean Code Cookbook. Centered on concepts like bijection and accidental complexity, it lets you learn techniques for improving code design and quality in the form of a recipe collection. It comprehensively covers well-known principles too, making it a book worth keeping close."
 slug: clean-code-cookbook
 date: 2025-10-26T00:00:00Z
 author: bmf-san

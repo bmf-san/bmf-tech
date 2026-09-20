@@ -1,6 +1,6 @@
 ---
 title: Customer Success
-description: "Customer Success"
+description: "A review of Customer Success. Unlike customer support, which centers on handling complaints, it explains customer success as the work of helping customers succeed. You learn how, in subscription businesses, it maximizes LTV and serves as a profit center that contributes to revenue, positioned within the sales process of 'The Model.'"
 slug: customer-success
 date: 2024-04-16T00:00:00Z
 author: bmf-san

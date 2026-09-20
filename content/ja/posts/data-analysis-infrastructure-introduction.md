@@ -1,6 +1,6 @@
 ---
 title: データ分析基盤構築入門
-description: "データ分析基盤構築入門"
+description: "『データ分析基盤構築入門』の書評。ログの収集・蓄積から分析までを支えるデータ基盤をどう作るかを解説する一冊。実際にログの収集・分析基盤を構築する際の参考になる、実務寄りの入門書。"
 slug: data-analysis-infrastructure-introduction
 date: 2020-06-19T00:00:00Z
 author: bmf-san

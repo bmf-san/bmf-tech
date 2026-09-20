@@ -1,6 +1,6 @@
 ---
 title: Context Engineering
-description: "Context Engineering"
+description: "A review of Context Engineering. It focuses on how to design the context you give an LLM. Beyond wording prompts, it covers choosing and structuring the information you pass in and combining it with retrieval and memory. Closely tied to the challenges of building RAG and agents, it offers a perspective for lifting ad hoc tweaks into reproducible engineering."
 slug: context-engineering
 date: 2026-07-28T00:00:00Z
 author: bmf-san

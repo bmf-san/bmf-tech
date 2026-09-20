@@ -1,6 +1,6 @@
 ---
 title: 'A Complete Guide to HR and Labor Practices'
-description: 'A Complete Guide to HR and Labor Practices'
+description: "A review of a book that gives a complete picture of HR and labor practices. An introductory guide for broadly learning the practical work of human resources and labor administration in one volume, and a good foothold when you want to grasp the overall landscape of systems and procedures around HR."
 slug: comprehensive-guide-to-hr-and-labor-practices
 date: 2024-04-18T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: 'Concrete and Abstract: The Mechanism of Intelligence that Changes How We See the World'
-description: "Concrete and Abstract: The Mechanism of Intelligence that Changes How We See the World"
+description: "A review of Concrete and Abstract. It focuses on the importance of abstract thinking and the contrast between two modes of thought, the concrete and the abstract. It gently unpacks a theme most people finish life without ever studying systematically, offering discoveries both for those who struggle with abstraction and those who naturally think in it."
 slug: concrete-abstract-intelligence
 date: 2025-12-29T00:00:00Z
 author: bmf-san

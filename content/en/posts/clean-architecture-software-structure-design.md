@@ -1,6 +1,6 @@
 ---
 title: 'Learning Software Structure and Design from Clean Architecture Experts'
-description: 'Learning Software Structure and Design from Clean Architecture Experts'
+description: "A review of Clean Architecture. Rather than giving a strict definition, it describes the traits and rules of a design that can be called clean. It frames the goal of software architecture as minimizing the people needed to build and maintain a system, explaining dependency inversion through polymorphism and independent deployability and developability."
 slug: clean-architecture-software-structure-design
 date: 2018-08-01T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: "Creating Value in the Age of Generative AI"
-description: "Creating Value in the Age of Generative AI"
+description: "A review of Creating Value in the Age of Generative AI. Going beyond the tooling question of how to use generative AI, it addresses how to create value in the generative AI era from a practitioner's viewpoint. Organized around mindset, skills, data, and use cases, it centers on the thinking that connects technology to organizational and business outcomes."
 slug: creating-value-generative-ai-era
 date: 2026-09-20T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: How to Read Books
-description: "How to Read Books"
+description: "A review of How to Read Books. It teaches both how to read and the attitude a reader should have. The 'inspectional reading' it describes-grasping each chapter's summary and the book's overall argument before diving in-stood out, and practicing it changes how easily and deeply you read. A reminder of the value of learning the process of reading."
 slug: book-reading-guide
 date: 2025-02-15T00:00:00Z
 author: bmf-san

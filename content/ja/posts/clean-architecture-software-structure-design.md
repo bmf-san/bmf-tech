@@ -1,6 +1,6 @@
 ---
 title: Clean Architecture 達人に学ぶソフトウェアの構造と設計
-description: "Clean Architecture 達人に学ぶソフトウェアの構造と設計"
+description: "『Clean Architecture 達人に学ぶソフトウェアの構造と設計』の書評。Clean Architectureの明確な定義を与えるのではなく、Cleanと言える設計の特徴や規則を語る一冊。その目的を構築・保守に必要な人材の最小化と捉え、ポリモーフィズムによる依存関係逆転や独立デプロイ・開発可能性を説く。"
 slug: clean-architecture-software-structure-design
 date: 2018-08-01T00:00:00Z
 author: bmf-san
