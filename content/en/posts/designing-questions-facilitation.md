@@ -7,7 +7,7 @@ categories:
   - Business
 tags:
   - Book Review
-description: "Designing Questions: Facilitating Creative Dialogue"
+description: "A review of Designing Questions: Facilitating Creative Dialogue. A book on how to frame and think about questions. From the view that a question's quality directly shapes the outcome's quality, it teaches how to draw out and discover questions beyond existing frames, a stimulating read for creativity."
 translation_key: designing-questions-facilitation
 books:
   - asin: "4761527439"

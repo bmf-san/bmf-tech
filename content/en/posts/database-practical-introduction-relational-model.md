@@ -1,6 +1,6 @@
 ---
 title: 'Practical Introduction to Databases: Efficient SQL through the Relational Model'
-description: 'Practical Introduction to Databases: Efficient SQL through the Relational Model'
+description: "A review of a practical introduction to databases taught from theory via the relational model. Learning databases from relational theory helps organize how you approach RDBs, grounding the principles behind efficient SQL in set theory and logic."
 slug: database-practical-introduction-relational-model
 date: 2024-04-01T00:00:00Z
 author: bmf-san

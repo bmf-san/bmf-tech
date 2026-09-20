@@ -1,6 +1,6 @@
 ---
 title: 'Distributed Services with Go'
-description: 'Distributed Services with Go'
+description: "A review of Distributed Services with Go. A hands-on book for building distributed services in Go. It deepens practical understanding of modern techniques in a microservices context, the reasoning behind architectures, and how to implement them."
 slug: distributed-services-with-golang
 date: 2023-08-18T00:00:00Z
 author: bmf-san

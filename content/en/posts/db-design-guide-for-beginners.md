@@ -1,6 +1,6 @@
 ---
 title: 'A Comprehensive Guide to Database Design: For Those Who Don’t Want to Stop at Beginner Level'
-description: 'A Comprehensive Guide to Database Design: For Those Who Don’t Want to Stop at Beginner Level'
+description: "A review of a thorough guide to database design for those who don't want to stop at the beginner level. It explains DB design systematically and clearly, covering the essentials of normalization and table design as a guide for stepping beyond the basics."
 slug: db-design-guide-for-beginners
 date: 2024-04-11T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Driving Domain with Data Modeling - Towards Distributed and Loosely Coupled Core Systems
-description: "Driving Domain with Data Modeling - Towards Distributed and Loosely Coupled Core Systems"
+description: "A review of a book on driving the domain with data modeling. Centered on the concept of ledgers, it systematically explains data modeling for making core systems distributed and loosely coupled. It proposes splitting activity and management systems and a new 'balance' concept, offering practical guidance for DDD and microservices."
 slug: domain-driven-data-modeling
 date: 2025-08-11T00:00:00Z
 author: bmf-san

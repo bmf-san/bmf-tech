@@ -1,6 +1,6 @@
 ---
 title: 'Guide for Engineering Executives: Technical Leadership to Drive Organizational Success'
-description: "Guide for Engineering Executives: Technical Leadership to Drive Organizational Success"
+description: "A review of a guide for engineering executives. A book on the mindset and practice of leading a technical organization as a VP of Engineering or CTO. It covers hiring, org design, technical strategy, and alignment with executives, centered on running the whole organization as a system."
 slug: engineering-cto-leadership-guide
 date: 2026-02-20T00:00:00Z
 author: bmf-san

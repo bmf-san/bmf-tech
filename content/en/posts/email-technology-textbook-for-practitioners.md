@@ -1,6 +1,6 @@
 ---
 title: 'Practical Email Technology Handbook: From Basic Mechanisms to Protocols, Server Setup, Sending Domain Authentication, Attachments, Encryption, and Security Measures'
-description: "Practical Email Technology Handbook: From Basic Mechanisms to Protocols, Server Setup, Sending Domain Authentication, Attachments, Encryption, and Security Measures"
+description: "A review of a practical email technology handbook. It systematically explains email from basic mechanisms to protocols, server setup, sender domain authentication, encryption, and security measures, useful for catching up on email technology as a whole."
 slug: email-technology-textbook-for-practitioners
 date: 2024-02-21T00:00:00Z
 author: bmf-san

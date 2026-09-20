@@ -1,6 +1,6 @@
 ---
 title: 'The Work of an Engineering Manager: How to Become the Manager Your Team Needs'
-description: "The Work of an Engineering Manager: How to Become the Manager Your Team Needs"
+description: "A review of The Work of an Engineering Manager. A book on practical methods for making a team function as an EM. It prescribes remedies for the real challenges EMs face, such as 1:1s, feedback, hiring, and culture, plus delegation that separates accountability from execution."
 slug: engineering-manager-role-guide
 date: 2026-02-20T00:00:00Z
 author: bmf-san

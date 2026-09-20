@@ -8,7 +8,7 @@ categories:
 tags:
   - Architect
   - Book Review
-description: "Design It"
+description: "A review of Design It. A book for learning the role and responsibilities a software architect should fulfill. It positions the architect at the center of three forces, business, technology, and users, and lays out concrete duties such as framing problems from an engineering viewpoint."
 translation_key: design-it
 books:
   - asin: "4873118956"
