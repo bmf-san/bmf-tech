@@ -1,6 +1,6 @@
 ---
 title: Design It
-description: "Design It"
+description: "『Design It』の書評。ソフトウェアアーキテクトが果たすべき役割や責任を学べる一冊。アーキテクトをビジネス・技術・ユーザーの3要素の中心に立つ存在として捉え、エンジニアリング視点からの問題定義など具体的な責務を整理する。"
 slug: design-it
 date: 2019-11-25T00:00:00Z
 author: bmf-san

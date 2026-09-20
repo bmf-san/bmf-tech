@@ -1,6 +1,6 @@
 ---
 title: Engineer’s Intellectual Productivity Techniques ── Learning, Organizing, and Outputting Efficiently
-description: "Engineer’s Intellectual Productivity Techniques ── Learning, Organizing, and Outputting Efficiently"
+description: "A review of Engineer's Intellectual Productivity Techniques. A book that discusses methods for learning, organizing, and producing output efficiently, framed specifically for the engineering profession. It offers hints for rethinking and improving how you learn."
 slug: engineer-productive-learning
 date: 2019-05-14T00:00:00Z
 author: bmf-san

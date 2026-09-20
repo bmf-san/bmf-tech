@@ -1,6 +1,6 @@
 ---
 title: 'Everything About Digital Identity: Knowledge for Realizing a Secure and User-Centric Identity System'
-description: 'Everything About Digital Identity: Knowledge for Realizing a Secure and User-Centric Identity System'
+description: "A review of a comprehensive book on digital identity. It explains everything from concepts to implementation systematically and broadly, covering OAuth 2.0, OpenID Connect, SAML, zero trust, and decentralized identity, giving engineers who design and operate authn/authz platforms a wide perspective."
 slug: digital-identity-overview
 date: 2026-02-20T00:00:00Z
 author: bmf-san

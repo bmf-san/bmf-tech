@@ -1,6 +1,6 @@
 ---
 title: 'Decision-Making Techniques for Software Architects: Leveraging Leadership, Technology, and Product Management'
-description: "Decision-Making Techniques for Software Architects: Leveraging Leadership, Technology, and Product Management"
+description: "A review of Decision-Making Techniques for Software Architects. A groundbreaking book focused on how architects make decisions. It introduces five questions and seven principles for facing architectural uncertainty, offering solid learning for anyone heading into design."
 slug: decision-making-software-architects
 date: 2024-12-26T00:00:00Z
 author: bmf-san

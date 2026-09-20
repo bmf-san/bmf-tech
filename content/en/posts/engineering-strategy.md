@@ -1,6 +1,6 @@
 ---
 title: How to Craft an Engineering Strategy
-description: "How to Craft an Engineering Strategy"
+description: "A review of How to Craft an Engineering Strategy. It presents engineering organizational strategy not as abstraction but as concrete steps. Through diagnosing the situation, setting direction, and translating it into action, it teaches a template for building technical decisions along the organization's context, clarifying for those wary of the word strategy."
 slug: engineering-strategy
 date: 2026-07-28T00:00:00Z
 author: bmf-san
