@@ -13,7 +13,7 @@ tags:
 translation_key: programmer-mindset
 books:
   - asin: "4798068535"
-    title: "プログラマ脳"
+    title: "プログラマー脳"
 draft: false
 ---
 
