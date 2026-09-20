@@ -1,6 +1,6 @@
 ---
 title: All for SaaS
-description: "All for SaaS"
+description: "『ALL for SaaS SaaS立ち上げのすべて』の読書メモ。ASPとSaaSの違い、リカーリングレベニュー（繰延収益）、ユニットエコノミクスといった、SaaS事業を立ち上げ・運営するうえで押さえておきたい概念や指標を整理する。事業視点でSaaSを捉えたい人向け。"
 slug: all-for-saas
 date: 2024-04-16T00:00:00Z
 author: bmf-san

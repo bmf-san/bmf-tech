@@ -1,6 +1,6 @@
 ---
 title: 'Beginning SQL, 3rd Edition'
-description: 'Beginning SQL, 3rd Edition'
+description: "A review of Beginning SQL, 3rd Edition. An easy-to-understand SQL primer you will wish you had read early in your career, also just right for revisiting how to write basic queries and the underlying ideas, and easy to recommend to those starting out with SQL."
 slug: beginner-sql-third-edition
 date: 2024-04-01T00:00:00Z
 author: bmf-san

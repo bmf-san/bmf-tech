@@ -1,6 +1,6 @@
 ---
 title: 'Algorithm Encyclopedia Revised Edition: 33 Algorithms Illustrated'
-description: "Algorithm Encyclopedia Revised Edition: 33 Algorithms Illustrated"
+description: "A review of the illustrated algorithm guide covering 33 algorithms including sorting and searching. It explains them clearly with diagrams at the center, letting you grasp their behavior intuitively and making it a reference worth keeping close."
 slug: algorithm-illustrated-guide
 date: 2021-05-16T00:00:00Z
 author: bmf-san

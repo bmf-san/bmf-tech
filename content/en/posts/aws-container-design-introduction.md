@@ -1,6 +1,6 @@
 ---
 title: 'Introduction to AWS Container Design and Construction [Practical]'
-description: 'Introduction to AWS Container Design and Construction [Practical]'
+description: "A review of a practical introduction to AWS container design and construction. It clearly and carefully explains AWS container services, structured around real-world container operations, making it a good primer for engineers about to design and build container environments on AWS."
 slug: aws-container-design-introduction
 date: 2021-10-16T00:00:00Z
 author: bmf-san

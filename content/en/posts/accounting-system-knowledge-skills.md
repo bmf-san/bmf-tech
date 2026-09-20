@@ -1,6 +1,6 @@
 ---
 title: Knowledge and Skills of Accounting Systems for Engineers
-description: "Knowledge and Skills of Accounting Systems for Engineers"
+description: "A review of 'Knowledge and Skills of Accounting Systems for Engineers.' Assuming a grounding in accounting and bookkeeping, it explains how an accounting system turns various inputs into outputs, helping engineers who find accounting daunting grasp the big picture."
 slug: accounting-system-knowledge-skills
 date: 2024-04-04T00:00:00Z
 author: bmf-san

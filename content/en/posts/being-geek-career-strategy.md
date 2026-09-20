@@ -1,6 +1,6 @@
 ---
 title: 'Being Geek: Career Strategies to Stay a Geek'
-description: "Being Geek: Career Strategies to Stay a Geek"
+description: "A review of Being Geek. Written by a geek, but even non-geeks who are engineers can learn a lot from it. The mindset and attitude of being an engineer are candidly told in a slightly quirky voice, making it a book you will want to keep close and revisit."
 slug: being-geek-career-strategy
 date: 2017-12-23T00:00:00Z
 author: bmf-san

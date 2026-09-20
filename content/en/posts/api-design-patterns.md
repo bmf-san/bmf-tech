@@ -1,6 +1,6 @@
 ---
 title: 'API Design Patterns'
-description: 'API Design Patterns'
+description: "A review of API Design Patterns. Starting from API design principles, it introduces a wealth of patterns such as resource-oriented (combining standard methods) and RPC-oriented (invoking procedures), teaching perspectives for good API design like being actionable, in a systematic way."
 slug: api-design-patterns
 date: 2024-08-26T00:00:00Z
 author: bmf-san

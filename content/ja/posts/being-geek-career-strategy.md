@@ -1,6 +1,6 @@
 ---
 title: Being Geek ギークであり続けるためのキャリア戦略
-description: "Being Geek ギークであり続けるためのキャリア戦略"
+description: "『Being Geek ギークであり続けるためのキャリア戦略』の書評。ギークが書いた本だが、ギークでなくともエンジニアであれば学びの多い一冊。エンジニアとしての姿勢や考え方が、少しクセのある語り口で率直に綴られており、手元に置いて折に触れ読み返したくなる。"
 slug: being-geek-career-strategy
 date: 2017-12-23T00:00:00Z
 author: bmf-san

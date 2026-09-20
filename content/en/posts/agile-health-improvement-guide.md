@@ -1,6 +1,6 @@
 ---
 title: '"Agile" Health Improvement Guide'
-description: '"Agile" Health Improvement Guide'
+description: "A review of the 'Agile' Health Improvement Guide. An unusual take that applies agile thinking from software development to improving health, describing concrete ways to continuously improve habits and behavior patterns that are easy to put into daily practice."
 slug: agile-health-improvement-guide
 date: 2022-12-02T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Hands-On API Learning
-description: "Hands-On API Learning"
+description: "A review of Hands-On API Learning. A practical book you learn by building, spanning API design, implementation, testing, and operations. It covers essentials for long-term operation such as design principles, documentation, versioning, and security, and works as a checklist for revisiting your own API design."
 slug: api-hands-on-learning
 date: 2026-07-28T00:00:00Z
 author: bmf-san

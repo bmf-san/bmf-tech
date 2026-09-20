@@ -1,6 +1,6 @@
 ---
 title: "Architecture Modernization: Socio-technical alignment of software, strategy, and structure"
-description: "Architecture Modernization: Socio-technical alignment of software, strategy, and structure"
+description: "A review of Architecture Modernization. A translation of the original by Nick Tune et al., it frames modernization as a sociotechnical effort that treats technology, organization, and strategy as one, introducing methods driven by business goals such as BVSSH value assessment and Wardley mapping."
 slug: architecture-modernization
 date: 2026-04-29T00:00:00Z
 author: bmf-san
