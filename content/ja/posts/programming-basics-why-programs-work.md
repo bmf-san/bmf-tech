@@ -5,7 +5,7 @@ slug: programming-basics-why-programs-work
 date: 2024-05-01T00:00:00Z
 author: bmf-san
 categories:
-  - アプリケーション
+  - コンピューターアーキテクチャ
 tags:
   - CPU
   - メモリ

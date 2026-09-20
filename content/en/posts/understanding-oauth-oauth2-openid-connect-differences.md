@@ -5,7 +5,7 @@ slug: understanding-oauth-oauth2-openid-connect-differences
 date: 2021-10-05T00:00:00Z
 author: bmf-san
 categories:
-  - Application
+  - Security
 tags:
   - OAuth
   - OpenID Connect

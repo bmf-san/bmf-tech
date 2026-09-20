@@ -5,7 +5,7 @@ slug: secure-reliable-system-design-google-sre
 date: 2024-05-24T00:00:00Z
 author: bmf-san
 categories:
-  - アーキテクチャ
+  - セキュリティ
 tags:
   - セキュリティ
   - 書評

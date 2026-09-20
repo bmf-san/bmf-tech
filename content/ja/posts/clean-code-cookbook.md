@@ -5,7 +5,7 @@ slug: clean-code-cookbook
 date: 2025-10-26T00:00:00Z
 author: bmf-san
 categories:
-  - アーキテクチャ
+  - アプリケーション
 tags:
   - 設計
   - 書評

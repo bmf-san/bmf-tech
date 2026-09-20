@@ -5,7 +5,7 @@ slug: passkeys-adoption-ux-implementation
 date: 2026-04-29T00:00:00Z
 author: bmf-san
 categories:
-  - Application
+  - Security
 tags:
   - Book Review
   - Authentication

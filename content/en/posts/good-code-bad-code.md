@@ -5,7 +5,7 @@ slug: good-code-bad-code
 date: 2026-07-28T00:00:00Z
 author: bmf-san
 categories:
-  - Architecture
+  - Application
 tags:
   - Book Review
   - Design
