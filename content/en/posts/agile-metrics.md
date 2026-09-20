@@ -1,6 +1,6 @@
 ---
 title: Agile Metrics
-description: "Agile Metrics"
+description: "A review of Agile Metrics. It systematically explains measurement indicators in agile development, teaching observation methods and how to read metrics to improve team performance. A good fit for those who want to grasp their team's state through numbers."
 slug: agile-metrics
 date: 2022-11-23T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: 'A Practical Guide to Backup: From Basic Concepts to Tool Utilization, Differential Management, Generation Management, Data Preservation, Restore, Recovery, and Ensuring Availability'
-description: "A Practical Guide to Backup: From Basic Concepts to Tool Utilization, Differential Management, Generation Management, Data Preservation, Restore, Recovery, and Ensuring Availability"
+description: "A review of a practical backup textbook. It broadly covers backups, from basic concepts to using tools, differential and generation management, data preservation, restore and recovery, and ensuring availability. Good for systematically revisiting the basics and building a foundation for practice."
 slug: backup-guide-tools-techniques-recovery-availability
 date: 2025-03-08T00:00:00Z
 author: bmf-san

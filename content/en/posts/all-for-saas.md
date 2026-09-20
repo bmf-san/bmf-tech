@@ -1,6 +1,6 @@
 ---
 title: All for SaaS
-description: "All for SaaS"
+description: "Reading notes on All for SaaS. It organizes concepts and metrics worth knowing when launching and running a SaaS business, from the difference between ASP and SaaS to recurring revenue (deferred revenue) and unit economics. Suited to viewing SaaS from a business angle."
 slug: all-for-saas
 date: 2024-04-16T00:00:00Z
 author: bmf-san

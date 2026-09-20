@@ -1,6 +1,6 @@
 ---
 title: APIデザイン・パターン
-description: "APIデザイン・パターン"
+description: "『APIデザイン・パターン』の書評。APIの設計原則に始まり、標準メソッドを組み合わせるリソース指向や手続きを呼び出すRPC指向など、豊富なデザインパターンを紹介する一冊。実行可能性をはじめとする、良いAPI設計のための観点を体系立てて学べる。"
 slug: api-design-patterns
 date: 2024-08-26T00:00:00Z
 author: bmf-san

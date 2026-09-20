@@ -1,6 +1,6 @@
 ---
 title: 'Optimal Architecture Strategy for Requirements'
-description: 'Optimal Architecture Strategy for Requirements'
+description: "A review of a book on requirement-optimal architecture strategy. It covers implementing architecture through domain-driven design once you understand the business strategy, devoting many pages to practical DDD and architecture implementation patterns, including why aiming for microservices from the start is hard."
 slug: architecture-strategy-requirements
 date: 2025-03-08T00:00:00Z
 author: bmf-san

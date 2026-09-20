@@ -1,6 +1,6 @@
 ---
 title: The Agile Samurai
-description: "The Agile Samurai"
+description: "A review of The Agile Samurai. A good introductory book for building a foundation in the mindset and practice of agile development. Without cramming in jargon, it is an easy first read for teams and engineers about to adopt agile."
 slug: agile-samurai
 date: 2020-09-12T00:00:00Z
 author: bmf-san

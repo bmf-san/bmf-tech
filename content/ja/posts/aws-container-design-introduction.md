@@ -1,6 +1,6 @@
 ---
 title: AWSコンテナ設計・構築[本格]入門
-description: "AWSコンテナ設計・構築[本格]入門"
+description: "『AWSコンテナ設計・構築[本格]入門』の書評。AWSのコンテナ関連サービスについて、わかりやすく丁寧に解説してくれる一冊。実務でコンテナを運用する場面を想定した構成になっており、これからAWS上でコンテナ環境を設計・構築するエンジニアの入門書に適している。"
 slug: aws-container-design-introduction
 date: 2021-10-16T00:00:00Z
 author: bmf-san
