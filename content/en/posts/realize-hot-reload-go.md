@@ -10,6 +10,7 @@ tags:
   - realize
 description: A memo on using Realize for hot reloading in Go applications.
 translation_key: realize-hot-reload-go
+draft: false
 ---
 
 

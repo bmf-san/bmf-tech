@@ -9,6 +9,7 @@ categories:
 tags:
   - React
 translation_key: react-multiple-input-form
+draft: false
 ---
 
 

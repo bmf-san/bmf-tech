@@ -9,6 +9,7 @@ tags:
   - Google Cloud Platform
 description: Miscellaneous notes taken while studying for the Google Cloud Certified Associate Cloud Engineer exam.
 translation_key: gcp-notes-and-resources
+draft: false
 ---
 
 # Overview

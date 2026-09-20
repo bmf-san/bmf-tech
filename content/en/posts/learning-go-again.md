@@ -9,6 +9,7 @@ categories:
 tags:
   - Golang
 translation_key: learning-go-again
+draft: false
 ---
 
 # Overview

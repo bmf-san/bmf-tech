@@ -14,6 +14,7 @@ tags:
   - JavaScript
 description: A simple document management tool to convert Markdown files to PDF, supporting mermaid, emoji, and toc.
 translation_key: markdown-to-pdf-conversion
+draft: false
 ---
 
 # Overview

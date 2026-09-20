@@ -11,6 +11,7 @@ tags:
   - PHP Conference
   - PHPerKaigi
 translation_key: phperkaigi-2019-participation
+draft: false
 ---
 
 # I Participated and Spoke at PHPerKaigi 2019

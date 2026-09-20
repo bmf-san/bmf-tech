@@ -12,6 +12,7 @@ tags:
   - CircleCI2.0
   - phpunit
 translation_key: circleci-phpunit-code-coverage
+draft: false
 ---
 
 

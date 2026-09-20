@@ -10,6 +10,7 @@ tags:
   - Laravel
   - SQLite
 translation_key: laravel-5-4-sqlite-test-setup
+draft: false
 ---
 
 

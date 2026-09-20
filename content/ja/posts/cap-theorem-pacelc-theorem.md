@@ -11,6 +11,7 @@ tags:
   - PACELC
   - 分散システム
 translation_key: cap-theorem-pacelc-theorem
+draft: false
 ---
 
 

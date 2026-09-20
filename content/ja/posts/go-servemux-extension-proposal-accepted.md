@@ -11,6 +11,7 @@ tags:
   - router
   - HTTP
 translation_key: go-servemux-extension-proposal-accepted
+draft: false
 ---
 
 

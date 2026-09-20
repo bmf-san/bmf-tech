@@ -10,6 +10,7 @@ tags:
   - Symbolic Links
   - Hard Links
 translation_key: symbolic-vs-hard-links
+draft: false
 ---
 
 

@@ -9,6 +9,7 @@ categories:
 tags:
   - React
 translation_key: react-tag-autocomplete-implementation
+draft: false
 ---
 
 I was thinking of developing a tag feature from scratch, but I found many convenient React Components, so I decided to use them.

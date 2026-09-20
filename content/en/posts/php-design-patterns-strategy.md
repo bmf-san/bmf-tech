@@ -12,6 +12,7 @@ tags:
   - GoF
   - Strategy Pattern
 translation_key: php-design-patterns-strategy
+draft: false
 ---
 
 

@@ -9,6 +9,7 @@ tags:
   - Nginx
 description: Notes taken while researching buffer sizes in NGINX.
 translation_key: nginx-buffer-directives-notes
+draft: false
 ---
 
 I took notes while researching buffer sizes.

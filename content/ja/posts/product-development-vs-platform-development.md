@@ -12,6 +12,7 @@ tags:
   - プラットフォーム・エンジニアリング
   - 組織設計
 translation_key: product-development-vs-platform-development
+draft: false
 ---
 
 # はじめに

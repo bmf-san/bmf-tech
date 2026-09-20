@@ -9,6 +9,7 @@ categories:
 tags:
   - tmux
 translation_key: tmux-beginners-guide
+draft: false
 ---
 
 

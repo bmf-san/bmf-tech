@@ -10,6 +10,7 @@ tags:
   - アーキテクチャ
   - 設計
 translation_key: architecture-design-approach
+draft: false
 ---
 
 

@@ -10,6 +10,7 @@ tags:
   - 退職
   - 転職
 translation_key: resignation-entry
+draft: false
 ---
 
 

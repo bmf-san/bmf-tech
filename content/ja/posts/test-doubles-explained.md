@@ -10,6 +10,7 @@ tags:
   - Golang
   - テストダブル
 translation_key: test-doubles-explained
+draft: false
 ---
 
 

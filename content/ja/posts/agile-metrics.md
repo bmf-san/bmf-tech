@@ -13,6 +13,7 @@ translation_key: agile-metrics
 books:
   - asin: "4798169412"
     title: "アジャイルメトリクス"
+draft: false
 ---
 
 

@@ -13,6 +13,7 @@ tags:
   - History API
   - Router
 translation_key: react-history-api-router
+draft: false
 ---
 
 # Overview

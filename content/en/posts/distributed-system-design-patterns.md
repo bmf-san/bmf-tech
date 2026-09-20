@@ -13,6 +13,7 @@ translation_key: distributed-system-design-patterns
 books:
   - asin: "4873118751"
     title: "分散システムデザインパターン"
+draft: false
 ---
 
 

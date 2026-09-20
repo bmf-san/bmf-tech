@@ -13,6 +13,7 @@ translation_key: software-architecture-hardparts
 books:
   - asin: "4814400063"
     title: "ソフトウェアアーキテクチャ Hardparts"
+draft: false
 ---
 
 

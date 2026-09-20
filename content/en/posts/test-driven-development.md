@@ -12,6 +12,7 @@ translation_key: test-driven-development
 books:
   - asin: "4274217884"
     title: "テスト駆動開発"
+draft: false
 ---
 
 

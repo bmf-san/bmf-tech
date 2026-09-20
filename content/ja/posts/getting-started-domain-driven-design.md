@@ -14,6 +14,7 @@ translation_key: getting-started-domain-driven-design
 books:
   - asin: "481440073X"
     title: "ドメイン駆動設計をはじめよう―ソフトウェアの実装と事業戦略を結びつける実践技法"
+draft: false
 ---
 
 

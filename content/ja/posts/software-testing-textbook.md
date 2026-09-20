@@ -12,6 +12,7 @@ translation_key: software-testing-textbook
 books:
   - asin: "4822286584"
     title: "ソフトウェアテストの教科書"
+draft: false
 ---
 
 

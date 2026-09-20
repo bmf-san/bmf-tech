@@ -9,6 +9,7 @@ categories:
 tags:
   - Golang
 translation_key: golang-interfaces-overview
+draft: false
 ---
 
 # Overview

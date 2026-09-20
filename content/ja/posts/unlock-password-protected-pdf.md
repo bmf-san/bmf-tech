@@ -10,6 +10,7 @@ tags:
   - PDF
   - Tips
 translation_key: unlock-password-protected-pdf
+draft: false
 ---
 
 

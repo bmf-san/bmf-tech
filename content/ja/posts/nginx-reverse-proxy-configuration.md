@@ -12,6 +12,7 @@ tags:
   - Apache
   - さくらのVPS
 translation_key: nginx-reverse-proxy-configuration
+draft: false
 ---
 
 

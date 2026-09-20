@@ -9,6 +9,7 @@ categories:
 tags:
   - PHPカンファレンス
 translation_key: php-conference-2018-presentation
+draft: false
 ---
 
 

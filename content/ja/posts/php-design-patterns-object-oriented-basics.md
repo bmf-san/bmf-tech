@@ -11,6 +11,7 @@ tags:
   - PHP
   - OOP
 translation_key: php-design-patterns-object-oriented-basics
+draft: false
 ---
 
 

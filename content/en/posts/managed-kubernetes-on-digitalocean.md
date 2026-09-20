@@ -11,6 +11,7 @@ tags:
   - DigitalOcean
 description: Exploring the use of managed Kubernetes on DigitalOcean for personal development and learning.
 translation_key: managed-kubernetes-on-digitalocean
+draft: false
 ---
 
 # Trying Managed Kubernetes on DigitalOcean

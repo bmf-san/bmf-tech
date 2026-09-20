@@ -9,6 +9,7 @@ categories:
 tags:
   - Architecture Decision Record
 translation_key: adr-template-command
+draft: false
 ---
 
 I created a Make command that simply generates a template file for ADR, so I'm jotting it down.

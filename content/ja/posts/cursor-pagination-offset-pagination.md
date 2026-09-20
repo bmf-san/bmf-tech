@@ -10,6 +10,7 @@ tags:
   - オフセットページネーション
   - カーソルページネーション
 translation_key: cursor-pagination-offset-pagination
+draft: false
 ---
 
 

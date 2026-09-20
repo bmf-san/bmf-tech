@@ -9,6 +9,7 @@ categories:
 tags:
   - Laravel
 translation_key: laravel-installer-easy-installation
+draft: false
 ---
 
 

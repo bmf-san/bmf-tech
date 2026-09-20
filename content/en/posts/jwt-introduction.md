@@ -9,6 +9,7 @@ categories:
 tags:
   - JWT
 translation_key: jwt-introduction
+draft: false
 ---
 
 # Overview

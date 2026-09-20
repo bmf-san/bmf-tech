@@ -10,6 +10,7 @@ tags:
   - Docker
   - 仮想環境
 translation_key: what-is-docker
+draft: false
 ---
 
 

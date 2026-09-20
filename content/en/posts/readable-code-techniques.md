@@ -13,6 +13,7 @@ translation_key: readable-code-techniques
 books:
   - asin: "4873115655"
     title: "リーダブルコード ―より良いコードを書くためのシンプルで実践的なテクニック"
+draft: false
 ---
 
 [Readable Code - Simple and Practical Techniques for Writing Better Code](https://amzn.to/4abQaC9) is a book I read.

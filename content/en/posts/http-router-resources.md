@@ -12,6 +12,7 @@ tags:
   - URL Routing
   - Link Collection
 translation_key: http-router-resources
+draft: false
 ---
 
 I will list various sources and my own articles that I referenced during the development of [goblin](https://github.com/bmf-san/goblin).

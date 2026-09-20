@@ -10,6 +10,7 @@ tags:
   - 権限管理
   - 設計
 translation_key: permission-management-case-study
+draft: false
 ---
 
 

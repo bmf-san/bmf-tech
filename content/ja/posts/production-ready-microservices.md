@@ -13,6 +13,7 @@ translation_key: production-ready-microservices
 books:
   - asin: "4873118158"
     title: "プロダクションレディマイクロサービス ―運用に強い本番対応システムの実装と標準化"
+draft: false
 ---
 
 

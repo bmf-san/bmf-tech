@@ -13,6 +13,7 @@ tags:
   - Design
   - Architecture
 translation_key: requirements-vs-constraints
+draft: false
 ---
 
 

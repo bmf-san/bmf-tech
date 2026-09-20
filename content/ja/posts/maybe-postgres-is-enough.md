@@ -10,6 +10,7 @@ tags:
   - アーキテクチャ
 description: "キャッシュや全文検索のために別のミドルウェアを足す前に、Postgresで足りないか確認したい。postgresisenough.devを参考に、用途ごとの代替機能を一覧で簡潔にまとめる。"
 translation_key: maybe-postgres-is-enough
+draft: false
 ---
 
 # 概要

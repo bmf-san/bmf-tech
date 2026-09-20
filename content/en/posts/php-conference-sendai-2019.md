@@ -10,6 +10,7 @@ tags:
   - PHP
   - PHP Conference
 translation_key: php-conference-sendai-2019
+draft: false
 ---
 
 

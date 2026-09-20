@@ -14,6 +14,7 @@ translation_key: everyone-computer-science
 books:
   - asin: "4798154814"
     title: "みんなのコンピュータサイエンス"
+draft: false
 ---
 
 

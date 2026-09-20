@@ -12,6 +12,7 @@ tags:
   - PHP
   - デザインパターン
 translation_key: php-design-patterns-adapter
+draft: false
 ---
 
 

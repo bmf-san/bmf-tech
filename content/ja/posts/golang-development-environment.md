@@ -9,6 +9,7 @@ categories:
 tags:
   - Golang
 translation_key: golang-development-environment
+draft: false
 ---
 
 

@@ -9,6 +9,7 @@ categories:
 tags:
   - MySQL
 translation_key: full-text-search-with-mysql
+draft: false
 ---
 
 # Overview

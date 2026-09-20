@@ -13,6 +13,7 @@ translation_key: golang-web-app-development-from-scratch
 books:
   - asin: "4295000965"
     title: "Goプログラミング実践入門 標準ライブラリでゼロからWebアプリを作る "
+draft: false
 ---
 
 

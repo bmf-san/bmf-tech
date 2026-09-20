@@ -9,6 +9,7 @@ categories:
 tags:
   - Amazon Web Service
 translation_key: remember-aws-arn
+draft: false
 ---
 
 Make a note to remember the format of AWS Resource Names (ARN).

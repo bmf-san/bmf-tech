@@ -17,6 +17,7 @@ tags:
   - Authorization
   - Authentication
 translation_key: authentication-authorization-basics
+draft: false
 ---
 
 

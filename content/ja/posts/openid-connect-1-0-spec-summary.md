@@ -11,6 +11,7 @@ tags:
   - 認証
   - 認可
 translation_key: openid-connect-1-0-spec-summary
+draft: false
 ---
 
 

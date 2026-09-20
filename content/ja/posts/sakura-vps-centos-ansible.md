@@ -12,6 +12,7 @@ tags:
   - さくらのVPS
   - Iaas
 translation_key: sakura-vps-centos-ansible
+draft: false
 ---
 
 

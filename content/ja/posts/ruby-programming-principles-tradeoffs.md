@@ -13,6 +13,7 @@ translation_key: ruby-programming-principles-tradeoffs
 books:
   - asin: "4908686173"
     title: "研鑽Rubyプログラミング 実践的なコードのための原則とトレードオフ"
+draft: false
 ---
 
 

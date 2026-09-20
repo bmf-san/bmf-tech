@@ -14,6 +14,7 @@ translation_key: agile-samurai
 books:
   - asin: "4274068560"
     title: "アジャイルサムライ"
+draft: false
 ---
 
 [The Agile Samurai](https://amzn.to/3y9JvuW) is a great book for laying the groundwork for Agile development.

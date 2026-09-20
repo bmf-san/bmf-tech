@@ -10,6 +10,7 @@ tags:
   - 振り返り
   - KPT
 translation_key: reflection-framework-bmf
+draft: false
 ---
 
 

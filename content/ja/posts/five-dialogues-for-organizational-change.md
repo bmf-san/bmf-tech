@@ -15,6 +15,7 @@ translation_key: five-dialogues-for-organizational-change
 books:
   - asin: "4814400640"
     title: "組織を変える5つの対話―対話を通じてアジャイルな組織文化を創る"
+draft: false
 ---
 
 

@@ -11,6 +11,7 @@ tags:
   - Transaction
   - Lock
 translation_key: mysql-locking
+draft: false
 ---
 
 # Overview

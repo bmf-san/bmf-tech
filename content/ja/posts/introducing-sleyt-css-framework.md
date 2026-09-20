@@ -10,6 +10,7 @@ tags:
   - CSS
   - Frontend
 translation_key: introducing-sleyt-css-framework
+draft: false
 ---
 
 # sleyt — グラスモーフィズムを活用したミニマルCSSフレームワークの紹介

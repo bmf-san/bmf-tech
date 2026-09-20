@@ -9,6 +9,7 @@ categories:
 tags:
   - Reflection and Resolutions
 translation_key: 2018-review-2019-goals
+draft: false
 ---
 
 ※This article has been transferred from a previously published post.

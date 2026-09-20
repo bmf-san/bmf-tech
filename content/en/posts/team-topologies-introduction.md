@@ -11,6 +11,7 @@ tags:
   - Team Management
   - Organizational Design
 translation_key: team-topologies-introduction
+draft: false
 ---
 
 ## What is Team Topologies?

@@ -11,6 +11,7 @@ tags:
   - リバースプロキシ
   - ゲートウェイ
 translation_key: proxy-server-differences
+draft: false
 ---
 
 

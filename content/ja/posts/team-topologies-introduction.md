@@ -11,6 +11,7 @@ tags:
   - チームマネジメント
   - 組織設計
 translation_key: team-topologies-introduction
+draft: false
 ---
 
 

@@ -11,6 +11,7 @@ tags:
   - PHP
   - Template Method Pattern
 translation_key: php-design-patterns-template-method
+draft: false
 ---
 
 # What is the Template Method Pattern?

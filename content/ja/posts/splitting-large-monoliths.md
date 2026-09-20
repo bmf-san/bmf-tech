@@ -11,6 +11,7 @@ tags:
   - モノリス
   - マイクロサービス
 translation_key: splitting-large-monoliths
+draft: false
 ---
 
 

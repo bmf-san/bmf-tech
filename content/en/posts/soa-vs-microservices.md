@@ -10,6 +10,7 @@ tags:
   - Microservices
   - Link Collection
 translation_key: soa-vs-microservices
+draft: false
 ---
 
 

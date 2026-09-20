@@ -10,6 +10,7 @@ categories:
 tags:
   - PostgreSQL
 translation_key: postgresql-collate-glibc-version-differences
+draft: false
 ---
 
 

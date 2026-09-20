@@ -15,6 +15,7 @@ translation_key: architecture-modernization
 books:
   - asin: "4798194077"
     title: "アーキテクチャモダナイゼーション ―組織とビジネスの未来を設計する"
+draft: false
 ---
 
 

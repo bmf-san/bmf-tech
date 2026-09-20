@@ -10,6 +10,7 @@ tags:
   - vim
   - Editor
 translation_key: road-to-vimmer
+draft: false
 ---
 
 # Overview

@@ -10,6 +10,7 @@ categories:
 tags:
   - Technology Radar
 translation_key: create-technology-radar
+draft: false
 ---
 
 [Makuake Advent Calendar 2022](https://adventar.org/calendars/8496)の記事の7日目です！

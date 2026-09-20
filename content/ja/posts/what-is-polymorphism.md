@@ -9,6 +9,7 @@ categories:
 tags:
   - ポリモーフィズム
 translation_key: what-is-polymorphism
+draft: false
 ---
 
 

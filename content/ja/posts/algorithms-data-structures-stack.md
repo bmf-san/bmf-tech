@@ -9,6 +9,7 @@ categories:
 tags:
   - スタック
 translation_key: algorithms-data-structures-stack
+draft: false
 ---
 
 

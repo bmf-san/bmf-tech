@@ -10,6 +10,7 @@ tags:
   - Sets
 description: Summarizing the basics of sets.
 translation_key: set-theory
+draft: false
 ---
 
 

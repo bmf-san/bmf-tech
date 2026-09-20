@@ -11,6 +11,7 @@ tags:
   - Cloud SQL
   - Google Cloud Platform
 translation_key: cloud-sql-alloydb-comparison
+draft: false
 ---
 
 

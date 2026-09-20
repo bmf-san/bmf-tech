@@ -12,6 +12,7 @@ translation_key: introduction-software-testing
 books:
   - asin: "4822282511"
     title: "Learning Software Testing Techniques for the First Time"
+draft: false
 ---
 
 

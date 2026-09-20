@@ -11,6 +11,7 @@ tags:
   - New Relic
 description: A comparison of features when considering switching from New Relic to Datadog APM.
 translation_key: comparison-of-new-relic-and-datadog-apm
+draft: false
 ---
 
 

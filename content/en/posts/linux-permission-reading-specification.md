@@ -10,6 +10,7 @@ tags:
   - Permissions
 description: An overview of Linux permissions
 translation_key: linux-permission-reading-specification
+draft: false
 ---
 
 # Overview

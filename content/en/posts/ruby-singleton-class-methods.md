@@ -9,6 +9,7 @@ categories:
 tags:
   - Ruby
 translation_key: ruby-singleton-class-methods
+draft: false
 ---
 
 

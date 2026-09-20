@@ -13,6 +13,7 @@ tags:
   - Grafana
   - Prometheus
 translation_key: postgresql-pgcat-local-environment
+draft: false
 ---
 
 

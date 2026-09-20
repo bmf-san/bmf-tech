@@ -9,6 +9,7 @@ categories:
 tags:
   - PostgreSQL
 translation_key: postgresql-logical-replication-summary
+draft: false
 ---
 
 # Overview

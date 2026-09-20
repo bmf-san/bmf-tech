@@ -13,6 +13,7 @@ translation_key: system-design-interview
 books:
   - asin: "4802614063"
     title: "システム設計の面接試験"
+draft: false
 ---
 
 

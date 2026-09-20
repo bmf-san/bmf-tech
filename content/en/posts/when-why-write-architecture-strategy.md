@@ -11,6 +11,7 @@ tags:
   - Architecture
   - Design
 translation_key: when-why-write-architecture-strategy
+draft: false
 ---
 
 

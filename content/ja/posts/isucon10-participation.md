@@ -10,6 +10,7 @@ tags:
   - ISUCON
   - ISUCON10
 translation_key: isucon10-participation
+draft: false
 ---
 
 

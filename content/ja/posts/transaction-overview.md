@@ -9,6 +9,7 @@ categories:
 tags:
   - トランザクション
 translation_key: transaction-overview
+draft: false
 ---
 
 

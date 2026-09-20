@@ -9,6 +9,7 @@ tags:
   - Ruby
 description: Summarizing the differences between instance variables, class variables, and class instance variables in Ruby.
 translation_key: ruby-instance-class-variables
+draft: false
 ---
 
 Summarizing the differences between instance variables, class variables, and class instance variables in Ruby.

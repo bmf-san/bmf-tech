@@ -10,6 +10,7 @@ tags:
   - Golang
   - リンク集
 translation_key: golang-study-resources
+draft: false
 ---
 
 

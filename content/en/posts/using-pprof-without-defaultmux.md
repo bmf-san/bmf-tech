@@ -10,6 +10,7 @@ tags:
   - Tips
 description: A note on using net/http/pprof with routers other than Go's default router.
 translation_key: using-pprof-without-defaultmux
+draft: false
 ---
 
 

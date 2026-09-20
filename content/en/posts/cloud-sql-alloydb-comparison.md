@@ -11,6 +11,7 @@ tags:
   - Google Cloud Platform
 description: A brief investigation into the advantages of AlloyDB over Cloud SQL.
 translation_key: cloud-sql-alloydb-comparison
+draft: false
 ---
 
 

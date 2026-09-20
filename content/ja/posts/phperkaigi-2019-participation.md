@@ -11,6 +11,7 @@ tags:
   - PHPカンファレンス
   - PHPerKaigi
 translation_key: phperkaigi-2019-participation
+draft: false
 ---
 
 

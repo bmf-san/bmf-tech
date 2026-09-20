@@ -16,6 +16,7 @@ translation_key: principles-of-system-architecture
 books:
   - asin: "4798116424"
     title: "システムアーキテクチャ構築の原理~ITアーキテクトが持つべき3つの思考"
+draft: false
 ---
 
 

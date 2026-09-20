@@ -9,6 +9,7 @@ categories:
 tags:
   - ISUCON
 translation_key: system-metrics-introduction-isucon
+draft: false
 ---
 
 

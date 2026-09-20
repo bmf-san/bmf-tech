@@ -10,6 +10,7 @@ tags:
   - システムパフォーマンス
   - Load Average
 translation_key: what-is-load-average
+draft: false
 ---
 
 

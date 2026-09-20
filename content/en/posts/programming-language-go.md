@@ -13,6 +13,7 @@ translation_key: programming-language-go
 books:
   - asin: "4621300253"
     title: "プログラミング言語Go"
+draft: false
 ---
 
 [Programming Language Go](https://amzn.to/3WrbznD) has been read.

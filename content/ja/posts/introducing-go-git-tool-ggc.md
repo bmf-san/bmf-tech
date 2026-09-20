@@ -13,6 +13,7 @@ tags:
   - CLI
   - TUI
 translation_key: introducing-go-git-tool-ggc
+draft: false
 ---
 
 # Go製Git操作ツール『ggc』の紹介

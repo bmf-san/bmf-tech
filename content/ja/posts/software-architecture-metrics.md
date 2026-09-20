@@ -14,6 +14,7 @@ translation_key: software-architecture-metrics
 books:
   - asin: "4814400608"
     title: "ソフトウェアアーキテクチャメトリクス ―アーキテクチャ品質を改善する10のアドバイス"
+draft: false
 ---
 
 

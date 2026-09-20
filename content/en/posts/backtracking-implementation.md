@@ -9,6 +9,7 @@ categories:
 tags:
   - Backtrack
 translation_key: backtracking-implementation
+draft: false
 ---
 
 # What is Backtracking

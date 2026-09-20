@@ -10,6 +10,7 @@ tags:
   - SSH
   - sshd
 translation_key: ssh-connection-setup-notes
+draft: false
 ---
 
 

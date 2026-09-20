@@ -9,6 +9,7 @@ categories:
 tags:
   - Laravel
 translation_key: laravel-redirect-differences
+draft: false
 ---
 
 It's a trivial matter, but I was curious, so I looked into it.

@@ -10,6 +10,7 @@ categories:
 tags:
   - アジャイル
 translation_key: dealing-with-uncertainty-software-projects
+draft: false
 ---
 
 

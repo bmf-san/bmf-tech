@@ -13,6 +13,7 @@ translation_key: stress-free-guide
 books:
   - asin: "4478107327"
     title: "ストレスフリー超大全"
+draft: false
 ---
 
 

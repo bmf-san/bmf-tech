@@ -11,6 +11,7 @@ tags:
   - LT
   - PHP
 translation_key: laravel-jp-conference-participation
+draft: false
 ---
 
 

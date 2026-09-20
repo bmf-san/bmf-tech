@@ -13,6 +13,7 @@ translation_key: slo-service-level-objectives-guide
 books:
   - asin: "4814400349"
     title: "SLO サービスレベル目標 ―SLI、SLO、エラーバジェット導入の実践ガイド"
+draft: false
 ---
 
 

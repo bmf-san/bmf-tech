@@ -9,6 +9,7 @@ categories:
 tags:
   - Kubernetes
 translation_key: kubernetes-components
+draft: false
 ---
 
 

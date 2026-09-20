@@ -13,6 +13,7 @@ translation_key: building-multitenant-saas-architecture
 books:
   - asin: "4814401019"
     title: "Building Multi-Tenant SaaS Architectures"
+draft: false
 ---
 
 [Building Multi-Tenant SaaS Architecture - Principles, Best Practices, AWS Architecture Patterns](https://amzn.to/3EjmRE6) has been read.

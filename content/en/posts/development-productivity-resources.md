@@ -10,6 +10,7 @@ tags:
   - Development Productivity
   - Link Collection
 translation_key: development-productivity-resources
+draft: false
 ---
 
 I explored articles on development productivity.

@@ -14,6 +14,7 @@ translation_key: evidence-based-parenting
 books:
   - asin: "4478121095"
     title: "科学的根拠（エビデンス）で子育て―教育経済学の最前線"
+draft: false
 ---
 
 

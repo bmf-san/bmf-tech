@@ -13,6 +13,7 @@ translation_key: software-architecture-basics
 books:
   - asin: "4873119820"
     title: "ソフトウェアアーキテクチャの基礎"
+draft: false
 ---
 
 

@@ -13,6 +13,7 @@ tags:
   - REST
 description: "When should you adopt GraphQL? This guide covers its core ideas (a typed schema, a single endpoint, fetching exactly what you need), where it fits and where it does not, the trade-offs, operational concerns such as N+1, and how it compares with REST and gRPC."
 translation_key: graphql-when-to-use
+draft: false
 ---
 
 # Overview

@@ -11,6 +11,7 @@ tags:
   - PHP
   - シングルトンパターン
 translation_key: php-design-patterns-singleton
+draft: false
 ---
 
 

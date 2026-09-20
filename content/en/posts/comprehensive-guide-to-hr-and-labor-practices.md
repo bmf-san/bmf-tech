@@ -14,6 +14,7 @@ translation_key: comprehensive-guide-to-hr-and-labor-practices
 books:
   - asin: "4534055854"
     title: "「人事・労務」の実務がまるごとわかる本"
+draft: false
 ---
 
 I read the [Complete Guide to HR and Labor Practices](https://amzn.to/49vzoO8).

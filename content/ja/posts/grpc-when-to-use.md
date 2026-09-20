@@ -14,6 +14,7 @@ tags:
   - HTTP/2
 description: "gRPC をいつ採用すべきかを、RPC・HTTP/2・Protocol Buffers の本質から整理します。向く場面と向かない場面、トレードオフ、運用の勘所、REST や GraphQL との使い分けまで解説します。"
 translation_key: grpc-when-to-use
+draft: false
 ---
 
 # 概要

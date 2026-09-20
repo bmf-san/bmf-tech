@@ -9,6 +9,7 @@ categories:
 tags:
   - Quick Sort
 translation_key: algorithms-data-structures-quick-sort
+draft: false
 ---
 
 

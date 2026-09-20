@@ -10,6 +10,7 @@ tags:
   - PHP CodeSniffer
   - PHPCompatibility
 translation_key: phpcompatibility-php82-compatibility-issues
+draft: false
 ---
 
 

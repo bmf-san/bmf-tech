@@ -13,6 +13,7 @@ translation_key: unit-testing-concepts-usage
 books:
   - asin: "4839981728"
     title: "単体テストの考え方/使い方"
+draft: false
 ---
 
 

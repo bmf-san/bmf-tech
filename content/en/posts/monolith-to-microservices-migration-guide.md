@@ -15,6 +15,7 @@ translation_key: monolith-to-microservices-migration-guide
 books:
   - asin: "4873119316"
     title: "モノリスからマイクロサービスへ ―モノリスを進化させる実践移行ガイド"
+draft: false
 ---
 
 I read [From Monolith to Microservices: A Practical Migration Guide to Evolve Monoliths](https://amzn.to/3VlOlyB).

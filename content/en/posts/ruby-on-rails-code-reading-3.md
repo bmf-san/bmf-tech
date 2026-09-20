@@ -10,6 +10,7 @@ tags:
   - Ruby
 description: Documenting the code reading process for Ruby on Rails.
 translation_key: ruby-on-rails-code-reading-3
+draft: false
 ---
 
 

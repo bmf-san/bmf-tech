@@ -9,6 +9,7 @@ categories:
 tags:
   - Reflections and Aspirations
 translation_key: reflections-and-resolutions-2025
+draft: false
 ---
 
 

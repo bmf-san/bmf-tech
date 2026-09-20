@@ -10,6 +10,7 @@ tags:
   - Git
   - Shell Script
 translation_key: create-shell-script-git-commands
+draft: false
 ---
 
 

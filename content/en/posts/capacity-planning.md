@@ -9,6 +9,7 @@ categories:
 tags:
   - Capacity Planning
 translation_key: capacity-planning
+draft: false
 ---
 
 # Purpose of Capacity Planning

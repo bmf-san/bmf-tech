@@ -9,6 +9,7 @@ categories:
 tags:
   - Reflection and Goals
 translation_key: 2024-reflections-goals
+draft: false
 ---
 
 # Reflection on 2024 and Goals for Next Year

@@ -11,6 +11,7 @@ tags:
   - npm
   - webpack
 translation_key: use-dotenv-variables-client-side
+draft: false
 ---
 
 dotenv-webpack is a useful library when you want to use environment variables prepared in a `.env` file on the client side.

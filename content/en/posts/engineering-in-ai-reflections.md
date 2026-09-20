@@ -14,6 +14,7 @@ tags:
   - Prompt Engineering
   - Continuous AI
 translation_key: engineering-in-ai-reflections
+draft: false
 ---
 
 As the utilization of large language models (LLMs) expands from individuals to organizations, the need to manage prompts with the same rigor as traditional source code is increasing.

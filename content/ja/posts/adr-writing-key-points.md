@@ -11,6 +11,7 @@ tags:
   - 設計
   - アーキテクチャ
 translation_key: adr-writing-key-points
+draft: false
 ---
 
 

@@ -12,6 +12,7 @@ tags:
   - アーキテクチャ戦略
   - アーキテクチャ
 translation_key: design-shelf-life-considerations
+draft: false
 ---
 
 

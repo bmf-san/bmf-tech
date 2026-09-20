@@ -11,6 +11,7 @@ tags:
   - Docker Compose
   - Tips
 translation_key: docker-compose-env-vars-issue
+draft: false
 ---
 
 

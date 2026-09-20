@@ -13,6 +13,7 @@ tags:
   - composer
   - homestead
 translation_key: laravel-homestead-setup
+draft: false
 ---
 
 

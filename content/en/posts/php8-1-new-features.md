@@ -9,6 +9,7 @@ categories:
 tags:
   - PHP
 translation_key: php8-1-new-features
+draft: false
 ---
 
 # Overview

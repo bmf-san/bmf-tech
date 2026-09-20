@@ -10,6 +10,7 @@ categories:
 tags:
   - PofEAA
 translation_key: table-inheritance-types
+draft: false
 ---
 
 

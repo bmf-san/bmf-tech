@@ -11,6 +11,7 @@ tags:
   - Authentication
   - Authorization
 translation_key: openid-connect-1-0-spec-summary
+draft: false
 ---
 
 

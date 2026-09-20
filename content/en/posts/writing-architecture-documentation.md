@@ -10,6 +10,7 @@ tags:
   - Architecture
 description: Guidelines for creating effective architecture documents in system design.
 translation_key: writing-architecture-documentation
+draft: false
 ---
 
 

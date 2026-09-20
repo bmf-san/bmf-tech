@@ -12,6 +12,7 @@ tags:
   - Trading
   - Infrastructure
 translation_key: introducing-gogocoin
+draft: false
 ---
 
 # gogocoin — セルフホスティング暗号資産の自動取引ボットの紹介

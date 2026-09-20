@@ -9,6 +9,7 @@ categories:
 tags:
   - CMS
 translation_key: blog-system-migration
+draft: false
 ---
 
 I made a commemorative post because I migrated the blog system.

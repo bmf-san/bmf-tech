@@ -10,6 +10,7 @@ tags:
   - Nginx
   - SPA
 translation_key: spa-development-challenges
+draft: false
 ---
 
 # Overview

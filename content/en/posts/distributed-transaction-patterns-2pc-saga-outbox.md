@@ -13,6 +13,7 @@ tags:
   - Saga Pattern
   - Outbox Pattern
 translation_key: distributed-transaction-patterns-2pc-saga-outbox
+draft: false
 ---
 
 

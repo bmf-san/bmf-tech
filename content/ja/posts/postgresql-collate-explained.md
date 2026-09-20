@@ -9,6 +9,7 @@ categories:
 tags:
   - PostgreSQL
 translation_key: postgresql-collate-explained
+draft: false
 ---
 
 

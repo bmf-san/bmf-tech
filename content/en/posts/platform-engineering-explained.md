@@ -9,6 +9,7 @@ categories:
 tags:
   - Platform Engineering
 translation_key: platform-engineering-explained
+draft: false
 ---
 
 ## Overview

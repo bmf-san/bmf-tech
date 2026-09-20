@@ -12,6 +12,7 @@ tags:
   - Riverpod
   - Dart
 translation_key: introducing-asset-trend-simulator
+draft: false
 ---
 
 # iPhoneアプリ「Asset Trend Simulator」の紹介

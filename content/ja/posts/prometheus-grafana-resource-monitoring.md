@@ -11,6 +11,7 @@ tags:
   - Prometheus
   - Grafana
 translation_key: prometheus-grafana-resource-monitoring
+draft: false
 ---
 
 

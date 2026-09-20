@@ -12,6 +12,7 @@ tags:
   - redux-form
   - Tips
 translation_key: redux-form-promise-error
+draft: false
 ---
 
 

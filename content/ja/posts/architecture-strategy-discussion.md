@@ -14,6 +14,7 @@ tags:
   - システム設計
   - アーキテクチャ戦略
 translation_key: architecture-strategy-discussion
+draft: false
 ---
 
 

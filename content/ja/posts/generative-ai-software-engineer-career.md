@@ -9,6 +9,7 @@ categories:
 tags:
   - 生成AI
 translation_key: generative-ai-software-engineer-career
+draft: false
 ---
 
 

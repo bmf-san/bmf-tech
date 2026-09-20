@@ -10,6 +10,7 @@ tags:
   - コードリーディング
   - AI
 translation_key: ai-code-reading-techniques
+draft: false
 ---
 
 

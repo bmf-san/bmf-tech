@@ -13,6 +13,7 @@ translation_key: capacity-planning-resource-optimization
 books:
   - asin: "4873113997"
     title: "キャパシティプランニング ― リソースを最大限に活かすサイト分析・予測・配置"
+draft: false
 ---
 
 [Capacity Planning - Maximizing Resources through Site Analysis, Forecasting, and Placement](https://amzn.to/4duNKBu) was read.

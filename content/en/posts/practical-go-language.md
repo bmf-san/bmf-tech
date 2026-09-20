@@ -13,6 +13,7 @@ translation_key: practical-go-language
 books:
   - asin: "4873119693"
     title: "Practical Go Language"
+draft: false
 ---
 
 I finished reading [Practical Go Language](https://amzn.to/3KO6sr4), so I’d like to leave some reading notes.

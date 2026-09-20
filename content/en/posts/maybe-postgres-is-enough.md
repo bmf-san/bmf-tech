@@ -10,6 +10,7 @@ tags:
   - Architecture
 description: "Before adding another datastore for caching or search, check whether Postgres already covers it. A concise table of per-use-case alternatives based on postgresisenough.dev."
 translation_key: maybe-postgres-is-enough
+draft: false
 ---
 
 # Overview

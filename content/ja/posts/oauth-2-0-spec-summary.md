@@ -11,6 +11,7 @@ tags:
   - 認証
   - 認可
 translation_key: oauth-2-0-spec-summary
+draft: false
 ---
 
 

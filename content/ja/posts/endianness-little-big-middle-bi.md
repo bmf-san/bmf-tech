@@ -9,6 +9,7 @@ categories:
 tags:
   - メモリ
 translation_key: endianness-little-big-middle-bi
+draft: false
 ---
 
 

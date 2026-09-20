@@ -10,6 +10,7 @@ categories:
 tags:
   - Agile
 translation_key: dealing-with-uncertainty-software-projects
+draft: false
 ---
 
 

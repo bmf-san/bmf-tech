@@ -13,6 +13,7 @@ translation_key: logical-thinking-techniques-for-japanese
 books:
   - asin: "4478014582"
     title: "入門 考える技術・書く技術――日本人のロジカルシンキング実践法"
+draft: false
 ---
 
 

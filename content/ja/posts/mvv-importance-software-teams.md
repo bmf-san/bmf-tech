@@ -9,6 +9,7 @@ categories:
 tags:
   - チームマネジメント
 translation_key: mvv-importance-software-teams
+draft: false
 ---
 
 

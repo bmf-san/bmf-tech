@@ -13,6 +13,7 @@ translation_key: engineer-productive-learning
 books:
   - asin: "4774198765"
     title: "エンジニアの知的生産術 ──効率的に学び、整理し、アウトプットする"
+draft: false
 ---
 
 

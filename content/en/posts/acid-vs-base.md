@@ -10,6 +10,7 @@ tags:
   - ACID
   - BASE
 translation_key: acid-vs-base
+draft: false
 ---
 
 This post discusses the transaction models ACID and BASE.

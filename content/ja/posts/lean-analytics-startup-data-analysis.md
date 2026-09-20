@@ -14,6 +14,7 @@ translation_key: lean-analytics-startup-data-analysis
 books:
   - asin: "4873117119"
     title: "LEAN ANALYTICS スタートアップのためのデータ解析と活用法"
+draft: false
 ---
 
 

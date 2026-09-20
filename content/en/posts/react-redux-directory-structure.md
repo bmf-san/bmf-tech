@@ -11,6 +11,7 @@ tags:
   - Redux
 description: Exploring directory structures for integrating React+Redux into applications.
 translation_key: react-redux-directory-structure
+draft: false
 ---
 
 

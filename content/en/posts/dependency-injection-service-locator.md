@@ -11,6 +11,7 @@ tags:
   - Service Locator
   - Design Patterns
 translation_key: dependency-injection-service-locator
+draft: false
 ---
 
 # Overview

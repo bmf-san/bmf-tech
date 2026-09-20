@@ -14,6 +14,7 @@ translation_key: sql-practical-introduction
 books:
   - asin: "4774173010"
     title: "Practical Introduction to SQL: Writing Fast and Understandable Queries (WEB+DB PRESS plus)"
+draft: false
 ---
 
 

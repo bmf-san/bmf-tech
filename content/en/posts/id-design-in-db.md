@@ -9,6 +9,7 @@ categories:
 tags:
   - DB
 translation_key: id-design-in-db
+draft: false
 ---
 
 

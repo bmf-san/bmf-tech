@@ -12,6 +12,7 @@ tags:
   - DB
 description: Exploring the features, design examples, advantages, and disadvantages of different temporal data models.
 translation_key: nontemporarl-unitemporal-bitemporal-design
+draft: false
 ---
 
 In data models, there are several patterns based on how the time axis (such as history or validity periods) is managed.

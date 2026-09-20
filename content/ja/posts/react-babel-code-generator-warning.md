@@ -10,6 +10,7 @@ tags:
   - React
   - Tips
 translation_key: react-babel-code-generator-warning
+draft: false
 ---
 
 

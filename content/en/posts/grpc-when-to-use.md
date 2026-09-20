@@ -14,6 +14,7 @@ tags:
   - HTTP/2
 description: "When should you adopt gRPC? This guide covers its core ideas (RPC, HTTP/2, Protocol Buffers), where it fits and where it does not, the trade-offs, operational concerns, and how it compares with REST and GraphQL."
 translation_key: grpc-when-to-use
+draft: false
 ---
 
 # Overview

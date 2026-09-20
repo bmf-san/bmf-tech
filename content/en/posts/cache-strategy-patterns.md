@@ -10,6 +10,7 @@ tags:
   - Cache
   - System Performance
 translation_key: cache-strategy-patterns
+draft: false
 ---
 
 To enhance performance in web applications and distributed systems, it is essential to understand the basic usage patterns of "cache."

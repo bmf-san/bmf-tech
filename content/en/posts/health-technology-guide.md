@@ -13,6 +13,7 @@ translation_key: health-technology-guide
 books:
   - asin: "4478102295"
     title: "健康になる技術　大全"
+draft: false
 ---
 
 

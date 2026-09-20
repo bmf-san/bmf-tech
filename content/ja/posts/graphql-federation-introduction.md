@@ -10,6 +10,7 @@ tags:
   - GraphQL
   - GraphQL Federation
 translation_key: graphql-federation-introduction
+draft: false
 ---
 
 

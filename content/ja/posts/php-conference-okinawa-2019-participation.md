@@ -10,6 +10,7 @@ tags:
   - PHP
   - PHPカンファレンス
 translation_key: php-conference-okinawa-2019-participation
+draft: false
 ---
 
 

@@ -14,6 +14,7 @@ tags:
   - Redux
   - webpack
 translation_key: react-ecosystem-spa-boilerplate
+draft: false
 ---
 
 

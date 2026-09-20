@@ -10,6 +10,7 @@ tags:
   - Open Policy Agent
   - Access Management
 translation_key: access-control-patterns-using-opa
+draft: false
 ---
 
 # Overview

@@ -10,6 +10,7 @@ tags:
   - マイクロサービス
   - リンク集
 translation_key: soa-vs-microservices
+draft: false
 ---
 
 

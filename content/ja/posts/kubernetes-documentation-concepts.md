@@ -11,6 +11,7 @@ tags:
   - コンテナ
   - Kubernetes
 translation_key: kubernetes-documentation-concepts
+draft: false
 ---
 
 

@@ -10,6 +10,7 @@ tags:
   - Golang
   - Tips
 translation_key: using-pprof-without-defaultmux
+draft: false
 ---
 
 

@@ -10,6 +10,7 @@ tags:
   - Linux
   - grep
 translation_key: introduction-to-grep
+draft: false
 ---
 
 

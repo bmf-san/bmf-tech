@@ -10,6 +10,7 @@ tags:
   - シンボリックリンク
   - ハードリンク
 translation_key: symbolic-vs-hard-links
+draft: false
 ---
 
 

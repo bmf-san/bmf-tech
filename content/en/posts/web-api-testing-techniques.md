@@ -13,6 +13,7 @@ translation_key: web-api-testing-techniques
 books:
   - asin: "B0C6DFQNLP"
     title: "Web APIテスト技法"
+draft: false
 ---
 
 

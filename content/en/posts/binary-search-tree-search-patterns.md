@@ -11,6 +11,7 @@ tags:
   - DFS
   - BFS
 translation_key: binary-search-tree-search-patterns
+draft: false
 ---
 
 # Overview

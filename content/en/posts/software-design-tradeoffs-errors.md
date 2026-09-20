@@ -15,6 +15,7 @@ translation_key: software-design-tradeoffs-errors
 books:
   - asin: "4814400314"
     title: "ソフトウェア設計のトレードオフと誤り ―プログラミングの際により良い選択をするには"
+draft: false
 ---
 
 

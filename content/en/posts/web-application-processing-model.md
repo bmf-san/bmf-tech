@@ -11,6 +11,7 @@ tags:
   - Thread
   - Process
 translation_key: web-application-processing-model
+draft: false
 ---
 
 In this article, I will write about the typical processing models of web applications.

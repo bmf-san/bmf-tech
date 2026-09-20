@@ -10,6 +10,7 @@ tags:
   - Docker
   - Docker Compose
 translation_key: docker-image-container-volume-issue
+draft: false
 ---
 
 

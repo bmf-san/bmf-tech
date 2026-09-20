@@ -11,6 +11,7 @@ tags:
   - Architecture Decision Record
   - Design Docs
 translation_key: accidental-complexity-and-missing-decision-records
+draft: false
 ---
 
 ## はじめに

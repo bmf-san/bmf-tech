@@ -10,6 +10,7 @@ tags:
   - キャッシュ
   - システムパフォーマンス
 translation_key: cache-strategy-patterns
+draft: false
 ---
 
 

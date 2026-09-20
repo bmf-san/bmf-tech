@@ -13,6 +13,7 @@ tags:
   - 設計
   - アーキテクチャ
 translation_key: requirements-vs-constraints
+draft: false
 ---
 
 

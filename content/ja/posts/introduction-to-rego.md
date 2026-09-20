@@ -10,6 +10,7 @@ tags:
   - Open Policy Agent
   - Rego
 translation_key: introduction-to-rego
+draft: false
 ---
 
 

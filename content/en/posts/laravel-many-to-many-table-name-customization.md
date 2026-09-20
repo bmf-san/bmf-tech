@@ -9,6 +9,7 @@ categories:
 tags:
   - Laravel
 translation_key: laravel-many-to-many-table-name-customization
+draft: false
 ---
 
 When designing many-to-many relationships, I thought I was following the documentation, but I had a slight misunderstanding.

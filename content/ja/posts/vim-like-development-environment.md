@@ -12,6 +12,7 @@ tags:
   - Atom
   - iTerm
 translation_key: vim-like-development-environment
+draft: false
 ---
 
 

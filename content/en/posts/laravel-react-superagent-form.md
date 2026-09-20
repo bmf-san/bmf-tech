@@ -12,6 +12,7 @@ tags:
   - AJAX
   - Superagent
 translation_key: laravel-react-superagent-form
+draft: false
 ---
 
 As the title suggests, we will implement an Ajax form using Laravel, React, and Superagent.

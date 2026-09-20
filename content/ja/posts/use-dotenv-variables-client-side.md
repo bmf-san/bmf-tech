@@ -11,6 +11,7 @@ tags:
   - npm
   - webpack
 translation_key: use-dotenv-variables-client-side
+draft: false
 ---
 
 

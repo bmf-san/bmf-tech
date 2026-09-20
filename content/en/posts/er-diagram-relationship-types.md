@@ -9,6 +9,7 @@ categories:
 tags:
   - ER
 translation_key: er-diagram-relationship-types
+draft: false
 ---
 
 # Overview

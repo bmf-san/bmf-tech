@@ -9,6 +9,7 @@ tags:
   - OS
 description: "Explore OS fundamentals including swap memory, page cache, buffer cache, slab cache, dentry/inode structures, hard links, and symbolic links."
 translation_key: os-memo
+draft: false
 ---
 
 

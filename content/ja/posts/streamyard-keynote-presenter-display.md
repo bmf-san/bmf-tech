@@ -11,6 +11,7 @@ tags:
   - StreamYard
   - Tips
 translation_key: streamyard-keynote-presenter-display
+draft: false
 ---
 
 

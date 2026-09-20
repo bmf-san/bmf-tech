@@ -11,6 +11,7 @@ tags:
   - Resume
 description: I switched from Google Drive to GitHub for managing my resume.
 translation_key: github-resume-management
+draft: false
 ---
 
 

@@ -18,6 +18,7 @@ tags:
   - fluentd
   - node-exporter
 translation_key: container-monitoring-infrastructure
+draft: false
 ---
 
 

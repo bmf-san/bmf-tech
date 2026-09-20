@@ -10,6 +10,7 @@ tags:
   - Design
   - System Design
 translation_key: cohesion-coupling
+draft: false
 ---
 
 # Overview

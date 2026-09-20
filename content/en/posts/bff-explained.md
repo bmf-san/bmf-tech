@@ -10,6 +10,7 @@ tags:
   - BFF
 description: A summary of what I researched about BFF.
 translation_key: bff-explained
+draft: false
 ---
 
 

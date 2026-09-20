@@ -13,6 +13,7 @@ tags:
   - homebrew
   - tidalcycles
 translation_key: live-coding-atom-tidalcycles-supercollider
+draft: false
 ---
 
 

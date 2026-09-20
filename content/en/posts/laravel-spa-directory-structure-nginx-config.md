@@ -11,6 +11,7 @@ tags:
   - React
   - Nginx
 translation_key: laravel-spa-directory-structure-nginx-config
+draft: false
 ---
 
 # Overview

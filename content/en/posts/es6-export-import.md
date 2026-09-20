@@ -10,6 +10,7 @@ tags:
   - JavaScript
   - ES6
 translation_key: es6-export-import
+draft: false
 ---
 
 I realized that I didn't fully grasp the export and import in ES6, so I did some research.

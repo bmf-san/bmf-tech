@@ -12,6 +12,7 @@ tags:
   - Tips
 description: A story about encountering network errors after updating Vagrant from an older version.
 translation_key: vagrant-update-issue-eth2
+draft: false
 ---
 
 

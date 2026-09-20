@@ -10,6 +10,7 @@ tags:
   - Docker
   - ER
 translation_key: db-documentation-tools-schemaspy-tbls
+draft: false
 ---
 
 

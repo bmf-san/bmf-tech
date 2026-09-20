@@ -11,6 +11,7 @@ tags:
   - CQRS
   - Microservices
 translation_key: cqrs-research-notes
+draft: false
 ---
 
 

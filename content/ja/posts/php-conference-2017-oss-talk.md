@@ -12,6 +12,7 @@ tags:
   - LT
   - PHPカンファレンス
 translation_key: php-conference-2017-oss-talk
+draft: false
 ---
 
 

@@ -9,6 +9,7 @@ tags:
   - Laravel
 description: Explains how to handle Laravel error pages with a common template.
 translation_key: laravel-error-message-template
+draft: false
 ---
 
 

@@ -13,6 +13,7 @@ translation_key: writing-sustainable-code
 books:
   - asin: "4814400799"
     title: "How to Write Code That Fits in the Brain: Rules and Techniques for Avoiding Complexity and Ensuring Sustainability"
+draft: false
 ---
 
 

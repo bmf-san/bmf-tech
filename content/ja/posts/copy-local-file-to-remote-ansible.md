@@ -9,6 +9,7 @@ categories:
 tags:
   - Ansible
 translation_key: copy-local-file-to-remote-ansible
+draft: false
 ---
 
 

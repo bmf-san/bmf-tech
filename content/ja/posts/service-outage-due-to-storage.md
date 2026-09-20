@@ -9,6 +9,7 @@ categories:
 tags:
   - ポストモーテム
 translation_key: service-outage-due-to-storage
+draft: false
 ---
 
 

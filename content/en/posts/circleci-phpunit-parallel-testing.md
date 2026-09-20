@@ -10,6 +10,7 @@ tags:
   - CircleCI
   - phpunit
 translation_key: circleci-phpunit-parallel-testing
+draft: false
 ---
 
 

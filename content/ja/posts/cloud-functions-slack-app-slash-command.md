@@ -13,6 +13,7 @@ tags:
   - Google Cloud Platform
   - Cloud Functions
 translation_key: cloud-functions-slack-app-slash-command
+draft: false
 ---
 
 

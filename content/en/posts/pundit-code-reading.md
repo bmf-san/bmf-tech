@@ -10,6 +10,7 @@ tags:
   - pundit
   - Ruby
 translation_key: pundit-code-reading
+draft: false
 ---
 
 # Overview

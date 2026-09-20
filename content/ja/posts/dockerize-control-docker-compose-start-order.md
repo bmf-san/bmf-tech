@@ -12,6 +12,7 @@ tags:
   - Docker Compose
   - Dockerize
 translation_key: dockerize-control-docker-compose-start-order
+draft: false
 ---
 
 

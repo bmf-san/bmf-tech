@@ -12,6 +12,7 @@ tags:
   - Non-Temporal
   - DB
 translation_key: nontemporarl-unitemporal-bitemporal-design
+draft: false
 ---
 
 

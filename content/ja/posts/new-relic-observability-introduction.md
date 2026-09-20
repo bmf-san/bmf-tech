@@ -13,6 +13,7 @@ translation_key: new-relic-observability-introduction
 books:
   - asin: "4798184500"
     title: "New Relic実践入門 第2版 オブザーバビリティの基礎と実現"
+draft: false
 ---
 
 

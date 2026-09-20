@@ -11,6 +11,7 @@ tags:
   - Design
 description: Exploring the differences between effective and ineffective architecture strategies.
 translation_key: good-bad-architecture-strategies
+draft: false
 ---
 
 

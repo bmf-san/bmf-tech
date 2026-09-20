@@ -13,6 +13,7 @@ translation_key: introduction-react-component-based-development
 books:
   - asin: "4873117194"
     title: "入門 React ―コンポーネントベースのWebフロントエンド開発"
+draft: false
 ---
 
 

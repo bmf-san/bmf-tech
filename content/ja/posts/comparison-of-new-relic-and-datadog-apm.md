@@ -11,6 +11,7 @@ tags:
   - Datadog
   - New Relic
 translation_key: comparison-of-new-relic-and-datadog-apm
+draft: false
 ---
 
 

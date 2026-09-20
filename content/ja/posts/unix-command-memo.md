@@ -11,6 +11,7 @@ tags:
   - jq
   - tee
 translation_key: unix-command-memo
+draft: false
 ---
 
 

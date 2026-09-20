@@ -10,6 +10,7 @@ tags:
   - fan-in
   - fan-out
 translation_key: go-fan-in-fan-out-implementation
+draft: false
 ---
 
 # Overview

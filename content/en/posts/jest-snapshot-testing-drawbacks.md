@@ -10,6 +10,7 @@ tags:
   - JavaScript
   - Jest
 translation_key: jest-snapshot-testing-drawbacks
+draft: false
 ---
 
 Here are some rough notes on the disadvantages of avoiding Jest snapshot testing.

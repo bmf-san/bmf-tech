@@ -10,6 +10,7 @@ tags:
   - ERE
   - 正規表現
 translation_key: basic-regular-expressions
+draft: false
 ---
 
 

@@ -9,6 +9,7 @@ categories:
 tags:
   - 振り返りと抱負
 translation_key: reflections-and-resolutions-2025
+draft: false
 ---
 
 

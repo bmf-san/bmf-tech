@@ -15,6 +15,7 @@ translation_key: lean-ux-user-experience-design
 books:
   - asin: "4873116619"
     title: "Lean UX ―リーン思考によるユーザエクスペリエンス・デザイン"
+draft: false
 ---
 
 [Lean UX - User Experience Design with Lean Thinking](https://amzn.to/3UW33vZ) is a book I read.

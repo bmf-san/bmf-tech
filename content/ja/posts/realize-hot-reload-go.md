@@ -10,6 +10,7 @@ tags:
   - Golang
   - realize
 translation_key: realize-hot-reload-go
+draft: false
 ---
 
 

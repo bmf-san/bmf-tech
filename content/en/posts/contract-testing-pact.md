@@ -12,6 +12,7 @@ tags:
   - Consumer-Driven Contract Testing
 description: A summary of research on contract testing and Pact.
 translation_key: contract-testing-pact
+draft: false
 ---
 
 

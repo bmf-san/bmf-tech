@@ -13,6 +13,7 @@ translation_key: thinking-like-top-engineers
 books:
   - asin: "4163917683"
     title: "世界一流エンジニアの思考法"
+draft: false
 ---
 
 

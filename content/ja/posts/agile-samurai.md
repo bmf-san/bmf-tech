@@ -14,6 +14,7 @@ translation_key: agile-samurai
 books:
   - asin: "4274068560"
     title: "アジャイルサムライ"
+draft: false
 ---
 
 

@@ -14,6 +14,7 @@ tags:
   - 履歴
   - Temporal Data Model
 translation_key: bitemporal-data-model
+draft: false
 ---
 
 

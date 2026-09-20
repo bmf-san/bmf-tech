@@ -11,6 +11,7 @@ tags:
   - Ubuntu
   - CentOS
 translation_key: postgresql-install-configure-error-troubleshooting
+draft: false
 ---
 
 

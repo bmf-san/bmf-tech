@@ -13,6 +13,7 @@ translation_key: product-management-in-practice-second-edition
 books:
   - asin: "4814400438"
     title: "プロダクトマネージャーのしごと 第2版 ―1日目から使える実践ガイド"
+draft: false
 ---
 
 

@@ -9,6 +9,7 @@ tags:
   - Google Cloud Platform
 description: Reflections on studying for the Google Cloud Certified Associate Cloud Engineer exam.
 translation_key: google-cloud-associate-engineer-exam
+draft: false
 ---
 
 

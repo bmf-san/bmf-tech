@@ -13,6 +13,7 @@ tags:
   - REST
 description: "GraphQL をいつ採用すべきかを、型システムや単一エンドポイント、オーバーフェッチ解消といった本質から整理します。向く場面と向かない場面、トレードオフ、N+1 などの運用、REST や gRPC との使い分けまで解説します。"
 translation_key: graphql-when-to-use
+draft: false
 ---
 
 # 概要

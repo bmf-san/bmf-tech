@@ -12,6 +12,7 @@ tags:
   - Zabbix
   - Tips
 translation_key: centos-error-404-pycurl
+draft: false
 ---
 
 # Encountered [Errno 14] PYCURL ERROR 22 - "The requested URL returned error: 404 Not Found" on CentOS6.7

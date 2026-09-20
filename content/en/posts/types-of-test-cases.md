@@ -9,6 +9,7 @@ tags:
   - Design
 description: A concise summary of basic types of test cases and how to identify them.
 translation_key: types-of-test-cases
+draft: false
 ---
 
 # Overview

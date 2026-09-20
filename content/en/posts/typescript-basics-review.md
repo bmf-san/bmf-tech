@@ -9,6 +9,7 @@ tags:
   - TypeScript
 description: Revisiting the fundamentals of TypeScript.
 translation_key: typescript-basics-review
+draft: false
 ---
 
 

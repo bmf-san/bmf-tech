@@ -10,6 +10,7 @@ tags:
   - 認証
   - 認可
 translation_key: session-token-authentication
+draft: false
 ---
 
 

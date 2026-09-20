@@ -10,6 +10,7 @@ tags:
   - Discrete Mathematics
 description: A summary of calculation methods for converting between binary, decimal, and hexadecimal.
 translation_key: binary-decimal-hexadecimal-conversion
+draft: false
 ---
 
 # Overview

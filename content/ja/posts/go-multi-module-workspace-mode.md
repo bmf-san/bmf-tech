@@ -9,6 +9,7 @@ categories:
 tags:
   - Golang
 translation_key: go-multi-module-workspace-mode
+draft: false
 ---
 
 

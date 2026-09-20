@@ -11,6 +11,7 @@ tags:
   - セキュリティ
   - 脆弱性
 translation_key: using-burp-suite-with-google-chrome
+draft: false
 ---
 
 

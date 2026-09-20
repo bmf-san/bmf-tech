@@ -13,6 +13,7 @@ translation_key: fun-with-ruby
 books:
   - asin: "4797399848"
     title: "たのしいRuby"
+draft: false
 ---
 
 I read [Fun with Ruby](https://amzn.to/3UV14YP).

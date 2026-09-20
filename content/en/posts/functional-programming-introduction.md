@@ -13,6 +13,7 @@ translation_key: functional-programming-introduction
 books:
   - asin: "4798179809"
     title: "なっとく！関数型プログラミング"
+draft: false
 ---
 
 

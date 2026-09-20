@@ -12,6 +12,7 @@ translation_key: book-reading-guide
 books:
   - asin: "4061592998"
     title: "本を読む本"
+draft: false
 ---
 
 [How to Read Books](https://amzn.to/4jWO5QN) is a book I read.

@@ -13,6 +13,7 @@ translation_key: idiomatic-go-practice-guide
 books:
   - asin: "4814401191"
     title: "初めてのGo言語 第2版 ―他言語プログラマーのためのイディオマティックGo実践ガイド"
+draft: false
 ---
 
 I read the [The Go Programming Language, 2nd Edition: An Idiomatic Go Practical Guide for Programmers from Other Languages](https://amzn.to/3J2NzmR).

@@ -10,6 +10,7 @@ tags:
   - PostgreSQL
   - Permission Management
 translation_key: postgresql-row-level-security
+draft: false
 ---
 
 # Overview

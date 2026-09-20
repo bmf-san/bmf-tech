@@ -10,6 +10,7 @@ tags:
   - Golang
   - コードレビュー
 translation_key: go-code-review-comments-summary
+draft: false
 ---
 
 

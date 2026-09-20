@@ -9,6 +9,7 @@ categories:
 tags:
   - PHP
 translation_key: php-uml-auto-generator-phuml
+draft: false
 ---
 
 

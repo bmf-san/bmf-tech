@@ -12,6 +12,7 @@ tags:
   - Node.js
   - bitFlyer
 translation_key: notify-bitcoin-status-slack-bitflyer-api
+draft: false
 ---
 
 

@@ -12,6 +12,7 @@ tags:
   - Riverpod
   - Dart
 translation_key: introducing-bookstacks
+draft: false
 ---
 
 # Introducing Bookstacks — An iPhone Bookshelf App with ISBN Barcode Scanning

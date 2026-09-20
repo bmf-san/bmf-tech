@@ -11,6 +11,7 @@ tags:
   - SSG
   - Architecture
 translation_key: introducing-gohan-ssg
+draft: false
 ---
 
 # gohan — インクリメンタルビルド対応のGo製静的サイトジェネレータの紹介

@@ -9,6 +9,7 @@ categories:
 tags:
   - Golang
 translation_key: golang-variable-definition-patterns
+draft: false
 ---
 
 # Overview

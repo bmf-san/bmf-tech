@@ -10,6 +10,7 @@ tags:
   - ポリモーフィック
   - SQLアンチパターン
 translation_key: table-design-multiple-tables-many-to-one
+draft: false
 ---
 
 

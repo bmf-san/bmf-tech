@@ -11,6 +11,7 @@ tags:
   - Design
   - Tips
 translation_key: system-specification-structure
+draft: false
 ---
 
 

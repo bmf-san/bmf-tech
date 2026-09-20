@@ -14,6 +14,7 @@ tags:
   - Process
   - Thread
 translation_key: exploring-go-process-goroutine-memory
+draft: false
 ---
 
 # 

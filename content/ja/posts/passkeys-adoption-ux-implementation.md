@@ -16,6 +16,7 @@ translation_key: passkeys-adoption-ux-implementation
 books:
   - asin: "4297146533"
     title: "パスキーのすべて ―導入・UX設計・実装"
+draft: false
 ---
 
 

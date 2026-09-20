@@ -13,6 +13,7 @@ tags:
   - Terraform
   - kubeadm
 translation_key: kubernetes-setup-with-terraform-ansible
+draft: false
 ---
 
 

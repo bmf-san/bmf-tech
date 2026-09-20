@@ -12,6 +12,7 @@ tags:
   - Function
   - Anonymous Function
 translation_key: golang-functions-callbacks-anonymous
+draft: false
 ---
 
 # Overview

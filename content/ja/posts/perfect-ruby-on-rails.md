@@ -14,6 +14,7 @@ translation_key: perfect-ruby-on-rails
 books:
   - asin: "4297114623"
     title: "パーフェクトRuby on Rails"
+draft: false
 ---
 
 

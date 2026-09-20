@@ -10,6 +10,7 @@ tags:
   - Book Review
 description: A book that introduces systems thinking from the perspective of how software engineers can apply it to their own work.
 translation_key: thinking-in-systems-for-software-engineers
+draft: false
 ---
 
 

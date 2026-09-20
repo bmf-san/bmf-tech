@@ -10,6 +10,7 @@ tags:
   - PHP
   - PHP Conference
 translation_key: php-conference-fukuoka-2019-participation
+draft: false
 ---
 
 

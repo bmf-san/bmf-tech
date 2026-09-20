@@ -12,6 +12,7 @@ tags:
   - RBAC
   - マイクロサービス
 translation_key: microservices-access-control-opa
+draft: false
 ---
 
 

@@ -9,6 +9,7 @@ categories:
 tags:
   - Postmortem
 translation_key: service-outage-due-to-storage
+draft: false
 ---
 
 

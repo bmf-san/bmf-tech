@@ -11,6 +11,7 @@ tags:
   - コードリーディング
   - router
 translation_key: golang-http-server-code-reading-2019
+draft: false
 ---
 
 

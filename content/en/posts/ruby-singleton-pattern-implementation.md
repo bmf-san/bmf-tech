@@ -9,6 +9,7 @@ tags:
   - Ruby
 description: A summary of how to implement the Singleton pattern in Ruby.
 translation_key: ruby-singleton-pattern-implementation
+draft: false
 ---
 
 

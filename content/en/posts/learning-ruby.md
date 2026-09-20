@@ -9,6 +9,7 @@ categories:
 tags:
   - Ruby
 translation_key: learning-ruby
+draft: false
 ---
 
 

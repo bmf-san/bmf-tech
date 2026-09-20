@@ -13,6 +13,7 @@ translation_key: gcp-textbook
 books:
   - asin: "4865941959"
     title: "GCPの教科書"
+draft: false
 ---
 
 

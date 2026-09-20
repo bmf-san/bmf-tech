@@ -12,6 +12,7 @@ tags:
   - 値渡し
   - 参照
 translation_key: golang-pointers-basics
+draft: false
 ---
 
 

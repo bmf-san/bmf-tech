@@ -10,6 +10,7 @@ tags:
   - モブプログラミング
   - アジャイル
 translation_key: mob-programming-introduction
+draft: false
 ---
 
 

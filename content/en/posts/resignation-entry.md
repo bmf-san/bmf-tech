@@ -10,6 +10,7 @@ tags:
   - Resignation
   - Career Change
 translation_key: resignation-entry
+draft: false
 ---
 
 

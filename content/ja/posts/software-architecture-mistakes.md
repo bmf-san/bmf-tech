@@ -14,6 +14,7 @@ translation_key: software-architecture-mistakes
 books:
   - asin: "477414343X"
     title: "間違いだらけのソフトウェア・アーキテクチャ―非機能要件の開発と評価"
+draft: false
 ---
 
 

@@ -9,6 +9,7 @@ categories:
 tags:
   - Git
 translation_key: split-commits-with-git
+draft: false
 ---
 
 

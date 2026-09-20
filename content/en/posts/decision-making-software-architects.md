@@ -16,6 +16,7 @@ translation_key: decision-making-software-architects
 books:
   - asin: "4295020761"
     title: "ソフトウェアアーキテクトのための意思決定術　リーダーシップ／技術／プロダクトマネジメントの活用"
+draft: false
 ---
 
 

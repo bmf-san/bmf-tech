@@ -11,6 +11,7 @@ tags:
   - GitHub
   - レジュメ
 translation_key: github-resume-management
+draft: false
 ---
 
 

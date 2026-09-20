@@ -13,6 +13,7 @@ tags:
   - lxd
   - コンテナ
 translation_key: container-technology-overview
+draft: false
 ---
 
 

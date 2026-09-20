@@ -9,6 +9,7 @@ tags:
   - Architect
 description: A book discussing communication through visual information, text, language, non-verbal cues, and documentation.
 translation_key: communication-guide-developers-architects
+draft: false
 ---
 
 

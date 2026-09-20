@@ -11,6 +11,7 @@ tags:
   - Repository Pattern
   - artisan
 translation_key: laravel-5-3-custom-artisan-command
+draft: false
 ---
 
 Currently, I am working on a project that implements the Repository pattern, and I thought it would be convenient to have a command that automatically generates Repository-related files, so I created one.

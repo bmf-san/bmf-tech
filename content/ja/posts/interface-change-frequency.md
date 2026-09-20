@@ -10,6 +10,7 @@ tags:
   - Golang
   - インターフェース
 translation_key: interface-change-frequency
+draft: false
 ---
 
 

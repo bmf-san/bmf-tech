@@ -14,6 +14,7 @@ tags:
   - プロンプトエンジニアリング
   - Continuous AI
 translation_key: github-agentic-workflow-llm-prompt-management
+draft: false
 ---
 
 

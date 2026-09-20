@@ -13,6 +13,7 @@ translation_key: perfect-ruby
 books:
   - asin: "4774189774"
     title: "パーフェクトRuby"
+draft: false
 ---
 
 

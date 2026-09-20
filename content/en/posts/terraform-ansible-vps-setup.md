@@ -13,6 +13,7 @@ tags:
   - OpenStack
   - Terraform
 translation_key: terraform-ansible-vps-setup
+draft: false
 ---
 
 

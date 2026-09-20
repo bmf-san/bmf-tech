@@ -14,6 +14,7 @@ translation_key: linux-kernel-explained
 books:
   - asin: "4798177849"
     title: "絵で見てわかるLinuxカーネルの仕組み"
+draft: false
 ---
 
 

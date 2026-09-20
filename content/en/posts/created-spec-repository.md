@@ -9,6 +9,7 @@ categories:
 tags:
   - GitHub
 translation_key: created-spec-repository
+draft: false
 ---
 
 I created a repository to organize and store original specifications and frameworks that I came up with.

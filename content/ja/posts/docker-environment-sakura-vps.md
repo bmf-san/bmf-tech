@@ -10,6 +10,7 @@ tags:
   - Docker
   - さくらのVPS
 translation_key: docker-environment-sakura-vps
+draft: false
 ---
 
 

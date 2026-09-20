@@ -13,6 +13,7 @@ tags:
   - コード生成
 description: "sqlc とは何か、SQL から型安全な Go コードを生成する仕組みを、SQLite を使ったハンズオンで解説します。スキーマとクエリからコードを生成する流れ、メリットやハマりどころまで簡単に理解できます。"
 translation_key: sqlc-introduction-golang
+draft: false
 ---
 
 # 概要

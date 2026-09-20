@@ -9,6 +9,7 @@ categories:
 tags:
   - 選択ソート
 translation_key: algorithms-data-structures-selection-sort
+draft: false
 ---
 
 

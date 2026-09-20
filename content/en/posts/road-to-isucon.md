@@ -11,6 +11,7 @@ tags:
   - ISUCON8
 description: Preparation for participating in ISUcon.
 translation_key: road-to-isucon
+draft: false
 ---
 
 

@@ -15,6 +15,7 @@ translation_key: secure-by-design-software
 books:
   - asin: "B09F697K2V"
     title: "セキュア・バイ・デザイン: 安全なソフトウェア設計"
+draft: false
 ---
 
 

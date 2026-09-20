@@ -10,6 +10,7 @@ tags:
   - Critical User Journey
   - SLO
 translation_key: critical-user-journey
+draft: false
 ---
 
 # Overview

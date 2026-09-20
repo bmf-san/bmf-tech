@@ -12,6 +12,7 @@ translation_key: good-strategy-bad-strategy
 books:
   - asin: "4532318092"
     title: "良い戦略、悪い戦略"
+draft: false
 ---
 
 

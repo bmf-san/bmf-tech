@@ -14,6 +14,7 @@ tags:
   - System Design
   - Architecture Strategy
 translation_key: architecture-strategy-discussion
+draft: false
 ---
 
 

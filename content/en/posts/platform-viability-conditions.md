@@ -11,6 +11,7 @@ tags:
   - Platform Engineering
   - DDD
 translation_key: platform-viability-conditions
+draft: false
 ---
 
 # Introduction

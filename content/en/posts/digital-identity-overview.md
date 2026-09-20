@@ -16,6 +16,7 @@ translation_key: digital-identity-overview
 books:
   - asin: "4814400985"
     title: "デジタルアイデンティティのすべて―安全かつユーザー中心のアイデンティティシステムを実現するための知識"
+draft: false
 ---
 
 I read [Everything About Digital Identity: Knowledge for Realizing a Secure and User-Centric Identity System](https://amzn.to/3ZOp0P7).  

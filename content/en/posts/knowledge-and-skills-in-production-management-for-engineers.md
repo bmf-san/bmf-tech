@@ -13,6 +13,7 @@ translation_key: knowledge-and-skills-in-production-management-for-engineers
 books:
   - asin: "4798162671"
     title: "エンジニアが学ぶ生産管理システムの「知識」と「技術」"
+draft: false
 ---
 
 

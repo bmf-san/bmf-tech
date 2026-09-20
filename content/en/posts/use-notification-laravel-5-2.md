@@ -9,6 +9,7 @@ tags:
   - Laravel
 description: Discussion on using Notifications in Laravel 5.2.
 translation_key: use-notification-laravel-5-2
+draft: false
 ---
 
 

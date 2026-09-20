@@ -12,6 +12,7 @@ tags:
   - 関数
   - 無名関数
 translation_key: golang-functions-callbacks-anonymous
+draft: false
 ---
 
 

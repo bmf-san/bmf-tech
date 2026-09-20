@@ -9,6 +9,7 @@ categories:
 tags:
   - Modular Monolith
 translation_key: modular-monolith-research-notes
+draft: false
 ---
 
 

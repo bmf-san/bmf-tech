@@ -11,6 +11,7 @@ tags:
   - Cloud-Native
 description: Learn about the fundamentals of cloud-native thinking.
 translation_key: cloud-native-architecture-principles
+draft: false
 ---
 
 

@@ -13,6 +13,7 @@ tags:
   - スタック
   - ヒープ
 translation_key: process-vs-thread
+draft: false
 ---
 
 
