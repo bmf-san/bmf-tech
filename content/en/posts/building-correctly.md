@@ -1,6 +1,6 @@
 ---
 title: Building the Right Thing the Right Way
-description: "Building the Right Thing the Right Way"
+description: "A review of Building the Right Thing the Right Way. Asking what it means to build a product and what lies beyond agile, it puts the product development process into words, organizing key ideas such as risk management-covering requirement, technical, staffing, and political risks-and expectation management that aligns stakeholders."
 slug: building-correctly
 date: 2024-04-16T00:00:00Z
 author: bmf-san

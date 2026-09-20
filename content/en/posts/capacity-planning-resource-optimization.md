@@ -1,6 +1,6 @@
 ---
 title: Capacity Planning - Maximizing Resources through Site Analysis, Forecasting, and Placement
-description: "Capacity Planning - Maximizing Resources through Site Analysis, Forecasting, and Placement"
+description: "A review of Capacity Planning. Though an older book, it teaches the fundamentals of capacity planning. While it assumes on-premises, much of its thinking on analyzing, forecasting, and placing site resources still transfers to the cloud."
 slug: capacity-planning-resource-optimization
 date: 2024-03-30T00:00:00Z
 author: bmf-san

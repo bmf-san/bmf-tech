@@ -1,6 +1,6 @@
 ---
 title: "CTO''s Thinking: Decision Making, Strategy, and Leadership to Drive Technology and Organization"
-description: "CTO''s Thinking: Decision Making, Strategy, and Leadership to Drive Technology and Organization"
+description: "A review of a book on the CTO's way of thinking. It reveals what a technical leader needs to truly function as part of executive leadership, from three angles: technology, business, and relationships. It emphasizes translating technology into business value, the trap of clinging to the 'right' technical answer, and making strategic decisions under uncertainty."
 slug: cto-thinking-strategy-leadership
 date: 2026-02-21T00:00:00Z
 author: bmf-san

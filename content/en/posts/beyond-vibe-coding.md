@@ -1,6 +1,6 @@
 ---
 title: Beyond Vibe Coding
-description: "Beyond Vibe Coding"
+description: "A review of Beyond Vibe Coding. Looking past 'vibe coding'-letting AI write code-it covers how to make real use of AI in practice, presenting practices for embedding AI into the whole development workflow rather than treating it as a mere code generator, and offering a map of how review, testing, and refactoring change in the AI era."
 slug: beyond-vibe-coding
 date: 2026-07-28T00:00:00Z
 author: bmf-san

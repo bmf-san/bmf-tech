@@ -1,6 +1,6 @@
 ---
 title: Data-Oriented Application Design
-description: "Data-Oriented Application Design"
+description: "A review of Data-Oriented Application Design. Known as a classic on distributed system design, it systematically covers the foundational technologies behind reliable, scalable applications, such as data storage and retrieval, distribution, and consistency. It is substantial and rewards repeated rereading."
 slug: data-oriented-application-design
 date: 2023-02-27T00:00:00Z
 author: bmf-san
