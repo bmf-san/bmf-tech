@@ -7,7 +7,7 @@ categories:
   - Application
 tags:
   - GraphQL
-description: Summarizing what I researched while practicing GraphQL.
+description: "A summary of what I researched while practicing GraphQL. Drawing on tutorials like How to GraphQL, it introduces how queries and mutations work, how GraphQL compares with REST, and practical samples for getting started."
 translation_key: graphql-introduction
 draft: false
 ---

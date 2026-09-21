@@ -10,7 +10,7 @@ tags:
   - Pact
   - Provider-Driven Contract Testing
   - Consumer-Driven Contract Testing
-description: A summary of research on contract testing and Pact.
+description: "A summary of my research into contract testing and Pact. It explains how contract testing verifies the interactions between a consumer and a provider, the difference between consumer-driven and provider-driven approaches, and how Pact works for testing between microservices."
 translation_key: contract-testing-pact
 draft: false
 ---

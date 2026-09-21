@@ -7,7 +7,7 @@ categories:
   - Database
 tags:
   - PostgreSQL
-description: Guidelines for optimizing PostgreSQL memory settings for performance and stability.
+description: "Guidelines for optimizing PostgreSQL memory settings for performance and stability. It works through key parameters such as shared_buffers, work_mem, and maintenance_work_mem, covering how to improve response times while avoiding out-of-memory situations."
 translation_key: postgresql-memory-settings
 draft: false
 ---

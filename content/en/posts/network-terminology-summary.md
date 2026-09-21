@@ -8,7 +8,7 @@ categories:
 tags:
   - IP
   - Load Balancer
-description: A compilation of network-related terms with unclear knowledge.
+description: "A compilation of network-related terms I wanted to pin down. It covers the basics of IPv4/IPv6, NAT/NAPT, CIDR notation, subnet masks, load balancing, and routing, organized as a reference for terms that were previously fuzzy to me."
 translation_key: network-terminology-summary
 draft: false
 ---

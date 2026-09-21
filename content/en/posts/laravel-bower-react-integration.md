@@ -8,7 +8,7 @@ categories:
 tags:
   - Laravel
   - React
-description: A guide on integrating React into a Laravel project using Bower.
+description: "A guide on integrating React into a Laravel project using the Bower package manager. It walks through setting up a build environment with Babel, JSX syntax, and gulp/elixir to develop the frontend with React instead of the usual jQuery."
 translation_key: laravel-bower-react-integration
 draft: false
 ---

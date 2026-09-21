@@ -7,7 +7,7 @@ categories:
   - Application
 tags:
   - Laravel
-description: Explains how to handle Laravel error pages with a common template.
+description: "Explains how to handle Laravel error pages using a common template. It covers overriding the renderHttpException method in the Handler class to respond to HttpExceptions, and design patterns for building custom, shared error pages."
 translation_key: laravel-error-message-template
 draft: false
 ---
