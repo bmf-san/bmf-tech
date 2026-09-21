@@ -8,7 +8,7 @@ categories:
   - Architecture
 tags:
   - Open Policy Agent
-  - Access Management
+  - Authorization
 translation_key: access-control-patterns-using-opa
 draft: false
 ---

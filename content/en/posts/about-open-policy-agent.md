@@ -8,7 +8,7 @@ categories:
   - Application
 tags:
   - Open Policy Agent
-  - Access Control
+  - Authorization
 translation_key: about-open-policy-agent
 draft: false
 ---

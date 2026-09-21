@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - Architecture
 tags:
-  - Authorization Management
+  - Authorization
   - Design
 translation_key: permission-management-case-study
 draft: false

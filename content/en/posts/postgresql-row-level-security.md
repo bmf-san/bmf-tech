@@ -8,7 +8,7 @@ categories:
   - Database
 tags:
   - PostgreSQL
-  - Permission Management
+  - Authorization
 translation_key: postgresql-row-level-security
 draft: false
 ---

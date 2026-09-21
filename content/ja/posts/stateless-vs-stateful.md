@@ -9,7 +9,7 @@ categories:
 tags:
   - ステートフル
   - ステートレス
-  - セッション
+  - 認証
 translation_key: stateless-vs-stateful
 draft: false
 ---

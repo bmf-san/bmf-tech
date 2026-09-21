@@ -1195,6 +1195,22 @@
 /ja/tags/ハッシュマップ/  /ja/tags/データ構造/  301
 /ja/tags/オープンアドレスハッシュテーブル/  /ja/tags/データ構造/  301
 
+# Tag consolidation: auth (access-control synonyms -> Authorization; authn mechanisms -> Authentication; OpenIDConnect dup)
+/tags/access-control/  /tags/authorization/  301
+/tags/access-management/  /tags/authorization/  301
+/tags/permissions/  /tags/authorization/  301
+/tags/permission-management/  /tags/authorization/  301
+/tags/authorization-management/  /tags/authorization/  301
+/tags/passkeys/  /tags/authentication/  301
+/tags/webauthn/  /tags/authentication/  301
+/tags/session/  /tags/authentication/  301
+/tags/openidconnect/  /tags/openid-connect/  301
+/ja/tags/権限管理/  /ja/tags/認可/  301
+/ja/tags/パーミッション/  /ja/tags/認可/  301
+/ja/tags/パスキー/  /ja/tags/認証/  301
+/ja/tags/webauthn/  /ja/tags/認証/  301
+/ja/tags/セッション/  /ja/tags/認証/  301
+
 # Dynamic redirects
 /categories/:splat  /ja/categories/:splat  301
 /tags/:splat  /ja/tags/:splat  301

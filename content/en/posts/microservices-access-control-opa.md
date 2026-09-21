@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - Architecture
 tags:
-  - Access Management
+  - Authorization
   - Open Policy Agent
   - RBAC
   - Microservices

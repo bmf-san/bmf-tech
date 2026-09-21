@@ -10,7 +10,7 @@ tags:
   - Open Policy Agent
   - オフセットページネーション
   - カーソルページネーション
-  - 権限管理
+  - 認可
 translation_key: pagination-impact-solutions-opa
 draft: false
 ---

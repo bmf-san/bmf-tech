@@ -8,7 +8,7 @@ categories:
   - OS
 tags:
   - Linux
-  - パーミッション
+  - 認可
 translation_key: linux-permission-reading-specification
 draft: false
 ---

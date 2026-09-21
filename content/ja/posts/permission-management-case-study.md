@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - アーキテクチャ
 tags:
-  - 権限管理
+  - 認可
   - 設計
 translation_key: permission-management-case-study
 draft: false

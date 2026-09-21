@@ -9,7 +9,7 @@ categories:
 tags:
   - Stateful
   - Stateless
-  - Session
+  - Authentication
 translation_key: stateless-vs-stateful
 draft: false
 ---

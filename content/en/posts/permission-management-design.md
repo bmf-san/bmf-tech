@@ -10,7 +10,7 @@ tags:
   - ABAC
   - ACL
   - RBAC
-  - Permission Management
+  - Authorization
   - System Design
   - Link Collection
 translation_key: permission-management-design
