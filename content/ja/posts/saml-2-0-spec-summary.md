@@ -8,6 +8,7 @@ categories:
   - アーキテクチャ
 tags:
   - SAML
+  - SSO
   - 認証
   - 認可
 translation_key: saml-2-0-spec-summary

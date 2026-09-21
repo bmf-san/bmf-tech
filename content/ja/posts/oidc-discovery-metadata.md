@@ -9,6 +9,7 @@ categories:
 tags:
   - OpenIDConnect
   - OAuth
+  - SSO
 translation_key: oidc-discovery-metadata
 draft: false
 ---
