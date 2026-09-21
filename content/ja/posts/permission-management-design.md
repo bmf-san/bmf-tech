@@ -10,7 +10,7 @@ tags:
   - ABAC
   - ACL
   - RBAC
-  - 権限管理
+  - 認可
   - システム設計
   - リンク集
 translation_key: permission-management-design

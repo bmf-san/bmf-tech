@@ -2,10 +2,6 @@
   translation_key: 2phase-commit
 - name: ABAC
   translation_key: abac
-- name: Access Control
-  translation_key: access-control
-- name: Access Management
-  translation_key: access-management
 - name: Accounting
   translation_key: accounting
 - name: ACID
@@ -62,8 +58,6 @@
   translation_key: authentication
 - name: Authorization
   translation_key: authorization
-- name: Authorization Management
-  translation_key: authorization-management
 - name: babel
   translation_key: babel
 - name: babel-jest
@@ -616,10 +610,6 @@
   translation_key: pdf
 - name: Performance Tuning
   translation_key: performance-tuning
-- name: Permission Management
-  translation_key: permission-management
-- name: Permissions
-  translation_key: permissions
 - name: PgCat
   translation_key: pgcat
 - name: PHP
@@ -780,8 +770,6 @@
   translation_key: service-locator
 - name: Service Mesh
   translation_key: service-mesh
-- name: Session
-  translation_key: session
 - name: Sets
   translation_key: sets
 - name: Sharding
@@ -956,14 +944,10 @@
   translation_key: machine-learning
 - name: Parenting
   translation_key: parenting
-- name: Passkeys
-  translation_key: passkeys
 - name: Product Management
   translation_key: product-management
 - name: Python
   translation_key: python
-- name: WebAuthn
-  translation_key: webauthn
 - name: Systems Thinking
   translation_key: systems-thinking
 - name: Messaging

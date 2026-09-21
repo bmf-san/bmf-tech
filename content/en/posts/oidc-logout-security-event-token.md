@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - Application
 tags:
-  - OpenIDConnect
+  - OpenID Connect
   - Authentication
 translation_key: oidc-logout-security-event-token
 draft: false

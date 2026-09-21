@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - アーキテクチャ
 tags:
-  - 権限管理
+  - 認可
   - Open Policy Agent
   - RBAC
   - マイクロサービス

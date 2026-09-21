@@ -8,7 +8,7 @@ categories:
   - データベース
 tags:
   - PostgreSQL
-  - 権限管理
+  - 認可
 translation_key: postgresql-row-level-security
 draft: false
 ---

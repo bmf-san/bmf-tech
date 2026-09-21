@@ -9,8 +9,6 @@ categories:
 tags:
   - Book Review
   - Authentication
-  - Passkeys
-  - WebAuthn
   - FIDO
 translation_key: passkeys-adoption-ux-implementation
 books:

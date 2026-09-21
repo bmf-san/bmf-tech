@@ -8,7 +8,7 @@ categories:
   - アプリケーション
 tags:
   - Open Policy Agent
-  - 権限管理
+  - 認可
 translation_key: about-open-policy-agent
 draft: false
 ---

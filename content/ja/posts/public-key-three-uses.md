@@ -11,7 +11,6 @@ tags:
   - 認証
   - セキュリティ
   - JWT
-  - WebAuthn
   - OAuth
   - PKI
 description: "公開鍵（鍵ペア）の用途は署名・暗号化・鍵交換の3つに集約できる。SSH公開鍵認証・WebAuthn・mTLS・private_key_jwt・コード署名・コンテナ署名などの実応用をこの3分類で整理し、HMACなど共通鍵との違いも一次ソース付きで解説する。"

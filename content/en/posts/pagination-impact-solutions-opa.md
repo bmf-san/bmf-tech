@@ -10,7 +10,7 @@ tags:
   - Open Policy Agent
   - Offset Pagination
   - Cursor Pagination
-  - Access Control
+  - Authorization
 translation_key: pagination-impact-solutions-opa
 draft: false
 ---

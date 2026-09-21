@@ -670,8 +670,6 @@
   translation_key: thread
 - name: セキュリティ
   translation_key: security
-- name: セッション
-  translation_key: session
 - name: セールス
   translation_key: sales
 - name: ソフトウェア
@@ -712,8 +710,6 @@
   translation_key: performance-tuning
 - name: パーティショニング
   translation_key: partitioning
-- name: パーミッション
-  translation_key: permissions
 - name: フォワードプロキシ
   translation_key: forward-proxy
 - name: フロントエンド
@@ -840,8 +836,6 @@
   translation_key: reflection-and-goals
 - name: 書評
   translation_key: book-review
-- name: 権限管理
-  translation_key: access-control
 - name: 機能テスト
   translation_key: functional-testing
 - name: 正規化
@@ -908,8 +902,6 @@
   translation_key: algorithmic-trading
 - name: エンジニアリングマネジメント
   translation_key: engineering-management
-- name: パスキー
-  translation_key: passkeys
 - name: プロダクトマネジメント
   translation_key: product-management
 - name: 子育て
@@ -922,8 +914,6 @@
   translation_key: machine-learning
 - name: Python
   translation_key: python
-- name: WebAuthn
-  translation_key: webauthn
 - name: システム思考
   translation_key: systems-thinking
 - name: データ変換

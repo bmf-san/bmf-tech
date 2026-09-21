@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - Application
 tags:
-  - OpenIDConnect
+  - OpenID Connect
   - OAuth
   - SSO
 translation_key: oidc-discovery-metadata

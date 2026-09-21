@@ -8,7 +8,7 @@ categories:
   - アーキテクチャ
 tags:
   - Open Policy Agent
-  - 権限管理
+  - 認可
 translation_key: access-control-patterns-using-opa
 draft: false
 ---

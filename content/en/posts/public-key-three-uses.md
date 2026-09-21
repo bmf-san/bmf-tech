@@ -11,7 +11,6 @@ tags:
   - Authentication
   - Security
   - JWT
-  - WebAuthn
   - OAuth
   - PKI
 description: "A public key has just three uses: signing, encryption, and key exchange. This article sorts real-world applications such as SSH public-key auth, WebAuthn, mTLS, private_key_jwt, code signing, and container signing into these three, and clarifies how they differ from shared-key schemes such as HMAC, with primary sources."
