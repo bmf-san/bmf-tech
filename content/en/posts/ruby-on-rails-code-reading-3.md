@@ -37,15 +37,15 @@ gem 'byebug'
 ```
 
 # Code Reading
-Let's explore how WelcomeController#index is invoked.
+Let's explore how Rails invokes WelcomeController#index.
 
-WelcomeController#index is not defined in config/routes.rb and seems to be defined by default, likely due to the autoload mechanism.
+config/routes.rb does not define WelcomeController#index; Rails seems to define it by default, likely through the autoload mechanism.
 
 [railties/lib/rails.rb#L33](https://github.com/rails/rails/blob/5385580ac82797167382ffcd79095a4bb973c666/railties/lib/rails.rb#L33)
 
-By being autoloaded here, WelcomeController is set in the routing.
+Autoloading it here registers WelcomeController in the routing.
 
 Here is the implementation of WelcomeController.
 [railties/lib/rails/welcome_controller.rb#L5](https://github.com/rails/rails/blob/2b0ae167eee81d0d31b1d2f88c3f6c596c61ea8c/railties/lib/rails/welcome_controller.rb#L5)
 
-Although I couldn't follow the code in detail, it seems that by leveraging the autoload mechanism, routing is resolved without explicitly registering it.
+Although I couldn't follow the code in detail, Rails appears to leverage the autoload mechanism to resolve routing without explicitly registering it.

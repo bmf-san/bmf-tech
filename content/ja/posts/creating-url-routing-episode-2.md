@@ -24,9 +24,9 @@ draft: false
 # エピソード1からの変更点
 エピソード1では、データ構造に木構造を採用してルーティングを作ろうというと試みた。
 
-パフォーマンスが考慮されているライブラリでは、木構造を生成するロジックを用意して、最適化された探索アルゴリズムを実装するような形になっているようだが、木構造を生成するロジックをかくのはめん(ry 時間がかかりそうだったので、探索部分だけ頑張る方向性でやってみることにした。
+パフォーマンスが考慮されているライブラリでは、木構造を生成するロジックを用意し、最適化された探索アルゴリズムを実装するような形になっているようだ。木構造を生成するロジックをかくのは手間で時間がかかりそうだったので、探索部分だけ頑張る方向性でやってみることにした。
 
-前回はルーティング定義のデータ構造を、
+前回はルーティング定義のデータ構造を以下のようにしていた。
 
 ```php
 <?php
@@ -62,7 +62,7 @@ $routes = [
 ];
 ```
 
-としていたが、
+これを見直すことにした。
 
 ```php
 <?php
@@ -100,16 +100,16 @@ $routes = [
 
 こんな感じに定義し直した。
 
-変更点としては、
+主な変更点は以下のとおりである。
 
 - ルートが2つある構造になっていたので、一つに統一して木構造として成立するようにした。
     - **根ノード (英: root node) とは、親ノードを持たないノードのこと。根ノードは木構造の最上位にあるノードであり、1つの木構造に高々1つしか存在しない** - [Wikipedia - 木構造（データ構造）](https://ja.wikipedia.org/wiki/%E6%9C%A8%E6%A7%8B%E9%80%A0_(%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0))より引用
     - つまり、前回のやつは正確には木構造ではなく、木構造モドキだった
 - END_POINTという識別子を用意した
-    - END_POINTという名前が適切だとは思えないが、ルート（根ノード）と区別を明確につけるために用意することにした
+    - END_POINTという名前が適切だとは思えないが、ルート（根ノード）と明確に区別するため用意した
 
 前回は関数で頑張ろうとしたが色々辛かったのでオブジェクトで戦うことにしたらすんなり実装できた。
-データ構造を変更したのも実装のしやすさに影響を与えたと思う。
+データ構造を変更したことも、実装のしやすさに影響を与えた。
 
 # 実装
 ```php
@@ -217,7 +217,7 @@ class Router
         for ($i=0; $i < count($targetParams); $i++) {
             if (isset($targetArrayDimension[$targetParams[$i]])) {
                 $this->params[$targetParams[$i]] = $targetPath;
-                
+
                 return $targetArrayDimension[$targetParams[$i]];
             }
         }
@@ -248,10 +248,10 @@ $router->search($routes, $currentPathArray, $currentMethod, $currentParams);
 割とメジャーなルーティングライブラリでも、正規表現を使用していたり、最適化されていないアルゴリズムで実装されていたりするっぽいので今後も色んな実装に目を通したり、アルゴリズムの勉強をしたりしてそのうちルーティングの実装に再挑戦してみたい。
 
 # ソースとパッケージ
-- [github - bmf-san/ahi-router](https://github.com/bmf-san/ahi-router)
+- [GitHub - bmf-san/ahi-router](https://github.com/bmf-san/ahi-router)
 - [packagist - ahi-router](https://packagist.org/packages/bmf-san/ahi-router#v1.0)
     - 雑だがパッケージ化しておいた
 
 # 参考
 - [pixiv inside - PHPで高速に動作するURLルーティングを自作してみた](https://devpixiv.hatenablog.com/entry/2015/12/13/145741)
-- [github - devlibs/routing](https://github.com/devlibs/routing)
+- [GitHub - devlibs/routing](https://github.com/devlibs/routing)
