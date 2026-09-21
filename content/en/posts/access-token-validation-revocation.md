@@ -1,5 +1,5 @@
 ---
-title: "Access Token Validation and Revocation: Introspection, JWT AT, and Revocation"
+title: "Access Token Validation and Revocation: Introspection, JWT, and Token Revocation (RFC 7009)"
 description: "Compares the two access token approaches (opaque + Introspection / JWT access tokens) and how each is validated, plus revocation via Token Revocation. Covers RFC 7662, RFC 9068, and RFC 7009."
 slug: access-token-validation-revocation
 date: 2026-07-11T00:00:00Z

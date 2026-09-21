@@ -1,5 +1,5 @@
 ---
-title: Comparison of Cloud SQL and AlloyDB
+title: "AlloyDB vs Cloud SQL: Performance, Features, and Cost"
 slug: cloud-sql-alloydb-comparison
 date: 2024-11-17T00:00:00Z
 author: bmf-san
@@ -9,7 +9,7 @@ tags:
   - AlloyDB
   - Cloud SQL
   - Google Cloud Platform
-description: "An article investigating the advantages of AlloyDB over Cloud SQL. Targeting Cloud SQL Enterprise edition, it compares the two to organize the use cases where AlloyDB has an edge, along with points around performance and compatibility."
+description: "AlloyDB vs Cloud SQL compared: use cases (OLTP vs HTAP), performance, availability, compatibility, and cost — and when AlloyDB has the edge over Cloud SQL Enterprise edition."
 translation_key: cloud-sql-alloydb-comparison
 draft: false
 ---
