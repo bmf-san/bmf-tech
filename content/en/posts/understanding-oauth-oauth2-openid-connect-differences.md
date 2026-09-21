@@ -1,6 +1,6 @@
 ---
 title: 'A Book to Understand the Differences Between OAuth, OAuth Authentication, and OpenID Connect'
-description: 'A book to understand the differences between OAuth, OAuth Authentication, and OpenID Connect'
+description: "A review of a book that helps you understand the differences between OAuth, OAuth authentication, and OpenID Connect. It clearly sorts out these easily-confused concepts for beginners, offering a starting point for understanding the role and proper use of each."
 slug: understanding-oauth-oauth2-openid-connect-differences
 date: 2021-10-05T00:00:00Z
 author: bmf-san

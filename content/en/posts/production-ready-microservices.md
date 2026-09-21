@@ -8,7 +8,7 @@ categories:
 tags:
   - Microservices
   - Book Review
-description: A book that organizes the requirements microservices must satisfy to be production-ready, presented as a standardization checklist.
+description: "A review of Production-Ready Microservices. A book that organizes the requirements microservices must meet to run in production: stability, reliability, scalability, fault tolerance, monitoring, and documentation, presenting them as a standardization checklist. It is grounded in the author's experience at Uber."
 translation_key: production-ready-microservices
 draft: false
 ---

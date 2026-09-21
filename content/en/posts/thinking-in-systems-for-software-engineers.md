@@ -8,7 +8,7 @@ categories:
 tags:
   - Systems Thinking
   - Book Review
-description: A book that introduces systems thinking from the perspective of how software engineers can apply it to their own work.
+description: "A review of a book introducing systems thinking for software engineers. Written from the angle of how software engineers can bring systems thinking into their own work, it connects tools like stocks and flows, feedback loops, and leverage points to phenomena that arise in development and organizations."
 translation_key: thinking-in-systems-for-software-engineers
 draft: false
 ---

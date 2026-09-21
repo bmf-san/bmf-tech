@@ -1,6 +1,6 @@
 ---
 title: Globis MBA Critical Thinking
-description: "Globis MBA Critical Thinking"
+description: "A review of Globis MBA Critical Thinking. A book for learning critical thinking practically, through plenty of exercises. By working through problems, you build the basics of reasoning logically and drawing well-structured conclusions."
 slug: globis-mba-critical-thinking
 date: 2015-05-19T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: The Penguin Who Became a Seagull
-description: "The Penguin Who Became a Seagull"
+description: "A review of Our Iceberg Is Melting. A fable of organizational change for learning how to solve problems and form teams in an environment that demands change. You experience Kotter's eight-step process for leading change through story, one for leaders and managers who drive change to keep in mind."
 slug: penguin-becoming-seagull
 date: 2025-08-09T00:00:00Z
 author: bmf-san

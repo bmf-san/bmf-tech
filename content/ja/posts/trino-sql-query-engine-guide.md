@@ -1,6 +1,6 @@
 ---
 title: '分散SQLクエリエンジンTrino徹底ガイド '
-description: "分散SQLクエリエンジンTrino徹底ガイド"
+description: "『分散SQLクエリエンジンTrino徹底ガイド』の書評。分散SQLクエリエンジンTrinoを解説する一冊。ANSI SQL対応やフェデレーテッドクエリにより異なるシステムのデータを横断的に扱い、OLAP向けに分散してリソースを拡縮する仕組みなど、従来のデータウェアハウスとは異なるアプローチを学べる。"
 slug: trino-sql-query-engine-guide
 date: 2024-10-24T00:00:00Z
 author: bmf-san
