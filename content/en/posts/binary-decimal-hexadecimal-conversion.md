@@ -8,7 +8,7 @@ categories:
 tags:
   - Radix Conversion
   - Discrete Mathematics
-description: A summary of calculation methods for converting between binary, decimal, and hexadecimal.
+description: "An article summarizing how to convert between binary, decimal, and hexadecimal. Starting from the concepts of weight and radix, it explains the calculation steps for converting between number bases, including octal, to clarify the essence of numeric representation for beginners."
 translation_key: binary-decimal-hexadecimal-conversion
 draft: false
 ---

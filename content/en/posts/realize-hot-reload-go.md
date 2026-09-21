@@ -8,7 +8,7 @@ categories:
 tags:
   - Golang
   - realize
-description: A memo on using Realize for hot reloading in Go applications.
+description: "A memo on achieving hot reloading in Go development using the Realize tool. It covers installing it with go get, configuring it via .realize.yaml, and starting the watch server, so that code changes are detected and the app is rebuilt and restarted automatically to improve development efficiency."
 translation_key: realize-hot-reload-go
 draft: false
 ---

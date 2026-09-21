@@ -1,6 +1,6 @@
 ---
 title: JavaScriptで始めるアルゴリズム
-description: JavaScriptで線形探索・二分探索、選択ソート・バブルソートなど基本的なアルゴリズムを実装しながら学びます。
+description: "JavaScriptを使って基本的なアルゴリズムを学ぶ記事です。リストや配列を先頭から順に比較していく線形探索（リニアサーチ）や二分探索といった探索アルゴリズムと、選択ソートやバブルソートといった整列アルゴリズムを、実際に実装しながら仕組みを理解していきます。"
 slug: javascript-algorithms-introduction
 date: 2018-07-13T00:00:00Z
 author: bmf-san

@@ -7,7 +7,7 @@ categories:
   - Infrastructure
 tags:
   - Google Cloud Platform
-description: Reflections on studying for the Google Cloud Certified Associate Cloud Engineer exam.
+description: "After passing the Google Cloud Certified Associate Cloud Engineer exam, I looked back on how I studied for it, both for a possible retake and for future exams. Based on my background as a software engineer with some GCP experience, it summarizes the study methods I used and my impressions of the exam."
 translation_key: google-cloud-associate-engineer-exam
 draft: false
 ---

@@ -1,6 +1,6 @@
 ---
 title: Aurora Serverlessについて調べた
-description: Aurora Serverless v2のマルチAZ対応、オートスケーリング、コスト最適化、導入時の検討ポイントを調べてまとめます。
+description: "Amazon Aurora Serverlessに興味を持って調べた内容をまとめた記事。Aurora Serverless v2のマルチAZ対応やオートスケーリング、コスト最適化、導入時に検討したいポイントなどを、参考にした記事とともに整理する。"
 slug: aurora-serverless-research
 date: 2023-12-27T00:00:00Z
 author: bmf-san

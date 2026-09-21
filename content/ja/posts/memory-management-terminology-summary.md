@@ -1,6 +1,6 @@
 ---
 title: メモリ管理に関する用語まとめ
-description: "理解するLinuxのメモリ管理。OOMKiller、仮想記憶、ページテーブル、ページフォルト、コピーオンライト、スワップなどの用語を解説"
+description: "書籍『試して理解 Linuxの仕組み』のメモリ管理の章を読む中で、理解の乏しかった用語をいくつかピックアップしてまとめた記事です。OOM Killerや仮想記憶、ページテーブル、ページフォルト、コピーオンライト、スワップといった、Linuxのメモリ管理にまつわる用語を解説します。"
 slug: memory-management-terminology-summary
 date: 2018-11-30T00:00:00Z
 author: bmf-san

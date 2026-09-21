@@ -1,6 +1,6 @@
 ---
 title: スタックとキューの実装
-description: "Go言語でスタック・キューをLIFO・FIFO実装、スライス・連結リストのパターン別に時間計算量O(1)で構築する方法"
+description: "Goでスタックとキューをそれぞれ実装してみた記事です。スライスを使ったパターンと連結リストを使ったパターンの2通りで、LIFOのスタックとFIFOのキューを実装し、push・popやenqueue・dequeueといった操作を時間計算量O(1)で構築する方法を、パターン別に比較しながら紹介します。"
 slug: stack-queue-implementation
 date: 2023-07-25T00:00:00Z
 author: bmf-san

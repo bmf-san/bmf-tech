@@ -1,6 +1,6 @@
 ---
 title: アルゴリズムとデータ構造 - バブルソート
-description: 隣り合う要素を交換していく比較ベースのバブルソートを解説。O(n²)の計算量と、Goでの実装を紹介します。
+description: "アルゴリズムとデータ構造を学ぶシリーズの記事。比較ベースのソートであるバブルソートを取り上げ、隣り合う要素を交換していく仕組みとO(n²)の計算量を、Goでの実装例とともに解説する。"
 slug: algorithms-data-structures-bubble-sort
 date: 2020-02-01T00:00:00Z
 author: bmf-san

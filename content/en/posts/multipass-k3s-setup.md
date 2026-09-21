@@ -8,7 +8,7 @@ categories:
 tags:
   - multipass
   - k3s
-description: Exploring the use of multipass to run k3s for personal development applications.
+description: "A note on using multipass, a lightweight VM manager, while attempting to migrate a personal docker-compose application to Kubernetes (k3s). Although I ultimately didn't complete the migration, it covers how to run k3s on multipass and use it for personal development."
 translation_key: multipass-k3s-setup
 draft: false
 ---

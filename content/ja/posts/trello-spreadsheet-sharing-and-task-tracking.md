@@ -1,6 +1,6 @@
 ---
 title: 雑Trelloと雑spreadsheetを公開した話とプライベートのタスクを計測し始めた話
-description: Trelloとスプレッドシートを使い、ストーリーポイントやスプリント計画で個人のタスクを管理・計測する取り組みを紹介します。
+description: "プライベートな時間のタスクを可視化しているTrelloと、自分なりのスプリントの計測データを管理しているスプレッドシートを使った、個人のタスク管理の取り組みを紹介する記事です。ストーリーポイントやスプリント計画を取り入れて、個人のタスクを管理・計測する仕組みについてまとめます。"
 slug: trello-spreadsheet-sharing-and-task-tracking
 date: 2019-02-12T00:00:00Z
 author: bmf-san

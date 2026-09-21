@@ -1,6 +1,6 @@
 ---
 title: Laravelの多対多のリレーションでテーブル名を規則から外す時
-description: Laravelの多対多リレーションで、Eloquentの中間テーブル名を規則から外してカスタム指定する方法を解説します。
+description: "Laravelの多対多リレーションを設計する際に、Eloquentが規約から自動で決める中間（ピボット）テーブル名を、任意の名前にカスタム指定する方法を解説します。ドキュメント通りに進めたつもりで少し勘違いした体験をもとに、命名規則と明示的な指定方法を整理します。"
 slug: laravel-many-to-many-table-name-customization
 date: 2017-10-01T00:00:00Z
 author: bmf-san

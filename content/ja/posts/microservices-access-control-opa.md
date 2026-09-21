@@ -1,6 +1,6 @@
 ---
 title: OPAを使用したマイクロサービスのアクセス制御システムの実装
-description: "設計するOPAによるアクセス制御。マイクロサービス権限管理、Rego言語、ポリシーエンジン、リソースレベルの細粒度制御実装パターン"
+description: "OPA（Open Policy Agent）を採用したマイクロサービスのアクセス制御システムのPOCに取り組んだ内容をまとめた記事です。Rego言語によるポリシー記述やポリシーエンジンの活用、リソースレベルでの細粒度なアクセス制御を実装するためのパターンを、公開リポジトリとあわせて紹介します。"
 slug: microservices-access-control-opa
 date: 2025-03-20T00:00:00Z
 author: bmf-san

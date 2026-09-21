@@ -1,6 +1,6 @@
 ---
 title: FuelPHPの2025年2月現在の現況 by 生成AI
-description: 2025年2月時点のFuelPHPの現況を整理。１.x系のEOL、１.9-devでのPHP8対応、コミュニティの移行動向を解説します。
+description: "2025年2月時点でのFuelPHPの現況を整理した記事です。1.x系のEOLや1.9-devにおけるPHP8対応の状況、開発の停滞やコミュニティの移行動向などを、過去のまとめと比較しながら振り返ります。"
 slug: fuelphp-status-february-2025
 date: 2025-02-27T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: punditのコードリーディング
-description: Rubyの認可フレームワークPunditを、権限ポリシーや認可の仕組みの観点からコードリーディングで読み解きます。
+description: "Rubyの認可フレームワークであるPunditのソースコードを読み解いた記録です。リポジトリをクローンして、権限ポリシー（Policy）の仕組みや、認可を適用する際に使われるメソッドの内部の動きを、コードリーディングを通して権限管理の観点から追っていきます。"
 slug: pundit-code-reading
 date: 2024-10-22T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: モダンなJSの話──クラス
-description: JavaScriptのES6クラス構文を解説。コンストラクタ定義、getter/setter、strictモードの挙動を紹介します。
+description: "JavaScriptのES6（ECMAScript 2015）で導入されたクラス構文について解説する記事です。ECMAScript6以前の書き方との違いから、コンストラクタの定義、getter/setterの書き方、クラス内で有効になるstrictモードの振る舞いまでを、具体例を交えて紹介します。"
 slug: modern-js-classes
 date: 2017-12-25T00:00:00Z
 author: bmf-san

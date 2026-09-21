@@ -7,7 +7,7 @@ categories:
   - Application
 tags:
   - Golang
-description: A benchmark tool to compare the performance of various Go HTTP Routers.
+description: "An article about a benchmarking tool I built to compare the performance of various Go HTTP routers. By designing multiple test cases such as static routes and routes with path parameters, it measures and compares the performance differences between the routers."
 translation_key: http-router-benchmark-go
 draft: false
 ---

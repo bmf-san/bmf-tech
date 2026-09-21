@@ -1,6 +1,6 @@
 ---
 title: 選択と集中を促す振り返りフレームワーク「bmf」
-description: 選択と集中を促す振り返りフレームワーク「bmf」。個人的な振り返りとハイライトをまとめます。
+description: "振り返りといえばKPT（Keep / Problem / Try）が定番ですが、自分なりのオリジナリティのあるフレームワークを考えてみたくなり、そのアイデアを記した記事です。Build・Miss・Focusの頭文字をとった「bmf」フレームワークで、選択と集中を促す振り返りの方法を紹介します。"
 slug: reflection-framework-bmf
 date: 2025-07-23T00:00:00Z
 author: bmf-san

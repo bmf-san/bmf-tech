@@ -1,6 +1,6 @@
 ---
 title: モダンなJSの話──アロー関数
-description: JavaScriptのアロー関数を解説。構文、レキシカルなthisのバインド、ES2015の関数式について紹介します。
+description: "JavaScriptのアロー関数について解説する記事です。アロー関数の基本的な構文や、通常の関数式との違い、レキシカルに決まるthisのバインドの振る舞いなど、ES2015で追加されたこの関数式の特徴を、具体例を交えて紹介します。"
 slug: modern-js-arrow-functions
 date: 2017-12-25T00:00:00Z
 author: bmf-san

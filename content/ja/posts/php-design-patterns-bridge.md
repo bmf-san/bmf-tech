@@ -1,6 +1,6 @@
 ---
 title: PHPで学ぶデザインパターン - Bridgeパターン
-description: PHPで学ぶデザインパターン - Bridgeパターンについて、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
+description: "「PHPで学ぶデザインパターン Advent Calendar 2018」の記事の1つで、Bridgeパターンを取り上げます。機能の拡張と実装の拡張という2つの階層を分離し、それぞれを独立して拡張できるようにするこのパターンの考え方と、PHPでの実装方法を解説します。"
 slug: php-design-patterns-bridge
 date: 2019-02-01T00:00:00Z
 author: bmf-san

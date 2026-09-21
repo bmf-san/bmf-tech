@@ -1,6 +1,6 @@
 ---
 title: GraphQLとは
-description: API向けのクエリ言語GraphQLを解説。柔軟なデータ取得、単一エンドポイント、型システムといった利点を紹介します。
+description: "API向けのクエリ言語であるGraphQLについて解説する記事です。Facebookが開発したGraphQLの、クライアントが必要なデータだけを柔軟に取得できる点や、単一のエンドポイントで完結する点、型システムを備えている点といった利点を、RESTとの違いにも触れながら紹介します。"
 slug: what-is-graphql
 date: 2018-06-14T00:00:00Z
 author: bmf-san

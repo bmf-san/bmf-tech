@@ -1,6 +1,6 @@
 ---
 title: GoReleaserを使ってのGoのアプリケーションを配布する
-description: GoReleaserを使ってGoアプリケーションをクロスコンパイルし、バイナリを配布する方法を解説します。
+description: "GoReleaserを使って、Goで書いたアプリケーションをクロスコンパイルし、バイナリとして配布する方法を解説した記事です。GoReleaserとはどのようなツールなのかを説明したうえで、実際に設定してリリースを行うまでの手順を紹介します。"
 slug: goreleaser-go-distribution
 date: 2023-11-11T00:00:00Z
 author: bmf-san

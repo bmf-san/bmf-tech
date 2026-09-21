@@ -1,6 +1,6 @@
 ---
 title: モダンなJSの話──async function
-description: モダンなJavaScriptのasync function、await式、Promiseベースの非同期処理を解説します。
+description: "モダンなJavaScriptにおける非同期処理を解説する記事です。async functionの定義の仕方や、Promiseの完了を待つawait式の使い方を中心に、Promiseベースの非同期処理をより読みやすく書くための仕組みを、具体例とともに紹介します。"
 slug: modern-js-async-functions
 date: 2018-01-29T00:00:00Z
 author: bmf-san

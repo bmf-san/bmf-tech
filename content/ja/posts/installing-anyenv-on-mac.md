@@ -1,6 +1,6 @@
 ---
 title: macにanyenvをインストールする
-description: Macにanyenvをインストールし、PATHや環境設定を整えて複数の言語バージョンを管理する方法を解説します。
+description: "Macにanyenvをインストールする手順をまとめた記事です。若干ハマったところがあったためメモとして残しています。PATHや環境設定を整え、複数のプログラミング言語のバージョンをanyenvで管理できるようにするまでの流れを解説します。"
 slug: installing-anyenv-on-mac
 date: 2017-10-01T00:00:00Z
 author: bmf-san

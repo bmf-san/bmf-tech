@@ -1,6 +1,6 @@
 ---
 title: アルゴリズムとデータ構造 - マージソート
-description: 分割統治法によるマージソートを解説。最悪O(n log n)の計算量、再帰的な分割とマージの手順、Goでの実装を紹介します。
+description: "アルゴリズムとデータ構造を学ぶシリーズの記事。分割統治法によるマージソートを取り上げ、最悪O(n log n)の計算量や、再帰的な分割とマージの手順を、Goでの実装例とともに解説する。"
 slug: algorithms-data-structures-merge-sort
 date: 2020-02-01T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: RubyとRailsのIO・CPU特性について
-description: "理解するRuby・RailsのI/O特性。GVL制約、Pumaスレッド・プロセス設計、見かけのI/O待ちの実態、計測による最適化指針。"
+description: "Ruby・RailsのI/O特性とパフォーマンスチューニングについて整理した記事です。RubyのGVL（Global VM Lock）による制約や、Pumaサーバのスレッド・プロセス設計、見かけのI/O待ちの実態、IO/CPUバウンドの捉え方をふまえ、計測にもとづいた適切な最適化の方針を示します。"
 slug: ruby-rails-io-cpu-characteristics
 date: 2025-06-14T00:00:00Z
 author: bmf-san

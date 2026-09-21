@@ -7,7 +7,7 @@ categories:
   - Application
 tags:
   - Laravel
-description: Introducing the laravel-debugbar debug tool for Laravel.
+description: "An introduction to laravel-debugbar, a debugging tool for Laravel. It walks through how to install the tool, which displays debug information such as SQL queries and request details on the page, along with how to use its basic features."
 translation_key: laravel-debugging-tool-usage
 draft: false
 ---

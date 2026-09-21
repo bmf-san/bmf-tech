@@ -1,6 +1,6 @@
 ---
 title: ISUCON10に参加してきた
-description: ISUCON10参加を通じて、クエリチューニング・MySQLアップグレード・インデックス設計などパフォーマンス最適化の戦略を紹介します。
+description: "Webアプリのパフォーマンスを競うコンテストISUCON10に参加した際の記録です。2年ぶり2回目の参加で取り組んだ、クエリチューニングやMySQLのアップグレード、インデックス設計といったパフォーマンス最適化の施策や、当日の進め方を振り返って紹介します。"
 slug: isucon10-participation
 date: 2020-05-21T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: パスワード付きPDFの解除をするワンライナー
-description: コマンドラインツールQPDFを使い、パスワード付きPDFの制限を安全に解除するワンライナーを紹介します。
+description: "コマンドラインツールのQPDFを使って、パスワードで保護されたPDFの制限を安全に解除する方法を紹介する記事です。brewでQPDFをインストールし、qpdf --decryptコマンドで対象のPDFからパスワードによる制限を外す、シンプルなワンライナーの手順を解説します。"
 slug: unlock-password-protected-pdf
 date: 2024-03-29T00:00:00Z
 author: bmf-san

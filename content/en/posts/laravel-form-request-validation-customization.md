@@ -7,7 +7,7 @@ categories:
   - Application
 tags:
   - Laravel
-description: Learn how to customize the values validated by Laravel form requests.
+description: "How to customize the values that a Laravel form request validates. This is useful when you want to validate not only the request body but also route parameters, for example on an endpoint like /post/:id/delete where the ID comes from the URL."
 translation_key: laravel-form-request-validation-customization
 draft: false
 ---

@@ -1,6 +1,6 @@
 ---
 title: Unixコマンドメモ
-description: "Unixコマンド活用集、jqでJSON加工・teeで双方向出力・atでジョブスケジュール実行する実用的な例"
+description: "普段使いのUnixコマンドについてまとめた活用集です。JSONを加工するjqや、出力を画面とファイルへ同時に流すtee、指定した時刻にジョブをスケジュール実行するatなど、実用的なコマンドの使い方を、具体的な例とともに紹介します。"
 slug: unix-command-memo
 date: 2018-07-07T00:00:00Z
 author: bmf-san

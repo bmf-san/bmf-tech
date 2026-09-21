@@ -1,6 +1,6 @@
 ---
 title: PHPで学ぶデザインパターン - Mediatorパターン
-description: PHPで学ぶデザインパターン - Mediatorパターンについて、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
+description: "「PHPで学ぶデザインパターン Advent Calendar 2018」の記事の1つで、Mediatorパターンを取り上げます。複雑になりがちなオブジェクト同士のやり取りを仲介役（Mediator）に集約し、オブジェクト間の関係の見通しを良くするこのパターンの仕組みと、PHPでの実装方法を解説します。"
 slug: php-design-patterns-mediator
 date: 2019-01-31T00:00:00Z
 author: bmf-san

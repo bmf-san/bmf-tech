@@ -1,6 +1,6 @@
 ---
 title: Road to ISUcon
-description: ISUCON参加に向けた準備について紹介します。
+description: "ISUCONへの初出場に向けて準備したことを記した記事です。予選の時間を目一杯使ってチューニングに取り組む、という現実的な目標を立てるところから、初参戦に向けてどのような準備や心構えをしていったのかを、目標・目的の設定とあわせて紹介します。"
 slug: road-to-isucon
 date: 2023-06-07T00:00:00Z
 author: bmf-san

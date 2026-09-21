@@ -1,6 +1,6 @@
 ---
 title: PHPで学ぶデザインパターン - Stateパターン
-description: PHPで学ぶデザインパターン - Stateパターンについて、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
+description: "「PHPで学ぶデザインパターン Advent Calendar 2018」の記事の1つで、Stateパターンを取り上げます。状態ごとの処理をそれぞれ別のクラスにカプセル化することで、状態に応じた振る舞いの切り替えを条件分岐に頼らず実現するこのパターンの仕組みと、PHPでの実装方法を解説します。"
 slug: php-design-patterns-state
 date: 2019-04-20T00:00:00Z
 author: bmf-san

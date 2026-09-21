@@ -7,7 +7,7 @@ categories:
   - Application
 tags:
   - TypeScript
-description: Revisiting the fundamentals of TypeScript.
+description: "A set of notes from revisiting the fundamentals of TypeScript. Starting with a review of JavaScript basics such as variable scope, it works through TypeScript's type system and core syntax, organizing the key points and practical takeaways."
 translation_key: typescript-basics-review
 draft: false
 ---

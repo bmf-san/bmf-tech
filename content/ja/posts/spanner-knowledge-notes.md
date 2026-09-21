@@ -1,6 +1,6 @@
 ---
 title: "Cloud Spannerの知見メモ｜設計・運用のポイント"
-description: "Cloud Spannerのノード・スプリット・レプリケーション仕様、ホットスポット対策とインデックス最適化を実装・検証する知見"
+description: "Cloud Spannerについて調べた知見をまとめたメモです。ノードやスプリット、レプリケーションといった仕組みや、計画メンテナンス時のダウンタイムがなく高い可用性を持つといった特徴から、ホットスポット対策やインデックス最適化まで、実装・検証を通して得た走り書きの知見を整理します。"
 slug: spanner-knowledge-notes
 date: 2024-03-03T00:00:00Z
 author: bmf-san

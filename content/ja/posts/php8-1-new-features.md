@@ -1,6 +1,6 @@
 ---
 title: PHP7.4からPHP8.1までの新機能をキャッチアップ
-description: PHP 8.1の新機能を解説。型付きプロパティ、アロー関数、Union型、match式、Attributesなどをキャッチアップします。
+description: "PHPの知識が7.3で止まっていたため、8.1までに追加された新機能を駆け足でキャッチアップした記事です。型付きプロパティやアロー関数、Union型、match式、Attributes（アトリビュート）など、各バージョンで導入された主要な新機能を実例とともに整理します。"
 slug: php8-1-new-features
 date: 2022-03-21T00:00:00Z
 author: bmf-san

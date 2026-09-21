@@ -1,6 +1,6 @@
 ---
 title: Laravelでの機能テストの始め方雑メモ
-description: "Laravelの機能テストを始めるための基本概念を解説し、browser-kit-testingを活用したAPIテスト実装例を紹介。"
+description: "Laravelでの機能テストの始め方と簡単な使い方について、テストを書いたことがない人向けに紹介します。browser-kit-testingを活用したAPIテストの実装例を通して、入門レベルで機能テストの基本を押さえられる内容です。"
 slug: getting-started-with-laravel-feature-testing
 date: 2019-02-11T00:00:00Z
 author: bmf-san

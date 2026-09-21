@@ -8,7 +8,7 @@ categories:
 tags:
   - Linux
   - Permissions
-description: An overview of Linux permissions
+description: "A summary of how Linux permissions work. It covers how to read permission strings, including the leading file-type character and the rwx (read, write, execute) bits shown in three-character groups for owner, group, and others, as well as numeric notation and practical use of the chmod command."
 translation_key: linux-permission-reading-specification
 draft: false
 ---

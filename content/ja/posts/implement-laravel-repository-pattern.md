@@ -1,6 +1,6 @@
 ---
 title: Laravel リポジトリパターンの実装
-description: "Laravelでリポジトリパターンを実装し、インターフェース設計・DB操作の抽象化によるテスト容易性と保守性向上の手法を詳述。"
+description: "Laravelでリポジトリパターンを実装する方法について解説した記事です。データ操作に関連するロジックをビジネスロジックから切り離し、抽象化したレイヤーに任せることで、テストのしやすさや保守性・拡張性を高める手法を、インターフェース設計やDB操作の抽象化を交えて紹介します。"
 slug: implement-laravel-repository-pattern
 date: 2017-09-26T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Letsencryptの証明書自動更新スクリプト
-description: シェルスクリプトの自動実行で、Let's Encrypt証明書を毎月自動更新し、Slack通知と連携する方法を解説します。
+description: "Let's Encryptの証明書を毎月自動で更新するシェルスクリプトを紹介する記事です。以前から作っていたものの、不具合やサーバー環境の変化で完全版を残せていなかったため、改めてまとめました。シェルスクリプトの自動実行とSlack通知の連携までを解説します。"
 slug: letsencrypt-auto-renewal-script
 date: 2017-10-01T00:00:00Z
 author: bmf-san

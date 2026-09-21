@@ -8,7 +8,7 @@ categories:
 tags:
   - Docker
   - ER
-description: Exploring and reviewing open-source tools for automatically generating DB documents.
+description: "A hands-on look at open-source tools for automatically generating database documentation such as ER diagrams. It tries out SchemaSpy and tbls, comparing their setup, generated output, and usability to help you choose between them."
 translation_key: db-documentation-tools-schemaspy-tbls
 draft: false
 ---

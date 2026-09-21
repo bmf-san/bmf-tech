@@ -1,6 +1,6 @@
 ---
 title: "Google Cloud認定 Associate Cloud Engineer 合格体験記｜勉強法"
-description: Google Cloud認定アソシエイトクラウドエンジニア試験を受験した際の学習方法や所感を振り返ります。
+description: "Google Cloud認定アソシエイトクラウドエンジニア試験を受験し合格したので、再受験や別の試験に備えて勉強の過程を振り返った記事です。ソフトウェアエンジニアとしての経験やGCPの利用歴を前提に、実践した学習方法や受験しての所感をまとめます。"
 slug: google-cloud-associate-engineer-exam
 date: 2023-06-07T00:00:00Z
 author: bmf-san

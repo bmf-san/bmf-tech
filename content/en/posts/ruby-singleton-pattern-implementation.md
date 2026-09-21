@@ -7,7 +7,7 @@ categories:
   - Application
 tags:
   - Ruby
-description: A summary of how to implement the Singleton pattern in Ruby.
+description: "A summary of how to implement the Singleton pattern in Ruby. It introduces ways to guarantee that only one instance of a class exists, using the standard Singleton module, class methods, and constants, so that a single instance can be managed in a thread-safe manner."
 translation_key: ruby-singleton-pattern-implementation
 draft: false
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Golangでトライ木（Trie）を実装する｜前方一致検索"
-description: "トライ木（プレフィックス木）のデータ構造をGoで実装し、O(m)の検索・挿入計算量とRadix Treeとの使い分けを解説。"
+description: "トライ木（プレフィックス木）というデータ構造のアルゴリズムと、そのGoでの実装についてまとめた記事です。O(m)で検索・挿入ができる特徴や、HTTPルーティングなどへの応用、Radix Treeとの使い分けについて、挿入・検索の実装例を交えて解説します。"
 slug: golang-tries-implementation
 date: 2019-09-24T00:00:00Z
 lastmod: 2026-03-15

@@ -1,6 +1,6 @@
 ---
 title: Ansibleでローカルのファイルをリモートにコピーする
-description: Ansibleのcopyモジュールでローカルのファイルやディレクトリをリモートサーバーに転送し、権限を適切に設定する方法を解説します。
+description: "Ansibleのcopyモジュールを使って、ローカルにあるファイルやディレクトリの中身をリモートサーバーに転送するタスクを解説した記事。実際のPlaybookの例とともに、権限を適切に設定しながらコピーする方法を紹介する。"
 slug: copy-local-file-to-remote-ansible
 date: 2017-09-26T00:00:00Z
 author: bmf-san

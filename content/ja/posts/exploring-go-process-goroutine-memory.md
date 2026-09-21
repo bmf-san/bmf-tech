@@ -1,6 +1,6 @@
 ---
 title: Goでプロセス・goroutine・メモリを覗いてみた
-description: "Goのプロセス・goroutine・メモリを解析し、仮想アドレス空間・ヒープ・スタック領域の独立性を確認する手法を実装例を通して解説。"
+description: "Goを使って、プロセスのアドレス空間・goroutineの動作・スタックとヒープの挙動を軽く覗いてみた記録です。子プロセスとの仮想アドレス空間の違いやメモリ領域の独立性を、os/execなどを用いた実装例を通して確認します。"
 slug: exploring-go-process-goroutine-memory
 date: 2025-08-09T00:00:00Z
 author: bmf-san

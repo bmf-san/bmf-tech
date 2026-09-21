@@ -1,6 +1,6 @@
 ---
 title: OAuth2、OIDCのキャッチアップのための資料
-description: OAuth2、OIDC、JWTといった認証・認可の標準仕様を、仕様書・書籍・実装ガイドからキャッチアップするための資料を紹介します。
+description: "OAuth2、OIDC、JWTといった認証・認可の標準仕様をキャッチアップするために読み漁った資料をまとめた記事です。OpenID Connect Coreなどの仕様書をはじめ、書籍や実装ガイドまで、これらの技術を理解するうえで参考になったリソースを紹介します。"
 slug: resources-for-catching-up-on-oauth2-oidc
 date: 2021-10-05T00:00:00Z
 author: bmf-san

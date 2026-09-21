@@ -1,6 +1,6 @@
 ---
 title: relineのコードリーディング
-description: RubyのrelineライブラリをコードリーディングでReadline呼び出しや行編集、入力バッファリングの内部構造から読み解きます。
+description: "Rubyのreline（Readlineの純Ruby実装）というライブラリのソースコードを読み解いた記録です。ライブラリをクローンしてサンプルコードを動かしながら、Readlineの呼び出しや行編集、入力のバッファリングといった内部構造を、コードリーディングを通して追っていきます。"
 slug: reline-code-reading
 date: 2024-10-20T00:00:00Z
 author: bmf-san

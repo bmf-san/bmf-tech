@@ -1,6 +1,6 @@
 ---
 title: DigitalOceanでマネージドKubernetesを使ってみる
-description: DigitalOceanのマネージドKubernetesを、個人開発や学習目的で使ってみた内容を紹介します。
+description: "プライベートの開発で、学習も兼ねてKubernetesを利用したいと考え、いくつかのサービスを検討した結果DigitalOceanのマネージドKubernetesを使ってみた内容を紹介する記事です。個人開発や学習の目的でマネージドなk8s環境を試した際の所感をまとめます。"
 slug: managed-kubernetes-on-digitalocean
 date: 2021-03-07T00:00:00Z
 author: bmf-san

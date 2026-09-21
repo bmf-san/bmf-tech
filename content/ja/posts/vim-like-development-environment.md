@@ -1,6 +1,6 @@
 ---
 title: 開発環境を見直してvimライクにした
-description: Vimを取り入れて開発環境を見直し、開発効率を高めた取り組みを紹介します。
+description: "開発の効率化を図るためにVimを取り入れ、開発環境を諸々刷新した取り組みをまとめた記事です。メインエディタでVimのキーバインドを使えるようにするなど、Vim的な操作感を取り入れることで開発効率を高めた工夫について紹介します。"
 slug: vim-like-development-environment
 date: 2018-05-22T00:00:00Z
 author: bmf-san

@@ -8,7 +8,7 @@ categories:
 tags:
   - Golang
   - GitHub Actions
-description: Using GoReleaser to cross-compile and distribute Go application binaries.
+description: "An article on how to cross-compile a Go application and distribute it as binaries using GoReleaser. After explaining what GoReleaser is, it walks through the steps of configuring it and actually producing a release."
 translation_key: goreleaser-go-distribution
 draft: false
 ---

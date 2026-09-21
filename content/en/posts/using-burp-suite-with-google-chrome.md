@@ -9,7 +9,7 @@ tags:
   - Burp Suite
   - Security
   - Vulnerability
-description: Steps to configure Burp Suite for use with Chrome.
+description: "An article on the various settings needed to use Burp Suite together with Google Chrome, for purposes such as vulnerability assessments. It covers using a proxy-switching extension like ProxySwitchSharp and setting up Burp's CA certificate so that its traffic can be inspected."
 translation_key: using-burp-suite-with-google-chrome
 draft: false
 ---

@@ -8,7 +8,7 @@ categories:
 tags:
   - Architecture Strategy
   - Architecture
-description: Guidelines for creating effective architecture documents in system design.
+description: "An article on what to keep in mind when writing architecture documents, which play an important role in system design. Rather than a mere listing of design information, it explains how to write them as material that explains the validity of a design to stakeholders, builds consensus, and guides readers to understanding and agreement."
 translation_key: writing-architecture-documentation
 draft: false
 ---

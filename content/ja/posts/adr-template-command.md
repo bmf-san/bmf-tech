@@ -1,6 +1,6 @@
 ---
 title: ADRのテンプレートファイルを生成するコマンド
-description: アーキテクチャ決定記録（ADR）のテンプレートを、自動採番やステータス管理つきで生成するMakeコマンドの実装を解説します。
+description: "アーキテクチャ決定記録（ADR）のテンプレートファイルを生成するMakeコマンドの実装を紹介する記事。自動採番やステータス管理を備えたコマンドの中身を、実際のMakefileの記述とともにメモとして残す。"
 slug: adr-template-command
 date: 2023-11-10T00:00:00Z
 author: bmf-san

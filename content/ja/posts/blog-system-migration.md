@@ -1,6 +1,6 @@
 ---
 title: ブログのシステムを移行した
-description: bmf-techのブログ基盤が、WordPress・Laravel CMS・Go CMSという3世代を経て進化してきた過程を紹介します。
+description: "bmf-techのブログ基盤を移行した記念の記事。WordPressからLaravel製の自作CMS、そしてGo製の自作CMSへと、3世代を経て進化してきたブログシステムの移行の経緯を振り返る。"
 slug: blog-system-migration
 date: 2022-06-14T00:00:00Z
 author: bmf-san

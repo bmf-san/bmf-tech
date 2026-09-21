@@ -1,6 +1,6 @@
 ---
 title: SaaSのアーキテクチャについて知るためのリスト
-description: SaaSのアーキテクチャについて知るためのリストについて、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
+description: "「SaaSなんもわからん！」から「SaaS完全に理解した！」に近づくために、参考になりそうな資料をまとめた記事です。AWSの『SaaSアーキテクチャの基礎』をはじめ、SaaSのアーキテクチャや設計を学ぶうえで役立つドキュメントやリンクを整理して紹介します。"
 slug: saas-architecture-resource-list
 date: 2024-02-24T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: LaravelにSPAを組み込む時に考えたディレクトリ構成とnginxのconfファイル
-description: LaravelにSPAを組み込む際のディレクトリ構成と、フロントエンド／バックエンドを振り分けるnginxの設定を解説します。
+description: "Laravelで作っているアプリケーションに、管理画面だけSPAを組み込もうとした際の記録です。フロントエンドとバックエンドをうまく振り分けるためのディレクトリ構成の考え方と、リクエストをルーティングするnginxの設定について、初めての試みをメモとしてまとめました。"
 slug: laravel-spa-directory-structure-nginx-config
 date: 2017-10-01T00:00:00Z
 author: bmf-san

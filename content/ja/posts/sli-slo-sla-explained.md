@@ -1,6 +1,6 @@
 ---
 title: "SLI・SLO・SLAを解説：エンジニアのための実践ガイド"
-description: 'SLI・SLO・SLA の意味と違いを解説。エラーバジェットの考え方と、信頼性目標を運用に組み込むための実践的なガイドです。'
+description: "SLI・SLO・SLAについて調べたことをまとめた記事です。これらがサービスレベル（Service Level）に関わる指標・目標・合意であることを整理したうえで、それぞれの意味と違いや、エラーバジェットの考え方、信頼性の目標を実際の運用に組み込むための実践的なガイドを解説します。"
 slug: sli-slo-sla-explained
 date: 2022-09-10T00:00:00Z
 author: bmf-san

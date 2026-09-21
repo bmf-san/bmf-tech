@@ -1,6 +1,6 @@
 ---
 title: DefaultServeMux以外でpprofを使う方法
-description: "Go言語のpprofパフォーマンス分析、DefaultServeMux以外のカスタムルーターでpprof.Indexをハンドラ登録する実装"
+description: "Goのnet/http/pprofを、DefaultServeMux以外の独自のルーターと組み合わせて使う方法についてのメモです。pprofをblank importするだけでは動かないというハマりどころを取り上げ、カスタムルーターにpprof.Indexなどのハンドラを自分で登録してパフォーマンス分析を行う実装を紹介します。"
 slug: using-pprof-without-defaultmux
 date: 2023-04-30T00:00:00Z
 author: bmf-san

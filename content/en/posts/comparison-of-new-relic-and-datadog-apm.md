@@ -9,7 +9,7 @@ tags:
   - APM
   - Datadog
   - New Relic
-description: A comparison of features when considering switching from New Relic to Datadog APM.
+description: "An article summarizing a feature comparison made when considering switching from New Relic to Datadog APM. Centered on APM but also touching other areas, it organizes the differences in features and usability between the two in a table to inform a migration decision."
 translation_key: comparison-of-new-relic-and-datadog-apm
 draft: false
 ---

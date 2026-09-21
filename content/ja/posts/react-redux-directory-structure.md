@@ -1,6 +1,6 @@
 ---
 title: React+Reduxのディレクトリ構成検討
-description: React+Reduxをアプリに組み込む際のディレクトリ構成の検討内容を紹介します。
+description: "React+Reduxをアプリケーションに導入する際の、ディレクトリ構成について検討した内容を紹介する記事です。構成に悩んでいたときに参考になった「A Better File Structure For React/Redux Applications」という記事をもとに、機能単位でまとめるファイル構成の考え方を整理します。"
 slug: react-redux-directory-structure
 date: 2017-10-01T00:00:00Z
 author: bmf-san

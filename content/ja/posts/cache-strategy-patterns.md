@@ -1,6 +1,6 @@
 ---
 title: キャッシュ戦略の基本的なパターンについて
-description: 「キャッシュ戦略の基本的なパターンについて」のまとめと読書メモ。重要なポイントと実践的な知見を整理します。
+description: "Webアプリケーションや分散システムのパフォーマンス向上に欠かせない、キャッシュの基本的な活用パターンを整理した記事。Cache Aside・Read Through・Write Through・Write Back・Write Aroundという5つの戦略を、読み書きのフローや一貫性のトレードオフとともに解説する。"
 slug: cache-strategy-patterns
 date: 2025-08-03T00:00:00Z
 author: bmf-san

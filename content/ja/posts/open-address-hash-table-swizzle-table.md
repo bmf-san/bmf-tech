@@ -1,6 +1,6 @@
 ---
 title: オープンアドレスハッシュテーブルとスイステーブル
-description: オープンアドレス法とスイステーブルを解説。衝突解決の手法や、キャッシュ効率の高いハッシュテーブル設計のポイントを紹介します。
+description: "Goのブログ記事「Faster Go maps with Swiss Tables」を読んだことをきっかけに、オープンアドレス法とスイステーブル（Swiss Table）について整理した記事です。ハッシュの衝突を解決する手法や、キャッシュ効率の高いハッシュテーブルを設計するためのポイントを紹介します。"
 slug: open-address-hash-table-swizzle-table
 date: 2025-02-27T00:00:00Z
 author: bmf-san

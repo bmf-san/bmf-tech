@@ -9,7 +9,7 @@ tags:
   - ES6
   - React
   - Redux
-description: Exploring directory structures for integrating React+Redux into applications.
+description: "An exploration of how to structure directories when integrating React and Redux into an application. Based on the article A Better File Structure For React/Redux Applications, which I found while struggling with this, it organizes a feature-based approach to organizing files."
 translation_key: react-redux-directory-structure
 draft: false
 ---

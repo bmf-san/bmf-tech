@@ -1,6 +1,6 @@
 ---
 title: Golangでインメモリなキャッシュを実装する
-description: "Golangで期限付きキャッシュを実装し、sync.Mapを使った同時参照安全性確保とメモリ破棄の仕組みを設計・検証。"
+description: "軽量でシンプルなインメモリキャッシュがあれば十分だったため、Goで期限付きキャッシュを自前で実装してみた記録です。要件の整理から、sync.Mapを使った同時参照時の安全性の確保、期限切れデータのメモリ破棄の仕組みまでを設計・検証します。"
 slug: golang-in-memory-cache-implementation
 date: 2020-09-29T00:00:00Z
 author: bmf-san

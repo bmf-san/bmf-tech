@@ -1,6 +1,6 @@
 ---
 title: Laravelをinstallerでカンタンインストール
-description: composerより手早くプロジェクトを作成できる、グローバルインストーラーを使ったLaravelの簡単なインストール方法を解説します。
+description: "Laravelのプロジェクトを、composerを使うよりも手早く作成できるグローバルインストーラーを使ったインストール方法を解説します。毎回長いcomposerコマンドを打つ手間を省ける、簡単なプロジェクト作成の手順を、インストーラーの導入から順に紹介します。"
 slug: laravel-installer-easy-installation
 date: 2016-05-15T00:00:00Z
 author: bmf-san

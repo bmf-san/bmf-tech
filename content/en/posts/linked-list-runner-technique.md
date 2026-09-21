@@ -10,7 +10,7 @@ tags:
   - Data Structures
   - Runner Technique
   - Tips
-description: Summarizing the runner technique useful for traversing linked lists.
+description: "A summary of the runner technique, useful for traversing linked lists. I first learned about this approach of advancing two pointers through the list at different speeds in the book Cracking the Coding Interview, and this article explains the idea and where it comes in handy."
 translation_key: linked-list-runner-technique
 draft: false
 ---

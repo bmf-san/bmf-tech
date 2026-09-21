@@ -8,7 +8,7 @@ categories:
 tags:
   - NewSQL
   - Link Collection
-description: A summary of various resources related to NewSQL.
+description: "A roundup of the various resources I read while researching NewSQL. I originally set out to compare several NewSQL databases, but since I needed to understand the technologies used under the hood, the collection also includes many articles on the related underlying technologies."
 translation_key: newsql-resources-review
 draft: false
 ---

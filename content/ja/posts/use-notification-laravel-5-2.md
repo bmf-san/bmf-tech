@@ -1,6 +1,6 @@
 ---
 title: Laravel5.2にNotificationでNotificationを使う
-description: Laravel 5.2でNotificationを使って通知を送る方法について解説します。
+description: "Laravel 5.3がリリースされたなかで、あえてLaravel 5.2のNotification機能を使って通知を送る方法について解説する記事です。Notificationとは何かという説明から、5.2（または5.1）環境でのインストールと、実際に通知を送るまでの手順を紹介します。"
 slug: use-notification-laravel-5-2
 date: 2017-09-26T00:00:00Z
 author: bmf-san

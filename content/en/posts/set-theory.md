@@ -8,7 +8,7 @@ categories:
 tags:
   - Discrete Mathematics
   - Sets
-description: Summarizing the basics of sets.
+description: "A summary of the basics of set theory. Starting from the definition of a set as a collection of elements satisfying certain conditions, it covers fundamental concepts such as subsets, unions, and intersections, and their applications to data structures, relational database theory, and logical expressions, framed around building problem-solving skills for software engineers."
 translation_key: set-theory
 draft: false
 ---

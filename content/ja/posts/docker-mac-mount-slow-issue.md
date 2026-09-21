@@ -1,6 +1,6 @@
 ---
 title: Docker for Macのマウントが遅い問題の対応
-description: Docker for Macのマウントが遅い問題の対応の原因と解決方法について解説します。
+description: "Docker for Macでボリュームマウントが遅く、npmなどの動作が実用的でないほど重くなる問題への対応メモです。macOSのファイルシステムまわりに起因する原因を整理し、マウントオプションの調整などで改善するための方法を紹介します。"
 slug: docker-mac-mount-slow-issue
 date: 2018-08-19T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: "API設計について学べるおすすめ本"
-description: 「API設計について学べる本」のまとめと読書メモ。重要なポイントと実践的な知見を整理します。
+description: "API設計について学び直そうと、数冊をピックアップして読んだ本を紹介する記事。『Web API: The Good Parts』をはじめ、API設計の基礎から設計フェーズ、テスト戦略、実践的なデザインパターンまでを学べる書籍を、おすすめの読書順でリストアップする。"
 slug: books-on-api-design
 date: 2024-08-26T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Let'sEncryptの証明書自動更新に失敗し続けていたけど何とかした話
-description: 'Let''sEncryptの証明書自動更新に失敗し続けていたけど何とかした話'
+description: "以前書いたLet's Encrypt証明書の自動更新スクリプトが、手動では成功するのにcronで実行すると毎回失敗する、という問題に悩まされていました。この記事では、その原因を探ってスクリプトを見直し、cronでも正しく自動更新が動くようにするまでの過程をまとめます。"
 slug: letsencrypt-auto-renewal-failure-solution
 date: 2017-10-01T00:00:00Z
 author: bmf-san

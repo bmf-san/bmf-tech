@@ -9,7 +9,7 @@ tags:
   - Performance Tuning
   - ISUCON
   - ISUCON8
-description: Preparation for participating in ISUcon.
+description: "An account of the preparations I made ahead of competing in ISUCON for the first time. Starting from setting a realistic goal of spending the entire qualifier session on tuning, it describes the preparation and mindset I built up for my first attempt at the competition."
 translation_key: road-to-isucon
 draft: false
 ---

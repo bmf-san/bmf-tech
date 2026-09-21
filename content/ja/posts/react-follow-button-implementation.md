@@ -1,6 +1,6 @@
 ---
 title: Reactでフォローボタンをつくってみる
-description: Reactで、SNSのようなトグル状態とホバー挙動を持つフォローボタンコンポーネントをつくる方法を解説します。
+description: "Reactを使って、SNSのようなトグル状態とホバー時の挙動を持つフォローボタンのコンポーネントをつくる方法を解説する記事です。ボタンの状態管理や、マウスホバーに応じた表示の切り替えなど、実装のポイントを具体的なコードとともに紹介します。"
 slug: react-follow-button-implementation
 date: 2017-10-01T00:00:00Z
 author: bmf-san
