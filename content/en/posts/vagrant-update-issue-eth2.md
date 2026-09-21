@@ -10,7 +10,7 @@ tags:
   - Vagrant
   - VirtualBox
   - Tips
-description: A story about encountering network errors after updating Vagrant from an older version.
+description: "A story about the network interface (eth2) error I hit after updating Vagrant from an older version (1.7.4) to 1.9.1. It walks through the error around 70-persistent-net.rules and how I worked around it to get the VM networking working again."
 translation_key: vagrant-update-issue-eth2
 draft: false
 ---

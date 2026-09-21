@@ -7,7 +7,7 @@ categories:
   - Infrastructure
 tags:
   - Nginx
-description: Notes taken while researching buffer sizes in NGINX.
+description: "Notes taken while researching buffer sizes in NGINX. It looks at reverse-proxy buffer directives such as proxy_buffering, proxy_buffer_size, and large_client_header_buffers, and how tuning them affects performance."
 translation_key: nginx-buffer-directives-notes
 draft: false
 ---

@@ -8,7 +8,7 @@ categories:
   - Architecture
 tags:
   - BFF
-description: A summary of what I researched about BFF.
+description: "A summary of what I researched about BFF (Backends For Frontends). It covers what a BFF is and why it is needed, and how placing a BFF layer between the frontend and backend can simplify the API contract for each client."
 translation_key: bff-explained
 draft: false
 ---

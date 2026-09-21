@@ -9,7 +9,7 @@ tags:
   - Amazon Web Service
   - Google Cloud Platform
   - Cloud-Native
-description: Learn about the fundamentals of cloud-native thinking.
+description: "Notes from reading the book Cloud-Native Architecture: Mastering Availability and Cost-Effectiveness in Next-Gen Design Principles. It summarizes the fundamentals of cloud-native thinking, along with the design principles and trade-offs involved in building for availability and cost-effectiveness."
 translation_key: cloud-native-architecture-principles
 draft: false
 ---

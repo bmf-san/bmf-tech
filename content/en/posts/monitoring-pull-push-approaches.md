@@ -7,7 +7,7 @@ categories:
   - Infrastructure
 tags:
   - Monitoring
-description: An overview of the differences between pull and push approaches in monitoring systems.
+description: "An overview of the differences between the pull and push approaches in monitoring systems. It organizes how each architecture works, their respective advantages and disadvantages, and the representative tools associated with each."
 translation_key: monitoring-pull-push-approaches
 draft: false
 ---

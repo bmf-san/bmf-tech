@@ -11,7 +11,7 @@ tags:
   - Kubernetes
   - Terraform
   - kubeadm
-description: A journey of setting up a Kubernetes environment using Terraform and Ansible.
+description: "A journey of setting up a Kubernetes environment using Terraform and Ansible. Driven by the wish to run my own application on Kubernetes, it covers automating the setup and building master and worker nodes with kubeadm as a practical take on infrastructure as code."
 translation_key: kubernetes-setup-with-terraform-ansible
 draft: false
 ---
