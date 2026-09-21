@@ -1,6 +1,6 @@
 ---
 title: 認証・認可の基本
-description: 「認証・認可の基本」のまとめと読書メモ。重要なポイントと実践的な知見を整理します。
+description: "認証・認可の基本を再確認するためにまとめた記事。認証サービスの開発に携わるなかで、識別やRBAC・ABAC、資格情報の種類、シングルサインオン、SAML 2.0、OAuth 2.0、OpenID Connectといった基礎を、実務の文脈をふまえて整理する。"
 slug: authentication-authorization-basics
 date: 2020-11-05T00:00:00Z
 author: bmf-san

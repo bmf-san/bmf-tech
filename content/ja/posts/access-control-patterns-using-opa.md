@@ -1,6 +1,6 @@
 ---
 title: OPAを利用したアクセス制御のパターン
-description: OPAを利用したアクセス制御のパターンについて、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
+description: "Open Policy Agent（OPA）を利用したアクセス制御の代表的なパターンを整理した記事。Allow/DenyやSQL生成、ASTを用いたアプローチなど複数のパターンを、特徴・適した用途・実装負荷の観点から比較し、責務分離をふまえて解説する。"
 slug: access-control-patterns-using-opa
 date: 2025-06-22T00:00:00Z
 author: bmf-san

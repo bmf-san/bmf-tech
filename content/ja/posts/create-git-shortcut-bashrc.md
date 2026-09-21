@@ -1,6 +1,6 @@
 ---
 title: .bashrcにgitのショートカットコマンドをつくった
-description: .bashrcの設定で、ブランチのチェックアウトやpull・pushを効率化するgitエイリアスとbash関数を作る方法を解説します。
+description: ".bashrcの設定で、gitの操作を効率化するエイリアスやbash関数をつくる方法を解説した記事。基本的なgitコマンドを毎回叩く手間を減らすため、ブランチのチェックアウトやpull・pushを楽にするショートカットを紹介する。"
 slug: create-git-shortcut-bashrc
 date: 2017-09-26T00:00:00Z
 author: bmf-san

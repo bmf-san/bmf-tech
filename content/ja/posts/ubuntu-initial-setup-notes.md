@@ -1,6 +1,6 @@
 ---
 title: ubuntu初期設定メモ
-description: "Ubuntuサーバー初期構築手順、アップデート・ユーザー作成・sudo権限付与・ホストネーム設定を実践的に解説"
+description: "Ubuntuサーバーの初期構築の手順を、ときどき忘れてしまうため実践的なメモとしてまとめた記事です。ConoHa上のUbuntuを例に、パッケージのアップデートや作業用ユーザーの作成、sudo権限の付与、ホストネームの設定といった、初期セットアップで行う作業を解説します。"
 slug: ubuntu-initial-setup-notes
 date: 2019-02-15T00:00:00Z
 author: bmf-san

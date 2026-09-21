@@ -1,6 +1,6 @@
 ---
 title: bmfと今年買ってよかったモノ
-description: bmfと今年買ってよかったモノ。個人的な振り返りとハイライトをまとめます。
+description: "2017年に買ってよかったモノを振り返った記事。Bluetoothのオーディオ機器やCote&Cielのバッグ、ジムの会員権など、QOL（生活の質）の向上につながったと感じる買い物をピックアップして紹介する。"
 slug: bmf-best-purchases-of-the-year
 date: 2017-12-25T00:00:00Z
 author: bmf-san

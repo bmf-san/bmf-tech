@@ -8,7 +8,7 @@ categories:
 tags:
   - System Performance
   - Load Average
-description: Understanding the concept of Load Average in system performance.
+description: "A practical explanation of what Load Average means on Linux, the metric you often see in commands like top and uptime. Since it represents processes waiting to run and indicates how congested a system is, the article covers how to read its three values, how to diagnose high load, and how it differs from CPU utilization."
 translation_key: what-is-load-average
 draft: false
 ---

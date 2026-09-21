@@ -9,7 +9,7 @@ tags:
   - MySQL
   - SQL
   - Cross Join
-description: A note on generating test data using only MySQL.
+description: "A note on how to generate test data using only MySQL. While generating test data with a script offers more flexibility, when you just want tens of thousands of records for a performance test, plain SQL can be enough. This article shows how to write such SQL."
 translation_key: mysql-test-data-generation-sql
 draft: false
 ---

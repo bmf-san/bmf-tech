@@ -8,7 +8,7 @@ categories:
 tags:
   - Agile
   - Scrum
-description: An idea on how to think about the criteria for story points.
+description: "An article jotting down an idea I had for how to think about the criteria behind story points in agile estimation. It introduces an approach that uses the Cynefin framework to size story points based on the degree of complexity of a task."
 translation_key: story-points-using-cynefin-framework
 draft: false
 ---

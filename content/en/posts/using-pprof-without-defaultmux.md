@@ -8,7 +8,7 @@ categories:
 tags:
   - Golang
   - Tips
-description: A note on using net/http/pprof with routers other than Go's default router.
+description: "A note on how to use Go's net/http/pprof with a custom router instead of the DefaultServeMux. It covers the common pitfall that a blank import alone won't work, and shows how to register handlers such as pprof.Index on your own router so you can still profile performance."
 translation_key: using-pprof-without-defaultmux
 draft: false
 ---

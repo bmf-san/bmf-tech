@@ -1,6 +1,6 @@
 ---
 title: TypeScriptの基本を学び直す
-description: 「TypeScriptの基本を学び直す」のまとめと読書メモ。重要なポイントと実践的な知見を整理します。
+description: "TypeScriptの基本を改めて学び直した際のまとめです。前提となるJavaScriptの変数スコープなどの復習から入り、TypeScriptの型システムや基本的な文法まで、重要なポイントと実践的な知見を整理します。"
 slug: typescript-basics-review
 date: 2024-07-20T00:00:00Z
 author: bmf-san

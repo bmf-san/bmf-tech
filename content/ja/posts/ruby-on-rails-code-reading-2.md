@@ -1,6 +1,6 @@
 ---
 title: Ruby on Railsのコードリーディング第2回-Railsのリクエスト処理
-description: Ruby on Railsのコードリーディングで、リクエスト処理の流れを追った記録です。
+description: "Ruby on Railsのソースコードを読み解くコードリーディングの記録の第2弾です。rails newで用意したプロジェクトを題材に、Railsが1つのリクエストを受け取ってレスポンスを返すまで、リクエスト処理がどのような流れで進んでいくのかを追いかけていきます。"
 slug: ruby-on-rails-code-reading-2
 date: 2024-09-02T00:00:00Z
 author: bmf-san

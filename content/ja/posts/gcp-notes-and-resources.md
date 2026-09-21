@@ -1,6 +1,6 @@
 ---
 title: GCPについての覚え書き
-description: Google Cloud認定アソシエイトクラウドエンジニア試験の学習中にまとめた、GCPの各種サービスに関する覚え書きです。
+description: "Google Cloud認定アソシエイトクラウドエンジニア試験に向けた学習の際にまとめた、雑多な覚え書きです。責任共有モデルや最小権限の原則といった考え方から、Google Cloudの各種サービスの要点までを整理した個人用のメモです。"
 slug: gcp-notes-and-resources
 date: 2023-05-22T00:00:00Z
 author: bmf-san

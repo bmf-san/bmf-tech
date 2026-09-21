@@ -1,6 +1,6 @@
 ---
 title: Laravelのフォームリクエストでバリデーションされる値をカスタマイズする
-description: Laravelのフォームリクエストでバリデーション対象の値をカスタマイズする方法を解説します。
+description: "Laravelのフォームリクエストで、バリデーションの対象となる値をカスタマイズする方法を解説します。たとえば/post/:id/deleteのようなエンドポイントで、リクエストボディだけでなくルートパラメータにもバリデーションをかけたい、といった場面で役立つ手法です。"
 slug: laravel-form-request-validation-customization
 date: 2017-10-01T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: "gRPCとは？GoによるgRPCの実践入門"
-description: 'gRPC とは何か、Protocol Buffers・サービス定義・ストリーミングを Go で実装する実践的な入門ガイドです。'
+description: "GoでgRPCに入門するための実践的なガイドです。gRPCとは何か、その前提となるHTTP/2やProtocol Buffersといった技術、サービス定義やストリーミングの仕組みを説明し、GoでgRPCのサーバーとクライアントを実装する手順を解説します。"
 slug: grpc-introduction-golang
 date: 2020-09-08T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Markdownで履歴書・職務経歴書を管理するテンプレートを作成した
-description: "管理するMarkdown形式の履歴書。Git版管理、自動PDF生成、textlint校正、環境変数で個人情報を安全に処理できるテンプレート"
+description: "Markdown形式で履歴書・職務経歴書を管理できるテンプレートを紹介する記事です。Gitによるバージョン管理や、CIでの自動PDF生成、textlintによる文章校正、環境変数を使った個人情報の安全な扱いなど、レジュメをコードのように扱うための仕組みをまとめています。"
 slug: markdown-resume-template
 date: 2025-07-16T00:00:00Z
 lastmod: 2026-03-15

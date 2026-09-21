@@ -1,6 +1,6 @@
 ---
 title: LaravelでCORS対応
-description: Laravelのミドルウェアでクロスオリジンリクエストやプリフライトに対応するCORS設定を、axiosの例とあわせて解説します。
+description: "LaravelでCORS（Cross-Origin Resource Sharing）に対応する方法をまとめた記事です。クライアントサイドにReactとaxiosを使う構成を例に、Laravelのミドルウェアでクロスオリジンリクエストやプリフライトリクエストを扱うためのCORS設定を、前提知識とあわせて解説します。"
 slug: laravel-cors-setup
 date: 2017-09-26T00:00:00Z
 author: bmf-san

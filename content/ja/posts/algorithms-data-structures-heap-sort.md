@@ -1,6 +1,6 @@
 ---
 title: アルゴリズムとデータ構造 - ヒープソート
-description: 二分ヒープ木を使ってO(n log n)でソートするヒープソートを解説。ヒープの構築、ルートの取り出し、Goでの実装を紹介します。
+description: "アルゴリズムとデータ構造を学ぶシリーズの記事。二分ヒープ木を使ってO(n log n)でソートするヒープソートを取り上げ、ヒープの構築やルートの取り出しの手順を、Goでの実装例とともに解説する。"
 slug: algorithms-data-structures-heap-sort
 date: 2020-02-01T00:00:00Z
 author: bmf-san

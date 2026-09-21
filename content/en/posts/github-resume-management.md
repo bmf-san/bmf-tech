@@ -9,7 +9,7 @@ tags:
   - Git
   - GitHub
   - Resume
-description: I switched from Google Drive to GitHub for managing my resume.
+description: "An account of why and how I switched from managing my resume on Google Drive to managing it on GitHub. Here, a resume means a text-based summary of my career, and this turned out to be a worthwhile approach worth sharing."
 translation_key: github-resume-management
 draft: false
 ---

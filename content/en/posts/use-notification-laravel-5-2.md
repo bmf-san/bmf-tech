@@ -7,7 +7,7 @@ categories:
   - Application
 tags:
   - Laravel
-description: Discussion on using Notifications in Laravel 5.2.
+description: "Even though Laravel 5.3 had just been released, this article deliberately covers how to send notifications using the Notification feature in Laravel 5.2. It explains what Notification is and walks through installing it and sending a notification on a 5.2 (or 5.1) environment."
 translation_key: use-notification-laravel-5-2
 draft: false
 ---

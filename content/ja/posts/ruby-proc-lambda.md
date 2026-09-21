@@ -1,6 +1,6 @@
 ---
 title: RubyのProcとlamdaについて
-description: "区別するProcとlambda。引数の厳格性、returnとnext・breakの挙動差、手続きオブジェクト化によるコード再利用パターン。"
+description: "RubyのProcとlambdaの違いについてまとめた記事です。ブロックをオブジェクト化した手続きオブジェクトであるProcを軸に、引数の厳格さの違いや、returnとnext・breakといったジャンプ文の挙動の差、そして手続きをオブジェクト化してコードを再利用するパターンを解説します。"
 slug: ruby-proc-lambda
 date: 2024-05-15T00:00:00Z
 author: bmf-san

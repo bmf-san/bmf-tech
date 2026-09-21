@@ -1,6 +1,6 @@
 ---
 title: "SAML 2.0とは？SSOとフェデレーテッドアイデンティティの仕組みを解説"
-description: 'SAML 2.0 とは何か、SSO（シングルサインオン）とフェデレーテッドアイデンティティの仕組み・フロー・実装上の注意点を解説します。'
+description: "OASIS SAML 2.0の仕様に基づいて要点を整理した記事です。SAML（Security Assertion Markup Language）とは何かという基本から、SSO（シングルサインオン・フェデレーテッドアイデンティティを実現する仕組みや認証のフロー、そして実装上の注意点までを解説します。"
 slug: saml-2-0
 date: 2026-01-23T00:00:00Z
 author: bmf-san

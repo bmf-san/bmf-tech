@@ -8,7 +8,7 @@ categories:
 tags:
   - Ruby on Rails
   - Ruby
-description: Documenting the code reading process for Ruby on Rails.
+description: "The third installment of my code reading notes for Ruby on Rails. Using a project created with rails new, it traces how a request flows through routing until the action of the WelcomeController is invoked, following the request handling step by step."
 translation_key: ruby-on-rails-code-reading-3
 draft: false
 ---

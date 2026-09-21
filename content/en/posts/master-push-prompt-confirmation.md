@@ -8,7 +8,7 @@ categories:
 tags:
   - Git
   - Shell Script
-description: How to create a safety net to prevent direct pushes to the master branch in git.
+description: "How to build a safety net that prevents accidental direct pushes to the master branch in git by prompting for confirmation before the push goes through. While you can also block this on GitHub's side, this uses Git hooks for cases where that isn't practical due to operational constraints."
 translation_key: master-push-prompt-confirmation
 draft: false
 ---

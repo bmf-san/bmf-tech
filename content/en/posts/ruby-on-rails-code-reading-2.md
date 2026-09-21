@@ -8,7 +8,7 @@ categories:
 tags:
   - Ruby
   - Ruby on Rails
-description: Recording the code reading work of Ruby on Rails.
+description: "The second installment of my code reading notes for Ruby on Rails. Using a project created with rails new, it follows how Rails processes a single request from the moment it arrives until a response is returned, tracing the flow of request handling through the framework."
 translation_key: ruby-on-rails-code-reading-2
 draft: false
 ---

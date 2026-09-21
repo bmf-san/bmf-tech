@@ -8,7 +8,7 @@ categories:
 tags:
   - Retrospective
   - KPT
-description: Introducing a new retrospective framework to enhance focus and selection.
+description: "While KPT (Keep, Problem, Try) is the standard for retrospectives, I wanted to devise a framework of my own, and this article lays out that idea. It introduces the bmf framework, standing for Build, Miss, and Focus, as a way to encourage selection and focus in your retrospectives."
 translation_key: reflection-framework-bmf
 draft: false
 ---

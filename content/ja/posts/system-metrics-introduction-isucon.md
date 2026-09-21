@@ -1,6 +1,6 @@
 ---
 title: ISUCON環境で学ぶシステムメトリクス入門
-description: "ISUCON環境でシステムメトリクス監視、iptables・ss・ロードアベレージでネットワークとCPU負荷のボトルネック解析を実教"
+description: "ISUCON環境を利用して、システムメトリクスをきちんと読めるようになろうという勉強会を定期的に行っており、そのまとめを残した記事です。iptablesやss、ロードアベレージといったツールや指標を使って、ネットワークやCPU負荷のボトルネックを解析する方法を実践的に整理します。"
 slug: system-metrics-introduction-isucon
 date: 2024-04-14T00:00:00Z
 author: bmf-san

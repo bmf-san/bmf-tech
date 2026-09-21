@@ -1,6 +1,6 @@
 ---
 title: TUI開発で役立つターミナル仕様の理解
-description: "TUI開発の基盤となるターミナル仕様、Line Discipline・termios・ANSIエスケープシーケンスの動作原理とGo実装"
+description: "TUI（Terminal User Interface）アプリケーションを開発する基盤となる、ターミナルの仕様について解説する記事です。既存ライブラリの裏でターミナルがどう動作しているのかに踏み込み、Line Disciplineやtermios、ANSIエスケープシーケンス、Raw Modeの動作原理を、Goでの実装を交えて紹介します。"
 slug: terminal-specifications-for-tui-development
 date: 2025-10-18T00:00:00Z
 author: bmf-san

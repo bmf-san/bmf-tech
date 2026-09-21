@@ -1,6 +1,6 @@
 ---
 title: OpenID Connect 1.0 仕様まとめ
-description: "実装するOpenID Connect。OAuthレイヤー、IDToken、JWTクレーム、認証フロー、署名・暗号化、仕様書要点を詳細解説"
+description: "OpenID Connect Core 1.0の仕様に基づいて要点を整理した記事です。OAuth 2.0の上に認証のレイヤーを重ねる仕組みとして、IDトークンやJWTのクレーム、認証フロー、署名・暗号化といった要素を取り上げ、仕様書のポイントを実装の観点から詳しく解説します。"
 slug: openid-connect-1-0-spec-summary
 date: 2026-01-23T00:00:00Z
 author: bmf-san

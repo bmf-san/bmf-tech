@@ -1,6 +1,6 @@
 ---
 title: "DockerのOperation not permittedというエラーに対応する"
-description: DockerのOperation not permittedというエラーに対応するの原因と解決方法について解説します。
+description: "Docker Composeを使ってGoのテストを実行した際に遭遇した「Operation not permitted」というエラーへの対応メモです。エラーが発生する原因と、privilegedオプションやケーパビリティの付与などによって解決するための方法を紹介します。"
 slug: docker-operation-not-permitted-error
 date: 2019-09-27T00:00:00Z
 lastmod: 2026-03-15

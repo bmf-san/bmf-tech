@@ -1,6 +1,6 @@
 ---
 title: Ansibleでリモートのファイルに書き込みをする
-description: Ansibleのblockinfileモジュールを使い、リモートのファイルへ書き込み・編集してインフラ構成を自動管理する方法を解説します。
+description: "Ansibleのblockinfileモジュールを使って、リモートサーバー上のファイルへの書き込みや編集を行う方法を解説する記事です。よく使うタスクとして、Playbookの具体例を示しながら、ファイルの内容を管理してインフラ構成を自動で管理・構成する手順を紹介します。"
 slug: write-remote-file-ansible
 date: 2017-09-26T00:00:00Z
 author: bmf-san

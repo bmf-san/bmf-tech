@@ -1,6 +1,6 @@
 ---
 title: 偶有的複雑性と意思決定の記録不在
-description: 偶有的複雑性が生まれる要因と、ADRやDesign Docがないと「本質」と「偶有」を切り分けられなくなる話
+description: "ソフトウェアの複雑性を本質的複雑性と偶有的複雑性に分けて捉え、偶有的複雑性が生まれる要因を整理した記事。ADRやDesign Docといった意思決定の記録が欠けると、「本質」と「偶有」を切り分けられなくなる問題を論じる。"
 slug: accidental-complexity-and-missing-decision-records
 date: 2026-05-21T00:00:00Z
 author: bmf-san

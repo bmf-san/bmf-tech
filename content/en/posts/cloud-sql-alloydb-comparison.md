@@ -9,7 +9,7 @@ tags:
   - AlloyDB
   - Cloud SQL
   - Google Cloud Platform
-description: A brief investigation into the advantages of AlloyDB over Cloud SQL.
+description: "An article investigating the advantages of AlloyDB over Cloud SQL. Targeting Cloud SQL Enterprise edition, it compares the two to organize the use cases where AlloyDB has an edge, along with points around performance and compatibility."
 translation_key: cloud-sql-alloydb-comparison
 draft: false
 ---

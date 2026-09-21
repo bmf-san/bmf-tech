@@ -1,6 +1,6 @@
 ---
 title: OpenAPIを使ったスキーマ駆動開発
-description: OpenAPIを使ったスキーマ駆動開発を解説。REST APIの仕様定義、コード生成、モックサーバーの活用といったメリットを紹介します。
+description: "OpenAPIを使ったスキーマ駆動開発について解説する記事です。OpenAPI Specificationとは、言語に依存しない形でHTTP APIの仕様を定義するためのフォーマットです。この仕様を起点に、REST APIの仕様定義やコード生成、モックサーバーの活用といったメリットを紹介します。"
 slug: openapi-schema-driven-development
 date: 2024-01-19T00:00:00Z
 author: bmf-san

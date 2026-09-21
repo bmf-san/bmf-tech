@@ -7,7 +7,7 @@ categories:
   - Architecture
 tags:
   - Load Testing
-description: A guide to understanding and starting load testing.
+description: "A starting guide aimed at helping you understand load testing and actually get started with it. From the basics that load testing is a technique for verifying system performance, it organizes how to check whether a system meets its assumed capacity, along with practical know-how."
 translation_key: load-testing-start-guide
 draft: false
 ---

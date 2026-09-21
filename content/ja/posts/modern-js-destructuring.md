@@ -1,6 +1,6 @@
 ---
 title: モダンなJSの話──Destructuring assignment（分割代入）
-description: モダンなJavaScriptの分割代入を解説。配列・オブジェクトのデフォルト値やエイリアスを使った書き方を紹介します。
+description: "モダンなJavaScriptの分割代入（Destructuring assignment）について解説する記事です。配列やオブジェクトのデータをそれぞれ別個の変数に取り出す書き方を、デフォルト値の指定や、別名（エイリアス）を付ける方法などの実例とともに紹介します。"
 slug: modern-js-destructuring
 date: 2017-12-25T00:00:00Z
 author: bmf-san

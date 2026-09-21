@@ -9,7 +9,7 @@ categories:
 tags:
   - System Design
   - Link Collection
-description: A compilation of resources related to system design.
+description: "A link-collection-style roundup of the various resources I read while studying system design. Along with the motivation behind why I dug into the topic, it organizes articles, books, and other resources I found helpful for learning system design."
 translation_key: system-design-resources-review
 draft: false
 ---

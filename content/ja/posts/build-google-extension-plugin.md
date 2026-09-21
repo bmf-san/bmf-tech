@@ -1,6 +1,6 @@
 ---
 title: Google ExtenstionのPluginをつくってみた
-description: manifest.jsonとJavaScriptで初めてのGoogle Chrome拡張機能プラグインをつくる手順を解説します。
+description: "manifest.jsonとJavaScriptで、初めてのGoogle Chrome拡張機能プラグインをつくる手順を解説した記事。英語版のGoogleで検索したいという身近な動機から、拡張機能の基本的な構成と作り方を実際の例とともに紹介する。"
 slug: build-google-extension-plugin
 date: 2017-09-26T00:00:00Z
 author: bmf-san

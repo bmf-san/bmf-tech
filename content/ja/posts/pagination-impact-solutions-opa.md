@@ -1,6 +1,6 @@
 ---
 title: OPAにおけるページネーションへの影響と解決策に関する検討
-description: OPAにおけるページネーションへの影響と解決策に関する検討の原因と解決方法について解説します。
+description: "OPA（Open Policy Agent）を使ったアクセス制御において、ページネーションがもたらす影響とその解決策を検討した記事です。Regoで記述したポリシーによる許可・拒否の判定と、オフセットやカーソルによるページネーション、アクセス制御でのフィルタリングをどう両立させるかを整理します。"
 slug: pagination-impact-solutions-opa
 date: 2025-06-14T00:00:00Z
 author: bmf-san

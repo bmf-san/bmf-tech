@@ -1,6 +1,6 @@
 ---
 title: URLルーティングをつくる　エピソード3（完結編）
-description: PHPで、パスパラメータ・HTTPメソッド・ツリーベースの探索アルゴリズムに対応したURLルーティングを完成させる方法を解説します。
+description: "ツリー構造を使ってURLルーティングを自作するシリーズのエピソード3。PHPで、パスパラメータやHTTPメソッド、ツリーベースの探索アルゴリズムに対応したURLルーティングを完成させるまでを解説する。"
 slug: creating-url-routing-episode-3
 date: 2019-03-17T00:00:00Z
 author: bmf-san

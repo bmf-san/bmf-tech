@@ -8,7 +8,7 @@ categories:
 tags:
   - Reliability
   - SLO
-description: A guide to understanding and starting the operation of SLOs.
+description: "A start guide aimed at helping you understand SLOs and actually begin operating them. It organizes the stages you need to go through to introduce SLOs to an organization or team and start running them, from initial adoption to ongoing operation, along with practical know-how."
 translation_key: slo-start-guide
 draft: false
 ---

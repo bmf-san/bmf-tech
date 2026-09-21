@@ -9,7 +9,7 @@ tags:
   - CircleCI
   - npm
   - textlint
-description: Automating text proofreading using textlint and reviewdog on CircleCI.
+description: "An article on how I automated text proofreading on CircleCI using textlint and reviewdog. For text managed on GitHub, it sets up CI to run textlint and feed the warnings back onto the pull request via reviewdog, which is handy when writing long-form articles."
 translation_key: textlint-and-reviewdog-for-circleci-text-proofreading
 draft: false
 ---

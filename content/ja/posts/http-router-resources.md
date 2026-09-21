@@ -1,6 +1,6 @@
 ---
 title: HTTP Routerの自作で参考にした資料
-description: Goでのradix木やトライ木、ベンチマーク比較など、HTTPルーターを自作する際に参考になる資料を紹介します。
+description: "自作のHTTPルーター「goblin」の開発で参考にした、各種の資料や自分のブログ記事をまとめた記事です。radix木やトライ木といったデータ構造、ベンチマーク比較など、GoでHTTPルーターを自作する際に役立つ情報を、分散していたものを集約して紹介します。"
 slug: http-router-resources
 date: 2023-10-30T00:00:00Z
 author: bmf-san

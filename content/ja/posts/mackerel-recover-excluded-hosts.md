@@ -1,6 +1,6 @@
 ---
 title: Mackerelで監視対象から外れたホストを再度復帰させる方法
-description: "復帰させるMackerelの監視ホスト。mackerel-agentの再起動、hostId更新、誤削除時の対応手順を実務的にガイド"
+description: "Mackerelの監視対象から誤ってホストを退役させてしまったり、意図せず監視対象から外してしまったりしたときに、そのホストを復帰させる方法をまとめたメモです。mackerel-agentを再起動しても自動では復帰しないため、hostIdを更新して対応する実務的な手順をガイドします。"
 slug: mackerel-recover-excluded-hosts
 date: 2019-09-17T00:00:00Z
 author: bmf-san

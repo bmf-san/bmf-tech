@@ -1,6 +1,6 @@
 ---
 title: MySQLでテストデータを生成するSQL
-description: MySQLだけでテストデータを生成するSQLの書き方についてまとめます。
+description: "MySQLだけでテストデータを生成するSQLの書き方についてまとめたメモです。テストデータをスクリプトで生成する方法は柔軟性が高い一方、数万件のレコードでパフォーマンステストをしたいときなどは、SQLだけでも十分な場合があります。その具体的な書き方を紹介します。"
 slug: mysql-test-data-generation-sql
 date: 2019-07-16T00:00:00Z
 author: bmf-san

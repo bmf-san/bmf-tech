@@ -1,6 +1,6 @@
 ---
 title: Laravelのredirect('hoge')とredirect()->to('hoge')の違い
-description: 'Laravelのredirect(''hoge'')とredirect()->to(''hoge'')の違い'
+description: "Laravelのリダイレクトで何となく使い分けていた、redirect('hoge')とredirect()->to('hoge')の違いが気になって調べてみた記事です。それぞれのヘルパー関数が内部でどう動くのかを確認し、どちらをどう使うべきかを整理します。"
 slug: laravel-redirect-differences
 date: 2017-10-01T00:00:00Z
 author: bmf-san

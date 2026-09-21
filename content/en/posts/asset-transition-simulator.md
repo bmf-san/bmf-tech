@@ -7,7 +7,7 @@ categories:
   - Application
 tags:
   - JavaScript
-description: Introducing a tool for personal asset formation, the Asset Trend Simulator.
+description: "An article introducing the Asset Trend Simulator, a tool built for thinking about personal asset formation. It covers why the tool was created and how to use it to simulate how assets change over time through contributions and investment returns."
 translation_key: asset-transition-simulator
 draft: false
 ---

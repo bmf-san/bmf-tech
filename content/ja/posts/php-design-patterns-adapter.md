@@ -1,6 +1,6 @@
 ---
 title: PHPで学ぶデザインパターン - Adapterパターン
-description: PHPで学ぶデザインパターン - Adapterパターンについて、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
+description: "「PHPで学ぶデザインパターン Advent Calendar 2018」の記事の1つで、Adapterパターンを取り上げます。互換性のないインターフェース同士を適合させ、既存のクラスに手を加えることなく再利用できるようにするこのパターンの仕組みと、PHPでの実装方法を解説します。"
 slug: php-design-patterns-adapter
 date: 2019-02-01T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: NewSQL関連の資料を読み漁った
-description: NewSQLに関するさまざまな資料を読み込み、要点をまとめます。
+description: "NewSQLについて調べ、読み漁った資料をまとめた記事です。もともとはいくつかのNewSQLのデータベースを比較したいと考えて情報を集めていましたが、内部で使われている技術を理解する必要があったため、関連技術に関する記事も含めて要点を整理しています。"
 slug: newsql-resources-review
 date: 2023-03-29T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: multipassでk3sを動かす
-description: multipassを使ってk3sを動かし、個人開発に活用する方法を紹介します。
+description: "docker-composeで構成していた個人開発のアプリケーションを、Kubernetes（k3s）へ移行しようと試みた際に、仮想マシン管理ツールのmultipassを使ってみたメモです。結局移行はしなかったものの、multipass上でk3sを動かして個人開発に活用する方法を紹介します。"
 slug: multipass-k3s-setup
 date: 2023-08-17T00:00:00Z
 author: bmf-san

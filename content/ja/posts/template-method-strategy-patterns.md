@@ -1,6 +1,6 @@
 ---
 title: Template MethodパターンとStarategyパターンについて
-description: "GoF行動パターンTemplate MethodとStrategyの違い、大枠処理の継承と戦略切り替えパターンの実装と使い分け"
+description: "GoFの振る舞いに関するデザインパターンである、Template MethodパターンとStrategyパターンの違いについてまとめた記事です。大枠の処理を上位クラスで決めて具体的な流れを下位クラスに任せる継承ベースの手法と、戦略を差し替える委譲ベースの手法を比較し、それぞれの実装と使い分けを解説します。"
 slug: template-method-strategy-patterns
 date: 2023-08-20T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Nginxをリバースプロキシとして設定する
-description: "設定するNginxリバースプロキシ。Apache併用構成、ポート変更、バーチャルホスト設定、ロードバランシング実装の完全ガイド"
+description: "Apacheで運用していたさくらVPSに、Nginxをリバースプロキシとして設定した際のメモです。ApacheとNginxを併用する構成やポート番号の変更、バーチャルホストの設定、ロードバランシングなど、リバースプロキシを構築するうえでのポイントをまとめます。"
 slug: nginx-reverse-proxy-configuration
 date: 2017-10-01T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: AWS認定ソリューションアーキテクトアソシエイトを受験した
-description: AWS認定ソリューションアーキテクトアソシエイトに合格するまでの学習方法と受験体験を紹介します。
+description: "AWS認定ソリューションアーキテクト–アソシエイトを受験し合格したので、取り組んだことを記録した記事です。ソフトウェアエンジニアとしての経験や、普段からAWSに触れているといった前提をふまえ、合格までに実践した学習方法や受験しての体験を紹介します。"
 slug: took-aws-certified-solutions-architect-associate
 date: 2021-07-17T00:00:00Z
 author: bmf-san

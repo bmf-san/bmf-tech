@@ -1,6 +1,6 @@
 ---
 title: PHPで学ぶデザインパターン - Strategy
-description: PHPで学ぶデザインパターン - Strategyについて、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
+description: "「PHPで学ぶデザインパターン Advent Calendar 2018」の記事の1つで、Strategyパターンを取り上げます。アルゴリズムをそれぞれクラスとして切り出して動的に切り替えられるようにし、条件分岐を減らして開放閉鎖の原則（OCP）に沿った設計を実現する方法を、PHPでの実装例とともに解説します。"
 slug: php-design-patterns-strategy
 date: 2018-12-09T00:00:00Z
 author: bmf-san

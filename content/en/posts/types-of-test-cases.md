@@ -7,7 +7,7 @@ categories:
   - Testing
 tags:
   - Design
-description: A concise summary of basic types of test cases and how to identify them.
+description: "A concise summary of the basic types of test cases and how to identify them. After organizing the purposes of testing, finding bugs and assuring and improving quality, it introduces types of tests such as unit tests and the perspectives you can use to enumerate test cases."
 translation_key: types-of-test-cases
 draft: false
 ---

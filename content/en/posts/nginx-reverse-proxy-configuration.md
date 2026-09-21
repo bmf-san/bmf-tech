@@ -10,7 +10,7 @@ tags:
   - Nginx
   - Apache
   - Sakura VPS
-description: Notes on configuring Nginx as a reverse proxy on a Sakura VPS previously running Apache.
+description: "Notes on setting up Nginx as a reverse proxy on a Sakura VPS that had been running Apache. It covers a configuration where Apache and Nginx coexist, along with port changes, virtual host settings, and load balancing as points to consider when building a reverse proxy."
 translation_key: nginx-reverse-proxy-configuration
 draft: false
 ---

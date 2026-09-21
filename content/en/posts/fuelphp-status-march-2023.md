@@ -7,7 +7,7 @@ categories:
   - Application
 tags:
   - FuelPHP
-description: A summary of the current status of FuelPHP as of March 2023.
+description: "A rough summary of the current status of FuelPHP as of March 2023, based on my own research. It organizes development and release activity and community trends, as a note for those still using FuelPHP in an era dominated by Laravel."
 translation_key: fuelphp-status-march-2023
 draft: false
 ---

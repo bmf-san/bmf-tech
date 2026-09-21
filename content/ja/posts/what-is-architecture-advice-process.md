@@ -1,6 +1,6 @@
 ---
 title: アーキテクチャアドバイスプロセス（AAP）とは何か？
-description: アーキテクチャアドバイスプロセス（AAP）とは何か？について、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
+description: "アーキテクチャアドバイスプロセス（AAP：Architecture Advice Process）とは何かについて、調べたことをまとめた記事です。意思決定を中央集権的にせず、関係者からアドバイスを受けたうえで決定者が意思決定を行うこのプロセスの考え方や、ADRとの関係、実践的な進め方を解説します。"
 slug: what-is-architecture-advice-process
 date: 2025-08-16T00:00:00Z
 author: bmf-san

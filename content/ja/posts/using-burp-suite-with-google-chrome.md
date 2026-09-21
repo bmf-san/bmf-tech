@@ -1,6 +1,6 @@
 ---
 title: GoogleChromeでBurp Suiteを使う手順
-description: "GoogleChromeでBurp Suite脆弱性診断を実施、proxy switchsharp拡張とCA証明書セットアップの手順を解説"
+description: "脆弱性診断などのために、Burp SuiteをGoogle Chromeで使えるようにするための設定について解説する記事です。ProxySwitchSharpのようなプロキシ切り替え拡張の利用や、Burpの通信を復号するためのCA証明書のセットアップといった、一連の手順を紹介します。"
 slug: using-burp-suite-with-google-chrome
 date: 2019-03-22T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: アーキテクチャ戦略・戦術・設計の書き分け
-description: アーキテクチャ戦略・戦術・設計の書き分けについて、設計原則とトレードオフ、実践的な適用方法を詳しく解説します。
+description: "アーキテクチャのドキュメントを書く際に迷いがちな「戦略・戦術・設計」の書き分けを整理した記事。三層構造として捉え、Why・What・How・When・Where・Whoという5W1Hのフレームワークを使って、それぞれに何を書くべきかを明確にする。"
 slug: architecture-strategy-tactics-design
 date: 2026-02-05T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: GolangでgoblinというURLルーターを自作した
-description: Goでトライ木を使い、パスパラメータや正規表現マッチングに対応した高性能URLルーター「goblin」を自作した話を解説します。
+description: "GoでURLルーターを自作した際の実装過程をまとめた記事です。トライ木というデータ構造を用いて、パスパラメータや正規表現によるマッチングに対応した高性能なURLルーター「goblin」を、設計の検討から実装まで順を追って解説します。"
 slug: goblin-url-router-in-golang
 date: 2020-01-26T00:00:00Z
 author: bmf-san

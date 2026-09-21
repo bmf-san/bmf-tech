@@ -1,6 +1,6 @@
 ---
 title: CircleCIでphpunitの並列テストを行う
-description: CircleCIでシェルスクリプトを使って設定を動的生成し、コンテナを分割してPHPUnitの並列テストを実行する方法を解説します。
+description: "CircleCIでPHPUnitの並列テストを実行するアプローチを解説した記事。シェルスクリプトでテスト設定ファイルを動的に生成し、コンテナを分割してテストを並列化することで、実行時間を短縮する方法を具体的に紹介する。"
 slug: circleci-phpunit-parallel-testing
 date: 2023-10-21T00:00:00Z
 author: bmf-san

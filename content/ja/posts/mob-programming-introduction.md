@@ -1,6 +1,6 @@
 ---
 title: モブプログラミングについて
-description: "実践するモブプログラミング。3人以上での同期開発、ドライバー・ナビゲーター役割分担、VS CodeLiveShare、チーム学習効果を解説"
+description: "モブプログラミングを人生で初めて経験し、その良さを忘れないように書き留めたメモです。3人以上のメンバーで1台のコンピューターを共有して開発するこの手法について、コードを書くドライバーと支えるナビゲーターの役割分担や、VS CodeのLive Share、チームの学習効果などを解説します。"
 slug: mob-programming-introduction
 date: 2024-01-23T00:00:00Z
 author: bmf-san

@@ -9,7 +9,7 @@ tags:
   - Architecture Strategy
   - Architecture
   - Design
-description: Exploring the differences between effective and ineffective architecture strategies.
+description: "Even when you write an architecture strategy, it sometimes fails to work, ending up as a strategy in name only or never being executed. Drawing on the book Good Strategy, Bad Strategy, this article organizes the difference between good and bad strategies through the lens of diagnosis, guiding policy, and coherent actions."
 translation_key: good-bad-architecture-strategies
 draft: false
 ---

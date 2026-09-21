@@ -1,6 +1,6 @@
 ---
 title: LaravelでEventを使う
-description: Laravelのイベントリスナーを使い、ユーザー登録や退会など特定のイベント発生時に実行したい処理を管理する方法を解説します。
+description: "Laravelのイベントリスナーを使って、ユーザー登録時や退会時など特定のイベント発生時に実行したい処理を管理する方法を解説します。基本的な定義方法はもちろん、1つのリスナークラスで複数のイベントを扱えるイベント購読（Subscriber）の使い方を中心に紹介します。"
 slug: laravel-event-usage
 date: 2017-09-26T00:00:00Z
 author: bmf-san
