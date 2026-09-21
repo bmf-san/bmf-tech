@@ -11,6 +11,9 @@ tags:
   - DFS
   - BFS
 translation_key: binary-search-tree-search-patterns
+recommended_books:
+  - asin: "479817243X"
+    title: "アルゴリズム図鑑（増補改訂版）"
 draft: false
 ---
 
@@ -21,7 +24,7 @@ draft: false
 どのノードにおいても、左の子ノード＜親ノード＜右の子ノードとなるような木。
 
 ```sh
-ex. 
+ex.
     5
    / \
   3   8

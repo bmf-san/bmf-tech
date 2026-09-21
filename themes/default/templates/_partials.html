@@ -540,11 +540,13 @@
 {{- $isJA := eq .Locale "ja"}}
 {{- $hasBooks := false}}
 {{- with index .PluginData "amazon_books"}}{{if .books}}{{$hasBooks = true}}{{end}}{{end}}
+{{- $isReview := false}}
+{{- range .FrontMatter.Tags}}{{if or (eq . "書評") (eq . "Book Review")}}{{$isReview = true}}{{end}}{{end}}
 {{- if $hasBooks}}
 {{- with index .PluginData "amazon_books"}}
 <aside class="card my-10" aria-label="PR">
   <div class="card-header flex items-center justify-between">
-    <span class="font-semibold text-base">{{if $isJA}}📚 この記事で紹介した本{{else}}📚 Books in this post{{end}}</span>
+    <span class="font-semibold text-base">{{if $isJA}}{{if $isReview}}📚 この記事で紹介した本{{else}}📚 関連書籍（おすすめ）{{end}}{{else}}{{if $isReview}}📚 Books in this post{{else}}📚 Recommended reading{{end}}{{end}}</span>
     <span class="badge badge-light text-secondary text-xs uppercase">PR</span>
   </div>
   <div class="card-body">
@@ -568,6 +570,33 @@
   </div>
 </aside>
 {{- end}}
+{{- end}}
+{{end}}
+
+{{define "recommended-books-card"}}
+{{- /* Affiliate card for NON-review posts that recommend related books via the
+     `recommended_books` front-matter (list of {asin,title}). Deliberately kept
+     separate from the amazon_books plugin so these do NOT appear on the bookshelf
+     / recently-read widgets. Links are built from ASIN + associate tag and use
+     rel="sponsored noopener noreferrer" per Google. Labeled 「PR」 for 景表法. */ -}}
+{{- $isJA := eq .Locale "ja"}}
+{{- $tag := "bmf035-22"}}
+{{- with index .FrontMatter.Extra "recommended_books"}}
+<aside class="card my-10" aria-label="PR">
+  <div class="card-header flex items-center justify-between">
+    <span class="font-semibold text-base">{{if $isJA}}📚 関連書籍（おすすめ）{{else}}📚 Recommended reading{{end}}</span>
+    <span class="badge badge-light text-secondary text-xs uppercase">PR</span>
+  </div>
+  <div class="card-body">
+    <div class="flex flex-col gap-3">
+      {{- range .}}
+      <a href="https://www.amazon.co.jp/dp/{{index . "asin"}}?tag={{$tag}}" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-outline-primary btn-sm self-start">
+        📕 {{index . "title"}}{{if $isJA}} をAmazonで見る →{{else}} on Amazon →{{end}}
+      </a>
+      {{- end}}
+    </div>
+  </div>
+</aside>
 {{- end}}
 {{end}}
 

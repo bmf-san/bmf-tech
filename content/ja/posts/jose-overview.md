@@ -11,6 +11,9 @@ tags:
   - JOSE
   - 認証
 translation_key: jose-overview
+recommended_books:
+  - asin: "4814400985"
+    title: "デジタルアイデンティティのすべて"
 draft: false
 ---
 

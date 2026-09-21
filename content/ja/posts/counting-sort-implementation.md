@@ -9,6 +9,9 @@ categories:
 tags:
   - カウントソート
 translation_key: counting-sort-implementation
+recommended_books:
+  - asin: "479817243X"
+    title: "アルゴリズム図鑑（増補改訂版）"
 draft: false
 ---
 
