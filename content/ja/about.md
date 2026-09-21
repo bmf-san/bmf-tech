@@ -16,7 +16,7 @@ translation_key: about
 
 フリーランスのWebエンジニアとしてキャリアをスタートし、スタートアップでの求人サービス開発、受託開発企業での多様なプロジェクト経験を積む。その後、クラウドファンディングのサービスを運営する事業会社にソフトウェアエンジニアとして入社し、通知基盤や認証・認可基盤などの基盤システムの設計・開発に従事。現在は人事・労務系SaaSを運営する事業会社にてシニアプラットフォームエンジニアとして、プロダクト基盤の開発に取り組んでいる。
 
-組織・ソフトウェアの価値を長期的に向上させるアーキテクトを目指している。「自分が書いたコードよりも、自分が作った仕組みで他者が成果を出せること」を価値の中心に置いている。アーキテクトとしての設計・意思決定を軸にしつつ、必要に応じてリードや組織づくりにも踏み込みながら成果を出すことを大切にしている。組織構造とソフトウェア構造は相互に影響し合うため、両軸を意図的に設計することにも関心がある。趣味は OSS 開発、筋トレ、観葉植物。
+組織・ソフトウェアの価値を長期的に向上させるアーキテクトを目指している。チームを通じてスケールする技術を重視しており、認証・通知・認可といった横断的な基盤の設計・開発を通じて、一つの基盤システムが組織全体の開発効率と品質に与える影響を目の当たりにしてきた。技術戦略と実行を通じて、事業成長を支える持続可能なエンジニアリング組織づくりに貢献したい。趣味は OSS 開発、筋トレ、観葉植物。
 
 | Key | Value |
 |---|---|
@@ -88,25 +88,20 @@ HR テック領域のプラットフォーム開発、システムアーキテ�
 
 | カテゴリ | リンク | 説明 |
 |---|---|---|
+| インフラ | [goblin](https://github.com/bmf-san/goblin) | Go 製トライ木ベースの HTTP ルーター。 |
+| インフラ | [godon](https://github.com/bmf-san/godon) | Go 製の L4 ロードバランサ。 |
+| インフラ | [gondola](https://github.com/bmf-san/gondola) | YAML ベースの Go 製リバースプロキシ。 |
+| インフラ | [go-router-benchmark](https://github.com/bmf-san/go-router-benchmark) | Go 製 HTTP ルーターのベンチマークテスト。 |
+| インフラ | [poc-opa-access-control-system](https://github.com/bmf-san/poc-opa-access-control-system) | Open Policy Agent を用いたアクセス制御基盤の概念検証（PoC）。 |
+| CLIツール | [ggc](https://github.com/bmf-san/ggc) | コマンドラインとインクリメンタル検索 UI を備えたモダンな Git CLI ツール。 |
+| CLIツール | [gohan](https://github.com/bmf-san/gohan) | Go 製の差分ビルド対応シンプル高速スタティックサイトジェネレーター。 |
+| バックエンド | [gobel-api](https://github.com/bmf-san/gobel-api) | Go 製ヘッドレス CMS。 |
+| アーキテクチャ | [go-clean-architecture-web-application-boilerplate](https://github.com/bmf-san/go-clean-architecture-web-application-boilerplate) | Go とクリーンアーキテクチャによる Web アプリボイラープレート。 |
+| Webサイト | [bmf-tech](https://github.com/bmf-san/bmf-tech) | 個人テックブログ。 |
 | モバイルアプリ | [Notifify](https://apps.apple.com/jp/app/notifify/id6762620021) | 完了管理のない、通知だけのシンプルなリマインダーiOSアプリ。 |
 | モバイルアプリ | [Bookstacks](https://apps.apple.com/jp/app/bookstacks-%E6%9C%AC%E6%A3%9A%E7%AE%A1%E7%90%86/id6760252143#information) | ISBNバーコードスキャンで書籍を登録・管理するiOSアプリ。ラベルで整理、書影を自動取得。|
 | モバイルアプリ | [Done Log](https://apps.apple.com/jp/app/done-log/id6759606196) | シンプルな習慣・行動ログアプリ。 |
 | モバイルアプリ | [Asset Transition Simulator](https://apps.apple.com/jp/app/%E8%B3%87%E7%94%A3%E6%8E%A8%E7%A7%BB%E3%82%B7%E3%83%A5%E3%83%9F%E3%83%AC%E3%83%BC%E3%82%BF%E3%83%BC/id6759601487) | 将来の資産推移をシミュレーションするアプリ。 |
-| Webサイト | [bmf-tech](https://github.com/bmf-san/bmf-tech) | 個人テックブログ。 |
-| Webシステム | [gobel-api](https://github.com/bmf-san/gobel-api) | Go 製ヘッドレス CMS。 |
-| ボット | [gogocoin](https://github.com/bmf-san/gogocoin) | bitFlyer取引所向けの暗号通貨取引ボット。 |
-| CLIツール | [gohan](https://github.com/bmf-san/gohan) | Go 製の差分ビルド対応シンプル高速スタティックサイトジェネレーター。 |
-| CLIツール | [ggc](https://github.com/bmf-san/ggc) | コマンドラインとインクリメンタル検索 UI を備えたモダンな Git CLI ツール。 |
-| ライブラリ | [goblin](https://github.com/bmf-san/goblin) | Go 製トライ木ベースの HTTP ルーター。 |
-| ライブラリ | [go-bitflyer-api-client](https://github.com/bmf-san/go-bitflyer-api-client) | Go 製 bitFlyer Lightning API クライアント。 |
-| フレームワーク | [sleyt](https://github.com/bmf-san/sleyt) | ミニマルでモダンな CSS フレームワーク。 |
-| テンプレート | [go-clean-architecture-web-application-boilerplate](https://github.com/bmf-san/go-clean-architecture-web-application-boilerplate) | Go とクリーンアーキテクチャによる Web アプリボイラープレート。 |
-| テンプレート | [resume-manager](https://github.com/bmf-san/resume-manager) | Markdown からキャリア書類を管理・PDF 生成するテンプレート。 |
-| ツール | [prompt-registry](https://github.com/bmf-san/prompt-registry) | AI エージェント向け個人プロンプト管理システム。 |
-| ツール | [go-router-benchmark](https://github.com/bmf-san/go-router-benchmark) | Go 製 HTTP ルーターのベンチマークテスト。 |
-| ドキュメント | [spec-by-bmf-san](https://github.com/bmf-san/spec-by-bmf-san) | bmf-san が作成したオリジナル仕様書のリポジトリ。 |
-| ドキュメント | [career-prompts](https://github.com/bmf-san/career-prompts) | エンジニアのキャリア形成・転職活動を支援するプロンプト集。 |
-| PoC | [poc-opa-access-control-system](https://github.com/bmf-san/poc-opa-access-control-system) | Open Policy Agent を用いたアクセス制御基盤の概念検証（PoC）。 |
 
 ---
 
@@ -144,8 +139,8 @@ Go の標準ライブラリのみで HTTP ルーターを実装する本。[gobl
 
 | メディア | タイトル |
 |---|---|
-| フリーランスHub | スキルアップやキャッチアップにつながる！注目の IT ブログ・メディアまとめ その 2 |
-| レバテックフリーランス | 市場価値を高めたいエンジニアに読んでほしい技術ブログ特集 |
+| フリーランスHub | [スキルアップやキャッチアップにつながる！注目の IT ブログ・メディアまとめ その 2](https://freelance-hub.jp/column/detail/697/) |
+| レバテックフリーランス | [市場価値を高めたいエンジニアに読んでほしい技術ブログ特集](https://freelance.levtech.jp/guide/detail/1641/) |
 
 ---
 
