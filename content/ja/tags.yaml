@@ -532,8 +532,6 @@
   translation_key: trino
 - name: TUI
   translation_key: tui
-- name: Two-Pointer Approach
-  translation_key: two-pointer-approach
 - name: TypeScript
   translation_key: typescript
 - name: Ubuntu
@@ -598,10 +596,6 @@
   translation_key: editor
 - name: オフセットページネーション
   translation_key: offset-pagination
-- name: オープンアドレスハッシュテーブル
-  translation_key: open-addressing-hash-table
-- name: カウントソート
-  translation_key: counting-sort
 - name: カスタマーサクセス
   translation_key: customer-success
 - name: カーソルページネーション
@@ -614,18 +608,12 @@
   translation_key: cache
 - name: キャパシティプランニング
   translation_key: capacity-planning
-- name: キュー
-  translation_key: queue
-- name: クイックソート
-  translation_key: quick-sort
 - name: クラウドネイティブ
   translation_key: cloud-native
 - name: クリティカルシンキング
   translation_key: critical-thinking
 - name: クリティカルユーザージャーニー
   translation_key: critical-user-journey
-- name: グラフ
-  translation_key: graph
 - name: ゲートウェイ
   translation_key: gateway
 - name: ゲーム
@@ -672,24 +660,18 @@
   translation_key: scrum
 - name: スケーラビリティ
   translation_key: scalability
-- name: スタック
-  translation_key: stack
 - name: スタートアップ
   translation_key: startup
 - name: ステートフル
   translation_key: stateful
 - name: ステートレス
   translation_key: stateless
-- name: スライディングウィンドウ
-  translation_key: sliding-window
 - name: スレッド
   translation_key: thread
 - name: セキュリティ
   translation_key: security
 - name: セッション
   translation_key: session
-- name: セレクションソート
-  translation_key: selection-sort
 - name: セールス
   translation_key: sales
 - name: ソフトウェア
@@ -718,34 +700,20 @@
   translation_key: deployment
 - name: データ構造
   translation_key: data-structures
-- name: トライ木
-  translation_key: trie
 - name: トランザクション
   translation_key: transaction
-- name: ハッシュマップ
-  translation_key: hashmap
 - name: ハードウェア
   translation_key: hardware
 - name: ハードリンク
   translation_key: hard-links
-- name: バイナリーサーチ
-  translation_key: binary-search
 - name: バックアップ
   translation_key: backup
-- name: バックトラック
-  translation_key: backtrack
-- name: バブルソート
-  translation_key: bubble-sort
 - name: パフォーマンスチューニング
   translation_key: performance-tuning
 - name: パーティショニング
   translation_key: partitioning
 - name: パーミッション
   translation_key: permissions
-- name: ヒープ
-  translation_key: heap
-- name: ヒープソート
-  translation_key: heap-sort
 - name: フォワードプロキシ
   translation_key: forward-proxy
 - name: フロントエンド
@@ -772,8 +740,6 @@
   translation_key: microservices
 - name: マネージャー
   translation_key: managers
-- name: マージソート
-  translation_key: merge-sort
 - name: メトリクス
   translation_key: metrics
 - name: メモリ
@@ -806,8 +772,6 @@
   translation_key: liskov-substitution-principle
 - name: リトライ
   translation_key: retry
-- name: リニアサーチ
-  translation_key: linear-search
 - name: リバースプロキシ
   translation_key: reverse-proxy
 - name: リポジトリーパターン
@@ -832,8 +796,6 @@
   translation_key: load-balancer
 - name: 事業戦略
   translation_key: business-strategy
-- name: 二分探索木
-  translation_key: binary-search-tree
 - name: 人事
   translation_key: hr
 - name: 仮想環境
@@ -846,8 +808,6 @@
   translation_key: pass-by-value
 - name: 健康
   translation_key: health
-- name: 再帰
-  translation_key: recursion
 - name: 分散システム
   translation_key: distributed-systems
 - name: 分散トランザクション
@@ -862,16 +822,12 @@
   translation_key: inventory-management
 - name: 基数変換
   translation_key: radix-conversion
-- name: 基数木
-  translation_key: radix-tree
 - name: 基本情報技術者
   translation_key: fundamental-information-technology-engineer
 - name: 契約テスト
   translation_key: contract-testing
 - name: 委譲
   translation_key: delegation
-- name: 尺取り法
-  translation_key: two-pointer-technique
 - name: 履歴
   translation_key: history
 - name: 思考法
@@ -882,12 +838,8 @@
   translation_key: retrospective
 - name: 振り返りと抱負
   translation_key: reflection-and-goals
-- name: 挿入ソート
-  translation_key: insertion-sort
 - name: 書評
   translation_key: book-review
-- name: 木構造
-  translation_key: tree-structure
 - name: 権限管理
   translation_key: access-control
 - name: 機能テスト
@@ -900,8 +852,6 @@
   translation_key: regular-expressions
 - name: 無名関数
   translation_key: anonymous-function
-- name: 片方向リスト
-  translation_key: singly-linked-list
 - name: 物流
   translation_key: logistics
 - name: 生成AI
@@ -942,12 +892,6 @@
   translation_key: resignation
 - name: 通知
   translation_key: notification
-- name: 連結リスト
-  translation_key: linked-list
-- name: 選択ソート
-  translation_key: ja-0063abf7
-- name: 配列
-  translation_key: arrays
 - name: 金融
   translation_key: finance
 - name: 開発生産性
@@ -956,10 +900,6 @@
   translation_key: function
 - name: 関数型
   translation_key: functional
-- name: 隣接リスト
-  translation_key: adjacency-list
-- name: 隣接行列
-  translation_key: adjacency-matrix
 - name: 集合
   translation_key: sets
 - name: 離散数学

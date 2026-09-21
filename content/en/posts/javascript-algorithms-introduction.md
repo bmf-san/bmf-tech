@@ -7,10 +7,7 @@ author: bmf-san
 categories:
   - Algorithms and Data Structures
 tags:
-  - Binary Search
-  - Linear Search
-  - Bubble Sort
-  - Selection Sort
+  - Algorithms
 translation_key: javascript-algorithms-introduction
 draft: false
 ---

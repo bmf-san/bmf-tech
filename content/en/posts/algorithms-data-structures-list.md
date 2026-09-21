@@ -7,8 +7,7 @@ author: bmf-san
 categories:
   - Algorithms and Data Structures
 tags:
-  - Linked List
-  - Singly Linked List
+  - Data Structures
 translation_key: algorithms-data-structures-list
 draft: false
 ---

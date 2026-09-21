@@ -10,7 +10,7 @@ tags:
   - PHP
   - URL Routing
   - HTTP
-  - Tree Structure
+  - Data Structures
   - Router
 translation_key: creating-url-routing-episode-3
 draft: false

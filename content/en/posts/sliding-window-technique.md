@@ -7,8 +7,7 @@ author: bmf-san
 categories:
   - Algorithms and Data Structures
 tags:
-  - Two-Pointer Technique
-  - Two-Pointer Approach
+  - Algorithms
 translation_key: sliding-window-technique
 recommended_books:
   - asin: "479817243X"

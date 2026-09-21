@@ -7,9 +7,7 @@ author: bmf-san
 categories:
   - アルゴリズムとデータ構造
 tags:
-  - グラフ
-  - 隣接行列
-  - 隣接リスト
+  - データ構造
 translation_key: adjacency-list-matrix
 draft: false
 ---

@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - アルゴリズムとデータ構造
 tags:
-  - ヒープソート
+  - アルゴリズム
 translation_key: algorithms-data-structures-heap-sort
 draft: false
 ---

@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - アルゴリズムとデータ構造
 tags:
-  - バックトラック
+  - アルゴリズム
 translation_key: backtracking-implementation
 draft: false
 ---

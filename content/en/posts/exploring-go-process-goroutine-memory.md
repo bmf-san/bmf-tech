@@ -9,8 +9,7 @@ categories:
 tags:
   - Golang
   - Memory
-  - Heap
-  - Stack
+  - Data Structures
   - Process
   - Thread
 translation_key: exploring-go-process-goroutine-memory

@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - Algorithms and Data Structures
 tags:
-  - Merge Sort
+  - Algorithms
 translation_key: algorithms-data-structures-merge-sort
 draft: false
 ---

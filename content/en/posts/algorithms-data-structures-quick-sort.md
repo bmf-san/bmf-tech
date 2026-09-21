@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - Algorithms and Data Structures
 tags:
-  - Quick Sort
+  - Algorithms
 translation_key: algorithms-data-structures-quick-sort
 draft: false
 ---

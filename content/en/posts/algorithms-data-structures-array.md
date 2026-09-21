@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - Algorithms and Data Structures
 tags:
-  - Arrays
+  - Data Structures
 translation_key: algorithms-data-structures-array
 draft: false
 ---

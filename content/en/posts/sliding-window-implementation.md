@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - Algorithms and Data Structures
 tags:
-  - Sliding Window
+  - Algorithms
 translation_key: sliding-window-implementation
 draft: false
 ---

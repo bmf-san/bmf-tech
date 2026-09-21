@@ -10,8 +10,7 @@ tags:
   - OS
   - スレッド
   - プロセス
-  - スタック
-  - ヒープ
+  - データ構造
 translation_key: process-vs-thread
 draft: false
 ---

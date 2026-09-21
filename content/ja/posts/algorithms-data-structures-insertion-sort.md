@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - アルゴリズムとデータ構造
 tags:
-  - 挿入ソート
+  - アルゴリズム
 translation_key: algorithms-data-structures-insertion-sort
 draft: false
 ---

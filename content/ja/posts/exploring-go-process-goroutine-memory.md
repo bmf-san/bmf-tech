@@ -9,8 +9,7 @@ categories:
 tags:
   - Golang
   - メモリ
-  - ヒープ
-  - スタック
+  - データ構造
   - プロセス
   - スレッド
 translation_key: exploring-go-process-goroutine-memory

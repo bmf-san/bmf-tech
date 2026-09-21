@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - Algorithms and Data Structures
 tags:
-  - Binary Search Tree
+  - Data Structures
   - DFS
   - BFS
 translation_key: binary-search-tree-search-patterns

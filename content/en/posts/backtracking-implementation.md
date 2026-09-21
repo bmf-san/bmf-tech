@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - Algorithms and Data Structures
 tags:
-  - Backtrack
+  - Algorithms
 translation_key: backtracking-implementation
 draft: false
 ---

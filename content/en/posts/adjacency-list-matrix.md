@@ -7,9 +7,7 @@ author: bmf-san
 categories:
   - Algorithms and Data Structures
 tags:
-  - Graph
-  - Adjacency Matrix
-  - Adjacency List
+  - Data Structures
 translation_key: adjacency-list-matrix
 draft: false
 ---

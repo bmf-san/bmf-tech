@@ -9,7 +9,7 @@ categories:
 tags:
   - HTTP
   - URL Routing
-  - Tree Structure
+  - Data Structures
   - Router
 translation_key: creating-url-routing-episode-1
 draft: false

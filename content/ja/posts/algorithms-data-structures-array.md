@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - アルゴリズムとデータ構造
 tags:
-  - 配列
+  - データ構造
 translation_key: algorithms-data-structures-array
 draft: false
 ---

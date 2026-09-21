@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - アプリケーション
 tags:
-  - 再帰
+  - アルゴリズム
 translation_key: recursion-challenges
 draft: false
 ---

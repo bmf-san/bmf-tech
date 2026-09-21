@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - アルゴリズムとデータ構造
 tags:
-  - マージソート
+  - アルゴリズム
 translation_key: algorithms-data-structures-merge-sort
 draft: false
 ---

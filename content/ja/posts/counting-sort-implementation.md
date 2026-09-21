@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - アルゴリズムとデータ構造
 tags:
-  - カウントソート
+  - アルゴリズム
 translation_key: counting-sort-implementation
 recommended_books:
   - asin: "479817243X"

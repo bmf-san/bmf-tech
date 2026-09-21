@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - アルゴリズムとデータ構造
 tags:
-  - クイックソート
+  - アルゴリズム
 translation_key: algorithms-data-structures-quick-sort
 draft: false
 ---

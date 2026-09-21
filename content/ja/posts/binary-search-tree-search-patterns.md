@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - アルゴリズムとデータ構造
 tags:
-  - 二分探索木
+  - データ構造
   - DFS
   - BFS
 translation_key: binary-search-tree-search-patterns

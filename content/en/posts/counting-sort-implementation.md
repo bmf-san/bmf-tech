@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - Algorithms and Data Structures
 tags:
-  - Counting Sort
+  - Algorithms
 translation_key: counting-sort-implementation
 recommended_books:
   - asin: "479817243X"

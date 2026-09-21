@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - Algorithms and Data Structures
 tags:
-  - Queue
+  - Data Structures
 translation_key: algorithms-data-structures-queue
 draft: false
 ---

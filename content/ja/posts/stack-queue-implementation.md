@@ -7,8 +7,7 @@ author: bmf-san
 categories:
   - アルゴリズムとデータ構造
 tags:
-  - スタック
-  - キュー
+  - データ構造
 translation_key: stack-queue-implementation
 draft: false
 ---
