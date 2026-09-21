@@ -9,7 +9,6 @@ categories:
 tags:
   - Design Patterns
   - PHP
-  - Singleton Pattern
 translation_key: php-design-patterns-singleton
 draft: false
 ---

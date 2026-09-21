@@ -9,7 +9,6 @@ categories:
 tags:
   - デザインパターン
   - PHP
-  - シングルトンパターン
 translation_key: php-design-patterns-singleton
 draft: false
 ---

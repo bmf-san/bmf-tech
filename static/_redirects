@@ -1110,6 +1110,30 @@
 /posts/tags/mysql  /ja/tags/MySQL/  301
 /posts/tags/api  /ja/tags/API/  301
 
+# Tag consolidation: design patterns -> Design Patterns / デザインパターン
+/tags/abstract-factory-pattern/  /tags/design-patterns/  301
+/tags/adapter-pattern/  /tags/design-patterns/  301
+/tags/bridge-pattern/  /tags/design-patterns/  301
+/tags/factory-method-pattern/  /tags/design-patterns/  301
+/tags/factory-pattern/  /tags/design-patterns/  301
+/tags/mediator-pattern/  /tags/design-patterns/  301
+/tags/singleton-pattern/  /tags/design-patterns/  301
+/tags/state-pattern/  /tags/design-patterns/  301
+/tags/strategy-pattern/  /tags/design-patterns/  301
+/tags/template-method/  /tags/design-patterns/  301
+/tags/template-method-pattern/  /tags/design-patterns/  301
+/ja/tags/アダプターパターン/  /ja/tags/デザインパターン/  301
+/ja/tags/アブストラクトファクトリーパターン/  /ja/tags/デザインパターン/  301
+/ja/tags/シングルトンパターン/  /ja/tags/デザインパターン/  301
+/ja/tags/ステートパターン/  /ja/tags/デザインパターン/  301
+/ja/tags/ストラテジーパターン/  /ja/tags/デザインパターン/  301
+/ja/tags/テンプレートメソッドパターン/  /ja/tags/デザインパターン/  301
+/ja/tags/ファクトリーパターン/  /ja/tags/デザインパターン/  301
+/ja/tags/ファクトリーメソッドパターン/  /ja/tags/デザインパターン/  301
+/ja/tags/ブリッジパターン/  /ja/tags/デザインパターン/  301
+/ja/tags/メディエーターパターン/  /ja/tags/デザインパターン/  301
+/ja/tags/template-method/  /ja/tags/デザインパターン/  301
+
 # Dynamic redirects
 /categories/:splat  /ja/categories/:splat  301
 /tags/:splat  /ja/tags/:splat  301

@@ -8,7 +8,7 @@ categories:
   - Application
 tags:
   - Strategy
-  - Template Method
+  - Design Patterns
 translation_key: template-method-strategy-patterns
 draft: false
 ---

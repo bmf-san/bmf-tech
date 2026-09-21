@@ -7,10 +7,9 @@ author: bmf-san
 categories:
   - Application
 tags:
-  - Adapter Pattern
+  - Design Patterns
   - GoF
   - PHP
-  - Design Patterns
 translation_key: php-design-patterns-adapter
 draft: false
 ---

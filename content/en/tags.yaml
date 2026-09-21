@@ -2,8 +2,6 @@
   translation_key: 2phase-commit
 - name: ABAC
   translation_key: abac
-- name: Abstract Factory Pattern
-  translation_key: abstract-factory-pattern
 - name: Access Control
   translation_key: access-control
 - name: Access Management
@@ -14,8 +12,6 @@
   translation_key: acid
 - name: ACL
   translation_key: acl
-- name: Adapter Pattern
-  translation_key: adapter-pattern
 - name: Adjacency List
   translation_key: adjacency-list
 - name: Adjacency Matrix
@@ -110,8 +106,6 @@
   translation_key: book
 - name: Book Review
   translation_key: book-review
-- name: Bridge Pattern
-  translation_key: bridge-pattern
 - name: browserify
   translation_key: browserify
 - name: Bubble Sort
@@ -312,10 +306,6 @@
   translation_key: exec
 - name: Exponential Backoff
   translation_key: exponential-backoff
-- name: Factory Method Pattern
-  translation_key: factory-method-pattern
-- name: Factory Pattern
-  translation_key: factory-pattern
 - name: fan-in
   translation_key: fan-in
 - name: fan-out
@@ -560,8 +550,6 @@
   translation_key: markdown
 - name: marked
   translation_key: marked
-- name: Mediator Pattern
-  translation_key: mediator-pattern
 - name: Memory
   translation_key: memory
 - name: Merge Sort
@@ -848,8 +836,6 @@
   translation_key: shell-script
 - name: Sidekiq
   translation_key: sidekiq
-- name: Singleton Pattern
-  translation_key: singleton-pattern
 - name: Singly Linked List
   translation_key: singly-linked-list
 - name: SLA
@@ -898,16 +884,12 @@
   translation_key: stack
 - name: Startup
   translation_key: startup
-- name: State Pattern
-  translation_key: state-pattern
 - name: Stateful
   translation_key: stateful
 - name: Stateless
   translation_key: stateless
 - name: Strategy
   translation_key: strategy
-- name: Strategy Pattern
-  translation_key: strategy-pattern
 - name: StreamYard
   translation_key: streamyard
 - name: Superagent
@@ -934,10 +916,6 @@
   translation_key: technology-radar
 - name: tee
   translation_key: tee
-- name: Template Method
-  translation_key: template-method
-- name: Template Method Pattern
-  translation_key: template-method-pattern
 - name: Temporal Data Model
   translation_key: temporal-data-model
 - name: Terminal

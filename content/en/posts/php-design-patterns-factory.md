@@ -10,9 +10,6 @@ tags:
   - Design Patterns
   - GoF
   - PHP
-  - Abstract Factory Pattern
-  - Factory Pattern
-  - Factory Method Pattern
 translation_key: php-design-patterns-factory
 draft: false
 ---

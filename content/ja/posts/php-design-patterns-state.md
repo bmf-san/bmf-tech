@@ -10,7 +10,6 @@ tags:
   - GoF
   - PHP
   - デザインパターン
-  - ステートパターン
 translation_key: php-design-patterns-state
 draft: false
 ---

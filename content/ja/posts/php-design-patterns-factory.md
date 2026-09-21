@@ -10,9 +10,6 @@ tags:
   - デザインパターン
   - GoF
   - PHP
-  - アブストラクトファクトリーパターン
-  - ファクトリーパターン
-  - ファクトリーメソッドパターン
 translation_key: php-design-patterns-factory
 draft: false
 ---

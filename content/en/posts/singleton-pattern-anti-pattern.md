@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - Application
 tags:
-  - Singleton Pattern
+  - Design Patterns
   - Golang
 translation_key: singleton-pattern-anti-pattern
 draft: false
