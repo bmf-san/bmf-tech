@@ -1,5 +1,6 @@
 ---
 title: "AI-DLC（AI駆動開発ライフサイクル）とは何か"
+description: "AWSが提唱するAI-DLC（AI駆動開発ライフサイクル）とは何かを整理した記事。AIを開発プロセスの中心的な協力者と位置づけ、「AIが実行し人間が監視する」「ダイナミックなチームコラボレーション」の2要素や、計画・すり合わせ・実装を高速に繰り返すメンタルモデルを、従来のSDLCと対比しながら解説する。"
 slug: ai-driven-development-life-cycle
 date: 2026-06-15T00:00:00Z
 author: bmf-san
