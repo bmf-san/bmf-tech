@@ -1,6 +1,6 @@
 ---
 title: "Product Management in Practice, 2nd Edition"
-description: "Product Management in Practice, 2nd Edition"
+description: "A review of Product Management in Practice, 2nd Edition. Matt LeMay's practical book weighted toward a PM's day-to-day behavior. Rather than career or method theory, it addresses what happens in a day, explaining concrete conduct along the CORE skills: communication, organization, research, and execution."
 slug: product-management-in-practice-second-edition
 date: 2026-04-29T00:00:00Z
 author: bmf-san

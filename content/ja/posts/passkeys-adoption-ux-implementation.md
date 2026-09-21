@@ -1,6 +1,6 @@
 ---
 title: パスキーのすべて ―導入・UX設計・実装
-description: "パスキーのすべて ―導入・UX設計・実装"
+description: "『パスキーのすべて ―導入・UX設計・実装』の書評。パスワードの限界やフィッシング耐性というパスキー登場の文脈から、WebAuthn・FIDOの仕様、サーバーや各プラットフォームでの実装、ログインUXの設計、端末紛失やリカバリといった運用の落とし穴までを1冊で扱う解説書。"
 slug: passkeys-adoption-ux-implementation
 date: 2026-04-29T00:00:00Z
 author: bmf-san

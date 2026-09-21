@@ -1,6 +1,6 @@
 ---
 title: 'Kaizen Journey'
-description: 'Kaizen Journey'
+description: "A review of Kaizen Journey. In a story format, it lets you vicariously experience the journey of crossing borders, from the individual to the team and on to the organization. More than the details of individual agile practices, you feel a strong message about the purpose and meaning of crossing those borders."
 slug: kaizen-journey
 date: 2024-04-16T00:00:00Z
 author: bmf-san

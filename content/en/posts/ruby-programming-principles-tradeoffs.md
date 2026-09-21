@@ -1,6 +1,6 @@
 ---
 title: 'Practical Ruby Programming: Principles and Trade-offs for Effective Code'
-description: 'Practical Ruby Programming: Principles and Trade-offs for Effective Code'
+description: "A review of Polished Ruby Programming. A book for those who, having finished the primers, want more practical knowledge. Tracing what Ruby-like code looks like through the lens of principles and trade-offs, it conveys Ruby's appeal while also teaching design ideas that transcend the language."
 slug: ruby-programming-principles-tradeoffs
 date: 2024-10-28T00:00:00Z
 author: bmf-san

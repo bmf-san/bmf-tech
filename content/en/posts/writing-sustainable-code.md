@@ -1,6 +1,6 @@
 ---
 title: 'How to Write Code That Fits in the Brain: Rules and Techniques for Avoiding Complexity and Ensuring Sustainability'
-description: 'How to Write Code That Fits in the Brain: Rules and Techniques for Avoiding Complexity and Ensuring Sustainability'
+description: "A review of How to Write Code That Fits in the Brain. A book that shares practical practices for writing code that fits in a person's working memory. Centered on field-honed rules of thumb rather than cognitive-science theory, it offers concrete techniques for avoiding complexity and keeping code sustainable."
 slug: writing-sustainable-code
 date: 2025-02-15T00:00:00Z
 author: bmf-san

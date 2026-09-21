@@ -1,6 +1,6 @@
 ---
 title: プログラミング言語Go
-description: "プログラミング言語Go"
+description: "『プログラミング言語Go』の書評。Goを学ぶうえで教典的な位置づけの一冊。言語設計に近い著者らによる正確で簡潔な解説で、文法から並行処理まで芯を押さえられる。Goに取り組むなら一家に一冊置いておきたい定番書。"
 slug: programming-language-go
 date: 2017-03-12T00:00:00Z
 author: bmf-san

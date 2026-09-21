@@ -1,6 +1,6 @@
 ---
 title: '50 Ideas to Improve Software Testing'
-description: '50 Ideas to Improve Software Testing'
+description: "A review of 50 Ideas to Improve Software Testing. A book that gathers ways to improve test quality as 50 ideas. It offers a broad range of hints for reviewing your own testing and improving it little by little."
 slug: software-testing-improvement-ideas
 date: 2022-11-22T00:00:00Z
 author: bmf-san

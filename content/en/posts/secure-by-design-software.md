@@ -1,6 +1,6 @@
 ---
 title: 'Secure by Design: Safe Software Design'
-description: 'Secure by Design: Safe Software Design'
+description: "A review of Secure by Design. A book that advocates improving security from software design itself rather than patching individual vulnerabilities. Centering on DDD, it shows how careful domain modeling weaves security naturally into design, treating it as a design concern rather than a bolt-on feature."
 slug: secure-by-design-software
 date: 2024-09-07T00:00:00Z
 author: bmf-san

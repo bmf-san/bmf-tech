@@ -1,6 +1,6 @@
 ---
 title: 'Starting with Go Language'
-description: 'Starting with Go Language'
+description: "A review of Starting with Go Language. A relatively gentle introduction to Go. Since it walks through the syntax and basic usage in one pass, it suits those new to Go in taking their first step."
 slug: starting-with-golang
 date: 2018-03-01T00:00:00Z
 author: bmf-san

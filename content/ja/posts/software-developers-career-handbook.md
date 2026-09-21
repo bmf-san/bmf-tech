@@ -1,6 +1,6 @@
 ---
 title: ソフトウェア開発者のキャリアハンドブック
-description: "ソフトウェア開発者のキャリアハンドブック"
+description: "『ソフトウェア開発者のキャリアハンドブック』の書評。『Being Geek』で知られるMichael Loppによる一冊。転職や昇進、上司との付き合い方、会議やチャットでの立ち振る舞いなど、キャリアで誰もがぶつかる場面を、正解の押し付けではなく判断のための問いとして語ってくれる。"
 slug: software-developers-career-handbook
 date: 2026-09-20T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Web API Testing Techniques
-description: "Web API Testing Techniques"
+description: "A review of Web API Testing Techniques. A book that explains API testing through frameworks like asking questions with the 5W1H and the ten Ps model for grasping testability. From building test strategy and plans to security perspectives via STRIDE and threat trees, it offers views useful in practice."
 slug: web-api-testing-techniques
 date: 2024-07-08T00:00:00Z
 author: bmf-san

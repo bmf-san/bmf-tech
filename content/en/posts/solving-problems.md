@@ -1,6 +1,6 @@
 ---
 title: How to Solve It
-description: "How to Solve It"
+description: "A review of How to Solve It. A classic that teaches broadly applicable problem-solving thinking using mathematics as its material. It drives home, again and again, the importance of first understanding the problem well and approaching it from many angles through trial and error."
 slug: solving-problems
 date: 2024-11-04T00:00:00Z
 author: bmf-san

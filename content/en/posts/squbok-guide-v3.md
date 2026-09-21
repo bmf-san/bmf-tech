@@ -1,6 +1,6 @@
 ---
 title: "Guide to the Software Quality Body of Knowledge, 3rd Edition (SQuBOK Guide V3)"
-description: "Guide to the Software Quality Body of Knowledge, 3rd Edition (SQuBOK Guide V3)"
+description: "A review of the Guide to the Software Quality Body of Knowledge, 3rd Edition (SQuBOK Guide V3). The third edition of SQuBOK, systematically organizing knowledge of software quality. Alongside quality concepts, management, test techniques, and metrics, it takes in recent topics like agile, AI/ML, and security. One to keep as a map of quality knowledge."
 slug: squbok-guide-v3
 date: 2026-09-20T00:00:00Z
 author: bmf-san

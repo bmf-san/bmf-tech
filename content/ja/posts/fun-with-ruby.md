@@ -1,6 +1,6 @@
 ---
 title: たのしいRuby
-description: "たのしいRuby"
+description: "『たのしいRuby』の書評。Rubyをこれから学ぶ初心者に向けた入門書。オブジェクト指向や他言語の経験があるとより読み進めやすい面もあるが、Rubyの基礎を一通りやさしく身につけられる。"
 slug: fun-with-ruby
 date: 2024-05-04T00:00:00Z
 author: bmf-san

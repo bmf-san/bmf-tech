@@ -1,6 +1,6 @@
 ---
 title: The UNIX Philosophy
-description: "The UNIX Philosophy"
+description: "A review of The UNIX Philosophy. A book that distills the thinking and philosophy behind UNIX into just 150 pages. Packed with ideas applicable to coding and design in general, like small is beautiful, it is something you will want to revisit whenever you face a design challenge."
 slug: thinking-unix
 date: 2018-05-18T00:00:00Z
 author: bmf-san

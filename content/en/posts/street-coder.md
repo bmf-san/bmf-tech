@@ -1,6 +1,6 @@
 ---
 title: 'Street Coder'
-description: 'Street Coder'
+description: "A review of Street Coder. A book that shares tips useful in the field (the street), told with jokes. Spanning algorithms, testing, and refactoring to security and performance optimization, it concretely shows how to face real-world challenges, offering something for beginners and veterans alike."
 slug: street-coder
 date: 2025-09-20T00:00:00Z
 author: bmf-san

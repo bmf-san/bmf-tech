@@ -1,6 +1,6 @@
 ---
 title: 'Getting Started with Domain-Driven Design: Practical Techniques for Connecting Software Implementation and Business Strategy'
-description: 'Getting Started with Domain-Driven Design: Practical Techniques for Connecting Software Implementation and Business Strategy'
+description: "A review of Learning Domain-Driven Design. A book on the thinking and implementation patterns for applying DDD's strategic and tactical design in practice. From identifying subdomains to bounded contexts, aggregates, domain events, and event sourcing, it explains where each fits, bridging DDD from introduction to practice."
 slug: getting-started-domain-driven-design
 date: 2026-02-20T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: 'The Secrets of Unicorn Companies: Software Development and Work Culture Learned from Spotify'
-description: 'The Secrets of Unicorn Companies: Software Development and Work Culture Learned from Spotify'
+description: "A review of The Secrets of Unicorn Companies. A book for learning the organizational theory and culture of unicorn companies, based on experience at Spotify. Its real theme is the culture and qualities that sustain growth regardless of methodology, prompting thought about what lies beyond Scrum."
 slug: unicorn-company-secrets
 date: 2023-05-19T00:00:00Z
 author: bmf-san

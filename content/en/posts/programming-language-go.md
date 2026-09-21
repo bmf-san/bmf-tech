@@ -1,6 +1,6 @@
 ---
 title: Programming Language Go
-description: "Programming Language Go"
+description: "A review of The Go Programming Language. A canonical book for learning Go. With accurate, concise explanations from those close to the language's design, it covers the core from syntax to concurrency. A standard to keep on hand if you work with Go."
 slug: programming-language-go
 date: 2017-03-12T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: GCPの教科書II 【コンテナ開発編】 KubernetesとGKE、Cloud Run、サービスメッシュを詳解
-description: "GCPの教科書II 【コンテナ開発編】 KubernetesとGKE、Cloud Run、サービスメッシュを詳解"
+description: "『GCPの教科書II 【コンテナ開発編】』の書評。KubernetesやGKE、Cloud Run、サービスメッシュといったGCPのコンテナ関連サービスを、わかりやすく解説する一冊。Associate Cloud Engineerの受験勉強の参考書としても活用できる。"
 slug: gcp-textbook-container-development
 date: 2021-07-27T00:00:00Z
 author: bmf-san

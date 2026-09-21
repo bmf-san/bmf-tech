@@ -1,6 +1,6 @@
 ---
 title: Go言語100Tips 開発者にありがちな間違いへの対処法
-description: "Go言語100Tips 開発者にありがちな間違いへの対処法"
+description: "『Go言語100Tips 開発者にありがちな間違いへの対処法』の書評。Goで陥りがちなミスを100個のTipsとして網羅的にカバーする一冊。ある程度Goに書き慣れた人が、コードの品質をもう一段上げたいときに手元に置いておきたい。"
 slug: golang-100-tips-common-mistakes
 date: 2023-08-27T00:00:00Z
 author: bmf-san

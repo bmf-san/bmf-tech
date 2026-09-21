@@ -1,6 +1,6 @@
 ---
 title: 'SLO Service Level Objectives: A Practical Guide to Implementing SLI, SLO, and Error Budgets'
-description: 'SLO Service Level Objectives: A Practical Guide to Implementing SLI, SLO, and Error Budgets'
+description: "A review of Implementing Service Level Objectives (SLO). A practical guide to adopting SLIs, SLOs, and error budgets. Starting from defining services and users, it frames reliability as whether users can do what they need, showing how to set meaningful targets while avoiding over-engineering reliability."
 slug: slo-service-level-objectives-guide
 date: 2024-07-20T00:00:00Z
 author: bmf-san

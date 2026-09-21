@@ -1,6 +1,6 @@
 ---
 title: Ruby コードレシピ集
-description: "Ruby コードレシピ集"
+description: "『Ruby コードレシピ集』の書評。Rubyでできることやよくあるパターンを、レシピ集としてまとめた一冊。分かりやすく簡潔に書かれており、これからRubyを学ぶ初心者が引き出しを増やすのにちょうど良い。"
 slug: ruby-code-recipes
 date: 2024-10-20T00:00:00Z
 author: bmf-san

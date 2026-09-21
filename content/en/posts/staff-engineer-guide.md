@@ -1,6 +1,6 @@
 ---
 title: 'The Path to Staff Engineer: A Guide to Becoming an Excellent Technical Professional'
-description: "The Path to Staff Engineer: A Guide to Becoming an Excellent Technical Professional"
+description: "A review of The Staff Engineer's Path. A compass for software engineers in positions to lead teams, projects, and organizations. From how to craft vision and strategy to ways of thinking, communication, and conduct, it broadly covers the abilities needed to lead an organization."
 slug: staff-engineer-guide
 date: 2025-01-23T00:00:00Z
 author: bmf-san

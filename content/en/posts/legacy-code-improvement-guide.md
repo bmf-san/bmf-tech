@@ -1,6 +1,6 @@
 ---
 title: 'Legacy Code Improvement Guide: Refactoring for Maintenance Development'
-description: "Legacy Code Improvement Guide: Refactoring for Maintenance Development"
+description: "A review of Working Effectively with Legacy Code. A book that systematizes practical techniques for tackling legacy code that lacks tests. Centered on concepts like seams, places to insert tests without changing behavior, it teaches how to make changes safely, step by step."
 slug: legacy-code-improvement-guide
 date: 2017-03-12T00:00:00Z
 author: bmf-san

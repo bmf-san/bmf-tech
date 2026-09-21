@@ -1,6 +1,6 @@
 ---
 title: セキュアで信頼性のあるシステム構築 ―Google SREが考える安全なシステムの設計、実装、保守
-description: "セキュアで信頼性のあるシステム構築 ―Google SREが考える安全なシステムの設計、実装、保守"
+description: "『セキュアで信頼性のあるシステム構築』の書評。セキュリティと信頼性を、単に実装するものではなくデプロイや運用から生まれる「創発特性」として捉える一冊。プロジェクトの初期段階から両者を設計に織り込むことの大切さを、Google SREの知見をもとに説く。"
 slug: secure-reliable-system-design-google-sre
 date: 2024-05-24T00:00:00Z
 author: bmf-san

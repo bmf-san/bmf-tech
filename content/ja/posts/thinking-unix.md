@@ -1,6 +1,6 @@
 ---
 title: UNIXという考え方
-description: "UNIXという考え方"
+description: "『UNIXという考え方』の書評。UNIXの背後にある思想と哲学を、わずか150ページに凝縮した一冊。「スモール・イズ・ビューティフル」など、コーディングや設計に普遍的に活かせる考え方が詰まっており、設計に立ち向かうときに折に触れて振り返りたくなる。"
 slug: thinking-unix
 date: 2018-05-18T00:00:00Z
 author: bmf-san

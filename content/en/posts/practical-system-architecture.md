@@ -1,6 +1,6 @@
 ---
 title: 'Practical Techniques for Building System Architecture'
-description: 'Practical Techniques for Building System Architecture'
+description: "A review of Practical Techniques for Building System Architecture. A practical guide for engineers doing architecture design in the field. Where the prior book focused on why, this one covers how, from requirements definition to logical and physical design and documentation through views, introducing concrete techniques useful on the ground."
 slug: practical-system-architecture
 date: 2025-07-17T00:00:00Z
 author: bmf-san

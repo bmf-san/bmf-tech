@@ -1,6 +1,6 @@
 ---
 title: ソフトウェアアーキテクチャの基礎 第2版 ―エンジニアリングに基づく体系的アプローチ
-description: "ソフトウェアアーキテクチャの基礎 第2版 ―エンジニアリングに基づく体系的アプローチ"
+description: "『ソフトウェアアーキテクチャの基礎 第2版』の書評。Mark RichardsとNeal Fordによる教科書的な一冊。アーキテクチャを「経験と勘」ではなく計測・統治できるエンジニアリング規律として扱い、アーキテクチャ特性（非機能要件）の定義・識別・計測・統治までを体系立てて解説する。"
 slug: software-architecture-basics-second-edition
 date: 2026-04-28T00:00:00Z
 author: bmf-san

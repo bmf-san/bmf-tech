@@ -1,6 +1,6 @@
 ---
 title: ソフトウェア品質知識体系ガイド（第3版）SQuBOK Guide V3
-description: "ソフトウェア品質知識体系ガイド（第3版）SQuBOK Guide V3"
+description: "『ソフトウェア品質知識体系ガイド（第3版）SQuBOK Guide V3』の書評。ソフトウェア品質の知識を体系立ててまとめたSQuBOKの第3版。品質の概念やマネジメント、テスト技法、メトリクスに加え、アジャイルやAI・機械学習、セキュリティなど近年のトピックも取り込む。品質の知識の地図として手元に置きたい。"
 slug: squbok-guide-v3
 date: 2026-09-20T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: "Evidence-Based Parenting: The Frontier of Education Economics"
-description: "Evidence-Based Parenting: The Frontier of Education Economics"
+description: "A review of Evidence-Based Parenting. Education economist Makiko Nakamuro answers parenting and education questions with evidence. On everyday questions like rewards and study time, it avoids firm verdicts, noting likely tendencies and their limits, giving you a basis to judge for yourself."
 slug: evidence-based-parenting
 date: 2026-04-28T00:00:00Z
 author: bmf-san

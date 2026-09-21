@@ -1,6 +1,6 @@
 ---
 title: パーフェクトRuby on Rails
-description: "パーフェクトRuby on Rails"
+description: "『パーフェクトRuby on Rails』の書評。Ruby on Railsに入門したい人に向けた一冊。フレームワークの機能が網羅的に書かれており、Railsが提供する仕組みの全体像を把握するのに役立つ。"
 slug: perfect-ruby-on-rails
 date: 2024-05-04T00:00:00Z
 author: bmf-san

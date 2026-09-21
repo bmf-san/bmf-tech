@@ -1,6 +1,6 @@
 ---
 title: Good Code, Bad Code
-description: "Good Code, Bad Code"
+description: "『Good Code, Bad Code』の書評。良いコードと悪いコードの違いを、抽象化やモジュール性、エラーハンドリング、テストといった観点から具体的に示す一冊。契約の明確化や想定外の入力への備え、誤用のしにくさなど、日々のレビューでそのまま使える判断基準を与えてくれる。"
 slug: good-code-bad-code
 date: 2026-07-28T00:00:00Z
 author: bmf-san

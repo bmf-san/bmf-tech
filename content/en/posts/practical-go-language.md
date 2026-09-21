@@ -1,6 +1,6 @@
 ---
 title: 'Practical Go Language'
-description: 'Practical Go Language'
+description: "A review of Practical Go Language. Even for those who have written Go for a while, a book that surfaces practical knowledge you did not know or had forgotten. From fine conventions like naming error types to the standard practices worth knowing when writing Go professionally, it covers a broad range."
 slug: practical-go-language
 date: 2023-08-05T00:00:00Z
 author: bmf-san

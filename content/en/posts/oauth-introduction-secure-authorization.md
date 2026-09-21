@@ -1,6 +1,6 @@
 ---
 title: 'A Comprehensive Introduction to OAuth: Principles and Practices for Implementing a Secure Authorization System'
-description: 'A Comprehensive Introduction to OAuth: Principles and Practices for Implementing a Secure Authorization System'
+description: "A review of A Comprehensive Introduction to OAuth. One of the few books that explains OAuth in depth. Covering authorization from principles to practice, it is a good bridge to keep at hand after a primer and before diving into the specifications."
 slug: oauth-introduction-secure-authorization
 date: 2021-10-05T00:00:00Z
 author: bmf-san

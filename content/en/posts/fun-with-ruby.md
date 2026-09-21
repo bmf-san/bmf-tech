@@ -1,6 +1,6 @@
 ---
 title: Fun with Ruby
-description: "Fun with Ruby"
+description: "A review of Fun with Ruby. An introductory book for beginners about to learn Ruby. Prior experience with object orientation or other languages makes it easier going, but it gently covers the basics of Ruby from end to end."
 slug: fun-with-ruby
 date: 2024-05-04T00:00:00Z
 author: bmf-san

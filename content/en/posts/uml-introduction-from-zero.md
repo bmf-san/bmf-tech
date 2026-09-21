@@ -1,6 +1,6 @@
 ---
 title: "Understanding UML from Scratch: A Beginner''s Guide"
-description: "Understanding UML from Scratch: A Beginner''s Guide"
+description: "A review of Understanding UML from Scratch. As the title says, an introductory book for beginners about to learn UML. It gently explains the main diagram types and how to draw them, well suited for taking your first step in expressing designs with UML."
 slug: uml-introduction-from-zero
 date: 2016-07-01T00:00:00Z
 author: bmf-san

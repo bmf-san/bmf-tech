@@ -8,7 +8,7 @@ categories:
 tags:
   - Book Review
   - Health
-description: "The Healthy Programmer: Health Hacks for Enjoyable Programming"
+description: "A review of The Healthy Programmer. A book that introduces ways for programmers to stay healthy while working, centered on exercise. Grounded in scientific research, it presents the idea that health grows from habits, such as not sitting for long stretches and changing posture, as concrete hacks."
 translation_key: healthy-programmer-hacks
 books:
   - asin: "4873117283"

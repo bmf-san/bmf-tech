@@ -1,6 +1,6 @@
 ---
 title: 'Mastering Web Performance Tuning: Practical Speed Optimization Lessons from ISUCON'
-description: 'Mastering Web Performance Tuning: Practical Speed Optimization Lessons from ISUCON'
+description: "A review of Mastering Web Performance Tuning. Using ISUCON as its material, a book for systematically learning web application performance tuning that starts from measurement. Practical content worth reading at least once if you are going to take part in ISUCON."
 slug: web-performance-tuning-isucon-lessons
 date: 2022-06-09T00:00:00Z
 author: bmf-san

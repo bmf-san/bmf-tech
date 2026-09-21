@@ -1,6 +1,6 @@
 ---
 title: 'Mistakes in Software Architecture: Development and Evaluation of Non-Functional Requirements'
-description: 'Mistakes in Software Architecture: Development and Evaluation of Non-Functional Requirements'
+description: "A review of a book on mistakes in software architecture. Though old (published in 2010), it discusses architecture topics that still resonate today, in a casual style. Closer to an essay than a technical book, its later chapters (from chapter 6) are where the technical substance lies."
 slug: software-architecture-mistakes
 date: 2024-05-24T00:00:00Z
 author: bmf-san

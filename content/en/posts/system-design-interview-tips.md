@@ -1,6 +1,6 @@
 ---
 title: Trends and Strategies for System Design Interviews
-description: "Trends and Strategies for System Design Interviews"
+description: "A review of Trends and Strategies for System Design Interviews. While themed around interview prep, it is also just right for learning system design patterns. With well-organized question patterns that capture design essentials, it is useful not only for candidates but also for interviewers who set the questions."
 slug: system-design-interview-tips
 date: 2025-09-29T00:00:00Z
 author: bmf-san

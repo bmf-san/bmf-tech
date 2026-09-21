@@ -1,6 +1,6 @@
 ---
 title: Test-Driven Development
-description: "Test-Driven Development"
+description: "A review of Test-Driven Development by Example. Kent Beck's foundational TDD text. Through worked examples, it teaches how to grow a design by writing tests first and turning the red-green-refactor cycle. The first book to reach for when learning TDD."
 slug: test-driven-development
 date: 2017-10-08T00:00:00Z
 author: bmf-san

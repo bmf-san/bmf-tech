@@ -1,6 +1,6 @@
 ---
 title: "The Software Developer's Career Handbook"
-description: "The Software Developer's Career Handbook"
+description: "A review of The Software Developer's Career Handbook. A book by Michael Lopp, known for Being Geek. On the situations everyone hits in their career: changing jobs, promotions, dealing with bosses, and conduct in meetings and chat, it offers questions to guide judgment rather than forcing a single right answer."
 slug: software-developers-career-handbook
 date: 2026-09-20T00:00:00Z
 author: bmf-san

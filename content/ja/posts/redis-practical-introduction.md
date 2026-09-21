@@ -1,6 +1,6 @@
 ---
 title: 実践Redis入門 技術の仕組みから現場の活用まで
-description: "実践Redis入門 技術の仕組みから現場の活用まで"
+description: "『実践Redis入門 技術の仕組みから現場の活用まで』の書評。Redisの仕組みから現場での活用、運用管理までを幅広く扱う一冊。日本語のRedis書籍が少ないなかで貴重な存在で、内部実装にも踏み込む。Redisで困ったときにいつでも参照できるよう手元に置いておきたい。"
 slug: redis-practical-introduction
 date: 2025-02-15T00:00:00Z
 author: bmf-san

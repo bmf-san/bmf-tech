@@ -8,7 +8,7 @@ categories:
 tags:
   - Thinking Methods
   - Book Review
-description: "The Thinking Methods of World-Class Engineers"
+description: "A review of The Thinking Methods of World-Class Engineers. A book introducing the thinking and attitudes common to top engineers. It discusses mindsets worth adopting in daily work, such as Be Lazy, maximizing value in less time, and taking time to understand rather than trying to grasp everything at once."
 translation_key: thinking-like-top-engineers
 books:
   - asin: "4163917683"

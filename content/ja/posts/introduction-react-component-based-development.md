@@ -1,6 +1,6 @@
 ---
 title: 入門 React ―コンポーネントベースのWebフロントエンド開発
-description: "入門 React ―コンポーネントベースのWebフロントエンド開発"
+description: "『入門 React ―コンポーネントベースのWebフロントエンド開発』の書評。コンポーネントベースでWebフロントエンドを構築するReactの基本を学べる一冊。これからReactに触れる人が土台をつかむのに適しており、実務レベルの発展的な内容は別書で補うとよい。"
 slug: introduction-react-component-based-development
 date: 2016-08-04T00:00:00Z
 author: bmf-san

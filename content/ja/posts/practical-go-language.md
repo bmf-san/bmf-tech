@@ -1,6 +1,6 @@
 ---
 title: 実用Go言語
-description: "実用Go言語"
+description: "『実用Go言語』の書評。ある程度Goを書いてきた人でも、知らなかった・忘れていた実務的な知見に気づける一冊。エラー型の命名など細やかな作法から、実務でGoを書くうえで押さえておきたい定石までを幅広く扱う。"
 slug: practical-go-language
 date: 2023-08-05T00:00:00Z
 author: bmf-san

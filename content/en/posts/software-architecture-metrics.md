@@ -1,6 +1,6 @@
 ---
 title: 'Software Architecture Metrics: 10 Tips for Improving Architecture Quality'
-description: 'Software Architecture Metrics: 10 Tips for Improving Architecture Quality'
+description: "A review of Software Architecture Metrics. A book in which multiple authors discuss perspectives on metrics for measuring architecture quality. In an advice-per-chapter format without going deep, it is useful as a starting point for thinking about metrics, covering the GQM approach, fitness functions, and more."
 slug: software-architecture-metrics
 date: 2025-01-25T00:00:00Z
 author: bmf-san

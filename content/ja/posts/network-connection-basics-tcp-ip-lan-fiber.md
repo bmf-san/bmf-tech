@@ -1,6 +1,6 @@
 ---
 title: ネットワークはなぜつながるのか 第2版 知っておきたいTCP/IP、LAN、光ファイバの基礎知識
-description: "ネットワークはなぜつながるのか 第2版 知っておきたいTCP/IP、LAN、光ファイバの基礎知識"
+description: "『ネットワークはなぜつながるのか 第2版 知っておきたいTCP/IP、LAN、光ファイバの基礎知識』の書評。ブラウザの入力からデータが届くまでの流れを軸に、TCP/IPやLAN、光ファイバの基礎を解説する一冊。入門者向けとされるが読みごたえがあり、他の基本書のあとに読むと理解が深まる。"
 slug: network-connection-basics-tcp-ip-lan-fiber
 date: 2024-05-09T00:00:00Z
 author: bmf-san

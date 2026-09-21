@@ -1,6 +1,6 @@
 ---
 title: 'A Practical Textbook on Logging: From Basic Knowledge to Collection Methods, Analysis Techniques, Troubleshooting, Performance Optimization, and Applications in Machine Learning'
-description: 'A Practical Textbook on Logging: From Basic Knowledge to Collection Methods, Analysis Techniques, Troubleshooting, Performance Optimization, and Applications in Machine Learning'
+description: "A review of A Practical Textbook on Logging. A book that systematically explains logging from basic knowledge to collection methods, analysis techniques, troubleshooting, performance optimization, and even applications in machine learning. It broadly covers the foundations for working with logs in practice."
 slug: practical-logging-textbook
 date: 2026-02-20T00:00:00Z
 author: bmf-san

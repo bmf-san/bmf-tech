@@ -1,6 +1,6 @@
 ---
 title: 'PostgreSQL Comprehensive Guide, 4th Edition: From Installation to Features, Mechanisms, Application Development, Management, and Operations'
-description: 'PostgreSQL Comprehensive Guide, 4th Edition: From Installation to Features, Mechanisms, Application Development, Management, and Operations'
+description: "A review of PostgreSQL Comprehensive Guide, 4th Edition. An introductory book spanning installation, features and mechanisms, application development, and management and operations. Just right for those new to PostgreSQL, it covers the basics with application examples."
 slug: postgresql-comprehensive-guide
 date: 2024-05-04T00:00:00Z
 author: bmf-san

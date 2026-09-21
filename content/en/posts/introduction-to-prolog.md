@@ -1,6 +1,6 @@
 ---
 title: Introduction to Prolog
-description: "Introduction to Prolog"
+description: "A review of Introduction to Prolog. A book that touches on the basics of Prolog, a logic and declarative language. Even read to gain background for learning Rego, and even without fully grasping its deeper philosophy, you can take away the essence of declarative programming."
 slug: introduction-to-prolog
 date: 2025-08-09T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: 'Mastering SQL: A Comprehensive Guide for Advanced Beginners, 2nd Edition'
-description: 'Mastering SQL: A Comprehensive Guide for Advanced Beginners, 2nd Edition'
+description: "A review of Mastering SQL: A Comprehensive Guide for Advanced Beginners, 2nd Edition. A book for learning the varied expressions of SQL beyond the basics. Full of oh-you-can-write-it-this-way moments that expand your repertoire, it suits those who want to step beyond the beginner level."
 slug: sql-master-guide-for-advanced-beginners
 date: 2024-04-01T00:00:00Z
 author: bmf-san

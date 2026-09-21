@@ -1,6 +1,6 @@
 ---
 title: 'Microservices Architecture, 2nd Edition'
-description: 'Microservices Architecture, 2nd Edition'
+description: "A review of Building Microservices, 2nd Edition. A book worth reading if you are working on or considering microservices. It thoroughly addresses the architectural qualities (non-functional requirements) distributed systems demand, offering value even beyond a microservices-only view. Chapter 1 is a well-organized concept summary."
 slug: microservices-architecture-second-edition
 date: 2024-06-16T00:00:00Z
 author: bmf-san

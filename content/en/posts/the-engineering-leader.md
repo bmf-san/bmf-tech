@@ -1,6 +1,6 @@
 ---
 title: "The Engineering Leader: Strategies for Scaling Yourself and Your Team"
-description: "The Engineering Leader: Strategies for Scaling Yourself and Your Team"
+description: "A review of The Engineering Leader. Cate Huston's practical book for leaders of engineering organizations. From managing your own energy and recognizing failure patterns to scaling hiring, 1:1s, and building teams that grow the next generation of leaders, it covers a broad range."
 slug: the-engineering-leader
 date: 2026-04-28T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: はじめてのデジタルアイデンティティ―Webサービスに欠かせない認証・認可・ID管理
-description: "はじめてのデジタルアイデンティティ―Webサービスに欠かせない認証・認可・ID管理"
+description: "『はじめてのデジタルアイデンティティ―Webサービスに欠かせない認証・認可・ID管理』の書評。Webサービスにおける認証・認可・ID管理の基礎を、実例を交えて平易に解説する一冊。OAuth 2.0やOpenID Connect、SAMLの仕組みから、シングルサインオンやソーシャルログイン、IDaaSの活用まで幅広く扱う入門書。"
 slug: introduction-digital-identity
 date: 2026-02-20T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: "Secure API: Principles for Design, Construction, and Implementation"
-description: "Secure API: Principles for Design, Construction, and Implementation"
+description: "A review of Secure API. A book that treats API security as consistent principles spanning design, construction, and implementation. From authn/authz, TLS, and secret management to dependency vulnerabilities and CI/CD, it organizes the whole API lifecycle from the threat-based view of why it is needed."
 slug: secure-api-design-principles
 date: 2026-09-20T00:00:00Z
 author: bmf-san

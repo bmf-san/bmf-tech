@@ -1,6 +1,6 @@
 ---
 title: マスタリングTCP/IP―入門編―(第6版)
-description: "マスタリングTCP/IP―入門編―(第6版)"
+description: "『マスタリングTCP/IP 入門編（第6版）』の書評。たとえがわかりやすく、TCP/IPの基本からネットワークの理解を進められる定番の入門書。ネットワークに苦手意識がある人でも読みやすく、教科書として頼りになる一冊。"
 slug: mastering-tcp-ip-introduction
 date: 2024-05-13T00:00:00Z
 author: bmf-san

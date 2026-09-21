@@ -1,6 +1,6 @@
 ---
 title: Eric Evans' Domain-Driven Design
-description: "Eric Evans' Domain-Driven Design"
+description: "A review of Eric Evans' Domain-Driven Design. The foundational DDD text, dense enough that even a reading group struggles to fully digest it. It drives home that understanding and interpreting the domain matters even more than how you express it in code. A classic worth revisiting over time."
 slug: eric-evans-domain-driven-design
 date: 2016-12-09T00:00:00Z
 author: bmf-san

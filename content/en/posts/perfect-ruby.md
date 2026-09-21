@@ -1,6 +1,6 @@
 ---
 title: Perfect Ruby
-description: "Perfect Ruby"
+description: "A review of Perfect Ruby. A volume in the Perfect series that comprehensively explains Ruby's language spec and features. Covering everything from basics to a step deeper, it is a dependable read when you want to learn Ruby thoroughly."
 slug: perfect-ruby
 date: 2024-05-04T00:00:00Z
 author: bmf-san

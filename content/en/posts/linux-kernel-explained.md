@@ -1,6 +1,6 @@
 ---
 title: 'Understanding the Linux Kernel through Illustrations'
-description: 'Understanding the Linux Kernel through Illustrations'
+description: "A review of Understanding the Linux Kernel through Illustrations. A book that explains how the Linux kernel works, clearly and with diagrams, even for beginners. It covers basics like process management, memory management, and file systems as an entry point to learning the kernel."
 slug: linux-kernel-explained
 date: 2025-01-31T00:00:00Z
 author: bmf-san

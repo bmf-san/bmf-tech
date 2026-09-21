@@ -1,6 +1,6 @@
 ---
 title: 'Running Lean: Practical Lean Startup'
-description: 'Running Lean: Practical Lean Startup'
+description: "A review of Running Lean. A book worth reading if you are involved with startups. Starting from validating the problem, it lays out a practical way to rapidly iterate and test a business idea. It also helps when launching a new venture."
 slug: running-lean-practical-startup
 date: 2016-12-27T00:00:00Z
 author: bmf-san

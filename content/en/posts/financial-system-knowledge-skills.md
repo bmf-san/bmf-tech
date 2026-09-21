@@ -1,6 +1,6 @@
 ---
 title: Knowledge and Technology of Financial Systems for Engineers
-description: "Knowledge and Technology of Financial Systems for Engineers"
+description: "A review of Knowledge and Skills of Financial Systems for Engineers. A book that weighs financial domain knowledge more than the systems themselves. It explains the operations and systems of banks, insurers, securities firms, and credit card companies, useful even for engineers working on payment systems."
 slug: financial-system-knowledge-skills
 date: 2024-04-04T00:00:00Z
 author: bmf-san

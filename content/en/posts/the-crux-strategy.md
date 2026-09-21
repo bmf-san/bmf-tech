@@ -1,6 +1,6 @@
 ---
 title: "The Crux: How Leaders Become Strategists"
-description: "The Crux: How Leaders Become Strategists"
+description: "A review of The Crux. A sequel by Richard P. Rumelt, author of Good Strategy, Bad Strategy. Of the prior book's diagnosis, guiding policy, and action, it digs especially into diagnosis: discerning the crux among tangled problems. It argues strategy is not about listing goals but about narrowing down the challenge to tackle."
 slug: the-crux-strategy
 date: 2026-04-28T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: 'Metaprogramming Ruby 2nd Edition'
-description: 'Metaprogramming Ruby 2nd Edition'
+description: "A review of Metaprogramming Ruby, 2nd Edition. A book for learning the mechanisms and uses of Ruby metaprogramming. Through the object model and dynamic features, it reveals the nature of Ruby magic, while making clear that truly mastering it takes real effort."
 slug: metaprogramming-ruby-2nd-edition
 date: 2025-01-06T00:00:00Z
 author: bmf-san

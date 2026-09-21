@@ -1,6 +1,6 @@
 ---
 title: The Book You Wish Your Parents Had Read
-description: "The Book You Wish Your Parents Had Read"
+description: "A review of The Book You Wish Your Parents Had Read. A book on parenting and the parent-child relationship by British psychotherapist Philippa Perry. Rather than a set of discipline techniques, it emphasizes how to build a relationship with your child and how to face your own emotions. Its view of valuing repair after mistakes over perfection lingers."
 slug: the-book-you-wish-your-parents-had-read
 date: 2026-07-28T00:00:00Z
 author: bmf-san

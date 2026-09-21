@@ -1,6 +1,6 @@
 ---
 title: 'Evolving Architecture: Supporting Continuous Change'
-description: "Evolving Architecture: Supporting Continuous Change"
+description: "A review of Building Evolutionary Architectures. A book for learning approaches to architectures that can keep adapting to change. Centered on using fitness functions to protect desired qualities, it also makes you feel how hard it is to design functions that actually work well."
 slug: evolutionary-architecture-supporting-change
 date: 2018-08-23T00:00:00Z
 author: bmf-san

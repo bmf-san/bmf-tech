@@ -1,6 +1,6 @@
 ---
 title: "Escaping the Build Trap: How Effective Product Management Creates Real Value"
-description: "Escaping the Build Trap: How Effective Product Management Creates Real Value"
+description: "A review of Escaping the Build Trap. Melissa Perri's introduction to product management. It organizes how to escape the build trap, where shipping features becomes the goal in itself, across four axes: organization, role, strategy, and process."
 slug: escaping-the-build-trap
 date: 2026-04-28T00:00:00Z
 author: bmf-san

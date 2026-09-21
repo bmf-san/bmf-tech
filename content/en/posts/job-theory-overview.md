@@ -1,6 +1,6 @@
 ---
 title: Jobs Theory
-description: "Jobs Theory"
+description: "A review of Jobs Theory. It explains the mechanism of consumption from the view that customers hire products to get a job done rather than for the products themselves. A theory worth keeping in mind when facing what users truly want to solve."
 slug: job-theory-overview
 date: 2024-03-20T00:00:00Z
 author: bmf-san

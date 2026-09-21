@@ -1,6 +1,6 @@
 ---
 title: ソフトウェアアーキテクチャ Hardparts
-description: "ソフトウェアアーキテクチャ Hardparts"
+description: "『ソフトウェアアーキテクチャ Hardparts』の書評。分散システムにおける「難しい判断」を主題に、アーキテクチャをどう再構築していくかの考え方やアプローチを整理する一冊。『ソフトウェアアーキテクチャの基礎』や『進化的アーキテクチャ』を先に読んでおくと、より読み進めやすい。"
 slug: software-architecture-hardparts
 date: 2023-02-27T00:00:00Z
 author: bmf-san

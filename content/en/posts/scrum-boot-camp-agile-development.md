@@ -1,6 +1,6 @@
 ---
 title: 'SCRUM BOOT CAMP THE BOOK: Revised Edition - Agile Development with Scrum Teams'
-description: 'SCRUM BOOT CAMP THE BOOK: Revised Edition - Agile Development with Scrum Teams'
+description: "A review of SCRUM BOOT CAMP THE BOOK (Revised Edition). A book for learning the basics of Scrum through situations that commonly arise in real teams. An approachable first read when you are about to start Scrum development."
 slug: scrum-boot-camp-agile-development
 date: 2020-09-07T00:00:00Z
 author: bmf-san

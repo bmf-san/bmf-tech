@@ -1,6 +1,6 @@
 ---
 title: "Simplicity: Sustainable, Humane, and Effective Software Development"
-description: "Simplicity: Sustainable, Humane, and Effective Software Development"
+description: "A review of Simplicity. A book that asks how to keep software development, so easily swallowed by complexity, simple. Beyond technical techniques, it makes you realize that choices about what not to build and where to stop are what let you keep developing healthily over the long term."
 slug: simplicity
 date: 2026-07-28T00:00:00Z
 author: bmf-san
