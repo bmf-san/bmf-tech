@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - Algorithms and Data Structures
 tags:
-  - Stack
+  - Data Structures
 translation_key: algorithms-data-structures-stack
 draft: false
 ---

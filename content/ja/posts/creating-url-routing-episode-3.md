@@ -10,7 +10,7 @@ tags:
   - PHP
   - URLルーティング
   - HTTP
-  - 木構造
+  - データ構造
   - router
 translation_key: creating-url-routing-episode-3
 draft: false

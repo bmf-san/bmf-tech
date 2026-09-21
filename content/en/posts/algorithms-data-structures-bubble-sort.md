@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - Algorithms and Data Structures
 tags:
-  - Bubble Sort
+  - Algorithms
 translation_key: algorithms-data-structures-bubble-sort
 draft: false
 ---

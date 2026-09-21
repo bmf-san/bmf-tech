@@ -7,8 +7,7 @@ author: bmf-san
 categories:
   - アルゴリズムとデータ構造
 tags:
-  - 連結リスト
-  - 片方向リスト
+  - データ構造
 translation_key: algorithms-data-structures-list
 draft: false
 ---

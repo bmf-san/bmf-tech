@@ -7,8 +7,7 @@ author: bmf-san
 categories:
   - Algorithms and Data Structures
 tags:
-  - Stack
-  - Queue
+  - Data Structures
 translation_key: stack-queue-implementation
 draft: false
 ---

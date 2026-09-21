@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - アルゴリズムとデータ構造
 tags:
-  - 選択ソート
+  - アルゴリズム
 translation_key: algorithms-data-structures-selection-sort
 draft: false
 ---

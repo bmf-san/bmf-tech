@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - Algorithms and Data Structures
 tags:
-  - Selection Sort
+  - Algorithms
 translation_key: algorithms-data-structures-selection-sort
 draft: false
 ---

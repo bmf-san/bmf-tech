@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - アルゴリズムとデータ構造
 tags:
-  - ハッシュマップ
+  - データ構造
 translation_key: algorithms-data-structures-hashmap
 draft: false
 ---

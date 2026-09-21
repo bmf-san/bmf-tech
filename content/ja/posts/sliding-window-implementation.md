@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - アルゴリズムとデータ構造
 tags:
-  - スライディングウィンドウ
+  - アルゴリズム
 translation_key: sliding-window-implementation
 draft: false
 ---

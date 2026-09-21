@@ -10,8 +10,7 @@ tags:
   - OS
   - Thread
   - Process
-  - Stack
-  - Heap
+  - Data Structures
 translation_key: process-vs-thread
 draft: false
 ---

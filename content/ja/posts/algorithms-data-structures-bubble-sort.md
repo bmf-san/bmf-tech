@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - アルゴリズムとデータ構造
 tags:
-  - バブルソート
+  - アルゴリズム
 translation_key: algorithms-data-structures-bubble-sort
 draft: false
 ---

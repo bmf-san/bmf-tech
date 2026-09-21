@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - Algorithms and Data Structures
 tags:
-  - Insertion Sort
+  - Algorithms
 translation_key: algorithms-data-structures-insertion-sort
 draft: false
 ---

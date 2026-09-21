@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - アルゴリズムとデータ構造
 tags:
-  - キュー
+  - データ構造
 translation_key: algorithms-data-structures-queue
 draft: false
 ---

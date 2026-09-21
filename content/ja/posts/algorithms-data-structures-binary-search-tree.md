@@ -8,7 +8,7 @@ author: bmf-san
 categories:
   - アルゴリズムとデータ構造
 tags:
-  - 二分探索木
+  - データ構造
 translation_key: algorithms-data-structures-binary-search-tree
 draft: false
 ---

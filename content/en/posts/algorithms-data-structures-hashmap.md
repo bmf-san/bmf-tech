@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - Algorithms and Data Structures
 tags:
-  - HashMap
+  - Data Structures
 translation_key: algorithms-data-structures-hashmap
 draft: false
 ---

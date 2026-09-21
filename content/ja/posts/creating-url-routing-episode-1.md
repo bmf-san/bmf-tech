@@ -9,7 +9,7 @@ categories:
 tags:
   - HTTP
   - URLルーティング
-  - 木構造
+  - データ構造
   - router
 translation_key: creating-url-routing-episode-1
 draft: false

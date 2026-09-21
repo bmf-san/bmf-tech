@@ -7,10 +7,7 @@ author: bmf-san
 categories:
   - アルゴリズムとデータ構造
 tags:
-  - バイナリーサーチ
-  - リニアサーチ
-  - バブルソート
-  - セレクションソート
+  - アルゴリズム
 translation_key: javascript-algorithms-introduction
 draft: false
 ---

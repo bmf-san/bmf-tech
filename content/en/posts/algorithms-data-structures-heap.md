@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - Algorithms and Data Structures
 tags:
-  - Heap
+  - Data Structures
 translation_key: algorithms-data-structures-heap
 draft: false
 ---

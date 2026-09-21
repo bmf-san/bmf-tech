@@ -7,9 +7,8 @@ author: bmf-san
 categories:
   - Algorithms and Data Structures
 tags:
-  - Open Addressing Hash Table
-  - Swiss Table
   - Data Structures
+  - Swiss Table
 translation_key: open-address-hash-table-swizzle-table
 draft: false
 ---

@@ -7,8 +7,7 @@ author: bmf-san
 categories:
   - アルゴリズムとデータ構造
 tags:
-  - 尺取り法
-  - Two-Pointer Approach
+  - アルゴリズム
 translation_key: sliding-window-technique
 recommended_books:
   - asin: "479817243X"

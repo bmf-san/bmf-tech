@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - アルゴリズムとデータ構造
 tags:
-  - スタック
+  - データ構造
 translation_key: algorithms-data-structures-stack
 draft: false
 ---

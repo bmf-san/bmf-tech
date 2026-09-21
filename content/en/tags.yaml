@@ -12,10 +12,6 @@
   translation_key: acid
 - name: ACL
   translation_key: acl
-- name: Adjacency List
-  translation_key: adjacency-list
-- name: Adjacency Matrix
-  translation_key: adjacency-matrix
 - name: Agile
   translation_key: agile
 - name: AI
@@ -56,8 +52,6 @@
   translation_key: architecture-review-board
 - name: Architecture Strategy
   translation_key: architecture-strategy
-- name: Arrays
-  translation_key: arrays
 - name: artisan
   translation_key: artisan
 - name: async
@@ -74,8 +68,6 @@
   translation_key: babel
 - name: babel-jest
   translation_key: babel-jest
-- name: Backtrack
-  translation_key: backtrack
 - name: Backup
   translation_key: backup
 - name: BASE
@@ -92,10 +84,6 @@
   translation_key: bi-temporal
 - name: Big O Notation
   translation_key: big-o-notation
-- name: Binary Search
-  translation_key: binary-search
-- name: Binary Search Tree
-  translation_key: binary-search-tree
 - name: Bitcoin
   translation_key: bitcoin
 - name: bitFlyer
@@ -108,8 +96,6 @@
   translation_key: book-review
 - name: browserify
   translation_key: browserify
-- name: Bubble Sort
-  translation_key: bubble-sort
 - name: Burp Suite
   translation_key: burp-suite
 - name: Business Strategy
@@ -190,8 +176,6 @@
   translation_key: contract-testing
 - name: CORS
   translation_key: cors
-- name: Counting Sort
-  translation_key: counting-sort
 - name: CPU
   translation_key: cpu
 - name: CQRS
@@ -370,8 +354,6 @@
   translation_key: gopls
 - name: Grafana
   translation_key: grafana
-- name: Graph
-  translation_key: graph
 - name: GraphQL
   translation_key: graphql
 - name: GraphQL Federation
@@ -386,16 +368,10 @@
   translation_key: hardware
 - name: Hashing
   translation_key: hashing
-- name: HashMap
-  translation_key: hashmap
 - name: Haskell
   translation_key: haskell
 - name: Health
   translation_key: health
-- name: Heap
-  translation_key: heap
-- name: Heap Sort
-  translation_key: heap-sort
 - name: highlightjs
   translation_key: highlightjs
 - name: History
@@ -426,8 +402,6 @@
   translation_key: infrastructure
 - name: Inheritance
   translation_key: inheritance
-- name: Insertion Sort
-  translation_key: insertion-sort
 - name: Intellectual Production
   translation_key: intellectual-production
 - name: Interface
@@ -500,12 +474,8 @@
   translation_key: life
 - name: Lightning Talk
   translation_key: lightning-talk
-- name: Linear Search
-  translation_key: linear-search
 - name: Link Collection
   translation_key: link-collection
-- name: Linked List
-  translation_key: linked-list
 - name: Linux
   translation_key: linux
 - name: Linux Capabilities
@@ -552,8 +522,6 @@
   translation_key: marked
 - name: Memory
   translation_key: memory
-- name: Merge Sort
-  translation_key: merge-sort
 - name: mermaid
   translation_key: mermaid
 - name: Metrics
@@ -612,8 +580,6 @@
   translation_key: oidc
 - name: OOP
   translation_key: oop
-- name: Open Addressing Hash Table
-  translation_key: open-addressing-hash-table
 - name: Open Policy Agent
   translation_key: open-policy-agent
 - name: OpenAPI
@@ -714,14 +680,8 @@
   translation_key: public-key-cryptography
 - name: pundit
   translation_key: pundit
-- name: Queue
-  translation_key: queue
-- name: Quick Sort
-  translation_key: quick-sort
 - name: Radix Conversion
   translation_key: radix-conversion
-- name: Radix Tree
-  translation_key: radix-tree
 - name: RBAC
   translation_key: rbac
 - name: rbenv
@@ -732,8 +692,6 @@
   translation_key: react-router
 - name: realize
   translation_key: realize
-- name: Recursion
-  translation_key: recursion
 - name: Redis
   translation_key: redis
 - name: Redux
@@ -816,8 +774,6 @@
   translation_key: seccomp
 - name: Security
   translation_key: security
-- name: Selection Sort
-  translation_key: selection-sort
 - name: Serialization
   translation_key: serialization
 - name: Service Locator
@@ -836,8 +792,6 @@
   translation_key: shell-script
 - name: Sidekiq
   translation_key: sidekiq
-- name: Singly Linked List
-  translation_key: singly-linked-list
 - name: SLA
   translation_key: sla
 - name: Slack
@@ -846,8 +800,6 @@
   translation_key: slack-bot
 - name: SLI
   translation_key: sli
-- name: Sliding Window
-  translation_key: sliding-window
 - name: SLO
   translation_key: slo
 - name: slog
@@ -880,8 +832,6 @@
   translation_key: ssl
 - name: SSO
   translation_key: sso
-- name: Stack
-  translation_key: stack
 - name: Startup
   translation_key: startup
 - name: Stateful
@@ -946,20 +896,12 @@
   translation_key: trading
 - name: Transaction
   translation_key: transaction
-- name: Tree Structure
-  translation_key: tree-structure
 - name: Trello
   translation_key: trello
-- name: Trie
-  translation_key: trie
 - name: Trino
   translation_key: trino
 - name: TUI
   translation_key: tui
-- name: Two-Pointer Approach
-  translation_key: two-pointer-approach
-- name: Two-Pointer Technique
-  translation_key: two-pointer-technique
 - name: Type Hinting
   translation_key: type-hinting
 - name: TypeScript

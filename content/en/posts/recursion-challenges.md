@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - Application
 tags:
-  - Recursion
+  - Algorithms
 translation_key: recursion-challenges
 draft: false
 ---

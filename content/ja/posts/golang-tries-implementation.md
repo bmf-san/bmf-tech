@@ -9,8 +9,7 @@ categories:
   - アルゴリズムとデータ構造
 tags:
   - Golang
-  - 基数木
-  - トライ木
+  - データ構造
 translation_key: golang-tries-implementation
 draft: false
 ---

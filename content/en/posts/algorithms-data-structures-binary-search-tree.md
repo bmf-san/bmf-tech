@@ -8,7 +8,7 @@ author: bmf-san
 categories:
   - Algorithms and Data Structures
 tags:
-  - Binary Search Tree
+  - Data Structures
 translation_key: algorithms-data-structures-binary-search-tree
 draft: false
 ---

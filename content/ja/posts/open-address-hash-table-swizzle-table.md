@@ -7,9 +7,8 @@ author: bmf-san
 categories:
   - アルゴリズムとデータ構造
 tags:
-  - オープンアドレスハッシュテーブル
-  - スイステーブル
   - データ構造
+  - スイステーブル
 translation_key: open-address-hash-table-swizzle-table
 draft: false
 ---
