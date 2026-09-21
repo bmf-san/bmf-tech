@@ -10,7 +10,7 @@ tags:
   - Architecture Strategy
   - Architect
   - Book Review
-description: "Principles of Building System Architecture: Three Mindsets IT Architects Should Have"
+description: "A review of Principles of Building System Architecture. A must-read if you are involved in architecture design. Beyond technical solutions, it systematically articulates the whole design process, from the definition and framing of architecture to engaging stakeholders and design techniques."
 translation_key: principles-of-system-architecture
 books:
   - asin: "4798116424"

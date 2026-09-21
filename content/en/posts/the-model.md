@@ -1,6 +1,6 @@
 ---
 title: 'The Model'
-description: 'The Model'
+description: "A review of The Model. A book explaining The Model, the systematized approach to sales cultivated at Salesforce. Through the division of labor and collaboration across marketing, inside sales, field sales, and customer success, it reveals how sales, so often labor-intensive, gains reproducibility."
 slug: the-model
 date: 2024-04-16T00:00:00Z
 author: bmf-san

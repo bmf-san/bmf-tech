@@ -1,6 +1,6 @@
 ---
 title: なっとく！関数型プログラミング
-description: "なっとく！関数型プログラミング"
+description: "『なっとく！関数型プログラミング』の書評。Scalaを題材に関数型プログラミングを丁寧に解説する良書。途中はScalaの言語仕様に寄る部分もあるが、言語に依存しない関数型のエッセンスを、やさしく学べる一冊。"
 slug: functional-programming-introduction
 date: 2025-08-31T00:00:00Z
 author: bmf-san

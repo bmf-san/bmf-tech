@@ -1,6 +1,6 @@
 ---
 title: 'Building Secure and Reliable Systems: Design, Implementation, and Maintenance from Google SRE'
-description: "Building Secure and Reliable Systems: Design, Implementation, and Maintenance from Google SRE"
+description: "A review of Building Secure and Reliable Systems. A book that frames security and reliability not as things simply implemented but as emergent properties arising from deployment and operations. Drawing on Google SRE's insights, it argues for weaving both into design from a project's earliest stages."
 slug: secure-reliable-system-design-google-sre
 date: 2024-05-24T00:00:00Z
 author: bmf-san

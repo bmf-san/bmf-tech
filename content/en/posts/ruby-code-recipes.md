@@ -1,6 +1,6 @@
 ---
 title: 'Ruby Code Recipe Collection'
-description: 'Ruby Code Recipe Collection'
+description: "A review of Ruby Code Recipe Collection. A book that compiles what you can do in Ruby and common patterns as a recipe collection. Written clearly and concisely, it is just right for beginners learning Ruby to build up their repertoire."
 slug: ruby-code-recipes
 date: 2024-10-20T00:00:00Z
 author: bmf-san

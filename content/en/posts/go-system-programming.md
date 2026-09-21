@@ -1,6 +1,6 @@
 ---
 title: Understanding System Programming with Go
-description: "Understanding System Programming with Go"
+description: "A review of Understanding System Programming with Go. A book for learning low-level-ish system programming through Go. Touching on the internals of standard packages, it lets you understand how programs interact with the OS by getting hands-on."
 slug: go-system-programming
 date: 2018-11-30T00:00:00Z
 author: bmf-san

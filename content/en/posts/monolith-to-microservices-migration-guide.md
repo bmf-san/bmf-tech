@@ -1,6 +1,6 @@
 ---
 title: 'From Monolith to Microservices: A Practical Migration Guide to Evolve Monoliths'
-description: 'From Monolith to Microservices: A Practical Migration Guide to Evolve Monoliths'
+description: "A review of Monolith to Microservices. A book focused specifically on approaches for migrating from a monolith to microservices. Its longest chapter tackles database decomposition, the biggest hurdle in migration, offering practical guidance for evolving a system step by step."
 slug: monolith-to-microservices-migration-guide
 date: 2024-05-29T00:00:00Z
 author: bmf-san

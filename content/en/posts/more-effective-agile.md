@@ -1,6 +1,6 @@
 ---
 title: More Effective Agile
-description: "More Effective Agile"
+description: "A review of More Effective Agile. A book that broadly compiles practices for putting agile into action. Beyond individual techniques, it organizes the essentials for leaders and teams to draw out agile's benefits, usable as a textbook for practice."
 slug: more-effective-agile
 date: 2023-10-01T00:00:00Z
 author: bmf-san

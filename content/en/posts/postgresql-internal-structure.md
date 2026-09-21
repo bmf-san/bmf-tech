@@ -1,6 +1,6 @@
 ---
 title: 'Learning PostgreSQL from Its Internal Structure: Principles of Design and Operation Planning'
-description: 'Learning PostgreSQL from Its Internal Structure: Principles of Design and Operation Planning'
+description: "A review of Learning PostgreSQL from Its Internal Structure. A book that covers what you should know to operate PostgreSQL, from the angle of design and operations grounded in its internals. Understanding the mechanisms, it guides you toward solid design and operational planning."
 slug: postgresql-internal-structure
 date: 2024-05-07T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: 'Web API: The Good Parts'
-description: "Web API: The Good Parts"
+description: "『Web API: The Good Parts』の書評。Web APIの設計方針を学ぶうえで、まず読んでおきたい定番の一冊。エンドポイント設計やレスポンスの返し方など、API設計の基礎がまとまっており、設計に迷ったときに読み返したくなる。"
 slug: web-api-good-parts
 date: 2016-10-18T00:00:00Z
 author: bmf-san

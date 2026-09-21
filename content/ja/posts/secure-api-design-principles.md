@@ -1,6 +1,6 @@
 ---
 title: セキュアAPI 設計・構築・実装を貫く原則
-description: "セキュアAPI 設計・構築・実装を貫く原則"
+description: "『セキュアAPI 設計・構築・実装を貫く原則』の書評。APIのセキュリティを、設計から構築・実装まで一貫した原則として扱う一冊。認証・認可、TLS、シークレット管理、依存関係の脆弱性、CI/CDまで、APIのライフサイクル全体を「なぜ必要か」という脅威の観点から整理する。"
 slug: secure-api-design-principles
 date: 2026-09-20T00:00:00Z
 author: bmf-san

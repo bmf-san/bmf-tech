@@ -1,6 +1,6 @@
 ---
 title: Programmer Brain
-description: "Programmer Brain"
+description: "A review of The Programmer's Brain. A book that uses a cognitive-science approach to study coding as a creative process. It reveals what happens in the mind of someone who reads and writes code quickly and accurately, offering hints from how memory and learning work for training the roots of programming ability."
 slug: programmer-mindset
 date: 2023-06-26T00:00:00Z
 author: bmf-san

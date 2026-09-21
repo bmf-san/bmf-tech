@@ -1,6 +1,6 @@
 ---
 title: 'Tidy First? ―Experiential Software Design for Individuals'
-description: 'Tidy First? ―Experiential Software Design for Individuals'
+description: "A review of Tidy First? Kent Beck's thin but dense book that makes you consider when to tidy your code. From the perspectives of coupling and cohesion, and cost and benefit, it frames tidying decisions empirically. Its arguments are concise and clear."
 slug: tidy-first-experiential-software-design
 date: 2025-01-06T00:00:00Z
 author: bmf-san

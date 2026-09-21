@@ -1,6 +1,6 @@
 ---
 title: Prompt Engineering for LLMs
-description: "Prompt Engineering for LLMs"
+description: "A review of Prompt Engineering for LLMs. An O'Reilly book that systematically organizes prompt engineering. Rather than a grab-bag of tricks, it explains from the principles of why a prompt works. Through tokenization, few-shot prompting, and output evaluation, it turns prompting from experience and intuition into something you can design."
 slug: prompt-engineering-for-llms
 date: 2026-07-28T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: More Effective Agile
-description: "More Effective Agile"
+description: "『More Effective Agile』の書評。アジャイルを実践するためのプラクティスを幅広くまとめた一冊。個別の手法にとどまらず、リーダーやチームがアジャイルの効果を引き出すための勘所を整理しており、実践の教科書として活用できる。"
 slug: more-effective-agile
 date: 2023-10-01T00:00:00Z
 author: bmf-san

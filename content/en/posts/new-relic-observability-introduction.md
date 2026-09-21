@@ -1,6 +1,6 @@
 ---
 title: 'New Relic Practical Introduction, 2nd Edition: Fundamentals and Implementation of Observability'
-description: 'New Relic Practical Introduction, 2nd Edition: Fundamentals and Implementation of Observability'
+description: "A review of New Relic Practical Introduction, 2nd Edition. A book that covers New Relic's features end to end while devoting many pages to how to use them. From the concepts of telemetry data like metrics and logs to practical ways of achieving observability, it has you covered."
 slug: new-relic-observability-introduction
 date: 2024-08-10T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Web APIの設計
-description: "Web APIの設計"
+description: "『Web APIの設計』の書評。インターフェースだけでなく、その手前の入り口からAPI設計を考えさせてくれる一冊。仕組みではなく「ユーザーが何をできるか」に焦点を当てる姿勢や、APIのゴールを洗い出すフレームワークなど、良いAPIを設計するための視点を与えてくれる。"
 slug: web-api-design
 date: 2024-07-28T00:00:00Z
 author: bmf-san

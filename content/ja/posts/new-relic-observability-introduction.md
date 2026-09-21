@@ -1,6 +1,6 @@
 ---
 title: New Relic実践入門 第2版 オブザーバビリティの基礎と実現
-description: "New Relic実践入門 第2版 オブザーバビリティの基礎と実現"
+description: "『New Relic実践入門 第2版 オブザーバビリティの基礎と実現』の書評。New Relicの機能を一通り網羅し、活用方法にも多くのページを割いた一冊。メトリクスやログといったテレメトリデータの考え方から、オブザーバビリティを実現する実践方法までを学べる。"
 slug: new-relic-observability-introduction
 date: 2024-08-10T00:00:00Z
 author: bmf-san

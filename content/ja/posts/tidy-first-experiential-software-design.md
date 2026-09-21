@@ -1,6 +1,6 @@
 ---
 title: Tidy First? ―個人で実践する経験主義的ソフトウェア設計
-description: "Tidy First? ―個人で実践する経験主義的ソフトウェア設計"
+description: "『Tidy First? ―個人で実践する経験主義的ソフトウェア設計』の書評。Kent Beckによる、コードの「整頓」をいつ行うかを考えさせてくれる薄くて濃い一冊。結合と凝集、そしてコストと収益という観点から、整頓の判断を経験主義的に捉える。主張が端的でわかりやすい。"
 slug: tidy-first-experiential-software-design
 date: 2025-01-06T00:00:00Z
 author: bmf-san

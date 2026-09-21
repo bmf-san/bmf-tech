@@ -1,6 +1,6 @@
 ---
 title: Knowledge and Skills of Production Management Systems for Engineers
-description: "Knowledge and Skills of Production Management Systems for Engineers"
+description: "A review of Knowledge and Skills of Production Management Systems for Engineers. A book for learning the domain of production management systems. It brings home, well beyond production management, that deeply understanding business workflows greatly affects system quality."
 slug: knowledge-and-skills-in-production-management-for-engineers
 date: 2024-04-04T00:00:00Z
 author: bmf-san

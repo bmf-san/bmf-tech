@@ -1,6 +1,6 @@
 ---
 title: 'GCP Textbook'
-description: 'GCP Textbook'
+description: "A review of GCP Textbook. An introductory book that clearly organizes GCP's main services. Good for grasping an overview of each cloud service, it also helps as a study reference for the Associate Cloud Engineer exam."
 slug: gcp-textbook
 date: 2021-07-27T00:00:00Z
 author: bmf-san

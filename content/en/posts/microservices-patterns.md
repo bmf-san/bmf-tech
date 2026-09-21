@@ -1,6 +1,6 @@
 ---
 title: "Microservices Patterns"
-description: "Microservices Patterns"
+description: "A review of Microservices Patterns. Chris Richardson's systematic organization of microservice design patterns. From decomposition strategies to Saga-based distributed transactions, API Composition, CQRS, and event sourcing, it lays out the challenges and standard solutions in distributed systems, complete with their trade-offs."
 slug: microservices-patterns
 date: 2026-09-20T00:00:00Z
 author: bmf-san

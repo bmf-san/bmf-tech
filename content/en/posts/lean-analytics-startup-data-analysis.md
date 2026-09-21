@@ -1,6 +1,6 @@
 ---
 title: 'LEAN ANALYTICS: Data Analysis and Utilization for Startups'
-description: "LEAN ANALYTICS: Data Analysis and Utilization for Startups"
+description: "A review of Lean Analytics. A book worth reading if you are involved with startups. Covering how to choose metrics and use them according to your business stage, it also helps beyond startups when you want insight into web-based businesses."
 slug: lean-analytics-startup-data-analysis
 date: 2016-11-19T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: 達人が教えるWebパフォーマンスチューニング 〜ISUCONから学ぶ高速化の実践
-description: "達人が教えるWebパフォーマンスチューニング 〜ISUCONから学ぶ高速化の実践"
+description: "『達人が教えるWebパフォーマンスチューニング 〜ISUCONから学ぶ高速化の実践』の書評。ISUCONを題材に、計測から始めるWebアプリケーションのパフォーマンスチューニングを体系的に学べる一冊。ISUCONに参加するなら一度は読んでおきたい、実践的な内容。"
 slug: web-performance-tuning-isucon-lessons
 date: 2022-06-09T00:00:00Z
 author: bmf-san

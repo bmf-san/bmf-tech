@@ -1,6 +1,6 @@
 ---
 title: 'GCP Textbook II: Container Development Edition - Detailed Explanation of Kubernetes, GKE, Cloud Run, and Service Mesh'
-description: 'GCP Textbook II: Container Development Edition - Detailed Explanation of Kubernetes, GKE, Cloud Run, and Service Mesh'
+description: "A review of GCP Textbook II: Container Development Edition. A book that clearly explains GCP's container-related services such as Kubernetes, GKE, Cloud Run, and service mesh. It also works as a study reference for the Associate Cloud Engineer exam."
 slug: gcp-textbook-container-development
 date: 2021-07-27T00:00:00Z
 author: bmf-san

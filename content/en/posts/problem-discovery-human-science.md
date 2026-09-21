@@ -1,6 +1,6 @@
 ---
 title: Is the Light On? The Human Science of Problem Discovery
-description: "Is the Light On? The Human Science of Problem Discovery"
+description: "A review of Are Your Lights On? A classic that, through memorable anecdotes, argues the core idea that problems are harder to find than to solve. It reminds you of something obvious yet easily forgotten: the importance of identifying the right problem."
 slug: problem-discovery-human-science
 date: 2023-05-19T00:00:00Z
 author: bmf-san

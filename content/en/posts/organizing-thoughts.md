@@ -1,6 +1,6 @@
 ---
 title: The Art of Thought Organization
-description: "The Art of Thought Organization"
+description: "A review of The Art of Thought Organization. Though first published before the internet spread, its message, the value of thinking with your own head and not over-relying on knowledge, still resonates today. In an essay-like voice, it lays out a philosophy for organizing your thinking."
 slug: organizing-thoughts
 date: 2024-12-08T00:00:00Z
 author: bmf-san

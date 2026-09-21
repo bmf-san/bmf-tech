@@ -1,6 +1,6 @@
 ---
 title: Stress-Free Mastery
-description: "Stress-Free Mastery"
+description: "A review of Stress-Free Mastery. A book that teaches how to cope with stress. You can learn good mindsets, ways of thinking, and concrete actions. Since building a healthy relationship with stress raises the quality of your time, it is worth recommending to anyone living in a stressful society."
 slug: stress-free-guide
 date: 2023-02-06T00:00:00Z
 author: bmf-san

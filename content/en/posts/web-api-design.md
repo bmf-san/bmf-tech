@@ -1,6 +1,6 @@
 ---
 title: 'Web API Design'
-description: 'Web API Design'
+description: "A review of Web API Design. A book that has you think about API design not just from the interface but from the entry point before it. It offers perspectives for designing good APIs: focusing on what users can do rather than the mechanism, and frameworks for surfacing an API's goals."
 slug: web-api-design
 date: 2024-07-28T00:00:00Z
 author: bmf-san

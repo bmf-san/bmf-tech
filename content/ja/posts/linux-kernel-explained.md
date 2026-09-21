@@ -1,6 +1,6 @@
 ---
 title: 絵で見てわかるLinuxカーネルの仕組み
-description: "絵で見てわかるLinuxカーネルの仕組み"
+description: "『絵で見てわかるLinuxカーネルの仕組み』の書評。Linuxカーネルの仕組みを、図を交えて初心者にもわかりやすく解説する一冊。プロセス管理やメモリ管理、ファイルシステムといった基礎を、カーネルを学ぶ入口として押さえられる。"
 slug: linux-kernel-explained
 date: 2025-01-31T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: Pythonからはじめるアルゴリズムトレード ―自動売買の基礎と機械学習の本格導入に向けたPythonプログラミング
-description: "Pythonからはじめるアルゴリズムトレード ―自動売買の基礎と機械学習の本格導入に向けたPythonプログラミング"
+description: "『Pythonからはじめるアルゴリズムトレード ―自動売買の基礎と機械学習の本格導入に向けたPythonプログラミング』の書評。Python環境構築やデータ分析から、移動平均やモメンタムといったトレード戦略、バックテスト、機械学習による予測、ブローカーAPIでの自動売買までを一冊で扱う入門書。"
 slug: python-for-algorithmic-trading
 date: 2026-04-28T00:00:00Z
 author: bmf-san

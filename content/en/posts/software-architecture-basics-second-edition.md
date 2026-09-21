@@ -1,6 +1,6 @@
 ---
 title: "Fundamentals of Software Architecture, 2nd Edition: An Engineering Approach"
-description: "Fundamentals of Software Architecture, 2nd Edition: An Engineering Approach"
+description: "A review of Fundamentals of Software Architecture, 2nd Edition. A textbook-like book by Mark Richards and Neal Ford. It treats architecture not as experience and intuition but as a measurable, governable engineering discipline, systematically explaining the definition, identification, measurement, and governance of architectural characteristics (non-functional requirements)."
 slug: software-architecture-basics-second-edition
 date: 2026-04-28T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: 'The Go Programming Language, 2nd Edition: An Idiomatic Go Practical Guide for Programmers from Other Languages'
-description: 'The Go Programming Language, 2nd Edition: An Idiomatic Go Practical Guide for Programmers from Other Languages'
+description: "A review of The Go Programming Language, 2nd Edition. More than a mere primer, it introduces many of Go's philosophies and idioms to deepen your understanding of the language. Digging into details other primers skip, it suits experienced programmers from other languages who want to write idiomatic Go."
 slug: idiomatic-go-practice-guide
 date: 2025-10-26T00:00:00Z
 author: bmf-san

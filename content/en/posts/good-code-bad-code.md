@@ -1,6 +1,6 @@
 ---
 title: Good Code, Bad Code
-description: "Good Code, Bad Code"
+description: "A review of Good Code, Bad Code. A book that concretely shows the difference between good and bad code through lenses like abstraction, modularity, error handling, and testing. It offers judgment criteria you can use directly in daily reviews, such as clarifying contracts, guarding against unexpected input, and making misuse hard."
 slug: good-code-bad-code
 date: 2026-07-28T00:00:00Z
 author: bmf-san

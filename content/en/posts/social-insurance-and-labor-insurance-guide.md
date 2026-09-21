@@ -1,6 +1,6 @@
 ---
 title: 'Revised 2nd Edition: A Quick Guide to Social Insurance and Labor Insurance Procedures'
-description: 'Revised 2nd Edition: A Quick Guide to Social Insurance and Labor Insurance Procedures'
+description: "A review of A Quick Guide to Social Insurance and Labor Insurance Procedures (Revised 2nd Edition). A book for quickly looking up and learning the filings and procedures for social and labor insurance. Even as the variety of forms and frequency of legal changes can be overwhelming, it helps you grasp the practical essentials fast."
 slug: social-insurance-and-labor-insurance-guide
 date: 2024-04-18T00:00:00Z
 author: bmf-san

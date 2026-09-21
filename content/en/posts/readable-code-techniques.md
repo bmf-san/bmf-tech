@@ -1,6 +1,6 @@
 ---
 title: Readable Code - Simple and Practical Techniques for Writing Better Code
-description: "Readable Code - Simple and Practical Techniques for Writing Better Code"
+description: "A review of The Art of Readable Code. A standard book that explains what makes code readable, with concrete techniques for naming, comments, control flow, and more. From the view that code is read far more than it is written, it offers practical guidance."
 slug: readable-code-techniques
 date: 2016-06-15T00:00:00Z
 author: bmf-san

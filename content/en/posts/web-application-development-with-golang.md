@@ -1,6 +1,6 @@
 ---
 title: 'Web Application Development with Go'
-description: 'Web Application Development with Go'
+description: "A review of Web Application Development with Go. Assuming a basic understanding of Go, a book that digs into the practical side of web application development. It lets you learn the flow of building web apps in Go along standard conventions."
 slug: web-application-development-with-golang
 date: 2017-03-12T00:00:00Z
 author: bmf-san

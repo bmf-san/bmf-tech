@@ -1,6 +1,6 @@
 ---
 title: Python for Algorithmic Trading
-description: "Python for Algorithmic Trading"
+description: "A review of Python for Algorithmic Trading. Yves Hilpisch's introduction to starting algorithmic trading with Python. In one volume it covers Python setup and data analysis, trading strategies like moving averages and momentum, backtesting, prediction with machine learning, and trade automation via broker APIs."
 slug: python-for-algorithmic-trading
 date: 2026-04-28T00:00:00Z
 author: bmf-san

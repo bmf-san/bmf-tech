@@ -1,6 +1,6 @@
 ---
 title: Purpose-Driven Thinking
-description: "Purpose-Driven Thinking"
+description: "A review of Purpose-Driven Thinking. A book that explains how to produce results at work through the framework of purpose, goals, and means. From the view that policy, execution, and results depend on strategy, whose source is company culture, it helps you truly grasp the idea that culture eats strategy."
 slug: purpose-driven-thinking
 date: 2025-12-29T00:00:00Z
 author: bmf-san

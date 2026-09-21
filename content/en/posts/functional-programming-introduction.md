@@ -1,6 +1,6 @@
 ---
 title: 'Understanding Functional Programming'
-description: 'Understanding Functional Programming'
+description: "A review of Grokking Functional Programming. A fine book that carefully explains functional programming using Scala. Some parts lean into Scala's language specifics, but you can gently learn the language-independent essence of functional programming."
 slug: functional-programming-introduction
 date: 2025-08-31T00:00:00Z
 author: bmf-san

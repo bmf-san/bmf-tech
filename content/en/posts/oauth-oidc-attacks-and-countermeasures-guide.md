@@ -1,6 +1,6 @@
 ---
 title: 'A Book to Understand Attacks and Countermeasures on OAuth and OIDC (Redirect Attack Edition)'
-description: 'A Book to Understand Attacks and Countermeasures on OAuth and OIDC (Redirect Attack Edition)'
+description: "A review of a book that organizes attacks and countermeasures on OAuth and OIDC (Redirect Attack Edition). It gently organizes the basic security of OAuth and OpenID Connect from the angle of attacks and defenses, using redirect-related attacks to help you grasp the essentials."
 slug: oauth-oidc-attacks-and-countermeasures-guide
 date: 2021-10-05T00:00:00Z
 author: bmf-san

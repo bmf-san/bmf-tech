@@ -1,6 +1,6 @@
 ---
 title: Go言語によるWebアプリケーション開発
-description: "Go言語によるWebアプリケーション開発"
+description: "『Go言語によるWebアプリケーション開発』の書評。Goの基本的な理解を前提に、Webアプリケーション開発の実践的な内容に踏み込む一冊。標準的な作法に沿って、GoでWebアプリを組み立てていく流れを学べる。"
 slug: web-application-development-with-golang
 date: 2017-03-12T00:00:00Z
 author: bmf-san

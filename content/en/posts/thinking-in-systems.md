@@ -1,6 +1,6 @@
 ---
 title: "Thinking in Systems: A Primer"
-description: "Thinking in Systems: A Primer"
+description: "A review of Thinking in Systems. A book by Donella Meadows, known as a classic of systems thinking. Around concepts like stocks and flows and feedback loops, it offers a way to see the world as a system of interrelated parts. It argues for finding the cause of problems in structure rather than individual elements, and for discerning leverage points."
 slug: thinking-in-systems
 date: 2026-07-28T00:00:00Z
 author: bmf-san

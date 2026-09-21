@@ -1,6 +1,6 @@
 ---
 title: 思考の整理学
-description: "思考の整理学"
+description: "『思考の整理学』の書評。初版はインターネット普及前だが、自分の頭で考え、知識に頼りすぎない姿勢の大切さは現代にも通じる一冊。エッセイ調の語り口で、思考を整理するための思想が綴られている。"
 slug: organizing-thoughts
 date: 2024-12-08T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: A Book to Train Your Programming Mind
-description: "A Book to Train Your Programming Mind"
+description: "A review of A Book to Train Your Programming Mind. Using arithmetic as material, it trains the kind of thinking that leads into programming. Its content is gentle and suits those first encountering computational thinking; it may feel light for adults, but it lets you check the basics of thought."
 slug: programming-brain-training
 date: 2023-06-24T00:00:00Z
 author: bmf-san

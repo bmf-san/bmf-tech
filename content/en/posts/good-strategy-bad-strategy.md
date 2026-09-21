@@ -1,6 +1,6 @@
 ---
 title: Good Strategy, Bad Strategy
-description: "Good Strategy, Bad Strategy"
+description: "A review of Good Strategy, Bad Strategy. Through many examples, it clarifies the difference between good and bad strategy. Good strategy has a kernel of diagnosis, guiding policy, and coherent action, concentrating strength; it also names the traits of bad strategy such as fluff and dodging the real problem, reminding you how vital it is to choose what not to do."
 slug: good-strategy-bad-strategy
 date: 2024-08-12T00:00:00Z
 author: bmf-san

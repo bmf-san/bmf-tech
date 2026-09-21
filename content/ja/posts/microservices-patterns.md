@@ -1,6 +1,6 @@
 ---
 title: マイクロサービスパターン
-description: "マイクロサービスパターン"
+description: "『マイクロサービスパターン』の書評。Chris Richardsonによる、マイクロサービスの設計パターンを体系化した一冊。分解戦略に始まり、Sagaによる分散トランザクション、API Composition、CQRS、イベントソーシングなど、分散システムで直面する課題と定石をトレードオフ付きで整理する。"
 slug: microservices-patterns
 date: 2026-09-20T00:00:00Z
 author: bmf-san

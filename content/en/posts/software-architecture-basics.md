@@ -1,6 +1,6 @@
 ---
 title: Fundamentals of Software Architecture
-description: "Fundamentals of Software Architecture"
+description: "A review of Fundamentals of Software Architecture. A book that explains how to evaluate software architecture and covers architecture patterns. Grasping the idea of architectural characteristics and the representative patterns, it helps you build a foundation for design decisions."
 slug: software-architecture-basics
 date: 2023-02-27T00:00:00Z
 author: bmf-san

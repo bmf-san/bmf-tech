@@ -1,6 +1,6 @@
 ---
 title: パーフェクトRuby
-description: "パーフェクトRuby"
+description: "『パーフェクトRuby』の書評。Rubyの言語仕様や機能を網羅的に解説する「パーフェクトシリーズ」の一冊。基礎から一歩踏み込んだ内容まで押さえられ、Rubyを腰を据えて学びたいときに頼りになる安定した内容。"
 slug: perfect-ruby
 date: 2024-05-04T00:00:00Z
 author: bmf-san

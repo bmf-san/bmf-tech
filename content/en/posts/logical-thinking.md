@@ -1,6 +1,6 @@
 ---
 title: Logical Thinking
-description: "Logical Thinking"
+description: "A review of Logical Thinking. A book for learning the basics of logical and critical thinking. The thinking skills it builds apply broadly, and although it is an older book, it is one you will want to keep on your shelf as a textbook."
 slug: logical-thinking
 date: 2015-05-19T00:00:00Z
 author: bmf-san

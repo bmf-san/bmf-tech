@@ -1,6 +1,6 @@
 ---
 title: 'Practical Introduction to Go Programming: Creating Web Applications from Scratch with the Standard Library'
-description: 'Practical Introduction to Go Programming: Creating Web Applications from Scratch with the Standard Library'
+description: "A review of Practical Introduction to Go Programming. A book for learning, hands-on, how to build web applications from scratch using only Go's standard library. Without relying on frameworks, you understand mechanisms like HTTP and templates by building them yourself."
 slug: golang-web-app-development-from-scratch
 date: 2022-11-23T00:00:00Z
 author: bmf-san

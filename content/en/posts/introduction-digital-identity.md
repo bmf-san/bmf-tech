@@ -1,6 +1,6 @@
 ---
 title: 'Introduction to Digital Identity: Essential Authentication, Authorization, and ID Management for Web Services'
-description: 'Introduction to Digital Identity: Essential Authentication, Authorization, and ID Management for Web Services'
+description: "A review of Introduction to Digital Identity. A book that plainly explains the basics of authentication, authorization, and ID management for web services, with real examples. It spans the mechanisms of OAuth 2.0, OpenID Connect, and SAML through single sign-on, social login, and using IDaaS, an ideal primer."
 slug: introduction-digital-identity
 date: 2026-02-20T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: "パスキーのすべて: Adoption, UX Design, and Implementation"
-description: "パスキーのすべて: Adoption, UX Design, and Implementation"
+description: "A review of Everything About Passkeys. From the context of passkeys' rise, password limits and phishing resistance, to WebAuthn and FIDO specifications, server- and platform-side implementation, login UX design, and operational pitfalls like device loss and recovery, it covers the whole picture in one volume."
 slug: passkeys-adoption-ux-implementation
 date: 2026-04-29T00:00:00Z
 author: bmf-san

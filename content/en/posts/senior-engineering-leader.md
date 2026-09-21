@@ -1,6 +1,6 @@
 ---
 title: The Work of a Senior Engineering Leader
-description: "The Work of a Senior Engineering Leader"
+description: "A review of The Work of a Senior Engineering Leader. A book for leaders shifting from getting things done individually to achieving results through others. It carefully organizes the areas technical skill alone cannot cover: delegating decisions, prioritization, and engaging stakeholders."
 slug: senior-engineering-leader
 date: 2026-07-28T00:00:00Z
 author: bmf-san

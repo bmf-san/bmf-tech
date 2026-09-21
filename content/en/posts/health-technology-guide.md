@@ -1,6 +1,6 @@
 ---
 title: 'The Complete Guide to Health Technology'
-description: 'The Complete Guide to Health Technology'
+description: "A review of The Complete Guide to Health Technology. A comprehensive, strongly evidence-conscious book on health. Centering on diet, it frames choices not as simply good or bad but as higher or lower risk. From the view that habits shape health, it also digs into controlling decisions and behavior."
 slug: health-technology-guide
 date: 2024-05-09T00:00:00Z
 author: bmf-san

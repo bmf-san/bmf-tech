@@ -1,6 +1,6 @@
 ---
 title: Lean UX ―リーン思考によるユーザエクスペリエンス・デザイン
-description: "Lean UX ―リーン思考によるユーザエクスペリエンス・デザイン"
+description: "『Lean UX ―リーン思考によるユーザエクスペリエンス・デザイン』の書評。UXデザインにリーンの考え方を持ち込み、仮説を素早く検証しながら価値をつくるアプローチを説く一冊。成果物づくりに偏らず、チームで学びながらユーザー体験を磨いていく進め方を学べる。"
 slug: lean-ux-user-experience-design
 date: 2016-12-27T00:00:00Z
 author: bmf-san

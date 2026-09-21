@@ -1,6 +1,6 @@
 ---
 title: 'freee Technical Book: Multi-Product Development at freee'
-description: 'freee Technical Book: Multi-Product Development at freee'
+description: "A review of freee Technical Book: Multi-Product Development at freee. A book on the practice of multi-product development in business SaaS. It concretely discusses design decisions in the field, such as how to carve out shared operations like application and approval as domains, the relationship between the platform and each app, and the trade-offs that arise."
 slug: freee-technical-book-multi-product-development
 date: 2024-11-09T00:00:00Z
 author: bmf-san

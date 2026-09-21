@@ -1,6 +1,6 @@
 ---
 title: 研鑽Rubyプログラミング 実践的なコードのための原則とトレードオフ
-description: "研鑽Rubyプログラミング 実践的なコードのための原則とトレードオフ"
+description: "『研鑽Rubyプログラミング 実践的なコードのための原則とトレードオフ』の書評。入門書を一通り終えた段階で、より実践的な知識を得たい人に向く一冊。原則とトレードオフという観点からRubyらしいコードのあり方をたどりつつRubyの魅力を伝え、言語に依らない設計の考え方も学べる。"
 slug: ruby-programming-principles-tradeoffs
 date: 2024-10-28T00:00:00Z
 author: bmf-san

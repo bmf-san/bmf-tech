@@ -1,6 +1,6 @@
 ---
 title: Prologへの入門
-description: "Prologへの入門"
+description: "『Prologへの入門』の書評。論理型・宣言型言語であるPrologの基礎に触れる一冊。Regoを学ぶ背景知識を得る目的で読んでも、深い思想までは追いきれずとも、宣言型プログラミングのエッセンスを汲み取れる。"
 slug: introduction-to-prolog
 date: 2025-08-09T00:00:00Z
 author: bmf-san

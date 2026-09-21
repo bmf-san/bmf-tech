@@ -1,6 +1,6 @@
 ---
 title: 'Introduction to Ruby for Aspiring Professionals'
-description: 'Introduction to Ruby for Aspiring Professionals'
+description: "A review of Introduction to Ruby for Aspiring Professionals. A book that explains Ruby in detail, from the basics to practical, work-ready content. Its careful, readable explanations make it well suited for those aiming to become professionals with Ruby to build a solid foundation."
 slug: ruby-introduction-for-beginners
 date: 2024-05-04T00:00:00Z
 author: bmf-san

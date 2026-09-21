@@ -1,6 +1,6 @@
 ---
 title: System Design Interview
-description: "System Design Interview"
+description: "A review of System Design Interview. The Japanese translation of the popular System Design Interview. Through interview scenarios, it concretely teaches how to design scalable systems. Books of this kind in Japanese are rare, making it one worth keeping on hand."
 slug: system-design-interview
 date: 2023-02-27T00:00:00Z
 author: bmf-san

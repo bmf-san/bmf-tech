@@ -1,6 +1,6 @@
 ---
 title: 内部構造から学ぶPostgreSQL―設計・運用計画の鉄則
-description: "内部構造から学ぶPostgreSQL―設計・運用計画の鉄則"
+description: "『内部構造から学ぶPostgreSQL―設計・運用計画の鉄則』の書評。PostgreSQLを運用するうえで知っておきたいことを、内部構造をふまえて設計・運用の観点から網羅する一冊。仕組みを理解したうえで、堅実な設計・運用計画を立てるための指針になる。"
 slug: postgresql-internal-structure
 date: 2024-05-07T00:00:00Z
 author: bmf-san

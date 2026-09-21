@@ -1,6 +1,6 @@
 ---
 title: 'Why Programs Work, 3rd Edition: Essential Programming Knowledge'
-description: "Why Programs Work, 3rd Edition: Essential Programming Knowledge"
+description: "A review of Why Programs Work, 3rd Edition. A book that carefully explains everything from how CPUs and memory work to how programs actually run. It is well suited to systematically revisiting the kind of fundamentals taught in a computer science curriculum."
 slug: programming-basics-why-programs-work
 date: 2024-05-01T00:00:00Z
 author: bmf-san

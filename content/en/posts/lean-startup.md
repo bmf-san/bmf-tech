@@ -1,6 +1,6 @@
 ---
 title: Lean Startup
-description: "Lean Startup"
+description: "A review of The Lean Startup. A bible of the lean startup approach. Based on lean manufacturing, it teaches how to rapidly validate uncertain ventures by turning the build-measure-learn cycle."
 slug: lean-startup
 date: 2017-06-01T00:00:00Z
 author: bmf-san

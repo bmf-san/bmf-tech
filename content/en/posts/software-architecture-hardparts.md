@@ -1,6 +1,6 @@
 ---
 title: Software Architecture Hardparts
-description: "Software Architecture Hardparts"
+description: "A review of Software Architecture: The Hard Parts. Centered on the hard decisions in distributed systems, it organizes ways of thinking and approaches for restructuring architecture. Reading Fundamentals of Software Architecture and Building Evolutionary Architectures first makes it easier going."
 slug: software-architecture-hardparts
 date: 2023-02-27T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: An Invitation to Engineering Organization Theory ~ Confronting Uncertainty and Refactoring Organizations
-description: "An Invitation to Engineering Organization Theory ~ Confronting Uncertainty and Refactoring Organizations"
+description: "A review of An Invitation to Engineering Organization Theory. Despite the title, its real theme is uncertainty. It puts into words the many uncertainties around engineering and how to face them. From members to architects, anyone involved in software can learn from it, regardless of role."
 slug: invitation-to-engineering-organization
 date: 2024-11-17T00:00:00Z
 author: bmf-san

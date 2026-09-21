@@ -1,6 +1,6 @@
 ---
 title: Introduction to Monitoring
-description: "Introduction to Monitoring"
+description: "A review of Introduction to Monitoring (Practical Monitoring). A book for learning the fundamentals and practice of monitoring. It covers the essentials of what and how to monitor while avoiding anti-patterns, a good primer when you are starting to learn monitoring."
 slug: introduction-monitoring
 date: 2019-01-26T00:00:00Z
 author: bmf-san

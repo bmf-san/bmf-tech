@@ -1,6 +1,6 @@
 ---
 title: 'Software Testing Textbook'
-description: 'Software Testing Textbook'
+description: "A review of Software Testing Textbook. A book for gaining systematic knowledge of software testing. It organizes the types and techniques of testing in one pass, well suited for those learning testing to grasp the overall picture."
 slug: software-testing-textbook
 date: 2022-11-22T00:00:00Z
 author: bmf-san

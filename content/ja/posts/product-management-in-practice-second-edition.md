@@ -1,6 +1,6 @@
 ---
 title: プロダクトマネージャーのしごと 第2版 ―1日目から使える実践ガイド
-description: "プロダクトマネージャーのしごと 第2版 ―1日目から使える実践ガイド"
+description: "『プロダクトマネージャーのしごと 第2版』の書評。Matt LeMayによる、PMの日々の振る舞いに重心を置いた実践書。キャリア論や手法論よりも「1日に何が起きるか」を扱い、コミュニケーション・組織化・リサーチ・実行というCOREスキルに沿って、具体的な立ち回りを解説する。"
 slug: product-management-in-practice-second-edition
 date: 2026-04-29T00:00:00Z
 author: bmf-san

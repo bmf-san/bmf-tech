@@ -1,6 +1,6 @@
 ---
 title: 'Practical Introduction to Redis: From Technical Mechanisms to Real-World Applications'
-description: 'Practical Introduction to Redis: From Technical Mechanisms to Real-World Applications'
+description: "A review of Practical Introduction to Redis. A book that broadly covers Redis from its mechanisms to real-world use and operations. Valuable amid a scarcity of Japanese Redis books, it even digs into internals. One to keep at hand for whenever you get stuck with Redis."
 slug: redis-practical-introduction
 date: 2025-02-15T00:00:00Z
 author: bmf-san

@@ -1,6 +1,6 @@
 ---
 title: システム設計の面接試験
-description: "システム設計の面接試験"
+description: "『システム設計の面接試験』の書評。英語圏で定番の『System Design Interview』の和訳本。スケーラブルなシステムをどう設計するかを、面接の題材を通じて具体的に学べる。日本語で読めるこの種の本は少なく、手元に置いておきたい一冊。"
 slug: system-design-interview
 date: 2023-02-27T00:00:00Z
 author: bmf-san

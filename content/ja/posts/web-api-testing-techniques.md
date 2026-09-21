@@ -1,6 +1,6 @@
 ---
 title: Web APIテスト技法
-description: "Web APIテスト技法"
+description: "『Web APIテスト技法』の書評。APIのテストを、5W1Hで問いを立てる発想や、テスタビリティを捉える10のPモデルといった枠組みから解説する一冊。テスト戦略・計画の立て方から、STRIDEや脅威ツリーによるセキュリティの観点まで、実務で役立つ視点が得られる。"
 slug: web-api-testing-techniques
 date: 2024-07-08T00:00:00Z
 author: bmf-san

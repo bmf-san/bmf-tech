@@ -1,6 +1,6 @@
 ---
 title: 'Understanding System Performance Through Illustrations'
-description: 'Understanding System Performance Through Illustrations'
+description: "A review of Understanding System Performance Through Illustrations. A book that clearly explains the basics of system performance with diagrams. From how to think about bottlenecks onward, it helps you build a foundation for performance-aware design and tuning."
 slug: system-performance-explained
 date: 2018-07-12T00:00:00Z
 author: bmf-san

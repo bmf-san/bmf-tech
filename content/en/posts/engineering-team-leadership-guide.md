@@ -1,6 +1,6 @@
 ---
 title: 'Leading Engineering Teams: A Practical Guide for Individual Contributors and Managers Learned from Google'
-description: "Leading Engineering Teams: A Practical Guide for Individual Contributors and Managers Learned from Google"
+description: "A review of Leading Engineering Teams. Drawing on Google's engineering culture, it covers how to lead teams effectively from both IC and manager perspectives. It systematically addresses topics rooted in daily work such as career ladders, code review, and handling technical debt, useful from senior engineers to EMs."
 slug: engineering-team-leadership-guide
 date: 2026-02-20T00:00:00Z
 author: bmf-san

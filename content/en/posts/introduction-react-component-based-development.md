@@ -1,6 +1,6 @@
 ---
 title: 'Introduction to React: Component-Based Web Frontend Development'
-description: 'Introduction to React: Component-Based Web Frontend Development'
+description: "A review of Introduction to React. A book for learning the basics of React, which builds web frontends from components. It suits those new to React in grasping the foundations; more advanced, production-level topics are best supplemented with other books."
 slug: introduction-react-component-based-development
 date: 2016-08-04T00:00:00Z
 author: bmf-san
