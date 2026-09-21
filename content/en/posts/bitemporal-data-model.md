@@ -14,6 +14,9 @@ tags:
   - History
   - Temporal Data Model
 translation_key: bitemporal-data-model
+recommended_books:
+  - asin: "4297140101"
+    title: "データモデリングでドメインを駆動する"
 draft: false
 ---
 

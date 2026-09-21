@@ -10,6 +10,9 @@ tags:
   - 尺取り法
   - Two-Pointer Approach
 translation_key: sliding-window-technique
+recommended_books:
+  - asin: "479817243X"
+    title: "アルゴリズム図鑑（増補改訂版）"
 draft: false
 ---
 

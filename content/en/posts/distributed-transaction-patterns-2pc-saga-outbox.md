@@ -13,6 +13,9 @@ tags:
   - Saga Pattern
   - Outbox Pattern
 translation_key: distributed-transaction-patterns-2pc-saga-outbox
+recommended_books:
+  - asin: "4873118751"
+    title: "分散システムデザインパターン"
 draft: false
 ---
 

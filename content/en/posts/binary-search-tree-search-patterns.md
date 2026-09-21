@@ -11,6 +11,9 @@ tags:
   - DFS
   - BFS
 translation_key: binary-search-tree-search-patterns
+recommended_books:
+  - asin: "479817243X"
+    title: "アルゴリズム図鑑（増補改訂版）"
 draft: false
 ---
 
@@ -20,7 +23,7 @@ draft: false
 A tree where for any node, the left child node < parent node < right child node.
 
 ```sh
-ex. 
+ex.
     5
    / \
   3   8

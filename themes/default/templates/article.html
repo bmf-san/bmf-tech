@@ -53,10 +53,12 @@
     </div>
   </header>
 
-  {{/* Amazon Books (book cover — shown at top for book-review posts) */}}
+  {{/* Amazon Books (book cover — shown at top ONLY for book-review posts) */}}
   {{- $hasBooks := false}}
   {{- with index .PluginData "amazon_books"}}{{if .books}}{{$hasBooks = true}}{{end}}{{end}}
-  {{if $hasBooks}}
+  {{- $isReview := false}}
+  {{- range .FrontMatter.Tags}}{{if or (eq . "書評") (eq . "Book Review")}}{{$isReview = true}}{{end}}{{end}}
+  {{if and $hasBooks $isReview}}
   {{with index .PluginData "amazon_books"}}
   <div class="flex flex-wrap justify-start gap-6 mb-8">
     {{range .books}}
@@ -95,6 +97,9 @@
 
   {{/* Amazon affiliate CTA (book-review posts): second touch point after content */}}
   {{template "amazon-books-card" .}}
+
+  {{/* Recommended books (non-review posts via recommended_books front-matter) */}}
+  {{template "recommended-books-card" .}}
 
   {{template "ad-unit-article-bottom" $}}
 

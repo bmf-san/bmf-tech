@@ -12,6 +12,9 @@ tags:
   - 認証
   - 認可
 translation_key: saml-2-0-spec-summary
+recommended_books:
+  - asin: "4814400985"
+    title: "デジタルアイデンティティのすべて"
 draft: false
 ---
 
