@@ -508,8 +508,6 @@
   translation_key: technology-radar
 - name: tee
   translation_key: tee
-- name: Template Method
-  translation_key: template-method
 - name: Temporal Data Model
   translation_key: temporal-data-model
 - name: termios
@@ -576,10 +574,6 @@
   translation_key: sakura-vps
 - name: アジャイル
   translation_key: agile
-- name: アダプターパターン
-  translation_key: adapter-pattern
-- name: アブストラクトファクトリーパターン
-  translation_key: abstract-factory-pattern
 - name: アルゴリズム
   translation_key: algorithms
 - name: アーキテクチャ
@@ -664,8 +658,6 @@
   translation_key: system-design
 - name: シャーディング
   translation_key: sharding
-- name: シングルトンパターン
-  translation_key: singleton-pattern
 - name: シンボリックリンク
   translation_key: symbolic-links
 - name: ジッター
@@ -684,14 +676,10 @@
   translation_key: stack
 - name: スタートアップ
   translation_key: startup
-- name: ステートパターン
-  translation_key: state-pattern
 - name: ステートフル
   translation_key: stateful
 - name: ステートレス
   translation_key: stateless
-- name: ストラテジーパターン
-  translation_key: strategy-pattern
 - name: スライディングウィンドウ
   translation_key: sliding-window
 - name: スレッド
@@ -722,8 +710,6 @@
   translation_key: technical-writing
 - name: テストダブル
   translation_key: test-double
-- name: テンプレートメソッドパターン
-  translation_key: template-method-pattern
 - name: デザインパターン
   translation_key: design-pattern
 - name: デバッグ
@@ -760,16 +746,10 @@
   translation_key: heap
 - name: ヒープソート
   translation_key: heap-sort
-- name: ファクトリーパターン
-  translation_key: factory-pattern
-- name: ファクトリーメソッドパターン
-  translation_key: factory-method-pattern
 - name: フォワードプロキシ
   translation_key: forward-proxy
 - name: フロントエンド
   translation_key: ja-3fed8dd7
-- name: ブリッジパターン
-  translation_key: bridge-pattern
 - name: プラットフォーム・エンジニアリング
   translation_key: platform-engineering
 - name: プロセス
@@ -794,8 +774,6 @@
   translation_key: managers
 - name: マージソート
   translation_key: merge-sort
-- name: メディエーターパターン
-  translation_key: mediator-pattern
 - name: メトリクス
   translation_key: metrics
 - name: メモリ

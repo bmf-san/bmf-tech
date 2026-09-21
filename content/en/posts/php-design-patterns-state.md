@@ -10,7 +10,6 @@ tags:
   - GoF
   - PHP
   - Design Patterns
-  - State Pattern
 translation_key: php-design-patterns-state
 draft: false
 ---

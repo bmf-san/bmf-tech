@@ -10,7 +10,6 @@ tags:
   - デザインパターン
   - PHP
   - GoF
-  - ストラテジーパターン
 translation_key: php-design-patterns-strategy
 draft: false
 ---

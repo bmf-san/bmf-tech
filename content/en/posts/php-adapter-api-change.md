@@ -8,7 +8,6 @@ categories:
   - Application
 tags:
   - PHP
-  - Adapter Pattern
   - Design Patterns
 translation_key: php-adapter-api-change
 draft: false

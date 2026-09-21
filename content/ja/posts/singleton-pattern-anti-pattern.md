@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - アプリケーション
 tags:
-  - シングルトンパターン
+  - デザインパターン
   - Golang
 translation_key: singleton-pattern-anti-pattern
 draft: false

@@ -9,7 +9,6 @@ categories:
 tags:
   - PHP
   - Design Patterns
-  - Mediator Pattern
   - GoF
 translation_key: php-design-patterns-mediator
 draft: false

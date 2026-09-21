@@ -10,7 +10,6 @@ tags:
   - GoF
   - PHP
   - デザインパターン
-  - ブリッジパターン
 translation_key: php-design-patterns-bridge
 draft: false
 ---
