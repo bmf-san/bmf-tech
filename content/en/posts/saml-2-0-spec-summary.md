@@ -8,6 +8,7 @@ categories:
   - Architecture
 tags:
   - SAML
+  - SSO
   - Authentication
   - Authorization
 translation_key: saml-2-0-spec-summary
