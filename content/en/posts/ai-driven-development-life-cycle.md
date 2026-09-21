@@ -1,5 +1,6 @@
 ---
 title: "What Is AI-DLC (AI-Driven Development Life Cycle)?"
+description: "An article organizing what AWS's AI-DLC (AI-Driven Development Life Cycle) is. Positioning AI as a central collaborator in development, it explains its two pillars, AI executes while humans supervise and dynamic team collaboration, and the mental model of rapidly iterating planning, alignment, and implementation, contrasted with the traditional SDLC."
 slug: ai-driven-development-life-cycle
 date: 2026-06-15T00:00:00Z
 author: bmf-san
