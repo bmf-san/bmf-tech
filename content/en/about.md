@@ -88,11 +88,11 @@ Contract web development across diverse clients and projects.
 
 | Category | Link | Description |
 |---|---|---|
-| Platform / Infrastructure | [goblin](https://github.com/bmf-san/goblin) | Trie-based HTTP router for Go. |
-| Platform / Infrastructure | [godon](https://github.com/bmf-san/godon) | L4 load balancer written in Go. |
-| Platform / Infrastructure | [gondola](https://github.com/bmf-san/gondola) | YAML-based reverse proxy written in Go. |
-| Platform / Infrastructure | [go-router-benchmark](https://github.com/bmf-san/go-router-benchmark) | Benchmark tests for HTTP routers in Go. |
-| Platform / Infrastructure | [poc-opa-access-control-system](https://github.com/bmf-san/poc-opa-access-control-system) | Proof of Concept for an access control system using Open Policy Agent. |
+| Infrastructure | [goblin](https://github.com/bmf-san/goblin) | Trie-based HTTP router for Go. |
+| Infrastructure | [godon](https://github.com/bmf-san/godon) | L4 load balancer written in Go. |
+| Infrastructure | [gondola](https://github.com/bmf-san/gondola) | YAML-based reverse proxy written in Go. |
+| Infrastructure | [go-router-benchmark](https://github.com/bmf-san/go-router-benchmark) | Benchmark tests for HTTP routers in Go. |
+| Infrastructure | [poc-opa-access-control-system](https://github.com/bmf-san/poc-opa-access-control-system) | Proof of Concept for an access control system using Open Policy Agent. |
 | CLI Tools | [ggc](https://github.com/bmf-san/ggc) | Modern Git CLI tool with incremental search UI. |
 | CLI Tools | [gohan](https://github.com/bmf-san/gohan) | A simple and fast static site generator in Go with incremental build support. |
 | Backend | [gobel-api](https://github.com/bmf-san/gobel-api) | Headless CMS written in Go. |

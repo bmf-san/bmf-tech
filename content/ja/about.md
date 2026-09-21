@@ -88,11 +88,11 @@ HR テック領域のプラットフォーム開発、システムアーキテ�
 
 | カテゴリ | リンク | 説明 |
 |---|---|---|
-| プラットフォーム・インフラ | [goblin](https://github.com/bmf-san/goblin) | Go 製トライ木ベースの HTTP ルーター。 |
-| プラットフォーム・インフラ | [godon](https://github.com/bmf-san/godon) | Go 製の L4 ロードバランサ。 |
-| プラットフォーム・インフラ | [gondola](https://github.com/bmf-san/gondola) | YAML ベースの Go 製リバースプロキシ。 |
-| プラットフォーム・インフラ | [go-router-benchmark](https://github.com/bmf-san/go-router-benchmark) | Go 製 HTTP ルーターのベンチマークテスト。 |
-| プラットフォーム・インフラ | [poc-opa-access-control-system](https://github.com/bmf-san/poc-opa-access-control-system) | Open Policy Agent を用いたアクセス制御基盤の概念検証（PoC）。 |
+| インフラ | [goblin](https://github.com/bmf-san/goblin) | Go 製トライ木ベースの HTTP ルーター。 |
+| インフラ | [godon](https://github.com/bmf-san/godon) | Go 製の L4 ロードバランサ。 |
+| インフラ | [gondola](https://github.com/bmf-san/gondola) | YAML ベースの Go 製リバースプロキシ。 |
+| インフラ | [go-router-benchmark](https://github.com/bmf-san/go-router-benchmark) | Go 製 HTTP ルーターのベンチマークテスト。 |
+| インフラ | [poc-opa-access-control-system](https://github.com/bmf-san/poc-opa-access-control-system) | Open Policy Agent を用いたアクセス制御基盤の概念検証（PoC）。 |
 | CLIツール | [ggc](https://github.com/bmf-san/ggc) | コマンドラインとインクリメンタル検索 UI を備えたモダンな Git CLI ツール。 |
 | CLIツール | [gohan](https://github.com/bmf-san/gohan) | Go 製の差分ビルド対応シンプル高速スタティックサイトジェネレーター。 |
 | バックエンド | [gobel-api](https://github.com/bmf-san/gobel-api) | Go 製ヘッドレス CMS。 |
