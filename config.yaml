@@ -64,14 +64,6 @@ syntax_highlight:
   theme: "github"
   line_numbers: false
 
-ogp:
-  enabled: true
-  background_color: "#ffffff"
-  text_color: "#111111"
-  logo_file: ""
-  width: 1200
-  height: 630
-
 i18n:
   default_locale: "en"
   locales:
@@ -86,3 +78,8 @@ plugins:
     enabled: true
     tag: "bmf035-22"
     recent_limit: 6
+  ogp:
+    enabled: true
+    logo_file: ""
+    width: 1200
+    height: 630
