@@ -1,5 +1,5 @@
 ---
-title: "What are OpenID Connect Discovery and Metadata? Auto-configuration and Key Retrieval"
+title: "OpenID Connect Discovery and Metadata: Auto-Configuration and jwks_uri Key Retrieval"
 description: "Explains the role of the OpenID Connect ID Token and how Discovery (OpenID Connect Discovery / RFC 8414 AS Metadata) enables auto-configuration and public key retrieval, including key rotation via jwks_uri."
 slug: oidc-discovery-metadata
 date: 2026-07-10T00:00:00Z
