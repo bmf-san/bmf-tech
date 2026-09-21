@@ -1,6 +1,6 @@
 ---
 title: OAuth、OAuth認証、OpenID Connectの違いを整理して理解できる本
-description: OAuth、OAuth認証、OpenID Connectの違いを整理して理解できる書籍を紹介します。
+description: "『OAuth、OAuth認証、OpenID Connectの違いを整理して理解できる本』の書評。混同されがちなOAuth、OAuth認証、OpenID Connectの違いを、入門者にもわかりやすく整理して解説する一冊。それぞれの役割と使いどころを理解する取っ掛かりになる。"
 slug: understanding-oauth-oauth2-openid-connect-differences
 date: 2021-10-05T00:00:00Z
 author: bmf-san

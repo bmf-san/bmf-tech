@@ -1,6 +1,6 @@
 ---
 title: Knowledge and Technology of Logistics Systems for Engineers
-description: "Knowledge and Technology of Logistics Systems for Engineers"
+description: "A review of Knowledge and Skills of Logistics Systems for Engineers. A book for learning the domain of logistics systems. It explains how to optimize the flow and management of goods together with business knowledge, offering a foothold for understanding logistics-related systems."
 slug: logistics-systems-knowledge-and-skills-for-engineers
 date: 2024-04-04T00:00:00Z
 author: bmf-san

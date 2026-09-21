@@ -1,6 +1,6 @@
 ---
 title: Building Multi-Tenant SaaS Architecture - Principles, Best Practices, AWS Architecture Patterns
-description: 'Design multitenant SaaS architecture patterns: control plane, application plane, tenant routing, and data partitioning strategies.'
+description: "A review of Building Multi-Tenant SaaS Architecture. It comprehensively explains the essentials specific to SaaS: the two-plane structure of control plane and application plane, tenant authentication and routing, data partitioning, and noisy-neighbor mitigation. Not tied to a particular domain, it reads as broadly applicable."
 slug: building-multitenant-saas-architecture
 date: 2025-04-20T00:00:00Z
 author: bmf-san

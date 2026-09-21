@@ -1,6 +1,6 @@
 ---
 title: 'Balancing Coupling in Software Design: Principles of Modularity for Sustainable Growth'
-description: 'Balancing Coupling in Software Design: Principles of Modularity for Sustainable Growth'
+description: "A review of Balancing Coupling in Software Design. A rare book that theoretically teaches how to manage architectural complexity through the lens of coupling. Its perspectives for analyzing coupling are exceptionally well organized, making it a reference you will want to consult while designing."
 slug: software-design-modularity-principles
 date: 2025-12-29T00:00:00Z
 author: bmf-san

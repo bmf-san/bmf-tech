@@ -1,6 +1,6 @@
 ---
 title: 'A Comprehensive Guide to the Distributed SQL Query Engine Trino'
-description: 'A Comprehensive Guide to the Distributed SQL Query Engine Trino'
+description: "A review of A Comprehensive Guide to the Distributed SQL Query Engine Trino. It explains Trino, which, via ANSI SQL support and federated queries, handles data across different systems and scales resources in a distributed way for OLAP workloads. You learn an approach that differs from traditional data warehouses."
 slug: trino-sql-query-engine-guide
 date: 2024-10-24T00:00:00Z
 author: bmf-san
