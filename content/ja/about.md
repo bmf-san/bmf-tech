@@ -98,6 +98,7 @@ HR テック領域のプラットフォーム開発、システムアーキテ�
 | Webシステム | [gobel-api](https://github.com/bmf-san/gobel-api) | Go 製ヘッドレス CMS。 |
 | Webサイト | [bmf-tech](https://github.com/bmf-san/bmf-tech) | 個人テックブログ。 |
 | テンプレート | [go-clean-architecture-web-application-boilerplate](https://github.com/bmf-san/go-clean-architecture-web-application-boilerplate) | Go とクリーンアーキテクチャによる Web アプリボイラープレート。 |
+| フレームワーク | [sleyt](https://github.com/bmf-san/sleyt) | ミニマルでモダンな CSS フレームワーク。 |
 | モバイルアプリ | [Notifify](https://apps.apple.com/jp/app/notifify/id6762620021) | 完了管理のない、通知だけのシンプルなリマインダーiOSアプリ。 |
 | モバイルアプリ | [Bookstacks](https://apps.apple.com/jp/app/bookstacks-%E6%9C%AC%E6%A3%9A%E7%AE%A1%E7%90%86/id6760252143#information) | ISBNバーコードスキャンで書籍を登録・管理するiOSアプリ。ラベルで整理、書影を自動取得。|
 | モバイルアプリ | [Done Log](https://apps.apple.com/jp/app/done-log/id6759606196) | シンプルな習慣・行動ログアプリ。 |

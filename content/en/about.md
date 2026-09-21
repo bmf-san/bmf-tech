@@ -98,6 +98,7 @@ Contract web development across diverse clients and projects.
 | Web Application | [gobel-api](https://github.com/bmf-san/gobel-api) | Headless CMS written in Go. |
 | Web Application | [bmf-tech](https://github.com/bmf-san/bmf-tech) | Personal tech blog. |
 | Templates | [go-clean-architecture-web-application-boilerplate](https://github.com/bmf-san/go-clean-architecture-web-application-boilerplate) | Web application boilerplate using Go and Clean Architecture. |
+| Framework | [sleyt](https://github.com/bmf-san/sleyt) | A minimal and modern CSS framework. |
 | Mobile Apps | [Notifify](https://apps.apple.com/jp/app/notifify/id6762620021) | A minimal notification-only reminder app for iOS — no completion tracking, just reminds you. |
 | Mobile Apps | [Bookstacks](https://apps.apple.com/jp/app/bookstacks-%E6%9C%AC%E6%A3%9A%E7%AE%A1%E7%90%86/id6760252143#information) | iOS app for managing your bookshelf — scan ISBN barcodes, organize with labels, and fetch cover images automatically. |
 | Mobile Apps | [Done Log](https://apps.apple.com/jp/app/done-log/id6759606196) | A simple habit and activity logging app. |
