@@ -88,16 +88,16 @@ HR テック領域のプラットフォーム開発、システムアーキテ�
 
 | カテゴリ | リンク | 説明 |
 |---|---|---|
-| インフラ | [goblin](https://github.com/bmf-san/goblin) | Go 製トライ木ベースの HTTP ルーター。 |
-| インフラ | [godon](https://github.com/bmf-san/godon) | Go 製の L4 ロードバランサ。 |
-| インフラ | [gondola](https://github.com/bmf-san/gondola) | YAML ベースの Go 製リバースプロキシ。 |
-| インフラ | [go-router-benchmark](https://github.com/bmf-san/go-router-benchmark) | Go 製 HTTP ルーターのベンチマークテスト。 |
-| インフラ | [poc-opa-access-control-system](https://github.com/bmf-san/poc-opa-access-control-system) | Open Policy Agent を用いたアクセス制御基盤の概念検証（PoC）。 |
+| ライブラリ | [goblin](https://github.com/bmf-san/goblin) | Go 製トライ木ベースの HTTP ルーター。 |
+| ライブラリ | [godon](https://github.com/bmf-san/godon) | Go 製の L4 ロードバランサ。 |
+| ライブラリ | [gondola](https://github.com/bmf-san/gondola) | YAML ベースの Go 製リバースプロキシ。 |
+| ツール | [go-router-benchmark](https://github.com/bmf-san/go-router-benchmark) | Go 製 HTTP ルーターのベンチマークテスト。 |
+| PoC | [poc-opa-access-control-system](https://github.com/bmf-san/poc-opa-access-control-system) | Open Policy Agent を用いたアクセス制御基盤の概念検証（PoC）。 |
 | CLIツール | [ggc](https://github.com/bmf-san/ggc) | コマンドラインとインクリメンタル検索 UI を備えたモダンな Git CLI ツール。 |
 | CLIツール | [gohan](https://github.com/bmf-san/gohan) | Go 製の差分ビルド対応シンプル高速スタティックサイトジェネレーター。 |
-| バックエンド | [gobel-api](https://github.com/bmf-san/gobel-api) | Go 製ヘッドレス CMS。 |
-| アーキテクチャ | [go-clean-architecture-web-application-boilerplate](https://github.com/bmf-san/go-clean-architecture-web-application-boilerplate) | Go とクリーンアーキテクチャによる Web アプリボイラープレート。 |
+| Webシステム | [gobel-api](https://github.com/bmf-san/gobel-api) | Go 製ヘッドレス CMS。 |
 | Webサイト | [bmf-tech](https://github.com/bmf-san/bmf-tech) | 個人テックブログ。 |
+| テンプレート | [go-clean-architecture-web-application-boilerplate](https://github.com/bmf-san/go-clean-architecture-web-application-boilerplate) | Go とクリーンアーキテクチャによる Web アプリボイラープレート。 |
 | モバイルアプリ | [Notifify](https://apps.apple.com/jp/app/notifify/id6762620021) | 完了管理のない、通知だけのシンプルなリマインダーiOSアプリ。 |
 | モバイルアプリ | [Bookstacks](https://apps.apple.com/jp/app/bookstacks-%E6%9C%AC%E6%A3%9A%E7%AE%A1%E7%90%86/id6760252143#information) | ISBNバーコードスキャンで書籍を登録・管理するiOSアプリ。ラベルで整理、書影を自動取得。|
 | モバイルアプリ | [Done Log](https://apps.apple.com/jp/app/done-log/id6759606196) | シンプルな習慣・行動ログアプリ。 |
