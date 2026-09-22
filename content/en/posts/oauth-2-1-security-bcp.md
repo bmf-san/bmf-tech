@@ -26,6 +26,9 @@ The related specifications are as follows.
 - [RFC 7636 PKCE](https://www.rfc-editor.org/rfc/rfc7636)
 - [The OAuth 2.1 Authorization Framework (draft)](https://datatracker.ietf.org/doc/draft-ietf-oauth-v2-1/)
 
+# Is OAuth 2.1 an RFC?
+No. As of 2026, OAuth 2.1 is an IETF draft (`draft-ietf-oauth-v2-1`), not a published RFC. Its security baseline **is** an RFC: **RFC 9700 (OAuth 2.0 Security Best Current Practice)**, which the IETF released in January 2025. OAuth 2.1 mainly codifies RFC 9700 and RFC 6749 into one "secure by default" draft, so the specification number to cite today is RFC 9700.
+
 # Positioning: 6749 -> 9700 -> OAuth 2.1
 
 Understanding the relationship among the three makes the big picture clear.
