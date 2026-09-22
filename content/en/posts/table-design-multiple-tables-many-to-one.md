@@ -7,7 +7,7 @@ categories:
   - Database
 tags:
   - Polymorphic
-  - SQL Anti-pattern
+  - SQL
 description: 'Learn how to handle a table related to multiple tables in many-to-one relationships. Compares polymorphic associations (SQL anti-pattern, no FK constraints) with cross/pivot tables.'
 translation_key: table-design-multiple-tables-many-to-one
 draft: false
