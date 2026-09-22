@@ -7,7 +7,6 @@ author: bmf-san
 categories:
   - Database
 tags:
-  - Normalization Theory
   - Normalization
 translation_key: normalization-theory
 draft: false

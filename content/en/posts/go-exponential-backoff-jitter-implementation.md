@@ -7,9 +7,7 @@ author: bmf-san
 categories:
   - Application
 tags:
-  - Exponential Backoff
   - Retry
-  - Jitter
 translation_key: go-exponential-backoff-jitter-implementation
 draft: false
 ---

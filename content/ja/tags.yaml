@@ -322,8 +322,6 @@
   translation_key: multipass
 - name: MySQL
   translation_key: mysql
-- name: mysqldump
-  translation_key: mysqldump
 - name: N+1
   translation_key: n-1
 - name: New Relic
@@ -474,8 +472,6 @@
   translation_key: sqlc
 - name: SQLite
   translation_key: sqlite
-- name: SQLアンチパターン
-  translation_key: sql-anti-pattern
 - name: SRE
   translation_key: ja-a1659538
 - name: SSG
@@ -604,8 +600,6 @@
   translation_key: gateway
 - name: ゲーム
   translation_key: game
-- name: コンシューマー駆動契約テスト
-  translation_key: consumer-driven-contract-testing
 - name: コンテキストエンジニアリング
   translation_key: context-engineering
 - name: コンテナ
@@ -634,8 +628,6 @@
   translation_key: sharding
 - name: シンボリックリンク
   translation_key: symbolic-links
-- name: ジッター
-  translation_key: jitter
 - name: ジョブ理論
   translation_key: jobs-theory
 - name: スイステーブル
@@ -704,8 +696,6 @@
   translation_key: platform-engineering
 - name: プロセス
   translation_key: process
-- name: プロデューサー駆動契約テスト
-  translation_key: provider-driven-contract-testing
 - name: プロファイリング
   translation_key: profiling
 - name: プロンプトエンジニアリング
@@ -812,8 +802,6 @@
   translation_key: history
 - name: 思考法
   translation_key: thinking-methods
-- name: 指数バックオフ
-  translation_key: exponential-backoff
 - name: 振り返り
   translation_key: retrospective
 - name: 振り返りと抱負
@@ -824,8 +812,6 @@
   translation_key: functional-testing
 - name: 正規化
   translation_key: normalization
-- name: 正規化理論
-  translation_key: normalization-theory
 - name: 正規表現
   translation_key: regular-expressions
 - name: 無名関数

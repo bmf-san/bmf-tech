@@ -7,9 +7,7 @@ author: bmf-san
 categories:
   - アプリケーション
 tags:
-  - 指数バックオフ
   - リトライ
-  - ジッター
 translation_key: go-exponential-backoff-jitter-implementation
 draft: false
 ---

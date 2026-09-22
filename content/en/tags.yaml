@@ -148,8 +148,6 @@
   translation_key: compression
 - name: Constraints
   translation_key: constraints
-- name: Consumer-Driven Contract Testing
-  translation_key: consumer-driven-contract-testing
 - name: Container
   translation_key: container
 - name: Context Engineering
@@ -274,8 +272,6 @@
   translation_key: event-loop
 - name: exec
   translation_key: exec
-- name: Exponential Backoff
-  translation_key: exponential-backoff
 - name: fan-in
   translation_key: fan-in
 - name: fan-out
@@ -412,8 +408,6 @@
   translation_key: javascript
 - name: Jest
   translation_key: jest
-- name: Jitter
-  translation_key: jitter
 - name: Job Change
   translation_key: job-change
 - name: Jobs Theory
@@ -530,8 +524,6 @@
   translation_key: multipass
 - name: MySQL
   translation_key: mysql
-- name: mysqldump
-  translation_key: mysqldump
 - name: N+1
   translation_key: n-1
 - name: New Relic
@@ -550,8 +542,6 @@
   translation_key: non-temporal
 - name: Normalization
   translation_key: normalization
-- name: Normalization Theory
-  translation_key: normalization-theory
 - name: Notification
   translation_key: notification
 - name: npm
@@ -652,8 +642,6 @@
   translation_key: promtail
 - name: Protocol Buffers
   translation_key: protocol-buffers
-- name: Provider-Driven Contract Testing
-  translation_key: provider-driven-contract-testing
 - name: Public Key Cryptography
   translation_key: public-key-cryptography
 - name: pundit
@@ -788,8 +776,6 @@
   translation_key: spanner
 - name: SQL
   translation_key: sql
-- name: SQL Anti-pattern
-  translation_key: sql-anti-pattern
 - name: sqlc
   translation_key: sqlc
 - name: SQLite

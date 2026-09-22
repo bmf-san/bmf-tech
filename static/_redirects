@@ -1231,6 +1231,22 @@
 /ja/tags/アーキテクチャレビューボード/  /ja/tags/アーキテクチャ/  301
 /ja/tags/モジュラモノリス/  /ja/tags/モノリス/  301
 
+# Tag consolidation: testing, database, resilience
+/tags/consumer-driven-contract-testing/  /tags/contract-testing/  301
+/tags/provider-driven-contract-testing/  /tags/contract-testing/  301
+/tags/normalization-theory/  /tags/normalization/  301
+/tags/mysqldump/  /tags/mysql/  301
+/tags/exponential-backoff/  /tags/retry/  301
+/tags/jitter/  /tags/retry/  301
+/tags/sql-anti-pattern/  /tags/sql/  301
+/ja/tags/コンシューマー駆動契約テスト/  /ja/tags/契約テスト/  301
+/ja/tags/プロデューサー駆動契約テスト/  /ja/tags/契約テスト/  301
+/ja/tags/正規化理論/  /ja/tags/正規化/  301
+/ja/tags/mysqldump/  /ja/tags/mysql/  301
+/ja/tags/指数バックオフ/  /ja/tags/リトライ/  301
+/ja/tags/ジッター/  /ja/tags/リトライ/  301
+/ja/tags/SQLアンチパターン/  /ja/tags/sql/  301
+
 # Dynamic redirects
 /categories/:splat  /ja/categories/:splat  301
 /tags/:splat  /ja/tags/:splat  301

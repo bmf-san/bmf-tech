@@ -8,7 +8,7 @@ categories:
   - データベース
 tags:
   - ポリモーフィック
-  - SQLアンチパターン
+  - sql
 translation_key: table-design-multiple-tables-many-to-one
 draft: false
 ---

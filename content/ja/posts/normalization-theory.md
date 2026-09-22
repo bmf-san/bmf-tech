@@ -7,7 +7,6 @@ author: bmf-san
 categories:
   - データベース
 tags:
-  - 正規化理論
   - 正規化
 translation_key: normalization-theory
 draft: false
