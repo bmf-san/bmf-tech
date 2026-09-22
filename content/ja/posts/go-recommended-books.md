@@ -88,6 +88,7 @@ GoでのWeb開発を、実装例を通して学べる一冊である。ルーテ
 
 ## 関連するまとめ記事
 
+- [📚 すべての技術書まとめ（一覧）](/ja/posts/tech-book-roundups/)
 - [Ruby / Railsのおすすめ本](/ja/posts/ruby-recommended-books/)
 - [良いコードを書くためのおすすめ本](/ja/posts/clean-code-recommended-books/)
 - [ソフトウェアアーキテクチャのおすすめ本](/ja/posts/software-architecture-recommended-books/)

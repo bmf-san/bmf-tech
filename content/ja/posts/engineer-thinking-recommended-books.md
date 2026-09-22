@@ -95,5 +95,6 @@ draft: false
 
 ## 関連するまとめ記事
 
+- [📚 すべての技術書まとめ（一覧）](/ja/posts/tech-book-roundups/)
 - [エンジニアリングマネジメントのおすすめ本](/ja/posts/engineering-management-recommended-books/)
 - [アジャイル開発のおすすめ本](/ja/posts/agile-development-recommended-books/)

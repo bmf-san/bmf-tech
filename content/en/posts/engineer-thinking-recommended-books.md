@@ -95,5 +95,6 @@ Start by building a base with problem solving and logical thinking. Widen into a
 
 ## Related roundups
 
+- [📚 All tech book roundups](/posts/tech-book-roundups/)
 - [Engineering management books](/posts/engineering-management-recommended-books/)
 - [Agile development books](/posts/agile-development-recommended-books/)

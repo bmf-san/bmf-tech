@@ -89,6 +89,7 @@ draft: false
 
 ## 関連するまとめ記事
 
+- [📚 すべての技術書まとめ（一覧）](/ja/posts/tech-book-roundups/)
 - [Go言語のおすすめ本](/ja/posts/go-recommended-books/)
 - [ソフトウェアアーキテクチャのおすすめ本](/ja/posts/software-architecture-recommended-books/)
 - [ソフトウェアテストのおすすめ本](/ja/posts/software-testing-recommended-books/)

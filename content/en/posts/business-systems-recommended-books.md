@@ -59,5 +59,6 @@ Start from the title closest to the work you touch. Once you hold the domain bas
 
 ## Related roundups
 
+- [📚 All tech book roundups](/posts/tech-book-roundups/)
 - [Database books](/posts/database-recommended-books/)
 - [Software architecture books](/posts/software-architecture-recommended-books/)

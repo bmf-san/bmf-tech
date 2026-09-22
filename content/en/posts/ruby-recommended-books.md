@@ -74,5 +74,6 @@ Start with the two primers to build a Ruby foundation, then widen your range wit
 
 ## Related roundups
 
+- [📚 All tech book roundups](/posts/tech-book-roundups/)
 - [Go books](/posts/go-recommended-books/)
 - [Good code books](/posts/clean-code-recommended-books/)

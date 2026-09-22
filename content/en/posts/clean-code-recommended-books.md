@@ -89,6 +89,7 @@ Start with the two staples to set a standard for readability, then improve exist
 
 ## Related roundups
 
+- [📚 All tech book roundups](/posts/tech-book-roundups/)
 - [Go books](/posts/go-recommended-books/)
 - [Software architecture books](/posts/software-architecture-recommended-books/)
 - [Software testing books](/posts/software-testing-recommended-books/)

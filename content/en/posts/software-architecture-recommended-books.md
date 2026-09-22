@@ -111,6 +111,7 @@ Start with the three fundamentals, then move into trade-offs and domain-driven d
 
 ## Related roundups
 
+- [📚 All tech book roundups](/posts/tech-book-roundups/)
 - [Database books](/posts/database-recommended-books/)
 - [Software testing books](/posts/software-testing-recommended-books/)
 - [Engineering management books](/posts/engineering-management-recommended-books/)

@@ -90,6 +90,7 @@ draft: false
 
 ## 関連するまとめ記事
 
+- [📚 すべての技術書まとめ（一覧）](/ja/posts/tech-book-roundups/)
 - [ソフトウェアアーキテクチャのおすすめ本](/ja/posts/software-architecture-recommended-books/)
 - [データベースのおすすめ本](/ja/posts/database-recommended-books/)
 - [ソフトウェアテストのおすすめ本](/ja/posts/software-testing-recommended-books/)

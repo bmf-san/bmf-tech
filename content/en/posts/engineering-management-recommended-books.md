@@ -110,6 +110,7 @@ Start with organization theory and team design, then move to the role closest to
 
 ## Related roundups
 
+- [📚 All tech book roundups](/posts/tech-book-roundups/)
 - [Software architecture books](/posts/software-architecture-recommended-books/)
 - [Database books](/posts/database-recommended-books/)
 - [Software testing books](/posts/software-testing-recommended-books/)
