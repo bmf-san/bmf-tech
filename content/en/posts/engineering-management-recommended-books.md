@@ -107,3 +107,11 @@ A broad, practical guide to a product manager's work you can use from day one. I
 ## Wrap-up
 
 Start with organization theory and team design, then move to the role closest to your own. Go deep on technical strategy and product management as your span of responsibility grows. Every book has a full review here, so start with whichever one interests you most.
+
+## Related roundups
+
+- [Software architecture books](/posts/software-architecture-recommended-books/)
+- [Database books](/posts/database-recommended-books/)
+- [Software testing books](/posts/software-testing-recommended-books/)
+- [Agile development books](/posts/agile-development-recommended-books/)
+- [Web application security books](/posts/web-security-recommended-books/)

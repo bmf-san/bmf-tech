@@ -87,3 +87,11 @@ draft: false
 ## まとめ
 
 まずは入門2冊でアジャイルの地図を持ち、次に実践と改善の本で足場を固めるとよい。リーンや持続可能性のテーマは、作るものが見えてきた段階で深めるのが効率的である。各書の個別レビューも用意したので、気になった本から読み進めるとよい。
+
+## 関連するまとめ記事
+
+- [ソフトウェアアーキテクチャのおすすめ本](/ja/posts/software-architecture-recommended-books/)
+- [データベースのおすすめ本](/ja/posts/database-recommended-books/)
+- [ソフトウェアテストのおすすめ本](/ja/posts/software-testing-recommended-books/)
+- [エンジニアリングマネジメントのおすすめ本](/ja/posts/engineering-management-recommended-books/)
+- [Webアプリのセキュリティのおすすめ本](/ja/posts/web-security-recommended-books/)

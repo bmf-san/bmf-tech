@@ -94,3 +94,11 @@ It covers Redis, an in-memory data store, from mechanics to field use. It widens
 ## Wrap-up
 
 Start with the two SQL primers, then raise quality with design and antipatterns. Go deep on PostgreSQL and distributed data once your target is clear. Every book has a full review here, so start with whichever one interests you most.
+
+## Related roundups
+
+- [Software architecture books](/posts/software-architecture-recommended-books/)
+- [Software testing books](/posts/software-testing-recommended-books/)
+- [Engineering management books](/posts/engineering-management-recommended-books/)
+- [Agile development books](/posts/agile-development-recommended-books/)
+- [Web application security books](/posts/web-security-recommended-books/)

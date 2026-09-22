@@ -108,3 +108,11 @@ Practical guidance for designing Web APIs that people enjoy using. Its advice on
 ## Wrap-up
 
 Start with the three fundamentals, then move into trade-offs and domain-driven design. Reach for microservices and API design when a project calls for them. Every book has a full review here, so start with whichever one interests you most.
+
+## Related roundups
+
+- [Database books](/posts/database-recommended-books/)
+- [Software testing books](/posts/software-testing-recommended-books/)
+- [Engineering management books](/posts/engineering-management-recommended-books/)
+- [Agile development books](/posts/agile-development-recommended-books/)
+- [Web application security books](/posts/web-security-recommended-books/)

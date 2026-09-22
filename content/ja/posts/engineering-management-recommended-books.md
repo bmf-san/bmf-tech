@@ -107,3 +107,11 @@ PdMの実務を、1日目から使える形で幅広く扱う実践ガイドで�
 ## まとめ
 
 まずは組織論とチーム設計で土台を作り、次に自分の立場に近い役割の本へ進むとよい。技術戦略やプロダクトマネジメントは、責任範囲が広がった段階で深めるのが効率的である。各書の個別レビューも用意したので、気になった本から読み進めるとよい。
+
+## 関連するまとめ記事
+
+- [ソフトウェアアーキテクチャのおすすめ本](/ja/posts/software-architecture-recommended-books/)
+- [データベースのおすすめ本](/ja/posts/database-recommended-books/)
+- [ソフトウェアテストのおすすめ本](/ja/posts/software-testing-recommended-books/)
+- [アジャイル開発のおすすめ本](/ja/posts/agile-development-recommended-books/)
+- [Webアプリのセキュリティのおすすめ本](/ja/posts/web-security-recommended-books/)
