@@ -112,7 +112,7 @@
   "mainEntityOfPage": {"@type": "WebPage", "@id": "{{.Config.Site.BaseURL}}{{$article.URL}}"},
   "inLanguage": "{{if $article.Locale}}{{$article.Locale}}{{else}}en{{end}}",
   "image": "{{.Config.Site.BaseURL}}/ogp/{{$article.FrontMatter.Slug}}.png",
-  "author": {"@type": "Person", "name": "{{index .Config.Theme.Params "author"}}"},
+  "author": {"@type": "Person", "name": "{{index .Config.Theme.Params "author"}}", "url": "{{.Config.Site.BaseURL}}{{if eq $article.Locale "ja"}}/ja{{end}}/about/", "sameAs": ["https://github.com/{{index .Config.Theme.Params "github"}}", "https://x.com/{{index .Config.Theme.Params "twitter"}}"]},
   "publisher": {"@type": "Organization", "name": "{{.Config.Site.Title}}"}{{if $article.FrontMatter.Description}},
   "description": "{{$article.FrontMatter.Description}}"{{end}}{{if $article.FrontMatter.Tags}},
   "keywords": "{{range $i, $t := $article.FrontMatter.Tags}}{{if $i}}, {{end}}{{$t}}{{end}}"{{end}}
