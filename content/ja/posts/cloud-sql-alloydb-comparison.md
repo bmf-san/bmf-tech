@@ -35,6 +35,20 @@ Cloud SQLについてはCloud SQL Enterprise editionを対象とする。
 | 互換性                 | MySQL/PostgreSQL/SQL Server                | PostgreSQL                                                   |
 | コスト                 | 単純比較では全体的にAlloyDBより安い       | 単純比較では全体的にCloud SQLより高い                        |
 
+# 使い分けの指針
+ワークロードと制約から、次のように選ぶとよい。
+
+- **Cloud SQLが向くケース**
+    - コストを重視する
+    - MySQLやSQL Serverの互換性が必要になる
+    - 一般的なOLTPで、単一インスタンスの性能で足りる
+    - 構成をシンプルに保ちたい
+- **AlloyDBが向くケース**
+    - 運用データに対して分析クエリ（HTAP）を実行したい
+    - 読み取りを大きくスケールさせつつ、レプリケーション遅延も抑えたい
+    - PostgreSQL互換で高い性能や可用性を求める
+    - マイクロ秒単位のポイントインタイムリカバリが必要になる
+
 # AlloyDBの特徴
 AlloyDBの主な特徴についてCloud SQLと比較しながらまとめる。
 

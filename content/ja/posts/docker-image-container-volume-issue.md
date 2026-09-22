@@ -40,6 +40,39 @@ docker-composeでdocker-compose.ymlに記述されているコンテナとネッ
 
 `docker-compose down --rmi all -v`
 
+# Dockerボリュームの削除方法
+イメージやコンテナを削除しても、ボリュームは残る。残ったボリュームは次の手順で削除する。
+
+まず、残っているボリュームを確認する。
+
+```
+docker volume ls
+```
+
+次に、不要なボリュームを名前で指定して削除する。
+
+```
+docker volume rm <volume-name>
+```
+
+どのコンテナからも参照されていないボリュームをまとめて削除する場合に使う。
+
+```
+docker volume prune
+```
+
+Docker Composeでは、`down`に`-v`を付けると、定義されたボリュームも削除できる。
+
+```
+docker compose down -v
+```
+
+イメージまで含めて片付けるなら、`--rmi all`も付ける。
+
+```
+docker compose down --rmi all -v
+```
+
 
 # 参考
 - [DockerのVolumeに関して -v --rm -d ゴミが残る問題 コンテナが起動しない](https://stlisacity.hatenablog.com/entry/2018/09/10/145101)

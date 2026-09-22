@@ -35,6 +35,20 @@ A simple comparison of specifications.
 | Compatibility          | MySQL/PostgreSQL/SQL Server                | PostgreSQL                                                   |
 | Cost                   | Generally cheaper than AlloyDB             | Generally more expensive than Cloud SQL                      |
 
+# Which Should You Choose?
+Pick based on your workload and constraints.
+
+- **Choose Cloud SQL when:**
+    - Cost is the main concern.
+    - You need MySQL or SQL Server compatibility.
+    - A single instance handles your OLTP workload.
+    - You want to keep the setup simple.
+- **Choose AlloyDB when:**
+    - You run analytical queries (HTAP) on operational data.
+    - You need to scale reads heavily while keeping replication lag low.
+    - You want strong performance and availability on PostgreSQL.
+    - You need microsecond point-in-time recovery.
+
 # Features of AlloyDB
 Summarizing the main features of AlloyDB in comparison to Cloud SQL.
 
