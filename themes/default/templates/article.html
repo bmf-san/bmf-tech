@@ -107,11 +107,11 @@
   {{- if and $hasBooks (or $audibleURL $kuURL)}}
   <aside class="card my-10" aria-label="PR">
     <div class="card-header flex items-center justify-between">
-      <span class="font-semibold text-base">{{if eq $locale "ja"}}� 読書をもっと（無料体験）{{else}}📚 More reading (free trial){{end}}</span>
+      <span class="font-semibold text-base">{{if eq $locale "ja"}}📚 読書をもっと（無料体験）{{else}}📚 More reading (free trial){{end}}</span>
       <span class="badge badge-light text-secondary text-xs uppercase">PR</span>
     </div>
     <div class="card-body">
-      <p class="text-sm text-secondary mb-4">{{if eq $locale "ja"}}対象作品が定額で楽しめるサービスの無料体験です。技術書・ビジネス書の読書のお供にどうぞ（対象タイトルは変わります）。{{else}}Free trials of Amazon's subscription services for readers. Great for tech &amp; business books; catalog varies.{{end}}</p>
+      <p class="text-sm text-secondary mb-4">{{if eq $locale "ja"}}対象作品が定額で楽しめるサービスの無料体験です。技術書・ビジネス書の読書のお供にどうぞ。{{else}}Free trials of Amazon's subscription services for readers. Great for tech &amp; business books.{{end}}</p>
       <div class="flex flex-col gap-3">
         {{- if $kuURL}}
         <a href="{{$kuURL}}" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-outline-primary btn-sm self-start">
