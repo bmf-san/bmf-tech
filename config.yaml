@@ -34,7 +34,7 @@ theme:
     adsense_slot_sidebar: "6019936839"
     # In-article ad injected mid-content by JS (ad-unit-article-in-content).
     # Create an "In-article" unit in AdSense and paste its slot ID here to activate.
-    adsense_slot_article_in_content: ""
+    adsense_slot_article_in_content: "6130848904"
     ga_id: "G-784B55NW88"
     paypal: "bmfsan"
     amazon_wishlist: "7UKXW63I8NEK"
