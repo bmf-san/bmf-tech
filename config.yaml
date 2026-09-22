@@ -38,10 +38,6 @@ theme:
     ga_id: "G-784B55NW88"
     paypal: "bmfsan"
     amazon_wishlist: "7UKXW63I8NEK"
-    # Amazon OneLink: localizes affiliate links to each visitor's regional Amazon
-    # store. Set up OneLink in Associates Central → Tools → OneLink, then paste the
-    # adInstanceId here to activate (empty = off).
-    onelink_ad_instance_id: ""
     # Sidebar PR slots (rendered by the "sponsors-sidebar" template).
     # Order matters: the first entry appears at the top of the slot.
     # These are bmf-san's own products/services (self-promotion), labeled 「PR」.

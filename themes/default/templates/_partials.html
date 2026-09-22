@@ -213,10 +213,6 @@
 {{- with index .Config.Theme.Params "adsense_id"}}
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{.}}" crossorigin="anonymous"></script>
 {{- end}}
-{{- /* Amazon OneLink: localizes amazon.co.jp affiliate links to the visitor's regional store. Off until adInstanceId is set. */ -}}
-{{- with index .Config.Theme.Params "onelink_ad_instance_id"}}
-<script src="https://z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=JP&adInstanceId={{.}}" async></script>
-{{- end}}
 <script>
 (function(){
   var p=localStorage.getItem('pref-locale');
