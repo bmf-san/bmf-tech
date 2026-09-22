@@ -1,5 +1,3 @@
-- name: 2phase commit
-  translation_key: 2phase-commit
 - name: ABAC
   translation_key: abac
 - name: ACID
@@ -442,10 +440,6 @@
   translation_key: ruby-on-rails
 - name: SaaS
   translation_key: saas
-- name: Outboxパターン
-  translation_key: outbox-pattern
-- name: Sagaパターン
-  translation_key: saga-pattern
 - name: SAML
   translation_key: saml
 - name: SDLC
@@ -500,8 +494,6 @@
   translation_key: streamyard
 - name: Superagent
   translation_key: superagent
-- name: TCCパターン
-  translation_key: tcc-pattern
 - name: TCP
   translation_key: tcp
 - name: Technology Radar

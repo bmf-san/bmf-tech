@@ -8,10 +8,7 @@ categories:
   - アーキテクチャ
 tags:
   - マイクロサービス
-  - Sagaパターン
-  - TCCパターン
   - 分散トランザクション
-  - 2phase commit
 translation_key: saga-pattern-research-notes
 draft: false
 ---
