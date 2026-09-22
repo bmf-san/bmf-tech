@@ -79,7 +79,7 @@ A broad reference on PostgreSQL, from install to operations. It guides you as yo
 
 ### Understanding PostgreSQL from Its Internals
 
-It explains indexes and transactions through their internal structures. Design and operations calls gain solid backing. I dig into it in the [review](/posts/postgresql-internal-structure/).
+It explains indices and transactions through their internal structures. Design and operations calls gain solid backing. I dig into it in the [review](/posts/postgresql-internal-structure/).
 
 ## 5. Extend to distributed data and caching
 
