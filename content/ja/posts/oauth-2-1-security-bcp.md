@@ -26,6 +26,9 @@ OAuth 2.0（RFC 6749）は2012年に登場して以来、広く使われてき�
 - [RFC 7636 PKCE](https://www.rfc-editor.org/rfc/rfc7636)
 - [The OAuth 2.1 Authorization Framework (draft)](https://datatracker.ietf.org/doc/draft-ietf-oauth-v2-1/)
 
+# OAuth 2.1はRFCなのか
+結論として、OAuth 2.1は2026年時点でRFCに該当しない。現在はIETFのドラフト（`draft-ietf-oauth-v2-1`）にとどまる。一方、その土台となるSecurity BCPはRFCであり、2025年1月発行のRFC 9700がこれにあたる。OAuth 2.1はRFC 9700とRFC 6749を「最初から安全な」仕様に一本化したものである。現時点で参照すべき番号はRFC 9700である。
+
 # 位置づけ：6749 → 9700 → OAuth 2.1
 
 3つの関係を押さえると全体像がわかりやすい。
