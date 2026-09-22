@@ -75,6 +75,7 @@ Start with the two primers, then sharpen your writing with TDD and unit testing.
 
 ## Related roundups
 
+- [📚 All tech book roundups](/posts/tech-book-roundups/)
 - [Software architecture books](/posts/software-architecture-recommended-books/)
 - [Database books](/posts/database-recommended-books/)
 - [Engineering management books](/posts/engineering-management-recommended-books/)

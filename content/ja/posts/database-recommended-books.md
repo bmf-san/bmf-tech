@@ -97,6 +97,7 @@ SQLの基本文法を、手を動かしながら学べる定番の入門書で�
 
 ## 関連するまとめ記事
 
+- [📚 すべての技術書まとめ（一覧）](/ja/posts/tech-book-roundups/)
 - [ソフトウェアアーキテクチャのおすすめ本](/ja/posts/software-architecture-recommended-books/)
 - [ソフトウェアテストのおすすめ本](/ja/posts/software-testing-recommended-books/)
 - [エンジニアリングマネジメントのおすすめ本](/ja/posts/engineering-management-recommended-books/)

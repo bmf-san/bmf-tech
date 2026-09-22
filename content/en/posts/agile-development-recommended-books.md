@@ -90,6 +90,7 @@ Start with the two primers to get a map of agile, then firm up your footing with
 
 ## Related roundups
 
+- [📚 All tech book roundups](/posts/tech-book-roundups/)
 - [Software architecture books](/posts/software-architecture-recommended-books/)
 - [Database books](/posts/database-recommended-books/)
 - [Software testing books](/posts/software-testing-recommended-books/)

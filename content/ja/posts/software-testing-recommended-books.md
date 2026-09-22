@@ -75,6 +75,7 @@ Web APIに特化したテストの観点と手法を、実践的にまとめた�
 
 ## 関連するまとめ記事
 
+- [📚 すべての技術書まとめ（一覧）](/ja/posts/tech-book-roundups/)
 - [ソフトウェアアーキテクチャのおすすめ本](/ja/posts/software-architecture-recommended-books/)
 - [データベースのおすすめ本](/ja/posts/database-recommended-books/)
 - [エンジニアリングマネジメントのおすすめ本](/ja/posts/engineering-management-recommended-books/)

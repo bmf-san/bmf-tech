@@ -111,6 +111,7 @@ DDDの原典であり、モデルを中心に複雑さへ立ち向かう思想�
 
 ## 関連するまとめ記事
 
+- [📚 すべての技術書まとめ（一覧）](/ja/posts/tech-book-roundups/)
 - [データベースのおすすめ本](/ja/posts/database-recommended-books/)
 - [ソフトウェアテストのおすすめ本](/ja/posts/software-testing-recommended-books/)
 - [エンジニアリングマネジメントのおすすめ本](/ja/posts/engineering-management-recommended-books/)

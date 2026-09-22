@@ -88,6 +88,7 @@ Start with the two primers to get comfortable with the syntax, then raise your w
 
 ## Related roundups
 
+- [📚 All tech book roundups](/posts/tech-book-roundups/)
 - [Ruby and Rails books](/posts/ruby-recommended-books/)
 - [Good code books](/posts/clean-code-recommended-books/)
 - [Software architecture books](/posts/software-architecture-recommended-books/)

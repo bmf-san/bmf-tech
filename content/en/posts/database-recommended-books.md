@@ -97,6 +97,7 @@ Start with the two SQL primers, then raise quality with design and antipatterns.
 
 ## Related roundups
 
+- [📚 All tech book roundups](/posts/tech-book-roundups/)
 - [Software architecture books](/posts/software-architecture-recommended-books/)
 - [Software testing books](/posts/software-testing-recommended-books/)
 - [Engineering management books](/posts/engineering-management-recommended-books/)
