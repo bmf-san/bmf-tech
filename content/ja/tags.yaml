@@ -568,14 +568,8 @@
   translation_key: algorithms
 - name: アーキテクチャ
   translation_key: architecture
-- name: アーキテクチャアドバイスプロセス
-  translation_key: architecture-advice-process
-- name: アーキテクチャレビューボード
-  translation_key: architecture-review-board
 - name: アーキテクチャ戦略
   translation_key: architecture-strategy
-- name: アーキテクティング
-  translation_key: architecting
 - name: アーキテクト
   translation_key: architect
 - name: イベントループ
@@ -734,8 +728,6 @@
   translation_key: memory
 - name: メール
   translation_key: email
-- name: モジュラモノリス
-  translation_key: modular-monolith
 - name: モデリング
   translation_key: modeling
 - name: モニタリング

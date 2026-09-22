@@ -11,7 +11,6 @@ tags:
   - 設計
   - アーキテクチャ
   - アーキテクト
-  - アーキテクティング
 translation_key: architecture-architecting
 draft: false
 ---

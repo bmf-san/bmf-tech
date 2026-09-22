@@ -8,7 +8,6 @@ categories:
   - Architecture
 tags:
   - Monolith
-  - Modular Monolith
   - Microservices
   - Book Review
 translation_key: monolith-to-microservices-migration-guide

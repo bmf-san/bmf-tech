@@ -7,8 +7,6 @@ author: bmf-san
 categories:
   - Architecture
 tags:
-  - Architecture Advice Process
-  - Architecture Review Board
   - Architecture
 translation_key: what-is-architecture-advice-process
 draft: false
