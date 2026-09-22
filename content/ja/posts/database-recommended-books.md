@@ -94,3 +94,11 @@ SQLの基本文法を、手を動かしながら学べる定番の入門書で�
 ## まとめ
 
 まずはSQLの入門2冊で土台を作り、次に設計とアンチパターンで質を高めるとよい。PostgreSQLや分散処理は、扱う対象が決まった段階で深めるのが効率的である。各書の個別レビューも用意したので、気になった本から読み進めるとよい。
+
+## 関連するまとめ記事
+
+- [ソフトウェアアーキテクチャのおすすめ本](/ja/posts/software-architecture-recommended-books/)
+- [ソフトウェアテストのおすすめ本](/ja/posts/software-testing-recommended-books/)
+- [エンジニアリングマネジメントのおすすめ本](/ja/posts/engineering-management-recommended-books/)
+- [アジャイル開発のおすすめ本](/ja/posts/agile-development-recommended-books/)
+- [Webアプリのセキュリティのおすすめ本](/ja/posts/web-security-recommended-books/)

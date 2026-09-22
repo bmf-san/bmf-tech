@@ -87,3 +87,11 @@ It considers sustainable, humane development through the lens of simplicity. You
 ## Wrap-up
 
 Start with the two primers to get a map of agile, then firm up your footing with practice and improvement. Go deep on lean and sustainability once what you build comes into view. Every book has a full review here, so start with whichever one interests you most.
+
+## Related roundups
+
+- [Software architecture books](/posts/software-architecture-recommended-books/)
+- [Database books](/posts/database-recommended-books/)
+- [Software testing books](/posts/software-testing-recommended-books/)
+- [Engineering management books](/posts/engineering-management-recommended-books/)
+- [Web application security books](/posts/web-security-recommended-books/)

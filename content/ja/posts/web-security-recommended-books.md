@@ -79,3 +79,11 @@ Google SREの知見をもとに、安全なシステムの設計・実装・保�
 ## まとめ
 
 まずはOAuthとデジタルアイデンティティで、認証・認可の土台を作るとよい。セキュアな設計・実装は、扱うシステムが具体化した段階で深めるのが効率的である。各書の個別レビューも用意したので、気になった本から読み進めるとよい。
+
+## 関連するまとめ記事
+
+- [ソフトウェアアーキテクチャのおすすめ本](/ja/posts/software-architecture-recommended-books/)
+- [データベースのおすすめ本](/ja/posts/database-recommended-books/)
+- [ソフトウェアテストのおすすめ本](/ja/posts/software-testing-recommended-books/)
+- [エンジニアリングマネジメントのおすすめ本](/ja/posts/engineering-management-recommended-books/)
+- [アジャイル開発のおすすめ本](/ja/posts/agile-development-recommended-books/)

@@ -72,3 +72,11 @@ A reference that organizes the software quality body of knowledge. It places tes
 ## Wrap-up
 
 Start with the two primers, then sharpen your writing with TDD and unit testing. Reach for improvement ideas and the quality body of knowledge when you need them. Every book has a full review here, so start with whichever one interests you most.
+
+## Related roundups
+
+- [Software architecture books](/posts/software-architecture-recommended-books/)
+- [Database books](/posts/database-recommended-books/)
+- [Engineering management books](/posts/engineering-management-recommended-books/)
+- [Agile development books](/posts/agile-development-recommended-books/)
+- [Web application security books](/posts/web-security-recommended-books/)

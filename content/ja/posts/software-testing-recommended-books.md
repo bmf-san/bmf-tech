@@ -72,3 +72,11 @@ Web APIに特化したテストの観点と手法を、実践的にまとめた�
 ## まとめ
 
 まずは入門2冊でテストの土台を作り、次にTDDと単体テストで書く力を高めるとよい。改善のアイデアや品質の体系は、必要になった段階で手に取るのが効率的である。各書の個別レビューも用意したので、気になった本から読み進めるとよい。
+
+## 関連するまとめ記事
+
+- [ソフトウェアアーキテクチャのおすすめ本](/ja/posts/software-architecture-recommended-books/)
+- [データベースのおすすめ本](/ja/posts/database-recommended-books/)
+- [エンジニアリングマネジメントのおすすめ本](/ja/posts/engineering-management-recommended-books/)
+- [アジャイル開発のおすすめ本](/ja/posts/agile-development-recommended-books/)
+- [Webアプリのセキュリティのおすすめ本](/ja/posts/web-security-recommended-books/)

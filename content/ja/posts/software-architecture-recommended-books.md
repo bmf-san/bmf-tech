@@ -108,3 +108,11 @@ DDDの原典であり、モデルを中心に複雑さへ立ち向かう思想�
 ## まとめ
 
 まずは基礎の3冊で土台を作り、次にトレードオフやドメイン駆動設計へ進むとよい。マイクロサービスやAPI設計は、必要になった段階で手に取るのが効率的である。各書の個別レビューも用意したので、気になった本から読み進めるとよい。
+
+## 関連するまとめ記事
+
+- [データベースのおすすめ本](/ja/posts/database-recommended-books/)
+- [ソフトウェアテストのおすすめ本](/ja/posts/software-testing-recommended-books/)
+- [エンジニアリングマネジメントのおすすめ本](/ja/posts/engineering-management-recommended-books/)
+- [アジャイル開発のおすすめ本](/ja/posts/agile-development-recommended-books/)
+- [Webアプリのセキュリティのおすすめ本](/ja/posts/web-security-recommended-books/)

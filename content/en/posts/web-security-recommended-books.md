@@ -79,3 +79,11 @@ A hefty volume on designing, building, and maintaining safe systems, drawn from 
 ## Wrap-up
 
 Start by building a base in authentication and authorization with OAuth and digital identity. Go deep on secure design and implementation once your target system takes shape. Every book has a full review here, so start with whichever one interests you most.
+
+## Related roundups
+
+- [Software architecture books](/posts/software-architecture-recommended-books/)
+- [Database books](/posts/database-recommended-books/)
+- [Software testing books](/posts/software-testing-recommended-books/)
+- [Engineering management books](/posts/engineering-management-recommended-books/)
+- [Agile development books](/posts/agile-development-recommended-books/)
