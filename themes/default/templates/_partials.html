@@ -130,6 +130,19 @@
   ]
 }
 </script>
+{{- with index $article.FrontMatter.Extra "recommended_books"}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "{{$article.FrontMatter.Title}}",
+  "numberOfItems": {{len .}},
+  "itemListElement": [{{range $i, $b := .}}{{if $i}},{{end}}
+    {"@type": "Book", "name": "{{index $b "title"}}"}{{end}}
+  ]
+}
+</script>
+{{- end}}
 {{- else}}
 {{- $ogTitle := .Config.Site.Title}}{{- $ogURL := printf "%s%s" .Config.Site.BaseURL $homeURL}}
 {{- if .CurrentTaxonomy}}
@@ -182,7 +195,12 @@
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "{{.Config.Site.Title}}",
-  "url": "{{.Config.Site.BaseURL}}"
+  "url": "{{.Config.Site.BaseURL}}",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {"@type": "EntryPoint", "urlTemplate": "{{.Config.Site.BaseURL}}{{if eq .CurrentLocale "ja"}}/ja/search/{{else}}/search/{{end}}?q={search_term_string}"},
+    "query-input": "required name=search_term_string"
+  }
 }
 </script>
 {{- if or .CurrentTaxonomy .CurrentArchivePath}}
