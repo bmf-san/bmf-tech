@@ -613,11 +613,12 @@
 {{end}}
 
 {{define "recommended-books-card"}}
-{{- /* Affiliate card for NON-review posts that recommend related books via the
-     `recommended_books` front-matter (list of {asin,title}). Deliberately kept
-     separate from the amazon_books plugin so these do NOT appear on the bookshelf
-     / recently-read widgets. Links are built from ASIN + associate tag and use
-     rel="sponsored noopener noreferrer" per Google. Labeled 「PR」 for 景表法. */ -}}
+{{- /* Affiliate cover-grid for posts that recommend books via the
+     `recommended_books` front-matter (list of {asin,title}) — e.g. roundups and
+     non-review posts. Covers use the deterministic Amazon image URL and links use
+     ASIN + associate tag, both built inline. Deliberately kept separate from the
+     amazon_books plugin so these do NOT appear on the bookshelf / recently-read
+     widgets. rel="sponsored noopener noreferrer" per Google; labeled 「PR」 for 景表法. */ -}}
 {{- $isJA := eq .Locale "ja"}}
 {{- $tag := "bmf035-22"}}
 {{- with index .FrontMatter.Extra "recommended_books"}}
@@ -627,11 +628,23 @@
     <span class="badge badge-light text-secondary text-xs uppercase">PR</span>
   </div>
   <div class="card-body">
-    <div class="flex flex-col gap-3">
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
       {{- range .}}
-      <a href="https://www.amazon.co.jp/dp/{{index . "asin"}}?tag={{$tag}}" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-outline-primary btn-sm self-start">
-        📕 {{index . "title"}}{{if $isJA}} をAmazonで見る →{{else}} on Amazon →{{end}}
-      </a>
+      {{- $asin := index . "asin"}}
+      {{- $title := index . "title"}}
+      <div class="flex flex-col items-center text-center gap-2">
+        <a href="https://www.amazon.co.jp/dp/{{$asin}}?tag={{$tag}}" target="_blank" rel="sponsored noopener noreferrer" class="block hover:opacity-80 transition-opacity" aria-label="{{$title}}{{if $isJA}}（Amazon）{{else}} on Amazon{{end}}">
+          <img
+            src="https://images-na.ssl-images-amazon.com/images/P/{{$asin}}.01._SL250_.jpg"
+            alt="{{$title}}"
+            class="rounded shadow w-full max-w-[160px] object-cover"
+            loading="lazy"
+            width="250"
+            height="250"
+          >
+        </a>
+        <p class="text-sm font-medium leading-snug line-clamp-3">{{$title}}</p>
+      </div>
       {{- end}}
     </div>
   </div>
