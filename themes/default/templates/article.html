@@ -95,6 +95,9 @@
     {{.HTMLContent}}
   </article>
 
+  {{/* In-article ad: JS injects it mid-body (guarded by the slot param) */}}
+  {{template "ad-unit-article-in-content" $}}
+
   {{/* Amazon affiliate CTA (book-review posts): second touch point after content */}}
   {{template "amazon-books-card" .}}
 

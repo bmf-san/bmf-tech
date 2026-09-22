@@ -451,6 +451,41 @@
 {{- end}}
 {{end}}
 
+{{define "ad-unit-article-in-content"}}
+{{- /* In-article ad injected mid-body by JS after a few paragraphs. Rendered as
+     an inert <template> plus an injector script; only active when the slot is set.
+     Labeled per AdSense policy. */ -}}
+{{- $id := index .Config.Theme.Params "adsense_id"}}
+{{- $slot := index .Config.Theme.Params "adsense_slot_article_in_content"}}
+{{- if and $id $slot}}
+{{- $isJA := eq .CurrentLocale "ja"}}
+<template id="in-article-ad-tpl">
+  <div class="my-8">
+    <div class="text-xs uppercase text-secondary mb-1">{{if $isJA}}広告{{else}}Sponsored{{end}}</div>
+    <ins class="adsbygoogle"
+         style="display:block; text-align:center"
+         data-ad-layout="in-article"
+         data-ad-format="fluid"
+         data-ad-client="{{$id}}"
+         data-ad-slot="{{$slot}}"></ins>
+  </div>
+</template>
+<script>
+(function () {
+  var tpl = document.getElementById('in-article-ad-tpl');
+  var body = document.querySelector('article.prose');
+  if (!tpl || !body || !('content' in tpl)) return;
+  var ps = body.querySelectorAll(':scope > p');
+  if (ps.length < 6) return;
+  var idx = Math.min(3, Math.floor(ps.length / 2));
+  var ad = tpl.content.firstElementChild.cloneNode(true);
+  ps[idx].insertAdjacentElement('afterend', ad);
+  (adsbygoogle = window.adsbygoogle || []).push({});
+})();
+</script>
+{{- end}}
+{{end}}
+
 {{define "sponsors-sidebar"}}
 {{- /* Sidebar PR slot for the top page (right column, above other widgets).
      - Shows bmf-san's own products/services from `theme.params.sponsors` in
