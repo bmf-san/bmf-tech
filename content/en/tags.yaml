@@ -34,16 +34,10 @@
   translation_key: apm
 - name: Architect
   translation_key: architect
-- name: Architecting
-  translation_key: architecting
 - name: Architecture
   translation_key: architecture
-- name: Architecture Advice Process
-  translation_key: architecture-advice-process
 - name: Architecture Decision Record
   translation_key: architecture-decision-record
-- name: Architecture Review Board
-  translation_key: architecture-review-board
 - name: Architecture Strategy
   translation_key: architecture-strategy
 - name: artisan
@@ -526,8 +520,6 @@
   translation_key: mob-programming
 - name: Modeling
   translation_key: modeling
-- name: Modular Monolith
-  translation_key: modular-monolith
 - name: Monitoring
   translation_key: monitoring
 - name: Monolith

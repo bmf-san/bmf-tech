@@ -1221,6 +1221,16 @@
 /ja/tags/TCCパターン/  /ja/tags/分散トランザクション/  301
 /ja/tags/2phase-commit/  /ja/tags/分散トランザクション/  301
 
+# Tag consolidation: architecture
+/tags/architecting/  /tags/architect/  301
+/tags/architecture-advice-process/  /tags/architecture/  301
+/tags/architecture-review-board/  /tags/architecture/  301
+/tags/modular-monolith/  /tags/monolith/  301
+/ja/tags/アーキテクティング/  /ja/tags/アーキテクト/  301
+/ja/tags/アーキテクチャアドバイスプロセス/  /ja/tags/アーキテクチャ/  301
+/ja/tags/アーキテクチャレビューボード/  /ja/tags/アーキテクチャ/  301
+/ja/tags/モジュラモノリス/  /ja/tags/モノリス/  301
+
 # Dynamic redirects
 /categories/:splat  /ja/categories/:splat  301
 /tags/:splat  /ja/tags/:splat  301

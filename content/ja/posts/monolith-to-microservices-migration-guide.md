@@ -8,7 +8,6 @@ categories:
   - アーキテクチャ
 tags:
   - モノリス
-  - モジュラモノリス
   - マイクロサービス
   - 書評
 translation_key: monolith-to-microservices-migration-guide

@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - アーキテクチャ
 tags:
-  - モジュラモノリス
+  - モノリス
 translation_key: modular-monolith-research-notes
 draft: false
 ---

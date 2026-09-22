@@ -7,7 +7,7 @@ author: bmf-san
 categories:
   - Architecture
 tags:
-  - Modular Monolith
+  - Monolith
 translation_key: modular-monolith-research-notes
 draft: false
 ---

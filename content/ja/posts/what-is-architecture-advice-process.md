@@ -7,8 +7,6 @@ author: bmf-san
 categories:
   - アーキテクチャ
 tags:
-  - アーキテクチャアドバイスプロセス
-  - アーキテクチャレビューボード
   - アーキテクチャ
 translation_key: what-is-architecture-advice-process
 draft: false

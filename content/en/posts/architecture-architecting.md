@@ -11,7 +11,6 @@ tags:
   - Design
   - Architecture
   - Architect
-  - Architecting
 translation_key: architecture-architecting
 draft: false
 ---
