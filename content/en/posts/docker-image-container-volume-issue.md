@@ -39,5 +39,38 @@ There is a way to clean up all containers, network images, and volumes described
 
 `docker-compose down --rmi all -v`
 
+# How to Delete Docker Volumes
+Removing images and containers leaves volumes behind. Delete the leftover volumes with these steps.
+
+First, list the volumes that remain.
+
+```
+docker volume ls
+```
+
+Next, delete a specific volume by name.
+
+```
+docker volume rm <volume-name>
+```
+
+To remove every volume that no containers reference, run:
+
+```
+docker volume prune
+```
+
+With Docker Compose, add `-v` to `down` to delete the volumes it defined.
+
+```
+docker compose down -v
+```
+
+To clean up images as well, add `--rmi all`.
+
+```
+docker compose down --rmi all -v
+```
+
 # References
 - [Docker Volume Issues -v --rm -d Garbage Remains, Container Won't Start](https://stlisacity.hatenablog.com/entry/2018/09/10/145101)
