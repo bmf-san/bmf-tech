@@ -1,4 +1,4 @@
-.PHONY: help install-gohan install-e2e install-lint build serve clean test-e2e test-e2e-ui new-ja new-en lint-content lint-content-diff check-parity check-content
+.PHONY: help install-gohan install-e2e install-lint build serve clean test-e2e test-e2e-ui new-ja new-en new-ja-roundup new-en-roundup lint-content lint-content-diff check-parity check-content
 
 GOHAN_VERSION ?= v1.7.0
 
@@ -73,5 +73,11 @@ new-ja: ## 日本語記事を作成  例: make new-ja TITLE="タイトル" SLUG=
 
 new-en: ## 英語記事を作成  例: make new-en TITLE="Title" SLUG=slug
 	GOTOOLCHAIN=auto gohan new --type=en/posts --archetype=en-post --title="$(TITLE)" $(SLUG)
+
+new-ja-roundup: ## まとめ記事(日本語)を作成  例: make new-ja-roundup TITLE="◯◯のおすすめ本" SLUG=slug
+	GOTOOLCHAIN=auto gohan new --type=ja/posts --archetype=ja-roundup --title="$(TITLE)" $(SLUG)
+
+new-en-roundup: ## まとめ記事(英語)を作成  例: make new-en-roundup TITLE="Best books for ..." SLUG=slug
+	GOTOOLCHAIN=auto gohan new --type=en/posts --archetype=en-roundup --title="$(TITLE)" $(SLUG)
 
 
