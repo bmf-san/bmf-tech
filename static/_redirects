@@ -1211,6 +1211,16 @@
 /ja/tags/webauthn/  /ja/tags/認証/  301
 /ja/tags/セッション/  /ja/tags/認証/  301
 
+# Tag consolidation: distributed transactions
+/tags/saga-pattern/  /tags/distributed-transactions/  301
+/tags/outbox-pattern/  /tags/distributed-transactions/  301
+/tags/tcc-pattern/  /tags/distributed-transactions/  301
+/tags/2phase-commit/  /tags/distributed-transactions/  301
+/ja/tags/Sagaパターン/  /ja/tags/分散トランザクション/  301
+/ja/tags/Outboxパターン/  /ja/tags/分散トランザクション/  301
+/ja/tags/TCCパターン/  /ja/tags/分散トランザクション/  301
+/ja/tags/2phase-commit/  /ja/tags/分散トランザクション/  301
+
 # Dynamic redirects
 /categories/:splat  /ja/categories/:splat  301
 /tags/:splat  /ja/tags/:splat  301

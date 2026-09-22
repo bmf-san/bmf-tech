@@ -219,15 +219,15 @@ test.describe('Footer sitemap link', () => {
 
 test.describe('Nav: locale toggle on tag pages', () => {
   test('JA tag page toggle links to EN tag page', async ({ page }) => {
-    await page.goto('/ja/tags/2phase-commit/');
+    await page.goto('/ja/tags/golang/');
     const href = await page.locator('nav.navbar a:has(.badge-primary)').getAttribute('href');
-    expect(href).toBe('/tags/2phase-commit/');
+    expect(href).toBe('/tags/golang/');
   });
 
   test('EN tag page toggle links to JA tag page', async ({ page }) => {
-    await page.goto('/tags/2phase-commit/');
+    await page.goto('/tags/golang/');
     const href = await page.locator('nav.navbar a:has(.badge-primary)').getAttribute('href');
-    expect(href).toBe('/ja/tags/2phase-commit/');
+    expect(href).toBe('/ja/tags/golang/');
   });
 });
 

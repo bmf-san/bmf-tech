@@ -9,9 +9,6 @@ categories:
 tags:
   - Microservices
   - Distributed Transactions
-  - 2phase commit
-  - Saga Pattern
-  - Outbox Pattern
 translation_key: distributed-transaction-patterns-2pc-saga-outbox
 recommended_books:
   - asin: "4873118751"

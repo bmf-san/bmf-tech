@@ -1,5 +1,3 @@
-- name: 2phase commit
-  translation_key: 2phase-commit
 - name: ABAC
   translation_key: abac
 - name: Accounting
@@ -582,8 +580,6 @@
   translation_key: openid-connect
 - name: OpenStack
   translation_key: openstack
-- name: Outbox Pattern
-  translation_key: outbox-pattern
 - name: Organization Design
   translation_key: organization-design
 - name: Organization Theory
@@ -744,8 +740,6 @@
   translation_key: runner-technique
 - name: SaaS
   translation_key: saas
-- name: Saga Pattern
-  translation_key: saga-pattern
 - name: Sakura VPS
   translation_key: sakura-vps
 - name: Sales
@@ -840,8 +834,6 @@
   translation_key: system-design
 - name: System Performance
   translation_key: system-performance
-- name: TCC Pattern
-  translation_key: tcc-pattern
 - name: TCP
   translation_key: tcp
 - name: Team Management
