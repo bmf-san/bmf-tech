@@ -101,6 +101,33 @@
   {{/* Amazon affiliate CTA (book-review posts): second touch point after content */}}
   {{template "amazon-books-card" .}}
 
+  {{/* Audible / Kindle Unlimited free-trial bounty CTA (book-review posts). Hidden until config URLs are set. */}}
+  {{- $audibleURL := index $.Config.Theme.Params "audible_bounty_url"}}
+  {{- $kuURL := index $.Config.Theme.Params "kindle_unlimited_bounty_url"}}
+  {{- if and $hasBooks (or $audibleURL $kuURL)}}
+  <aside class="card my-10" aria-label="PR">
+    <div class="card-header flex items-center justify-between">
+      <span class="font-semibold text-base">{{if eq $locale "ja"}}📖 続きは無料体験で{{else}}📖 Read more for free{{end}}</span>
+      <span class="badge badge-light text-secondary text-xs uppercase">PR</span>
+    </div>
+    <div class="card-body">
+      <p class="text-sm text-secondary mb-4">{{if eq $locale "ja"}}紹介した本のようなタイトルは、以下の無料体験でも読めます（対象タイトルの場合）。初回登録は無料です。{{else}}Many titles like the ones above are available with a free trial. Signing up is free.{{end}}</p>
+      <div class="flex flex-col gap-3">
+        {{- if $kuURL}}
+        <a href="{{$kuURL}}" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-outline-primary btn-sm self-start">
+          {{if eq $locale "ja"}}📚 Kindle Unlimited を無料で試す →{{else}}📚 Try Kindle Unlimited free →{{end}}
+        </a>
+        {{- end}}
+        {{- if $audibleURL}}
+        <a href="{{$audibleURL}}" target="_blank" rel="sponsored noopener noreferrer" class="btn btn-outline-primary btn-sm self-start">
+          {{if eq $locale "ja"}}🎧 Audible を無料で試す →{{else}}🎧 Try Audible free →{{end}}
+        </a>
+        {{- end}}
+      </div>
+    </div>
+  </aside>
+  {{- end}}
+
   {{/* Recommended books (non-review posts via recommended_books front-matter) */}}
   {{template "recommended-books-card" .}}
 

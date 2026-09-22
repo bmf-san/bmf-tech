@@ -38,6 +38,11 @@ theme:
     ga_id: "G-784B55NW88"
     paypal: "bmfsan"
     amazon_wishlist: "7UKXW63I8NEK"
+    # Amazon bounty CTA (Audible / Kindle Unlimited free-trial links) shown at the
+    # end of book-review posts. Get the links from Associates Central → プロダクト
+    # リンク → バウンティ, and paste them here to activate (empty = hidden).
+    audible_bounty_url: ""
+    kindle_unlimited_bounty_url: ""
     # Sidebar PR slots (rendered by the "sponsors-sidebar" template).
     # Order matters: the first entry appears at the top of the slot.
     # These are bmf-san's own products/services (self-promotion), labeled 「PR」.
