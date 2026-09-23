@@ -136,6 +136,13 @@ PKCEは「認可コードを盗まれても、正しいクライアント以外�
 - 守るべき点は、redirect_uri完全一致・PKCE必須・Implicit/ROPC非推奨・Mix-Up対策・送信者制約・audience制限。
 - これらの多くはRFC 6819の脅威が源流であり、9700で対策として体系化された。
 
+# 関連記事
+- [SAML 2.0とSSOの基礎](/ja/posts/saml-2-0/)
+- [動的クライアント登録（RFC 7591・7592）](/ja/posts/dynamic-client-registration/)
+- [OIDCのDiscoveryとメタデータ](/ja/posts/oidc-discovery-metadata/)
+- [JOSEの全体像（JWT・JWS・JWE・JWK・JWA）](/ja/posts/jose-overview/)
+- [アクセストークンの検証と失効](/ja/posts/access-token-validation-revocation/)
+
 # 参考リンク
 
 - [RFC 9700 Best Current Practice for OAuth 2.0 Security](https://www.rfc-editor.org/rfc/rfc9700)

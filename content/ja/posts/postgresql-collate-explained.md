@@ -130,5 +130,9 @@ PostgreSQLで日本語を扱う際は、照合順序（COLLATE）の適切な設
 
 といった運用が推奨される。もし異なる言語設定が求められる場合には、英語のCOLLATEや他言語のCOLLATEを動的に指定してソート順や比較の挙動を切り替えることも可能である。開発・運用時には、実際に日本語のデータを格納してソートや比較結果をテストし、意図どおりの動作になることを確認することが大切である。
 
+# 関連記事
+- [シャーディングとパーティショニングの違い](/ja/posts/sharding-vs-partitioning/)
+- [Cloud SQLとAlloyDBの比較](/ja/posts/cloud-sql-alloydb-comparison/)
+
 # 参考
 - [PostgreSQL公式ドキュメント - Collation Support](https://www.postgresql.org/docs/current/collation.html))*

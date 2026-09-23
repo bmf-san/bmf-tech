@@ -473,6 +473,13 @@ Format of user identifiers.
 
 ---
 
+## Related posts
+- [OAuth 2.1 and the Security BCP (RFC 9700)](/posts/oauth-2-1-security-bcp/)
+- [Dynamic Client Registration (RFC 7591/7592)](/posts/dynamic-client-registration/)
+- [OIDC Discovery and metadata](/posts/oidc-discovery-metadata/)
+- [JOSE overview (JWT, JWS, JWE, JWK, JWA)](/posts/jose-overview/)
+- [Access token validation and revocation](/posts/access-token-validation-revocation/)
+
 ## References
 
 - [SAML 2.0 Technical Overview](https://docs.oasis-open.org/security/saml/Post2.0/sstc-saml-tech-overview-2.0.html)

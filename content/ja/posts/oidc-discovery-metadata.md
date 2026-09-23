@@ -108,6 +108,13 @@ RFC 8414は、メタデータ利用の利点として次を挙げている。
 - Discoveryとメタデータ（OIDC Discovery / RFC 8414）により、エンドポイントや鍵を手で設定せず自動取得できる。
 - `jwks_uri`による公開鍵配布と`kid`により、無停止の鍵ローテーションが可能になる。
 
+# 関連記事
+- [SAML 2.0とSSOの基礎](/ja/posts/saml-2-0/)
+- [OAuth 2.1とSecurity BCP（RFC 9700）](/ja/posts/oauth-2-1-security-bcp/)
+- [動的クライアント登録（RFC 7591・7592）](/ja/posts/dynamic-client-registration/)
+- [JOSEの全体像（JWT・JWS・JWE・JWK・JWA）](/ja/posts/jose-overview/)
+- [アクセストークンの検証と失効](/ja/posts/access-token-validation-revocation/)
+
 # 参考リンク
 
 - [OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.html)

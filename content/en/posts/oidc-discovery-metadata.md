@@ -108,6 +108,13 @@ RFC 8414 lists the benefits of using metadata.
 - Discovery and metadata (OIDC Discovery / RFC 8414) let you fetch endpoints and keys automatically instead of configuring them by hand.
 - Public key distribution via `jwks_uri` and `kid` enables key rotation without downtime.
 
+# Related posts
+- [SAML 2.0 spec and SSO](/posts/saml-2-0/)
+- [OAuth 2.1 and the Security BCP (RFC 9700)](/posts/oauth-2-1-security-bcp/)
+- [Dynamic Client Registration (RFC 7591/7592)](/posts/dynamic-client-registration/)
+- [JOSE overview (JWT, JWS, JWE, JWK, JWA)](/posts/jose-overview/)
+- [Access token validation and revocation](/posts/access-token-validation-revocation/)
+
 # References
 
 - [OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.html)

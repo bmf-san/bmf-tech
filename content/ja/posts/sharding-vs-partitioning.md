@@ -37,6 +37,10 @@ draft: false
 - データ量や書き込み負荷が単一サーバーの限界に達したら、シャーディングを検討する。
 - シャーディングはルーティングや再分散、シャードをまたぐクエリなど運用コストが増えるため、必要になるまで選ばない。
 
+# 関連記事
+- [PostgreSQLのCOLLATE（照合順序）](/ja/posts/postgresql-collate-explained/)
+- [Cloud SQLとAlloyDBの比較](/ja/posts/cloud-sql-alloydb-comparison/)
+
 # 参考
 - [Database sharding vs partitioning](https://stackoverflow.com/questions/20771435/database-sharding-vs-partitioning)
 - ~~shardingとpartitioningの違いは？【分散データベース】~~

@@ -71,6 +71,13 @@ DCRは便利だが、「誰でも登録できる」ことがそのままリス�
 - 多数クライアントやフェデレーション環境で手動登録を避けるために使う。
 - 「誰でも登録できる」リスクがあるため、初期アクセストークンやredirect_uri検証で守る。
 
+# 関連記事
+- [SAML 2.0とSSOの基礎](/ja/posts/saml-2-0/)
+- [OAuth 2.1とSecurity BCP（RFC 9700）](/ja/posts/oauth-2-1-security-bcp/)
+- [OIDCのDiscoveryとメタデータ](/ja/posts/oidc-discovery-metadata/)
+- [JOSEの全体像（JWT・JWS・JWE・JWK・JWA）](/ja/posts/jose-overview/)
+- [アクセストークンの検証と失効](/ja/posts/access-token-validation-revocation/)
+
 # 参考リンク
 
 - [RFC 7591 OAuth 2.0 Dynamic Client Registration Protocol](https://www.rfc-editor.org/rfc/rfc7591)

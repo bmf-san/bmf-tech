@@ -37,6 +37,10 @@ A rough guide:
 - If data volume or write load outgrows a single server, consider sharding.
 - Sharding adds operational cost (routing, rebalancing, cross-shard queries), so avoid it until you need it.
 
+# Related posts
+- [PostgreSQL COLLATE (collation)](/posts/postgresql-collate-explained/)
+- [Cloud SQL vs AlloyDB](/posts/cloud-sql-alloydb-comparison/)
+
 # References
 - [Database sharding vs partitioning](https://stackoverflow.com/questions/20771435/database-sharding-vs-partitioning)
 - ~~What is the difference between sharding and partitioning? 【Distributed Database】~~
