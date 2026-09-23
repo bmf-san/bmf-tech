@@ -71,6 +71,13 @@ DCR is convenient, but "anyone can register" can itself be a risk.
 - It avoids manual registration in environments with many clients or federation.
 - Because of the "anyone can register" risk, protect it with initial access tokens and redirect_uri validation.
 
+# Related posts
+- [SAML 2.0 spec and SSO](/posts/saml-2-0/)
+- [OAuth 2.1 and the Security BCP (RFC 9700)](/posts/oauth-2-1-security-bcp/)
+- [OIDC Discovery and metadata](/posts/oidc-discovery-metadata/)
+- [JOSE overview (JWT, JWS, JWE, JWK, JWA)](/posts/jose-overview/)
+- [Access token validation and revocation](/posts/access-token-validation-revocation/)
+
 # References
 
 - [RFC 7591 OAuth 2.0 Dynamic Client Registration Protocol](https://www.rfc-editor.org/rfc/rfc7591)

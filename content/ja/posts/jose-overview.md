@@ -203,6 +203,13 @@ JOSEの各仕様の役割を表に整理する。
 - 鍵はJWK、アルゴリズムはJWA、安全な使い方はRFC 8725で定義される。
 - 普段「JWT」と呼んでいるものは、実際には「JWSで署名されたJWT」である。
 
+# 関連記事
+- [SAML 2.0とSSOの基礎](/ja/posts/saml-2-0/)
+- [OAuth 2.1とSecurity BCP（RFC 9700）](/ja/posts/oauth-2-1-security-bcp/)
+- [動的クライアント登録（RFC 7591・7592）](/ja/posts/dynamic-client-registration/)
+- [OIDCのDiscoveryとメタデータ](/ja/posts/oidc-discovery-metadata/)
+- [アクセストークンの検証と失効](/ja/posts/access-token-validation-revocation/)
+
 # 参考リンク
 
 - [RFC 7515 JSON Web Signature (JWS)](https://www.rfc-editor.org/rfc/rfc7515)

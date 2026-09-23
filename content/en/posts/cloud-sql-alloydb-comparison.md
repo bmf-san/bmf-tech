@@ -108,6 +108,10 @@ The index advisor analyzes query execution plans and suggests indexes.
 - Reads scale infinitely. There seems to be no need to worry about replication lag.
 - If you're already using Cloud SQL, considering migration to Cloud SQL Enterprise edition Plus might be worthwhile as it could offer performance improvements, making it a potential candidate for migration.
 
+# Related posts
+- [PostgreSQL COLLATE (collation)](/posts/postgresql-collate-explained/)
+- [Sharding vs partitioning](/posts/sharding-vs-partitioning/)
+
 # References
 - [cloud.google.com - AlloyDB overview](https://cloud.google.com/alloydb/docs/overview)
 - [cloud.google.com - How AlloyDB for PostgreSQL works: Intelligent database storage](https://cloud.google.com/blog/ja/products/databases/alloydb-for-postgresql-intelligent-scalable-storage)

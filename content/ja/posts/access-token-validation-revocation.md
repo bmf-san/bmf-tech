@@ -108,6 +108,13 @@ token=45ghiukldjahdnhzdauz&token_type_hint=refresh_token
 - JWT ATはローカル検証でスケールしやすいが、即時失効が苦手。短命化やブラックリストで補う。
 - Token Revocation（RFC 7009）は失効の標準手段。JWTでは短命化・ブラックリストと併用する。
 
+# 関連記事
+- [SAML 2.0とSSOの基礎](/ja/posts/saml-2-0/)
+- [OAuth 2.1とSecurity BCP（RFC 9700）](/ja/posts/oauth-2-1-security-bcp/)
+- [動的クライアント登録（RFC 7591・7592）](/ja/posts/dynamic-client-registration/)
+- [OIDCのDiscoveryとメタデータ](/ja/posts/oidc-discovery-metadata/)
+- [JOSEの全体像（JWT・JWS・JWE・JWK・JWA）](/ja/posts/jose-overview/)
+
 # 参考リンク
 
 - [RFC 7662 OAuth 2.0 Token Introspection](https://www.rfc-editor.org/rfc/rfc7662)

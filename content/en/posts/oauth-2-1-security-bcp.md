@@ -136,6 +136,13 @@ You put `code_challenge` in the authorization request and send `code_verifier` a
 - What to protect: exact redirect_uri matching, mandatory PKCE, deprecation of Implicit/ROPC, Mix-Up defense, sender constraints, and audience restriction.
 - Many of these originate from the threats in RFC 6819, which 9700 systematized into countermeasures.
 
+# Related posts
+- [SAML 2.0 spec and SSO](/posts/saml-2-0/)
+- [Dynamic Client Registration (RFC 7591/7592)](/posts/dynamic-client-registration/)
+- [OIDC Discovery and metadata](/posts/oidc-discovery-metadata/)
+- [JOSE overview (JWT, JWS, JWE, JWK, JWA)](/posts/jose-overview/)
+- [Access token validation and revocation](/posts/access-token-validation-revocation/)
+
 # References
 
 - [RFC 9700 Best Current Practice for OAuth 2.0 Security](https://www.rfc-editor.org/rfc/rfc9700)

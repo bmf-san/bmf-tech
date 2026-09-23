@@ -525,6 +525,13 @@ Assertionを含むResponseは`urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST`で
 
 ---
 
+## 関連記事
+- [OAuth 2.1とSecurity BCP（RFC 9700）](/ja/posts/oauth-2-1-security-bcp/)
+- [動的クライアント登録（RFC 7591・7592）](/ja/posts/dynamic-client-registration/)
+- [OIDCのDiscoveryとメタデータ](/ja/posts/oidc-discovery-metadata/)
+- [JOSEの全体像（JWT・JWS・JWE・JWK・JWA）](/ja/posts/jose-overview/)
+- [アクセストークンの検証と失効](/ja/posts/access-token-validation-revocation/)
+
 ## 参考資料
 
 - [SAML 2.0 Technical Overview](https://docs.oasis-open.org/security/saml/Post2.0/sstc-saml-tech-overview-2.0.html)

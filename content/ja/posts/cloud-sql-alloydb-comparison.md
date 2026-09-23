@@ -108,6 +108,10 @@ index advisorは、クエリの実行計画を分析し、インデックスの�
 - Readは無限にスケールする。レプリケーション遅延を気にする必要はなさそう
 - 既にCloud SQLを利用している場合、Cloud SQL Enterprise edition Plusでも性能改善が期待できる可能性もあり、移行対象候補の一つとして考えても良いかもしれない
 
+# 関連記事
+- [PostgreSQLのCOLLATE（照合順序）](/ja/posts/postgresql-collate-explained/)
+- [シャーディングとパーティショニングの違い](/ja/posts/sharding-vs-partitioning/)
+
 # 参考
 - [cloud.google.com - AlloyDB overview](https://cloud.google.com/alloydb/docs/overview)
 - [cloud.google.com - AlloyDB for PostgreSQL の仕組み: データベース対応のインテリジェントなストレージ](https://cloud.google.com/blog/ja/products/databases/alloydb-for-postgresql-intelligent-scalable-storage)

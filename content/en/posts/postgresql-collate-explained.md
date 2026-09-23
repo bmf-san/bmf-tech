@@ -131,5 +131,9 @@ When handling Japanese in PostgreSQL, it is important to set the appropriate col
 
 If different language settings are required, it is also possible to dynamically specify English COLLATE or other language COLLATE to switch sorting order and comparison behavior. During development and operation, it is important to actually store Japanese data and test sorting and comparison results to ensure they behave as intended.
 
+# Related posts
+- [Sharding vs partitioning](/posts/sharding-vs-partitioning/)
+- [Cloud SQL vs AlloyDB](/posts/cloud-sql-alloydb-comparison/)
+
 # References
 - [PostgreSQL Official Documentation - Collation Support](https://www.postgresql.org/docs/current/collation.html)
