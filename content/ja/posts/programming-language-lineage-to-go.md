@@ -79,19 +79,19 @@ Go最大の特徴であるゴルーチンとチャネルは、ベル研究所を
 
 ## CSP（1978年）
 
-CSP（Communicating Sequential Processes）は、トニー・ホアが1978年の論文で提唱した並行処理の理論・モデルである。言語そのものではなく、概念である点に注意したい。
+CSP（Communicating Sequential Processes）は、トニー・ホアが1978年の論文で示した並行処理のモデルである。当初は並行プログラミング言語に近い形で提案され、のちにホアやロスコーらの手でプロセス代数（並行性の数学的理論）として整えられた。特定の実装言語というより、並行処理を捉えるための枠組みである。
 
-CSPは「メモリを共有して通信する」のではなく、「通信することでメモリを共有する」という発想だった。スレッドとロックではなく、プロセスとチャネルで並行処理を捉える発想である。この考え方は、のちのGoの有名な格言『通信によってメモリを共有せよ』へと受け継がれた。
+その核心は、メモリを共有するのではなく、独立したプロセスがメッセージのやり取りで協調するという考え方にある。スレッドやロックに頼る手法とは対照的なこの発想は、のちのGoの有名な格言『通信によってメモリを共有せよ』へと受け継がれた。
 
 ## Squeak（1985年）
 
-Squeakは、ベル研究所のルカ・カルデリとロブ・パイクが開発した言語である。マウスやキーボードを扱うUIについて、その並行性をプログラミング言語で初めて表現した。CSPのモデルを言語で実装した初期の試みである。なお、Smalltalk実装のSqueakとは同名の別物である。
+Squeakは、ベル研究所のルカ・カルデリとロブ・パイクが、CSPの考え方をUI記述に応用して作った小さな言語である。マウスやキーボードといった入力を扱う画面について、その並行性をプログラムとして表現するのが狙いだった。CSPを実際の言語に落とし込んだ初期の試みである。発表論文の副題は「マウスと対話するための言語」であった。なお、Smalltalk実装のSqueakとは同名の別物である。
 
 ## Newsqueak（1989年）
 
 Newsqueakは、ロブ・パイクがSqueakをもとに開発した、より実用的な並行処理言語である。
 
-構文はCに近い。ファーストクラスのチャネル（`chan`）、動的なプロセス生成とチャネル生成、そして複数のチャネルを待ち受ける`select`構文が、明確な形で実装された。これらはいずれも、現在のGoにそのまま見られる特徴である。
+構文はCに近い。最大の特徴は、チャネルをファーストクラスの値として扱える点にある。CSPやSqueakと違い、チャネルを変数に入れたり、関数へ渡したり、チャネル越しに送ったりできる。動的にプロセスやチャネルを生成でき、複数のチャネルを待ち受け、通信を選ぶ仕組み（Goの`select`の直接の祖先）も備えていた。これらはいずれも、現在のGoに通じる特徴である。
 
 ## Alef（1992年）
 
@@ -143,6 +143,8 @@ flowchart TB
 
 - [Go FAQ — What are Go's ancestors? / Why build concurrency on the ideas of CSP?](https://go.dev/doc/faq)
 - [Rob Pike, "Origins of Go concurrency style"（OSCON 2010）](https://www.youtube.com/watch?v=3DtUzH3zoFo)
+- [Russ Cox, "Bell Labs and CSP Threads"](https://swtch.com/~rsc/thread/)
+- [Wikipedia: Communicating sequential processes](https://en.wikipedia.org/wiki/Communicating_sequential_processes)
 - [Wikipedia: Newsqueak](https://en.wikipedia.org/wiki/Newsqueak)
 - [Wikipedia: Alef (programming language)](https://en.wikipedia.org/wiki/Alef_(programming_language))
 - [Wikipedia: Limbo (programming language)](https://en.wikipedia.org/wiki/Limbo_(programming_language))

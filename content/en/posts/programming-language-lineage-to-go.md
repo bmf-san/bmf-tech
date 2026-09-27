@@ -79,9 +79,9 @@ Goroutines and channels, the defining features of Go, grew out of a concurrency 
 
 ## CSP (1978)
 
-Tony Hoare proposed CSP (Communicating Sequential Processes) in a 1978 paper as a theory and model of concurrency. Note that CSP names a concept, not a language.
+Tony Hoare first described CSP (Communicating Sequential Processes) in a 1978 paper. CSP is a formal model of concurrency — a member of the process-calculus family. Hoare presented the 1978 version much like a concurrent programming language, then he and Roscoe later refined it into a full theory (his 1985 book). Rather than a language you code in day to day, CSP is a way to reason about concurrency.
 
-CSP set out a clear philosophy: do not share memory to communicate; instead, communicate to share memory. It frames concurrency around processes and channels rather than threads and locks. Go inherited that idea as a proverb: "Do not communicate by sharing memory; instead, share memory by communicating."
+Its essence is simple: instead of sharing memory, independent processes coordinate by passing messages. That stance — message passing over threads and locks — carried into Go as a proverb: "Do not communicate by sharing memory; instead, share memory by communicating."
 
 ## Squeak (1985)
 
@@ -93,7 +93,7 @@ Squeak stands as an early experiment that expressed the CSP model as a programmi
 
 Rob Pike built Newsqueak on top of Squeak as a more practical concurrency language.
 
-Its syntax sits close to C. Newsqueak realized first-class channels (`chan`), dynamic process and channel creation, and the `select` statement that waits on several channels at once. Each of these features appears in Go today.
+Its syntax sits close to C. Its key advance was to make channels first-class values: unlike in CSP and Squeak, a Newsqueak program can store a channel in a variable, pass it to a function, and even send it over another channel. It could also create processes and channels dynamically and choose among several channel communications at once — the direct ancestor of Go's `select`. Each of these traits appears in Go today.
 
 ## Alef (1992)
 
@@ -145,6 +145,8 @@ Behind a single line of Go lies more than half a century of language design. Onc
 
 - [Go FAQ — What are Go's ancestors? / Why build concurrency on the ideas of CSP?](https://go.dev/doc/faq)
 - [Rob Pike, "Origins of Go concurrency style" (OSCON 2010)](https://www.youtube.com/watch?v=3DtUzH3zoFo)
+- [Russ Cox, "Bell Labs and CSP Threads"](https://swtch.com/~rsc/thread/)
+- [Wikipedia: Communicating sequential processes](https://en.wikipedia.org/wiki/Communicating_sequential_processes)
 - [Wikipedia: Newsqueak](https://en.wikipedia.org/wiki/Newsqueak)
 - [Wikipedia: Alef (programming language)](https://en.wikipedia.org/wiki/Alef_(programming_language))
 - [Wikipedia: Limbo (programming language)](https://en.wikipedia.org/wiki/Limbo_(programming_language))
