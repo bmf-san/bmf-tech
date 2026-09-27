@@ -31,7 +31,7 @@ Start with the big picture. The official Go FAQ describes Go's ancestry as three
 
 ## Algol 60 (1960)
 
-Nearly every procedural language today descends directly from Algol 60.
+Many of today's procedural languages trace back to Algol 60.
 
 Algol 60 offered block structure through `begin ... end`, local variable scope, and recursion. It also became renowned for defining its grammar formally in BNF (Backus–Naur Form), the notation Backus devised for Algol 58 and Naur refined for Algol 60. From C and Pascal to Java and Go, the basic rules of syntax start here.
 
@@ -39,7 +39,7 @@ Algol 60 offered block structure through `begin ... end`, local variable scope, 
 
 Niklaus Wirth designed Pascal for teaching and for writing systems.
 
-Pascal simplified Algol 60 and added a strict type system, including the `record` type. It also earned a reputation for fast compilation. Pascal spread structured programming across the world and stood beside C as a standard language.
+Pascal built on Algol 60 and added a strict type system, including the `record` type. Its declare-before-use rule allowed efficient single-pass compilation. It saw wide use from classrooms to commercial software and did much to popularize structured programming.
 
 # 2. Modularity and the Oberon lineage: Wirth's pursuit
 
@@ -55,11 +55,11 @@ It split the definition part (`DEFINITION MODULE`) from the implementation part 
 
 Niklaus Wirth designed Oberon by stripping Modula-2 down to the extreme. He and Jürg Gutknecht then built the matching tiny operating system, the Oberon System.
 
-Wirth removed the complex features and added only two things: type extension, which resembles single inheritance, and garbage collection. Oberon marks the peak of his philosophy: gain the most expressive power from the fewest features.
+Wirth removed the complex features and added type extension, which resembles single inheritance, and garbage collection. Oberon's guiding motto — "make things as simple as possible, but not simpler," a line often attributed to Einstein — reflects Wirth's devotion to simplicity.
 
 ## Object Oberon (1989) and Oberon-2 (1991)
 
-Two extensions brought full object orientation to Oberon. Mössenböck, Templ, and Griesemer built Object Oberon; Mössenböck and Wirth built Oberon-2. Oberon-2 in particular settled on type-bound procedures with a receiver — that is, methods.
+Two extensions added object-oriented features to Oberon. Mössenböck, Templ, and Griesemer built Object Oberon; Mössenböck and Wirth built Oberon-2. Oberon-2 in particular settled on type-bound procedures with a receiver — that is, methods.
 
 One choice stands out: they added no `class` construct. Instead, they attached methods directly to Oberon's type extension.
 
