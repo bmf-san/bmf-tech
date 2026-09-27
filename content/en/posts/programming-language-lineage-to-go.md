@@ -18,13 +18,13 @@ draft: false
 
 Go grew out of two great lineages. Niklaus Wirth shaped one of them, the lineage of structure and modularity, from Pascal through Oberon. Tony Hoare started the other with CSP, the root of a concurrency lineage. On the simple syntax of C, Go brings these two rivers together into a single language.
 
-This article walks the path from Algol 60 to Go and organizes the traits and historical links of each language. Every claim rests on the sources at the end and matches the official Go FAQ and the primary references for each language.
+This article walks the path from Algol 60 to Go and organizes the traits and historical links of each language. Every claim rests on the sources at the end and matches the official Go FAQ and the references for each language.
 
 # Two great lineages
 
 Start with the big picture. The official Go FAQ describes Go's ancestry as three streams: most of the syntax comes from the C family; declarations and packages come from the Pascal/Modula/Oberon family; and concurrency comes from Newsqueak and Limbo, which trace back to Hoare's CSP. This article follows the same map.
 
-- The Oberon line: a lean type system, object orientation without inheritance, module management through packages, and garbage collection
+- The Oberon line: a lean type system, object orientation without classes, module management through packages, and garbage collection
 - The CSP line: process communication through channels, the `select` statement, and lightweight processes
 
 # 1. The Algol 60 lineage: the origin of structured programming
