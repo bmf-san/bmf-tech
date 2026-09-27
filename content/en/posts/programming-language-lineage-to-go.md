@@ -75,7 +75,7 @@ The clearest link runs through a person. Robert Griesemer, one of Go's three cre
 
 # 3. CSP and the concurrency lineage: the direct ancestor of Go's concurrency
 
-Goroutines and channels, the defining features of Go, grew out of a concurrency model that centered on Bell Labs.
+Go's goroutines and channels grew out of a concurrency model that centered on Bell Labs.
 
 ## CSP (1978)
 
@@ -93,7 +93,7 @@ Squeak stands as an early experiment that expressed the CSP model as a programmi
 
 Rob Pike built Newsqueak on top of Squeak as a more practical concurrency language.
 
-Its syntax sits close to C. Its key advance was to make channels first-class values: unlike in CSP and Squeak, a Newsqueak program can store a channel in a variable, pass it to a function, and even send it over another channel. It could also create processes and channels dynamically and choose among several channel communications at once — the direct ancestor of Go's `select`. Each of these traits appears in Go today.
+Its syntax sits close to C. Its key advance was to make channels first-class values: unlike in CSP and Squeak, a Newsqueak program can store a channel in a variable, pass it to a function, and even send it over another channel. It could also create processes and channels dynamically and choose among several channel communications at once — a forerunner of Go's `select`. Each of these traits appears in Go today.
 
 ## Alef (1992)
 
