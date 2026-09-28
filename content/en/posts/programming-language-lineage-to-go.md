@@ -69,7 +69,7 @@ Go's design carries a clear mark of the Oberon line.
 
 - It holds no `class` and binds methods to structs
 - It uses type embedding instead of inheritance
-- It manages modules through packages
+- It organizes code into packages
 
 The clearest link runs through a person. Robert Griesemer, one of Go's three creators, studied under Wirth and Mössenböck at ETH Zurich and co-authored Object Oberon (1989). An author of the Oberon line joined the Go design directly.
 
