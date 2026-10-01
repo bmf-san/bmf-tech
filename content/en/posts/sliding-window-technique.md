@@ -72,6 +72,12 @@ Sorting is done to make it easier to efficiently find pairs.
 
 Although `r-l` might seem counterintuitive, since the code is for finding pairs, it focuses on counting pairs by indices rather than the values themselves in the array, resulting in this kind of code.
 
+# Related posts
+- [Binary search tree traversal patterns](/posts/binary-search-tree-search-patterns/)
+- [Big O notation and complexity](/posts/big-o-notation-algorithms/)
+- [Adjacency list vs adjacency matrix](/posts/adjacency-list-matrix/)
+- [Open addressing and Swiss Table](/posts/open-address-hash-table-swizzle-table/)
+
 # References
 - [algodaily.com - The Two Pointer Technique](https://algodaily.com/lessons/using-the-two-pointer-technique/go)
 - [www.geekforgeeks.org - Two Pointers Technique](https://www.geeksforgeeks.org/two-pointers-technique/)

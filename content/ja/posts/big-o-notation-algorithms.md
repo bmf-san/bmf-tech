@@ -153,6 +153,12 @@ nが8の時
 1+log2ⁿのステップ数となるので、諸々を省略して計算量はlog nととなる。
 
 
+# 関連記事
+- [2分探索木の探索パターン](/ja/posts/binary-search-tree-search-patterns/)
+- [尺取り法（スライディングウィンドウ）](/ja/posts/sliding-window-technique/)
+- [隣接リストと隣接行列の違い](/ja/posts/adjacency-list-matrix/)
+- [オープンアドレス法とスイステーブル](/ja/posts/open-address-hash-table-swizzle-table/)
+
 # 参考リンク
 - [計算量オーダーについて](https://qiita.com/asksaito/items/59e0d48408f1eab081b5)
 - [[初心者向け] プログラムの計算量を求める方法](https://qiita.com/cotrpepe/items/1f4c38cc9d3e3a5f5e9c)

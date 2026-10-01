@@ -83,3 +83,9 @@ The code was written as a practice for Cline, but there may still be some bugs.
 
 ## 3. Summary
 Open addressing hash tables are a method that excels in memory and cache efficiency because they do not require extra pointer structures. However, they face challenges such as increased search times as load rates increase and complex deletion processes. On the other hand, **Swiss Table** achieves high performance by cleverly compensating for the shortcomings of open addressing through the use of SIMD, bucket grouping, and Control Bytes (tag management). It is adopted in implementations like Google's Abseil Library and Rust's hashbrown.
+
+## Related posts
+- [Binary search tree traversal patterns](/posts/binary-search-tree-search-patterns/)
+- [Sliding window technique](/posts/sliding-window-technique/)
+- [Big O notation and complexity](/posts/big-o-notation-algorithms/)
+- [Adjacency list vs adjacency matrix](/posts/adjacency-list-matrix/)

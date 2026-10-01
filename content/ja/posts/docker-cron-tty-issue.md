@@ -28,4 +28,9 @@ cronに設定しようとした内容例は以下。
 # 解決策
 `-it`のオプションを削除すれば解決。
 
+# 関連記事
+- [Dockerボリュームが削除されない問題](/ja/posts/docker-image-container-volume-issue/)
+- [Docker Composeで環境変数が参照できない](/ja/posts/docker-compose-env-vars-issue/)
+- [DockerでElasticsearchとKibanaを構築](/ja/posts/docker-elasticsearch-kibana-setup/)
+
 

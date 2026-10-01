@@ -225,6 +225,12 @@ func main() {
 
 The conditions for adding edges may be a bit complicated.
 
+# Related posts
+- [Binary search tree traversal patterns](/posts/binary-search-tree-search-patterns/)
+- [Sliding window technique](/posts/sliding-window-technique/)
+- [Big O notation and complexity](/posts/big-o-notation-algorithms/)
+- [Open addressing and Swiss Table](/posts/open-address-hash-table-swizzle-table/)
+
 # References
 - [mathwords.net - Data Structures for Graphs (Adjacency Matrix and Adjacency List)](https://mathwords.net/gurahu)
 - ~~Graph data structure and graph representation (Part 1 of 2)~~

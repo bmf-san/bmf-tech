@@ -323,6 +323,12 @@ Depth-first search is a bit more troublesome. Moreover, node deletion processing
 # Impressions
 If you remember the search patterns this way, it seems like you can keep them in mind.
 
+# Related posts
+- [Sliding window technique](/posts/sliding-window-technique/)
+- [Big O notation and complexity](/posts/big-o-notation-algorithms/)
+- [Adjacency list vs adjacency matrix](/posts/adjacency-list-matrix/)
+- [Open addressing and Swiss Table](/posts/open-address-hash-table-swizzle-table/)
+
 # References
 - [www.momoyama-usagi.com - Understanding Binary Search Trees for Beginners Part 2: Four Traversal Methods](https://www.momoyama-usagi.com/entry/info-algo-tree-traverse)
   - The traversal methods are very easy to remember, and I used them as a reference.

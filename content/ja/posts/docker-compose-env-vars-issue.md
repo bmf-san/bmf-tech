@@ -89,6 +89,11 @@ const apiClient = axios.create({
 });
 ```
 
+# 関連記事
+- [Dockerボリュームが削除されない問題](/ja/posts/docker-image-container-volume-issue/)
+- [cronでDockerを実行するとTTYエラー](/ja/posts/docker-cron-tty-issue/)
+- [DockerでElasticsearchとKibanaを構築](/ja/posts/docker-elasticsearch-kibana-setup/)
+
 # 参考
 - [docs.docker.jp - Compose における環境変数](https://docs.docker.jp/compose/environment-variables.html)
 - [qiita.com - docker-composeのビルド中に環境変数が認識されない](http://web.archive.org/web/20201114042453/https://qiita.com/katoosky/items/422c183cf5cabb789030)

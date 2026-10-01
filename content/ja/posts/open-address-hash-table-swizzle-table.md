@@ -87,3 +87,9 @@ Clineの素振りを兼ねて書いたコードであるが、いくらかバグ
 ## 3. まとめ
 オープンアドレスハッシュテーブルは、余分なポインタ構造を必要としないためメモリ効率とキャッシュ効率に優れた手法である。しかし、負荷率が高まるにつれ探索回数が増えやすく、削除処理が複雑になるといった課題を抱えている。
 一方、**スイステーブル（Swiss Table）** は、SIMD活用やバケットのグループ化、Control Bytes（タグ管理）といった工夫を重ねることで、オープンアドレス法の欠点をうまく補いながら高性能を実現している。Google の Abseil Library や Rust の hashbrown といった実装で採用されている。
+
+## 関連記事
+- [2分探索木の探索パターン](/ja/posts/binary-search-tree-search-patterns/)
+- [尺取り法（スライディングウィンドウ）](/ja/posts/sliding-window-technique/)
+- [O記法と計算量の求め方](/ja/posts/big-o-notation-algorithms/)
+- [隣接リストと隣接行列の違い](/ja/posts/adjacency-list-matrix/)
