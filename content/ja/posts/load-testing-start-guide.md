@@ -140,6 +140,11 @@ ex.
 # まとめ
 何はともあれ、目的が大事になる。目的がブレるとその後プロセスが意味を持たなくなってしまう。
 
+# 関連記事
+- [クリティカルユーザージャーニー](/ja/posts/critical-user-journey/)
+- [モニタリングのPull型とPush型](/ja/posts/monitoring-pull-push-approaches/)
+- [契約テストとPact](/ja/posts/contract-testing-pact/)
+
 # 参考
 - [キャパシティプランニング](https://www.oreilly.co.jp/books/9784873113999/)
     - 古い本ですがキャパシティプランニングについて書かれた希少な本

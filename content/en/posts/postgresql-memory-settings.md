@@ -65,6 +65,10 @@ Memory management is broadly divided into the following two categories:
 # Conclusion
 PostgreSQL memory management requires a comprehensive design centered around `shared_buffers` and `work_mem`, considering process-specific consumption, concurrent connections, and parallel query characteristics. Implement changes gradually, and ensure thorough pre-verification, risk assessment, and continuous monitoring to achieve stable and high-performance operations.
 
+# Related posts
+- [PostgreSQL Row Level Security (RLS)](/posts/postgresql-row-level-security/)
+- [PostgreSQL COLLATE (collation)](/posts/postgresql-collate-explained/)
+
 # References
 - [PostgreSQL Official Documentation: Runtime Configuration - Resource Consumption](https://www.postgresql.org/docs/current/runtime-config-resource.html)
 - [Gihyo Series: Detailed PostgreSQL Part 2 - Internal Structure of PostgreSQL](https://gihyo.jp/dev/feature/01/dex_postgresql/0002)

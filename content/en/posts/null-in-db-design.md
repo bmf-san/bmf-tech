@@ -44,12 +44,17 @@ The relational model is based on binary logic, so three-valued logic, which incl
   - A function that allows setting a default value when a specified column is NULL
     - IFNULL also exists, but IFNULL is not SQL standard
   - Can be effectively used in patterns where SQL evaluation results in NULL (e.g., results of aggregate functions like SUM or AVG, results of OUTER JOIN, evaluation results of NULLIF, etc.)
-  
+
 # Empty String vs. NULL
 An empty string has a length of 0 and is an existing string, whereas NULL is a non-existent set, and the two are distinguished.
 
 # Cases Allowing NULL
 It may be acceptable to allow NULL when dealing with data that does not fit the relational model.
+
+# Related posts
+- [Cursor vs offset pagination](/posts/cursor-pagination-offset-pagination/)
+- [Bitemporal data model](/posts/bitemporal-data-model/)
+- [Nontemporal, unitemporal, and bitemporal design](/posts/nontemporarl-unitemporal-bitemporal-design/)
 
 # References
 - [amzn.to - Learn Databases from Theory to Practice ~ Efficient SQL with Relational Model (WEB+DB PRESS plus)](https://amzn.to/3TEltzx)

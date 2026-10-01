@@ -152,3 +152,8 @@ CREATE TABLE contract_bitemporal (
 **Supplementary**
 - Some RDBMS products have built-in system time history management (so-called "temporal table" functionality) (e.g., SQL Server's System-Versioned Temporal Table, Oracle's Flashback, etc.).
 - Whether bitemporal is natively supported varies by DB product, but even without standard features, it can be achieved through table design and operational logic (though complexity increases).
+
+## Related posts
+- [Bitemporal data model](/posts/bitemporal-data-model/)
+- [NULL in database design](/posts/null-in-db-design/)
+- [Cursor vs offset pagination](/posts/cursor-pagination-offset-pagination/)

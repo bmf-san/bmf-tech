@@ -215,3 +215,7 @@ In practice, **placing Saga and Outbox at the center** and reserving 2PC for cas
 - **Outbox**: A device for reliably aligning DB writes with external notifications. The foundation for Saga's reliability.
 
 "In a distributed system, give up the Isolation of ACID and recover Atomicity through compensation" — that is the essence of **Saga**, and Outbox is the foundation that reliably drives each of its steps. Before reaching for 2PC, start by asking whether this combination can do the job.
+
+## Related posts
+- [CAP theorem and PACELC](/posts/cap-theorem-pacelc-theorem/)
+- [Cache strategy patterns](/posts/cache-strategy-patterns/)

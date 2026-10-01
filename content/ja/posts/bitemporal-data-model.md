@@ -62,6 +62,11 @@ Temporal Data Modelsという分野で扱われるデータモデルの１つで
 # 所感
 今まで業務で柔軟性の高い履歴データを扱ったことがなかったので、履歴の扱いの世界に深いものを感じた。
 
+# 関連記事
+- [ノンテンポラル・ユニテンポラル・バイテンポラルの設計](/ja/posts/nontemporarl-unitemporal-bitemporal-design/)
+- [DB設計におけるNULL](/ja/posts/null-in-db-design/)
+- [カーソルページネーションとオフセットページネーション](/ja/posts/cursor-pagination-offset-pagination/)
+
 # 参考
 - [en.wikipedia.org - Bitemporal modeling](https://en.wikipedia.org/wiki/Bitemporal_modeling)
 - [martinfowler.com - Bitemporal History](https://martinfowler.com/articles/bitemporal-history.html)

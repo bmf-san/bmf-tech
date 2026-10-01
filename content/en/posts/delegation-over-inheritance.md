@@ -280,6 +280,9 @@ In the real world, "a square is a type of rectangle," but in programs, "a square
 
 Therefore, in OOP design, **"Composition over Inheritance" should be the foundation, and abstraction should be based on behavior, not type names**, leading to robust design.
 
+## Related posts
+- [Cohesion and coupling](/posts/cohesion-coupling/)
+
 ## References
 
 - [Barbara Liskov, Data Abstraction and Hierarchy, 1987](https://www.cs.cmu.edu/~wing/publications/LiskovWing94.pdf)

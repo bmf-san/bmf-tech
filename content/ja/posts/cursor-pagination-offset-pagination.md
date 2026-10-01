@@ -67,3 +67,8 @@ draft: false
 - ライブラリの利用
 - カーソルの軽量化
   - カーソルの情報を軽量化することで、実装の複雑さを軽減できる
+
+# 関連記事
+- [DB設計におけるNULL](/ja/posts/null-in-db-design/)
+- [バイテンポラルデータモデル](/ja/posts/bitemporal-data-model/)
+- [ノンテンポラル・ユニテンポラル・バイテンポラルの設計](/ja/posts/nontemporarl-unitemporal-bitemporal-design/)

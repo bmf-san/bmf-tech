@@ -311,6 +311,10 @@ PostgreSQL's Row Level Security (RLS) is a feature that enables fine-grained row
 - Flexible policies can be created by combining context functions like `current_user` and `current_setting`
 - Applicable to various use cases such as multi-tenant SaaS, user-specific data separation, department-based access control, and regulatory compliance
 
+# Related posts
+- [PostgreSQL memory settings](/posts/postgresql-memory-settings/)
+- [PostgreSQL COLLATE (collation)](/posts/postgresql-collate-explained/)
+
 # References
 - [www.postgresql.jp - ddl-rowsecurity](https://www.postgresql.jp/document/17/html/ddl-rowsecurity.html)
 - [www.postgresql.jp - sql-createpolicy](https://www.postgresql.jp/document/17/html/sql-createpolicy.html)

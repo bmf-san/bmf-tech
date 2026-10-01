@@ -120,3 +120,8 @@ The reasons Pact may not appear popular could be that it only supports consumer-
 PactFlow, an extension of Pact, seemed to be still in the development stage, but it could potentially become a good tool to lower the barriers to entry for contract testing and its benefits.
 
 As services reach a certain scale, systems that provide APIs used by multiple services may emerge, and in such cases, provider-driven contract testing might be more suitable. In these cases, Pact might not be the optimal solution.
+
+# Related posts
+- [Critical user journey](/posts/critical-user-journey/)
+- [Pull vs push monitoring](/posts/monitoring-pull-push-approaches/)
+- [Load testing starting guide](/posts/load-testing-start-guide/)

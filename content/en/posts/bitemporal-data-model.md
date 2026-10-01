@@ -63,6 +63,11 @@ Although it is a data model that allows for referencing past history, adding pas
 # Impressions
 I have never dealt with highly flexible historical data in my work before, so I felt a deep sense of the world of handling history.
 
+# Related posts
+- [Nontemporal, unitemporal, and bitemporal design](/posts/nontemporarl-unitemporal-bitemporal-design/)
+- [NULL in database design](/posts/null-in-db-design/)
+- [Cursor vs offset pagination](/posts/cursor-pagination-offset-pagination/)
+
 # References
 - [en.wikipedia.org - Bitemporal modeling](https://en.wikipedia.org/wiki/Bitemporal_modeling)
 - [martinfowler.com - Bitemporal History](https://martinfowler.com/articles/bitemporal-history.html)

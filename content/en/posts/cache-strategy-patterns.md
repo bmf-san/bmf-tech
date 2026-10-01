@@ -319,3 +319,7 @@ When making a selection, consider the following factors:
 * **Operational Costs**: Complexity of management and development effort
 
 By effectively utilizing cache strategies, the performance and availability of applications can be significantly improved. It is crucial to choose the one that fits the requirements of each project.
+
+## Related posts
+- [CAP theorem and PACELC](/posts/cap-theorem-pacelc-theorem/)
+- [Distributed transactions: 2PC, Saga, and Outbox](/posts/distributed-transaction-patterns-2pc-saga-outbox/)

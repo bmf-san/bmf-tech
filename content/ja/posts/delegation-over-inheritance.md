@@ -281,6 +281,9 @@ func main() {
 
 したがって、OOP設計においては**「継承より委譲」を基本とし、型名ではなく振る舞いに基づく抽象化を行うこと**が堅牢な設計につながる。
 
+## 関連記事
+- [凝集度と結合度](/ja/posts/cohesion-coupling/)
+
 ## 参考
 
 - [Barbara Liskov, Data Abstraction and Hierarchy, 1987](https://www.cs.cmu.edu/~wing/publications/LiskovWing94.pdf)
