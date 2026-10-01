@@ -98,3 +98,6 @@ func DoStuffAndLog() {
 
 # Summary
 Cohesion and coupling are crucial criteria that influence design quality. By clarifying module responsibilities and minimizing dependencies, a system design that is easy to understand, maintain, and scale can be achieved.
+
+# Related posts
+- [Delegation over inheritance](/posts/delegation-over-inheritance/)

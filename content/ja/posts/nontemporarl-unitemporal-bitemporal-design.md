@@ -153,3 +153,8 @@ CREATE TABLE contract_bitemporal (
 **補足**
 - RDBMSの中には、標準でシステム時間の履歴を管理できる（いわゆる「テンポラルテーブル」機能）製品がある（例: SQL Server の System-Versioned Temporal Table、Oracle の Flashback など）。
 - バイテンポラルをネイティブにサポートしているかはDB製品により様々だが、標準機能がない場合でもテーブル設計と運用ロジックで実現が可能である。（ただし、複雑度が高くなる）
+
+## 関連記事
+- [バイテンポラルデータモデル](/ja/posts/bitemporal-data-model/)
+- [DB設計におけるNULL](/ja/posts/null-in-db-design/)
+- [カーソルページネーションとオフセットページネーション](/ja/posts/cursor-pagination-offset-pagination/)

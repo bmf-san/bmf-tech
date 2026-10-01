@@ -137,6 +137,11 @@ Based on the analysis results, perform tuning if necessary and re-execute.
 # Conclusion
 In any case, the purpose is important. If the purpose wavers, the subsequent process becomes meaningless.
 
+# Related posts
+- [Critical user journey](/posts/critical-user-journey/)
+- [Pull vs push monitoring](/posts/monitoring-pull-push-approaches/)
+- [Contract testing and Pact](/posts/contract-testing-pact/)
+
 # References
 - [Capacity Planning](https://www.oreilly.co.jp/books/9784873113999/)
     - An old book but a rare one written about capacity planning

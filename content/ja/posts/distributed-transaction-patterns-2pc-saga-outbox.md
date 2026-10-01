@@ -215,3 +215,7 @@ Saga（業務フロー全体）
 - **Outbox**: DB と外部通知を確実に揃えるための装置。Saga の信頼性の土台になる
 
 「分散システムでは ACID の Isolation を諦め、Atomicity を補償で取り戻す」 — これが Saga の本質であり、Outbox はその各ステップを確実に動かすための土台になる。2PC を選ぶ前に、まずこの組み合わせで設計できないかを検討するところから始めるのが良い。
+
+## 関連記事
+- [CAP定理とPACELC定理](/ja/posts/cap-theorem-pacelc-theorem/)
+- [キャッシュ戦略のパターン](/ja/posts/cache-strategy-patterns/)

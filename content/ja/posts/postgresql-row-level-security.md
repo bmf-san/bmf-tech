@@ -313,6 +313,10 @@ PostgreSQLのRow Level Security（RLS）は、データベースにおけるき�
 - `current_user`や`current_setting`などのコンテキスト関数と組み合わせて柔軟なポリシーを作成可能
 - マルチテナントSaaS、ユーザー別データ分離、部門別アクセス制御、規制コンプライアンスなど様々なユースケースに適用可能
 
+# 関連記事
+- [PostgreSQLのメモリ設定](/ja/posts/postgresql-memory-settings/)
+- [PostgreSQLのCOLLATE（照合順序）](/ja/posts/postgresql-collate-explained/)
+
 # 参考
 - [www.postgresql.jp - ddl-rowsecurity](https://www.postgresql.jp/document/17/html/ddl-rowsecurity.html)
 - [www.postgresql.jp - sql-createpolicy](https://www.postgresql.jp/document/17/html/sql-createpolicy.html)

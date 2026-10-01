@@ -95,6 +95,10 @@ This theorem allows designers of distributed systems to clearly organize design 
 
 In designing distributed systems, it is important to consider both the CAP theorem and PACELC theorem. This enables a clear understanding of the trade-offs regarding system availability, consistency, and latency, allowing for appropriate design choices.
 
+# Related posts
+- [Distributed transactions: 2PC, Saga, and Outbox](/posts/distributed-transaction-patterns-2pc-saga-outbox/)
+- [Cache strategy patterns](/posts/cache-strategy-patterns/)
+
 # References
 - [en.wikipedia.org - CAP theorem](https://en.wikipedia.org/wiki/CAP_theorem)
 - [en.wikipedia.org - PACELC design principle](https://en.wikipedia.org/wiki/PACELC_design_principle)

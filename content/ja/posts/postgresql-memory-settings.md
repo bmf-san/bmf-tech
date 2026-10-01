@@ -64,6 +64,10 @@ PostgreSQLはマルチプロセスモデルを採用しており、サーバ起�
 # まとめ
 PostgreSQLのメモリ管理は`shared_buffers`と`work_mem`を中心に、プロセスごとの消費や同時接続数、パラレルクエリ特性を加味した総合設計が不可欠である。設定変更は段階的に行い、事前検証・リスク評価・継続監視の3点を徹底することで、安定性と性能を両立した運用を実現できる。
 
+# 関連記事
+- [PostgreSQLのRow Level Security（RLS）](/ja/posts/postgresql-row-level-security/)
+- [PostgreSQLのCOLLATE（照合順序）](/ja/posts/postgresql-collate-explained/)
+
 # 参考
 - [PostgreSQL公式ドキュメント: Runtime Configuration - Resource Consumption](https://www.postgresql.org/docs/current/runtime-config-resource.html)
 - [Gihyo連載：詳解PostgreSQL第2回 - PostgreSQLの内部構造](https://gihyo.jp/dev/feature/01/dex_postgresql/0002)

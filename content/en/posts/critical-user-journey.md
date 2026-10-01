@@ -228,6 +228,11 @@ I felt that organizing based on user experience, rather than user flow (the expe
 
 Having clear answers to questions like "Why was this SLO defined?" and "Why is this SLO important?" makes it easier to involve non-developers in the design and operation of SLOs.
 
+# Related posts
+- [Pull vs push monitoring](/posts/monitoring-pull-push-approaches/)
+- [Load testing starting guide](/posts/load-testing-start-guide/)
+- [Contract testing and Pact](/posts/contract-testing-pact/)
+
 # References
 - [sre.google - Modeling User Journeys](https://sre.google/workbook/implementing-slos/#modeling-user-journeys)
 - [cloud.google.com - Standardizing the SLO Design Process](https://cloud.google.com/blog/ja/products/devops-sre/how-to-design-good-slos-according-to-google-sres)

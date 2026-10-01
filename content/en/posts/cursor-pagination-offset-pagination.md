@@ -66,3 +66,8 @@ Ideas to resolve implementation complexity include:
 - Using libraries
 - Lightweight cursors
   - Reducing the information in the cursor can alleviate implementation complexity.
+
+# Related posts
+- [NULL in database design](/posts/null-in-db-design/)
+- [Bitemporal data model](/posts/bitemporal-data-model/)
+- [Nontemporal, unitemporal, and bitemporal design](/posts/nontemporarl-unitemporal-bitemporal-design/)

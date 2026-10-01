@@ -321,3 +321,7 @@ sequenceDiagram
 
 キャッシュ戦略をうまく使いこなすことで、アプリケーションの性能と可用性は大きく向上する。各プロジェクトの要件に合った選択が重要である。
 
+## 関連記事
+- [CAP定理とPACELC定理](/ja/posts/cap-theorem-pacelc-theorem/)
+- [分散トランザクションの3パターン（2PC・Saga・Outbox）](/ja/posts/distributed-transaction-patterns-2pc-saga-outbox/)
+

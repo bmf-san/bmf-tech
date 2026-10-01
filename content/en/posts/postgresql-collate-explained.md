@@ -134,6 +134,8 @@ If different language settings are required, it is also possible to dynamically 
 # Related posts
 - [Sharding vs partitioning](/posts/sharding-vs-partitioning/)
 - [Cloud SQL vs AlloyDB](/posts/cloud-sql-alloydb-comparison/)
+- [PostgreSQL memory settings](/posts/postgresql-memory-settings/)
+- [PostgreSQL Row Level Security (RLS)](/posts/postgresql-row-level-security/)
 
 # References
 - [PostgreSQL Official Documentation - Collation Support](https://www.postgresql.org/docs/current/collation.html)

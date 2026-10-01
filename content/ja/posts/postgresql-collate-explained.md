@@ -133,6 +133,8 @@ PostgreSQLで日本語を扱う際は、照合順序（COLLATE）の適切な設
 # 関連記事
 - [シャーディングとパーティショニングの違い](/ja/posts/sharding-vs-partitioning/)
 - [Cloud SQLとAlloyDBの比較](/ja/posts/cloud-sql-alloydb-comparison/)
+- [PostgreSQLのメモリ設定](/ja/posts/postgresql-memory-settings/)
+- [PostgreSQLのRow Level Security（RLS）](/ja/posts/postgresql-row-level-security/)
 
 # 参考
 - [PostgreSQL公式ドキュメント - Collation Support](https://www.postgresql.org/docs/current/collation.html))*

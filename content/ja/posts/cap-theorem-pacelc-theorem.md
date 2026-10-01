@@ -96,6 +96,10 @@ flowchart TD
 
 分散システムの設計においては、CAP定理とPACELC定理の両方を考慮することが重要である。これにより、システムの可用性、一貫性、レイテンシに関するトレードオフを明確に理解し、適切な設計選択を行うことができる。
 
+# 関連記事
+- [分散トランザクションの3パターン（2PC・Saga・Outbox）](/ja/posts/distributed-transaction-patterns-2pc-saga-outbox/)
+- [キャッシュ戦略のパターン](/ja/posts/cache-strategy-patterns/)
+
 # 参考
 - [en.wikipedia.org - CAP theorem](https://en.wikipedia.org/wiki/CAP_theorem)
 - [en.wikipedia.org - PACELC design principle](https://en.wikipedia.org/wiki/PACELC_design_principle)

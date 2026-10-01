@@ -44,6 +44,11 @@ ex. DatadogやMackerelなど
 
 モニタリングシステムを選択する際には、要件やシステムの特性に合わせて、Pull型またはPush型を選択する必要がある。
 
+# 関連記事
+- [クリティカルユーザージャーニー](/ja/posts/critical-user-journey/)
+- [負荷試験のスターティングガイド](/ja/posts/load-testing-start-guide/)
+- [契約テストとPact](/ja/posts/contract-testing-pact/)
+
 # 参考
 - [モニタリングシステムの Push 型 Pull 型アプローチと Prometheus についての考察](https://yasuharu519.hatenablog.com/entry/2017/12/16/215855)
 - [監視ツールはPull型かPush型か](https://scrapbox.io/gosyujin/%E7%9B%A3%E8%A6%96%E3%83%84%E3%83%BC%E3%83%AB%E3%81%AFPull%E5%9E%8B%E3%81%8BPush%E5%9E%8B%E3%81%8B)

@@ -229,6 +229,11 @@ SLOを考えるときにクリティカルユーザージャーニーを定義�
 
 「なぜこのSLOを定義したのか？」「このSLOはなぜ重要なのか？」という問いに明確な答えを持つことができるため、開発者以外を巻き込んだSLOの設計・運用がしやすくなると思った。
 
+# 関連記事
+- [モニタリングのPull型とPush型](/ja/posts/monitoring-pull-push-approaches/)
+- [負荷試験のスターティングガイド](/ja/posts/load-testing-start-guide/)
+- [契約テストとPact](/ja/posts/contract-testing-pact/)
+
 # 参考
 - [sre.google - Modeling User Journeys](https://sre.google/workbook/implementing-slos/#modeling-user-journeys)
 - [cloud.google.com - SRE の導入: SLO の設計プロセスを標準化する](https://cloud.google.com/blog/ja/products/devops-sre/how-to-design-good-slos-according-to-google-sres)

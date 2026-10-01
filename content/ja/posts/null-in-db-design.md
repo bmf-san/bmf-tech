@@ -43,12 +43,17 @@ draft: false
   - 指定したカラムがNULLのときのデフォルト値を設定できる関数
     - IFNULLもあるが、IFNULLはSQL標準ではない
   - SQLの評価結果によりNULLになってしまうパターン（ex. SUMやAVGなどの集計関数の実行結果やOUTER JOINの結果、NULLIFの評価結果など）で有効に使える
-  
+
 # 空文字とNULL
 空文字は長さが0で、存在する文字列であるの対し、NULLは存在しない集合であり、両者は区別されるものである。
 
 # NULLを許容するケース
 リレーショナルモデルに合わないデータを扱う場合は許容しても良いと考えられる。
+
+# 関連記事
+- [カーソルページネーションとオフセットページネーション](/ja/posts/cursor-pagination-offset-pagination/)
+- [バイテンポラルデータモデル](/ja/posts/bitemporal-data-model/)
+- [ノンテンポラル・ユニテンポラル・バイテンポラルの設計](/ja/posts/nontemporarl-unitemporal-bitemporal-design/)
 
 # 参考
 - [amzn.to - 理論から学ぶデータベース実践入門 ~リレーショナルモデルによる効率的なSQL (WEB+DB PRESS plus) ](https://amzn.to/3TEltzx)

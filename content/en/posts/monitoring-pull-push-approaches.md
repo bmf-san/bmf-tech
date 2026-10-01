@@ -44,6 +44,11 @@ The table above shows general advantages and disadvantages, which may vary depen
 
 When selecting a monitoring system, it is necessary to choose between the pull or push approach based on requirements and system characteristics.
 
+# Related posts
+- [Critical user journey](/posts/critical-user-journey/)
+- [Load testing starting guide](/posts/load-testing-start-guide/)
+- [Contract testing and Pact](/posts/contract-testing-pact/)
+
 # References
 - [Considerations on Push and Pull Approaches in Monitoring Systems and Prometheus](https://yasuharu519.hatenablog.com/entry/2017/12/16/215855)
 - [Is the Monitoring Tool Pull or Push?](https://scrapbox.io/gosyujin/%E7%9B%A3%E8%A6%96%E3%83%84%E3%83%BC%E3%83%AB%E3%81%AFPull%E5%9E%8B%E3%81%8BPush%E5%9E%8B%E3%81%8B)
