@@ -161,6 +161,12 @@ The number of steps is 1+log2ⁿ, so excluding various factors, the complexity i
 - [Comprehensive Guide to Determining Complexity Order! ~ Where Does log Come From ~](https://qiita.com/drken/items/872ebc3a2b5caaa4a0d0)
 - [techscore - A Basic Guide to Algorithms and Complexity for New Developers](http://www.techscore.com/blog/2016/08/08/%E9%96%8B%E7%99%BA%E6%96%B0%E5%8D%92%E3%81%AB%E6%8D%A7%E3%81%90%E3%80%81%E5%9F%BA%E6%9C%AC%E3%81%AE%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0%E3%81%A8%E8%A8%88%E7%AE%97%E9%87%8F/)
 
+# Related posts
+- [Binary search tree traversal patterns](/posts/binary-search-tree-search-patterns/)
+- [Sliding window technique](/posts/sliding-window-technique/)
+- [Adjacency list vs adjacency matrix](/posts/adjacency-list-matrix/)
+- [Open addressing and Swiss Table](/posts/open-address-hash-table-swizzle-table/)
+
 # Reference Books
 - [Cracking the Coding Interview: 189 Programming Questions and Solutions](https://amzn.to/2yOgQ08)
   - Easy-to-understand examples about Big O notation.

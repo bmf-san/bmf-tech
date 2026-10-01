@@ -49,6 +49,11 @@ kibana:
     - ELASTICSEARCH_URL=http://127.0.0.1:9200
 ```
 
+# 関連記事
+- [Dockerボリュームが削除されない問題](/ja/posts/docker-image-container-volume-issue/)
+- [Docker Composeで環境変数が参照できない](/ja/posts/docker-compose-env-vars-issue/)
+- [cronでDockerを実行するとTTYエラー](/ja/posts/docker-cron-tty-issue/)
+
 # 参考
 - [Elasticsearch](https://www.elastic.co/jp/products/elasticsearch)
 - [DockerでElasticsearchとKibanaを動かす](http://mezina1942.hatenablog.com/entry/2017/10/31/025825)

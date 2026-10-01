@@ -72,5 +72,10 @@ To clean up images as well, add `--rmi all`.
 docker compose down --rmi all -v
 ```
 
+# Related posts
+- [Docker Compose env vars not recognized](/posts/docker-compose-env-vars-issue/)
+- [Docker in cron: the input device is not a TTY](/posts/docker-cron-tty-issue/)
+- [Elasticsearch and Kibana with Docker](/posts/docker-elasticsearch-kibana-setup/)
+
 # References
 - [Docker Volume Issues -v --rm -d Garbage Remains, Container Won't Start](https://stlisacity.hatenablog.com/entry/2018/09/10/145101)

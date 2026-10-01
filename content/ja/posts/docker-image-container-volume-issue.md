@@ -74,5 +74,10 @@ docker compose down --rmi all -v
 ```
 
 
+# 関連記事
+- [Docker Composeで環境変数が参照できない](/ja/posts/docker-compose-env-vars-issue/)
+- [cronでDockerを実行するとTTYエラー](/ja/posts/docker-cron-tty-issue/)
+- [DockerでElasticsearchとKibanaを構築](/ja/posts/docker-elasticsearch-kibana-setup/)
+
 # 参考
 - [DockerのVolumeに関して -v --rm -d ゴミが残る問題 コンテナが起動しない](https://stlisacity.hatenablog.com/entry/2018/09/10/145101)

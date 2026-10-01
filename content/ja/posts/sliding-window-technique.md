@@ -72,6 +72,12 @@ func findPairs(n []int, m int) int {
 
 r-lが直感に反するような気がするが、ペアを探すためのコードなので、配列内の値そのものではなくインデックスに注目してペアをカウントすれば良いため、このようなコードになる。
 
+# 関連記事
+- [2分探索木の探索パターン](/ja/posts/binary-search-tree-search-patterns/)
+- [O記法と計算量の求め方](/ja/posts/big-o-notation-algorithms/)
+- [隣接リストと隣接行列の違い](/ja/posts/adjacency-list-matrix/)
+- [オープンアドレス法とスイステーブル](/ja/posts/open-address-hash-table-swizzle-table/)
+
 # 参照
 - [algodaily.com - The Two Pointer Technique](https://algodaily.com/lessons/using-the-two-pointer-technique/go)
 - [www.geekforgeeks.org - Two Pointers Technique](https://www.geeksforgeeks.org/two-pointers-technique/)

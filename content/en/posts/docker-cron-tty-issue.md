@@ -26,3 +26,8 @@ The `-t` option assigns a TTY, and `-i` opens standard input, but these are unne
 
 # Solution
 Removing the `-it` options resolves the issue.
+
+# Related posts
+- [Docker volumes not deleted](/posts/docker-image-container-volume-issue/)
+- [Docker Compose env vars not recognized](/posts/docker-compose-env-vars-issue/)
+- [Elasticsearch and Kibana with Docker](/posts/docker-elasticsearch-kibana-setup/)

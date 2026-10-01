@@ -325,6 +325,12 @@ func main() {
 # 所感
 探索パターンはとりあえずこうやって覚えておけば頭には留められそう。
 
+# 関連記事
+- [尺取り法（スライディングウィンドウ）](/ja/posts/sliding-window-technique/)
+- [O記法と計算量の求め方](/ja/posts/big-o-notation-algorithms/)
+- [隣接リストと隣接行列の違い](/ja/posts/adjacency-list-matrix/)
+- [オープンアドレス法とスイステーブル](/ja/posts/open-address-hash-table-swizzle-table/)
+
 # 参考
 - [www.momoyama-usagi.com - うさぎでもわかる2分探索木　後編　2分探索木における4つの走査方法](https://www.momoyama-usagi.com/entry/info-algo-tree-traverse)
   - 走査方法が大変覚えやすく、参考にさせて頂いた

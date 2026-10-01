@@ -50,6 +50,11 @@ kibana:
     - ELASTICSEARCH_URL=http://127.0.0.1:9200
 ```
 
+# Related posts
+- [Docker volumes not deleted](/posts/docker-image-container-volume-issue/)
+- [Docker Compose env vars not recognized](/posts/docker-compose-env-vars-issue/)
+- [Docker in cron: the input device is not a TTY](/posts/docker-cron-tty-issue/)
+
 # References
 - [Elasticsearch](https://www.elastic.co/jp/products/elasticsearch)
 - [Running Elasticsearch and Kibana with Docker](http://mezina1942.hatenablog.com/entry/2017/10/31/025825)

@@ -89,6 +89,11 @@ const apiClient = axios.create({
 });
 ```
 
+# Related posts
+- [Docker volumes not deleted](/posts/docker-image-container-volume-issue/)
+- [Docker in cron: the input device is not a TTY](/posts/docker-cron-tty-issue/)
+- [Elasticsearch and Kibana with Docker](/posts/docker-elasticsearch-kibana-setup/)
+
 # References
 - [docs.docker.jp - Environment Variables in Compose](https://docs.docker.jp/compose/environment-variables.html)
 - [qiita.com - Environment Variables Not Recognized During docker-compose Build](http://web.archive.org/web/20201114042453/https://qiita.com/katoosky/items/422c183cf5cabb789030)
