@@ -14,6 +14,8 @@
   translation_key: database
 - name: Development Process
   translation_key: development-process
+- name: Fishing
+  translation_key: fishing
 - name: Healthcare
   translation_key: healthcare
 - name: Incident Report

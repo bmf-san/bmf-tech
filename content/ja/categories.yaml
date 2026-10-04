@@ -42,3 +42,5 @@
   translation_key: development-process
 - name: 障害報告
   translation_key: incident-report
+- name: 釣り
+  translation_key: fishing

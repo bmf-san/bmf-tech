@@ -762,6 +762,8 @@
   translation_key: logical-thinking
 - name: ロック
   translation_key: lock
+- name: ロックフィッシュ
+  translation_key: rockfish
 - name: ロードバランサー
   translation_key: load-balancer
 - name: 事業戦略

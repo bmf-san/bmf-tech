@@ -702,6 +702,8 @@
   translation_key: risk-assessment
 - name: Riverpod
   translation_key: riverpod
+- name: Rockfish
+  translation_key: rockfish
 - name: Round Robin
   translation_key: round-robin
 - name: Router
