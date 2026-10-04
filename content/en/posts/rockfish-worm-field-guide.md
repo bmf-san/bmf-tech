@@ -12,8 +12,6 @@ translation_key: rockfish-worm-field-guide
 draft: false
 ---
 
-*This post contains Amazon Associates affiliate links (ads).*
-
 # Introduction
 This guide lays out how to decide your next move when you fish soft plastics for rockfish. Read it top to bottom at the spot.
 
@@ -240,18 +238,6 @@ Paste these six lines into a phone note.
 - Baitfish in mind: shad tail on a swimming retrieve
 - Bottom in mind: craw on a bottom bump
 - No bites: change where you cast first, then change one thing at a time
-
-# Related Gear (PR)
-This section contains Amazon Associates affiliate links (ads). Each link opens Amazon Japan search results for a worm type or item.
-
-- [Shad tail worms](https://www.amazon.co.jp/s?k=%E3%82%B7%E3%83%A3%E3%83%83%E3%83%89%E3%83%86%E3%83%BC%E3%83%AB+%E3%83%AF%E3%83%BC%E3%83%A0+%E3%83%AD%E3%83%83%E3%82%AF%E3%83%95%E3%82%A3%E3%83%83%E3%82%B7%E3%83%A5&tag=bmf035-22)
-- [Craw/hog worms](https://www.amazon.co.jp/s?k=%E3%82%AF%E3%83%AD%E3%83%BC+%E3%83%9B%E3%83%83%E3%82%B0+%E3%83%AF%E3%83%BC%E3%83%A0+%E3%83%AD%E3%83%83%E3%82%AF%E3%83%95%E3%82%A3%E3%83%83%E3%82%B7%E3%83%A5&tag=bmf035-22)
-- [Curly tail/grub worms](https://www.amazon.co.jp/s?k=%E3%82%AB%E3%83%BC%E3%83%AA%E3%83%BC%E3%83%86%E3%83%BC%E3%83%AB+%E3%82%B0%E3%83%A9%E3%83%96+%E3%83%AF%E3%83%BC%E3%83%A0&tag=bmf035-22)
-- [Straight/pin tail worms](https://www.amazon.co.jp/s?k=%E3%83%94%E3%83%B3%E3%83%86%E3%83%BC%E3%83%AB+%E3%82%B9%E3%83%88%E3%83%AC%E3%83%BC%E3%83%88+%E3%83%AF%E3%83%BC%E3%83%A0+%E3%83%A9%E3%82%A4%E3%83%88%E3%82%B2%E3%83%BC%E3%83%A0&tag=bmf035-22)
-- [Rockfish jig heads](https://www.amazon.co.jp/s?k=%E3%83%AD%E3%83%83%E3%82%AF%E3%83%95%E3%82%A3%E3%83%83%E3%82%B7%E3%83%A5+%E3%82%B8%E3%82%B0%E3%83%98%E3%83%83%E3%83%89&tag=bmf035-22)
-- [Bullet sinkers for Texas rigs](https://www.amazon.co.jp/s?k=%E3%83%86%E3%82%AD%E3%82%B5%E3%82%B9%E3%83%AA%E3%82%B0+%E3%83%90%E3%83%AC%E3%83%83%E3%83%88%E3%82%B7%E3%83%B3%E3%82%AB%E3%83%BC&tag=bmf035-22)
-- [Fish grips](https://www.amazon.co.jp/s?k=%E3%83%95%E3%82%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%82%B0%E3%83%AA%E3%83%83%E3%83%97&tag=bmf035-22)
-- [Fishing life jackets](https://www.amazon.co.jp/s?k=%E3%83%A9%E3%82%A4%E3%83%95%E3%82%B8%E3%83%A3%E3%82%B1%E3%83%83%E3%83%88+%E9%87%A3%E3%82%8A&tag=bmf035-22)
 
 # References
 - [fish.shimano.com - Areolate grouper: characteristics and how to catch them (Japanese)](https://fish.shimano.com/ja-JP/content/beginners/fish/oomonhata/index.html)
