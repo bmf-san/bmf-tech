@@ -16,7 +16,7 @@ draft: false
 ---
 
 
-[ソフトウェアエンジニアリングの基礎 ―コーダーからエンジニアになるための実践ガイド](https://www.amazon.co.jp/dp/4814401787?tag=bmf035-22)を読んだ。
+[ソフトウェアエンジニアリングの基礎 ―コーダーからエンジニアになるための実践ガイド](https://link.amazon/B06hNonyT)を読んだ。
 
 Nathaniel SchuttaとDan Vegaによる『Fundamentals of Software Engineering』の邦訳。プログラムを書けることと、ソフトウェアエンジニアとして仕事ができることの間にある距離を埋めるための一冊で、学校やブートキャンプでは教わらない実務の基礎を幅広く扱っている。
 

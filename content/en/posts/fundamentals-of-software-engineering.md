@@ -16,7 +16,7 @@ draft: false
 ---
 
 
-I read [Fundamentals of Software Engineering: From Coder to Engineer](https://www.amazon.co.jp/dp/4814401787?tag=bmf035-22) (Japanese edition).
+I read [Fundamentals of Software Engineering: From Coder to Engineer](https://link.amazon/B06hNonyT) (Japanese edition).
 
 This book by Nathaniel Schutta and Dan Vega aims to close the gap between being able to write programs and being able to work as a software engineer. It covers a wide range of practical basics that schools and bootcamps don't teach.
 
