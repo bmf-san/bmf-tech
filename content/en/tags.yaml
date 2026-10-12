@@ -484,6 +484,8 @@
   translation_key: loki
 - name: LT
   translation_key: lt
+- name: Lure Fishing
+  translation_key: lure-fishing
 - name: lxc
   translation_key: lxc
 - name: lxd

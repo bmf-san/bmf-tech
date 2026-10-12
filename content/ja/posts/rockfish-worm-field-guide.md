@@ -7,6 +7,7 @@ categories:
   - 釣り
 tags:
   - ロックフィッシュ
+  - ルアーフィッシング
 description: "オオモンハタ・アカハタ・カサゴをワームで狙うロックフィッシュの実釣ガイド。魚の習性から、ワームの種類・アクション・カラー・リグの選び方、釣れないときに何から変えるかまでを表と図で整理する。"
 translation_key: rockfish-worm-field-guide
 draft: false
@@ -238,6 +239,9 @@ flowchart TD
 - 小魚を意識：シャッド系のスイミング
 - 底を意識：クロー系のボトムバンプ
 - 釣れない：まず投げる場所を変え、次に1つずつ変える
+
+# 関連記事
+- [スピニングリールのキャスティング入門](/ja/posts/spinning-reel-casting-guide/)
 
 # 参考
 - [fish.shimano.com - オオモンハタの特徴と釣り方](https://fish.shimano.com/ja-JP/content/beginners/fish/oomonhata/index.html)
