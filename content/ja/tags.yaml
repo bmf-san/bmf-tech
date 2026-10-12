@@ -752,6 +752,8 @@
   translation_key: leadership
 - name: リーン
   translation_key: lean
+- name: ルアーフィッシング
+  translation_key: lure-fishing
 - name: レガシーコード
   translation_key: legacy-code
 - name: レジュメ

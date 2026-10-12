@@ -7,6 +7,7 @@ categories:
   - Fishing
 tags:
   - Rockfish
+  - Lure Fishing
 description: "A field guide to catching areolate grouper, blacktip grouper, and marbled rockfish on soft plastics. Covers fish behavior, worm types, actions, colors, rigs, and what to change first when nothing bites, with tables and diagrams."
 translation_key: rockfish-worm-field-guide
 draft: false
@@ -238,6 +239,9 @@ Paste these six lines into a phone note.
 - Baitfish in mind: shad tail on a swimming retrieve
 - Bottom in mind: craw on a bottom bump
 - No bites: change where you cast first, then change one thing at a time
+
+# Related posts
+- [Spinning reel casting guide](/posts/spinning-reel-casting-guide/)
 
 # References
 - [fish.shimano.com - Areolate grouper: characteristics and how to catch them (Japanese)](https://fish.shimano.com/ja-JP/content/beginners/fish/oomonhata/index.html)
