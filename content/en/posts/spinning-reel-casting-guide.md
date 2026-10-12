@@ -32,10 +32,20 @@ Anglers call the length of line between the rod tip and the lure the "drop" (tar
 | Standard (30–50 cm) | Good balance of accuracy and distance | Start here |
 | Long (50–80 cm) | Loads the rod more and adds distance, but aiming gets harder | Long casts, heavy lures |
 
-## Grip
-- Hold the reel foot between your middle and ring fingers.
-- Turn the line roller toward the rod (straight up) and hook the line on the tip of your index finger.
-- Keep the line on your finger and open the bail.
+## Grip and Hooking the Line
+You repeat this basic routine before every cast. Do it in this order.
+
+1. **Hold the rod with two fingers in front**: Put your index and middle fingers in front of the reel foot and hold the reel foot between your middle and ring fingers. The rod stays steady, and your index finger stays free to move.
+2. **Turn the reel to bring the line roller up**: Turn the handle a little to rotate the rotor until the line roller sits on the rod side (straight up). With the line roller at the bottom, your index finger can't reach the line.
+3. **Hook the line on your index finger**: Pick up the line coming off the line roller with your index finger and hook it on your fingertip.
+4. **Open the bail**: Keep the line on your finger and open the bail with your other hand. Your finger holds the line, so no line comes off until you release it.
+
+```mermaid
+flowchart LR
+    A["Hold with two fingers in front"] --> B["Turn the reel to bring the line roller up"]
+    B --> C["Hook the line on your index finger"]
+    C --> D["Open the bail"]
+```
 
 ## Safety Check
 Make sure no people or obstacles stand behind you and no boats sit in your casting direction before you cast.
@@ -143,7 +153,7 @@ At the water, the best fix is the one in the previous section: feather at splash
 
 # Field Summary
 - Check behind you before you cast
-- Set the drop to 30–50 cm. Hook the line on your finger before you open the bail
+- Set the drop to 30–50 cm. Hold with two fingers in front, bring the line roller up, hook the line on your index finger, then open the bail
 - Cast with the rod's bend, not your arm. Use 70–80% of your strength
 - Release your finger as the rod passes overhead
 - Feather if the lure flies too far. After splashdown, close the bail by hand and reel in the loose line
