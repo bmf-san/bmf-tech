@@ -16,7 +16,7 @@ draft: false
 ---
 
 # Introduction
-Services like GitHub and OpenAI let users issue Personal Access Tokens (PATs) with chosen scopes. The feature is convenient.
+GitHub Personal Access Tokens (PATs) and OpenAI API keys let users issue tokens with chosen scopes. The feature is convenient.
 
 But if the implementation only issues a token, stores it in a database, and compares it on each request, a leaked token lets an attacker in as a legitimate user. Worse, nothing tells you that it happened.
 
@@ -45,7 +45,7 @@ NIST CSF 2.0 gives a framework for this whole picture. NIST released CSF 2.0 on 
 
 CSF describes outcomes to achieve, not how to build them. The mapping in this article is my own interpretation of CSF applied to an API token feature.
 
-The six Functions are not sequential steps; CSF 2.0 says to address them concurrently. Govern, Identify, Protect, and Detect run continuously, while Respond and Recover stay ready for incidents at all times. CSF 2.0 draws the Functions as a wheel with Govern at the center, because Govern informs how you carry out the other five.
+The six Functions are not sequential steps; CSF 2.0 says organizations should address them concurrently. Actions supporting Govern, Identify, Protect, and Detect should happen continuously, while actions supporting Respond and Recover should be ready at all times and happen when incidents occur. CSF 2.0 draws the Functions as a wheel with Govern at the center, because Govern informs how you put the other five into practice.
 
 ```mermaid
 flowchart TB
@@ -63,9 +63,9 @@ The table maps each CSF Function to requirements for an API token feature. The I
 | Function | Requirement | Design decisions |
 |---|---|---|
 | Govern | Token lifecycle rules (GV.PO-01) | Mandatory expiry with a cap (e.g. 90 days max), auto-revoke tokens unused for a long time |
-| Identify | Know the scopes and who holds which token (ID.AM-08) | Scope granularity (`read:users`, `write:orders`, etc.), a token list with last-used time |
+| Identify | Know the scopes, who holds which token, and the impact of a leak (ID.AM-08, ID.RA-04) | Scope granularity (`read:users`, `write:orders`, etc.), a token list with last-used time |
 | Protect | Safe storage, least privilege, log generation (PR.AA-01, PR.AA-05, PR.DS-01, PR.PS-04) | Store hashes instead of raw tokens, block privilege escalation, IP restrictions (CIDR), per-request access logs |
-| Detect | Find leaks and misuse early (DE.CM-03, DE.AE-02) | Rate-limit overruns, access from unknown IPs or countries, secret scanning |
+| Detect | Find leaks and misuse early (DE.CM-03, DE.AE-02, DE.AE-07) | Rate-limit overruns, access from unknown IPs or countries, secret scanning |
 | Respond | Contain, notify, and analyze (RS.MI-01, RS.CO-02, RS.AN-03) | Instant revocation, automatic revocation and user notification on detection, impact analysis from access logs |
 | Recover | Return to normal use (RC.RP-05) | A reissue flow, confirming normal use afterward |
 
