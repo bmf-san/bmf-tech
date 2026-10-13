@@ -250,7 +250,7 @@ Handle it in this order:
 
 1. Verify that GitHub sent the request using the `Github-Public-Key-Identifier` and `Github-Public-Key-Signature` headers. The signature uses ECDSA (NIST P-256, SHA-256). Verify it against the raw body you received, not a re-serialized JSON.
 2. Check each `token` with `LooksValid`, hash it, and look it up.
-3. Revoke matching tokens and notify the user, including the `url` where the leak appeared.
+3. Revoke matching tokens and notify the user. The `url` field holds the public URL where GitHub found the match, but it may be empty; in that case, tell the user the kind of location from `source`.
 
 GitHub's documentation recommends treating any reported secret as public and compromised. So revoke automatically here without waiting for confirmation.
 
