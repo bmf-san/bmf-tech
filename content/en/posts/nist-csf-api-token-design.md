@@ -107,7 +107,7 @@ This format has several benefits:
 
 - The prefix makes tokens easy to find in logs and source code with a regular expression, and reduces false positives in secret scanning.
 - The checksum lets you reject malformed tokens before querying the database.
-- The `_` separator is not a base64 character, so random strings such as SHAs won't produce it by accident. Double-clicking also selects the whole token.
+- The `_` separator is not in the standard base64 alphabet, so random strings such as SHAs won't produce it by accident. Double-clicking also selects the whole token. Note that URL-safe base64 (base64url) does use `_`, so if you encode the random part with base64url, `_` no longer works as a separator. The example below uses Base62.
 
 For example, Stripe uses `sk_live_`. Don't reuse another company's format; pick a prefix unique to your service. The example below uses `acme_pat_`.
 
