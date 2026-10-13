@@ -45,14 +45,16 @@ NIST CSF 2.0 gives a framework for this whole picture. NIST released CSF 2.0 on 
 
 CSF describes outcomes to achieve, not how to build them. The mapping in this article is my own interpretation of CSF applied to an API token feature.
 
+The six Functions are not sequential steps; CSF 2.0 says to address them concurrently. Govern, Identify, Protect, and Detect run continuously, while Respond and Recover stay ready for incidents at all times. CSF 2.0 draws the Functions as a wheel with Govern at the center, because Govern informs how you carry out the other five.
+
 ```mermaid
-flowchart LR
-    GV["Govern<br/>Expiry and other policies"] --> ID["Identify<br/>Scope design and inventory"]
-    ID --> PR["Protect<br/>Hashed storage, least privilege"]
-    PR --> DE["Detect<br/>Access logs, anomaly detection"]
-    DE --> RS["Respond<br/>Revocation, notification"]
-    RS --> RC["Recover<br/>Impact review, reissue"]
-    RC --> GV
+flowchart TB
+    GV(("Govern<br/>Expiry and other policies"))
+    GV --- ID["Identify<br/>Scope design and inventory"]
+    GV --- PR["Protect<br/>Hashed storage, least privilege"]
+    GV --- DE["Detect<br/>Access logs, anomaly detection"]
+    GV --- RS["Respond<br/>Revocation, notification, impact analysis"]
+    GV --- RC["Recover<br/>Reissue, confirm normal operation"]
 ```
 
 # Mapping NIST CSF to API Token Design
@@ -62,10 +64,10 @@ The table maps each CSF Function to requirements for an API token feature. The I
 |---|---|---|
 | Govern | Token lifecycle rules (GV.PO-01) | Mandatory expiry with a cap (e.g. 90 days max), auto-revoke tokens unused for a long time |
 | Identify | Know the scopes and who holds which token (ID.AM-08) | Scope granularity (`read:users`, `write:orders`, etc.), a token list with last-used time |
-| Protect | Safe storage and least privilege (PR.AA-01, PR.AA-05, PR.DS-01) | Store hashes instead of raw tokens, block privilege escalation, IP restrictions (CIDR) |
+| Protect | Safe storage, least privilege, log generation (PR.AA-01, PR.AA-05, PR.DS-01, PR.PS-04) | Store hashes instead of raw tokens, block privilege escalation, IP restrictions (CIDR), per-request access logs |
 | Detect | Find leaks and misuse early (DE.CM-03, DE.AE-02) | Rate-limit overruns, access from unknown IPs or countries, secret scanning |
-| Respond | Contain and notify (RS.MI-01, RS.CO-02) | Instant revocation, automatic revocation and user notification on detection |
-| Recover | Return to a safe state (RS.AN-03, RC.RP-05) | Review impact through access logs, a reissue flow |
+| Respond | Contain, notify, and analyze (RS.MI-01, RS.CO-02, RS.AN-03) | Instant revocation, automatic revocation and user notification on detection, impact analysis from access logs |
+| Recover | Return to normal use (RC.RP-05) | A reissue flow, confirming normal use afterward |
 
 # Implementation Derived from the Framework
 The following sections show implementation examples that meet the requirements above. The examples use PostgreSQL and Go.
@@ -105,7 +107,7 @@ This format has several benefits:
 
 - The prefix makes tokens easy to find in logs and source code with a regular expression, and reduces false positives in secret scanning.
 - The checksum lets you reject malformed tokens before querying the database.
-- `_` is not a base64 character, so it works well as a separator.
+- The `_` separator is not a base64 character, so random strings such as SHAs won't produce it by accident. Double-clicking also selects the whole token.
 
 For example, Stripe uses `sk_live_`. Don't reuse another company's format; pick a prefix unique to your service. The example below uses `acme_pat_`.
 
@@ -281,13 +283,13 @@ Keep the cache TTL short as well. If a purge fails, the TTL caps how long a revo
 
 For automatic responses to anomalies, consider false positives. When a compromise is near certain, as with a secret scanning alert, revoke automatically. When the signal is ambiguous, such as access from an unknown IP, notify the user and ask for confirmation.
 
-## [Recover] Impact Review and Reissue
-After revocation, find out what happened and return to a safe state.
+## [Respond / Recover] Impact Analysis and Reissue
+After revocation, analyze what happened and return to a safe state. In CSF terms, the analysis belongs to Respond (RS.AN-03) and the return to normal belongs to Recover (RC.RP-05).
 
-- **Impact review**: extract the access log for the token ID from the suspected leak time to the revocation time and show it to the user. Knowing which endpoints and data the token touched tells you what else to do.
-- **Reissue**: provide a flow to issue a new token with the same scopes. Use it as a chance to ask whether the old scopes were really necessary.
+- **Impact analysis (Respond)**: extract the access log for the token ID from the suspected leak time to the revocation time and show it to the user. Knowing which endpoints and data the token touched tells you what else to do.
+- **Reissue (Recover)**: provide a flow to issue a new token with the same scopes. Use it as a chance to ask whether the old scopes were really necessary. After reissue, confirm that the new token works as expected.
 
-Feed what you learn in Recover back into policies such as expiry and scope granularity (Govern). The CSF Functions form a cycle, not a one-way sequence.
+Feed what you learn back into policies such as expiry and scope granularity. In CSF 2.0, identifying improvements from operations falls under Identify (ID.IM-03), and updating policy falls under Govern (GV.PO-02).
 
 # Summary
 When you design from functional requirements alone, an API token feature tends to end up as Protect only: issue, store, compare.
