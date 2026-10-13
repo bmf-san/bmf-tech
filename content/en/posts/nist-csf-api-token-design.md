@@ -229,7 +229,7 @@ WHERE id = $1
 - **Changed usage patterns**: a long-dormant token suddenly gets used, or calls to endpoints it never touched increase.
 
 ## [Detect] Secret Scanning Integration
-GitHub secret scanning finds secrets in public repositories and public npm packages. If you join the secret scanning partner program as a service provider, GitHub notifies you when it finds a string that matches your token format.
+GitHub secret scanning runs by default on public repositories and public npm packages. If you join the secret scanning partner program as a service provider, GitHub notifies you when it finds a string that matches your token format in a public source. Matches in private repositories go to the repository admins and the committer as alerts, not to the service provider.
 
 To join, you contact GitHub and register a regular expression that detects your tokens and an endpoint that receives alerts. To improve regular expression quality, GitHub recommends a unique prefix, a high-entropy random string, and a 32-bit checksum. The token format above follows those recommendations.
 
