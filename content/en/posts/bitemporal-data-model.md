@@ -1,6 +1,6 @@
 ---
-title: "Bitemporal Data Model: Valid Time and Transaction Time Explained"
-description: 'Understand bitemporal data models with two timelines: transaction time and valid time, for temporal database management.'
+title: "Bitemporal Modeling: Valid Time and Transaction Time Explained"
+description: 'Bitemporal modeling explained: how a bitemporal data model tracks two timelines, valid time and transaction time, how it differs from non-temporal and uni-temporal models, and the challenges of implementing it in a relational database.'
 slug: bitemporal-data-model
 date: 2024-05-27T00:00:00Z
 lastmod: 2026-03-15
