@@ -25,3 +25,7 @@ The examples are easy to understand and the book is very readable.
 I felt that it serves as a good textbook for advancing understanding of networks from the basics of TCP/IP.
 
 Although I tend to have a bit of a complex about networks and often neglect them, this book was easy to read and quite helpful.
+
+## Roundups featuring this book
+
+- [Computer and network fundamentals books](/posts/computer-network-basics-recommended-books/)

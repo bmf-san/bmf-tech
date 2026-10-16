@@ -23,3 +23,7 @@ I read [Web Frontend High-Performance Tuning](https://amzn.to/3QErDil).
 It goes beyond merely introducing tuning techniques; it explains browser rendering and measurement methods as well.
 
 This is a must-read for anyone looking to learn about tuning in the frontend.
+
+## Roundups featuring this book
+
+- [Web performance books](/posts/web-performance-recommended-books/)

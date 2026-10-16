@@ -27,5 +27,6 @@ DDDはコードでどう表現されるか？ということよりも、その�
 
 時を置いて読み直したい。
 
+## この本を紹介しているまとめ記事
 
-
+- [ソフトウェアアーキテクチャのおすすめ本](/ja/posts/software-architecture-recommended-books/)

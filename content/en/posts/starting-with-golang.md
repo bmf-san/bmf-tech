@@ -19,3 +19,7 @@ draft: false
 I read [Starting with Go Language](https://amzn.to/3xY3SLw).
 
 This book offers relatively easy-to-understand content as an introduction to Go.
+
+## Roundups featuring this book
+
+- [Go books](/posts/go-recommended-books/)

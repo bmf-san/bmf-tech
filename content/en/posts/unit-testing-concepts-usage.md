@@ -27,3 +27,7 @@ Good tests provide protection against regressions, resilience to refactoring, qu
 Until now, I primarily focused on writing tests for production code, but I realized I lacked a clear criterion for deciding whether to write tests or not. Writing high-quality tests requires a deep understanding of design, which I feel might still be challenging for AI.
 
 Chapter 10's discussion on databases was particularly memorable. It covered almost all the concerns I had regarding database testing.
+
+## Roundups featuring this book
+
+- [Software testing books](/posts/software-testing-recommended-books/)

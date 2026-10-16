@@ -24,3 +24,7 @@ draft: false
 使い所は分かったような気がするが、使いこなすのが難しいという感想を持った。
 
 [kinoppyd/reading-metaprogramming-ruby](https://github.com/kinoppyd/reading-metaprogramming-ruby)を後日やろうと思っている。
+
+## この本を紹介しているまとめ記事
+
+- [Ruby / Railsのおすすめ本](/ja/posts/ruby-recommended-books/)

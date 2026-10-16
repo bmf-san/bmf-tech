@@ -21,3 +21,7 @@ draft: false
 [Lean UX - User Experience Design with Lean Thinking](https://amzn.to/3UW33vZ) is a book I read.
 
 It discusses an approach to practicing lean thinking in UX.
+
+## Roundups featuring this book
+
+- [Agile development books](/posts/agile-development-recommended-books/)

@@ -20,3 +20,7 @@ draft: false
 [Goプログラミング実践入門 標準ライブラリでゼロからWebアプリを作る ](https://amzn.to/3y5QIfK)を読んだ。
 
 GoでWebアプリケーションをつくる実践的な方法について書かれている。
+
+## この本を紹介しているまとめ記事
+
+- [Go言語のおすすめ本](/ja/posts/go-recommended-books/)

@@ -20,3 +20,7 @@ draft: false
 I read [GLOBIS MBA Critical Thinking](https://amzn.to/3yotEc5).
 
 This book allows you to learn about critical thinking along with exercises.
+
+## Roundups featuring this book
+
+- [Strategy and systems thinking books](/posts/strategy-systems-thinking-recommended-books/)

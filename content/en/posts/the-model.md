@@ -30,3 +30,7 @@ Most businesses have sales, which possess an indispensable power for business gr
 This book briefly touched on the SaaS business model, and I was reminded that SaaS does not scale solely through engineering; it is a business model that also relies on the power of sales.
 
 I realized the importance of customer success through this book, so I am thinking of reading [Customer Success: 10 Principles for Customer Success in the Subscription Era](https://amzn.to/4aRSsas).
+
+## Roundups featuring this book
+
+- [SaaS and business books](/posts/saas-business-recommended-books/)

@@ -19,3 +19,7 @@ draft: false
 [Knowledge and Skills of Accounting Systems for Engineers](https://amzn.to/3xSP2WC) was read.
 
 It assumes knowledge of accounting and bookkeeping, explaining how to produce outputs from various inputs. I have a sense of discomfort in this field...
+
+## Roundups featuring this book
+
+- [Business systems books](/posts/business-systems-recommended-books/)

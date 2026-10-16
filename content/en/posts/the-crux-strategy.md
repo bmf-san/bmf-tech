@@ -33,3 +33,7 @@ Points that stood out:
 The book leans heavily on case studies, walking through how Rumelt diagnoses the strategy of various companies and organizations. It is enjoyable as a read, and it nudges you to reframe your day-to-day problems with questions like "Is this really the problem to solve?" and "Can I narrow this down further?"
 
 If you have read Good Strategy/Bad Strategy, this picks up naturally from there. Reading the previous book first makes the shared vocabulary and assumptions easier to follow.
+
+## Roundups featuring this book
+
+- [Strategy and systems thinking books](/posts/strategy-systems-thinking-recommended-books/)

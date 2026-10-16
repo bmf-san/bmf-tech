@@ -26,3 +26,7 @@ The fourth chapter, which takes up the most pages, focuses on splitting database
 As the title suggests, this book is specialized in approaches, so if you want to delve deeper into microservices, I recommend [Microservices Architecture](https://amzn.to/3R2FOhn), written by the same author.
 
 The book is written with the perspective that microservices are not necessarily the optimal solution, allowing readers to think about microservices from a more detached standpoint.
+
+## Roundups featuring this book
+
+- [Software architecture books](/posts/software-architecture-recommended-books/)

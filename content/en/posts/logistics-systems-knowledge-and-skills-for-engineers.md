@@ -22,3 +22,6 @@ draft: false
 
 It was fascinating to see how the optimization of the flow and management of goods is discussed alongside business knowledge.
 
+## Roundups featuring this book
+
+- [Business systems books](/posts/business-systems-recommended-books/)

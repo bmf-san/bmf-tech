@@ -24,3 +24,7 @@ This book is perfect for Ruby beginners to input what can be done with Ruby and 
 If you are going to learn Ruby, I think it would be beneficial to read this book.
 
 It is written clearly and concisely, making it easy to read.
+
+## Roundups featuring this book
+
+- [Ruby and Rails books](/posts/ruby-recommended-books/)

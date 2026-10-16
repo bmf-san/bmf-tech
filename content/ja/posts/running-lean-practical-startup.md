@@ -21,3 +21,7 @@ draft: false
 [Running Lean ―実践リーンスタートアップ](https://amzn.to/3UFmmbx)を読んだ。
 
 スタートアップに関わるなら読んでおきたい一冊。新規事業を始める時にも役立つ。
+
+## この本を紹介しているまとめ記事
+
+- [アジャイル開発のおすすめ本](/ja/posts/agile-development-recommended-books/)

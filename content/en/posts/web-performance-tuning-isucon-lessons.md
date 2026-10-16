@@ -20,3 +20,7 @@ draft: false
 I read [Mastering Web Performance Tuning: Practical Speed Optimization Lessons from ISUCON](https://amzn.to/4afLIm3).
 
 This is a book that anyone participating in ISUCON should read at least once.
+
+## Roundups featuring this book
+
+- [Web performance books](/posts/web-performance-recommended-books/)

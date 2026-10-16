@@ -26,3 +26,7 @@ Trade-offs are sometimes not documented. While the reasons for choosing somethin
 This book emphasizes the importance of considering design decision trade-offs in contrast and provides examples of trade-offs in software design.
 
 In the latter half, there were chapters that seemed to question whether they were trade-offs.
+
+## Roundups featuring this book
+
+- [System design and architect books](/posts/system-design-recommended-books/)

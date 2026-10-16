@@ -23,4 +23,6 @@ draft: false
 
 オンプレが前提とはなっているが、クラウドにおいても転用できる考え方があると思う。
 
+## この本を紹介しているまとめ記事
 
+- [監視・SRE・運用のおすすめ本](/ja/posts/sre-operations-recommended-books/)

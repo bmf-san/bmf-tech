@@ -30,3 +30,7 @@ However, it does not delve deeply into specific methods for addressing vulnerabi
 
 - Treat security not as a feature to be implemented but as a concern to be addressed.
 - By being conscious of design, naturally incorporate security into the software.
+
+## Roundups featuring this book
+
+- [Web application security books](/posts/web-security-recommended-books/)

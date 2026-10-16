@@ -21,3 +21,7 @@ draft: false
 [達人が教えるWebパフォーマンスチューニング 〜ISUCONから学ぶ高速化の実践](https://amzn.to/4afLIm3)を読んだ。
 
 ISUCONに参加するなら一度読んでおきたい本。
+
+## この本を紹介しているまとめ記事
+
+- [Webパフォーマンスのおすすめ本](/ja/posts/web-performance-recommended-books/)

@@ -20,3 +20,7 @@ draft: false
 [スターティングGo言語](https://amzn.to/3xY3SLw)を読んだ。
 
 Goの入門書として比較的平易な内容。
+
+## この本を紹介しているまとめ記事
+
+- [Go言語のおすすめ本](/ja/posts/go-recommended-books/)

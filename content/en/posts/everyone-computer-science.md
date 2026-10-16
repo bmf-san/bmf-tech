@@ -18,3 +18,7 @@ draft: false
 ---
 
 [Everyone's Computer Science](https://amzn.to/4avmhgB) is a great read for getting a comprehensive understanding of computer science.
+
+## Roundups featuring this book
+
+- [Computer and network fundamentals books](/posts/computer-network-basics-recommended-books/)

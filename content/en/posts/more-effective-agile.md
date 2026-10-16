@@ -22,3 +22,7 @@ I read [More Effective Agile](https://amzn.to/3JYYieN).
 It is a book that summarizes practices for implementing Agile.
 
 I used it as a textbook for the [Agile Workshop](https://speakerdeck.com/bmf_san/aziyairuwakusiyotupu).
+
+## Roundups featuring this book
+
+- [Agile development books](/posts/agile-development-recommended-books/)

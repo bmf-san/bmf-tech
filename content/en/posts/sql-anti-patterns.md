@@ -21,3 +21,7 @@ draft: false
 I read [SQL Anti-Patterns](https://amzn.to/3vFzbdw).
 
 A classic of classics. The book introduces anti-patterns with clear explanations.
+
+## Roundups featuring this book
+
+- [Database books](/posts/database-recommended-books/)

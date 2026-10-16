@@ -22,3 +22,7 @@ draft: false
 I reread it since a revised edition was released.
 
 I feel like this is something that would be taught in lectures at information technology schools.
+
+## Roundups featuring this book
+
+- [Computer and network fundamentals books](/posts/computer-network-basics-recommended-books/)

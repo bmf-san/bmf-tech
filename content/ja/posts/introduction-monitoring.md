@@ -22,3 +22,7 @@ draft: false
 監視の基本と実践について学ぶことができる。
 
 監視について学んでみたいときの入門書。
+
+## この本を紹介しているまとめ記事
+
+- [監視・SRE・運用のおすすめ本](/ja/posts/sre-operations-recommended-books/)

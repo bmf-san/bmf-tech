@@ -25,3 +25,7 @@ Donella Meadows wrote this classic on systems thinking. She reframes the world n
 What stuck with me most was her stance of looking at structure rather than blaming individual parts. The same structure keeps producing the same behavior, so finding leverage points—places where a small intervention yields a large effect—matters far more than reacting to symptoms.
 
 Software engineers design and operate systems every day, so much of this overlaps with our work. I want to revisit this book often as a foundation for seeing the underlying structure and fixing problems at the root, rather than only patching the symptoms in front of me.
+
+## Roundups featuring this book
+
+- [Strategy and systems thinking books](/posts/strategy-systems-thinking-recommended-books/)

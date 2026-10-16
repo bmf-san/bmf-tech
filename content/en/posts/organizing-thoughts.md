@@ -25,3 +25,7 @@ The first edition was published just before the internet became widespread, yet 
 This book emphasizes the importance of thinking for oneself and not relying solely on knowledge.
 
 Although written in an essay style rather than a business-like tone, it conveys ideas for organizing thoughts.
+
+## Roundups featuring this book
+
+- [Thinking and productivity books](/posts/engineer-thinking-recommended-books/)

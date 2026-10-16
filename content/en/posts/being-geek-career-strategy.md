@@ -20,3 +20,7 @@ draft: false
 The author's perspective and way of expressing ideas may have a unique style, but it is certainly informative.
 
 I really like this book and consider it one that I want to keep on hand.
+
+## Roundups featuring this book
+
+- [Engineer career books](/posts/engineer-career-recommended-books/)

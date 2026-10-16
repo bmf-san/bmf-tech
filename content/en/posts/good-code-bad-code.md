@@ -24,3 +24,7 @@ This book shows the difference between good and bad code in concrete terms, thro
 The guidance especially stands out: make contracts explicit, prepare for unexpected input, and stay aware of how easily code invites reuse or misuse. You can apply this guidance directly in daily reviews.
 
 It backs up the sense I picked up over the years with words and principles, and it works well as a shared vocabulary when I explain things to junior engineers.
+
+## Roundups featuring this book
+
+- [Good code books](/posts/clean-code-recommended-books/)

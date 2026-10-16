@@ -24,3 +24,7 @@ draft: false
 It's a book where you can learn the basics of logical thinking and critical thinking.
 
 The thinking skills you can learn from this book are useful in many areas. Although it's quite an old book, it's one I want to always keep on my bookshelf as a textbook.
+
+## Roundups featuring this book
+
+- [Thinking and productivity books](/posts/engineer-thinking-recommended-books/)

@@ -21,3 +21,7 @@ draft: false
 I read the [A Tutorial Guide to Understanding OAuth2.0 Without Just Going Through the Motions!](https://amzn.to/4dlYfXE).
 
 It's an easy read as an introduction to OAuth2.0.
+
+## Roundups featuring this book
+
+- [Web application security books](/posts/web-security-recommended-books/)

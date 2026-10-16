@@ -21,3 +21,7 @@ draft: false
 [みんなのコンピュータサイエンス](https://amzn.to/4avmhgB)を読んだ。
 
 コンピューターサイエンスについての全体感を掴むのにちょうど良い一冊。
+
+## この本を紹介しているまとめ記事
+
+- [コンピュータとネットワークの基礎のおすすめ本](/ja/posts/computer-network-basics-recommended-books/)

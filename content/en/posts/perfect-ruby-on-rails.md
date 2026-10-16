@@ -21,3 +21,7 @@ draft: false
 I read [Perfect Ruby on Rails](https://amzn.to/3UEbQB4).
 
 I picked up this book to get started with Ruby on Rails. It is comprehensive and helps in understanding the features of the framework.
+
+## Roundups featuring this book
+
+- [Ruby and Rails books](/posts/ruby-recommended-books/)

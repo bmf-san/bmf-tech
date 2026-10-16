@@ -19,3 +19,7 @@ draft: false
 [ソフトウェアアーキテクトが知るべき97のこと](https://amzn.to/4dOEvfU)を読んだ。
 
 著名なソフトウェアアーキテクチャの姿勢や考え方など97つ知ることができる。
+
+## この本を紹介しているまとめ記事
+
+- [システム設計とアーキテクトのおすすめ本](/ja/posts/system-design-recommended-books/)

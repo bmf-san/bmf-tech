@@ -23,3 +23,7 @@ Having recently had the opportunity to write Go at work after a long time, I rea
 This book is not just an introductory text; it introduces many of Go's philosophies and idioms, allowing for a deeper understanding of the language.
 
 It covers topics that other introductory books might overlook, making it a valuable resource.
+
+## Roundups featuring this book
+
+- [Go books](/posts/go-recommended-books/)

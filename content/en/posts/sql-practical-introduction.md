@@ -21,3 +21,7 @@ draft: false
 I read [Practical Introduction to SQL: Writing Fast and Understandable Queries (WEB+DB PRESS plus)](https://amzn.to/4aTTjaJ).
 
 The book organizes important considerations to keep in mind when writing SQL.
+
+## Roundups featuring this book
+
+- [Database books](/posts/database-recommended-books/)

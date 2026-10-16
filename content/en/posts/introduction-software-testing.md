@@ -21,3 +21,7 @@ I read [Learning Software Testing Techniques for the First Time](https://amzn.to
 This book discusses methods of testing and allows you to learn the fundamental patterns of software testing.
 
 If you have never written test code, this is a great book to start with.
+
+## Roundups featuring this book
+
+- [Software testing books](/posts/software-testing-recommended-books/)

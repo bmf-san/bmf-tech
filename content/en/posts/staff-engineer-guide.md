@@ -28,3 +28,7 @@ There is extensive discussion on the skills required to lead an organization, su
 It allows you to identify the skills you lack and offers moments of empathy where you find yourself thinking, "I understand... I understand...", making it a rewarding read.
 
 In Japan, it seems rare to see job postings for the position of Staff Engineer, but I believe there are many organizations seeking the kind of contributions described in this book.
+
+## Roundups featuring this book
+
+- [Engineer career books](/posts/engineer-career-recommended-books/)

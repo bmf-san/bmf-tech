@@ -20,3 +20,7 @@ draft: false
 [Lean Startup](https://amzn.to/3yeN2IC) is a bible-like book on the subject.
 
 You can learn what Lean Startup is, based on the Lean Production System.
+
+## Roundups featuring this book
+
+- [SaaS and business books](/posts/saas-business-recommended-books/)

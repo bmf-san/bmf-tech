@@ -21,3 +21,7 @@ draft: false
 [CTO's Thinking: Decision Making, Strategy, and Leadership to Drive Technology and Organization](https://amzn.to/46RE9mB) is a book that reveals the perspectives necessary for technology leaders to truly function as part of the management team, exploring three aspects: technology, business, and human relationships. It emphasizes the importance of being a 'translator' in how to convert technology into business value and communicate in a common language with other executives like the CEO.
 
 The role of the CTO goes beyond mere technology selection; it encompasses recruitment, fostering organizational culture, and even security and budget management. The book points out the trap that engineers often fall into, which is the fixation on the 'correct answer' in technology, and details strategic thinking on how to make decisions in an uncertain business environment. Ultimately, it provides practical guidance on maximizing the organization's potential through technology as a means to lead the business to success.
+
+## Roundups featuring this book
+
+- [Engineering management books](/posts/engineering-management-recommended-books/)

@@ -24,3 +24,7 @@ draft: false
 - The 10 P model, presented as a framework for understanding testability in the field, was excellent. It seems useful for organizing the prerequisites for test strategy and planning.
 - The example test plan format discussed for organizing and documenting test plans was simple and easy to grasp. I want to refer to it when organizing strategies and plans.
 - I learned about the STRIDE model for threat discovery and the threat tree framework for the first time. I hope to utilize these when considering security.
+
+## Roundups featuring this book
+
+- [Software testing books](/posts/software-testing-recommended-books/)

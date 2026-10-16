@@ -28,3 +28,7 @@ I read the [A Comprehensive Guide to the Distributed SQL Query Engine Trino](htt
   - Since it is aimed at OLAP, the performance targets are likely at the OLAP level
 - The ability to scale computing resources as a distributed system resembles the nature of New SQL
 - Handles data sources in a way that differs from traditional big data approaches (which require various query languages and tools, along with costly operational and maintenance expenses for data warehouses)
+
+## Roundups featuring this book
+
+- [Database books](/posts/database-recommended-books/)

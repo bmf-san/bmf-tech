@@ -33,3 +33,6 @@ draft: false
 
 Amazonのレビューにそのように書いてあったがソースはわからない。。。
 
+## この本を紹介しているまとめ記事
+
+- [システム設計とアーキテクトのおすすめ本](/ja/posts/system-design-recommended-books/)

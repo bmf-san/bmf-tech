@@ -29,3 +29,7 @@ Still, many aspects haven't changed over the past ten years, making it worth a l
 The book defines being healthy as having a "low risk of developing diseases from lifestyle" and "experiencing relatively little pain."
 
 There was a discussion about how sitting or standing for more than 20 minutes is not good, and the importance lies in changing posture and moving rather than just standing continuously. This was an eye-opener for me. While there might be various opinions on the duration of standing or sitting, the key takeaway seems to be that maintaining the same posture for extended periods is what burdens the body.
+
+## Roundups featuring this book
+
+- [Engineer health books](/posts/engineer-health-recommended-books/)

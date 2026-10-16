@@ -23,3 +23,7 @@ This book on the software developer's career is by Michael Lopp (Rands), known f
 The backbone of the book is treating a career not as a straight staircase but as the ongoing act of moving through uncertainty. Rather than imposing right answers, it offers questions for judgment and ways of observing, so you can read it against your own situation.
 
 The narration has a bit of a quirk to it, but it carries the felt sense of someone who has watched the field for years as a manager, and it makes you want to reread it now and then. Opening it when you feel lost or stalled in your career seems likely to help you organize your perspective.
+
+## Roundups featuring this book
+
+- [Engineer career books](/posts/engineer-career-recommended-books/)

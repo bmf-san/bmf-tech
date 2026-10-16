@@ -67,3 +67,6 @@ draft: false
 - 順序依存の検知
   - `go test -shuffle=on`でテストの実行順がシャッフルされる
 
+# この本を紹介しているまとめ記事
+
+- [Go言語のおすすめ本](/ja/posts/go-recommended-books/)

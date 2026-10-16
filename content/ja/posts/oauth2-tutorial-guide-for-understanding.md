@@ -22,5 +22,6 @@ draft: false
 
 OAuth2.0の入門として読みやすい。
 
+## この本を紹介しているまとめ記事
 
-
+- [Webアプリのセキュリティのおすすめ本](/ja/posts/web-security-recommended-books/)

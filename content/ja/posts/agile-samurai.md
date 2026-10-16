@@ -21,3 +21,7 @@ draft: false
 [アジャイルサムライ](https://amzn.to/3y9JvuW)を読んだ。
 
 アジャイル開発についての下地づくりにちょうど良い本だと思う。
+
+## この本を紹介しているまとめ記事
+
+- [アジャイル開発のおすすめ本](/ja/posts/agile-development-recommended-books/)

@@ -19,3 +19,7 @@ draft: false
 I read [Fun with Ruby](https://amzn.to/3UV14YP).
 
 While it is easier to read for those with experience in object-oriented programming or other languages, it is a book for Ruby beginners.
+
+## Roundups featuring this book
+
+- [Ruby and Rails books](/posts/ruby-recommended-books/)

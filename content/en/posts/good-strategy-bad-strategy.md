@@ -40,3 +40,7 @@ When thinking about strategy, if you feel like you've missed the mark despite th
 While this book focuses on business strategy, I believe the insights on strategy can be beneficial for thinking about strategy in general, whether it be organizational strategy or career strategy.
 
 I often think about my career, and I want to use the insights gained from this book to make my strategies more concrete.
+
+## Roundups featuring this book
+
+- [Strategy and systems thinking books](/posts/strategy-systems-thinking-recommended-books/)

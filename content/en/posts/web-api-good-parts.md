@@ -23,3 +23,7 @@ I read [Web API: The Good Parts](https://amzn.to/3ycWwnE).
 This is a must-read book for anyone looking to learn about API design principles.
 
 It covers the fundamental aspects of API design. It's a book you'll want to revisit whenever you find yourself uncertain about your design choices.
+
+## Roundups featuring this book
+
+- [Software architecture books](/posts/software-architecture-recommended-books/)

@@ -28,3 +28,7 @@ The book outlines patterns for team design within organizations, but I understoo
 Since the optimal structure varies by organization, I read the patterns presented here as just examples.
 
 Recently, I feel like I've been seeing organizational structures similar to these patterns more often, so personally, I didn't find it particularly novel. (Though I'm not sure about when it was first released...)
+
+## Roundups featuring this book
+
+- [Engineering management books](/posts/engineering-management-recommended-books/)

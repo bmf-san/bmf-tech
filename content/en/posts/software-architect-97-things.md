@@ -19,3 +19,7 @@ draft: false
 I read [97 Things Every Software Architect Should Know](https://amzn.to/4dOEvfU).
 
 You can learn about 97 different attitudes and thoughts of prominent software architects.
+
+## Roundups featuring this book
+
+- [System design and architect books](/posts/system-design-recommended-books/)

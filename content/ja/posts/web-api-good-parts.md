@@ -23,3 +23,7 @@ draft: false
 APIの設計方針について学ぶにはまず読んでおきたい本。
 
 API設計の基礎的内容が書かれている。設計に迷ったときに読み返したくなる。
+
+## この本を紹介しているまとめ記事
+
+- [ソフトウェアアーキテクチャのおすすめ本](/ja/posts/software-architecture-recommended-books/)

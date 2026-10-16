@@ -24,3 +24,7 @@ I thought that mastering metaprogramming would make me a wizard.
 I feel like I understand where to use it, but I found it difficult to master.
 
 I plan to work on [kinoppyd/reading-metaprogramming-ruby](https://github.com/kinoppyd/reading-metaprogramming-ruby) later.
+
+## Roundups featuring this book
+
+- [Ruby and Rails books](/posts/ruby-recommended-books/)

@@ -23,3 +23,7 @@ I read [Understanding the Linux Kernel through Illustrations](https://amzn.to/3W
 It is written in a way that is easy for beginners to understand the workings of the Linux kernel. There were some parts that I couldn't fully grasp, though...
 
 Since I know very little about the Linux kernel, I would like to use this as a starting point to study a bit more.
+
+## Roundups featuring this book
+
+- [Computer and network fundamentals books](/posts/computer-network-basics-recommended-books/)

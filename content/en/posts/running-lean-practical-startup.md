@@ -21,3 +21,7 @@ draft: false
 I read [Running Lean ― Practical Lean Startup](https://amzn.to/3UFmmbx).
 
 This is a must-read for anyone involved in startups. It's also useful when starting a new business.
+
+## Roundups featuring this book
+
+- [Agile development books](/posts/agile-development-recommended-books/)

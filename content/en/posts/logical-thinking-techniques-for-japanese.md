@@ -21,3 +21,7 @@ draft: false
 [Introduction to Thinking and Writing Techniques: Practical Logical Thinking Methods for Japanese](https://amzn.to/3QtLUqQ) was read.
 
 Reading books on themes like critical thinking and logical thinking seems to deepen understanding. Books of that kind I read in the past were quite useful.
+
+## Roundups featuring this book
+
+- [Thinking and productivity books](/posts/engineer-thinking-recommended-books/)

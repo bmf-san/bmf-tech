@@ -23,3 +23,6 @@ draft: false
 
 UXにおいてリーンの考え方を実践するアプローチについて書かれている。
 
+## この本を紹介しているまとめ記事
+
+- [アジャイル開発のおすすめ本](/ja/posts/agile-development-recommended-books/)

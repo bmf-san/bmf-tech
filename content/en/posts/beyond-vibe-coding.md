@@ -25,3 +25,7 @@ This book looks past "vibe coding"—letting AI write code on a hunch—toward h
 The author shows concrete practices for weaving AI into the whole development workflow, not treating it as a mere code generator. It draws a good map for thinking about how review, testing, and refactoring change in the age of AI.
 
 Anyone leaning hard into AI coding gains the most from pausing to check the point they need to move beyond.
+
+## Roundups featuring this book
+
+- [Generative AI development books](/posts/generative-ai-development-recommended-books/)

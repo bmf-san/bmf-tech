@@ -25,3 +25,7 @@ Although it's quite an old book, it discusses a thinking method applicable to pr
 Since it's not a recent book, it's a bit difficult to read.
 
 To solve a problem, it's crucial to first understand the problem well and to approach it from various angles, experimenting and iterating, as this book thoroughly reminds us.
+
+## Roundups featuring this book
+
+- [Thinking and productivity books](/posts/engineer-thinking-recommended-books/)

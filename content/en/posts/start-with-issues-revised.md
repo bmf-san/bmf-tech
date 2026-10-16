@@ -46,3 +46,7 @@ From personal experience, I often feel that formulating and understanding the pr
 If coding is seen as the act of solving, then everyone probably feels that the preceding process takes more time.
 
 Among the preceding processes, deeply considering the "question" at the very beginning is often overlooked (I think this is because it is not a skill cultivated much in compulsory education). So, when in doubt about solving something, I want to be conscious of reviewing the "question."
+
+## Roundups featuring this book
+
+- [Thinking and productivity books](/posts/engineer-thinking-recommended-books/)

@@ -25,3 +25,7 @@ This O'Reilly book organizes prompt engineering in a systematic way. Rather than
 Through topics such as tokenization, context length, few-shot prompting, and output evaluation, it turns prompting from "experience and intuition" into something you can design. It gives you a foothold to verify and improve your prompts on your own.
 
 As someone who builds with LLMs every day, I found it practical: it put into words and organized the things I had done by feel.
+
+## Roundups featuring this book
+
+- [Generative AI development books](/posts/generative-ai-development-recommended-books/)

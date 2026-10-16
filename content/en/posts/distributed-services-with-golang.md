@@ -22,3 +22,7 @@ I read [Distributed Services with Go](https://amzn.to/3qIwOEj).
 This book discusses the practical aspects of distributed services using Go.
 
 I believe you can also learn about modern technologies and the background of configurations in the context of microservices.
+
+## Roundups featuring this book
+
+- [Go books](/posts/go-recommended-books/)

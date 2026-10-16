@@ -21,3 +21,7 @@ draft: false
 [I read Perfect Ruby](https://amzn.to/3URxJyn).
 
 I've only read the Perfect series for PHP and JavaScript before, but it feels like the reliable Perfect series as always.
+
+## Roundups featuring this book
+
+- [Ruby and Rails books](/posts/ruby-recommended-books/)

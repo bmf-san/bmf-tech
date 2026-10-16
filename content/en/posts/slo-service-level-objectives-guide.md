@@ -26,3 +26,7 @@ I read the [SLO Service Level Objectives: A Practical Guide to Implementing SLI,
 - SLOs are not just mere metrics for reliability improvement; by collecting data based on these metrics, they provide insights for development and operational improvements.
 - While implementing error budgets can be challenging, if successful, they can provide data and discussion opportunities to improve teams, organizations, companies, and services.
 - To implement SLOs in an organization, it is necessary to obtain agreement from superiors, adjust expectations, explain the time investment benefits, and be prepared to take on cross-functional roles.
+
+## Roundups featuring this book
+
+- [Monitoring, SRE, and operations books](/posts/sre-operations-recommended-books/)

@@ -65,3 +65,7 @@ Having worked with Go for several years, I realized many things I didn’t know 
 # Testing
 - Detection of order dependence:
   - The test execution order is shuffled with `go test -shuffle=on`.
+
+# Roundups featuring this book
+
+- [Go books](/posts/go-recommended-books/)

@@ -25,3 +25,7 @@ This book focuses on how to design the context you feed to an LLM. It goes past 
 The quality of an LLM's output depends far more on what you pass, in what order, and how much, than on the model itself. The book lifts this design from ad-hoc tricks to reproducible engineering.
 
 The content connects directly to the problems you hit when you build RAG systems and agents, so I found it useful as a guide for implementation.
+
+## Roundups featuring this book
+
+- [Generative AI development books](/posts/generative-ai-development-recommended-books/)

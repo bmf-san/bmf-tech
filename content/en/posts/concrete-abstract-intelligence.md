@@ -32,3 +32,7 @@ I feel that there were few opportunities to learn about abstraction in my academ
 I think I am more inclined towards abstract thinking, but I found many relatable and interesting points in the contrast between abstract and concrete.
 
 How to solve the issue of abstraction not being conveyed is a concern of mine, but it seems I still need to continue pondering over it.
+
+## Roundups featuring this book
+
+- [Thinking and productivity books](/posts/engineer-thinking-recommended-books/)

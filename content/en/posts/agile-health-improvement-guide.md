@@ -24,3 +24,7 @@ A unique combination of health and Agile.
 The principles of Agile can be applied in various areas, and it seems they are also quite useful for improving health.
 
 The guide discusses various habits and behavioral patterns for health, making it easy to implement.
+
+## Roundups featuring this book
+
+- [Engineer health books](/posts/engineer-health-recommended-books/)

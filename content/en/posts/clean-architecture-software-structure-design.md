@@ -60,3 +60,7 @@ If you want to learn about Clean Architecture, I think it's best to start with t
   - The goal of the shape of software architecture is to facilitate development, deployment, operation, and maintenance, and the strategy is to leave as many options open for as long as possible.
   - For decisions about details that do not need to be made immediately, it is best to delay them as much as possible or to keep them changeable at any time.
   - Software has both "behavioral value" and "structural value," but the latter is more valuable because it makes the software flexible (modifiable).
+
+## Roundups featuring this book
+
+- [Software architecture books](/posts/software-architecture-recommended-books/)

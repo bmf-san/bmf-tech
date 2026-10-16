@@ -70,3 +70,7 @@ Design ItのP.214　”プログラマーは日々アーキテクチャに関す
 
 # 参考
 - [Design It](https://amzn.to/4635mAS)
+
+# この本を紹介しているまとめ記事
+
+- [ソフトウェアアーキテクチャのおすすめ本](/ja/posts/software-architecture-recommended-books/)

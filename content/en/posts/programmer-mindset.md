@@ -67,3 +67,7 @@ It seems there are methods to train working memory.
 [How to Train Your Brain's Working Memory. Strengthening and freeing working memory can enhance work performance and study efficiency!](https://studyhacker.net/columns/workingmemory-image)
 
 Isn't the once-popular "brain training" (still popular now...?) also a type of working memory training?
+
+# Roundups featuring this book
+
+- [Good code books](/posts/clean-code-recommended-books/)

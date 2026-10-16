@@ -21,3 +21,7 @@ draft: false
 [SCRUM BOOT CAMP THE BOOK【増補改訂版】 スクラムチームではじめるアジャイル開発](https://amzn.to/3wwns1b)を読んだ。
 
 スクラム開発について学ぶ最初の本として良い。
+
+## この本を紹介しているまとめ記事
+
+- [アジャイル開発のおすすめ本](/ja/posts/agile-development-recommended-books/)

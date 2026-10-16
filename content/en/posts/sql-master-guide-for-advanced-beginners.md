@@ -20,3 +20,7 @@ draft: false
 I read [Mastering SQL: A Comprehensive Guide for Advanced Beginners, 2nd Edition](https://amzn.to/3PZYnSS).
 
 I feel like my SQL skills have expanded with thoughts like, "Oh, so this is how you can write it!"
+
+## Roundups featuring this book
+
+- [Database books](/posts/database-recommended-books/)

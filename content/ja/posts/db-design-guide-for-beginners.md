@@ -22,3 +22,6 @@ draft: false
 
 体系的に解説されていて分かりやすい。
 
+## この本を紹介しているまとめ記事
+
+- [データベースのおすすめ本](/ja/posts/database-recommended-books/)

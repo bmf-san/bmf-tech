@@ -24,3 +24,6 @@ draft: false
 
 スタートアップに関わらずWeb系のビジネスについてインサイトを持ちたい場合にもおすすめ。
 
+## この本を紹介しているまとめ記事
+
+- [アジャイル開発のおすすめ本](/ja/posts/agile-development-recommended-books/)

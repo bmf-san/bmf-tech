@@ -31,3 +31,7 @@ I think there are some aspects that are influenced by the development environmen
   - If it stays in your memory, it might help when using the standard library.
   - This is something I haven't been able to do.
   - Recently, with the power of generative AI, this might be an area where AI can be a great help.
+
+## Roundups featuring this book
+
+- [Good code books](/posts/clean-code-recommended-books/)

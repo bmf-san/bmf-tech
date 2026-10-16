@@ -25,3 +25,7 @@ I believe this book is valuable for anyone involved in software engineering, whe
 The book verbalizes various uncertainties in engineering and touches on how to confront uncertainty.
 
 The latter chapters deal with themes that could easily fill an entire book on their own, so having prior knowledge from other books or resources would make it easier to read.
+
+## Roundups featuring this book
+
+- [Engineering management books](/posts/engineering-management-recommended-books/)

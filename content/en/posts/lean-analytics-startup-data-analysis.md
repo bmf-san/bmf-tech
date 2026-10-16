@@ -20,3 +20,7 @@ draft: false
 [LEAN ANALYTICS: Data Analysis and Utilization for Startups](https://amzn.to/44zNRHS) is a must-read for anyone involved in startups.
 
 I also recommend it for those who want insights into web-based businesses, regardless of their involvement in startups.
+
+## Roundups featuring this book
+
+- [Agile development books](/posts/agile-development-recommended-books/)

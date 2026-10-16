@@ -32,3 +32,7 @@ The book cover is completely reminiscent of O'Reilly, but the publisher is Techn
 The author, Tom Engelberg, seems to be a fictional character, and the actual authors are the translators.
 
 I saw that mentioned in an Amazon review, but I don't know the source...
+
+## Roundups featuring this book
+
+- [System design and architect books](/posts/system-design-recommended-books/)

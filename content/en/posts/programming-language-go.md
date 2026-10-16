@@ -19,3 +19,7 @@ draft: false
 [Programming Language Go](https://amzn.to/3WrbznD) has been read.
 
 As a canonical reference, it might be good to have a copy in every household if you're working with Go.
+
+## Roundups featuring this book
+
+- [Go books](/posts/go-recommended-books/)

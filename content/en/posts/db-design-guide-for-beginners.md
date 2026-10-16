@@ -20,3 +20,7 @@ draft: false
 I read [A Comprehensive Guide to Database Design: For Those Who Don’t Want to Stop at Beginner Level](https://amzn.to/3U9lQU1).
 
 It is systematically explained and easy to understand.
+
+## Roundups featuring this book
+
+- [Database books](/posts/database-recommended-books/)

@@ -23,3 +23,7 @@ I believe it is considered a classic.
 When I finished reading it, I felt somewhat unsatisfied, as if it didn't quite resonate with me. However, after some time reflecting on it, I feel like I have come to grasp the message of this book.
 
 The idea that "discovering a problem is more difficult than solving it, and misidentifying the problem to solve is meaningless" may seem obvious, but I think we often forget this obvious truth and end up facing problems without clarity.
+
+## Roundups featuring this book
+
+- [Strategy and systems thinking books](/posts/strategy-systems-thinking-recommended-books/)

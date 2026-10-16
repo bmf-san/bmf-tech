@@ -22,3 +22,7 @@ I read [Understanding Functional Programming](https://amzn.to/3IwNOpJ).
 I felt that it is a great book that carefully explains functional programming using Scala.
 
 There were parts where it seemed to focus heavily on the language specifications of Scala, but regardless of the language, it allows for an easy understanding of the essence of functional programming.
+
+## Roundups featuring this book
+
+- [Good code books](/posts/clean-code-recommended-books/)

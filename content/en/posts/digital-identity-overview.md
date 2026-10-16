@@ -23,3 +23,7 @@ I read [Everything About Digital Identity: Knowledge for Realizing a Secure and 
 This book systematically and extensively explains the concept of digital identity from its foundations to implementation.  
 In addition to covering standard protocols such as OAuth 2.0, OpenID Connect, and SAML, it encompasses modern architectural concepts like zero trust and decentralized identity.  
 Not limited to mere technical explanations, it also addresses design philosophies that balance user experience and security, providing a broad perspective for engineers and architects involved in designing and operating authentication and authorization infrastructures.
+
+## Roundups featuring this book
+
+- [Web application security books](/posts/web-security-recommended-books/)

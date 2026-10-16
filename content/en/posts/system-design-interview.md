@@ -25,3 +25,7 @@ This is the Japanese translation of [System Design Interview – An insider's gu
 While reading [donnemartin/system-design-primer](https://github.com/donnemartin/system-design-primer/blob/master/README-ja.md), I found that I already knew some of the content to a certain extent. However, it seems that books of this kind are not often published in Japan, so it's a book I want to keep at hand.
 
 [ByteByteGo](https://bytebytego.com/) is a service run by the author. It appears to be a mostly paid service with some free content, but it seems educational, so it might be worth subscribing to. The author's Discord channel, where they discuss system design, was mentioned in the afterword, so I joined it.
+
+## Roundups featuring this book
+
+- [System design and architect books](/posts/system-design-recommended-books/)

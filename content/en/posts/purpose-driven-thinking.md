@@ -32,3 +32,7 @@ Recently, I have been interested in the criteria for judgment in decision-making
 I felt that by understanding the framework of purpose, goals, and means, and incorporating it into practice, I could significantly improve the quality of decision-making.
 
 Since I am also quite uneducated about decision-making thinking, I plan to read various books on this topic in the future.
+
+## Roundups featuring this book
+
+- [Thinking and productivity books](/posts/engineer-thinking-recommended-books/)

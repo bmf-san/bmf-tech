@@ -101,10 +101,10 @@
   {{/* Amazon affiliate CTA (book-review posts): second touch point after content */}}
   {{template "amazon-books-card" .}}
 
-  {{/* Audible / Kindle Unlimited free-trial bounty CTA (book-review posts). Hidden until config URLs are set. */}}
+  {{/* Audible / Kindle Unlimited free-trial bounty CTA (book reviews and book roundups). Hidden until config URLs are set. */}}
   {{- $audibleURL := index $.Config.Theme.Params "audible_bounty_url"}}
   {{- $kuURL := index $.Config.Theme.Params "kindle_unlimited_bounty_url"}}
-  {{- if and $hasBooks (or $audibleURL $kuURL)}}
+  {{- if and (or $hasBooks $isReview) (or $audibleURL $kuURL)}}
   <aside class="card my-10" aria-label="PR">
     <div class="card-header flex items-center justify-between">
       <span class="font-semibold text-base">{{if eq $locale "ja"}}📚 読書をもっと（無料体験）{{else}}📚 More reading (free trial){{end}}</span>

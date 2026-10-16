@@ -38,3 +38,6 @@ draft: false
 
 なので袖ケ浦さんはもっと最初から江島さんたちと協力することができたんじゃないだろうか笑
 
+# この本を紹介しているまとめ記事
+
+- [アジャイル開発のおすすめ本](/ja/posts/agile-development-recommended-books/)

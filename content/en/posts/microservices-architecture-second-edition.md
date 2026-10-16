@@ -30,3 +30,7 @@ There are some overlapping sections with monoliths transitioning to microservice
 There isn't much discussion on the implementation of microservices.
 
 It discusses the concepts of shared ownership and strong ownership proposed by Martin Fowler, which are important concepts in the design of organizational and system architecture, serving as one of the connections between the organization and the system. It's something you should keep in mind.
+
+## Roundups featuring this book
+
+- [Software architecture books](/posts/software-architecture-recommended-books/)

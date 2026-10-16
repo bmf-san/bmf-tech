@@ -29,3 +29,7 @@ I found the arguments to be concise and easy to understand.
 Personally, I think estimating costs and revenues is challenging, and it really tests one's skills as a technician.
 
 In particular, I found several chapters that present ideas from a monetary economic approach to be quite interesting.
+
+## Roundups featuring this book
+
+- [Good code books](/posts/clean-code-recommended-books/)

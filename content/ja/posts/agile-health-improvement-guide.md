@@ -26,3 +26,6 @@ draft: false
 
 健康のための習慣、行動パターンについて色々書かれているので、実践しやすい。
 
+## この本を紹介しているまとめ記事
+
+- [エンジニアの健康のおすすめ本](/ja/posts/engineer-health-recommended-books/)

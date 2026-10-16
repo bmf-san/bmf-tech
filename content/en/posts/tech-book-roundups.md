@@ -56,6 +56,8 @@ An index of this blog's tech book roundups, organized by topic. It spans design,
 - [Thinking and productivity books](/posts/engineer-thinking-recommended-books/) — 10 books, from problem solving to how to learn.
 - [Engineer career books](/posts/engineer-career-recommended-books/) — 4 books, from the fundamentals to staff engineer.
 - [SaaS and business books](/posts/saas-business-recommended-books/) — 6 books on launch, architecture, sales, and customers.
+- [Strategy and systems thinking books](/posts/strategy-systems-thinking-recommended-books/) — 7 books, from strategy to asking better questions.
+- [Engineer health books](/posts/engineer-health-recommended-books/) — 4 books on posture, exercise, stress, and diet.
 
 ## How to use this index
 

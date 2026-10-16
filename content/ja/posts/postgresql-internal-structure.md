@@ -22,3 +22,7 @@ draft: false
 PostgreSQLを運用するに当たって知っておきたいことが設計・運用の観点で網羅されていて良い。
 
 MySQLにもこういう本ないかなぁ。ありそう。
+
+## この本を紹介しているまとめ記事
+
+- [データベースのおすすめ本](/ja/posts/database-recommended-books/)

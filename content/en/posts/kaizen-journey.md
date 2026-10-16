@@ -37,3 +37,7 @@ I read this book without any prior knowledge, but it might have been easier to r
 The story in this book is set in a contract development company, but I think those with experience in business companies might find the content resonates more with them. (I might be mixing in my own biases and prejudices based on my experiences...)
 
 So, I wonder if Sodekawara could have collaborated with Ejima and the others from the very beginning! Haha.
+
+# Roundups featuring this book
+
+- [Agile development books](/posts/agile-development-recommended-books/)

@@ -27,3 +27,7 @@ There are surprisingly few books written in Japanese about Redis, and I believe 
 I particularly appreciated the thorough coverage of operational management. Although my understanding is shallow, I also found the sections on internal implementation to be beneficial.
 
 I want to keep this book on hand so that I can refer to it whenever I encounter difficulties with Redis.
+
+## Roundups featuring this book
+
+- [Database books](/posts/database-recommended-books/)

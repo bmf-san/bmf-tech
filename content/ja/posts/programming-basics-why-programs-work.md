@@ -23,3 +23,7 @@ draft: false
 改訂版が出ていたの読み直した。
 
 情報系の学校であればこういうことは講義で学んでいる気がしている。
+
+## この本を紹介しているまとめ記事
+
+- [コンピュータとネットワークの基礎のおすすめ本](/ja/posts/computer-network-basics-recommended-books/)

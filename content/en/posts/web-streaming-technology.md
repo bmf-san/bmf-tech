@@ -23,3 +23,7 @@ draft: false
 [Web Distribution Technology: Utilizing HTTP Cache, Reverse Proxy, and CDN](https://amzn.to/496qjhP) was read.
 
 It comprehensively covers caching in web content distribution. It's a must-have when considering cache optimization.
+
+## Roundups featuring this book
+
+- [Web performance books](/posts/web-performance-recommended-books/)

@@ -19,3 +19,7 @@ draft: false
 I read [Test-Driven Development](https://amzn.to/3WwNITP).
 
 This is Kent Beck's TDD book. If you want to learn about TDD, this is the one you should pick up first.
+
+## Roundups featuring this book
+
+- [Software testing books](/posts/software-testing-recommended-books/)

@@ -19,3 +19,7 @@ draft: false
 I read [50 Ideas to Improve Software Testing](https://amzn.to/3JWDsN1).
 
 This book provides insights on ideas to enhance the quality of testing.
+
+## Roundups featuring this book
+
+- [Software testing books](/posts/software-testing-recommended-books/)

@@ -25,3 +25,7 @@ Rather than staying at the level of how to use generative AI as a tool, this boo
 The center of gravity is on the ways of thinking that connect generative AI to organizational and business outcomes, more than on the technology itself. The message rings true—that chasing model performance alone does not create value, and what matters is which problems you aim it at, how you prepare the data, and how you combine it with people.
 
 If you are exploring how to make the most of generative AI, it helps you grasp the big picture on a layer separate from individual technical articles. Not only engineers but also people involved in planning and decision-making seem likely to gain something from it.
+
+## Roundups featuring this book
+
+- [Generative AI development books](/posts/generative-ai-development-recommended-books/)

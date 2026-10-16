@@ -25,3 +25,7 @@ draft: false
 ハードウェアからソフトウェアまでの流れを理解することができる。
 
 [プログラムはなぜ動くのか 第3版 知っておきたいプログラミングの基礎知識](https://amzn.to/4afy0zD)もセットで読むと良い気がする。
+
+## この本を紹介しているまとめ記事
+
+- [コンピュータとネットワークの基礎のおすすめ本](/ja/posts/computer-network-basics-recommended-books/)

@@ -23,3 +23,7 @@ draft: false
 A classic in distributed system design.
 
 There are many parts I haven't fully understood, so I want to read it again.
+
+## Roundups featuring this book
+
+- [Software architecture books](/posts/software-architecture-recommended-books/)

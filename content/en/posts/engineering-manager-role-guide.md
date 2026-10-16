@@ -28,3 +28,7 @@ draft: false
   - How do you measure the success of the team under a manager? Team output, satisfaction, retention, all of these?
   - What do successful managers do in between their management tasks?
   - How should managers within the organization collaborate? Do they only care about their own teams, or do they collaborate across roles and departments?
+
+## Roundups featuring this book
+
+- [Engineering management books](/posts/engineering-management-recommended-books/)

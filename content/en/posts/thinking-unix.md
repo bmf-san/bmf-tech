@@ -25,3 +25,7 @@ This book condenses the philosophy and principles of UNIX into a concise 150-pag
 It also offers insights applicable to coding.
 
 The book discusses universal principles that can be applied when considering design, making it a valuable reference when tackling design challenges.
+
+## Roundups featuring this book
+
+- [Computer and network fundamentals books](/posts/computer-network-basics-recommended-books/)

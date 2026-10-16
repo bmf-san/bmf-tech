@@ -23,3 +23,7 @@ It’s a book that teaches methodologies for learning aimed at engineers.
 While there are various books discussing learning methodologies, there may be few that specifically address the field of engineering.
 
 As we learn and age, we sometimes derive methodologies from our experiences, but gaining insights from pioneers and knowledgeable individuals can enhance our own learning.
+
+## Roundups featuring this book
+
+- [Thinking and productivity books](/posts/engineer-thinking-recommended-books/)

@@ -25,3 +25,7 @@ I understood that the understanding and interpretation of the domain, which come
 I feel that the initial understanding of how to translate the domain into code is more difficult than the coding itself.
 
 I would like to reread it after some time.
+
+## Roundups featuring this book
+
+- [Software architecture books](/posts/software-architecture-recommended-books/)

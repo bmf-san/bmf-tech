@@ -22,3 +22,7 @@ I read the [Clean Code Cookbook: A Recipe Collection for Improving Code Design a
 Throughout the book, it teaches the concepts of total injectivity and accidental complexity, allowing you to learn techniques for improving code design and quality.
 
 It comprehensively covers well-known principles, making it a book you’ll want to keep on hand.
+
+## Roundups featuring this book
+
+- [Good code books](/posts/clean-code-recommended-books/)

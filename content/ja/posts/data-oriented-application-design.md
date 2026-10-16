@@ -23,3 +23,6 @@ draft: false
 
 理解がしきれていない部分も多いの読み直したい。
 
+## この本を紹介しているまとめ記事
+
+- [ソフトウェアアーキテクチャのおすすめ本](/ja/posts/software-architecture-recommended-books/)

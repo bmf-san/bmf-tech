@@ -31,3 +31,7 @@ I initially thought SRE and security were not closely related, but this book cha
 Although SRE is not my primary role, I want to read more books related to SRE. In particular, I want to read "Site Reliability Engineering." This book frequently references it, indicating a high level of relevance.
 
 While this book offers valuable insights, I felt that its practical applicability might be limited due to differences in organizational scale and structure.
+
+## Roundups featuring this book
+
+- [Web application security books](/posts/web-security-recommended-books/)

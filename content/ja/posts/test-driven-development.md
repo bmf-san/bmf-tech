@@ -19,3 +19,7 @@ draft: false
 [テスト駆動開発](https://amzn.to/3WwNITP)を読んだ。
 
 Kent Beck氏のTDD本。TDDについて学ぶならとりあえずこれを手に取りたい。
+
+## この本を紹介しているまとめ記事
+
+- [ソフトウェアテストのおすすめ本](/ja/posts/software-testing-recommended-books/)

@@ -68,3 +68,7 @@ draft: false
 [脳の「ワーキングメモリ」を鍛える方法。仕事の能力、勉強の効率アップには、ワーキングメモリの強化と解放が効く！](https://studyhacker.net/columns/workingmemory-image)
 
 昔流行った「脳トレ」（今も流行っているのだろうか）とかも、ワーキングメモリを鍛える系の類いだろうか。
+
+# この本を紹介しているまとめ記事
+
+- [良いコードを書くためのおすすめ本](/ja/posts/clean-code-recommended-books/)

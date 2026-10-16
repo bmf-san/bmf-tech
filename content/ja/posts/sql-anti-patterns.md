@@ -21,3 +21,7 @@ draft: false
 [SQLアンチパターン](https://amzn.to/3vFzbdw)を読んだ。
 
 定番of定番。分かりやすい解説でアンチパターンが紹介されている。
+
+## この本を紹介しているまとめ記事
+
+- [データベースのおすすめ本](/ja/posts/database-recommended-books/)

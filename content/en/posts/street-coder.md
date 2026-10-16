@@ -24,3 +24,7 @@ This book shares tips from the field with a touch of humor.
 It covers a wide range of topics, from algorithms and testing to refactoring, security, and performance optimization, providing concrete guidance on how to tackle challenges encountered in real-world scenarios.
 
 For beginners, it offers a practical image of what to expect, while for experienced professionals, it provides an opportunity to reflect on their own skills and mindset.
+
+## Roundups featuring this book
+
+- [Good code books](/posts/clean-code-recommended-books/)

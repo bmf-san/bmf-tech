@@ -31,3 +31,7 @@ What stood out:
 - Chapter 14, "the manager within the product manager," covers the pitfalls a PM hits when stepping up to lead PM or product leadership roles, and reads close to a book on engineering management.
 
 Where [Escaping the Build Trap](https://amzn.to/49hDkoj) draws "why the organization makes products at all" with frameworks, this book deals scrappily with "how PMs actually behave day to day." Read together, the strategy layer and the floor layer mesh more easily.
+
+## Roundups featuring this book
+
+- [Engineering management books](/posts/engineering-management-recommended-books/)

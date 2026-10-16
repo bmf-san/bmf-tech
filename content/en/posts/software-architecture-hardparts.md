@@ -29,3 +29,7 @@ The book organizes thoughts and approaches on how to reconstruct architecture.
 Personally, my favorite chapter is the last one, "Chapter 15: Building Your Own Trade-off Analysis." Although it slightly deviates from the main content of the book, it provides a way of thinking about architectural strategies.
 
 As an aside, I participated in the translation review of this book, so I have a personal attachment to it.
+
+## Roundups featuring this book
+
+- [Software architecture books](/posts/software-architecture-recommended-books/)

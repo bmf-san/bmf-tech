@@ -19,3 +19,7 @@ draft: false
 I read the [Practical Introduction to Go Programming: Creating Web Applications from Scratch with the Standard Library](https://amzn.to/3y5QIfK).
 
 It discusses practical methods for creating web applications using Go.
+
+## Roundups featuring this book
+
+- [Go books](/posts/go-recommended-books/)

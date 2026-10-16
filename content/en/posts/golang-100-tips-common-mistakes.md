@@ -19,3 +19,7 @@ draft: false
 [100 Tips for Go: How to Address Common Developer Mistakes (impress top gear)](https://amzn.to/3QXZt2F) is a comprehensive tips book that covers common mistakes in Go, as the title suggests.
 
 It's a must-read for those who are familiar with writing in Go but want to improve the quality of their code.
+
+## Roundups featuring this book
+
+- [Go books](/posts/go-recommended-books/)

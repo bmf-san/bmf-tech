@@ -26,3 +26,6 @@ The chapter on reading code comes before the chapter on writing it, which reflec
 
 It suits people about to start working in the field, and it also helps experienced engineers take stock of their own fundamentals.
 
+## Roundups featuring this book
+
+- [Engineer career books](/posts/engineer-career-recommended-books/)

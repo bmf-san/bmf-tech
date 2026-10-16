@@ -23,3 +23,7 @@ Having started using Ruby at work and having read a variety of introductory book
 I felt that I could grasp not only practical knowledge of Ruby but also the charm of Ruby through this book.
 
 From a programming perspective, I was able to pick up ideas that are not limited to Ruby itself.
+
+## Roundups featuring this book
+
+- [Ruby and Rails books](/posts/ruby-recommended-books/)

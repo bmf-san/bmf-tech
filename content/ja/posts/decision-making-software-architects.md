@@ -29,4 +29,6 @@ draft: false
 
 特に5つの質問は、アーキテクチャの意思決定におけるクリティカルな質問であり、常に頭の片隅において置きたいと思った。
 
+## この本を紹介しているまとめ記事
 
+- [ソフトウェアアーキテクチャのおすすめ本](/ja/posts/software-architecture-recommended-books/)

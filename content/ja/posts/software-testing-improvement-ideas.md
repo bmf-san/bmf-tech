@@ -19,3 +19,7 @@ draft: false
 [ソフトウェアテストをカイゼンする50のアイデア](https://amzn.to/3JWDsN1)を読んだ。
 
 テスト品質を向上させるアイデアについて学べる本。
+
+## この本を紹介しているまとめ記事
+
+- [ソフトウェアテストのおすすめ本](/ja/posts/software-testing-recommended-books/)

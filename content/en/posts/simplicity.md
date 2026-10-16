@@ -24,3 +24,7 @@ This book asks how to keep software development simple when complexity threatens
 It made me realize that piling on features and chasing trendy tools does not always create value. Instead, the choices of what not to build and where to stop pay off when you want to keep developing in a healthy way over the long run.
 
 The book gave me a reason to simplify not only code but also teams, processes, and the way we work.
+
+## Roundups featuring this book
+
+- [Agile development books](/posts/agile-development-recommended-books/)

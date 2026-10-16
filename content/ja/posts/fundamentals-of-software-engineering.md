@@ -26,3 +26,6 @@ Nathaniel SchuttaとDan Vegaによる『Fundamentals of Software Engineering』�
 
 これから現場に出る人はもちろん、ある程度経験を積んだ人が自分の基礎を棚卸しするのにも使える一冊。
 
+## この本を紹介しているまとめ記事
+
+- [エンジニアのキャリアのおすすめ本](/ja/posts/engineer-career-recommended-books/)

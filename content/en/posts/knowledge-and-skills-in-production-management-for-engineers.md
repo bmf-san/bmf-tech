@@ -21,3 +21,7 @@ draft: false
 [I read "Knowledge and Skills of Production Management Systems for Engineers"](https://amzn.to/3Wg7PW9).
 
 It's not limited to production management systems, but I keenly felt that deeply understanding business flows greatly affects the quality of the system.
+
+## Roundups featuring this book
+
+- [Business systems books](/posts/business-systems-recommended-books/)

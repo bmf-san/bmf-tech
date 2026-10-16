@@ -21,3 +21,7 @@ draft: false
 [パーフェクトRuby on Rails](https://amzn.to/3UEbQB4)を読んだ。
 
 Ruby on Railsに入門したくて読んだ本。網羅的に書かれているのでフレームワークの機能を把握するのに役立つ。
+
+## この本を紹介しているまとめ記事
+
+- [Ruby / Railsのおすすめ本](/ja/posts/ruby-recommended-books/)

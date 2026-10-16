@@ -28,3 +28,7 @@ The book makes you realize that innovation begins with questions and stimulates 
 Not only is it important to design questions, but also to discover them. This book teaches how to draw out questions that were previously unseen, unimagined, unconsidered, or not held as values.
 
 I think you can learn about the depth of questions and hints on how to achieve results that exceed expectations.
+
+## Roundups featuring this book
+
+- [Strategy and systems thinking books](/posts/strategy-systems-thinking-recommended-books/)

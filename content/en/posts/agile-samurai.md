@@ -18,3 +18,7 @@ draft: false
 ---
 
 [The Agile Samurai](https://amzn.to/3y9JvuW) is a great book for laying the groundwork for Agile development.
+
+## Roundups featuring this book
+
+- [Agile development books](/posts/agile-development-recommended-books/)

@@ -23,3 +23,7 @@ I read [Understanding System Performance Through Illustrations](https://amzn.to/
 I thought I would study something in preparation for ISUCON, so I picked up this book.
 
 It teaches the basic concepts of system performance. It's easy to understand.
+
+## Roundups featuring this book
+
+- [Web performance books](/posts/web-performance-recommended-books/)

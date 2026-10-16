@@ -22,3 +22,7 @@ draft: false
 アジャイルを実践するためのプラクティスがまとめられた本。
 
 [アジャイルワークショップ](https://speakerdeck.com/bmf_san/aziyairuwakusiyotupu)の教科書として活用させてもらった。
+
+## この本を紹介しているまとめ記事
+
+- [アジャイル開発のおすすめ本](/ja/posts/agile-development-recommended-books/)

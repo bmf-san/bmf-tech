@@ -23,3 +23,7 @@ I read the [PostgreSQL Comprehensive Guide, 4th Edition: From Installation to Fe
 For someone who had never worked with PostgreSQL before, this was the perfect introductory book.
 
 While there are quite a few pages dedicated to examples of applications, the book covers the fundamental aspects of PostgreSQL.
+
+## Roundups featuring this book
+
+- [Database books](/posts/database-recommended-books/)

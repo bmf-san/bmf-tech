@@ -38,3 +38,7 @@ The final chapter, "Emotions Create Health," was surprisingly intriguing. I have
 I initially thought this book could serve as a reference, but upon finishing it, I realized that health-related research is constantly being updated, so I need to rethink my approach of passively accepting information. (Thus, continuous learning is essential.)
 
 The title seems appealing to engineers, so it might be a good idea to discreetly place it in the IT section of bookstores!
+
+## Roundups featuring this book
+
+- [Engineer health books](/posts/engineer-health-recommended-books/)

@@ -55,3 +55,7 @@ In the era before the emergence of the SaaS service model, principles focused on
 I wasn't familiar with the role of Customer Success, but I was able to get a sense of it.
 
 I realized that a cross-functional approach is required not only in technical organizations.
+
+# Roundups featuring this book
+
+- [SaaS and business books](/posts/saas-business-recommended-books/)

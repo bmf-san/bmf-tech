@@ -20,3 +20,7 @@ draft: false
 [プロを目指す人のためのRuby入門](https://amzn.to/4baAm3P)を読んだ。
 
 業務レベルで役に立ちそうなことが詳細に書かれている。読みやすい。
+
+## この本を紹介しているまとめ記事
+
+- [Ruby / Railsのおすすめ本](/ja/posts/ruby-recommended-books/)

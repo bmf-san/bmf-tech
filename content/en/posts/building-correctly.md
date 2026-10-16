@@ -45,3 +45,7 @@ Whether one can reflect on the correctness of a decision made is an important st
 I believe that organizing correct and incorrect information guides product development. (Defining correctness is difficult, so organizing it in a binary manner is also challenging...)
 
 The discussion on perspectives and viewpoints in the latter chapters was good. It made me realize that I still lack sufficient perspective shifts.
+
+# Roundups featuring this book
+
+- [Agile development books](/posts/agile-development-recommended-books/)

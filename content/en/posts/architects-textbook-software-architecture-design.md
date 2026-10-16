@@ -26,3 +26,7 @@ As the title suggests, it is truly a textbook that comprehensively covers the ar
 There is a significant focus on software architecture throughout the book.
 
 With abundant annotations, recommendations for good books, and references, this book serves as a great starting point for expanding your learning.
+
+## Roundups featuring this book
+
+- [System design and architect books](/posts/system-design-recommended-books/)

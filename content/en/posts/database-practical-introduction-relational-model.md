@@ -20,3 +20,7 @@ draft: false
 I read [Practical Introduction to Databases: Efficient SQL through the Relational Model (WEB+DB PRESS plus)](https://amzn.to/3PZYdLg).
 
 By learning from theory, I was able to organize my approach and thinking towards RDBs. Since I haven't fully grasped set theory and logic, this will be a challenge for me moving forward.
+
+## Roundups featuring this book
+
+- [Database books](/posts/database-recommended-books/)

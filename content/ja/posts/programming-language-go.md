@@ -20,3 +20,7 @@ draft: false
 [プログラミング言語Go](https://amzn.to/3WrbznD)を読んだ。
 
 教典的立ち位置で、Goをやるなら一家に一冊置いておいても良いのではないだろうか。
+
+## この本を紹介しているまとめ記事
+
+- [Go言語のおすすめ本](/ja/posts/go-recommended-books/)

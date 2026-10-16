@@ -22,3 +22,7 @@ I read [A Comprehensive Introduction to OAuth: Principles and Practices for Impl
 It is one of the few books that provides detailed information about OAuth.
 
 After reading an introductory book, I want to read this to prepare for reading the specifications.
+
+## Roundups featuring this book
+
+- [Web application security books](/posts/web-security-recommended-books/)

@@ -23,3 +23,7 @@ This is the third edition of SQuBOK, which systematically organizes the body of 
 Rather than reading it cover to cover to memorize every detail, I keep it at hand as a map of quality knowledge and consult the relevant area when needed. It works well as an entry point for surveying fields you have not yet mastered and following the related standards and references.
 
 When you want to relearn quality in a systematic way, or to share a common vocabulary about quality within a team, it serves as a reliable anchor.
+
+## Roundups featuring this book
+
+- [Software testing books](/posts/software-testing-recommended-books/)

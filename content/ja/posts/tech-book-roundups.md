@@ -56,6 +56,8 @@ draft: false
 - [エンジニアの思考法・知的生産のおすすめ本](/ja/posts/engineer-thinking-recommended-books/) — 問題解決から学び方まで10冊。
 - [エンジニアのキャリアのおすすめ本](/ja/posts/engineer-career-recommended-books/) — 基礎力からスタッフエンジニアまで4冊。
 - [SaaSと事業づくりのおすすめ本](/ja/posts/saas-business-recommended-books/) — 立ち上げ・アーキテクチャ・営業・顧客理解の6冊。
+- [戦略とシステム思考のおすすめ本](/ja/posts/strategy-systems-thinking-recommended-books/) — 戦略論から問いの立て方まで7冊。
+- [エンジニアの健康のおすすめ本](/ja/posts/engineer-health-recommended-books/) — 姿勢・運動・ストレス・食事の4冊。
 
 ## 使い方
 

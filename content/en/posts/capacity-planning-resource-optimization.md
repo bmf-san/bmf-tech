@@ -21,3 +21,7 @@ draft: false
 Although it is an old book, it provides fundamental insights into the concepts of capacity planning.
 
 While it assumes an on-premises environment, I believe there are transferable ideas applicable to the cloud as well.
+
+## Roundups featuring this book
+
+- [Monitoring, SRE, and operations books](/posts/sre-operations-recommended-books/)

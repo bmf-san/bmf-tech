@@ -35,3 +35,7 @@ A few things that stood out to me in the second edition:
 When I read the first edition, I valued it most as a vocabulary book for software architecture. The second edition extends that into how to operate architecture over time, making it easier to step into discussions about organizations and processes from the same foundation.
 
 Whether you are aspiring to become an architect or already making architecture decisions in practice, this is a book worth coming back to. Even if you already own the first edition, focusing on the added and reorganized chapters alone is well worth the time.
+
+## Roundups featuring this book
+
+- [Software architecture books](/posts/software-architecture-recommended-books/)

@@ -34,3 +34,7 @@ What stood out:
 This is not an entry-level book. It reads more as a reference book for someone who already has the basics of web authentication, public-key cryptography, and OAuth/OIDC, and is now adopting passkeys in a product.
 
 Reading [Introduction to Digital Identity](https://amzn.to/4b2GqOg) first to get a map of the authentication/authorization landscape, and then going deep on passkeys with this book, meshes well.
+
+## Roundups featuring this book
+
+- [Web application security books](/posts/web-security-recommended-books/)

@@ -34,3 +34,7 @@ Although my practical experience is still shallow, I found it to be a good disco
 For example, I feel I have gained confidence that there will be new discoveries by learning methods of self-study.
 
 I realized the importance of learning a systematic process, breaking free from the illusion that I know best what works for me.
+
+## Roundups featuring this book
+
+- [Thinking and productivity books](/posts/engineer-thinking-recommended-books/)

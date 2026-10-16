@@ -25,3 +25,7 @@ This book speaks to leaders who have stepped up from hands-on engineering into a
 It lays out the areas that technical skill alone cannot carry you through: how you delegate decisions, how you set priorities, and how you face stakeholders. Anyone who wavers at the boundary between management and technical leadership will find a signpost here.
 
 The book pushed me to face, ahead of time, the questions I run into as my role widens.
+
+## Roundups featuring this book
+
+- [Engineering management books](/posts/engineering-management-recommended-books/)

@@ -20,3 +20,7 @@ draft: false
 [たのしいRuby](https://amzn.to/3UV14YP)を読んだ。
 
 オブジェクト志向の経験や他言語の経験があるほうが読みやすい部分も多いが、Ruby初心者向けの本。
+
+## この本を紹介しているまとめ記事
+
+- [Ruby / Railsのおすすめ本](/ja/posts/ruby-recommended-books/)

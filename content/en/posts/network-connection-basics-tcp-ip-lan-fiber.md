@@ -22,3 +22,7 @@ draft: false
 I read [Why Networks Connect: 2nd Edition - Essential Knowledge of TCP/IP, LAN, and Fiber Optics](https://amzn.to/3JUlISw).
 
 It seems to be aimed at beginners, but understanding the content might be quite challenging. It may flow better if you read it after gaining some foundational knowledge from other books.
+
+## Roundups featuring this book
+
+- [Computer and network fundamentals books](/posts/computer-network-basics-recommended-books/)

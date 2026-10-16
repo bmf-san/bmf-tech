@@ -21,3 +21,7 @@ draft: false
 [達人に学ぶSQL徹底指南書 第2版 初級者で終わりたくないあなたへ](https://amzn.to/3PZYnSS)を読んだ。
 
 「なるほどこういうふうに書けるのか〜」といった感じにSQLの引き出しが増えた気がする。
+
+## この本を紹介しているまとめ記事
+
+- [データベースのおすすめ本](/ja/posts/database-recommended-books/)

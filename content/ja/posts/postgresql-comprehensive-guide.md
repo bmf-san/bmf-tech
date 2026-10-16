@@ -23,3 +23,7 @@ draft: false
 PostgreSQLを触ったことなかった自分にはちょうど良い入門書だった。
 
 アプリケーションの実例の章が割と多めにページを割かれているが、PostgreSQLの基本的なことはカバーされている。
+
+## この本を紹介しているまとめ記事
+
+- [データベースのおすすめ本](/ja/posts/database-recommended-books/)

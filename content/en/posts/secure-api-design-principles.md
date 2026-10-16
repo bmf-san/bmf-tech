@@ -24,3 +24,7 @@ This book treats API security as a consistent set of principles spanning design,
 Rather than lining up individual techniques in fragments, it explains them from the standpoint of threats—the "why" behind each measure—which I appreciated. It connects naturally with classifications like the OWASP API Security Top 10, letting you think about countermeasures while getting an overview of where risk lurks.
 
 The samples center on Python, but the principles themselves do not depend on the tech stack. If you design and build APIs, it serves as a foundation for weaving security in from the start rather than bolting it on later.
+
+## Roundups featuring this book
+
+- [Web application security books](/posts/web-security-recommended-books/)

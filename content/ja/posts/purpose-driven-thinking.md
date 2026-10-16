@@ -36,4 +36,6 @@ draft: false
 
 意思決定の思考についても不勉強なことが多いので、これについても今後色々本を読んでみようと思う。
 
+## この本を紹介しているまとめ記事
 
+- [エンジニアの思考法・知的生産のおすすめ本](/ja/posts/engineer-thinking-recommended-books/)

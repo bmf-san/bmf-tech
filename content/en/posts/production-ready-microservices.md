@@ -33,3 +33,7 @@ Three points left an impression on me:
 There are few implementation details or code examples, so it is best used as a shared language for cross-organization agreement on the minimum quality bar microservices should meet.
 
 I think it is especially useful for people already operating microservices who want to drive standardization and production readiness at an organizational level.
+
+## Roundups featuring this book
+
+- [Monitoring, SRE, and operations books](/posts/sre-operations-recommended-books/)

@@ -71,3 +71,7 @@ I aspire to one day confidently call myself a software architect.
 
 # References
 - [Design It](https://amzn.to/4635mAS)
+
+# Roundups featuring this book
+
+- [Software architecture books](/posts/software-architecture-recommended-books/)

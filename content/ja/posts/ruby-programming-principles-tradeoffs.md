@@ -25,6 +25,6 @@ Rubyの実践的な知識はもちろん、Rubyの魅力についてもこの本
 
 プログラミングという観点では、Rubyに依らない考え方も拾うことができた。
 
+## この本を紹介しているまとめ記事
 
-
-
+- [Ruby / Railsのおすすめ本](/ja/posts/ruby-recommended-books/)

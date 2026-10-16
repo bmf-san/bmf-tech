@@ -24,3 +24,7 @@ I revisited it since a revised edition was released.
 It helps to understand the flow from hardware to software.
 
 I feel that reading it alongside [Why Programs Work: 3rd Edition - Essential Knowledge of Programming](https://amzn.to/4afy0zD) would be beneficial.
+
+## Roundups featuring this book
+
+- [Computer and network fundamentals books](/posts/computer-network-basics-recommended-books/)

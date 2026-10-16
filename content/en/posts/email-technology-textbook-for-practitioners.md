@@ -19,3 +19,7 @@ draft: false
 [Practical Email Technology Handbook: From Basic Mechanisms to Protocols, Server Setup, Sending Domain Authentication, Attachments, Encryption, and Security Measures](https://amzn.to/3wibKHq) was a very helpful read.
 
 I had never systematically caught up on email technology, so it was extremely useful.
+
+## Roundups featuring this book
+
+- [Computer and network fundamentals books](/posts/computer-network-basics-recommended-books/)

@@ -21,3 +21,7 @@ draft: false
 [グロービスMBAクリティカル・シンキング](https://amzn.to/3yotEc5)を読んだ。
 
 クリティカル・シンキングについて演習とともに学ぶことができる本。
+
+## この本を紹介しているまとめ記事
+
+- [戦略とシステム思考のおすすめ本](/ja/posts/strategy-systems-thinking-recommended-books/)

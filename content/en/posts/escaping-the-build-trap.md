@@ -39,3 +39,7 @@ What stood out:
 - The Product Kata loop (understand current state → set goals → explore problems → explore solutions → build) is easy to bring into day-to-day product discussions.
 
 For engineers, this is also useful for raising your resolution on what PMs actually do and where they struggle. For anyone involved with a product, reading this as shared vocabulary across PM, engineering, design, and management makes those conversations mesh better.
+
+## Roundups featuring this book
+
+- [Engineering management books](/posts/engineering-management-recommended-books/)

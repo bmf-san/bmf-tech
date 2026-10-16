@@ -25,3 +25,7 @@ This book presents "strategy" in an engineering organization as a concrete proce
 It grounds strategy by moving from diagnosing the current state, to setting direction, to translating that into concrete action. It offers a template for stacking technical decisions along the organization's context instead of momentary preference.
 
 Anyone who feels uneasy about the word "strategy" will sharpen their view of it by reading this.
+
+## Roundups featuring this book
+
+- [Engineering management books](/posts/engineering-management-recommended-books/)

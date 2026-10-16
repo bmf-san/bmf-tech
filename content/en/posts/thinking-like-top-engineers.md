@@ -29,3 +29,7 @@ This is a mindset that can be practiced individually, but I think it's more impo
 The other point is about taking time to understand. Even people who are considered very smart don't try to understand something in one go; they read the same text multiple times to grasp it. (There might be people who can understand instantly or quickly, though.)
 
 When trying to understand something, it's common to avoid repetition due to time concerns, but I decided to consciously take time on parts I want to deepen my understanding of or find difficult to grasp.
+
+## Roundups featuring this book
+
+- [Thinking and productivity books](/posts/engineer-thinking-recommended-books/)

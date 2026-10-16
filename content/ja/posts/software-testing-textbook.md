@@ -20,3 +20,6 @@ draft: false
 
 テストについての体系的な知識を得ることができる。
 
+## この本を紹介しているまとめ記事
+
+- [ソフトウェアテストのおすすめ本](/ja/posts/software-testing-recommended-books/)

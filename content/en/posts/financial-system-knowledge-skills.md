@@ -21,3 +21,7 @@ draft: false
 [Knowledge and Technology of Financial Systems for Engineers](https://amzn.to/3wd9dhG) was read.
 
 The book gives the impression of having more financial domain knowledge than system-related discussions. It explains the operations and systems of banks, insurance companies, securities firms, and credit card companies. I thought it might be a useful book even for those involved in payment systems.
+
+## Roundups featuring this book
+
+- [Business systems books](/posts/business-systems-recommended-books/)

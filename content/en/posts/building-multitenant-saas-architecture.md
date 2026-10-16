@@ -33,3 +33,7 @@ It comprehensively covers the key points and challenges of SaaS architecture.
 Since it focuses on the SaaS pattern rather than specific business domains, it is generic.
 
 Although it mentions AWS architecture patterns, it can also be considered in the context of other cloud vendors like Google Cloud Platform, making it easy to read.
+
+## Roundups featuring this book
+
+- [SaaS and business books](/posts/saas-business-recommended-books/)

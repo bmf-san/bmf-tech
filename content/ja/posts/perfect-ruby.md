@@ -20,3 +20,7 @@ draft: false
 [パーフェクトRuby](https://amzn.to/3URxJyn)を読んだ。
 
 パーフェクトシリーズは他にはPHPとJavaScriptしか読んだことないが、安定のパーフェクトシリーズといった感じ。
+
+## この本を紹介しているまとめ記事
+
+- [Ruby / Railsのおすすめ本](/ja/posts/ruby-recommended-books/)

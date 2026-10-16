@@ -22,3 +22,7 @@ I read [Learning PostgreSQL from Its Internal Structure: Principles of Design an
 It covers everything you want to know about operating PostgreSQL from the perspective of design and operation, which is great.
 
 I wonder if there’s a similar book for MySQL. There probably is.
+
+## Roundups featuring this book
+
+- [Database books](/posts/database-recommended-books/)

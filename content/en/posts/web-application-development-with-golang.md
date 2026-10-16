@@ -20,3 +20,7 @@ draft: false
 I read [Web Application Development with Go](https://amzn.to/3UGzvSK).
 
 The book discusses practical aspects of web application development, assuming a basic understanding of Go.
+
+## Roundups featuring this book
+
+- [Go books](/posts/go-recommended-books/)

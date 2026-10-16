@@ -27,3 +27,7 @@ I believe it would be useful for those creating interview questions as well.
 There are parts that provide insights into question patterns that capture the essence of system design, making it beneficial even for technical interviewers not conducting system design interviews.
 
 There aren't many books like this, but I wish to explore more books that allow learning about architecture design examples and patterns in a way that closely resembles real-world scenarios.
+
+## Roundups featuring this book
+
+- [System design and architect books](/posts/system-design-recommended-books/)

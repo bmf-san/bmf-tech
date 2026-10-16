@@ -24,3 +24,7 @@ As a prerequisite, I feel that a certain level of ability to write tests is requ
 
   - A seam is a place where you can change the behavior of the program even if you cannot directly edit that location.
   - Every seam has an enabling point. At the enabling point, you can decide which behavior to use.
+
+## Roundups featuring this book
+
+- [Good code books](/posts/clean-code-recommended-books/)

@@ -20,3 +20,7 @@ draft: false
 It teaches an approach to creating an architecture that can evolve.
 
 It seems challenging to prepare a fitness function that works well...
+
+## Roundups featuring this book
+
+- [Software architecture books](/posts/software-architecture-recommended-books/)

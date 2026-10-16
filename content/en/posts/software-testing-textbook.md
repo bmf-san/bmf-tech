@@ -19,3 +19,7 @@ draft: false
 I read the [Software Testing Textbook](https://amzn.to/3UDkFer).
 
 It provides a systematic understanding of testing knowledge.
+
+## Roundups featuring this book
+
+- [Software testing books](/posts/software-testing-recommended-books/)

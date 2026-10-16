@@ -20,3 +20,7 @@ draft: false
 I read [Introduction to Ruby for Aspiring Professionals](https://amzn.to/4baAm3P).
 
 It contains detailed information that seems useful at a professional level. It's easy to read.
+
+## Roundups featuring this book
+
+- [Ruby and Rails books](/posts/ruby-recommended-books/)

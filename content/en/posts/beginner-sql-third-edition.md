@@ -21,3 +21,7 @@ draft: false
 I read [Beginning SQL, 3rd Edition](https://amzn.to/3VSQp1u).
 
 It is an easy-to-understand introduction to SQL. I wish I had read it when I was just starting out. It's also perfect for reviewing the basics.
+
+## Roundups featuring this book
+
+- [Database books](/posts/database-recommended-books/)

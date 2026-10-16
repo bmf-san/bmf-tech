@@ -62,3 +62,7 @@ There was a discussion in the latter half about how defining jobs can make an or
 Due to the nature of the engineering job, it's easy to focus on technology, but this book made me realize once again that I should cultivate more business sense and theory.
 
 There are many similar topics, like "Users don't know what they want," or "What the customer really wanted was... (the tire swing)," so I felt there were some commonalities.
+
+## Roundups featuring this book
+
+- [SaaS and business books](/posts/saas-business-recommended-books/)

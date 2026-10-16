@@ -19,3 +19,7 @@ draft: false
 [Knowledge and Skills of Inventory Management Systems for Engineers](https://amzn.to/3Qr0P54) was read.
 
 I learned about the difficulties of inventory management. There are systems related to production, sales, purchasing, accounting, and costs, and I felt the complexity of the functions required for inventory management.
+
+## Roundups featuring this book
+
+- [Business systems books](/posts/business-systems-recommended-books/)

@@ -22,3 +22,7 @@ I read [Getting Started with Domain-Driven Design: Practical Techniques for Conn
 This book discusses the concepts and implementation patterns for applying strategic and tactical design of DDD in practice.  
 It systematically covers identifying subdomains, designing bounded contexts, aggregates, domain events, and event sourcing, providing careful explanations of when to use each pattern and when to avoid them.  
 It also delves into the relationship with microservices and event-driven architecture, making it a distinctive bridge from DDD introduction to practice.
+
+## Roundups featuring this book
+
+- [Software architecture books](/posts/software-architecture-recommended-books/)

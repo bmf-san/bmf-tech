@@ -22,3 +22,7 @@ draft: false
 OAuthについて詳しく書かれた数少ない本。
 
 入門書を読んだ後で、仕様書を読む流れなどで読んだおきたい。
+
+## この本を紹介しているまとめ記事
+
+- [Webアプリのセキュリティのおすすめ本](/ja/posts/web-security-recommended-books/)

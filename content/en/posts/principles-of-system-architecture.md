@@ -37,3 +37,7 @@ This is a book I want to keep by my side when facing architecture design.
 The book I purchased is the first edition, but it seems there is also a second edition, which I would like to read as well.
 
 Although this first edition is quite an old book, I feel that the theoretical parts remain unchanged in recent years, and I was able to reaffirm the usefulness of the series of skills necessary for design.
+
+## Roundups featuring this book
+
+- [System design and architect books](/posts/system-design-recommended-books/)

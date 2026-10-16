@@ -22,3 +22,7 @@ I read [Introduction to Monitoring](https://amzn.to/44ASkKm).
 You can learn the basics and practices of monitoring.
 
 It's a beginner's book when you want to learn about monitoring.
+
+## Roundups featuring this book
+
+- [Monitoring, SRE, and operations books](/posts/sre-operations-recommended-books/)

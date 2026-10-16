@@ -33,3 +33,7 @@ Three points left an impression on me:
 Because it is more about aligning the underlying OS of how we think than providing concrete procedures, I felt it pairs well with roles such as architects, engineering managers, and tech leads who deal with "structures behind individual phenomena."
 
 It is a book that reminds you to focus on structure rather than symptoms when dealing with problems in organizations and systems.
+
+## Roundups featuring this book
+
+- [Strategy and systems thinking books](/posts/strategy-systems-thinking-recommended-books/)

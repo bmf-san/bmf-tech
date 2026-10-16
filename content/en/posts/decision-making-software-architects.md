@@ -29,3 +29,7 @@ The focus on decision-making for architects is groundbreaking, providing valuabl
 The book introduces five questions and seven principles as tools to tackle the uncertainties of architecture.
 
 In particular, the five questions are critical for architectural decision-making, and I felt they should always be kept in mind.
+
+## Roundups featuring this book
+
+- [Software architecture books](/posts/software-architecture-recommended-books/)

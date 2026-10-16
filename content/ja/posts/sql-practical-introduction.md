@@ -22,3 +22,6 @@ draft: false
 
 SQLを書くときに意識しておきたいことが整理されている。
 
+## この本を紹介しているまとめ記事
+
+- [データベースのおすすめ本](/ja/posts/database-recommended-books/)

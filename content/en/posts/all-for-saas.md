@@ -45,3 +45,7 @@ draft: false
 Not limited to just this book, but every time I read a book related to SaaS, I feel that important perspectives are discussed that apply not only to SaaS but also to other business models. (I found a similar sentiment in an Amazon review and felt a sense of connection.)
 
 I thought the unique aspects exclusive to SaaS might be quite limited. (Perhaps I am still not well-versed enough.)
+
+# Roundups featuring this book
+
+- [SaaS and business books](/posts/saas-business-recommended-books/)

@@ -25,3 +25,7 @@ It teaches you how to deal with stress.
 I recommend it because you can learn good mindsets, ways of thinking, and actions.
 
 Having a good relationship with stress can improve a percentage of your life, allowing you to spend your time better. Therefore, I think it's worth reading for working adults living in a stressful society.
+
+## Roundups featuring this book
+
+- [Engineer health books](/posts/engineer-health-recommended-books/)

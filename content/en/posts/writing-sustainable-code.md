@@ -28,3 +28,7 @@ I found many parts relatable based on my own experiences. The author seems to ha
 The content felt somewhat fragmented.
 
 The discussion on fractal architecture felt a bit brief, so I would love to read a whole book by the author focused on the theme of fractal architecture.
+
+## Roundups featuring this book
+
+- [Good code books](/posts/clean-code-recommended-books/)
