@@ -217,8 +217,9 @@
 {{- end}}
 {{- end}}
 {{block "extra-style" .}}{{end}}
-{{- with index .Config.Theme.Params "ga_id"}}
-<script async src="https://www.googletagmanager.com/gtag/js?id={{.}}"></script>
+{{- $gaID := index .Config.Theme.Params "ga_id"}}
+{{- $adsID := index .Config.Theme.Params "adsense_id"}}
+{{- with $gaID}}
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -228,8 +229,39 @@
   }
 </script>
 {{- end}}
-{{- with index .Config.Theme.Params "adsense_id"}}
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{.}}" crossorigin="anonymous"></script>
+{{- if or $gaID $adsID}}
+{{- /* gtag and AdSense block the main thread on mobile and delay LCP, so load them on first interaction or 3s after load; both APIs queue calls made before load. */}}
+<script>
+(function () {
+  var srcs = [];
+  {{- with $gaID}}
+  srcs.push({src: 'https://www.googletagmanager.com/gtag/js?id={{.}}'});
+  {{- end}}
+  {{- with $adsID}}
+  srcs.push({src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{.}}', crossOrigin: 'anonymous'});
+  {{- end}}
+  var loaded = false;
+  function load() {
+    if (loaded) return;
+    loaded = true;
+    srcs.forEach(function (s) {
+      var el = document.createElement('script');
+      el.async = true;
+      el.src = s.src;
+      if (s.crossOrigin) el.crossOrigin = s.crossOrigin;
+      document.head.appendChild(el);
+    });
+  }
+  ['scroll', 'pointerdown', 'keydown', 'touchstart'].forEach(function (e) {
+    window.addEventListener(e, load, {once: true, passive: true});
+  });
+  if (document.readyState === 'complete') {
+    setTimeout(load, 3000);
+  } else {
+    window.addEventListener('load', function () { setTimeout(load, 3000); });
+  }
+})();
+</script>
 {{- end}}
 <script>
 (function(){
@@ -309,8 +341,8 @@
 {{- if eq .CurrentLocale "ja"}}{{$targetLocale = "en"}}{{end}}
 <nav class="navbar">
   <a href="{{$homeURL}}" class="navbar-brand">{{.Config.Site.Title}}</a>
-  <input type="checkbox" id="navbar-toggle" class="navbar-toggle-checkbox" />
-  <label for="navbar-toggle" class="navbar-toggle-label" aria-label="Toggle navigation">
+  <input type="checkbox" id="navbar-toggle" class="navbar-toggle-checkbox" aria-label="Toggle navigation" />
+  <label for="navbar-toggle" class="navbar-toggle-label">
     <span></span><span></span><span></span>
   </label>
   <ul class="navbar-nav">
@@ -434,14 +466,15 @@
 {{- $id := index .Config.Theme.Params "adsense_id"}}
 {{- $slot := index .Config.Theme.Params "adsense_slot_list_mobile"}}
 {{- if and $id $slot}}
-<div class="block md:hidden my-4">
+<div class="block md:hidden my-4" id="ad-list-mobile">
   <ins class="adsbygoogle"
        style="display:block"
        data-ad-format="fluid"
        data-ad-layout-key="-5s+cz-w-9a+pg"
        data-ad-client="{{$id}}"
        data-ad-slot="{{$slot}}"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  {{- /* md:hidden leaves 0 width on desktop; pushing then throws "Fluid responsive ads must be at least 250px wide". */}}
+  <script>if (document.getElementById('ad-list-mobile').offsetWidth > 0) { (adsbygoogle = window.adsbygoogle || []).push({}); }</script>
 </div>
 {{- end}}
 {{end}}
@@ -714,7 +747,7 @@
 {{- $img := index .FrontMatter.Extra "image"}}
 {{- if not $img}}{{$img = printf "/ogp/%s.png" .FrontMatter.Slug}}{{end}}
 <a href="{{.URL}}" class="card no-underline">
-  <img src="{{$img}}" alt="{{.FrontMatter.Title}}" class="w-full object-cover rounded-t max-h-40" loading="lazy" decoding="async">
+  <img src="{{$img}}" alt="{{.FrontMatter.Title}}" class="w-full h-auto object-cover rounded-t max-h-40" width="1200" height="630" loading="lazy" decoding="async">
   <div class="card-body">
     <div class="flex items-center gap-2 mb-2 flex-wrap">
       {{range .FrontMatter.Categories}}<span class="badge badge-secondary">{{.}}</span>{{end}}
