@@ -7,17 +7,19 @@ categories:
   - Career
 tags:
   - Book Review
-description: "An index of this blog's tech book roundups by topic: design, languages, data, quality, security, management, and thinking. Pick by goal, and reach the individual reviews from each roundup."
+description: "An index of this blog's tech book roundups by topic: design, languages, data, quality, security, fundamentals and operations, generative AI, management, and careers. Pick by goal, and reach the individual reviews from each roundup."
 translation_key: tech-book-roundups
 draft: false
 ---
 
-An index of this blog's tech book roundups, organized by topic. It spans design, languages, data, quality, security, and management, so you can pick by goal. From each roundup, you can also reach the individual review of every book.
+An index of this blog's tech book roundups, organized by topic. It spans design, languages, data, quality, security, fundamentals and operations, generative AI, management, and careers, so you can pick by goal. From each roundup, you can also reach the individual review of every book.
 
 ## Design and code
 
 - [Software architecture books](/posts/software-architecture-recommended-books/) — 12 books, from design basics to microservices and API design.
 - [Good code books](/posts/clean-code-recommended-books/) — 9 books centered on readability and refactoring.
+- [System design and architect books](/posts/system-design-recommended-books/) — 8 books, from design interviews to the design process and trade-offs.
+- [Books to learn about API design](/posts/books-on-api-design/) — from API design basics to testing and design patterns.
 
 ## Programming languages
 
@@ -38,10 +40,22 @@ An index of this blog's tech book roundups, organized by topic. It spans design,
 
 - [Web application security books](/posts/web-security-recommended-books/) — 8 books, from auth to secure design.
 
+## Fundamentals, infrastructure, and operations
+
+- [Computer and network fundamentals books](/posts/computer-network-basics-recommended-books/) — 8 books on CS, the OS, and TCP/IP.
+- [Monitoring, SRE, and operations books](/posts/sre-operations-recommended-books/) — 7 books, from monitoring basics to SLOs, logging, and capacity.
+- [Web performance books](/posts/web-performance-recommended-books/) — 4 books, from the fundamentals to tuning and CDNs.
+
+## Generative AI
+
+- [Generative AI development books](/posts/generative-ai-development-recommended-books/) — 4 books on prompts, context, and AI coding.
+
 ## Management and thinking
 
 - [Engineering management books](/posts/engineering-management-recommended-books/) — 12 books on organization, leadership, and product management.
 - [Thinking and productivity books](/posts/engineer-thinking-recommended-books/) — 10 books, from problem solving to how to learn.
+- [Engineer career books](/posts/engineer-career-recommended-books/) — 4 books, from the fundamentals to staff engineer.
+- [SaaS and business books](/posts/saas-business-recommended-books/) — 6 books on launch, architecture, sales, and customers.
 
 ## How to use this index
 
