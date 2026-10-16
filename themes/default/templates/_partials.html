@@ -466,14 +466,15 @@
 {{- $id := index .Config.Theme.Params "adsense_id"}}
 {{- $slot := index .Config.Theme.Params "adsense_slot_list_mobile"}}
 {{- if and $id $slot}}
-<div class="block md:hidden my-4">
+<div class="block md:hidden my-4" id="ad-list-mobile">
   <ins class="adsbygoogle"
        style="display:block"
        data-ad-format="fluid"
        data-ad-layout-key="-5s+cz-w-9a+pg"
        data-ad-client="{{$id}}"
        data-ad-slot="{{$slot}}"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  {{- /* md:hidden leaves 0 width on desktop; pushing then throws "Fluid responsive ads must be at least 250px wide". */}}
+  <script>if (document.getElementById('ad-list-mobile').offsetWidth > 0) { (adsbygoogle = window.adsbygoogle || []).push({}); }</script>
 </div>
 {{- end}}
 {{end}}
@@ -746,7 +747,7 @@
 {{- $img := index .FrontMatter.Extra "image"}}
 {{- if not $img}}{{$img = printf "/ogp/%s.png" .FrontMatter.Slug}}{{end}}
 <a href="{{.URL}}" class="card no-underline">
-  <img src="{{$img}}" alt="{{.FrontMatter.Title}}" class="w-full object-cover rounded-t max-h-40" loading="lazy" decoding="async">
+  <img src="{{$img}}" alt="{{.FrontMatter.Title}}" class="w-full h-auto object-cover rounded-t max-h-40" width="1200" height="630" loading="lazy" decoding="async">
   <div class="card-body">
     <div class="flex items-center gap-2 mb-2 flex-wrap">
       {{range .FrontMatter.Categories}}<span class="badge badge-secondary">{{.}}</span>{{end}}
