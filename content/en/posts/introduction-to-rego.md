@@ -1,6 +1,6 @@
 ---
-title: Introduction to Rego
-description: 'Write Rego policies for Open Policy Agent with declarative syntax, rules, and built-in functions for access control.'
+title: "What Is Rego? An Introduction to the Open Policy Agent Policy Language"
+description: 'What is Rego? Rego is the declarative policy language of Open Policy Agent (OPA). This guide covers its syntax and data structures, rules, control structures, comprehensions, built-in functions, and testing.'
 slug: introduction-to-rego
 date: 2025-07-31T00:00:00Z
 author: bmf-san

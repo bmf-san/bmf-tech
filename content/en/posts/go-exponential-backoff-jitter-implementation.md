@@ -1,6 +1,6 @@
 ---
 title: Implementing Exponential Backoff and Jitter in Go
-description: 'Implement exponential backoff with jitter in Go for robust retry logic. Covers multiplying retry delays, adding randomness to prevent thundering herd, retry limits, and timeouts.'
+description: 'What is backoff with jitter? Exponential backoff multiplies the delay between retries, and jitter adds randomness so clients do not retry in sync. Learn both, with a Go implementation, retry limits, and timeouts.'
 slug: go-exponential-backoff-jitter-implementation
 date: 2024-01-31T00:00:00Z
 author: bmf-san

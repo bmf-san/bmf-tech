@@ -9,7 +9,7 @@ tags:
   - OAuth
   - Authentication
   - Authorization
-description: Summary based on RFC 6749 (OAuth 2.0 Authorization Framework) and RFC 6750 (Bearer Token Usage).
+description: "OAuth 2.0 explained from the specs (RFC 6749 and RFC 6750): the four roles, the four grant types, access and refresh tokens, endpoints, scopes, Bearer tokens, security considerations, and what OAuth 2.1 changes."
 translation_key: oauth-2-0-spec-summary
 draft: false
 ---
