@@ -1,6 +1,6 @@
 ---
-title: "Linux Load Averageとは？読み方とパフォーマンス問題の診断"
-description: "topやuptimeコマンドで表示される、Linuxの「Load Average」という指標とは何かを実践的に解説する記事です。プロセスの実行待ち状態を表しシステムの混雑度合いを示すこの指標について、3つの値の読み方や高負荷時の診断方法、CPU使用率との違いを紹介します。"
+title: "ロードアベレージ（Load Average）とは？Linuxでの読み方と高負荷の診断"
+description: "ロードアベレージ（Load Average）とは、一定期間に実行可能状態または実行中だったプロセス数の平均値である。topやuptimeに表示される1分・5分・15分の3つの値の読み方、CPUコア数との関係、高くても問題ないケースと注意すべきケース、CPU使用率など他の指標との使い分けを解説する。"
 slug: what-is-load-average
 date: 2025-07-07T00:00:00Z
 author: bmf-san
