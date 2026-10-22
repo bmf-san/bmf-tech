@@ -82,7 +82,7 @@ Official sources point to three reasons and benefits for running commands on one
 
 - **The CPU rarely becomes the bottleneck**: the official FAQ says CPU is seldom the limit for Redis, which is usually memory or network bound. It notes that with pipelining, a Redis instance on an average Linux system can deliver one million requests per second.
 - **No locks needed**: commands run one at a time on a single thread, so the data structures need no locks. That rules out lock contention and the bugs that come with it. The Valkey team also says single-threaded command execution avoids race conditions without complex synchronization.
-- **Atomicity comes easily**: no other command runs in the middle of a command, so each command is atomic. Work grouped with MULTI/EXEC or a Lua script also runs without another client's commands slipping in.
+- **Atomicity comes easily**: no other command runs in the middle of a command, so each command is atomic. Work grouped with MULTI/EXEC or a Lua script also runs without another client's commands slipping in. MULTI/EXEC does not roll back, though: if one command fails after EXEC, Redis still runs the rest.
 
 The flip side: while a slow command runs, every other client waits. The official latency guide names SORT and SUNION on large collections, and KEYS in production, as causes of latency.
 
