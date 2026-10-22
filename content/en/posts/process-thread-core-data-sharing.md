@@ -75,7 +75,7 @@ The main tools:
 |---|---|
 | Mutex | Creates a section that one thread at a time can enter |
 | Read-write lock | Lets many readers in at once but only one writer |
-| Spinlock | Loops until the lock frees up; suited to short sections |
+| Spinlock | Loops until the lock frees up; pthread_spin_init(3) says most programs should use mutexes instead |
 | Atomic operation | Uses CPU instructions to do things like compare-and-swap as one indivisible step |
 | Condition variable, semaphore | Lets threads wait, for example until data becomes ready |
 | Queue, channel | Passes data through a queue instead of sharing it |
@@ -152,6 +152,7 @@ The higher the layer, the more the programmer handles explicitly; the lower the 
 - [fifo(7) — Linux manual page](https://man7.org/linux/man-pages/man7/fifo.7.html)
 - [shm_overview(7) — Linux manual page](https://man7.org/linux/man-pages/man7/shm_overview.7.html)
 - [pthreads(7) — Linux manual page](https://man7.org/linux/man-pages/man7/pthreads.7.html)
+- [pthread_spin_init(3) — Linux manual page](https://man7.org/linux/man-pages/man3/pthread_spin_init.3.html)
 - [numa(7) — Linux manual page](https://man7.org/linux/man-pages/man7/numa.7.html)
 - [Effective Go: Share by communicating](https://go.dev/doc/effective_go#sharing)
 - [Linux Kernel Memory Barriers](https://www.kernel.org/doc/Documentation/memory-barriers.txt)

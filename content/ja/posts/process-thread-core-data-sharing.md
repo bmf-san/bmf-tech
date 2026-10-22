@@ -75,7 +75,7 @@ pthreads(7)によると、同じプロセス内のスレッドはグローバル
 |---|---|
 | ミューテックス | 1度に1スレッドだけが入れる区間を作る |
 | 読み書きロック | 読むだけなら複数スレッドが同時に入れ、書くときは1スレッドだけにする |
-| スピンロック | 空くまでループして待つ。ごく短い区間向け |
+| スピンロック | 空くまでループして待つ。pthread_spin_init(3)は、ほとんどのプログラムではミューテックスを使うべきだとしている |
 | アトミック操作 | CPU命令で「比較して書き換え」などを不可分に行う |
 | 条件変数・セマフォ | 「準備ができたら起こす」といった待ち合わせに使う |
 | キュー・チャネル | データを共有せず、キューで受け渡す |
@@ -154,6 +154,7 @@ flowchart LR
 - [fifo(7) — Linux manual page](https://man7.org/linux/man-pages/man7/fifo.7.html)
 - [shm_overview(7) — Linux manual page](https://man7.org/linux/man-pages/man7/shm_overview.7.html)
 - [pthreads(7) — Linux manual page](https://man7.org/linux/man-pages/man7/pthreads.7.html)
+- [pthread_spin_init(3) — Linux manual page](https://man7.org/linux/man-pages/man3/pthread_spin_init.3.html)
 - [numa(7) — Linux manual page](https://man7.org/linux/man-pages/man7/numa.7.html)
 - [Effective Go: Share by communicating](https://go.dev/doc/effective_go#sharing)
 - [Linux Kernel Memory Barriers](https://www.kernel.org/doc/Documentation/memory-barriers.txt)
