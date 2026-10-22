@@ -22,7 +22,7 @@ This article gives a short overview of how data gets shared at each of these thr
 # TL;DR
 - **Between processes**: memory spaces are separate, so one process cannot see another's data directly. Data moves through OS IPC such as pipes, sockets, or shared memory.
 - **Between threads**: threads share one memory space and can read and write the same data directly. In return, you either protect it with locks or avoid sharing and pass messages instead.
-- **Between cores**: programs have no instruction to send data to another core. The hardware's cache coherence mechanism keeps the values in each core's cache consistent.
+- **Between cores**: data usually moves through memory. The hardware's cache coherence mechanism keeps the values in each core's cache consistent.
 
 ```mermaid
 flowchart TB
@@ -47,13 +47,13 @@ Because the memory is separate, processes cannot read each other's variables. Th
 
 | Method | How it works | Typical use |
 |---|---|---|
-| Pipe | A one-way byte stream between parent and child processes | `ls \| grep` in a shell |
-| Named pipe (FIFO) | A pipe with a name in the file system, usable by unrelated processes | Simple process coordination |
+| Pipe | A one-way byte stream between related processes, such as parent and child | `ls \| grep` in a shell |
+| Named pipe (FIFO) | A pipe opened through a name in the file system, usable by unrelated processes | Simple process coordination |
 | Unix domain socket | A socket for communication within one machine, in both directions | Connecting to local daemons and databases |
 | TCP/UDP socket | A socket that also works across the network | Talking to other machines |
 | Shared memory | Maps the same memory region into several processes' address spaces | Sharing large data fast |
 | Message queue | Passes messages through a queue the OS manages | Asynchronous notifications |
-| Signal | Sends only a short notice, such as "terminate" | Stopping a process or reloading its configuration |
+| Signal | Sends only a short notice, such as "terminate" | Stopping a process; by convention, some daemons reload their configuration on SIGHUP |
 
 Broadly, there are two styles: copying the data across (pipes, sockets, queues) or looking at the same memory (shared memory). Copying keeps things safe but costs time for the copy.
 
@@ -87,7 +87,7 @@ The last option, queues and channels, avoids sharing memory even between threads
 The same guide adds that this approach can go too far: reference counts may work best as an integer guarded by a mutex. Choose locks or messages to fit the job.
 
 # Between Cores: Hardware Keeps Values Consistent Through Cache Coherence
-Now we reach the hardware. Programs have no special instruction to send data from one core to another. Every core sees the same main memory, and the hardware keeps the caches in front of it consistent.
+Now we reach the hardware. Data between cores usually moves through memory. Every core sees the same main memory, and the hardware keeps the caches in front of it consistent.
 
 ## The Cache Hierarchy
 CPUs often stack small, fast per-core caches on top of larger caches that several cores share.
@@ -107,7 +107,7 @@ flowchart LR
     SH --> MEM[("Main memory")]
 ```
 
-The layout varies by CPU. On my Apple M1, for example, four cores share each L2 cache and there is no L3 (checked with `sysctl`).
+The layout varies by CPU. On my Apple M1, for example, `sysctl` shows four cores sharing each L2 cache and reports no L3 cache entry.
 
 Caches and memory exchange data in units called cache lines. According to the kernel documentation, a cache line usually spans 64 bytes or more. The Apple M1 above uses 128 bytes.
 
@@ -139,7 +139,7 @@ Here are the three layers side by side.
 | Between threads | Shared | Read and written directly, coordinated with locks or messages | Data races |
 | Between cores | Same memory, seen through caches | Hardware cache coherence keeps values consistent | Cache line ping-pong, false sharing, access ordering |
 
-The higher the layer, the more the programmer handles explicitly; the lower the layer, the more the OS and hardware take care of. Still, the costs at lower layers shape the design at higher ones. Contended locks run slow, and designs that give each thread its own data run fast, largely because of how caches behave across cores.
+The higher the layer, the more the programmer handles explicitly; the lower the layer, the more the OS and hardware take care of. Still, the costs at lower layers shape the design at higher ones. Contended locks run slow, and designs that give each thread its own data run fast, partly because of how caches behave across cores.
 
 # Related Posts
 - [Processes vs Threads: Key Differences Every Developer Should Know](/posts/process-vs-thread/)
@@ -148,6 +148,8 @@ The higher the layer, the more the programmer handles explicitly; the lower the 
 
 # References
 - [fork(2) — Linux manual page](https://man7.org/linux/man-pages/man2/fork.2.html)
+- [pipe(7) — Linux manual page](https://man7.org/linux/man-pages/man7/pipe.7.html)
+- [fifo(7) — Linux manual page](https://man7.org/linux/man-pages/man7/fifo.7.html)
 - [shm_overview(7) — Linux manual page](https://man7.org/linux/man-pages/man7/shm_overview.7.html)
 - [pthreads(7) — Linux manual page](https://man7.org/linux/man-pages/man7/pthreads.7.html)
 - [numa(7) — Linux manual page](https://man7.org/linux/man-pages/man7/numa.7.html)
