@@ -78,11 +78,13 @@ flowchart LR
 
 Only the main thread runs commands. Turning on I/O threads still leaves command execution on a single core.
 
-Redis keeps command execution on one thread for three main reasons.
+Official sources point to three reasons and benefits for running commands on one thread.
 
 - **The CPU rarely becomes the bottleneck**: the official FAQ says CPU is seldom the limit for Redis, which is usually memory or network bound. It notes that with pipelining, a Redis instance on an average Linux system can deliver one million requests per second.
-- **No locks needed**: commands run one at a time on a single thread, so the data structures need no locks. That rules out lock contention and the bugs that come with it.
+- **No locks needed**: commands run one at a time on a single thread, so the data structures need no locks. That rules out lock contention and the bugs that come with it. The Valkey team also says single-threaded command execution avoids race conditions without complex synchronization.
 - **Atomicity comes easily**: no other command runs in the middle of a command, so each command is atomic. Work grouped with MULTI/EXEC or a Lua script also runs without another client's commands slipping in.
+
+The flip side: while a slow command runs, every other client waits. The official latency guide names SORT and SUNION on large collections, and KEYS in production, as causes of latency.
 
 ## How Redis Uses Many Cores
 Single-threaded command execution still leaves ways to use many cores. The official FAQ recommends starting several Redis instances on the same machine and treating them as separate servers when you want to use every CPU. Redis Cluster splits the keyspace into 16,384 hash slots and spreads them across processes and machines.
@@ -201,6 +203,7 @@ flowchart TB
 
 # References
 - [Redis FAQ](https://redis.io/docs/latest/develop/get-started/faq/)
+- [Diagnosing latency issues](https://redis.io/docs/latest/operate/oss_and_stack/management/optimization/latency/)
 - [redis.conf (THREADED I/O section)](https://github.com/redis/redis/blob/unstable/redis.conf)
 - [Redis Adopts Dual Source-Available Licensing](https://redis.io/blog/redis-adopts-dual-source-available-licensing/)
 - [Redis is now available under the AGPLv3 open source license](https://redis.io/blog/agplv3/)

@@ -78,11 +78,13 @@ flowchart LR
 
 コマンドを実行するのはメインスレッドだけである。I/Oスレッドを有効にしても、コマンド実行に使えるコアは1つのままである。
 
-コマンド実行をシングルスレッドにしている理由は、次の3つに整理できる。
+公式資料からは、コマンド実行をシングルスレッドにしている理由と利点として次の3つが読み取れる。
 
 - **CPUがボトルネックになりにくい**：公式FAQは、RedisでCPUがボトルネックになることはまれで、多くはメモリかネットワークが律速すると述べている。パイプラインを使えば、一般的なLinuxマシンで毎秒100万リクエストを処理できるとしている。
-- **ロックが要らない**：コマンドは1本のスレッドで順に実行されるため、データ構造を守るためのロックが不要になる。ロックの取り合いや、それに伴うバグの心配がない。
+- **ロックが要らない**：コマンドは1本のスレッドで順に実行されるため、データ構造を守るためのロックが不要になる。ロックの取り合いや、それに伴うバグの心配がない。Valkeyの開発チームも、シングルスレッドでのコマンド実行は複雑な同期なしに競合状態を避けられる設計だと説明している。
 - **原子性を保ちやすい**：1つのコマンドの実行中に他のコマンドが割り込まないため、各コマンドが原子的に動く。MULTI/EXECやLuaスクリプトでまとめた処理も、途中で他のクライアントの処理が挟まらない。
+
+一方で、遅いコマンドの実行中は他のクライアントがすべて待たされる。公式のレイテンシ診断ドキュメントも、要素数の多いSORTやSUNION、本番環境でのKEYSを遅延の原因として挙げている。
 
 ## Redisでマルチコアを使う方法
 シングルスレッドでも、Redisでマルチコアを使う方法はある。公式FAQは、CPUを使い切りたい場合は同じマシンで複数のRedisインスタンスを起動し、別々のサーバーとして扱うよう勧めている。Redis Clusterを使えば、キー空間を16384個のハッシュスロットに分け、複数のプロセスやマシンに分散できる。
@@ -201,6 +203,7 @@ flowchart TB
 
 # 参考リンク
 - [Redis FAQ](https://redis.io/docs/latest/develop/get-started/faq/)
+- [Diagnosing latency issues](https://redis.io/docs/latest/operate/oss_and_stack/management/optimization/latency/)
 - [redis.conf（THREADED I/Oの節）](https://github.com/redis/redis/blob/unstable/redis.conf)
 - [Redis Adopts Dual Source-Available Licensing](https://redis.io/blog/redis-adopts-dual-source-available-licensing/)
 - [Redis is now available under the AGPLv3 open source license](https://redis.io/blog/agplv3/)
