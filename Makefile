@@ -1,4 +1,4 @@
-.PHONY: help install-gohan install-e2e install-lint build serve clean test-e2e test-e2e-ui new-ja new-en new-ja-roundup new-en-roundup lint-content lint-content-diff check-parity check-content
+.PHONY: help install-gohan install-e2e install-lint build serve clean test-e2e test-e2e-ui new-ja new-en new-ja-roundup new-en-roundup lint-content lint-content-diff check-parity check-picks check-content
 
 GOHAN_VERSION ?= v1.7.0
 
@@ -24,6 +24,9 @@ lint-content: ## 全記事を textlint でチェック (JA + EN)
 
 check-parity: ## 日英記事の translation_key 対応をチェック
 	bash scripts/check-translation-parity.sh
+
+check-picks: ## ピックアップ記事の listing_slugs / picks_groups / 日英の一致をチェック
+	bash scripts/check-picks.sh
 
 check-content: ## gohan check で重複スラッグ・必須フロントマター・孤立 translation_key を検証
 	GOTOOLCHAIN=auto gohan check

@@ -2,12 +2,15 @@
 <body class="bg-body">
 {{template "header" .}}
 <main class="container mx-auto py-10">
+  {{- $page := index .Articles 0}}
+  {{- $isJA := eq .CurrentLocale "ja"}}
+  {{- $groups := index $page.FrontMatter.Extra "picks_groups"}}
 
   {{/* Page header */}}
   <div class="mb-8">
     <ol class="breadcrumbs mb-4">
       <li class="breadcrumbs-item">
-        {{if eq .CurrentLocale "ja"}}
+        {{if $isJA}}
         <a href="/ja/" class="breadcrumbs-link">ホーム</a>
         {{else}}
         <a href="/" class="breadcrumbs-link">Home</a>
@@ -15,24 +18,66 @@
         <span class="breadcrumbs-separator">/</span>
       </li>
       <li class="breadcrumbs-item active">
-        <span class="breadcrumbs-link">{{if eq .CurrentLocale "ja"}}ピックアップ記事{{else}}picks{{end}}</span>
+        <span class="breadcrumbs-link">{{$page.FrontMatter.Title}}</span>
       </li>
     </ol>
-    <h1 class="text-3xl font-bold mb-2">
-      {{if eq .CurrentLocale "ja"}}ピックアップ記事{{else}}picks{{end}}
-    </h1>
+    <h1 class="text-3xl font-bold mb-2">{{$page.FrontMatter.Title}}</h1>
+    {{if $page.HTMLContent}}
+    <div class="prose mb-2">{{$page.HTMLContent}}</div>
+    {{end}}
     <p class="text-secondary">
-      {{len .ListingArticles}} {{if eq .CurrentLocale "ja"}}件の記事{{else}}articles{{end}}
+      {{len .ListingArticles}} {{if $isJA}}件の記事{{else}}articles{{end}}
     </p>
   </div>
 
   {{if .ListingArticles}}
+  {{if $groups}}
+  <nav class="mb-8" aria-label="{{if $isJA}}テーマ{{else}}Themes{{end}}">
+    <div class="flex flex-wrap gap-2">
+      {{range $i, $g := $groups}}
+      <a href="#picks-group-{{$i}}" class="badge badge-light text-secondary">{{index $g "title"}}</a>
+      {{end}}
+    </div>
+  </nav>
+
+  {{range $i, $g := $groups}}
+  <section id="picks-group-{{$i}}" class="mb-10">
+    <h2 class="text-2xl font-bold mb-4">{{index $g "title"}}</h2>
+    <div class="grid gap-4">
+      {{range $slug := index $g "slugs"}}
+      {{range $.ListingArticles}}{{if eq .FrontMatter.Slug $slug}}{{template "article-card" .}}{{end}}{{end}}
+      {{end}}
+    </div>
+  </section>
+  {{end}}
+
+  {{/* Picks listed in listing_slugs but missing from every group stay visible here. */}}
+  {{- $hasOrphans := false}}
+  {{range $.ListingArticles}}
+  {{- $a := .}}{{$found := false}}
+  {{- range $groups}}{{range index . "slugs"}}{{if eq . $a.FrontMatter.Slug}}{{$found = true}}{{end}}{{end}}{{end}}
+  {{- if not $found}}{{$hasOrphans = true}}{{end}}
+  {{end}}
+  {{if $hasOrphans}}
+  <section class="mb-10">
+    <h2 class="text-2xl font-bold mb-4">{{if $isJA}}その他{{else}}Others{{end}}</h2>
+    <div class="grid gap-4">
+      {{range $.ListingArticles}}
+      {{- $a := .}}{{$found := false}}
+      {{- range $groups}}{{range index . "slugs"}}{{if eq . $a.FrontMatter.Slug}}{{$found = true}}{{end}}{{end}}{{end}}
+      {{- if not $found}}{{template "article-card" $a}}{{end}}
+      {{end}}
+    </div>
+  </section>
+  {{end}}
+  {{else}}
   <div class="grid gap-4 mb-8">
     {{range .ListingArticles}}{{template "article-card" .}}{{end}}
   </div>
+  {{end}}
   {{template "ad-unit-list-mobile" .}}
   {{else}}
-  <p class="text-secondary mt-4">{{if eq .CurrentLocale "ja"}}記事がありません。{{else}}No articles found.{{end}}</p>
+  <p class="text-secondary mt-4">{{if $isJA}}記事がありません。{{else}}No articles found.{{end}}</p>
   {{end}}
 
 </main>

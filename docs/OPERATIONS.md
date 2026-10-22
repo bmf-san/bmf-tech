@@ -48,8 +48,9 @@
 | `e2e.yml` | push main / PR | ESLint + Prettier + Playwright |
 | `lint.yml` | PR (content/) | textlint + cspell |
 | `linkcheck.yml` | PR / cron (Mon 00:00 UTC) | lychee でリンク切れ検出 |
-| `parity.yml` | PR (content/) | 日英 translation_key 対応 |
+| `parity.yml` | PR (content/) | 日英 translation_key 対応 + ピックアップ記事の整合性 |
 | `lighthouse.yml` | PR | Lighthouse CI |
+| `picks-review-reminder.yml` | cron (1/4/7/10 月 1 日 00:00 UTC) | ピックアップ記事の見直し Issue を作成 |
 
 ## ローカル開発
 
@@ -66,3 +67,28 @@ HTML テンプレートや Markdown を変更した場合は従来通りフル�
 ### コンテンツ整合性チェック
 
 `make check-content` で gohan の組み込みリンタ (重複スラッグ・必須フロントマター・孤立 `translation_key`) を実行できる。CI でも `lint.yml` 経由で PR ごとに実行される。
+
+## ピックアップ記事の運用
+
+`/picks/` と `/ja/picks/` は筆者が選んだ記事をテーマ別に並べるページ。
+
+### 選定基準
+
+設計判断やトレードオフを扱う記事を中心に、長く参照できるものを選ぶ。この基準はページ冒頭（`picks.md` の本文）にも書いている。
+
+### 構成
+
+- `content/{ja,en}/picks.md` の `listing_slugs`: 掲載する記事の一覧。gohan がこれを記事に解決する
+- 同 `picks_groups`: テーマごとの見出し (`title`) と記事 (`slugs`)。テンプレート `themes/default/templates/picks.html` がこの順で表示する
+- どのグループにも入っていない記事は「その他」に表示される
+- `make check-picks` で、`listing_slugs` と `picks_groups` の一致、記事の存在、日英の一致を検証する（CI では `parity.yml`）
+
+### 四半期ごとの見直し
+
+`picks-review-reminder.yml` が 1/4/7/10 月に見直し用の Issue を作る。選ぶのは引き続き筆者自身で、データは見落としに気づくためだけに使う。
+
+1. GA4 で直近 3 か月の閲覧数上位の記事を確認する
+2. Search Console で直近 3 か月の流入上位の記事を確認する
+3. 上位にあるのにピックアップにない記事を、選定基準に照らして追加するか判断する
+4. 古くなった記事や、選定基準に合わなくなった記事を外すか判断する
+5. 変更する場合は日英の `listing_slugs` と `picks_groups` を更新し、`make check-picks` を通す

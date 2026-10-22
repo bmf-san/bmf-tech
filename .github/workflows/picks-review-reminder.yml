@@ -1,0 +1,36 @@
+name: Picks Review Reminder
+
+on:
+  schedule:
+    # quarterly: 1st of Jan/Apr/Jul/Oct 00:00 UTC
+    - cron: "0 0 1 1,4,7,10 *"
+  workflow_dispatch:
+
+jobs:
+  remind:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Open review issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          title="ピックアップ記事の四半期見直し ($(date -u +%Y-%m))"
+          if gh issue list --state open --search "in:title \"$title\"" --json number --jq '.[0].number' | grep -q .; then
+            echo "already open: $title"
+            exit 0
+          fi
+          cat > body.md <<'EOF'
+          ピックアップ記事（`content/{ja,en}/picks.md`）の定期見直しです。手順は [docs/OPERATIONS.md](https://github.com/bmf-san/bmf-tech/blob/main/docs/OPERATIONS.md#ピックアップ記事の運用) を参照。
+
+          選ぶのは筆者自身。データは見落としに気づくためだけに使う。
+
+          - [ ] GA4 で直近 3 か月の閲覧数上位の記事を確認する
+          - [ ] Search Console で直近 3 か月の流入上位の記事を確認する
+          - [ ] 上位にあるのにピックアップにない記事を、選定基準に照らして追加するか判断する
+          - [ ] 古くなった・選定基準に合わなくなった記事を外すか判断する
+          - [ ] 変更する場合は日英の `listing_slugs` と `picks_groups` を更新し、`make check-picks` を通す
+          EOF
+          gh issue create --title "$title" --body-file body.md
