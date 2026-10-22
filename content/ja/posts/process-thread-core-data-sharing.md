@@ -52,7 +52,7 @@ fork(2)のmanページにあるとおり、親プロセスと子プロセスは�
 | UNIXドメインソケット | 同じマシン内専用のソケット。双方向に通信できる | ローカルのデーモンやDBへの接続 |
 | TCP/UDPソケット | ネットワーク越しにも使えるソケット | 別マシンとの通信 |
 | 共有メモリ | 同じメモリ領域を複数プロセスのメモリ空間に割り当てる | 大きなデータを高速に共有したい場合 |
-| メッセージキュー | OSが管理するキューでメッセージを受け渡す | 非同期の通知 |
+| メッセージキュー | OSが管理するキューでメッセージを受け渡す | メッセージ単位の受け渡し。到着を非同期に通知させることもできる |
 | シグナル | 「終了しろ」などの短い合図だけを送る | プロセスの停止。デーモンによってはSIGHUPで設定を読み直す慣習もある |
 
 大きく分けると、データをコピーして渡す方式（パイプ、ソケット、キュー）と、同じメモリを見る方式（共有メモリ）がある。コピー方式は安全だが、コピーの分だけコストがかかる。
@@ -152,6 +152,7 @@ flowchart LR
 - [fork(2) — Linux manual page](https://man7.org/linux/man-pages/man2/fork.2.html)
 - [pipe(7) — Linux manual page](https://man7.org/linux/man-pages/man7/pipe.7.html)
 - [fifo(7) — Linux manual page](https://man7.org/linux/man-pages/man7/fifo.7.html)
+- [mq_overview(7) — Linux manual page](https://man7.org/linux/man-pages/man7/mq_overview.7.html)
 - [shm_overview(7) — Linux manual page](https://man7.org/linux/man-pages/man7/shm_overview.7.html)
 - [pthreads(7) — Linux manual page](https://man7.org/linux/man-pages/man7/pthreads.7.html)
 - [pthread_spin_init(3) — Linux manual page](https://man7.org/linux/man-pages/man3/pthread_spin_init.3.html)

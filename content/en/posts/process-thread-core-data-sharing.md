@@ -52,7 +52,7 @@ Because the memory is separate, processes cannot read each other's variables. Th
 | Unix domain socket | A socket for communication within one machine, in both directions | Connecting to local daemons and databases |
 | TCP/UDP socket | A socket that also works across the network | Talking to other machines |
 | Shared memory | Maps the same memory region into several processes' address spaces | Sharing large data fast |
-| Message queue | Passes messages through a queue the OS manages | Asynchronous notifications |
+| Message queue | Passes messages through a queue the OS manages | Exchanging data as messages; can also notify asynchronously when a message arrives |
 | Signal | Sends only a short notice, such as "terminate" | Stopping a process; by convention, some daemons reload their configuration on SIGHUP |
 
 Broadly, there are two styles: copying the data across (pipes, sockets, queues) or looking at the same memory (shared memory). Copying keeps things safe but costs time for the copy.
@@ -150,6 +150,7 @@ The higher the layer, the more the programmer handles explicitly; the lower the 
 - [fork(2) — Linux manual page](https://man7.org/linux/man-pages/man2/fork.2.html)
 - [pipe(7) — Linux manual page](https://man7.org/linux/man-pages/man7/pipe.7.html)
 - [fifo(7) — Linux manual page](https://man7.org/linux/man-pages/man7/fifo.7.html)
+- [mq_overview(7) — Linux manual page](https://man7.org/linux/man-pages/man7/mq_overview.7.html)
 - [shm_overview(7) — Linux manual page](https://man7.org/linux/man-pages/man7/shm_overview.7.html)
 - [pthreads(7) — Linux manual page](https://man7.org/linux/man-pages/man7/pthreads.7.html)
 - [pthread_spin_init(3) — Linux manual page](https://man7.org/linux/man-pages/man3/pthread_spin_init.3.html)
