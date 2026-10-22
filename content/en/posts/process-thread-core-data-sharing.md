@@ -57,10 +57,10 @@ Because the memory is separate, processes cannot read each other's variables. Th
 
 Broadly, there are two styles: copying the data across (pipes, sockets, queues) or looking at the same memory (shared memory). Copying keeps things safe but costs time for the copy.
 
-Shared memory runs fast, but concurrent writes can corrupt it. The shm_overview(7) man page notes that processes typically must synchronize access to shared memory, for example with POSIX semaphores. Choosing shared memory brings in the same problem that threads face, covered next.
+Shared memory runs fast because it skips the copy, but concurrent writes can corrupt it. The shm_overview(7) man page notes that processes typically must synchronize access to shared memory, for example with POSIX semaphores. Choosing shared memory brings in the same problem that threads face, covered next.
 
 # Between Threads: Share Memory and Coordinate With Locks or Messages
-According to pthreads(7), threads in one process share global memory (the data and heap segments), while each thread has its own stack. They also share open file descriptors.
+According to pthreads(7), threads in one process share global memory (the data and heap segments), while each thread has its own stack. They also share open file descriptors, while some attributes, such as the thread ID, stay separate per thread.
 
 | Shared between threads | Separate per thread |
 |---|---|
@@ -107,7 +107,7 @@ flowchart LR
     SH --> MEM[("Main memory")]
 ```
 
-The layout varies by CPU. On my Apple M1, for example, `sysctl` shows four cores sharing each L2 cache and reports no L3 cache entry.
+The layout varies by CPU. As a non-Linux example, on my Apple M1 running macOS, `sysctl` shows four cores sharing each L2 cache and reports no L3 cache entry.
 
 Caches and memory exchange data in units called cache lines. According to the kernel documentation, a cache line usually spans 64 bytes or more. The Apple M1 above uses 128 bytes.
 
