@@ -55,7 +55,7 @@ Because the memory is separate, processes cannot read each other's variables. Th
 | Message queue | Passes messages through a queue the OS manages | Exchanging data as messages; can also notify asynchronously when a message arrives |
 | Signal | Sends only a short notice, such as "terminate" | Stopping a process; by convention, some daemons reload their configuration on SIGHUP |
 
-Broadly, there are two styles: copying the data across (pipes, sockets, queues) or looking at the same memory (shared memory). Copying keeps things safe but costs time for the copy.
+Broadly, there are two styles: copying the data across (pipes, sockets, queues) or looking at the same memory (shared memory). Copying keeps each process from writing to the other's data, but the copy takes time.
 
 Shared memory runs fast because it skips the copy, but concurrent writes can corrupt it. The shm_overview(7) man page notes that processes typically must synchronize access to shared memory, for example with POSIX semaphores. Choosing shared memory brings in the same problem that threads face, covered next.
 
