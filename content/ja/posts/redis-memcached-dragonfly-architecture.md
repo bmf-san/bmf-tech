@@ -93,15 +93,15 @@ flowchart LR
 flowchart LR
     C["クラスタ対応クライアント<br/>スロットとプロセスの対応表を保持<br/>CRC16(key) mod 16384 で宛先を決める"]
     subgraph M["マシン（4コア）"]
-        P1["Redisプロセス1（コア1）<br/>スロット 0〜4095"]
-        P2["Redisプロセス2（コア2）<br/>スロット 4096〜8191"]
-        P3["Redisプロセス3（コア3）<br/>スロット 8192〜12287"]
-        P4["Redisプロセス4（コア4）<br/>スロット 12288〜16383"]
+        P1["Redisプロセス1<br/>スロット 0〜4095"]
+        P2["Redisプロセス2<br/>スロット 4096〜8191"]
+        P3["Redisプロセス3<br/>スロット 8192〜12287"]
+        P4["Redisプロセス4<br/>スロット 12288〜16383"]
     end
     C --> P1 & P2 & P3 & P4
 ```
 
-各プロセスは担当スロットのキーだけを保持する。コマンド実行で使うのは、プロセスごとに1コアである。クライアントは、キーのハッシュスロットをもとに宛先のプロセスへ直接送る。対応表が古い場合は、MOVEDリダイレクトによって正しい宛先を教えてもらえる。同じ形のまま、プロセスを複数のマシンへ広げられる。
+各プロセスは担当スロットのキーだけを保持する。各プロセスのコマンド実行は1スレッドなので、4プロセスなら最大4コアを使える。クライアントは、キーのハッシュスロットをもとに宛先のプロセスへ直接送る。対応表が古い場合は、MOVEDリダイレクトによって正しい宛先を教えてもらえる。同じ形のまま、プロセスを複数のマシンへ広げられる。
 
 つまりRedisは、スレッドではなくプロセスを単位にマルチコアと複数マシンを使う設計である。「単一プロセスに大量のコアを与えても使い切れない」というのが正確な理解になる。
 
@@ -130,16 +130,16 @@ flowchart LR
     C["クライアント"] -->|SET key val| T1
     subgraph M["マシン（4コア）"]
         subgraph P["Dragonflyプロセス（1つ）"]
-            T1["スレッド1（コア1）<br/>この接続を担当"] --- S1[("シャード1")]
-            T2["スレッド2（コア2）"] --- S2[("シャード2")]
-            T3["スレッド3（コア3）"] --- S3[("シャード3<br/>keyの担当")]
-            T4["スレッド4（コア4）"] --- S4[("シャード4")]
+            T1["スレッド1<br/>この接続を担当"] --- S1[("シャード1")]
+            T2["スレッド2"] --- S2[("シャード2")]
+            T3["スレッド3"] --- S3[("シャード3<br/>keyの担当")]
+            T4["スレッド4"] --- S4[("シャード4")]
             T1 -.->|メッセージで処理を依頼| T3
         end
     end
 ```
 
-例えば、キーの担当がシャード3なら、スレッド1はスレッド3へメッセージで処理を依頼する。各シャードに触れるのは所有スレッドだけなので、データを守るロックも要らない。
+例えば、キーの担当がシャード3なら、スレッド1はスレッド3へメッセージで処理を依頼する。各シャードに触れるのは所有スレッドだけなので、データ構造をミューテックスで守る必要がない。
 
 Memcachedは複数のスレッドが1つの領域を共有し、Redisは1本のスレッドがすべてを扱う。Dragonflyはスレッドごとに担当範囲を分けることで、共有によるロックの取り合いを避けている。
 
@@ -155,8 +155,8 @@ Dragonflyの性能を語るときによく引用されるのが、READMEにあ�
 # ライセンスとエコシステム
 技術以外に、ライセンスも選定に影響する。
 
-- **Redis**：2024年3月、Redis 7.4以降のライセンスをBSDからRSALv2とSSPLv1のデュアルライセンスへ変更した。どちらもOSI承認のオープンソースライセンスではない。その後Redis 8から、OSI承認のAGPLv3も選べるようになった。Redis社のFAQによれば、RSALv2・SSPLv1のもとでも組織内の利用やホスティングは許可される。制限されるのは、Redisの商用製品と競合する形で組み込んだりホスティングしたりする場合である。AGPLv3のもとで改変したRedisの場合、ネットワーク越しの利用者へのソースコード提供が義務となる（第13条）。
-- **Valkey**：Redisのライセンス変更を受けて生まれたBSDライセンスのフォークで、Linux Foundationのもとで開発されている。AWSのElastiCacheやGoogle CloudのMemorystoreが、Valkeyのマネージドサービスを提供している。
+- **Redis**：2024年3月、Redis 7.4以降のライセンスをBSDからRSALv2とSSPLv1のデュアルライセンスへ変更した。どちらもOSI承認のオープンソースライセンスではない。その後Redis 8から、OSI承認のAGPLv3も選べるようになった。Redis社のFAQによれば、RSALv2・SSPLv1のもとでも組織内の利用やホスティングは許可される。同FAQは、制限の対象をRedisの商用製品と競合する形での組み込みやホスティングとしている。AGPLv3のもとで改変したRedisの場合、ネットワーク越しの利用者へのソースコード提供が義務となる（第13条）。
+- **Valkey**：Redisのライセンス変更を受け、Redis 7.2.4から派生したBSDライセンスのフォークで、Linux Foundationのもとで開発されている。AWSのElastiCacheやGoogle CloudのMemorystoreが、Valkeyのマネージドサービスを提供している。
 - **Dragonfly**：BSL 1.1（Business Source License）で、OSI承認のオープンソースではない。本番利用で許されるのは、自社の製品やサービスの一部として使う場合だけである。ただし、その製品やサービスがインメモリデータストアにあたるときは対象外となる。Dragonflyを第三者向けのサービス（SaaSなど）として提供することも認められていない。現行のLICENSEの規定で、各バージョンは公開から4年後、または2030年11月1日のいずれか早い日にApache 2.0へ切り替わる。
 
 利用の可否はライセンスごとの条件と利用形態の組み合わせ次第で、一律に判断できない。採用前には、各ライセンス本文と自社の利用形態を照らし合わせておきたい。判断に迷う場合は、法務への相談が確実である。
@@ -209,6 +209,7 @@ flowchart TB
 - [Redis Transactions](https://redis.io/docs/latest/develop/using-commands/transactions/)
 - [13 Years Later – Does Redis Need a New Architecture?](https://redis.io/blog/redis-architecture-13-years-later/)
 - [Valkey](https://valkey.io/)
+- [Linux Foundation Launches Open Source Valkey Community](https://www.linuxfoundation.org/press/linux-foundation-launches-open-source-valkey-community)
 - [Memcached Documentation: Performance and Efficiency](https://docs.memcached.org/serverguide/performance/)
 - [Memcached Documentation: Warm Restart](https://docs.memcached.org/features/restart/)
 - [Memcached Documentation: Basic Text Protocol](https://docs.memcached.org/protocols/basic/)

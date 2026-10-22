@@ -93,15 +93,15 @@ The next diagram shows a Redis Cluster built from four Redis processes on a four
 flowchart LR
     C["Cluster-aware client<br/>keeps a slot-to-process map<br/>CRC16(key) mod 16384 picks the target"]
     subgraph M["Machine (4 cores)"]
-        P1["Redis process 1 (core 1)<br/>slots 0-4095"]
-        P2["Redis process 2 (core 2)<br/>slots 4096-8191"]
-        P3["Redis process 3 (core 3)<br/>slots 8192-12287"]
-        P4["Redis process 4 (core 4)<br/>slots 12288-16383"]
+        P1["Redis process 1<br/>slots 0-4095"]
+        P2["Redis process 2<br/>slots 4096-8191"]
+        P3["Redis process 3<br/>slots 8192-12287"]
+        P4["Redis process 4<br/>slots 12288-16383"]
     end
     C --> P1 & P2 & P3 & P4
 ```
 
-Each process holds only the keys in its own slots and runs commands on one core. The client picks the target process from the key's hash slot and sends the request there directly. If the client's slot map is out of date, a MOVED redirect points it to the right process. The same layout extends across machines.
+Each process holds only the keys in its own slots. Each process runs commands on one thread, so four processes can use up to four cores. The client picks the target process from the key's hash slot and sends the request there directly. If the client's slot map is out of date, a MOVED redirect points it to the right process. The same layout extends across machines.
 
 In other words, Redis uses cores and machines with the process, not the thread, as the unit. The accurate statement is that a single Redis process cannot use many cores on its own.
 
@@ -130,16 +130,16 @@ flowchart LR
     C["Client"] -->|SET key val| T1
     subgraph M["Machine (4 cores)"]
         subgraph P["Dragonfly process (one)"]
-            T1["Thread 1 (core 1)<br/>handles this connection"] --- S1[("Shard 1")]
-            T2["Thread 2 (core 2)"] --- S2[("Shard 2")]
-            T3["Thread 3 (core 3)"] --- S3[("Shard 3<br/>owns key")]
-            T4["Thread 4 (core 4)"] --- S4[("Shard 4")]
+            T1["Thread 1<br/>handles this connection"] --- S1[("Shard 1")]
+            T2["Thread 2"] --- S2[("Shard 2")]
+            T3["Thread 3"] --- S3[("Shard 3<br/>owns key")]
+            T4["Thread 4"] --- S4[("Shard 4")]
             T1 -.->|asks by message| T3
         end
     end
 ```
 
-For example, if the key belongs to shard 3, thread 1 sends thread 3 a message asking it to do the work. Only the owning thread touches each shard, so the data needs no locks.
+For example, if the key belongs to shard 3, thread 1 sends thread 3 a message asking it to do the work. Only the owning thread touches each shard, so the data structures need no mutexes.
 
 In Memcached, several threads share one area; in Redis, a single thread handles everything. Dragonfly gives each thread its own range, which avoids contention over shared data.
 
@@ -155,8 +155,8 @@ Both sets of numbers come from the vendors themselves, and results vary with wor
 # Licensing and Ecosystem
 Beyond technology, licensing also shapes the choice.
 
-- **Redis**: in March 2024, Redis moved Redis 7.4 and later from BSD to a dual RSALv2 and SSPLv1 license. Neither is an OSI-approved open source license. Starting with Redis 8, it added the OSI-approved AGPLv3 as an option. According to Redis's FAQ, RSALv2 and SSPLv1 still permit use and hosting within your organization. The restrictions apply when you embed or host Redis in a way that competes with Redis's commercial products. If you change the Redis source and run it under AGPLv3, section 13 requires you to offer the source code to users who interact with it over a network.
-- **Valkey**: a BSD-licensed fork created after the Redis license change, developed under the Linux Foundation. AWS ElastiCache and Google Cloud Memorystore offer managed Valkey services.
+- **Redis**: in March 2024, Redis moved Redis 7.4 and later from BSD to a dual RSALv2 and SSPLv1 license. Neither is an OSI-approved open source license. Starting with Redis 8, it added the OSI-approved AGPLv3 as an option. According to Redis's FAQ, RSALv2 and SSPLv1 still permit use and hosting within your organization. The same FAQ limits the restrictions to embedding or hosting Redis in a way that competes with Redis's commercial products. If you change the Redis source and run it under AGPLv3, section 13 requires you to offer the source code to users who interact with it over a network.
+- **Valkey**: a BSD-licensed fork of Redis 7.2.4 created after the Redis license change, developed under the Linux Foundation. AWS ElastiCache and Google Cloud Memorystore offer managed Valkey services.
 - **Dragonfly**: licensed under BSL 1.1 (Business Source License), which is not OSI-approved open source. The license permits production use only as part of your own product or service, and not when that product or service is an in-memory data store. You also may not offer Dragonfly to third parties as a service, such as SaaS. Under the current LICENSE, each version converts to Apache 2.0 on the earlier of four years after its release or November 1, 2030.
 
 Whether you may use a product depends on its license terms and on how you use it, so no blanket answer exists. Before adopting one, check the license text against your own use case, and ask your legal team when in doubt.
@@ -209,6 +209,7 @@ flowchart TB
 - [Redis Transactions](https://redis.io/docs/latest/develop/using-commands/transactions/)
 - [13 Years Later – Does Redis Need a New Architecture?](https://redis.io/blog/redis-architecture-13-years-later/)
 - [Valkey](https://valkey.io/)
+- [Linux Foundation Launches Open Source Valkey Community](https://www.linuxfoundation.org/press/linux-foundation-launches-open-source-valkey-community)
 - [Memcached Documentation: Performance and Efficiency](https://docs.memcached.org/serverguide/performance/)
 - [Memcached Documentation: Warm Restart](https://docs.memcached.org/features/restart/)
 - [Memcached Documentation: Basic Text Protocol](https://docs.memcached.org/protocols/basic/)
