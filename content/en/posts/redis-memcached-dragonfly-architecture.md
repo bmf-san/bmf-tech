@@ -155,11 +155,11 @@ Both sets of numbers come from the vendors themselves, and results vary with wor
 # Licensing and Ecosystem
 Beyond technology, licensing also shapes the choice.
 
-- **Redis**: in March 2024, Redis moved Redis 7.4 and later from BSD to a dual RSALv2 and SSPLv1 license. Neither is an OSI-approved open source license. Starting with Redis 8, it added the OSI-approved AGPLv3 as an option.
+- **Redis**: in March 2024, Redis moved Redis 7.4 and later from BSD to a dual RSALv2 and SSPLv1 license. Neither is an OSI-approved open source license. Starting with Redis 8, it added the OSI-approved AGPLv3 as an option. According to Redis's FAQ, RSALv2 and SSPLv1 still permit use and hosting within your organization. The restrictions apply when you embed or host Redis in a way that competes with Redis's commercial products. If you change the Redis source and run it under AGPLv3, section 13 requires you to offer the source code to users who interact with it over a network.
 - **Valkey**: a BSD-licensed fork created after the Redis license change, developed under the Linux Foundation. AWS ElastiCache and Google Cloud Memorystore offer managed Valkey services.
 - **Dragonfly**: licensed under BSL 1.1 (Business Source License), which is not OSI-approved open source. The license permits production use only as part of your own product or service, and not when that product or service is an in-memory data store. You also may not offer Dragonfly to third parties as a service, such as SaaS. Under the current LICENSE, each version converts to Apache 2.0 on the earlier of four years after its release or November 1, 2030.
 
-For a cache inside your own service or an internal platform, none of these usually causes trouble. Take care when you offer it to other companies as a managed service, or when your product is itself an in-memory data store.
+Whether you may use a product depends on its license terms and on how you use it, so no blanket answer exists. Before adopting one, check the license text against your own use case, and ask your legal team when in doubt.
 
 # Summary
 Here is where each product fits.
@@ -204,6 +204,7 @@ flowchart TB
 - [redis.conf (THREADED I/O section)](https://github.com/redis/redis/blob/unstable/redis.conf)
 - [Redis Adopts Dual Source-Available Licensing](https://redis.io/blog/redis-adopts-dual-source-available-licensing/)
 - [Redis is now available under the AGPLv3 open source license](https://redis.io/blog/agplv3/)
+- [GNU Affero General Public License v3.0](https://www.gnu.org/licenses/agpl-3.0.html)
 - [Redis cluster specification](https://redis.io/docs/latest/operate/oss_and_stack/reference/cluster-spec/)
 - [Redis Transactions](https://redis.io/docs/latest/develop/using-commands/transactions/)
 - [13 Years Later – Does Redis Need a New Architecture?](https://redis.io/blog/redis-architecture-13-years-later/)

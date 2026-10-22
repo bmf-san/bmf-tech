@@ -155,11 +155,11 @@ Dragonflyの性能を語るときによく引用されるのが、READMEにあ�
 # ライセンスとエコシステム
 技術以外に、ライセンスも選定に影響する。
 
-- **Redis**：2024年3月、Redis 7.4以降のライセンスをBSDからRSALv2とSSPLv1のデュアルライセンスへ変更した。どちらもOSI承認のオープンソースライセンスではない。その後Redis 8から、OSI承認のAGPLv3も選べるようになった。
+- **Redis**：2024年3月、Redis 7.4以降のライセンスをBSDからRSALv2とSSPLv1のデュアルライセンスへ変更した。どちらもOSI承認のオープンソースライセンスではない。その後Redis 8から、OSI承認のAGPLv3も選べるようになった。Redis社のFAQによれば、RSALv2・SSPLv1のもとでも組織内の利用やホスティングは許可される。制限されるのは、Redisの商用製品と競合する形で組み込んだりホスティングしたりする場合である。AGPLv3のもとで改変したRedisの場合、ネットワーク越しの利用者へのソースコード提供が義務となる（第13条）。
 - **Valkey**：Redisのライセンス変更を受けて生まれたBSDライセンスのフォークで、Linux Foundationのもとで開発されている。AWSのElastiCacheやGoogle CloudのMemorystoreが、Valkeyのマネージドサービスを提供している。
 - **Dragonfly**：BSL 1.1（Business Source License）で、OSI承認のオープンソースではない。本番利用で許されるのは、自社の製品やサービスの一部として使う場合だけである。ただし、その製品やサービスがインメモリデータストアにあたるときは対象外となる。Dragonflyを第三者向けのサービス（SaaSなど）として提供することも認められていない。現行のLICENSEの規定で、各バージョンは公開から4年後、または2030年11月1日のいずれか早い日にApache 2.0へ切り替わる。
 
-自社サービスのキャッシュや社内基盤として使う分には、多くの場合どれも問題にならない。注意が要るのは、他社向けのマネージドサービスとして提供する場合や、インメモリデータストアそのものを製品にする場合である。
+利用の可否はライセンスごとの条件と利用形態の組み合わせ次第で、一律に判断できない。採用前には、各ライセンス本文と自社の利用形態を照らし合わせておきたい。判断に迷う場合は、法務への相談が確実である。
 
 # まとめ
 3つのプロダクトの位置付けは次のとおりである。
@@ -204,6 +204,7 @@ flowchart TB
 - [redis.conf（THREADED I/Oの節）](https://github.com/redis/redis/blob/unstable/redis.conf)
 - [Redis Adopts Dual Source-Available Licensing](https://redis.io/blog/redis-adopts-dual-source-available-licensing/)
 - [Redis is now available under the AGPLv3 open source license](https://redis.io/blog/agplv3/)
+- [GNU Affero General Public License v3.0](https://www.gnu.org/licenses/agpl-3.0.html)
 - [Redis cluster specification](https://redis.io/docs/latest/operate/oss_and_stack/reference/cluster-spec/)
 - [Redis Transactions](https://redis.io/docs/latest/develop/using-commands/transactions/)
 - [13 Years Later – Does Redis Need a New Architecture?](https://redis.io/blog/redis-architecture-13-years-later/)
