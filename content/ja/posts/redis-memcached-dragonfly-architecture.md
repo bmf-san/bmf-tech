@@ -33,7 +33,7 @@ Webアプリケーションの高速化に欠かせないインメモリデー�
 | データ構造 | キーと値（値は任意のバイト列） | 文字列、ハッシュ、リスト、セット、ソート済みセットなど |
 | 永続化 | なし（Warm Restartは計画的な再起動時のみ） | RDB（スナップショット）とAOF（追記ログ） |
 | スレッドモデル | マルチスレッド（ワーカースレッドごとにイベントループ） | コマンド実行はシングルスレッド（I/Oなど一部は別スレッド） |
-| 複数ノードへの分散 | クライアント側でキーをハッシュして振り分ける | Redis Cluster（サーバー側のシャーディング）とレプリケーション |
+| 複数ノードへの分散 | クライアント側でキーをハッシュして振り分ける（組み込みプロキシも利用可） | Redis Cluster（ハッシュスロットによるシャーディング）とレプリケーション |
 
 Memcachedのワーカースレッドは、それぞれが自分のイベントループで接続を処理し、キャッシュ本体は集中管理されたロックを介して共有する。1.5.18以降はWarm Restartという機能で、計画的に再起動したときにキャッシュを引き継げる。ただし公式ドキュメントのとおり停止中の更新は失われるため、永続化とは別物である。
 
@@ -59,16 +59,16 @@ Redisは「シングルスレッド」と言われるが、正確にはコマン
 - **Memcached**：1プロセスでマルチコアを使えるが、扱えるのは単純なキー・バリューのみで、永続化もない。
 - **Redis**：機能は豊富だが、1プロセスで使えるのは実質1コア分のコマンド実行能力である。マルチコアを使うには、複数のプロセスを起動してシャーディングする運用が要る。
 
-複数プロセスの運用には、シャードの配置やリバランス、クライアントのクラスタ対応といった手間がかかる。「Redisのような機能を、1プロセスのままマルチコアで速く動かせないか」という発想から生まれたのが、Dragonflyのようなマルチスレッドのデータストアである。
+複数プロセスの運用には、シャードの配置やリバランス、クライアントのクラスタ対応といった手間がかかる。Redis Clusterでは、複数キーを扱う操作も、対象のキーがすべて同じハッシュスロットにある場合だけ実行できる。「Redisのような機能を、1プロセスのままマルチコアで速く動かせないか」という発想から生まれたのが、Dragonflyのようなマルチスレッドのデータストアである。
 
 # Dragonflyとは
-DragonflyはC++製のインメモリデータストアで、RedisとMemcachedのAPIとの互換性をうたっている。READMEによると、2022年に設計したらどうなるかという実験から始まり、パブリッククラウドの大きなマシンでCPU・メモリ・I/Oを使い切ることを目標にしている。
+DragonflyはC++製のインメモリデータストアで、RedisとMemcachedのAPIとの互換性をうたっている。READMEによると、2022年に設計したらどうなるかという実験から始まった。最初の課題は、パブリッククラウドで現在使えるサーバーのCPU・メモリ・I/Oを使い切ることだったという。
 
 ## Shared-Nothingアーキテクチャ
 Dragonflyの中心にあるのが、Shared-Nothingアーキテクチャである。
 
-- キー空間を「シャード」に分割し、スレッドごとに担当させる。各スレッドは自分のシャードのデータだけを管理する。
-- キーはハッシュによって担当のシャードが決まり、そのシャードを持つスレッドが処理する。他のスレッドが直接そのデータに触れることはない。
+- キー空間をスレッド数以下の「シャード」に分割する。各シャードの所有者は1つのスレッドに限られ、データの操作も所有スレッドだけが行う。
+- キーのハッシュ値で担当のシャードが決まる。接続担当のスレッドは、担当シャードのスレッドへメッセージで処理を依頼する。スレッド間の連携はメッセージの受け渡しだけで行う。他のスレッドがシャードのデータを直接操作することもない。
 - 複数のシャードにまたがる操作は、VLL（Very Lightweight Locking）という論文を基にしたトランザクションの仕組みで調整する。READMEによれば、これによりミューテックスやスピンロックを使わずに、複数キーの操作を原子的に実行できる。
 
 3つのスレッドモデルを図にすると次のようになる。
@@ -76,7 +76,7 @@ Dragonflyの中心にあるのが、Shared-Nothingアーキテクチャである
 ```mermaid
 flowchart TB
     subgraph MC["Memcached"]
-        MW1["ワーカースレッド1"] --> MH[("共有のハッシュテーブル<br/>（ロックで保護）")]
+        MW1["ワーカースレッド1"] --> MH[("共有のキャッシュ<br/>（ロックで保護）")]
         MW2["ワーカースレッド2"] --> MH
         MW3["ワーカースレッド3"] --> MH
     end
@@ -93,23 +93,23 @@ flowchart TB
 
 Memcachedは複数のスレッドが1つの領域を共有し、Redisは1本のスレッドがすべてを扱う。Dragonflyはスレッドごとに担当範囲を分けることで、共有によるロックの取り合いを避けている。
 
-このほか、ハッシュテーブルにDashという構造を採用し、fork()を使わないスナップショットも実装している。READMEのベンチマークでは、スナップショット中のメモリ使用量がRedisより小さいとしている。
+このほか、ハッシュテーブルにDashという構造を採用し、fork()を使わないスナップショットも実装している。READMEのベンチマークでは、アイドル時のメモリ効率がRedisより30%高いとしている。スナップショット中もメモリ使用量がほぼ増えず、ピーク時のRedisはDragonflyの約3倍のメモリを使ったという。
 
 # ベンチマークの読み方
 Dragonflyの性能を語るときによく引用されるのが、READMEにある「25倍のスループット」である。これはAWSのc6gn.16xlargeで、Dragonfly 1台と単一プロセスのRedisを比べた結果である。
 
-これに対してRedis社は2022年のブログで、同じインスタンスに40シャードのRedis 7.0 Clusterを動かせば、Dragonflyより18〜40%高いスループットが出たと反論している。比較の土台が「1プロセス対1プロセス」か「マシン1台全体対マシン1台全体」かで、結論が逆になるわけである。
+これに対してRedis社は2022年のブログで、同じインスタンスに40シャードのRedis 7.0 Clusterを動かせば、Dragonflyより18〜40%高いスループットが出たと反論している。このときRedis側のプロセスは64 vCPUのうち40個分だけで、Dragonfly側が64 vCPUすべてを使い切っていた点も添えている。比較の土台が「1プロセス対1プロセス」か「マシン1台全体対マシン1台全体」かで、結論が逆になるわけである。
 
 どちらもベンダー自身による計測であり、ワークロードや設定によって結果は変わる。採用を検討する際は、自分のワークロードで計測するのが確実である。
 
 # ライセンスとエコシステム
 技術以外に、ライセンスも選定に影響する。
 
-- **Redis**：2024年3月に、BSDからSSPLなどのソース公開型ライセンスへ変更した。その後Redis 8から、OSI承認のAGPLv3も選べるようになった。
+- **Redis**：2024年3月、Redis 7.4以降のライセンスをBSDからRSALv2とSSPLv1のデュアルライセンスへ変更した。どちらもOSI承認のオープンソースライセンスではない。その後Redis 8から、OSI承認のAGPLv3も選べるようになった。
 - **Valkey**：Redisのライセンス変更を受けて生まれたBSDライセンスのフォークで、Linux Foundationのもとで開発されている。AWSのElastiCacheやGoogle CloudのMemorystoreが、Valkeyのマネージドサービスを提供している。
-- **Dragonfly**：BSL 1.1（Business Source License）で、OSI承認のオープンソースではない。自社の製品やサービスの一部として使うことは許可されているが、インメモリデータストアそのものを提供するサービスとしては使えない。各バージョンは公開から4年後、または2030年11月1日のいずれか早い日にApache 2.0へ切り替わる。
+- **Dragonfly**：BSL 1.1（Business Source License）で、OSI承認のオープンソースではない。本番利用で許されるのは、自社の製品やサービスの一部として使う場合だけである。ただし、その製品やサービスがインメモリデータストアにあたるときは対象外となる。Dragonflyを第三者向けのサービス（SaaSなど）として提供することも認められていない。現行のLICENSEの規定で、各バージョンは公開から4年後、または2030年11月1日のいずれか早い日にApache 2.0へ切り替わる。
 
-自社サービスのキャッシュとして使う分には、多くの場合どれも問題にならない。ただし社内基盤として他チームに提供する場合などは、条件を確認しておきたい。
+自社サービスのキャッシュや社内基盤として使う分には、多くの場合どれも問題にならない。注意が要るのは、他社向けのマネージドサービスとして提供する場合や、インメモリデータストアそのものを製品にする場合である。
 
 # まとめ
 3つのプロダクトの位置付けは次のとおりである。
@@ -128,11 +128,16 @@ Dragonflyの性能を語るときによく引用されるのが、READMEにあ�
 # 参考リンク
 - [Redis FAQ](https://redis.io/docs/latest/develop/get-started/faq/)
 - [redis.conf（THREADED I/Oの節）](https://github.com/redis/redis/blob/unstable/redis.conf)
+- [Redis Adopts Dual Source-Available Licensing](https://redis.io/blog/redis-adopts-dual-source-available-licensing/)
 - [Redis is now available under the AGPLv3 open source license](https://redis.io/blog/agplv3/)
+- [Redis cluster specification](https://redis.io/docs/latest/operate/oss_and_stack/reference/cluster-spec/)
+- [Redis Transactions](https://redis.io/docs/latest/develop/using-commands/transactions/)
 - [13 Years Later – Does Redis Need a New Architecture?](https://redis.io/blog/redis-architecture-13-years-later/)
 - [Valkey](https://valkey.io/)
 - [Memcached Documentation: Performance and Efficiency](https://docs.memcached.org/serverguide/performance/)
 - [Memcached Documentation: Warm Restart](https://docs.memcached.org/features/restart/)
+- [Memcached Documentation: Basic Text Protocol](https://docs.memcached.org/protocols/basic/)
 - [dragonflydb/dragonfly（README）](https://github.com/dragonflydb/dragonfly)
+- [Dragonfly Architecture（docs/df-share-nothing.md）](https://github.com/dragonflydb/dragonfly/blob/main/docs/df-share-nothing.md)
 - [Dragonfly LICENSE（BSL 1.1）](https://github.com/dragonflydb/dragonfly/blob/main/LICENSE.md)
 

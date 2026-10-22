@@ -33,7 +33,7 @@ First, a comparison of the two long-standing options.
 | Data model | Keys and values (values are arbitrary bytes) | Strings, hashes, lists, sets, sorted sets, and more |
 | Persistence | None (Warm Restart covers planned restarts only) | RDB (snapshots) and AOF (append-only log) |
 | Threading | Multi-threaded (one event loop per worker thread) | Single-threaded command execution (some work, such as I/O, on other threads) |
-| Spreading across nodes | The client hashes keys to pick a server | Redis Cluster (server-side sharding) and replication |
+| Spreading across nodes | The client hashes keys to pick a server (a built-in proxy is also available) | Redis Cluster (sharding by hash slot) and replication |
 
 Each Memcached worker thread runs its own event loop for its connections, and the threads share the cache through centralized locks. Since 1.5.18, Warm Restart lets Memcached keep its cache across a planned restart. As the official docs warn, the instance misses any updates sent during the downtime, so this is not persistence.
 
@@ -59,16 +59,16 @@ Putting this together, the two make different trade-offs:
 - **Memcached**: one process uses many cores, but it handles only plain key-value data and has no persistence.
 - **Redis**: it offers rich features, but one process gets roughly one core's worth of command execution. To use more cores, you run more processes and shard across them.
 
-Running many processes means managing shard placement, rebalancing, and cluster-aware clients. Multi-threaded data stores such as Dragonfly grew out of the question: can we get Redis-like features running fast on many cores within a single process?
+Running many processes means managing shard placement, rebalancing, and cluster-aware clients. In Redis Cluster, a command that touches several keys works only when all those keys map to the same hash slot. Multi-threaded data stores such as Dragonfly grew out of the question: can we get Redis-like features running fast on many cores within a single process?
 
 # What Is Dragonfly?
-Dragonfly is an in-memory data store written in C++ that claims compatibility with the Redis and Memcached APIs. According to its readme, it started as an experiment in what an in-memory store would look like if designed in 2022, aiming to fully use the CPU, memory, and I/O of large public cloud servers.
+Dragonfly is an in-memory data store written in C++ that claims compatibility with the Redis and Memcached APIs. According to its readme, it started as an experiment in what an in-memory store would look like if designed in 2022. Its first challenge was to fully use the CPU, memory, and I/O of the servers available in public clouds today.
 
 ## Shared-Nothing Architecture
 At Dragonfly's core sits a shared-nothing architecture.
 
-- It splits the keyspace into "shards" and assigns each shard to a thread. Each thread manages only its own shard's data.
-- A hash of the key decides its shard, and the thread that owns that shard processes it. No other thread touches that data directly.
+- It splits the keyspace into "shards," no more than the number of threads. A single thread owns each shard, and only that thread operates on its data.
+- A hash of the key decides its shard. The thread handling the client connection sends a message to the thread that owns the shard and asks it to do the work. Threads interact only by passing messages, and no other thread touches a shard's data directly.
 - Operations that span shards go through a transactional framework based on the VLL (Very Lightweight Locking) paper. According to the readme, this lets Dragonfly run multi-key operations atomically without mutexes or spinlocks.
 
 The diagram below contrasts the three threading models.
@@ -76,7 +76,7 @@ The diagram below contrasts the three threading models.
 ```mermaid
 flowchart TB
     subgraph MC["Memcached"]
-        MW1["Worker thread 1"] --> MH[("Shared hash table<br/>(protected by locks)")]
+        MW1["Worker thread 1"] --> MH[("Shared cache<br/>(protected by locks)")]
         MW2["Worker thread 2"] --> MH
         MW3["Worker thread 3"] --> MH
     end
@@ -93,23 +93,23 @@ flowchart TB
 
 In Memcached, several threads share one area; in Redis, a single thread handles everything. Dragonfly gives each thread its own range, which avoids contention over shared data.
 
-Dragonfly also bases its hash table on a design called Dash and implements snapshots without fork(). Its readme benchmark reports lower memory use than Redis during a snapshot.
+Dragonfly also bases its hash table on a design called Dash and implements snapshots without fork(). Its readme benchmark reports 30% better memory efficiency than Redis when idle. During a snapshot, Dragonfly's memory use barely rose, while Redis at its peak used almost three times as much memory as Dragonfly.
 
 # How to Read the Benchmarks
 The figure most often quoted for Dragonfly is the "25X more throughput" in its readme. That result compares one Dragonfly instance against a single Redis process on an AWS c6gn.16xlarge.
 
-In a 2022 blog post, Redis responded that a 40-shard Redis 7.0 Cluster on the same instance delivered 18% to 40% more throughput than Dragonfly. The conclusion flips depending on whether you compare one process against one process or a whole machine against a whole machine.
+In a 2022 blog post, Redis responded that a 40-shard Redis 7.0 Cluster on the same instance delivered 18% to 40% more throughput than Dragonfly. The post notes that the Redis processes used only 40 of the 64 vCPUs, while Dragonfly used all 64. The conclusion flips depending on whether you compare one process against one process or a whole machine against a whole machine.
 
 Both sets of numbers come from the vendors themselves, and results vary with workload and configuration. If you are considering adoption, measure with your own workload.
 
 # Licensing and Ecosystem
 Beyond technology, licensing also shapes the choice.
 
-- **Redis**: in March 2024, Redis moved from BSD to source-available licenses including SSPL. Starting with Redis 8, it added the OSI-approved AGPLv3 as an option.
+- **Redis**: in March 2024, Redis moved Redis 7.4 and later from BSD to a dual RSALv2 and SSPLv1 license. Neither is an OSI-approved open source license. Starting with Redis 8, it added the OSI-approved AGPLv3 as an option.
 - **Valkey**: a BSD-licensed fork created after the Redis license change, developed under the Linux Foundation. AWS ElastiCache and Google Cloud Memorystore offer managed Valkey services.
-- **Dragonfly**: licensed under BSL 1.1 (Business Source License), which is not OSI-approved open source. You may use it as part of your own product or service, but not to offer an in-memory data store as a service. Each version converts to Apache 2.0 on the earlier of four years after its release or November 1, 2030.
+- **Dragonfly**: licensed under BSL 1.1 (Business Source License), which is not OSI-approved open source. The license permits production use only as part of your own product or service, and not when that product or service is an in-memory data store. You also may not offer Dragonfly to third parties as a service, such as SaaS. Under the current LICENSE, each version converts to Apache 2.0 on the earlier of four years after its release or November 1, 2030.
 
-For a cache inside your own service, none of these usually causes trouble. Still, check the terms if you plan to offer it as a platform to other teams.
+For a cache inside your own service or an internal platform, none of these usually causes trouble. Take care when you offer it to other companies as a managed service, or when your product is itself an in-memory data store.
 
 # Summary
 Here is where each product fits.
@@ -128,11 +128,16 @@ Here is where each product fits.
 # References
 - [Redis FAQ](https://redis.io/docs/latest/develop/get-started/faq/)
 - [redis.conf (THREADED I/O section)](https://github.com/redis/redis/blob/unstable/redis.conf)
+- [Redis Adopts Dual Source-Available Licensing](https://redis.io/blog/redis-adopts-dual-source-available-licensing/)
 - [Redis is now available under the AGPLv3 open source license](https://redis.io/blog/agplv3/)
+- [Redis cluster specification](https://redis.io/docs/latest/operate/oss_and_stack/reference/cluster-spec/)
+- [Redis Transactions](https://redis.io/docs/latest/develop/using-commands/transactions/)
 - [13 Years Later – Does Redis Need a New Architecture?](https://redis.io/blog/redis-architecture-13-years-later/)
 - [Valkey](https://valkey.io/)
 - [Memcached Documentation: Performance and Efficiency](https://docs.memcached.org/serverguide/performance/)
 - [Memcached Documentation: Warm Restart](https://docs.memcached.org/features/restart/)
+- [Memcached Documentation: Basic Text Protocol](https://docs.memcached.org/protocols/basic/)
 - [dragonflydb/dragonfly (readme)](https://github.com/dragonflydb/dragonfly)
+- [Dragonfly Architecture (docs/df-share-nothing.md)](https://github.com/dragonflydb/dragonfly/blob/main/docs/df-share-nothing.md)
 - [Dragonfly LICENSE (BSL 1.1)](https://github.com/dragonflydb/dragonfly/blob/main/LICENSE.md)
 
