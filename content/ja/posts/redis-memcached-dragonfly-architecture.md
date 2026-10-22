@@ -21,7 +21,7 @@ Webアプリケーションの高速化に欠かせないインメモリデー�
 # TL;DR
 - Memcachedはマルチスレッドで、単純なキー・バリューのキャッシュに特化している。永続化はない。
 - Redisは豊富なデータ構造と永続化を持つ。コマンドの実行はシングルスレッドで、マルチコアは複数プロセスやRedis Clusterで使う。
-- DragonflyはRedis・Memcached互換のAPIを持ち、キー空間をスレッドごとに分割するShared-Nothing設計で、1プロセスのままマルチコアを使う。
+- DragonflyはRedis・Memcached互換のAPIを持ち、キー空間をシャードに分けて各シャードを1つのスレッドに持たせるShared-Nothing設計で、1プロセスのままマルチコアを使う。
 - 性能比較はベンチマークの条件次第で結論が変わる。ライセンスの違いも選定に影響する。
 
 # MemcachedとRedisの違い
@@ -33,7 +33,7 @@ Webアプリケーションの高速化に欠かせないインメモリデー�
 | データ構造 | キーと値（値は任意のバイト列） | 文字列、ハッシュ、リスト、セット、ソート済みセットなど |
 | 永続化 | なし（Warm Restartは計画的な再起動時のみ） | RDB（スナップショット）とAOF（追記ログ） |
 | スレッドモデル | マルチスレッド（ワーカースレッドごとにイベントループ） | コマンド実行はシングルスレッド（I/Oなど一部は別スレッド） |
-| 複数ノードへの分散 | クライアント側でキーをハッシュして振り分ける（組み込みプロキシも利用可） | Redis Cluster（ハッシュスロットによるシャーディング）とレプリケーション |
+| 複数ノードへの分散 | クライアント側でキーをハッシュして振り分ける（1.6.23以降は組み込みプロキシも利用可） | Redis Cluster（ハッシュスロットによるシャーディング）とレプリケーション |
 
 Memcachedのワーカースレッドは、それぞれが自分のイベントループで接続を処理し、キャッシュ本体は集中管理されたロックを介して共有する。1.5.18以降はWarm Restartという機能で、計画的に再起動したときにキャッシュを引き継げる。ただし公式ドキュメントのとおり停止中の更新は失われるため、永続化とは別物である。
 
@@ -103,7 +103,7 @@ flowchart LR
 
 各プロセスは担当スロットのキーだけを保持する。各プロセスのコマンド実行は1スレッドなので、4プロセスなら最大4コアを使える。クライアントは、キーのハッシュスロットをもとに宛先のプロセスへ直接送る。対応表が古い場合は、MOVEDリダイレクトによって正しい宛先を教えてもらえる。同じ形のまま、プロセスを複数のマシンへ広げられる。
 
-つまりRedisは、スレッドではなくプロセスを単位にマルチコアと複数マシンを使う設計である。「単一プロセスに大量のコアを与えても使い切れない」というのが正確な理解になる。
+つまりRedisは、スレッドではなくプロセスを単位にマルチコアと複数マシンを使う設計である。「単一プロセスに大量のコアを与えても、コマンド実行に使えるのは1コアだけ」というのが正確な理解になる。
 
 # 1プロセスでマルチコアを使うという課題
 ここまでを整理すると、両者には次のようなトレードオフがある。
@@ -111,7 +111,7 @@ flowchart LR
 - **Memcached**：1プロセスでマルチコアを使えるが、扱えるのは単純なキー・バリューのみで、永続化もない。
 - **Redis**：機能は豊富だが、1プロセスで使えるのは実質1コア分のコマンド実行能力である。マルチコアを使うには、複数のプロセスを起動してシャーディングする運用が要る。
 
-複数プロセスの運用には、シャードの配置やリバランス、クライアントのクラスタ対応といった手間がかかる。Redis Clusterでは、複数キーを扱う操作も、対象のキーがすべて同じハッシュスロットにある場合だけ実行できる。「Redisのような機能を、1プロセスのままマルチコアで速く動かせないか」という発想から生まれたのが、Dragonflyのようなマルチスレッドのデータストアである。
+複数プロセスの運用には、シャードの配置やリバランス、クライアントのクラスタ対応といった手間がかかる。Redis Clusterでは、複数キーを扱う操作も、対象のキーがすべて同じハッシュスロットにある場合だけ実行できる。キー名に`{user1000}`のようなハッシュタグを含めれば、関連するキーを同じスロットへ揃えられる。「Redisのような機能を、1プロセスのままマルチコアで速く動かせないか」という発想から生まれたのが、Dragonflyのようなマルチスレッドのデータストアである。
 
 # Dragonflyとは
 DragonflyはC++製のインメモリデータストアで、RedisとMemcachedのAPIとの互換性をうたっている。READMEによると、2022年に設計したらどうなるかという実験から始まった。最初の課題は、パブリッククラウドで現在使えるサーバーのCPU・メモリ・I/Oを使い切ることだったという。
@@ -209,10 +209,12 @@ flowchart TB
 - [Redis Transactions](https://redis.io/docs/latest/develop/using-commands/transactions/)
 - [13 Years Later – Does Redis Need a New Architecture?](https://redis.io/blog/redis-architecture-13-years-later/)
 - [Valkey](https://valkey.io/)
+- [Unlock 1 Million RPS: Experience Triple the Speed with Valkey](https://valkey.io/blog/unlock-one-million-rps/)
 - [Linux Foundation Launches Open Source Valkey Community](https://www.linuxfoundation.org/press/linux-foundation-launches-open-source-valkey-community)
 - [Memcached Documentation: Performance and Efficiency](https://docs.memcached.org/serverguide/performance/)
 - [Memcached Documentation: Warm Restart](https://docs.memcached.org/features/restart/)
 - [Memcached Documentation: Basic Text Protocol](https://docs.memcached.org/protocols/basic/)
+- [Memcached Documentation: Built-in proxy](https://docs.memcached.org/features/proxy/)
 - [dragonflydb/dragonfly（README）](https://github.com/dragonflydb/dragonfly)
 - [Dragonfly Architecture（docs/df-share-nothing.md）](https://github.com/dragonflydb/dragonfly/blob/main/docs/df-share-nothing.md)
 - [Dragonfly LICENSE（BSL 1.1）](https://github.com/dragonflydb/dragonfly/blob/main/LICENSE.md)

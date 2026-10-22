@@ -21,7 +21,7 @@ This article compares the three by threading model and by how they scale. It gro
 # TL;DR
 - Memcached is multi-threaded and focused on plain key-value caching. It has no persistence.
 - Redis offers rich data structures and persistence. It runs commands on a single thread and uses more cores by running more processes or Redis Cluster.
-- Dragonfly speaks the Redis and Memcached APIs and splits the keyspace across threads in a shared-nothing design, so a single process uses many cores.
+- Dragonfly speaks the Redis and Memcached APIs and splits the keyspace into shards, each owned by one thread, in a shared-nothing design, so a single process uses many cores.
 - Benchmark conclusions flip depending on the setup, and licensing differences also affect the choice.
 
 # Memcached vs Redis
@@ -33,7 +33,7 @@ First, a comparison of the two long-standing options.
 | Data model | Keys and values (values are arbitrary bytes) | Strings, hashes, lists, sets, sorted sets, and more |
 | Persistence | None (Warm Restart covers planned restarts only) | RDB (snapshots) and AOF (append-only log) |
 | Threading | Multi-threaded (one event loop per worker thread) | Single-threaded command execution (some work, such as I/O, on other threads) |
-| Spreading across nodes | The client hashes keys to pick a server (a built-in proxy is also available) | Redis Cluster (sharding by hash slot) and replication |
+| Spreading across nodes | The client hashes keys to pick a server (1.6.23 and later also offer a built-in proxy) | Redis Cluster (sharding by hash slot) and replication |
 
 Each Memcached worker thread runs its own event loop for its connections, and the threads share the cache through centralized locks. Since 1.5.18, Warm Restart lets Memcached keep its cache across a planned restart. As the official docs warn, the instance misses any updates sent during the downtime, so this is not persistence.
 
@@ -103,7 +103,7 @@ flowchart LR
 
 Each process holds only the keys in its own slots. Each process runs commands on one thread, so four processes can use up to four cores. The client picks the target process from the key's hash slot and sends the request there directly. If the client's slot map is out of date, a MOVED redirect points it to the right process. The same layout extends across machines.
 
-In other words, Redis uses cores and machines with the process, not the thread, as the unit. The accurate statement is that a single Redis process cannot use many cores on its own.
+In other words, Redis uses cores and machines with the process, not the thread, as the unit. The accurate statement is that a single Redis process runs commands on only one core, no matter how many cores it gets.
 
 # The Challenge: Many Cores in One Process
 Putting this together, the two make different trade-offs:
@@ -111,7 +111,7 @@ Putting this together, the two make different trade-offs:
 - **Memcached**: one process uses many cores, but it handles only plain key-value data and has no persistence.
 - **Redis**: it offers rich features, but one process gets roughly one core's worth of command execution. To use more cores, you run more processes and shard across them.
 
-Running many processes means managing shard placement, rebalancing, and cluster-aware clients. In Redis Cluster, a command that touches several keys works only when all those keys map to the same hash slot. Multi-threaded data stores such as Dragonfly grew out of the question: can we get Redis-like features running fast on many cores within a single process?
+Running many processes means managing shard placement, rebalancing, and cluster-aware clients. In Redis Cluster, a command that touches several keys works only when all those keys map to the same hash slot. A hash tag such as `{user1000}` in the key names puts related keys in the same slot. Multi-threaded data stores such as Dragonfly grew out of the question: can we get Redis-like features running fast on many cores within a single process?
 
 # What Is Dragonfly?
 Dragonfly is an in-memory data store written in C++ that claims compatibility with the Redis and Memcached APIs. According to its readme, it started as an experiment in what an in-memory store would look like if designed in 2022. Its first challenge was to fully use the CPU, memory, and I/O of the servers available in public clouds today.
@@ -209,10 +209,12 @@ flowchart TB
 - [Redis Transactions](https://redis.io/docs/latest/develop/using-commands/transactions/)
 - [13 Years Later – Does Redis Need a New Architecture?](https://redis.io/blog/redis-architecture-13-years-later/)
 - [Valkey](https://valkey.io/)
+- [Unlock 1 Million RPS: Experience Triple the Speed with Valkey](https://valkey.io/blog/unlock-one-million-rps/)
 - [Linux Foundation Launches Open Source Valkey Community](https://www.linuxfoundation.org/press/linux-foundation-launches-open-source-valkey-community)
 - [Memcached Documentation: Performance and Efficiency](https://docs.memcached.org/serverguide/performance/)
 - [Memcached Documentation: Warm Restart](https://docs.memcached.org/features/restart/)
 - [Memcached Documentation: Basic Text Protocol](https://docs.memcached.org/protocols/basic/)
+- [Memcached Documentation: Built-in proxy](https://docs.memcached.org/features/proxy/)
 - [dragonflydb/dragonfly (readme)](https://github.com/dragonflydb/dragonfly)
 - [Dragonfly Architecture (docs/df-share-nothing.md)](https://github.com/dragonflydb/dragonfly/blob/main/docs/df-share-nothing.md)
 - [Dragonfly LICENSE (BSL 1.1)](https://github.com/dragonflydb/dragonfly/blob/main/LICENSE.md)
