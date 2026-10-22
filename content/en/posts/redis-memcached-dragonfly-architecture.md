@@ -37,10 +37,46 @@ First, a comparison of the two long-standing options.
 
 Each Memcached worker thread runs its own event loop for its connections, and the threads share the cache through centralized locks. Since 1.5.18, Warm Restart lets Memcached keep its cache across a planned restart. As the official docs warn, the instance misses any updates sent during the downtime, so this is not persistence.
 
+Here is the inside of a single Memcached process.
+
+```mermaid
+flowchart LR
+    C["Client"] -->|new connection| L
+    subgraph M["Machine (multi-core)"]
+        subgraph P["memcached process (one)"]
+            L["Listener thread<br/>hands connections to workers"] --> W1 & W2 & W3
+            W1["Worker thread 1<br/>(event loop)"]
+            W2["Worker thread 2<br/>(event loop)"]
+            W3["Worker thread 3<br/>(event loop)"]
+            W1 & W2 & W3 --> CACHE[("Shared cache<br/>(protected by locks)")]
+        end
+    end
+```
+
+A single listener thread accepts new connections and hands each one to a worker thread, which then serves that client. The worker threads run in parallel on different cores but share one cache.
+
 Redis provides atomic operations per data structure and can save data to disk with RDB and AOF. Beyond caching, teams use it for counters, leaderboards, queues, and more.
 
 # Why Redis Runs Commands on a Single Thread
 People call Redis "single-threaded," but strictly speaking, command execution is single-threaded. redis.conf itself says Redis is mostly single-threaded, with some operations such as UNLINK and slow I/O performed on side threads. With `io-threads` enabled, Redis also reads from and writes to sockets and parses the protocol on several threads.
+
+Here is one Redis process running on one machine.
+
+```mermaid
+flowchart LR
+    C["Clients"] --> IO
+    subgraph M["Machine (multi-core)"]
+        subgraph P["Redis process (one)"]
+            IO["I/O threads (with io-threads)<br/>socket reads/writes, protocol parsing"] --> MAIN["Main thread<br/>runs commands one at a time"]
+            MAIN --> DATA[("Entire keyspace")]
+            MAIN -.->|offloads heavy frees, etc.| BG["Background threads<br/>UNLINK, etc."]
+        end
+        IDLE["Other cores<br/>not used for running commands"]
+    end
+    style IDLE stroke-dasharray: 5 5
+```
+
+Only the main thread runs commands. Turning on I/O threads still leaves command execution on a single core.
 
 Redis keeps command execution on one thread for three main reasons.
 
@@ -50,6 +86,22 @@ Redis keeps command execution on one thread for three main reasons.
 
 ## How Redis Uses Many Cores
 Single-threaded command execution still leaves ways to use many cores. The official FAQ recommends starting several Redis instances on the same machine and treating them as separate servers when you want to use every CPU. Redis Cluster splits the keyspace into 16,384 hash slots and spreads them across processes and machines.
+
+The next diagram shows a Redis Cluster built from four Redis processes on a four-core machine. The slot ranges serve as an example.
+
+```mermaid
+flowchart LR
+    C["Cluster-aware client<br/>keeps a slot-to-process map<br/>CRC16(key) mod 16384 picks the target"]
+    subgraph M["Machine (4 cores)"]
+        P1["Redis process 1 (core 1)<br/>slots 0-4095"]
+        P2["Redis process 2 (core 2)<br/>slots 4096-8191"]
+        P3["Redis process 3 (core 3)<br/>slots 8192-12287"]
+        P4["Redis process 4 (core 4)<br/>slots 12288-16383"]
+    end
+    C --> P1 & P2 & P3 & P4
+```
+
+Each process holds only the keys in its own slots and runs commands on one core. The client picks the target process from the key's hash slot and sends the request there directly. If the client's slot map is out of date, a MOVED redirect points it to the right process. The same layout extends across machines.
 
 In other words, Redis uses cores and machines with the process, not the thread, as the unit. The accurate statement is that a single Redis process cannot use many cores on its own.
 
@@ -71,25 +123,23 @@ At Dragonfly's core sits a shared-nothing architecture.
 - A hash of the key decides its shard. The thread handling the client connection sends a message to the thread that owns the shard and asks it to do the work. Threads interact only by passing messages, and no other thread touches a shard's data directly.
 - Operations that span shards go through a transactional framework based on the VLL (Very Lightweight Locking) paper. According to the readme, this lets Dragonfly run multi-key operations atomically without mutexes or spinlocks.
 
-The diagram below contrasts the three threading models.
+Here is Dragonfly running on a four-core machine.
 
 ```mermaid
-flowchart TB
-    subgraph MC["Memcached"]
-        MW1["Worker thread 1"] --> MH[("Shared cache<br/>(protected by locks)")]
-        MW2["Worker thread 2"] --> MH
-        MW3["Worker thread 3"] --> MH
-    end
-    subgraph RD["Redis (one process)"]
-        RIO["I/O threads (optional)"] --> RM["Main thread<br/>(runs commands in order)"]
-        RM --> RH[("Entire keyspace")]
-    end
-    subgraph DF["Dragonfly"]
-        DT1["Thread 1"] --> DS1[("Shard 1")]
-        DT2["Thread 2"] --> DS2[("Shard 2")]
-        DT3["Thread 3"] --> DS3[("Shard 3")]
+flowchart LR
+    C["Client"] -->|SET key val| T1
+    subgraph M["Machine (4 cores)"]
+        subgraph P["Dragonfly process (one)"]
+            T1["Thread 1 (core 1)<br/>handles this connection"] --- S1[("Shard 1")]
+            T2["Thread 2 (core 2)"] --- S2[("Shard 2")]
+            T3["Thread 3 (core 3)"] --- S3[("Shard 3<br/>owns key")]
+            T4["Thread 4 (core 4)"] --- S4[("Shard 4")]
+            T1 -.->|asks by message| T3
+        end
     end
 ```
+
+For example, if the key belongs to shard 3, thread 1 sends thread 3 a message asking it to do the work. Only the owning thread touches each shard, so the data needs no locks.
 
 In Memcached, several threads share one area; in Redis, a single thread handles everything. Dragonfly gives each thread its own range, which avoids contention over shared data.
 
@@ -117,6 +167,30 @@ Here is where each product fits.
 - **Memcached**: an option for fast, plain key-value caching with many threads in one process.
 - **Redis (and Valkey)**: the standard choice when you need rich data structures, persistence, replication, and clustering. It uses more cores by running more processes.
 - **Dragonfly**: an option for keeping the Redis-compatible API while using many cores in one process. Check the extent of compatibility and the license first.
+
+The diagram below puts the three ways of scaling side by side.
+
+```mermaid
+flowchart TB
+    subgraph DF["Dragonfly: one process, many threads, partitioned data"]
+        direction LR
+        DT1["Thread"] --> DD1[("Shard")]
+        DT2["Thread"] --> DD2[("Shard")]
+        DT3["Thread"] --> DD3[("Shard")]
+    end
+    subgraph RC["Redis Cluster: many processes, one command thread each, partitioned data"]
+        direction LR
+        RP1["Process"] --> RD1[("Own slots")]
+        RP2["Process"] --> RD2[("Own slots")]
+        RP3["Process"] --> RD3[("Own slots")]
+    end
+    subgraph MC["Memcached: one process, many threads, shared data"]
+        direction LR
+        MT1["Thread"] --> MD[("Shared cache")]
+        MT2["Thread"] --> MD
+        MT3["Thread"] --> MD
+    end
+```
 
 "Single-threaded means slow" and "multi-threaded means fast" are both oversimplifications. The real difference is whether the unit of scaling is the process or the thread. Weigh operational effort and licensing too, and choose what fits your requirements based on your own measurements.
 
