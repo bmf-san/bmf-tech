@@ -79,9 +79,18 @@ HTML テンプレートや Markdown を変更した場合は従来通りフル�
 ### 構成
 
 - `content/{ja,en}/picks.md` の `listing_slugs`: 掲載する記事の一覧。gohan がこれを記事に解決する
-- 同 `picks_groups`: テーマごとの見出し (`title`) と記事 (`slugs`)。テンプレート `themes/default/templates/picks.html` がこの順で表示する
+- 同 `picks_sections`: 大分類 (`title`) と、その下のグループ (`groups`: `title`・`description`・`slugs`)。テンプレート `themes/default/templates/picks.html` がこの順で、グループごとのパネルを並べて表示する
 - どのグループにも入っていない記事は「その他」に表示される
-- `make check-picks` で、`listing_slugs` と `picks_groups` の一致、記事の存在、日英の一致を検証する（CI では `parity.yml`）
+- `make check-picks` で、`listing_slugs` と `picks_sections` の一致、記事の存在、日英の一致（グループ分けを含む）を検証する（CI では `parity.yml`）
+
+### グループ分けのルール
+
+グループは MECE になるように保つ。
+
+- 大分類は「何を扱うか」で分ける。「システムの技術」と「作る人と組織」の 2 つ
+- グループは「その記事が主に答える問い」で分け、`description` にその問いを一文で書く
+- 1 記事は 1 グループにだけ入れる。複数にまたがる記事は、主題がどの問いに答えるかで決める
+- 「その他」のような受け皿のグループは作らない。どこにも入らない記事が出たら、グループの定義を見直すか、ピックから外す
 
 ### 四半期ごとの見直し
 
@@ -91,4 +100,4 @@ HTML テンプレートや Markdown を変更した場合は従来通りフル�
 2. Search Console で直近 3 か月の流入上位の記事を確認する
 3. 上位にあるのにピックアップにない記事を、選定基準に照らして追加するか判断する
 4. 古くなった記事や、選定基準に合わなくなった記事を外すか判断する
-5. 変更する場合は日英の `listing_slugs` と `picks_groups` を更新し、`make check-picks` を通す
+5. 変更する場合は日英の `listing_slugs` と `picks_sections` を更新し、`make check-picks` を通す

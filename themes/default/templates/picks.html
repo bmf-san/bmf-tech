@@ -4,7 +4,7 @@
 <main class="container mx-auto py-10">
   {{- $page := index .Articles 0}}
   {{- $isJA := eq .CurrentLocale "ja"}}
-  {{- $groups := index $page.FrontMatter.Extra "picks_groups"}}
+  {{- $sections := index $page.FrontMatter.Extra "picks_sections"}}
 
   {{/* Page header */}}
   <div class="mb-8">
@@ -31,21 +31,37 @@
   </div>
 
   {{if .ListingArticles}}
-  {{if $groups}}
-  <nav class="mb-8" aria-label="{{if $isJA}}テーマ{{else}}Themes{{end}}">
+  {{if $sections}}
+  {{/* Panels stack on mobile, so offer jump links there; on desktop every panel is visible at once. */}}
+  <nav class="md:hidden mb-8" aria-label="{{if $isJA}}グループ{{else}}Groups{{end}}">
     <div class="flex flex-wrap gap-2">
-      {{range $i, $g := $groups}}
-      <a href="#picks-group-{{$i}}" class="badge badge-light text-secondary">{{index $g "title"}}</a>
-      {{end}}
+      {{range $si, $s := $sections}}{{range $gi, $g := index $s "groups"}}
+      <a href="#picks-{{$si}}-{{$gi}}" class="badge badge-light text-secondary">{{index $g "title"}} ({{len (index $g "slugs")}})</a>
+      {{end}}{{end}}
     </div>
   </nav>
 
-  {{range $i, $g := $groups}}
-  <section id="picks-group-{{$i}}" class="mb-10">
-    <h2 class="text-2xl font-bold mb-4">{{index $g "title"}}</h2>
-    <div class="grid gap-4">
-      {{range $slug := index $g "slugs"}}
-      {{range $.ListingArticles}}{{if eq .FrontMatter.Slug $slug}}{{template "article-card" .}}{{end}}{{end}}
+  {{range $si, $s := $sections}}
+  <section class="mb-10">
+    <h2 class="text-2xl font-bold mb-4">{{index $s "title"}}</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
+      {{range $gi, $g := index $s "groups"}}
+      <section id="picks-{{$si}}-{{$gi}}" class="card">
+        <div class="card-header-compact">
+          <div class="flex items-baseline justify-between gap-2">
+            <h3 class="text-lg font-bold">{{index $g "title"}}</h3>
+            <span class="text-xs text-secondary font-normal whitespace-nowrap">{{len (index $g "slugs")}} {{if $isJA}}件{{else}}articles{{end}}</span>
+          </div>
+          {{with index $g "description"}}<p class="text-sm text-secondary font-normal mt-1">{{.}}</p>{{end}}
+        </div>
+        <ul class="card-body-compact m-0">
+          {{range $j, $slug := index $g "slugs"}}
+          {{range $.ListingArticles}}{{if eq .FrontMatter.Slug $slug}}
+          <li class="py-2{{if $j}} border-t{{end}}"><a href="{{.URL}}" class="text-sm leading-snug" title="{{.FrontMatter.Description}}">{{.FrontMatter.Title}}</a></li>
+          {{end}}{{end}}
+          {{end}}
+        </ul>
+      </section>
       {{end}}
     </div>
   </section>
@@ -55,7 +71,7 @@
   {{- $hasOrphans := false}}
   {{range $.ListingArticles}}
   {{- $a := .}}{{$found := false}}
-  {{- range $groups}}{{range index . "slugs"}}{{if eq . $a.FrontMatter.Slug}}{{$found = true}}{{end}}{{end}}{{end}}
+  {{- range $sections}}{{range index . "groups"}}{{range index . "slugs"}}{{if eq . $a.FrontMatter.Slug}}{{$found = true}}{{end}}{{end}}{{end}}{{end}}
   {{- if not $found}}{{$hasOrphans = true}}{{end}}
   {{end}}
   {{if $hasOrphans}}
@@ -64,7 +80,7 @@
     <div class="grid gap-4">
       {{range $.ListingArticles}}
       {{- $a := .}}{{$found := false}}
-      {{- range $groups}}{{range index . "slugs"}}{{if eq . $a.FrontMatter.Slug}}{{$found = true}}{{end}}{{end}}{{end}}
+      {{- range $sections}}{{range index . "groups"}}{{range index . "slugs"}}{{if eq . $a.FrontMatter.Slug}}{{$found = true}}{{end}}{{end}}{{end}}{{end}}
       {{- if not $found}}{{template "article-card" $a}}{{end}}
       {{end}}
     </div>
