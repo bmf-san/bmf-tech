@@ -31,6 +31,6 @@ jobs:
           - [ ] Search Console で直近 3 か月の流入上位の記事を確認する
           - [ ] 上位にあるのにピックアップにない記事を、選定基準に照らして追加するか判断する
           - [ ] 古くなった・選定基準に合わなくなった記事を外すか判断する
-          - [ ] 変更する場合は日英の `listing_slugs` と `picks_groups` を更新し、`make check-picks` を通す
+          - [ ] 変更する場合は日英の `listing_slugs` と `picks_sections` を更新し、`make check-picks` を通す
           EOF
           gh issue create --title "$title" --body-file body.md
