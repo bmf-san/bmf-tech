@@ -1,0 +1,320 @@
+---
+title: "What is Authorization? Mapping AuthN, AuthZ, and IAM Subdomains"
+slug: authorization-domain-iam-subdomains
+date: 2026-10-24
+author: bmf-san
+categories:
+  - Architecture
+tags:
+  - Authorization
+  - Authentication
+  - IAM
+  - OAuth
+  - DDD
+description: "What is authorization? This post maps it against authentication, explains OAuth as delegation, and splits IAM into five subdomains. It covers DDD Core/Supporting/Generic positioning, adjacent domains, where the business meaning of permissions lives, and why AI agents raise the weight of delegation."
+translation_key: authorization-domain-iam-subdomains
+draft: false
+---
+
+# Overview
+
+People use the word "authorization" for different things. One person means login, another means OAuth scopes, and a third means role design in an admin console. If you start a discussion about an authorization platform without aligning on scope, nobody knows what the team will build.
+
+This post draws a map that lets you treat authorization as a design subject. You will learn:
+
+- What authentication (AuthN) and authorization (AuthZ) each answer, and why you should separate them
+- Why the "authorization" in OAuth means delegation
+- A map that splits IAM into five subdomains: identity, authentication, delegation, access decision, and access governance
+- How IAM fits into the DDD categories Core, Supporting, and Generic
+- The adjacent domains outside IAM, and where the business meaning of permissions belongs
+- Why AI agents make the delegation boundary matter more
+
+This post opens a series on authorization. Each specification and architecture that later posts cover maps to some place on this map.
+
+First, how this post relates to existing ones. [Authentication and Authorization Basics](/posts/authentication-authorization-basics/) covers the basic terms: identification, authentication, and authorization. [Permission Management Design](/posts/permission-management-design/) covers ACL, RBAC, ABAC, and feature scope versus data scope. [What is OAuth 2.0?](/posts/oauth-2-0/) covers the OAuth 2.0 specification. This post does not repeat them. It shows where each of them sits on the IAM map.
+
+# Authentication and Authorization Answer Different Questions
+
+## Two questions
+
+Authentication and authorization answer different questions.
+
+| | Authentication | Authorization |
+|---|---|---|
+| Question | Who are you? | May this subject perform this action on this resource in this context? |
+| Result | A verified identity (person, service, agent) | Permit or deny (sometimes with conditions) |
+| Main inputs | Credentials (password, passkey, certificate, signature) | Subject, resource, action, context, policy |
+| When it fails | It lets an impostor in | It allows an action without permission, or blocks a legitimate one |
+
+The result of authentication forms just one input to authorization. Authorization adds three more pieces to the verified subject. These are the resource (which data), the action (read, write, approve), and the context (time, origin, tenant, risk).
+
+## Successful authentication does not imply authorization
+
+The most important principle: successful authentication does not mean the subject may access a resource. Holding a valid credential and having permission to access a resource are two separate facts.
+
+The IETF WIMSE architecture (draft-ietf-wimse-arch-08) states this in §4.5. A workload with a valid credential does not gain access to every resource in the trust domain. The draft asks issuers, relying parties, gateways, and workloads to avoid treating successful authentication as implicit authorization.
+
+The same principle applies to people. Suppose a logged-in user can read someone else's invoice by editing the ID in the URL. Authentication works fine there, but authorization has a gap. Broken Access Control (A01) holds the top spot in the OWASP Top 10:2025. OWASP reports that every application it tested had some form of broken access control. That explains why you should design authentication and authorization separately.
+
+## Authorization splits into deciding and enforcing
+
+Authorization splits further into two parts.
+
+- Decision: compare the request against policy and decide to permit or deny
+- Enforcement: let the request through or stop it according to the decision
+
+NIST SP 800-162 and XACML call the decision component the PDP (Policy Decision Point) and the enforcement component the PEP (Policy Enforcement Point). Separating them lets you keep decision logic in one place while each application enforces at its own entry point. [Authorization architecture, models, and engines](/posts/authorization-architecture-models-engines/) covers this reference architecture and how to choose an authorization model.
+
+# The "Authorization" in OAuth Means Delegation
+
+OAuth calls itself an "authorization framework." In practice, it issues tokens for delegated access.
+
+The opening of RFC 6749 describes OAuth 2.0 this way. It lets a third-party application get limited access to an HTTP service. The application gets that access either on behalf of a resource owner or on its own behalf.
+
+So OAuth answers this question: "Which part of my permissions do I hand to this client, and for how long?" It does not answer "May this user read this invoice?"
+
+| | What OAuth decides | What OAuth does not decide |
+|---|---|---|
+| Target | The range you hand to a client (scope, audience, lifetime) | Access per resource or per row |
+| Example | Grant this app "read invoices" | Only the sales department's invoices; only managers can approve |
+| Result | Access token | Permit or deny |
+| Owner | Authorization server | Resource server, or the decision mechanism behind it |
+
+Even with an `invoices:read` scope, the resource server still has to decide which invoices the caller may read. If you try to decide per-resource access from the token contents alone, the token grows too large or the decision becomes too coarse. Confusing these two layers is the biggest trap when people bring OAuth into a discussion about an authorization platform.
+
+[What is OAuth 2.0?](/posts/oauth-2-0/) summarizes the OAuth 2.0 specification, and [What is OAuth 2.1?](/posts/oauth-2-1-security-bcp/) covers OAuth 2.1 and the Security BCP. [A map of OAuth and related standards](/posts/oauth-standards-map-authorization-platform/) looks at OAuth from the viewpoint of an authorization platform.
+
+# Splitting IAM into DDD Subdomains
+
+## Why use DDD vocabulary
+
+Separating authentication from authorization still gives a coarse map. Many jobs end up under the name "authorization": OAuth delegation, role requests and approvals, ID provisioning, and more. So this post splits the whole of IAM (Identity and Access Management), including authentication and authorization, by business problem.
+
+It borrows DDD (Domain-Driven Design) vocabulary for the split. The terms follow Vaughn Vernon's "Implementing Domain-Driven Design" (IDDD). This split serves as one example, not the only correct answer.
+
+## What IAM means
+
+The NIST glossary describes IAM as the administration of individual identities within a system, such as a company, a network, or even a country. It adds that in enterprise IT, it means establishing and managing the roles and access privileges of individual users.
+
+In this post, IAM means the area that manages the identities of subjects (people, services, AI agents), decides what each subject may access, and governs that access. Concretely, it bundles authentication, authorization (delegation, access decision, access governance), and the identity management those depend on.
+
+## DDD terms
+
+| Term | Meaning |
+|---|---|
+| Domain | The business an organization runs and the world that business lives in |
+| Subdomain | A section of the domain, split by business problem |
+| Core domain | The subdomain most important to business success and the source of differentiation |
+| Supporting subdomain | A subdomain the business needs and that has some specific elements, but not Core |
+| Generic subdomain | A subdomain with nothing specific to the business, which you can buy or cover with standards |
+
+Core, Supporting, and Generic classify subdomains. Which one applies depends on whose business you look from. The same authentication mechanism counts as Core for a company that sells an IdP and as Generic for an e-commerce site.
+
+## IAM's position depends on the business
+
+| The organization's business | Position of IAM |
+|---|---|
+| Something other than IAM (business apps such as e-commerce or SaaS) | A Generic subdomain within the business domain (Supporting for some businesses) |
+| IAM itself (IdP, authorization engine, or IGA vendor) | IAM forms the domain itself. Its subdomains split into Core, Supporting, and Generic |
+
+For an organization that builds business apps, IAM usually counts as Generic. The `iddd_identityaccess` module (Identity and Access Context) in the official IDDD samples shows exactly this: IAM as a Generic subdomain. When IAM counts as Generic, leaning on standards and off-the-shelf products makes sense.
+
+Still, for a SaaS product that sells rich per-tenant permission settings, access decision or access governance can move toward Supporting. For IAM vendors, the Core tends to sit in authentication and delegation for an IdP, in access decision for an authorization engine, and in access governance for IGA (Identity Governance and Administration).
+
+Deciding early which parts count as Core for your organization keeps decisions about where to invest and what to buy steady. [How far should you build an authorization platform?](/posts/authorization-platform-scope-stages/) covers how to set that scope.
+
+# The IAM Map
+
+This diagram splits IAM into five subdomains and places the adjacent domains and the business domains outside.
+
+```mermaid
+flowchart TB
+    RISK["Risk Assessment<br/>(adjacent domain)"]
+    SUB["Subscription<br/>(adjacent domain)"]
+
+    subgraph IAM["IAM"]
+        direction LR
+        ID["1. Identity<br/>Manage subject IDs<br/>and their lifecycle"]
+        AUTHN["2. Authentication<br/>Verify the subject<br/>is who it claims"]
+        DEL["3. Delegation<br/>A subject hands part of<br/>its permissions to another"]
+        GOV["5. Access Governance<br/>Control who holds which permission"]
+        POL["4. Access Decision<br/>Decide whether this action is allowed"]
+        ID -- "subject and attributes" --> AUTHN
+        AUTHN -- "authentication result" --> DEL
+        ID -- "subject and attributes" --> POL
+        GOV -- "permission assignments" --> POL
+        POL -. "approval request" .-> GOV
+    end
+
+    APP["Business domains (apps and APIs)"]
+
+    RISK -- "risk signals" --> IAM
+    SUB -- "subscription status" --> IAM
+    IAM -- "access tokens and decisions" --> APP
+```
+
+Solid lines show data flow, and dotted lines show requests. Authentication and access decision mainly consume risk signals, and access decision consumes subscription status. Delegation hands access tokens to the business domains, and access decision hands them decisions.
+
+# The Five Subdomains
+
+| # | Subdomain | Responsibility | Includes |
+|---|---|---|---|
+| 1 | Identity | Holds subject identifiers and attributes and manages their lifecycle from creation to deletion | Identifiers, attributes, identity proofing, provisioning |
+| 2 | Authentication | Verifies that a subject is who it claims to be and keeps that result | Authenticator and credential management, MFA and step-up, federation, sessions, account recovery, non-human authentication |
+| 3 | Delegation | Lets a subject hand part of its permissions to another subject and manages the range and lifetime | Registering delegates, consent, scopes, token issuance, exchange, and revocation, delegation chains |
+| 4 | Access Decision | Decides, based on policy, whether a subject may perform an action on a resource | Policy definition, evaluation, providing decisions |
+| 5 | Access Governance | Decides who holds which permission and keeps that appropriate over time | Requests and approvals, assignment, access reviews, separation of duties, just-in-time (JIT) access |
+
+The sections below look briefly at what each one decides and which standards connect to it.
+
+## 1. Identity
+
+Identity holds the data that says who a subject is: identifiers, attributes (department, title, employment type), identity proofing results, and the lifecycle from joining to leaving. Distributing accounts to other systems (provisioning) also belongs here. SCIM serves as the representative standard.
+
+Access decision uses the attributes this subdomain holds. If attributes go stale, someone who changed departments can still read data from the old one. Some authorization incidents come from attribute freshness, not from the decision logic.
+
+## 2. Authentication
+
+Authentication verifies that a subject is who it claims to be and keeps the result as a session. It includes passwords, passkeys, MFA, federation (OpenID Connect, SAML), and account recovery. Authentication of non-human subjects such as services and workloads also belongs here.
+
+NIST SP 800-63-4 (finalized in July 2025) treats identity proofing (63A), authentication (63B), and federation (63C) separately. It helps when you think about the boundary between subdomains 1 and 2.
+
+## 3. Delegation
+
+Delegation lets a subject hand part of its permissions to another subject. It covers registering the delegate (the client), consent to delegate, the range (scopes and audience), token issuance, exchange, and revocation, and chains where a delegate delegates further. OAuth centers on this subdomain.
+
+## 4. Access Decision
+
+Access decision determines, based on policy, whether a subject may perform an action on a resource. Models such as RBAC, ABAC, and ReBAC, policy engines such as OPA and Cedar, and the PDP/PEP split all belong here. "Authorization" in the narrow sense refers to this subdomain. [What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers a standard API between PEP and PDP.
+
+## 5. Access Governance
+
+Access governance decides who holds which permission and keeps that appropriate over time. It includes permission requests and approvals, role assignment, periodic access reviews, separation of duties (for example, the requester must not approve their own request), and JIT access that grants a permission for a limited time.
+
+Subdomain 4 decides "may this action happen now?" on every request. Subdomain 5 decides "should this person hold this permission at all?" over a longer period. Subdomain 4 uses the assignments that subdomain 5 makes as input. If a decision in subdomain 4 needs human approval, the request goes back to subdomain 5.
+
+## Why delegation stands alone
+
+Many models fold delegation into authentication or access decision. This map keeps delegation separate because the core OAuth concepts (client, consent, grant) fit nowhere else.
+
+- They do not fit authentication. Consent does not verify who you are
+- They do not fit access decision. The subject's own will sets the delegated range, not a per-resource decision
+- They do not fit access governance. The permission holder grants the permission, not an administrator
+
+Consent for delegation also differs from consent under privacy laws such as the GDPR, which covers the use of personal data for a specific purpose. The first hands your permissions to another subject. The second concerns privacy. The screens may look alike, but what you record and what happens on withdrawal differ.
+
+## Narrow and broad meanings of "authorization"
+
+What people call "authorization" in daily work spans subdomains 3, 4, and 5. Discussions drift when people do not distinguish them.
+
+| Name | Refers to | Typical question |
+|---|---|---|
+| Authorization in the narrow sense | 4. Access Decision | May this action happen? |
+| "Authorization" in OAuth | 3. Delegation | What do I hand to this client? |
+| Permission management | 5. Access Governance | Who holds which permission? |
+| Authorization in the broad sense | 3, 4, and 5 together | All of the above |
+
+When someone says "let's build an authorization platform," aligning first on which row they mean speeds up the discussion.
+
+# Adjacent Domains
+
+Some domains outside IAM also feed input into authentication and access decision. Two common ones:
+
+| Adjacent domain | Responsibility | What it gives IAM | Receiving subdomain |
+|---|---|---|---|
+| Risk Assessment | Evaluates whether a subject's behavior looks suspicious | Risk signals | 2. Authentication, 4. Access Decision |
+| Subscription | Manages which features each tenant has subscribed to | Subscription status | 4. Access Decision |
+
+Risk assessment spots logins from unusual locations or a burst of suspicious actions. Based on that result, authentication asks for an extra factor (step-up) and access decision blocks risky actions. SSF, CAEP, and RISC exist as standards for sharing such signals continuously.
+
+Subscription feeds the question "may this tenant use this feature?" In a SaaS product where available features depend on the plan, access decision looks at both the user's permissions and the subscription status.
+
+These sit outside IAM because they have different owners. Fraud detection rules and pricing plan definitions do not count as IAM knowledge. IAM takes them as input and uses them in decisions, nothing more.
+
+# The Business Meaning of Permissions Belongs to the Business Domain
+
+One thing people often miss on this map: where the business meaning of a permission lives.
+
+The question "may this person approve this invoice?" carries business knowledge. An invoice exists as a resource, approval exists as an action, the approver changes with the amount, and the requester cannot approve their own request. These rules come from the business domain's language, and the business domain should own it. IAM owns the mechanism for deciding and enforcing.
+
+| | Owned by the business domain | Owned by IAM |
+|---|---|---|
+| Vocabulary | Invoice, approve, manager, requester | Subject, resource, action, policy |
+| Rules | Approver depends on amount; no self-approval | The mechanism that evaluates rules and returns results |
+| Who changes it and when | Business teams, as the business changes | Platform teams, as the platform changes |
+
+The official IDDD samples illustrate this relationship well. The business-side Collaboration Context does not use the users and roles from the Identity and Access Context as they come. Through `UserInRoleAdapter` and `CollaboratorTranslator`, it translates them into its own terms, Author and Moderator.
+
+Mixing these up makes IAM absorb business knowledge. Every change to a business rule turns into a request to the platform team, and the platform team cannot write policies without understanding the business. The reverse also hurts: if each business domain owns the decision mechanism too, decisions drift between applications. Keep the mechanism shared and the meaning in each domain. That split gives you the starting point for scoping an authorization platform.
+
+[Permission Management Design](/posts/permission-management-design/) covers the elements of a permission (who, on what, may do what) and the design of feature scope and data scope.
+
+# Why AI Agents Make Delegation Heavier
+
+AI agents strengthen the reason this map keeps delegation as its own subdomain.
+
+Traditional delegation centered on a single hop: a user hands part of their permissions to an application. AI agents change this in several ways.
+
+- Delegation chains. A user delegates to an agent, and the agent delegates to tools or other agents
+- It gets harder to see whose permissions an action uses. You need to tell the agent's own permissions apart from the ones a user delegated
+- Setting the range in advance gets harder. Which tools an agent calls may not become clear until it runs
+- The subject may not be a person. Authenticating non-human subjects and delegating to them becomes routine
+
+So you need a mechanism that records the range, lifetime, and chain of delegation and narrows them along the way. Token Exchange (RFC 8693) provides a way to tell the original subject apart from the actor that works on its behalf inside a token. The MCP (Model Context Protocol) authorization specification also positions an MCP server as an OAuth 2.1 resource server and an MCP client as an OAuth 2.1 client.
+
+Delegation alone does not cover everything, though. Within the delegated range, access decision (subdomain 4) decides whether the agent may perform each action. If you put a human approval in front of a risky action, access governance (subdomain 5) takes part. Authorization for AI agents spans subdomains 3, 4, and 5. [What changes in authorization with AI agents](/posts/authorization-for-ai-agents/) and [Key points for designing MCP authorization](/posts/mcp-authorization-design/) go into detail.
+
+# How to Use This Map
+
+When you discuss authorization or read a specification, apply the map in this order to reduce confusion.
+
+1. Which of the five subdomains does the problem belong to? If it spans several, which one leads?
+2. For your organization, does that subdomain count as Core, Supporting, or Generic?
+3. Where do the inputs come from: identity attributes, or signals and subscription status from adjacent domains?
+4. Which business domain owns the business meaning of the permission?
+5. Which subdomain's problem does the specification or product solve?
+
+For example, a proposal to "build an authorization platform with OAuth" means something completely different depending on whether it targets delegation (3) or access decision (4). This map helps you draw that line early.
+
+# Summary
+
+- Authentication answers "who are you?" Authorization answers "may this subject perform this action on this resource in this context?" Successful authentication does not imply authorization
+- The "authorization" in OAuth issues tokens for delegated access. Per-resource access decisions live in a different layer
+- IAM splits into five subdomains: identity, authentication, delegation, access decision, and access governance. Everyday "authorization" covers delegation, access decision, and access governance together
+- Whether IAM counts as Core, Supporting, or Generic depends on the organization's business. For business-app organizations, it usually counts as Generic
+- Adjacent domains such as risk assessment and subscription sit outside IAM and feed it input
+- The business domain owns the business meaning of permissions. IAM owns the mechanism for deciding and enforcing
+- With AI agents, delegation chains, and treating delegation as its own subdomain matters more
+
+# Related Posts
+
+- [Authentication and Authorization Basics](/posts/authentication-authorization-basics/)
+- [Permission Management Design](/posts/permission-management-design/)
+- [What is OAuth 2.0?](/posts/oauth-2-0/)
+- [What is OAuth 2.1?](/posts/oauth-2-1-security-bcp/)
+- [Service-to-service authentication](/posts/service-to-service-authentication/)
+- [Introduction to Digital Identity](/posts/introduction-digital-identity/)
+- [Digital Identity Overview](/posts/digital-identity-overview/)
+- [How Much Authorization Platform Do You Need? Scope, Ownership, Stages, and Externalized Decisions](/posts/authorization-platform-scope-stages/)
+- [What Are Authorization Architectures and Models? PEP/PDP, RBAC/ABAC/ReBAC, and Choosing a Policy Engine](/posts/authorization-architecture-models-engines/)
+- [What is the AuthZEN Authorization API? A Standard Between PEP and PDP](/posts/authzen-authorization-api/)
+- [Which OAuth Standards Does an Authorization Platform Need? A Map of Delegation, Tokens, and Continuous Evaluation](/posts/oauth-standards-map-authorization-platform/)
+- [What is Workload Identity? WIMSE, Transaction Tokens, and SPIFFE Client Authentication for Service Identity and Context](/posts/workload-identity-wimse-transaction-tokens/)
+- [What is Authorization for AI Agents? Delegation Chains, Human Approval, and Audit with MCP, AuthZEN, AIMS, and A2A/AP2](/posts/authorization-for-ai-agents/)
+- [How Should You Design Authorization for MCP? Common Incidents and Decisions That Are Hard to Reverse](/posts/mcp-authorization-design/)
+- [What Does an Authorization Platform Architecture Look Like? Containers, Key Sequences, PEP/PDP Placement, and Non-Functional Decisions](/posts/authorization-platform-architecture-decisions/)
+# References
+
+- [RFC 6749 The OAuth 2.0 Authorization Framework](https://www.rfc-editor.org/rfc/rfc6749)
+- [RFC 8693 OAuth 2.0 Token Exchange](https://www.rfc-editor.org/rfc/rfc8693)
+- [The OAuth 2.1 Authorization Framework (draft-ietf-oauth-v2-1)](https://datatracker.ietf.org/doc/draft-ietf-oauth-v2-1/)
+- [Workload Identity in a Multi System Environment (WIMSE) Architecture (draft-ietf-wimse-arch)](https://datatracker.ietf.org/doc/draft-ietf-wimse-arch/)
+- [NIST CSRC Glossary: identity and access management](https://csrc.nist.gov/glossary/term/identity_and_access_management)
+- [NIST SP 800-63-4 Digital Identity Guidelines](https://csrc.nist.gov/pubs/sp/800/63/4/final)
+- [NIST SP 800-162 Guide to Attribute Based Access Control (ABAC) Definition and Considerations](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-162.pdf)
+- [OASIS eXtensible Access Control Markup Language (XACML) Version 3.0](https://docs.oasis-open.org/xacml/3.0/xacml-3.0-core-spec-os-en.html)
+- [OWASP Top 10:2025 A01 Broken Access Control](https://owasp.org/Top10/2025/A01_2025-Broken_Access_Control/)
+- [OWASP Authorization Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html)
+- [Model Context Protocol Specification: Authorization](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization)
+- [Eric Evans, DDD Reference](https://www.domainlanguage.com/ddd/reference/)
+- [Vaughn Vernon, IDDD_Samples](https://github.com/VaughnVernon/IDDD_Samples)
