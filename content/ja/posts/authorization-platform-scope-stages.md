@@ -258,7 +258,7 @@ sequenceDiagram
 |---|---|
 | 判定の往復による遅延 | 判定結果のキャッシュ。PDPをサイドカーやプロセス内ライブラリとして近くで動かす |
 | PDPの障害が全体を止める | PDPを各PEPの近くに分散して置く。キャッシュで短時間の障害を吸収する。fail-closedを前提にタイムアウトを設計する |
-| 一覧表示で判定の回数が膨らむ | 部分評価でポリシーをSQLの条件などに変換する（OPAのpartial evaluation）。Resource Search APIで許可される資源をまとめて取得する（AuthZEN） |
+| 一覧表示で判定の回数が膨らむ | 部分評価でポリシーをSQLの条件などに変換する（OPAのpartial evaluation）。PDPが対応していれば、Resource Search APIで許可される資源をまとめて取得する（AuthZEN） |
 
 PEPとPDPの配置、キャッシュや一貫性などの非機能の設計は、[認可基盤のアーキテクチャと設計判断](/ja/posts/authorization-platform-architecture-decisions/)で扱う。
 
@@ -268,9 +268,11 @@ PEPとPDPの配置、キャッシュや一貫性などの非機能の設計は�
 
 Authorization API 1.0は、主に次のAPIを定めている。
 
-- Access Evaluation API: 主体（Subject）、操作（Action）、資源（Resource）、文脈（Context）を受け取って判定を返す
+- Access Evaluation API: 主体（Subject）、操作（Action）、資源（Resource）と、任意の文脈（Context）を受け取って判定を返す
 - Access Evaluations API: 複数の判定をまとめて求める
 - Search API（Subject Search、Resource Search、Action Search）: 許可される主体・資源・操作を探す
+
+仕様の中核はAccess Evaluation APIで、メタデータで必須のエンドポイントもこれだけである。Access Evaluations APIとSearch APIは任意で、メタデータを公開するPDPは、載せたエンドポイントで対応を示す。
 
 PDPのポリシー言語、アーキテクチャ、状態の管理は仕様の範囲外である。そのため、PDPの中身が何であっても、PEPからは同じ形で問い合わせられる。仕様の詳細は[AuthZEN Authorization APIとは](/ja/posts/authzen-authorization-api/)で扱う。
 

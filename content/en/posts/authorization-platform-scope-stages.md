@@ -258,7 +258,7 @@ Externalization has costs: latency from a network round trip per decision, and t
 |---|---|
 | Latency from decision round trips | Cache decision results. Run the PDP nearby as a sidecar or in-process library |
 | A PDP outage stops everything | Distribute PDPs close to each PEP. Absorb short outages with caching. Design timeouts assuming fail-closed |
-| List views multiply the number of decisions | Use partial evaluation to turn policy into conditions such as SQL (OPA partial evaluation). Use the Resource Search API to fetch permitted resources in bulk (AuthZEN) |
+| List views multiply the number of decisions | Use partial evaluation to turn policy into conditions such as SQL (OPA partial evaluation). If the PDP supports it, use the Resource Search API to fetch permitted resources in bulk (AuthZEN) |
 
 [Authorization Platform Architecture and Design Decisions](/posts/authorization-platform-architecture-decisions/) covers PEP and PDP placement and non-functional design such as caching and consistency.
 
@@ -268,9 +268,11 @@ One concern with externalization: the PEP implementation may get locked into a s
 
 Authorization API 1.0 defines these main APIs:
 
-- Access Evaluation API: takes a Subject, Action, Resource, and Context, and returns a decision
+- Access Evaluation API: takes a Subject, Action, Resource, and an optional Context, and returns a decision
 - Access Evaluations API: requests several decisions together
 - Search APIs (Subject Search, Resource Search, Action Search): find permitted subjects, resources, or actions
+
+The Access Evaluation API is the core of the spec and the only endpoint the metadata requires. The Access Evaluations API and the Search APIs are optional, and a PDP that publishes metadata signals support by listing their endpoints.
 
 The policy language, architecture, and state management of a PDP are out of the specification's scope. So whatever runs inside the PDP, the PEP can query it the same way. [What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers the specification in detail.
 
