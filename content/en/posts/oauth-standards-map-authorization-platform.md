@@ -76,7 +76,7 @@ The following table is the map itself. I checked each status as of October 2026 
 | Discovery and audience: which AS, for which resource | RFC 8414, OIDC Discovery, Resource Indicators (RFC 8707), Protected Resource Metadata (RFC 9728), DCR (RFC 7591/7592), CIMD | CIMD is a Draft; the rest are RFCs or Final | [Discovery](/posts/oidc-discovery-metadata/), [DCR](/posts/dynamic-client-registration/) |
 | Cross-domain: cross trust boundaries | Token Exchange (RFC 8693), Identity Chaining, ID-JAG, Transaction Tokens | All Drafts except RFC 8693 | [Service-to-service authentication](/posts/service-to-service-authentication/) |
 | Tokens: what goes in, how to validate, how to stop | JOSE, JWT, JWT AT (RFC 9068), Introspection (RFC 7662), Revocation (RFC 7009), mTLS (RFC 8705), DPoP (RFC 9449) | RFCs | [JOSE](/posts/jose-overview/), [Validation and revocation](/posts/access-token-validation-revocation/), [Sender-constrained tokens](/posts/sender-constrained-tokens-mtls-dpop/) |
-| Identity: establish who and supply attributes | OIDC Core, SAML 2.0, SCIM (RFC 7643/7644/9967), IPSIE | OIDC is Final, SCIM consists of RFCs, IPSIE is a Draft | [OIDC](/posts/openid-connect-1-0-spec-summary/), [SAML](/posts/saml-2-0/) |
+| Identity: establish who and supply attributes | OIDC Core, SAML 2.0, SCIM (RFC 7643/7644/9967), IPSIE | OIDC is Final, SAML 2.0 is an OASIS Standard, SCIM consists of RFCs, IPSIE is a Draft | [OIDC](/posts/openid-connect-1-0-spec-summary/), [SAML](/posts/saml-2-0/) |
 | Continuous evaluation: reflect changes after issuance | SET (RFC 8417), SSF, CAEP, RISC, Step-up (RFC 9470) | RFCs; SSF/CAEP/RISC are Final | [Logout and SET](/posts/oidc-logout-security-event-token/) |
 
 The rest of this post walks through each question: the role of each standard and what the platform must decide.
@@ -135,7 +135,7 @@ The flow works like this:
 
 With `binding_message`, both the requesting screen and the approving screen show the same string. CIBA suits cases where the person operating and the person approving use different devices, such as call centers and store terminals. CIBA is also one candidate when AI agents need to ask humans for approval. [How authorization changes with AI agents](/posts/authorization-for-ai-agents/) covers that.
 
-An authorization platform must decide how to identify the user (the `login_hint` format) and which device receives the approval notice. Identifying the wrong user means asking a stranger for approval.
+An authorization platform must decide how to identify the user (the `login_hint` format) and which device receives the approval notice. Identifying the wrong user means asking the wrong person for approval.
 
 ## GNAP (RFC 9635): A Separate Protocol That Rebuilds OAuth
 
@@ -250,7 +250,7 @@ Main requirements as of draft-02:
 - The client cannot use authentication methods based on `client_secret`. It either acts as a public client or authenticates with a key, such as `private_key_jwt`
 - The AS signals support with the `client_id_metadata_document_supported` metadata
 
-Because the AS fetches external URLs, it needs SSRF countermeasures. If the AS accepts any URL, anyone can claim to be any client, so the AS also needs a policy on which domains to trust. The MCP authorization specification (2026-07-28) prefers CIMD over DCR and deprecates DCR. [Key points for designing MCP authorization](/posts/mcp-authorization-design/) covers the details.
+Because the AS fetches external URLs, it needs SSRF countermeasures. If the AS accepts any URL, anyone can act as a client, including one that poses as a well-known client, so the AS also needs a policy on which domains to trust. The MCP authorization specification (2026-07-28) prefers CIMD over DCR and deprecates DCR. [Key points for designing MCP authorization](/posts/mcp-authorization-design/) covers the details.
 
 An authorization platform must decide which registration methods (pre-registration, DCR, CIMD) to allow for which kinds of clients.
 
@@ -271,7 +271,7 @@ Sometimes you want to carry a user's delegation between internal microservices o
 
 Identity Chaining offers a general mechanism for crossing domains. The client first runs Token Exchange at the AS in its own domain and obtains a JWT authorization grant aimed at the other domain. It then presents that grant, in the form of an RFC 7523 JWT Bearer grant, to the other domain's AS and receives an access token.
 
-ID-JAG (Identity Assertion JWT Authorization Grant) applies this pattern to enterprise SSO. People also call it Cross-App Access (XAA) informally.
+ID-JAG (Identity Assertion JWT Authorization Grant) applies this pattern to enterprise SSO. People informally call the pattern it defines Cross-App Access (XAA).
 
 ```mermaid
 sequenceDiagram
@@ -384,7 +384,7 @@ CAEP (Continuous Access Evaluation Profile) defines event types for continuous a
 - `assurance-level-change`: the authentication assurance level changed
 - `device-compliance-change`: a device stopped or started complying with policy
 - `risk-level-change`: the risk level changed
-- `session-established` / `session-presented`: the Transmitter established a new session, or observed that a session is present
+- `session-established` / `session-presented`: the Transmitter established a new session, or observed that a session is present at the Transmitter
 
 RISC (Risk Incident Sharing and Coordination) defines event types about account risk, for example `account-disabled`, `credential-compromise`, and `identifier-recycled`. Providers use it to share signs of account takeover with each other.
 

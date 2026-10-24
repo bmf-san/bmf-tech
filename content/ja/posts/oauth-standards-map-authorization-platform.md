@@ -76,7 +76,7 @@ flowchart LR
 | 発見と宛先: どこに何向けのトークンを | RFC 8414、OIDC Discovery、Resource Indicators（RFC 8707）、Protected Resource Metadata（RFC 9728）、DCR（RFC 7591/7592）、CIMD | CIMDはDraft、他はRFCまたはFinal | [Discovery](/ja/posts/oidc-discovery-metadata/)、[DCR](/ja/posts/dynamic-client-registration/) |
 | ドメイン横断: 信頼境界を越える | Token Exchange（RFC 8693）、Identity Chaining、ID-JAG、Transaction Tokens | RFC 8693以外はDraft | [サービス間認証](/ja/posts/service-to-service-authentication/) |
 | トークン: 何を入れ、どう検証し、どう止めるか | JOSE、JWT、JWT AT（RFC 9068）、Introspection（RFC 7662）、Revocation（RFC 7009）、mTLS（RFC 8705）、DPoP（RFC 9449） | RFC | [JOSE](/ja/posts/jose-overview/)、[検証と失効](/ja/posts/access-token-validation-revocation/)、[送信者制約](/ja/posts/sender-constrained-tokens-mtls-dpop/) |
-| アイデンティティ: 誰かを確立し属性を供給する | OIDC Core、SAML 2.0、SCIM（RFC 7643/7644/9967）、IPSIE | OIDCはFinal、SCIMはRFC、IPSIEはDraft | [OIDC](/ja/posts/openid-connect-1-0-spec-summary/)、[SAML](/ja/posts/saml-2-0/) |
+| アイデンティティ: 誰かを確立し属性を供給する | OIDC Core、SAML 2.0、SCIM（RFC 7643/7644/9967）、IPSIE | OIDCはFinal、SAML 2.0はOASIS標準、SCIMはRFC、IPSIEはDraft | [OIDC](/ja/posts/openid-connect-1-0-spec-summary/)、[SAML](/ja/posts/saml-2-0/) |
 | 継続評価: 発行後の変化を反映する | SET（RFC 8417）、SSF、CAEP、RISC、Step-up（RFC 9470） | RFC、SSF/CAEP/RISCはFinal | [ログアウトとSET](/ja/posts/oidc-logout-security-event-token/) |
 
 ここから問いごとに、各標準の役割と、認可基盤として決めることを見ていく。
@@ -250,7 +250,7 @@ OAuth Client ID Metadata Documentは、HTTPSのURLを`client_id`にする仕組�
 - `client_secret`を使う認証方式は使えない。公開クライアントか、`private_key_jwt`などの鍵による認証になる
 - ASは対応していることを、メタデータの`client_id_metadata_document_supported`で示す
 
-ASは外部のURLを取得するので、SSRFへの対策が要る。誰のURLでも受け入れると、どのクライアントでも名乗れてしまう。どのドメインを信頼するかのポリシーも要る。MCPの認可仕様（2026-07-28版）は、DCRよりCIMDを優先し、DCRを非推奨とした。詳しくは[MCPの認可を設計するときの勘所](/ja/posts/mcp-authorization-design/)で扱う。
+ASは外部のURLを取得するので、SSRFへの対策が要る。どのURLでも受け入れると、誰でもクライアントになれ、よく知られたクライアントを装うこともできる。そのため、どのドメインを信頼するかのポリシーも要る。MCPの認可仕様（2026-07-28版）は、DCRよりCIMDを優先し、DCRを非推奨とした。詳しくは[MCPの認可を設計するときの勘所](/ja/posts/mcp-authorization-design/)で扱う。
 
 認可基盤として決めることは、クライアントの登録方式（事前登録、DCR、CIMD）のどれを、どの種類のクライアントに許すかである。
 
@@ -271,7 +271,7 @@ Token Exchangeの基本は[サービス間認証の全体像とは？](/ja/posts
 
 Identity Chainingは、ドメインをまたぐ一般的な仕組みである。クライアントはまず自分のドメインのASでToken Exchangeを行い、相手のドメイン向けのJWT認可グラントを得る。次に、そのグラントを相手のドメインのASにRFC 7523のJWT Bearerグラントとして出し、アクセストークンを得る。
 
-ID-JAG（Identity Assertion JWT Authorization Grant）は、この形を企業のSSOに当てはめたものである。非公式にCross-App Access（XAA）とも呼ばれる。
+ID-JAG（Identity Assertion JWT Authorization Grant）は、この形を企業のSSOに当てはめたものである。この仕様が定めるパターンは、非公式にCross-App Access（XAA）と呼ばれる。
 
 ```mermaid
 sequenceDiagram
@@ -384,7 +384,7 @@ CAEP（Continuous Access Evaluation Profile）は、継続的なアクセス評�
 - `assurance-level-change`: 認証の保証レベルが変わった
 - `device-compliance-change`: 端末がポリシーに適合しなくなった、または適合した
 - `risk-level-change`: リスクのレベルが変わった
-- `session-established` / `session-presented`: Transmitterがセッションを作った、セッションの提示を観測した
+- `session-established` / `session-presented`: Transmitterがセッションを作った、Transmitterでセッションが存在することを観測した
 
 RISC（Risk Incident Sharing and Coordination）は、アカウントのリスクに関わるイベント型を定める。例は`account-disabled`、`credential-compromise`、`identifier-recycled`である。事業者の間でアカウント乗っ取りの兆候を共有するために使う。
 
