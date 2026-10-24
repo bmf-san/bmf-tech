@@ -341,8 +341,8 @@ Guidelines for choosing:
 
 - **Two tiers are the default.** Do coarse authorization at the edge and fine-grained authorization inside the service or at the data layer. Reject clearly invalid requests early, and leave per-resource decisions to the side that has the context.
 - **Central management and execution location are separate concerns.** Even if the PDP runs as a library or sidecar, distributing policies from a central PAP keeps management in one place.
-- **Keep the API independent of placement.** AuthZEN defines the API independently of transport (with HTTPS as the required binding), so a PEP can ask a sidecar PDP or a central PDP in the same shape. A standard interface between PEP and PDP makes later placement changes easier.
-- **Design list retrieval separately.** Repeating "may I read this resource?" for every item in a list breaks counts and page boundaries and raises load. [Considerations and Solutions for Pagination Impact in OPA](/posts/pagination-impact-solutions-opa/) examines this problem and its solutions with OPA. [Access Control Patterns Using OPA](/posts/access-control-patterns-using-opa/) compares returning database conditions through partial evaluation with returning structured conditions. If the PDP supports it, the AuthZEN 1.0 Resource Search API also answers "which resources may this subject see?" Both the Search APIs and pagination are optional for the PDP.
+- **Keep the API independent of placement.** A PDP that complies with AuthZEN MUST support the HTTPS binding, so a PEP can ask a sidecar PDP or a central PDP in the same shape. A standard interface between PEP and PDP makes later placement changes easier.
+- **Design list retrieval separately.** If you fetch one page from the database and then filter it item by item with "may I read this resource?", the page size and page boundaries break. Fetching more rows to fill the gap raises load. [Considerations and Solutions for Pagination Impact in OPA](/posts/pagination-impact-solutions-opa/) examines this problem and its solutions with OPA. [Access Control Patterns Using OPA](/posts/access-control-patterns-using-opa/) compares returning database conditions through partial evaluation with returning structured conditions. If the PDP supports it, the AuthZEN 1.0 Resource Search API also answers "which resources may this subject see?" Both the Search APIs and pagination are optional for the PDP.
 
 ## Coarse vs Fine-Grained Authorization, and the Role of Tokens
 
@@ -356,7 +356,7 @@ Authorization has two layers with different granularity.
 Splitting the two layers clarifies what tokens do.
 
 - **Tokens carry coarse authorization.** They suit statements that cross boundaries, such as "this client may read this API."
-- **Do not stuff fine-grained authorization into tokens.** Listing per-resource permissions in claims bloats the token, and a revoked permission survives until the token expires. Leave fine-grained decisions to the PDP and PIP.
+- **Do not stuff fine-grained authorization into tokens.** Listing per-resource permissions in claims bloats the token. If resource servers check a JWT locally, a revoked permission survives until the token expires. Leave fine-grained decisions to the PDP and PIP.
 - **Narrow tokens when you pass them inward.** Do not reuse an access token between services; swap it for a token with narrower authority (downscoping). Token Exchange can also narrow the audience to the next service. A Transaction Token names the whole trust domain as its audience and narrows its scope to the purpose of the transaction. [What is Workload Identity?](/posts/workload-identity-wimse-transaction-tokens/) covers this in detail.
 
 RAR (RFC 9396) lets a token request carry structured authority, such as "pay this amount to this payee." Even so, per-resource decisions that change with every request stay easier to revoke and audit when the PDP handles them.
@@ -369,7 +369,7 @@ Externalizing decisions puts a decision round trip on the request path. That is 
 
 If decisions sit on the synchronous path, decide how to keep the round trip short.
 
-- **Run the PDP close by.** An in-process library or a sidecar removes network hops.
+- **Run the PDP close by.** An in-process library or a sidecar cuts network round trips.
 - **Batch your questions.** The AuthZEN Access Evaluations API sends many decisions in one request (boxcarring). You choose the evaluation semantics: `execute_all`, `deny_on_first_deny`, or `permit_on_first_permit`. Implementing this API is optional for the PDP.
 - **Cache decisions.** A short-TTL cache keyed on Subject, Action, Resource, and Context helps, but it delays revocation. Set the TTL by how late a revocation may take effect.
 - **Filter lists up front.** As the previous section explains, use partial evaluation or, if the PDP supports it, the Search API to compute lists in one pass.
@@ -418,7 +418,7 @@ The table below covers the remaining choices.
 | Token validation | Self-contained JWT (RFC 9068), introspection (RFC 7662) | JWT for low latency, introspection for immediate revocation (if you do not cache results for long); you can combine both |
 | Token theft protection | Bearer, DPoP, mTLS binding | Bind tokens to the sender when you need high assurance |
 | Adopt ReBAC? | Are relationships central to decisions? | Adopt it when ownership, sharing, and inheritance drive access |
-| Agent support | Recording delegation (act), COAZ-MCP, AARP | Recording delegation is close to mandatory for platforms that serve AI agents. COAZ-MCP and AARP remain Drafts, so adopt them only where you can keep up with spec changes |
+| Agent support | Recording delegation (act), COAZ-MCP, AARP | In the author's view, platforms that serve AI agents cannot do without recording delegation. COAZ-MCP and AARP remain Drafts, so adopt them only where you can keep up with spec changes |
 | Decision API | Product-specific API, AuthZEN | Standardize on one API when many languages and teams write PEPs |
 
 # Summary
