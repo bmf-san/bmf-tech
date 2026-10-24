@@ -242,7 +242,7 @@ flowchart TB
 | Provisioning | Issue and rotate at runtime. Assess the posture of the runtime at issuance. **The LLM MUST NOT have access to credentials** |
 | Authentication | mTLS, WIMSE Workload Proof Token (WPT), HTTP Message Signatures |
 | Authorization | Use OAuth as the delegation framework (see the table below) |
-| Monitoring and remediation | Subscribe to SSF (CAEP, RISC) for revocation and risk changes, and reduce access without undue delay. Keep audit logs |
+| Monitoring and remediation | Participants MAY subscribe to SSF (CAEP, RISC) for revocation and risk-change signals. Recipients MUST reduce access without undue delay. Deployments MUST keep audit logs |
 
 [The workload identity post](/posts/workload-identity-wimse-transaction-tokens/) covers each authentication method. In the latest draft-ietf-wimse-wpt-02, a client sends the WPT as `Authorization: WPT`.
 

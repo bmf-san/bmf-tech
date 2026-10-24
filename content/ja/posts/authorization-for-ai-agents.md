@@ -242,7 +242,7 @@ flowchart TB
 | 配布 | 実行時に発行・ローテーションする。発行の時点で、実行環境の状態（posture）を評価する。**LLMは資格情報にアクセスしてはならない**（MUST NOT） |
 | 認証 | mTLS、WIMSE Workload Proof Token（WPT）、HTTP Message Signatures |
 | 認可 | OAuthを委譲の枠組みとして使う（下の表） |
-| 監視・是正 | SSF（CAEP、RISC）で失効やリスクの変化を受け、遅滞なく権限を減らす。監査ログを残す |
+| 監視・是正 | SSF（CAEP、RISC）で失効やリスクの変化の通知を購読できる（MAY）。通知を受けた側は、遅滞なく権限を減らす（MUST）。監査ログを残す（MUST） |
 
 認証の各方式は[ワークロードアイデンティティの記事](/ja/posts/workload-identity-wimse-transaction-tokens/)で扱う。WPTは、最新のdraft-ietf-wimse-wpt-02では`Authorization: WPT`の形で送る。
 
