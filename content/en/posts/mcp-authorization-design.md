@@ -85,7 +85,7 @@ The MCP Security Best Practices define token passthrough as an antipattern. In i
 Passthrough causes more harm than token theft alone. The Best Practices list these risks:
 
 - Clients bypass rate limits and checks that the MCP server or downstream API built around the token audience
-- The MCP server cannot tell clients apart, and the downstream API logs show a different sender from the real one. Incident investigation and auditing get harder
+- When clients call with a token issued for the downstream API, the MCP server cannot tell clients apart, and the downstream API logs show a different sender from the real one. Incident investigation and auditing get harder
 - When several services accept one token without proper validation, an attacker who breaks one service can reach the other connected services
 - Even if the server works as a plain proxy today, it may need security controls later. Separating audiences from the start makes the security model easier to evolve
 
@@ -117,7 +117,7 @@ The last mistake leads straight to the next section: what the specification does
 
 ## Credentials in the LLM context
 
-If you put API keys or tokens into the LLM context, they leak through conversation logs and prompts. A prompt injection can also make the model print credentials. Let the MCP client (the host) or the MCP server hold credentials, and never show them to the model.
+If you put API keys or tokens into the LLM context, they can leak through conversation logs and prompts. A prompt injection can also make the model print credentials. Let the MCP client (the host) or the MCP server hold credentials, and never show them to the model.
 
 The MCP specification reflects the same idea. Servers MUST NOT use the form mode of Elicitation (the way a server asks the user for input) to request passwords, API keys, or access tokens. For OAuth with an external service, the server uses URL mode so that external credentials never pass through the MCP client.
 
@@ -243,7 +243,7 @@ Instead of "we cannot ship until we do everything", draw a line. For anything yo
 
 AARP refers to the AuthZEN Access Request and Approval Profile (Draft). AARP is the abbreviation from the OpenID Foundation announcement; the draft's header uses ARAP.
 
-Among the "do now" items, audience validation and no passthrough, PKCE, and per-request access decisions are MUSTs in the specification. If you add audience validation, short-lived tokens, or audit logs later, you have to recall tokens you have handed out or backfill past logs. In the author's view, most "can wait" items are easy to add or swap later as long as you have fixed the entry point for decisions (the PEP). That is why you should gather the places that call the decision into one spot, even if the logic stays hardcoded for now.
+Among the "do now" items, audience validation, no passthrough, and PKCE are MUSTs in the specification. Per-request access decisions also fall under the access controls that the tools specification requires servers to put in place (MUST). If you add short-lived tokens or audit logs later, they do not reach the long-lived tokens you have already handed out or the past operations you never recorded. In the author's view, most "can wait" items are easy to add or swap later as long as you have fixed the entry point for decisions (the PEP). That is why you should gather the places that call the decision into one spot, even if the logic stays hardcoded for now.
 
 # Main requirements of the MCP authorization specification
 
