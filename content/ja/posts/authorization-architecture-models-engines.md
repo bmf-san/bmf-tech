@@ -286,7 +286,7 @@ Zanzibarは製品ではなく、Googleが2019年にUSENIX ATCで発表した論�
 
 ## 汎用のポリシーエンジン
 
-OPA（Open Policy Agent）は、Kubernetesのアドミッション制御からマイクロサービスの認可、IaCの検査まで使える汎用のポリシーエンジンである。Regoで書いたポリシーをJSONの入力に対して評価する。バンドルによるポリシーの配布、部分評価、判定ログを備える。2021年にCNCFのGraduatedになった。2025年8月にはOPAの作者たちとStyraのチームの多くがAppleに移ったと公表されたが、CNCFのプロジェクトとしての統治とライセンスは変わらない、と説明されている。OPA自体の解説は[Open Policy Agent（OPA）とは](/ja/posts/open-policy-agent/)、使い方のパターンは[OPAを利用したアクセス制御のパターン](/ja/posts/access-control-patterns-using-opa/)と[OPAを使用したマイクロサービスのアクセス制御システムの実装](/ja/posts/microservices-access-control-opa/)にまとめた。
+OPA（Open Policy Agent）は、Kubernetesのアドミッション制御からマイクロサービスの認可、IaCの検査まで使える汎用のポリシーエンジンである。Regoで書いたポリシーをJSONの入力に対して評価する。バンドルによるポリシーの配布、部分評価、判定ログを備える。2021年にCNCFのGraduatedになった。2025年8月には、OPAの作者たちが、自分たちとStyraのチームの多くがAppleに移ったとプロジェクトのブログで公表した。CNCFのプロジェクトとしての統治とライセンスは変わらない、と説明されている。OPA自体の解説は[Open Policy Agent（OPA）とは](/ja/posts/open-policy-agent/)、使い方のパターンは[OPAを利用したアクセス制御のパターン](/ja/posts/access-control-patterns-using-opa/)と[OPAを使用したマイクロサービスのアクセス制御システムの実装](/ja/posts/microservices-access-control-opa/)にまとめた。
 
 Cedarは、AWSが公開した認可専用のポリシー言語である。主体・操作・資源・文脈（PARC）に対してpermitとforbidを書く。既定は拒否で、forbidがpermitに優先する。スキーマでポリシーを検証でき、言語の仕様はLeanで形式化され、性質の証明が公開されている。ポリシーを記号的に解析するツールもある。汎用のRegoに対し、Cedarは認可に絞った分だけ書き方が制約され、解析しやすい。CNCFのSandboxに採択されている。Amazon Verified Permissionsは、Cedarを使うマネージドのPDPである。
 
