@@ -113,7 +113,7 @@ Guardrails are constraints every domain follows regardless of business meaning. 
 ```mermaid
 flowchart TB
   subgraph Shared["Shared (owned by the platform)"]
-    T["Token formats, scope conventions, delegation"]
+    T["Token formats, audience and scope conventions, delegation"]
     API["Decision API contract, policy style"]
     LOG["Audit log format, revocation, continuous evaluation"]
     G["Guardrails"]
@@ -177,7 +177,7 @@ A rough guide to which axis and stage each signal relates to:
 | Stage | What it includes | When it fits |
 |---|---|---|
 | 0. Each app implements its own | Each application decides in code | Small scale, few applications, fixed roles |
-| 1. Shared conventions and libraries | Standardize token formats, scope structure, audit log format, and revocation mechanisms across the organization. Decisions stay in each application | Applications and teams have started to multiply |
+| 1. Shared conventions and libraries | Standardize token formats, audiences and scope structure, audit log format, and revocation mechanisms across the organization. Decisions stay in each application | Applications and teams have started to multiply |
 | 2. Externalized decisions | Share a decision engine (PDP, Policy Decision Point) and manage policies as code. Each domain owns the content of its policies | Scale and cross-cutting reach, permission model complexity, and change frequency are strong |
 | 3. Platform including governance | Add access requests and approvals, access reviews, continuous evaluation, and management of delegation chains | In addition, governance and regulation, diversity of subjects, and consistency requirements are strong |
 
@@ -224,7 +224,7 @@ David Brossard, co-chair of the AuthZEN Working Group, also said in an OpenID Fo
 
 ## What externalized authorization means
 
-Externalized authorization separates decision logic from applications and gathers it in a PDP. The application (PEP) asks "may Alice read doc 123?" and enforces the decision it gets back.
+Externalized authorization separates decision logic from applications and gathers it in a PDP. The application (PEP) asks "may Alice read doc 123?" and enforces the decision it gets back. The PEP can pass the attributes the decision needs in the request, or the PDP can fetch them from an attribute source (PIP, Policy Information Point).
 
 ```mermaid
 sequenceDiagram
@@ -234,8 +234,10 @@ sequenceDiagram
   participant PIP as Attribute source (PIP)
   U->>PEP: I want to read doc 123
   PEP->>PDP: May Alice read doc 123?
-  PDP->>PIP: Fetch attributes needed for the decision
-  PIP-->>PDP: Department, resource owner, and so on
+  opt Attributes missing from the request
+    PDP->>PIP: Fetch attributes needed for the decision
+    PIP-->>PDP: Department, resource owner, and so on
+  end
   PDP-->>PEP: Permit or deny
   PEP-->>U: Result with the decision enforced
 ```
@@ -303,12 +305,12 @@ If you are unsure, consider starting with an in-process library or a sidecar rat
 
 # Summary
 
-- Authorization happens wherever resources live, its meaning lives in each business domain, and its inputs come from across the organization. So an authorization platform spans the whole organization
+- Authorization happens wherever protected resources live, its meaning lives in each business domain, and its inputs come from across the organization. So an authorization platform spans the whole organization
 - Even so, do not gather it in one place. Standardize mechanisms and contracts (tokens, the decision API contract, audit logs, revocation, guardrails) across the organization, and keep meaning (resources and actions, policy content) in each domain
 - An authorization platform is not a yes-or-no choice. Ask which stage you need: Stage 0 (each application), Stage 1 (shared conventions and libraries), Stage 2 (externalized decisions), or Stage 3 (a platform including governance)
 - The seven decision axes are scale and cross-cutting reach, permission model complexity, change frequency, governance, diversity of subjects, consistency, and organizational capability. Present-day pain also tells you where you stand
-- Align Stage 1 early once you have several applications or teams. Skip Stage 2 and beyond when you have one stable product, when latency and availability risks outweigh the benefits, or when nobody would use the platform
-- Externalizing decisions trades latency and availability costs for central management, consistency, and localized change. AuthZEN Authorization API 1.0 standardizes the interface between PEP and PDP, and each domain still owns its policy content after externalization
+- In my view, you should align Stage 1 early once you have several applications or teams. Signs that you should not build Stage 2 and beyond include one product with few and stable roles, latency and availability risks that outweigh the benefits, and teams with no incentive to use the platform
+- Externalizing decisions trades latency (when you call the PDP over the network) and availability costs for central management, consistency, and localized change. AuthZEN Authorization API 1.0 standardizes the interface between PEP and PDP, and each domain still owns its policy content after externalization
 
 # Related Posts
 
