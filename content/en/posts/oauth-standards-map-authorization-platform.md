@@ -11,7 +11,7 @@ tags:
   - OpenID Connect
   - IAM
   - Security
-description: "A map of OAuth and related standards for an authorization platform, grouped by seven questions: delegation, request integrity, discovery and audience, cross-domain, tokens, identity, and continuous evaluation. Covers RAR, PAR, Step-up, RFC 9728, CIMD, ID-JAG, SCIM, and SSF/CAEP, with status as of October 2026."
+description: "A map of OAuth and related standards for an authorization platform, grouped by seven questions: delegation, request integrity, discovery and audience, cross-domain, tokens, identity, and continuous evaluation. Covers RAR, PAR, Step-up, RFC 9728, CIMD, ID-JAG, SCIM, and SSF/CAEP, with status as of October 2026 and what the platform must decide."
 translation_key: oauth-standards-map-authorization-platform
 draft: false
 ---
