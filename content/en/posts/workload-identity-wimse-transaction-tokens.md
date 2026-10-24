@@ -422,13 +422,13 @@ Service-to-service OAuth (client_credentials, token exchange, requests to the TT
 Key points follow.
 
 - A JWT-SVID's `aud` MUST contain only the AS issuer identifier (following rfc7523bis). Unlike RFC 7523, the draft does not require `iss`; the AS maps the SPIFFE ID in `sub` to a registered client.
-- The recommended source of verification keys is a SPIFFE bundle endpoint tied to each trust domain. It MUST NOT verify X.509-SVIDs against the system trust store. Otherwise any CA in that store could issue a certificate for any SPIFFE ID.
+- The recommended source of verification keys is a SPIFFE bundle endpoint tied to each trust domain. The AS MUST NOT verify X.509-SVIDs against the system trust store. Otherwise any CA in that store could issue a certificate for any SPIFFE ID.
 - The AS MUST NOT accept a token just because a key discovered via `iss` verifies its signature and `sub` looks like a SPIFFE ID. That invites token confusion, where an OIDC token meant for something else poses as a JWT-SVID.
 - With a Client ID Metadata Document (CIMD), the metadata's `spiffe_id` can end with a `/*` wildcard. Matching works as a prefix match on whole path segments.
 
 The design caveat: mapping SPIFFE IDs to `client_id` values is itself an authorization decision. Which workload may act as which OAuth client sets the upper bound on the scopes that client gets. Anyone who can create SPIRE registration entries can, in effect, create OAuth clients. Govern who can create registration entries as strictly as you govern client registration at the authorization server.
 
-As a default, `spiffe_x509` with proof of possession fits paths that connect to the AS directly over TLS, and a short-lived `spiffe_jwt` fits paths where something terminates TLS. `spiffe_wit` depends on drafts that still change, so making it the production default would be premature.
+In my view, a practical default is `spiffe_x509` with proof of possession on paths that connect to the AS directly over TLS, and a short-lived `spiffe_jwt` on paths where something terminates TLS. `spiffe_wit` depends on drafts that still change, so I consider it too early to make it the production default.
 
 # How the Pieces Fit Together
 
@@ -494,7 +494,7 @@ I checked these on the IETF Datatracker on October 24, 2026. Drafts change betwe
 | draft-ietf-wimse-workload-identity-practices | -07 (2026-09-22) | Submitted to IESG (AD Evaluation). Informational |
 | draft-ietf-wimse-workload-creds | -02 (2026-07-02) | WG Document |
 | draft-ietf-wimse-mutual-tls | -02 (2026-07-06) | WG Document |
-| draft-ietf-wimse-http-signature | -08 (2026-10-20) | WG Document. Shepherd follow-up underway. Intended as Proposed Standard |
+| draft-ietf-wimse-http-signature | -08 (2026-10-20) | WG Document. Doc Shepherd Follow-up Underway. Intended as Proposed Standard |
 | draft-ietf-wimse-wpt | -02 (2026-08-27) | WG Document |
 | draft-ietf-oauth-transaction-tokens | -11 (2026-07-30) | WG Consensus: Waiting for Write-Up. The text says Standards Track |
 | draft-ietf-oauth-spiffe-client-auth | -02 (2026-06-15) | WG Document |

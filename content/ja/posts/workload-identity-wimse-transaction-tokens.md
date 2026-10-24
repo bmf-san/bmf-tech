@@ -428,7 +428,7 @@ Txn-Tokenは`aud`の信頼ドメインの中でだけ有効である。別ドメ
 
 設計上の注意は、SPIFFE IDと`client_id`の対応づけが、そのまま認可の判断になることである。どのワークロードがどのOAuthクライアントとして振る舞えるかは、そのクライアントに許すスコープの上限を決める。SPIREの登録エントリを作れる人は、事実上OAuthのクライアントを作れる人になる。登録エントリの作成は、ASのクライアント登録と同じ水準で管理する必要がある。
 
-既定の方式は、ASと直接TLSでつながる経路なら所持の証明がある`spiffe_x509`、TLSが途中で終端される経路なら短命の`spiffe_jwt`が現実的である。`spiffe_wit`は依存するドラフトがまだ動いているので、本番の既定にするのは早い。
+既定の方式は、ASと直接TLSでつながる経路なら所持の証明がある`spiffe_x509`、TLSが途中で終端される経路なら短命の`spiffe_jwt`が現実的だと筆者は考える。`spiffe_wit`は依存するドラフトがまだ動いているので、本番の既定にするのはまだ早いと判断している。
 
 # どう組み合わせるか
 
@@ -494,7 +494,7 @@ workload-credsとwptのドラフトは、役割の分け方を「WITの身元で
 | draft-ietf-wimse-workload-identity-practices | -07（2026-09-22） | IESGに提出済み（AD Evaluation）。Informational |
 | draft-ietf-wimse-workload-creds | -02（2026-07-02） | WG Document |
 | draft-ietf-wimse-mutual-tls | -02（2026-07-06） | WG Document |
-| draft-ietf-wimse-http-signature | -08（2026-10-20） | WG Document。シェパードのレビュー中。Proposed Standardを予定 |
+| draft-ietf-wimse-http-signature | -08（2026-10-20） | WG Document。Doc Shepherd Follow-up Underway。Proposed Standardを予定 |
 | draft-ietf-wimse-wpt | -02（2026-08-27） | WG Document |
 | draft-ietf-oauth-transaction-tokens | -11（2026-07-30） | WG Consensus: Waiting for Write-Up。本文はStandards Track |
 | draft-ietf-oauth-spiffe-client-auth | -02（2026-06-15） | WG Document |
