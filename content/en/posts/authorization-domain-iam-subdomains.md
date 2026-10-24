@@ -237,7 +237,7 @@ These sit outside IAM because they have different owners. Fraud detection rules 
 
 One thing people often miss on this map: where the business meaning of a permission lives.
 
-The question "may this person approve this invoice?" carries business knowledge. An invoice exists as a resource, approval exists as an action, the approver changes with the amount, and the requester cannot approve their own request. These rules come from the business domain's language, and the business domain should own it. IAM owns the mechanism for deciding and enforcing.
+The question "may this person approve this invoice?" carries business knowledge. An invoice exists as a resource, approval exists as an action, the approver changes with the amount, and the requester cannot approve their own request. These rules come from the business domain's language, and the business domain should own them. IAM owns the mechanism for deciding and enforcing.
 
 | | Owned by the business domain | Owned by IAM |
 |---|---|---|
@@ -245,7 +245,7 @@ The question "may this person approve this invoice?" carries business knowledge.
 | Rules | Approver depends on amount; no self-approval | The mechanism that evaluates rules and returns results |
 | Who changes it and when | Business teams, as the business changes | Platform teams, as the platform changes |
 
-The official IDDD samples illustrate this relationship well. The business-side Collaboration Context does not use the users and roles from the Identity and Access Context as they come. Through `UserInRoleAdapter` and `CollaboratorTranslator`, it translates them into its own terms, Author and Moderator.
+The official IDDD samples illustrate this relationship well. The business-side Collaboration Context does not use the users and roles from the Identity and Access Context as they come. Through `UserInRoleAdapter` and `CollaboratorTranslator`, it translates them into its own terms, such as Author and Moderator.
 
 Mixing these up makes IAM absorb business knowledge. Every change to a business rule turns into a request to the platform team, and the platform team cannot write policies without understanding the business. The reverse also hurts: if each business domain owns the decision mechanism too, decisions drift between applications. Keep the mechanism shared and the meaning in each domain. That split gives you the starting point for scoping an authorization platform.
 
