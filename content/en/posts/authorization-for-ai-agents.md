@@ -388,7 +388,7 @@ You can also use the AIMS layers as a review checklist. Check the following:
 # Summary
 
 - With AI agents, delegation chains, least privilege that you cannot fix up front, misuse of legitimate authority through prompt injection, human approval, and audit attribution become new problems.
-- MCP authorization covers obtaining and validating tokens for tools. How to decide, separating users from agents, and human approval sit outside the spec.
+- MCP authorization covers obtaining and validating tokens for tools. How to decide, separating users from agents, and human approval sit outside the authorization spec.
 - AuthZEN COAZ-MCP maps MCP requests to authorization questions, down to the argument level when a tool declares a mapping. AARP connects a denial to approval and re-evaluation. Both keep the PDP as the final authority.
 - AIMS serves as a checklist for agent authentication and authorization built from existing standards.
 - OBO and AAuth show ways to express delegation, ID-JAG handles central management by enterprises, and A2A and AP2 handle agent collaboration and payment approval.
