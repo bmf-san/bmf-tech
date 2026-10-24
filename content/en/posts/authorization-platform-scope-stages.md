@@ -85,7 +85,7 @@ Technology alone does not determine whether you can reliably remove a departed e
 
 ## Delegation chains across services
 
-Permissions travel across services: from a user to an agent, to an MCP server, to a business API. If token audience design, scope structure, how services get new tokens, and how you record the user and the agent are not consistent, one loose implementation anywhere becomes a hole in the whole system. A typical example: a service that forwards the token it received straight to the next service.
+Permissions travel across services: from a user to an agent, to an MCP server, to a business API. If token audience design, scope structure, how services get new tokens, and how you record the user and the agent are not consistent, one loose implementation anywhere becomes a hole in the whole system. One example: a service that forwards the token it received straight to the next service.
 
 [Standardizing Workload Identity](/posts/workload-identity-wimse-transaction-tokens/) covers context propagation between services, and [What Changes in Authorization with AI Agents](/posts/authorization-for-ai-agents/) covers agent delegation.
 
@@ -97,7 +97,7 @@ Conversely, once you externalize decisions, an outage of the decision service ca
 
 # Do Not Centralize It: What to Standardize and What Domains Own
 
-The reasons above make it tempting to say "manage all authorization centrally." But that collides with the second reason: the meaning of permissions lives in each domain. If a central platform team takes on the meaning of every business's permissions, the platform team becomes a bottleneck and its business knowledge goes stale.
+The reasons above make it tempting to say "manage all authorization centrally." But that collides with the second reason: the meaning of permissions lives in each domain. If a central platform team takes on the meaning of every business's permissions, the platform team tends to become a bottleneck, and its business knowledge tends to go stale.
 
 So **standardize the mechanisms and contracts across the organization, and keep the meaning in each domain**.
 
@@ -190,7 +190,7 @@ flowchart LR
 
 Each stage builds on the previous one. The PDP in Stage 2 relies on the token and audit log formats you standardized in Stage 1. If you skip Stage 1 and introduce a PDP, each PEP still represents subjects and writes logs in its own way, and you lose much of the consistency and auditability that motivated externalization.
 
-You do not need to move every domain at once when you move up a stage. Start with the domains that feel the most pain, and firm up the shared contracts as you go. That keeps the platform close to real requirements.
+You do not need to move every domain at once when you move up a stage. Start with the domains that feel the most pain, and firm up the shared contracts as you go. In my view, that keeps the platform close to real requirements.
 
 [Case Study on Authorization Management Infrastructure](/posts/permission-management-case-study/) covers freee's example (from articles and presentation slides published in 2023 and 2024) of a dedicated team that builds and runs a permission management platform.
 
@@ -246,7 +246,7 @@ Externalizing does not necessarily mean calling a decision service over the netw
 
 ## What externalization gives you
 
-- **Central management, auditing, and reuse of policy**: rules live in one place as policy rather than scattered through code, and you can record each decision
+- **Managing, auditing, and reusing rules as policy**: rules live as policy in a defined place rather than scattered through code, and you can record each decision
 - **Consistency across applications**: the same rules, evaluated by the same engine, apply to several applications
 - **Localized change**: changing a rule means changing a policy, decoupled from application releases
 
@@ -262,7 +262,7 @@ Externalization has costs: latency from a round trip per decision when you call 
 | A PDP outage stops everything | Distribute PDPs close to each PEP. Absorb short outages with caching. Design timeouts assuming fail-closed |
 | List views multiply the number of decisions | Use partial evaluation to turn policy into conditions such as SQL (OPA partial evaluation). If the PDP supports it, use the Resource Search API to fetch permitted resources in bulk (AuthZEN) |
 
-If you cache decision results, revocations and permission changes do not reach decisions until the cached entries expire. Choose the cache lifetime based on how long you can tolerate a delayed revocation.
+If you cache decision results without a way to invalidate them, revocations and permission changes do not reach decisions until the cached entries expire. Choose the cache lifetime based on how long you can tolerate a delayed revocation.
 
 [Authorization Platform Architecture and Design Decisions](/posts/authorization-platform-architecture-decisions/) covers PEP and PDP placement and non-functional design such as caching and consistency.
 
@@ -278,7 +278,7 @@ Authorization API 1.0 defines these main APIs:
 
 The Access Evaluation API is the core of the spec and the only endpoint the metadata requires. The Access Evaluations API and the Search APIs are optional, and a PDP that publishes metadata signals support by listing their endpoints.
 
-The policy language, architecture, and state management of a PDP are out of the specification's scope. So as long as a PDP implements the specification, the PEP can query it the same way, whatever runs inside. [What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers the specification in detail.
+The policy language, architecture, and state management of a PDP are out of the specification's scope. So as long as a PDP implements the specification, the PEP can query it the same way, whatever runs inside. The standard covers how the PEP queries the PDP, though. Policy languages and how you load the data that decisions use still vary from product to product, so swapping PDPs means migrating those. [What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers the specification in detail.
 
 Engines and products you can use as the PDP for externalized authorization include OPA, Cedar (with Amazon Verified Permissions as a managed service built on Cedar), Cerbos, and OpenFGA. Not every one of them accepts the AuthZEN API out of the box. Whether and how each product supports it (natively, as an experimental feature, or through a separate plugin) varies.
 
@@ -286,7 +286,7 @@ Engines and products you can use as the PDP for externalized authorization inclu
 
 Externalization differs from centralization. You share the decision mechanism (the evaluator, the decision API contract, the policy style, and the distribution mechanism), while each domain writes, tests, and changes its own policy content. The only policies the platform team owns are guardrails common to every domain.
 
-This split applies the earlier rule (share mechanisms and contracts across the organization, keep meaning in each domain) to externalization. If the platform team starts writing every domain's policies because decisions now live outside the applications, the problems of central management come right back.
+This split applies the earlier rule (share mechanisms and contracts across the organization, keep meaning in each domain) to externalization. If the platform team starts writing every domain's policies because decisions now live outside the applications, the bottleneck problem described earlier comes right back.
 
 ## Deciding whether to externalize
 
@@ -312,7 +312,7 @@ If you are unsure, consider starting with an in-process library or a sidecar rat
 - An authorization platform is not a yes-or-no choice. Ask which stage you need: Stage 0 (each application), Stage 1 (shared conventions and libraries), Stage 2 (externalized decisions), or Stage 3 (a platform including governance)
 - The seven decision axes are scale and cross-cutting reach, permission model complexity, change frequency, governance, diversity of subjects, consistency, and organizational capability. Present-day pain also tells you where you stand
 - In my view, you should align Stage 1 early once you have several applications or teams. Signs that you should not build Stage 2 and beyond include one product with few and stable roles, latency and availability risks that outweigh the benefits, and teams with no incentive to use the platform
-- Externalizing decisions trades latency (when you call the PDP over the network) and availability costs for central management, consistency, and localized change. AuthZEN Authorization API 1.0 standardizes the interface between PEP and PDP, and each domain still owns its policy content after externalization
+- Externalizing decisions trades latency (when you call the PDP over the network) and availability costs for managing rules as policy, consistency, and localized change. AuthZEN Authorization API 1.0 standardizes the interface between PEP and PDP, and each domain still owns its policy content after externalization
 
 # Related Posts
 
