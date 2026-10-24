@@ -301,7 +301,7 @@ ID-JAG (Identity Assertion JWT Authorization Grant) solves this with the followi
 1. The client (the agent's application) exchanges an ID token from the enterprise IdP for an ID-JAG through Token Exchange (RFC 8693). The IdP evaluates administrator-defined policy before issuing it.
 2. The client presents the ID-JAG to the SaaS authorization server as a JWT authorization grant (RFC 7523) and receives an access token. The SaaS side decides with its own policy whether to accept or narrow it.
 
-MCP's Enterprise-Managed Authorization brings this mechanism to MCP. Keep two caveats in mind. The `client_id` in an ID-JAG represents the agent's application, not individual agent instances or multi-hop delegation. Also, the IdP can stop only the issuance of new ID-JAGs. To cut off already-issued access tokens at once, you need short lifetimes or revocation signals through SSF/CAEP. ID-JAG sits at -04 (May 2026) as an OAuth WG draft. [The map of OAuth-related standards](/posts/oauth-standards-map-authorization-platform/) covers the surrounding specs.
+MCP's Enterprise-Managed Authorization brings this mechanism to MCP. Keep two caveats in mind. The `client_id` in an ID-JAG represents the agent's application. Draft -04 allows an optional `act` claim and `actor_token` parameter, but it leaves their processing to future profiles. It does not yet define how to represent individual agents or multi-hop delegation. Also, the IdP can stop only the issuance of new ID-JAGs. To cut off already-issued access tokens at once, you need short lifetimes or revocation signals through SSF/CAEP. ID-JAG sits at -04 (May 2026) as an OAuth WG draft. [The map of OAuth-related standards](/posts/oauth-standards-map-authorization-platform/) covers the surrounding specs.
 
 # Agent-to-agent and payments: A2A and AP2
 
@@ -322,7 +322,7 @@ In short, A2A defines how agents connect, and leaves it to OAuth mechanisms such
 
 AP2 (Agent Payments Protocol) makes payments by agents verifiable against what the user approved. The latest version is v0.2.0 (April 2026), which changed the structure substantially from v0.1.
 
-AP2 states its premise plainly: **preventing prompt injection completely is impossible**, so it treats every LLM and agent as a potential attacker. It relies only on the user's signature on a Trusted Surface (the screen where the user consents) and on verification by deterministic code.
+AP2 states its premise plainly: **preventing prompt injection attacks is infeasible**, so it treats every LLM and agent as a potential attacker. It relies only on the user's signature on a Trusted Surface (the screen where the user consents) and on verification by deterministic code.
 
 - On the Trusted Surface, the user signs what to buy (Checkout Mandate) and the payment (Payment Mandate). Mandates take the form of SD-JWT credentials.
 - When the agent acts without the user present, the user first hands over an open mandate that carries constraints (merchants, amount range, budget, and so on) and the agent's public key (`cnf`). The agent then creates a closed mandate bound to a specific transaction with its own key.
