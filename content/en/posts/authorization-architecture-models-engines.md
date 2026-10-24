@@ -21,7 +21,7 @@ draft: false
 The heart of an authorization platform answers one question: how do you express permissions, and where and how do you decide? This post splits that question into four parts.
 
 1. Which components take part in a decision, and where do they sit relative to business domains (PEP/PDP/PIP/PAP)?
-2. What do you base permissions on (RBAC/ABAC/ReBAC, plus PBAC)?
+2. What do you base permissions on (RBAC/ABAC/ReBAC, and where PBAC fits)?
 3. What can the classic standards (the RBAC standard, NIST SP 800-162, XACML, NGAC) still teach us?
 4. How do you choose a policy engine (OPA, Cedar, Cerbos, OpenFGA, SpiceDB)?
 
@@ -47,11 +47,11 @@ flowchart TB
 |---|---|---|
 | Model | What grants access | RBAC, ABAC, ReBAC |
 | Expression | The policy language and its authors | XACML, ALFA, Rego, Cedar, YAML, relation schemas |
-| Engine | Evaluation, deployment, and where data lives | OPA, Cedar, Cerbos, OpenFGA, SpiceDB |
+| Engine | Evaluation, deployment, and data handling | OPA, Cedar, Cerbos, OpenFGA, SpiceDB |
 | API | The shape of requests and responses between PEP and PDP | Engine APIs, AuthZEN |
 | Data | The authority and freshness of attributes and relations | Directories, HR, contracts, business databases, relation stores |
 
-Picking a model does not fix the language or the engine. Picking an engine, by contrast, almost fixes the expression and the data layout. So the safe order runs "model, then data, then engine".
+Picking a model does not fix the expression or the engine. Picking an engine, by contrast, almost fixes the expression and data handling. So the safe order runs "model, then data, then engine".
 
 # Reference Architecture: PEP, PDP, PIP, PAP
 
@@ -311,7 +311,7 @@ Adopting a ReBAC engine means you keep relation data both in the business databa
 | Model focus | Roles and conditions, or a relation graph? | The former: OPA, Cedar, Cerbos. The latter: OpenFGA, SpiceDB |
 | Data handling | Can each request carry the data, or must the engine hold it? | If requests can carry it, go stateless; for large, deep relations, use a store |
 | Listing | Must you return "resources this user can read" fast? | Store-based ReBAC excels; attribute engines rely on partial evaluation or query plans |
-| Authors and verification | Who writes policy, and how much do you want machine checks? | Rego for generality, Cedar for analysis and readability, YAML for a configuration-like feel |
+| Authors and verification | Who writes policy, and how much do you want machine checks? | Rego for generality, Cedar for analyzability, YAML for a configuration-like feel |
 | Breadth of use | Application authorization only, or infrastructure control too? | OPA if you want one language across infrastructure |
 | Operations | Self-host or managed? | Amazon Verified Permissions for AWS-centric stacks; commercial offerings such as Auth0 FGA for ReBAC |
 | Replaceability | Do you want room to switch engines later? | Move the PEP-PDP line toward AuthZEN |
@@ -330,9 +330,9 @@ You do not need to put everything on one engine. One example setup keeps a ReBAC
 # Summary
 
 - Think of authorization in layers: model, expression, engine, API, and data. The safe order of choice runs model, data, engine.
-- Put the PEP on the business domain side, the PDP and PAP on the access decision side, and the PIP next to attribute authorities. Protect the PEP-PDP channel and deny when no decision comes back.
+- Put the PEP on the business domain side, the PDP and PAP on the access decision side, and the PIP next to attribute authorities. Protect the PEP-PDP connection and deny when no decision comes back.
 - RBAC, ABAC, and ReBAC do not exclude each other. Letting roles set the ceiling and relations and attributes narrow it keeps review manageable. Treating PBAC as a writing style rather than a model keeps the discussion clear.
-- The originals still teach: RBAC's "only if", SP 800-162's attribute authorities, XACML's combining algorithms and obligations, and NGAC's "answer list questions with enumeration".
+- The originals still teach: RBAC's "only if", SP 800-162's attribute authorities, and XACML's combining algorithms and obligations. NGAC adds the idea of answering list questions by enumerating relations.
 - Narrow down engines by model focus, data handling, and listing needs. Standardizing the PEP-PDP line keeps the option to choose again.
 
 # Related Posts
