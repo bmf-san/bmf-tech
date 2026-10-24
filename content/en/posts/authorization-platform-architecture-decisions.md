@@ -258,7 +258,7 @@ sequenceDiagram
 
 This flow stacks three layers.
 
-1. **The scope of the MCP authorization specification.** The flow starts with a 401, finds the authorization server through RFC 9728 metadata, and names the target with the RFC 8707 resource parameter when requesting a token. The MCP server points to the metadata either with `resource_metadata` in WWW-Authenticate or at a well-known URI. The MCP server MUST confirm that the token names it as the intended audience.
+1. **The scope of the MCP authorization specification.** The flow starts with a 401, finds the authorization server through RFC 9728 metadata, and names the target with the RFC 8707 resource parameter when requesting a token. The MCP server points to the metadata either with `resource_metadata` in WWW-Authenticate or at a well-known URI. The MCP server MUST check that the authorization server issued the token specifically for it as the intended audience.
 2. **An extension that records whose authority the agent uses.** `requested_actor` and `actor_token` in the diagram come from "On-Behalf-Of User Authorization for AI Agents," an individual draft submitted to the IETF. That draft has expired as of October 2026. The draft defines the client (the application) and the actor (the agent) as separate roles; the diagram merges them into one. Recording the user and the agent separately through the `act` claim follows the same idea as `act` in Token Exchange (RFC 8693).
 3. **Externalized fine-grained authorization.** COAZ-MCP (an AuthZEN Draft) defines how to map MCP messages to AuthZEN's SARC and ask a PDP. It lets the PDP answer what scopes cannot express: "may this user call this tool with these arguments?"
 
@@ -425,7 +425,7 @@ The table below covers the remaining choices.
 
 - Aligning boundaries with IAM subdomains (identity, authentication, delegation, access decision, access governance) keeps an authorization platform architecture easy to reason about.
 - Put PEPs on the business side and externalize decisions to a PDP. Connecting them through a standard API such as AuthZEN makes placement easy to change.
-- The three representative flows are request-time decisions, AI agent delegation with MCP, and denial-to-approval-to-re-evaluation. In all three diagrams, the PDP makes the final decision. In the MCP flow, the server asks a PDP only when it uses COAZ-MCP (Draft).
+- The three representative flows are request-time decisions, AI agent delegation with MCP, and denial-to-approval-to-re-evaluation. In all three diagrams, the PDP makes the final decision. In the MCP flow, the PDP step comes from COAZ-MCP (Draft); the MCP authorization specification does not require it.
 - Let tokens carry coarse authorization and leave fine-grained authorization to the PDP and PIP. Downscope tokens inside your system.
 - On the non-functional side, design latency and caching, fail-closed and availability, consistency, audit, and related concerns together. Revocation speed depends on several settings at once.
 
