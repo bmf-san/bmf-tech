@@ -399,7 +399,7 @@ JSONについては、I-JSON（RFC 7493）に沿うことを推奨している�
 
 # XACMLとNIST ABACとの関係
 
-AuthZENは新しい概念を発明したわけではない。仕様は冒頭で、PDPとPEPの定義をXACMLとNIST SP 800-162（ABACのガイド）に負っていると明記する。
+AuthZENは新しい概念を発明したわけではない。仕様は冒頭で、PDPとPEPはXACMLとNIST SP 800-162（ABACのガイド）で定義されていると書いている。
 
 | 観点 | XACML 3.0 | AuthZEN Authorization API 1.0 |
 | --- | --- | --- |
