@@ -88,7 +88,7 @@ The architecture rests on three elements.
 
 | Element | Description |
 | --- | --- |
-| Trust domain | A group of systems that share security controls and policies. It SHOULD use an FQDN owned by the organization. It MUST map securely to X.509 trust anchors and to a JWK Set for verifying WITs |
+| Trust domain | A group of systems that share security controls and policies. It SHOULD use an FQDN owned by the organization. It maps to X.509 trust anchors and to a JWK Set for verifying WITs, and that mapping MUST come from a secure mechanism |
 | Workload identifier | A URI that names a workload uniquely within a trust domain. A separate draft (draft-ietf-wimse-identifier) defines the format. SPIFFE ID appears as a conforming example |
 | Workload identity credential | A credential that binds the identifier to a cryptographic key. Two forms exist: the WIT (Workload Identity Token), a JWT, and the WIC (Workload Identity Certificate), an X.509 certificate |
 
@@ -174,7 +174,7 @@ The main WIT claims follow.
 | Claim | Required | Meaning |
 | --- | --- | --- |
 | `sub` | Required | The workload identifier. Exactly one identifier per credential |
-| `exp` | Required | Expiration. SHOULD be short-lived, typically a few hours |
+| `exp` | Required | Expiration. SHOULD be short-lived, typically on the order of hours |
 | `cnf.jwk` | Required | The workload's public key (RFC 7800) |
 | `cnf.jwk.alg` | Required | The algorithm for proofs. No `none` and no symmetric algorithms. General implementations support ES256 |
 | `iss` | Recommended (optional) | The issuer, for audit and operations |
@@ -224,7 +224,7 @@ Some notes on each.
 
 - **mTLS**: You MUST check that the trust domain in the WIC matches the one you expect for that connection. When you connect by DNS name, you also run RFC 9525 hostname verification: Section 3.2.1 makes this a MUST, while the Security Considerations section says SHOULD. Identifier checks add to it rather than replace it. Unless another mechanism protects and authorizes it, you MUST NOT let a self-asserted identity in an HTTP header override the identity that mTLS established.
 - **HTTP Message Signatures**: To survive proxies that end TLS and rewrite `Host`, the profile does not sign `@authority` for requests other than CONNECT. Instead it puts the target in the signature parameter `wimse-aud`, and the receiver compares it exactly against trusted configuration. The `nonce` needs at least 64 bits of entropy, and the signature lifetime (`expires`) MUST be short, on the order of minutes.
-- **WPT**: A short-lived JWT signed with the WIT key. The http-signature draft (-08) describes WPT as the option inspired by OAuth DPoP (RFC 9449). In wpt-02, the WPT draft moved it from a dedicated header to `Authorization: WPT`. As a result, you cannot send a Bearer or DPoP access token in the same request. The WPT draft describes this exclusivity as intentional: it keeps a request from dropping to the strength of its weakest credential.
+- **WPT** (Workload Proof Token): A short-lived JWT signed with the WIT key. The http-signature draft (-08) describes WPT as the option inspired by OAuth DPoP (RFC 9449). In wpt-02, the WPT draft moved it from a dedicated header to `Authorization: WPT`. As a result, you cannot send a Bearer or DPoP access token in the same request. The WPT draft describes this exclusivity as intentional: it keeps a request from dropping to the strength of its weakest credential.
 
 The questions below settle most choices. The main forks are two: whether intermediaries end TLS, and whether you also send an OAuth access token in the same request.
 
@@ -250,7 +250,7 @@ WIMSE methods and OAuth sender-constrained tokens (RFC 8705 mTLS, RFC 9449 DPoP)
 
 # How to Deliver Credentials
 
-draft-ietf-wimse-workload-identity-practices records how workloads get credentials on today's platforms, without assuming WIMSE protocols. It has progressed furthest among the WIMSE drafts and is now under IESG review.
+draft-ietf-wimse-workload-identity-practices records how workloads get credentials on today's platforms, without assuming WIMSE protocols. It has progressed furthest among the WIMSE drafts: the WG has submitted it to the IESG, and its current state is AD Evaluation.
 
 ## The General Pattern
 
