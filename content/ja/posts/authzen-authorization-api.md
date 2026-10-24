@@ -378,7 +378,7 @@ PEPが守るべき検証と扱いは次のとおりである。
 
 仕様は、情報モデルとトランスポートを分けて定義する。準拠するPDPは、HTTPSとJSONのバインディングを実装しなければならない。gRPCなどのバインディングは、将来プロファイルとして定義されうる。
 
-JSONについては、I-JSON（RFC 7493）に沿うことを推奨している。UTF-8で符号化すること、IEEE 754の倍精度を超える数値を使わないこと、メンバー名を重複させないことを求める。値が`null`のプロパティは省くことも推奨している。「ない」と「null」の取り違えを避けるためである。
+JSONについては、I-JSON（RFC 7493）に沿うことを推奨している。具体的に挙げるのは、UTF-8で符号化すること、IEEE 754の倍精度を超える数値を使わないこと、メンバー名を重複させないことである。値が`null`のプロパティは省くことも推奨している。「ない」と「null」の取り違えを避けるためである。
 
 ## セキュリティ上の考慮
 
@@ -469,7 +469,7 @@ Authorization API 1.0の上に、用途ごとのプロファイルが作られ�
 
 | プロファイル | 状態 | 埋める隙間 |
 | --- | --- | --- |
-| Access Request and Approval Profile（AARP） | Working Group Draft | 「拒否だが申請はできる」判定を、申請・承認・再評価でつなぐ。承認後もPDPが再評価して決める |
+| Access Request and Approval Profile（AARP） | Working Group Draft | 「拒否だが申請はできる」判定を、申請・承認・再評価でつなぐ。基本の完了方式では、承認後もPDPが再評価して決める |
 | COAZ Framework | Working Group Draft | 任意のプロトコルの要求からSARCを組み立てる、宣言的な写し方の枠組み |
 | COAZ-MCP Binding | Working Group Draft | COAZをMCPに当てはめ、MCPのメッセージごとに判定する |
 | Obligations Profile | Working Group Draft | 判定に付ける、PEPが必ず実行すべき義務の形式と交渉 |

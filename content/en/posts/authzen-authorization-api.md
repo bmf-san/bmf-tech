@@ -469,7 +469,7 @@ The working group builds profiles for specific uses on top of Authorization API 
 
 | Profile | Status | Gap it fills |
 | --- | --- | --- |
-| Access Request and Approval Profile (AARP) | Working Group Draft | Connects a "denied, but requestable" decision to request, approval, and re-evaluation. After approval, the PDP re-evaluates and still decides |
+| Access Request and Approval Profile (AARP) | Working Group Draft | Connects a "denied, but requestable" decision to request, approval, and re-evaluation. In the base completion mode, the PDP re-evaluates after approval and still decides |
 | COAZ Framework | Working Group Draft | A declarative way to map requests from any protocol into SARC |
 | COAZ-MCP Binding | Working Group Draft | Applies COAZ to MCP so that each MCP message gets a decision |
 | Obligations Profile | Working Group Draft | Format and negotiation of mandatory actions that the PEP must perform for a decision |
