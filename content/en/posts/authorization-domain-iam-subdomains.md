@@ -52,7 +52,7 @@ The result of authentication forms just one input to authorization. Authorizatio
 
 The first principle to keep in mind: successful authentication does not mean the subject may access a resource. Holding a valid credential and having permission to access a resource are two separate facts.
 
-The IETF WIMSE architecture (draft-ietf-wimse-arch-08) states this in §4.5. A workload with a valid credential does not gain access to every resource in the trust domain. The draft asks issuers, relying parties, gateways, and workloads to avoid treating successful authentication as implicit authorization.
+The WIMSE architecture document (draft-ietf-wimse-arch-08), an IETF draft that the WIMSE working group is still developing and not yet an RFC, states this in §4.5. A workload with a valid credential does not gain access to every resource in the trust domain. The draft asks issuers, relying parties, gateways, and workloads to avoid treating successful authentication as implicit authorization.
 
 The same principle applies to people. Suppose a logged-in user can read someone else's invoice by editing the ID in the URL. Authentication works fine there, but authorization has a gap. Broken Access Control (A01) holds the top spot in the OWASP Top 10:2025. The OWASP page states that every tested application had some form of broken access control. That explains why you should design authentication and authorization separately.
 
@@ -262,7 +262,7 @@ Traditional delegation centered on a single hop: a user hands part of their perm
 - Setting the range in advance gets harder. Which tools an agent calls may not become clear until it runs
 - The subject may not be a person. Authenticating non-human subjects and delegating to them becomes routine
 
-So you need a mechanism that records the range, lifetime, and chain of delegation and narrows them along the way. Token Exchange (RFC 8693) provides a way to tell the original subject apart from the actor that works on its behalf inside a token. The MCP (Model Context Protocol) authorization specification (version 2026-07-28) also positions a protected MCP server as an OAuth 2.1 resource server and an MCP client as an OAuth 2.1 client.
+So you need a mechanism that records the range, lifetime, and chain of delegation and narrows them along the way. Token Exchange (RFC 8693) provides a way to tell the original subject apart from the actor that works on its behalf inside a token. The MCP (Model Context Protocol) authorization specification (version 2026-07-28) also positions a protected MCP server as an OAuth 2.1 resource server and an MCP client as an OAuth 2.1 client. Note that MCP makes authorization support itself OPTIONAL, and OAuth 2.1 remains an IETF draft, not yet an RFC.
 
 Delegation alone does not cover everything, though. Within the delegated range, access decision (subdomain 4) decides whether the agent may perform each action. If you put a human approval in front of a risky action, access governance (subdomain 5) takes part. Authorization for AI agents spans subdomains 3, 4, and 5. [What changes in authorization with AI agents](/posts/authorization-for-ai-agents/) and [Key points for designing MCP authorization](/posts/mcp-authorization-design/) go into detail.
 
