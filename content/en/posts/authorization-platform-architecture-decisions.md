@@ -30,11 +30,11 @@ What you will learn:
 
 The diagrams follow two levels of the C4 model: Context (the system and the outside world) and Container (applications and data stores that must be running for the system to work). See [the C4 model](https://c4model.com/) for the approach. For general advice on documenting architecture, see [Things to Consider When Writing Architecture Documents](/posts/writing-architecture-documentation/).
 
-The architecture here works as a reference: it lists every element an organization might need. You do not need to build everything on day one. How far to go, and whether to move decisions out of applications at all, belongs to [How Far Should You Build an Authorization Platform?](/posts/authorization-platform-scope-stages/).
+The architecture here works as a reference: it lists every element an organization might need. You do not need to build everything on day one. How far to go, and whether to move decisions out of applications at all, belongs to [How Much Authorization Platform Do You Need?](/posts/authorization-platform-scope-stages/).
 
 # Premise: Align Boundaries with IAM Subdomains
 
-The architecture draws its boundaries along IAM subdomains, which split IAM by business problem. [What Is Authorization?](/posts/authorization-domain-iam-subdomains/) explains the split in detail. The table below gives only the essentials.
+The architecture draws its boundaries along IAM subdomains, which split IAM by business problem. [What is Authorization?](/posts/authorization-domain-iam-subdomains/) explains the split in detail. The table below gives only the essentials.
 
 | # | Subdomain | Responsibility |
 |---|---|---|
@@ -184,7 +184,7 @@ The table lists the role of each container and the standards or implementations 
 Other posts in this series cover each row in depth.
 
 - [Authorization Architecture, Models, and Engines](/posts/authorization-architecture-models-engines/) covers PDPs, relationship stores, and how to choose an engine.
-- [What Is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers the API between PEPs and PDPs.
+- [What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers the API between PEPs and PDPs.
 - [A Map of OAuth and Related Standards for Authorization Platforms](/posts/oauth-standards-map-authorization-platform/) covers authorization servers, tokens, SCIM, and SSF / CAEP.
 - [Standardizing Workload Identity](/posts/workload-identity-wimse-transaction-tokens/) covers workload credentials and Transaction Tokens. [What is the Big Picture of Service-to-Service Authentication?](/posts/service-to-service-authentication/) covers authentication between services.
 - [Authorization for AI Agents](/posts/authorization-for-ai-agents/) covers approvals for agents and MCP.
@@ -295,7 +295,7 @@ The rest of this post covers how to choose each part of the diagrams.
 
 ## Whether to Externalize Decisions
 
-[How Far Should You Build an Authorization Platform?](/posts/authorization-platform-scope-stages/) covers whether to pull decision logic out of applications into a PDP. The decisions below assume you have chosen to externalize.
+[How Much Authorization Platform Do You Need?](/posts/authorization-platform-scope-stages/) covers whether to pull decision logic out of applications into a PDP. The decisions below assume you have chosen to externalize.
 
 ## PEP and PDP Placement
 
@@ -340,7 +340,7 @@ Guidelines for choosing:
 
 - **Two tiers are the default.** Do coarse authorization at the edge and fine-grained authorization inside the service or at the data layer. Reject clearly invalid requests early, and leave per-resource decisions to the side that has the context.
 - **Central management and execution location are separate concerns.** Even if the PDP runs as a library or sidecar, distributing policies from a central PAP keeps management in one place.
-- **Keep the API independent of placement.** The AuthZEN API works with a PDP in any placement. A standard interface between PEP and PDP makes later placement changes easier.
+- **Keep the API independent of placement.** AuthZEN defines the API independently of transport (with HTTPS as the required binding), so a PEP can ask a sidecar PDP or a central PDP in the same shape. A standard interface between PEP and PDP makes later placement changes easier.
 - **Design list retrieval separately.** Repeating "may I read this resource?" for every item in a list breaks counts and page boundaries and raises load. [Considerations and Solutions for Pagination Impact in OPA](/posts/pagination-impact-solutions-opa/) examines this problem and its solutions with OPA. [Access Control Patterns Using OPA](/posts/access-control-patterns-using-opa/) compares returning database conditions through partial evaluation with returning structured conditions. The AuthZEN 1.0 Resource Search API also answers "which resources may this subject see?" Pagination support is optional for the PDP.
 
 ## Coarse vs Fine-Grained Authorization, and the Role of Tokens
@@ -377,7 +377,7 @@ If decisions sit on the synchronous path, decide how to keep the round trip shor
 
 Decide whether to let requests through (fail-open) or stop them (fail-closed) when the PDP is down or slow.
 
-- **Fail closed by default.** If you cannot decide, deny. AARP follows the same idea: when the mechanism is unavailable, the denial stands.
+- **Fail closed by default.** If you cannot decide, deny. AARP follows the same idea: a denial stays a denial, and a PEP SHOULD fail closed when it cannot determine the status of the access request.
 - **Shrink the blast radius by design.** Redundant PDPs, sidecar placement, and local copies of policies and attributes all reduce how often fail-closed kicks in.
 - **Set timeouts.** Put an upper bound on how long to wait for the PDP, and treat a timeout as a denial.
 - **Make degradation explicit.** If you allow degraded operation as an exception (for example, reads only), write which actions pass under which conditions as policy, and record it in the audit log.
