@@ -87,7 +87,7 @@ Passthrough causes more harm than token theft alone. The Best Practices list the
 - Clients bypass rate limits and checks that the MCP server or downstream API built around the token audience
 - The MCP server cannot tell clients apart, and the downstream API logs show a different sender from the real one. Incident investigation and auditing get harder
 - When several services accept one token, an attacker who breaks one service can reach the other connected services
-- Even if the server works as a plain proxy today, adding controls later requires a rewrite without audience separation
+- Even if the server works as a plain proxy today, it may need security controls later. Separating audiences from the start makes the security model easier to evolve
 
 Teams tend to miss the last point. Separating audiences protects you today and also leaves room to add controls later.
 
@@ -132,7 +132,7 @@ Adding OAuth does not finish authorization. Viewed through the IAM subdomains, t
 | Who decides and reviews which agent may use which tool? | Access governance | Out of scope |
 | Do high-risk operations need human approval? | Access decision and governance | Only a SHOULD about the host UI; no mechanism dedicated to approval. A server can ask the user to confirm through Elicitation |
 
-The specification does not ignore access decisions. The tools specification says servers MUST put proper access controls in place. The caching specification says servers MUST NOT rely on `cacheScope` alone and MUST enforce access control per feature. It does not say how to decide, though. That part belongs to your design.
+The specification does not ignore access decisions. The tools specification says servers MUST put proper access controls in place. The caching specification says servers MUST NOT rely on `cacheScope` alone and MUST apply access controls per primitive (tools, resources, and so on). It does not say how to decide, though. That part belongs to your design.
 
 ## Designing access decisions for tools and data
 
@@ -150,7 +150,7 @@ You have three main places to put the decision:
 | Location | Good fit | Caveat |
 |---|---|---|
 | Directly in the MCP server code | Few MCP servers and simple policies | Every policy change means modifying every MCP server |
-| A gateway (PEP) in front of the MCP servers | You want per-tool permissions or per-tenant controls in one place | Decisions that inspect argument values get hard |
+| A gateway (PEP) in front of the MCP servers | You want per-tool permissions or per-tenant controls in one place | To inspect argument values, it must parse the body or use arguments that the server mirrors into headers through `x-mcp-header` |
 | An external decision service (PDP) | Many MCP servers, and you want to manage policy across them | You need to design the decision API and the attributes it uses |
 
 In the 2026-07-28 Streamable HTTP transport, every POST must carry the `Mcp-Method` header. Requests such as `tools/call` must also carry the `Mcp-Name` header. A gateway learns "which method, which tool" without parsing the body and can apply per-tool controls. A server that processes the body MUST check that the header values match the body and reject mismatches. A gateway that decides on headers SHOULD confirm that `MCP-Protocol-Version` names a revision that requires this check, and reject the request otherwise.
@@ -235,6 +235,8 @@ Instead of "we cannot ship until we do everything", draw a line. For anything yo
 |---|---|
 | Do now | Audience validation and no passthrough, PKCE, minimal scopes, short-lived tokens, no credentials in the LLM, audit logs that separate the user from the agent, per-request access decisions (hardcoded is fine) |
 | Can wait (but record it) | Externalized decisions (AuthZEN, COAZ-MCP), human approval flows (AuthZEN AARP, CIBA), continuous evaluation (CAEP), fine-grained per-tool policies |
+
+AARP refers to the AuthZEN Access Request and Approval Profile (Draft). AARP is the abbreviation from the OpenID Foundation announcement; the draft's header uses ARAP.
 
 Many "do now" items overlap with MUSTs in the specification. Adding them later also means recalling tokens you have handed out or backfilling past logs. In contrast, the "can wait" items stay swappable as long as you have fixed the entry point for decisions (the PEP). That is why you should gather the places that call the decision into one spot, even if the logic stays hardcoded for now.
 
