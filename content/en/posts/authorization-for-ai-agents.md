@@ -353,7 +353,7 @@ Finally, here is a single table of the concerns in designing authorization for A
 
 | Concern | Standards | Status (October 2026) |
 |---|---|---|
-| Agent identifiers and credentials | WIMSE (WIT, WIC, WPT), SPIFFE | WIMSE specs are IETF drafts |
+| Agent identifiers and credentials | WIMSE (WIT and WIC as credentials, WPT as proof of possession), SPIFFE | WIMSE specs are IETF drafts |
 | Access to tools | MCP authorization (OAuth 2.1, RFC 9728, RFC 8707) | MCP 2026-07-28 is current; OAuth 2.1 is a draft |
 | Argument-level decisions | AuthZEN API 1.0, COAZ-MCP | API is Final; COAZ-MCP is Draft 1 |
 | Delegation from user to agent | Authorization Code, `act`, RAR (OBO for reference) | OBO is an expired individual draft |

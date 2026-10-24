@@ -353,7 +353,7 @@ OAuthでは認可サーバーがトークンを発行するが、AP2では利用
 
 | 関心事 | 使う標準 | 状態（2026年10月） |
 |---|---|---|
-| エージェントの識別子と資格情報 | WIMSE（WIT、WIC、WPT）、SPIFFE | WIMSEはIETFのDraft |
+| エージェントの識別子と資格情報 | WIMSE（資格情報のWIT・WIC、所持の証明のWPT）、SPIFFE | WIMSEはIETFのDraft |
 | ツールへのアクセス | MCPの認可（OAuth 2.1、RFC 9728、RFC 8707） | MCP 2026-07-28版が現行。OAuth 2.1はDraft |
 | 引数の単位の判定 | AuthZEN API 1.0、COAZ-MCP | APIはFinal、COAZ-MCPはDraft 1 |
 | 利用者からエージェントへの委譲 | Authorization Code、`act`、RAR（OBOは参考） | OBOは期限切れの個人ドラフト |
