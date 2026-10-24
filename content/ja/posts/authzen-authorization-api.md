@@ -92,7 +92,7 @@ flowchart LR
 
 ## OAuthとOIDCが標準化したものとの対比
 
-OAuthは権限の委譲を、OpenID Connectは認証の結果の受け渡しを、それぞれ標準にした。AuthZENのAuthorization APIは、その隣にある「判定の問い合わせ」を標準にする。トークンに入っているスコープやクレームで粗く絞ったあと、資源ごとの細かい判定をPDPに問う。この後半の部分には、XACMLのプロファイル（後述）を除くと、共通の形がなかった。
+OAuthは権限の委譲を、OpenID Connectは認証の結果の受け渡しを、それぞれ標準にした。AuthZENのAuthorization APIは、その隣にある「判定の問い合わせ」を標準にする。トークンに入っているスコープやクレームで粗く絞ったあと、資源ごとの細かい判定をPDPに問う。筆者の知る限り、この後半の部分には、XACMLのプロファイル（後述）を除くと広く使われる共通の形がなかった。
 
 OAuthまわりの標準の地図は[認可基盤から見たOAuthと周辺標準の地図](/ja/posts/oauth-standards-map-authorization-platform/)にまとめた。
 
@@ -407,7 +407,7 @@ AuthZENは新しい概念を発明したわけではない。仕様は冒頭で�
 | 形式 | XML（JSONとRESTのプロファイルは2019年にOASIS Standard） | JSON（HTTPSバインディングが必須） |
 | 要求の構造 | 属性カテゴリ（主体、資源、操作、環境）に属性を並べる | Subject・Action・Resource・Contextのオブジェクト |
 | 判定の値 | Permit・Deny・NotApplicable・Indeterminate | `true`か`false` |
-| 義務と助言 | ObligationとAdviceを言語で定義する | `context`に入れる（形式はプロファイルで定める） |
+| 義務と助言 | ObligationとAdviceを言語で定義する | `context`に入れる（形式は本体の範囲外で、Obligationsプロファイルはまだドラフト） |
 | 一覧の問い | 中核にはない | Search APIとして定義する |
 
 XACMLは判定の結果を4値で返し、ポリシー言語と処理モデルまで含めて定めた。筆者の見方では、そのためにXACMLの要求を受け付けるPDPは、ほぼXACMLのエンジンに限られた。AuthZENはポリシー言語に一切踏み込まず、線の形だけを決める。内部はRego、Cedar、関係タプルのいずれでもよい。判定を`true`と`false`に絞り、ほかの情報を`context`に逃がしたのも、異なるエンジンが同じ口を持てるようにするためだと読める。

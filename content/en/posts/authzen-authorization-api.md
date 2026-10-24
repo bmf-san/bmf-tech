@@ -92,7 +92,7 @@ The spec's introduction observes that PDP-PEP communication follows similar patt
 
 ## What OAuth and OIDC Standardized, and What They Did Not
 
-OAuth standardized delegation, and OpenID Connect standardized how to convey authentication results. The AuthZEN Authorization API standardizes the neighboring step: asking for a decision. Scopes and claims in a token narrow things down coarsely, and then the application asks a PDP for fine-grained, per-resource decisions. Apart from the XACML profiles covered later, that second part had no common shape.
+OAuth standardized delegation, and OpenID Connect standardized how to convey authentication results. The AuthZEN Authorization API standardizes the neighboring step: asking for a decision. Scopes and claims in a token narrow things down coarsely, and then the application asks a PDP for fine-grained, per-resource decisions. As far as I know, apart from the XACML profiles covered later, that second part had no widely used common shape.
 
 For a map of the OAuth-related standards, see [A map of OAuth and related standards for an authorization platform](/posts/oauth-standards-map-authorization-platform/).
 
@@ -407,7 +407,7 @@ AuthZEN did not invent new concepts. The spec opens by noting that XACML and NIS
 | Format | XML (JSON and REST profiles became OASIS Standards in 2019) | JSON (HTTPS binding mandatory) |
 | Request structure | Attributes grouped into categories (subject, resource, action, environment) | Subject, Action, Resource, and Context objects |
 | Decision values | Permit, Deny, NotApplicable, Indeterminate | `true` or `false` |
-| Obligations and advice | Defined in the policy language | Carried in `context` (profiles define the format) |
+| Obligations and advice | Defined in the policy language | Carried in `context` (format outside the core spec; the Obligations Profile is still a draft) |
 | Listing questions | Not in the core | Search APIs |
 
 XACML returns four decision values and defines everything down to the policy language and processing model. In my view, this is why PDPs that accept XACML requests were almost always XACML engines. AuthZEN stays out of policy languages and defines only the shape of the line. Inside, the PDP can use Rego, Cedar, or relationship tuples. Reducing the decision to a boolean and moving everything else into `context` reads as a way to let different engines expose the same interface.
