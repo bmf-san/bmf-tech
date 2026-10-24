@@ -90,7 +90,7 @@ Even with an `invoices:read` scope, the resource server still has to decide whic
 
 Separating authentication from authorization still gives a coarse map. Many jobs end up under the name "authorization": OAuth delegation, role requests and approvals, ID provisioning, and more. So this post splits the whole of IAM (Identity and Access Management), including authentication and authorization, by business problem.
 
-It borrows DDD (Domain-Driven Design) vocabulary for the split. The terms follow Vaughn Vernon's "Implementing Domain-Driven Design" (IDDD). This split serves as one example, not the only correct answer.
+It borrows DDD (Domain-Driven Design) vocabulary for the split. The terms follow Vaughn Vernon's "Implementing Domain-Driven Design" (IDDD). The "Meaning" column below is my summary based on IDDD's terms and Evans's DDD Reference. This split serves as one example, not the only correct answer.
 
 ## What IAM means
 
@@ -104,7 +104,7 @@ In this post, IAM means the area that manages the identities of subjects (people
 |---|---|
 | Domain | The business an organization runs and the world that business lives in |
 | Subdomain | A section of the domain, split by business problem |
-| Core domain | The subdomain most important to business success and the source of differentiation |
+| Core domain | The subdomain that holds the real business asset and the most valuable, specialized concepts |
 | Supporting subdomain | A subdomain the business needs and that has some specific elements, but not Core |
 | Generic subdomain | A subdomain that captures nothing special to the business, yet the overall business solution needs it |
 
