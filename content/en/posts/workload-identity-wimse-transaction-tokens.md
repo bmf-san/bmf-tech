@@ -92,7 +92,7 @@ The architecture rests on three elements.
 | Workload identifier | A URI that names a workload uniquely within a trust domain. A separate draft (draft-ietf-wimse-identifier) defines the format. SPIFFE ID appears as a conforming example |
 | Workload identity credential | A credential that binds the identifier to a cryptographic key. Two forms exist: the WIT (Workload Identity Token), a JWT, and the WIC (Workload Identity Certificate), an X.509 certificate |
 
-An identifier's meaning depends on the trust domain that validates it. Per arch-08, two credentials with the same identifier value represent the same workload only when a verifier validates both under the same trust domain and issuer trust configuration. The later advice "never make access decisions on the path alone" rests on the same idea.
+An identifier's meaning depends on the trust domain that validates it. Per arch-08, two credentials with the same identifier value represent the same workload only when a verifier validates both under the same trust domain and issuer trust configuration. The later rule against authorizing on the path alone rests on the same idea.
 
 Credentials SHOULD have bounded lifetimes and automatic renewal. You do not need a new key per request.
 
@@ -295,7 +295,7 @@ These normative rules in the practices draft matter most for design.
 - **Evaluate the values of custom claims** (MUST). In CI/CD, allowing federation only from the protected `main` branch requires checking the branch claim's value.
 - **Do not trust `iss` alone in multi-tenant platforms.** Where each tenant can configure the same issuer identifier, `iss` does not uniquely identify a trusted authority.
 
-To turn a platform credential into an access token, the draft discourages Token Exchange or proprietary APIs because they hurt interoperability. It favors the JWT authorization grant from RFC 7521 and draft-ietf-oauth-rfc7523bis.
+To turn a platform credential into an access token, the draft discourages Token Exchange or proprietary APIs because they hurt interoperability. As the standards for this pattern, it names the RFC 7521 assertion framework and the JWT authorization grant in draft-ietf-oauth-rfc7523bis.
 
 # Carrying Transaction Context with Transaction Tokens
 
