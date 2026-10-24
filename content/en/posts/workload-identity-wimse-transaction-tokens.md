@@ -92,7 +92,7 @@ The architecture rests on three elements.
 | Workload identifier | A URI that names a workload uniquely within a trust domain. A separate draft (draft-ietf-wimse-identifier) defines the format. SPIFFE ID appears as a conforming example |
 | Workload identity credential | A credential that binds the identifier to a cryptographic key. Two forms exist: the WIT (Workload Identity Token), a JWT, and the WIC (Workload Identity Certificate), an X.509 certificate |
 
-Two identifiers that differ only in trust domain refer to different entities. This rule underpins the later advice "never make access decisions on the path alone."
+An identifier's meaning depends on the trust domain that validates it. Per arch-08, two credentials with the same identifier value represent the same workload only when a verifier validates both under the same trust domain and issuer trust configuration. The later advice "never make access decisions on the path alone" rests on the same idea.
 
 Credentials SHOULD have bounded lifetimes and automatic renewal. You do not need a new key per request.
 
