@@ -182,7 +182,7 @@ This design matters for agent authorization in three ways.
 2. **A gateway can act as the PEP.** Mappings travel in the `tools/list` response, so a gateway that knows nothing about the business can still enforce the decisions that the tool's owning team defined.
 3. **It does not trust values the server wrote.** When a declared `subject.id` points to the token's `sub`, the PEP checks it against the validated token, and policies MUST NOT treat other declared attributes as authoritative for identity or privilege. The PEP denies unknown methods.
 
-Some caveats apply. The PDP never sees arguments that the mapping leaves out. If a payment tool's mapping omits the amount, no amount limit applies. The MCP server writes the mappings, so when a gateway enforces them, the deployment MUST account in its threat model for how far it trusts the server as their author. Also, Draft 1 predates MCP 2026-07-28 and lags behind it; for example, it has no default mapping for methods that the newer version added.
+Some caveats apply. The PDP never sees arguments that the mapping leaves out. If a payment tool's mapping omits the amount, no amount limit applies. The MCP server writes the mappings, so the deployment MUST account in its threat model for how far it trusts the server as their author. Also, Draft 1 predates MCP 2026-07-28 and lags behind it; for example, it has no default mapping for methods that the newer version added.
 
 ## AARP: turning "not allowed yet" into approval and re-evaluation
 
