@@ -10,7 +10,7 @@ tags:
   - OAuth
   - Security
   - Generative AI
-description: "Adding OAuth does not finish MCP authorization. This post covers token passthrough, confused deputy, and over-broad scopes, the per-tool access decisions the spec leaves to you, who holds whose authority per hop, hard-to-reverse decisions, and the main 2026-07-28 requirements."
+description: "Adding OAuth does not finish MCP authorization. This post covers token passthrough, confused deputy, and over-broad scopes, the per-tool access decisions whose logic the spec leaves to you, who holds whose authority per hop, hard-to-reverse decisions, and the main 2026-07-28 requirements."
 translation_key: mcp-authorization-design
 draft: false
 ---
@@ -19,7 +19,7 @@ draft: false
 
 MCP (Model Context Protocol) is an open standard for connecting AI applications to external tools and data. When you put an MCP server in front of internal business APIs, an agent can read and write business data on behalf of a user. That convenience comes with risk. A flawed authorization design lets an agent perform operations the user never intended, or lets a stolen token reach other APIs.
 
-MCP has an authorization specification built on OAuth 2.1, which is still an IETF draft. That specification mainly covers one part: obtaining and validating a token for the MCP server. The question "may this agent, acting for this user, run this tool on this data?" stays outside the specification. Your team has to design that part.
+MCP has an authorization specification built on OAuth 2.1, which is still an IETF draft. That specification mainly covers one part: obtaining and validating a token for the MCP server. The question "may this agent, acting for this user, run this tool on this data?" The specification does not say how to answer it. Your team has to design that part.
 
 This post targets teams that add authorization to MCP servers or MCP clients. It covers the following:
 
@@ -128,7 +128,7 @@ Adding OAuth does not finish authorization. Viewed through the IAM subdomains, t
 |---|---|---|
 | Is the user who they claim to be? | Authentication | Out of scope. Leave it to your existing IdP |
 | Which client may access which MCP server, and how far? | Delegation (OAuth, scopes, audience) | The core of the specification |
-| May the caller run this tool on this data? | Access decision | Out of scope. Design it yourself |
+| May the caller run this tool on this data? | Access decision | Requires access controls (MUST) but does not say how to decide. Design it yourself |
 | Who decides and reviews which agent may use which tool? | Access governance | Out of scope |
 | Do high-risk operations need human approval? | Access decision and governance | Only a SHOULD about the host UI; no mechanism dedicated to approval. A server can ask the user to confirm through Elicitation |
 
@@ -220,7 +220,7 @@ You do not need to do everything now. Settle the decisions that cost a lot to ch
 | Audit log fields (user, agent, tool, target, result) | Adding them later does not recover past records |
 | Token lifetime and revocation | You cannot recall long-lived tokens once you spread them |
 
-Some notes on each:
+Notes on four of them follow. Earlier sections cover the decision location and the audit log fields.
 
 - Authorization server: the specification allows the authorization server to live with the MCP server. If you build one per MCP server, though, every permission change or offboarding has to reach every one of them. Inside a company, build on the corporate IdP. The official Enterprise-Managed Authorization extension defines a way to manage access to MCP servers centrally through the enterprise IdP.
 - Audience: the MCP client puts the canonical URI of the MCP server in `resource`. The specification recommends the form without a trailing slash unless the slash is semantically significant. If you do not settle the format early, you end up fixing both the validator and the client configuration.
@@ -303,7 +303,7 @@ The core specification fits the case where a user interactively grants a client 
 - Put audience validation and the ban on passthrough in place first. For backend APIs, use a new token obtained through Token Exchange or a similar method.
 - Draw whose authority each hop uses, and record the user and the agent separately.
 - Do not treat identifiers such as handles or `clientInfo` as permissions. Take the subject information for decisions from verified tokens.
-- The authorization server placement, audience, scope granularity, decision location, audit log fields, and token lifetime resist change later. Decide them first.
+- The authorization server placement, audience, scope granularity, decision location, audit log fields, and token lifetime and revocation resist change later. Decide them first.
 - For anything you postpone, record the reason and the conditions for revisiting it in an ADR.
 
 # Related Posts
