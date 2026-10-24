@@ -49,9 +49,9 @@ flowchart TB
 
 Authorization does not stay inside one team or one service. Six reasons explain why.
 
-## Authorization happens on every request, for every resource
+## Authorization happens on every request to a protected resource
 
-You can verify authentication once at the entry point and carry the result in a token. Authorization asks, for each resource, "may this subject perform this action on this resource?" That means you need enforcement points (PEPs, Policy Enforcement Points) everywhere resources live: gateways, every service, and the data layer.
+You can verify authentication once at the entry point and carry the result in a token. Authorization asks, for each resource, "may this subject perform this action on this resource?" That means you need enforcement points (PEPs, Policy Enforcement Points) everywhere protected resources live: gateways, every service, and the data layer.
 
 The OWASP Authorization Cheat Sheet also recommends checking permissions on every request. The OWASP Top 10:2025 places Broken Access Control at A01.
 
