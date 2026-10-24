@@ -247,7 +247,7 @@ X-Request-ID: bfe9eb29-ab87-4ca3-be83-a1d5d8305716
 
 ## 誤りの扱い
 
-誤りは2種類に分かれる。要求全体に関わる誤りは、HTTPの4xxや5xxで返す。個々の判定の誤りは、その要素を`"decision": false`にし、`context`に誤りを載せる。判定は既定で閉じる（fail-closed）。
+誤りは2種類に分かれる。要求全体に関わる誤りは、HTTPの4xxや5xxで返す。個々の判定の誤りは、その要素を`"decision": false`にし、`context`に誤りを載せられる。判定は既定で閉じる（fail-closed）。
 
 ```json
 {
@@ -428,7 +428,7 @@ AuthZENの効き目は、PEPの側から見たエンジンの違いを吸収す�
 | Context | `input`の任意の構造 | `context` | `context`（条件付きの関係で使う） |
 | 一覧の問い | 部分評価などで工夫する | 中核の判定APIにはない | ListObjects、ListUsers |
 
-Cedarの4つ組はSARCとほぼ同じ形をしている。OpenFGAは関係を問うので、Actionを`relation`に写す取り決めが要る。OPAは入力の形を決めていないので、SARCをそのまま`input`として受けるポリシーを書けばよい。ただし、OPA本体はAuthZENのエンドポイントを持たない。AuthZENの要求を`input`に渡すには、OPAのcontribにあるauthzen-proxyのような変換層が要る。OPAの基本は[Open Policy Agent (OPA)とは](/ja/posts/open-policy-agent/)で、マイクロサービスでの使い方は[OPAを使用したマイクロサービスのアクセス制御システムの実装](/ja/posts/microservices-access-control-opa/)で扱った。
+Cedarの4つ組はSARCとほぼ同じ形をしている。OpenFGAは関係を問うので、Actionを`relation`に写す取り決めが要る。OPAは入力の形を決めていないので、SARCをそのまま`input`として受けるポリシーを書けばよい。ただし、OPA本体はAuthZENのエンドポイントを持たない。AuthZENの要求を`input`に渡すには、OPAのcontribにあるauthzen-proxyのような変換層を前に置く。または、AuthZENのエンドポイントを足したOPAのビルドを使う。OPAのエコシステムのページには、第三者によるOPA-AuthZENが載っている。OPAの基本は[Open Policy Agent (OPA)とは](/ja/posts/open-policy-agent/)で、マイクロサービスでの使い方は[OPAを使用したマイクロサービスのアクセス制御システムの実装](/ja/posts/microservices-access-control-opa/)で扱った。
 
 ## 差し替えられるもの、差し替えられないもの
 
@@ -504,7 +504,7 @@ OpenID Foundationは2026年6月の発表で、認可システムはこれまで�
 - 要求はSubject・Action・Resource・Context（SARC）で、応答は真偽値の`decision`と任意の`context`である。
 - APIは、1件の判定、評価方式を選べる一括判定、主体・資源・操作の検索、`/.well-known/authzen-configuration`のメタデータからなる。
 - 拒否は`200`と`false`で返り、HTTPのエラーとは区別する。個々の判定の誤りはfail-closedになる。
-- セキュリティでは、TLSによる保護が必須で、PEPの認証、応答の署名、DoS対策が推奨または許可されている。PDPはPEPを信頼する前提に立つので、属性の出どころが設計の要になる。
+- セキュリティでは、PEPとPDPの接続の保護（HTTPならTLSなど）が必須で、PEPの認証、応答の署名、DoS対策が推奨または許可されている。PDPはPEPを信頼する前提に立つので、属性の出どころが設計の要になる。
 - XACMLとNIST ABACの語彙を受け継ぎつつ、ポリシー言語には踏み込まない。そのためOPA、Cedar、OpenFGAなどが同じ口を持てる。
 - 替えやすくなるのはPEPの側であり、ポリシー、データ、語彙、`context`の読み方は残る作業である。
 
@@ -531,6 +531,7 @@ OpenID Foundationは2026年6月の発表で、認可システムはこれまで�
 - [OpenID AuthZEN Interop](https://authzen-interop.net/)
 - [openid/authzen（GitHub）](https://github.com/openid/authzen)
 - [open-policy-agent/contrib authzen-proxy（GitHub）](https://github.com/open-policy-agent/contrib/tree/main/authzen/authzen-proxy)
+- [OPA-AuthZEN（OPA Ecosystem）](https://www.openpolicyagent.org/ecosystem/entry/opa-authzen)
 - [OpenID Foundation advances authorization for the agent era with new AuthZEN Working Group Drafts](https://openid.net/openid-foundation-advances-authorization-for-the-agent-era-with-new-authzen-working-group-drafts/)
 - [OASIS XACML 3.0](https://docs.oasis-open.org/xacml/3.0/xacml-3.0-core-spec-os-en.html)
 - [JSON Profile of XACML 3.0 Version 1.1](https://docs.oasis-open.org/xacml/xacml-json-http/v1.1/xacml-json-http-v1.1.html)

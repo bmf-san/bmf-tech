@@ -247,7 +247,7 @@ If the `evaluations` array is missing or empty, the API behaves like a single Ac
 
 ## Errors
 
-The spec separates two kinds of errors. Errors that concern the whole payload use HTTP 4xx or 5xx. An error in one evaluation sets that element to `"decision": false` and carries the error in its `context`. Decisions default to closed (fail-closed).
+The spec separates two kinds of errors. Errors that concern the whole payload use HTTP 4xx or 5xx. An error in one evaluation sets that element to `"decision": false` and its `context` can carry the error. Decisions default to closed (fail-closed).
 
 ```json
 {
@@ -428,7 +428,7 @@ AuthZEN pays off by hiding engine differences from the PEP. The concepts of comm
 | Context | Any structure in `input` | `context` | `context` (for conditional relationships) |
 | Listing questions | Needs workarounds such as partial evaluation | Not part of the core decision API | ListObjects, ListUsers |
 
-Cedar's four-part request looks almost identical to SARC. OpenFGA asks about relationships, so you need a convention that maps Action to `relation`. OPA does not fix the shape of its input, so you can write policies that take SARC directly as `input`. OPA itself has no AuthZEN endpoints, though. To feed an AuthZEN request into `input`, you need a translation layer such as the authzen-proxy in OPA's contrib repository. For OPA basics, see [What is Open Policy Agent (OPA)?](/posts/open-policy-agent/), and for its use in microservices, see [Implementation of Access Control System for Microservices Using OPA](/posts/microservices-access-control-opa/).
+Cedar's four-part request looks almost identical to SARC. OpenFGA asks about relationships, so you need a convention that maps Action to `relation`. OPA does not fix the shape of its input, so you can write policies that take SARC directly as `input`. OPA itself has no AuthZEN endpoints, though. To feed an AuthZEN request into `input`, put a translation layer such as the authzen-proxy in OPA's contrib repository in front of OPA. Or use an OPA build that adds the AuthZEN endpoints. The OPA ecosystem page lists OPA-AuthZEN, a third-party build of this kind. For OPA basics, see [What is Open Policy Agent (OPA)?](/posts/open-policy-agent/), and for its use in microservices, see [Implementation of Access Control System for Microservices Using OPA](/posts/microservices-access-control-opa/).
 
 ## What You Can Swap, and What You Cannot
 
@@ -477,7 +477,7 @@ The working group builds profiles for specific uses on top of Authorization API 
 
 The abbreviation AARP follows the OpenID Foundation announcement; the draft header abbreviates the name as ARAP.
 
-In its June 2026 announcement, the OpenID Foundation said that authorization systems used to answer one question, "can this action happen right now?", and increasingly must also answer what must happen before policy can allow the action. Add the "which" question that the Search APIs handle, and decision APIs answer three questions.
+In its June 2026 announcement, the OpenID Foundation said that authorization systems used to answer one question, whether an action can go ahead right now, and increasingly must also answer what must happen before policy can allow the action. Add the "which" question that the Search APIs handle, and decision APIs answer three questions.
 
 | Question | Example | Coverage |
 | --- | --- | --- |
@@ -504,7 +504,7 @@ Finally, here are my own tips for bringing AuthZEN into a design.
 - A request carries Subject, Action, Resource, and Context (SARC), and a response carries a boolean `decision` and an optional `context`.
 - The API consists of single evaluation, batch evaluation with selectable semantics, subject/resource/action search, and metadata at `/.well-known/authzen-configuration`.
 - A denial comes back as `200` with `false`, separate from HTTP errors. Errors in individual evaluations fail closed.
-- On security, TLS protection is mandatory, and the spec recommends or permits PEP authentication, signed responses, and DoS protections. The PDP trusts the PEP, so the source of attributes becomes a central design question.
+- On security, protecting the PEP-PDP connection (for example with TLS for HTTP) is mandatory, and the spec recommends or permits PEP authentication, signed responses, and DoS protections. The PDP trusts the PEP, so the source of attributes becomes a central design question.
 - It inherits vocabulary from XACML and NIST ABAC but stays out of policy languages. That lets OPA, Cedar, OpenFGA, and others expose the same interface.
 - The PEP side becomes easy to swap; policies, data, vocabulary, and the reading of `context` remain your work.
 
@@ -531,6 +531,7 @@ Finally, here are my own tips for bringing AuthZEN into a design.
 - [OpenID AuthZEN Interop](https://authzen-interop.net/)
 - [openid/authzen (GitHub)](https://github.com/openid/authzen)
 - [open-policy-agent/contrib authzen-proxy (GitHub)](https://github.com/open-policy-agent/contrib/tree/main/authzen/authzen-proxy)
+- [OPA-AuthZEN (OPA Ecosystem)](https://www.openpolicyagent.org/ecosystem/entry/opa-authzen)
 - [OpenID Foundation advances authorization for the agent era with new AuthZEN Working Group Drafts](https://openid.net/openid-foundation-advances-authorization-for-the-agent-era-with-new-authzen-working-group-drafts/)
 - [OASIS XACML 3.0](https://docs.oasis-open.org/xacml/3.0/xacml-3.0-core-spec-os-en.html)
 - [JSON Profile of XACML 3.0 Version 1.1](https://docs.oasis-open.org/xacml/xacml-json-http/v1.1/xacml-json-http-v1.1.html)
