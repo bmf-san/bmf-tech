@@ -76,7 +76,7 @@ Apart from the case where a client obtains access on its own behalf (Client Cred
 | | What OAuth decides | What OAuth does not decide |
 |---|---|---|
 | Target | The range you hand to a client (scope, audience, lifetime) | Access per resource or per row |
-| Example | Grant this app "read invoices" | Only the sales department's invoices; only managers can approve |
+| Example | Grant this app "read invoices" | Only the sales department's invoices; only managers or above can approve |
 | Result | Access token | Permit or deny |
 | Owner | Authorization server | Resource server, or the decision mechanism behind it |
 
