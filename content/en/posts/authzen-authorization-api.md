@@ -193,7 +193,7 @@ Three points matter.
 - **The PEP MAY reject a `true` decision if it does not understand the `context`.** When the decision is `false`, the PEP MUST NOT let the request go forward.
 - **Request identifiers.** The PEP can identify a request with the `X-Request-ID` header. If it does, the PDP MUST return the same value in the response. This helps you correlate PEP and PDP records in audit logs.
 
-If the request omits a required attribute, the PDP returns `400 Bad Request`. Receivers MUST ignore unknown fields, which keeps the format open for future extensions.
+If the request omits a required attribute, the PDP MUST return `400 Bad Request`. Receivers MUST ignore unknown fields, which keeps the format open for future extensions.
 
 # Access Evaluations API: Batch Decisions
 
@@ -366,8 +366,8 @@ The spec recommends that a PDP publish its configuration as metadata at `/.well-
 
 On the PEP side, checks and handling work as follows.
 
-- The `policy_decision_point` value in the metadata must equal the identifier the PEP used to fetch it. If they differ, the PEP MUST NOT use the data.
-- A PEP that supports `signed_metadata` validates the signature and the issuer (`iss`). Signed values take precedence over plain JSON values.
+- The `policy_decision_point` value in the metadata MUST be identical to the identifier the PEP used to fetch it. If they differ, the PEP MUST NOT use the data.
+- A PEP that supports `signed_metadata` MUST verify the signature and check that the signing key belongs to the issuer (`iss`). Signed values MUST take precedence over plain JSON values.
 - Normal HTTP caching applies. The spec suggests directives such as `Cache-Control` with `max-age` to cache metadata for a suitable period (a plain "should", not a normative SHOULD).
 
 If the metadata lists an endpoint URL, the PEP MUST use it. Without one, the PEP SHOULD build the URL by appending the default path to the PDP's base URL. Still, an API missing from the metadata tells the PEP that the PDP does not support it. The spec does not cite the OAuth metadata RFCs, but its design closely resembles OAuth Authorization Server Metadata (RFC 8414) and OAuth 2.0 Protected Resource Metadata (RFC 9728). Its definition of `signed_metadata` follows the RFC 9728 wording almost word for word.
