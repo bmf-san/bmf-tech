@@ -65,7 +65,7 @@ Authorization splits further into two parts.
 
 NIST SP 800-162 and XACML call the decision component the PDP (Policy Decision Point) and the enforcement component the PEP (Policy Enforcement Point). Separating them lets you keep decision logic in one place while each application enforces at its own entry point. [Authorization architecture, models, and engines](/posts/authorization-architecture-models-engines/) covers this reference architecture and how to choose an authorization model.
 
-# The "Authorization" in OAuth Means Delegation
+# The "Authorization" in OAuth Centers on Delegation
 
 OAuth calls itself an "authorization framework." In practice, it centers on issuing tokens for delegated access.
 

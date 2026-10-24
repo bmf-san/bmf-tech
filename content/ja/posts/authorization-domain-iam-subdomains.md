@@ -65,7 +65,7 @@ IETFのWIMSE WGが策定中のアーキテクチャ文書（draft-ietf-wimse-arc
 
 NIST SP 800-162やXACMLは、判定する部品をPDP（Policy Decision Point）、強制する部品をPEP（Policy Enforcement Point）と呼ぶ。両者を分けておくと、判定のロジックを1か所に集めつつ、強制は各アプリケーションの入口で行える。この参照アーキテクチャと認可モデルの選び方は[認可のアーキテクチャ、モデル、エンジンの比較](/ja/posts/authorization-architecture-models-engines/)で扱う。
 
-# OAuthの「認可」は委譲である
+# OAuthの「認可」の中心は委譲である
 
 OAuthは自らを「認可フレームワーク」と呼ぶ。しかし、その中心は委譲されたアクセス（delegated access）のためのトークン発行である。
 
