@@ -94,7 +94,7 @@ It borrows DDD (Domain-Driven Design) vocabulary for the split. The terms follow
 
 ## What IAM means
 
-The NIST glossary describes IAM as the administration of individual identities within a system, such as a company, a network, or even a country. It adds that in enterprise IT, it means establishing and managing the roles and access privileges of individual users.
+The NIST glossary describes IAM as the administration of individual identities within a system, such as a company, a network, or even a country. It adds that in enterprise IT, it means establishing and managing the roles and access privileges of individual network users.
 
 In this post, IAM means the area that manages the identities of subjects (people, services, AI agents), decides what each subject may access, and governs that access. Concretely, it bundles authentication, authorization (delegation, access decision, access governance), and the identity management those depend on.
 
@@ -119,7 +119,7 @@ Core, Supporting, and Generic classify subdomains. Which one applies depends on 
 | Something other than IAM (business apps such as e-commerce or SaaS) | A Generic subdomain within the business domain (Supporting for some businesses) |
 | IAM itself (IdP, authorization engine, or IGA vendor) | IAM forms the domain itself. Its subdomains split into Core, Supporting, and Generic |
 
-For an organization that builds business apps, IAM usually counts as Generic. The `iddd_identityaccess` module (Identity and Access Context) in the official IDDD samples shows exactly this: IAM as a Generic subdomain. When IAM counts as Generic, leaning on standards and off-the-shelf products makes sense.
+For an organization that builds business apps, IAM usually counts as Generic. The IDDD book uses the Identity and Access Context as an example of a Generic subdomain, and the `iddd_identityaccess` module in the official IDDD samples implements it. When IAM counts as Generic, leaning on standards and off-the-shelf products makes sense.
 
 Still, for a SaaS product that sells rich per-tenant permission settings, access decision or access governance can move toward Supporting. For IAM vendors, the Core tends to sit in authentication and delegation for an IdP, in access decision for an authorization engine, and in access governance for IGA (Identity Governance and Administration).
 

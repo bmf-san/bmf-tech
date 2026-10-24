@@ -94,7 +94,7 @@ OAuth 2.0の仕様は[OAuth 2.0とは？](/ja/posts/oauth-2-0/)に、OAuth 2.1�
 
 ## IAMとは何か
 
-NISTの用語集は、IAMを「システム（企業、ネットワーク、国など）の中で個々のIDを管理すること」と説明している。企業ITでは、個々の利用者のロールとアクセス権限を確立し管理することを指すとも書く。
+NISTの用語集は、IAMを広くシステム（企業、ネットワーク、国など）の中で個々のIDを管理することだと説明している。企業ITでは、個々のネットワーク利用者のロールとアクセス権限を確立し管理することを指すとも書く。
 
 この記事では、主体（人、サービス、AIエージェント）のIDを管理し、その主体が何にアクセスしてよいかを決めて統制する領域をIAMと呼ぶ。具体的には、認証、認可（委譲、アクセス判定、アクセスガバナンス）、その前提となるIDの管理をまとめたものである。
 
@@ -119,7 +119,7 @@ Core / Supporting / Genericはサブドメインの分類である。どれに�
 | IAM以外（EC、SaaSなどの業務アプリ） | 事業ドメインの中のGenericサブドメイン（事業によってはSupporting） |
 | IAMそのもの（IdP、認可エンジン、IGAのベンダー） | IAMがドメインそのもの。その中のサブドメインをCore / Supporting / Genericに分ける |
 
-業務アプリの組織にとって、IAMは基本的にGenericである。IDDDの公式サンプルにある`iddd_identityaccess`（Identity and Access Context）は、まさにGenericサブドメインとしてのIAMの例である。Genericであれば、標準仕様と既製品で済ませる方向に倒すのが自然な判断になる。
+業務アプリの組織にとって、IAMは基本的にGenericである。IDDDの本はIdentity and Access ContextをGenericサブドメインの例として扱っており、公式サンプルの`iddd_identityaccess`がその実装である。Genericであれば、標準仕様と既製品で済ませる方向に倒すのが自然な判断になる。
 
 ただし、テナントごとに複雑な権限を設定できることが売りのSaaSでは、アクセス判定やアクセスガバナンスがSupportingに寄ることがある。IAMのベンダーであれば、IdPなら認証と委譲、認可エンジンならアクセス判定、IGA（Identity Governance and Administration）ならアクセスガバナンスがCoreになりやすい。
 
