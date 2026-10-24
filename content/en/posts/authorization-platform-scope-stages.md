@@ -27,7 +27,7 @@ This article lays out the material you need to decide how much authorization pla
 - Four stages, and the signs that you should not build a platform
 - How to decide whether to move authorization decisions out of applications (externalize them)
 
-[What Is Authorization? The Big Picture Through IAM Subdomains](/posts/authorization-domain-iam-subdomains/) covers what authorization is, how it differs from authentication, and the IAM subdomains. This article builds on that and focuses on how much an organization should build.
+[What is Authorization? Mapping AuthN, AuthZ, and IAM Subdomains](/posts/authorization-domain-iam-subdomains/) covers what authorization is, how it differs from authentication, and the IAM subdomains. This article builds on that and focuses on how much an organization should build.
 
 The stages and decision axes in this article reflect my own framing. No standard set of criteria exists for this decision.
 
