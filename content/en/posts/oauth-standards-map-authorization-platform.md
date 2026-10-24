@@ -89,10 +89,10 @@ The rest of this post walks through each question: the role of each standard and
 | RFC 6749 / RFC 6750 | The core of OAuth 2.0: roles, grants, and how to use bearer tokens | RFC |
 | OAuth 2.1 (draft-ietf-oauth-v2-1) | Consolidates 6749, major extensions, and the BCP. Requires PKCE and drops Implicit and Password | Draft (-16, September 2026) |
 | RFC 9700 (BCP 240) | The Security BCP, collecting attacks and countermeasures found since 2012 | RFC |
-| RFC 7636 (PKCE) | Stops authorization code interception. Today every client should use it | RFC |
+| RFC 7636 (PKCE) | Stops authorization code interception. RFC 9700 requires it for public clients and recommends it for confidential clients; OAuth 2.1 requires it for all clients with narrow exceptions | RFC |
 | RFC 8252 and RFC 10017 (BCP 212) | Best Current Practice for native apps and browser-based apps | RFC (10017 in August 2026) |
 | RFC 8628 | Device grant: approve on a second device when the first one has poor input | RFC |
-| RFC 7523 | Client authentication with a JWT (`private_key_jwt`), and JWTs as authorization grants | RFC |
+| RFC 7523 | Client authentication with a JWT (the basis of OIDC's `private_key_jwt`), and JWTs as authorization grants | RFC |
 
 [What is OAuth 2.0?](/posts/oauth-2-0/) covers OAuth 2.0 as a whole, and [What is OAuth 2.1?](/posts/oauth-2-1-security-bcp/) covers OAuth 2.1 and the RFC 9700 recommendations. As of October 2026, OAuth 2.1 still has no RFC number. The BCP for browser-based apps came out as RFC 10017 in August 2026. [Where should you store SPA tokens?](/posts/spa-token-storage-bff/) covers token storage in SPAs.
 
@@ -132,7 +132,7 @@ The flow works like this:
 2. The OP returns an `auth_req_id` and asks the user's device for approval.
 3. The client receives the result. It picks one of three modes at registration: Poll, Ping, or Push.
 
-With `binding_message`, both the requesting screen and the approving screen show the same string. CIBA suits cases where the person operating and the person approving use different devices, such as call centers and store terminals. It also inspired mechanisms where AI agents ask humans for approval. [How authorization changes with AI agents](/posts/authorization-for-ai-agents/) covers that.
+With `binding_message`, both the requesting screen and the approving screen show the same string. CIBA suits cases where the person operating and the person approving use different devices, such as call centers and store terminals. CIBA is also one candidate when AI agents need to ask humans for approval. [How authorization changes with AI agents](/posts/authorization-for-ai-agents/) covers that.
 
 An authorization platform must decide how to identify the user (the `login_hint` format) and which device receives the approval notice. Identifying the wrong user means asking a stranger for approval.
 
@@ -147,7 +147,7 @@ The main differences from OAuth:
 - The request itself negotiates how to interact with the user (redirect, user code, and so on).
 - After issuance, the client can update or revoke the grant through a continuation URL.
 
-As of October 2026, few large ecosystems have adopted GNAP. An authorization platform has little reason to build it today. Still, its ideas of "key-bound clients" and "continuing grants" help when you design OAuth sender constraints or agent delegation.
+As far as I know, few large ecosystems had adopted GNAP as of October 2026. An authorization platform has little reason to build it today. Still, its ideas of "key-bound clients" and "continuing grants" help when you design OAuth sender constraints or agent delegation.
 
 # Request Integrity: Keep Authorization Requests Tamper-Proof
 
@@ -171,7 +171,10 @@ POST /as/par HTTP/1.1
 Host: as.example.com
 Content-Type: application/x-www-form-urlencoded
 
-response_type=code&client_id=s6BhdRkqt3&code_challenge=...&redirect_uri=...
+response_type=code&client_id=s6BhdRkqt3&redirect_uri=...
+&code_challenge=...&code_challenge_method=S256
+&client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer
+&client_assertion=...
 ```
 
 ```json
@@ -192,7 +195,7 @@ FAPI 2.0 is an OpenID Foundation profile that narrows how to use OAuth for high-
 
 Examples of Security Profile requirements:
 
-- Use only the authorization code flow and support only confidential clients
+- Limit authorization requests to the authorization code flow (`response_type=code`) and support only confidential clients
 - Use PAR and require PKCE with S256
 - Issue only sender-constrained access tokens (mTLS or DPoP)
 - Limit authorization code lifetime to 60 seconds at most
@@ -246,7 +249,7 @@ Main requirements as of draft-02:
 - The client cannot use authentication methods based on `client_secret`. It either acts as a public client or authenticates with a key, such as `private_key_jwt`
 - The AS signals support with the `client_id_metadata_document_supported` metadata
 
-Because the AS fetches external URLs, it needs SSRF countermeasures. If the AS accepts any URL, anyone can claim to be any client, so the AS also needs a policy on which domains to trust. The MCP authorization specification now prefers CIMD over DCR. [Key points for designing MCP authorization](/posts/mcp-authorization-design/) covers the details.
+Because the AS fetches external URLs, it needs SSRF countermeasures. If the AS accepts any URL, anyone can claim to be any client, so the AS also needs a policy on which domains to trust. The MCP authorization specification (2026-07-28) prefers CIMD over DCR and deprecates DCR. [Key points for designing MCP authorization](/posts/mcp-authorization-design/) covers the details.
 
 An authorization platform must decide which registration methods (pre-registration, DCR, CIMD) to allow for which kinds of clients.
 
@@ -446,19 +449,19 @@ You do not need to adopt everything from day one. Follow the stages in [How far 
 - [How Should You Design Authorization for MCP? Common Incidents and Decisions That Are Hard to Reverse](/posts/mcp-authorization-design/)
 - [What Does an Authorization Platform Architecture Look Like? Containers, Key Sequences, PEP/PDP Placement, and Non-Functional Decisions](/posts/authorization-platform-architecture-decisions/)
 - [OAuth 2.0 Explained: Complete Guide to Flows, Tokens, and Implementation](/posts/oauth-2-0/)
-- [OAuth 2.1 and the Security BCP: RFC 9700 and RFC 6819](/posts/oauth-2-1-security-bcp/)
+- [OAuth 2.1 and the Security BCP: RFC 9700 and RFC 6819 (Changes from OAuth 2.0)](/posts/oauth-2-1-security-bcp/)
 - [Summary of OpenID Connect 1.0 Specifications](/posts/openid-connect-1-0-spec-summary/)
-- [OpenID Connect Discovery and Metadata](/posts/oidc-discovery-metadata/)
-- [What is Dynamic Client Registration (DCR)?](/posts/dynamic-client-registration/)
+- [OpenID Connect Discovery and Metadata: Auto-Configuration and jwks_uri Key Retrieval](/posts/oidc-discovery-metadata/)
+- [What is Dynamic Client Registration (DCR)? An Introduction to RFC 7591 and 7592](/posts/dynamic-client-registration/)
 - [What is JOSE? An Overview of JWT, JWS, JWE, JWK, and JWA](/posts/jose-overview/)
-- [What is JWT? JSON Web Tokens Explained](/posts/jwt-introduction/)
-- [Access Token Validation and Revocation](/posts/access-token-validation-revocation/)
-- [What are Sender-Constrained Tokens? mTLS (RFC 8705) and DPoP (RFC 9449)](/posts/sender-constrained-tokens-mtls-dpop/)
+- [What is JWT? JSON Web Tokens Explained for Secure API Authentication](/posts/jwt-introduction/)
+- [Access Token Validation and Revocation: Introspection, JWT, and Token Revocation (RFC 7009)](/posts/access-token-validation-revocation/)
+- [What are Sender-Constrained Tokens? An Introduction to mTLS (RFC 8705) and DPoP (RFC 9449)](/posts/sender-constrained-tokens-mtls-dpop/)
 - [OIDC Logout and Security Event Token (SET)](/posts/oidc-logout-security-event-token/)
-- [Where Should You Store SPA Tokens? A BFF + Session Design](/posts/spa-token-storage-bff/)
-- [The Big Picture of Service-to-Service Authentication](/posts/service-to-service-authentication/)
-- [SAML 2.0 Explained](/posts/saml-2-0/)
-- [Designing Secure API Tokens with NIST CSF 2.0](/posts/nist-csf-api-token-design/)
+- [Where Should You Store SPA Tokens? A BFF + Session Authentication Design](/posts/spa-token-storage-bff/)
+- [What is the Big Picture of Service-to-Service Authentication? mTLS, Token Exchange, SPIFFE, and Zero Trust](/posts/service-to-service-authentication/)
+- [SAML 2.0 Explained: How SSO and Federated Identity Work](/posts/saml-2-0/)
+- [Designing Secure API Tokens with NIST CSF 2.0: Working Backward from Protect and Detect](/posts/nist-csf-api-token-design/)
 - [Resources for Catching Up on OAuth2 and OIDC](/posts/resources-for-catching-up-on-oauth2-oidc/)
 
 # References

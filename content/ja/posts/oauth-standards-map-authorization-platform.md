@@ -89,10 +89,10 @@ flowchart LR
 | RFC 6749 / RFC 6750 | ロール、グラント、Bearerトークンの使い方を定めるOAuth 2.0の本体 | RFC |
 | OAuth 2.1（draft-ietf-oauth-v2-1） | 6749と主要な拡張、BCPを1本にまとめ直した版。PKCE必須、ImplicitとPasswordを削除 | Draft（-16、2026年9月） |
 | RFC 9700（BCP 240） | 2012年以降にわかった攻撃と対策をまとめたSecurity BCP | RFC |
-| RFC 7636（PKCE） | 認可コードの横取りを防ぐ。今はすべてのクライアントで使う | RFC |
+| RFC 7636（PKCE） | 認可コードの横取りを防ぐ。RFC 9700は公開クライアントに必須、機密クライアントに推奨とし、OAuth 2.1は原則すべてのクライアントに求める | RFC |
 | RFC 8252とRFC 10017（BCP 212） | ネイティブアプリとブラウザで動くアプリのBest Current Practice | RFC（10017は2026年8月） |
 | RFC 8628 | 入力しにくい端末で、別の端末から承認するデバイスグラント | RFC |
-| RFC 7523 | JWTでクライアントを認証する（`private_key_jwt`）。JWTを認可グラントとしても使う | RFC |
+| RFC 7523 | JWTでクライアントを認証する（OIDCの`private_key_jwt`もこれを使う）。JWTを認可グラントとしても使う | RFC |
 
 OAuth 2.0の全体は[OAuth 2.0とは？](/ja/posts/oauth-2-0/)に、OAuth 2.1とRFC 9700の推奨は[OAuth 2.1とは？](/ja/posts/oauth-2-1-security-bcp/)にまとめた。OAuth 2.1は2026年10月時点でもまだRFCではない。ブラウザで動くアプリのBCPは2026年8月にRFC 10017として出た。SPAでのトークンの置き場所は[SPAのトークンをどこに置く？](/ja/posts/spa-token-storage-bff/)で扱った。
 
@@ -132,7 +132,7 @@ OpenID Connect Client-Initiated Backchannel Authentication（CIBA）Core 1.0は�
 2. OPは`auth_req_id`を返し、利用者の端末に承認を求める。
 3. クライアントは結果を受け取る。受け取り方はPoll、Ping、Pushの3つのモードから登録時に選ぶ。
 
-`binding_message`を使うと、要求した側と承認する側の両方の画面に同じ文字列を出せる。コールセンターや店頭端末のように、操作する人と承認する人の端末が分かれる場面に向く。AIエージェントが人の承認を求める仕組みの発想の元にもなっている。これは[AIエージェントで認可の何が変わるか](/ja/posts/authorization-for-ai-agents/)で扱う。
+`binding_message`を使うと、要求した側と承認する側の両方の画面に同じ文字列を出せる。コールセンターや店頭端末のように、操作する人と承認する人の端末が分かれる場面に向く。AIエージェントが人の承認を求める場面でも、CIBAは候補の1つになる。これは[AIエージェントで認可の何が変わるか](/ja/posts/authorization-for-ai-agents/)で扱う。
 
 認可基盤として決めることは、利用者をどう指定するか（`login_hint`の形式）と、承認の通知をどの端末に送るかである。利用者を取り違えると、別人に承認を求めることになる。
 
@@ -147,7 +147,7 @@ OAuthとの主な違いは次のとおりである。
 - 利用者とのやりとり（リダイレクト、ユーザーコードなど）を要求の中で交渉する。
 - 発行後も、継続用のURLでグラントを更新したり取り消したりできる。
 
-2026年10月時点で、GNAPを採用した大きなエコシステムは少ない。認可基盤が今GNAPを実装する必要は薄い。ただし「鍵に結び付いたクライアント」「継続するグラント」という考え方は、OAuthの送信者制約やエージェントの委譲を設計する際の参考になる。
+筆者の知る範囲では、2026年10月時点でGNAPを採用した大きなエコシステムは少ない。認可基盤が今GNAPを実装する必要は薄い。ただし「鍵に結び付いたクライアント」「継続するグラント」という考え方は、OAuthの送信者制約やエージェントの委譲を設計する際の参考になる。
 
 # 要求の完全性: 認可要求を改ざんさせない
 
@@ -171,7 +171,10 @@ POST /as/par HTTP/1.1
 Host: as.example.com
 Content-Type: application/x-www-form-urlencoded
 
-response_type=code&client_id=s6BhdRkqt3&code_challenge=...&redirect_uri=...
+response_type=code&client_id=s6BhdRkqt3&redirect_uri=...
+&code_challenge=...&code_challenge_method=S256
+&client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer
+&client_assertion=...
 ```
 
 ```json
@@ -192,7 +195,7 @@ FAPI 2.0は、金融などの高リスクなAPI向けにOAuthの使い方を絞�
 
 Security Profileの要求の例は次のとおりである。
 
-- 認可コードフローだけを使い、機密クライアントだけをサポートする
+- 認可要求は認可コードフロー（`response_type=code`）に限り、機密クライアントだけをサポートする
 - PARを使い、PKCEはS256を必須にする
 - アクセストークンは送信者制約（mTLSかDPoP）付きだけを発行する
 - 認可コードの有効期限は最長60秒にする
@@ -246,7 +249,7 @@ OAuth Client ID Metadata Documentは、HTTPSのURLを`client_id`にする仕組�
 - `client_secret`を使う認証方式は使えない。公開クライアントか、`private_key_jwt`などの鍵による認証になる
 - ASは対応していることを、メタデータの`client_id_metadata_document_supported`で示す
 
-ASは外部のURLを取得するので、SSRFへの対策が要る。誰のURLでも受け入れると、どのクライアントでも名乗れてしまう。どのドメインを信頼するかのポリシーも要る。MCPの認可仕様では、DCRよりCIMDを優先するようになった。詳しくは[MCPの認可を設計するときの勘所](/ja/posts/mcp-authorization-design/)で扱う。
+ASは外部のURLを取得するので、SSRFへの対策が要る。誰のURLでも受け入れると、どのクライアントでも名乗れてしまう。どのドメインを信頼するかのポリシーも要る。MCPの認可仕様（2026-07-28版）は、DCRよりCIMDを優先し、DCRを非推奨とした。詳しくは[MCPの認可を設計するときの勘所](/ja/posts/mcp-authorization-design/)で扱う。
 
 認可基盤として決めることは、クライアントの登録方式（事前登録、DCR、CIMD）のどれを、どの種類のクライアントに許すかである。
 
@@ -448,7 +451,7 @@ WWW-Authenticate: Bearer error="insufficient_user_authentication",
 - [OAuth 2.0とは？フロー・トークン・実装の完全解説](/ja/posts/oauth-2-0/)
 - [OAuth 2.1とは？OAuth 2.0からの変更点とSecurity BCP（RFC 9700）](/ja/posts/oauth-2-1-security-bcp/)
 - [OpenID Connect 1.0 仕様まとめ](/ja/posts/openid-connect-1-0-spec-summary/)
-- [OpenID ConnectのDiscoveryとメタデータとは？](/ja/posts/oidc-discovery-metadata/)
+- [OpenID ConnectのDiscoveryとメタデータとは？自動設定と鍵取得の仕組み](/ja/posts/oidc-discovery-metadata/)
 - [動的クライアント登録（DCR）とは？RFC 7591・7592入門](/ja/posts/dynamic-client-registration/)
 - [JOSEとは？JWT・JWS・JWE・JWK・JWAの全体像と安全な使い方](/ja/posts/jose-overview/)
 - [JWTとは？安全なAPI認証のためのJSON Web Token解説](/ja/posts/jwt-introduction/)
@@ -458,7 +461,7 @@ WWW-Authenticate: Bearer error="insufficient_user_authentication",
 - [SPAのトークンをどこに置く？BFF＋セッションで守る認証構成](/ja/posts/spa-token-storage-bff/)
 - [サービス間認証の全体像とは？mTLS・Token Exchange・SPIFFE・ゼロトラスト](/ja/posts/service-to-service-authentication/)
 - [SAML 2.0とは？SSOとフェデレーテッドアイデンティティの仕組みを解説](/ja/posts/saml-2-0/)
-- [NIST CSF 2.0に学ぶ安全なAPIトークン設計](/ja/posts/nist-csf-api-token-design/)
+- [NIST CSF 2.0に学ぶ安全なAPIトークン設計｜防御と検知から逆算する実装パターン](/ja/posts/nist-csf-api-token-design/)
 - [OAuth2、OIDCのキャッチアップのための資料](/ja/posts/resources-for-catching-up-on-oauth2-oidc/)
 
 # 参考リンク
