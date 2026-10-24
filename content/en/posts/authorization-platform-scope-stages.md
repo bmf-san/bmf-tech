@@ -192,7 +192,7 @@ Each stage builds on the previous one. The PDP in Stage 2 relies on the token an
 
 You do not need to move every domain at once when you move up a stage. Start with the domains that feel the most pain, and firm up the shared contracts as you go. That keeps the platform close to real requirements.
 
-[Case Study on Authorization Management Infrastructure](/posts/permission-management-case-study/) covers freee's example (from articles and a talk published in 2023 and 2024) of a dedicated team that builds and runs a permission management platform.
+[Case Study on Authorization Management Infrastructure](/posts/permission-management-case-study/) covers freee's example (from articles and presentation slides published in 2023 and 2024) of a dedicated team that builds and runs a permission management platform.
 
 ## Align Stage 1 early
 
