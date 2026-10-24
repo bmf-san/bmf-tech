@@ -452,7 +452,7 @@ PDPが落ちたときや応答が遅いときに、通す（fail-open）か止�
 - [AuthZEN Access Request and Approval Profile（Draft）](https://openid.github.io/authzen/authzen-access-request-approval-profile-1_0.html)
 - [COAZ-MCP: COAZ Binding for the Model Context Protocol（Draft）](https://openid.github.io/authzen/authzen-coaz-mcp-binding-1_0.html)
 - [Model Context Protocol: Authorization（2026-07-28）](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization)
-- [Model Context Protocol: Security Best Practices（2026-07-28）](https://modelcontextprotocol.io/specification/2026-07-28/basic/security_best_practices)
+- [Model Context Protocol: Security Best Practices（2026-07-28）](https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices)
 - [The OAuth 2.1 Authorization Framework（Internet-Draft）](https://datatracker.ietf.org/doc/draft-ietf-oauth-v2-1/)
 - [RFC 8693: OAuth 2.0 Token Exchange](https://www.rfc-editor.org/rfc/rfc8693)
 - [Transaction Tokens（Internet-Draft）](https://datatracker.ietf.org/doc/draft-ietf-oauth-transaction-tokens/)
