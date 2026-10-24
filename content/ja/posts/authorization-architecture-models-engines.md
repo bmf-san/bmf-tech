@@ -149,9 +149,9 @@ flowchart LR
 
 3つは排他ではない。SP 800-162は、ACLとRBACをある意味でABACの特殊な場合とみなす。ACLはidentityという属性、RBACはroleという属性で判定している、という見方である。関係も属性の一種として表せる。違いは「何を中心にモデリングするか」であり、実務では組み合わせるのが普通である。
 
-## PBACは「書き方」の名前
+## PBACは「書き方」として捉える
 
-PBAC（Policy-Based Access Control）は、上の3軸のどれにも入らない。ポリシー言語で宣言的に書くという表現方法を指す名前である。ABACと同じ意味で使われることが多いが、RBACとReBACもポリシー言語で書ける。だから「RBACとPBACのどちらを選ぶ」という問いは軸が混ざっている。「RBACのモデルを、Policy-as-Codeで書く」のように分けて語ると議論がかみ合う。
+PBAC（Policy-Based Access Control）には、定まった1つの定義がない。NISTの用語集はCNSSI 4009の定義を引き、評価する要素（ID、ロール、クリアランス、リスクなど）を柔軟に選べる認可ポリシーを使うアクセス制御の一形態としている。筆者は、PBACを上の3軸とは別の、ポリシー言語で宣言的に書くという表現方法の名前として捉えると、議論を整理しやすいと考える。ABACと同じ意味で使われることが多いが、RBACとReBACもポリシー言語で書ける。だから「RBACとPBACのどちらを選ぶ」という問いは軸が混ざっている。「RBACのモデルを、Policy-as-Codeで書く」のように分けて語ると議論がかみ合う。
 
 # モデルの選び方と組み合わせ方
 
@@ -331,7 +331,7 @@ ReBACのエンジンを入れると、関係データを業務DBとエンジン�
 
 - 認可は「モデル」「表現」「エンジン」「API」「データ」の層に分けて考える。選ぶ順序は、モデル、データ、エンジンが安全である。
 - PEPは業務ドメインの側、PDPとPAPはアクセス判定の側、PIPは属性の権威の側に置く。PEPとPDPの間は守り、判定できなければ拒否する。
-- RBAC・ABAC・ReBACは排他ではない。ロールで上限を決め、関係と属性で絞る構成が見直しやすい。PBACはモデルではなく書き方の名前である。
+- RBAC・ABAC・ReBACは排他ではない。ロールで上限を決め、関係と属性で絞る構成が見直しやすい。PBACは、モデルではなく書き方の名前として捉えると整理しやすい。
 - 原典の教訓は今も使える。RBACの「only if」、SP 800-162の属性の権威、XACMLの結合アルゴリズムと義務、NGACの「一覧の問いには列挙で答える」がその例である。
 - エンジンは、モデルの中心、データの持ち方、一覧の要件で絞り込む。PEPとPDPの間を標準に寄せておけば、選び直しの余地が残る。
 
@@ -354,6 +354,7 @@ ReBACのエンジンを入れると、関係データを業務DBとエンジン�
 # 参考リンク
 
 - [NIST: Role Based Access Control（プロジェクトページ）](https://csrc.nist.gov/projects/role-based-access-control)
+- [NIST CSRC Glossary: policy-based access control](https://csrc.nist.gov/glossary/term/policy_based_access_control)
 - [D. Ferraiolo, R. Kuhn: Role-Based Access Controls (1992)](https://csrc.nist.gov/pubs/conference/1992/10/13/rolebased-access-controls/final)
 - [R. Kuhn, E. Coyne, T. Weil: Adding Attributes to Role-Based Access Control (2010)](https://csrc.nist.gov/pubs/journal/2010/06/adding-attributes-to-rolebased-access-control/final)
 - [INCITS 359-2012 (R2022)](https://webstore.ansi.org/standards/incits/incits3592012r2022) / [BSR INCITS 359 ドラフト（2003-04-04、NIST）](https://csrc.nist.gov/CSRC/media/Projects/Role-Based-Access-Control/documents/rbac-std-ncits.pdf)

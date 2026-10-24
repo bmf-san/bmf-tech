@@ -149,9 +149,9 @@ The third axis goes back to the access matrix in Lampson's 1971 paper. Osborn, S
 
 The three do not exclude each other. SP 800-162 treats ACL and RBAC as, in some ways, special cases of ABAC: ACL decides on the identity attribute and RBAC on the role attribute. You can also express relations as attributes. The difference lies in what you model around, and real systems usually combine them.
 
-## PBAC Names a Style, Not a Model
+## Treat PBAC as a Style, Not a Model
 
-PBAC (Policy-Based Access Control) does not belong to any of the three axes. The name refers to writing access rules declaratively in a policy language. People often use it as a synonym for ABAC, yet you can write RBAC and ReBAC in a policy language too. The question "RBAC or PBAC?" mixes two axes. Phrasing it as "an RBAC model written as Policy-as-Code" keeps the discussion clear.
+PBAC (Policy-Based Access Control) has no single agreed definition. The NIST glossary cites CNSSI 4009, which calls it "a form of access control that uses an authorization policy that is flexible in the types of evaluated parameters (e.g., identity, role, clearance, operational need, risk, heuristics)." In my view, the discussion stays clearer if you treat PBAC as a name for a style outside the three axes: writing access rules declaratively in a policy language. People often use it as a synonym for ABAC, yet you can write RBAC and ReBAC in a policy language too. The question "RBAC or PBAC?" mixes two axes. Phrasing it as "an RBAC model written as Policy-as-Code" keeps the discussion clear.
 
 # Choosing and Combining Models
 
@@ -331,7 +331,7 @@ You do not need to put everything on one engine. A common setup keeps a ReBAC en
 
 - Think of authorization in layers: model, expression, engine, API, and data. The safe order of choice runs model, data, engine.
 - Put the PEP on the business domain side, the PDP and PAP on the access decision side, and the PIP next to attribute authorities. Protect the PEP-PDP channel and deny when no decision comes back.
-- RBAC, ABAC, and ReBAC do not exclude each other. Letting roles set the ceiling and relations and attributes narrow it keeps review manageable. PBAC names a writing style, not a model.
+- RBAC, ABAC, and ReBAC do not exclude each other. Letting roles set the ceiling and relations and attributes narrow it keeps review manageable. Treating PBAC as a writing style rather than a model keeps the discussion clear.
 - The originals still teach: RBAC's "only if", SP 800-162's attribute authorities, XACML's combining algorithms and obligations, and NGAC's "answer list questions with enumeration".
 - Narrow down engines by model focus, data handling, and listing needs. Standardizing the PEP-PDP line keeps the option to choose again.
 
@@ -354,6 +354,7 @@ You do not need to put everything on one engine. A common setup keeps a ReBAC en
 # References
 
 - [NIST: Role Based Access Control (project page)](https://csrc.nist.gov/projects/role-based-access-control)
+- [NIST CSRC Glossary: policy-based access control](https://csrc.nist.gov/glossary/term/policy_based_access_control)
 - [D. Ferraiolo, R. Kuhn: Role-Based Access Controls (1992)](https://csrc.nist.gov/pubs/conference/1992/10/13/rolebased-access-controls/final)
 - [R. Kuhn, E. Coyne, T. Weil: Adding Attributes to Role-Based Access Control (2010)](https://csrc.nist.gov/pubs/journal/2010/06/adding-attributes-to-rolebased-access-control/final)
 - [INCITS 359-2012 (R2022)](https://webstore.ansi.org/standards/incits/incits3592012r2022) / [BSR INCITS 359 draft (2003-04-04, NIST)](https://csrc.nist.gov/CSRC/media/Projects/Role-Based-Access-Control/documents/rbac-std-ncits.pdf)
