@@ -118,7 +118,7 @@ As a rule, the callee makes the decision. When the decision gets too fine-graine
 
 ## Layered Authentication and "Authentication Is Not Authorization"
 
-In real deployments, a workload often authenticates to a sidecar or gateway over mTLS and to the destination workload with an application-layer WIT. arch-08 calls this layered authentication and sets these rules.
+In some deployments, a workload authenticates to a sidecar or gateway over mTLS and to the destination workload with an application-layer WIT. arch-08 notes that this pattern is common when infrastructure components end connections on behalf of workloads, calls it layered authentication, and sets these rules.
 
 - The destination MUST NOT assume that the transport-layer identity an intermediary authenticated equals the application-layer caller, unless protocol or deployment policy establishes that relationship explicitly.
 - When identities from both layers are available and relevant, audit records SHOULD include both.
@@ -429,7 +429,7 @@ Key points follow.
 - The AS MUST NOT accept a token just because a key discovered via `iss` verifies its signature and `sub` looks like a SPIFFE ID. That invites token confusion, where an OIDC token meant for something else poses as a JWT-SVID.
 - With a Client ID Metadata Document (CIMD), the metadata's `spiffe_id` can end with a `/*` wildcard. Matching works as a prefix match on whole path segments.
 
-The design caveat: mapping SPIFFE IDs to `client_id` values is itself an authorization decision. Which workload may act as which OAuth client sets the upper bound on the scopes that client gets. Anyone who can create SPIRE registration entries can, in effect, decide this mapping. Govern who can create registration entries as strictly as you govern client registration at the authorization server.
+The design caveat: mapping SPIFFE IDs to `client_id` values is itself an authorization decision. Which workload may act as which OAuth client sets the upper bound on the scopes that client gets. SPIRE registration entries decide which workload gets which SPIFFE ID, so anyone who can create them can, in effect, decide which workload acts as which OAuth client. Govern who can create registration entries as strictly as you govern client registration at the authorization server.
 
 In my view, a practical default is `spiffe_x509` with proof of possession on paths that connect to the AS directly over TLS, and a short-lived `spiffe_jwt` on paths where something terminates TLS. A `spiffe_jwt` is a bearer token, so this assumes you trust the intermediary that terminates TLS. `spiffe_wit` depends on drafts that still change, so I consider it too early to make it the production default.
 
