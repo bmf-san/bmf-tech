@@ -201,7 +201,7 @@ X-Request-ID: bfe9eb29-ab87-4ca3-be83-a1d5d8305716
 
 ## 既定値と上書き
 
-最上位の`subject`・`action`・`resource`・`context`は、`evaluations`配列の各要素の既定値になる。要素の中に同じキーがあれば、そちらで上書きする。次の例では、主体・操作・環境を共通にし、3件目だけ操作を`can_edit`に替えている。
+最上位の`subject`・`action`・`resource`・`context`は、`evaluations`配列の各要素の既定値になる。要素の中に同じキーがあれば、そちらで上書きする。次の例では、主体・操作・環境を最上位で一度だけ指定し、3件目だけ操作を`can_edit`で上書きしている。
 
 ```json
 {

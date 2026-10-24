@@ -201,7 +201,7 @@ Suppose a list page needs to decide, for each of 50 documents, whether to show a
 
 ## Defaults and Overrides
 
-The top-level `subject`, `action`, `resource`, and `context` act as defaults for each element of the `evaluations` array. A key inside an element overrides the default. In the example below, all elements share the subject, action, and context, and only the third element switches the action to `can_edit`.
+The top-level `subject`, `action`, `resource`, and `context` act as defaults for each element of the `evaluations` array. A key inside an element overrides the default. In the example below, the top level sets the subject, action, and context once, and only the third element overrides the action with `can_edit`.
 
 ```json
 {
