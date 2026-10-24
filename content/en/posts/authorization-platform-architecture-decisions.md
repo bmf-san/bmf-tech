@@ -28,7 +28,7 @@ What you will learn:
 - Where to place PEPs and PDPs, how to split coarse and fine-grained authorization, and what to carry in tokens
 - Non-functional decisions: latency, caching, availability and fail-closed, consistency, and audit
 
-The diagrams follow two levels of the C4 model: Context (the system and the outside world) and Container (deployable building blocks). See [the C4 model](https://c4model.com/) for the approach. For general advice on documenting architecture, see [Things to Consider When Writing Architecture Documents](/posts/writing-architecture-documentation/).
+The diagrams follow two levels of the C4 model: Context (the system and the outside world) and Container (applications and data stores that must be running for the system to work). See [the C4 model](https://c4model.com/) for the approach. For general advice on documenting architecture, see [Things to Consider When Writing Architecture Documents](/posts/writing-architecture-documentation/).
 
 The architecture here works as a reference: it lists every element an organization might need. You do not need to build everything on day one. How far to go, and whether to move decisions out of applications at all, belongs to [How Far Should You Build an Authorization Platform?](/posts/authorization-platform-scope-stages/).
 
@@ -96,9 +96,9 @@ Three points stand out in this diagram.
 - **Three kinds of subjects enter the system.** Humans, workloads (services), and AI agents. The context diagram shows humans and AI agents; the container diagram covers workloads.
 - **Inputs also come from outside IAM.** Subdomains 2 and 4 receive most risk signals, and subdomain 4 receives subscription status.
 
-# Containers: Split Each Subdomain into Deployable Units
+# Containers: Split Each Subdomain into Applications and Data Stores
 
-Next, split each subdomain into deployable containers. Arrow labels show what each edge carries and which standard it uses.
+Next, split each subdomain into containers such as applications and data stores. Arrow labels show what each edge carries and which standard it uses.
 
 ```mermaid
 flowchart LR
@@ -225,11 +225,11 @@ Note how the flow splits the roles.
 
 - **Token validation is the PEP's job.** Until the PEP checks the signature, issuer (iss), audience (aud), and expiry (exp), asking the PDP has no value.
 - **Deciding is the PDP's job.** The PEP passes "who, what action, which resource, in what context" as AuthZEN's Subject, Action, Resource, and Context.
-- **A decision is more than true or false.** An AuthZEN 1.0 decision carries a context that can return reasons for a denial or a step-up authentication request (such as acr_values).
+- **A decision is more than true or false.** An AuthZEN 1.0 decision can include a context that returns reasons for a denial or a step-up authentication request (such as acr_values).
 
 ## AI Agent Delegation with MCP
 
-Here an AI agent uses a tool on an MCP server. Under the MCP authorization specification, the MCP server acts as an OAuth resource server, and the agent (the MCP client) acts as an OAuth client.
+Here an AI agent uses a tool on an MCP server. Under the MCP authorization specification, a protected MCP server acts as an OAuth 2.1 resource server, and the agent (the MCP client) acts as an OAuth 2.1 client.
 
 ```mermaid
 sequenceDiagram
@@ -307,7 +307,7 @@ Two independent axes decide placement: where the PEP (enforcement) sits on the r
 | | Service mesh proxy | Enforce on service-to-service traffic without changing service code |
 | | Inside the service (middleware, code) | Fine-grained authorization that uses business context |
 | | Data layer (row-level security, SQL conditions from partial evaluation) | Narrow "which items may I see" inside the database |
-| Where the PDP runs | In-process library (OPA, Cedar, Cerbos SDKs, etc.) | Lowest latency |
+| Where the PDP runs | In-process library (OPA, Cedar, Cerbos embedded PDP, etc.) | Lowest latency |
 | | Sidecar | Language-independent, low latency |
 | | Central service (including managed services) | Consistent decisions, centralized audit, shared by many PEPs |
 
@@ -341,7 +341,7 @@ Guidelines for choosing:
 - **Two tiers are the default.** Do coarse authorization at the edge and fine-grained authorization inside the service or at the data layer. Reject clearly invalid requests early, and leave per-resource decisions to the side that has the context.
 - **Central management and execution location are separate concerns.** Even if the PDP runs as a library or sidecar, distributing policies from a central PAP keeps management in one place.
 - **Keep the API independent of placement.** The AuthZEN API works with a PDP in any placement. A standard interface between PEP and PDP makes later placement changes easier.
-- **Design list retrieval separately.** Repeating "may I read this resource?" for every item in a list breaks counts and page boundaries and raises load. [Considerations and Solutions for Pagination Impact in OPA](/posts/pagination-impact-solutions-opa/) examines this problem and its solutions with OPA. [Access Control Patterns Using OPA](/posts/access-control-patterns-using-opa/) compares returning database conditions through partial evaluation with returning structured conditions. The AuthZEN 1.0 Resource Search API (with pagination) also answers "which resources may this subject see?"
+- **Design list retrieval separately.** Repeating "may I read this resource?" for every item in a list breaks counts and page boundaries and raises load. [Considerations and Solutions for Pagination Impact in OPA](/posts/pagination-impact-solutions-opa/) examines this problem and its solutions with OPA. [Access Control Patterns Using OPA](/posts/access-control-patterns-using-opa/) compares returning database conditions through partial evaluation with returning structured conditions. The AuthZEN 1.0 Resource Search API also answers "which resources may this subject see?" Pagination support is optional for the PDP.
 
 ## Coarse vs Fine-Grained Authorization, and the Role of Tokens
 
@@ -358,7 +358,7 @@ Splitting the two layers clarifies what tokens do.
 - **Do not stuff fine-grained authorization into tokens.** Listing per-resource permissions in claims bloats the token, and a revoked permission survives until the token expires. Leave fine-grained decisions to the PDP and PIP.
 - **Narrow tokens when you pass them inward.** Do not reuse an access token between services; swap it for a token with a narrower audience and authority through Token Exchange or Transaction Tokens (downscoping). [Standardizing Workload Identity](/posts/workload-identity-wimse-transaction-tokens/) covers this in detail.
 
-RAR (RFC 9396) lets a token request carry structured authority, such as "from this account, up to this amount." Even so, per-resource decisions that change with every request stay easier to revoke and audit when the PDP handles them.
+RAR (RFC 9396) lets a token request carry structured authority, such as "pay this amount to this payee." Even so, per-resource decisions that change with every request stay easier to revoke and audit when the PDP handles them.
 
 ## Non-Functional Decisions
 
