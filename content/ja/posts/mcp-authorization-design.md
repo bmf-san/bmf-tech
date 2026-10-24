@@ -150,12 +150,12 @@ MCPの仕様にも、この考え方が表れている。Elicitation（サーバ
 | 置き場所 | 向いている場面 | 注意点 |
 |---|---|---|
 | MCPサーバーのコードに直接書く | MCPサーバーが少なく、ポリシーが単純 | ポリシーを変えるたびに、すべてのMCPサーバーを改修する |
-| MCPサーバーの前のゲートウェイ（PEP） | tool単位の許可やテナントごとの制御を一か所でかけたい | 引数の中身を見るには、本文を解析するか、サーバーが`x-mcp-header`でヘッダに写した引数を使う |
+| MCPサーバーの前のゲートウェイ（PEP） | tool単位の許可やテナントごとの制御を一か所でかけたい | 引数の中身を見るには、本文を解析するか、サーバーが`x-mcp-header`で指定してクライアントがヘッダに写した引数を使う |
 | 外部の判定サービス（PDP）に問い合わせる | MCPサーバーが多く、ポリシーを横断で管理したい | 判定のAPIと、判定に使う属性の設計が要る |
 
 2026-07-28版のStreamable HTTPでは、POSTの要求に`Mcp-Method`ヘッダが必須になった。`tools/call`などの要求には`Mcp-Name`ヘッダも必須である。ゲートウェイは本文を解析せずに「どのメソッドの、どのtoolか」を知り、tool単位の制御をかけられる。本文を処理するサーバーは、ヘッダと本文の値の一致を検証し、違う場合は拒否しなければならない。ヘッダで判定するゲートウェイは、`MCP-Protocol-Version`がこの照合を求める版かを確かめ、そうでなければ要求を拒否すべきである（SHOULD）。
 
-判定を外部化するなら、PEPとPDPをつなぐ標準としてAuthZENの[Authorization API](/ja/posts/authzen-authorization-api/)がある。AuthZENには、MCPの要求を判定の要求に写すプロファイル（COAZ-MCP）のDraftもある。COAZ-MCPの表記はDraft 1（2026-02-13付）のままだが、編集中の版は2026-07-28版に合わせて更新が続いている（`initialize`の対応付けの削除など）。採用するときは、前提にしているMCPの版を確かめる必要がある。PEPとPDPの分け方は[認可のアーキテクチャ](/ja/posts/authorization-architecture-models-engines/)で扱っている。
+判定を外部化するなら、PEPとPDPをつなぐ標準としてAuthZENの[Authorization API](/ja/posts/authzen-authorization-api/)がある。AuthZENには、MCPの要求を判定の要求に写すプロファイル（COAZ-MCP）のDraftもある。COAZ-MCPの表記はDraft 1（2026-02-13付）のままだが、編集中の版には2026-07-28版に合わせた変更も入り始めている（`initialize`の対応付けの削除など）。採用するときは、前提にしているMCPの版を確かめる必要がある。PEPとPDPの分け方は[認可のアーキテクチャ](/ja/posts/authorization-architecture-models-engines/)で扱っている。
 
 ## 識別子は権限ではない
 
