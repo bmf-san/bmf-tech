@@ -471,7 +471,7 @@ Authorization API 1.0の上に、用途ごとのプロファイルに加えて�
 | --- | --- | --- |
 | Access Request and Approval Profile（AARP） | Working Group Draft | 「拒否だが申請はできる」判定を、申請・承認・再評価でつなぐ。基本の完了方式では、承認後もPDPが再評価して決める |
 | COAZ Framework | Working Group Draft | 任意のプロトコルの要求からSARCを組み立てる、宣言的な写し方の枠組み |
-| COAZ-MCP Binding | Working Group Draft | COAZをMCPに当てはめ、MCPのメッセージごとに判定する |
+| COAZ-MCP Binding | Working Group Draft | COAZをMCPに当てはめ、MCPのメソッドごとに判定の問いへの写し方を決める（`ping`と通知はPDPに問い合わせずに通す） |
 | Obligations Profile | Working Group Draft | 判定に付ける、PEPが必ず実行すべき義務の形式と交渉 |
 | OAuth関連（Token Issuance、Token Exchange、Authorization Claims） | リポジトリ上のDraft 1 | トークン発行やトークン交換の判断、JWTアクセストークンに入れる権限をAuthZENに問う |
 

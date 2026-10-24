@@ -471,7 +471,7 @@ On top of Authorization API 1.0, the working group builds profiles for specific 
 | --- | --- | --- |
 | Access Request and Approval Profile (AARP) | Working Group Draft | Connects a "denied, but requestable" decision to request, approval, and re-evaluation. In the base completion mode, the PDP re-evaluates after approval and still decides |
 | COAZ Framework | Working Group Draft | A declarative way to map requests from any protocol into SARC |
-| COAZ-MCP Binding | Working Group Draft | Applies COAZ to MCP so that each MCP message gets a decision |
+| COAZ-MCP Binding | Working Group Draft | Applies COAZ to MCP and defines how each MCP method maps to a decision request (`ping` and notifications pass through without a PDP call) |
 | Obligations Profile | Working Group Draft | Format and negotiation of mandatory actions that the PEP must perform for a decision |
 | OAuth-related (Token Issuance, Token Exchange, Authorization Claims) | Draft 1 in the repository | Ask AuthZEN whether to issue or exchange a token, and which entitlements to put in JWT access tokens |
 
