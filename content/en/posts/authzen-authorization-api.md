@@ -17,7 +17,7 @@ draft: false
 
 # Overview
 
-Systems that decide "may this person perform this action on this resource?" usually split the work into two roles: the PDP (Policy Decision Point), which decides, and the PEP (Policy Enforcement Point), which enforces. Until recently, each engine shaped the PEP-to-PDP call in its own way. With OPA you build a Rego `input`. With Cedar you build a `principal`, an `action`, and a `resource`. With OpenFGA you build a `user`, a `relation`, and an `object`.
+Systems that decide "may this person perform this action on this resource?" often split the work into two roles: the PDP (Policy Decision Point), which decides, and the PEP (Policy Enforcement Point), which enforces. Until recently, each engine shaped the PEP-to-PDP call in its own way. With OPA you build a Rego `input`. With Cedar you build a `principal`, an `action`, and a `resource`. With OpenFGA you build a `user`, a `relation`, and an `object`.
 
 The OpenID Foundation's AuthZEN Working Group wrote **Authorization API 1.0** to standardize that line between the PEP and the PDP. The OpenID Foundation membership approved it as an OpenID Final Specification in January 2026.
 
@@ -92,7 +92,7 @@ The spec's introduction observes that PDP-PEP communication follows similar patt
 
 ## What OAuth and OIDC Standardized, and What They Did Not
 
-OAuth standardized delegation, and OpenID Connect standardized how to convey authentication results. The AuthZEN Authorization API standardizes the neighboring step: asking for a decision. Scopes and claims in a token narrow things down coarsely, and then the application asks a PDP for fine-grained, per-resource decisions. As far as I know, apart from the XACML profiles covered later, that second part had no widely used common shape.
+OAuth standardized delegation, and OpenID Connect standardized how to convey authentication results. The AuthZEN Authorization API standardizes the neighboring step: asking for a decision. For example, scopes and claims in a token can narrow things down coarsely, and the application can then ask a PDP for fine-grained, per-resource decisions. As far as I know, apart from the XACML profiles covered later, that second part had no widely used common shape.
 
 For a map of the OAuth-related standards, see [A map of OAuth and related standards for an authorization platform](/posts/oauth-standards-map-authorization-platform/).
 
@@ -393,7 +393,7 @@ For JSON, the spec recommends following I-JSON (RFC 7493): UTF-8 encoding, no nu
 
 ## Design Notes (My Take)
 
-The assumption that "the PDP trusts the PEP" carries weight. The PDP believes whatever department or role the PEP puts in `properties`. So decide who supplies the attributes that drive decisions. If a decision depends on attributes the PEP can set freely, an attacker who takes over the PEP can forge them too. A safer design lets the PDP fetch important attributes from a PIP itself, or read them from a token whose signature the PDP verifies itself.
+The assumption that "the PDP trusts the PEP" carries weight. The PDP believes whatever department or role the PEP puts in `properties`. So decide who supplies the attributes that drive decisions. If a decision depends on attributes the PEP can set freely, a bug in the PEP, or a PEP that copies user input straight into attributes, can let someone forge those attributes. A safer design lets the PDP fetch important attributes from a PIP itself, or read them from a token whose signature the PDP verifies itself.
 
 The second point concerns what happens when the PEP cannot reach the PDP. The spec makes errors in individual evaluations fail closed, but it does not say how a PEP should behave when the PDP itself goes down. The PEP side has to decide on timeouts, caching, and degraded-mode decisions. In my view, the safe default is to deny when the PDP is unreachable. If you cache decisions, an old permit can outlive a revoked permission, so keep the cache lifetime within what you can tolerate. For decisions about PEP/PDP placement and non-functional requirements, see [Authorization platform architecture and design decisions](/posts/authorization-platform-architecture-decisions/).
 
@@ -410,7 +410,7 @@ AuthZEN did not invent new concepts. The spec opens by noting that XACML and NIS
 | Obligations and advice | Defined in the policy language | Carried in `context` (format outside the core spec; the Obligations Profile is still a draft) |
 | Listing questions | Not in the core | Search APIs |
 
-XACML returns four decision values and defines everything down to the policy language and processing model. In my view, this is why PDPs that accept XACML requests were almost always XACML engines. AuthZEN stays out of policy languages and defines only the shape of the line. Inside, the PDP can use Rego, Cedar, or relationship tuples. Reducing the decision to a boolean and moving everything else into `context` reads as a way to let different engines expose the same interface.
+XACML returns four decision values and defines everything down to the policy language and processing model. In my view, this is why PDPs that accept XACML requests were almost always XACML engines. AuthZEN stays out of policy languages and defines only the shape of the line. Inside, the PDP can use Rego, Cedar, or relationship tuples. I read the choice to reduce the decision to a boolean and move everything else into `context` as a way to let different engines expose the same interface.
 
 NIST SP 800-162 describes ABAC through subject attributes, object attributes, operations, and environment conditions. SARC maps closely to that vocabulary. For the original sources behind the models, see [Authorization architecture: models and engines](/posts/authorization-architecture-models-engines/).
 
@@ -443,7 +443,7 @@ AuthZEN makes the PEP code and the wire format easy to swap. The following work 
 | Search API support | Search and batch evaluation are optional and vary by PDP |
 | Attribute supply paths | Which attributes the PEP sends and which the PDP fetches depends on your setup |
 
-In short, AuthZEN lets you switch PDPs without rewriting PEPs, but not without rewriting policies. Even so, in an organization with as many PEPs as it has services and gateways, the first benefit matters a lot.
+In short, AuthZEN lets you switch PDPs without rewriting PEPs, but not without rewriting policies. Even so, in my view, the first benefit matters a lot in an organization with as many PEPs as it has services and gateways.
 
 ## Interoperability Track Record
 
@@ -461,11 +461,11 @@ The AuthZEN Working Group ran seven interoperability events, from Identiverse 20
 
 Many PDPs posted results for the scenario that uses a todo app as the PEP, including Aserto, Axiomatics, Cerbos, Open Policy Agent, OpenFGA, Amazon Verified Permissions, PlainID, SGNL, and Topaz. Participation does not mean the product speaks AuthZEN out of the box, though. For example, the OPA results come from a proxy that runs on the interop site. Before adopting a product, check its documentation for which draft and which APIs it supports.
 
-The interop site also shows a layered setup: coarse-grained decisions at the IdP, medium-grained ones at the API gateway, and fine-grained ones in the application. Connecting PEPs at all three layers through one API shows well why a standard API matters.
+The interop site also shows a layered setup: coarse-grained decisions at the IdP, medium-grained ones at the API gateway, and fine-grained ones in the application. In my view, connecting PEPs at all three layers through one API shows well why a standard API matters.
 
 # Profiles at a Glance
 
-On top of Authorization API 1.0, the working group builds profiles for specific uses, plus the COAZ framework and bindings (COAZ-MCP, Token Exchange). Every one of them is a draft and may still change. [What changes in authorization for AI agents](/posts/authorization-for-ai-agents/) covers their use with AI agents in detail.
+On top of Authorization API 1.0, the working group builds profiles for specific uses, plus the COAZ framework and two bindings: COAZ-MCP for MCP, and one for OAuth 2.0 Token Exchange. Every one of them is a draft and may still change. [What changes in authorization for AI agents](/posts/authorization-for-ai-agents/) covers their use with AI agents in detail.
 
 | Document | Status | Gap it fills |
 | --- | --- | --- |
