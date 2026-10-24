@@ -130,7 +130,7 @@ Adding OAuth does not finish authorization. Viewed through the IAM subdomains, t
 | Which client may access which MCP server, and how far? | Delegation (OAuth, scopes, audience) | The core of the specification |
 | May the caller run this tool on this data? | Access decision | Out of scope. Design it yourself |
 | Who decides and reviews which agent may use which tool? | Access governance | Out of scope |
-| Do high-risk operations need human approval? | Access decision and governance | Only a SHOULD about the host UI; no protocol mechanism |
+| Do high-risk operations need human approval? | Access decision and governance | Only a SHOULD about the host UI; no mechanism dedicated to approval. A server can ask the user to confirm through Elicitation |
 
 The specification does not ignore access decisions. The tools specification says servers MUST put proper access controls in place. The caching specification says servers MUST NOT rely on `cacheScope` alone and MUST enforce access control per feature. It does not say how to decide, though. That part belongs to your design.
 
