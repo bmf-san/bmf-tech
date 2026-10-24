@@ -46,8 +46,8 @@ flowchart LR
     subgraph API["AuthZEN Authorization API"]
         META["/.well-known/authzen-configuration (recommended)"]
         EV["/access/v1/evaluation"]
-        EVS["/access/v1/evaluations (optional)"]
-        SR["/access/v1/search/subject|resource|action (optional)"]
+        EVS["/access/v1/evaluations (OPTIONAL in metadata)"]
+        SR["/access/v1/search/subject|resource|action (OPTIONAL in metadata)"]
     end
     subgraph PDPs["PDP (decision)"]
         OPA["OPA"]
