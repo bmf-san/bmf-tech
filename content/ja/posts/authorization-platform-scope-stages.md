@@ -323,6 +323,7 @@ PDPのポリシー言語、アーキテクチャ、状態の管理は仕様の�
 - [プラットフォームの成立条件](/ja/posts/platform-viability-conditions/)
 - [アーキテクチャ設計における共通化の罠](/ja/posts/abstraction-trap-in-architecture/)
 - [OPAを使用したマイクロサービスのアクセス制御システムの実装](/ja/posts/microservices-access-control-opa/)
+
 # 参考リンク
 
 - [OpenID Foundation - Authorization API 1.0](https://openid.net/specs/authorization-api-1_0.html)

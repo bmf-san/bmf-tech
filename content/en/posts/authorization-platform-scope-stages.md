@@ -272,7 +272,7 @@ Authorization API 1.0 defines these main APIs:
 - Access Evaluations API: requests several decisions together
 - Search APIs (Subject Search, Resource Search, Action Search): find permitted subjects, resources, or actions
 
-The policy language, architecture, and state management of a PDP are out of the specification's scope. So whatever runs inside the PDP, the PEP can query it the same way. [What Is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers the specification in detail.
+The policy language, architecture, and state management of a PDP are out of the specification's scope. So whatever runs inside the PDP, the PEP can query it the same way. [What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers the specification in detail.
 
 Engines and products you can use as the PDP for externalized authorization include OPA, Cedar (Amazon Verified Permissions), Cerbos, and OpenFGA.
 
@@ -323,6 +323,7 @@ If you are unsure, consider starting with an in-process library or a sidecar rat
 - [Viability Conditions for Building a Platform](/posts/platform-viability-conditions/)
 - [The Abstraction Trap in Architecture Design](/posts/abstraction-trap-in-architecture/)
 - [Implementation of Access Control System for Microservices Using OPA](/posts/microservices-access-control-opa/)
+
 # References
 
 - [OpenID Foundation - Authorization API 1.0](https://openid.net/specs/authorization-api-1_0.html)
