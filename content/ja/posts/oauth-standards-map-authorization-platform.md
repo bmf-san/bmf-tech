@@ -102,7 +102,7 @@ OAuth 2.0の全体は[OAuth 2.0とは？](/ja/posts/oauth-2-0/)に、OAuth 2.1�
 
 ## RAR（RFC 9396）: スコープでは表せない委譲を表す
 
-RFC 9396の1節によると、スコープは静的で粗い粒度の要求には足りるが、「Merchant Aへ123.50ユーロを送金してよい」のような細かい委譲を表すには足りない。RAR（OAuth 2.0 Rich Authorization Requests）は、認可要求に`authorization_details`というJSONの配列を加えて、これを構造化して表す。
+RFC 9396の1節によると、スコープは静的で粗い粒度の要求には足りるが、「Merchant Aへ45ユーロを送金させてほしい」のような細かい要求を表すには足りない。RAR（OAuth 2.0 Rich Authorization Requests）は、認可要求に`authorization_details`というJSONの配列を加えて、これを構造化して表す。
 
 各要素は必須の`type`を持ち、その型ごとに中身をAPI側が決める。共通のフィールドとして`locations`、`actions`、`datatypes`、`identifier`、`privileges`が用意されている。
 
@@ -342,7 +342,7 @@ SCIM（System for Cross-domain Identity Management）は、IdPや人事システ
 - Enterprise Userの拡張で、`department`や`manager`などの組織の属性を持てる
 - `/ServiceProviderConfig`と`/Schemas`で、対応している機能とスキーマを公開する
 
-認可基盤から見ると、SCIMは判定に使う主体と属性を各サービスへ前もって配る仕組みで、PIP（属性の供給元）が参照するデータを揃える。入社、異動、退職に合わせて、グループや属性が自動で変わる。逆に、このプロビジョニングがなければ、退職者のアカウントは手作業で消すことになり、消し忘れが起きうる。
+認可基盤から見ると、SCIMは判定に使う主体と属性を各サービスへ前もって配る仕組みで、PIP（属性の供給元）が参照するデータを揃える。入社、異動、退職に合わせて、グループや属性が自動で変わる。逆に、このプロビジョニングがなければ、退職者のアカウントを各SaaSで個別に消すことになり、消し忘れが起きうる。
 
 2026年5月のRFC 9967は、SCIMの変更をSET（RFC 8417）で通知するプロファイルである。プロビジョニングを非同期にし、変更を受け手に知らせられる。
 
@@ -356,7 +356,7 @@ SCIM（System for Cross-domain Identity Management）は、IdPや人事システ
 
 IPSIE（Interoperability Profiling for Secure Identity in the Enterprise）は、OpenID FoundationのWorking Groupである。新しいプロトコルを作るのではなく、既存の仕様の使い方を絞ったプロファイルを作る。
 
-最初に扱う範囲は、SSO、利用者のライフサイクル管理、エンタイトルメント、リスクシグナルの共有、ログアウト、トークンの失効である。WGの憲章によると、既存の仕様は選択肢が多く、独立に作った実装どうしが相互運用できるとは限らない。IPSIEは、その相互運用を第一の目標にプロファイルを作る。
+最初に扱う範囲は、SSO、利用者のライフサイクル管理、エンタイトルメント、リスクシグナルの共有、ログアウト、トークンの失効である。WGの憲章によると、既存の仕様の多くはフレームワークで選択肢が多く、独立に作った実装どうしが追加の調整なしに相互運用できるとは限らない。IPSIEは、その相互運用を第一の目標とし、安全な既定値も優先してプロファイルを作る。
 
 2026年10月時点で、FinalとImplementer's Draftはまだない。認可基盤として今できることは、SaaSを選ぶときにOIDC、SCIM、SSFへの対応を条件に入れ、IPSIEのプロファイルが固まったら合わせられるようにしておくことである。
 

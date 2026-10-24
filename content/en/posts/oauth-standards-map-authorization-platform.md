@@ -102,7 +102,7 @@ An authorization platform must decide which grant types and which client types (
 
 ## RAR (RFC 9396): Delegation That Scopes Cannot Express
 
-Section 1 of RFC 9396 says a scope works for static, coarse-grained requests but cannot express a fine-grained delegation such as "transfer 123.50 EUR to Merchant A." RAR (OAuth 2.0 Rich Authorization Requests) adds a JSON array named `authorization_details` to the authorization request and expresses such delegations as structured data.
+Section 1 of RFC 9396 says a scope works for static, coarse-grained requests but cannot express a fine-grained request such as "please let me transfer an amount of 45 Euros to Merchant A." RAR (OAuth 2.0 Rich Authorization Requests) adds a JSON array named `authorization_details` to the authorization request and expresses such requests as structured data.
 
 Each element carries a required `type`, and the API defines the content for each type. RAR also offers common fields: `locations`, `actions`, `datatypes`, `identifier`, and `privileges`.
 
@@ -342,7 +342,7 @@ SCIM (System for Cross-domain Identity Management) delivers users and groups fro
 - Carry organizational attributes such as `department` and `manager` through the Enterprise User extension
 - Publish supported features and schemas through `/ServiceProviderConfig` and `/Schemas`
 
-From the platform's viewpoint, SCIM delivers the subjects and attributes used in decisions to each service in advance, and keeps the data that a PIP (the source of attributes) reads in sync. Groups and attributes change automatically as people join, move, and leave. Conversely, without this provisioning, removing a former employee's accounts depends on manual work, and someone may forget a few.
+From the platform's viewpoint, SCIM delivers the subjects and attributes used in decisions to each service in advance, and keeps the data that a PIP (the source of attributes) reads in sync. Groups and attributes change automatically as people join, move, and leave. Conversely, without this provisioning, someone must remove a former employee's account in each SaaS product separately, and may forget a few.
 
 RFC 9967 (May 2026) defines a profile that announces SCIM changes as SETs (RFC 8417). It makes provisioning asynchronous and tells receivers about changes.
 
@@ -356,7 +356,7 @@ An authorization platform must decide:
 
 IPSIE (Interoperability Profiling for Secure Identity in the Enterprise) is an OpenID Foundation working group. It does not create new protocols. It writes profiles that narrow how to use existing specifications.
 
-Its initial scope covers SSO, user lifecycle management, entitlements, risk signal sharing, logout, and token revocation. According to the WG charter, existing specifications carry so much optionality that two independent implementations are not guaranteed to interoperate. IPSIE makes that interoperability the primary goal of its profiles.
+Its initial scope covers SSO, user lifecycle management, entitlements, risk signal sharing, logout, and token revocation. According to the WG charter, many existing specifications are frameworks with so much optionality that two independent implementations are not guaranteed to interoperate without further coordination. IPSIE makes that interoperability the primary goal of its profiles and also prioritizes secure defaults.
 
 As of October 2026, IPSIE has no Final specification and no Implementer's Draft. What a platform can do today: require OIDC, SCIM, and SSF support when choosing SaaS, and stay ready to align with IPSIE profiles once they settle.
 
