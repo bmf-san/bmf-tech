@@ -64,7 +64,8 @@ flowchart LR
   SCIM -- "Subjects and attributes" --> AS
   T["SSF / CAEP / RISC"] -. "Post-issuance events" .-> AS
   T -. "Post-issuance events" .-> RS
-  AS -- "Token Exchange, ID-JAG" --> AS2["AS in another domain"]
+  AS -- "JWT authorization grant or ID-JAG<br/>via Token Exchange" --> C
+  C -- "Present JWT authorization grant" --> AS2["AS in another domain"]
 ```
 
 The following table is the map itself. I checked each status as of October 2026 against the IETF Datatracker and openid.net.
@@ -188,7 +189,7 @@ JAR packs the authorization request parameters into a signed JWT (Request Object
 
 You can combine the two. PAR keeps the request out of the browser; JAR signs the request itself. They protect different things.
 
-An authorization platform must decide whether to require PAR for every client. The AS can announce this through the `require_pushed_authorization_requests` metadata. For a new platform, requiring PAR from confidential clients means that adding RAR later will not cause URL problems.
+An authorization platform must decide whether to require PAR for every client. The AS can announce this through the `require_pushed_authorization_requests` metadata. To require PAR per client, use the client metadata parameter of the same name. For a new platform, requiring PAR from confidential clients means that adding RAR later will not cause URL problems.
 
 ## FAPI 2.0: A High-Assurance Profile
 
@@ -241,7 +242,7 @@ An authorization platform must decide how to name RS identifiers (the value of `
 
 With DCR, the client registers at each AS it uses, and each AS stores the registered client information. In environments with many client and AS combinations, registrations keep piling up and management gets heavy.
 
-OAuth Client ID Metadata Document uses an HTTPS URL as the `client_id`. The client hosts its own metadata (`redirect_uris`, `client_name`, and so on) as JSON at that URL. When the AS first sees the client in an authorization request, it fetches the document from the URL. No prior registration needed.
+OAuth Client ID Metadata Document uses an HTTPS URL as the `client_id`. The client hosts its own metadata (`redirect_uris`, `client_name`, and so on) as JSON at that URL. The AS SHOULD fetch the document from the URL automatically. Because the contents may change, the AS SHOULD also re-fetch it periodically. The client does not need to register with each AS in advance.
 
 Main requirements as of draft-02:
 
@@ -271,7 +272,7 @@ Sometimes you want to carry a user's delegation between internal microservices o
 
 Identity Chaining offers a general mechanism for crossing domains. The client first runs Token Exchange at the AS in its own domain and obtains a JWT authorization grant aimed at the other domain. It then presents that grant, in the form of an RFC 7523 JWT Bearer grant, to the other domain's AS and receives an access token.
 
-ID-JAG (Identity Assertion JWT Authorization Grant) applies this pattern to enterprise SSO. People informally call the pattern it defines Cross-App Access (XAA).
+ID-JAG (Identity Assertion JWT Authorization Grant) applies this pattern to apps that trust the same IdP for SSO. Enterprise workforce IdPs are a common example, but not the only one. People informally call the pattern it defines Cross-App Access (XAA).
 
 ```mermaid
 sequenceDiagram
@@ -287,7 +288,7 @@ sequenceDiagram
   App->>API: API call
 ```
 
-The user does not need to sign in or consent again. The enterprise IdP decides in one place which app may access which SaaS. That central control gives the enterprise its main benefit.
+The user does not need to sign in or consent again. The enterprise IdP decides in one place which app may access which SaaS. That central control gives the enterprise its main benefit. The SaaS authorization server still applies its own policy to decide whether to honor the ID-JAG and what access token to issue.
 
 An authorization platform must decide whose permissions to carry across a domain boundary, and how far. Narrow `aud` and scopes at each exchange, and record who acts on whose behalf in `act`. [How authorization changes with AI agents](/posts/authorization-for-ai-agents/) covers the use with AI agents.
 

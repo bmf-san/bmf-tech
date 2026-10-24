@@ -64,7 +64,8 @@ flowchart LR
   SCIM -- "主体と属性" --> AS
   T["SSF / CAEP / RISC"] -. "発行後のイベント" .-> AS
   T -. "発行後のイベント" .-> RS
-  AS -- "Token Exchange・ID-JAG" --> AS2["別ドメインの認可サーバ"]
+  AS -- "Token Exchange で<br/>JWT 認可グラント・ID-JAG" --> C
+  C -- "JWT 認可グラントを提示" --> AS2["別ドメインの認可サーバ"]
 ```
 
 次の表が、この記事の地図そのものである。状態は2026年10月時点で、IETF Datatrackerとopenid.netで確かめた。
@@ -188,7 +189,7 @@ JARは、認可要求のパラメータを署名付きのJWT（Request Object）
 
 2つは組み合わせられる。PARは「要求をブラウザに通さない」、JARは「要求そのものに署名する」で、守る対象が違う。
 
-認可基盤として決めることは、PARをすべてのクライアントに要求するかどうかである。ASメタデータの`require_pushed_authorization_requests`で公開できる。新しく作る基盤なら、機密クライアントにはPARを要求しておくと、後からRARを足してもURLの問題が起きない。
+認可基盤として決めることは、PARをすべてのクライアントに要求するかどうかである。ASメタデータの`require_pushed_authorization_requests`で公開できる。クライアントごとに要求するときは、同じ名前のクライアントメタデータを使う。新しく作る基盤なら、機密クライアントにはPARを要求しておくと、後からRARを足してもURLの問題が起きない。
 
 ## FAPI 2.0: 高保証のプロファイル
 
@@ -241,7 +242,7 @@ RSは401を返すときに、`WWW-Authenticate`ヘッダーの`resource_metadata
 
 DCRでは、クライアントは使うASごとに登録し、ASは登録したクライアントの情報を保存する。クライアントとASの組み合わせが多い環境では、登録が増え続け、管理が重くなる。
 
-OAuth Client ID Metadata Documentは、HTTPSのURLを`client_id`にする仕組みである。クライアントはそのURLに、自分のメタデータ（`redirect_uris`、`client_name`など）をJSONで置く。ASは認可要求で初めてそのクライアントを見たときに、URLから文書を取得する。事前の登録は要らない。
+OAuth Client ID Metadata Documentは、HTTPSのURLを`client_id`にする仕組みである。クライアントはそのURLに、自分のメタデータ（`redirect_uris`、`client_name`など）をJSONで置く。ASは、そのURLから文書を自動で取得することが推奨される（SHOULD）。内容は変わりうるので、定期的に取り直すことも推奨される。クライアントは、ASごとの事前の登録をしなくてよい。
 
 主な要件は次のとおりである（draft-02時点）。
 
@@ -271,7 +272,7 @@ Token Exchangeの基本は[サービス間認証の全体像とは？](/ja/posts
 
 Identity Chainingは、ドメインをまたぐ一般的な仕組みである。クライアントはまず自分のドメインのASでToken Exchangeを行い、相手のドメイン向けのJWT認可グラントを得る。次に、そのグラントを相手のドメインのASにRFC 7523のJWT Bearerグラントとして出し、アクセストークンを得る。
 
-ID-JAG（Identity Assertion JWT Authorization Grant）は、この形を企業のSSOに当てはめたものである。この仕様が定めるパターンは、非公式にCross-App Access（XAA）と呼ばれる。
+ID-JAG（Identity Assertion JWT Authorization Grant）は、この形を、SSOで同じIdPを信頼するアプリの間に当てはめたものである。代表例は企業の従業員向けのIdPだが、それに限らない。この仕様が定めるパターンは、非公式にCross-App Access（XAA）と呼ばれる。
 
 ```mermaid
 sequenceDiagram
@@ -287,7 +288,7 @@ sequenceDiagram
   App->>API: API 呼び出し
 ```
 
-利用者はもう一度ログインしたり同意したりしなくてよい。企業のIdPが、どのアプリがどのSaaSにアクセスしてよいかを一か所で決められる。これが企業にとっての利点である。
+利用者はもう一度ログインしたり同意したりしなくてよい。企業のIdPが、どのアプリがどのSaaSにアクセスしてよいかを一か所で決められる。これが企業にとっての利点である。ただし、SaaSの認可サーバも自分のポリシーで、ID-JAGを受け入れるかと、どの範囲のトークンを出すかを決める。
 
 認可基盤として決めることは、ドメインをまたぐときに、誰の権限をどこまで引き継ぐかである。交換のたびに`aud`とスコープを絞り、`act`で誰が代理しているかを残す。AIエージェントでの使い方は[AIエージェントで認可の何が変わるか](/ja/posts/authorization-for-ai-agents/)で扱う。
 
