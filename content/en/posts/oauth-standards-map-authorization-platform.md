@@ -230,7 +230,7 @@ RFC 8414 lets an AS describe itself. RFC 9728 does the same for an RS: the RS se
 }
 ```
 
-Key fields include `resource` (required, the RS identifier), `authorization_servers` (the AS that issues tokens for this RS), `scopes_supported`, and `jwks_uri`. The RS can also announce whether it requires sender constraints (`dpop_bound_access_tokens_required`, `tls_client_certificate_bound_access_tokens`).
+Key fields include `resource` (required, the RS identifier), `authorization_servers` (the AS that issues tokens for this RS), `scopes_supported`, and `jwks_uri`. For sender constraints, the RS can also announce whether it always requires DPoP-bound tokens (`dpop_bound_access_tokens_required`) and whether it supports mTLS-bound tokens (`tls_client_certificate_bound_access_tokens`).
 
 When the RS returns 401, it can point to this URL with the `resource_metadata` parameter of the `WWW-Authenticate` header. The moment a call to the RS fails, the client learns which AS it should contact. The MCP authorization specification requires MCP servers to serve this metadata.
 

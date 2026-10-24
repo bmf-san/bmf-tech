@@ -230,7 +230,7 @@ RFC 8414はASが自分を説明するメタデータである。RFC 9728はそ�
 }
 ```
 
-主なフィールドは、RSの識別子の`resource`（必須）、このRS向けのトークンを出す`authorization_servers`、`scopes_supported`、`jwks_uri`などである。送信者制約を要求するかどうか（`dpop_bound_access_tokens_required`、`tls_client_certificate_bound_access_tokens`）も公開できる。
+主なフィールドは、RSの識別子の`resource`（必須）、このRS向けのトークンを出す`authorization_servers`、`scopes_supported`、`jwks_uri`などである。送信者制約も公開できる。`dpop_bound_access_tokens_required`はDPoPを常に要求するかを、`tls_client_certificate_bound_access_tokens`はmTLSで結び付けたトークンへの対応を示す。
 
 RSは401を返すときに、`WWW-Authenticate`ヘッダーの`resource_metadata`パラメータでこのURLを示せる。クライアントは、RSを呼んで失敗した時点で、どのASに行けばよいかがわかる。MCPの認可仕様は、MCPサーバにこのメタデータの実装を求めている。
 
