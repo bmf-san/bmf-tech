@@ -50,7 +50,7 @@ The result of authentication forms just one input to authorization. Authorizatio
 
 ## Successful authentication does not imply authorization
 
-The most important principle: successful authentication does not mean the subject may access a resource. Holding a valid credential and having permission to access a resource are two separate facts.
+The first principle to keep in mind: successful authentication does not mean the subject may access a resource. Holding a valid credential and having permission to access a resource are two separate facts.
 
 The IETF WIMSE architecture (draft-ietf-wimse-arch-08) states this in §4.5. A workload with a valid credential does not gain access to every resource in the trust domain. The draft asks issuers, relying parties, gateways, and workloads to avoid treating successful authentication as implicit authorization.
 
@@ -80,7 +80,7 @@ Apart from the case where a client obtains access on its own behalf (Client Cred
 | Result | Access token | Permit or deny |
 | Owner | Authorization server | Resource server, or the decision mechanism behind it |
 
-Even with an `invoices:read` scope, the resource server still has to decide which invoices the caller may read. If you try to decide per-resource access from the token contents alone, the token grows too large or the decision becomes too coarse. Confusing these two layers is the biggest trap when people bring OAuth into a discussion about an authorization platform.
+Even with an `invoices:read` scope, the resource server still has to decide which invoices the caller may read. If you try to decide per-resource access from the token contents alone, the token grows too large or the decision becomes too coarse. These two layers are easy to confuse, which makes them a major trap when people bring OAuth into a discussion about an authorization platform.
 
 [What is OAuth 2.0?](/posts/oauth-2-0/) summarizes the OAuth 2.0 specification, and [What is OAuth 2.1?](/posts/oauth-2-1-security-bcp/) covers OAuth 2.1 and the Security BCP. [A map of OAuth and related standards](/posts/oauth-standards-map-authorization-platform/) looks at OAuth from the viewpoint of an authorization platform.
 
