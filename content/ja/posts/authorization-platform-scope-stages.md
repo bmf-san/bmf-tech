@@ -258,7 +258,7 @@ sequenceDiagram
 |---|---|
 | 判定の往復による遅延 | 判定結果のキャッシュ。PDPをサイドカーやプロセス内ライブラリとして近くで動かす |
 | PDPの障害が全体を止める | PDPを各PEPの近くに分散して置く。キャッシュで短時間の障害を吸収する。fail-closedを前提にタイムアウトを設計する |
-| 一覧表示で判定の回数が膨らむ | 部分評価でポリシーをSQLの条件などに変換する（OPAのpartial evaluation）。Search APIで許可される資源をまとめて取得する（AuthZEN） |
+| 一覧表示で判定の回数が膨らむ | 部分評価でポリシーをSQLの条件などに変換する（OPAのpartial evaluation）。Resource Search APIで許可される資源をまとめて取得する（AuthZEN） |
 
 PEPとPDPの配置、キャッシュや一貫性などの非機能の設計は、[認可基盤のアーキテクチャと設計判断](/ja/posts/authorization-platform-architecture-decisions/)で扱う。
 
@@ -268,11 +268,11 @@ PEPとPDPの配置、キャッシュや一貫性などの非機能の設計は�
 
 Authorization API 1.0は、主に次のAPIを定めている。
 
-- Evaluation API: 主体（Subject）、操作（Action）、資源（Resource）、文脈（Context）を受け取って判定を返す
-- Evaluations API: 複数の判定をまとめて求める
-- Search API: 許可される主体・資源・操作を探す
+- Access Evaluation API: 主体（Subject）、操作（Action）、資源（Resource）、文脈（Context）を受け取って判定を返す
+- Access Evaluations API: 複数の判定をまとめて求める
+- Search API（Subject Search、Resource Search、Action Search）: 許可される主体・資源・操作を探す
 
-ポリシー言語は定めない。そのため、PDPの中身が何であっても、PEPからは同じ形で問い合わせられる。仕様の詳細は[AuthZEN Authorization APIとは](/ja/posts/authzen-authorization-api/)で扱う。
+PDPのポリシー言語、アーキテクチャ、状態の管理は仕様の範囲外である。そのため、PDPの中身が何であっても、PEPからは同じ形で問い合わせられる。仕様の詳細は[AuthZEN Authorization APIとは](/ja/posts/authzen-authorization-api/)で扱う。
 
 外部化認可のPDPとして使えるエンジンや製品には、OPA、Cedar（Amazon Verified Permissions）、Cerbos、OpenFGAなどがある。
 
@@ -318,12 +318,11 @@ Authorization API 1.0は、主に次のAPIを定めている。
 - [AIエージェントの認可とは？委譲の連鎖・人の承認・監査をMCP、AuthZEN、AIMS、A2A/AP2で整理する](/ja/posts/authorization-for-ai-agents/)
 - [MCPの認可はどう設計する？起きうる事故と後から直せない判断](/ja/posts/mcp-authorization-design/)
 - [認可基盤のアーキテクチャとは？コンテナ構成・代表シーケンス・PEPとPDPの配置と非機能の設計判断](/ja/posts/authorization-platform-architecture-decisions/)
-- [権限管理の設計](/ja/posts/permission-management-design/)
+- [権限管理の設計｜アクセス制御の考え方を整理する](/ja/posts/permission-management-design/)
 - [権限管理基盤についての事例](/ja/posts/permission-management-case-study/)
 - [プラットフォームの成立条件](/ja/posts/platform-viability-conditions/)
 - [アーキテクチャ設計における共通化の罠](/ja/posts/abstraction-trap-in-architecture/)
 - [OPAを使用したマイクロサービスのアクセス制御システムの実装](/ja/posts/microservices-access-control-opa/)
-
 # 参考リンク
 
 - [OpenID Foundation - Authorization API 1.0](https://openid.net/specs/authorization-api-1_0.html)

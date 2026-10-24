@@ -220,7 +220,7 @@ Moving from Stage 1 to Stage 2 comes down to whether you take decisions out of y
 
 Sprinkling checks like `if user.role == "admin"` through each application's code works as the simplest approach while you have few applications. As applications multiply, though, teams write the same rule in several places independently, and the copies drift apart.
 
-David Brossard, co-chair of the AuthZEN Working Group, also said in an OpenID Foundation announcement that "siloed, hardcoded, and brittle authorization is already a problem in today's apps."
+David Brossard, co-chair of the AuthZEN Working Group, also said in an OpenID Foundation announcement that siloed, hardcoded, and brittle authorization is already a problem in today's apps.
 
 ## What externalized authorization means
 
@@ -258,7 +258,7 @@ Externalization has costs: latency from a network round trip per decision, and t
 |---|---|
 | Latency from decision round trips | Cache decision results. Run the PDP nearby as a sidecar or in-process library |
 | A PDP outage stops everything | Distribute PDPs close to each PEP. Absorb short outages with caching. Design timeouts assuming fail-closed |
-| List views multiply the number of decisions | Use partial evaluation to turn policy into conditions such as SQL (OPA partial evaluation). Use the Search API to fetch permitted resources in bulk (AuthZEN) |
+| List views multiply the number of decisions | Use partial evaluation to turn policy into conditions such as SQL (OPA partial evaluation). Use the Resource Search API to fetch permitted resources in bulk (AuthZEN) |
 
 [Authorization Platform Architecture and Design Decisions](/posts/authorization-platform-architecture-decisions/) covers PEP and PDP placement and non-functional design such as caching and consistency.
 
@@ -268,11 +268,11 @@ One concern with externalization: the PEP implementation may get locked into a s
 
 Authorization API 1.0 defines these main APIs:
 
-- Evaluation API: takes a Subject, Action, Resource, and Context, and returns a decision
-- Evaluations API: requests several decisions together
-- Search API: finds permitted subjects, resources, or actions
+- Access Evaluation API: takes a Subject, Action, Resource, and Context, and returns a decision
+- Access Evaluations API: requests several decisions together
+- Search APIs (Subject Search, Resource Search, Action Search): find permitted subjects, resources, or actions
 
-It does not define a policy language. So whatever runs inside the PDP, the PEP can query it the same way. [What Is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers the specification in detail.
+The policy language, architecture, and state management of a PDP are out of the specification's scope. So whatever runs inside the PDP, the PEP can query it the same way. [What Is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers the specification in detail.
 
 Engines and products you can use as the PDP for externalized authorization include OPA, Cedar (Amazon Verified Permissions), Cerbos, and OpenFGA.
 
@@ -323,7 +323,6 @@ If you are unsure, consider starting with an in-process library or a sidecar rat
 - [Viability Conditions for Building a Platform](/posts/platform-viability-conditions/)
 - [The Abstraction Trap in Architecture Design](/posts/abstraction-trap-in-architecture/)
 - [Implementation of Access Control System for Microservices Using OPA](/posts/microservices-access-control-opa/)
-
 # References
 
 - [OpenID Foundation - Authorization API 1.0](https://openid.net/specs/authorization-api-1_0.html)
