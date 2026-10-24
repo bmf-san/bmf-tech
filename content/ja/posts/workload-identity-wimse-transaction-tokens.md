@@ -23,7 +23,7 @@ draft: false
 mTLS、Token Exchange（RFC 8693）、SPIFFE/SPIREといった基本の道具は「[サービス間認証の全体像とは？](/ja/posts/service-to-service-authentication/)」で整理した。この記事では、その上でIETFが進めている次の標準化を扱う。
 
 - **WIMSE**（Workload Identity in Multi System Environments）: ワークロードの識別子、資格情報（WIT/WIC）、認証方式を定めるIETFのドラフト群
-- **Transaction Tokens**: 外部のアクセストークンを、1つの取引に結び付いた内部用のトークンに交換し、呼び出しの連鎖に伝える仕組み
+- **Transaction Tokens**: 外部のアクセストークンなどを、1つの取引に結び付いた内部用のトークンに交換し、呼び出しの連鎖に伝える仕組み
 - **OAuth SPIFFE Client Authentication**: SPIFFEのSVIDをOAuthのクライアント認証に使い、`client_secret`をなくす仕組み
 
 この記事で答える問いは次のとおりである。
@@ -49,7 +49,7 @@ mTLS、Token Exchange（RFC 8693）、SPIFFE/SPIREといった基本の道具は
 | 呼び出しの文脈を内部でどう運ぶか | 外部のアクセストークンを内部で使い回すと、盗まれたときの被害が大きい | Transaction Tokens |
 | 別のトラストドメインにどうアクセスするか | 内部の資格情報や形式を外に出したくない | Identity Chaining、Transaction Tokenのチェイニングのプロファイル |
 
-共通する原則は、長命の共有シークレット（静的なAPIキーや`client_secret`）を置かず、短命で鍵に結び付いた資格情報を、環境の構成証明（attestation）にもとづいて配ることである。
+共通する原則は、長命の共有シークレット（静的なAPIキーや`client_secret`）を置かないことである。代わりに、短命でできるだけ鍵に結び付いた資格情報を、環境の構成証明（attestation）にもとづいて配る。
 
 全体の関係を先に図で示す。
 
@@ -73,7 +73,7 @@ flowchart LR
     IS -. "WIT / WIC を配布" .-> B
     A -- "WIT＋証明（WPT / HTTP 署名）<br/>＋Txn-Token" --> B
     B -- "主体＝WIT の sub<br/>文脈＝Txn-Token" --> PDP
-    B -- "Identity Chaining" --> AS
+    B -- "Identity Chaining<br/>（自ドメインで得た<br/>JWT 認可グラントを提示）" --> AS
 ```
 
 身元はWIMSEの資格情報が、取引の文脈はTransaction Tokensが運ぶ。両者を所持の証明で結び付け、呼ばれる側のPEPが検証済みの値だけをPDPに渡す。これが全体の骨格である。
@@ -174,7 +174,7 @@ WITの主なクレームは次のとおりである。
 | クレーム | 要否 | 意味 |
 | --- | --- | --- |
 | `sub` | 必須 | ワークロード識別子。資格情報1つにつき識別子はちょうど1つ |
-| `exp` | 必須 | 有効期限。数時間程度の短命が想定されている |
+| `exp` | 必須 | 有効期限。数時間程度の短命にすべき（SHOULD） |
 | `cnf.jwk` | 必須 | ワークロードの公開鍵（RFC 7800） |
 | `cnf.jwk.alg` | 必須 | 証明に使うアルゴリズム。`none`や対称鍵は使えない。汎用の実装はES256に対応する |
 | `iss` | 推奨（任意） | 発行者。監査と運用のため |
@@ -198,6 +198,8 @@ WITの主なクレームは次のとおりである。
 ```
 
 WITは`Workload-Identity-Token`というHTTPヘッダで運ぶ。検証では、`sub`のトラストドメインに帯域外で設定したトラストアンカーの鍵を使う。WITの`iss`のURLなど、トークンの中の情報だけを頼りに鍵を取りに行ってはならない（MUST NOT）。トークン自身が指す場所から検証鍵を得ると、誰でも発行者を立てられてしまうからである。
+
+WITのようなJWTの資格情報は、通常、必要なときに失効させられない。そのため、WITと秘密鍵が漏れたときの主な対策は短い有効期限である（workload-credsの9.2.1節）。
 
 「資格情報1つに識別子1つ」は、PDPの側を単純にする。主体の識別がぶれないので、ポリシーと監査の突き合わせが楽になる。インスタンスの区別などは`jti`や追加のクレームで扱い、認可の主体とは分ける。
 
@@ -224,7 +226,7 @@ WITとWICを使って実際に相手を認証する方式は、3本のドラフ�
 - **HTTP Message Signatures**: TLSを終端するプロキシが`Host`を書き換えても壊れないよう、CONNECT以外の要求では`@authority`を署名しない。代わりに宛先を署名パラメータ`wimse-aud`に入れ、受け手は信頼できる設定値と完全一致で照合する。`nonce`は64ビット以上のエントロピーが必須である。署名の有効期間（`expires`）は短くしなければならず（MUST）、目安は分単位である。
 - **WPT**: WITの鍵で署名した短命のJWTである。http-signatureのドラフト（-08）は、WPTをOAuthのDPoP（RFC 9449）に着想を得た方式と説明している。wptの-02で送り方が専用ヘッダから`Authorization: WPT`に変わった。その結果、同じ要求でBearerやDPoPのアクセストークンを送れなくなった。wptのドラフトはこの排他性を、要求の強さが最も弱い資格情報に引きずられるのを防ぐための意図的なものとしている。
 
-選び方は、次の2つの問いでおおむね決まる。
+選び方は、次の問いを順にたどるとおおむね決まる。主な分かれ目は、TLSが中継装置で切れるかと、同じ要求でOAuthのアクセストークンも送るかの2つである。
 
 ```mermaid
 flowchart TD
@@ -287,7 +289,7 @@ practicesの規範のうち、設計に直結するものを挙げる。
 - **用途ごとにaudienceの違う資格情報を使う**（MUST）。内部の資源向けと外部のIdP向けで同じベアラートークンを使うと、IdPがそのトークンで内部の資源にアクセスし、ワークロードになりすませる。
 - **JWTの`aud`は1つにする**（MUST NOT複数）。資格情報を複数得られない場合やaudienceを指定できない場合は例外である。`aud`に並んだ受け手の誰もが、他の受け手にそのトークンを提示できてしまう。
 - **トークンの寿命をインスタンスの寿命より長くしない**（MUST NOT）。プラットフォームがインスタンスの寿命を知りえない場合は、できるだけ短くする。
-- **インスタンスがなくなったら資格情報を無効にする**（MUST）。残りの有効期間が許容できるほど寿命が短い場合は例外である。
+- **インスタンスが停止、一時停止、消滅したら資格情報を無効にする**（MUST）。残りの有効期間が許容できるほど寿命が短い場合は例外である。
 - **所持の証明を使う**（SHOULD）。使えない場合は、短い寿命、厳しいaudience、ネットワークの統制で補う（MUST）。
 - **アプリの脆弱性で資格情報が漏れうると仮定する**（MUST）。信頼できない入力が、資格情報のファイルのパスやローカルAPIへの接続を左右してはならない（MUST NOT）。
 - **独自クレームの値を評価する**（MUST）。CI/CDなら、保護された`main`ブランチだけにフェデレーションを許し、他のブランチは許さない、という判断はブランチのクレームの値を見ないとできない。
@@ -303,7 +305,7 @@ WIMSEの資格情報が運ぶのは「どのワークロードか」までで、
 
 外部からの1回のAPI呼び出しは、内部で多数のワークロードを呼ぶ。内部のワークロードがサプライチェーン攻撃や内部不正で侵害されると、正当な取引がないのに他のワークロードを呼んだり、パラメータを書き換えたり、アクセストークンを盗んだりできる。
 
-Txn-Tokenは、利用者やワークロードの身元と認可・要求の文脈を、特定の取引に結び付いた短命の署名付きJWTとして表す。そのJWTを信頼ドメインの中の呼び出しの連鎖（Call Chain）全体に伝える。下流のワークロードはこのトークンにもとづいて、その取引の中での認可を判断する。署名があるので途中での改変を検知できる。
+Txn-Tokenは、利用者やワークロードの身元と認可・要求の文脈を、特定の取引に結び付いた短命の署名付きJWTとして表す。そのJWTをトラストドメインの中の呼び出しの連鎖（Call Chain）全体に伝える。下流のワークロードはこのトークンにもとづいて、その取引の中での認可を判断する。署名があるので途中での改変を検知できる。
 
 ## 発行と伝播の流れ
 
@@ -311,12 +313,12 @@ Txn-Tokenは、利用者やワークロードの身元と認可・要求の文�
 sequenceDiagram
     autonumber
     participant EC as 外部クライアント
-    participant GW as 外部エンドポイント
+    participant GW as ゲートウェイ（外部向けの入口）
     participant TTS as Txn-Token Service
     participant W1 as ワークロード 1
     participant W2 as ワークロード 2
     EC->>GW: 要求（アクセストークン）
-    GW->>TTS: トークン交換（相互認証）<br/>subject_token = アクセストークン<br/>audience = 信頼ドメイン, scope
+    GW->>TTS: トークン交換（相互認証）<br/>subject_token = アクセストークン<br/>audience = トラストドメイン, scope
     TTS->>TTS: 要求者を認可し scope を絞る<br/>txn を採番して署名
     TTS-->>GW: Txn-Token
     GW->>W1: 要求（Txn-Token ヘッダ）
@@ -324,12 +326,12 @@ sequenceDiagram
     W1->>W2: 受け取った Txn-Token をそのまま付ける
 ```
 
-発行するのはTransaction Token Service（TTS）で、信頼ドメインごとに論理的なTTSはちょうど1つ（MUST）である。HTTPで要求するならRFC 8693のトークン交換を使う。主なパラメータは次のとおりである。
+発行するのはTransaction Token Service（TTS）で、トラストドメインごとに論理的なTTSはちょうど1つ（MUST）である。HTTPで要求するならRFC 8693のトークン交換を使う。主なパラメータは次のとおりである。
 
 | パラメータ | 内容 |
 | --- | --- |
 | `requested_token_type` | `urn:ietf:params:oauth:token-type:txn_token` |
-| `audience` | 信頼ドメインの名前 |
+| `audience` | トラストドメインの名前 |
 | `scope` | 取引の目的。できるだけ狭く |
 | `subject_token` | 主体を表すトークン。外部のアクセストークン、自己署名のJWT、署名なしのJSONなど。リフレッシュトークンは不可 |
 | `request_context` | 元の要求のIPアドレスなどの環境の文脈（推奨） |
@@ -343,10 +345,10 @@ Txn-TokenはJWTで、`typ`は`txntoken+jwt`である。
 
 | クレーム | 要否 | 内容 |
 | --- | --- | --- |
-| `aud` | 必須 | 有効な信頼ドメイン。その外で受け入れてはならない |
+| `aud` | 必須 | 有効なトラストドメイン。その外で受け入れてはならない |
 | `iat`、`exp` | 必須 | 寿命は数分以下を想定 |
 | `txn` | 必須 | 取引の一意な識別子（RFC 8417） |
-| `sub` | 必須 | 取引の主体。信頼ドメインの中で一意 |
+| `sub` | 必須 | 取引の主体。トラストドメインの中で一意 |
 | `scope` | 必須 | TTSが決める取引の目的。外部のスコープと一致しなくてよい |
 | `req_wl` | 必須 | Txn-Tokenを要求したワークロード |
 | `tctx` | 推奨 | 取引の間ずっと変わらない認可の詳細。TTSが決める |
@@ -404,11 +406,11 @@ Txn-Tokenを`subject_token`にして、新しいTxn-Tokenを得ることもで�
 
 Call Chainの保持方法は決まっていないので、置き換えを使う場合は、監査でどの経路を通ったかを追う仕組みを自前で用意する必要がある。
 
-## 信頼ドメインをまたぐ場合
+## トラストドメインをまたぐ場合
 
-Txn-Tokenは`aud`の信頼ドメインの中でだけ有効である。別ドメインの資源が必要で、Txn-Tokenの身元と認可の文脈を引き継ぐなら、Identity Chaining（draft-ietf-oauth-identity-chaining）を使うべき（SHOULD）とされる。
+Txn-Tokenは`aud`のトラストドメインの中でだけ有効である。別ドメインの資源が必要で、Txn-Tokenの身元と認可の文脈を引き継ぐなら、Identity Chaining（draft-ietf-oauth-identity-chaining）を使うべき（SHOULD）とされる。
 
-その具体的な手順を定めるのが個人ドラフトのdraft-fletcher-oauth-txn-token-chaining-profileである。以前はdraft-fletcher-transaction-token-chaining-profileという名前だったが、2026年9月、現在の名前の-00に置き換えられた。このプロファイルでは、Txn-Tokenを`subject_token`としてトークン交換し、境界を越えるJWT認可グラントを得る。`subject_token_type`は`urn:ietf:params:oauth:token-type:txn_token`である。内部の資格情報やトークンの形式を外に出さず、取引の文脈を相手のドメインへ渡せる。Identity Chainingそのものは「[認可基盤に必要なOAuth関連標準とは？](/ja/posts/oauth-standards-map-authorization-platform/)」で扱う。
+その具体的な手順を定めるのが個人ドラフトのdraft-fletcher-oauth-txn-token-chaining-profileである。以前はdraft-fletcher-transaction-token-chaining-profileという名前だったが、2026年9月、現在の名前の-00に置き換えられた。このプロファイルでは、Txn-Tokenを`subject_token`として自ドメインのASとトークン交換し、境界を越えるJWT認可グラントを得る。そのグラントを相手ドメインのASに示して、アクセストークンを得る。`subject_token_type`は`urn:ietf:params:oauth:token-type:txn_token`である。内部の資格情報やトークンの形式を外に出さず、取引の文脈を相手のドメインへ渡せる。Identity Chainingそのものは「[認可基盤に必要なOAuth関連標準とは？](/ja/posts/oauth-standards-map-authorization-platform/)」で扱う。
 
 # SPIFFEをOAuthのクライアント認証に使う
 
@@ -477,10 +479,10 @@ workload-credsとwptのドラフトは、役割の分け方を「WITの身元で
 
 - **主体は識別子全体で書く**。トラストドメインとpathを組で扱い、pathだけの照合や前方一致を避ける。
 - **認証の成功を認可とみなさない**。mTLSが通ったことは、どの資源にアクセスしてよいかを意味しない。
-- **トランスポート層とアプリ層の身元を分けてPDPに渡し、両方を監査に残す**。
-- **認証方式は「TLSが中継装置で切れるか」と「同じ要求にOAuthのトークンを載せるか」で選ぶ**。HTTPの東西トラフィックでは、mTLSを基本にし、中継装置でTLSが切れる経路には端から端までのHTTP署名を重ねるのが無難だと筆者は考える。
+- **トランスポート層とアプリ層の身元を分けてPDPに渡し、両方が得られるなら両方を監査に残す**。
+- **認証方式は主に「TLSが中継装置で切れるか」と「同じ要求にOAuthのトークンを載せるか」で選ぶ**。HTTPの東西トラフィックでは、mTLSを基本にし、中継装置でTLSが切れる経路には端から端までのHTTP署名を重ねるのが無難だと筆者は考える。
 - **外部のアクセストークンを内部で使い回さない**。ゲートウェイでTxn-Tokenに交換し、スコープを取引の目的まで絞る。
-- **資格情報は用途ごとにaudienceを分け、短命にし、他の受け渡し方があるなら環境変数で渡さない**。
+- **資格情報は用途ごとにaudienceを分け、短命にし、本番では他の受け渡し方があるなら環境変数で渡さない**。
 - **`client_secret`はSPIFFEのクライアント認証で置き換える**。そのうえで、SPIFFE IDと`client_id`の対応づけを認可の判断として管理する。
 - **取り消しは資格情報の失効ではなくポリシーで効かせる**。WITのようなJWTの資格情報は通常、必要なときに失効させられないので、短命の資格情報と、即時に効くPDPのポリシーを組み合わせる。
 
@@ -506,12 +508,12 @@ WIMSEの中では、実践ガイドが最もRFCに近く、HTTP署名がそれ�
 
 # まとめ
 
-- WIMSEは、OAuth・JWT・SPIFFEといった既存の仕組みを土台に、トラストドメイン・ワークロード識別子・資格情報（WIT/WIC）の3つでワークロードの身元を表す。SPIFFE IDはその準拠例で、置き換えられるわけではない。
-- 認証方式はmTLS、HTTP Message Signatures、WPTの3つ。TLSが切れるか、同じ要求でOAuthのトークンを送るかで選ぶ。
-- 資格情報の配布は、構成証明にもとづき、用途ごとにaudienceを分けた短命の資格情報にする。環境変数は避ける。
+- WIMSEは、トラストドメイン・ワークロード識別子・資格情報（WIT/WIC）の3つでワークロードの身元を表す。SPIFFE IDはその準拠例で、WIMSEがSPIFFEを置き換えるわけではない。
+- 認証方式はmTLS、HTTP Message Signatures、WPTの3つ。主に、TLSが切れるかと、同じ要求でOAuthのトークンを送るかで選ぶ。
+- 資格情報の配布は、構成証明にもとづき、用途ごとにaudienceを分けた短命の資格情報にする。本番では、他の受け渡し方があるなら環境変数を使わない。
 - Transaction Tokensは、外部のアクセストークン（内部で始まる取引では自己署名のJWTなど）を取引に結び付いた内部用のトークンに交換し、改変されない形で呼び出しの連鎖に伝える。アクセストークンとも認証の資格情報とも別物として扱う。
 - SPIFFEのクライアント認証で`client_secret`をなくせるが、SPIFFE IDと`client_id`の対応づけは認可の判断として管理する。
-- 組み合わせると、PEPは「主体＝WITの`sub`」「文脈＝Txn-Token」を所持の証明と結び付いた形で受け取り、PDPに渡せる。
+- 組み合わせると、HTTP署名やWPTを使う場合、PEPは「主体＝WITの`sub`」「文脈＝Txn-Token」を所持の証明と結び付いた形で受け取り、PDPに渡せる。
 
 # 関連記事
 
