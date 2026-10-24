@@ -54,7 +54,8 @@ flowchart LR
     SCIM["SCIM<br/>プロビジョニング"]
   end
   C["クライアント"] -- "1 認可要求<br/>PKCE・PAR・JAR・RAR" --> AS["認可サーバ"]
-  C -- "発見<br/>RFC 9728・RFC 8414" --> RS["リソースサーバ"]
+  C -- "発見<br/>RFC 9728" --> RS["リソースサーバ"]
+  C -- "発見<br/>RFC 8414・OIDC Discovery" --> AS
   AS -- "2 トークン<br/>JWT AT・送信者制約" --> C
   C -- "3 API 呼び出し<br/>resource・DPoP/mTLS" --> RS
   RS -- "検証<br/>JWKS・Introspection" --> AS
@@ -147,7 +148,7 @@ OAuthとの主な違いは次のとおりである。
 - 利用者とのやりとり（リダイレクト、ユーザーコードなど）を要求の中で交渉する。
 - 発行後も、継続用のURLでグラントを更新したり取り消したりできる。
 
-筆者の知る範囲では、2026年10月時点でGNAPを採用した大きなエコシステムは少ない。認可基盤が今GNAPを実装する必要は薄い。ただし「鍵に結び付いたクライアント」「継続するグラント」という考え方は、OAuthの送信者制約やエージェントの委譲を設計する際の参考になる。
+筆者の知る範囲では、2026年10月時点でGNAPを採用した大きなエコシステムは少ない。そのため筆者は、認可基盤が今GNAPを実装する必要は薄いと考える。ただし「鍵に結び付いたクライアント」「継続するグラント」という考え方は、OAuthの送信者制約やエージェントの委譲を設計する際の参考になる。
 
 # 要求の完全性: 認可要求を改ざんさせない
 
@@ -164,7 +165,7 @@ OAuthとの主な違いは次のとおりである。
 
 ## PAR（RFC 9126）とJAR（RFC 9101）
 
-PARでは、クライアントが認可要求のパラメータをASの`pushed_authorization_request_endpoint`にPOSTする。このときクライアントは認証を受ける。ASは短い有効期限の`request_uri`を返す。
+PARでは、クライアントが認可要求のパラメータをASの`pushed_authorization_request_endpoint`にPOSTする。ASは、トークンエンドポイントと同じ規則でクライアントを認証し、短い有効期限の`request_uri`を返す。
 
 ```http
 POST /as/par HTTP/1.1
@@ -366,14 +367,14 @@ IPSIE（Interoperability Profiling for Secure Identity in the Enterprise）は�
 | OIDC Back-Channel Logout 1.0 | OPからRPへ、Logout Token（`events`クレームを持つJWT）でログアウトを伝える | Final |
 | SSF 1.0 | イベントの送り手と受け手の間で、SETを配るためのストリームを定める | Final（2025年8月） |
 | CAEP 1.0 | セッションの失効、クレームの変更などのイベント型を定める | Final（2025年8月） |
-| RISC 1.0 | アカウントの乗っ取りや資格情報の漏えいなどのイベント型を定める | Final（2025年8月） |
+| RISC 1.0 | アカウントの無効化や資格情報の漏えいなどのイベント型を定める | Final（2025年8月） |
 | RFC 9470（Step-up） | RSが、より強い認証や新しい認証を求めるチャレンジを返す | RFC（2023年9月） |
 
 SETとOIDCのログアウトは[OIDCのログアウトとSecurity Event Token（SET）とは？](/ja/posts/oidc-logout-security-event-token/)で扱った。
 
 ## SSF、CAEP、RISC
 
-SSF（OpenID Shared Signals Framework）は、イベントを送るTransmitterと受け取るReceiverの間の取り決めである。Receiverはストリームを設定し、どの主体のどのイベントを受け取るかを決める。配信はRFC 8935のPushか、RFC 8936のPollを使う。主体の識別にはRFC 9493のSubject Identifiersを使う。
+SSF（OpenID Shared Signals Framework）は、イベントを送るTransmitterと受け取るReceiverの間の取り決めである。Receiverはストリームを設定し、受け取りたいイベントと主体を指定する。実際に配るイベントは、その要求の範囲でTransmitterが決める。配信はRFC 8935のPushか、RFC 8936のPollを使う。主体の識別にはRFC 9493のSubject Identifiersを使う。
 
 CAEP（Continuous Access Evaluation Profile）は、継続的なアクセス評価のためのイベント型を定める。
 
@@ -383,7 +384,7 @@ CAEP（Continuous Access Evaluation Profile）は、継続的なアクセス評�
 - `assurance-level-change`: 認証の保証レベルが変わった
 - `device-compliance-change`: 端末がポリシーに適合しなくなった、または適合した
 - `risk-level-change`: リスクのレベルが変わった
-- `session-established` / `session-presented`: セッションが作られた、使われた
+- `session-established` / `session-presented`: Transmitterがセッションを作った、セッションの提示を観測した
 
 RISC（Risk Incident Sharing and Coordination）は、アカウントのリスクに関わるイベント型を定める。例は`account-disabled`、`credential-compromise`、`identifier-recycled`である。事業者の間でアカウント乗っ取りの兆候を共有するために使う。
 

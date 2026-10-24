@@ -54,7 +54,8 @@ flowchart LR
     SCIM["SCIM<br/>provisioning"]
   end
   C["Client"] -- "1 Authorization request<br/>PKCE, PAR, JAR, RAR" --> AS["Authorization server"]
-  C -- "Discovery<br/>RFC 9728, RFC 8414" --> RS["Resource server"]
+  C -- "Discovery<br/>RFC 9728" --> RS["Resource server"]
+  C -- "Discovery<br/>RFC 8414, OIDC Discovery" --> AS
   AS -- "2 Token<br/>JWT AT, sender-constrained" --> C
   C -- "3 API call<br/>resource, DPoP/mTLS" --> RS
   RS -- "Validation<br/>JWKS, Introspection" --> AS
@@ -147,7 +148,7 @@ The main differences from OAuth:
 - The request itself negotiates how to interact with the user (redirect, user code, and so on).
 - After issuance, the client can update or revoke the grant through a continuation URL.
 
-As far as I know, few large ecosystems had adopted GNAP as of October 2026. An authorization platform has little reason to build it today. Still, its ideas of "key-bound clients" and "continuing grants" help when you design OAuth sender constraints or agent delegation.
+As far as I know, few large ecosystems had adopted GNAP as of October 2026. So, in my view, an authorization platform has little reason to build it today. Still, its ideas of "key-bound clients" and "continuing grants" help when you design OAuth sender constraints or agent delegation.
 
 # Request Integrity: Keep Authorization Requests Tamper-Proof
 
@@ -164,7 +165,7 @@ Authorization request parameters usually travel in the browser URL. The user's d
 
 ## PAR (RFC 9126) and JAR (RFC 9101)
 
-With PAR, the client POSTs the authorization request parameters to the AS's `pushed_authorization_request_endpoint`. The AS authenticates the client at this point and returns a short-lived `request_uri`.
+With PAR, the client POSTs the authorization request parameters to the AS's `pushed_authorization_request_endpoint`. The AS authenticates the client by the same rules as at the token endpoint and returns a short-lived `request_uri`.
 
 ```http
 POST /as/par HTTP/1.1
@@ -366,14 +367,14 @@ A token reflects a decision at the moment of issuance. After that, a user may le
 | OIDC Back-Channel Logout 1.0 | Lets the OP tell the RP about logout through a Logout Token (a JWT with an `events` claim) | Final |
 | SSF 1.0 | Defines streams that deliver SETs between event transmitters and receivers | Final (August 2025) |
 | CAEP 1.0 | Defines event types such as session revocation and claim changes | Final (August 2025) |
-| RISC 1.0 | Defines event types such as account takeover and credential compromise | Final (August 2025) |
+| RISC 1.0 | Defines event types such as account disablement and credential compromise | Final (August 2025) |
 | RFC 9470 (Step-up) | Lets the RS return a challenge that asks for stronger or fresher authentication | RFC (September 2023) |
 
 [OIDC logout and Security Event Token (SET)](/posts/oidc-logout-security-event-token/) covers SET and OIDC logout.
 
 ## SSF, CAEP, and RISC
 
-SSF (OpenID Shared Signals Framework) sets the rules between a Transmitter that sends events and a Receiver that receives them. The Receiver configures a stream and chooses which events about which subjects to receive. Delivery uses push (RFC 8935) or poll (RFC 8936). Subjects use the Subject Identifiers of RFC 9493.
+SSF (OpenID Shared Signals Framework) sets the rules between a Transmitter that sends events and a Receiver that receives them. The Receiver configures a stream and requests the events and subjects it wants. The Transmitter then decides which of the requested events it actually delivers. Delivery uses push (RFC 8935) or poll (RFC 8936). Subjects use the Subject Identifiers of RFC 9493.
 
 CAEP (Continuous Access Evaluation Profile) defines event types for continuous access evaluation:
 
@@ -383,7 +384,7 @@ CAEP (Continuous Access Evaluation Profile) defines event types for continuous a
 - `assurance-level-change`: the authentication assurance level changed
 - `device-compliance-change`: a device stopped or started complying with policy
 - `risk-level-change`: the risk level changed
-- `session-established` / `session-presented`: someone created or used a session
+- `session-established` / `session-presented`: the Transmitter established a new session, or observed that a session is present
 
 RISC (Risk Incident Sharing and Coordination) defines event types about account risk, for example `account-disabled`, `credential-compromise`, and `identifier-recycled`. Providers use it to share signs of account takeover with each other.
 
