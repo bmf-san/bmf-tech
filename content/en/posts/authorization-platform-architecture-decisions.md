@@ -225,7 +225,7 @@ Note how the flow splits the roles.
 
 - **Token validation is the PEP's job.** Until the PEP checks the signature, issuer (iss), audience (aud), and expiry (exp), asking the PDP has no value.
 - **Deciding is the PDP's job.** The PEP passes "who, what action, which resource, in what context" as AuthZEN's Subject, Action, Resource, and Context.
-- **A decision is more than true or false.** An AuthZEN 1.0 decision can include a context that returns reasons for a denial or a step-up authentication request (such as acr_values).
+- **A decision is more than true or false.** An AuthZEN 1.0 decision can include an optional context. The specification leaves its format to implementations, and its examples return reasons for a denial or a step-up authentication request (such as acr_values).
 
 ## AI Agent Delegation with MCP
 
@@ -258,7 +258,7 @@ sequenceDiagram
 
 This flow stacks three layers.
 
-1. **The scope of the MCP authorization specification.** The flow starts with a 401 and WWW-Authenticate, finds the authorization server through RFC 9728 metadata, and names the target with the RFC 8707 resource parameter when requesting a token. The MCP server MUST confirm that the token names it as the intended audience.
+1. **The scope of the MCP authorization specification.** The flow starts with a 401, finds the authorization server through RFC 9728 metadata, and names the target with the RFC 8707 resource parameter when requesting a token. The MCP server points to the metadata either with `resource_metadata` in WWW-Authenticate or at a well-known URI. The MCP server MUST confirm that the token names it as the intended audience.
 2. **An extension that records whose authority the agent uses.** `requested_actor` and `actor_token` in the diagram come from "On-Behalf-Of User Authorization for AI Agents," an individual draft submitted to the IETF. That draft has expired as of October 2026. The draft defines the client (the application) and the actor (the agent) as separate roles; the diagram merges them into one. Recording the user and the agent separately through the `act` claim follows the same idea as `act` in Token Exchange (RFC 8693).
 3. **Externalized fine-grained authorization.** COAZ-MCP (an AuthZEN Draft) defines how to map MCP messages to AuthZEN's SARC and ask a PDP. It lets the PDP answer what scopes cannot express: "may this user call this tool with these arguments?"
 
@@ -342,7 +342,7 @@ Guidelines for choosing:
 - **Two tiers are the default.** Do coarse authorization at the edge and fine-grained authorization inside the service or at the data layer. Reject clearly invalid requests early, and leave per-resource decisions to the side that has the context.
 - **Central management and execution location are separate concerns.** Even if the PDP runs as a library or sidecar, distributing policies from a central PAP keeps management in one place.
 - **Keep the API independent of placement.** AuthZEN defines the API independently of transport (with HTTPS as the required binding), so a PEP can ask a sidecar PDP or a central PDP in the same shape. A standard interface between PEP and PDP makes later placement changes easier.
-- **Design list retrieval separately.** Repeating "may I read this resource?" for every item in a list breaks counts and page boundaries and raises load. [Considerations and Solutions for Pagination Impact in OPA](/posts/pagination-impact-solutions-opa/) examines this problem and its solutions with OPA. [Access Control Patterns Using OPA](/posts/access-control-patterns-using-opa/) compares returning database conditions through partial evaluation with returning structured conditions. The AuthZEN 1.0 Resource Search API also answers "which resources may this subject see?" Pagination support is optional for the PDP.
+- **Design list retrieval separately.** Repeating "may I read this resource?" for every item in a list breaks counts and page boundaries and raises load. [Considerations and Solutions for Pagination Impact in OPA](/posts/pagination-impact-solutions-opa/) examines this problem and its solutions with OPA. [Access Control Patterns Using OPA](/posts/access-control-patterns-using-opa/) compares returning database conditions through partial evaluation with returning structured conditions. If the PDP supports it, the AuthZEN 1.0 Resource Search API also answers "which resources may this subject see?" Both the Search APIs and pagination are optional for the PDP.
 
 ## Coarse vs Fine-Grained Authorization, and the Role of Tokens
 
@@ -370,7 +370,7 @@ Externalizing decisions puts a decision round trip on the request path. That is 
 If decisions sit on the synchronous path, decide how to keep the round trip short.
 
 - **Run the PDP close by.** An in-process library or a sidecar removes network hops.
-- **Batch your questions.** The AuthZEN Access Evaluations API sends many decisions in one request (boxcarring). You choose the evaluation semantics: `execute_all`, `deny_on_first_deny`, or `permit_on_first_permit`.
+- **Batch your questions.** The AuthZEN Access Evaluations API sends many decisions in one request (boxcarring). You choose the evaluation semantics: `execute_all`, `deny_on_first_deny`, or `permit_on_first_permit`. Implementing this API is optional for the PDP.
 - **Cache decisions.** A short-TTL cache keyed on Subject, Action, Resource, and Context helps, but it delays revocation. Set the TTL by how late a revocation may take effect.
 - **Filter lists up front.** As the previous section explains, use partial evaluation or the Search API to compute lists in one pass.
 

@@ -225,7 +225,7 @@ sequenceDiagram
 
 - **トークンの検証はPEPの仕事**である。署名、発行者（iss）、宛先（aud）、期限（exp）を確かめるまでは、PDPに問い合わせる価値がない。
 - **判定はPDPの仕事**である。PEPは「誰が・何を・どの資源に・どんな文脈で」をAuthZENのSubject・Action・Resource・Contextの形で渡す。
-- **判定の応答はtrue / falseだけではない**。AuthZEN 1.0の判定にはcontextを付けられ、拒否の理由やstep-up認証の要求（acr_valuesなど）を返せる。
+- **判定の応答はtrue / falseだけではない**。AuthZEN 1.0の判定には任意でcontextを付けられる。中身の形は実装に任されており、仕様の例では拒否の理由やstep-up認証の要求（acr_valuesなど）を返している。
 
 ## AI エージェントへの委譲と MCP
 
@@ -258,7 +258,7 @@ sequenceDiagram
 
 この流れは3つの層を重ねている。
 
-1. **MCPの認可仕様の範囲**。401とWWW-Authenticateから始まり、RFC 9728のメタデータで認可サーバを見つけ、RFC 8707のresourceパラメータで宛先を指定してトークンを取る。MCPサーバは、トークンが自分宛てに発行されたことを検証しなければならない（MUST）。
+1. **MCPの認可仕様の範囲**。401から始まり、RFC 9728のメタデータで認可サーバを見つけ、RFC 8707のresourceパラメータで宛先を指定してトークンを取る。MCPサーバはメタデータの場所を、WWW-Authenticateの`resource_metadata`かwell-known URIのどちらかで示す。MCPサーバは、トークンが自分宛てに発行されたことを検証しなければならない（MUST）。
 2. **誰の権限で動いているかを表す拡張**。図の`requested_actor`と`actor_token`は「On-Behalf-Of User Authorization for AI Agents」という個人のInternet-Draftの拡張である。このドラフトは2026年10月時点で期限切れになっている。ドラフトはクライアント（アプリ）とアクター（エージェント）を別の役割として定めるが、図では1つにまとめた。トークンの`act`クレームでユーザーとエージェントを分けて残す考え方は、Token Exchange（RFC 8693）の`act`と同じである。
 3. **細かい認可の外部化**。COAZ-MCP（AuthZENのDraft）は、MCPのメッセージをAuthZENのSARCに写してPDPに問い合わせる方法を決める。スコープでは表しきれない「このユーザーがこの引数でこのツールを呼んでよいか」をPDPに任せられる。
 
@@ -342,7 +342,7 @@ flowchart LR
 - **二段構えが基本になる**。粗い認可はエッジで、細かい認可はサービス内やデータ層で行う。入口で明らかに無理な要求を早く弾き、資源ごとの判断は文脈を持つ側に任せる。
 - **管理の一元化と実行場所は別の話である**。ライブラリやサイドカーで動かしても、ポリシーを中央のPAPから配れば管理は一元化できる。
 - **APIは配置に依存させない**。AuthZENはAPIを転送方式に依存しない形で定めており（HTTPSの結び付けは必須）、サイドカーのPDPにも中央のPDPにも同じ形で問い合わせられる。PEPとPDPの間を標準の形にしておけば、あとから配置を変えやすい。
-- **一覧の取得は別に設計する**。「この資源を読んでよいか」の判定を一覧の全件に繰り返すと、件数やページ境界が崩れ、負荷も上がる。OPAで起きるこの問題と解き方を[OPAにおけるページネーションへの影響と解決策](/ja/posts/pagination-impact-solutions-opa/)で検討した。部分評価でDBの条件を返す方式や、条件を構造で返す方式の比較は[OPAを利用したアクセス制御のパターン](/ja/posts/access-control-patterns-using-opa/)にある。AuthZEN 1.0のResource Search APIも「この主体が見てよい資源は何か」に答える手段として使える。ページングへの対応はPDPの任意である。
+- **一覧の取得は別に設計する**。「この資源を読んでよいか」の判定を一覧の全件に繰り返すと、件数やページ境界が崩れ、負荷も上がる。OPAで起きるこの問題と解き方を[OPAにおけるページネーションへの影響と解決策](/ja/posts/pagination-impact-solutions-opa/)で検討した。部分評価でDBの条件を返す方式や、条件を構造で返す方式の比較は[OPAを利用したアクセス制御のパターン](/ja/posts/access-control-patterns-using-opa/)にある。PDPが対応していれば、AuthZEN 1.0のResource Search APIも「この主体が見てよい資源は何か」に答える手段として使える。Search APIとページングは、どちらも実装するかがPDPの任意である。
 
 ## 粗い認可と細かい認可、トークンの役割
 
@@ -370,7 +370,7 @@ RAR（RFC 9396）を使えば、トークン要求に「この相手に、この
 判定を同期の経路に入れるなら、往復の時間をどう抑えるかを決める。
 
 - **PDPを近くに置く**。プロセス内ライブラリやサイドカーにすればネットワークの往復が減る。
-- **まとめて問い合わせる**。AuthZENのAccess Evaluations APIは複数の判定を1回の要求で送れる（boxcarring）。`execute_all`、`deny_on_first_deny`、`permit_on_first_permit`の評価の仕方を選べる。
+- **まとめて問い合わせる**。AuthZENのAccess Evaluations APIは複数の判定を1回の要求で送れる（boxcarring）。`execute_all`、`deny_on_first_deny`、`permit_on_first_permit`の評価の仕方を選べる。ただし、このAPIを実装するかはPDPの任意である。
 - **判定をキャッシュする**。Subject・Action・Resource・Contextをキーにした短いTTLのキャッシュは効くが、権限の取り消しが遅れて効く。TTLの長さは「取り消しがどれだけ遅れてよいか」で決める。
 - **一覧は事前に絞る**。前節のとおり、部分評価やSearch APIでまとめて求める。
 
