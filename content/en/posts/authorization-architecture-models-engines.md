@@ -57,7 +57,7 @@ Picking a model does not fix the language or the engine. Picking an engine, by c
 
 ## The Four Roles
 
-The names of these components come from OASIS XACML. NIST SP 800-162 (the ABAC guide) uses the same vocabulary for its reference architecture, and NIST SP 800-207 (Zero Trust) uses the same PDP and PEP terms. AuthZEN builds on this vocabulary as well.
+The IETF Policy Framework defined the terms PEP and PDP first (RFC 2753 in 2000, with the terminology in RFC 3198). OASIS XACML adopted them and added PAP and PIP to form the four roles. NIST SP 800-162 (the ABAC guide) uses the same vocabulary for its reference architecture, and NIST SP 800-207 (Zero Trust) uses the same PDP and PEP terms. AuthZEN builds on this vocabulary as well.
 
 ```mermaid
 flowchart LR
@@ -189,7 +189,7 @@ ReBAC, which stores relations as enumerated data, handles these questions well. 
 
 ## Roles Set the Ceiling; Attributes and Relations Narrow It
 
-For combining models, the "role-centric" approach from NIST researchers still works. Kuhn, Coyne, and Weil's 2010 paper classified three ways to add attributes to RBAC.
+For combining models, the "role-centric" approach that Kuhn of NIST and his co-authors described still works. Their 2010 paper (Kuhn of NIST, with Coyne and Weil) classified three ways to add attributes to RBAC.
 
 | Approach | How permissions follow | Assessment |
 |---|---|---|
@@ -235,7 +235,7 @@ The guide makes a few more points:
 
 ## XACML 3.0
 
-XACML 3.0 became an OASIS Standard in 2013, and a version with errata followed in 2017. The XML weighs it down and few new projects adopt it, yet its evaluation semantics remain the most precise.
+XACML 3.0 became an OASIS Standard in 2013, and a version with errata followed in 2017. Writing it in XML takes effort, but it defines its evaluation semantics in detail, from the four decision values to combining algorithms and obligations, so it still works as a yardstick for comparing other approaches.
 
 Decisions take four values: Permit and Deny, plus NotApplicable (no matching policy) and Indeterminate (evaluation error). Combining algorithms merge the results of many rules.
 
@@ -258,7 +258,7 @@ The XACML TC is drafting ACAL 1.0 as a successor, separating semantics from XML,
 
 ## NGAC
 
-NGAC (Next Generation Access Control) is an ABAC standard that NIST developed, published as ANSI/INCITS 499-2018. NIST SP 800-178 (2016) compares it with XACML.
+NGAC (Next Generation Access Control) is an ABAC standard that grew out of NIST research (the Policy Machine). ANSI/INCITS published it as INCITS 499-2018 (functional architecture) and INCITS 526-2016 (operations and data structures). NIST SP 800-178 (2016) compares it with XACML.
 
 The difference lies in how each represents policy. XACML writes policy as logical formulas over attribute values. NGAC enumerates policy as a configuration of assignments and associations among users, user attributes, objects, and object attributes. SP 800-178 concludes that NGAC supports efficient per-user and per-object review, while the logical formula approach struggles with it. In exchange, NGAC may need an explicit relation for each attribute value, so the number of relations can multiply.
 
@@ -357,6 +357,7 @@ You do not need to put everything on one engine. A common setup keeps a ReBAC en
 - [D. Ferraiolo, R. Kuhn: Role-Based Access Controls (1992)](https://csrc.nist.gov/pubs/conference/1992/10/13/rolebased-access-controls/final)
 - [R. Kuhn, E. Coyne, T. Weil: Adding Attributes to Role-Based Access Control (2010)](https://csrc.nist.gov/pubs/journal/2010/06/adding-attributes-to-rolebased-access-control/final)
 - [INCITS 359-2012 (R2022)](https://webstore.ansi.org/standards/incits/incits3592012r2022)
+- [RFC 2753: A Framework for Policy-based Admission Control](https://www.rfc-editor.org/rfc/rfc2753) / [RFC 3198: Terminology for Policy-Based Management](https://www.rfc-editor.org/rfc/rfc3198)
 - [NIST SP 800-162: Guide to Attribute Based Access Control (ABAC) Definition and Considerations](https://csrc.nist.gov/pubs/sp/800/162/upd2/final)
 - [NIST SP 800-178: A Comparison of ABAC Standards for Data Service Applications: XACML and NGAC](https://csrc.nist.gov/pubs/sp/800/178/final)
 - [NIST SP 800-207: Zero Trust Architecture](https://csrc.nist.gov/pubs/sp/800/207/final)

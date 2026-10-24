@@ -57,7 +57,7 @@ flowchart TB
 
 ## 4つの役割
 
-認可の部品の呼び名は、OASISのXACMLに由来する。NIST SP 800-162（ABACのガイド）もこの語彙で参照アーキテクチャを示し、NIST SP 800-207（ゼロトラスト）も同じPDPとPEPの語を使う。AuthZENもこの語彙を前提にしている。
+PEPとPDPという呼び名は、IETFのPolicy Framework（RFC 2753、2000年。用語はRFC 3198）が先に定めたものである。OASISのXACMLはこの2つを取り込み、PAPとPIPを加えて4つの役割にまとめた。NIST SP 800-162（ABACのガイド）もこの語彙で参照アーキテクチャを示し、NIST SP 800-207（ゼロトラスト）も同じPDPとPEPの語を使う。AuthZENもこの語彙を前提にしている。
 
 ```mermaid
 flowchart LR
@@ -189,7 +189,7 @@ flowchart TD
 
 ## ロールで上限を決め、属性と関係で絞る
 
-組み合わせ方の指針として、NISTの研究者が示した「ロール中心」の方式が今も使える。Kuhn、Coyne、Weilの2010年の論文は、RBACに属性を足す方式を3つに分けた。
+組み合わせ方の指針として、NISTのKuhnらが示した「ロール中心」の方式が今も使える。Kuhn（NIST）、Coyne、Weilの2010年の論文は、RBACに属性を足す方式を3つに分けた。
 
 | 方式 | 権限の決まり方 | 評価 |
 |---|---|---|
@@ -235,7 +235,7 @@ SP 800-162は2014年に出たABACのガイドで、2019年の更新で信頼の�
 
 ## XACML 3.0
 
-XACML 3.0は2013年にOASIS Standardとして承認された。2017年には正誤を取り込んだ版が出ている。XMLが重く新規の採用は少ないが、評価の意味論は今もいちばん精密である。
+XACML 3.0は2013年にOASIS Standardとして承認された。2017年には正誤を取り込んだ版が出ている。XMLで書く負担は大きいが、判定の4値、結合アルゴリズム、義務の扱いまで評価の意味論を細かく定めている点は、今も他の方式を比べる物差しになる。
 
 判定は許可・拒否だけでなく、NotApplicable（該当ポリシーなし）とIndeterminate（評価エラー）を加えた4値で返る。複数のルールの結果は結合アルゴリズムでまとめる。
 
@@ -258,7 +258,7 @@ XACML 3.0は2013年にOASIS Standardとして承認された。2017年には正�
 
 ## NGAC
 
-NGAC（Next Generation Access Control）は、NISTが開発したABACの標準で、ANSI/INCITS 499-2018として規格になっている。NIST SP 800-178（2016年）がXACMLと比べている。
+NGAC（Next Generation Access Control）は、NISTの研究（Policy Machine）から生まれたABACの標準である。ANSI/INCITSでINCITS 499-2018（機能アーキテクチャ）とINCITS 526-2016（操作とデータ構造）として規格になっている。NIST SP 800-178（2016年）がXACMLと比べている。
 
 違いはポリシーの持ち方にある。XACMLは属性の値を使った論理式でポリシーを書く。NGACは利用者、利用者の属性、対象、対象の属性を節にした割り当てと関連の構成として、ポリシーを列挙する。SP 800-178の結論では、NGACは利用者ごと・対象ごとの見直しを効率よくこなせる。一方、論理式の方式ではこの見直しが難しい。その代わり、属性の値ごとに関係を作る必要があるため、関係の数は膨らみやすい。
 
@@ -357,6 +357,7 @@ ReBACのエンジンを入れると、関係データを業務DBとエンジン�
 - [D. Ferraiolo, R. Kuhn: Role-Based Access Controls (1992)](https://csrc.nist.gov/pubs/conference/1992/10/13/rolebased-access-controls/final)
 - [R. Kuhn, E. Coyne, T. Weil: Adding Attributes to Role-Based Access Control (2010)](https://csrc.nist.gov/pubs/journal/2010/06/adding-attributes-to-rolebased-access-control/final)
 - [INCITS 359-2012 (R2022)](https://webstore.ansi.org/standards/incits/incits3592012r2022)
+- [RFC 2753: A Framework for Policy-based Admission Control](https://www.rfc-editor.org/rfc/rfc2753) / [RFC 3198: Terminology for Policy-Based Management](https://www.rfc-editor.org/rfc/rfc3198)
 - [NIST SP 800-162: Guide to Attribute Based Access Control (ABAC) Definition and Considerations](https://csrc.nist.gov/pubs/sp/800/162/upd2/final)
 - [NIST SP 800-178: A Comparison of ABAC Standards for Data Service Applications: XACML and NGAC](https://csrc.nist.gov/pubs/sp/800/178/final)
 - [NIST SP 800-207: Zero Trust Architecture](https://csrc.nist.gov/pubs/sp/800/207/final)
