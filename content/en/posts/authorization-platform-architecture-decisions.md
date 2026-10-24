@@ -357,7 +357,7 @@ Splitting the two layers clarifies what tokens do.
 
 - **Tokens carry coarse authorization.** They suit statements that cross boundaries, such as "this client may read this API."
 - **Do not stuff fine-grained authorization into tokens.** Listing per-resource permissions in claims bloats the token, and a revoked permission survives until the token expires. Leave fine-grained decisions to the PDP and PIP.
-- **Narrow tokens when you pass them inward.** Do not reuse an access token between services; swap it for a token with a narrower audience and authority through Token Exchange or Transaction Tokens (downscoping). [What is Workload Identity?](/posts/workload-identity-wimse-transaction-tokens/) covers this in detail.
+- **Narrow tokens when you pass them inward.** Do not reuse an access token between services; swap it for a token with narrower authority (downscoping). Token Exchange can also narrow the audience to the next service. A Transaction Token names the whole trust domain as its audience and narrows its scope to the purpose of the transaction. [What is Workload Identity?](/posts/workload-identity-wimse-transaction-tokens/) covers this in detail.
 
 RAR (RFC 9396) lets a token request carry structured authority, such as "pay this amount to this payee." Even so, per-resource decisions that change with every request stay easier to revoke and audit when the PDP handles them.
 
@@ -387,7 +387,7 @@ Decide whether to let requests through (fail-open) or stop them (fail-closed) wh
 
 Decide when updates to relationships and attributes reach decisions.
 
-- Relationship stores for ReBAC propagate updates with some delay. Zanzibar handles the risk of deciding on stale state right after a permission removal (the "new enemy" problem) with a consistency token called a zookie. SpiceDB's ZedToken follows the same idea.
+- To keep checks fast, relationship stores for ReBAC may answer them from caches or slightly older snapshots, so a recent update can take a moment to reach decisions. Zanzibar handles the risk of deciding on stale state right after a permission removal (the "new enemy" problem) with a consistency token called a zookie. SpiceDB's ZedToken follows the same idea.
 - How fast a revocation takes effect depends on the combination of cache TTL, token lifetime, and relationship store consistency settings. Shortening only one of them does not help if the others stay long.
 
 ### Audit
