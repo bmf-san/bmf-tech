@@ -143,7 +143,7 @@ MCPの仕様にも、この考え方が表れている。Elicitation（サーバ
 - 対象: toolの引数が指すデータ（テナント、レコード、ファイル）
 - 文脈: スコープ、時刻、操作のリスクの高さ
 
-スコープは「このMCPサーバーのこの種類の機能を使ってよい」という粗い上限として使い、個々のデータへの判定はサーバー側で行う。2026-07-28版では、`tools/list`の結果が要求に付いた認可によって変わってよいことになった。たとえば、付与されたスコープで許されるtoolだけを返せる。見せるtoolを絞ると、LLMが誤って危険なtoolを選ぶ機会も減る。ただし、一覧に出さないことは判定の代わりにならない。`tools/call`のたびに判定する。
+スコープは「このMCPサーバーのこの種類の機能を使ってよい」という粗い上限として使い、個々のデータへの判定はサーバー側で行う。2026-07-28版では、`tools/list`の結果が要求に付いた認可によって変わってよいと明記された。たとえば、付与されたスコープで許されるtoolだけを返せる。見せるtoolを絞ると、LLMが誤って危険なtoolを選ぶ機会も減る。ただし、一覧に出さないことは判定の代わりにならない。`tools/call`のたびに判定する。
 
 判定を置く場所には、主に次の3つがある。
 
@@ -153,9 +153,9 @@ MCPの仕様にも、この考え方が表れている。Elicitation（サーバ
 | MCPサーバーの前のゲートウェイ（PEP） | tool単位の許可やテナントごとの制御を一か所でかけたい | 引数の中身まで見る判定は難しい |
 | 外部の判定サービス（PDP）に問い合わせる | MCPサーバーが多く、ポリシーを横断で管理したい | 判定のAPIと、判定に使う属性の設計が要る |
 
-2026-07-28版のStreamable HTTPでは、POSTに`Mcp-Method`と`Mcp-Name`のヘッダが必須になった。ゲートウェイは本文を解析せずに「どのメソッドの、どのtoolか」を知り、tool単位の制御をかけられる。本文を処理するサーバーは、ヘッダと本文の値の一致を検証し、違う場合は拒否しなければならない。ヘッダで判定するゲートウェイは、この照合を求める版の要求かどうかも確かめる必要がある。
+2026-07-28版のStreamable HTTPでは、POSTの要求に`Mcp-Method`ヘッダが必須になった。`tools/call`などの要求には`Mcp-Name`ヘッダも必須である。ゲートウェイは本文を解析せずに「どのメソッドの、どのtoolか」を知り、tool単位の制御をかけられる。本文を処理するサーバーは、ヘッダと本文の値の一致を検証し、違う場合は拒否しなければならない。ヘッダで判定するゲートウェイは、`MCP-Protocol-Version`がこの照合を求める版かを確かめ、そうでなければ要求を拒否すべきである（SHOULD）。
 
-判定を外部化するなら、PEPとPDPをつなぐ標準としてAuthZENの[Authorization API](/ja/posts/authzen-authorization-api/)がある。AuthZENには、MCPの要求を判定の要求に写すプロファイル（COAZ-MCP）のDraftもある。ただしCOAZ-MCPのDraft 1は2026-07-28版より前に書かれているので、前提にしているMCPの版を確かめる必要がある。PEPとPDPの分け方は[認可のアーキテクチャ](/ja/posts/authorization-architecture-models-engines/)で扱っている。
+判定を外部化するなら、PEPとPDPをつなぐ標準としてAuthZENの[Authorization API](/ja/posts/authzen-authorization-api/)がある。AuthZENには、MCPの要求を判定の要求に写すプロファイル（COAZ-MCP）のDraftもある。COAZ-MCPの表記はDraft 1（2026-02-13付）のままだが、編集中の版は2026-07-28版に合わせて更新が続いている（`initialize`の対応付けの削除など）。採用するときは、前提にしているMCPの版を確かめる必要がある。PEPとPDPの分け方は[認可のアーキテクチャ](/ja/posts/authorization-architecture-models-engines/)で扱っている。
 
 ## 識別子は権限ではない
 
@@ -283,13 +283,13 @@ sequenceDiagram
 | 中継の禁止 | 自分宛て以外のトークンを受け入れたり、通過させたりしない | MCPサーバー | MUST NOT |
 | PKCE | PKCEを実装し、可能なら`S256`を使う。メタデータに`code_challenge_methods_supported`がなければ進めない | MCPクライアント | MUST |
 | mix-up対策 | 認可応答に`iss`（RFC 9207）を含める。含めるならメタデータで宣言する | 認可サーバー | SHOULD（宣言はMUST） |
-| mix-up対策 | 選んだ認可サーバーの`issuer`を記録し、認可コードを使う前に応答の`iss`と照合する | MCPクライアント | MUST |
+| mix-up対策 | 選んだ認可サーバーの`issuer`を記録し、認可コードを使う前に応答の`iss`と照合する。`iss`を宣言済みの認可サーバーから`iss`のない応答が来たら拒否する | MCPクライアント | MUST |
 | スコープ | 最初の401の`scope`、なければ`scopes_supported`を使う。不足は403の`insufficient_scope`で返し、クライアントは和集合で認可をやり直す | MCPサーバー / MCPクライアント | SHOULD |
 | 通信 | 認可サーバーの口はすべてHTTPSにする。リダイレクトURIはlocalhostかHTTPSにし、完全一致で検証する | 認可サーバー / MCPクライアント | MUST |
 | トークンの盗難 | 短命のアクセストークンを発行する。公開クライアントのリフレッシュトークンは回転させる | 認可サーバー | SHOULD / MUST |
 | confused deputy | 固定のclient IDを使うMCPプロキシは、動的に登録されたクライアントごとにユーザーの同意を得てから転送する | MCPサーバー（プロキシ） | MUST |
 
-クライアント登録では、2026-07-28版でCIMDが優先になった。MCPでよくあるのは、クライアントとサーバーに事前の関係がない場面だからである。CIMDでは、クライアントがHTTPSのURLを`client_id`にし、そのURLにメタデータのJSONを置く。認可サーバーはその文書を取得し、`client_id`の一致と`redirect_uri`を検証する。任意のURLを取得することになるので、認可サーバーの側はSSRFに注意する。
+クライアント登録では、事前登録がなければ、DCRより先にCIMDを試す。MCPでよくあるのは、クライアントとサーバーに事前の関係がない場面だからである。CIMDは2025-11-25版で推奨の方式として入り、2026-07-28版ではDCRが非推奨になった。CIMDでは、クライアントがHTTPSのURLを`client_id`にし、そのURLにメタデータのJSONを置く。認可サーバーはその文書を取得し、`client_id`の一致と`redirect_uri`を検証する。任意のURLを取得することになるので、認可サーバーの側はSSRFに注意する。
 
 DCRの仕組みは[動的クライアント登録（DCR）](/ja/posts/dynamic-client-registration/)、メタデータによる発見は[OpenID ConnectのDiscoveryとメタデータ](/ja/posts/oidc-discovery-metadata/)で扱った。PKCEやmix-up対策などOAuth 2.1の土台は[OAuth 2.1とSecurity BCP](/ja/posts/oauth-2-1-security-bcp/)にまとめている。MCPが使うOAuthの周辺標準の位置づけは[OAuthと周辺標準の地図](/ja/posts/oauth-standards-map-authorization-platform/)を参照してほしい。
 

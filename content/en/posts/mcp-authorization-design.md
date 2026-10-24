@@ -143,7 +143,7 @@ An access decision uses at least these inputs:
 - Resource: the data that the tool arguments point to (tenant, record, file)
 - Context: scopes, time, and the risk of the operation
 
-Use scopes as a coarse upper bound such as "may use this kind of feature on this MCP server", and make decisions about individual data in the server. The 2026-07-28 revision allows the result of `tools/list` to vary by the authorization attached to the request. For example, a server can return only the tools that the granted scopes permit. Showing fewer tools also lowers the chance that the LLM picks a dangerous tool by mistake. Hiding a tool from the list does not replace a decision, though. Decide on every `tools/call`.
+Use scopes as a coarse upper bound such as "may use this kind of feature on this MCP server", and make decisions about individual data in the server. The 2026-07-28 revision explicitly allows the result of `tools/list` to vary by the authorization attached to the request. For example, a server can return only the tools that the granted scopes permit. Showing fewer tools also lowers the chance that the LLM picks a dangerous tool by mistake. Hiding a tool from the list does not replace a decision, though. Decide on every `tools/call`.
 
 You have three main places to put the decision:
 
@@ -153,9 +153,9 @@ You have three main places to put the decision:
 | A gateway (PEP) in front of the MCP servers | You want per-tool permissions or per-tenant controls in one place | Decisions that inspect argument values get hard |
 | An external decision service (PDP) | Many MCP servers, and you want to manage policy across them | You need to design the decision API and the attributes it uses |
 
-In the 2026-07-28 Streamable HTTP transport, every POST must carry the `Mcp-Method` and `Mcp-Name` headers. A gateway learns "which method, which tool" without parsing the body and can apply per-tool controls. A server that processes the body MUST check that the header values match the body and reject mismatches. A gateway that decides on headers also needs to confirm that the request uses a revision that requires this check.
+In the 2026-07-28 Streamable HTTP transport, every POST must carry the `Mcp-Method` header. Requests such as `tools/call` must also carry the `Mcp-Name` header. A gateway learns "which method, which tool" without parsing the body and can apply per-tool controls. A server that processes the body MUST check that the header values match the body and reject mismatches. A gateway that decides on headers SHOULD confirm that `MCP-Protocol-Version` names a revision that requires this check, and reject the request otherwise.
 
-If you externalize decisions, AuthZEN's [Authorization API](/posts/authzen-authorization-api/) offers a standard between the PEP and the PDP. AuthZEN also has a draft profile, COAZ-MCP, that maps MCP requests to decision requests. COAZ-MCP Draft 1 predates the 2026-07-28 revision, so check which MCP revision it assumes. [Authorization architecture](/posts/authorization-architecture-models-engines/) covers how to split the PEP and the PDP.
+If you externalize decisions, AuthZEN's [Authorization API](/posts/authzen-authorization-api/) offers a standard between the PEP and the PDP. AuthZEN also has a draft profile, COAZ-MCP, that maps MCP requests to decision requests. COAZ-MCP still carries the label Draft 1 (dated 2026-02-13), but its editor's draft keeps changing to follow the 2026-07-28 revision (for example, it dropped the `initialize` mapping). Before you adopt it, check which MCP revision it assumes. [Authorization architecture](/posts/authorization-architecture-models-engines/) covers how to split the PEP and the PDP.
 
 ## Identifiers are not permissions
 
@@ -283,13 +283,13 @@ sequenceDiagram
 | No passthrough | Never accept or transit tokens meant for anyone else | MCP server | MUST NOT |
 | PKCE | Support PKCE and use `S256` when technically capable. Refuse to proceed if the metadata lacks `code_challenge_methods_supported` | MCP client | MUST |
 | Mix-up defense | Include `iss` (RFC 9207) in authorization responses. If you include it, advertise it in the metadata | Authorization server | SHOULD (advertising is MUST) |
-| Mix-up defense | Record the `issuer` of the chosen authorization server and compare it with the response `iss` before using the code | MCP client | MUST |
+| Mix-up defense | Record the `issuer` of the chosen authorization server and compare it with the response `iss` before using the code. Reject a response without `iss` from an authorization server that advertises `iss` support | MCP client | MUST |
 | Scopes | Use the `scope` in the first 401, or `scopes_supported` if absent. Signal missing scopes with 403 `insufficient_scope`; the client reauthorizes with the union | MCP server / MCP client | SHOULD |
 | Transport | Serve all authorization server endpoints over HTTPS. Redirect URIs use localhost or HTTPS, and the server checks them by exact match | Authorization server / MCP client | MUST |
 | Token theft | Issue short-lived access tokens. Rotate refresh tokens for public clients | Authorization server | SHOULD / MUST |
 | Confused deputy | An MCP proxy with a static client ID gets user consent for each dynamically registered client before forwarding | MCP server (proxy) | MUST |
 
-For client registration, the 2026-07-28 revision puts CIMD first. In MCP, clients and servers often have no prior relationship. With CIMD, the client uses an HTTPS URL as its `client_id` and hosts a JSON metadata document at that URL. The authorization server fetches the document and checks that `client_id` matches and that the document lists the `redirect_uri`. Because the authorization server fetches arbitrary URLs, it needs to guard against SSRF.
+For client registration, a client without pre-registered credentials tries CIMD before DCR. In MCP, clients and servers often have no prior relationship. CIMD arrived in the 2025-11-25 revision as the recommended mechanism, and the 2026-07-28 revision deprecated DCR. With CIMD, the client uses an HTTPS URL as its `client_id` and hosts a JSON metadata document at that URL. The authorization server fetches the document and checks that `client_id` matches and that the document lists the `redirect_uri`. Because the authorization server fetches arbitrary URLs, it needs to guard against SSRF.
 
 [Dynamic Client Registration (DCR)](/posts/dynamic-client-registration/) covers how DCR works, and [OpenID Connect Discovery and metadata](/posts/oidc-discovery-metadata/) covers metadata-based discovery. [OAuth 2.1 and the Security BCP](/posts/oauth-2-1-security-bcp/) summarizes the OAuth 2.1 foundation, including PKCE and mix-up defenses. For where MCP's OAuth building blocks fit, see [A map of OAuth and related standards](/posts/oauth-standards-map-authorization-platform/).
 
