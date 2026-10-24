@@ -23,7 +23,7 @@ Dozens of RFCs and OpenID Foundation specifications surround OAuth. If you build
 This post maps OAuth and its related standards from the viewpoint of an authorization platform. You will learn:
 
 - The big picture, with standards grouped into seven questions: delegation, request integrity, discovery and audience, cross-domain, tokens, identity and provisioning, and continuous evaluation
-- A one-line role for each standard and its status as of October 2026 (RFC, Draft, or Final)
+- A one-line role for each standard and its status as of October 2026 (RFC, Draft, Final, and so on)
 - What an authorization platform must decide
 - An index to the deep-dive posts on this blog
 
@@ -59,8 +59,8 @@ flowchart LR
   AS -- "2 Token<br/>JWT AT, sender-constrained" --> C
   C -- "3 API call<br/>DPoP/mTLS" --> RS
   RS -- "Validation<br/>JWKS, Introspection" --> AS
-  RS -- "4 Step-up challenge" --> C
-  IdP -- "ID Token" --> AS
+  RS -- "4 Step-up challenge (when needed)" --> C
+  IdP -- "ID Token, SAML assertion" --> AS
   SCIM -- "Subjects and attributes" --> AS
   T["SSF / CAEP / RISC"] -. "Post-issuance events" .-> AS
   T -. "Post-issuance events" .-> RS
@@ -89,7 +89,7 @@ The rest of this post walks through each question: the role of each standard and
 | Standard | One-line role | Status |
 | --- | --- | --- |
 | RFC 6749 / RFC 6750 | The core of OAuth 2.0: roles, grants, and how to use bearer tokens | RFC |
-| OAuth 2.1 (draft-ietf-oauth-v2-1) | Consolidates 6749, major extensions, and the BCP. Requires PKCE and drops Implicit and Password | Draft (-16, September 2026) |
+| OAuth 2.1 (draft-ietf-oauth-v2-1) | Consolidates 6749, major extensions, and the BCP. Requires PKCE with narrow exceptions and drops Implicit and Password | Draft (-16, September 2026) |
 | RFC 9700 (BCP 240) | The Security BCP, collecting attacks and countermeasures found since 2012 | RFC |
 | RFC 7636 (PKCE) | Stops authorization code interception. RFC 9700 requires it for public clients and recommends it for confidential clients; OAuth 2.1 requires it for all clients with narrow exceptions | RFC |
 | RFC 8252 and RFC 10017 (BCP 212) | Best Current Practice for native apps and browser-based apps | RFC (10017 in August 2026) |
@@ -97,6 +97,8 @@ The rest of this post walks through each question: the role of each standard and
 | RFC 7523 | Client authentication with a JWT (the basis of OIDC's `private_key_jwt`), and JWTs as authorization grants | RFC |
 
 [What is OAuth 2.0?](/posts/oauth-2-0/) covers OAuth 2.0 as a whole, and [What is OAuth 2.1?](/posts/oauth-2-1-security-bcp/) covers OAuth 2.1 and the RFC 9700 recommendations. As of October 2026, OAuth 2.1 still has no RFC number. The BCP for browser-based apps came out as RFC 10017 in August 2026. [Where should you store SPA tokens?](/posts/spa-token-storage-bff/) covers token storage in SPAs.
+
+An authorization platform must decide which grant types and which client types (public or confidential) to allow.
 
 ## RAR (RFC 9396): Delegation That Scopes Cannot Express
 
@@ -249,7 +251,7 @@ Main requirements as of draft-02:
 - The `client_id` URL uses https, contains a path, and contains no fragment
 - The `client_id` inside the document must match the document URL exactly
 - The client cannot use authentication methods based on `client_secret`. It either acts as a public client or authenticates with a key, such as `private_key_jwt`
-- The AS signals support with the `client_id_metadata_document_supported` metadata
+- The AS can signal support with the `client_id_metadata_document_supported` metadata (OPTIONAL)
 
 Because the AS fetches external URLs, it needs SSRF countermeasures. If the AS accepts any URL, anyone can act as a client, including one that poses as a well-known client, so the AS also needs a policy on which domains to trust. The MCP authorization specification (2026-07-28) prefers CIMD over DCR and deprecates DCR. [Key points for designing MCP authorization](/posts/mcp-authorization-design/) covers the details.
 
@@ -280,7 +282,7 @@ sequenceDiagram
   participant IdP as Enterprise IdP
   participant RAS as SaaS authorization server
   participant API as SaaS API
-  App->>IdP: Token Exchange (subject_token = ID Token)
+  App->>IdP: Token Exchange (subject_token = ID Token or SAML assertion)
   IdP->>IdP: Decide by enterprise policy
   IdP-->>App: ID-JAG (aud = SaaS authorization server)
   App->>RAS: JWT Bearer grant (assertion = ID-JAG)
@@ -340,7 +342,7 @@ SCIM (System for Cross-domain Identity Management) delivers users and groups fro
 - Carry organizational attributes such as `department` and `manager` through the Enterprise User extension
 - Publish supported features and schemas through `/ServiceProviderConfig` and `/Schemas`
 
-From the platform's viewpoint, SCIM feeds the PIP (the source of attributes). Groups and attributes change automatically as people join, move, and leave. Conversely, without this provisioning, accounts of former employees tend to linger in SaaS products.
+From the platform's viewpoint, SCIM delivers the subjects and attributes used in decisions to each service in advance, and keeps the data that a PIP (the source of attributes) reads in sync. Groups and attributes change automatically as people join, move, and leave. Conversely, without this provisioning, accounts of former employees tend to linger in SaaS products.
 
 RFC 9967 (May 2026) defines a profile that announces SCIM changes as SETs (RFC 8417). It makes provisioning asynchronous and tells receivers about changes.
 
@@ -406,7 +408,7 @@ WWW-Authenticate: Bearer error="insufficient_user_authentication",
 
 Use it when you want strong authentication only for operations such as payments or permission changes. Compared with always demanding the strongest authentication at first login, it puts less burden on users. [What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) shows an example of turning a PDP decision into a step-up.
 
-An authorization platform must decide:
+For continuous evaluation, an authorization platform must decide:
 
 - Which events to receive, and what to stop when one arrives (sessions, refresh tokens, cached decisions)
 - Which `acr` to require for which operations. Agree on the meaning of each `acr` value across the organization
@@ -420,7 +422,7 @@ This table collects the decisions from each section.
 | --- | --- | --- |
 | Delegation | Which grant types and client types to allow | OAuth 2.1, RFC 9700, RFC 10017 |
 | Delegation | Scopes or `authorization_details` | RAR |
-| Delegation | Whether approval on another device matters | CIBA, device grant |
+| Delegation | Whether to use approval on another device, and if so, how to identify the user and where to send the notice | CIBA, device grant |
 | Request integrity | Whether to require PAR or JAR, and from which risk level | PAR, JAR, FAPI 2.0 |
 | Discovery and audience | How to name RS identifiers and validate `aud` | RFC 8707, RFC 9728 |
 | Discovery and audience | How clients register | Pre-registration, DCR, CIMD |
@@ -437,7 +439,7 @@ You do not need to adopt everything from day one. Follow the stages in [How far 
 - RAR adds fine-grained delegation, PAR and JAR add request integrity, and FAPI 2.0 sets a bar for high-risk use.
 - RFC 9728 and CIMD connect an RS, an AS, and a client that have never met. CIMD remains a Draft as of October 2026.
 - Token Exchange forms the base for cross-domain delegation. Identity Chaining sits in the RFC Editor queue, and ID-JAG remains a working group Draft.
-- SCIM keeps subjects and attributes in sync, and SSF, CAEP, RISC, and Step-up reflect changes after issuance. IPSIE aims to bundle these for the enterprise.
+- SCIM keeps subjects and attributes in sync, and SSF, CAEP, RISC, and Step-up reflect changes after issuance. IPSIE aims to bundle SSO, lifecycle management, risk signal sharing, and more into enterprise profiles.
 - As of October 2026, OAuth 2.1 remains a Draft.
 
 # Related Posts

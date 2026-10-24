@@ -23,7 +23,7 @@ OAuthの周辺にはRFCとOpenID Foundationの仕様が数十本ある。認可�
 この記事は、認可基盤から見たOAuthと周辺標準の地図である。次のことがわかる。
 
 - 標準を7つの問い（委譲、要求の完全性、発見と宛先、ドメイン横断、トークン、アイデンティティとプロビジョニング、継続評価）に分けた全体像
-- 各標準の1行の役割と、2026年10月時点の状態（RFC、Draft、Finalの別）
+- 各標準の1行の役割と、2026年10月時点の状態（RFC、Draft、Finalなどの別）
 - 認可基盤として決めなければならないこと
 - このブログで詳しく解説した記事への索引
 
@@ -59,8 +59,8 @@ flowchart LR
   AS -- "2 トークン<br/>JWT AT・送信者制約" --> C
   C -- "3 API 呼び出し<br/>DPoP/mTLS" --> RS
   RS -- "検証<br/>JWKS・Introspection" --> AS
-  RS -- "4 Step-up チャレンジ" --> C
-  IdP -- "ID Token" --> AS
+  RS -- "4 Step-up チャレンジ（必要時）" --> C
+  IdP -- "ID Token・SAML アサーション" --> AS
   SCIM -- "主体と属性" --> AS
   T["SSF / CAEP / RISC"] -. "発行後のイベント" .-> AS
   T -. "発行後のイベント" .-> RS
@@ -89,7 +89,7 @@ flowchart LR
 | 標準 | 1行の役割 | 状態 |
 | --- | --- | --- |
 | RFC 6749 / RFC 6750 | ロール、グラント、Bearerトークンの使い方を定めるOAuth 2.0の本体 | RFC |
-| OAuth 2.1（draft-ietf-oauth-v2-1） | 6749と主要な拡張、BCPを1本にまとめ直した版。PKCE必須、ImplicitとPasswordを削除 | Draft（-16、2026年9月） |
+| OAuth 2.1（draft-ietf-oauth-v2-1） | 6749と主要な拡張、BCPを1本にまとめ直した版。PKCEを原則必須にし、ImplicitとPasswordを削除 | Draft（-16、2026年9月） |
 | RFC 9700（BCP 240） | 2012年以降にわかった攻撃と対策をまとめたSecurity BCP | RFC |
 | RFC 7636（PKCE） | 認可コードの横取りを防ぐ。RFC 9700は公開クライアントに必須、機密クライアントに推奨とし、OAuth 2.1は原則すべてのクライアントに求める | RFC |
 | RFC 8252とRFC 10017（BCP 212） | ネイティブアプリとブラウザで動くアプリのBest Current Practice | RFC（10017は2026年8月） |
@@ -97,6 +97,8 @@ flowchart LR
 | RFC 7523 | JWTでクライアントを認証する（OIDCの`private_key_jwt`もこれを使う）。JWTを認可グラントとしても使う | RFC |
 
 OAuth 2.0の全体は[OAuth 2.0とは？](/ja/posts/oauth-2-0/)に、OAuth 2.1とRFC 9700の推奨は[OAuth 2.1とは？](/ja/posts/oauth-2-1-security-bcp/)にまとめた。OAuth 2.1は2026年10月時点でもまだRFCではない。ブラウザで動くアプリのBCPは2026年8月にRFC 10017として出た。SPAでのトークンの置き場所は[SPAのトークンをどこに置く？](/ja/posts/spa-token-storage-bff/)で扱った。
+
+認可基盤として決めることは、許すグラントタイプとクライアントの種類（公開クライアント、機密クライアント）である。
 
 ## RAR（RFC 9396）: スコープでは表せない委譲を表す
 
@@ -249,7 +251,7 @@ OAuth Client ID Metadata Documentは、HTTPSのURLを`client_id`にする仕組�
 - `client_id`のURLはhttpsで、パスを含み、フラグメントを含まない
 - 文書の中の`client_id`は、文書のURLと完全に一致しなければならない
 - `client_secret`を使う認証方式は使えない。公開クライアントか、`private_key_jwt`などの鍵による認証になる
-- ASは対応していることを、メタデータの`client_id_metadata_document_supported`で示す
+- ASは対応していることを、メタデータの`client_id_metadata_document_supported`で示せる（任意）
 
 ASは外部のURLを取得するので、SSRFへの対策が要る。どのURLでも受け入れると、誰でもクライアントになれ、よく知られたクライアントを装うこともできる。そのため、どのドメインを信頼するかのポリシーも要る。MCPの認可仕様（2026-07-28版）は、DCRよりCIMDを優先し、DCRを非推奨とした。詳しくは[MCPの認可を設計するときの勘所](/ja/posts/mcp-authorization-design/)で扱う。
 
@@ -280,7 +282,7 @@ sequenceDiagram
   participant IdP as 企業の IdP
   participant RAS as SaaS の認可サーバ
   participant API as SaaS の API
-  App->>IdP: Token Exchange（subject_token = ID Token）
+  App->>IdP: Token Exchange（subject_token = ID Token か SAML アサーション）
   IdP->>IdP: 企業のポリシーで可否を判断
   IdP-->>App: ID-JAG（aud = SaaS の認可サーバ）
   App->>RAS: JWT Bearer グラント（assertion = ID-JAG）
@@ -340,7 +342,7 @@ SCIM（System for Cross-domain Identity Management）は、IdPや人事システ
 - Enterprise Userの拡張で、`department`や`manager`などの組織の属性を持てる
 - `/ServiceProviderConfig`と`/Schemas`で、対応している機能とスキーマを公開する
 
-認可基盤から見ると、SCIMはPIP（属性の供給元）を満たす仕組みである。入社、異動、退職に合わせて、グループや属性が自動で変わる。逆に、このプロビジョニングが欠けていると、退職者のアカウントがSaaSに残りやすい。
+認可基盤から見ると、SCIMは判定に使う主体と属性を各サービスへ前もって配る仕組みで、PIP（属性の供給元）が参照するデータを揃える。入社、異動、退職に合わせて、グループや属性が自動で変わる。逆に、このプロビジョニングが欠けていると、退職者のアカウントがSaaSに残りやすい。
 
 2026年5月のRFC 9967は、SCIMの変更をSET（RFC 8417）で通知するプロファイルである。プロビジョニングを非同期にし、変更を受け手に知らせられる。
 
@@ -406,7 +408,7 @@ WWW-Authenticate: Bearer error="insufficient_user_authentication",
 
 送金や権限の変更のような操作だけで強い認証を求めたいときに使う。最初のログインで常に最も強い認証を求めるより、利用者の負担が小さい。PDPの判定結果からStep-upにつなげる例は[AuthZEN Authorization APIとは？](/ja/posts/authzen-authorization-api/)で扱う。
 
-認可基盤として決めることは次のとおりである。
+継続評価について、認可基盤として決めることは次のとおりである。
 
 - どのイベントを受け取り、受け取ったら何を止めるか（セッション、リフレッシュトークン、キャッシュした判定）
 - どの操作で、どの`acr`を要求するか。`acr`の値の意味を組織で揃える
@@ -420,7 +422,7 @@ WWW-Authenticate: Bearer error="insufficient_user_authentication",
 | --- | --- | --- |
 | 委譲 | 許すグラントタイプとクライアントの種類 | OAuth 2.1、RFC 9700、RFC 10017 |
 | 委譲 | スコープで表すか、`authorization_details`で表すか | RAR |
-| 委譲 | 別の端末での承認が要るか | CIBA、デバイスグラント |
+| 委譲 | 別の端末での承認を使うか、使うなら利用者の指定方法と通知先 | CIBA、デバイスグラント |
 | 要求の完全性 | PARやJARを必須にするか、どのリスクから必須にするか | PAR、JAR、FAPI 2.0 |
 | 発見と宛先 | RSの識別子の付け方と`aud`の検証 | RFC 8707、RFC 9728 |
 | 発見と宛先 | クライアントの登録方式 | 事前登録、DCR、CIMD |
@@ -437,7 +439,7 @@ WWW-Authenticate: Bearer error="insufficient_user_authentication",
 - 委譲の細かさはRARで、要求の完全性はPARとJARで、高いリスクの基準はFAPI 2.0で補う。
 - 初めて会うRSとASとクライアントをつなぐのが、RFC 9728とCIMDである。CIMDは2026年10月時点でDraftである。
 - ドメイン横断の委譲はToken Exchangeが土台である。Identity ChainingはRFC Editorの待ち行列にあり、ID-JAGはWGのDraftである。
-- 主体と属性はSCIMで揃え、発行後の変化はSSF、CAEP、RISCとStep-upで反映する。IPSIEはこれらを企業向けにまとめようとしている。
+- 主体と属性はSCIMで揃え、発行後の変化はSSF、CAEP、RISCとStep-upで反映する。IPSIEは、SSOやライフサイクル管理、リスクシグナルの共有などを企業向けのプロファイルにまとめようとしている。
 - OAuth 2.1は2026年10月時点でもまだDraftである。
 
 # 関連記事
