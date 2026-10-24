@@ -242,7 +242,7 @@ flowchart TB
 | Provisioning | Issue and rotate at runtime. Assess the posture of the runtime at issuance. **The LLM MUST NOT have access to credentials** |
 | Authentication | mTLS, WIMSE Workload Proof Token (WPT), HTTP Message Signatures |
 | Authorization | Use OAuth as the delegation framework (see the table below) |
-| Monitoring and remediation | Subscribe to SSF (CAEP, RISC) for revocation and risk changes, and reduce access without delay. Keep audit logs |
+| Monitoring and remediation | Subscribe to SSF (CAEP, RISC) for revocation and risk changes, and reduce access without undue delay. Keep audit logs |
 
 [The workload identity post](/posts/workload-identity-wimse-transaction-tokens/) covers each authentication method. In the latest draft-ietf-wimse-wpt-02, a client sends the WPT as `Authorization: WPT`.
 
@@ -259,7 +259,7 @@ The authorization part looks like this.
 
 AIMS also lists the fields that audit logs must contain at the least: the agent identifier, the delegating principal, the resource, the requested action and the decision, the timestamp and correlation ID, the posture or risk state that influenced the decision, and remediation or revocation events.
 
-AIMS still has gaps. Tokens use only `client_id` and `sub`, and the draft does not discuss how to represent multi-hop delegation with `act`. It leaves out of scope how to derive the needed permissions from a natural-language goal (the "mission"). The draft itself admits that CIBA does not fit well for getting human approval in the middle of execution. AARP is a candidate to fill that last gap from the decision side.
+AIMS still has gaps. Tokens use only `client_id` and `sub`, and the draft does not discuss how to represent multi-hop delegation with `act`. It leaves out of scope how to derive the needed permissions from a natural-language goal (the "mission"). The draft itself admits that CIBA does not fit well for getting human approval in the middle of execution. In my view, AARP is a candidate to fill that last gap from the decision side.
 
 # OAuth extensions for delegation: OBO and AAuth
 
