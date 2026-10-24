@@ -117,12 +117,12 @@ OAuth 2.0の全体は[OAuth 2.0とは？](/ja/posts/oauth-2-0/)に、OAuth 2.1�
 ]
 ```
 
-認可サーバは、同意画面でこの内容を利用者に示し、許可した内容をトークンレスポンスやトークンの中に返す。対応する型はASメタデータの`authorization_details_types_supported`で公開する。
+認可サーバは、同意画面でこの内容を利用者に示す。RFC 9396では、許可した内容をトークンレスポンスで返し、RSからも参照できるようにしなければならない（MUST）。RS向けには、JWTのアクセストークンやIntrospectionの結果に入れられる。対応する型はASメタデータの`authorization_details_types_supported`で公開する。
 
 認可基盤として決めることは次の2つである。
 
 - どの操作をスコープで表し、どの操作を`authorization_details`で表すか。金額や対象の資源など、値を伴う委譲はRARに向く。
-- `type`ごとのスキーマを誰が定義し、どこで検証するか。RSがトークンの中の`authorization_details`を読んで、実際の要求と突き合わせる必要がある。
+- `type`ごとのスキーマを誰が定義し、どこで検証するか。RSがトークンやIntrospectionの結果の中の`authorization_details`を読んで、実際の要求と突き合わせる必要がある。
 
 RARは「何を委譲したか」を運ぶだけで、資源の中での判定は別に要る。PDPの入力として使う形が自然である。
 
@@ -251,7 +251,7 @@ OAuth Client ID Metadata Documentは、HTTPSのURLを`client_id`にする仕組�
 - `client_id`のURLはhttpsで、パスを含み、フラグメントを含まない
 - 文書の中の`client_id`は、文書のURLと完全に一致しなければならない
 - `client_secret`を使う認証方式は使えない。公開クライアントか、`private_key_jwt`などの鍵による認証になる
-- ASは対応していることを、メタデータの`client_id_metadata_document_supported`で示せる（任意）
+- CIMDに対応し、RFC 8414のメタデータを公開するASは、`client_id_metadata_document_supported`を含めなければならない（MUST）。ただし、項目自体の定義はOPTIONALと書かれている
 
 ASは外部のURLを取得するので、SSRFへの対策が要る。どのURLでも受け入れると、誰でもクライアントになれ、よく知られたクライアントを装うこともできる。そのため、どのドメインを信頼するかのポリシーも要る。MCPの認可仕様（2026-07-28版）は、DCRよりCIMDを優先し、DCRを非推奨とした。詳しくは[MCPの認可を設計するときの勘所](/ja/posts/mcp-authorization-design/)で扱う。
 

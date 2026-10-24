@@ -117,12 +117,12 @@ Each element carries a required `type`, and the API defines the content for each
 ]
 ```
 
-The AS shows this content to the user on the consent screen and returns what the user granted in the token response or inside the token. The AS lists the types it supports in the `authorization_details_types_supported` metadata.
+The AS shows this content to the user on the consent screen. RFC 9396 says the AS MUST return what the user granted in the token response and MUST make it available to the RS. For the RS, the AS can put it inside a JWT access token or in the Introspection response. The AS lists the types it supports in the `authorization_details_types_supported` metadata.
 
 An authorization platform must decide two things:
 
 - Which operations to express as scopes and which as `authorization_details`. Delegations that carry values, such as an amount or a target resource, suit RAR.
-- Who defines the schema for each `type` and where validation happens. The RS needs to read `authorization_details` in the token and compare it with the actual request.
+- Who defines the schema for each `type` and where validation happens. The RS needs to read `authorization_details` in the token or the Introspection response and compare it with the actual request.
 
 RAR only carries what the user delegated. Decisions inside the resource still need a separate mechanism. Feeding RAR into the PDP as input fits well.
 
@@ -251,7 +251,7 @@ Main requirements as of draft-02:
 - The `client_id` URL uses https, contains a path, and contains no fragment
 - The `client_id` inside the document must match the document URL exactly
 - The client cannot use authentication methods based on `client_secret`. It either acts as a public client or authenticates with a key, such as `private_key_jwt`
-- The AS can signal support with the `client_id_metadata_document_supported` metadata (OPTIONAL)
+- An AS that supports CIMD and publishes RFC 8414 metadata MUST include `client_id_metadata_document_supported` to signal support. The draft still labels the field itself OPTIONAL
 
 Because the AS fetches external URLs, it needs SSRF countermeasures. If the AS accepts any URL, anyone can act as a client, including one that poses as a well-known client, so the AS also needs a policy on which domains to trust. The MCP authorization specification (2026-07-28) prefers CIMD over DCR and deprecates DCR. [Key points for designing MCP authorization](/posts/mcp-authorization-design/) covers the details.
 
