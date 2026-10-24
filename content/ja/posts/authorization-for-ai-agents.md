@@ -28,7 +28,7 @@ AIエージェントは、利用者から目的を受け取り、どのツール
 
 扱う標準は、MCPの認可、AuthZENのプロファイル（AARP、COAZ）、AIMS、委譲を表すOAuthの拡張（OBO、AAuth）、ID-JAG、A2AとAP2である。仕様の版と状態は、2026年10月時点で一次資料を確かめた内容にもとづく。多くはまだDraftなので、考え方を取り入れ、ワイヤ形式は版を固定して追う、という読み方を勧める。
 
-認可そのものの定義やIAMのサブドメインは「[認可とは何か](/ja/posts/authorization-domain-iam-subdomains/)」、OAuthと周辺標準の全体像は「[認可基盤から見たOAuthと周辺標準の地図](/ja/posts/oauth-standards-map-authorization-platform/)」を前提にしている。
+認可そのものの定義やIAMのサブドメインは[認可とIAMのサブドメインの記事](/ja/posts/authorization-domain-iam-subdomains/)、OAuthと周辺標準の全体像は[OAuth関連標準の地図の記事](/ja/posts/oauth-standards-map-authorization-platform/)を前提にしている。
 
 # なぜAIエージェントで認可が変わるのか
 
@@ -135,11 +135,11 @@ MCP（Model Context Protocol）は、AIアプリをツールやデータにつ�
 - 権限が足りなければ、サーバーは`insufficient_scope`で必要なスコープを示し、クライアントは段階的に取り直す（step-up）。
 - 対話のない機械間の連携と、企業のIdPによる一元管理は、公式の認可の拡張（ext-auth）が受け持つ。前者がClient Credentials、後者がEnterprise-Managed Authorizationで、後者は後で触れるID-JAGを使う。
 
-ただし、MCPの認可が受け持つのは「トークンの取得と検証」までである。「このツールを、このデータに対して、この利用者の代わりに実行してよいか」という判定、利用者とエージェントの区別、人の承認は、仕様の外にある。MCPの認可を設計するときの勘所は「[MCPの認可を設計するときの勘所](/ja/posts/mcp-authorization-design/)」で詳しく扱う。
+ただし、MCPの認可が受け持つのは「トークンの取得と検証」までである。「このツールを、このデータに対して、この利用者の代わりに実行してよいか」という判定、利用者とエージェントの区別、人の承認は、仕様の外にある。MCPの認可を設計するときの勘所は、[MCPの認可の設計の記事](/ja/posts/mcp-authorization-design/)で詳しく扱う。
 
 # AuthZENのプロファイル：判定の前と後を埋める
 
-AuthZEN Authorization API 1.0は、PEPがPDPに「この主体は、この資源に、この操作をしてよいか」を問う標準のAPIである。2026年1月にOpenIDのFinal Specificationになった。主体（Subject）、操作（Action）、資源（Resource）、文脈（Context）の4つで問いを組み立てる。APIそのものは「[AuthZEN Authorization APIとは](/ja/posts/authzen-authorization-api/)」で扱う。
+AuthZEN Authorization API 1.0は、PEPがPDPに「この主体は、この資源に、この操作をしてよいか」を問う標準のAPIである。2026年1月にOpenIDのFinal Specificationになった。主体（Subject）、操作（Action）、資源（Resource）、文脈（Context）の4つで問いを組み立てる。APIそのものは[AuthZEN Authorization APIの記事](/ja/posts/authzen-authorization-api/)で扱う。
 
 OpenID Foundationは2026年6月に、エージェント時代の認可に向けたAuthZENの新しいDraft群を発表した。ここでは、判定の前を埋めるCOAZと、判定の後を埋めるAARPを見る。
 
@@ -214,7 +214,7 @@ sequenceDiagram
 - 申請しただけでも、承認されただけでも、アクセスは許されない。
 - 強制のときに、PDPが今のポリシーと状態で新たに判定する。承認は、その判定の入力にすぎない。
 
-承認者の適格性と職務分掌の確認は必須（MUST）である。拒否・申請・承認の結び付けは、PDPと申請受付が状態を共有していれば識別子で、共有していなければPDPなどが署名したJWSで行う。Task Handleは保存して後から再開できるので、エージェントは承認を待つ間に他の作業を進められる。ただし、Task Handleを知っていることは権限にならない。
+承認者の適格性と職務分掌の確認は必須（MUST）である。拒否・申請・承認の結び付けは、PDPと申請受付が状態を共有していれば識別子で、共有していなければPDPなどが署名した値（JWSを推奨）で行う。Task Handleは保存して後から再開できるので、エージェントは承認を待つ間に他の作業を進められる。ただし、Task Handleを知っていることは権限にならない。
 
 AARPは、承認ワークフローがいつのまにかポリシーの代わりになる、というよくある崩れ方を防ぐ。判定の最終権威をPDPに残し、承認は入力として渡す。一方で、Draft 1で著者は1人であり、COAZ-MCPの拒否からAARPの申請へつなぐ方法も、まだ決まっていない。考え方は今すぐ取り入れられるが、ワイヤ形式に合わせて作り込むのは早い。
 
@@ -244,7 +244,7 @@ flowchart TB
 | 認可 | OAuthを委譲の枠組みとして使う（下の表） |
 | 監視・是正 | SSF（CAEP、RISC）で失効やリスクの変化を受け、遅滞なく権限を減らす。監査ログを残す |
 
-認証の各方式は「[ワークロードアイデンティティの標準化](/ja/posts/workload-identity-wimse-transaction-tokens/)」で扱う。WPTは、最新のdraft-ietf-wimse-wpt-02では`Authorization: WPT`の形で送る。
+認証の各方式は[ワークロードアイデンティティの記事](/ja/posts/workload-identity-wimse-transaction-tokens/)で扱う。WPTは、最新のdraft-ietf-wimse-wpt-02では`Authorization: WPT`の形で送る。
 
 認可の部分は次のとおり。
 
@@ -286,7 +286,7 @@ draft-oauth-ai-agents-on-behalf-of-user（OBO）は、Authorization Codeグラ�
 
 draft-rosenberg-oauth-aauth（AAuth）は、電話やSMSで顧客に応対するAIエージェントを想定する。従来のボットは、全利用者のデータにアクセスできるサービスアカウントを持っていた。LLMが本人を取り違えれば、その「何でもできるトークン」で誤った操作がそのまま実行される。
 
-AAuthは、会話で集めた個人情報の組み合わせで本人を特定し、その利用者だけの低い権限のトークンを発行する新しいグラントを提案する。高い権限には人の承認を挟む。最小権限に向かう方向は正しい。ただし、本人の特定の強さは要求する個人情報の数と種類に左右され、ドラフト自身も公開されている個人情報を使う危険を認めている。被害者の個人情報を知る攻撃者への備えも十分ではない。グラントの処理の詳細は「Details to be filled in」のままである。最新は-01で、2026年4月に期限が切れた。
+AAuthは、会話で集めた個人情報の組み合わせで本人を特定し、その利用者だけの低い権限のトークンを発行する新しいグラントを提案する。高い権限には人の承認を挟む。最小権限に向かう方向は、筆者は妥当だと考える。ただし、本人の特定の強さは要求する個人情報の数と種類に左右され、ドラフト自身も公開されている個人情報を使う危険を認めている。ドラフトにはセキュリティの考慮事項の節がなく、被害者の個人情報を知る攻撃者への対策も書かれていない。グラントの処理の詳細は「Details to be filled in」のままである。最新は-01で、2026年4月に期限が切れた。
 
 なお、D. Hardtによる「AAuth Protocol」（draft-hardt-oauth-aauth-protocol）という別の個人ドラフトもあり、こちらは更新が続いている。名前は同じでも別の提案なので、参照するときは区別する。
 
@@ -301,7 +301,7 @@ ID-JAG（Identity Assertion JWT Authorization Grant）は、この問題を次�
 1. クライアント（エージェントのアプリ）が、企業のIdPのIDトークンをToken Exchange（RFC 8693）でID-JAGに交換する。IdPは発行の前に、管理者が決めたポリシーを評価する。
 2. クライアントは、ID-JAGをJWT認可グラント（RFC 7523）としてSaaSの認可サーバーに提示し、アクセストークンを得る。SaaS側は自分のポリシーで、受け入れるか、絞るかを決める。
 
-MCPのEnterprise-Managed Authorizationは、この仕組みをMCPに持ち込んだものである。注意点は2つある。ID-JAGの`client_id`はエージェントのアプリを表し、個々のエージェントや多段の委譲は表さない。また、IdPで止められるのは新しいID-JAGの発行である。発行済みのアクセストークンを即時に止めるには、短い有効期間かSSF/CAEPによる失効の伝達が要る。ID-JAGの状態は-04（2026年5月）で、OAuth WGのドラフトである。周辺の仕様は「[認可基盤から見たOAuthと周辺標準の地図](/ja/posts/oauth-standards-map-authorization-platform/)」で扱う。
+MCPのEnterprise-Managed Authorizationは、この仕組みをMCPに持ち込んだものである。注意点は2つある。ID-JAGの`client_id`はエージェントのアプリを表し、個々のエージェントや多段の委譲は表さない。また、IdPで止められるのは新しいID-JAGの発行である。発行済みのアクセストークンを即時に止めるには、短い有効期間かSSF/CAEPによる失効の伝達が要る。ID-JAGの状態は-04（2026年5月）で、OAuth WGのドラフトである。周辺の仕様は[OAuth関連標準の地図の記事](/ja/posts/oauth-standards-map-authorization-platform/)で扱う。
 
 # エージェント間と決済：A2AとAP2
 
@@ -314,7 +314,7 @@ A2A（Agent2Agent Protocol）は、異なるベンダーのエージェント同
 - 認証方式はAgent Cardの`securitySchemes`で宣言する。OAuth 2.0、OpenID Connect、mTLSなど既存の方式を使い、A2A自身は認証方式を作らない。
 - 認可のモデルは各エージェントに任されている。ただし、すべての操作での認可のチェックと、結果を呼び出し元の権限の範囲に絞ることは必須（MUST）である。
 - タスクの途中で追加の認可が要るとき、エージェントはタスクを`TASK_STATE_AUTH_REQUIRED`にする。この状態は上流のエージェントへ連鎖できる。
-- ただし、この状態への遷移は何かを認可したことにはならない。得た権限の範囲や表現は、A2Aの外で決める。
+- ただし、この状態は追加の認可が要るという合図にすぎない。資格情報は原則として帯域外で受け取り、その形式や範囲はA2Aの外で決める。
 
 つまりA2Aは「つなぎ方」までを決め、委譲の連鎖で誰の権限を運ぶかは、Token ExchangeやTransaction TokensなどOAuth側の仕組みに任せている。
 

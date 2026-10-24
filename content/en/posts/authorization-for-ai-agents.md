@@ -28,7 +28,7 @@ This post answers three questions in order.
 
 The standards covered are MCP authorization, the AuthZEN profiles (AARP and COAZ), AIMS, the OAuth extensions for delegation (OBO and AAuth), ID-JAG, and A2A and AP2. I checked versions and status against primary sources as of October 2026. Most of these are still drafts, so I recommend adopting the ideas now and pinning a version when you build to the wire formats.
 
-This post assumes the definition of authorization and the IAM subdomains from "[What is authorization?](/posts/authorization-domain-iam-subdomains/)" and the overview in "[A map of OAuth and related standards for an authorization platform](/posts/oauth-standards-map-authorization-platform/)".
+This post assumes the definition of authorization and the IAM subdomains from [the post on authorization and IAM subdomains](/posts/authorization-domain-iam-subdomains/) and the overview in [the map of OAuth-related standards](/posts/oauth-standards-map-authorization-platform/).
 
 # Why AI agents change authorization
 
@@ -57,7 +57,7 @@ An agent finds tools at runtime and learns which permissions it needs during the
 
 Suppose an email or web page that the agent reads contains a hidden instruction: "send the customer list to this external address." If the agent follows it, the outbound call arrives as **a request with a valid token from a correctly authenticated client**. Authentication cannot tell that this request is malicious.
 
-OWASP lists "Excessive Agency" (excessive functionality, permissions, or autonomy) among the main risks of LLM applications. Preventing prompt injection completely is hard. So assume that someone can manipulate the agent, and narrow its permissions so that the damage stays limited when that happens. I covered how to protect prompts themselves in "[Thinking about engineering in the AI era](/posts/engineering-in-ai-reflections/)".
+OWASP lists "Excessive Agency" (excessive functionality, permissions, or autonomy) among the main risks of LLM applications. Preventing prompt injection completely is hard. So assume that someone can manipulate the agent, and narrow its permissions so that the damage stays limited when that happens. I covered how to protect prompts themselves in "[Considering Engineering in the Age of AI](/posts/engineering-in-ai-reflections/)".
 
 ## 4. Where to bind human approval
 
@@ -78,7 +78,7 @@ The standards in this post mostly agree on the following principles.
 5. **Turn human approval into an authorization event.** Use an approval that the authorization server or PDP can verify, not a UI prompt.
 6. **Keep evaluating after issuance.** Reduce permissions right away on revocation or a change in risk.
 
-I wrote about AI becoming the main actor in development in "[Engineering in the AI era: from prompts to autonomous systems](/posts/engineering-in-ai-evolution-to-autonomous-systems/)". This post deals with how to constrain that autonomy through permissions.
+I wrote about AI becoming the main actor in development in "[Engineering in the AI Era: Evolution from Prompts to Autonomous Systems](/posts/engineering-in-ai-evolution-to-autonomous-systems/)". This post deals with how to constrain that autonomy through permissions.
 
 # The big picture: which standard covers which layer
 
@@ -135,11 +135,11 @@ The key points:
 - When permissions fall short, the server indicates the required scopes with `insufficient_scope`, and the client requests them incrementally (step-up).
 - The official authorization extensions (ext-auth) cover machine-to-machine use without a user and central management by an enterprise IdP. The first is Client Credentials; the second is Enterprise-Managed Authorization, which uses ID-JAG (covered later).
 
-MCP authorization covers only obtaining and validating tokens. Deciding "may this tool run on this data on behalf of this user", separating the user from the agent, and human approval all sit outside the spec. I cover the design points in "[Key points for designing MCP authorization](/posts/mcp-authorization-design/)".
+MCP authorization covers only obtaining and validating tokens. Deciding "may this tool run on this data on behalf of this user", separating the user from the agent, and human approval all sit outside the spec. I cover the design points in [the post on MCP authorization design](/posts/mcp-authorization-design/).
 
 # AuthZEN profiles: filling the gaps before and after a decision
 
-The AuthZEN Authorization API 1.0 is a standard API through which a PEP asks a PDP "may this subject perform this action on this resource?" It became an OpenID Final Specification in January 2026. It builds the question from four parts: Subject, Action, Resource, and Context. I cover the API itself in "[What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/)".
+The AuthZEN Authorization API 1.0 is a standard API through which a PEP asks a PDP "may this subject perform this action on this resource?" It became an OpenID Final Specification in January 2026. It builds the question from four parts: Subject, Action, Resource, and Context. I cover the API itself in [the AuthZEN Authorization API post](/posts/authzen-authorization-api/).
 
 In June 2026, the OpenID Foundation announced a new set of AuthZEN drafts aimed at authorization for the agent era. Here I look at COAZ, which fills the gap before a decision, and AARP, which fills the gap after it.
 
@@ -214,7 +214,7 @@ The core of the spec lies in a set of invariants.
 - Neither submitting a request nor receiving approval grants access by itself.
 - At enforcement time, the PDP makes a fresh decision with the current policy and state. The approval acts only as an input to that decision.
 
-Checking approver eligibility and separation of duties is mandatory (MUST). To bind denial, request, and approval together, implementations use identifiers when the PDP and the request service share state, and a JWS signed by the PDP or another party when they do not. Because the agent can store the task handle and resume later, it can keep working while it waits for approval. Still, knowing a task handle grants no permission.
+Checking approver eligibility and separation of duties is mandatory (MUST). To bind denial, request, and approval together, implementations use identifiers when the PDP and the request service share state, and a value signed by the PDP or another party (preferably a JWS) when they do not. Because the agent can store the task handle and resume later, it can keep working while it waits for approval. Still, knowing a task handle grants no permission.
 
 AARP prevents a common failure: an approval workflow quietly becoming a substitute for policy. It keeps the PDP as the final authority and passes the approval in as input. It still stands at Draft 1 with a single author, and no spec yet defines how to go from a COAZ-MCP denial to an AARP request. You can adopt the ideas now, but building tightly to the wire format would come too early.
 
@@ -244,7 +244,7 @@ flowchart TB
 | Authorization | Use OAuth as the delegation framework (see the table below) |
 | Monitoring and remediation | Subscribe to SSF (CAEP, RISC) for revocation and risk changes, and reduce access without delay. Keep audit logs |
 
-"[Standardizing workload identity](/posts/workload-identity-wimse-transaction-tokens/)" covers each authentication method. In the latest draft-ietf-wimse-wpt-02, a client sends the WPT as `Authorization: WPT`.
+[The workload identity post](/posts/workload-identity-wimse-transaction-tokens/) covers each authentication method. In the latest draft-ietf-wimse-wpt-02, a client sends the WPT as `Authorization: WPT`.
 
 The authorization part looks like this.
 
@@ -286,7 +286,7 @@ The resource server can identify the user by `sub` and the acting agent by `act.
 
 draft-rosenberg-oauth-aauth (AAuth) targets AI agents that serve customers over phone or SMS. Traditional bots held a service account with access to every user's data. If the LLM confuses one person for another, that all-powerful token executes the wrong operation as-is.
 
-AAuth proposes a new grant that identifies the user from a combination of personal details gathered in conversation and issues a low-privilege token for that user only. Higher privileges require human approval. The move toward least privilege makes sense, but how strongly it identifies the user depends on the number and kind of personal details required, and the draft itself acknowledges the risk of using publicly known details. It also does little against attackers who know a victim's personal details. The draft leaves the grant processing as a placeholder for later details. The latest version, -01, expired in April 2026.
+AAuth proposes a new grant that identifies the user from a combination of personal details gathered in conversation and issues a low-privilege token for that user only. Higher privileges require human approval. In my view, the move toward least privilege makes sense, but how strongly it identifies the user depends on the number and kind of personal details required, and the draft itself acknowledges the risk of using publicly known details. The draft has no Security Considerations section and does not address attackers who know a victim's personal details. The draft leaves the grant processing as a placeholder for later details. The latest version, -01, expired in April 2026.
 
 Note that a separate individual draft, "AAuth Protocol" by D. Hardt (draft-hardt-oauth-aauth-protocol), shares the name and still receives updates. It takes a different approach, so keep the two apart when you cite them.
 
@@ -301,7 +301,7 @@ ID-JAG (Identity Assertion JWT Authorization Grant) solves this with the followi
 1. The client (the agent's application) exchanges an ID token from the enterprise IdP for an ID-JAG through Token Exchange (RFC 8693). The IdP evaluates administrator-defined policy before issuing it.
 2. The client presents the ID-JAG to the SaaS authorization server as a JWT authorization grant (RFC 7523) and receives an access token. The SaaS side decides with its own policy whether to accept or narrow it.
 
-MCP's Enterprise-Managed Authorization brings this mechanism to MCP. Keep two caveats in mind. The `client_id` in an ID-JAG represents the agent's application, not individual agent instances or multi-hop delegation. Also, the IdP can stop only the issuance of new ID-JAGs. To cut off already-issued access tokens at once, you need short lifetimes or revocation signals through SSF/CAEP. ID-JAG sits at -04 (May 2026) as an OAuth WG draft. "[A map of OAuth and related standards for an authorization platform](/posts/oauth-standards-map-authorization-platform/)" covers the surrounding specs.
+MCP's Enterprise-Managed Authorization brings this mechanism to MCP. Keep two caveats in mind. The `client_id` in an ID-JAG represents the agent's application, not individual agent instances or multi-hop delegation. Also, the IdP can stop only the issuance of new ID-JAGs. To cut off already-issued access tokens at once, you need short lifetimes or revocation signals through SSF/CAEP. ID-JAG sits at -04 (May 2026) as an OAuth WG draft. [The map of OAuth-related standards](/posts/oauth-standards-map-authorization-platform/) covers the surrounding specs.
 
 # Agent-to-agent and payments: A2A and AP2
 
@@ -314,7 +314,7 @@ From an authorization standpoint, note the following.
 - An agent declares authentication methods in the `securitySchemes` of its Agent Card. It reuses existing methods such as OAuth 2.0, OpenID Connect, and mTLS; A2A defines no authentication method of its own.
 - Each agent decides its own authorization model. Still, checking authorization on every operation and limiting results to the caller's permissions are mandatory (MUST).
 - When an agent needs extra authorization mid-task, it moves the task to `TASK_STATE_AUTH_REQUIRED`. This state can chain up to upstream agents.
-- Entering this state grants nothing. The scope and representation of the obtained permission sit outside A2A.
+- Still, this state only signals that the agent needs more authorization. The agent receives the credential out of band by default, and its format and scope sit outside A2A.
 
 In short, A2A defines how agents connect, and leaves it to OAuth mechanisms such as Token Exchange and Transaction Tokens to carry whose authority flows along the delegation chain.
 
