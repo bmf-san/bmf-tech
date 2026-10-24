@@ -217,7 +217,7 @@ These points still apply:
 
 - All access goes through roles. The NIST FAQ describes the ability of group-based schemes to tie permissions directly to users as a possible "loophole". Even exceptional grants stay easier to review when you model them as exception roles.
 - The 1992 model grants access "only if" a condition holds. A subject can only run transactions authorized for its active roles, but authorization does not guarantee execution. The model leaves room for extra constraints from the start, and the role-centric approach above extends this design.
-- A session activates only a subset of the assigned roles. The same idea applies when you limit the scopes in an OAuth access token to what the request needs.
+- A session can activate just a subset of the assigned roles. The same idea applies when you limit the scopes in an OAuth access token to what the request needs.
 - Separation of duty comes in two forms. Static separation applies at assignment time; dynamic separation applies when a session activates roles. Transaction-level separation, such as "do not approve your own request", belongs in PDP rules.
 - The pre-approval draft of the 2004 standard (2003, published by NIST) leaves two things to implementations: what a role hierarchy means (does activating a senior role activate the junior roles automatically?) and what happens to existing sessions when you remove a role assignment. The 2012 text sits behind a paywall, so public sources do not show whether it changed this. Write these down for your own platform.
 
@@ -250,7 +250,7 @@ Decisions take four values: Permit and Deny, plus NotApplicable (no matching pol
 Designs worth taking home:
 
 - How to fail closed. Put deny-unless-permit at the top and use a deny-biased PEP that allows only on Permit with every obligation fulfilled. Both NotApplicable and errors then become Deny.
-- Obligations versus advice. The PEP must carry out obligations and may ignore advice. If the PEP does not understand an obligation, it must not allow access. The same contract applies when you handle obligations in AuthZEN responses. Also note that unordered combining algorithms make the returned set of obligations nondeterministic.
+- Obligations versus advice. The PEP must carry out obligations and may ignore advice. If the PEP does not understand or cannot fulfill an obligation, it acts according to its bias; a deny-biased PEP does not allow access. The same contract applies when you handle obligations in AuthZEN responses. Also note that unordered combining algorithms can make the returned set of obligations nondeterministic.
 - Avoid negative rules. "Allow unless X" falls open when the attribute fails to arrive.
 - Distinguish kinds of subjects. XACML has separate categories for the subject that started the request, intermediaries, and the recipient of the result. That vocabulary helps when decisions must account for multi-hop calls such as "user, then agent, then API".
 
@@ -262,7 +262,7 @@ NGAC (Next Generation Access Control) is an ABAC standard that grew out of NIST 
 
 The difference lies in how each represents policy. XACML writes policy as logical formulas over attribute values. NGAC enumerates policy as a configuration of assignments and associations among users, user attributes, objects, and object attributes. SP 800-178 concludes that NGAC supports efficient per-user and per-object review, while the logical formula approach struggles with it. In exchange, NGAC may need an explicit relation for each attribute value, so the number of relations can multiply.
 
-Enumerating relations as a graph and reading "who can access what" from it anticipates the later Zanzibar-style ReBAC. Read it as a rationale: if you care about both check and list, store a graph.
+Enumerating relations as a graph and reading "who can access what" from it has much in common with the later Zanzibar-style ReBAC. Read it as a rationale: if you care about both check and list, store a graph.
 
 ## SP 800-207 (Zero Trust)
 
