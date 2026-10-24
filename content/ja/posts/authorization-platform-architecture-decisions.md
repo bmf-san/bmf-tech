@@ -241,7 +241,7 @@ sequenceDiagram
     AG->>MCP: tool 呼び出し（トークンなし）
     MCP-->>AG: 401 と WWW-Authenticate（resource_metadata を含む場合がある）
     AG->>MCP: Protected Resource Metadata の取得（RFC 9728）
-    MCP-->>AG: メタデータ（認可サーバ、任意で scopes_supported）
+    MCP-->>AG: メタデータ（認可サーバ、推奨の scopes_supported）
     Note over AG,AS: requested_actor と actor_token は OBO ドラフトの拡張で、MCP の認可仕様の外
     AG->>AS: 認可要求（resource=MCP、PKCE、requested_actor=AG）
     AS->>U: 同意画面（クライアント、エージェント、scope を示す）
@@ -342,7 +342,7 @@ flowchart LR
 - **二段構えが基本になる**。粗い認可はエッジで、細かい認可はサービス内やデータ層で行う。入口で明らかに無理な要求を早く弾き、資源ごとの判断は文脈を持つ側に任せる。
 - **管理の一元化と実行場所は別の話である**。ライブラリやサイドカーで動かしても、ポリシーを中央のPAPから配れば管理は一元化できる。
 - **APIは配置に依存させない**。AuthZENに準拠するPDPはHTTPSの結び付けを必ず実装する（MUST）ので、サイドカーのPDPにも中央のPDPにも同じ形で問い合わせられる。PEPとPDPの間を標準の形にしておけば、あとから配置を変えやすい。
-- **一覧の取得は別に設計する**。DBから取った1ページ分を「この資源を読んでよいか」で1件ずつ絞ると、ページの件数や境界が崩れる。足りない分を取り直せば負荷も上がる。OPAで起きるこの問題と解き方を[OPAにおけるページネーションへの影響と解決策](/ja/posts/pagination-impact-solutions-opa/)で検討した。部分評価でDBの条件を返す方式や、条件を構造で返す方式の比較は[OPAを利用したアクセス制御のパターン](/ja/posts/access-control-patterns-using-opa/)にある。PDPが対応していれば、AuthZEN 1.0のResource Search APIも「この主体が見てよい資源は何か」に答える手段として使える。Search APIとページングは、どちらも実装するかがPDPの任意である。
+- **一覧の取得は別に設計する**。DBから取った1ページ分を「この資源を読んでよいか」で1件ずつ絞ると、ページの件数や境界が崩れる。足りない分を取り直せば負荷も上がる。OPAで起きるこの問題と解き方を[OPAにおけるページネーションへの影響と解決策](/ja/posts/pagination-impact-solutions-opa/)で検討した。部分評価でDBの条件を返す方式や、条件を構造で返す方式の比較は[OPAを利用したアクセス制御のパターン](/ja/posts/access-control-patterns-using-opa/)にある。PDPが対応していれば、AuthZEN 1.0のResource Search APIも「この主体が見てよい資源は何か」に答える手段として使える。メタデータでのSearch APIのエンドポイントは任意（OPTIONAL）で、載っていなければPEPはそのPDPが対応していないと判断できる。ページングもPDPが対応してよい（MAY）機能である。
 
 ## 粗い認可と細かい認可、トークンの役割
 
@@ -370,7 +370,7 @@ RAR（RFC 9396）を使えば、トークン要求に「この相手に、この
 判定を同期の経路に入れるなら、往復の時間をどう抑えるかを決める。
 
 - **PDPを近くに置く**。プロセス内ライブラリやサイドカーにすればネットワークの往復が減る。
-- **まとめて問い合わせる**。AuthZENのAccess Evaluations APIは複数の判定を1回の要求で送れる（boxcarring）。`execute_all`、`deny_on_first_deny`、`permit_on_first_permit`の評価の仕方を選べる。ただし、このAPIを実装するかはPDPの任意である。
+- **まとめて問い合わせる**。AuthZENのAccess Evaluations APIは複数の判定を1回の要求で送れる（boxcarring）。`execute_all`、`deny_on_first_deny`、`permit_on_first_permit`の評価の仕方を選べる。ただし、メタデータでのこのAPIのエンドポイントは任意（OPTIONAL）で、載っていなければPEPはそのPDPが対応していないと判断できる。
 - **判定をキャッシュする**。Subject・Action・Resource・Contextをキーにした短いTTLのキャッシュは効くが、権限の取り消しが遅れて効く。TTLの長さは「取り消しがどれだけ遅れてよいか」で決める。
 - **一覧は事前に絞る**。前節のとおり、部分評価や、PDPが対応していればSearch APIでまとめて求める。
 

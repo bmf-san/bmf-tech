@@ -241,7 +241,7 @@ sequenceDiagram
     AG->>MCP: Call tool (no token)
     MCP-->>AG: 401 with WWW-Authenticate (may include resource_metadata)
     AG->>MCP: Fetch Protected Resource Metadata (RFC 9728)
-    MCP-->>AG: Metadata (authorization server, optional scopes_supported)
+    MCP-->>AG: Metadata (authorization server, RECOMMENDED scopes_supported)
     Note over AG,AS: requested_actor and actor_token come from the OBO draft, outside the MCP authorization spec
     AG->>AS: Authorization request (resource=MCP, PKCE, requested_actor=AG)
     AS->>U: Consent screen (client, agent, scopes)
@@ -342,7 +342,7 @@ Guidelines for choosing:
 - **Two tiers are the default.** Do coarse authorization at the edge and fine-grained authorization inside the service or at the data layer. Reject clearly invalid requests early, and leave per-resource decisions to the side that has the context.
 - **Central management and execution location are separate concerns.** Even if the PDP runs as a library or sidecar, distributing policies from a central PAP keeps management in one place.
 - **Keep the API independent of placement.** A PDP that complies with AuthZEN MUST support the HTTPS binding, so a PEP can ask a sidecar PDP or a central PDP in the same shape. A standard interface between PEP and PDP makes later placement changes easier.
-- **Design list retrieval separately.** If you fetch one page from the database and then filter it item by item with "may I read this resource?", the page size and page boundaries break. Fetching more rows to fill the gap raises load. [Considerations and Solutions for Pagination Impact in OPA](/posts/pagination-impact-solutions-opa/) examines this problem and its solutions with OPA. [Access Control Patterns Using OPA](/posts/access-control-patterns-using-opa/) compares returning database conditions through partial evaluation with returning structured conditions. If the PDP supports it, the AuthZEN 1.0 Resource Search API also answers "which resources may this subject see?" Both the Search APIs and pagination are optional for the PDP.
+- **Design list retrieval separately.** If you fetch one page from the database and then filter it item by item with "may I read this resource?", the page size and page boundaries break. Fetching more rows to fill the gap raises load. [Considerations and Solutions for Pagination Impact in OPA](/posts/pagination-impact-solutions-opa/) examines this problem and its solutions with OPA. [Access Control Patterns Using OPA](/posts/access-control-patterns-using-opa/) compares returning database conditions through partial evaluation with returning structured conditions. If the PDP supports it, the AuthZEN 1.0 Resource Search API also answers "which resources may this subject see?" The Search API endpoints are OPTIONAL in the PDP metadata, and if they are absent, the PEP can determine that the PDP does not support those APIs. Pagination is also something a PDP MAY support.
 
 ## Coarse vs Fine-Grained Authorization, and the Role of Tokens
 
@@ -370,7 +370,7 @@ Externalizing decisions puts a decision round trip on the request path. That is 
 If decisions sit on the synchronous path, decide how to keep the round trip short.
 
 - **Run the PDP close by.** An in-process library or a sidecar cuts network round trips.
-- **Batch your questions.** The AuthZEN Access Evaluations API sends many decisions in one request (boxcarring). You choose the evaluation semantics: `execute_all`, `deny_on_first_deny`, or `permit_on_first_permit`. Implementing this API is optional for the PDP.
+- **Batch your questions.** The AuthZEN Access Evaluations API sends many decisions in one request (boxcarring). You choose the evaluation semantics: `execute_all`, `deny_on_first_deny`, or `permit_on_first_permit`. Its endpoint is OPTIONAL in the PDP metadata, and when the metadata omits it, the PEP can determine that the PDP does not support the API.
 - **Cache decisions.** A short-TTL cache keyed on Subject, Action, Resource, and Context helps, but it delays revocation. Set the TTL by how late a revocation may take effect.
 - **Filter lists up front.** As the previous section explains, use partial evaluation or, if the PDP supports it, the Search API to compute lists in one pass.
 
