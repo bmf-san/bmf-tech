@@ -123,7 +123,7 @@ flowchart LR
 
 - The PEP-PDP channel is the most sensitive connection. Protect it with mTLS or similar, and have the PDP authenticate the PEP. A PDP that answers anyone becomes an entry point for policy probing and load attacks.
 - Make the PEP fail closed: if it cannot get a decision, it denies. Decide early what happens when the PDP goes down or times out.
-- XACML had a profile for JSON requests and responses (an OASIS Standard since 2019), yet most of today's engines expose their own PEP-PDP API. The OpenID Foundation's AuthZEN Authorization API 1.0 standardizes that line across engines. [What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers it in depth.
+- XACML also has a profile for JSON requests and responses (an OASIS Standard since 2019), yet most of today's engines expose their own PEP-PDP API. The OpenID Foundation's AuthZEN Authorization API 1.0 standardizes that line across engines. [What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers it in depth.
 
 # A Taxonomy of Authorization Models
 

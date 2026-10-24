@@ -123,7 +123,7 @@ flowchart LR
 
 - PEPとPDPの間は最も機微な接続である。mTLSなどで保護し、PDPはPEPを認証する。PDPに何でも問い合わせられると、ポリシーの推測や負荷攻撃の入口になる。
 - PEPは「判定できなければ拒否（fail-closed）」を基本にする。PDPが落ちたとき、タイムアウトしたときの挙動を最初に決める。
-- XACMLには要求と応答をJSONで表すプロファイル（2019年にOASIS Standard）があったが、今のエンジンの多くはPEPとPDPの間に独自のAPIを持つ。エンジンをまたいでこの線を標準化するのが、OpenID FoundationのAuthZEN Authorization API 1.0である。詳しくは[AuthZEN Authorization APIとは](/ja/posts/authzen-authorization-api/)で扱う。
+- XACMLにも要求と応答をJSONで表すプロファイル（2019年にOASIS Standard）があるが、今のエンジンの多くはPEPとPDPの間に独自のAPIを持つ。エンジンをまたいでこの線を標準化するのが、OpenID FoundationのAuthZEN Authorization API 1.0である。詳しくは[AuthZEN Authorization APIとは](/ja/posts/authzen-authorization-api/)で扱う。
 
 # 認可モデルの分類
 
