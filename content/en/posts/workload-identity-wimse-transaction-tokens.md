@@ -49,7 +49,7 @@ The problem splits into four questions.
 | How do you carry call context inside the system? | Reusing an external access token internally widens the damage when someone steals it | Transaction Tokens |
 | How do you reach another trust domain? | You do not want to expose internal credentials or formats | Identity Chaining, the Transaction Token chaining profile |
 
-The shared principle: do not keep long-lived shared secrets (static API keys or `client_secret`). Instead, deliver short-lived credentials, bound to a key where possible, based on attestation of the environment.
+The identity delivery and authentication rows share one approach: do not keep long-lived shared secrets (static API keys or `client_secret`). Instead, deliver short-lived credentials, bound to a key where possible, based on attestation of the environment.
 
 The diagram below shows the whole picture first.
 
@@ -76,11 +76,11 @@ flowchart LR
     B -- "Identity Chaining<br/>(presents a JWT authorization<br/>grant from its own domain)" --> AS
 ```
 
-WIMSE credentials carry identity, and Transaction Tokens carry transaction context. A proof of possession binds the two, and the callee's PEP passes only verified values to the PDP. That forms the backbone.
+WIMSE credentials carry identity, and Transaction Tokens carry transaction context. With HTTP signatures or WPT, a proof of possession binds the two. The callee's PEP passes only verified values to the PDP. That forms the backbone.
 
 # The WIMSE Architecture
 
-The WIMSE architecture draft (draft-ietf-wimse-arch) does not define a protocol. It aligns the vocabulary for components and their interactions.
+The WIMSE architecture draft (draft-ietf-wimse-arch) does not define a protocol itself. As a basis for designing and standardizing protocols, it lays out terminology, use cases, and how the components relate.
 
 ## Three Building Blocks
 
@@ -106,7 +106,7 @@ arch-08 adds components step by step across three scenarios.
 | Context | Context service | The gateway exchanges the external access token for an internal context token. The gateway normally does not forward the access token inside |
 | Cross-domain | Token service, external token service | Internal identity and context get exchanged for a token usable in another domain. The steps follow Identity Chaining |
 
-The context scenario matches the idea behind Transaction Tokens. Do not let an external bearer token flow inside; replace it with a token that has meaning only inside.
+arch-08 names Transaction Tokens as one example of this context token. Do not let an external bearer token flow inside; replace it with a token that has meaning only inside.
 
 ## Placing the PEP and PDP
 
@@ -123,7 +123,7 @@ In real deployments, a workload often authenticates to a sidecar or gateway over
 - The destination MUST NOT assume that the transport-layer identity an intermediary authenticated equals the application-layer caller, unless protocol or deployment policy establishes that relationship explicitly.
 - When identities from both layers are available and relevant, audit records SHOULD include both.
 
-The security considerations also state that a valid credential does not give a workload access to every resource in the trust domain. The common service mesh setup "allow if mTLS succeeds" contradicts this principle. State allowed identifiers explicitly, and treat authorization as a separate decision.
+The security considerations also state that a valid credential does not give a workload access to every resource in the trust domain. An "allow if mTLS succeeds" setup contradicts this principle. State allowed identifiers explicitly, and treat authorization as a separate decision.
 
 arch-08 also covers AI agents. An agent is a special case of a delegated workload, and in a multi-hop chain where agents call other agents, each hop MUST explicitly scope and re-bind the security context. "[What is Authorization for AI Agents?](/posts/authorization-for-ai-agents/)" covers agent authorization in depth.
 
@@ -158,7 +158,7 @@ Three points matter for authorization platform design.
 - **Look up groupings as attributes, not by parsing the path.** Units such as namespaces or teams hold up better when you fetch them as attributes from a PIP such as a service catalog, instead of prefix matching.
 - **Keep a mapping from endpoints to identifiers.** Consumers MUST NOT assume they can derive an identifier from a DNS name or IP address. Hold a mapping such as "the peer at this hostname should have this identifier" in configuration or service discovery. Since -04, a WIC that carries both a DNS name and the identifier MAY also convey the mapping. Without either, the caller can only confirm "someone in the same trust domain."
 
-Keep the relationship with SPIFFE ID in mind as well. A SPIFFE ID is one kind of WIMSE identifier, and WIMSE does not replace SPIFFE. If your data model treats the subject as a "workload identifier (URI)" without fixing the scheme to `spiffe`, principals from cloud platforms or CI/CD fit the same slot.
+Keep the relationship with SPIFFE ID in mind as well. A SPIFFE ID is one format usable as a WIMSE identifier, and arch-08 cites it as a conforming example. You do not need to move SPIFFE IDs to another format to adopt WIMSE. If your data model treats the subject as a "workload identifier (URI)" without fixing the scheme to `spiffe`, principals from cloud platforms or CI/CD fit the same slot.
 
 # Credentials: WIT and WIC
 
@@ -226,7 +226,7 @@ Some notes on each.
 - **HTTP Message Signatures**: To survive proxies that end TLS and rewrite `Host`, the profile does not sign `@authority` for requests other than CONNECT. Instead it puts the target in the signature parameter `wimse-aud`, and the receiver compares it exactly against trusted configuration. The `nonce` needs at least 64 bits of entropy, and the signature lifetime (`expires`) MUST be short, on the order of minutes.
 - **WPT** (Workload Proof Token): A short-lived JWT signed with the WIT key. The http-signature draft (-08) describes WPT as the option inspired by OAuth DPoP (RFC 9449). In wpt-02, the WPT draft moved it from a dedicated header to `Authorization: WPT`. As a result, you cannot send a Bearer or DPoP access token in the same request. The WPT draft describes this exclusivity as intentional: it keeps a request from dropping to the strength of its weakest credential.
 
-The questions below settle most choices. The main forks are two: whether intermediaries end TLS, and whether you also send an OAuth access token in the same request.
+In my framing, the questions below settle most choices. The main forks are two: whether intermediaries end TLS, and whether you also send an OAuth access token in the same request.
 
 ```mermaid
 flowchart TD
@@ -369,7 +369,7 @@ The draft's example represents a stock trade like this (trimmed).
 }
 ```
 
-With quantity and ticker in `tctx`, downstream workloads get those parameters as trustworthy values. If an intermediate workload changes the quantity, the mismatch with the signed `tctx` reveals it.
+With quantity and ticker in `tctx`, downstream workloads get those parameters as trustworthy values. If an intermediate workload changes the quantity in the request, comparing it with the signed `tctx` reveals the change.
 
 ## Propagation Rules
 
@@ -404,7 +404,7 @@ A workload can also present a Txn-Token as `subject_token` to get a new one, whi
 | If the TTS can extend lifetimes, limit the number of replacements | SHOULD |
 | Preserve the call chain of the workload that requested the original (method out of scope) | MUST |
 
-The draft leaves the method for preserving the call chain open, so if you use replacement, you need your own way to trace which path a transaction took for audit.
+The draft leaves the method for preserving the call chain out of scope, so if you use replacement, you must decide yourself how to carry the original call chain into the new Txn-Token.
 
 ## Crossing Trust Domains
 
@@ -414,7 +414,7 @@ The individual draft draft-fletcher-oauth-txn-token-chaining-profile defines the
 
 # Using SPIFFE for OAuth Client Authentication
 
-Service-to-service OAuth (client_credentials, token exchange, requests to the TTS) tends to scatter `client_secret` values across config files and CI secrets. draft-ietf-oauth-spiffe-client-auth turns SPIFFE SVIDs into OAuth client credentials and removes that secret.
+Using `client_secret` for service-to-service OAuth (client_credentials, token exchange, requests to the TTS) means distributing and managing that secret out of band. draft-ietf-oauth-spiffe-client-auth turns SPIFFE SVIDs into OAuth client credentials and removes that secret.
 
 | Method | Credential | How to send | Proof of possession | Name in AS metadata |
 | --- | --- | --- | --- | --- |
@@ -429,7 +429,7 @@ Key points follow.
 - The AS MUST NOT accept a token just because a key discovered via `iss` verifies its signature and `sub` looks like a SPIFFE ID. That invites token confusion, where an OIDC token meant for something else poses as a JWT-SVID.
 - With a Client ID Metadata Document (CIMD), the metadata's `spiffe_id` can end with a `/*` wildcard. Matching works as a prefix match on whole path segments.
 
-The design caveat: mapping SPIFFE IDs to `client_id` values is itself an authorization decision. Which workload may act as which OAuth client sets the upper bound on the scopes that client gets. Anyone who can create SPIRE registration entries can, in effect, create OAuth clients. Govern who can create registration entries as strictly as you govern client registration at the authorization server.
+The design caveat: mapping SPIFFE IDs to `client_id` values is itself an authorization decision. Which workload may act as which OAuth client sets the upper bound on the scopes that client gets. Anyone who can create SPIRE registration entries can, in effect, decide this mapping. Govern who can create registration entries as strictly as you govern client registration at the authorization server.
 
 In my view, a practical default is `spiffe_x509` with proof of possession on paths that connect to the AS directly over TLS, and a short-lived `spiffe_jwt` on paths where something terminates TLS. A `spiffe_jwt` is a bearer token, so this assumes you trust the intermediary that terminates TLS. `spiffe_wit` depends on drafts that still change, so I consider it too early to make it the production default.
 
@@ -508,8 +508,8 @@ Within WIMSE, the practices guide sits closest to an RFC, with HTTP signatures n
 
 # Summary
 
-- WIMSE expresses workload identity through three elements: trust domain, workload identifier, and credentials (WIT/WIC). A SPIFFE ID is a conforming example, and WIMSE does not replace SPIFFE.
-- WIMSE offers three authentication methods: mTLS, HTTP Message Signatures, and WPT. Choose mainly based on whether TLS terminates midway and whether you send an OAuth token in the same request.
+- WIMSE expresses workload identity through three elements: trust domain, workload identifier, and credentials (WIT/WIC). A SPIFFE ID is a conforming example and works as is.
+- WIMSE offers three authentication methods: mTLS, HTTP Message Signatures, and WPT. In my framing, the choice turns mainly on whether TLS terminates midway and whether you send an OAuth token in the same request.
 - Deliver credentials based on attestation, as short-lived credentials with a distinct audience per use. In production, avoid environment variables when another delivery pattern exists.
 - Transaction Tokens exchange an external access token (or, when no inbound token exists, something like a self-signed JWT) for an internal token bound to one transaction and pass it unchanged along the call chain. Treat it as different from both access tokens and authentication credentials.
 - SPIFFE client authentication removes `client_secret`, but you must manage the SPIFFE ID to `client_id` mapping as an authorization decision.
