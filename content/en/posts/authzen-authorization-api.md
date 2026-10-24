@@ -502,7 +502,7 @@ Finally, here are my own tips for bringing AuthZEN into a design.
 
 - AuthZEN Authorization API 1.0 standardizes the request and response between the PEP and the PDP. It became an OpenID Final Specification in January 2026.
 - A request carries Subject, Action, Resource, and Context (SARC), and a response carries a boolean `decision` and an optional `context`.
-- The API consists of single evaluation, batch evaluation with selectable semantics, subject/resource/action search, and metadata at `/.well-known/authzen-configuration`.
+- The API consists of single evaluation, batch evaluation with selectable semantics, subject/resource/action search, and metadata at `/.well-known/authzen-configuration`. PDP support for batch evaluation and search is optional, and the spec recommends publishing metadata.
 - A denial comes back as `200` with `false`, separate from HTTP errors. Errors in individual evaluations fail closed.
 - On security, protecting the PEP-PDP connection (for example with TLS for HTTP) is mandatory, and the spec recommends or permits PEP authentication, signed responses, and DoS protections. The PDP trusts the PEP, so the source of attributes becomes a central design question.
 - It inherits vocabulary from XACML and NIST ABAC but stays out of policy languages. That lets OPA, Cedar, OpenFGA, and others expose the same interface.
