@@ -156,7 +156,7 @@ Three points matter for authorization platform design.
 
 - **Write policies on the full identifier.** Matching only the path, such as `*/payments`, lets another trust domain through when it claims the same path. Combine identifier checks with an allowlist of trusted trust domains.
 - **Look up groupings as attributes, not by parsing the path.** Units such as namespaces or teams hold up better when you fetch them as attributes from a PIP such as a service catalog, instead of prefix matching.
-- **Keep a mapping from endpoints to identifiers.** Consumers MUST NOT assume they can derive an identifier from a DNS name or IP address. Without a mapping such as "the peer at this hostname should have this identifier," held in configuration or service discovery, the caller can only confirm "someone in the same trust domain."
+- **Keep a mapping from endpoints to identifiers.** Consumers MUST NOT assume they can derive an identifier from a DNS name or IP address. Hold a mapping such as "the peer at this hostname should have this identifier" in configuration or service discovery. Since -04, a WIC that carries both a DNS name and the identifier MAY also convey the mapping. Without either, the caller can only confirm "someone in the same trust domain."
 
 Keep the relationship with SPIFFE ID in mind as well. A SPIFFE ID is one kind of WIMSE identifier, and WIMSE does not replace SPIFFE. If your data model treats the subject as a "workload identifier (URI)" without fixing the scheme to `spiffe`, principals from cloud platforms or CI/CD fit the same slot.
 
@@ -480,7 +480,7 @@ Binding has limits, though. It stops an intermediary from swapping or stripping 
 - **Pass transport-layer and application-layer identities to the PDP separately, and record both for audit.**
 - **Choose the authentication method by asking "do intermediaries terminate TLS?" and "do you send an OAuth token in the same request?"** For east-west HTTP traffic, I consider a safe default to be mTLS, plus an end-to-end HTTP signature on paths where an intermediary terminates TLS.
 - **Do not reuse external access tokens inside.** Exchange them for Txn-Tokens at the gateway and narrow the scope to the transaction's purpose.
-- **Give credentials a distinct audience per use, keep them short-lived, and avoid environment variables.**
+- **Give credentials a distinct audience per use, keep them short-lived, and avoid environment variables when another delivery pattern exists.**
 - **Replace `client_secret` with SPIFFE client authentication,** then manage the SPIFFE ID to `client_id` mapping as an authorization decision.
 - **Revoke through policy, not credential revocation.** You cannot revoke a JWT credential such as a WIT on demand in most deployments, so pair short-lived credentials with PDP policies that take effect at once.
 
@@ -509,7 +509,7 @@ Within WIMSE, the practices guide sits closest to an RFC, with HTTP signatures n
 - WIMSE builds on existing technologies such as OAuth, JWT, and SPIFFE, and expresses workload identity through three elements: trust domain, workload identifier, and credentials (WIT/WIC). A SPIFFE ID is a conforming example, not something WIMSE replaces.
 - WIMSE offers three authentication methods: mTLS, HTTP Message Signatures, and WPT. Choose based on whether TLS terminates midway and whether you send an OAuth token in the same request.
 - Deliver credentials based on attestation, as short-lived credentials with a distinct audience per use. Avoid environment variables.
-- Transaction Tokens exchange an external access token for an internal token bound to one transaction and pass it unchanged along the call chain. Treat it as different from both access tokens and authentication credentials.
+- Transaction Tokens exchange an external access token (or, for internally initiated transactions, something like a self-signed JWT) for an internal token bound to one transaction and pass it unchanged along the call chain. Treat it as different from both access tokens and authentication credentials.
 - SPIFFE client authentication removes `client_secret`, but you must manage the SPIFFE ID to `client_id` mapping as an authorization decision.
 - Combined, the PEP receives "subject = WIT `sub`" and "context = Txn-Token" bound by proof of possession, and can pass both to the PDP.
 
