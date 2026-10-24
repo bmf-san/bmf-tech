@@ -88,7 +88,7 @@ flowchart LR
     IDP["Enterprise IdP"]
     A["AI agent<br/>(MCP client)"]
     AS["Authorization server"]
-    G["Gateway<br/>(PEP)"]
+    G["Gateway<br/>(PEP, if present)"]
     PDP["PDP<br/>(AuthZEN)"]
     T["MCP server<br/>(tools)"]
     RA["Remote agent"]
@@ -214,7 +214,7 @@ The core of the spec lies in seven invariants. The key points:
 - Neither submitting a request nor receiving approval grants access by itself.
 - At enforcement time, the PDP makes a fresh decision with the current policy and state. The approval acts only as an input to that decision.
 
-Checking approver eligibility and separation of duties is mandatory (MUST). To bind denial, request, and approval together, implementations use identifiers when the PDP and the request service share state, and a value signed by the PDP or another party (preferably a JWS) when they do not. Because the agent can store the task handle and resume later, it can keep working while it waits for approval. Still, knowing a task handle grants no permission.
+Checking approver eligibility and separation of duties is mandatory (MUST). To bind denial, request, and approval together, implementations use identifiers when the PDP and the Access Request Service share state, and a value signed by the PDP or another party (preferably a JWS) when they do not. Because the agent can store the task handle and resume later, it can keep working while it waits for approval. Still, knowing a task handle grants no permission.
 
 AARP's design avoids a failure mode in which an approval workflow quietly becomes a substitute for policy. It keeps the PDP as the final authority and passes the approval in as input. It still stands at Draft 1 with a single author, and no spec yet defines how to go from a COAZ-MCP denial to an AARP request. In my view, you can adopt the ideas now, but building tightly to the wire format would come too early.
 
@@ -242,7 +242,7 @@ flowchart TB
 | Provisioning | Issue and rotate at runtime. Assess the posture of the runtime at issuance. **The LLM MUST NOT have access to credentials** |
 | Authentication | mTLS, WIMSE Workload Proof Token (WPT), HTTP Message Signatures |
 | Authorization | Use OAuth as the delegation framework (see the table below) |
-| Monitoring and remediation | Participants MAY subscribe to SSF (CAEP, RISC) for revocation and risk-change signals. Recipients SHOULD remediate, for example by attenuating access, and MUST enforce revoked or downgraded authorization without undue delay. Deployments MUST keep audit logs |
+| Monitoring, observability, remediation | Participants MAY subscribe to SSF (CAEP, RISC) for revocation and risk-change signals. Recipients SHOULD remediate, for example by attenuating access, and MUST enforce revoked or downgraded authorization without undue delay. Deployments MUST keep audit logs |
 
 [The workload identity post](/posts/workload-identity-wimse-transaction-tokens/) covers each authentication method. In the latest draft-ietf-wimse-wpt-02, a client sends the WPT as `Authorization: WPT`.
 
@@ -356,7 +356,7 @@ Finally, here is a single table of the concerns in designing authorization for A
 | Agent identifiers and credentials | WIMSE (WIT and WIC as credentials, WPT as proof of possession), SPIFFE | WIMSE specs are IETF drafts |
 | Access to tools | MCP authorization (OAuth 2.1, RFC 9728, RFC 8707) | MCP 2026-07-28 is current; OAuth 2.1 is a draft |
 | Argument-level decisions | AuthZEN API 1.0, COAZ-MCP | API is Final; COAZ-MCP is Draft 1 |
-| Delegation from user to agent | Authorization Code, `act`, RAR (OBO for reference) | OBO is an expired individual draft |
+| Delegation from user to agent | Authorization Code, `act` (OBO for reference) | OBO is an expired individual draft |
 | Least privilege inside and across hops | Token Exchange (RFC 8693), Transaction Tokens | Transaction Tokens at -11 with WG consensus |
 | Across domains | Identity Chaining, ID-JAG | Identity Chaining in the RFC Editor Queue; ID-JAG at -04 |
 | Central management by the enterprise | ID-JAG, MCP Enterprise-Managed Authorization | The extension sits in the stable directory |
@@ -374,7 +374,7 @@ You do not need everything at once. Decide first on what you cannot easily chang
 | When | What to do |
 |---|---|
 | Decide first | Represent users and agents with separate identifiers. Keep credentials away from the LLM. Never relay tokens. Record both the user and the agent in audit logs |
-| Add early | Narrow token audiences (RFC 8707). Keep scopes minimal and add more through step-up. Require human approval that the authorization server can verify for high-risk operations |
+| Add early | Narrow token audiences (RFC 8707). Keep scopes minimal and add more through step-up. Require human approval that the authorization server or PDP can verify for high-risk operations |
 | Add when needed | Argument-level decisions at a gateway (COAZ-MCP), approval and re-evaluation (AARP), central management with ID-JAG, internal propagation with Transaction Tokens |
 
 You can also use the AIMS layers as a review checklist. Check the following:
@@ -389,10 +389,10 @@ You can also use the AIMS layers as a review checklist. Check the following:
 
 - With AI agents, delegation chains, least privilege that you cannot fix up front, misuse of legitimate authority through prompt injection, human approval, and audit attribution become new problems.
 - MCP authorization covers obtaining and validating tokens for tools. How to decide, separating users from agents, and human approval sit outside the authorization spec.
-- AuthZEN COAZ-MCP maps MCP requests to authorization questions, down to the argument level when a tool declares a mapping. AARP connects a denial to approval and re-evaluation. Both keep the PDP as the final authority.
-- AIMS serves as a checklist for agent authentication and authorization built from existing standards.
-- OBO and AAuth show ways to express delegation, ID-JAG handles central management by enterprises, and A2A and AP2 handle agent collaboration and payment approval.
-- Most of these remain drafts. Adopt the shared ideas first: do not rely on the LLM for trust, treat approval as an input to a decision, and never treat an identifier as a permission. Pin versions when you build to the wire formats.
+- AuthZEN COAZ-MCP maps MCP requests to authorization questions, down to the argument level when a tool declares a mapping. AARP connects a requestable denial to approval and re-evaluation. Both keep the PDP as the final authority.
+- AIMS is a draft that collects best practices for agent authentication and authorization built from existing standards, and you can also use it as a design checklist.
+- OBO and AAuth serve as references for expressing delegation (both remain expired individual drafts), ID-JAG handles central management by enterprises, and A2A and AP2 handle agent collaboration and payment approval.
+- Most of these remain drafts. Adopt the design principles first, such as keeping credentials away from the LLM, recording the delegation chain, and turning human approval into an authorization event. Pin versions when you build to the wire formats.
 
 # Related Posts
 
