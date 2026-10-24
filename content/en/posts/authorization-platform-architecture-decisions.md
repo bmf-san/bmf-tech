@@ -259,14 +259,14 @@ sequenceDiagram
 This flow stacks three layers.
 
 1. **The scope of the MCP authorization specification.** The flow starts with a 401 and WWW-Authenticate, finds the authorization server through RFC 9728 metadata, and names the target with the RFC 8707 resource parameter when requesting a token. The MCP server MUST confirm that the token names it as the intended audience.
-2. **An extension that records whose authority the agent uses.** `requested_actor` and `actor_token` in the diagram come from "On-Behalf-Of User Authorization for AI Agents," an individual draft submitted to the IETF. That draft has expired as of October 2026. Recording the user and the agent separately through the `act` claim follows the same idea as `act` in Token Exchange (RFC 8693).
+2. **An extension that records whose authority the agent uses.** `requested_actor` and `actor_token` in the diagram come from "On-Behalf-Of User Authorization for AI Agents," an individual draft submitted to the IETF. That draft has expired as of October 2026. The draft defines the client (the application) and the actor (the agent) as separate roles; the diagram merges them into one. Recording the user and the agent separately through the `act` claim follows the same idea as `act` in Token Exchange (RFC 8693).
 3. **Externalized fine-grained authorization.** COAZ-MCP (an AuthZEN Draft) defines how to map MCP messages to AuthZEN's SARC and ask a PDP. It lets the PDP answer what scopes cannot express: "may this user call this tool with these arguments?"
 
 [Key Points for Designing MCP Authorization](/posts/mcp-authorization-design/) goes deeper into MCP authorization design, including the risk of "token passthrough," where a server forwards the received token downstream as is.
 
 ## Approval Flow for "Not Allowed Yet" (AARP)
 
-When you grant permissions ahead of time through roles or scopes, a denial at runtime ends the story. The AuthZEN Access Request and Approval Profile (AARP, Draft) connects a denial to approval and re-evaluation.
+When you grant permissions ahead of time through roles or scopes, a denial at runtime ends the story. The AuthZEN Access Request and Approval Profile (AARP, Draft) connects a denial to approval and re-evaluation. AARP is the abbreviation from the OpenID Foundation announcement; the draft's header uses ARAP.
 
 ```mermaid
 sequenceDiagram
@@ -406,7 +406,7 @@ Make every decision reconstructible after the fact.
 ### Testing and Continuous Evaluation
 
 - **Test policies as code.** Treat policies as code and run unit and regression tests. OPA provides `opa test`. Build a way to check, before production, "whose decisions change with this policy change?"
-- **Revisit tokens after issuance.** OpenID CAEP defines how to send and receive events such as session revocation or rising risk. Use them to cut off issued tokens and sessions midway.
+- **Revisit tokens after issuance.** OpenID CAEP defines event types such as session revocation and risk level changes, and SSF defines how to send and receive them. Use them to cut off issued tokens and sessions midway.
 
 ## Other Decisions
 

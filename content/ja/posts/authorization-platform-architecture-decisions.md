@@ -30,7 +30,7 @@ draft: false
 
 図はC4モデルのContext（システムと外界）とContainer（デプロイできる構成要素）の2段で描く。C4の考え方は[C4 model](https://c4model.com/)を参照。アーキテクチャを文書にするときの心構えは[アーキテクチャドキュメントを書くときに気をつけること](/ja/posts/writing-architecture-documentation/)にまとめた。
 
-ここで扱う構成は、ある組織が必要とする要素を一通り並べた参照の形である。全部を最初から作る必要はない。どこまで作るか、判定をアプリの外に出すかを決める話も[認可基盤はどこまで作るか](/ja/posts/authorization-platform-scope-stages/)で扱った。
+ここで扱う構成は、ある組織が必要とする要素を一通り並べた参照の形である。全部を最初から作る必要はない。どこまで作るか、判定をアプリの外に出すかを決める話も[認可基盤はどこまで作るべきか](/ja/posts/authorization-platform-scope-stages/)で扱った。
 
 # 前提: 境界は IAM のサブドメインに揃える
 
@@ -259,14 +259,14 @@ sequenceDiagram
 この流れは3つの層を重ねている。
 
 1. **MCPの認可仕様の範囲**。401とWWW-Authenticateから始まり、RFC 9728のメタデータで認可サーバを見つけ、RFC 8707のresourceパラメータで宛先を指定してトークンを取る。MCPサーバは、トークンが自分宛てに発行されたことを検証しなければならない（MUST）。
-2. **誰の権限で動いているかを表す拡張**。図の`requested_actor`と`actor_token`は「On-Behalf-Of User Authorization for AI Agents」という個人のInternet-Draftの拡張である。このドラフトは2026年10月時点で期限切れになっている。トークンの`act`クレームでユーザーとエージェントを分けて残す考え方は、Token Exchange（RFC 8693）の`act`と同じである。
+2. **誰の権限で動いているかを表す拡張**。図の`requested_actor`と`actor_token`は「On-Behalf-Of User Authorization for AI Agents」という個人のInternet-Draftの拡張である。このドラフトは2026年10月時点で期限切れになっている。ドラフトはクライアント（アプリ）とアクター（エージェント）を別の役割として定めるが、図では1つにまとめた。トークンの`act`クレームでユーザーとエージェントを分けて残す考え方は、Token Exchange（RFC 8693）の`act`と同じである。
 3. **細かい認可の外部化**。COAZ-MCP（AuthZENのDraft）は、MCPのメッセージをAuthZENのSARCに写してPDPに問い合わせる方法を決める。スコープでは表しきれない「このユーザーがこの引数でこのツールを呼んでよいか」をPDPに任せられる。
 
 MCPの認可を設計するときの注意点、たとえばトークンをそのまま下流に渡す「Token Passthrough」の危険は[MCP の認可を設計するときの勘所](/ja/posts/mcp-authorization-design/)で詳しく扱う。
 
 ## 「まだ許可できない」を扱う承認フロー（AARP）
 
-役割やスコープで権限を事前に与えておく方式では、実行時に拒否されたらそこで終わる。AuthZENのAccess Request and Approval Profile（AARP、Draft）は、拒否を承認と再評価につなぐ。
+役割やスコープで権限を事前に与えておく方式では、実行時に拒否されたらそこで終わる。AuthZENのAccess Request and Approval Profile（AARP、Draft）は、拒否を承認と再評価につなぐ。AARPはOpenID Foundationの発表での略称で、ドラフトのヘッダーではARAPと書かれている。
 
 ```mermaid
 sequenceDiagram
@@ -295,7 +295,7 @@ sequenceDiagram
 
 ## 判定を外部化するか
 
-判定ロジックをアプリから切り離してPDPに集めるかどうかの判断は、[認可基盤はどこまで作るか](/ja/posts/authorization-platform-scope-stages/)で扱った。以下は外部化すると決めた前提で、その先の判断を並べる。
+判定ロジックをアプリから切り離してPDPに集めるかどうかの判断は、[認可基盤はどこまで作るべきか](/ja/posts/authorization-platform-scope-stages/)で扱った。以下は外部化すると決めた前提で、その先の判断を並べる。
 
 ## PEP と PDP の配置
 
@@ -406,7 +406,7 @@ PDPが落ちたときや応答が遅いときに、通す（fail-open）か止�
 ### テストと継続的な評価
 
 - **ポリシーをコードとして試す**。Policy-as-Codeにしてユニットテストと回帰テストを回す。OPAなら`opa test`がある。ポリシーの変更で「誰の判定が変わるか」を、本番より前に確かめる仕組みを用意する。
-- **一度出したトークンを見直す**。OpenIDのCAEPは、セッションの失効やリスクの上昇といったイベントを送受信する方法を決める。これを受けて、発行済みのトークンやセッションを途中で止める。
+- **一度出したトークンを見直す**。OpenIDのCAEPは、セッションの失効やリスクレベルの変化といったイベントの種類を決め、SSFがその送受信の方法を決める。これを受けて、発行済みのトークンやセッションを途中で止める。
 
 ## その他の判断
 
