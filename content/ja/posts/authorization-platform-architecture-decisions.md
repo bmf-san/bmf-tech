@@ -51,7 +51,7 @@ IAMの外には、リスク評価（主体の振る舞いが疑わしいか）�
 1. **PEPは業務ドメインの側に置く**。判定（PDP）は ④ に集めても、強制（PEP）は要求を受ける業務システムが持つ。
 2. **権限の「意味」は業務ドメインが持つ**。「この請求書を承認してよいか」がどんな資源と操作で、業務上どんなルールかは業務ドメインが決める。IAMが持つのは判定と強制の仕組みである。
 
-PEP（Policy Enforcement Point）は強制、PDP（Policy Decision Point）は判定を受け持つ。PIP（Policy Information Point）は属性を供給し、PAP（Policy Administration Point）はポリシーを管理する。この参照アーキテクチャは[認可のアーキテクチャ・モデル・エンジン](/ja/posts/authorization-architecture-models-engines/)で説明した。
+PEP（Policy Enforcement Point）は強制、PDP（Policy Decision Point）は判定を受け持つ。PIP（Policy Information Point）は属性を供給し、PAP（Policy Administration Point）はポリシーを管理する。この参照アーキテクチャは[認可のアーキテクチャとモデルとは](/ja/posts/authorization-architecture-models-engines/)で説明した。
 
 # システムコンテキスト: 認可基盤は誰と関わるか
 
@@ -183,10 +183,10 @@ flowchart LR
 
 表の各行は、シリーズの他の記事で詳しく扱っている。
 
-- PDPと関係ストア、エンジンの選び方は[認可のアーキテクチャ・モデル・エンジン](/ja/posts/authorization-architecture-models-engines/)にある。
+- PDPと関係ストア、エンジンの選び方は[認可のアーキテクチャとモデルとは](/ja/posts/authorization-architecture-models-engines/)にある。
 - PEPとPDPをつなぐAPIは[AuthZEN Authorization API とは](/ja/posts/authzen-authorization-api/)にある。
-- 認可サーバとトークン、SCIM、SSF / CAEPは[認可基盤から見た OAuth と周辺標準の地図](/ja/posts/oauth-standards-map-authorization-platform/)にまとめた。
-- ワークロードの資格情報とTransaction Tokensは[ワークロードアイデンティティの標準化](/ja/posts/workload-identity-wimse-transaction-tokens/)にある。サービス間の通信の認証は[サービス間認証の全体像](/ja/posts/service-to-service-authentication/)で整理した。
+- 認可サーバとトークン、SCIM、SSF / CAEPは[認可基盤に必要なOAuth関連標準とは](/ja/posts/oauth-standards-map-authorization-platform/)にまとめた。
+- ワークロードの資格情報とTransaction Tokensは[ワークロードアイデンティティとは](/ja/posts/workload-identity-wimse-transaction-tokens/)にある。サービス間の通信の認証は[サービス間認証の全体像](/ja/posts/service-to-service-authentication/)で整理した。
 - AIエージェント向けの承認やMCPは[AI エージェントの認可](/ja/posts/authorization-for-ai-agents/)にある。
 
 コンテナ図で押さえたい点は、**PDPの入力が多方向から来る**ことである。ポリシーはPAPから、属性はPIPから、関係は関係ストアから、リスクシグナルは隣接ドメインから届く。PDP自体はステートレスに保ち、状態はこれらの入力側に置く。OPAを例にしたPEP・PDP・PIPの分担と実装は[OPAを使用したマイクロサービスのアクセス制御システムの実装](/ja/posts/microservices-access-control-opa/)に書いた。
@@ -262,7 +262,7 @@ sequenceDiagram
 2. **誰の権限で動いているかを表す拡張**。図の`requested_actor`と`actor_token`は「On-Behalf-Of User Authorization for AI Agents」という個人のInternet-Draftの拡張である。このドラフトは2026年10月時点で期限切れになっている。ドラフトはクライアント（アプリ）とアクター（エージェント）を別の役割として定めるが、図では1つにまとめた。トークンの`act`クレームでユーザーとエージェントを分けて残す考え方は、Token Exchange（RFC 8693）の`act`と同じである。
 3. **細かい認可の外部化**。COAZ-MCP（AuthZENのDraft）は、MCPのメッセージをAuthZENのSARCに写してPDPに問い合わせる方法を決める。スコープでは表しきれない「このユーザーがこの引数でこのツールを呼んでよいか」をPDPに任せられる。
 
-MCPの認可を設計するときの注意点、たとえばトークンをそのまま下流に渡す「Token Passthrough」の危険は[MCP の認可を設計するときの勘所](/ja/posts/mcp-authorization-design/)で詳しく扱う。
+MCPの認可を設計するときの注意点、たとえば自分宛てか確かめずに受け取ったトークンを下流のAPIに渡す「Token Passthrough」の危険は[MCPの認可はどう設計するか](/ja/posts/mcp-authorization-design/)で詳しく扱う。
 
 ## 「まだ許可できない」を扱う承認フロー（AARP）
 
@@ -356,7 +356,7 @@ flowchart LR
 
 - **トークンは粗い認可を運ぶものである**。境界を越えて「このクライアントはこのAPIのreadを許されている」を伝えるのに向いている。
 - **細かい認可をトークンに詰め込まない**。資源ごとの権限をクレームに並べると、トークンが肥大化し、権限を取り消してもトークンの期限まで残る。細かい判断はPDPとPIPに任せる。
-- **内部に伝えるときは絞る**。サービス間でアクセストークンを使い回さず、Token ExchangeやTransaction Tokensで宛先と権限を絞ったトークンに替える（ダウンスコープ）。詳しくは[ワークロードアイデンティティの標準化](/ja/posts/workload-identity-wimse-transaction-tokens/)で扱う。
+- **内部に伝えるときは絞る**。サービス間でアクセストークンを使い回さず、Token ExchangeやTransaction Tokensで宛先と権限を絞ったトークンに替える（ダウンスコープ）。詳しくは[ワークロードアイデンティティとは](/ja/posts/workload-identity-wimse-transaction-tokens/)で扱う。
 
 RAR（RFC 9396）を使えば、トークン要求に「この相手に、この金額を支払う」のような構造化した権限を載せられる。それでも、要求のたびに変わる資源ごとの判断をPDPに寄せる方が、取り消しと監査の面で扱いやすい。
 

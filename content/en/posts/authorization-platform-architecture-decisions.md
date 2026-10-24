@@ -51,7 +51,7 @@ This split yields two rules for the architecture.
 1. **The PEP lives on the business side.** Decisions (the PDP) can live in subdomain 4, but enforcement (the PEP) belongs to the business system that receives the request.
 2. **The business domain owns the meaning of permissions.** The business domain defines what "may this user approve this invoice?" means: which resources and actions exist and which business rules apply. IAM owns the machinery for deciding and enforcing.
 
-The PEP (Policy Enforcement Point) enforces, and the PDP (Policy Decision Point) decides. The PIP (Policy Information Point) supplies attributes, and the PAP (Policy Administration Point) manages policies. [Authorization Architecture, Models, and Engines](/posts/authorization-architecture-models-engines/) covers this reference architecture.
+The PEP (Policy Enforcement Point) enforces, and the PDP (Policy Decision Point) decides. The PIP (Policy Information Point) supplies attributes, and the PAP (Policy Administration Point) manages policies. [What Are Authorization Architectures and Models?](/posts/authorization-architecture-models-engines/) covers this reference architecture.
 
 # System Context: Who Does the Platform Talk To?
 
@@ -183,11 +183,11 @@ The table lists the role of each container and the standards or implementations 
 
 Other posts in this series cover each row in depth.
 
-- [Authorization Architecture, Models, and Engines](/posts/authorization-architecture-models-engines/) covers PDPs, relationship stores, and how to choose an engine.
+- [What Are Authorization Architectures and Models?](/posts/authorization-architecture-models-engines/) covers PDPs, relationship stores, and how to choose an engine.
 - [What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers the API between PEPs and PDPs.
-- [A Map of OAuth and Related Standards for Authorization Platforms](/posts/oauth-standards-map-authorization-platform/) covers authorization servers, tokens, SCIM, and SSF / CAEP.
-- [Standardizing Workload Identity](/posts/workload-identity-wimse-transaction-tokens/) covers workload credentials and Transaction Tokens. [What is the Big Picture of Service-to-Service Authentication?](/posts/service-to-service-authentication/) covers authentication between services.
-- [Authorization for AI Agents](/posts/authorization-for-ai-agents/) covers approvals for agents and MCP.
+- [Which OAuth Standards Does an Authorization Platform Need?](/posts/oauth-standards-map-authorization-platform/) covers authorization servers, tokens, SCIM, and SSF / CAEP.
+- [What is Workload Identity?](/posts/workload-identity-wimse-transaction-tokens/) covers workload credentials and Transaction Tokens. [What is the Big Picture of Service-to-Service Authentication?](/posts/service-to-service-authentication/) covers authentication between services.
+- [What is Authorization for AI Agents?](/posts/authorization-for-ai-agents/) covers approvals for agents and MCP.
 
 The key point of the container diagram: **inputs reach the PDP from many directions.** Policies come from the PAP, attributes from the PIP, relationships from the relationship store, and risk signals from adjacent domains. Keep the PDP itself stateless and keep state on the input side. [Implementation of Access Control System for Microservices Using OPA](/posts/microservices-access-control-opa/) shows how PEP, PDP, and PIP split their work in an OPA-based implementation.
 
@@ -262,7 +262,7 @@ This flow stacks three layers.
 2. **An extension that records whose authority the agent uses.** `requested_actor` and `actor_token` in the diagram come from "On-Behalf-Of User Authorization for AI Agents," an individual draft submitted to the IETF. That draft has expired as of October 2026. The draft defines the client (the application) and the actor (the agent) as separate roles; the diagram merges them into one. Recording the user and the agent separately through the `act` claim follows the same idea as `act` in Token Exchange (RFC 8693).
 3. **Externalized fine-grained authorization.** COAZ-MCP (an AuthZEN Draft) defines how to map MCP messages to AuthZEN's SARC and ask a PDP. It lets the PDP answer what scopes cannot express: "may this user call this tool with these arguments?"
 
-[Key Points for Designing MCP Authorization](/posts/mcp-authorization-design/) goes deeper into MCP authorization design, including the risk of "token passthrough," where a server forwards the received token downstream as is.
+[How Should You Design Authorization for MCP?](/posts/mcp-authorization-design/) goes deeper into MCP authorization design, including the risk of "token passthrough," where a server accepts a token without checking that it names the server as the audience and forwards it to a downstream API.
 
 ## Approval Flow for "Not Allowed Yet" (AARP)
 
@@ -356,7 +356,7 @@ Splitting the two layers clarifies what tokens do.
 
 - **Tokens carry coarse authorization.** They suit statements that cross boundaries, such as "this client may read this API."
 - **Do not stuff fine-grained authorization into tokens.** Listing per-resource permissions in claims bloats the token, and a revoked permission survives until the token expires. Leave fine-grained decisions to the PDP and PIP.
-- **Narrow tokens when you pass them inward.** Do not reuse an access token between services; swap it for a token with a narrower audience and authority through Token Exchange or Transaction Tokens (downscoping). [Standardizing Workload Identity](/posts/workload-identity-wimse-transaction-tokens/) covers this in detail.
+- **Narrow tokens when you pass them inward.** Do not reuse an access token between services; swap it for a token with a narrower audience and authority through Token Exchange or Transaction Tokens (downscoping). [What is Workload Identity?](/posts/workload-identity-wimse-transaction-tokens/) covers this in detail.
 
 RAR (RFC 9396) lets a token request carry structured authority, such as "pay this amount to this payee." Even so, per-resource decisions that change with every request stay easier to revoke and audit when the PDP handles them.
 
