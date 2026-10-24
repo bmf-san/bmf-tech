@@ -114,18 +114,18 @@ arch-08 splits one call into stages: get credentials, set up transport, authenti
 
 The architecture defines neither a policy language nor a PEP-PDP protocol. As a reference architecture, this matches the split in "[What Are Authorization Architectures and Models?](/posts/authorization-architecture-models-engines/)," and AuthZEN ("[What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/)") can fill the PEP-PDP gap.
 
-As a rule, the callee makes the decision. When the decision gets too fine-grained, as with a database, the caller MAY decide instead.
+As a rule, the callee makes the decision. When the decision gets too fine-grained, as with a database, the caller MAY decide instead, but only if it has enough context and policy information to decide correctly.
 
 ## Layered Authentication and "Authentication Is Not Authorization"
 
 In real deployments, a workload often authenticates to a sidecar or gateway over mTLS and to the destination workload with an application-layer WIT. arch-08 calls this layered authentication and sets these rules.
 
 - The destination MUST NOT assume that the transport-layer identity an intermediary authenticated equals the application-layer caller, unless the deployment states the relationship explicitly.
-- Audit records SHOULD include the identities from both layers.
+- When identities from both layers are available and relevant, audit records SHOULD include both.
 
 The security considerations also state that a valid credential does not give a workload access to every resource in the trust domain. The common service mesh setup "allow if mTLS succeeds" contradicts this principle. State allowed identifiers explicitly, and treat authorization as a separate decision.
 
-arch-08 also covers AI agents. An agent is a special case of a delegated workload, and in a multi-hop chain each hop MUST explicitly scope and re-bind the security context. "[What is Authorization for AI Agents?](/posts/authorization-for-ai-agents/)" covers agent authorization in depth.
+arch-08 also covers AI agents. An agent is a special case of a delegated workload, and in a multi-hop chain where agents call other agents, each hop MUST explicitly scope and re-bind the security context. "[What is Authorization for AI Agents?](/posts/authorization-for-ai-agents/)" covers agent authorization in depth.
 
 # Rules for Workload Identifiers
 
@@ -220,8 +220,8 @@ Three drafts define how workloads use WITs and WICs to authenticate each other. 
 
 Some notes on each.
 
-- **mTLS**: You MUST check that the trust domain in the WIC matches the one you expect for that connection. When you connect by DNS name, you also run RFC 9525 hostname verification: Section 3.2.1 makes this a MUST, while the Security Considerations section says SHOULD. Identifier checks add to it rather than replace it. You MUST NOT let a self-asserted identity in an HTTP header override the identity that mTLS established.
-- **HTTP Message Signatures**: To survive proxies that end TLS and rewrite `Host`, the profile does not sign `@authority`. Instead it puts the target in the signature parameter `wimse-aud`, and the receiver compares it exactly against trusted configuration. The `nonce` needs at least 64 bits of entropy, and the signature lifetime (`expires`) should stay in minutes.
+- **mTLS**: You MUST check that the trust domain in the WIC matches the one you expect for that connection. When you connect by DNS name, you also run RFC 9525 hostname verification: Section 3.2.1 makes this a MUST, while the Security Considerations section says SHOULD. Identifier checks add to it rather than replace it. Unless another mechanism protects and authorizes it, you MUST NOT let a self-asserted identity in an HTTP header override the identity that mTLS established.
+- **HTTP Message Signatures**: To survive proxies that end TLS and rewrite `Host`, the profile does not sign `@authority` for requests other than CONNECT. Instead it puts the target in the signature parameter `wimse-aud`, and the receiver compares it exactly against trusted configuration. The `nonce` needs at least 64 bits of entropy, and the signature lifetime (`expires`) should stay in minutes.
 - **WPT**: A short-lived JWT signed with the WIT key. The predecessor draft, s2s-protocol, described it as an option inspired by OAuth DPoP (RFC 9449). In -02, the draft moved it from a dedicated header to `Authorization: WPT`. As a result, you cannot send a Bearer or DPoP access token in the same request. The draft describes this exclusivity as intentional: it keeps a request from dropping to the strength of its weakest credential.
 
 Two questions settle most choices.
@@ -242,7 +242,7 @@ flowchart TD
     Q3 -- "No" --> H
 ```
 
-You can combine layers. The mutual-tls draft says that when you need end-to-end workload authentication across intermediaries that end TLS, you SHOULD also use an application-layer WIMSE method on top of TLS. Hop-by-hop mTLS with an end-to-end HTTP signature on top is one example.
+You can combine layers. The mutual-tls draft says that when you need end-to-end workload authentication across intermediaries that end TLS, you SHOULD use an application-layer WIMSE method as well as TLS-layer server authentication. Hop-by-hop mTLS with an end-to-end HTTP signature on top is one example.
 
 WIMSE methods and OAuth sender-constrained tokens (RFC 8705 mTLS, RFC 9449 DPoP) protect different things. WIMSE proves "which workload is calling," while sender constraint proves "who may use this access token." See "[What are Sender-Constrained Tokens?](/posts/sender-constrained-tokens-mtls-dpop/)" for the latter. If you use an X.509-SVID or WIC for RFC 8705 client authentication and certificate binding, one certificate covers both.
 
@@ -285,8 +285,9 @@ The practices draft covers Kubernetes service account tokens, the SPIFFE Workloa
 These normative rules in the practices draft matter most for design.
 
 - **Use credentials with distinct audiences per purpose** (MUST). If you use the same bearer token for internal resources and an external IdP, the IdP can present it to internal resources and impersonate the workload.
-- **Put a single value in a JWT's `aud`** (two or more audiences MUST NOT). Otherwise any recipient listed in `aud` can present the token to the others.
-- **Do not let a token outlive its instance** (MUST NOT). Invalidate credentials when the instance goes away (MUST).
+- **Put a single value in a JWT's `aud`** (two or more audiences MUST NOT). The exceptions are cases where you cannot get several credentials or cannot choose the audience. Otherwise any recipient listed in `aud` can present the token to the others.
+- **Do not let a token outlive its instance** (MUST NOT). If the platform cannot know the instance lifetime, keep the token as short-lived as possible.
+- **Invalidate credentials when the instance goes away** (MUST). The exception is a lifetime short enough that the remaining validity is acceptable.
 - **Use proof of possession** (SHOULD). When you cannot, compensate with short lifetimes, strict audiences, and network controls (MUST).
 - **Assume application vulnerabilities can leak credentials** (MUST). Untrusted input MUST NOT influence credential file paths or connections to the local API.
 - **Evaluate the values of custom claims** (MUST). In CI/CD, allowing federation only from the protected `main` branch requires checking the branch claim's value.
@@ -334,7 +335,7 @@ The Transaction Token Service (TTS) issues the token, and each trust domain MUST
 | `request_context` | Environmental context such as the original request IP (recommended) |
 | `request_details` | Request details such as API parameters (recommended) |
 
-When no external request exists (batch or scheduled jobs), a workload can start a transaction with a self-signed JWT as `subject_token`. The TTS and the workload MUST authenticate each other. Examples for workload authentication include RFC 8705, WIMSE mTLS, HTTP signatures, WPT, and signed JWTs from RFC 7523.
+When the workload has no inbound token to send to the TTS, it can start a transaction with a self-signed JWT as `subject_token`. This covers external authentication that does not use an access token and scheduled internal jobs. The TTS and the workload MUST authenticate each other. Examples for workload authentication include RFC 8705, WIMSE mTLS, HTTP signatures, WPT, and signed JWTs from RFC 7523.
 
 ## Token Format
 
@@ -350,7 +351,7 @@ A Txn-Token is a JWT with `typ` set to `txntoken+jwt`.
 | `req_wl` | Required | The workload that requested the Txn-Token |
 | `tctx` | Recommended | Authorization details that stay fixed for the whole transaction, decided by the TTS |
 | `rctx` | Recommended | Environmental context of the original request |
-| `iss` | Optional | Helps identify the signer |
+| `iss` | Optional | Helps identify the signer when the signing keys are not predetermined |
 
 The draft's example represents a stock trade like this (trimmed).
 
@@ -376,7 +377,7 @@ With quantity and ticker in `tctx`, downstream workloads get those parameters as
 
 ## Treat It as Different from an Access Token
 
-The draft sets several prohibitions so that nobody confuses Txn-Tokens with other tokens.
+Besides prohibitions that keep Txn-Tokens distinct from other tokens, the draft sets rules on scope and logging.
 
 | Rule | Reason |
 | --- | --- |
@@ -386,7 +387,7 @@ The draft sets several prohibitions so that nobody confuses Txn-Tokens with othe
 | The TTS must not widen scope beyond the `subject_token` (MUST) | Prevents privileges from growing inside. Reject a `subject_token` whose scope is unknown |
 | Do not log entire Txn-Tokens as-is (MUST NOT) | Prevents replay and personal data leaks. Log a hash or the payload without the signature |
 
-Txn-Tokens do not resist replay. The defenses are short lifetimes and recording `txn` to reject repeated values. The TTS should be selective about which workloads it issues to and need not issue to every workload that asks. For example, a policy can limit Txn-Tokens that include a trade amount to the gateway that handles user requests.
+Txn-Tokens do not resist replay. The defenses are short lifetimes and recording `txn` to reject repeated values. This single-use check can be hard when several instances without shared state receive the token. The TTS should be selective about which workloads it issues to and need not issue to every workload that asks. For example, a policy can limit Txn-Tokens that include a trade amount to the gateway that handles user requests.
 
 ## Replacement
 
@@ -405,7 +406,7 @@ The draft leaves the method for preserving the call chain open, so if you use re
 
 ## Crossing Trust Domains
 
-A Txn-Token is valid only within the trust domain in `aud`. When you need resources in another domain, you SHOULD use Identity Chaining (draft-ietf-oauth-identity-chaining).
+A Txn-Token is valid only within the trust domain in `aud`. When you need resources in another domain and must preserve the identity and authorization context from the Txn-Token, you SHOULD use Identity Chaining (draft-ietf-oauth-identity-chaining).
 
 The individual draft draft-fletcher-oauth-txn-token-chaining-profile defines the concrete steps. Its earlier name was draft-fletcher-transaction-token-chaining-profile, and in September 2026 the -00 under the current name replaced it. In this profile, the workload presents a Txn-Token as `subject_token` in a token exchange and gets a JWT authorization grant for crossing the boundary. The `subject_token_type` is `urn:ietf:params:oauth:token-type:txn_token`. This carries transaction context to the other domain without exposing internal credentials or token formats. "[Which OAuth Standards Does an Authorization Platform Need?](/posts/oauth-standards-map-authorization-platform/)" covers Identity Chaining itself.
 
