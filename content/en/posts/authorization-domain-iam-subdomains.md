@@ -67,7 +67,7 @@ NIST SP 800-162 and XACML call the decision component the PDP (Policy Decision P
 
 # The "Authorization" in OAuth Means Delegation
 
-OAuth calls itself an "authorization framework." In practice, it issues tokens for delegated access.
+OAuth calls itself an "authorization framework." In practice, it centers on issuing tokens for delegated access.
 
 The opening of RFC 6749 describes OAuth 2.0 this way. It lets a third-party application get limited access to an HTTP service. The application gets that access either on behalf of a resource owner or on its own behalf.
 
@@ -94,7 +94,7 @@ It borrows DDD (Domain-Driven Design) vocabulary for the split. The terms follow
 
 ## What IAM means
 
-The NIST glossary describes IAM as the administration of individual identities within a system, such as a company, a network, or even a country. It adds that in enterprise IT, it means establishing and managing the roles and access privileges of individual network users.
+The NIST glossary describes IAM as the administration of individual identities within a system, such as a company, a network, or even a country. It adds that in enterprise IT, identity management means establishing and managing the roles and access privileges of individual network users.
 
 In this post, IAM means the area that manages the identities of subjects (people, services, AI agents), decides what each subject may access, and governs that access. Concretely, it bundles authentication, authorization (delegation, access decision, access governance), and the identity management those depend on.
 
@@ -281,7 +281,7 @@ For example, a proposal to "build an authorization platform with OAuth" means so
 # Summary
 
 - Authentication answers "who are you?" Authorization answers "may this subject perform this action on this resource in this context?" Successful authentication does not imply authorization
-- The "authorization" in OAuth issues tokens for delegated access. Per-resource access decisions live in a different layer
+- The "authorization" in OAuth centers on issuing tokens for delegated access. Per-resource access decisions live in a different layer
 - IAM splits into five subdomains: identity, authentication, delegation, access decision, and access governance. Everyday "authorization" covers delegation, access decision, and access governance together
 - Whether IAM counts as Core, Supporting, or Generic depends on the organization's business. For business-app organizations, it usually counts as Generic
 - Adjacent domains such as risk assessment and subscription sit outside IAM and feed it input
