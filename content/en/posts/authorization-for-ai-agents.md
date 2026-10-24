@@ -186,7 +186,7 @@ Some caveats apply. The PDP never sees arguments that the mapping leaves out. If
 
 ## AARP: turning "not allowed yet" into approval and re-evaluation
 
-An agent that hits a boundary and tries to route around it with another tool or permission is dangerous. If a legitimate path exists past the denial, the agent has less reason to look for a detour. The AuthZEN Access Request and Approval Profile (AARP, the abbreviation in the OpenID Foundation announcement; the draft header uses ARAP) defines that path. The idea resembles CIBA, applied to authorization decisions instead of authentication.
+An agent that hits a boundary and tries to route around it with another tool or permission is dangerous. If a legitimate path exists past the denial, the agent has less reason to look for a detour. The AuthZEN Access Request and Approval Profile (AARP, the abbreviation in the OpenID Foundation announcement; the draft header uses ARAP) defines that path. The OpenID Foundation announcement describes AARP as doing for authorization prerequisites what CIBA does for authentication approval.
 
 ```mermaid
 sequenceDiagram
@@ -216,7 +216,7 @@ The core of the spec lies in seven invariants. The key points:
 
 Checking approver eligibility and separation of duties is mandatory (MUST). To bind denial, request, and approval together, implementations use identifiers when the PDP and the request service share state, and a value signed by the PDP or another party (preferably a JWS) when they do not. Because the agent can store the task handle and resume later, it can keep working while it waits for approval. Still, knowing a task handle grants no permission.
 
-AARP's design avoids a failure mode in which an approval workflow quietly becomes a substitute for policy. It keeps the PDP as the final authority and passes the approval in as input. It still stands at Draft 1 with a single author, and no spec yet defines how to go from a COAZ-MCP denial to an AARP request. You can adopt the ideas now, but building tightly to the wire format would come too early.
+AARP's design avoids a failure mode in which an approval workflow quietly becomes a substitute for policy. It keeps the PDP as the final authority and passes the approval in as input. It still stands at Draft 1 with a single author, and no spec yet defines how to go from a COAZ-MCP denial to an AARP request. In my view, you can adopt the ideas now, but building tightly to the wire format would come too early.
 
 # AIMS: a framework that combines existing standards for agents
 
