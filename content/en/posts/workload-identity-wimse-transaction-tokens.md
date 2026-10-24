@@ -386,7 +386,7 @@ The draft sets several prohibitions so that nobody confuses Txn-Tokens with othe
 | The TTS must not widen scope beyond the `subject_token` (MUST) | Prevents privileges from growing inside. Reject a `subject_token` whose scope is unknown |
 | Do not log entire Txn-Tokens as-is (MUST NOT) | Prevents replay and personal data leaks. Log a hash or the payload without the signature |
 
-Txn-Tokens do not resist replay. The defenses are short lifetimes and recording `txn` to reject repeated values. The TTS may choose which workloads it issues to. For example, a policy can limit Txn-Tokens that include a trade amount to the gateway that handles user requests.
+Txn-Tokens do not resist replay. The defenses are short lifetimes and recording `txn` to reject repeated values. The TTS should be selective about which workloads it issues to and need not issue to every workload that asks. For example, a policy can limit Txn-Tokens that include a trade amount to the gateway that handles user requests.
 
 ## Replacement
 
@@ -477,7 +477,7 @@ Binding has limits, though. It stops an intermediary from swapping or stripping 
 - **Write subjects as full identifiers.** Treat trust domain and path together, and avoid path-only or prefix matching.
 - **Do not treat successful authentication as authorization.** Passing mTLS does not decide which resources a workload may access.
 - **Pass transport-layer and application-layer identities to the PDP separately, and record both for audit.**
-- **Choose the authentication method by asking "do intermediaries terminate TLS?" and "do you send an OAuth token in the same request?"** For east-west HTTP traffic, a safe default uses mTLS and adds HTTP signatures on hops where TLS ends.
+- **Choose the authentication method by asking "do intermediaries terminate TLS?" and "do you send an OAuth token in the same request?"** For east-west HTTP traffic, I consider a safe default to be mTLS, plus an end-to-end HTTP signature on paths where an intermediary terminates TLS.
 - **Do not reuse external access tokens inside.** Exchange them for Txn-Tokens at the gateway and narrow the scope to the transaction's purpose.
 - **Give credentials a distinct audience per use, keep them short-lived, and avoid environment variables.**
 - **Replace `client_secret` with SPIFFE client authentication,** then manage the SPIFFE ID to `client_id` mapping as an authorization decision.
@@ -505,7 +505,7 @@ Within WIMSE, the practices guide sits closest to an RFC, with HTTP signatures n
 
 # Summary
 
-- WIMSE generalizes the SPIFFE approach and expresses workload identity through three elements: trust domain, workload identifier, and credentials (WIT/WIC). A SPIFFE ID is a conforming example, not something WIMSE replaces.
+- WIMSE builds on existing technologies such as OAuth, JWT, and SPIFFE, and expresses workload identity through three elements: trust domain, workload identifier, and credentials (WIT/WIC). A SPIFFE ID is a conforming example, not something WIMSE replaces.
 - WIMSE offers three authentication methods: mTLS, HTTP Message Signatures, and WPT. Choose based on whether TLS terminates midway and whether you send an OAuth token in the same request.
 - Deliver credentials based on attestation, as short-lived credentials with a distinct audience per use. Avoid environment variables.
 - Transaction Tokens exchange an external access token for an internal token bound to one transaction and pass it unchanged along the call chain. Treat it as different from both access tokens and authentication credentials.
