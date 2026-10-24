@@ -46,7 +46,7 @@ Authentication and authorization answer different questions.
 | Main inputs | Credentials (password, passkey, certificate, signature) | Subject, resource, action, context, policy |
 | When it fails | It lets an impostor in | It allows an action without permission, or blocks a legitimate one |
 
-The result of authentication forms just one input to authorization. Authorization adds three more pieces to the verified subject. These are the resource (which data), the action (read, write, approve), and the context (time, origin, tenant, risk).
+The result of authentication forms just one input to authorization. Authorization adds three more pieces to the verified subject and checks them against policy. These are the resource (which data), the action (read, write, approve), and the context (time, origin, tenant, risk).
 
 ## Successful authentication does not imply authorization
 
@@ -145,7 +145,7 @@ flowchart TB
         AUTHN -- "authentication result" --> DEL
         ID -- "subject and attributes" --> POL
         GOV -- "permission assignments" --> POL
-        POL -. "approval request" .-> GOV
+        POL -. "approval request (when needed)" .-> GOV
     end
 
     APP["Business domains (apps and APIs)"]
@@ -282,11 +282,11 @@ For example, a proposal to "build an authorization platform with OAuth" means so
 
 - Authentication answers "who are you?" Authorization answers "may this subject perform this action on this resource in this context?" Successful authentication does not imply authorization
 - The "authorization" in OAuth centers on issuing tokens for delegated access. Per-resource access decisions live in a different layer
-- IAM splits into five subdomains: identity, authentication, delegation, access decision, and access governance. Everyday "authorization" covers delegation, access decision, and access governance together
+- The map in this post splits IAM into five subdomains (one possible split): identity, authentication, delegation, access decision, and access governance. Everyday "authorization" covers delegation, access decision, and access governance together
 - Whether IAM counts as Core, Supporting, or Generic depends on the organization's business. For business-app organizations, it usually counts as Generic
 - Adjacent domains such as risk assessment and subscription sit outside IAM and feed it input
 - The business domain owns the business meaning of permissions. IAM owns the mechanism for deciding and enforcing
-- With AI agents, delegation chains, and treating delegation as its own subdomain matters more
+- With AI agents, delegation forms chains, so treating delegation as its own subdomain matters more. Still, authorization for AI agents spans access decision and access governance as well as delegation
 
 # Related Posts
 
