@@ -344,7 +344,7 @@ Also avoid leaking policy internals through admin-facing reasons. Keep user-faci
 
 # PDP Metadata: What Lives Where
 
-The spec recommends that a PDP publish its configuration as metadata at `/.well-known/authzen-configuration`. A multi-tenant PDP can append the tenant to the path, as in `https://pdp.example.com/.well-known/authzen-configuration/tenant1`.
+The spec recommends that a PDP publish its configuration as metadata at `/.well-known/authzen-configuration`. If the PDP identifier has a path, this string goes between the host and the path. For example, a multi-tenant PDP can publish its metadata at `https://pdp.example.com/.well-known/authzen-configuration/tenant1`.
 
 ```json
 {
@@ -426,7 +426,7 @@ AuthZEN pays off by hiding engine differences from the PEP. The concepts of comm
 | Action | Any structure in `input` | `action` (entity) | `relation` |
 | Resource | Any structure in `input` | `resource` (entity) | `object` |
 | Context | Any structure in `input` | `context` | `context` (for conditional relationships) |
-| Listing questions | Needs workarounds such as partial evaluation | Not part of the core decision API | ListObjects, ListUsers |
+| Listing questions | Needs workarounds such as partial evaluation | Not part of the core decision API (the experimental `tpe` feature adds `query_resource` and similar) | ListObjects, ListUsers |
 
 Cedar's four-part request looks almost identical to SARC. OpenFGA asks about relationships, so you need a convention that maps Action to `relation`. OPA does not fix the shape of its input, so you can write policies that take SARC directly as `input`. OPA itself has no AuthZEN endpoints, though. To feed an AuthZEN request into `input`, put a translation layer such as the authzen-proxy in OPA's contrib repository in front of OPA. Or use an OPA build that adds the AuthZEN endpoints. The OPA ecosystem page lists OPA-AuthZEN, a third-party build of this kind. For OPA basics, see [What is Open Policy Agent (OPA)?](/posts/open-policy-agent/), and for its use in microservices, see [Implementation of Access Control System for Microservices Using OPA](/posts/microservices-access-control-opa/).
 
@@ -447,7 +447,7 @@ In short, AuthZEN lets you switch PDPs without rewriting PEPs, but not without r
 
 ## Interoperability Track Record
 
-The AuthZEN Working Group has run seven interoperability events since June 2024 (according to authzen-interop.net).
+The AuthZEN Working Group ran seven interoperability events, from Identiverse 2024 in May 2024 to the Gartner IAM Summit in December 2025 (according to authzen-interop.net and an OpenID Foundation announcement).
 
 | Scenario | Event | Draft | Endpoints |
 | --- | --- | --- | --- |
@@ -529,6 +529,7 @@ Finally, here are my own tips for bringing AuthZEN into a design.
 - [AuthZEN Working Group – Specifications](https://openid.net/wg/authzen/specifications/)
 - [Conformance Testing for OpenID AuthZEN Authorization API 1.0](https://openid.net/certification/authzen_testing/)
 - [OpenID AuthZEN Interop](https://authzen-interop.net/)
+- [AuthZEN Work Group Announces Authorization Interop Results (OpenID Foundation, 2024-05-29)](https://openid.net/authorization-interop-results/)
 - [openid/authzen (GitHub)](https://github.com/openid/authzen)
 - [open-policy-agent/contrib authzen-proxy (GitHub)](https://github.com/open-policy-agent/contrib/tree/main/authzen/authzen-proxy)
 - [OPA-AuthZEN (OPA Ecosystem)](https://www.openpolicyagent.org/ecosystem/entry/opa-authzen)

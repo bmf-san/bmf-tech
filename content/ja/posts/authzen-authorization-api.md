@@ -344,7 +344,7 @@ Decisionの本体は`true`か`false`だけである。それ以外の情報は�
 
 # PDPメタデータ: どこに何があるか
 
-PDPは、自分の設定をメタデータとして公開することが推奨される（RECOMMENDED）。場所は`/.well-known/authzen-configuration`である。複数のテナントを持つPDPなら、`https://pdp.example.com/.well-known/authzen-configuration/tenant1`のように、パスの後ろにテナントを足せる。
+PDPは、自分の設定をメタデータとして公開することが推奨される（RECOMMENDED）。場所は`/.well-known/authzen-configuration`である。PDPの識別子にパスがあれば、ホストとパスの間にこの文字列を挟む。たとえば複数のテナントを持つPDPなら、`https://pdp.example.com/.well-known/authzen-configuration/tenant1`のようになる。
 
 ```json
 {
@@ -426,7 +426,7 @@ AuthZENの効き目は、PEPの側から見たエンジンの違いを吸収す�
 | Action | `input`の任意の構造 | `action`（エンティティ） | `relation` |
 | Resource | `input`の任意の構造 | `resource`（エンティティ） | `object` |
 | Context | `input`の任意の構造 | `context` | `context`（条件付きの関係で使う） |
-| 一覧の問い | 部分評価などで工夫する | 中核の判定APIにはない | ListObjects、ListUsers |
+| 一覧の問い | 部分評価などで工夫する | 中核の判定APIにはない（実験的な`tpe`機能に`query_resource`などがある） | ListObjects、ListUsers |
 
 Cedarの4つ組はSARCとほぼ同じ形をしている。OpenFGAは関係を問うので、Actionを`relation`に写す取り決めが要る。OPAは入力の形を決めていないので、SARCをそのまま`input`として受けるポリシーを書けばよい。ただし、OPA本体はAuthZENのエンドポイントを持たない。AuthZENの要求を`input`に渡すには、OPAのcontribにあるauthzen-proxyのような変換層を前に置く。または、AuthZENのエンドポイントを足したOPAのビルドを使う。OPAのエコシステムのページには、第三者によるOPA-AuthZENが載っている。OPAの基本は[Open Policy Agent (OPA)とは](/ja/posts/open-policy-agent/)で、マイクロサービスでの使い方は[OPAを使用したマイクロサービスのアクセス制御システムの実装](/ja/posts/microservices-access-control-opa/)で扱った。
 
@@ -447,7 +447,7 @@ AuthZENで替えやすくなるのは、PEPのコードと通信の形である�
 
 ## 相互運用の実績
 
-AuthZENワーキンググループは、2024年6月から7回の相互運用イベントを開いてきた（authzen-interop.netによる）。
+AuthZENワーキンググループは、7回の相互運用イベントを開いた。2024年5月のIdentiverse 2024から2025年12月のGartner IAM Summitまでである（authzen-interop.netとOpenID Foundationの発表による）。
 
 | 場面 | イベント | 版 | 対象 |
 | --- | --- | --- | --- |
@@ -529,6 +529,7 @@ OpenID Foundationは2026年6月の発表で、認可システムはこれまで�
 - [AuthZEN Working Group – Specifications](https://openid.net/wg/authzen/specifications/)
 - [Conformance Testing for OpenID AuthZEN Authorization API 1.0](https://openid.net/certification/authzen_testing/)
 - [OpenID AuthZEN Interop](https://authzen-interop.net/)
+- [AuthZEN Work Group Announces Authorization Interop Results（OpenID Foundation, 2024-05-29）](https://openid.net/authorization-interop-results/)
 - [openid/authzen（GitHub）](https://github.com/openid/authzen)
 - [open-policy-agent/contrib authzen-proxy（GitHub）](https://github.com/open-policy-agent/contrib/tree/main/authzen/authzen-proxy)
 - [OPA-AuthZEN（OPA Ecosystem）](https://www.openpolicyagent.org/ecosystem/entry/opa-authzen)
