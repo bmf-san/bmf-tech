@@ -152,9 +152,9 @@ The AuthZEN API defines the shape of the question but not **how** to build it fr
 - Mapping values are literals or expressions, and the default expression language is CEL (Common Expression Language).
 - If the mapping fails, the PDP denies, or the PDP is unreachable, the operation does not proceed (fail-closed).
 
-## COAZ-MCP: authorizing every MCP message
+## COAZ-MCP: an authorization question for each MCP method
 
-COAZ-MCP is the binding that applies COAZ to MCP. It defines a default mapping for each MCP method. For example, the default for `tools/call` stops at "may this caller call this tool" and does not look at which customer it reads.
+COAZ-MCP is the binding that applies COAZ to MCP. It defines a default mapping for each MCP method. A few messages, such as notifications (`notifications/*`), pass through without a PDP call. For example, the default for `tools/call` stops at "may this caller call this tool" and does not look at which customer it reads.
 
 A tool that needs argument-level decisions overrides the default by declaring `x-authzen-mapping` in its `inputSchema`.
 
@@ -271,6 +271,8 @@ draft-oauth-ai-agents-on-behalf-of-user (OBO) extends the Authorization Code gra
 - The token request adds `actor_token` (authentication of the agent itself), and the authorization server checks that it matches the agent the user consented to.
 - The resulting JWT access token records the agent in an `act` claim (RFC 8693).
 
+Here are the main claims from the draft's example (`iss`, `aud`, `exp`, and others omitted).
+
 ```json
 {
   "sub": "user-456",
@@ -322,14 +324,15 @@ In short, A2A defines how agents connect, and leaves it to OAuth mechanisms such
 
 AP2 (Agent Payments Protocol) makes payments by agents verifiable against what the user approved. The latest version is v0.2.0 (April 2026), which changed the structure substantially from v0.1.
 
-AP2 states its premise plainly: **preventing prompt injection attacks is infeasible**, so it treats every LLM and agent as a potential attacker. It relies only on the user's signature on a Trusted Surface (the screen where the user consents) and on verification by deterministic code.
+AP2 states its premise plainly: **preventing prompt injection attacks is infeasible**, so it treats every LLM and agent as a potential attacker. It bases trust on signatures made after the user consents on a Trusted Surface (the screen where the user consents) and on verification by deterministic code.
 
-- On the Trusted Surface, the user signs what to buy (Checkout Mandate) and the payment (Payment Mandate). Mandates take the form of SD-JWT credentials.
+- On the Trusted Surface, the user approves what to buy (Checkout Mandate) and the payment (Payment Mandate). Mandates take the form of SD-JWT credentials.
+- The user signs with their own credential, or an Agent Provider on the verifier's trust list signs instead.
 - When the agent acts without the user present, the user first hands over an open mandate that carries constraints (merchants, amount range, budget, and so on) and the agent's public key (`cnf`). The agent then creates a closed mandate bound to a specific transaction with its own key.
 - The merchant, the credential provider, and the payment processor each verify the constraints independently. They treat unknown constraints as failures.
 - Verifiers return signed receipts that serve as evidence in disputes.
 
-In OAuth, an authorization server issues tokens. In AP2, the agent carries evidence signed by the user and shows each verifier only the parts it needs. The AP2 documentation itself notes that the model could apply more generally than payments in the future.
+In OAuth, an authorization server issues tokens. In AP2, the agent carries signed evidence of the user's approval and shows each verifier only the parts it needs. The AP2 documentation itself notes that the model could apply more generally than payments in the future.
 
 # Answers to "not enough permission mid-execution"
 
