@@ -120,7 +120,7 @@ As a rule, the callee makes the decision. When the decision gets too fine-graine
 
 In real deployments, a workload often authenticates to a sidecar or gateway over mTLS and to the destination workload with an application-layer WIT. arch-08 calls this layered authentication and sets these rules.
 
-- The destination MUST NOT assume that the transport-layer identity an intermediary authenticated equals the application-layer caller, unless the deployment states the relationship explicitly.
+- The destination MUST NOT assume that the transport-layer identity an intermediary authenticated equals the application-layer caller, unless protocol or deployment policy establishes that relationship explicitly.
 - When identities from both layers are available and relevant, audit records SHOULD include both.
 
 The security considerations also state that a valid credential does not give a workload access to every resource in the trust domain. The common service mesh setup "allow if mTLS succeeds" contradicts this principle. State allowed identifiers explicitly, and treat authorization as a separate decision.
@@ -431,7 +431,7 @@ Key points follow.
 
 The design caveat: mapping SPIFFE IDs to `client_id` values is itself an authorization decision. Which workload may act as which OAuth client sets the upper bound on the scopes that client gets. Anyone who can create SPIRE registration entries can, in effect, create OAuth clients. Govern who can create registration entries as strictly as you govern client registration at the authorization server.
 
-In my view, a practical default is `spiffe_x509` with proof of possession on paths that connect to the AS directly over TLS, and a short-lived `spiffe_jwt` on paths where something terminates TLS. `spiffe_wit` depends on drafts that still change, so I consider it too early to make it the production default.
+In my view, a practical default is `spiffe_x509` with proof of possession on paths that connect to the AS directly over TLS, and a short-lived `spiffe_jwt` on paths where something terminates TLS. A `spiffe_jwt` is a bearer token, so this assumes you trust the intermediary that terminates TLS. `spiffe_wit` depends on drafts that still change, so I consider it too early to make it the production default.
 
 # How the Pieces Fit Together
 
@@ -483,8 +483,8 @@ Binding has limits, though. It stops an intermediary from swapping or stripping 
 - **Choose the authentication method mainly by asking "do intermediaries terminate TLS?" and "do you send an OAuth token in the same request?"** For east-west HTTP traffic, I consider a safe default to be mTLS, plus an end-to-end HTTP signature on paths where an intermediary terminates TLS.
 - **Do not reuse external access tokens inside.** Exchange them for Txn-Tokens at the gateway and narrow the scope to the transaction's purpose.
 - **Give credentials a distinct audience per use, keep them short-lived, and in production avoid environment variables when another delivery pattern exists.**
-- **Replace `client_secret` with SPIFFE client authentication,** then manage the SPIFFE ID to `client_id` mapping as an authorization decision.
-- **Revoke through policy, not credential revocation.** You cannot revoke a JWT credential such as a WIT on demand in most deployments, so pair short-lived credentials with PDP policies that take effect at once.
+- **If you already run SPIFFE and your AS supports it, replace `client_secret` with SPIFFE client authentication,** then manage the SPIFFE ID to `client_id` mapping as an authorization decision.
+- **For immediate revocation, do not rely on credential revocation alone; enforce it through policy as well.** You cannot revoke a JWT credential such as a WIT on demand in most deployments, so pair short-lived credentials with PDP policies that take effect at once. Invalidating credentials when an instance stops (a MUST in the practices draft) remains a separate task.
 
 # Status of the Specifications (October 2026)
 
@@ -511,7 +511,7 @@ Within WIMSE, the practices guide sits closest to an RFC, with HTTP signatures n
 - WIMSE expresses workload identity through three elements: trust domain, workload identifier, and credentials (WIT/WIC). A SPIFFE ID is a conforming example, and WIMSE does not replace SPIFFE.
 - WIMSE offers three authentication methods: mTLS, HTTP Message Signatures, and WPT. Choose mainly based on whether TLS terminates midway and whether you send an OAuth token in the same request.
 - Deliver credentials based on attestation, as short-lived credentials with a distinct audience per use. In production, avoid environment variables when another delivery pattern exists.
-- Transaction Tokens exchange an external access token (or, for internally initiated transactions, something like a self-signed JWT) for an internal token bound to one transaction and pass it unchanged along the call chain. Treat it as different from both access tokens and authentication credentials.
+- Transaction Tokens exchange an external access token (or, when no inbound token exists, something like a self-signed JWT) for an internal token bound to one transaction and pass it unchanged along the call chain. Treat it as different from both access tokens and authentication credentials.
 - SPIFFE client authentication removes `client_secret`, but you must manage the SPIFFE ID to `client_id` mapping as an authorization decision.
 - Combined, with HTTP signatures or WPT, the PEP receives "subject = WIT `sub`" and "context = Txn-Token" bound by proof of possession, and can pass both to the PDP.
 
