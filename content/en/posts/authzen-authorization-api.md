@@ -410,7 +410,7 @@ AuthZEN did not invent new concepts. The spec opens by noting that XACML and NIS
 | Obligations and advice | Defined in the policy language | Carried in `context` (format outside the core spec; the Obligations Profile is still a draft) |
 | Listing questions | Not in the core | Search APIs |
 
-XACML returns four decision values and defines everything down to the policy language and processing model. In my view, this is why PDPs that accept XACML requests were almost always XACML engines. AuthZEN stays out of policy languages and defines only the shape of the line. Inside, the PDP can use Rego, Cedar, or relationship tuples. I read the choice to reduce the decision to a boolean and move everything else into `context` as a way to let different engines expose the same interface.
+XACML returns four decision values and defines everything down to the policy language and processing model. AuthZEN stays out of policy languages and defines only the shape of the line. Inside, the PDP can use Rego, Cedar, or relationship tuples. The next two points are my own reading. PDPs that accept XACML requests were almost always XACML engines, probably because XACML defines the policy language and processing model too. In the same way, AuthZEN reduces the decision to a boolean and moves everything else into `context`, probably so that different engines can expose the same interface.
 
 NIST SP 800-162 describes ABAC through subject attributes, object attributes, operations, and environment conditions. SARC maps closely to that vocabulary. For the original sources behind the models, see [Authorization architecture: models and engines](/posts/authorization-architecture-models-engines/).
 
@@ -461,7 +461,7 @@ The AuthZEN Working Group ran seven interoperability events, from Identiverse 20
 
 Many PDPs posted results for the scenario that uses a todo app as the PEP, including Aserto, Axiomatics, Cerbos, Open Policy Agent, OpenFGA, Amazon Verified Permissions, PlainID, SGNL, and Topaz. Participation does not mean the product speaks AuthZEN out of the box, though. For example, the OPA results come from a proxy that runs on the interop site. Before adopting a product, check its documentation for which draft and which APIs it supports.
 
-The interop site also shows a layered setup: coarse-grained decisions at the IdP, medium-grained ones at the API gateway, and fine-grained ones in the application. In my view, connecting PEPs at all three layers through one API shows well why a standard API matters.
+The interop site states that AuthZEN takes a defense-in-depth approach to IAM, and shows a layered setup: coarse-grained decisions at the IdP, medium-grained ones at the API gateway, and fine-grained ones in the application. In my view, connecting PEPs at all three layers through one API shows well why a standard API matters.
 
 # Profiles at a Glance
 
