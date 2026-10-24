@@ -23,7 +23,7 @@ MCP has an authorization specification built on OAuth 2.1, which is still an IET
 
 This post targets teams that add authorization to MCP servers or MCP clients. It covers the following:
 
-- Incidents that a "it just works" implementation causes, and their typical causes
+- Incidents that an "it just works" implementation causes, and their typical causes
 - What the MCP authorization specification decides, and what you must design yourself
 - Who holds whose authority at each hop
 - Decisions that cost a lot to change later
@@ -161,7 +161,7 @@ If you externalize decisions, AuthZEN's [Authorization API](/posts/authzen-autho
 
 The 2026-07-28 revision removed protocol-level sessions. A server that needs state across calls mints a handle and receives it back as an ordinary tool argument. The specification says that, for authenticated servers, a handle is a name, not a capability. The Best Practices say servers MUST NOT treat possession of a state handle as authentication. They also recommend binding each handle to the verified user in the server-side store. For example, key the stored state as `<user_id>:<handle>` and take the user ID from the verified token.
 
-The same idea applies to other values. `clientInfo` is self-reported, and implementations should not rely on it for security decisions. Clients MUST treat tool annotations as untrusted unless they come from trusted servers. Take the subject information for access decisions only from verified tokens.
+The same idea applies to other values. `clientInfo` (in 2026-07-28, the `io.modelcontextprotocol/clientInfo` field in the request `_meta`) is self-reported, and the specification says implementations SHOULD NOT rely on it for security decisions. Clients MUST treat tool annotations as untrusted unless they come from trusted servers. Take the subject information for access decisions only from verified tokens.
 
 # Who holds whose authority at each hop
 
