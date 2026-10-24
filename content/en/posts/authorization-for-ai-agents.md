@@ -130,7 +130,7 @@ MCP (Model Context Protocol) connects AI applications to tools and data. In the 
 The key points:
 
 - The MCP server publishes Protected Resource Metadata (RFC 9728), and the client discovers the authorization server from it.
-- The client binds the token to a specific MCP server with `resource` (RFC 8707). The server accepts only tokens issued for itself and **must not relay a received token to upstream APIs**.
+- The client binds the token to a specific MCP server with `resource` (RFC 8707). The server accepts only tokens issued for itself and **MUST NOT pass a received token through to upstream APIs**.
 - A client that supports every registration option SHOULD prefer pre-registration, then a Client ID Metadata Document (CIMD), then Dynamic Client Registration, and prompt the user for client information only when none of these is available. DCR now remains only for backward compatibility and the spec deprecates it.
 - When permissions fall short, the server indicates the required scopes with `insufficient_scope`, and the client requests them incrementally (step-up).
 - The official authorization extensions (ext-auth) cover machine-to-machine use without a user and central management by an enterprise IdP. The first is Client Credentials; the second is Enterprise-Managed Authorization, which uses ID-JAG (covered later).
@@ -180,7 +180,7 @@ This design matters for agent authorization in three ways.
 
 1. **It separates the user from the agent.** The subject comes from the token's `sub` (the user), and the agent goes into `context.agent`. Policies can judge each one on its own.
 2. **A gateway can act as the PEP.** Mappings travel in the `tools/list` response, so a gateway that knows nothing about the business can still enforce the decisions that the tool's owning team defined.
-3. **It does not trust values the server wrote.** When a declared `subject.id` points to the token's `sub`, the PEP checks it against the validated token, and policies must not use other declared attributes as grounds for identity or permission. The PEP denies unknown methods.
+3. **It does not trust values the server wrote.** When a declared `subject.id` points to the token's `sub`, the PEP checks it against the validated token, and policies MUST NOT treat other declared attributes as authoritative for identity or privilege. The PEP denies unknown methods.
 
 Some caveats apply. The PDP never sees arguments that the mapping leaves out. If a payment tool's mapping omits the amount, no amount limit applies. Also, Draft 1 predates MCP 2026-07-28 and lags behind it; for example, it has no default mapping for methods that the newer version added.
 
