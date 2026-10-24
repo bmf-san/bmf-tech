@@ -52,7 +52,7 @@ The result of authentication forms just one input to authorization. Authorizatio
 
 The first principle to keep in mind: successful authentication does not mean the subject may access a resource. Holding a valid credential and having permission to access a resource are two separate facts.
 
-The WIMSE architecture document (draft-ietf-wimse-arch-08), an IETF draft that the WIMSE working group is still developing and not yet an RFC, states this in §4.5. Holding a valid credential does not mean a workload may access every resource in the trust domain. The draft asks issuers, relying parties, gateways, and workloads to avoid treating successful authentication as implicit authorization.
+The IETF WIMSE working group is still developing its architecture document (draft-ietf-wimse-arch-08), an IETF draft that has not yet become an RFC. Section 4.5 of that draft states this point. Holding a valid credential does not mean a workload may access every resource in the trust domain. The draft asks issuers, relying parties, gateways, and workloads to avoid treating successful authentication as implicit authorization.
 
 The same principle applies to people. Suppose a logged-in user can read someone else's invoice by editing the ID in the URL. Authentication works fine there, but authorization has a gap. Broken Access Control (A01) holds the top spot in the OWASP Top 10:2025. The OWASP page states that every tested application had some form of broken access control. That explains why you should design authentication and authorization separately.
 
