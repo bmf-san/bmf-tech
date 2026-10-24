@@ -294,7 +294,7 @@ Cerbosは、YAMLでポリシーを書くステートレスなPDPである。サ�
 
 ## 関係ベースのエンジン（Zanzibar系）
 
-Zanzibarは、Googleの多くの製品が共有する認可システムである。権限を「オブジェクトのある関係に、あるユーザー（またはユーザーの集合）がいる」というタプルで表し、「editorはすべてviewerでもある」のような書き換え規則で関係を継承する。ACLの更新の順序を無視したり、古いACLを新しい内容に当てはめたりすると、外したはずの利用者に新しい内容が見えてしまう。論文はこれを「new enemy problem」と呼ぶ。更新の因果順を保つタイムスタンプ（外部一貫性）と、zookieという一貫性のトークンで鮮度の下限を決めた読み取りで防ぐ。深いグループの入れ子はLeopardという索引で高速化する。
+Zanzibarは、Googleの多くの製品が共有する認可システムである。権限を「オブジェクトのある関係に、あるユーザー（またはユーザーの集合）がいる」というタプルで表し、「editorはすべてviewerでもある」のような書き換え規則で関係を継承する。ACLの更新の順序を無視したり、古いACLを新しい内容に当てはめたりすると、外したはずの利用者に新しい内容が見えてしまう。論文はこれを「new enemy」問題と呼ぶ。更新の因果順を保つタイムスタンプ（外部一貫性）と、zookieという一貫性のトークンで鮮度の下限を決めた読み取りで防ぐ。深いグループの入れ子はLeopardという索引で高速化する。
 
 OpenFGAは、Okta（Auth0）の開発者が始めたZanzibar系のOSSで、2022年にCNCFのSandboxに入り、2025年にIncubatingへ移った。DSLで認可モデルを定義し、関係タプルを書き込み、Check、ListObjects、ListUsersで問い合わせる。条件付きの関係タプルで、属性の条件も一部扱える。
 
@@ -353,17 +353,20 @@ ReBACのエンジンを入れると、関係データを業務DBとエンジン�
 
 # 参考リンク
 
-- [NIST: Role Based Access Control（プロジェクトページ）](https://csrc.nist.gov/projects/role-based-access-control)
+- [NIST: Role Based Access Control（プロジェクトページ）](https://csrc.nist.gov/projects/role-based-access-control) / [RBAC FAQ](https://csrc.nist.gov/projects/role-based-access-control/faqs)
 - [NIST CSRC Glossary: policy-based access control](https://csrc.nist.gov/glossary/term/policy_based_access_control)
 - [D. Ferraiolo, R. Kuhn: Role-Based Access Controls (1992)](https://csrc.nist.gov/pubs/conference/1992/10/13/rolebased-access-controls/final)
 - [R. Kuhn, E. Coyne, T. Weil: Adding Attributes to Role-Based Access Control (2010)](https://csrc.nist.gov/pubs/journal/2010/06/adding-attributes-to-rolebased-access-control/final)
 - [INCITS 359-2012 (R2022)](https://webstore.ansi.org/standards/incits/incits3592012r2022) / [BSR INCITS 359 ドラフト（2003-04-04、NIST）](https://csrc.nist.gov/CSRC/media/Projects/Role-Based-Access-Control/documents/rbac-std-ncits.pdf)
 - [RFC 2753: A Framework for Policy-based Admission Control](https://www.rfc-editor.org/rfc/rfc2753) / [RFC 3198: Terminology for Policy-Based Management](https://www.rfc-editor.org/rfc/rfc3198)
 - [NIST SP 800-162: Guide to Attribute Based Access Control (ABAC) Definition and Considerations](https://csrc.nist.gov/pubs/sp/800/162/upd2/final)
-- [NIST SP 800-178: A Comparison of ABAC Standards for Data Service Applications: XACML and NGAC](https://csrc.nist.gov/pubs/sp/800/178/final)
+- [NIST SP 800-178: A Comparison of Attribute Based Access Control (ABAC) Standards for Data Service Applications](https://csrc.nist.gov/pubs/sp/800/178/final)
+- [INCITS 499-2018: Next Generation Access Control - Functional Architecture (NGAC-FA)](https://webstore.ansi.org/standards/incits/incits4992018)
+- [INCITS 526-2016: Next Generation Access Control - Generic Operations and Data Structures (NGAC-GOADS)](https://webstore.ansi.org/standards/incits/incits5262016)
 - [NIST SP 800-207: Zero Trust Architecture](https://csrc.nist.gov/pubs/sp/800/207/final)
 - [OASIS: XACML Version 3.0 Plus Errata 01](https://docs.oasis-open.org/xacml/3.0/errata01/os/xacml-3.0-core-spec-errata01-os-complete.html) / [JSON Profile of XACML 3.0 Version 1.1](https://docs.oasis-open.org/xacml/xacml-json-http/v1.1/os/xacml-json-http-v1.1-os.html)
 - [OASIS: ACALの成果物](https://docs.oasis-open.org/xacml/acal/)
+- [OASIS XACML TC: alfa-for-xacml-v1.0-wd01.doc uploaded（2015-03-10）](https://groups.oasis-open.org/communities/community-home/digestviewer/viewthread?GroupId=19&MessageKey=4d628175-5a72-4e71-9f75-1bd70a4309d1&CommunityKey=67afe552-0921-49b7-9a85-018dc7d3ef1d)
 - [B. Lampson: Protection (1971)](https://bwlampson.site/08-Protection/WebPage.html)
 - [S. Osborn, R. Sandhu, Q. Munawer: Configuring role-based access control to enforce mandatory and discretionary access control policies (2000)](https://doi.org/10.1145/354876.354878)
 - [Zanzibar: Google's Consistent, Global Authorization System (USENIX ATC 2019)](https://research.google/pubs/pub48190/)

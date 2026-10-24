@@ -294,7 +294,7 @@ Cerbos is a stateless PDP with policies in YAML. It runs as a service or sidecar
 
 ## Relationship-Based Engines (Zanzibar-Style)
 
-Zanzibar is the authorization system that many Google products share. It stores permissions as tuples of the form "this user (or set of users) holds this relation on this object", and rewrite rules such as "every editor is also a viewer" let relations inherit from each other. The paper names the "new enemy problem": if a check ignores the order of ACL updates, or applies an old ACL to new content, a user you removed can still see the new content. Zanzibar prevents it with timestamps that respect the causal order of updates (external consistency) and with snapshot reads whose freshness a consistency token called a zookie bounds. An index called Leopard speeds up deeply nested groups.
+Zanzibar is the authorization system that many Google products share. It stores permissions as tuples of the form "this user (or set of users) holds this relation on this object", and rewrite rules such as "every editor is also a viewer" let relations inherit from each other. The paper describes the "new enemy" problem: if a check ignores the order of ACL updates, or applies an old ACL to new content, a user you removed can still see the new content. Zanzibar prevents it with timestamps that respect the causal order of updates (external consistency) and with snapshot reads whose freshness a consistency token called a zookie bounds. An index called Leopard speeds up deeply nested groups.
 
 OpenFGA is a Zanzibar-style open source project that Okta (Auth0) engineers started. It joined the CNCF Sandbox in 2022 and moved to Incubating in 2025. You define an authorization model in a DSL, write relationship tuples, and query with Check, ListObjects, and ListUsers. Conditional relationship tuples let it cover some attribute conditions too.
 
@@ -353,17 +353,20 @@ You do not need to put everything on one engine. One example setup keeps a ReBAC
 
 # References
 
-- [NIST: Role Based Access Control (project page)](https://csrc.nist.gov/projects/role-based-access-control)
+- [NIST: Role Based Access Control (project page)](https://csrc.nist.gov/projects/role-based-access-control) / [RBAC FAQ](https://csrc.nist.gov/projects/role-based-access-control/faqs)
 - [NIST CSRC Glossary: policy-based access control](https://csrc.nist.gov/glossary/term/policy_based_access_control)
 - [D. Ferraiolo, R. Kuhn: Role-Based Access Controls (1992)](https://csrc.nist.gov/pubs/conference/1992/10/13/rolebased-access-controls/final)
 - [R. Kuhn, E. Coyne, T. Weil: Adding Attributes to Role-Based Access Control (2010)](https://csrc.nist.gov/pubs/journal/2010/06/adding-attributes-to-rolebased-access-control/final)
 - [INCITS 359-2012 (R2022)](https://webstore.ansi.org/standards/incits/incits3592012r2022) / [BSR INCITS 359 draft (2003-04-04, NIST)](https://csrc.nist.gov/CSRC/media/Projects/Role-Based-Access-Control/documents/rbac-std-ncits.pdf)
 - [RFC 2753: A Framework for Policy-based Admission Control](https://www.rfc-editor.org/rfc/rfc2753) / [RFC 3198: Terminology for Policy-Based Management](https://www.rfc-editor.org/rfc/rfc3198)
 - [NIST SP 800-162: Guide to Attribute Based Access Control (ABAC) Definition and Considerations](https://csrc.nist.gov/pubs/sp/800/162/upd2/final)
-- [NIST SP 800-178: A Comparison of ABAC Standards for Data Service Applications: XACML and NGAC](https://csrc.nist.gov/pubs/sp/800/178/final)
+- [NIST SP 800-178: A Comparison of Attribute Based Access Control (ABAC) Standards for Data Service Applications](https://csrc.nist.gov/pubs/sp/800/178/final)
+- [INCITS 499-2018: Next Generation Access Control - Functional Architecture (NGAC-FA)](https://webstore.ansi.org/standards/incits/incits4992018)
+- [INCITS 526-2016: Next Generation Access Control - Generic Operations and Data Structures (NGAC-GOADS)](https://webstore.ansi.org/standards/incits/incits5262016)
 - [NIST SP 800-207: Zero Trust Architecture](https://csrc.nist.gov/pubs/sp/800/207/final)
 - [OASIS: XACML Version 3.0 Plus Errata 01](https://docs.oasis-open.org/xacml/3.0/errata01/os/xacml-3.0-core-spec-errata01-os-complete.html) / [JSON Profile of XACML 3.0 Version 1.1](https://docs.oasis-open.org/xacml/xacml-json-http/v1.1/os/xacml-json-http-v1.1-os.html)
 - [OASIS: ACAL work products](https://docs.oasis-open.org/xacml/acal/)
+- [OASIS XACML TC: alfa-for-xacml-v1.0-wd01.doc uploaded (2015-03-10)](https://groups.oasis-open.org/communities/community-home/digestviewer/viewthread?GroupId=19&MessageKey=4d628175-5a72-4e71-9f75-1bd70a4309d1&CommunityKey=67afe552-0921-49b7-9a85-018dc7d3ef1d)
 - [B. Lampson: Protection (1971)](https://bwlampson.site/08-Protection/WebPage.html)
 - [S. Osborn, R. Sandhu, Q. Munawer: Configuring role-based access control to enforce mandatory and discretionary access control policies (2000)](https://doi.org/10.1145/354876.354878)
 - [Zanzibar: Google's Consistent, Global Authorization System (USENIX ATC 2019)](https://research.google/pubs/pub48190/)
