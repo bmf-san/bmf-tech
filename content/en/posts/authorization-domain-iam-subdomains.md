@@ -31,7 +31,7 @@ This post draws a map that lets you treat authorization as a design subject. You
 
 This post opens a series on authorization. Each specification and architecture that later posts cover maps to some place on this map.
 
-First, how this post relates to existing ones. [Basics of Authentication and Authorization](/posts/authentication-authorization-basics/) covers the basic terms: identification, authentication, and authorization. [Permission Management Design](/posts/permission-management-design/) covers ACL, RBAC, ABAC, and feature scope versus data scope. [What is OAuth 2.0?](/posts/oauth-2-0/) covers the OAuth 2.0 specification. This post does not repeat them. It shows where each of them sits on the IAM map.
+First, how this post relates to existing ones. [Basics of Authentication and Authorization](/posts/authentication-authorization-basics/) covers the basic terms: identification, authentication, and authorization. [Permission Management Design](/posts/permission-management-design/) covers ACL, RBAC, ABAC, and feature scope versus data scope. [OAuth 2.0 Explained](/posts/oauth-2-0/) covers the OAuth 2.0 specification. This post does not repeat them. It shows where each of them sits on the IAM map.
 
 # Authentication and Authorization Answer Different Questions
 
@@ -52,7 +52,7 @@ The result of authentication forms just one input to authorization. Authorizatio
 
 The first principle to keep in mind: successful authentication does not mean the subject may access a resource. Holding a valid credential and having permission to access a resource are two separate facts.
 
-The WIMSE architecture document (draft-ietf-wimse-arch-08), an IETF draft that the WIMSE working group is still developing and not yet an RFC, states this in §4.5. A workload with a valid credential does not gain access to every resource in the trust domain. The draft asks issuers, relying parties, gateways, and workloads to avoid treating successful authentication as implicit authorization.
+The WIMSE architecture document (draft-ietf-wimse-arch-08), an IETF draft that the WIMSE working group is still developing and not yet an RFC, states this in §4.5. Holding a valid credential does not mean a workload may access every resource in the trust domain. The draft asks issuers, relying parties, gateways, and workloads to avoid treating successful authentication as implicit authorization.
 
 The same principle applies to people. Suppose a logged-in user can read someone else's invoice by editing the ID in the URL. Authentication works fine there, but authorization has a gap. Broken Access Control (A01) holds the top spot in the OWASP Top 10:2025. The OWASP page states that every tested application had some form of broken access control. That explains why you should design authentication and authorization separately.
 
@@ -82,7 +82,7 @@ Apart from the case where a client obtains access on its own behalf (Client Cred
 
 Even with an `invoices:read` scope, the resource server still has to decide which invoices the caller may read. If you try to decide per-resource access from the token contents alone, the token grows too large or the decision becomes too coarse. These two layers are easy to confuse, which makes them a major trap when people bring OAuth into a discussion about an authorization platform.
 
-[What is OAuth 2.0?](/posts/oauth-2-0/) summarizes the OAuth 2.0 specification, and [What is OAuth 2.1?](/posts/oauth-2-1-security-bcp/) covers OAuth 2.1 and the Security BCP. [A map of OAuth and related standards](/posts/oauth-standards-map-authorization-platform/) looks at OAuth from the viewpoint of an authorization platform.
+[OAuth 2.0 Explained](/posts/oauth-2-0/) summarizes the OAuth 2.0 specification, and the post on [OAuth 2.1 and the Security BCP](/posts/oauth-2-1-security-bcp/) covers those two. [A map of OAuth and related standards](/posts/oauth-standards-map-authorization-platform/) looks at OAuth from the viewpoint of an authorization platform.
 
 # Splitting IAM into DDD Subdomains
 
@@ -94,7 +94,7 @@ It borrows DDD (Domain-Driven Design) vocabulary for the split. The terms follow
 
 ## What IAM means
 
-The NIST glossary describes IAM as the administration of individual identities within a system, such as a company, a network, or even a country. It adds that in enterprise IT, identity management means establishing and managing the roles and access privileges of individual network users.
+The NIST glossary describes IAM, broadly, as the administration of individual identities within a system, such as a company, a network, or even a country. It adds that in enterprise IT, identity management means establishing and managing the roles and access privileges of individual network users.
 
 In this post, IAM means the area that manages the identities of subjects (people, services, AI agents), decides what each subject may access, and governs that access. Concretely, it bundles authentication, authorization (delegation, access decision, access governance), and the identity management those depend on.
 
@@ -123,7 +123,7 @@ For an organization that builds business apps, IAM usually counts as Generic. Th
 
 Still, for a SaaS product that sells rich per-tenant permission settings, access decision or access governance can move toward Supporting. For IAM vendors, the Core tends to sit in authentication and delegation for an IdP, in access decision for an authorization engine, and in access governance for IGA (Identity Governance and Administration).
 
-Deciding early which parts count as Core for your organization keeps decisions about where to invest and what to buy steady. [How far should you build an authorization platform?](/posts/authorization-platform-scope-stages/) covers how to set that scope.
+Deciding early which parts count as Core for your organization keeps decisions about where to invest and what to buy steady. [How Much Authorization Platform Do You Need?](/posts/authorization-platform-scope-stages/) covers how to set that scope.
 
 # The IAM Map
 
