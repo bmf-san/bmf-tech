@@ -285,7 +285,7 @@ sequenceDiagram
 | No passthrough | Never accept or transit tokens meant for anyone else | MCP server | MUST NOT |
 | PKCE | Support PKCE and use `S256` when technically capable. Refuse to proceed if the metadata lacks `code_challenge_methods_supported` | MCP client | MUST |
 | Mix-up defense | Include `iss` (RFC 9207) in authorization responses. If you include it, advertise it in the metadata | Authorization server | SHOULD (advertising is MUST) |
-| Mix-up defense | Record the `issuer` of the chosen authorization server and compare it with the response `iss` before using the code. Reject a response without `iss` from an authorization server that advertises `iss` support | MCP client | MUST |
+| Mix-up defense | Record the `issuer` of the chosen authorization server. If the response has `iss`, compare the two before using the code. Reject a response without `iss` from an authorization server that advertises `iss` support | MCP client | MUST |
 | Scopes | Use the `scope` in the first 401, or `scopes_supported` if absent. Signal missing scopes with 403 `insufficient_scope`; the client reauthorizes with the union | MCP server / MCP client | SHOULD |
 | Transport | Serve all authorization server endpoints over HTTPS. Redirect URIs use localhost or HTTPS, and the server checks them by exact match | Authorization server / MCP client | MUST |
 | Token theft | Issue short-lived access tokens. Rotate refresh tokens for public clients | Authorization server | SHOULD / MUST |
@@ -302,7 +302,7 @@ The core specification fits the case where a user interactively grants a client 
 - The MCP authorization specification mainly covers delegation: obtaining and validating tokens. Design access decisions for tools and data, access governance, and human approval yourself.
 - Put audience validation and the ban on passthrough in place first. For backend APIs, use a new token obtained through Token Exchange or a similar method.
 - Draw whose authority each hop uses, and record the user and the agent separately.
-- Do not treat identifiers such as handles or `clientInfo` as permissions. Take decision inputs from verified tokens.
+- Do not treat identifiers such as handles or `clientInfo` as permissions. Take the subject information for decisions from verified tokens.
 - The authorization server placement, audience, scope granularity, decision location, audit log fields, and token lifetime resist change later. Decide them first.
 - For anything you postpone, record the reason and the conditions for revisiting it in an ADR.
 
