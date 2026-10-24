@@ -182,7 +182,7 @@ This design matters for agent authorization in three ways.
 2. **A gateway can act as the PEP.** Mappings travel in the `tools/list` response, so a gateway that knows nothing about the business can still enforce the decisions that the tool's owning team defined.
 3. **It does not trust values the server wrote.** When a declared `subject.id` points to the token's `sub`, the PEP checks it against the validated token, and policies MUST NOT treat other declared attributes as authoritative for identity or privilege. The PEP denies unknown methods.
 
-Some caveats apply. The PDP never sees arguments that the mapping leaves out. If a payment tool's mapping omits the amount, no amount limit applies. Also, Draft 1 predates MCP 2026-07-28 and lags behind it; for example, it has no default mapping for methods that the newer version added.
+Some caveats apply. The PDP never sees arguments that the mapping leaves out. If a payment tool's mapping omits the amount, no amount limit applies. The MCP server writes the mappings, so when a gateway enforces them, the deployment MUST account in its threat model for how far it trusts the server as their author. Also, Draft 1 predates MCP 2026-07-28 and lags behind it; for example, it has no default mapping for methods that the newer version added.
 
 ## AARP: turning "not allowed yet" into approval and re-evaluation
 
@@ -324,7 +324,7 @@ In short, A2A defines how agents connect, and leaves it to OAuth mechanisms such
 
 AP2 (Agent Payments Protocol) makes payments by agents verifiable against what the user approved. The latest version is v0.2.0 (April 2026), which changed the structure substantially from v0.1.
 
-AP2 states its premise plainly: **preventing prompt injection attacks is infeasible**, so it treats every LLM and agent as a potential attacker. It bases trust on signatures made after the user consents on a Trusted Surface (the screen where the user consents) and on verification by deterministic code.
+AP2 states its premise plainly: **preventing prompt injection attacks is infeasible**, so it treats every LLM and agent as a potential attacker. It bases trust on signatures made through a Trusted Surface, the screen where the user consents, and on verification by deterministic code.
 
 - On the Trusted Surface, the user approves what to buy (Checkout Mandate) and the payment (Payment Mandate). Mandates take the form of SD-JWT credentials.
 - The user signs with their own credential, or an Agent Provider on the verifier's trust list signs instead.
@@ -345,7 +345,7 @@ One of the newer issues in agent authorization concerns what happens when permis
 | A2A `TASK_STATE_AUTH_REQUIRED` | Pauses the task and reports that more authorization is needed | Outside the protocol |
 | AuthZEN AARP | Submits a request, obtains approval, and has the PDP decide again | Approvers (a person or an automated governance system), and finally the PDP |
 
-Pick by the question: step-up when the token's scope falls short, CIBA when you need the user's own consent, and AARP when a manager or administrator must approve. No spec connects these yet, so for now you must decide how to combine them yourself.
+Pick by the question: step-up when the token's scope falls short, CIBA when you need the user's consent through a separate channel, and AARP when a manager or administrator must approve. No spec connects these yet, so for now you must decide how to combine them yourself.
 
 # A design map
 
@@ -373,9 +373,11 @@ You do not need everything at once. Decide first on what you cannot easily chang
 
 | When | What to do |
 |---|---|
-| Decide first | Represent users and agents with separate identifiers. Keep credentials away from the LLM. Never relay tokens. Record both the user and the agent in audit logs |
-| Add early | Narrow token audiences (RFC 8707). Keep scopes minimal and add more through step-up. Require human approval that the authorization server or PDP can verify for high-risk operations |
+| Decide first | Represent users and agents with separate identifiers. Keep credentials away from the LLM. Never relay tokens, and restrict their audience (RFC 8707). Record both the user and the agent in audit logs |
+| Add early | Keep scopes minimal and add more through step-up. Require human approval that the authorization server or PDP can verify for high-risk operations |
 | Add when needed | Argument-level decisions at a gateway (COAZ-MCP), approval and re-evaluation (AARP), central management with ID-JAG, internal propagation with Transaction Tokens |
+
+What you can defer is argument-level decisions at a gateway. Access control in the tool itself is a MUST in the MCP tools spec, so you need it from the start.
 
 You can also use the AIMS layers as a review checklist. Check the following:
 
