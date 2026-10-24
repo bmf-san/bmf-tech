@@ -147,7 +147,7 @@ The third axis goes back to the access matrix in Lampson's 1971 paper. Osborn, S
 | ABAC | Attributes of subject, resource, and environment, plus conditions | Fine-grained conditions, cross-organization decisions, unknown users | Evaluation cost, policy complexity, difficulty of reviewing "who can do what" in advance |
 | ReBAC | A graph of relations between subjects and resources | Owners, sharing, membership, folder inheritance, org hierarchy | Keeping relation data consistent and operating the store |
 
-The three do not exclude each other. SP 800-162 treats ACL and RBAC as special cases of ABAC: ACL decides on the identity attribute and RBAC on the role attribute. You can also express relations as attributes. The difference lies in what you model around, and real systems usually combine them.
+The three do not exclude each other. SP 800-162 treats ACL and RBAC as, in some ways, special cases of ABAC: ACL decides on the identity attribute and RBAC on the role attribute. You can also express relations as attributes. The difference lies in what you model around, and real systems usually combine them.
 
 ## PBAC Names a Style, Not a Model
 
@@ -194,7 +194,7 @@ For combining models, the "role-centric" approach that Kuhn of NIST and his co-a
 | Approach | How permissions follow | Assessment |
 |---|---|---|
 | Dynamic roles | Attributes determine roles; roles determine permissions | You can layer it on top of existing RBAC |
-| Attribute-centric | The role becomes one attribute among many | RBAC's ease of review fades as attributes grow |
+| Attribute-centric | The role becomes one attribute among many | RBAC's administrative simplicity fades quickly as attributes grow |
 | Role-centric | Attribute conditions constrain the permissions that roles grant | Attributes can only reduce permissions, never add; you can still compute the upper bound |
 
 In the role-centric approach, the usable permissions equal the intersection of "permissions of active roles" and "permissions the rules allow". Roles set the ceiling, which preserves least privilege and keeps review simple. The paper also suggests turning static attributes (position, skills, location) into roles and dynamic attributes (such as time) into rules. With ten attributes (four static, six dynamic), pure RBAC or pure ABAC can need up to 1,024 roles or rules. Splitting them needs at most 16 roles and 64 rules.
@@ -243,7 +243,7 @@ Decisions take four values: Permit and Deny, plus NotApplicable (no matching pol
 |---|---|
 | deny-overrides | Any Deny wins |
 | permit-overrides | Any Permit wins |
-| first-applicable | Evaluate in order and take the first definite result |
+| first-applicable | Evaluate in order and take the first result other than NotApplicable |
 | deny-unless-permit | Permit if any rule permits; otherwise Deny |
 | permit-unless-deny | Deny if any rule denies; otherwise Permit |
 
