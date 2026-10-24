@@ -123,7 +123,7 @@ flowchart LR
 
 - PEPとPDPの間は最も機微な接続である。mTLSなどで保護し、PDPはPEPを認証する。PDPに何でも問い合わせられると、ポリシーの推測や負荷攻撃の入口になる。
 - PEPは「判定できなければ拒否（fail-closed）」を基本にする。PDPが落ちたとき、タイムアウトしたときの挙動を最初に決める。
-- PEPとPDPの間のAPIは、長くエンジンごとに独自だった。これを標準化するのがOpenID FoundationのAuthZEN Authorization API 1.0である。詳しくは[AuthZEN Authorization APIとは](/ja/posts/authzen-authorization-api/)で扱う。
+- XACMLには要求と応答をJSONで表すプロファイル（2019年にOASIS Standard）があったが、今のエンジンの多くはPEPとPDPの間に独自のAPIを持つ。エンジンをまたいでこの線を標準化するのが、OpenID FoundationのAuthZEN Authorization API 1.0である。詳しくは[AuthZEN Authorization APIとは](/ja/posts/authzen-authorization-api/)で扱う。
 
 # 認可モデルの分類
 
@@ -219,7 +219,7 @@ RBACは1992年にFerraioloとKuhnが形式化し、NISTのモデルが2004年に
 - 1992年のモデルは「only if」でアクセスを認める。有効なロールに認められたトランザクションしか実行できないが、認められていれば必ず実行できるわけではない。追加の制約をかける余地を最初から残しており、前節のロール中心の方式はこの設計の延長にある。
 - セッションでは、割り当てられたロールの一部だけを有効にできる。これは、OAuthのアクセストークンに載せるスコープを要求が必要とする分だけに絞る設計と同じ考え方である。
 - 職務分離は2種類ある。静的な職務分離は割り当てのときに効き、動的な職務分離はロールを有効にする時点で効く。「自分の起票を自分で承認しない」のような取引単位の分離は、PDPのルールで扱う。
-- 標準は、ロール階層の意味（上位を有効にすると下位も自動で有効か）と、ロールを外したときの既存セッションの扱いを実装に委ねた。自分たちの基盤では明文化しておく。
+- 2004年版の承認前のドラフト（2003年、NISTが公開）は、ロール階層の意味（上位を有効にすると下位も自動で有効か）と、ロールを外したときの既存セッションの扱いを実装に委ねている。2012年版の本文は有償で、この扱いが変わったかは公開資料では確かめられない。自分たちの基盤では明文化しておく。
 
 ## NIST SP 800-162（ABAC）
 
@@ -356,12 +356,12 @@ ReBACのエンジンを入れると、関係データを業務DBとエンジン�
 - [NIST: Role Based Access Control（プロジェクトページ）](https://csrc.nist.gov/projects/role-based-access-control)
 - [D. Ferraiolo, R. Kuhn: Role-Based Access Controls (1992)](https://csrc.nist.gov/pubs/conference/1992/10/13/rolebased-access-controls/final)
 - [R. Kuhn, E. Coyne, T. Weil: Adding Attributes to Role-Based Access Control (2010)](https://csrc.nist.gov/pubs/journal/2010/06/adding-attributes-to-rolebased-access-control/final)
-- [INCITS 359-2012 (R2022)](https://webstore.ansi.org/standards/incits/incits3592012r2022)
+- [INCITS 359-2012 (R2022)](https://webstore.ansi.org/standards/incits/incits3592012r2022) / [BSR INCITS 359 ドラフト（2003-04-04、NIST）](https://csrc.nist.gov/CSRC/media/Projects/Role-Based-Access-Control/documents/rbac-std-ncits.pdf)
 - [RFC 2753: A Framework for Policy-based Admission Control](https://www.rfc-editor.org/rfc/rfc2753) / [RFC 3198: Terminology for Policy-Based Management](https://www.rfc-editor.org/rfc/rfc3198)
 - [NIST SP 800-162: Guide to Attribute Based Access Control (ABAC) Definition and Considerations](https://csrc.nist.gov/pubs/sp/800/162/upd2/final)
 - [NIST SP 800-178: A Comparison of ABAC Standards for Data Service Applications: XACML and NGAC](https://csrc.nist.gov/pubs/sp/800/178/final)
 - [NIST SP 800-207: Zero Trust Architecture](https://csrc.nist.gov/pubs/sp/800/207/final)
-- [OASIS: XACML Version 3.0 Plus Errata 01](https://docs.oasis-open.org/xacml/3.0/errata01/os/xacml-3.0-core-spec-errata01-os-complete.html)
+- [OASIS: XACML Version 3.0 Plus Errata 01](https://docs.oasis-open.org/xacml/3.0/errata01/os/xacml-3.0-core-spec-errata01-os-complete.html) / [JSON Profile of XACML 3.0 Version 1.1](https://docs.oasis-open.org/xacml/xacml-json-http/v1.1/os/xacml-json-http-v1.1-os.html)
 - [OASIS: ACALの成果物](https://docs.oasis-open.org/xacml/acal/)
 - [B. Lampson: Protection (1971)](https://bwlampson.site/08-Protection/WebPage.html)
 - [S. Osborn, R. Sandhu, Q. Munawer: Configuring role-based access control to enforce mandatory and discretionary access control policies (2000)](https://doi.org/10.1145/354876.354878)

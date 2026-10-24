@@ -123,7 +123,7 @@ flowchart LR
 
 - The PEP-PDP channel is the most sensitive connection. Protect it with mTLS or similar, and have the PDP authenticate the PEP. A PDP that answers anyone becomes an entry point for policy probing and load attacks.
 - Make the PEP fail closed: if it cannot get a decision, it denies. Decide early what happens when the PDP goes down or times out.
-- For a long time, every engine had its own PEP-PDP API. The OpenID Foundation's AuthZEN Authorization API 1.0 standardizes it. [What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers it in depth.
+- XACML had a profile for JSON requests and responses (an OASIS Standard since 2019), yet most of today's engines expose their own PEP-PDP API. The OpenID Foundation's AuthZEN Authorization API 1.0 standardizes that line across engines. [What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers it in depth.
 
 # A Taxonomy of Authorization Models
 
@@ -219,7 +219,7 @@ These points still apply:
 - The 1992 model grants access "only if" a condition holds. A subject can only run transactions authorized for its active roles, but authorization does not guarantee execution. The model leaves room for extra constraints from the start, and the role-centric approach above extends this design.
 - A session activates only a subset of the assigned roles. The same idea applies when you limit the scopes in an OAuth access token to what the request needs.
 - Separation of duty comes in two forms. Static separation applies at assignment time; dynamic separation applies when a session activates roles. Transaction-level separation, such as "do not approve your own request", belongs in PDP rules.
-- The standard left two things to implementations: what a role hierarchy means (does activating a senior role activate the junior roles automatically?) and what happens to existing sessions when you remove a role assignment. Write these down for your own platform.
+- The pre-approval draft of the 2004 standard (2003, published by NIST) leaves two things to implementations: what a role hierarchy means (does activating a senior role activate the junior roles automatically?) and what happens to existing sessions when you remove a role assignment. The 2012 text sits behind a paywall, so public sources do not show whether it changed this. Write these down for your own platform.
 
 ## NIST SP 800-162 (ABAC)
 
@@ -356,12 +356,12 @@ You do not need to put everything on one engine. A common setup keeps a ReBAC en
 - [NIST: Role Based Access Control (project page)](https://csrc.nist.gov/projects/role-based-access-control)
 - [D. Ferraiolo, R. Kuhn: Role-Based Access Controls (1992)](https://csrc.nist.gov/pubs/conference/1992/10/13/rolebased-access-controls/final)
 - [R. Kuhn, E. Coyne, T. Weil: Adding Attributes to Role-Based Access Control (2010)](https://csrc.nist.gov/pubs/journal/2010/06/adding-attributes-to-rolebased-access-control/final)
-- [INCITS 359-2012 (R2022)](https://webstore.ansi.org/standards/incits/incits3592012r2022)
+- [INCITS 359-2012 (R2022)](https://webstore.ansi.org/standards/incits/incits3592012r2022) / [BSR INCITS 359 draft (2003-04-04, NIST)](https://csrc.nist.gov/CSRC/media/Projects/Role-Based-Access-Control/documents/rbac-std-ncits.pdf)
 - [RFC 2753: A Framework for Policy-based Admission Control](https://www.rfc-editor.org/rfc/rfc2753) / [RFC 3198: Terminology for Policy-Based Management](https://www.rfc-editor.org/rfc/rfc3198)
 - [NIST SP 800-162: Guide to Attribute Based Access Control (ABAC) Definition and Considerations](https://csrc.nist.gov/pubs/sp/800/162/upd2/final)
 - [NIST SP 800-178: A Comparison of ABAC Standards for Data Service Applications: XACML and NGAC](https://csrc.nist.gov/pubs/sp/800/178/final)
 - [NIST SP 800-207: Zero Trust Architecture](https://csrc.nist.gov/pubs/sp/800/207/final)
-- [OASIS: XACML Version 3.0 Plus Errata 01](https://docs.oasis-open.org/xacml/3.0/errata01/os/xacml-3.0-core-spec-errata01-os-complete.html)
+- [OASIS: XACML Version 3.0 Plus Errata 01](https://docs.oasis-open.org/xacml/3.0/errata01/os/xacml-3.0-core-spec-errata01-os-complete.html) / [JSON Profile of XACML 3.0 Version 1.1](https://docs.oasis-open.org/xacml/xacml-json-http/v1.1/os/xacml-json-http-v1.1-os.html)
 - [OASIS: ACAL work products](https://docs.oasis-open.org/xacml/acal/)
 - [B. Lampson: Protection (1971)](https://bwlampson.site/08-Protection/WebPage.html)
 - [S. Osborn, R. Sandhu, Q. Munawer: Configuring role-based access control to enforce mandatory and discretionary access control policies (2000)](https://doi.org/10.1145/354876.354878)
