@@ -26,7 +26,7 @@ This post answers three questions in order.
 - Which standards respond to those changes, and at which layer
 - Which standard to use for what when you design a system
 
-The standards covered are MCP authorization, the AuthZEN profiles (AARP and COAZ), AIMS, the OAuth extensions for delegation (OBO and AAuth), ID-JAG, and A2A and AP2. I checked versions and status against primary sources as of October 2026. Most of these are still drafts, so I recommend adopting the ideas now and pinning a version when you build to the wire formats.
+The standards covered are MCP authorization, the new AuthZEN drafts (the AARP profile and the COAZ framework with its MCP binding), AIMS, the OAuth extensions for delegation (OBO and AAuth), ID-JAG, and A2A and AP2. I checked versions and status against primary sources as of October 2026. Most of these are still drafts, so I recommend adopting the ideas now and pinning a version when you build to the wire formats.
 
 This post assumes the definition of authorization and the IAM subdomains from [the post on authorization and IAM subdomains](/posts/authorization-domain-iam-subdomains/) and the overview in [the map of OAuth-related standards](/posts/oauth-standards-map-authorization-platform/).
 
@@ -131,13 +131,13 @@ The key points:
 
 - The MCP server publishes Protected Resource Metadata (RFC 9728), and the client discovers the authorization server from it.
 - The client binds the token to a specific MCP server with `resource` (RFC 8707). The server accepts only tokens issued for itself and **must not relay a received token to upstream APIs**.
-- A client that supports every registration option SHOULD prefer pre-registration, then a Client ID Metadata Document (CIMD), then Dynamic Client Registration. DCR now remains only for backward compatibility and the spec deprecates it.
+- A client that supports every registration option SHOULD prefer pre-registration, then a Client ID Metadata Document (CIMD), then Dynamic Client Registration, and prompt the user for client information only when none of these is available. DCR now remains only for backward compatibility and the spec deprecates it.
 - When permissions fall short, the server indicates the required scopes with `insufficient_scope`, and the client requests them incrementally (step-up).
 - The official authorization extensions (ext-auth) cover machine-to-machine use without a user and central management by an enterprise IdP. The first is Client Credentials; the second is Enterprise-Managed Authorization, which uses ID-JAG (covered later).
 
 MCP authorization covers only obtaining and validating tokens. Deciding "may this tool run on this data on behalf of this user", separating the user from the agent, and human approval all sit outside the authorization spec. The tools spec says servers MUST put proper access controls in place, but it does not define how to decide. I cover the design points in [the post on MCP authorization design](/posts/mcp-authorization-design/).
 
-# AuthZEN profiles: filling the gaps before and after a decision
+# New AuthZEN drafts: filling the gaps before and after a decision
 
 The AuthZEN Authorization API 1.0 is a standard API through which a PEP asks a PDP "may this subject perform this action on this resource?" It became an OpenID Final Specification in January 2026. It builds the question from four parts: Subject, Action, Resource, and Context. I cover the API itself in [the AuthZEN Authorization API post](/posts/authzen-authorization-api/).
 

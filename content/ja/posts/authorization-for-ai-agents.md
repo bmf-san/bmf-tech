@@ -26,7 +26,7 @@ AIエージェントは、利用者から目的を受け取り、どのツール
 - その変化に、どの標準がどの層で応えているのか
 - 設計するときに、どの標準を何のために使えばよいのか
 
-扱う標準は、MCPの認可、AuthZENのプロファイル（AARP、COAZ）、AIMS、委譲を表すOAuthの拡張（OBO、AAuth）、ID-JAG、A2AとAP2である。仕様の版と状態は、2026年10月時点で一次資料を確かめた内容にもとづく。多くはまだDraftなので、考え方を取り入れ、ワイヤ形式は版を固定して追う、という読み方を勧める。
+扱う標準は、MCPの認可、AuthZENの新しいDraft（AARPのプロファイル、COAZのフレームワークとMCPバインディング）、AIMS、委譲を表すOAuthの拡張（OBO、AAuth）、ID-JAG、A2AとAP2である。仕様の版と状態は、2026年10月時点で一次資料を確かめた内容にもとづく。多くはまだDraftなので、考え方を取り入れ、ワイヤ形式は版を固定して追う、という読み方を勧める。
 
 認可そのものの定義やIAMのサブドメインは[認可とIAMのサブドメインの記事](/ja/posts/authorization-domain-iam-subdomains/)、OAuthと周辺標準の全体像は[OAuth関連標準の地図の記事](/ja/posts/oauth-standards-map-authorization-platform/)を前提にしている。
 
@@ -131,13 +131,13 @@ MCP（Model Context Protocol）は、AIアプリをツールやデータにつ�
 
 - MCPサーバーはProtected Resource Metadata（RFC 9728）を公開し、クライアントはそこから認可サーバーを見つける。
 - クライアントは`resource`（RFC 8707）でトークンを特定のMCPサーバーに結び付ける。サーバーは自分宛てのトークンだけを受け入れ、**受け取ったトークンを裏のAPIに中継してはならない**。
-- どの登録方式にも対応するクライアントは、事前登録、Client ID Metadata Document（CIMD）、Dynamic Client Registrationの順で選ぶべき（SHOULD）とされる。DCRは後方互換のための非推奨の扱いになった。
+- どの登録方式にも対応するクライアントは、事前登録、Client ID Metadata Document（CIMD）、Dynamic Client Registrationの順で選ぶべき（SHOULD）とされる。どれも使えなければ、利用者にクライアントの情報を入力させる。DCRは後方互換のための非推奨の扱いになった。
 - 権限が足りなければ、サーバーは`insufficient_scope`で必要なスコープを示し、クライアントは段階的に取り直す（step-up）。
 - 対話のない機械間の連携と、企業のIdPによる一元管理は、公式の認可の拡張（ext-auth）が受け持つ。前者がClient Credentials、後者がEnterprise-Managed Authorizationで、後者は後で触れるID-JAGを使う。
 
 ただし、MCPの認可が受け持つのは「トークンの取得と検証」までである。「このツールを、このデータに対して、この利用者の代わりに実行してよいか」という判定、利用者とエージェントの区別、人の承認は、認可の仕様の外にある。toolsの仕様は、サーバーが適切なアクセス制御を実装しなければならない（MUST）とするが、判定の方法は決めていない。MCPの認可を設計するときの勘所は、[MCPの認可の設計の記事](/ja/posts/mcp-authorization-design/)で詳しく扱う。
 
-# AuthZENのプロファイル：判定の前と後を埋める
+# AuthZENの新しいDraft：判定の前と後を埋める
 
 AuthZEN Authorization API 1.0は、PEPがPDPに「この主体は、この資源に、この操作をしてよいか」を問う標準のAPIである。2026年1月にOpenIDのFinal Specificationになった。主体（Subject）、操作（Action）、資源（Resource）、文脈（Context）の4つで問いを組み立てる。APIそのものは[AuthZEN Authorization APIの記事](/ja/posts/authzen-authorization-api/)で扱う。
 
