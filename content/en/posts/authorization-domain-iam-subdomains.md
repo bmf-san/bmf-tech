@@ -173,7 +173,7 @@ The sections below look briefly at what each one decides and which standards con
 
 Identity holds the data that says who a subject is: identifiers, attributes (department, title, employment type), identity proofing results, and the lifecycle from joining to leaving. Distributing accounts to other systems (provisioning) also belongs here. SCIM serves as the representative standard.
 
-Access decision uses the attributes this subdomain holds. If attributes go stale, someone who changed departments can still read data from the old one. An authorization incident can come from attribute freshness rather than from the decision logic.
+Access decision uses the attributes this subdomain holds. If attributes go stale, someone who changed departments can still read data from the old one. Even when the decision logic is correct, stale attributes can cause an authorization incident.
 
 ## 2. Authentication
 
@@ -200,7 +200,7 @@ Subdomain 4 decides "may this action happen now?" on every request. Subdomain 5 
 Some models fold delegation into authentication or access decision. This map keeps delegation separate because the core OAuth concepts (client, consent, grant) fit nowhere else.
 
 - They do not fit authentication. Consent does not verify who you are
-- They do not fit access decision. The subject's own will sets the delegated range, not a per-resource decision
+- They do not fit access decision. The delegated range starts from the subject's own consent, not from a per-resource decision
 - They do not fit access governance. The permission holder grants the permission, not an administrator
 
 Consent for delegation also differs from consent under privacy laws such as the GDPR, which covers the use of personal data for a specific purpose. The first hands your permissions to another subject. The second concerns privacy. The screens may look alike, but what you record and what happens on withdrawal differ.
