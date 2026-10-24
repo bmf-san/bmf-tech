@@ -251,7 +251,7 @@ flowchart TB
 | 場面 | AIMSの指針 |
 |---|---|
 | トークンの中身 | `client_id`にエージェント、利用者の代わりなら`sub`に利用者を入れる |
-| 利用者がエージェントに委ねる | Authorization Codeグラント。利用者はパスキーなどで認証し、エージェントは`private_key_jwt`、mTLS、SPIFFEでクライアント認証する |
+| 利用者がエージェントに委ねる | Authorization Codeグラント。利用者はパスキーなどで認証し、エージェントはJWT（RFC 7523）、mTLS、SPIFFEでクライアント認証する |
 | エージェント自身の権限 | Client CredentialsかJWT Authorization Grant |
 | 内部の呼び出し | Transaction Tokensに交換し、取引に結び付いた狭いトークンを回す。ツールが受け取ったアクセストークンを裏のサービスに転送するのはアンチパターン |
 | ドメインをまたぐ | Identity ChainingかID-JAG |
@@ -411,6 +411,7 @@ AIMSの層は、レビューのチェックリストとしてもそのまま使�
 # 参考リンク
 
 - [MCP Specification 2026-07-28: Authorization](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization)
+- [MCP Specification 2026-07-28: Tools](https://modelcontextprotocol.io/specification/2026-07-28/server/tools)
 - [MCP Authorization Extensions（ext-auth）](https://github.com/modelcontextprotocol/ext-auth)
 - [OpenID AuthZEN Working Group: Specifications](https://openid.net/wg/authzen/specifications/)
 - [AuthZEN Authorization API 1.0](https://openid.net/specs/authorization-api-1_0.html)

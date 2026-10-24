@@ -251,7 +251,7 @@ The authorization part looks like this.
 | Situation | AIMS guidance |
 |---|---|
 | Token contents | Put the agent in `client_id`, and the user in `sub` when acting on the user's behalf |
-| User delegates to an agent | Authorization Code grant. The user authenticates with a passkey or similar, and the agent authenticates as a client with `private_key_jwt`, mTLS, or SPIFFE |
+| User delegates to an agent | Authorization Code grant. The user authenticates with a passkey or similar, and the agent authenticates as a client with a JWT (RFC 7523), mTLS, or SPIFFE |
 | Agent acts on its own authority | Client Credentials or JWT Authorization Grant |
 | Internal calls | Exchange for Transaction Tokens and pass narrow tokens bound to the transaction. A tool that forwards a received access token to backend services follows an antipattern |
 | Across domains | Identity Chaining or ID-JAG |
@@ -411,6 +411,7 @@ You can also use the AIMS layers as a review checklist. Check the following:
 # References
 
 - [MCP Specification 2026-07-28: Authorization](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization)
+- [MCP Specification 2026-07-28: Tools](https://modelcontextprotocol.io/specification/2026-07-28/server/tools)
 - [MCP Authorization Extensions (ext-auth)](https://github.com/modelcontextprotocol/ext-auth)
 - [OpenID AuthZEN Working Group: Specifications](https://openid.net/wg/authzen/specifications/)
 - [AuthZEN Authorization API 1.0](https://openid.net/specs/authorization-api-1_0.html)
