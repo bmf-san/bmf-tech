@@ -11,7 +11,7 @@ tags:
   - IAM
   - OAuth
   - DDD
-description: "What is authorization? This post maps it against authentication, explains OAuth as delegation, and splits IAM into five subdomains. It covers DDD Core/Supporting/Generic positioning, adjacent domains, where the business meaning of permissions lives, and why AI agents raise the weight of delegation."
+description: "What is authorization? This post maps it against authentication, explains the delegation that OAuth handles, and splits IAM into five subdomains. It covers DDD Core/Supporting/Generic positioning, adjacent domains, where the business meaning of permissions lives, and why AI agents raise the weight of delegation."
 translation_key: authorization-domain-iam-subdomains
 draft: false
 ---
@@ -23,7 +23,7 @@ People use the word "authorization" for different things. One person means login
 This post draws a map that lets you treat authorization as a design subject. You will learn:
 
 - What authentication (AuthN) and authorization (AuthZ) each answer, and why you should separate them
-- Why the "authorization" in OAuth means delegation
+- Why the "authorization" in OAuth centers on delegation
 - A map that splits IAM into five subdomains: identity, authentication, delegation, access decision, and access governance
 - How IAM fits into the DDD categories Core, Supporting, and Generic
 - The adjacent domains outside IAM, and where the business meaning of permissions belongs
