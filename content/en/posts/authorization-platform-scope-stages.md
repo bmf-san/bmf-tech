@@ -252,7 +252,7 @@ These benefits act directly on three of the decision axes: scale and cross-cutti
 
 ## What externalization costs you
 
-Externalization has costs: latency from a network round trip per decision, and the PDP's availability directly affecting the availability of the whole system. Mitigations:
+Externalization has costs: latency from a round trip per decision when you call the PDP over the network, and the PDP's availability directly affecting the availability of the whole system. Mitigations:
 
 | Cost | Mitigation |
 |---|---|
