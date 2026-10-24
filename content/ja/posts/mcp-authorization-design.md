@@ -155,7 +155,7 @@ MCPの仕様にも、この考え方が表れている。Elicitation（サーバ
 
 2026-07-28版のStreamable HTTPでは、POSTの要求に`Mcp-Method`ヘッダが必須になった。`tools/call`などの要求には`Mcp-Name`ヘッダも必須である。ゲートウェイは本文を解析せずに「どのメソッドの、どのtoolか」を知り、tool単位の制御をかけられる。本文を処理するサーバーは、ヘッダと本文の値の一致を検証し、違う場合は拒否しなければならない。ヘッダで判定するゲートウェイは、`MCP-Protocol-Version`がこの照合を求める版かを確かめ、そうでなければ要求を拒否すべきである（SHOULD）。
 
-判定を外部化するなら、PEPとPDPをつなぐ標準としてAuthZENの[Authorization API](/ja/posts/authzen-authorization-api/)がある。AuthZENには、MCPの要求を判定の要求に写すプロファイル（COAZ-MCP）のDraftもある。COAZ-MCPの表記はDraft 1（2026-02-13付）のままだが、編集中の版には2026-07-28版に合わせた変更も入り始めている（`initialize`の対応付けの削除など）。採用するときは、前提にしているMCPの版を確かめる必要がある。PEPとPDPの分け方は[認可のアーキテクチャ](/ja/posts/authorization-architecture-models-engines/)で扱っている。
+判定を外部化するなら、PEPとPDPをつなぐ標準としてAuthZENの[Authorization API](/ja/posts/authzen-authorization-api/)がある。AuthZENには、MCPの要求を判定の要求に写すバインディング（COAZ-MCP）のDraftもある。COAZ-MCPの表記はDraft 1（2026-02-13付）のままだが、編集中の版には2026-07-28版に合わせた変更も入り始めている（`initialize`の対応付けの削除など）。採用するときは、前提にしているMCPの版を確かめる必要がある。PEPとPDPの分け方は[認可のアーキテクチャ](/ja/posts/authorization-architecture-models-engines/)で扱っている。
 
 ## 識別子は権限ではない
 
