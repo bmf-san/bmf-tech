@@ -313,7 +313,7 @@ An authorization platform must decide:
 
 - **Format**: Let the RS self-validate JWTs, or let it check opaque tokens through Introspection. Choose based on whether you need instant revocation or want to avoid lookup latency.
 - **Lifetime**: Keep access tokens short-lived, and back them up with refresh tokens and event-driven revocation.
-- **Audience**: Always check `aud` and narrow it with RFC 8707. Any RS that receives a token without an audience can use it.
+- **Audience**: Always check `aud` and narrow it with RFC 8707. Without audience restriction, an RS that receives the token, or anyone who steals it, can replay it at other resource servers that trust the same AS.
 - **Sender constraint**: Hand out bearer tokens as they are, or bind them to keys with DPoP or mTLS.
 - **Content**: Pack a list of permissions into the token, or leave decisions to the PDP and put only the subject and delegation in the token. [Authorization platform architecture and design decisions](/posts/authorization-platform-architecture-decisions/) covers this choice.
 
