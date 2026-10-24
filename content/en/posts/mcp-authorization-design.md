@@ -19,7 +19,7 @@ draft: false
 
 MCP (Model Context Protocol) is an open standard for connecting AI applications to external tools and data. When you put an MCP server in front of internal business APIs, an agent can read and write business data on behalf of a user. That convenience comes with risk. A flawed authorization design lets an agent perform operations the user never intended, or lets a stolen token reach other APIs.
 
-MCP has an authorization specification built on OAuth 2.1. That specification mainly covers one part: obtaining and validating a token for the MCP server. The question "may this agent, acting for this user, run this tool on this data?" stays outside the specification. Your team has to design that part.
+MCP has an authorization specification built on OAuth 2.1, which is still an IETF draft. That specification mainly covers one part: obtaining and validating a token for the MCP server. The question "may this agent, acting for this user, run this tool on this data?" stays outside the specification. Your team has to design that part.
 
 This post targets teams that add authorization to MCP servers or MCP clients. It covers the following:
 
@@ -254,15 +254,15 @@ sequenceDiagram
     participant A as Authorization server
 
     C->>M: MCP request without a token
-    M-->>C: 401 (resource_metadata and scope in WWW-Authenticate)
+    M-->>C: 401 (WWW-Authenticate can carry resource_metadata and scope)
     C->>M: Fetch Protected Resource Metadata
     M-->>C: authorization_servers
     C->>A: Fetch authorization server metadata
     A-->>C: issuer, PKCE support, CIMD support, and more
     Note over C: Client registration (pre-registration, CIMD, DCR)
     C->>A: Authorization request (code_challenge, resource)
-    A-->>C: Authorization code and iss
-    Note over C: Compare iss with the recorded issuer
+    A-->>C: Authorization code (and iss if the server supports it)
+    Note over C: If iss is present, compare it with the recorded issuer
     C->>A: Token request (code_verifier, resource)
     A-->>C: Access token
     C->>M: MCP request with Authorization: Bearer

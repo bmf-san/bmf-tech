@@ -19,7 +19,7 @@ draft: false
 
 MCP（Model Context Protocol）は、AIアプリケーションを外部のツールやデータにつなぐためのオープンな標準である。社内の業務APIの前にMCPサーバーを置くと、エージェントがユーザーの代わりに業務データを読み書きできるようになる。便利な反面、認可の設計を誤ると、エージェントがユーザーの意図しない操作をしたり、盗まれたトークンで別のAPIまで叩かれたりする。
 
-MCPにはOAuth 2.1を土台にした認可の仕様がある。ただし、仕様が決めているのは主に「MCPサーバー宛てのトークンを得て、検証する」部分である。「このユーザーのこのエージェントが、このtoolを、このデータに対して実行してよいか」という判定は、自分たちで設計する必要がある。
+MCPには、OAuth 2.1（IETFで策定中のDraft）を土台にした認可の仕様がある。ただし、仕様が決めているのは主に「MCPサーバー宛てのトークンを得て、検証する」部分である。「このユーザーのこのエージェントが、このtoolを、このデータに対して実行してよいか」という判定は、自分たちで設計する必要がある。
 
 この記事は、MCPサーバーやMCPクライアントに認可を実装するチームに向けて、次のことを整理する。
 
@@ -254,15 +254,15 @@ sequenceDiagram
     participant A as 認可サーバー
 
     C->>M: トークンなしでMCPの要求
-    M-->>C: 401（WWW-Authenticateにresource_metadataとscope）
+    M-->>C: 401（WWW-Authenticateにresource_metadataやscopeを含められる）
     C->>M: Protected Resource Metadataを取得
     M-->>C: authorization_servers
     C->>A: 認可サーバーのメタデータを取得
     A-->>C: issuer、PKCEの対応、CIMDの対応など
     Note over C: クライアント登録（事前登録、CIMD、DCR）
     C->>A: 認可要求（code_challenge、resource）
-    A-->>C: 認可コードとiss
-    Note over C: 記録したissuerとissを照合
+    A-->>C: 認可コード（対応していればiss）
+    Note over C: issがあれば、記録したissuerと照合
     C->>A: トークン要求（code_verifier、resource）
     A-->>C: アクセストークン
     C->>M: Authorization: Bearer付きでMCPの要求
