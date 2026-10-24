@@ -76,7 +76,7 @@ The standards in this post mostly agree on the following principles.
 3. **Least privilege and down-scoping.** Request fine-grained permissions, and pass even narrower tokens internally.
 4. **Record the delegation chain.** Represent the user as `sub` and the acting agent as `act` or `client_id`.
 5. **Turn human approval into an authorization event.** Use an approval that the authorization server or PDP can verify, not a UI prompt.
-6. **Keep evaluating after issuance.** Reduce permissions right away on revocation or a change in risk.
+6. **Keep evaluating after issuance.** Enforce revocations and downgrades without undue delay, and narrow permissions when risk changes.
 
 I wrote about AI becoming the main actor in development in "[Engineering in the AI Era: Evolution from Prompts to Autonomous Systems](/posts/engineering-in-ai-evolution-to-autonomous-systems/)". This post deals with how to constrain that autonomy through permissions.
 
@@ -131,7 +131,7 @@ The key points:
 
 - The MCP server publishes Protected Resource Metadata (RFC 9728), and the client discovers the authorization server from it.
 - The client binds the token to a specific MCP server with `resource` (RFC 8707). The server accepts only tokens issued for itself and **must not relay a received token to upstream APIs**.
-- The client registers by pre-registration, a Client ID Metadata Document (CIMD), or Dynamic Client Registration, in that order of preference. DCR now remains only for backward compatibility and the spec deprecates it.
+- A client that supports every registration option SHOULD prefer pre-registration, then a Client ID Metadata Document (CIMD), then Dynamic Client Registration. DCR now remains only for backward compatibility and the spec deprecates it.
 - When permissions fall short, the server indicates the required scopes with `insufficient_scope`, and the client requests them incrementally (step-up).
 - The official authorization extensions (ext-auth) cover machine-to-machine use without a user and central management by an enterprise IdP. The first is Client Credentials; the second is Enterprise-Managed Authorization, which uses ID-JAG (covered later).
 
@@ -238,7 +238,7 @@ flowchart TB
 | Layer | Key points |
 |---|---|
 | Identifier | Assign exactly one WIMSE identifier (a SPIFFE ID works) to each agent |
-| Credentials | WIT, WIC, SVID, and so on. Short-lived, with an explicit expiry. Static API keys count as an antipattern |
+| Credentials | WIT, WIC, SVID, and so on. They SHOULD be short-lived and MUST carry an explicit expiry. Static API keys count as an antipattern |
 | Provisioning | Issue and rotate at runtime. Assess the posture of the runtime at issuance. **The LLM MUST NOT have access to credentials** |
 | Authentication | mTLS, WIMSE Workload Proof Token (WPT), HTTP Message Signatures |
 | Authorization | Use OAuth as the delegation framework (see the table below) |
@@ -253,11 +253,11 @@ The authorization part looks like this.
 | Token contents | Put the agent in `client_id`, and the user in `sub` when acting on the user's behalf |
 | User delegates to an agent | Authorization Code grant. The user authenticates with a passkey or similar, and the agent authenticates as a client with `private_key_jwt`, mTLS, or SPIFFE |
 | Agent acts on its own authority | Client Credentials or JWT Authorization Grant |
-| Internal calls | Exchange for Transaction Tokens and pass narrow tokens bound to the transaction. Forwarding a received token counts as an antipattern |
+| Internal calls | Exchange for Transaction Tokens and pass narrow tokens bound to the transaction. A tool that forwards a received access token to backend services follows an antipattern |
 | Across domains | Identity Chaining or ID-JAG |
 | Human approval | Bind it to a grant that the authorization server issues, for example via CIBA. Agents MUST NOT treat a local UI confirmation alone as authorization |
 
-AIMS also lists the fields that audit logs must contain at the least: the agent identifier, the delegating principal, the resource, the requested action and the decision, the timestamp and correlation ID, the posture or risk state that influenced the decision, and remediation or revocation events.
+AIMS also lists the fields that audit logs must contain at the least: the agent identifier, the delegating principal (when present), the resource, the requested action and the decision, the timestamp and correlation ID, the posture or risk state that influenced the decision, and remediation or revocation events.
 
 AIMS still has gaps. Tokens use only `client_id` and `sub`, and the draft does not discuss how to represent multi-hop delegation with `act`. It leaves out of scope how to derive the needed permissions from a natural-language goal (the "mission"). The draft itself admits that CIBA does not fit well for getting human approval in the middle of execution. In my view, AARP is a candidate to fill that last gap from the decision side.
 
@@ -315,7 +315,7 @@ From an authorization standpoint, note the following.
 
 - An agent declares authentication methods in the `securitySchemes` of its Agent Card. It reuses existing methods such as OAuth 2.0, OpenID Connect, and mTLS; A2A defines no authentication method of its own.
 - Each agent decides its own authorization model. Still, checking authorization on every operation and limiting results to the caller's permissions are mandatory (MUST).
-- When an agent needs extra authorization mid-task, it moves the task to `TASK_STATE_AUTH_REQUIRED`. This state can chain up to upstream agents.
+- When an agent asks its caller to fulfill extra authorization mid-task, it moves the task to `TASK_STATE_AUTH_REQUIRED`. This state can chain up to upstream agents.
 - Still, this state only signals that the agent needs more authorization. The agent receives the credential out of band by default, and its format and scope sit outside A2A.
 
 In short, A2A defines how agents connect, and leaves it to OAuth mechanisms such as Token Exchange and Transaction Tokens to carry whose authority flows along the delegation chain.
