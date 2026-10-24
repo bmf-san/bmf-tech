@@ -296,7 +296,7 @@ Here is a Resource Search. The PEP sends only the `type` of the resource it want
 
 - **Consistency with evaluation.** If you pass a search result to Access Evaluation, the decision SHOULD be `true`. Evaluation can depend on other variables such as time, so the spec does not guarantee it.
 - **Transitive traversal.** The spec recommends transitive search. If user U belongs to group G and G can view document D, a search for subjects who can view D includes U.
-- **Pagination.** The PEP fetches the next page with an opaque token, and an empty `next_token` marks the end. Pagination gives no atomic snapshot, so if data changes mid-way, results may repeat or go missing. Requests after the first page MUST repeat every value of the first request except the token.
+- **Pagination.** Pagination support is optional (MAY) for the PDP. With a PDP that supports it, the PEP fetches the next page with an opaque token, and an empty `next_token` marks the end. Pagination gives no atomic snapshot, so if data changes mid-way, results may repeat or go missing. Requests after the first page MUST repeat every value of the first request except the token.
 
 ## Where It Helps
 
@@ -489,7 +489,7 @@ This grouping into three questions is my own framing; the spec does not define i
 
 Finally, here are my own tips for bringing AuthZEN into a design.
 
-- **Start with Access Evaluation only.** The spec requires only this API and part of the metadata. Use batch and search after you confirm your PDP supports them.
+- **Start with Access Evaluation only.** The spec calls this API the core feature, and its URL is the only required endpoint in the metadata. Publishing metadata is itself only recommended. Some PDPs don't support batch evaluation or search, so confirm support before you use them.
 - **Settle the `type` and `name` vocabulary first.** Use one vocabulary for resource types and action names across the organization. If some PEPs send `read` and others send `can_read`, decisions drift even without a PDP change.
 - **Document your `context` conventions.** Agree inside the organization on how to return reasons and step-up requests. Once the Obligations Profile stabilizes, move toward it.
 - **Decide where attributes come from.** Separate attributes the PEP sends from attributes the PDP fetches. The more important the attribute, the less you should rely on the PEP for it.
