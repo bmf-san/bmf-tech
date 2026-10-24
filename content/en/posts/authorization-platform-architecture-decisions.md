@@ -288,7 +288,7 @@ sequenceDiagram
     AG->>AG: Perform action and record audit
 ```
 
-The architectural point: **approval alone does not grant access; the PDP makes a fresh decision at the end.** AARP rests on invariants such as "a requestable denial is still a denial" and "an approval does not itself grant access." It keeps the approval machinery (subdomain 5) separate from the decision machinery (subdomain 4) and still turns denial-to-allow into one flow. Approval screens and workflow engines fall outside AARP, so you can put an existing approval system behind it.
+The architectural point: **approval alone does not grant access; the PDP makes a fresh decision at the end.** This describes the base completion mode that AARP defines (`reevaluate`); other profiles can define other completion modes. AARP rests on invariants such as "a requestable denial is still a denial" and "an approval does not itself grant access." It keeps the approval machinery (subdomain 5) separate from the decision machinery (subdomain 4) and still turns denial-to-allow into one flow. Approval screens and workflow engines fall outside AARP, so you can put an existing approval system behind it.
 
 # Design Decisions
 
@@ -415,10 +415,10 @@ The table below covers the remaining choices.
 
 | Decision | Options | Guideline |
 |---|---|---|
-| Token validation | Self-contained JWT (RFC 9068), introspection (RFC 7662) | JWT for low latency, introspection for immediate revocation; you can combine both |
+| Token validation | Self-contained JWT (RFC 9068), introspection (RFC 7662) | JWT for low latency, introspection for immediate revocation (if you do not cache results for long); you can combine both |
 | Token theft protection | Bearer, DPoP, mTLS binding | Bind tokens to the sender when you need high assurance |
 | Adopt ReBAC? | Are relationships central to decisions? | Adopt it when ownership, sharing, and inheritance drive access |
-| Agent support | Recording delegation (act), COAZ-MCP, AARP | Close to mandatory for platforms that serve AI agents, though COAZ-MCP and AARP remain Drafts |
+| Agent support | Recording delegation (act), COAZ-MCP, AARP | Recording delegation is close to mandatory for platforms that serve AI agents. COAZ-MCP and AARP remain Drafts, so adopt them only where you can keep up with spec changes |
 | Decision API | Product-specific API, AuthZEN | Standardize on one API when many languages and teams write PEPs |
 
 # Summary
