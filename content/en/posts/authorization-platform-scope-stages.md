@@ -274,7 +274,7 @@ Authorization API 1.0 defines these main APIs:
 
 The policy language, architecture, and state management of a PDP are out of the specification's scope. So whatever runs inside the PDP, the PEP can query it the same way. [What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers the specification in detail.
 
-Engines and products you can use as the PDP for externalized authorization include OPA, Cedar (Amazon Verified Permissions), Cerbos, and OpenFGA.
+Engines and products you can use as the PDP for externalized authorization include OPA, Cedar (with Amazon Verified Permissions as a managed service built on Cedar), Cerbos, and OpenFGA.
 
 ## Externalized, but each domain still owns its policy content
 

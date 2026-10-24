@@ -274,7 +274,7 @@ Authorization API 1.0は、主に次のAPIを定めている。
 
 PDPのポリシー言語、アーキテクチャ、状態の管理は仕様の範囲外である。そのため、PDPの中身が何であっても、PEPからは同じ形で問い合わせられる。仕様の詳細は[AuthZEN Authorization APIとは](/ja/posts/authzen-authorization-api/)で扱う。
 
-外部化認可のPDPとして使えるエンジンや製品には、OPA、Cedar（Amazon Verified Permissions）、Cerbos、OpenFGAなどがある。
+外部化認可のPDPとして使えるエンジンや製品には、OPA、Cedar（Cedarを使うマネージドサービスとしてAmazon Verified Permissions）、Cerbos、OpenFGAなどがある。
 
 ## 外部化しても、ポリシーの中身は各ドメインが持つ
 
