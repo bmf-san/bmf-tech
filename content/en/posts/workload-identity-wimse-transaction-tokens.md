@@ -94,7 +94,7 @@ The architecture rests on three elements.
 
 An identifier's meaning depends on the trust domain that validates it. Per arch-08, two credentials with the same identifier value represent the same workload only when a verifier validates both under the same trust domain and issuer trust configuration. The later rule against authorizing on the path alone rests on the same idea.
 
-Credentials SHOULD have bounded lifetimes and automatic renewal. You do not need a new key per request.
+Deployments SHOULD use bounded credential lifetimes and automated renewal. You do not generally need a new key pair for every request.
 
 ## Three Scenarios
 
@@ -176,7 +176,7 @@ The main WIT claims follow.
 | `sub` | Required | The workload identifier. Exactly one identifier per credential |
 | `exp` | Required | Expiration. SHOULD be short-lived, typically on the order of hours |
 | `cnf.jwk` | Required | The workload's public key (RFC 7800) |
-| `cnf.jwk.alg` | Required | The algorithm for proofs. No `none` and no symmetric algorithms. General implementations support ES256 |
+| `cnf.jwk.alg` | Required | The algorithm for proofs. No `none` and no symmetric algorithms. General-purpose implementations MUST support ES256 |
 | `iss` | Recommended (optional) | The issuer, for audit and operations |
 | `jti` | Optional | A unique token identifier |
 
@@ -203,7 +203,7 @@ You usually cannot revoke a JWT credential such as a WIT on demand. So a short e
 
 "One identifier per credential" keeps the PDP side simple. The subject stays stable, which makes it easier to match policies against audit logs. Handle things like instance distinctions with `jti` or extra claims, separate from the authorization subject.
 
-SPIFFE has also started to adopt the WIT as WIT-SVID, a profile narrowed for SPIFFE (its stability level is Incubating). A JWT-SVID is a bearer token, but a WIT-SVID binds to a key. Proof of possession closes the JWT-SVID gaps of "anyone who steals it can use it" and "the receiver can impersonate the caller downstream."
+SPIFFE has also started to adopt the WIT as WIT-SVID, a profile narrowed for SPIFFE (its stability level is Incubating). A JWT-SVID is a bearer token, but a WIT-SVID binds to a key. Proof of possession mitigates the JWT-SVID weaknesses of "anyone who steals it can use it" and "the receiver can impersonate the caller downstream."
 
 # Three Authentication Methods and How to Choose
 
@@ -326,7 +326,7 @@ sequenceDiagram
     W1->>W2: Forward the received Txn-Token unchanged
 ```
 
-The Transaction Token Service (TTS) issues the token, and each trust domain MUST have exactly one logical TTS. HTTP requests use RFC 8693 token exchange. The main parameters follow.
+The Transaction Token Service (TTS) issues the token, and each trust domain MUST have exactly one logical TTS. A request over HTTP to a remote TTS MUST use RFC 8693 token exchange. The main parameters follow.
 
 | Parameter | Description |
 | --- | --- |
@@ -337,7 +337,7 @@ The Transaction Token Service (TTS) issues the token, and each trust domain MUST
 | `request_context` | Environmental context such as the original request IP (recommended) |
 | `request_details` | Request details such as API parameters (recommended) |
 
-When the workload has no inbound token to send to the TTS, it can start a transaction with a self-signed JWT as `subject_token`. This covers external authentication that does not use an access token and scheduled internal jobs. The TTS and the workload MUST authenticate each other. Examples for workload authentication include RFC 8705, WIMSE mTLS, HTTP signatures, WPT, and signed JWTs from RFC 7523.
+When the workload has no inbound token to send to the TTS, it MAY generate a self-signed JWT and present it as `subject_token` to start a transaction. This covers external authentication that does not use an access token and scheduled internal jobs. The TTS and the workload MUST authenticate each other. Examples for workload authentication include RFC 8705, WIMSE mTLS, HTTP signatures, WPT, and signed JWTs from RFC 7523.
 
 ## Token Format
 
@@ -424,7 +424,7 @@ Service-to-service OAuth (client_credentials, token exchange, requests to the TT
 
 Key points follow.
 
-- A JWT-SVID's `aud` MUST contain only the AS issuer identifier (following rfc7523bis). Unlike RFC 7523, the draft does not require `iss`; the AS maps the SPIFFE ID in `sub` to a registered client.
+- The AS MUST verify that a JWT-SVID's `aud` contains only the AS issuer identifier (following rfc7523bis). Unlike RFC 7523, the draft does not require `iss`; the AS maps the SPIFFE ID in `sub` to a registered client.
 - The recommended source of verification keys is a SPIFFE bundle endpoint tied to each trust domain. The AS MUST NOT verify X.509-SVIDs against the system trust store. Otherwise any CA in that store could issue a certificate for any SPIFFE ID.
 - The AS MUST NOT accept a token just because a key discovered via `iss` verifies its signature and `sub` looks like a SPIFFE ID. That invites token confusion, where an OIDC token meant for something else poses as a JWT-SVID.
 - With a Client ID Metadata Document (CIMD), the metadata's `spiffe_id` can end with a `/*` wildcard. Matching works as a prefix match on whole path segments.
