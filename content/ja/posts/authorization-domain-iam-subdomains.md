@@ -108,7 +108,7 @@ NISTの用語集は、IAMを広くシステム（企業、ネットワーク、�
 | 支援サブドメイン（Supporting） | 事業に必要で固有の要素もあるが、Coreではないサブドメイン |
 | 汎用サブドメイン（Generic） | 事業に固有のものはないが、事業全体には必要なサブドメイン |
 
-IDDDは、SupportingやGenericは重要でないという意味ではないと断っている。その領域で卓越する必要がない、という意味である。だからGenericは、既製品や標準で済ませる選択をとりやすい。
+IDDDの第1章は、Core以外のモデルも重要だと書く。ただし、Coreほどの優先度と労力はかけないことがあるとしている。EvansのDDD Referenceも、Genericな要素はシステムが動くのに欠かせないとしたうえで、既製品や公開済みのモデルの利用を検討するよう勧めている。だからGenericは、既製品や標準で済ませる選択をとりやすい。
 
 Core / Supporting / Genericはサブドメインの分類である。どれになるかは、どの組織の事業から見るかで決まる。同じ認証の仕組みでも、IdPを売る会社にとってはCoreであり、ECサイトにとってはGenericである。
 
@@ -319,4 +319,5 @@ IDDDの公式サンプルがこの関係をよく表している。業務側のC
 - [OWASP Authorization Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html)
 - [Model Context Protocol Specification: Authorization](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization)
 - [Eric Evans, DDD Reference](https://www.domainlanguage.com/ddd/reference/)
+- [Vaughn Vernon, Implementing Domain-Driven Design 第1章の抜粋: The Business Value of Using DDD（InformIT）](https://www.informit.com/articles/article.aspx?p=1944876&seqNum=4)
 - [Vaughn Vernon, IDDD_Samples](https://github.com/VaughnVernon/IDDD_Samples)

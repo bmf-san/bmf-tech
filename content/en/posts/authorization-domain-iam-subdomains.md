@@ -31,7 +31,7 @@ This post draws a map that lets you treat authorization as a design subject. You
 
 This post opens a series on authorization. Each specification and architecture that later posts cover maps to some place on this map.
 
-First, how this post relates to existing ones. [Authentication and Authorization Basics](/posts/authentication-authorization-basics/) covers the basic terms: identification, authentication, and authorization. [Permission Management Design](/posts/permission-management-design/) covers ACL, RBAC, ABAC, and feature scope versus data scope. [What is OAuth 2.0?](/posts/oauth-2-0/) covers the OAuth 2.0 specification. This post does not repeat them. It shows where each of them sits on the IAM map.
+First, how this post relates to existing ones. [Basics of Authentication and Authorization](/posts/authentication-authorization-basics/) covers the basic terms: identification, authentication, and authorization. [Permission Management Design](/posts/permission-management-design/) covers ACL, RBAC, ABAC, and feature scope versus data scope. [What is OAuth 2.0?](/posts/oauth-2-0/) covers the OAuth 2.0 specification. This post does not repeat them. It shows where each of them sits on the IAM map.
 
 # Authentication and Authorization Answer Different Questions
 
@@ -108,7 +108,7 @@ In this post, IAM means the area that manages the identities of subjects (people
 | Supporting subdomain | A subdomain the business needs and that has some specific elements, but not Core |
 | Generic subdomain | A subdomain that captures nothing special to the business, yet the overall business solution needs it |
 
-IDDD notes that Supporting or Generic does not mean unimportant. It means the business does not need to excel there. That is why a Generic subdomain is a good candidate for off-the-shelf products or standards.
+Chapter 1 of IDDD says that models other than the Core Domain matter too, but they may not get the same priority and effort as the Core. Evans's DDD Reference also calls generic elements essential to the functioning of the system and recommends considering off-the-shelf solutions or published models for them. That is why a Generic subdomain is a good candidate for off-the-shelf products or standards.
 
 Core, Supporting, and Generic classify subdomains. Which one applies depends on whose business you look from. The same authentication mechanism counts as Core for a company that sells an IdP and as Generic for an e-commerce site.
 
@@ -319,4 +319,5 @@ For example, a proposal to "build an authorization platform with OAuth" means so
 - [OWASP Authorization Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html)
 - [Model Context Protocol Specification: Authorization](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization)
 - [Eric Evans, DDD Reference](https://www.domainlanguage.com/ddd/reference/)
+- [Vaughn Vernon, Implementing Domain-Driven Design, Chapter 1 excerpt: The Business Value of Using DDD (InformIT)](https://www.informit.com/articles/article.aspx?p=1944876&seqNum=4)
 - [Vaughn Vernon, IDDD_Samples](https://github.com/VaughnVernon/IDDD_Samples)
