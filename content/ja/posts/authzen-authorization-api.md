@@ -44,10 +44,10 @@ flowchart LR
         IDP["IdP"]
     end
     subgraph API["AuthZEN Authorization API"]
-        META["/.well-known/authzen-configuration"]
+        META["/.well-known/authzen-configuration（推奨）"]
         EV["/access/v1/evaluation"]
-        EVS["/access/v1/evaluations"]
-        SR["/access/v1/search/subject|resource|action"]
+        EVS["/access/v1/evaluations（任意）"]
+        SR["/access/v1/search/subject|resource|action（任意）"]
     end
     subgraph PDPs["PDP（判定側）"]
         OPA["OPA"]
@@ -447,7 +447,7 @@ AuthZENで替えやすくなるのは、PEPのコードと通信の形である�
 
 ## 相互運用の実績
 
-AuthZENワーキンググループは、7回の相互運用イベントを開いた。2024年5月のIdentiverse 2024から2025年12月のGartner IAM Summitまでである（authzen-interop.netとOpenID Foundationの発表による）。
+AuthZENワーキンググループは、7回の相互運用イベントを開いた。2024年5月のIdentiverse 2024から2025年12月のGartner IAM US 2025までである（authzen-interop.netとOpenID Foundationの発表による）。
 
 | 場面 | イベント | 版 | 対象 |
 | --- | --- | --- | --- |
@@ -505,8 +505,8 @@ OpenID Foundationは2026年6月の発表で、認可システムはこれまで�
 - APIは、1件の判定、評価方式を選べる一括判定、主体・資源・操作の検索、`/.well-known/authzen-configuration`のメタデータからなる。一括判定と検索へのPDPの対応は任意で、メタデータの公開は推奨である。
 - 拒否は`200`と`false`で返り、HTTPのエラーとは区別する。個々の判定の誤りはfail-closedになる。
 - セキュリティでは、PEPとPDPの接続の保護（HTTPならTLSなど）が必須で、PEPの認証、応答の署名、DoS対策が推奨または許可されている。PDPはPEPを信頼する前提に立つので、属性の出どころが設計の要になる。
-- XACMLとNIST ABACの語彙を受け継ぎつつ、ポリシー言語には踏み込まない。そのためOPA、Cedar、OpenFGAなどが同じ口を持てる。
-- 替えやすくなるのはPEPの側であり、ポリシー、データ、語彙、`context`の読み方は残る作業である。
+- PEPとPDPの定義はXACMLとNIST ABACに拠り、SARCもその語彙とほぼ対応するが、ポリシー言語には踏み込まない。そのため、OPA・Cedar・OpenFGAなどを、変換層を挟むなどして同じAPIの後ろに置ける。
+- 替えやすくなるのはPEPの側であり、ポリシー、データ、語彙、`context`の読み方などは残る作業である。
 
 # 関連記事
 

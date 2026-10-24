@@ -44,10 +44,10 @@ flowchart LR
         IDP["IdP"]
     end
     subgraph API["AuthZEN Authorization API"]
-        META["/.well-known/authzen-configuration"]
+        META["/.well-known/authzen-configuration (recommended)"]
         EV["/access/v1/evaluation"]
-        EVS["/access/v1/evaluations"]
-        SR["/access/v1/search/subject|resource|action"]
+        EVS["/access/v1/evaluations (optional)"]
+        SR["/access/v1/search/subject|resource|action (optional)"]
     end
     subgraph PDPs["PDP (decision)"]
         OPA["OPA"]
@@ -447,7 +447,7 @@ In short, AuthZEN lets you switch PDPs without rewriting PEPs, but not without r
 
 ## Interoperability Track Record
 
-The AuthZEN Working Group ran seven interoperability events, from Identiverse 2024 in May 2024 to the Gartner IAM Summit in December 2025 (according to authzen-interop.net and an OpenID Foundation announcement).
+The AuthZEN Working Group ran seven interoperability events, from Identiverse 2024 in May 2024 to Gartner IAM US 2025 in December 2025 (according to authzen-interop.net and an OpenID Foundation announcement).
 
 | Scenario | Event | Draft | Endpoints |
 | --- | --- | --- | --- |
@@ -505,8 +505,8 @@ Finally, here are my own tips for bringing AuthZEN into a design.
 - The API consists of single evaluation, batch evaluation with selectable semantics, subject/resource/action search, and metadata at `/.well-known/authzen-configuration`. PDP support for batch evaluation and search is optional, and the spec recommends publishing metadata.
 - A denial comes back as `200` with `false`, separate from HTTP errors. Errors in individual evaluations fail closed.
 - On security, protecting the PEP-PDP connection (for example with TLS for HTTP) is mandatory, and the spec recommends or permits PEP authentication, signed responses, and DoS protections. The PDP trusts the PEP, so the source of attributes becomes a central design question.
-- It inherits vocabulary from XACML and NIST ABAC but stays out of policy languages. That lets OPA, Cedar, OpenFGA, and others expose the same interface.
-- The PEP side becomes easy to swap; policies, data, vocabulary, and the reading of `context` remain your work.
+- It takes its PEP and PDP definitions from XACML and NIST ABAC, and SARC maps closely to their vocabulary, but it stays out of policy languages. So OPA, Cedar, OpenFGA, and others can sit behind the same API, sometimes through a translation layer.
+- The PEP side becomes easy to swap; policies, data, vocabulary, the reading of `context`, and more remain your work.
 
 # Related Posts
 
