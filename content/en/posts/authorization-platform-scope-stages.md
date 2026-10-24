@@ -264,7 +264,7 @@ Externalization has costs: latency from a network round trip per decision, and t
 
 ## A standard between PEP and PDP: AuthZEN
 
-One concern with externalization: the PEP implementation may get locked into a specific PDP product. The OpenID Foundation's AuthZEN Working Group standardizes the interface between PEP and PDP. The OpenID Foundation published Authorization API 1.0 as a Final Specification on January 11, 2026.
+One concern with externalization: the PEP implementation may get locked into a specific PDP product. The OpenID Foundation's AuthZEN Working Group standardizes the interface between PEP and PDP. OpenID Foundation members approved the version of Authorization API 1.0 dated January 11, 2026 as an OpenID Final Specification, and the foundation announced the approval on January 12, 2026.
 
 Authorization API 1.0 defines these main APIs:
 
@@ -326,6 +326,7 @@ If you are unsure, consider starting with an in-process library or a sidecar rat
 # References
 
 - [OpenID Foundation - Authorization API 1.0](https://openid.net/specs/authorization-api-1_0.html)
+- [OpenID Foundation - Authorization API 1.0 Final Specification Approved](https://openid.net/authorization-api-1-0-final-specification-approved/)
 - [OpenID Foundation - AuthZEN Working Group](https://openid.net/wg/authzen/)
 - [OpenID Foundation - OpenID Foundation advances authorization for the agent era with new AuthZEN Working Group Drafts](https://openid.net/openid-foundation-advances-authorization-for-the-agent-era-with-new-authzen-working-group-drafts/)
 - [AuthZEN Interop](https://authzen-interop.net/)

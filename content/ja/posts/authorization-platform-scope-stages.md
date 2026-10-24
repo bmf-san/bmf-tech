@@ -264,7 +264,7 @@ PEPとPDPの配置、キャッシュや一貫性などの非機能の設計は�
 
 ## PEPとPDPの間をつなぐ標準: AuthZEN
 
-外部化で気になるのは、PEPの実装が特定のPDP製品に縛られることである。OpenID FoundationのAuthZEN Working Groupは、PEPとPDPの間のインターフェースを標準化している。Authorization API 1.0は2026年1月11日にFinal Specificationとして公開された。
+外部化で気になるのは、PEPの実装が特定のPDP製品に縛られることである。OpenID FoundationのAuthZEN Working Groupは、PEPとPDPの間のインターフェースを標準化している。Authorization API 1.0は、2026年1月11日付の版がOpenID Final Specificationとして承認された（承認の発表は1月12日）。
 
 Authorization API 1.0は、主に次のAPIを定めている。
 
@@ -326,6 +326,7 @@ PDPのポリシー言語、アーキテクチャ、状態の管理は仕様の�
 # 参考リンク
 
 - [OpenID Foundation - Authorization API 1.0](https://openid.net/specs/authorization-api-1_0.html)
+- [OpenID Foundation - Authorization API 1.0 Final Specification Approved](https://openid.net/authorization-api-1-0-final-specification-approved/)
 - [OpenID Foundation - AuthZEN Working Group](https://openid.net/wg/authzen/)
 - [OpenID Foundation - OpenID Foundation advances authorization for the agent era with new AuthZEN Working Group Drafts](https://openid.net/openid-foundation-advances-authorization-for-the-agent-era-with-new-authzen-working-group-drafts/)
 - [AuthZEN Interop](https://authzen-interop.net/)
