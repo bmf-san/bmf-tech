@@ -157,6 +157,7 @@ flowchart LR
     dir -- "主体の属性（SCIM）" --> pip
     approval -- "期限付きの割り当て" --> pip
     risk -- "リスクシグナル（CAEP）" --> pdp
+    risk -- "リスクシグナル（CAEP）" --> idp
     pdp -- "判定の記録" --> audit
 ```
 

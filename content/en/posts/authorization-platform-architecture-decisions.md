@@ -157,6 +157,7 @@ flowchart LR
     dir -- "subject attributes (SCIM)" --> pip
     approval -- "time-bound assignments" --> pip
     risk -- "risk signals (CAEP)" --> pdp
+    risk -- "risk signals (CAEP)" --> idp
     pdp -- "record decisions" --> audit
 ```
 
