@@ -30,7 +30,7 @@ This post targets teams that add authorization to MCP servers or MCP clients. It
 - How to separate what to do now from what can wait
 - A table of the main requirements in the specification
 
-This post refers to the 2026-07-28 revision, the current revision as of October 2026. The MCP specification keeps evolving, so pick the revision you adopt and check the original text. For the broader picture of authorization for AI agents, including AuthZEN profiles and delegation extensions, see [Authorization for AI agents](/posts/authorization-for-ai-agents/).
+This post refers to the 2026-07-28 revision, the current revision as of October 2026. The MCP specification keeps evolving, so pick the revision you adopt and check the original text. For the broader picture of authorization for AI agents, including the new AuthZEN drafts (AARP, COAZ) and delegation extensions, see [Authorization for AI agents](/posts/authorization-for-ai-agents/).
 
 # Start by drawing your architecture on one page
 
