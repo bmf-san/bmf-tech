@@ -89,13 +89,18 @@ Passthrough causes more harm than token theft alone. The Best Practices list the
 - When several services accept one token without proper validation, an attacker who breaks one service can reach the other connected services
 - Even if the server works as a plain proxy today, it may need security controls later. Separating audiences from the start makes the security model easier to evolve
 
-Teams tend to miss the last point. Separating audiences protects you today and also leaves room to add controls later.
+Unlike the other three, the last point concerns future evolution rather than present harm. Separating audiences protects you today and also leaves room to add controls later.
 
 ## Confused deputy
 
-The confused deputy problem appears when an MCP server acts as a proxy to a third-party API. Such an MCP server uses one static client ID with the third-party authorization server and lets MCP clients register dynamically.
+The confused deputy problem can appear when an MCP server acts as a proxy to a third-party API. The Best Practices say the attack becomes possible when every one of these conditions holds:
 
-The third-party authorization server remembers, through a cookie, that the user already consented to that client ID. An attacker registers a malicious client and gets the user to click a link. The consent screen never appears, and the authorization code goes to the attacker's redirect URI.
+- The MCP server uses one static client ID with the third-party authorization server
+- The MCP server lets MCP clients register dynamically
+- The third-party authorization server sets a consent cookie after the first authorization
+- The MCP server forwards requests to the third-party authorization server without per-client consent
+
+An attacker then registers a malicious client and gets the user to click a link. The consent cookie remains, so the consent screen never appears, and the authorization code goes to the attacker's redirect URI.
 
 As a countermeasure, an MCP proxy that uses a static client ID MUST get user consent for each dynamically registered client before it forwards the request to the third party. The Best Practices also require (MUST) the proxy to keep a per-user registry of approved `client_id` values, to show the client name, scopes, and redirect URI on the consent screen, and to check `redirect_uri` by exact match.
 
@@ -238,7 +243,7 @@ Instead of "we cannot ship until we do everything", draw a line. For anything yo
 
 AARP refers to the AuthZEN Access Request and Approval Profile (Draft). AARP is the abbreviation from the OpenID Foundation announcement; the draft's header uses ARAP.
 
-Many "do now" items overlap with MUSTs in the specification. Adding them later also means recalling tokens you have handed out or backfilling past logs. In contrast, the "can wait" items stay swappable as long as you have fixed the entry point for decisions (the PEP). That is why you should gather the places that call the decision into one spot, even if the logic stays hardcoded for now.
+Among the "do now" items, audience validation and no passthrough, PKCE, and per-request access decisions are MUSTs in the specification. If you add audience validation, short-lived tokens, or audit logs later, you have to recall tokens you have handed out or backfill past logs. In the author's view, most "can wait" items are easy to add or swap later as long as you have fixed the entry point for decisions (the PEP). That is why you should gather the places that call the decision into one spot, even if the logic stays hardcoded for now.
 
 # Main requirements of the MCP authorization specification
 
