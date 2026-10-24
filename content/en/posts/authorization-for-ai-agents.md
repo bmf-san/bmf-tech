@@ -135,7 +135,7 @@ The key points:
 - When permissions fall short, the server indicates the required scopes with `insufficient_scope`, and the client requests them incrementally (step-up).
 - The official authorization extensions (ext-auth) cover machine-to-machine use without a user and central management by an enterprise IdP. The first is Client Credentials; the second is Enterprise-Managed Authorization, which uses ID-JAG (covered later).
 
-MCP authorization covers only obtaining and validating tokens. Deciding "may this tool run on this data on behalf of this user", separating the user from the agent, and human approval all sit outside the spec. I cover the design points in [the post on MCP authorization design](/posts/mcp-authorization-design/).
+MCP authorization covers only obtaining and validating tokens. Deciding "may this tool run on this data on behalf of this user", separating the user from the agent, and human approval all sit outside the authorization spec. The tools spec says servers MUST put proper access controls in place, but it does not define how to decide. I cover the design points in [the post on MCP authorization design](/posts/mcp-authorization-design/).
 
 # AuthZEN profiles: filling the gaps before and after a decision
 
@@ -388,7 +388,7 @@ You can also use the AIMS layers as a review checklist. Check the following:
 # Summary
 
 - With AI agents, delegation chains, least privilege that you cannot fix up front, misuse of legitimate authority through prompt injection, human approval, and audit attribution become new problems.
-- MCP authorization covers obtaining and validating tokens for tools. Decisions, separating users from agents, and human approval sit outside the spec.
+- MCP authorization covers obtaining and validating tokens for tools. How to decide, separating users from agents, and human approval sit outside the spec.
 - AuthZEN COAZ-MCP maps MCP requests to authorization questions, down to the argument level when a tool declares a mapping. AARP connects a denial to approval and re-evaluation. Both keep the PDP as the final authority.
 - AIMS serves as a checklist for agent authentication and authorization built from existing standards.
 - OBO and AAuth show ways to express delegation, ID-JAG handles central management by enterprises, and A2A and AP2 handle agent collaboration and payment approval.
