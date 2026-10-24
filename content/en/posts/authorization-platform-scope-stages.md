@@ -17,7 +17,7 @@ draft: false
 
 # Overview
 
-Discussions about an authorization platform tend to collapse into two options: "build one platform that manages every permission in the company" or "leave it to each application." In practice, several stages sit between those two, and your organization needs one of them.
+Discussions about an authorization platform sometimes collapse into two options: "build one platform that manages every permission in the company" or "leave it to each application." In practice, several stages sit between those two, and your organization needs one of them.
 
 This article lays out the material you need to decide how much authorization platform your organization needs. You will learn:
 
@@ -91,7 +91,7 @@ Permissions travel across services: from a user to an agent, to an MCP server, t
 
 ## Hard to change later, and when it stops, everything stops
 
-Authorization logic gets embedded in code everywhere. So when you change the permission model, you have to touch every service.
+When each application makes its own decisions, authorization logic gets embedded in code everywhere. So when you change the permission model, you have to touch every service.
 
 Conversely, once you externalize decisions, an outage of the decision service can stop every feature. The usual rule is to deny (fail-closed) rather than allow (fail-open) when you cannot reach a decision, so the decision service's availability drives the availability of the whole system. Either way, the blast radius covers the entire architecture.
 
