@@ -220,7 +220,7 @@ Three drafts define how workloads use WITs and WICs to authenticate each other. 
 
 Some notes on each.
 
-- **mTLS**: You MUST check that the trust domain in the WIC matches the one you expect for that connection. When you connect by DNS name, you SHOULD also run RFC 9525 hostname verification; identifier checks add to it rather than replace it. You MUST NOT let a self-asserted identity in an HTTP header override the identity that mTLS established.
+- **mTLS**: You MUST check that the trust domain in the WIC matches the one you expect for that connection. When you connect by DNS name, you also run RFC 9525 hostname verification: Section 3.2.1 makes this a MUST, while the Security Considerations section says SHOULD. Identifier checks add to it rather than replace it. You MUST NOT let a self-asserted identity in an HTTP header override the identity that mTLS established.
 - **HTTP Message Signatures**: To survive proxies that end TLS and rewrite `Host`, the profile does not sign `@authority`. Instead it puts the target in the signature parameter `wimse-aud`, and the receiver compares it exactly against trusted configuration. The `nonce` needs at least 64 bits of entropy, and the signature lifetime (`expires`) should stay in minutes.
 - **WPT**: A short-lived JWT signed with the WIT key. The predecessor draft, s2s-protocol, described it as an option inspired by OAuth DPoP (RFC 9449). In -02, the draft moved it from a dedicated header to `Authorization: WPT`. As a result, you cannot send a Bearer or DPoP access token in the same request. The draft describes this exclusivity as intentional: it keeps a request from dropping to the strength of its weakest credential.
 
