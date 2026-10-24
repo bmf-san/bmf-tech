@@ -154,7 +154,7 @@ The `id` of a Subject or Resource only needs to be unique within its `type`. Act
 }
 ```
 
-The spec explains why `properties` exists. Many authorization systems keep no state and expect the PEP to pass every attribute the policy needs. So the PEP can put attributes such as department, group memberships, device identifier, or IP address into `properties`.
+The spec explains why `properties` exists. Many authorization systems keep no state and expect the PEP to pass every attribute the policy needs. So the PEP can put subject attributes such as department, group memberships, device identifier, or IP address into the subject's `properties`. Resources and actions carry their own `properties` for the same purpose.
 
 Some things stay open. The spec does not define the values of `type` (for example, `user` or `account`), the values of `name` (for example, `can_read` or `read`), or the keys of `properties`. Aligning that vocabulary between PEPs and PDPs remains your job.
 
@@ -428,7 +428,7 @@ AuthZEN pays off by hiding engine differences from the PEP. The concepts of comm
 | Context | Any structure in `input` | `context` | `context` (for conditional relationships) |
 | Listing questions | Needs workarounds such as partial evaluation | Not part of the core decision API | ListObjects, ListUsers |
 
-Cedar's four-part request looks almost identical to SARC. OpenFGA asks about relationships, so you need a convention that maps Action to `relation`. OPA does not fix the shape of its input, so you can write policies that take SARC directly as `input`. For OPA basics, see [What is Open Policy Agent (OPA)?](/posts/open-policy-agent/), and for its use in microservices, see [Implementation of Access Control System for Microservices Using OPA](/posts/microservices-access-control-opa/).
+Cedar's four-part request looks almost identical to SARC. OpenFGA asks about relationships, so you need a convention that maps Action to `relation`. OPA does not fix the shape of its input, so you can write policies that take SARC directly as `input`. OPA itself has no AuthZEN endpoints, though. To feed an AuthZEN request into `input`, you need a translation layer such as the authzen-proxy in OPA's contrib repository. For OPA basics, see [What is Open Policy Agent (OPA)?](/posts/open-policy-agent/), and for its use in microservices, see [Implementation of Access Control System for Microservices Using OPA](/posts/microservices-access-control-opa/).
 
 ## What You Can Swap, and What You Cannot
 
@@ -528,6 +528,7 @@ Finally, here are my own tips for bringing AuthZEN into a design.
 - [Conformance Testing for OpenID AuthZEN Authorization API 1.0](https://openid.net/certification/authzen_testing/)
 - [OpenID AuthZEN Interop](https://authzen-interop.net/)
 - [openid/authzen (GitHub)](https://github.com/openid/authzen)
+- [open-policy-agent/contrib authzen-proxy (GitHub)](https://github.com/open-policy-agent/contrib/tree/main/authzen/authzen-proxy)
 - [OpenID Foundation advances authorization for the agent era with new AuthZEN Working Group Drafts](https://openid.net/openid-foundation-advances-authorization-for-the-agent-era-with-new-authzen-working-group-drafts/)
 - [OASIS XACML 3.0](https://docs.oasis-open.org/xacml/3.0/xacml-3.0-core-spec-os-en.html)
 - [JSON Profile of XACML 3.0 Version 1.1](https://docs.oasis-open.org/xacml/xacml-json-http/v1.1/xacml-json-http-v1.1.html)

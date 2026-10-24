@@ -154,7 +154,7 @@ SubjectとResourceの`id`は、`type`の中で一意であればよい。Action�
 }
 ```
 
-`properties`が用意されている理由を、仕様は次のように説明する。多くの認可システムは状態を持たず、判定に必要な属性をすべてPEPが渡すことを期待する。そのため、部署、所属グループ、端末の識別子、IPアドレスといった属性を、主体や資源の`properties`に載せられる。
+`properties`が用意されている理由を、仕様は次のように説明する。多くの認可システムは状態を持たず、判定に必要な属性をすべてPEPが渡すことを期待する。そのため、部署、所属グループ、端末の識別子、IPアドレスといった主体の属性を、主体の`properties`に載せられる。資源と操作にも、同じように属性を載せる`properties`がある。
 
 ここで決まっていないことがある。`type`の値（例: `user`、`account`）、`name`の値（例: `can_read`、`read`）、`properties`のキーは、仕様では決めていない。PEPとPDPの間で語彙をそろえる作業は、導入する側に残る。
 
@@ -384,7 +384,7 @@ JSONについては、I-JSON（RFC 7493）に沿うことを推奨している�
 
 | 観点 | 仕様の要求 | 理由 |
 | --- | --- | --- |
-| 通信の完全性と機密性 | PEPとPDPの接続を、TLSなど適切な手段で保護しなければならない（MUST） | ABACの構成で最も重要な接続だから |
+| 通信の完全性と機密性 | PEPとPDPの接続を、TLSなど適切な手段で保護しなければならない（MUST） | ABACの構成で最も機微な接続だから |
 | PEPの認証 | PDPはPEPを認証すべき（SHOULD）。手段はmTLS、OAuth、APIキーなど | 大量の要求でポリシーを探られることと、DoSを防ぐ |
 | 認証の失敗 | `401`を返さなければならず（MUST）、`WWW-Authenticate`ヘッダを付けるべき（SHOULD） | 期待する認証方式を伝える |
 | 信頼 | PDPはPEPを信頼する前提に立つ | 判定を最後に強制するのはPEPだから |
@@ -428,7 +428,7 @@ AuthZENの効き目は、PEPの側から見たエンジンの違いを吸収す�
 | Context | `input`の任意の構造 | `context` | `context`（条件付きの関係で使う） |
 | 一覧の問い | 部分評価などで工夫する | 中核の判定APIにはない | ListObjects、ListUsers |
 
-Cedarの4つ組はSARCとほぼ同じ形をしている。OpenFGAは関係を問うので、Actionを`relation`に写す取り決めが要る。OPAは入力の形を決めていないので、SARCをそのまま`input`に渡すポリシーを書けばよい。OPAの基本は[Open Policy Agent (OPA)とは](/ja/posts/open-policy-agent/)で、マイクロサービスでの使い方は[OPAを使用したマイクロサービスのアクセス制御システムの実装](/ja/posts/microservices-access-control-opa/)で扱った。
+Cedarの4つ組はSARCとほぼ同じ形をしている。OpenFGAは関係を問うので、Actionを`relation`に写す取り決めが要る。OPAは入力の形を決めていないので、SARCをそのまま`input`として受けるポリシーを書けばよい。ただし、OPA本体はAuthZENのエンドポイントを持たない。AuthZENの要求を`input`に渡すには、OPAのcontribにあるauthzen-proxyのような変換層が要る。OPAの基本は[Open Policy Agent (OPA)とは](/ja/posts/open-policy-agent/)で、マイクロサービスでの使い方は[OPAを使用したマイクロサービスのアクセス制御システムの実装](/ja/posts/microservices-access-control-opa/)で扱った。
 
 ## 差し替えられるもの、差し替えられないもの
 
@@ -528,6 +528,7 @@ OpenID Foundationは2026年6月の発表で、認可システムはこれまで�
 - [Conformance Testing for OpenID AuthZEN Authorization API 1.0](https://openid.net/certification/authzen_testing/)
 - [OpenID AuthZEN Interop](https://authzen-interop.net/)
 - [openid/authzen（GitHub）](https://github.com/openid/authzen)
+- [open-policy-agent/contrib authzen-proxy（GitHub）](https://github.com/open-policy-agent/contrib/tree/main/authzen/authzen-proxy)
 - [OpenID Foundation advances authorization for the agent era with new AuthZEN Working Group Drafts](https://openid.net/openid-foundation-advances-authorization-for-the-agent-era-with-new-authzen-working-group-drafts/)
 - [OASIS XACML 3.0](https://docs.oasis-open.org/xacml/3.0/xacml-3.0-core-spec-os-en.html)
 - [JSON Profile of XACML 3.0 Version 1.1](https://docs.oasis-open.org/xacml/xacml-json-http/v1.1/xacml-json-http-v1.1.html)
