@@ -192,7 +192,7 @@ Each stage builds on the previous one. The PDP in Stage 2 relies on the token an
 
 You do not need to move every domain at once when you move up a stage. Start with the domains that feel the most pain, and firm up the shared contracts as you go. That keeps the platform close to real requirements.
 
-[Case Study on Authorization Management Infrastructure](/posts/permission-management-case-study/) collects examples of organizations that run a permission management platform with a dedicated team.
+[Case Study on Authorization Management Infrastructure](/posts/permission-management-case-study/) covers freee's example of a dedicated team that builds and runs a permission management platform.
 
 ## Every organization needs Stage 1 early
 
@@ -333,4 +333,4 @@ If you are unsure, consider starting with an in-process library or a sidecar rat
 - [OWASP Top 10:2025 - A01 Broken Access Control](https://owasp.org/Top10/2025/A01_2025-Broken_Access_Control/)
 - [NIST SP 800-53 Rev. 5 - Security and Privacy Controls for Information Systems and Organizations](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final)
 - [NIST SP 800-162 - Guide to Attribute Based Access Control (ABAC) Definition and Considerations](https://csrc.nist.gov/pubs/sp/800/162/upd2/final)
-- [Open Policy Agent - Filtering Data (partial evaluation)](https://www.openpolicyagent.org/docs/filtering)
+- [Open Policy Agent - Data Filtering with OPA (partial evaluation)](https://www.openpolicyagent.org/docs/filtering)

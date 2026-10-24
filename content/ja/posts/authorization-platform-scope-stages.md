@@ -192,7 +192,7 @@ flowchart LR
 
 段階を上げるときに、全ドメインを一度に移す必要はない。痛みの強いドメインから移し、横断の契約はそのつど固めていく方が、基盤が実際の要件から離れにくい。
 
-専任チームで権限管理基盤を運用している事例は、[権限管理基盤についての事例](/ja/posts/permission-management-case-study/)にまとめた。
+専任チームで権限管理基盤を開発・運用しているfreeeの事例は、[権限管理基盤についての事例](/ja/posts/permission-management-case-study/)にまとめた。
 
 ## 段階1はどの組織でも早めに要る
 
@@ -208,7 +208,7 @@ flowchart LR
 - 判定を外に出すことによる遅延や、判定サービスが止まったときに全体が止まるリスクの方が大きい
 - 基盤を作っても、各チームには使うインセンティブがない（結局アプリ内で判定し続ける）
 
-早すぎる基盤化は、可用性のリスクと運用の負担だけを増やす。3つ目のサインは、[プラットフォームの成立条件](/ja/posts/platform-viability-conditions/)の「複数チームから再利用される」という条件を満たせない状態でもある。
+早すぎる基盤化は、可用性のリスクと運用の負担だけを増やす。3つ目のサインは、[プラットフォームの成立条件](/ja/posts/platform-viability-conditions/)の「複数チーム／複数プロダクトから再利用される」という条件を満たせない状態でもある。
 
 ただし、基盤を作らないことは何もしないことではない。前節のとおり、段階1の規約はどの組織でも早めに揃えておく方がよい。作らない判断の対象は、主に段階2以降である。
 
@@ -333,4 +333,4 @@ PDPのポリシー言語、アーキテクチャ、状態の管理は仕様の�
 - [OWASP Top 10:2025 - A01 Broken Access Control](https://owasp.org/Top10/2025/A01_2025-Broken_Access_Control/)
 - [NIST SP 800-53 Rev. 5 - Security and Privacy Controls for Information Systems and Organizations](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final)
 - [NIST SP 800-162 - Guide to Attribute Based Access Control (ABAC) Definition and Considerations](https://csrc.nist.gov/pubs/sp/800/162/upd2/final)
-- [Open Policy Agent - Filtering Data（partial evaluation）](https://www.openpolicyagent.org/docs/filtering)
+- [Open Policy Agent - Data Filtering with OPA（partial evaluation）](https://www.openpolicyagent.org/docs/filtering)
