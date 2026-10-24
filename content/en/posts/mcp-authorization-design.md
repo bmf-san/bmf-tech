@@ -86,7 +86,7 @@ Passthrough causes more harm than token theft alone. The Best Practices list the
 
 - Clients bypass rate limits and checks that the MCP server or downstream API built around the token audience
 - The MCP server cannot tell clients apart, and the downstream API logs show a different sender from the real one. Incident investigation and auditing get harder
-- When several services accept one token, an attacker who breaks one service can reach the other connected services
+- When several services accept one token without proper validation, an attacker who breaks one service can reach the other connected services
 - Even if the server works as a plain proxy today, it may need security controls later. Separating audiences from the start makes the security model easier to evolve
 
 Teams tend to miss the last point. Separating audiences protects you today and also leaves room to add controls later.
@@ -97,7 +97,7 @@ The confused deputy problem appears when an MCP server acts as a proxy to a thir
 
 The third-party authorization server remembers, through a cookie, that the user already consented to that client ID. An attacker registers a malicious client and gets the user to click a link. The consent screen never appears, and the authorization code goes to the attacker's redirect URI.
 
-As a countermeasure, an MCP proxy that uses a static client ID MUST get user consent for each dynamically registered client before it forwards the request to the third party. The Best Practices also ask the proxy to keep a per-user registry of approved `client_id` values, to show the client name, scopes, and redirect URI on the consent screen, and to check `redirect_uri` by exact match.
+As a countermeasure, an MCP proxy that uses a static client ID MUST get user consent for each dynamically registered client before it forwards the request to the third party. The Best Practices also require (MUST) the proxy to keep a per-user registry of approved `client_id` values, to show the client name, scopes, and redirect URI on the consent screen, and to check `redirect_uri` by exact match.
 
 ## Over-broad scopes and decisions that rely on scopes alone
 
@@ -114,7 +114,7 @@ The last mistake leads straight to the next section: what the specification does
 
 If you put API keys or tokens into the LLM context, they leak through conversation logs and prompts. A prompt injection can also make the model print credentials. Let the MCP client (the host) or the MCP server hold credentials, and never show them to the model.
 
-The MCP specification reflects the same idea. In form mode, Elicitation (the way a server asks the user for input) MUST NOT request passwords, API keys, or access tokens. For OAuth with an external service, the server uses URL mode so that external credentials never pass through the MCP client.
+The MCP specification reflects the same idea. Servers MUST NOT use the form mode of Elicitation (the way a server asks the user for input) to request passwords, API keys, or access tokens. For OAuth with an external service, the server uses URL mode so that external credentials never pass through the MCP client.
 
 ## Nobody can trace who did what
 
@@ -153,7 +153,7 @@ You have three main places to put the decision:
 | A gateway (PEP) in front of the MCP servers | You want per-tool permissions or per-tenant controls in one place | To inspect argument values, it must parse the body or use the arguments that the server marks with `x-mcp-header` and the client mirrors into headers |
 | An external decision service (PDP) | Many MCP servers, and you want to manage policy across them | You need to design the decision API and the attributes it uses |
 
-In the 2026-07-28 Streamable HTTP transport, every POST must carry the `Mcp-Method` header. Requests such as `tools/call` must also carry the `Mcp-Name` header. A gateway learns "which method, which tool" without parsing the body and can apply per-tool controls. A server that processes the body MUST check that the header values match the body and reject mismatches. A gateway that decides on headers SHOULD confirm that `MCP-Protocol-Version` names a revision that requires this check, and reject the request otherwise.
+In the 2026-07-28 Streamable HTTP transport, every request REQUIRES the `Mcp-Method` header. Requests such as `tools/call` also REQUIRE the `Mcp-Name` header. A gateway learns "which method, which tool" without parsing the body and can apply per-tool controls. A server that processes the body MUST check that the header values match the body and reject mismatches. A gateway that decides on headers SHOULD confirm that `MCP-Protocol-Version` names a revision that requires this check, and reject the request otherwise.
 
 If you externalize decisions, AuthZEN's [Authorization API](/posts/authzen-authorization-api/) offers a standard between the PEP and the PDP. AuthZEN also has a draft binding, COAZ-MCP, that maps MCP requests to decision requests. COAZ-MCP still carries the label Draft 1 (dated 2026-02-13), but its editor's draft has started to pick up changes for the 2026-07-28 revision (for example, it dropped the `initialize` mapping). Before you adopt it, check which MCP revision it assumes. [Authorization architecture](/posts/authorization-architecture-models-engines/) covers how to split the PEP and the PDP.
 
@@ -287,7 +287,7 @@ sequenceDiagram
 | Mix-up defense | Include `iss` (RFC 9207) in authorization responses. If you include it, advertise it in the metadata | Authorization server | SHOULD (advertising is MUST) |
 | Mix-up defense | Record the `issuer` of the chosen authorization server. If the response has `iss`, compare the two before using the code. Reject a response without `iss` from an authorization server that advertises `iss` support | MCP client | MUST |
 | Scopes | Use the `scope` in the first 401, or `scopes_supported` if absent. Signal missing scopes with 403 `insufficient_scope`; the client reauthorizes with the union | MCP server / MCP client | SHOULD |
-| Transport | Serve all authorization server endpoints over HTTPS. Redirect URIs use localhost or HTTPS, and the server checks them by exact match | Authorization server / MCP client | MUST |
+| Transport | Serve all authorization server endpoints over HTTPS. Redirect URIs use localhost or HTTPS, and the authorization server checks them by exact match | Authorization server / MCP client | MUST |
 | Token theft | Issue short-lived access tokens. Rotate refresh tokens for public clients | Authorization server | SHOULD / MUST |
 | Confused deputy | An MCP proxy with a static client ID gets user consent for each dynamically registered client before forwarding | MCP server (proxy) | MUST |
 
