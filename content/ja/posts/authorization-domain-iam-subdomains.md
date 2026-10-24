@@ -119,7 +119,7 @@ Core / Supporting / Genericはサブドメインの分類である。どれに�
 | IAM以外（EC、SaaSなどの業務アプリ） | 事業ドメインの中のGenericサブドメイン（事業によってはSupporting） |
 | IAMそのもの（IdP、認可エンジン、IGAのベンダー） | IAMがドメインそのもの。その中のサブドメインをCore / Supporting / Genericに分ける |
 
-業務アプリの組織にとって、IAMは基本的にGenericである。IDDDの本はIdentity and Access ContextをGenericサブドメインの例として扱っており、公式サンプルの`iddd_identityaccess`がその実装である。Genericであれば、標準仕様と既製品で済ませる方向に倒すのが自然な判断になる。
+業務アプリの組織にとって、IAMは基本的にGenericである。IDDDの著者のVernonは、InfoQのインタビューで、本のサンプルモデルのIdentity and Access Contextに触れている。その中で、このContextは「Generic Subdomainとみなされる」と述べている。公式サンプルの`iddd_identityaccess`がその実装である。Genericであれば、標準仕様と既製品で済ませる方向に倒すのが自然な判断になる。
 
 ただし、テナントごとに複雑な権限を設定できることが求められるSaaSでは、アクセス判定やアクセスガバナンスがSupportingに寄ることがある。IAMのベンダーであれば、IdPなら認証と委譲、認可エンジンならアクセス判定、IGA（Identity Governance and Administration）ならアクセスガバナンスがCoreになりやすい。
 
@@ -327,3 +327,4 @@ IDDDの公式サンプルがこの関係をよく表している。業務側のC
 - [Eric Evans, DDD Reference](https://www.domainlanguage.com/ddd/reference/)
 - [Vaughn Vernon, Implementing Domain-Driven Design 第1章の抜粋: The Business Value of Using DDD（InformIT）](https://www.informit.com/articles/article.aspx?p=1944876&seqNum=4)
 - [Vaughn Vernon, IDDD_Samples](https://github.com/VaughnVernon/IDDD_Samples)
+- [Implementing Domain Driven Design Review and Interview（InfoQ）](https://www.infoq.com/articles/implmenting-domain-driven-design-vaughn-vernon/)

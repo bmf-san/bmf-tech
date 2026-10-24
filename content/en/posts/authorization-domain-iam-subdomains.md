@@ -119,7 +119,7 @@ Core, Supporting, and Generic classify subdomains. Which one applies depends on 
 | Something other than IAM (business apps such as e-commerce or SaaS) | A Generic subdomain within the business domain (Supporting for some businesses) |
 | IAM itself (IdP, authorization engine, or IGA vendor) | IAM forms the domain itself. Its subdomains split into Core, Supporting, and Generic |
 
-For an organization that builds business apps, IAM usually counts as Generic. The IDDD book uses the Identity and Access Context as an example of a Generic subdomain, and the `iddd_identityaccess` module in the official IDDD samples implements it. When IAM counts as Generic, leaning on standards and off-the-shelf products makes sense.
+For an organization that builds business apps, IAM usually counts as Generic. In an InfoQ interview, Vernon, the author of IDDD, says that the book's sample models treat the Identity and Access Context as a Generic Subdomain. The `iddd_identityaccess` module in the official IDDD samples implements it. When IAM counts as Generic, leaning on standards and off-the-shelf products makes sense.
 
 Still, for a SaaS product whose customers need rich per-tenant permission settings, access decision or access governance can move toward Supporting. For IAM vendors, the Core tends to sit in authentication and delegation for an IdP, in access decision for an authorization engine, and in access governance for IGA (Identity Governance and Administration).
 
@@ -327,3 +327,4 @@ For example, a proposal to "build an authorization platform with OAuth" means so
 - [Eric Evans, DDD Reference](https://www.domainlanguage.com/ddd/reference/)
 - [Vaughn Vernon, Implementing Domain-Driven Design, Chapter 1 excerpt: The Business Value of Using DDD (InformIT)](https://www.informit.com/articles/article.aspx?p=1944876&seqNum=4)
 - [Vaughn Vernon, IDDD_Samples](https://github.com/VaughnVernon/IDDD_Samples)
+- [Implementing Domain Driven Design Review and Interview (InfoQ)](https://www.infoq.com/articles/implmenting-domain-driven-design-vaughn-vernon/)
