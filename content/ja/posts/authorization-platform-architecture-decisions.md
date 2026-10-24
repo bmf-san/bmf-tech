@@ -76,7 +76,6 @@ flowchart TB
         AUTHN -- "認証結果" --> DEL
         ID -- "主体と属性" --> POL
         GOV -- "権限の割り当て" --> POL
-        POL -. "承認の依頼" .-> GOV
     end
 
     APP["業務システム<br/>（アプリ・API・MCP サーバ。PEP を持つ）"]
@@ -87,7 +86,7 @@ flowchart TB
     agent -- "トークン取得" --> IAM
     user -- "操作" --> APP
     agent -- "tool 呼び出し" --> APP
-    APP -- "判定要求・トークン検証" --> IAM
+    APP -- "判定要求・トークン検証・承認の申請" --> IAM
 ```
 
 この図から読み取れる点は3つある。
@@ -149,7 +148,7 @@ flowchart LR
     as -- "交換・発行（RFC 8693）" --> txn
     gw -- "判定要求（AuthZEN）" --> pdp
     svcpep -- "判定要求（AuthZEN）" --> pdp
-    gw -- "承認の依頼（AARP）" --> approval
+    gw -- "申請（AARP）" --> approval
     pap -- "配布" --> polstore
     polstore -- "ポリシー" --> pdp
     pip -- "属性" --> pdp
@@ -190,7 +189,7 @@ flowchart LR
 - ワークロードの資格情報とTransaction Tokensは[ワークロードアイデンティティとは](/ja/posts/workload-identity-wimse-transaction-tokens/)にある。サービス間の通信の認証は[サービス間認証の全体像](/ja/posts/service-to-service-authentication/)で整理した。
 - AIエージェント向けの承認やMCPは[AI エージェントの認可](/ja/posts/authorization-for-ai-agents/)にある。
 
-コンテナ図で押さえたい点は、**PDPの入力が多方向から来る**ことである。ポリシーはPAPから、属性はPIPから、関係は関係ストアから、リスクシグナルは隣接ドメインから届く。PDP自体はステートレスに保ち、状態はこれらの入力側に置く。OPAを例にしたPEP・PDP・PIPの分担と実装は[OPAを使用したマイクロサービスのアクセス制御システムの実装](/ja/posts/microservices-access-control-opa/)に書いた。
+コンテナ図で押さえたい点は、**PDPの入力が多方向から来る**ことである。ポリシーはPAPからポリシーストアを経て、属性はPIPから、関係は関係ストアから、リスクシグナルは隣接ドメインから届く。PDP自体はステートレスに保ち、状態はこれらの入力側に置く。OPAを例にしたPEP・PDP・PIPの分担と実装は[OPAを使用したマイクロサービスのアクセス制御システムの実装](/ja/posts/microservices-access-control-opa/)に書いた。
 
 # 代表シーケンス
 
@@ -207,14 +206,14 @@ sequenceDiagram
     participant AS as 認可サーバ
     participant PDP as PDP
     participant PIP as PIP/関係ストア
-    C->>AS: トークン要求（OAuth 2.1、PKCE、RAR）
+    C->>AS: トークン要求（OAuth 2.1、PKCE、任意で RAR）
     AS-->>C: アクセストークン（aud=対象、scope）
     C->>PEP: 資源の要求とトークン
     PEP->>PEP: トークン検証（署名、iss、aud、exp）
     PEP->>PDP: Access Evaluation（subject、action、resource、context）
     PDP->>PIP: 属性・関係の取得
     PIP-->>PDP: 属性・関係
-    PDP-->>PEP: decision と context（理由、step-up の要求など）
+    PDP-->>PEP: decision と任意の context（理由、step-up の要求など）
     alt 許可
         PEP-->>C: 資源
     else 拒否
@@ -240,9 +239,9 @@ sequenceDiagram
     participant AS as 認可サーバ
     participant PDP as PDP
     AG->>MCP: tool 呼び出し（トークンなし）
-    MCP-->>AG: 401 と WWW-Authenticate（resource_metadata）
+    MCP-->>AG: 401 と WWW-Authenticate（resource_metadata を含む場合がある）
     AG->>MCP: Protected Resource Metadata の取得（RFC 9728）
-    MCP-->>AG: メタデータ（認可サーバ、scope）
+    MCP-->>AG: メタデータ（認可サーバ、任意で scopes_supported）
     Note over AG,AS: requested_actor と actor_token は OBO ドラフトの拡張で、MCP の認可仕様の外
     AG->>AS: 認可要求（resource=MCP、PKCE、requested_actor=AG）
     AS->>U: 同意画面（クライアント、エージェント、scope を示す）
@@ -373,7 +372,7 @@ RAR（RFC 9396）を使えば、トークン要求に「この相手に、この
 - **PDPを近くに置く**。プロセス内ライブラリやサイドカーにすればネットワークの往復が減る。
 - **まとめて問い合わせる**。AuthZENのAccess Evaluations APIは複数の判定を1回の要求で送れる（boxcarring）。`execute_all`、`deny_on_first_deny`、`permit_on_first_permit`の評価の仕方を選べる。ただし、このAPIを実装するかはPDPの任意である。
 - **判定をキャッシュする**。Subject・Action・Resource・Contextをキーにした短いTTLのキャッシュは効くが、権限の取り消しが遅れて効く。TTLの長さは「取り消しがどれだけ遅れてよいか」で決める。
-- **一覧は事前に絞る**。前節のとおり、部分評価やSearch APIでまとめて求める。
+- **一覧は事前に絞る**。前節のとおり、部分評価や、PDPが対応していればSearch APIでまとめて求める。
 
 ### 可用性と fail-closed
 
@@ -426,9 +425,9 @@ PDPが落ちたときや応答が遅いときに、通す（fail-open）か止�
 
 - 認可基盤のアーキテクチャは、IAMのサブドメイン（アイデンティティ、認証、委譲、アクセス判定、アクセスガバナンス）に境界を揃えると整理しやすい。
 - PEPは業務ドメインの側に置き、判定はPDPに外部化する。PEPとPDPの間はAuthZENのような標準のAPIでつなぐと、配置を変えやすい。
-- 代表的な流れは、リクエスト時の判定、AIエージェントへの委譲とMCP、拒否から承認を経て再評価する流れの3つである。どれも最後に判定するのはPDPである。
+- 代表的な流れは、リクエスト時の判定、AIエージェントへの委譲とMCP、拒否から承認を経て再評価する流れの3つである。3つの図では、どれも最後にPDPが判定する。MCPの流れでPDPに問い合わせるのは、COAZ-MCP（Draft）を使う場合である。
 - トークンは粗い認可を運ぶものとし、細かい認可はPDPとPIPに任せる。内部ではダウンスコープする。
-- 非機能では、レイテンシとキャッシュ、fail-closedと可用性、一貫性、監査を組み合わせて設計する。取り消しの速さは複数の設定の組み合わせで決まる。
+- 非機能では、レイテンシとキャッシュ、fail-closedと可用性、一貫性、監査などを組み合わせて設計する。取り消しの速さは複数の設定の組み合わせで決まる。
 
 # 関連記事
 

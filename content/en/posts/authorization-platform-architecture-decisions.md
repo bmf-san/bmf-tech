@@ -76,7 +76,6 @@ flowchart TB
         AUTHN -- "authentication result" --> DEL
         ID -- "subjects and attributes" --> POL
         GOV -- "permission assignments" --> POL
-        POL -. "approval request" .-> GOV
     end
 
     APP["Business systems<br/>(apps, APIs, MCP servers; they hold PEPs)"]
@@ -87,7 +86,7 @@ flowchart TB
     agent -- "obtain tokens" --> IAM
     user -- "operate" --> APP
     agent -- "call tools" --> APP
-    APP -- "decision requests, token validation" --> IAM
+    APP -- "decision requests, token validation, access requests" --> IAM
 ```
 
 Three points stand out in this diagram.
@@ -149,7 +148,7 @@ flowchart LR
     as -- "exchange / issue (RFC 8693)" --> txn
     gw -- "decision request (AuthZEN)" --> pdp
     svcpep -- "decision request (AuthZEN)" --> pdp
-    gw -- "approval request (AARP)" --> approval
+    gw -- "access request (AARP)" --> approval
     pap -- "distribute" --> polstore
     polstore -- "policies" --> pdp
     pip -- "attributes" --> pdp
@@ -190,7 +189,7 @@ Other posts in this series cover each row in depth.
 - [What is Workload Identity?](/posts/workload-identity-wimse-transaction-tokens/) covers workload credentials and Transaction Tokens. [What is the Big Picture of Service-to-Service Authentication?](/posts/service-to-service-authentication/) covers authentication between services.
 - [What is Authorization for AI Agents?](/posts/authorization-for-ai-agents/) covers approvals for agents and MCP.
 
-The key point of the container diagram: **inputs reach the PDP from many directions.** Policies come from the PAP, attributes from the PIP, relationships from the relationship store, and risk signals from adjacent domains. Keep the PDP itself stateless and keep state on the input side. [Implementation of Access Control System for Microservices Using OPA](/posts/microservices-access-control-opa/) shows how PEP, PDP, and PIP split their work in an OPA-based implementation.
+The key point of the container diagram: **inputs reach the PDP from many directions.** Policies come from the PAP through the policy store, attributes from the PIP, relationships from the relationship store, and risk signals from adjacent domains. Keep the PDP itself stateless and keep state on the input side. [Implementation of Access Control System for Microservices Using OPA](/posts/microservices-access-control-opa/) shows how PEP, PDP, and PIP split their work in an OPA-based implementation.
 
 # Key Sequences
 
@@ -207,14 +206,14 @@ sequenceDiagram
     participant AS as Authorization server
     participant PDP as PDP
     participant PIP as PIP / relationship store
-    C->>AS: Token request (OAuth 2.1, PKCE, RAR)
+    C->>AS: Token request (OAuth 2.1, PKCE, optional RAR)
     AS-->>C: Access token (aud=target, scope)
     C->>PEP: Resource request with token
     PEP->>PEP: Validate token (signature, iss, aud, exp)
     PEP->>PDP: Access Evaluation (subject, action, resource, context)
     PDP->>PIP: Fetch attributes / relationships
     PIP-->>PDP: Attributes / relationships
-    PDP-->>PEP: decision and context (reasons, step-up request, etc.)
+    PDP-->>PEP: decision and optional context (reasons, step-up request, etc.)
     alt allow
         PEP-->>C: Resource
     else deny
@@ -240,9 +239,9 @@ sequenceDiagram
     participant AS as Authorization server
     participant PDP as PDP
     AG->>MCP: Call tool (no token)
-    MCP-->>AG: 401 with WWW-Authenticate (resource_metadata)
+    MCP-->>AG: 401 with WWW-Authenticate (may include resource_metadata)
     AG->>MCP: Fetch Protected Resource Metadata (RFC 9728)
-    MCP-->>AG: Metadata (authorization server, scopes)
+    MCP-->>AG: Metadata (authorization server, optional scopes_supported)
     Note over AG,AS: requested_actor and actor_token come from the OBO draft, outside the MCP authorization spec
     AG->>AS: Authorization request (resource=MCP, PKCE, requested_actor=AG)
     AS->>U: Consent screen (client, agent, scopes)
@@ -373,7 +372,7 @@ If decisions sit on the synchronous path, decide how to keep the round trip shor
 - **Run the PDP close by.** An in-process library or a sidecar removes network hops.
 - **Batch your questions.** The AuthZEN Access Evaluations API sends many decisions in one request (boxcarring). You choose the evaluation semantics: `execute_all`, `deny_on_first_deny`, or `permit_on_first_permit`. Implementing this API is optional for the PDP.
 - **Cache decisions.** A short-TTL cache keyed on Subject, Action, Resource, and Context helps, but it delays revocation. Set the TTL by how late a revocation may take effect.
-- **Filter lists up front.** As the previous section explains, use partial evaluation or the Search API to compute lists in one pass.
+- **Filter lists up front.** As the previous section explains, use partial evaluation or, if the PDP supports it, the Search API to compute lists in one pass.
 
 ### Availability and Fail-Closed
 
@@ -426,9 +425,9 @@ The table below covers the remaining choices.
 
 - Aligning boundaries with IAM subdomains (identity, authentication, delegation, access decision, access governance) keeps an authorization platform architecture easy to reason about.
 - Put PEPs on the business side and externalize decisions to a PDP. Connecting them through a standard API such as AuthZEN makes placement easy to change.
-- The three representative flows are request-time decisions, AI agent delegation with MCP, and denial-to-approval-to-re-evaluation. In each, the PDP makes the final decision.
+- The three representative flows are request-time decisions, AI agent delegation with MCP, and denial-to-approval-to-re-evaluation. In all three diagrams, the PDP makes the final decision. In the MCP flow, the server asks a PDP only when it uses COAZ-MCP (Draft).
 - Let tokens carry coarse authorization and leave fine-grained authorization to the PDP and PIP. Downscope tokens inside your system.
-- On the non-functional side, design latency and caching, fail-closed and availability, consistency, and audit together. Revocation speed depends on several settings at once.
+- On the non-functional side, design latency and caching, fail-closed and availability, consistency, audit, and related concerns together. Revocation speed depends on several settings at once.
 
 # Related Posts
 
