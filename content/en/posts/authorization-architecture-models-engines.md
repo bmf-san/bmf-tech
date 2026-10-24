@@ -251,7 +251,7 @@ Designs worth taking home:
 
 - How to fail closed. Put deny-unless-permit at the top and use a deny-biased PEP that allows only on Permit with every obligation fulfilled. Both NotApplicable and errors then become Deny.
 - Obligations versus advice. The PEP must carry out obligations and may ignore advice. If the PEP does not understand or cannot fulfill an obligation, it acts according to its bias; a deny-biased PEP does not allow access. AuthZEN only lists obligations and advice as examples of what the optional (MAY) context field of a response can carry, and does not define how to handle them. If you return obligations through AuthZEN, define this contract yourself. Also note that unordered combining algorithms can make the returned set of obligations nondeterministic.
-- Avoid negative rules. "Allow unless X" can fall open when the attribute fails to arrive.
+- Avoid negative rules where you can. The XACML spec also recommends using them with care and avoiding them if possible. "Allow unless X" can fall open when the attribute fails to arrive.
 - Distinguish kinds of subjects. XACML has separate categories for the subject that started the request, intermediaries, and the recipient of the result. That vocabulary helps when decisions must account for multi-hop calls such as "user, then agent, then API".
 
 As a successor, the XACML TC is drafting ACAL 1.0, an XML-agnostic core model with separate representations: XML (XACML 4.0), JSON (JACAL), and YAML (YACAL). Committee Specification Draft 01 of the core and of the XML and JSON representations came out in February 2026, so adoption decisions would come too early. ALFA, a friendlier notation for XACML, also exists. A Working Draft 01 of it appeared in the XACML TC in 2015, but it never became an OASIS standard.
@@ -260,7 +260,7 @@ As a successor, the XACML TC is drafting ACAL 1.0, an XML-agnostic core model wi
 
 NGAC (Next Generation Access Control) is an ABAC standard that grew out of NIST research (the Policy Machine). ANSI/INCITS published it as INCITS 499-2018 (functional architecture) and INCITS 526-2016 (operations and data structures). NIST SP 800-178 (2016) compares it with XACML.
 
-The difference lies in how each represents policy. XACML writes policy as logical formulas over attribute values. NGAC enumerates policy as a configuration of assignments and associations among users, user attributes, objects, and object attributes. SP 800-178 concludes that NGAC supports efficient per-user and per-object review, while the logical formula approach struggles with it. In exchange, NGAC may need an explicit relation for each attribute value, so the number of relations can multiply.
+The difference lies in how each represents policy. XACML writes policy as logical formulas over attribute values. NGAC enumerates policy as a configuration of assignments and associations among users, user attributes, objects, and object attributes. According to SP 800-178, NGAC supports efficient per-user and per-object review, while the logical formula approach struggles with it. In exchange, NGAC may need an explicit relation for each attribute value, so the number of relations can multiply.
 
 Enumerating relations as a graph and reading "who can access what" from it has much in common with the later Zanzibar-style ReBAC. Read it as a rationale: if you care about both check and list, store a graph.
 
