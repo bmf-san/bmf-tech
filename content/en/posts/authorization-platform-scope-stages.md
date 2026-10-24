@@ -262,6 +262,8 @@ Externalization has costs: latency from a round trip per decision when you call 
 | A PDP outage stops everything | Distribute PDPs close to each PEP. Absorb short outages with caching. Design timeouts assuming fail-closed |
 | List views multiply the number of decisions | Use partial evaluation to turn policy into conditions such as SQL (OPA partial evaluation). If the PDP supports it, use the Resource Search API to fetch permitted resources in bulk (AuthZEN) |
 
+If you cache decision results, revocations and permission changes do not reach decisions until the cached entries expire. Choose the cache lifetime based on how long you can tolerate a delayed revocation.
+
 [Authorization Platform Architecture and Design Decisions](/posts/authorization-platform-architecture-decisions/) covers PEP and PDP placement and non-functional design such as caching and consistency.
 
 ## A standard between PEP and PDP: AuthZEN
@@ -301,7 +303,7 @@ Keeping decisions inside the application works better when:
 - You cannot afford a decision round trip on the synchronous path, and in-process evaluation is not an option either
 - You have no team to run a highly available PDP, and you cannot use a managed service
 
-If you are unsure, consider starting with an in-process library or a sidecar rather than a central service over the network. You gain the benefits of externalization (separated logic and managed policy) while keeping the latency and availability costs small.
+If you are unsure, consider starting with an in-process library or a sidecar rather than a central service over the network. You gain the benefits of externalization (separated logic and managed policy) while keeping the latency and availability costs small. This approach does require distributing policies and the data decisions need to every instance. When that data is large, as with relationship data for ReBAC, it becomes hard to apply.
 
 # Summary
 
