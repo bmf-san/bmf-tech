@@ -180,7 +180,7 @@ This design matters for agent authorization in three ways.
 
 1. **It separates the user from the agent.** The subject comes from the token's `sub` (the user), and the agent goes into `context.agent`. Policies can judge each one on its own.
 2. **A gateway can act as the PEP.** Mappings travel in the `tools/list` response, so a gateway that knows nothing about the business can still enforce the decisions that the tool's owning team defined.
-3. **It does not trust values the server wrote.** The PEP checks a declared `subject.id` against the validated token, and policies must not use other declared attributes as grounds for identity or permission. The PEP denies unknown methods.
+3. **It does not trust values the server wrote.** When a declared `subject.id` points to the token's `sub`, the PEP checks it against the validated token, and policies must not use other declared attributes as grounds for identity or permission. The PEP denies unknown methods.
 
 Some caveats apply. The PDP never sees arguments that the mapping leaves out. If a payment tool's mapping omits the amount, no amount limit applies. Also, Draft 1 predates MCP 2026-07-28 and lags behind it; for example, it has no default mapping for methods that the newer version added.
 
@@ -208,7 +208,7 @@ sequenceDiagram
     PDP-->>PEP: Permit, or denial with next action
 ```
 
-The core of the spec lies in a set of invariants.
+The core of the spec lies in seven invariants. The key points:
 
 - A requestable denial remains a denial.
 - Neither submitting a request nor receiving approval grants access by itself.
@@ -216,7 +216,7 @@ The core of the spec lies in a set of invariants.
 
 Checking approver eligibility and separation of duties is mandatory (MUST). To bind denial, request, and approval together, implementations use identifiers when the PDP and the request service share state, and a value signed by the PDP or another party (preferably a JWS) when they do not. Because the agent can store the task handle and resume later, it can keep working while it waits for approval. Still, knowing a task handle grants no permission.
 
-AARP prevents a common failure: an approval workflow quietly becoming a substitute for policy. It keeps the PDP as the final authority and passes the approval in as input. It still stands at Draft 1 with a single author, and no spec yet defines how to go from a COAZ-MCP denial to an AARP request. You can adopt the ideas now, but building tightly to the wire format would come too early.
+AARP's design avoids a failure mode in which an approval workflow quietly becomes a substitute for policy. It keeps the PDP as the final authority and passes the approval in as input. It still stands at Draft 1 with a single author, and no spec yet defines how to go from a COAZ-MCP denial to an AARP request. You can adopt the ideas now, but building tightly to the wire format would come too early.
 
 # AIMS: a framework that combines existing standards for agents
 
@@ -329,18 +329,18 @@ AP2 states its premise plainly: **preventing prompt injection attacks is infeasi
 - The merchant, the credential provider, and the payment processor each verify the constraints independently. They treat unknown constraints as failures.
 - Verifiers return signed receipts that serve as evidence in disputes.
 
-In OAuth, an authorization server issues tokens. In AP2, the agent carries evidence signed by the user and shows each verifier only the parts it needs. This model also helps outside payments, whenever you let an agent perform high-risk operations.
+In OAuth, an authorization server issues tokens. In AP2, the agent carries evidence signed by the user and shows each verifier only the parts it needs. The AP2 documentation itself notes that the model could apply more generally than payments in the future.
 
 # Answers to "not enough permission mid-execution"
 
-The newest issue in agent authorization concerns what happens when permissions run short in the middle of a task. Each standard answers at a different layer.
+One of the newer issues in agent authorization concerns what happens when permissions run short in the middle of a task. Each standard answers at a different layer.
 
 | Mechanism | What it does | Who decides |
 |---|---|---|
 | MCP `insufficient_scope` and step-up | Indicates missing scopes and makes the client obtain a new token | Authorization server and the user's consent |
 | CIBA | Gets the user's consent through a separate channel such as a mobile phone | The user |
 | A2A `TASK_STATE_AUTH_REQUIRED` | Pauses the task and reports that more authorization is needed | Outside the protocol |
-| AuthZEN AARP | Submits a request, obtains approval, and has the PDP decide again | Approvers (humans, policies, AI supervisors), and finally the PDP |
+| AuthZEN AARP | Submits a request, obtains approval, and has the PDP decide again | Approvers (a person or an automated governance system), and finally the PDP |
 
 Pick by the question: step-up when the token's scope falls short, CIBA when you need the user's own consent, and AARP when a manager or administrator must approve. No spec connects these yet, so for now you must decide how to combine them yourself.
 
@@ -414,7 +414,7 @@ You can also use the AIMS layers as a review checklist. Check the following:
 - [AuthZEN Access Request and Approval Profile 1.0 - Draft 1](https://openid.github.io/authzen/authzen-access-request-approval-profile-1_0.html)
 - [COAZ Framework 1.0 - Draft 1](https://openid.github.io/authzen/authzen-coaz-framework-1_0.html)
 - [COAZ-MCP Binding 1.0 - Draft 1](https://openid.github.io/authzen/authzen-coaz-mcp-binding-1_0.html)
-- [OpenID Foundation advances authorization for the agent era with new AuthZEN Working Group drafts](https://openid.net/openid-foundation-advances-authorization-for-the-agent-era-with-new-authzen-working-group-drafts/)
+- [OpenID Foundation advances authorization for the agent era with new AuthZEN Working Group Drafts](https://openid.net/openid-foundation-advances-authorization-for-the-agent-era-with-new-authzen-working-group-drafts/)
 - [draft-ietf-wimse-aims: AI Identity Management System](https://datatracker.ietf.org/doc/draft-ietf-wimse-aims/)
 - [draft-ietf-wimse-wpt: WIMSE Workload Proof Token](https://datatracker.ietf.org/doc/draft-ietf-wimse-wpt/)
 - [The Mission Shaping Problem](https://notes.karlmcguinness.com/notes/the-mission-shaping-problem/)

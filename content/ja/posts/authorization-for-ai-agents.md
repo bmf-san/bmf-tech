@@ -180,7 +180,7 @@ COAZ-MCPは、COAZをMCPに当てはめたバインディングである。MCP�
 
 1. **利用者とエージェントを分ける**。主体はトークンの`sub`（利用者）で、エージェントは`context.agent`に入る。ポリシーは両者を別々に評価できる。
 2. **ゲートウェイがPEPになれる**。マッピングは`tools/list`の応答に載って届くので、業務を知らないゲートウェイでも、ツールを持つチームが決めた判定を強制できる。
-3. **サーバーが書いた値を信頼しない**。宣言の`subject.id`は検証済みトークンと照合し、それ以外の宣言された属性は権限の根拠にしない。知らないメソッドは拒否する。
+3. **サーバーが書いた値を信頼しない**。宣言の`subject.id`がトークンの`sub`を指すときは検証済みトークンの値と照合し、それ以外の宣言された属性は権限の根拠にしない。知らないメソッドは拒否する。
 
 注意点もある。マッピングに写さなかった引数は、PDPが評価しない。送金ツールで金額を写さなければ、金額の上限は効かない。また、Draft 1はMCP 2026-07-28版より前に書かれていて、新しく加わったメソッドに既定のマッピングがないなど、版のずれがある。
 
@@ -208,7 +208,7 @@ sequenceDiagram
     PDP-->>PEP: 許可、または拒否と次にすべきこと
 ```
 
-仕様の芯は、次の不変条件にある。
+仕様の芯は、7つの不変条件にある。要点は次のとおり。
 
 - 申請できる拒否も、拒否である。
 - 申請しただけでも、承認されただけでも、アクセスは許されない。
@@ -216,7 +216,7 @@ sequenceDiagram
 
 承認者の適格性と職務分掌の確認は必須（MUST）である。拒否・申請・承認の結び付けは、PDPと申請受付が状態を共有していれば識別子で、共有していなければPDPなどが署名した値（JWSを推奨）で行う。Task Handleは保存して後から再開できるので、エージェントは承認を待つ間に他の作業を進められる。ただし、Task Handleを知っていることは権限にならない。
 
-AARPは、承認ワークフローがいつのまにかポリシーの代わりになる、というよくある崩れ方を防ぐ。判定の最終権威をPDPに残し、承認は入力として渡す。一方で、Draft 1で著者は1人であり、COAZ-MCPの拒否からAARPの申請へつなぐ方法も、まだ決まっていない。考え方は今すぐ取り入れられるが、ワイヤ形式に合わせて作り込むのは早い。
+AARPは、承認ワークフローがいつのまにかポリシーの代わりになる、という崩れ方を避ける設計である。判定の最終権威をPDPに残し、承認は入力として渡す。一方で、Draft 1で著者は1人であり、COAZ-MCPの拒否からAARPの申請へつなぐ方法も、まだ決まっていない。考え方は今すぐ取り入れられるが、ワイヤ形式に合わせて作り込むのは早い。
 
 # AIMS：既存の標準を束ねたエージェントの認証・認可
 
@@ -329,18 +329,18 @@ AP2の前提は明快で、**プロンプトインジェクションを防ぎき
 - 加盟店、支払い資格情報の提供者、決済代行が、それぞれ独立に制約を検証する。未知の制約は失敗として扱う。
 - 検証者は署名した受領証を返し、紛争時の証拠になる。
 
-OAuthでは認可サーバーがトークンを発行するが、AP2では利用者の署名した証拠をエージェントが持ち歩き、複数の検証者に必要な部分だけを見せる。決済に限らず、エージェントに高リスクの操作をさせるときの参考になる。
+OAuthでは認可サーバーがトークンを発行するが、AP2では利用者の署名した証拠をエージェントが持ち歩き、複数の検証者に必要な部分だけを見せる。AP2の文書も、このモデルは将来、決済以外にも適用しうるとしている。
 
 # 「実行の途中で権限が足りない」への答え
 
-エージェントの認可で最も新しい論点は、実行の途中で権限が足りなくなったときの扱いである。各標準の答えは層が違う。
+エージェントの認可で新しい論点の1つは、実行の途中で権限が足りなくなったときの扱いである。各標準の答えは層が違う。
 
 | 仕組み | すること | 判断する者 |
 |---|---|---|
 | MCPの`insufficient_scope`とstep-up | 足りないスコープを示し、トークンを取り直させる | 認可サーバーと本人の同意 |
 | CIBA | 本人の同意を、スマートフォンなど別の経路で得る | 本人 |
 | A2Aの`TASK_STATE_AUTH_REQUIRED` | タスクを止め、追加の認可が要ることを伝える | プロトコルの外 |
-| AuthZEN AARP | 申請し、承認を得て、PDPに判定し直させる | 承認者（人、ポリシー、AIの監督者）と、最後はPDP |
+| AuthZEN AARP | 申請し、承認を得て、PDPに判定し直させる | 承認者（人、または自動化されたガバナンスの仕組み）と、最後はPDP |
 
 トークンの範囲が足りないならstep-up、本人の同意が要るならCIBA、上長や管理者の承認が要るならAARP、と問いに応じて使い分ける。これらをつなぐ仕様はまだないので、今は組み合わせ方を自分で決める必要がある。
 
@@ -414,7 +414,7 @@ AIMSの層は、レビューのチェックリストとしてもそのまま使�
 - [AuthZEN Access Request and Approval Profile 1.0 - Draft 1](https://openid.github.io/authzen/authzen-access-request-approval-profile-1_0.html)
 - [COAZ Framework 1.0 - Draft 1](https://openid.github.io/authzen/authzen-coaz-framework-1_0.html)
 - [COAZ-MCP Binding 1.0 - Draft 1](https://openid.github.io/authzen/authzen-coaz-mcp-binding-1_0.html)
-- [OpenID Foundation advances authorization for the agent era with new AuthZEN Working Group drafts](https://openid.net/openid-foundation-advances-authorization-for-the-agent-era-with-new-authzen-working-group-drafts/)
+- [OpenID Foundation advances authorization for the agent era with new AuthZEN Working Group Drafts](https://openid.net/openid-foundation-advances-authorization-for-the-agent-era-with-new-authzen-working-group-drafts/)
 - [draft-ietf-wimse-aims: AI Identity Management System](https://datatracker.ietf.org/doc/draft-ietf-wimse-aims/)
 - [draft-ietf-wimse-wpt: WIMSE Workload Proof Token](https://datatracker.ietf.org/doc/draft-ietf-wimse-wpt/)
 - [The Mission Shaping Problem](https://notes.karlmcguinness.com/notes/the-mission-shaping-problem/)
