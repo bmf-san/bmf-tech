@@ -192,11 +192,11 @@ Each stage builds on the previous one. The PDP in Stage 2 relies on the token an
 
 You do not need to move every domain at once when you move up a stage. Start with the domains that feel the most pain, and firm up the shared contracts as you go. That keeps the platform close to real requirements.
 
-[Case Study on Authorization Management Infrastructure](/posts/permission-management-case-study/) covers freee's example of a dedicated team that builds and runs a permission management platform.
+[Case Study on Authorization Management Infrastructure](/posts/permission-management-case-study/) covers freee's example (from articles published in 2023) of a dedicated team that builds and runs a permission management platform.
 
-## Every organization needs Stage 1 early
+## Align Stage 1 early
 
-Every organization needs Stage 1 early. How you handle tokens and audit logs forms a shared contract between teams. If you do not align on them as conventions, even without a platform team, unifying them later becomes extremely costly.
+In my view, once you have several applications or teams, you should align Stage 1 early. How you handle tokens and audit logs forms a shared contract between teams. If you do not align on them as conventions, even without a platform team, unifying them later tends to become costly.
 
 OAuth and related standards can express much of what Stage 1 standardizes (token formats, audiences and scopes, revocation). [A Map of OAuth and Related Standards for an Authorization Platform](/posts/oauth-standards-map-authorization-platform/) organizes which standard decides what.
 
@@ -210,7 +210,7 @@ Some situations call for not moving up a stage.
 
 Building a platform too early tends to add availability risk and operational burden before it delivers any benefit. The third sign also means you fail the condition that "several teams or several products will reuse it" from [Viability Conditions for Building a Platform](/posts/platform-viability-conditions/).
 
-Not building a platform does not mean doing nothing, though. As the previous section explains, every organization benefits from aligning Stage 1 conventions early. The decision not to build applies mainly to Stage 2 and beyond.
+Not building a platform does not mean doing nothing, though. As the previous section explains, aligning Stage 1 conventions early pays off once you have several applications or teams. The decision not to build applies mainly to Stage 2 and beyond.
 
 # Should You Externalize Authorization Decisions?
 
@@ -305,7 +305,7 @@ If you are unsure, consider starting with an in-process library or a sidecar rat
 - Even so, do not gather it in one place. Standardize mechanisms and contracts (tokens, the decision API contract, audit logs, revocation, guardrails) across the organization, and keep meaning (resources and actions, policy content) in each domain
 - An authorization platform is not a yes-or-no choice. Ask which stage you need: Stage 0 (each application), Stage 1 (shared conventions and libraries), Stage 2 (externalized decisions), or Stage 3 (a platform including governance)
 - The seven decision axes are scale and cross-cutting reach, permission model complexity, change frequency, governance, diversity of subjects, consistency, and organizational capability. Present-day pain also tells you where you stand
-- Align Stage 1 early in any organization. Skip Stage 2 and beyond when you have one stable product, when latency and availability risks outweigh the benefits, or when nobody would use the platform
+- Align Stage 1 early once you have several applications or teams. Skip Stage 2 and beyond when you have one stable product, when latency and availability risks outweigh the benefits, or when nobody would use the platform
 - Externalizing decisions trades latency and availability costs for central management, consistency, and localized change. AuthZEN Authorization API 1.0 standardizes the interface between PEP and PDP, and each domain still owns its policy content after externalization
 
 # Related Posts
