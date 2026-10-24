@@ -71,7 +71,7 @@ OAuth calls itself an "authorization framework." In practice, it issues tokens f
 
 The opening of RFC 6749 describes OAuth 2.0 this way. It lets a third-party application get limited access to an HTTP service. The application gets that access either on behalf of a resource owner or on its own behalf.
 
-So OAuth answers this question: "Which part of my permissions do I hand to this client, and for how long?" It does not answer "May this user read this invoice?"
+Apart from the case where a client obtains access on its own behalf (Client Credentials), OAuth answers this question: "Which part of my permissions do I hand to this client, and for how long?" In neither case does it answer "May this user read this invoice?"
 
 | | What OAuth decides | What OAuth does not decide |
 |---|---|---|
@@ -106,7 +106,9 @@ In this post, IAM means the area that manages the identities of subjects (people
 | Subdomain | A section of the domain, split by business problem |
 | Core domain | The subdomain most important to business success and the source of differentiation |
 | Supporting subdomain | A subdomain the business needs and that has some specific elements, but not Core |
-| Generic subdomain | A subdomain with nothing specific to the business, which you can buy or cover with standards |
+| Generic subdomain | A subdomain that captures nothing special to the business, yet the overall business solution needs it |
+
+IDDD notes that Supporting or Generic does not mean unimportant. It means the business does not need to excel there. That is why a Generic subdomain is a good candidate for off-the-shelf products or standards.
 
 Core, Supporting, and Generic classify subdomains. Which one applies depends on whose business you look from. The same authentication mechanism counts as Core for a company that sells an IdP and as Generic for an e-commerce site.
 
@@ -260,7 +262,7 @@ Traditional delegation centered on a single hop: a user hands part of their perm
 - Setting the range in advance gets harder. Which tools an agent calls may not become clear until it runs
 - The subject may not be a person. Authenticating non-human subjects and delegating to them becomes routine
 
-So you need a mechanism that records the range, lifetime, and chain of delegation and narrows them along the way. Token Exchange (RFC 8693) provides a way to tell the original subject apart from the actor that works on its behalf inside a token. The MCP (Model Context Protocol) authorization specification also positions an MCP server as an OAuth 2.1 resource server and an MCP client as an OAuth 2.1 client.
+So you need a mechanism that records the range, lifetime, and chain of delegation and narrows them along the way. Token Exchange (RFC 8693) provides a way to tell the original subject apart from the actor that works on its behalf inside a token. The MCP (Model Context Protocol) authorization specification (version 2026-07-28) also positions a protected MCP server as an OAuth 2.1 resource server and an MCP client as an OAuth 2.1 client.
 
 Delegation alone does not cover everything, though. Within the delegated range, access decision (subdomain 4) decides whether the agent may perform each action. If you put a human approval in front of a risky action, access governance (subdomain 5) takes part. Authorization for AI agents spans subdomains 3, 4, and 5. [What changes in authorization with AI agents](/posts/authorization-for-ai-agents/) and [Key points for designing MCP authorization](/posts/mcp-authorization-design/) go into detail.
 
@@ -288,13 +290,13 @@ For example, a proposal to "build an authorization platform with OAuth" means so
 
 # Related Posts
 
-- [Authentication and Authorization Basics](/posts/authentication-authorization-basics/)
-- [Permission Management Design](/posts/permission-management-design/)
-- [What is OAuth 2.0?](/posts/oauth-2-0/)
-- [What is OAuth 2.1?](/posts/oauth-2-1-security-bcp/)
-- [Service-to-service authentication](/posts/service-to-service-authentication/)
-- [Introduction to Digital Identity](/posts/introduction-digital-identity/)
-- [Digital Identity Overview](/posts/digital-identity-overview/)
+- [Basics of Authentication and Authorization](/posts/authentication-authorization-basics/)
+- [Exploring Permission Management Design](/posts/permission-management-design/)
+- [OAuth 2.0 Explained: Complete Guide to Flows, Tokens, and Implementation](/posts/oauth-2-0/)
+- [OAuth 2.1 and the Security BCP: RFC 9700 and RFC 6819 (Changes from OAuth 2.0)](/posts/oauth-2-1-security-bcp/)
+- [What is the Big Picture of Service-to-Service Authentication? mTLS, Token Exchange, SPIFFE, and Zero Trust](/posts/service-to-service-authentication/)
+- [Introduction to Digital Identity: Essential Authentication, Authorization, and ID Management for Web Services](/posts/introduction-digital-identity/)
+- [Everything About Digital Identity: Knowledge for Realizing a Secure and User-Centric Identity System](/posts/digital-identity-overview/)
 - [How Much Authorization Platform Do You Need? Scope, Ownership, Stages, and Externalized Decisions](/posts/authorization-platform-scope-stages/)
 - [What Are Authorization Architectures and Models? PEP/PDP, RBAC/ABAC/ReBAC, and Choosing a Policy Engine](/posts/authorization-architecture-models-engines/)
 - [What is the AuthZEN Authorization API? A Standard Between PEP and PDP](/posts/authzen-authorization-api/)
