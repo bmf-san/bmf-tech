@@ -298,7 +298,7 @@ OBOとAAuthはどちらも標準ではない。「エージェントに広い権
 
 ID-JAG（Identity Assertion JWT Authorization Grant）は、この問題を次の流れで解く。
 
-1. クライアント（エージェントのアプリ）が、企業のIdPのIDトークンをToken Exchange（RFC 8693）でID-JAGに交換する。IdPは発行の前に、管理者が決めたポリシーを評価する。
+1. クライアント（エージェントのアプリ）が、企業のIdPのIDトークンまたはSAMLアサーションを、Token Exchange（RFC 8693）でID-JAGに交換する。IdPは発行の前に、管理者が決めたポリシーを評価する。
 2. クライアントは、ID-JAGをJWT認可グラント（RFC 7523）としてSaaSの認可サーバーに提示し、アクセストークンを得る。SaaS側は自分のポリシーで、受け入れるか、絞るかを決める。
 
 MCPのEnterprise-Managed Authorizationは、この仕組みをMCPに持ち込んだものである。注意点は2つある。ID-JAGの`client_id`はエージェントのアプリを表す。-04では`act`クレームと`actor_token`を任意で載せられるが、その処理は将来のプロファイルに委ねられている。個々のエージェントや多段の委譲の表し方は、まだ決まっていない。また、IdPで止められるのは新しいID-JAGの発行である。発行済みのアクセストークンを即時に止めるには、短い有効期間かSSF/CAEPによる失効の伝達が要る。ID-JAGの状態は-04（2026年5月）で、OAuth WGのドラフトである。周辺の仕様は[OAuth関連標準の地図の記事](/ja/posts/oauth-standards-map-authorization-platform/)で扱う。
