@@ -287,7 +287,7 @@ sequenceDiagram
     AG->>AG: Perform action and record audit
 ```
 
-The architectural point: **approval alone does not grant access; the PDP makes a fresh decision at the end.** AARP rests on invariants such as "a requestable denial is still a denial" and "approval alone does not grant access." It keeps the approval machinery (subdomain 5) separate from the decision machinery (subdomain 4) and still turns denial-to-allow into one flow. Approval screens and workflow engines fall outside AARP, so you can put an existing approval system behind it.
+The architectural point: **approval alone does not grant access; the PDP makes a fresh decision at the end.** AARP rests on invariants such as "a requestable denial is still a denial" and "an approval does not itself grant access." It keeps the approval machinery (subdomain 5) separate from the decision machinery (subdomain 4) and still turns denial-to-allow into one flow. Approval screens and workflow engines fall outside AARP, so you can put an existing approval system behind it.
 
 # Design Decisions
 
