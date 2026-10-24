@@ -123,7 +123,7 @@ flowchart LR
 
 - The AuthZEN spec calls the PEP-PDP connection the most sensitive one in an ABAC architecture and requires (MUST) securing it, for example with TLS. It also says the PDP SHOULD authenticate the PEP, for example with mutual TLS, OAuth, or an API key. A PDP that answers anyone becomes an entry point for policy probing and load attacks.
 - Make the PEP fail closed: if it cannot get a decision, it denies. Decide early what happens when the PDP goes down or times out.
-- XACML also has a profile for JSON requests and responses (an OASIS Standard since 2019), yet every engine compared in this post exposes its own PEP-PDP API. The OpenID Foundation's AuthZEN Authorization API 1.0 standardizes that line across engines. [What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers it in depth.
+- XACML also has a profile for JSON requests and responses (an OASIS Standard since 2019), yet every engine compared in this post exposes its own PEP-PDP API. The OpenID Foundation's AuthZEN Authorization API 1.0 standardizes that line across engines. As of October 2026, Cerbos implements part of the AuthZEN API, and OpenFGA implements it as an experimental feature. [What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers it in depth.
 
 # A Taxonomy of Authorization Models
 
@@ -314,7 +314,7 @@ If the business database still holds relations such as owners and membership aft
 | Authors and verification | Who writes policy, and how much do you want machine checks? | Rego for generality, Cedar for analyzability, YAML for a configuration-like feel |
 | Breadth of use | Application authorization only, or infrastructure control too? | OPA if you want one language across infrastructure |
 | Operations | Self-host or managed? | Amazon Verified Permissions for AWS-centric stacks; commercial offerings such as Auth0 FGA for ReBAC |
-| Replaceability | Do you want room to switch engines later? | Move the PEP-PDP line toward AuthZEN |
+| Replaceability | Do you want room to switch engines later? | Move the PEP-PDP line toward AuthZEN; AuthZEN does not cover writing relations or distributing policy |
 
 ## Combining Engines
 

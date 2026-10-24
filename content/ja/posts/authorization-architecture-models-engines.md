@@ -123,7 +123,7 @@ flowchart LR
 
 - AuthZENの仕様は、PEPとPDPの間をABACの構成で最も機微な接続と位置づけ、TLSなどでの保護を必須（MUST）とする。PDPはPEPを認証すべき（SHOULD）とし、方法の例にmTLS、OAuth、APIキーを挙げる。PDPに何でも問い合わせられると、ポリシーの推測や負荷攻撃の入口になる。
 - PEPは「判定できなければ拒否（fail-closed）」を基本にする。PDPが落ちたとき、タイムアウトしたときの挙動を最初に決める。
-- XACMLにも要求と応答をJSONで表すプロファイル（2019年にOASIS Standard）があるが、本記事で比べるエンジンはどれもPEPとPDPの間に独自のAPIを持つ。エンジンをまたいでこの線を標準化するのが、OpenID FoundationのAuthZEN Authorization API 1.0である。詳しくは[AuthZEN Authorization APIとは](/ja/posts/authzen-authorization-api/)で扱う。
+- XACMLにも要求と応答をJSONで表すプロファイル（2019年にOASIS Standard）があるが、本記事で比べるエンジンはどれもPEPとPDPの間に独自のAPIを持つ。エンジンをまたいでこの線を標準化するのが、OpenID FoundationのAuthZEN Authorization API 1.0である。2026年10月時点で、CerbosはAuthZENのAPIを一部実装し、OpenFGAは実験的な機能として実装している。詳しくは[AuthZEN Authorization APIとは](/ja/posts/authzen-authorization-api/)で扱う。
 
 # 認可モデルの分類
 
@@ -314,7 +314,7 @@ ReBACのエンジンを入れた後も業務DBに所有者や所属などの関�
 | 書き手と検証 | 誰がポリシーを書き、どこまで機械で検査したいか | 汎用性ならRego、解析のしやすさならCedar、設定に近い形ならYAML |
 | 用途の広さ | アプリの認可だけか、インフラの制御も含めるか | インフラまで1つの言語でそろえるならOPA |
 | 運用 | 自前で動かすか、マネージドを使うか | AWS中心ならAmazon Verified Permissions、ReBACならAuth0 FGAなどの商用版 |
-| 差し替え | 将来エンジンを替える余地を残すか | PEPとPDPの間をAuthZENに寄せておく |
+| 差し替え | 将来エンジンを替える余地を残すか | PEPとPDPの間をAuthZENに寄せておく。関係の書き込みやポリシーの配布はAuthZENの対象外である |
 
 ## 組み合わせる構成
 
