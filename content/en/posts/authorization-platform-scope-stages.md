@@ -93,7 +93,7 @@ Permissions travel across services: from a user to an agent, to an MCP server, t
 
 Authorization logic gets embedded in code everywhere. So when you change the permission model, you have to touch every service.
 
-Conversely, once you externalize decisions, an outage of the decision service can stop every feature. The principle says to deny (fail-closed) rather than allow (fail-open) when you cannot reach a decision, so the decision service's availability drives the availability of the whole system. Either way, the blast radius covers the entire architecture.
+Conversely, once you externalize decisions, an outage of the decision service can stop every feature. The usual rule is to deny (fail-closed) rather than allow (fail-open) when you cannot reach a decision, so the decision service's availability drives the availability of the whole system. Either way, the blast radius covers the entire architecture.
 
 # Do Not Centralize It: What to Standardize and What Domains Own
 
@@ -192,7 +192,7 @@ Each stage builds on the previous one. The PDP in Stage 2 relies on the token an
 
 You do not need to move every domain at once when you move up a stage. Start with the domains that feel the most pain, and firm up the shared contracts as you go. That keeps the platform close to real requirements.
 
-[Case Study on Authorization Management Infrastructure](/posts/permission-management-case-study/) covers freee's example (from articles published in 2023) of a dedicated team that builds and runs a permission management platform.
+[Case Study on Authorization Management Infrastructure](/posts/permission-management-case-study/) covers freee's example (from articles and a talk published in 2023 and 2024) of a dedicated team that builds and runs a permission management platform.
 
 ## Align Stage 1 early
 
