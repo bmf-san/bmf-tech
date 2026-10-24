@@ -121,7 +121,7 @@ flowchart LR
 
 ## 設計の要点
 
-- AuthZENの仕様は、PEPとPDPの間をABACの構成で最も機微な接続と位置づける。mTLSなどで保護し、PDPはPEPを認証する。PDPに何でも問い合わせられると、ポリシーの推測や負荷攻撃の入口になる。
+- AuthZENの仕様は、PEPとPDPの間をABACの構成で最も機微な接続と位置づけ、TLSなどでの保護を必須（MUST）とする。PDPはPEPを認証すべき（SHOULD）とし、方法の例にmTLS、OAuth、APIキーを挙げる。PDPに何でも問い合わせられると、ポリシーの推測や負荷攻撃の入口になる。
 - PEPは「判定できなければ拒否（fail-closed）」を基本にする。PDPが落ちたとき、タイムアウトしたときの挙動を最初に決める。
 - XACMLにも要求と応答をJSONで表すプロファイル（2019年にOASIS Standard）があるが、今のエンジンの多くはPEPとPDPの間に独自のAPIを持つ。エンジンをまたいでこの線を標準化するのが、OpenID FoundationのAuthZEN Authorization API 1.0である。詳しくは[AuthZEN Authorization APIとは](/ja/posts/authzen-authorization-api/)で扱う。
 

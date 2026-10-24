@@ -121,7 +121,7 @@ flowchart LR
 
 ## Design Points
 
-- The AuthZEN spec calls the PEP-PDP connection the most sensitive one in an ABAC architecture. Protect it with mTLS or similar, and have the PDP authenticate the PEP. A PDP that answers anyone becomes an entry point for policy probing and load attacks.
+- The AuthZEN spec calls the PEP-PDP connection the most sensitive one in an ABAC architecture and requires (MUST) securing it, for example with TLS. It also says the PDP SHOULD authenticate the PEP, for example with mutual TLS, OAuth, or an API key. A PDP that answers anyone becomes an entry point for policy probing and load attacks.
 - Make the PEP fail closed: if it cannot get a decision, it denies. Decide early what happens when the PDP goes down or times out.
 - XACML also has a profile for JSON requests and responses (an OASIS Standard since 2019), yet most of today's engines expose their own PEP-PDP API. The OpenID Foundation's AuthZEN Authorization API 1.0 standardizes that line across engines. [What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers it in depth.
 
