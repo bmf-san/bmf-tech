@@ -88,7 +88,7 @@ When you move authorization decisions out of the application, application code t
 - Products such as API gateways and IdPs must build a separate integration for each engine.
 - Changing engines means rewriting every PEP.
 
-The spec's introduction observes that PDP-PEP communication follows similar patterns across products. The API aims to let PDP and PEP providers work without binding themselves to a single PDP or PEP implementation.
+The spec's introduction observes that PDP-PEP communication follows similar patterns across products. It then says the API enables providers to offer PDP and PEP capabilities without binding themselves to a single PDP or PEP implementation.
 
 ## What OAuth and OIDC Standardized, and What They Did Not
 
@@ -465,9 +465,9 @@ The interop site also shows a layered setup: coarse-grained decisions at the IdP
 
 # Profiles at a Glance
 
-The working group builds profiles for specific uses on top of Authorization API 1.0. Every one of them is a draft and may still change. [What changes in authorization for AI agents](/posts/authorization-for-ai-agents/) covers their use with AI agents in detail.
+On top of Authorization API 1.0, the working group builds profiles for specific uses, plus the COAZ framework and bindings (COAZ-MCP, Token Exchange). Every one of them is a draft and may still change. [What changes in authorization for AI agents](/posts/authorization-for-ai-agents/) covers their use with AI agents in detail.
 
-| Profile | Status | Gap it fills |
+| Document | Status | Gap it fills |
 | --- | --- | --- |
 | Access Request and Approval Profile (AARP) | Working Group Draft | Connects a "denied, but requestable" decision to request, approval, and re-evaluation. In the base completion mode, the PDP re-evaluates after approval and still decides |
 | COAZ Framework | Working Group Draft | A declarative way to map requests from any protocol into SARC |

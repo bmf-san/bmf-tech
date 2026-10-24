@@ -88,7 +88,7 @@ flowchart LR
 - APIゲートウェイやIdPのような製品は、エンジンごとに連携を作らなければならない。
 - エンジンを替えるときに、すべてのPEPを書き換えることになる。
 
-仕様のIntroductionによれば、PDPとPEPの通信は製品をまたいで似たパターンをたどる。そのうえでこのAPIは、PDPやPEPの提供者が特定の実装へ縛られないことを目的とする。
+仕様のIntroductionによれば、PDPとPEPの通信は製品をまたいで似たパターンをたどる。そのうえで、このAPIを使えば、提供者は特定のPDPやPEPの実装へ縛られずにPDPやPEPの機能を提供できるとしている。
 
 ## OAuthとOIDCが標準化したものとの対比
 
@@ -465,9 +465,9 @@ TodoアプリをPEPにしたシナリオには、多くのPDPが結果を載せ�
 
 # プロファイル群の概要
 
-Authorization API 1.0の上に、用途ごとのプロファイルが作られている。どれもDraftであり、今後も変わりうる。AIエージェントでの使い方は[AIエージェントで認可の何が変わるか](/ja/posts/authorization-for-ai-agents/)で詳しく扱う。
+Authorization API 1.0の上に、用途ごとのプロファイルに加えて、COAZのフレームワークやバインディング（COAZ-MCP、Token Exchange）も作られている。どれもDraftであり、今後も変わりうる。AIエージェントでの使い方は[AIエージェントで認可の何が変わるか](/ja/posts/authorization-for-ai-agents/)で詳しく扱う。
 
-| プロファイル | 状態 | 埋める隙間 |
+| 文書 | 状態 | 埋める隙間 |
 | --- | --- | --- |
 | Access Request and Approval Profile（AARP） | Working Group Draft | 「拒否だが申請はできる」判定を、申請・承認・再評価でつなぐ。基本の完了方式では、承認後もPDPが再評価して決める |
 | COAZ Framework | Working Group Draft | 任意のプロトコルの要求からSARCを組み立てる、宣言的な写し方の枠組み |
