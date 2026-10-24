@@ -186,7 +186,7 @@ Some caveats apply. The PDP never sees arguments that the mapping leaves out. If
 
 ## AARP: turning "not allowed yet" into approval and re-evaluation
 
-An agent that hits a boundary and tries to route around it with another tool or permission is dangerous. If a legitimate path exists past the denial, the agent has less reason to look for a detour. The AuthZEN Access Request and Approval Profile (AARP, the abbreviation in the OpenID Foundation announcement; the draft header uses ARAP) defines that path. The OpenID Foundation announcement describes AARP as doing for authorization prerequisites what CIBA does for authentication approval.
+An agent that hits a boundary and tries to route around it with another tool or permission is dangerous. In my view, a legitimate path past the denial gives the agent less reason to look for a detour. The AuthZEN Access Request and Approval Profile (AARP, the abbreviation in the OpenID Foundation announcement; the draft header uses ARAP) defines that path. The OpenID Foundation announcement describes AARP as doing for authorization prerequisites what CIBA does for authentication approval.
 
 ```mermaid
 sequenceDiagram
@@ -214,9 +214,9 @@ The core of the spec lies in seven invariants. The key points:
 - Neither submitting a request nor receiving approval grants access by itself.
 - At enforcement time, the PDP makes a fresh decision with the current policy and state. The approval acts only as an input to that decision.
 
-Before it returns `approved`, the Access Request Service MUST check approver eligibility, including separation of duties. To bind denial, request, and approval together, implementations use identifiers when the PDP and the Access Request Service share state, and a value signed by the PDP or another party (preferably a JWS) when they do not. Because the agent can store the task handle and resume later, it can keep working while it waits for approval. Still, knowing a task handle grants no permission.
+Before it returns `approved`, the Access Request Service MUST check approver eligibility, including separation of duties. To bind denial, request, and approval together, implementations use identifiers when the PDP and the Access Request Service share state, and a value signed by the PDP or another party when they do not. The issuer SHOULD issue such a signed value as a JWS, and as the interoperability baseline, the side that verifies it MUST support JWS. Because the agent can store the task handle and resume later, it can keep working while it waits for approval. Still, knowing a task handle grants no permission.
 
-AARP's design avoids a failure mode in which an approval workflow quietly becomes a substitute for policy. It keeps the PDP as the final authority and passes the approval in as input. It still stands at Draft 1 with a single author, and no spec yet defines how to go from a COAZ-MCP denial to an AARP request. In my view, you can adopt the ideas now, but building tightly to the wire format would come too early.
+The OpenID Foundation announcement states that AARP's goal is neither to bypass policy nor to turn authorization systems into workflow engines. It keeps the PDP as the final authority and passes the approval in as input. It still stands at Draft 1 with a single author, and no spec yet defines how to go from a COAZ-MCP denial to an AARP request. In my view, you can adopt the ideas now, but building tightly to the wire format would come too early.
 
 # AIMS: a framework that combines existing standards for agents
 
@@ -286,7 +286,7 @@ The resource server can identify the user by `sub` and the acting agent by `act.
 
 ## AAuth: delegation over channels without redirects
 
-draft-rosenberg-oauth-aauth (AAuth) targets AI agents that serve customers over phone or SMS. Traditional bots held a service account with access to every user's data. If the LLM confuses one person for another, that all-powerful token executes the wrong operation as-is.
+draft-rosenberg-oauth-aauth (AAuth) targets AI agents that serve customers over phone or SMS. According to the draft, the common practice was to give bots a service account with access to every user's data. If the LLM confuses one person for another, that all-powerful token executes the wrong operation as-is.
 
 AAuth proposes a new grant that identifies the user from a combination of personal details gathered in conversation and issues a low-privilege token for that user only. Higher privileges require human approval. In my view, the move toward least privilege makes sense, but how strongly it identifies the user depends on the number and kind of personal details required, and the draft itself acknowledges the risk of using publicly known details. The draft has no Security Considerations section and does not address attackers who know a victim's personal details. The draft leaves the grant processing as a placeholder for later details. The latest version, -01, expired in April 2026.
 
@@ -296,14 +296,14 @@ Neither OBO nor AAuth counts as a standard. Read them as references for a design
 
 # Enterprise-managed access: ID-JAG
 
-Enterprises want to manage centrally, in their IdP, which SaaS products and which permissions the agents that employees use may reach. When users click through a consent screen for each SaaS, administrators cannot see those connections.
+Enterprises want to manage centrally, in their IdP, which SaaS products and which permissions the agents that employees use may reach. When users click through a consent screen for each SaaS, the IdP cannot see those connections.
 
 ID-JAG (Identity Assertion JWT Authorization Grant) solves this with the following flow.
 
 1. The client (the agent's application) exchanges an ID token or SAML assertion from the enterprise IdP for an ID-JAG through Token Exchange (RFC 8693). If the IdP supports it, the client can also use a refresh token that the IdP issued. The IdP evaluates administrator-defined policy before issuing it.
 2. The client presents the ID-JAG to the SaaS authorization server as a JWT authorization grant (RFC 7523) and receives an access token. The SaaS side decides with its own policy whether to accept or narrow it.
 
-MCP's Enterprise-Managed Authorization brings this mechanism to MCP. Keep two caveats in mind. The `client_id` in an ID-JAG represents the agent's application. Draft -04 allows an optional `act` claim and `actor_token` parameter, but it leaves their processing to future profiles. It does not yet define how to represent individual agents or multi-hop delegation. Also, the IdP can stop only the issuance of new ID-JAGs. To cut off already-issued access tokens at once, you need short lifetimes or revocation signals through SSF/CAEP. ID-JAG sits at -04 (May 2026) as an OAuth WG draft. [The map of OAuth-related standards](/posts/oauth-standards-map-authorization-platform/) covers the surrounding specs.
+MCP's Enterprise-Managed Authorization brings this mechanism to MCP. Keep two caveats in mind. The `client_id` in an ID-JAG represents the agent's application. Draft -04 allows an optional `act` claim and `actor_token` parameter, but it leaves their processing to future profiles. It does not yet define how to represent individual agents or multi-hop delegation. Also, the IdP can stop only the issuance of new ID-JAGs. The draft defines no way to cut off ID-JAGs or access tokens already issued. In my view, you need to keep their lifetimes short or propagate revocation through SSF/CAEP. ID-JAG sits at -04 (May 2026) as an OAuth WG draft. [The map of OAuth-related standards](/posts/oauth-standards-map-authorization-platform/) covers the surrounding specs.
 
 # Agent-to-agent and payments: A2A and AP2
 
@@ -318,7 +318,7 @@ From an authorization standpoint, note the following.
 - When an agent asks its caller to fulfill extra authorization mid-task, it moves the task to `TASK_STATE_AUTH_REQUIRED`. This state can chain up to upstream agents.
 - Still, this state only signals that the agent needs more authorization. The agent receives the credential out of band by default, and its format and scope sit outside A2A.
 
-In short, A2A defines how agents connect, and leaves it to OAuth mechanisms such as Token Exchange and Transaction Tokens to carry whose authority flows along the delegation chain.
+In short, A2A defines how agents connect but does not define whose authority flows along the delegation chain. In my view, OAuth mechanisms such as Token Exchange and Transaction Tokens have to fill that gap.
 
 ## AP2: binding payments to user approval
 
@@ -345,7 +345,7 @@ One of the newer issues in agent authorization concerns what happens when permis
 | A2A `TASK_STATE_AUTH_REQUIRED` | Pauses the task and reports that more authorization is needed | Outside the protocol |
 | AuthZEN AARP | Submits a request, obtains approval, and has the PDP decide again | Approvers (a person or an automated governance system), and finally the PDP |
 
-Pick by the question: step-up when the token's scope falls short, CIBA when you need the user's consent through a separate channel, and AARP when a manager or administrator must approve. No spec connects these yet, so for now you must decide how to combine them yourself.
+Pick by the question: step-up when the token's scope falls short, CIBA when you need the user's consent through a separate channel, and AARP when a manager or administrator must approve. As far as I know, no spec connects these yet, so for now you must decide how to combine them yourself.
 
 # A design map
 
