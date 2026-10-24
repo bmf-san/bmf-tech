@@ -114,7 +114,7 @@ flowchart LR
 ```
 
 - The PEP lives on the business domain side. The owner of a resource protects it, and a PEP outside the domain opens a bypass. A common split puts coarse checks in the gateway and per-resource checks inside the service.
-- The PDP and PAP belong to the access decision subdomain. That does not mean a central team writes every rule. A central team owns tenant isolation and company-wide prohibitions, domain teams own domain rules, and the PAP ties them together through review and distribution. SP 800-162 also shows an enterprise distributing policy hierarchically to local organizations.
+- The PDP and PAP belong to the access decision subdomain. That does not mean a central team writes every rule. A central team owns tenant isolation and company-wide prohibitions, domain teams own domain rules, and the PAP ties them together through review and distribution. SP 800-162 also expects a hierarchy in which subordinate organizations keep their own local policies without conflicting with higher-level ones.
 - The PIP connects to wherever the authority for an attribute lives. Identity owns subject attributes, access governance owns role assignments, and the business domain owns resource attributes. Instead of having the PDP hold all data, decide per attribute whether to fetch it from the authority or replicate it.
 
 [How far should you build an authorization platform?](/posts/authorization-platform-scope-stages/) discusses how much to centralize. [Authorization platform architecture and design decisions](/posts/authorization-platform-architecture-decisions/) covers PEP and PDP placement in detail.
@@ -183,7 +183,7 @@ A point that model selection often misses: what kind of question must the system
 - Check: "Can this user read this resource?"
 - List: "Which resources can this user read?" or "Who can read this resource?"
 
-List questions always come up, for search result filtering in the UI and for access reviews. NIST SP 800-178 points out that for policies written as logical formulas, as in XACML, such a review reduces to the propositional satisfiability problem, which has no efficient general solution. Asking "who can read this?" of a policy written only as attribute conditions stays hard by nature.
+List questions always come up, for search result filtering in the UI and for access reviews. NIST SP 800-178 points out that logical formula-based policies, as in XACML, cannot support such a review efficiently: the review amounts to propositional satisfiability, an NP-complete problem. Asking "who can read this?" of a policy written only as attribute conditions stays hard by nature.
 
 ReBAC, which stores relations as enumerated data, handles these questions well. Attribute-centric engines work around the problem with partial evaluation or query plans that turn policy into database filters. Flag the resources that need listing while you choose the model.
 
@@ -215,7 +215,7 @@ Ferraiolo and Kuhn formalized RBAC in 1992, and the NIST model became the US nat
 
 These points still apply:
 
-- All access goes through roles. The NIST FAQ calls the ability to assign permissions directly to users a "loophole". Even exceptional grants stay easier to review when you model them as exception roles.
+- All access goes through roles. The NIST FAQ describes the ability of group-based schemes to tie permissions directly to users as a possible "loophole". Even exceptional grants stay easier to review when you model them as exception roles.
 - The 1992 model grants access "only if" a condition holds. A subject can only run transactions authorized for its active roles, but authorization does not guarantee execution. The model leaves room for extra constraints from the start, and the role-centric approach above extends this design.
 - A session activates only a subset of the assigned roles. The same idea applies when you limit the scopes in an OAuth access token to what the request needs.
 - Separation of duty comes in two forms. Static separation applies at assignment time; dynamic separation applies when a session activates roles. Transaction-level separation, such as "do not approve your own request", belongs in PDP rules.
@@ -250,11 +250,11 @@ Decisions take four values: Permit and Deny, plus NotApplicable (no matching pol
 Designs worth taking home:
 
 - How to fail closed. Put deny-unless-permit at the top and use a deny-biased PEP that allows only on Permit with every obligation fulfilled. Both NotApplicable and errors then become Deny.
-- Obligations versus advice. The PEP must carry out obligations and may ignore advice. If the PEP does not understand an obligation, it must not allow access. The same contract applies when you handle obligations in AuthZEN responses. Also note that unordered combining algorithms leave the returned set of obligations undefined.
+- Obligations versus advice. The PEP must carry out obligations and may ignore advice. If the PEP does not understand an obligation, it must not allow access. The same contract applies when you handle obligations in AuthZEN responses. Also note that unordered combining algorithms make the returned set of obligations nondeterministic.
 - Avoid negative rules. "Allow unless X" falls open when the attribute fails to arrive.
 - Distinguish kinds of subjects. XACML has separate categories for the subject that started the request, intermediaries, and the recipient of the result. That vocabulary helps when decisions must account for multi-hop calls such as "user, then agent, then API".
 
-The XACML TC is drafting ACAL 1.0 as a successor, separating semantics from XML, JSON, and YAML representations. Committee Specification Draft 01 came out in February 2026, so adoption decisions would come too early. ALFA, a friendlier notation for XACML, also exists, but it never became an OASIS standard.
+As a successor, the XACML TC is drafting ACAL 1.0, an XML-agnostic core model with separate representations: XML (XACML 4.0), JSON (JACAL), and YAML (YACAL). Committee Specification Draft 01 of the core and of the XML and JSON representations came out in February 2026, so adoption decisions would come too early. ALFA, a friendlier notation for XACML, also exists. The XACML TC published a Working Draft 01 of it in 2015, but it never became an OASIS standard.
 
 ## NGAC
 
@@ -345,11 +345,11 @@ You do not need to put everything on one engine. A common setup keeps a ReBAC en
 - [What is Authorization for AI Agents? Delegation Chains, Human Approval, and Audit with MCP, AuthZEN, AIMS, and A2A/AP2](/posts/authorization-for-ai-agents/)
 - [How Should You Design Authorization for MCP? Common Incidents and Decisions That Are Hard to Reverse](/posts/mcp-authorization-design/)
 - [What Does an Authorization Platform Architecture Look Like? Containers, Key Sequences, PEP/PDP Placement, and Non-Functional Decisions](/posts/authorization-platform-architecture-decisions/)
-- [Permission management design](/posts/permission-management-design/)
-- [What is Open Policy Agent (OPA)?](/posts/open-policy-agent/)
-- [Access control patterns using OPA](/posts/access-control-patterns-using-opa/)
-- [Implementing microservice access control with OPA](/posts/microservices-access-control-opa/)
-- [PostgreSQL Row Level Security (RLS)](/posts/postgresql-row-level-security/)
+- [Exploring Permission Management Design](/posts/permission-management-design/)
+- [What is Open Policy Agent (OPA)? A Practical Guide to Policy as Code](/posts/open-policy-agent/)
+- [Access Control Patterns Using OPA](/posts/access-control-patterns-using-opa/)
+- [Implementation of Access Control System for Microservices Using OPA](/posts/microservices-access-control-opa/)
+- [About Row Level Security (RLS) in PostgreSQL](/posts/postgresql-row-level-security/)
 
 # References
 
