@@ -208,7 +208,7 @@ Some situations call for not moving up a stage.
 - The latency of moving decisions out, or the risk that a decision service outage stops everything, outweighs the benefits
 - Even if you build a platform, teams have no incentive to use it (they keep deciding inside their applications)
 
-Building a platform too early only adds availability risk and operational burden. The third sign also means you fail the condition that "several teams or several products will reuse it" from [Viability Conditions for Building a Platform](/posts/platform-viability-conditions/).
+Building a platform too early tends to add availability risk and operational burden before it delivers any benefit. The third sign also means you fail the condition that "several teams or several products will reuse it" from [Viability Conditions for Building a Platform](/posts/platform-viability-conditions/).
 
 Not building a platform does not mean doing nothing, though. As the previous section explains, every organization benefits from aligning Stage 1 conventions early. The decision not to build applies mainly to Stage 2 and beyond.
 
