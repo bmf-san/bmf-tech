@@ -280,7 +280,7 @@ sequenceDiagram
     AR-->>AG: Task Handle (status=pending)
     AR->>M: Ask for approval (existing workflow)
     M-->>AR: Approve
-    Note over AG,AR: Instead of polling, the PEP can receive a completion callback
+    Note over AG,AR: Instead of polling, the PEP can receive a completion callback defined in a companion profile
     AG->>AR: Check status (polling)
     AR-->>AG: status=approved and approval result
     AG->>PDP: Re-evaluate with approval (context.approval)

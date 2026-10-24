@@ -280,7 +280,7 @@ sequenceDiagram
     AR-->>AG: Task Handle（status=pending）
     AR->>M: 承認の依頼（既存のワークフロー）
     M-->>AR: 承認
-    Note over AG,AR: ポーリングの代わりに、完了通知（callback）を受け取る方法もある
+    Note over AG,AR: ポーリングの代わりに、別のプロファイルで定める完了通知（callback）を受け取る方法もある
     AG->>AR: 状態の確認（ポーリング）
     AR-->>AG: status=approved と承認の結果（approval）
     AG->>PDP: 承認を添えて再評価（context.approval）
@@ -378,7 +378,7 @@ RAR（RFC 9396）を使えば、トークン要求に「この相手に、この
 
 PDPが落ちたときや応答が遅いときに、通す（fail-open）か止める（fail-closed）かを決める。
 
-- **原則はfail-closedにする**。判定できないなら拒否する。AARPも、拒否は拒否のままとし、申請の状態がわからないときはfail-closedにすべき（SHOULD）としている。
+- **原則はfail-closedにする**。判定できないなら拒否する。AARPも、拒否は拒否のままとし、申請の状態がわからないときはPEPがfail-closedにすべき（SHOULD）としている。
 - **止まる範囲を設計で狭める**。PDPの冗長化、サイドカーへの配置、ポリシーと属性の手元への複製といった手で、fail-closedが発動する場面そのものを減らす。
 - **タイムアウトを決める**。PDPの応答を待つ上限を決め、超えたら拒否として扱う。
 - **縮退を明示する**。例外的に縮退運転を許すなら（読み取りだけは通すなど）、どの操作をどの条件で通すかをポリシーとして書き、監査に残す。
