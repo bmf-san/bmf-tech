@@ -74,7 +74,7 @@ flowchart LR
 | --- | --- | --- | --- |
 | 委譲: 誰が何を任せるか | OAuth 2.0（RFC 6749/6750）、OAuth 2.1、RFC 9700、PKCE（RFC 7636）、RAR（RFC 9396）、CIBA、GNAP（RFC 9635） | OAuth 2.1はDraft、他はRFCまたはFinal | [OAuth 2.0](/ja/posts/oauth-2-0/)、[OAuth 2.1](/ja/posts/oauth-2-1-security-bcp/) |
 | 要求の完全性: 要求を改ざんさせない | PAR（RFC 9126）、JAR（RFC 9101）、`iss`（RFC 9207）、FAPI 2.0 | RFC、FAPI 2.0はFinal | [OAuth 2.1](/ja/posts/oauth-2-1-security-bcp/) |
-| 発見と宛先: どこに何向けのトークンを | RFC 8414、OIDC Discovery、Resource Indicators（RFC 8707）、Protected Resource Metadata（RFC 9728）、DCR（RFC 7591/7592）、CIMD | CIMDはDraft、他はRFCまたはFinal | [Discovery](/ja/posts/oidc-discovery-metadata/)、[DCR](/ja/posts/dynamic-client-registration/) |
+| 発見と宛先: どこに何向けのトークンを | RFC 8414、OIDC Discovery、Resource Indicators（RFC 8707）、Protected Resource Metadata（RFC 9728）、DCR（RFC 7591/7592）、CIMD | CIMDはDraft、RFC 7592はExperimentalのRFC、他はRFCまたはFinal | [Discovery](/ja/posts/oidc-discovery-metadata/)、[DCR](/ja/posts/dynamic-client-registration/) |
 | ドメイン横断: 信頼境界を越える | Token Exchange（RFC 8693）、Identity Chaining、ID-JAG、Transaction Tokens | RFC 8693以外はDraft | [サービス間認証](/ja/posts/service-to-service-authentication/) |
 | トークン: 何を入れ、どう検証し、どう止めるか | JOSE、JWT、JWT AT（RFC 9068）、Introspection（RFC 7662）、Revocation（RFC 7009）、mTLS（RFC 8705）、DPoP（RFC 9449） | RFC | [JOSE](/ja/posts/jose-overview/)、[検証と失効](/ja/posts/access-token-validation-revocation/)、[送信者制約](/ja/posts/sender-constrained-tokens-mtls-dpop/) |
 | アイデンティティ: 誰かを確立し属性を供給する | OIDC Core、SAML 2.0、SCIM（RFC 7643/7644/9967）、IPSIE | OIDCはFinal、SAML 2.0はOASIS標準、SCIMはRFC、IPSIEはDraft | [OIDC](/ja/posts/openid-connect-1-0-spec-summary/)、[SAML](/ja/posts/saml-2-0/) |
@@ -213,7 +213,7 @@ Security Profileの要求の例は次のとおりである。
 | RFC 8414 / OIDC Discovery | AS（OP）のエンドポイント、対応機能、`jwks_uri`を公開する | RFC / Final |
 | RFC 8707（Resource Indicators） | `resource`でトークンの宛先を指定し、`aud`を絞る | RFC |
 | RFC 9728（Protected Resource Metadata） | RSが、自分を守るASや対応するスコープを公開する | RFC（2025年4月） |
-| RFC 7591 / RFC 7592（DCR） | クライアントをASに動的に登録し、管理する | RFC |
+| RFC 7591 / RFC 7592（DCR） | クライアントをASに動的に登録し、管理する | RFC（管理用の7592はExperimental） |
 | CIMD（draft-ietf-oauth-client-id-metadata-document） | URLを`client_id`にし、そのURLにクライアントのメタデータを置く | Draft（-02、2026年7月） |
 
 AS側のメタデータは[OpenID ConnectのDiscoveryとメタデータとは？](/ja/posts/oidc-discovery-metadata/)で、Resource Indicatorsは[送信者制約トークンとは？](/ja/posts/sender-constrained-tokens-mtls-dpop/)で、DCRは[動的クライアント登録（DCR）とは？](/ja/posts/dynamic-client-registration/)で扱った。

@@ -74,7 +74,7 @@ The following table is the map itself. I checked each status as of October 2026 
 | --- | --- | --- | --- |
 | Delegation: who delegates what | OAuth 2.0 (RFC 6749/6750), OAuth 2.1, RFC 9700, PKCE (RFC 7636), RAR (RFC 9396), CIBA, GNAP (RFC 9635) | OAuth 2.1 is a Draft; the rest are RFCs or Final | [OAuth 2.0](/posts/oauth-2-0/), [OAuth 2.1](/posts/oauth-2-1-security-bcp/) |
 | Request integrity: prevent tampering | PAR (RFC 9126), JAR (RFC 9101), `iss` (RFC 9207), FAPI 2.0 | RFCs; FAPI 2.0 is Final | [OAuth 2.1](/posts/oauth-2-1-security-bcp/) |
-| Discovery and audience: which AS, for which resource | RFC 8414, OIDC Discovery, Resource Indicators (RFC 8707), Protected Resource Metadata (RFC 9728), DCR (RFC 7591/7592), CIMD | CIMD is a Draft; the rest are RFCs or Final | [Discovery](/posts/oidc-discovery-metadata/), [DCR](/posts/dynamic-client-registration/) |
+| Discovery and audience: which AS, for which resource | RFC 8414, OIDC Discovery, Resource Indicators (RFC 8707), Protected Resource Metadata (RFC 9728), DCR (RFC 7591/7592), CIMD | CIMD is a Draft; RFC 7592 is an Experimental RFC; the rest are RFCs or Final | [Discovery](/posts/oidc-discovery-metadata/), [DCR](/posts/dynamic-client-registration/) |
 | Cross-domain: cross trust boundaries | Token Exchange (RFC 8693), Identity Chaining, ID-JAG, Transaction Tokens | All Drafts except RFC 8693 | [Service-to-service authentication](/posts/service-to-service-authentication/) |
 | Tokens: what goes in, how to validate, how to stop | JOSE, JWT, JWT AT (RFC 9068), Introspection (RFC 7662), Revocation (RFC 7009), mTLS (RFC 8705), DPoP (RFC 9449) | RFCs | [JOSE](/posts/jose-overview/), [Validation and revocation](/posts/access-token-validation-revocation/), [Sender-constrained tokens](/posts/sender-constrained-tokens-mtls-dpop/) |
 | Identity: establish who and supply attributes | OIDC Core, SAML 2.0, SCIM (RFC 7643/7644/9967), IPSIE | OIDC is Final, SAML 2.0 is an OASIS Standard, SCIM consists of RFCs, IPSIE is a Draft | [OIDC](/posts/openid-connect-1-0-spec-summary/), [SAML](/posts/saml-2-0/) |
@@ -213,7 +213,7 @@ Sometimes the client, the AS, and the RS have no prior relationship. With MCP an
 | RFC 8414 / OIDC Discovery | Publish the AS (OP) endpoints, capabilities, and `jwks_uri` | RFC / Final |
 | RFC 8707 (Resource Indicators) | Name the token's target with `resource` and narrow `aud` | RFC |
 | RFC 9728 (Protected Resource Metadata) | Let the RS publish which AS protects it and which scopes it supports | RFC (April 2025) |
-| RFC 7591 / RFC 7592 (DCR) | Register and manage clients at the AS dynamically | RFC |
+| RFC 7591 / RFC 7592 (DCR) | Register and manage clients at the AS dynamically | RFC (7592, for management, is Experimental) |
 | CIMD (draft-ietf-oauth-client-id-metadata-document) | Use a URL as `client_id` and host the client metadata at that URL | Draft (-02, July 2026) |
 
 [OpenID Connect Discovery and metadata](/posts/oidc-discovery-metadata/) covers AS metadata, [What are sender-constrained tokens?](/posts/sender-constrained-tokens-mtls-dpop/) covers Resource Indicators, and [What is Dynamic Client Registration?](/posts/dynamic-client-registration/) covers DCR.
