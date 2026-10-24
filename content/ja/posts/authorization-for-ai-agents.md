@@ -186,7 +186,7 @@ COAZ-MCPは、COAZをMCPに当てはめたバインディングである。MCP�
 
 ## AARP：「今は許可できない」を承認と再評価につなぐ
 
-境界にぶつかったエージェントが、別のツールや権限で迂回しようとするのは危険である。拒否の先に正規の道があれば、迂回する理由が減る。AuthZEN Access Request and Approval Profile（AARP）は、その道を決める。発想は、CIBAの認可の判定版に近い。
+境界にぶつかったエージェントが、別のツールや権限で迂回しようとするのは危険である。拒否の先に正規の道があれば、迂回する理由が減る。AuthZEN Access Request and Approval Profile（AARP。OpenID Foundationの発表での略称で、ドラフトのヘッダーではARAP）は、その道を決める。発想は、CIBAの認可の判定版に近い。
 
 ```mermaid
 sequenceDiagram
@@ -240,7 +240,7 @@ flowchart TB
 | 識別子 | 1つのエージェントに、ちょうど1つのWIMSE識別子（SPIFFE IDでもよい）を割り当てる |
 | 資格情報 | WIT、WIC、SVIDなど。短命で、明示的な有効期限を持つ。静的なAPIキーはアンチパターン |
 | 配布 | 実行時に発行・ローテーションする。発行の時点で、実行環境の状態（posture）を評価する。**LLMは資格情報にアクセスしてはならない**（MUST NOT） |
-| 認証 | mTLS、WIMSE Proof Token（WPT）、HTTP Message Signatures |
+| 認証 | mTLS、WIMSE Workload Proof Token（WPT）、HTTP Message Signatures |
 | 認可 | OAuthを委譲の枠組みとして使う（下の表） |
 | 監視・是正 | SSF（CAEP、RISC）で失効やリスクの変化を受け、遅滞なく権限を減らす。監査ログを残す |
 
@@ -286,7 +286,7 @@ draft-oauth-ai-agents-on-behalf-of-user（OBO）は、Authorization Codeグラ�
 
 draft-rosenberg-oauth-aauth（AAuth）は、電話やSMSで顧客に応対するAIエージェントを想定する。従来のボットは、全利用者のデータにアクセスできるサービスアカウントを持っていた。LLMが本人を取り違えれば、その「何でもできるトークン」で誤った操作がそのまま実行される。
 
-AAuthは、会話で集めた個人情報の組み合わせで本人を特定し、その利用者だけの低い権限のトークンを発行する新しいグラントを提案する。高い権限には人の承認を挟む。最小権限に向かう方向は正しいが、被害者の個人情報を知る攻撃者には弱く、グラントのパラメータも定義しきれていない。最新は-01で、2026年4月に期限が切れた。
+AAuthは、会話で集めた個人情報の組み合わせで本人を特定し、その利用者だけの低い権限のトークンを発行する新しいグラントを提案する。高い権限には人の承認を挟む。最小権限に向かう方向は正しい。ただし、本人の特定の強さは要求する個人情報の数と種類に左右され、ドラフト自身も公開されている個人情報を使う危険を認めている。被害者の個人情報を知る攻撃者への備えも十分ではない。グラントの処理の詳細は「Details to be filled in」のままである。最新は-01で、2026年4月に期限が切れた。
 
 なお、D. Hardtによる「AAuth Protocol」（draft-hardt-oauth-aauth-protocol）という別の個人ドラフトもあり、こちらは更新が続いている。名前は同じでも別の提案なので、参照するときは区別する。
 
@@ -405,7 +405,6 @@ AIMSの層は、レビューのチェックリストとしてもそのまま使�
 - [送信者制約トークンとは？mTLS（RFC 8705）とDPoP（RFC 9449）入門](/ja/posts/sender-constrained-tokens-mtls-dpop/)
 - [AI時代のエンジニアリング：プロンプトから自律型システムへの進化](/ja/posts/engineering-in-ai-evolution-to-autonomous-systems/)
 - [AI時代のエンジニアリングについて考える](/ja/posts/engineering-in-ai-reflections/)
-
 # 参考リンク
 
 - [MCP Specification 2026-07-28: Authorization](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization)

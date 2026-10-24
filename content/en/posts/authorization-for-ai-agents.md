@@ -186,7 +186,7 @@ Some caveats apply. The PDP never sees arguments that the mapping leaves out. If
 
 ## AARP: turning "not allowed yet" into approval and re-evaluation
 
-An agent that hits a boundary and tries to route around it with another tool or permission is dangerous. If a legitimate path exists past the denial, the agent has less reason to look for a detour. The AuthZEN Access Request and Approval Profile (AARP) defines that path. The idea resembles CIBA, applied to authorization decisions instead of authentication.
+An agent that hits a boundary and tries to route around it with another tool or permission is dangerous. If a legitimate path exists past the denial, the agent has less reason to look for a detour. The AuthZEN Access Request and Approval Profile (AARP, the abbreviation in the OpenID Foundation announcement; the draft header uses ARAP) defines that path. The idea resembles CIBA, applied to authorization decisions instead of authentication.
 
 ```mermaid
 sequenceDiagram
@@ -240,7 +240,7 @@ flowchart TB
 | Identifier | Assign exactly one WIMSE identifier (a SPIFFE ID works) to each agent |
 | Credentials | WIT, WIC, SVID, and so on. Short-lived, with an explicit expiry. Static API keys count as an antipattern |
 | Provisioning | Issue and rotate at runtime. Assess the posture of the runtime at issuance. **The LLM MUST NOT have access to credentials** |
-| Authentication | mTLS, WIMSE Proof Token (WPT), HTTP Message Signatures |
+| Authentication | mTLS, WIMSE Workload Proof Token (WPT), HTTP Message Signatures |
 | Authorization | Use OAuth as the delegation framework (see the table below) |
 | Monitoring and remediation | Subscribe to SSF (CAEP, RISC) for revocation and risk changes, and reduce access without delay. Keep audit logs |
 
@@ -286,7 +286,7 @@ The resource server can identify the user by `sub` and the acting agent by `act.
 
 draft-rosenberg-oauth-aauth (AAuth) targets AI agents that serve customers over phone or SMS. Traditional bots held a service account with access to every user's data. If the LLM confuses one person for another, that all-powerful token executes the wrong operation as-is.
 
-AAuth proposes a new grant that identifies the user from a combination of personal details gathered in conversation and issues a low-privilege token for that user only. Higher privileges require human approval. The move toward least privilege makes sense, but the scheme stays weak against attackers who know a victim's personal details, and the draft leaves the grant parameters undefined. The latest version, -01, expired in April 2026.
+AAuth proposes a new grant that identifies the user from a combination of personal details gathered in conversation and issues a low-privilege token for that user only. Higher privileges require human approval. The move toward least privilege makes sense, but how strongly it identifies the user depends on the number and kind of personal details required, and the draft itself acknowledges the risk of using publicly known details. It also does little against attackers who know a victim's personal details. The draft leaves the grant processing as a placeholder for later details. The latest version, -01, expired in April 2026.
 
 Note that a separate individual draft, "AAuth Protocol" by D. Hardt (draft-hardt-oauth-aauth-protocol), shares the name and still receives updates. It takes a different approach, so keep the two apart when you cite them.
 
@@ -401,11 +401,10 @@ You can also use the AIMS layers as a review checklist. Check the following:
 - [What is Workload Identity? WIMSE, Transaction Tokens, and SPIFFE Client Authentication for Service Identity and Context](/posts/workload-identity-wimse-transaction-tokens/)
 - [How Should You Design Authorization for MCP? Common Incidents and Decisions That Are Hard to Reverse](/posts/mcp-authorization-design/)
 - [What Does an Authorization Platform Architecture Look Like? Containers, Key Sequences, PEP/PDP Placement, and Non-Functional Decisions](/posts/authorization-platform-architecture-decisions/)
-- [What is service-to-service authentication? mTLS, Token Exchange, SPIFFE, and zero trust](/posts/service-to-service-authentication/)
-- [What are sender-constrained tokens? An introduction to mTLS (RFC 8705) and DPoP (RFC 9449)](/posts/sender-constrained-tokens-mtls-dpop/)
-- [Engineering in the AI era: from prompts to autonomous systems](/posts/engineering-in-ai-evolution-to-autonomous-systems/)
-- [Thinking about engineering in the AI era](/posts/engineering-in-ai-reflections/)
-
+- [What is the Big Picture of Service-to-Service Authentication? mTLS, Token Exchange, SPIFFE, and Zero Trust](/posts/service-to-service-authentication/)
+- [What are Sender-Constrained Tokens? An Introduction to mTLS (RFC 8705) and DPoP (RFC 9449)](/posts/sender-constrained-tokens-mtls-dpop/)
+- [Engineering in the AI Era: Evolution from Prompts to Autonomous Systems](/posts/engineering-in-ai-evolution-to-autonomous-systems/)
+- [Considering Engineering in the Age of AI](/posts/engineering-in-ai-reflections/)
 # References
 
 - [MCP Specification 2026-07-28: Authorization](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization)
