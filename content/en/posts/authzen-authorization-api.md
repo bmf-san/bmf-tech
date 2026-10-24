@@ -70,9 +70,9 @@ The table lists what the spec defines and what it leaves out.
 | --- | --- |
 | Defines | Information model (Subject, Action, Resource, Context, and Decision) |
 | Defines | Access Evaluation API (one decision) |
-| Defines | Access Evaluations API (many decisions in one call) |
-| Defines | Search APIs (lists of subjects, resources, or actions) |
-| Defines | PDP metadata (`/.well-known/authzen-configuration`) |
+| Defines | Access Evaluations API (many decisions in one call; optional for a PDP) |
+| Defines | Search APIs (lists of subjects, resources, or actions; optional for a PDP) |
+| Defines | PDP metadata (`/.well-known/authzen-configuration`; publishing it is RECOMMENDED) |
 | Defines | HTTPS/JSON binding, error handling, security considerations |
 | Leaves out | Policy language, PDP internal architecture, state management |
 | Leaves out | How the PEP authenticates to the PDP (it only recommends OAuth 2.0 support) |
@@ -340,7 +340,7 @@ The second asks for step-up authentication. The PDP signals the `acr` and `amr` 
 
 Keep in mind that the meaning and format of `context` sit outside the spec. Keys such as `reason_admin` and `acr_values` serve as examples, not rules. If you change PDPs, the way you read `context` may change too. To close this gap, the working group develops a separate Obligations Profile that defines the format of obligations (see below).
 
-Also avoid leaking policy internals through admin-facing reasons. Keep user-facing reasons separate, and word them so that users cannot infer the structure of your policies.
+The spec does not require the following, but in my view you should also avoid leaking policy internals through admin-facing reasons. Keep user-facing reasons separate, and word them so that users cannot infer the structure of your policies.
 
 # PDP Metadata: What Lives Where
 
@@ -364,11 +364,11 @@ The spec recommends that a PDP publish its configuration as metadata at `/.well-
 | `capabilities` | No | Array of IANA-registered capability URNs |
 | `signed_metadata` | No | A JWT that signs the metadata |
 
-A PEP has to check and handle the following.
+On the PEP side, checks and handling work as follows.
 
 - The `policy_decision_point` value in the metadata must equal the identifier the PEP used to fetch it. If they differ, the PEP MUST NOT use the data.
 - A PEP that supports `signed_metadata` validates the signature and the issuer (`iss`). Signed values take precedence over plain JSON values.
-- Normal HTTP caching applies. Use directives such as `Cache-Control` with `max-age` to cache metadata for a suitable period.
+- Normal HTTP caching applies. The spec suggests directives such as `Cache-Control` with `max-age` to cache metadata for a suitable period (a plain "should", not a normative SHOULD).
 
 If the metadata lists an endpoint URL, the PEP MUST use it. Without one, the PEP SHOULD build the URL by appending the default path to the PDP's base URL. Still, an API missing from the metadata tells the PEP that the PDP does not support it. The spec does not cite the OAuth metadata RFCs, but its design closely resembles OAuth Authorization Server Metadata (RFC 8414) and OAuth 2.0 Protected Resource Metadata (RFC 9728). Its definition of `signed_metadata` follows the RFC 9728 wording almost word for word.
 
@@ -382,7 +382,7 @@ For JSON, the spec recommends following I-JSON (RFC 7493): UTF-8 encoding, no nu
 
 ## Security Considerations
 
-| Area | Requirement | Reason |
+| Area | What the spec says | Reason |
 | --- | --- | --- |
 | Integrity and confidentiality | The PEP-PDP connection MUST use adequate protection such as TLS | It is the most sensitive connection in an ABAC architecture |
 | PEP authentication | The PDP SHOULD authenticate the PEP, for example with mTLS, OAuth, or API keys | Stops attackers from probing policies with crafted requests, and helps against DoS |
