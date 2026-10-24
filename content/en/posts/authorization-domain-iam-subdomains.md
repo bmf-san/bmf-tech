@@ -48,14 +48,6 @@ Authentication and authorization answer different questions.
 
 The result of authentication forms just one input to authorization. Authorization adds three more pieces to the verified subject and checks them against policy. These are the resource (which data), the action (read, write, approve), and the context (time, origin, tenant, risk).
 
-## Successful authentication does not imply authorization
-
-The first principle to keep in mind: successful authentication does not mean the subject may access a resource. Holding a valid credential and having permission to access a resource are two separate facts.
-
-The IETF WIMSE working group is still developing its architecture document (draft-ietf-wimse-arch-08), an IETF draft that has not yet become an RFC. Section 4.5 of that draft states this point. Holding a valid credential does not mean a workload may access every resource in the trust domain. The draft asks issuers, relying parties, gateways, and workloads to avoid treating successful authentication as implicit authorization.
-
-The same principle applies to people. Suppose a logged-in user can read someone else's invoice by editing the ID in the URL. Authentication works fine there, but authorization has a gap. Broken Access Control (A01) holds the top spot in the OWASP Top 10:2025. The OWASP page states that every tested application had some form of broken access control. That explains why you should design authentication and authorization separately.
-
 ## Authorization splits into deciding and enforcing
 
 Authorization splits further into two parts.
@@ -280,7 +272,7 @@ For example, a proposal to "build an authorization platform with OAuth" means so
 
 # Summary
 
-- Authentication answers "who are you?" Authorization answers "may this subject perform this action on this resource in this context?" Successful authentication does not imply authorization
+- Authentication answers "who are you?" Authorization answers "may this subject perform this action on this resource in this context?"
 - The "authorization" in OAuth centers on issuing tokens for delegated access. Per-resource access decisions live in a different layer
 - The map in this post splits IAM into five subdomains (one possible split): identity, authentication, delegation, access decision, and access governance. Everyday "authorization" covers delegation, access decision, and access governance together
 - Whether IAM counts as Core, Supporting, or Generic depends on the organization's business. For business-app organizations, it usually counts as Generic
@@ -313,13 +305,10 @@ For example, a proposal to "build an authorization platform with OAuth" means so
 - [RFC 7643 System for Cross-domain Identity Management: Core Schema](https://www.rfc-editor.org/rfc/rfc7643)
 - [RFC 7644 System for Cross-domain Identity Management: Protocol](https://www.rfc-editor.org/rfc/rfc7644)
 - [The OAuth 2.1 Authorization Framework (draft-ietf-oauth-v2-1)](https://datatracker.ietf.org/doc/draft-ietf-oauth-v2-1/)
-- [Workload Identity in a Multi System Environment (WIMSE) Architecture (draft-ietf-wimse-arch)](https://datatracker.ietf.org/doc/draft-ietf-wimse-arch/)
 - [NIST CSRC Glossary: identity and access management](https://csrc.nist.gov/glossary/term/identity_and_access_management)
 - [NIST SP 800-63-4 Digital Identity Guidelines](https://csrc.nist.gov/pubs/sp/800/63/4/final)
 - [NIST SP 800-162 Guide to Attribute Based Access Control (ABAC) Definition and Considerations](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-162.pdf)
 - [OASIS eXtensible Access Control Markup Language (XACML) Version 3.0](https://docs.oasis-open.org/xacml/3.0/xacml-3.0-core-spec-os-en.html)
-- [OWASP Top 10:2025 A01 Broken Access Control](https://owasp.org/Top10/2025/A01_2025-Broken_Access_Control/)
-- [OWASP Authorization Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html)
 - [OpenID Shared Signals Framework Specification 1.0](https://openid.net/specs/openid-sharedsignals-framework-1_0-final.html)
 - [OpenID Continuous Access Evaluation Profile 1.0](https://openid.net/specs/openid-caep-1_0-final.html)
 - [OpenID RISC Profile Specification 1.0](https://openid.net/specs/openid-risc-1_0-final.html)

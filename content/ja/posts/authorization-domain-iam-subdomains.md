@@ -48,14 +48,6 @@ draft: false
 
 認証の結果は認可の入力の1つにすぎない。認可は、認証で確かめた主体に3つの情報を加え、ポリシーに照らして判断する。資源（どのデータか）、操作（読む・書く・承認するなど）、文脈（時刻・接続元・テナント・リスク）である。
 
-## 認証の成功は認可を意味しない
-
-最初に押さえておきたい原則は「認証に成功したことは、アクセスしてよいことを意味しない」である。有効な資格情報を持っていることと、ある資源にアクセスしてよいことは別の事実である。
-
-IETFのWIMSE WGが策定中のアーキテクチャ文書（draft-ietf-wimse-arch-08、RFC化前のInternet-Draft）は、§4.5でこの点を明示している。ワークロードが有効な資格情報を持っていても、信頼ドメイン内のすべての資源にアクセスしてよいことにはならない。さらに発行者・リライングパーティ・ゲートウェイ・ワークロードのいずれにも、認証の成功を暗黙の認可として扱わないよう求めている。
-
-この原則は人にも当てはまる。ログインしている利用者が、URLのIDを書き換えるだけで他人の請求書を読めるなら、認証は正しく動いていても認可が欠けている。OWASP Top 10:2025でもアクセス制御の不備（A01 Broken Access Control）は1位であり、テストしたアプリケーションのすべてに何らかのアクセス制御の不備が見つかったと書かれている。認証と認可を分けて設計する理由はここにある。
-
 ## 認可は「決める」と「強制する」に分かれる
 
 認可はさらに2つに分かれる。
@@ -280,7 +272,7 @@ IDDDの公式サンプルがこの関係をよく表している。業務側のC
 
 # まとめ
 
-- 認証は「あなたは誰か」、認可は「この主体はこの資源にこの操作をこの文脈で行ってよいか」に答える。認証の成功は認可を意味しない
+- 認証は「あなたは誰か」、認可は「この主体はこの資源にこの操作をこの文脈で行ってよいか」に答える
 - OAuthの「authorization」の中心は委譲されたアクセスのためのトークン発行であり、資源ごとのアクセス判定は別の層にある
 - この記事の地図では、IAMをアイデンティティ、認証、委譲、アクセス判定、アクセスガバナンスの5つのサブドメインに分ける（分け方の一例）。日常の「認可」は委譲、アクセス判定、アクセスガバナンスの総称である
 - IAMがCore / Supporting / Genericのどれになるかは、組織の事業で決まる。業務アプリの組織では基本的にGenericである
@@ -313,13 +305,10 @@ IDDDの公式サンプルがこの関係をよく表している。業務側のC
 - [RFC 7643 System for Cross-domain Identity Management: Core Schema](https://www.rfc-editor.org/rfc/rfc7643)
 - [RFC 7644 System for Cross-domain Identity Management: Protocol](https://www.rfc-editor.org/rfc/rfc7644)
 - [The OAuth 2.1 Authorization Framework (draft-ietf-oauth-v2-1)](https://datatracker.ietf.org/doc/draft-ietf-oauth-v2-1/)
-- [Workload Identity in a Multi System Environment (WIMSE) Architecture (draft-ietf-wimse-arch)](https://datatracker.ietf.org/doc/draft-ietf-wimse-arch/)
 - [NIST CSRC Glossary: identity and access management](https://csrc.nist.gov/glossary/term/identity_and_access_management)
 - [NIST SP 800-63-4 Digital Identity Guidelines](https://csrc.nist.gov/pubs/sp/800/63/4/final)
 - [NIST SP 800-162 Guide to Attribute Based Access Control (ABAC) Definition and Considerations](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-162.pdf)
 - [OASIS eXtensible Access Control Markup Language (XACML) Version 3.0](https://docs.oasis-open.org/xacml/3.0/xacml-3.0-core-spec-os-en.html)
-- [OWASP Top 10:2025 A01 Broken Access Control](https://owasp.org/Top10/2025/A01_2025-Broken_Access_Control/)
-- [OWASP Authorization Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html)
 - [OpenID Shared Signals Framework Specification 1.0](https://openid.net/specs/openid-sharedsignals-framework-1_0-final.html)
 - [OpenID Continuous Access Evaluation Profile 1.0](https://openid.net/specs/openid-caep-1_0-final.html)
 - [OpenID RISC Profile Specification 1.0](https://openid.net/specs/openid-risc-1_0-final.html)
