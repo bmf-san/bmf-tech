@@ -113,7 +113,7 @@ flowchart LR
     DATA -- "PIP" --> PDP1
 ```
 
-- The PEP lives on the business domain side. The owner of a resource protects it, and a PEP outside the domain opens a bypass. A common split puts coarse checks in the gateway and per-resource checks inside the service.
+- The PEP lives on the business domain side. The owner of a resource protects it, and a PEP outside the domain opens a bypass. Consider splitting the work: coarse checks in the gateway, per-resource checks inside the service.
 - The PDP and PAP belong to the access decision subdomain. That does not mean a central team writes every rule. A central team owns tenant isolation and company-wide prohibitions, domain teams own domain rules, and the PAP ties them together through review and distribution. SP 800-162 also expects a hierarchy in which subordinate organizations keep their own local policies without conflicting with higher-level ones.
 - The PIP connects to wherever the authority for an attribute lives. Identity owns subject attributes, access governance owns role assignments, and the business domain owns resource attributes. Instead of having the PDP hold all data, decide per attribute whether to fetch it from the authority or replicate it.
 
@@ -123,13 +123,13 @@ flowchart LR
 
 - The AuthZEN spec calls the PEP-PDP connection the most sensitive one in an ABAC architecture and requires (MUST) securing it, for example with TLS. It also says the PDP SHOULD authenticate the PEP, for example with mutual TLS, OAuth, or an API key. A PDP that answers anyone becomes an entry point for policy probing and load attacks.
 - Make the PEP fail closed: if it cannot get a decision, it denies. Decide early what happens when the PDP goes down or times out.
-- XACML also has a profile for JSON requests and responses (an OASIS Standard since 2019), yet most of today's engines expose their own PEP-PDP API. The OpenID Foundation's AuthZEN Authorization API 1.0 standardizes that line across engines. [What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers it in depth.
+- XACML also has a profile for JSON requests and responses (an OASIS Standard since 2019), yet every engine compared in this post exposes its own PEP-PDP API. The OpenID Foundation's AuthZEN Authorization API 1.0 standardizes that line across engines. [What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers it in depth.
 
 # A Taxonomy of Authorization Models
 
 ## Three Independent Axes
 
-Three axes organize authorization models without overlap. The axes stay independent, so you describe a system with a combination. For example, "we realize DAC with RBAC and store it as ACLs" makes sense.
+This post organizes authorization models along three axes. The axes stay independent, so you describe a system with a combination. For example, "we realize DAC with RBAC and store it as ACLs" makes sense.
 
 | Axis | Options | Key distinction |
 |---|---|---|
@@ -147,11 +147,11 @@ The third axis goes back to the access matrix in Lampson's 1971 paper. Osborn, S
 | ABAC | Attributes of subject, resource, and environment, plus conditions | Fine-grained conditions, cross-organization decisions, unknown users | Evaluation cost, policy complexity, difficulty of reviewing "who can do what" in advance |
 | ReBAC | A graph of relations between subjects and resources | Owners, sharing, membership, folder inheritance, org hierarchy | Keeping relation data consistent and operating the store |
 
-The three do not exclude each other. SP 800-162 treats ACL and RBAC as, in some ways, special cases of ABAC: ACL decides on the identity attribute and RBAC on the role attribute. You can also express relations as attributes. The difference lies in what you model around, and real systems usually combine them.
+The three do not exclude each other. SP 800-162 treats ACL and RBAC as, in some ways, special cases of ABAC: ACL decides on the identity attribute and RBAC on the role attribute. You can also express relations as attributes. The difference lies in what you model around, and one system can combine them.
 
 ## Treat PBAC as a Style, Not a Model
 
-PBAC (Policy-Based Access Control) has no single agreed definition. The NIST glossary itself lists two definitions. The one it takes from CNSSI 4009 calls it "a form of access control that uses an authorization policy that is flexible in the types of evaluated parameters (e.g., identity, role, clearance, operational need, risk, heuristics)." In my view, the discussion stays clearer if you treat PBAC as a name for a style outside the three axes: writing access rules declaratively in a policy language. People often use it as a synonym for ABAC, yet you can write RBAC and ReBAC in a policy language too. The question "RBAC or PBAC?" mixes two axes. Phrasing it as "an RBAC model written as Policy-as-Code" keeps the discussion clear.
+PBAC (Policy-Based Access Control) has no single agreed definition. The NIST glossary itself lists two definitions. The one it takes from CNSSI 4009 calls it "a form of access control that uses an authorization policy that is flexible in the types of evaluated parameters (e.g., identity, role, clearance, operational need, risk, heuristics)." In my view, the discussion stays clearer if you treat PBAC as a name for a style outside the three axes: writing access rules declaratively in a policy language. The CNSSI 4009 definition comes close to ABAC, yet you can write RBAC and ReBAC in a policy language too. Seen this way, the question "RBAC or PBAC?" mixes two axes. Phrasing it as "an RBAC model written as Policy-as-Code" keeps the discussion clear.
 
 # Choosing and Combining Models
 
@@ -174,7 +174,7 @@ flowchart TD
     Q3 -- "yes" --> A
 ```
 
-Most business SaaS products need a little of all three. Job functions such as administrator or approver fit RBAC. "Requests I created" or "data about my direct reports" fit ReBAC. "Only during business hours" or "only from managed devices" fit ABAC.
+In my view, many business SaaS products need a little of all three. Job functions such as administrator or approver fit RBAC. "Requests I created" or "data about my direct reports" fit ReBAC. "Only during business hours" or "only from managed devices" fit ABAC.
 
 ## "Check" and "List" Are Different Questions
 
@@ -300,7 +300,7 @@ OpenFGA is a Zanzibar-style open source project that Okta (Auth0) engineers star
 
 SpiceDB is a Zanzibar-style open source project that AuthZed develops. You define relations and permissions in its schema language, and ZedTokens plus per-request consistency settings avoid the new enemy problem. Its caveats feature expresses conditional relations.
 
-Adopting a ReBAC engine means you keep relation data both in the business database and in the engine. How you sync business updates with relation updates, and which side holds the source of truth, becomes one of the heaviest decisions in the rollout.
+If the business database still holds relations such as owners and membership after you adopt a ReBAC engine, you keep the same relation data in two places. Then how you sync business updates with relation updates, and which side holds the source of truth, becomes one of the heaviest decisions in the rollout.
 
 # How to Choose an Engine
 
