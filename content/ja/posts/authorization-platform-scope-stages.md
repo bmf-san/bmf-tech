@@ -274,9 +274,9 @@ Authorization API 1.0は、主に次のAPIを定めている。
 
 仕様の中核はAccess Evaluation APIで、メタデータで必須のエンドポイントもこれだけである。Access Evaluations APIとSearch APIは任意で、メタデータを公開するPDPは、載せたエンドポイントで対応を示す。
 
-PDPのポリシー言語、アーキテクチャ、状態の管理は仕様の範囲外である。そのため、PDPの中身が何であっても、PEPからは同じ形で問い合わせられる。仕様の詳細は[AuthZEN Authorization APIとは](/ja/posts/authzen-authorization-api/)で扱う。
+PDPのポリシー言語、アーキテクチャ、状態の管理は仕様の範囲外である。そのため、仕様を実装したPDPであれば、中身が何であっても、PEPからは同じ形で問い合わせられる。仕様の詳細は[AuthZEN Authorization APIとは](/ja/posts/authzen-authorization-api/)で扱う。
 
-外部化認可のPDPとして使えるエンジンや製品には、OPA、Cedar（Cedarを使うマネージドサービスとしてAmazon Verified Permissions）、Cerbos、OpenFGAなどがある。
+外部化認可のPDPとして使えるエンジンや製品には、OPA、Cedar（Cedarを使うマネージドサービスとしてAmazon Verified Permissions）、Cerbos、OpenFGAなどがある。ただし、どれもがAuthZENのAPIをそのまま受け付けるわけではない。対応の有無や形（本体の機能、実験的な実装、別のプラグイン）は製品ごとに異なる。
 
 ## 外部化しても、ポリシーの中身は各ドメインが持つ
 

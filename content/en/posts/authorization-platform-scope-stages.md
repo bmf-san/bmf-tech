@@ -274,9 +274,9 @@ Authorization API 1.0 defines these main APIs:
 
 The Access Evaluation API is the core of the spec and the only endpoint the metadata requires. The Access Evaluations API and the Search APIs are optional, and a PDP that publishes metadata signals support by listing their endpoints.
 
-The policy language, architecture, and state management of a PDP are out of the specification's scope. So whatever runs inside the PDP, the PEP can query it the same way. [What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers the specification in detail.
+The policy language, architecture, and state management of a PDP are out of the specification's scope. So as long as a PDP implements the specification, the PEP can query it the same way, whatever runs inside. [What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers the specification in detail.
 
-Engines and products you can use as the PDP for externalized authorization include OPA, Cedar (with Amazon Verified Permissions as a managed service built on Cedar), Cerbos, and OpenFGA.
+Engines and products you can use as the PDP for externalized authorization include OPA, Cedar (with Amazon Verified Permissions as a managed service built on Cedar), Cerbos, and OpenFGA. Not every one of them accepts the AuthZEN API out of the box. Whether and how each product supports it (natively, as an experimental feature, or through a separate plugin) varies.
 
 ## Externalized, but each domain still owns its policy content
 
