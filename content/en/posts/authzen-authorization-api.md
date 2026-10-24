@@ -70,8 +70,8 @@ The table lists what the spec defines and what it leaves out.
 | --- | --- |
 | Defines | Information model (Subject, Action, Resource, Context, and Decision) |
 | Defines | Access Evaluation API (one decision) |
-| Defines | Access Evaluations API (many decisions in one call; optional for a PDP) |
-| Defines | Search APIs (lists of subjects, resources, or actions; optional for a PDP) |
+| Defines | Access Evaluations API (many decisions in one call; its metadata endpoint is OPTIONAL) |
+| Defines | Search APIs (lists of subjects, resources, or actions; their metadata endpoints are OPTIONAL) |
 | Defines | PDP metadata (`/.well-known/authzen-configuration`; publishing it is RECOMMENDED) |
 | Defines | HTTPS/JSON binding, error handling, security considerations |
 | Leaves out | Policy language, PDP internal architecture, state management |
@@ -302,7 +302,7 @@ Here is a Resource Search. The PEP sends only the `type` of the resource it want
 
 The Search APIs help with pre-filtering list pages, deciding which menus and buttons to show, and reviewing access. Once you externalize decisions, lists and pagination get hard. I explored that problem with OPA in [Considerations and Solutions for Pagination Impact in OPA](/posts/pagination-impact-solutions-opa/).
 
-Reverse lookups such as "who can access what" are not new. Zanzibar's Expand API takes an object#relation pair and returns the effective userset as a tree. OpenFGA's ListObjects and ListUsers return lists of permitted objects and users. What AuthZEN adds is a common API for them across PDPs. All Search APIs are optional, and if the metadata does not list one, the PEP can conclude that the PDP does not support it.
+Reverse lookups such as "who can access what" are not new. Zanzibar's Expand API takes an object#relation pair and returns the effective userset as a tree. OpenFGA's ListObjects and ListUsers return lists of permitted objects and users. What AuthZEN adds is a common API for them across PDPs. The metadata endpoints for all Search APIs are OPTIONAL, and if the metadata does not list one, the PEP can conclude that the PDP does not support it.
 
 # Decision Context: Beyond a Boolean
 
@@ -440,7 +440,7 @@ AuthZEN makes the PEP code and the wire format easy to swap. The following work 
 | Migrating the data model | Each engine stores relationship tuples and attributes differently |
 | Aligning `type` and `name` vocabulary | The spec defines no vocabulary |
 | Reading `context` | Formats for reasons and obligations sit outside the spec |
-| Search API support | Search and batch evaluation are optional and vary by PDP |
+| Search API support | The metadata endpoints for search and batch evaluation are OPTIONAL; if one is missing, the PEP can conclude that the PDP does not support that API |
 | Attribute supply paths | Which attributes the PEP sends and which the PDP fetches depends on your setup |
 
 In short, AuthZEN lets you switch PDPs without rewriting PEPs, but not without rewriting policies. Even so, in my view, the first benefit matters a lot in an organization with as many PEPs as it has services and gateways.
@@ -491,7 +491,7 @@ This grouping into three questions is my own framing; the spec does not define i
 
 Finally, here are my own tips for bringing AuthZEN into a design.
 
-- **Start with Access Evaluation only.** The spec calls this API the core feature, and its URL is the only required endpoint in the metadata. Publishing metadata is itself only recommended. Some PDPs don't support batch evaluation or search, so confirm support before you use them.
+- **Start with Access Evaluation only.** The spec calls this API the core feature, and its URL is the only required endpoint in the metadata. Publishing metadata is itself only recommended. The metadata endpoints for batch evaluation and search are OPTIONAL, and a missing one tells the PEP that the PDP does not support that API. Confirm support before you use them.
 - **Settle the `type` and `name` vocabulary first.** Use one vocabulary for resource types and action names across the organization. If some PEPs send `read` and others send `can_read`, decisions drift even without a PDP change.
 - **Document your `context` conventions.** Agree inside the organization on how to return reasons and step-up requests. Once the Obligations Profile stabilizes, move toward it.
 - **Decide where attributes come from.** Separate attributes the PEP sends from attributes the PDP fetches. The more important the attribute, the less you should rely on the PEP for it.
@@ -502,7 +502,7 @@ Finally, here are my own tips for bringing AuthZEN into a design.
 
 - AuthZEN Authorization API 1.0 standardizes the request and response between the PEP and the PDP. It became an OpenID Final Specification in January 2026.
 - A request carries Subject, Action, Resource, and Context (SARC), and a response carries a boolean `decision` and an optional `context`.
-- The API consists of single evaluation, batch evaluation with selectable semantics, subject/resource/action search, and metadata at `/.well-known/authzen-configuration`. PDP support for batch evaluation and search is optional, and the spec recommends publishing metadata.
+- The API consists of single evaluation, batch evaluation with selectable semantics, subject/resource/action search, and metadata at `/.well-known/authzen-configuration`. The spec recommends publishing metadata, in which the batch evaluation and search endpoints are OPTIONAL; if one is missing, the PEP can conclude that the PDP does not support that API.
 - A denial comes back as `200` with `false`, separate from HTTP errors. Errors in individual evaluations fail closed.
 - On security, protecting the PEP-PDP connection (for example with TLS for HTTP) is mandatory, and the spec recommends or permits PEP authentication, signed responses, and DoS protections. The PDP trusts the PEP, so the source of attributes becomes a central design question.
 - It takes its PEP and PDP definitions from XACML and NIST ABAC, and SARC maps closely to their vocabulary, but it stays out of policy languages. So OPA, Cedar, OpenFGA, and others can sit behind the same API, sometimes through a translation layer.
