@@ -237,7 +237,7 @@ The guide makes a few more points:
 
 XACML 3.0 became an OASIS Standard in 2013, and a version with errata followed in 2017. Writing it in XML takes effort, but it defines its evaluation semantics in detail, from the four decision values to combining algorithms and obligations, so it still works as a yardstick for comparing other approaches.
 
-Decisions take four values: Permit and Deny, plus NotApplicable (no matching policy) and Indeterminate (evaluation error). Combining algorithms merge the results of many rules.
+Decisions take four values: Permit and Deny, plus NotApplicable (no matching policy) and Indeterminate (evaluation error). Combining algorithms merge the results of many rules or policies. The table lists the main ones. XACML also defines ordered variants that fix the evaluation order (ordered-deny-overrides and ordered-permit-overrides), and only-one-applicable, which combines policies only.
 
 | Combining algorithm | Rule of thumb |
 |---|---|
@@ -250,7 +250,7 @@ Decisions take four values: Permit and Deny, plus NotApplicable (no matching pol
 Designs worth taking home:
 
 - How to fail closed. Put deny-unless-permit at the top and use a deny-biased PEP that allows only on Permit with every obligation fulfilled. Both NotApplicable and errors then become Deny.
-- Obligations versus advice. The PEP must carry out obligations and may ignore advice. If the PEP does not understand or cannot fulfill an obligation, it acts according to its bias; a deny-biased PEP does not allow access. The same contract applies when you handle obligations in AuthZEN responses. Also note that unordered combining algorithms can make the returned set of obligations nondeterministic.
+- Obligations versus advice. The PEP must carry out obligations and may ignore advice. If the PEP does not understand or cannot fulfill an obligation, it acts according to its bias; a deny-biased PEP does not allow access. AuthZEN only lists obligations and advice as examples of what the optional (MAY) context field of a response can carry, and does not define how to handle them. If you return obligations through AuthZEN, define this contract yourself. Also note that unordered combining algorithms can make the returned set of obligations nondeterministic.
 - Avoid negative rules. "Allow unless X" can fall open when the attribute fails to arrive.
 - Distinguish kinds of subjects. XACML has separate categories for the subject that started the request, intermediaries, and the recipient of the result. That vocabulary helps when decisions must account for multi-hop calls such as "user, then agent, then API".
 
