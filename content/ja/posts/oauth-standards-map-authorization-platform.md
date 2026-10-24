@@ -53,11 +53,11 @@ flowchart LR
     IdP["IdP / OP<br/>OIDC・SAML"]
     SCIM["SCIM<br/>プロビジョニング"]
   end
-  C["クライアント"] -- "1 認可要求<br/>PKCE・PAR・JAR・RAR" --> AS["認可サーバ"]
+  C["クライアント"] -- "1 認可要求<br/>PKCE・PAR・JAR・RAR・resource" --> AS["認可サーバ"]
   C -- "発見<br/>RFC 9728" --> RS["リソースサーバ"]
   C -- "発見<br/>RFC 8414・OIDC Discovery" --> AS
   AS -- "2 トークン<br/>JWT AT・送信者制約" --> C
-  C -- "3 API 呼び出し<br/>resource・DPoP/mTLS" --> RS
+  C -- "3 API 呼び出し<br/>DPoP/mTLS" --> RS
   RS -- "検証<br/>JWKS・Introspection" --> AS
   RS -- "4 Step-up チャレンジ" --> C
   IdP -- "ID Token" --> AS
@@ -184,7 +184,7 @@ response_type=code&client_id=s6BhdRkqt3&redirect_uri=...
 
 ブラウザは`client_id`と`request_uri`だけを持って認可エンドポイントへ行く。パラメータはブラウザを通らないので、改ざんや漏えいが起きにくい。クライアント認証を認可要求の段階で済ませられるのも利点である。
 
-JARは、認可要求のパラメータを署名付きのJWT（Request Object）にまとめ、`request`または`request_uri`で渡す。署名によって、要求を作ったのが確かにそのクライアントであることと、途中で変わっていないことを示せる。RFC 9101では、ASはRequest Objectの中のパラメータだけを使い、外に置かれたパラメータを使ってはならない。
+JARは、認可要求のパラメータを署名付きのJWT（Request Object）にまとめ、`request`または`request_uri`で渡す。署名によって、要求を作ったのが確かにそのクライアントであることと、途中で変わっていないことを示せる。RFC 9101では、同じパラメータが外にも置かれていても、ASはRequest Objectの中のパラメータだけを使わなければならない。
 
 2つは組み合わせられる。PARは「要求をブラウザに通さない」、JARは「要求そのものに署名する」で、守る対象が違う。
 
@@ -205,7 +205,7 @@ Security Profileの要求の例は次のとおりである。
 
 # 発見と宛先: どのASに、どの資源向けのトークンを求めるか
 
-クライアントとASとRSが事前に知り合っていない場面が増えている。MCPやAIエージェントでは、初めて見るRSに対して、どのASからトークンを得ればよいかをその場で調べる必要がある。
+クライアントとASとRSが、事前に知り合っていないこともある。たとえばMCPやAIエージェントでは、初めて見るRSに対して、どのASからトークンを得ればよいかをその場で調べる必要がある。
 
 | 標準 | 1行の役割 | 状態 |
 | --- | --- | --- |
@@ -323,7 +323,7 @@ APIキーのような長命のトークンの設計は[NIST CSF 2.0に学ぶ安�
 | 標準 | 1行の役割 | 状態 |
 | --- | --- | --- |
 | OpenID Connect Core 1.0 | OAuthの上で認証の結果をID Tokenとして運ぶ | Final |
-| SAML 2.0 | XMLのアサーションでSSOを行う。企業ではまだ多く使われる | OASIS標準 |
+| SAML 2.0 | XMLのアサーションでSSOを行う。2005年3月にOASIS標準になった | OASIS標準 |
 | SCIM（RFC 7643 / 7644） | 利用者とグループを組織の間で作成、更新、削除するREST APIとスキーマ | RFC（2015年9月） |
 | SCIMのSETプロファイル（RFC 9967） | SCIMの変更をSecurity Event Tokenで非同期に通知する | RFC（2026年5月） |
 | IPSIE | 企業のSSO、ライフサイクル、失効などの相互運用プロファイル | Draft（WGで策定中） |

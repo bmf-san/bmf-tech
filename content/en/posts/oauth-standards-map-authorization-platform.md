@@ -53,11 +53,11 @@ flowchart LR
     IdP["IdP / OP<br/>OIDC, SAML"]
     SCIM["SCIM<br/>provisioning"]
   end
-  C["Client"] -- "1 Authorization request<br/>PKCE, PAR, JAR, RAR" --> AS["Authorization server"]
+  C["Client"] -- "1 Authorization request<br/>PKCE, PAR, JAR, RAR, resource" --> AS["Authorization server"]
   C -- "Discovery<br/>RFC 9728" --> RS["Resource server"]
   C -- "Discovery<br/>RFC 8414, OIDC Discovery" --> AS
   AS -- "2 Token<br/>JWT AT, sender-constrained" --> C
-  C -- "3 API call<br/>resource, DPoP/mTLS" --> RS
+  C -- "3 API call<br/>DPoP/mTLS" --> RS
   RS -- "Validation<br/>JWKS, Introspection" --> AS
   RS -- "4 Step-up challenge" --> C
   IdP -- "ID Token" --> AS
@@ -184,7 +184,7 @@ response_type=code&client_id=s6BhdRkqt3&redirect_uri=...
 
 The browser goes to the authorization endpoint with only `client_id` and `request_uri`. The parameters never pass through the browser, which makes tampering and leakage harder. Another benefit: the AS authenticates the client already at the authorization request stage.
 
-JAR packs the authorization request parameters into a signed JWT (Request Object) and sends it as `request` or `request_uri`. The signature shows that the client really created the request and that nobody changed it on the way. Under RFC 9101, the AS must use only the parameters inside the Request Object and must ignore parameters outside it.
+JAR packs the authorization request parameters into a signed JWT (Request Object) and sends it as `request` or `request_uri`. The signature shows that the client really created the request and that nobody changed it on the way. Under RFC 9101, the AS must use only the parameters inside the Request Object, even if the same parameter also appears outside it.
 
 You can combine the two. PAR keeps the request out of the browser; JAR signs the request itself. They protect different things.
 
@@ -205,7 +205,7 @@ Even if you do not build financial APIs, FAPI 2.0 serves as a reference for how 
 
 # Discovery and Audience: Which AS, and Tokens for Which Resource
 
-More and more, the client, the AS, and the RS have no prior relationship. With MCP and AI agents, a client facing an unfamiliar RS must find out at runtime which AS issues tokens for it.
+Sometimes the client, the AS, and the RS have no prior relationship. With MCP and AI agents, for example, a client facing an unfamiliar RS must find out at runtime which AS issues tokens for it.
 
 | Standard | One-line role | Status |
 | --- | --- | --- |
@@ -323,7 +323,7 @@ Authorization decisions need to know who the subject is, which groups it belongs
 | Standard | One-line role | Status |
 | --- | --- | --- |
 | OpenID Connect Core 1.0 | Carries the authentication result as an ID Token on top of OAuth | Final |
-| SAML 2.0 | SSO with XML assertions. Still common in enterprises | OASIS Standard |
+| SAML 2.0 | SSO with XML assertions. OASIS approved it as a standard in March 2005 | OASIS Standard |
 | SCIM (RFC 7643 / 7644) | REST API and schema to create, update, and delete users and groups across organizations | RFC (September 2015) |
 | SCIM profile for SETs (RFC 9967) | Notifies SCIM changes asynchronously through Security Event Tokens | RFC (May 2026) |
 | IPSIE | Interoperability profiles for enterprise SSO, lifecycle, revocation, and more | Draft (in progress in the WG) |
