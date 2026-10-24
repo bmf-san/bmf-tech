@@ -220,7 +220,7 @@ AARP's design avoids a failure mode in which an approval workflow quietly become
 
 # AIMS: a framework that combines existing standards for agents
 
-AIMS (AI Identity Management System, draft-ietf-wimse-aims) is an IETF draft that collects best practices for authenticating and authorizing AI agents. Its predecessor, draft-klrc-aiagent-auth, moved to the WIMSE WG, which published -00 as a WG document in September 2026. The authors come from Defakto Security, AWS, Zscaler, Ping Identity, OpenAI, and Okta.
+draft-ietf-wimse-aims (titled "AI Identity Management System") is an IETF draft that collects best practices for authenticating and authorizing AI agents. In the body, AIMS stands for Agent Identity Management System, a conceptual model for the functions that manage an agent's identity and permissions. Its predecessor, draft-klrc-aiagent-auth, moved to the WIMSE WG, which published -00 as a WG document in September 2026. The authors come from Defakto Security, AWS, Zscaler, Ping Identity, OpenAI, and Okta.
 
 AIMS **does not define a new protocol**. It combines WIMSE, SPIFFE, OAuth, and Shared Signals, and points out the gaps.
 

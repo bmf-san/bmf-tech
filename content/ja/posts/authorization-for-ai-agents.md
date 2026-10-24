@@ -220,7 +220,7 @@ AARPは、承認ワークフローがいつのまにかポリシーの代わり�
 
 # AIMS：既存の標準を束ねたエージェントの認証・認可
 
-AIMS（AI Identity Management System、draft-ietf-wimse-aims）は、AIエージェントの認証・認可のベストプラクティスをまとめたIETFのドラフトである。前身はdraft-klrc-aiagent-authで、WIMSE WGに採択され、2026年9月にWGの文書として-00が出た。著者はDefakto Security、AWS、Zscaler、Ping Identity、OpenAI、Oktaの人である。
+draft-ietf-wimse-aims（表題はAI Identity Management System）は、AIエージェントの認証・認可のベストプラクティスをまとめたIETFのドラフトである。AIMSは本文ではAgent Identity Management Systemの略で、エージェントの身元と権限を管理する機能の概念モデルを指す。前身はdraft-klrc-aiagent-authで、WIMSE WGに採択され、2026年9月にWGの文書として-00が出た。著者はDefakto Security、AWS、Zscaler、Ping Identity、OpenAI、Oktaの人である。
 
 AIMSは**新しいプロトコルを作らない**。WIMSE、SPIFFE、OAuth、Shared Signalsを組み合わせ、足りない隙間を示す。
 
