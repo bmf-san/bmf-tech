@@ -364,7 +364,7 @@ PDPは、自分の設定をメタデータとして公開することが推奨�
 | `capabilities` | 任意 | IANAに登録された能力のURNの配列 |
 | `signed_metadata` | 任意 | メタデータを署名したJWT |
 
-PEPが守るべき検証は次のとおりである。
+PEPが守るべき検証と扱いは次のとおりである。
 
 - 取得したメタデータの`policy_decision_point`が、取得に使った識別子と同一であることを確かめる。違えば、その内容を使ってはならない。
 - `signed_metadata`を扱うPEPは、署名と発行者（`iss`）を検証する。署名付きの値は、平文の値より優先する。
@@ -386,7 +386,7 @@ JSONについては、I-JSON（RFC 7493）に沿うことを推奨している�
 | --- | --- | --- |
 | 通信の完全性と機密性 | PEPとPDPの接続を、TLSなど適切な手段で保護しなければならない（MUST） | ABACの構成で最も重要な接続だから |
 | PEPの認証 | PDPはPEPを認証すべき（SHOULD）。手段はmTLS、OAuth、APIキーなど | 大量の要求でポリシーを探られることと、DoSを防ぐ |
-| 認証の失敗 | `401`を返し、`WWW-Authenticate`ヘッダを付けるべき | 期待する認証方式を伝える |
+| 認証の失敗 | `401`を返さなければならず（MUST）、`WWW-Authenticate`ヘッダを付けるべき（SHOULD） | 期待する認証方式を伝える |
 | 信頼 | PDPはPEPを信頼する前提に立つ | 判定を最後に強制するのはPEPだから |
 | 応答の完全性 | PDPは応答に署名してよい（MAY） | プロキシやゲートウェイを挟むと、TLSだけでは経路全体を守れない |
 | 可用性 | 要求の大きさ、件数、不正なJSON、深い入れ子、メモリ消費に対策すべき | レート制限などでDoSを防ぐ |
@@ -428,7 +428,7 @@ AuthZENの効き目は、PEPの側から見たエンジンの違いを吸収す�
 | Context | `input`の任意の構造 | `context` | `context`（条件付きの関係で使う） |
 | 一覧の問い | 部分評価などで工夫する | 中核の判定APIにはない | ListObjects、ListUsers |
 
-Cedarの4つ組はSARCとほぼ同じ形をしている。OpenFGAは関係を問うので、Actionを`relation`に写す取り決めが要る。OPAは入力の形を決めていないので、SARCをそのまま`input`に渡すポリシーを書けばよい。OPAの基本は[Open Policy Agent（OPA）とは](/ja/posts/open-policy-agent/)で、マイクロサービスでの使い方は[OPAを使用したマイクロサービスのアクセス制御システムの実装](/ja/posts/microservices-access-control-opa/)で扱った。
+Cedarの4つ組はSARCとほぼ同じ形をしている。OpenFGAは関係を問うので、Actionを`relation`に写す取り決めが要る。OPAは入力の形を決めていないので、SARCをそのまま`input`に渡すポリシーを書けばよい。OPAの基本は[Open Policy Agent (OPA)とは](/ja/posts/open-policy-agent/)で、マイクロサービスでの使い方は[OPAを使用したマイクロサービスのアクセス制御システムの実装](/ja/posts/microservices-access-control-opa/)で扱った。
 
 ## 差し替えられるもの、差し替えられないもの
 
@@ -469,7 +469,7 @@ Authorization API 1.0の上に、用途ごとのプロファイルが作られ�
 
 | プロファイル | 状態 | 埋める隙間 |
 | --- | --- | --- |
-| Access Request and Approval Profile（AARP） | Working Group Draft | 「今は拒否だが、承認があれば許可」を、申請・承認・再評価でつなぐ |
+| Access Request and Approval Profile（AARP） | Working Group Draft | 「拒否だが申請はできる」判定を、申請・承認・再評価でつなぐ。承認後もPDPが再評価して決める |
 | COAZ Framework | Working Group Draft | 任意のプロトコルの要求からSARCを組み立てる、宣言的な写し方の枠組み |
 | COAZ-MCP Binding | Working Group Draft | COAZをMCPに当てはめ、MCPのメッセージごとに判定する |
 | Obligations Profile | Working Group Draft | 判定に付ける、PEPが必ず実行すべき義務の形式と交渉 |
@@ -515,7 +515,7 @@ OpenID Foundationは2026年6月の発表で、認可システムはこれまで�
 - [AIエージェントの認可とは？委譲の連鎖・人の承認・監査をMCP、AuthZEN、AIMS、A2A/AP2で整理する](/ja/posts/authorization-for-ai-agents/)
 - [MCPの認可はどう設計する？起きうる事故と後から直せない判断](/ja/posts/mcp-authorization-design/)
 - [認可基盤のアーキテクチャとは？コンテナ構成・代表シーケンス・PEPとPDPの配置と非機能の設計判断](/ja/posts/authorization-platform-architecture-decisions/)
-- [Open Policy Agent（OPA）とは？ポリシー・アズ・コードの実践ガイド](/ja/posts/open-policy-agent/)
+- [Open Policy Agent (OPA)とは？ポリシー・アズ・コードの実践ガイド](/ja/posts/open-policy-agent/)
 - [OPAを使用したマイクロサービスのアクセス制御システムの実装](/ja/posts/microservices-access-control-opa/)
 - [OPAにおけるページネーションへの影響と解決策に関する検討](/ja/posts/pagination-impact-solutions-opa/)
 

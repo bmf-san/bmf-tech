@@ -364,7 +364,7 @@ The spec recommends that a PDP publish its configuration as metadata at `/.well-
 | `capabilities` | No | Array of IANA-registered capability URNs |
 | `signed_metadata` | No | A JWT that signs the metadata |
 
-A PEP has to check the following.
+A PEP has to check and handle the following.
 
 - The `policy_decision_point` value in the metadata must equal the identifier the PEP used to fetch it. If they differ, the PEP MUST NOT use the data.
 - A PEP that supports `signed_metadata` validates the signature and the issuer (`iss`). Signed values take precedence over plain JSON values.
@@ -386,7 +386,7 @@ For JSON, the spec recommends following I-JSON (RFC 7493): UTF-8 encoding, no nu
 | --- | --- | --- |
 | Integrity and confidentiality | The PEP-PDP connection MUST use adequate protection such as TLS | It is the most sensitive connection in an ABAC architecture |
 | PEP authentication | The PDP SHOULD authenticate the PEP, for example with mTLS, OAuth, or API keys | Stops attackers from probing policies with crafted requests, and helps against DoS |
-| Authentication failure | Return `401` and SHOULD include `WWW-Authenticate` | Tells the caller which scheme to use |
+| Authentication failure | MUST return `401` and SHOULD include `WWW-Authenticate` | Tells the caller which scheme to use |
 | Trust | The PDP trusts the PEP | The PEP enforces the decision in the end |
 | Response integrity | The PDP MAY sign its response | TLS does not cover the full path when proxies or gateways sit in between |
 | Availability | Protect against large payloads, request floods, invalid or deeply nested JSON, and memory exhaustion | Rate limiting and similar measures prevent DoS |
@@ -469,7 +469,7 @@ The working group builds profiles for specific uses on top of Authorization API 
 
 | Profile | Status | Gap it fills |
 | --- | --- | --- |
-| Access Request and Approval Profile (AARP) | Working Group Draft | Turns "denied now, but allowed with approval" into request, approval, and re-evaluation |
+| Access Request and Approval Profile (AARP) | Working Group Draft | Connects a "denied, but requestable" decision to request, approval, and re-evaluation. After approval, the PDP re-evaluates and still decides |
 | COAZ Framework | Working Group Draft | A declarative way to map requests from any protocol into SARC |
 | COAZ-MCP Binding | Working Group Draft | Applies COAZ to MCP so that each MCP message gets a decision |
 | Obligations Profile | Working Group Draft | Format and negotiation of mandatory actions that the PEP must perform for a decision |
