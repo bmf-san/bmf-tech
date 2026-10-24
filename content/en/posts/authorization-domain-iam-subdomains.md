@@ -54,7 +54,7 @@ The most important principle: successful authentication does not mean the subjec
 
 The IETF WIMSE architecture (draft-ietf-wimse-arch-08) states this in §4.5. A workload with a valid credential does not gain access to every resource in the trust domain. The draft asks issuers, relying parties, gateways, and workloads to avoid treating successful authentication as implicit authorization.
 
-The same principle applies to people. Suppose a logged-in user can read someone else's invoice by editing the ID in the URL. Authentication works fine there, but authorization has a gap. Broken Access Control (A01) holds the top spot in the OWASP Top 10:2025. OWASP reports that every application it tested had some form of broken access control. That explains why you should design authentication and authorization separately.
+The same principle applies to people. Suppose a logged-in user can read someone else's invoice by editing the ID in the URL. Authentication works fine there, but authorization has a gap. Broken Access Control (A01) holds the top spot in the OWASP Top 10:2025. The OWASP page states that every tested application had some form of broken access control. That explains why you should design authentication and authorization separately.
 
 ## Authorization splits into deciding and enforcing
 
