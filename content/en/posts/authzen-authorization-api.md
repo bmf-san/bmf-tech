@@ -295,7 +295,7 @@ Here is a Resource Search. The PEP sends only the `type` of the resource it want
 ## Semantics
 
 - **Consistency with evaluation.** If you pass a search result to Access Evaluation, the decision SHOULD be `true`. Evaluation can depend on other variables such as time, so the spec does not guarantee it.
-- **Transitive traversal.** The spec recommends transitive search. If user U belongs to group G and G can view document D, a search for subjects who can view D includes U.
+- **Transitive traversal.** The spec recommends (RECOMMENDED) that a search traverse intermediate attributes and relationships transitively. If user U belongs to group G and G can view document D, a search for users who can view D includes U.
 - **Pagination.** Pagination support is optional (MAY) for the PDP. With a PDP that supports it, the PEP fetches the next page with an opaque token, and an empty `next_token` marks the end. Pagination gives no atomic snapshot, so if data changes mid-way, results may repeat or go missing. Requests after the first page MUST repeat every value of the first request except the token.
 
 ## Where It Helps
