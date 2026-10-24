@@ -276,7 +276,7 @@ Authorization API 1.0 defines these main APIs:
 - Access Evaluations API: requests several decisions together
 - Search APIs (Subject Search, Resource Search, Action Search): find permitted subjects, resources, or actions
 
-The Access Evaluation API is the core of the spec and the only endpoint the metadata requires. The Access Evaluations API and the Search APIs are optional, and a PDP that publishes metadata signals support by listing their endpoints.
+The Access Evaluation API is the core of the spec and the only endpoint the metadata requires. The metadata endpoints for the Access Evaluations API and the Search APIs are OPTIONAL, and if one is absent, the PEP can conclude that the PDP does not support that API.
 
 The policy language, architecture, and state management of a PDP are out of the specification's scope. So as long as a PDP implements the specification, the PEP can query it the same way, whatever runs inside. The standard covers how the PEP queries the PDP, though. Policy languages and how you load the data that decisions use still vary from product to product, so swapping PDPs means migrating those. [What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers the specification in detail.
 

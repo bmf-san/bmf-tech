@@ -276,7 +276,7 @@ Authorization API 1.0は、主に次のAPIを定めている。
 - Access Evaluations API: 複数の判定をまとめて求める
 - Search API（Subject Search、Resource Search、Action Search）: 許可される主体・資源・操作を探す
 
-仕様の中核はAccess Evaluation APIで、メタデータで必須のエンドポイントもこれだけである。Access Evaluations APIとSearch APIは任意で、メタデータを公開するPDPは、載せたエンドポイントで対応を示す。
+仕様の中核はAccess Evaluation APIで、メタデータで必須のエンドポイントもこれだけである。Access Evaluations APIとSearch APIのエンドポイントはメタデータで任意（OPTIONAL）で、載っていなければPEPはそのPDPが対応していないと判断できる。
 
 PDPのポリシー言語、アーキテクチャ、状態の管理は仕様の範囲外である。そのため、仕様を実装したPDPであれば、中身が何であっても、PEPからは同じ形で問い合わせられる。ただし、標準になるのは問い合わせの形である。ポリシーの書き方や判定に使うデータの登録は製品ごとに異なるため、PDPを差し替えるときはそれらの移行が要る。仕様の詳細は[AuthZEN Authorization APIとは](/ja/posts/authzen-authorization-api/)で扱う。
 
