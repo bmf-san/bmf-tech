@@ -121,7 +121,7 @@ flowchart LR
 
 ## Design Points
 
-- The PEP-PDP channel is the most sensitive connection. Protect it with mTLS or similar, and have the PDP authenticate the PEP. A PDP that answers anyone becomes an entry point for policy probing and load attacks.
+- The AuthZEN spec calls the PEP-PDP connection the most sensitive one in an ABAC architecture. Protect it with mTLS or similar, and have the PDP authenticate the PEP. A PDP that answers anyone becomes an entry point for policy probing and load attacks.
 - Make the PEP fail closed: if it cannot get a decision, it denies. Decide early what happens when the PDP goes down or times out.
 - XACML also has a profile for JSON requests and responses (an OASIS Standard since 2019), yet most of today's engines expose their own PEP-PDP API. The OpenID Foundation's AuthZEN Authorization API 1.0 standardizes that line across engines. [What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers it in depth.
 
@@ -183,7 +183,7 @@ A point that model selection often misses: what kind of question must the system
 - Check: "Can this user read this resource?"
 - List: "Which resources can this user read?" or "Who can read this resource?"
 
-List questions always come up, for search result filtering in the UI and for access reviews. NIST SP 800-178 points out that logical formula-based policies, as in XACML, cannot support such a review efficiently: the review amounts to propositional satisfiability, an NP-complete problem. Asking "who can read this?" of a policy written only as attribute conditions stays hard by nature.
+List questions come up often, for search result filtering in the UI and for access reviews. NIST SP 800-178 points out that logical formula-based policies, as in XACML, cannot support such a review efficiently: the review amounts to propositional satisfiability, an NP-complete problem. Asking "who can read this?" of a policy written only as attribute conditions stays hard by nature.
 
 ReBAC, which stores relations as enumerated data, handles these questions well. Attribute-centric engines work around the problem with partial evaluation or query plans that turn policy into database filters. Flag the resources that need listing while you choose the model.
 
@@ -251,7 +251,7 @@ Designs worth taking home:
 
 - How to fail closed. Put deny-unless-permit at the top and use a deny-biased PEP that allows only on Permit with every obligation fulfilled. Both NotApplicable and errors then become Deny.
 - Obligations versus advice. The PEP must carry out obligations and may ignore advice. If the PEP does not understand or cannot fulfill an obligation, it acts according to its bias; a deny-biased PEP does not allow access. The same contract applies when you handle obligations in AuthZEN responses. Also note that unordered combining algorithms can make the returned set of obligations nondeterministic.
-- Avoid negative rules. "Allow unless X" falls open when the attribute fails to arrive.
+- Avoid negative rules. "Allow unless X" can fall open when the attribute fails to arrive.
 - Distinguish kinds of subjects. XACML has separate categories for the subject that started the request, intermediaries, and the recipient of the result. That vocabulary helps when decisions must account for multi-hop calls such as "user, then agent, then API".
 
 As a successor, the XACML TC is drafting ACAL 1.0, an XML-agnostic core model with separate representations: XML (XACML 4.0), JSON (JACAL), and YAML (YACAL). Committee Specification Draft 01 of the core and of the XML and JSON representations came out in February 2026, so adoption decisions would come too early. ALFA, a friendlier notation for XACML, also exists. A Working Draft 01 of it appeared in the XACML TC in 2015, but it never became an OASIS standard.
@@ -300,7 +300,7 @@ OpenFGA is a Zanzibar-style open source project that Okta (Auth0) engineers star
 
 SpiceDB is a Zanzibar-style open source project that AuthZed develops. You define relations and permissions in its schema language, and ZedTokens plus per-request consistency settings avoid the new enemy problem. Its caveats feature expresses conditional relations.
 
-Adopting a ReBAC engine means you keep relation data both in the business database and in the engine. How you sync business updates with relation updates, and which side holds the source of truth, becomes the heaviest decision in the rollout.
+Adopting a ReBAC engine means you keep relation data both in the business database and in the engine. How you sync business updates with relation updates, and which side holds the source of truth, becomes one of the heaviest decisions in the rollout.
 
 # How to Choose an Engine
 
