@@ -177,7 +177,7 @@ flowchart LR
 | 関係ストア | ④ アクセス判定 | 所有・共有・継承の関係 | Zanzibar 型（OpenFGA、SpiceDB） |
 | 承認・アクセス要求 | ⑤ アクセスガバナンス | 拒否のあとの承認、期限付きの割り当て | AuthZEN AARP（Draft）、CIBA |
 | API・AI ゲートウェイ（PEP） | 業務ドメイン | 入口での粗い認可、トークン検証 | Bearer トークン（RFC 6750）、Protected Resource Metadata（RFC 9728）、COAZ-MCP（Draft） |
-| サービス内 PEP・サイドカー | 業務ドメイン | 細かい認可の強制 | AuthZEN（PEP 側）、OPA サイドカー |
+| サービス内 PEP・サイドカー | 業務ドメイン | 細かい認可の強制 | AuthZEN（PEP 側）。問い合わせ先の PDP を OPA などのサイドカーで動かせる |
 | リスク評価 | 隣接ドメイン | リスクシグナルの送信 | OpenID SSF、CAEP、RISC |
 | 監査ログ | 横断 | 判定と操作の記録 | 構造化された監査ログ |
 
@@ -280,7 +280,8 @@ sequenceDiagram
     AR-->>AG: Task Handle（status=pending）
     AR->>M: 承認の依頼（既存のワークフロー）
     M-->>AR: 承認
-    AG->>AR: 状態の確認（ポーリングまたは完了通知）
+    Note over AG,AR: ポーリングの代わりに、完了通知（callback）を受け取る方法もある
+    AG->>AR: 状態の確認（ポーリング）
     AR-->>AG: status=approved と承認の結果（approval）
     AG->>PDP: 承認を添えて再評価（context.approval）
     PDP-->>AG: 許可

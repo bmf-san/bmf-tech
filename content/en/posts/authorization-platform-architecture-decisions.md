@@ -177,7 +177,7 @@ The table lists the role of each container and the standards or implementations 
 | Relationship store | 4 Access decision | Ownership, sharing, and inheritance | Zanzibar-style systems (OpenFGA, SpiceDB) |
 | Approval / access request | 5 Access governance | Approval after a denial, time-bound assignments | AuthZEN AARP (Draft), CIBA |
 | API / AI gateway (PEP) | Business domain | Coarse authorization at the entry, token validation | Bearer tokens (RFC 6750), Protected Resource Metadata (RFC 9728), COAZ-MCP (Draft) |
-| In-service PEP / sidecar | Business domain | Enforce fine-grained authorization | AuthZEN (PEP side), OPA sidecar |
+| In-service PEP / sidecar | Business domain | Enforce fine-grained authorization | AuthZEN (PEP side); the PDP it calls can run as a sidecar, such as OPA |
 | Risk assessment | Adjacent domain | Send risk signals | OpenID SSF, CAEP, RISC |
 | Audit log | Cross-cutting | Record decisions and operations | Structured audit logs |
 
@@ -280,7 +280,8 @@ sequenceDiagram
     AR-->>AG: Task Handle (status=pending)
     AR->>M: Ask for approval (existing workflow)
     M-->>AR: Approve
-    AG->>AR: Check status (polling or callback)
+    Note over AG,AR: Instead of polling, the PEP can receive a completion callback
+    AG->>AR: Check status (polling)
     AR-->>AG: status=approved and approval result
     AG->>PDP: Re-evaluate with approval (context.approval)
     PDP-->>AG: Allow
