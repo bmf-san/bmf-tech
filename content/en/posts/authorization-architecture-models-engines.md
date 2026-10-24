@@ -294,7 +294,7 @@ Cerbos is a stateless PDP with policies in YAML. It runs as a service or sidecar
 
 ## Relationship-Based Engines (Zanzibar-Style)
 
-Zanzibar is the authorization system that many Google products share. It stores permissions as tuples of the form "this user (or set of users) holds this relation on this object", and rewrite rules such as "editor includes viewer" let relations inherit from each other. The paper names the "new enemy problem": you revoke a permission and then update a resource, yet the old permission still reveals the new content because the two changes apply out of order. Zanzibar prevents it with a consistency token called a zookie. An index called Leopard speeds up deeply nested groups.
+Zanzibar is the authorization system that many Google products share. It stores permissions as tuples of the form "this user (or set of users) holds this relation on this object", and rewrite rules such as "every editor is also a viewer" let relations inherit from each other. The paper names the "new enemy problem": if a check ignores the order of ACL updates, or applies an old ACL to new content, a user you removed can still see the new content. Zanzibar prevents it with timestamps that respect the causal order of updates (external consistency) and with snapshot reads whose freshness a consistency token called a zookie bounds. An index called Leopard speeds up deeply nested groups.
 
 OpenFGA is a Zanzibar-style open source project that Okta (Auth0) engineers started. It joined the CNCF Sandbox in 2022 and moved to Incubating in 2025. You define an authorization model in a DSL, write relationship tuples, and query with Check, ListObjects, and ListUsers. Conditional relationship tuples let it cover some attribute conditions too.
 
