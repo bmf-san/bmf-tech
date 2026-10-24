@@ -161,7 +161,7 @@ If you externalize decisions, AuthZEN's [Authorization API](/posts/authzen-autho
 
 The 2026-07-28 revision removed protocol-level sessions. A server that needs state across calls mints a handle and receives it back as an ordinary tool argument. The specification says a handle is a name, not a capability. The Best Practices say servers MUST NOT treat possession of a state handle as authentication. They also recommend binding each handle to the verified user in the server-side store. For example, key the stored state as `<user_id>:<handle>` and take the user ID from the verified token.
 
-The same idea applies to other values. `clientInfo` is self-reported, and servers should not use it for security decisions. Clients should not trust tool annotations from untrusted servers. Take the subject information for access decisions only from verified tokens.
+The same idea applies to other values. `clientInfo` is self-reported, and implementations should not rely on it for security decisions. Clients MUST treat tool annotations as untrusted unless they come from trusted servers. Take the subject information for access decisions only from verified tokens.
 
 # Who holds whose authority at each hop
 
