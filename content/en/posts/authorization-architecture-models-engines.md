@@ -318,7 +318,7 @@ Adopting a ReBAC engine means you keep relation data both in the business databa
 
 ## Combining Engines
 
-You do not need to put everything on one engine. A common setup keeps a ReBAC engine as the authority for relations and evaluates attribute conditions in a policy engine. In that setup, the ReBAC engine acts as a PDP and also as a PIP from the policy engine's point of view. Following the role-centric idea, roles and relations set the ceiling and policy engine conditions narrow it.
+You do not need to put everything on one engine. One example setup keeps a ReBAC engine as the authority for relations and evaluates attribute conditions in a policy engine. In that setup, the ReBAC engine acts as a PDP and also as a PIP from the policy engine's point of view. Following the role-centric idea, roles and relations set the ceiling and policy engine conditions narrow it.
 
 ## Choices to Avoid
 
