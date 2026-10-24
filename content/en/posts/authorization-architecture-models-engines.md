@@ -187,7 +187,7 @@ List questions come up often, for search result filtering in the UI and for acce
 
 ReBAC, which stores relations as enumerated data, handles these questions well. Attribute-centric engines work around the problem with partial evaluation or query plans that turn policy into database filters. Flag the resources that need listing while you choose the model.
 
-## Roles Set the Ceiling; Attributes and Relations Narrow It
+## Roles Set the Ceiling; Conditions Narrow It
 
 For combining models, the "role-centric" approach that Kuhn of NIST and his co-authors described still works. Their 2010 paper (Kuhn of NIST, with Coyne and Weil) classified three ways to add attributes to RBAC.
 
@@ -199,11 +199,11 @@ For combining models, the "role-centric" approach that Kuhn of NIST and his co-a
 
 In the role-centric approach, the usable permissions equal the intersection of "permissions of active roles" and "permissions the rules allow". Roles set the ceiling, which preserves least privilege and keeps review simple. The paper also suggests turning static attributes (position, skills, location) into roles and dynamic attributes (such as time) into rules. With ten attributes (four static, six dynamic), pure RBAC or pure ABAC can need up to 1,024 roles or rules. Splitting them needs at most 16 roles and 64 rules.
 
-In authorization platform terms:
+In authorization platform terms, it looks like this. The paper covers only roles and attributes; where relations fit is my own mapping.
 
-- Use roles to define the most a person can ever do
-- Narrow with relations (assignment, ownership, membership) and attributes (time window, device, risk)
-- Do not write rules where attributes add permissions; if you need more, express it as a role or a relation
+- Use roles to define the most a person can ever do. A relation that grants access by itself, such as sharing a document, also belongs on this ceiling side.
+- Narrow with conditions on relations (assignment, ownership, membership) and attributes (time window, device, risk). For example, limit an approver role to requests from the departments the person handles.
+- Do not write rules where attributes add permissions; if you need more, express it as a role or as a relation that grants access
 
 # What the Originals Still Teach
 
@@ -318,7 +318,7 @@ Adopting a ReBAC engine means you keep relation data both in the business databa
 
 ## Combining Engines
 
-You do not need to put everything on one engine. One example setup keeps a ReBAC engine as the authority for relations and evaluates attribute conditions in a policy engine. In that setup, the ReBAC engine acts as a PDP and also as a PIP from the policy engine's point of view. Following the role-centric idea, roles and relations set the ceiling and policy engine conditions narrow it.
+You do not need to put everything on one engine. One example setup keeps a ReBAC engine as the authority for relations and evaluates attribute conditions in a policy engine. In that setup, the ReBAC engine acts as a PDP and also as a PIP from the policy engine's point of view. Following the role-centric idea, roles and the relations that grant access set the ceiling, and conditions in the policy engine narrow it.
 
 ## Choices to Avoid
 
@@ -331,7 +331,7 @@ You do not need to put everything on one engine. One example setup keeps a ReBAC
 
 - Think of authorization in layers: model, expression, engine, API, and data. The safe order of choice runs model, data, engine.
 - Put the PEP on the business domain side, the PDP and PAP on the access decision side, and the PIP next to attribute authorities. Protect the PEP-PDP connection and deny when no decision comes back.
-- RBAC, ABAC, and ReBAC do not exclude each other. Letting roles set the ceiling and relations and attributes narrow it keeps review manageable. Treating PBAC as a writing style rather than a model keeps the discussion clear.
+- RBAC, ABAC, and ReBAC do not exclude each other. Letting roles (and relations that grant access) set the ceiling, and conditions on attributes and relations narrow it, keeps review manageable. Treating PBAC as a writing style rather than a model keeps the discussion clear.
 - The originals still teach: RBAC's "only if", SP 800-162's attribute authorities, and XACML's combining algorithms and obligations. NGAC adds the idea of answering list questions by enumerating relations.
 - Narrow down engines by model focus, data handling, and listing needs. Standardizing the PEP-PDP line keeps the option to choose again.
 
