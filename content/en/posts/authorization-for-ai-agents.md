@@ -131,7 +131,7 @@ The key points:
 
 - The MCP server publishes Protected Resource Metadata (RFC 9728), and the client discovers the authorization server from it.
 - The client binds the token to a specific MCP server with `resource` (RFC 8707). The server accepts only tokens issued for itself and **MUST NOT pass a received token through to upstream APIs**.
-- A client that supports every registration option SHOULD prefer pre-registration, then a Client ID Metadata Document (CIMD), then Dynamic Client Registration, and prompt the user for client information only when none of these is available. DCR now remains only for backward compatibility and the spec deprecates it.
+- A client that supports every registration option SHOULD prefer pre-registration, then a Client ID Metadata Document (CIMD), then Dynamic Client Registration, and prompt the user for client information only when none of these is available. The spec deprecates DCR and keeps it for backward compatibility with authorization servers that do not support CIMD.
 - When permissions fall short, the server indicates the required scopes with `insufficient_scope`, and the client requests them incrementally (step-up).
 - The official authorization extensions (ext-auth) cover machine-to-machine use without a user and central management by an enterprise IdP. The first is Client Credentials; the second is Enterprise-Managed Authorization, which uses ID-JAG (covered later).
 
@@ -214,7 +214,7 @@ The core of the spec lies in seven invariants. The key points:
 - Neither submitting a request nor receiving approval grants access by itself.
 - At enforcement time, the PDP makes a fresh decision with the current policy and state. The approval acts only as an input to that decision.
 
-Checking approver eligibility and separation of duties is mandatory (MUST). To bind denial, request, and approval together, implementations use identifiers when the PDP and the Access Request Service share state, and a value signed by the PDP or another party (preferably a JWS) when they do not. Because the agent can store the task handle and resume later, it can keep working while it waits for approval. Still, knowing a task handle grants no permission.
+Before it returns `approved`, the Access Request Service MUST check approver eligibility, including separation of duties. To bind denial, request, and approval together, implementations use identifiers when the PDP and the Access Request Service share state, and a value signed by the PDP or another party (preferably a JWS) when they do not. Because the agent can store the task handle and resume later, it can keep working while it waits for approval. Still, knowing a task handle grants no permission.
 
 AARP's design avoids a failure mode in which an approval workflow quietly becomes a substitute for policy. It keeps the PDP as the final authority and passes the approval in as input. It still stands at Draft 1 with a single author, and no spec yet defines how to go from a COAZ-MCP denial to an AARP request. In my view, you can adopt the ideas now, but building tightly to the wire format would come too early.
 
