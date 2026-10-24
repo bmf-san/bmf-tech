@@ -71,7 +71,7 @@ OAuth calls itself an "authorization framework." In practice, it centers on issu
 
 The opening of RFC 6749 describes OAuth 2.0 this way. It lets a third-party application get limited access to an HTTP service. The application gets that access either on behalf of a resource owner or on its own behalf.
 
-Apart from the case where a client obtains access on its own behalf (Client Credentials), OAuth answers this question: "Which part of my permissions do I hand to this client, and for how long?" In neither case does it answer "May this user read this invoice?"
+Apart from the case where a client obtains access on its own behalf (Client Credentials), OAuth answers this question: "Which part of the user's permissions goes to this client, and for how long?" In neither case does it answer "May this user read this invoice?"
 
 | | What OAuth decides | What OAuth does not decide |
 |---|---|---|
@@ -80,7 +80,7 @@ Apart from the case where a client obtains access on its own behalf (Client Cred
 | Result | Access token | Permit or deny |
 | Owner | Authorization server | Resource server, or the decision mechanism behind it |
 
-Even with an `invoices:read` scope, the resource server still has to decide which invoices the caller may read. If you try to decide per-resource access from the token contents alone, the token grows too large or the decision becomes too coarse. These two layers are easy to confuse, which makes them a major trap when people bring OAuth into a discussion about an authorization platform.
+Even with an `invoices:read` scope, the resource server still has to decide which invoices the caller may read. If you try to decide per-resource access from the token contents alone, the token grows too large or the decision becomes too coarse. In my view, these two layers are easy to confuse, which makes them a trap when people bring OAuth into a discussion about an authorization platform.
 
 [OAuth 2.0 Explained](/posts/oauth-2-0/) summarizes the OAuth 2.0 specification, and the post on [OAuth 2.1 and the Security BCP](/posts/oauth-2-1-security-bcp/) covers those two. [A map of OAuth and related standards](/posts/oauth-standards-map-authorization-platform/) looks at OAuth from the viewpoint of an authorization platform.
 
@@ -121,7 +121,7 @@ Core, Supporting, and Generic classify subdomains. Which one applies depends on 
 
 For an organization that builds business apps, IAM usually counts as Generic. The IDDD book uses the Identity and Access Context as an example of a Generic subdomain, and the `iddd_identityaccess` module in the official IDDD samples implements it. When IAM counts as Generic, leaning on standards and off-the-shelf products makes sense.
 
-Still, for a SaaS product that sells rich per-tenant permission settings, access decision or access governance can move toward Supporting. For IAM vendors, the Core tends to sit in authentication and delegation for an IdP, in access decision for an authorization engine, and in access governance for IGA (Identity Governance and Administration).
+Still, for a SaaS product whose customers need rich per-tenant permission settings, access decision or access governance can move toward Supporting. For IAM vendors, the Core tends to sit in authentication and delegation for an IdP, in access decision for an authorization engine, and in access governance for IGA (Identity Governance and Administration).
 
 Deciding early which parts count as Core for your organization keeps decisions about where to invest and what to buy steady. [How Much Authorization Platform Do You Need?](/posts/authorization-platform-scope-stages/) covers how to set that scope.
 
@@ -173,7 +173,7 @@ The sections below look briefly at what each one decides and which standards con
 
 Identity holds the data that says who a subject is: identifiers, attributes (department, title, employment type), identity proofing results, and the lifecycle from joining to leaving. Distributing accounts to other systems (provisioning) also belongs here. SCIM serves as the representative standard.
 
-Access decision uses the attributes this subdomain holds. If attributes go stale, someone who changed departments can still read data from the old one. Some authorization incidents come from attribute freshness, not from the decision logic.
+Access decision uses the attributes this subdomain holds. If attributes go stale, someone who changed departments can still read data from the old one. An authorization incident can come from attribute freshness rather than from the decision logic.
 
 ## 2. Authentication
 
@@ -197,7 +197,7 @@ Subdomain 4 decides "may this action happen now?" on every request. Subdomain 5 
 
 ## Why delegation stands alone
 
-Many models fold delegation into authentication or access decision. This map keeps delegation separate because the core OAuth concepts (client, consent, grant) fit nowhere else.
+Some models fold delegation into authentication or access decision. This map keeps delegation separate because the core OAuth concepts (client, consent, grant) fit nowhere else.
 
 - They do not fit authentication. Consent does not verify who you are
 - They do not fit access decision. The subject's own will sets the delegated range, not a per-resource decision
@@ -247,7 +247,7 @@ The question "may this person approve this invoice?" carries business knowledge.
 
 The official IDDD samples illustrate this relationship well. The business-side Collaboration Context does not use the users and roles from the Identity and Access Context as they come. Through `UserInRoleAdapter` and `CollaboratorTranslator`, it translates them into its own terms, such as Author and Moderator.
 
-Mixing these up makes IAM absorb business knowledge. Every change to a business rule turns into a request to the platform team, and the platform team cannot write policies without understanding the business. The reverse also hurts: if each business domain owns the decision mechanism too, decisions drift between applications. Keep the mechanism shared and the meaning in each domain. That split gives you the starting point for scoping an authorization platform.
+Mixing these up makes IAM absorb business knowledge. Every change to a business rule turns into a request to the platform team, and the platform team cannot write policies without understanding the business. The reverse also hurts: if each business domain owns the decision mechanism too, decisions tend to drift between applications. Keep the mechanism shared and the meaning in each domain. That split gives you the starting point for scoping an authorization platform.
 
 [Permission Management Design](/posts/permission-management-design/) covers the elements of a permission (who, on what, may do what) and the design of feature scope and data scope.
 
