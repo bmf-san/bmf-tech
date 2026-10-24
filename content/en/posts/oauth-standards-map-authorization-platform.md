@@ -102,7 +102,7 @@ An authorization platform must decide which grant types and which client types (
 
 ## RAR (RFC 9396): Delegation That Scopes Cannot Express
 
-A scope is a space-separated string, so it cannot express a concrete delegation such as "transfer 123.50 EUR from account A to B." RAR (OAuth 2.0 Rich Authorization Requests) adds a JSON array named `authorization_details` to the authorization request and expresses such delegations as structured data.
+Section 1 of RFC 9396 says a scope works for static, coarse-grained requests but cannot express a fine-grained delegation such as "transfer 123.50 EUR to Merchant A." RAR (OAuth 2.0 Rich Authorization Requests) adds a JSON array named `authorization_details` to the authorization request and expresses such delegations as structured data.
 
 Each element carries a required `type`, and the API defines the content for each type. RAR also offers common fields: `locations`, `actions`, `datatypes`, `identifier`, and `privileges`.
 
@@ -124,7 +124,7 @@ An authorization platform must decide two things:
 - Which operations to express as scopes and which as `authorization_details`. Delegations that carry values, such as an amount or a target resource, suit RAR.
 - Who defines the schema for each `type` and where validation happens. The RS needs to read `authorization_details` in the token or the Introspection response and compare it with the actual request.
 
-RAR only carries what the user delegated. Decisions inside the resource still need a separate mechanism. Feeding RAR into the PDP as input fits well.
+RAR only carries what the user delegated. Decisions inside the resource still need a separate mechanism. In the author's view, feeding RAR into the PDP as input fits well.
 
 ## CIBA: Approval on the User's Own Device
 
@@ -191,7 +191,7 @@ JAR packs the authorization request parameters into a signed JWT (Request Object
 
 You can combine the two. PAR keeps the request out of the browser; JAR signs the request itself. They protect different things.
 
-An authorization platform must decide whether to require PAR for every client. The AS can announce this through the `require_pushed_authorization_requests` metadata. To require PAR per client, use the client metadata parameter of the same name. For a new platform, requiring PAR from confidential clients means that adding RAR later will not cause URL problems.
+An authorization platform must decide whether to require PAR for every client. The AS can announce this through the `require_pushed_authorization_requests` metadata. To require PAR per client, use the client metadata parameter of the same name. For a new platform, the author recommends requiring PAR from confidential clients. The parameters stay out of the URL, so adding RAR later will not make URLs too long.
 
 ## FAPI 2.0: A High-Assurance Profile
 
@@ -242,7 +242,7 @@ An authorization platform must decide how to name RS identifiers (the value of `
 
 ## Client ID Metadata Document (CIMD)
 
-With DCR, the client registers at each AS it uses, and each AS stores the registered client information. In environments with many client and AS combinations, registrations keep piling up and management gets heavy.
+With DCR, the client registers at each AS it uses, and each AS stores the registered client information. Section 1 of the CIMD draft notes that DCR is not always practical and can create extra work managing registration data and cleaning up inactive clients.
 
 OAuth Client ID Metadata Document uses an HTTPS URL as the `client_id`. The client hosts its own metadata (`redirect_uris`, `client_name`, and so on) as JSON at that URL. The draft says the AS SHOULD fetch the document from the URL automatically. Because the contents may change, the draft also says the AS SHOULD re-fetch it periodically. The client does not need to register with each AS in advance.
 
@@ -253,7 +253,7 @@ Main requirements as of draft-02:
 - The client cannot use authentication methods based on `client_secret`. It either acts as a public client or authenticates with a key, such as `private_key_jwt`
 - An AS that supports CIMD and publishes RFC 8414 metadata MUST include `client_id_metadata_document_supported` to signal support. The draft still labels the field itself OPTIONAL
 
-Because the AS fetches external URLs, it needs SSRF countermeasures. If the AS accepts any URL, anyone can act as a client, including one that poses as a well-known client, so the AS also needs a policy on which domains to trust. The MCP authorization specification (2026-07-28) prefers CIMD over DCR and deprecates DCR. [Key points for designing MCP authorization](/posts/mcp-authorization-design/) covers the details.
+Because the AS fetches external URLs, it needs SSRF countermeasures. Section 8.1 of the CIMD draft warns that, without limits on how `redirect_uris` relate to `client_id`, a client may impersonate a more well-known client. Section 8.9 lets the AS set its own policy on which domains to trust, for example with an allowlist of trusted domain patterns. The MCP authorization specification (2026-07-28) prefers CIMD over DCR and deprecates DCR. [Key points for designing MCP authorization](/posts/mcp-authorization-design/) covers the details.
 
 An authorization platform must decide which registration methods (pre-registration, DCR, CIMD) to allow for which kinds of clients.
 
@@ -342,7 +342,7 @@ SCIM (System for Cross-domain Identity Management) delivers users and groups fro
 - Carry organizational attributes such as `department` and `manager` through the Enterprise User extension
 - Publish supported features and schemas through `/ServiceProviderConfig` and `/Schemas`
 
-From the platform's viewpoint, SCIM delivers the subjects and attributes used in decisions to each service in advance, and keeps the data that a PIP (the source of attributes) reads in sync. Groups and attributes change automatically as people join, move, and leave. Conversely, without this provisioning, accounts of former employees tend to linger in SaaS products.
+From the platform's viewpoint, SCIM delivers the subjects and attributes used in decisions to each service in advance, and keeps the data that a PIP (the source of attributes) reads in sync. Groups and attributes change automatically as people join, move, and leave. Conversely, without this provisioning, removing a former employee's accounts depends on manual work, and someone may forget a few.
 
 RFC 9967 (May 2026) defines a profile that announces SCIM changes as SETs (RFC 8417). It makes provisioning asynchronous and tells receivers about changes.
 
@@ -356,7 +356,7 @@ An authorization platform must decide:
 
 IPSIE (Interoperability Profiling for Secure Identity in the Enterprise) is an OpenID Foundation working group. It does not create new protocols. It writes profiles that narrow how to use existing specifications.
 
-Its initial scope covers SSO, user lifecycle management, entitlements, risk signal sharing, logout, and token revocation. Existing specifications offer many options, so implementations tend to vary from one SaaS to the next. IPSIE aims to solve that problem.
+Its initial scope covers SSO, user lifecycle management, entitlements, risk signal sharing, logout, and token revocation. According to the WG charter, existing specifications carry so much optionality that two independent implementations are not guaranteed to interoperate. IPSIE makes that interoperability the primary goal of its profiles.
 
 As of October 2026, IPSIE has no Final specification and no Implementer's Draft. What a platform can do today: require OIDC, SCIM, and SSF support when choosing SaaS, and stay ready to align with IPSIE profiles once they settle.
 
@@ -431,7 +431,7 @@ This table collects the decisions from each section.
 | Identity | The source of truth for subjects and attributes, and how to distribute them | OIDC, SCIM |
 | Continuous evaluation | Which events to receive and what to stop, and which operations need step-up | SSF, CAEP, RISC, Step-up |
 
-You do not need to adopt everything from day one. Follow the stages in [How far should you build an authorization platform?](/posts/authorization-platform-scope-stages/) and answer each question when it becomes relevant. Still, RS identifier naming and token content resist later change. Decide them early.
+You do not need to adopt everything from day one. Follow the stages in [How far should you build an authorization platform?](/posts/authorization-platform-scope-stages/) and answer each question when it becomes relevant. Still, the author recommends deciding RS identifier naming and token content early. Identifiers end up in client configuration and `aud` checks, and token content ends up in RS code, so both resist later change.
 
 # Summary
 

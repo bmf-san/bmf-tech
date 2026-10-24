@@ -102,7 +102,7 @@ OAuth 2.0の全体は[OAuth 2.0とは？](/ja/posts/oauth-2-0/)に、OAuth 2.1�
 
 ## RAR（RFC 9396）: スコープでは表せない委譲を表す
 
-スコープは空白区切りの文字列なので、「口座AからBへ123.50ユーロを送金してよい」のような具体的な委譲を表せない。RAR（OAuth 2.0 Rich Authorization Requests）は、認可要求に`authorization_details`というJSONの配列を加えて、これを構造化して表す。
+RFC 9396の1節によると、スコープは静的で粗い粒度の要求には足りるが、「Merchant Aへ123.50ユーロを送金してよい」のような細かい委譲を表すには足りない。RAR（OAuth 2.0 Rich Authorization Requests）は、認可要求に`authorization_details`というJSONの配列を加えて、これを構造化して表す。
 
 各要素は必須の`type`を持ち、その型ごとに中身をAPI側が決める。共通のフィールドとして`locations`、`actions`、`datatypes`、`identifier`、`privileges`が用意されている。
 
@@ -124,7 +124,7 @@ OAuth 2.0の全体は[OAuth 2.0とは？](/ja/posts/oauth-2-0/)に、OAuth 2.1�
 - どの操作をスコープで表し、どの操作を`authorization_details`で表すか。金額や対象の資源など、値を伴う委譲はRARに向く。
 - `type`ごとのスキーマを誰が定義し、どこで検証するか。RSがトークンやIntrospectionの結果の中の`authorization_details`を読んで、実際の要求と突き合わせる必要がある。
 
-RARは「何を委譲したか」を運ぶだけで、資源の中での判定は別に要る。PDPの入力として使う形が自然である。
+RARは「何を委譲したか」を運ぶだけで、資源の中での判定は別に要る。筆者は、PDPの入力として使う形が自然だと考える。
 
 ## CIBA: 利用者の手元の端末で承認を得る
 
@@ -191,7 +191,7 @@ JARは、認可要求のパラメータを署名付きのJWT（Request Object）
 
 2つは組み合わせられる。PARは「要求をブラウザに通さない」、JARは「要求そのものに署名する」で、守る対象が違う。
 
-認可基盤として決めることは、PARをすべてのクライアントに要求するかどうかである。ASメタデータの`require_pushed_authorization_requests`で公開できる。クライアントごとに要求するときは、同じ名前のクライアントメタデータを使う。新しく作る基盤なら、機密クライアントにはPARを要求しておくと、後からRARを足してもURLの問題が起きない。
+認可基盤として決めることは、PARをすべてのクライアントに要求するかどうかである。ASメタデータの`require_pushed_authorization_requests`で公開できる。クライアントごとに要求するときは、同じ名前のクライアントメタデータを使う。筆者は、新しく作る基盤なら機密クライアントにPARを要求しておくことを勧める。パラメータをURLに載せないので、後からRARを足してもURLは長くならない。
 
 ## FAPI 2.0: 高保証のプロファイル
 
@@ -242,7 +242,7 @@ RSは401を返すときに、`WWW-Authenticate`ヘッダーの`resource_metadata
 
 ## Client ID Metadata Document（CIMD）
 
-DCRでは、クライアントは使うASごとに登録し、ASは登録したクライアントの情報を保存する。クライアントとASの組み合わせが多い環境では、登録が増え続け、管理が重くなる。
+DCRでは、クライアントは使うASごとに登録し、ASは登録したクライアントの情報を保存する。CIMDの1節によると、DCRは実用的でない場合があり、登録データの管理や使われなくなったクライアントの後始末という課題も生む。
 
 OAuth Client ID Metadata Documentは、HTTPSのURLを`client_id`にする仕組みである。クライアントはそのURLに、自分のメタデータ（`redirect_uris`、`client_name`など）をJSONで置く。ASは、そのURLから文書を自動で取得することが推奨される（SHOULD）。内容は変わりうるので、定期的に取り直すことも推奨される。クライアントは、ASごとの事前の登録をしなくてよい。
 
@@ -253,7 +253,7 @@ OAuth Client ID Metadata Documentは、HTTPSのURLを`client_id`にする仕組�
 - `client_secret`を使う認証方式は使えない。公開クライアントか、`private_key_jwt`などの鍵による認証になる
 - CIMDに対応し、RFC 8414のメタデータを公開するASは、`client_id_metadata_document_supported`を含めなければならない（MUST）。ただし、項目自体の定義はOPTIONALと書かれている
 
-ASは外部のURLを取得するので、SSRFへの対策が要る。どのURLでも受け入れると、誰でもクライアントになれ、よく知られたクライアントを装うこともできる。そのため、どのドメインを信頼するかのポリシーも要る。MCPの認可仕様（2026-07-28版）は、DCRよりCIMDを優先し、DCRを非推奨とした。詳しくは[MCPの認可を設計するときの勘所](/ja/posts/mcp-authorization-design/)で扱う。
+ASは外部のURLを取得するので、SSRFへの対策が要る。CIMDの8.1節は、`redirect_uris`と`client_id`の関係を制限しないと、よく知られたクライアントを装われるおそれがあると書く。8.9節は、どのドメインを信頼するかの方針をASが独自に持てるとし、信頼するドメインの許可リストを例に挙げる。MCPの認可仕様（2026-07-28版）は、DCRよりCIMDを優先し、DCRを非推奨とした。詳しくは[MCPの認可を設計するときの勘所](/ja/posts/mcp-authorization-design/)で扱う。
 
 認可基盤として決めることは、クライアントの登録方式（事前登録、DCR、CIMD）のどれを、どの種類のクライアントに許すかである。
 
@@ -342,7 +342,7 @@ SCIM（System for Cross-domain Identity Management）は、IdPや人事システ
 - Enterprise Userの拡張で、`department`や`manager`などの組織の属性を持てる
 - `/ServiceProviderConfig`と`/Schemas`で、対応している機能とスキーマを公開する
 
-認可基盤から見ると、SCIMは判定に使う主体と属性を各サービスへ前もって配る仕組みで、PIP（属性の供給元）が参照するデータを揃える。入社、異動、退職に合わせて、グループや属性が自動で変わる。逆に、このプロビジョニングが欠けていると、退職者のアカウントがSaaSに残りやすい。
+認可基盤から見ると、SCIMは判定に使う主体と属性を各サービスへ前もって配る仕組みで、PIP（属性の供給元）が参照するデータを揃える。入社、異動、退職に合わせて、グループや属性が自動で変わる。逆に、このプロビジョニングがなければ、退職者のアカウントは手作業で消すことになり、消し忘れが起きうる。
 
 2026年5月のRFC 9967は、SCIMの変更をSET（RFC 8417）で通知するプロファイルである。プロビジョニングを非同期にし、変更を受け手に知らせられる。
 
@@ -356,7 +356,7 @@ SCIM（System for Cross-domain Identity Management）は、IdPや人事システ
 
 IPSIE（Interoperability Profiling for Secure Identity in the Enterprise）は、OpenID FoundationのWorking Groupである。新しいプロトコルを作るのではなく、既存の仕様の使い方を絞ったプロファイルを作る。
 
-最初に扱う範囲は、SSO、利用者のライフサイクル管理、エンタイトルメント、リスクシグナルの共有、ログアウト、トークンの失効である。既存の仕様は選択肢が多く、SaaSごとに実装がばらつきやすい。IPSIEはこの問題に答えようとしている。
+最初に扱う範囲は、SSO、利用者のライフサイクル管理、エンタイトルメント、リスクシグナルの共有、ログアウト、トークンの失効である。WGの憲章によると、既存の仕様は選択肢が多く、独立に作った実装どうしが相互運用できるとは限らない。IPSIEは、その相互運用を第一の目標にプロファイルを作る。
 
 2026年10月時点で、FinalとImplementer's Draftはまだない。認可基盤として今できることは、SaaSを選ぶときにOIDC、SCIM、SSFへの対応を条件に入れ、IPSIEのプロファイルが固まったら合わせられるようにしておくことである。
 
@@ -431,7 +431,7 @@ WWW-Authenticate: Bearer error="insufficient_user_authentication",
 | アイデンティティ | 主体と属性の正本と配り方 | OIDC、SCIM |
 | 継続評価 | 受け取るイベントと止めるもの、Step-upを求める操作 | SSF、CAEP、RISC、Step-up |
 
-すべてを最初から採用する必要はない。[認可基盤はどこまで作るか](/ja/posts/authorization-platform-scope-stages/)で扱った段階に合わせて、必要になった問いから答えていけばよい。ただし、RSの識別子の付け方や、トークンに何を入れるかは、後から変えにくい。早めに決めておく。
+すべてを最初から採用する必要はない。[認可基盤はどこまで作るか](/ja/posts/authorization-platform-scope-stages/)で扱った段階に合わせて、必要になった問いから答えていけばよい。ただし筆者は、RSの識別子の付け方と、トークンに何を入れるかは早めに決めておくことを勧める。識別子はクライアントの設定と`aud`の検証に、トークンの中身はRSの実装に入り込み、後から変えにくいからである。
 
 # まとめ
 
