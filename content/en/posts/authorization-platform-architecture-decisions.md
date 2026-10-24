@@ -379,7 +379,7 @@ If decisions sit on the synchronous path, decide how to keep the round trip shor
 
 Decide whether to let requests through (fail-open) or stop them (fail-closed) when the PDP is down or slow.
 
-- **Fail closed by default.** If you cannot decide, deny. AARP follows the same idea: a denial stays a denial, and a PEP SHOULD fail closed when it cannot determine the status of the access request.
+- **Fail closed by default.** If you cannot decide, deny. AARP follows the same idea: a requestable denial is still a denial, and a PEP MUST NOT grant access based on it. A PEP SHOULD also fail closed when it cannot determine the status of the access request.
 - **Shrink the blast radius by design.** Redundant PDPs, sidecar placement, and local copies of policies and attributes all reduce how often fail-closed kicks in.
 - **Set timeouts.** Put an upper bound on how long to wait for the PDP, and treat a timeout as a denial.
 - **Make degradation explicit.** If you allow degraded operation as an exception (for example, reads only), write which actions pass under which conditions as policy, and record it in the audit log.
