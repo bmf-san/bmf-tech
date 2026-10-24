@@ -151,7 +151,7 @@ The three do not exclude each other. SP 800-162 treats ACL and RBAC as, in some 
 
 ## Treat PBAC as a Style, Not a Model
 
-PBAC (Policy-Based Access Control) has no single agreed definition. The NIST glossary cites CNSSI 4009, which calls it "a form of access control that uses an authorization policy that is flexible in the types of evaluated parameters (e.g., identity, role, clearance, operational need, risk, heuristics)." In my view, the discussion stays clearer if you treat PBAC as a name for a style outside the three axes: writing access rules declaratively in a policy language. People often use it as a synonym for ABAC, yet you can write RBAC and ReBAC in a policy language too. The question "RBAC or PBAC?" mixes two axes. Phrasing it as "an RBAC model written as Policy-as-Code" keeps the discussion clear.
+PBAC (Policy-Based Access Control) has no single agreed definition. The NIST glossary itself lists two definitions. The one it takes from CNSSI 4009 calls it "a form of access control that uses an authorization policy that is flexible in the types of evaluated parameters (e.g., identity, role, clearance, operational need, risk, heuristics)." In my view, the discussion stays clearer if you treat PBAC as a name for a style outside the three axes: writing access rules declaratively in a policy language. People often use it as a synonym for ABAC, yet you can write RBAC and ReBAC in a policy language too. The question "RBAC or PBAC?" mixes two axes. Phrasing it as "an RBAC model written as Policy-as-Code" keeps the discussion clear.
 
 # Choosing and Combining Models
 
@@ -203,7 +203,7 @@ In authorization platform terms, it looks like this. The paper covers only roles
 
 - Use roles to define the most a person can ever do. A relation that grants access by itself, such as sharing a document, also belongs on this ceiling side.
 - Narrow with conditions on relations (assignment, ownership, membership) and attributes (time window, device, risk). For example, limit an approver role to requests from the departments the person handles.
-- Do not write rules where attributes add permissions; if you need more, express it as a role or as a relation that grants access
+- Do not write rules where attributes add permissions; if you need more, express it as a role or as a relation that grants access.
 
 # What the Originals Still Teach
 
