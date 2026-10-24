@@ -340,3 +340,6 @@ If you are unsure, consider starting with an in-process library or a sidecar rat
 - [NIST SP 800-53 Rev. 5 - Security and Privacy Controls for Information Systems and Organizations](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final)
 - [NIST SP 800-162 - Guide to Attribute Based Access Control (ABAC) Definition and Considerations](https://csrc.nist.gov/pubs/sp/800/162/upd2/final)
 - [Open Policy Agent - Data Filtering with OPA (partial evaluation)](https://www.openpolicyagent.org/docs/filtering)
+- [Amazon Verified Permissions User Guide - What is Amazon Verified Permissions?](https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/what-is-avp.html)
+- [Cerbos - The Cerbos API (AuthZEN Authorization API)](https://docs.cerbos.dev/cerbos/latest/api/index.html#authzen)
+- [OpenFGA - AuthZEN Implementation and Interop Scenarios](https://github.com/openfga/openfga/blob/main/docs/authzen/README.md)
