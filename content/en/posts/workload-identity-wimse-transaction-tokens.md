@@ -112,7 +112,7 @@ The context scenario matches the idea behind Transaction Tokens. Do not let an e
 
 arch-08 splits one call into stages: get credentials, set up transport, authenticate at the application layer, make the access decision, and respond. The PEP enforces authorization and may delegate decisions to a PDP. The PEP is a logical function on the callee's request path; you can place it inside the workload, in a sidecar, or in a gateway.
 
-The architecture defines neither a policy language nor a PEP-PDP protocol. As a reference architecture, this matches the split in "[Authorization Architecture, Models, and Engines](/posts/authorization-architecture-models-engines/)," and AuthZEN ("[What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/)") can fill the PEP-PDP gap.
+The architecture defines neither a policy language nor a PEP-PDP protocol. As a reference architecture, this matches the split in "[What Are Authorization Architectures and Models?](/posts/authorization-architecture-models-engines/)," and AuthZEN ("[What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/)") can fill the PEP-PDP gap.
 
 As a rule, the callee makes the decision. When the decision gets too fine-grained, as with a database, the caller MAY decide instead.
 
@@ -123,9 +123,9 @@ In real deployments, a workload often authenticates to a sidecar or gateway over
 - The destination MUST NOT assume that the transport-layer identity an intermediary authenticated equals the application-layer caller, unless the deployment states the relationship explicitly.
 - Audit records SHOULD include the identities from both layers.
 
-The security considerations also state that "possession of a valid credential does not imply authorization to all resources in the trust domain." The common service mesh setup "allow if mTLS succeeds" contradicts this principle. State allowed identifiers explicitly, and treat authorization as a separate decision.
+The security considerations also state that a valid credential does not give a workload access to every resource in the trust domain. The common service mesh setup "allow if mTLS succeeds" contradicts this principle. State allowed identifiers explicitly, and treat authorization as a separate decision.
 
-arch-08 also covers AI agents. An agent is a special case of a delegated workload, and in a multi-hop chain each hop MUST explicitly scope and re-bind the security context. "[What Changes for Authorization with AI Agents](/posts/authorization-for-ai-agents/)" covers agent authorization in depth.
+arch-08 also covers AI agents. An agent is a special case of a delegated workload, and in a multi-hop chain each hop MUST explicitly scope and re-bind the security context. "[What is Authorization for AI Agents?](/posts/authorization-for-ai-agents/)" covers agent authorization in depth.
 
 # Rules for Workload Identifiers
 
@@ -136,7 +136,7 @@ The main requirements as of -04 (2026-10-23) follow.
 | Requirement | Strength |
 | --- | --- |
 | An absolute URI with a non-empty authority that names the trust domain | MUST |
-| A non-empty path, with no `.` or `..` segments (added in -04) | MUST / MUST NOT |
+| A non-empty path, with no `.` or `..` segments (both added in -04) | MUST / MUST NOT |
 | No query, fragment, userinfo, or port | MUST NOT |
 | Support identifiers up to 2048 bytes; do not exceed 2048 bytes | MUST / SHOULD NOT |
 | Use an FQDN owned by the organization for the trust domain | SHOULD |
@@ -242,7 +242,7 @@ flowchart TD
     Q3 -- "No" --> H
 ```
 
-You can combine layers. The mutual-tls draft says that when TLS ends at intermediaries, you SHOULD add an application-layer method, for example hop-by-hop mTLS with an end-to-end HTTP signature on top.
+You can combine layers. The mutual-tls draft says that when you need end-to-end workload authentication across intermediaries that end TLS, you SHOULD also use an application-layer WIMSE method on top of TLS. Hop-by-hop mTLS with an end-to-end HTTP signature on top is one example.
 
 WIMSE methods and OAuth sender-constrained tokens (RFC 8705 mTLS, RFC 9449 DPoP) protect different things. WIMSE proves "which workload is calling," while sender constraint proves "who may use this access token." See "[What are Sender-Constrained Tokens?](/posts/sender-constrained-tokens-mtls-dpop/)" for the latter. If you use an X.509-SVID or WIC for RFC 8705 client authentication and certificate binding, one certificate covers both.
 
@@ -270,7 +270,7 @@ sequenceDiagram
     W->>R2: Access with the access token
 ```
 
-The practices draft covers Kubernetes service account tokens, the SPIFFE Workload API, cloud instance metadata, CI/CD workflow identities, and service mesh sidecars. For an overview of each, see the identity foundation section of "[the big picture of service-to-service authentication](/posts/service-to-service-authentication/)."
+The practices draft covers Kubernetes service account tokens, the SPIFFE Workload API, cloud instance metadata, CI/CD workflow identities, and service mesh sidecars. For overviews of Kubernetes, cloud platforms, and SPIFFE, see the identity foundation section of "[What is the Big Picture of Service-to-Service Authentication?](/posts/service-to-service-authentication/)."
 
 ## Three Delivery Patterns
 
@@ -407,7 +407,7 @@ The draft leaves the method for preserving the call chain open, so if you use re
 
 A Txn-Token is valid only within the trust domain in `aud`. When you need resources in another domain, you SHOULD use Identity Chaining (draft-ietf-oauth-identity-chaining).
 
-The individual draft draft-fletcher-oauth-txn-token-chaining-profile defines the concrete steps. Its earlier name was draft-fletcher-transaction-token-chaining-profile, and in September 2026 the -00 under the current name replaced it. In this profile, the workload presents a Txn-Token as `subject_token` in a token exchange and gets a JWT authorization grant for crossing the boundary. The `subject_token_type` is `urn:ietf:params:oauth:token-type:txn_token`. This carries transaction context to the other domain without exposing internal credentials or token formats. "[A Map of OAuth and Related Standards](/posts/oauth-standards-map-authorization-platform/)" covers Identity Chaining itself.
+The individual draft draft-fletcher-oauth-txn-token-chaining-profile defines the concrete steps. Its earlier name was draft-fletcher-transaction-token-chaining-profile, and in September 2026 the -00 under the current name replaced it. In this profile, the workload presents a Txn-Token as `subject_token` in a token exchange and gets a JWT authorization grant for crossing the boundary. The `subject_token_type` is `urn:ietf:params:oauth:token-type:txn_token`. This carries transaction context to the other domain without exposing internal credentials or token formats. "[Which OAuth Standards Does an Authorization Platform Need?](/posts/oauth-standards-map-authorization-platform/)" covers Identity Chaining itself.
 
 # Using SPIFFE for OAuth Client Authentication
 
@@ -422,7 +422,7 @@ Service-to-service OAuth (client_credentials, token exchange, requests to the TT
 Key points follow.
 
 - A JWT-SVID's `aud` MUST contain only the AS issuer identifier (following rfc7523bis). Unlike RFC 7523, the draft does not require `iss`; the AS maps the SPIFFE ID in `sub` to a registered client.
-- The AS obtains verification keys from a SPIFFE bundle endpoint configured out of band per trust domain. It MUST NOT verify X.509-SVIDs against the system trust store. Otherwise any CA in that store could issue a certificate for any SPIFFE ID.
+- The recommended source of verification keys is a SPIFFE bundle endpoint tied to each trust domain. It MUST NOT verify X.509-SVIDs against the system trust store. Otherwise any CA in that store could issue a certificate for any SPIFFE ID.
 - The AS MUST NOT accept a token just because a key discovered via `iss` verifies its signature and `sub` looks like a SPIFFE ID. That invites token confusion, where an OIDC token meant for something else poses as a JWT-SVID.
 - With a Client ID Metadata Document (CIMD), the metadata's `spiffe_id` can end with a `/*` wildcard. Matching works as a prefix match on whole path segments.
 
@@ -468,7 +468,7 @@ sequenceDiagram
 
 The workload-creds and wpt drafts give an example of the role split: the WIT identity decides which APIs a caller can invoke, and the context token decides which resources it can access. As PDP input, the subject comes from the WIT `sub` and the context from the Txn-Token claims.
 
-The important rule: **pass only values bound to the proof to the PDP.** HTTP signatures MUST cover the `Txn-Token` header when present, and WPT binds the Txn-Token hash in `tth`. The wpt draft says the receiver MUST NOT use other tokens that `oth` does not cover for authorization decisions. You can adopt that directly as a PEP implementation rule.
+The important rule: **pass only values bound to the proof to the PDP.** HTTP signatures MUST cover the `Txn-Token` header when present, and WPT binds the Txn-Token hash in `tth`. The wpt draft says that when `oth` is present, the receiver MUST NOT use other tokens that `oth` does not cover for authorization decisions. You can adopt that directly as a PEP implementation rule.
 
 Binding has limits, though. It stops an intermediary from swapping or stripping the Txn-Token on a legitimate request. It does not stop another legitimate workload that stole a Txn-Token from wrapping it in its own WIT and proof. An authorization policy of the form "may this workload present a Txn-Token for this transaction?" and the TTS issuance policy handle that case.
 
@@ -481,7 +481,7 @@ Binding has limits, though. It stops an intermediary from swapping or stripping 
 - **Do not reuse external access tokens inside.** Exchange them for Txn-Tokens at the gateway and narrow the scope to the transaction's purpose.
 - **Give credentials a distinct audience per use, keep them short-lived, and avoid environment variables.**
 - **Replace `client_secret` with SPIFFE client authentication,** then manage the SPIFFE ID to `client_id` mapping as an authorization decision.
-- **Revoke through policy, not credential revocation.** WITs have no revocation mechanism, so pair short-lived credentials with PDP policies that take effect at once.
+- **Revoke through policy, not credential revocation.** You cannot revoke a JWT credential such as a WIT on demand in most deployments, so pair short-lived credentials with PDP policies that take effect at once.
 
 # Status of the Specifications (October 2026)
 
@@ -496,7 +496,7 @@ I checked these on the IETF Datatracker on October 24, 2026. Drafts change betwe
 | draft-ietf-wimse-mutual-tls | -02 (2026-07-06) | WG Document |
 | draft-ietf-wimse-http-signature | -08 (2026-10-20) | WG Document. Shepherd follow-up underway. Intended as Proposed Standard |
 | draft-ietf-wimse-wpt | -02 (2026-08-27) | WG Document |
-| draft-ietf-oauth-transaction-tokens | -11 (2026-07-30) | WG Consensus: Waiting for Write-Up. Standards Track |
+| draft-ietf-oauth-transaction-tokens | -11 (2026-07-30) | WG Consensus: Waiting for Write-Up. The text says Standards Track |
 | draft-ietf-oauth-spiffe-client-auth | -02 (2026-06-15) | WG Document |
 | draft-ietf-oauth-identity-chaining | -17 (2026-07-19) | Approved by the IESG, in the RFC Editor Queue |
 | draft-fletcher-oauth-txn-token-chaining-profile | -00 (2026-09-10) | Individual draft. Replaced draft-fletcher-transaction-token-chaining-profile |

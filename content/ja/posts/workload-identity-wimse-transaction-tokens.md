@@ -112,7 +112,7 @@ arch-08は部品を段階的に足しながら3つのシナリオを示す。
 
 arch-08では、1つの呼び出しを「資格情報の取得 → トランスポートの確立 → アプリ層の認証 → 認可 → 応答」の段階に分けて描いている。認可を強制するのはPEPで、必要ならPDPに判定を委ねる。PEPは呼ばれる側の経路上の論理的な機能で、ワークロードの内部、サイドカー、ゲートウェイのどれに置いてもよい。
 
-アーキテクチャは、ポリシー言語もPEPとPDPの間のプロトコルも定めない。参照アーキテクチャとしては「[認可アーキテクチャとモデル・エンジン](/ja/posts/authorization-architecture-models-engines/)」の切り分けと同じで、PEPとPDPの間はAuthZEN（「[AuthZEN Authorization APIとは](/ja/posts/authzen-authorization-api/)」）で埋められる。
+アーキテクチャは、ポリシー言語もPEPとPDPの間のプロトコルも定めない。参照アーキテクチャとしては「[認可のアーキテクチャとモデルとは？](/ja/posts/authorization-architecture-models-engines/)」の切り分けと同じで、PEPとPDPの間はAuthZEN（「[AuthZEN Authorization APIとは？](/ja/posts/authzen-authorization-api/)」）で埋められる。
 
 判定の場所は、原則として呼ばれる側である。データベースのように判定が細かすぎる場合は、呼ぶ側で判定してもよい（MAY）。
 
@@ -123,9 +123,9 @@ arch-08では、1つの呼び出しを「資格情報の取得 → トランス�
 - 宛先は、中継者が認証したトランスポート層の身元を、アプリ層の呼び出し元と同じとみなしてはならない（MUST NOT）。関係を明示した場合は除く。
 - 監査記録には、両方の層の身元を残すべき（SHOULD）。
 
-また、セキュリティ上の考慮では「有効な資格情報を持つことは、トラストドメインのすべての資源への認可を意味しない」と明記している。サービスメッシュでよく見る「mTLSが通れば許可」の構成は、この原則に反する。識別子ごとに許可を明示し、認可は別の判定として行う。
+また、セキュリティ上の考慮の節は、有効な資格情報を持つワークロードでもトラストドメインのすべての資源を認可されたわけではない、と明記している。サービスメッシュでよく見る「mTLSが通れば許可」の構成は、この原則に反する。識別子ごとに許可を明示し、認可は別の判定として行う。
 
-arch-08はAIエージェントも扱っている。エージェントは委譲されたワークロードの特別な場合で、多段の連鎖では各ホップでセキュリティコンテキストを絞り直し、結び付け直さなければならない（MUST）。エージェントの認可は「[AIエージェントで認可の何が変わるか](/ja/posts/authorization-for-ai-agents/)」で詳しく扱う。
+arch-08はAIエージェントも扱っている。エージェントは委譲されたワークロードの特別な場合で、多段の連鎖では各ホップでセキュリティコンテキストを絞り直し、結び付け直さなければならない（MUST）。エージェントの認可は「[AIエージェントの認可とは？](/ja/posts/authorization-for-ai-agents/)」で詳しく扱う。
 
 # ワークロード識別子の規則
 
@@ -136,7 +136,7 @@ draft-ietf-wimse-identifierは、WIMSEのドラフトの中で識別子の形式
 | 要件 | 強さ |
 | --- | --- |
 | 絶対URIで、トラストドメインを表す空でないauthorityを含む | MUST |
-| 空でないpathを含む。`.`や`..`のセグメントを含まない（-04で追加） | MUST / MUST NOT |
+| 空でないpathを含む。`.`や`..`のセグメントを含まない（どちらも-04で追加） | MUST / MUST NOT |
 | query、fragment、userinfo、portを含まない | MUST NOT |
 | 2048バイトまでの識別子を扱える。2048バイトを超えない | MUST / SHOULD NOT |
 | トラストドメインは組織のFQDNにする | SHOULD |
@@ -242,7 +242,7 @@ flowchart TD
     Q3 -- "いいえ" --> H
 ```
 
-層は組み合わせられる。区間ごとのmTLSに端から端までのHTTP署名を重ねる構成は、mutual-tlsのドラフトもTLSが終端される場合に勧めている（SHOULD）。
+層は組み合わせられる。mutual-tlsのドラフトは、TLSを終端する中継装置をまたいで端から端までの認証が要る場合、TLS層の認証に加えてアプリ層のWIMSEの方式を使うべき（SHOULD）としている。区間ごとのmTLSに端から端までのHTTP署名を重ねる構成は、その一例である。
 
 WIMSEの方式と、OAuthの送信者制約（RFC 8705のmTLS、RFC 9449のDPoP）は守る対象が違う。WIMSEは「呼び出し元はどのワークロードか」を、送信者制約は「このアクセストークンを使ってよいのは誰か」を証明する。送信者制約の仕組みは「[送信者制約トークンとは？](/ja/posts/sender-constrained-tokens-mtls-dpop/)」を参照してほしい。X.509-SVIDやWICをRFC 8705のクライアント認証と証明書束縛に使えば、1枚の証明書で両方を賄える。
 
@@ -270,7 +270,7 @@ sequenceDiagram
     W->>R2: アクセストークンでアクセス
 ```
 
-practicesが取り上げるのは、Kubernetesのサービスアカウントトークン、SPIFFEのWorkload API、クラウドのインスタンスメタデータ、CI/CDのワークフローの身元、サービスメッシュのサイドカーである。各仕組みの概要は、既存記事「[サービス間認証の全体像](/ja/posts/service-to-service-authentication/)」のアイデンティティ基盤の節にある。
+practicesが取り上げるのは、Kubernetesのサービスアカウントトークン、SPIFFEのWorkload API、クラウドのインスタンスメタデータ、CI/CDのワークフローの身元、サービスメッシュのサイドカーである。このうちKubernetes・クラウド・SPIFFEの概要は、既存記事「[サービス間認証の全体像とは？](/ja/posts/service-to-service-authentication/)」のアイデンティティ基盤の節にある。
 
 ## 受け渡しの3つの型
 
@@ -407,7 +407,7 @@ Call Chainの保持方法は決まっていないので、置き換えを使う�
 
 Txn-Tokenは`aud`の信頼ドメインの中でだけ有効である。別ドメインの資源が必要なら、Identity Chaining（draft-ietf-oauth-identity-chaining）を使うべき（SHOULD）とされる。
 
-その具体的な手順を定めるのが個人ドラフトのdraft-fletcher-oauth-txn-token-chaining-profileである。以前はdraft-fletcher-transaction-token-chaining-profileという名前だったが、2026年9月、現在の名前の-00に置き換えられた。このプロファイルでは、Txn-Tokenを`subject_token`としてトークン交換し、境界を越えるJWT認可グラントを得る。`subject_token_type`は`urn:ietf:params:oauth:token-type:txn_token`である。内部の資格情報やトークンの形式を外に出さず、取引の文脈を相手のドメインへ渡せる。Identity Chainingそのものは「[OAuthと周辺標準の地図](/ja/posts/oauth-standards-map-authorization-platform/)」で扱う。
+その具体的な手順を定めるのが個人ドラフトのdraft-fletcher-oauth-txn-token-chaining-profileである。以前はdraft-fletcher-transaction-token-chaining-profileという名前だったが、2026年9月、現在の名前の-00に置き換えられた。このプロファイルでは、Txn-Tokenを`subject_token`としてトークン交換し、境界を越えるJWT認可グラントを得る。`subject_token_type`は`urn:ietf:params:oauth:token-type:txn_token`である。内部の資格情報やトークンの形式を外に出さず、取引の文脈を相手のドメインへ渡せる。Identity Chainingそのものは「[認可基盤に必要なOAuth関連標準とは？](/ja/posts/oauth-standards-map-authorization-platform/)」で扱う。
 
 # SPIFFEをOAuthのクライアント認証に使う
 
@@ -422,7 +422,7 @@ Txn-Tokenは`aud`の信頼ドメインの中でだけ有効である。別ドメ
 要点は次のとおりである。
 
 - JWT-SVIDの`aud`は、ASのissuer識別子1つだけでなければならない（rfc7523bisに従う）。RFC 7523と違い`iss`を求めず、`sub`のSPIFFE IDを登録済みのクライアントに対応づける。
-- 検証鍵は、トラストドメインごとに帯域外で設定したSPIFFEのバンドルエンドポイントから得る。X.509-SVIDの検証にシステムの信頼ストアを使ってはならない（MUST NOT）。そうすると、ストアに入っているどのCAでも、任意のSPIFFE IDの証明書を発行できてしまう。
+- 検証鍵は、トラストドメインごとにひも付けたSPIFFEのバンドルエンドポイントから得るのが推奨の方法である。X.509-SVIDの検証にシステムの信頼ストアを使ってはならない（MUST NOT）。そうすると、ストアに入っているどのCAでも、任意のSPIFFE IDの証明書を発行できてしまう。
 - `iss`から鍵を発見して「署名が通り、`sub`がSPIFFE IDに見える」だけで受け入れてはならない（MUST NOT）。別の目的のOIDCトークンをJWT-SVIDとして示す、トークンの取り違えを招く。
 - Client ID Metadata Document（CIMD）を使う場合、メタデータの`spiffe_id`に末尾`/*`のワイルドカードを書ける。一致はpathのセグメント単位の前方一致で判定する。
 
@@ -468,7 +468,7 @@ sequenceDiagram
 
 workload-credsとwptのドラフトは、役割の分け方を「WITの身元でどのAPIを呼べるかを決め、文脈トークンでどの資源にアクセスできるかを決める」と例示している。PDPへの入力に直すと、主体はWITの`sub`、文脈はTxn-Tokenのクレームになる。
 
-ここで大事なのは、**証明に結び付いた値だけをPDPに渡す**ことである。HTTP署名は`Txn-Token`ヘッダがあれば署名の対象にしなければならず（MUST）、WPTは`tth`でTxn-Tokenのハッシュを結び付ける。wptのドラフトは、`oth`で覆われていない追加のトークンを認可の判断に使ってはならない（MUST NOT）と定めている。これはPEPの実装規則としてそのまま採用できる。
+ここで大事なのは、**証明に結び付いた値だけをPDPに渡す**ことである。HTTP署名は`Txn-Token`ヘッダがあれば署名の対象にしなければならず（MUST）、WPTは`tth`でTxn-Tokenのハッシュを結び付ける。wptのドラフトは、`oth`を使う場合、`oth`で覆われていない追加のトークンを認可の判断に使ってはならない（MUST NOT）と定めている。これはPEPの実装規則としてそのまま採用できる。
 
 ただし、結び付けで防げるのは、中継装置が正当な要求のTxn-Tokenを差し替えたり外したりすることまでである。Txn-Tokenを盗んだ別の正当なワークロードが、自分のWITと証明でそれを覆って送ることは防げない。これは「このワークロードがこの取引のTxn-Tokenを提示してよいか」という認可ポリシーと、TTSの発行ポリシーで防ぐ。
 
@@ -481,7 +481,7 @@ workload-credsとwptのドラフトは、役割の分け方を「WITの身元で
 - **外部のアクセストークンを内部で使い回さない**。ゲートウェイでTxn-Tokenに交換し、スコープを取引の目的まで絞る。
 - **資格情報は用途ごとにaudienceを分け、短命にし、環境変数で渡さない**。
 - **`client_secret`はSPIFFEのクライアント認証で置き換える**。そのうえで、SPIFFE IDと`client_id`の対応づけを認可の判断として管理する。
-- **取り消しは資格情報の失効ではなくポリシーで効かせる**。WITは失効の仕組みを持たないので、短命の資格情報と、即時に効くPDPのポリシーを組み合わせる。
+- **取り消しは資格情報の失効ではなくポリシーで効かせる**。WITのようなJWTの資格情報は通常、必要なときに失効させられないので、短命の資格情報と、即時に効くPDPのポリシーを組み合わせる。
 
 # 仕様の状態（2026年10月時点）
 
@@ -496,7 +496,7 @@ workload-credsとwptのドラフトは、役割の分け方を「WITの身元で
 | draft-ietf-wimse-mutual-tls | -02（2026-07-06） | WG Document |
 | draft-ietf-wimse-http-signature | -08（2026-10-20） | WG Document。シェパードのレビュー中。Proposed Standardを予定 |
 | draft-ietf-wimse-wpt | -02（2026-08-27） | WG Document |
-| draft-ietf-oauth-transaction-tokens | -11（2026-07-30） | WG Consensus: Waiting for Write-Up。Standards Track |
+| draft-ietf-oauth-transaction-tokens | -11（2026-07-30） | WG Consensus: Waiting for Write-Up。本文はStandards Track |
 | draft-ietf-oauth-spiffe-client-auth | -02（2026-06-15） | WG Document |
 | draft-ietf-oauth-identity-chaining | -17（2026-07-19） | IESG承認後、RFC Editor Queue |
 | draft-fletcher-oauth-txn-token-chaining-profile | -00（2026-09-10） | 個人ドラフト。draft-fletcher-transaction-token-chaining-profileを置き換えた |
