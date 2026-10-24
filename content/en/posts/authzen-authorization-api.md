@@ -92,7 +92,7 @@ The spec's introduction observes that PDP-PEP communication follows similar patt
 
 ## What OAuth and OIDC Standardized, and What They Did Not
 
-OAuth standardized delegation, and OpenID Connect standardized how to convey authentication results. The AuthZEN Authorization API standardizes the neighboring step: asking for a decision. Scopes and claims in a token narrow things down coarsely, and then the application asks a PDP for fine-grained, per-resource decisions. That second part had no common shape until now.
+OAuth standardized delegation, and OpenID Connect standardized how to convey authentication results. The AuthZEN Authorization API standardizes the neighboring step: asking for a decision. Scopes and claims in a token narrow things down coarsely, and then the application asks a PDP for fine-grained, per-resource decisions. Apart from the XACML profiles covered later, that second part had no common shape.
 
 For a map of the OAuth-related standards, see [A map of OAuth and related standards for an authorization platform](/posts/oauth-standards-map-authorization-platform/).
 
@@ -302,7 +302,7 @@ Here is a Resource Search. The PEP sends only the `type` of the resource it want
 
 The Search APIs help with pre-filtering list pages, deciding which menus and buttons to show, and reviewing access. Once you externalize decisions, lists and pagination get hard. I explored that problem with OPA in [Considerations and Solutions for Pagination Impact in OPA](/posts/pagination-impact-solutions-opa/).
 
-Reverse lookups such as "who can access what" are not new. Zanzibar's Expand API and OpenFGA's ListObjects and ListUsers have answered them for years. What AuthZEN adds is a common API for them across PDPs. All Search APIs are optional, and if the metadata does not list one, the PEP can conclude that the PDP does not support it.
+Reverse lookups such as "who can access what" are not new. Zanzibar's Expand API takes an object#relation pair and returns the effective userset as a tree. OpenFGA's ListObjects and ListUsers return lists of permitted objects and users. What AuthZEN adds is a common API for them across PDPs. All Search APIs are optional, and if the metadata does not list one, the PEP can conclude that the PDP does not support it.
 
 # Decision Context: Beyond a Boolean
 
@@ -370,7 +370,7 @@ A PEP has to check and handle the following.
 - A PEP that supports `signed_metadata` validates the signature and the issuer (`iss`). Signed values take precedence over plain JSON values.
 - Normal HTTP caching applies. Use directives such as `Cache-Control` with `max-age` to cache metadata for a suitable period.
 
-If the metadata lists an endpoint URL, the PEP MUST use it. Without one, the PEP SHOULD build the URL by appending the default path to the PDP's base URL. Still, an API missing from the metadata tells the PEP that the PDP does not support it. The metadata design follows the same idea as OAuth Authorization Server Metadata (RFC 8414).
+If the metadata lists an endpoint URL, the PEP MUST use it. Without one, the PEP SHOULD build the URL by appending the default path to the PDP's base URL. Still, an API missing from the metadata tells the PEP that the PDP does not support it. The spec does not cite the OAuth metadata RFCs, but its design closely resembles OAuth Authorization Server Metadata (RFC 8414) and OAuth 2.0 Protected Resource Metadata (RFC 9728). Its definition of `signed_metadata` follows the RFC 9728 wording almost word for word.
 
 # Transport and Security
 
@@ -389,7 +389,7 @@ For JSON, the spec recommends following I-JSON (RFC 7493): UTF-8 encoding, no nu
 | Authentication failure | MUST return `401` and SHOULD include `WWW-Authenticate` | Tells the caller which scheme to use |
 | Trust | The PDP trusts the PEP | The PEP enforces the decision in the end |
 | Response integrity | The PDP MAY sign its response | TLS does not cover the full path when proxies or gateways sit in between |
-| Availability | Protect against large payloads, request floods, invalid or deeply nested JSON, and memory exhaustion | Rate limiting and similar measures prevent DoS |
+| Availability | The PDP SHOULD protect against large payloads, request floods, invalid or deeply nested JSON, and memory exhaustion | Rate limiting and similar measures prevent DoS |
 
 ## Design Notes (My Take)
 
@@ -410,7 +410,7 @@ AuthZEN did not invent new concepts. The spec opens by noting that XACML and NIS
 | Obligations and advice | Defined in the policy language | Carried in `context` (profiles define the format) |
 | Listing questions | Not in the core | Search APIs |
 
-XACML returns four decision values and defines everything down to the policy language and processing model. As a result, PDPs that accept XACML requests were almost always XACML engines. AuthZEN stays out of policy languages and defines only the shape of the line. Inside, the PDP can use Rego, Cedar, or relationship tuples. Reducing the decision to a boolean and moving everything else into `context` reads as a way to let different engines expose the same interface.
+XACML returns four decision values and defines everything down to the policy language and processing model. In my view, this is why PDPs that accept XACML requests were almost always XACML engines. AuthZEN stays out of policy languages and defines only the shape of the line. Inside, the PDP can use Rego, Cedar, or relationship tuples. Reducing the decision to a boolean and moving everything else into `context` reads as a way to let different engines expose the same interface.
 
 NIST SP 800-162 describes ABAC through subject attributes, object attributes, operations, and environment conditions. SARC maps closely to that vocabulary. For the original sources behind the models, see [Authorization architecture: models and engines](/posts/authorization-architecture-models-engines/).
 
@@ -423,7 +423,7 @@ AuthZEN pays off by hiding engine differences from the PEP. The concepts of comm
 | SARC | OPA (Rego) | Cedar | OpenFGA |
 | --- | --- | --- | --- |
 | Subject | Any structure in `input` | `principal` (entity) | `user` |
-| Action | Any structure in `input` | `action` | `relation` |
+| Action | Any structure in `input` | `action` (entity) | `relation` |
 | Resource | Any structure in `input` | `resource` (entity) | `object` |
 | Context | Any structure in `input` | `context` | `context` (for conditional relationships) |
 | Listing questions | Needs workarounds such as partial evaluation | Not part of the core decision API | ListObjects, ListUsers |
@@ -474,6 +474,8 @@ The working group builds profiles for specific uses on top of Authorization API 
 | COAZ-MCP Binding | Working Group Draft | Applies COAZ to MCP so that each MCP message gets a decision |
 | Obligations Profile | Working Group Draft | Format and negotiation of mandatory actions that the PEP must perform for a decision |
 | OAuth-related (Token Issuance, Token Exchange, Authorization Claims) | Draft 1 in the repository | Ask AuthZEN whether to issue or exchange a token, and which entitlements to put in JWT access tokens |
+
+The abbreviation AARP follows the OpenID Foundation announcement; the draft header abbreviates the name as ARAP.
 
 In its June 2026 announcement, the OpenID Foundation said that authorization systems used to answer one question, "can this action happen right now?", and increasingly must also answer what must happen before policy can allow the action. Add the "which" question that the Search APIs handle, and decision APIs answer three questions.
 
@@ -536,3 +538,4 @@ Finally, here are my own tips for bringing AuthZEN into a design.
 - [NIST SP 800-162 Guide to Attribute Based Access Control (ABAC) Definition and Considerations](https://csrc.nist.gov/pubs/sp/800/162/upd2/final)
 - [RFC 7493 The I-JSON Message Format](https://www.rfc-editor.org/rfc/rfc7493)
 - [RFC 8414 OAuth 2.0 Authorization Server Metadata](https://www.rfc-editor.org/rfc/rfc8414)
+- [RFC 9728 OAuth 2.0 Protected Resource Metadata](https://www.rfc-editor.org/rfc/rfc9728)

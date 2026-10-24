@@ -92,7 +92,7 @@ flowchart LR
 
 ## OAuthとOIDCが標準化したものとの対比
 
-OAuthは権限の委譲を、OpenID Connectは認証の結果の受け渡しを、それぞれ標準にした。AuthZENのAuthorization APIは、その隣にある「判定の問い合わせ」を標準にする。トークンに入っているスコープやクレームで粗く絞ったあと、資源ごとの細かい判定をPDPに問う。この後半の部分に、これまで共通の形がなかった。
+OAuthは権限の委譲を、OpenID Connectは認証の結果の受け渡しを、それぞれ標準にした。AuthZENのAuthorization APIは、その隣にある「判定の問い合わせ」を標準にする。トークンに入っているスコープやクレームで粗く絞ったあと、資源ごとの細かい判定をPDPに問う。この後半の部分には、XACMLのプロファイル（後述）を除くと、共通の形がなかった。
 
 OAuthまわりの標準の地図は[認可基盤から見たOAuthと周辺標準の地図](/ja/posts/oauth-standards-map-authorization-platform/)にまとめた。
 
@@ -302,7 +302,7 @@ Resource Searchの例を示す。探したい資源の`type`だけを渡す。
 
 Search APIは、一覧画面の事前フィルタ、メニューやボタンの出し分け、権限の棚卸しに使える。判定を外に出した構成では、一覧とページングの扱いが難しくなる。OPAでこの問題を検討した内容は[OPAにおけるページネーションへの影響と解決策](/ja/posts/pagination-impact-solutions-opa/)にまとめた。
 
-「誰が・何に」を逆に引く問い自体は新しくない。ZanzibarのExpand APIやOpenFGAのListObjects・ListUsersが、以前から答えてきた。AuthZENで新しいのは、それがPDPをまたいだ共通のAPIになった点である。なお、Search APIはどれも任意で、メタデータに載っていなければPEPはそのPDPが対応していないと判断できる。
+「誰が・何に」を逆に引く問い自体は新しくない。ZanzibarのExpand APIは、オブジェクトと関係の組に対する実効的なユーザーセットを木の形で返す。OpenFGAのListObjectsとListUsersは、許される資源と主体を一覧で返す。AuthZENで新しいのは、それがPDPをまたいだ共通のAPIになった点である。なお、Search APIはどれも任意で、メタデータに載っていなければPEPはそのPDPが対応していないと判断できる。
 
 # 判定のcontext: 真偽値の先にあるもの
 
@@ -370,7 +370,7 @@ PEPが守るべき検証と扱いは次のとおりである。
 - `signed_metadata`を扱うPEPは、署名と発行者（`iss`）を検証する。署名付きの値は、平文の値より優先する。
 - メタデータは通常のHTTPキャッシュに従う。`Cache-Control`の`max-age`などで、適切な期間だけキャッシュする。
 
-メタデータにエンドポイントのURLがあれば、それを使わなければならない。URLが示されていなければ、PDPの基底URLに既定のパスを足して呼ぶ（SHOULD）。ただし、メタデータに載っていないAPIは、そのPDPが対応していないと判断してよい。メタデータの仕組みは、OAuthの認可サーバのメタデータ（RFC 8414）と同じ考え方である。
+メタデータにエンドポイントのURLがあれば、それを使わなければならない。URLが示されていなければ、PDPの基底URLに既定のパスを足して呼ぶ（SHOULD）。ただし、メタデータに載っていないAPIは、そのPDPが対応していないと判断してよい。仕様はOAuthのメタデータのRFCを参照していないが、仕組みは認可サーバのメタデータ（RFC 8414）や保護リソースのメタデータ（RFC 9728）とよく似ている。`signed_metadata`の定義は、RFC 9728とほぼ同じ文面である。
 
 # トランスポートとセキュリティ
 
@@ -389,7 +389,7 @@ JSONについては、I-JSON（RFC 7493）に沿うことを推奨している�
 | 認証の失敗 | `401`を返さなければならず（MUST）、`WWW-Authenticate`ヘッダを付けるべき（SHOULD） | 期待する認証方式を伝える |
 | 信頼 | PDPはPEPを信頼する前提に立つ | 判定を最後に強制するのはPEPだから |
 | 応答の完全性 | PDPは応答に署名してよい（MAY） | プロキシやゲートウェイを挟むと、TLSだけでは経路全体を守れない |
-| 可用性 | 要求の大きさ、件数、不正なJSON、深い入れ子、メモリ消費に対策すべき | レート制限などでDoSを防ぐ |
+| 可用性 | 要求の大きさ、件数、不正なJSON、深い入れ子、メモリ消費に対策すべき（SHOULD） | レート制限などでDoSを防ぐ |
 
 ## 設計で気をつけること（筆者の見立て）
 
@@ -410,7 +410,7 @@ AuthZENは新しい概念を発明したわけではない。仕様は冒頭で�
 | 義務と助言 | ObligationとAdviceを言語で定義する | `context`に入れる（形式はプロファイルで定める） |
 | 一覧の問い | 中核にはない | Search APIとして定義する |
 
-XACMLは判定の結果を4値で返し、ポリシー言語と処理モデルまで含めて定めた。そのため、XACMLの要求を受け付けるPDPは、ほぼXACMLのエンジンに限られた。AuthZENはポリシー言語に一切踏み込まず、線の形だけを決める。内部はRego、Cedar、関係タプルのいずれでもよい。判定を`true`と`false`に絞り、ほかの情報を`context`に逃がしたのも、異なるエンジンが同じ口を持てるようにするためだと読める。
+XACMLは判定の結果を4値で返し、ポリシー言語と処理モデルまで含めて定めた。筆者の見方では、そのためにXACMLの要求を受け付けるPDPは、ほぼXACMLのエンジンに限られた。AuthZENはポリシー言語に一切踏み込まず、線の形だけを決める。内部はRego、Cedar、関係タプルのいずれでもよい。判定を`true`と`false`に絞り、ほかの情報を`context`に逃がしたのも、異なるエンジンが同じ口を持てるようにするためだと読める。
 
 NIST SP 800-162は、ABACを主体の属性、対象の属性、操作、環境条件で説明する。SARCはこの語彙とほぼ対応している。モデルの原典の詳細は[認可のアーキテクチャとモデル・エンジンの選び方](/ja/posts/authorization-architecture-models-engines/)に譲る。
 
@@ -423,7 +423,7 @@ AuthZENの効き目は、PEPの側から見たエンジンの違いを吸収す�
 | SARC | OPA（Rego） | Cedar | OpenFGA |
 | --- | --- | --- | --- |
 | Subject | `input`の任意の構造 | `principal`（エンティティ） | `user` |
-| Action | `input`の任意の構造 | `action` | `relation` |
+| Action | `input`の任意の構造 | `action`（エンティティ） | `relation` |
 | Resource | `input`の任意の構造 | `resource`（エンティティ） | `object` |
 | Context | `input`の任意の構造 | `context` | `context`（条件付きの関係で使う） |
 | 一覧の問い | 部分評価などで工夫する | 中核の判定APIにはない | ListObjects、ListUsers |
@@ -474,6 +474,8 @@ Authorization API 1.0の上に、用途ごとのプロファイルが作られ�
 | COAZ-MCP Binding | Working Group Draft | COAZをMCPに当てはめ、MCPのメッセージごとに判定する |
 | Obligations Profile | Working Group Draft | 判定に付ける、PEPが必ず実行すべき義務の形式と交渉 |
 | OAuth関連（Token Issuance、Token Exchange、Authorization Claims） | リポジトリ上のDraft 1 | トークン発行やトークン交換の判断、JWTアクセストークンに入れる権限をAuthZENに問う |
+
+AARPはOpenID Foundationの発表に合わせた略称で、ドラフトのヘッダーでの略称はARAPである。
 
 OpenID Foundationは2026年6月の発表で、認可システムはこれまで「今この操作をしてよいか」に答えてきたが、「許可の前に何が必要か」にも答える必要が増していると述べた。Search APIが扱う「どれを・誰が」を加えると、判定のAPIが答える問いは3つに整理できる。
 
@@ -536,3 +538,4 @@ OpenID Foundationは2026年6月の発表で、認可システムはこれまで�
 - [NIST SP 800-162 Guide to Attribute Based Access Control (ABAC) Definition and Considerations](https://csrc.nist.gov/pubs/sp/800/162/upd2/final)
 - [RFC 7493 The I-JSON Message Format](https://www.rfc-editor.org/rfc/rfc7493)
 - [RFC 8414 OAuth 2.0 Authorization Server Metadata](https://www.rfc-editor.org/rfc/rfc8414)
+- [RFC 9728 OAuth 2.0 Protected Resource Metadata](https://www.rfc-editor.org/rfc/rfc9728)
