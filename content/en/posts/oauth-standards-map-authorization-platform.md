@@ -234,7 +234,7 @@ RFC 8414 lets an AS describe itself. RFC 9728 does the same for an RS: the RS se
 }
 ```
 
-Key fields include `resource` (required, the RS identifier), `authorization_servers` (the AS that issues tokens for this RS), `scopes_supported`, and `jwks_uri`. For sender constraints, the RS can also announce whether it always requires DPoP-bound tokens (`dpop_bound_access_tokens_required`) and whether it supports mTLS-bound tokens (`tls_client_certificate_bound_access_tokens`).
+Key fields include `resource` (required, the RS identifier), `authorization_servers` (an array of the authorization servers that can issue tokens for this RS), `scopes_supported`, and `jwks_uri`. For sender constraints, the RS can also announce whether it always requires DPoP-bound tokens (`dpop_bound_access_tokens_required`) and whether it supports mTLS-bound tokens (`tls_client_certificate_bound_access_tokens`).
 
 When the RS returns 401, it can point to this URL with the `resource_metadata` parameter of the `WWW-Authenticate` header. The moment a call to the RS fails, the client learns which AS it should contact. The MCP authorization specification requires MCP servers to serve this metadata.
 
@@ -244,7 +244,7 @@ An authorization platform must decide how to name RS identifiers (the value of `
 
 With DCR, the client registers at each AS it uses, and each AS stores the registered client information. In environments with many client and AS combinations, registrations keep piling up and management gets heavy.
 
-OAuth Client ID Metadata Document uses an HTTPS URL as the `client_id`. The client hosts its own metadata (`redirect_uris`, `client_name`, and so on) as JSON at that URL. The AS SHOULD fetch the document from the URL automatically. Because the contents may change, the AS SHOULD also re-fetch it periodically. The client does not need to register with each AS in advance.
+OAuth Client ID Metadata Document uses an HTTPS URL as the `client_id`. The client hosts its own metadata (`redirect_uris`, `client_name`, and so on) as JSON at that URL. The draft says the AS SHOULD fetch the document from the URL automatically. Because the contents may change, the draft also says the AS SHOULD re-fetch it periodically. The client does not need to register with each AS in advance.
 
 Main requirements as of draft-02:
 
