@@ -54,7 +54,7 @@ In the table above, "authorization" means deciding whether a subject may perform
 |---|---|---|
 | Authorization in the narrow sense | Access decision | May this action happen? |
 | "Authorization" in OAuth | Delegation | What do I hand to this client? |
-| Permission management | Access governance | Who holds which permission? |
+| Granting and managing permissions (assignment, requests and approvals, access reviews) | Access governance | Who holds which permission? |
 | Authorization in the broad sense | The three above together | All of the above |
 
 When someone says "let's build an authorization platform," aligning first on which row they mean speeds up the discussion. On the IAM map later in this post, these three correspond to subdomains 3 (delegation), 4 (access decision), and 5 (access governance).
