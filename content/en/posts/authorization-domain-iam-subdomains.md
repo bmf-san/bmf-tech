@@ -131,33 +131,13 @@ Solid lines show data flow, and dotted lines show requests. Authentication and a
 
 Where lifecycle management and provisioning belong, under 1 or under 5, depends on how you split IAM. For example, Microsoft Entra ID Governance calls identity lifecycle management the foundation for identity governance and includes provisioning among its features.
 
-The sections below look briefly at what each one decides and which standards connect to it.
+Beyond the responsibilities and contents in the table, a few points matter for each subdomain.
 
-## 1. Identity
-
-Identity holds the data that says who a subject is: identifiers, attributes (department, title, employment type), identity proofing results, and the lifecycle from joining to leaving. Distributing accounts to other systems (provisioning) also belongs here. SCIM serves as the representative standard.
-
-Access decision uses the attributes this subdomain holds. If attributes go stale, someone who changed departments can still read data from the old one. Even when the decision logic is correct, stale attributes can cause an authorization incident.
-
-## 2. Authentication
-
-Authentication verifies that a subject is who it claims to be and keeps the result as a session. It includes passwords, passkeys, MFA, federation (OpenID Connect, SAML), and account recovery. Authentication of non-human subjects such as services and workloads also belongs here.
-
-NIST SP 800-63-4 (finalized in July 2025) treats identity proofing (63A), authentication (63B), and federation (63C) separately. It helps when you think about the boundary between subdomains 1 and 2.
-
-## 3. Delegation
-
-Delegation lets a subject hand part of its permissions to another subject. It covers registering the delegate (the client), consent to delegate, the range (scopes and audience), token issuance, exchange, and revocation, and chains where a delegate delegates further. OAuth centers on this subdomain. Still, delegation only settles the range handed to the client. Even with a scope of `invoices:read`, the resource server decides separately which invoices the caller may read, as part of 4. Access Decision. RFC 6749 only requires (MUST) the resource server to check that the token's scope covers the requested resource, and it does not define how to decide access per resource.
-
-## 4. Access Decision
-
-Access decision determines, based on policy, whether a subject may perform an action on a resource. "Authorization" in the narrow sense refers to this subdomain. Models such as RBAC, ABAC, and ReBAC, policy engines such as OPA and Cedar, and the PDP/PEP split all belong here. Reference architectures such as XACML and NIST SP 800-162 call the component that makes the decision the PDP (Policy Decision Point). They call the component that lets a request through or blocks it based on that decision the PEP (Policy Enforcement Point). [What Are Authorization Architectures and Models?](/posts/authorization-architecture-models-engines/) covers the reference architecture and how to choose a model. [What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers a standard API between PEP and PDP.
-
-## 5. Access Governance
-
-Access governance decides who holds which permission and keeps that appropriate over time. It includes permission requests and approvals, role assignment, periodic access reviews, separation of duties (for example, the requester must not approve their own request), and JIT access that grants a permission for a limited time.
-
-Subdomain 4 decides "may this action happen now?" on every request. Subdomain 5 decides "should this person hold this permission at all?" over a longer period. Subdomain 4 uses the assignments that subdomain 5 makes as input. If a decision in subdomain 4 needs human approval, the request goes back to subdomain 5.
+- 1. Identity: SCIM serves as the representative standard. Access decision uses this subdomain's attributes as input, so stale attributes can cause an authorization incident even when the decision logic is correct. For example, someone who changed departments can still read data from the old one.
+- 2. Authentication: OpenID Connect and SAML serve as the representative federation standards. NIST SP 800-63-4 (finalized in July 2025) treats identity proofing (63A), authentication (63B), and federation (63C) separately. That split helps when you think about the boundary between subdomains 1 and 2.
+- 3. Delegation: OAuth centers on this subdomain. Still, delegation only settles the range handed to the client. Even with a scope of `invoices:read`, the resource server decides separately which invoices the caller may read, as part of subdomain 4. RFC 6749 only requires (MUST) the resource server to check that the token's scope covers the requested resource, and it does not define how to decide access per resource.
+- 4. Access Decision: "Authorization" in the narrow sense refers to this subdomain. Models such as RBAC, ABAC, and ReBAC and policy engines such as OPA and Cedar belong here. Reference architectures such as XACML and NIST SP 800-162 call the component that makes the decision the PDP (Policy Decision Point). They call the component that lets a request through or blocks it based on that decision the PEP (Policy Enforcement Point). [What Are Authorization Architectures and Models?](/posts/authorization-architecture-models-engines/) covers the reference architecture and how to choose a model, and [What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers a standard API between PEP and PDP.
+- 5. Access Governance: Subdomain 4 decides "may this action happen now?" on every request. Subdomain 5 decides "should this person hold this permission at all?" over a longer period.
 
 ## Why delegation stands alone
 
