@@ -35,8 +35,6 @@ First, how this post relates to existing ones. [Basics of Authentication and Aut
 
 # Authentication and Authorization Answer Different Questions
 
-## Two questions
-
 Authentication and authorization answer different questions.
 
 | | Authentication | Authorization |
@@ -47,15 +45,6 @@ Authentication and authorization answer different questions.
 | When it fails | It lets an impostor in | It allows an action without permission, or blocks a legitimate one |
 
 The result of authentication forms just one input to authorization. Authorization adds three more pieces to the verified subject and checks them against policy. These are the resource (which data), the action (read, write, approve), and the context (time, origin, tenant, risk).
-
-## Authorization splits into deciding and enforcing
-
-Authorization splits further into two parts.
-
-- Decision: compare the request against policy and decide to permit or deny
-- Enforcement: let the request through or stop it according to the decision
-
-NIST SP 800-162 and XACML call the decision component the PDP (Policy Decision Point) and the enforcement component the PEP (Policy Enforcement Point). Separating them lets you keep decision logic in one place while each application enforces at its own entry point. [Authorization architecture, models, and engines](/posts/authorization-architecture-models-engines/) covers this reference architecture and how to choose an authorization model.
 
 # The "Authorization" in OAuth Centers on Delegation
 
@@ -179,7 +168,7 @@ Delegation lets a subject hand part of its permissions to another subject. It co
 
 ## 4. Access Decision
 
-Access decision determines, based on policy, whether a subject may perform an action on a resource. Models such as RBAC, ABAC, and ReBAC, policy engines such as OPA and Cedar, and the PDP/PEP split all belong here. "Authorization" in the narrow sense refers to this subdomain. [What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers a standard API between PEP and PDP.
+Access decision determines, based on policy, whether a subject may perform an action on a resource. "Authorization" in the narrow sense refers to this subdomain. Models such as RBAC, ABAC, and ReBAC, policy engines such as OPA and Cedar, and the PDP/PEP split all belong here. Reference architectures such as XACML and NIST SP 800-162 call the component that makes the decision the PDP (Policy Decision Point). They call the component that lets a request through or blocks it based on that decision the PEP (Policy Enforcement Point). [What Are Authorization Architectures and Models?](/posts/authorization-architecture-models-engines/) covers the reference architecture and how to choose a model. [What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers a standard API between PEP and PDP.
 
 ## 5. Access Governance
 

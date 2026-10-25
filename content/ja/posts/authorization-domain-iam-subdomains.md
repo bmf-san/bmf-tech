@@ -35,8 +35,6 @@ draft: false
 
 # 認証と認可は別の問いに答える
 
-## 2つの問い
-
 認証と認可は、答える問いが違う。
 
 | | 認証（Authentication） | 認可（Authorization） |
@@ -47,15 +45,6 @@ draft: false
 | 失敗したとき | なりすましを許す | 権限のない操作を許す、または正当な操作を止める |
 
 認証の結果は認可の入力の1つにすぎない。認可は、認証で確かめた主体に3つの情報を加え、ポリシーに照らして判断する。資源（どのデータか）、操作（読む・書く・承認するなど）、文脈（時刻・接続元・テナント・リスク）である。
-
-## 認可は「決める」と「強制する」に分かれる
-
-認可はさらに2つに分かれる。
-
-- 判定（decision）: ポリシーに照らして、許可か拒否かを決める
-- 強制（enforcement）: 判定の結果に従って、リクエストを通すか止める
-
-NIST SP 800-162やXACMLは、判定する部品をPDP（Policy Decision Point）、強制する部品をPEP（Policy Enforcement Point）と呼ぶ。両者を分けておくと、判定のロジックを1か所に集めつつ、強制は各アプリケーションの入口で行える。この参照アーキテクチャと認可モデルの選び方は[認可のアーキテクチャ、モデル、エンジンの比較](/ja/posts/authorization-architecture-models-engines/)で扱う。
 
 # OAuthの「認可」の中心は委譲である
 
@@ -179,7 +168,7 @@ NIST SP 800-63-4（2025年7月に確定）は、身元確認（63A）、認証�
 
 ## ④ アクセス判定
 
-主体がある資源にある操作をしてよいかを、ポリシーに基づいて決める。RBAC、ABAC、ReBACといったモデル、OPAやCedarのようなポリシーエンジン、PDPとPEPの分離はこのサブドメインの話である。狭い意味の「認可」はここを指す。標準化されたPEPとPDPの間のAPIについては[AuthZEN Authorization APIとは？](/ja/posts/authzen-authorization-api/)で扱う。
+主体がある資源にある操作をしてよいかを、ポリシーに基づいて決める。狭い意味の「認可」はここを指す。RBAC、ABAC、ReBACといったモデル、OPAやCedarのようなポリシーエンジン、PDPとPEPの分離はこのサブドメインの話である。XACMLやNIST SP 800-162などの参照アーキテクチャは、判定する部品をPDP（Policy Decision Point）と呼ぶ。判定の結果に従って要求を通すか止める部品はPEP（Policy Enforcement Point）と呼ぶ。参照アーキテクチャとモデルの選び方は[認可のアーキテクチャ、モデル、エンジンの比較](/ja/posts/authorization-architecture-models-engines/)で扱う。標準化されたPEPとPDPの間のAPIについては[AuthZEN Authorization APIとは？](/ja/posts/authzen-authorization-api/)で扱う。
 
 ## ⑤ アクセスガバナンス
 
