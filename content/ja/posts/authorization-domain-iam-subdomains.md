@@ -126,8 +126,10 @@ flowchart TB
 | ① | アイデンティティ（Identity） | 主体の識別子と属性を持ち、生成から削除までのライフサイクルを管理する | 識別子、属性、身元確認、プロビジョニング |
 | ② | 認証（Authentication） | 主体が名乗っているとおりの本人であることを確かめ、その結果を保つ | 認証器と資格情報の管理、MFAやステップアップ、フェデレーション、セッション、アカウントリカバリ、非人間の主体の認証 |
 | ③ | 委譲（Delegation） | 主体が自分の権限の一部を別の主体に委ね、その範囲と期限を管理する | 委ねる先の登録、同意、スコープ、トークンの発行・交換・失効、委譲の連鎖 |
-| ④ | アクセス判定（Access Decision） | 主体がある資源にある操作をしてよいかを、ポリシーに基づいて決める | ポリシーの定義、評価、判定結果の提供 |
+| ④ | アクセス判定（Access Decision） | 主体がある資源にある操作をしてよいかを、ポリシーに基づいて決める | ポリシーの定義、評価（PDP）、判定結果の提供と強制の仕組み（PEP） |
 | ⑤ | アクセスガバナンス（Access Governance） | 誰にどの権限を持たせるかを決め、それが妥当であり続けるよう統制する | 申請・承認、割り当て、棚卸し、職務分掌、一時的な権限付与（JIT） |
+
+ライフサイクルとプロビジョニングを①と⑤のどちらに置くかは、分け方によって違う。たとえばMicrosoft Entra ID Governanceは、アイデンティティのライフサイクル管理をガバナンスの土台と位置づけ、プロビジョニングもその機能に含めている。
 
 以下、それぞれが何を決めるのか、どの標準と結びつくのかを短く見る。
 
@@ -287,3 +289,4 @@ IDDDの公式サンプルがこの関係をよく表している。業務側のC
 - [Vaughn Vernon, Implementing Domain-Driven Design 第1章の抜粋: The Business Value of Using DDD（InformIT）](https://www.informit.com/articles/article.aspx?p=1944876&seqNum=4)
 - [Vaughn Vernon, IDDD_Samples](https://github.com/VaughnVernon/IDDD_Samples)
 - [Implementing Domain Driven Design Review and Interview（InfoQ）](https://www.infoq.com/articles/implmenting-domain-driven-design-vaughn-vernon/)
+- [What is Microsoft Entra ID Governance?（Microsoft Learn）](https://learn.microsoft.com/en-us/entra/id-governance/identity-governance-overview)

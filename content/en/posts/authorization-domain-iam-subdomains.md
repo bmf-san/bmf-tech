@@ -126,8 +126,10 @@ Solid lines show data flow, and dotted lines show requests. Authentication and a
 | 1 | Identity | Holds subject identifiers and attributes and manages their lifecycle from creation to deletion | Identifiers, attributes, identity proofing, provisioning |
 | 2 | Authentication | Verifies that a subject is who it claims to be and keeps that result | Authenticator and credential management, MFA and step-up, federation, sessions, account recovery, non-human authentication |
 | 3 | Delegation | Lets a subject hand part of its permissions to another subject and manages the range and lifetime | Registering delegates, consent, scopes, token issuance, exchange, and revocation, delegation chains |
-| 4 | Access Decision | Decides, based on policy, whether a subject may perform an action on a resource | Policy definition, evaluation, providing decisions |
+| 4 | Access Decision | Decides, based on policy, whether a subject may perform an action on a resource | Policy definition, evaluation (PDP), providing decisions and the enforcement mechanism (PEP) |
 | 5 | Access Governance | Decides who holds which permission and keeps that appropriate over time | Requests and approvals, assignment, access reviews, separation of duties, just-in-time (JIT) access |
+
+Where lifecycle management and provisioning belong, under 1 or under 5, depends on how you split IAM. For example, Microsoft Entra ID Governance calls identity lifecycle management the foundation for identity governance and includes provisioning among its features.
 
 The sections below look briefly at what each one decides and which standards connect to it.
 
@@ -287,3 +289,4 @@ For example, a proposal to "build an authorization platform with OAuth" means so
 - [Vaughn Vernon, Implementing Domain-Driven Design, Chapter 1 excerpt: The Business Value of Using DDD (InformIT)](https://www.informit.com/articles/article.aspx?p=1944876&seqNum=4)
 - [Vaughn Vernon, IDDD_Samples](https://github.com/VaughnVernon/IDDD_Samples)
 - [Implementing Domain Driven Design Review and Interview (InfoQ)](https://www.infoq.com/articles/implmenting-domain-driven-design-vaughn-vernon/)
+- [What is Microsoft Entra ID Governance? (Microsoft Learn)](https://learn.microsoft.com/en-us/entra/id-governance/identity-governance-overview)
