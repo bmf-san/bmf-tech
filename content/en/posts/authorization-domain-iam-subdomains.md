@@ -52,7 +52,7 @@ OAuth calls itself an "authorization framework." In practice, it centers on issu
 
 The opening of RFC 6749 describes OAuth 2.0 this way. It lets a third-party application get limited access to an HTTP service. The application gets that access either on behalf of a resource owner or on its own behalf.
 
-Apart from the case where a client obtains access on its own behalf (Client Credentials), OAuth answers this question: "Which part of the user's permissions goes to this client, and for how long?" In neither case does it answer "May this user read this invoice?"
+Apart from the case where a client obtains access on its own behalf (Client Credentials), OAuth answers this question: "Which part of the user's permissions goes to this client, and for how long?" In both cases, how to decide "May this user (or this client) read this invoice?" sits outside the OAuth specification. RFC 6749 only requires (MUST) the resource server to check that the token's scope covers the requested resource.
 
 | | What OAuth decides | What OAuth does not decide |
 |---|---|---|
