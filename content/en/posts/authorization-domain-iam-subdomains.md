@@ -189,8 +189,6 @@ The question "may this person approve this invoice?" carries business knowledge.
 | Rules | Approver depends on amount; no self-approval | The mechanism that evaluates rules and returns results |
 | Who changes it and when | Business teams, as the business changes | Platform teams, as the platform changes |
 
-The official IDDD samples illustrate this relationship well. The business-side Collaboration Context does not use the users and roles from the Identity and Access Context as they come. Through `UserInRoleAdapter` and `CollaboratorTranslator`, it translates them into its own terms, such as Author and Moderator.
-
 Mixing these up makes IAM absorb business knowledge. Every change to a business rule turns into a request to the platform team, and the platform team cannot write policies without understanding the business. The reverse also hurts: if each business domain owns the decision mechanism too, decisions tend to drift between applications. Keep the mechanism shared and the meaning in each domain. That split gives you the starting point for scoping an authorization platform.
 
 [Permission Management Design](/posts/permission-management-design/) covers the elements of a permission (who, on what, may do what) and the design of feature scope and data scope.
