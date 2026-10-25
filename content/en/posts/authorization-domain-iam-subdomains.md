@@ -46,25 +46,6 @@ Authentication and authorization answer different questions.
 
 The result of authentication forms just one input to authorization. Authorization adds three more pieces to the verified subject and checks them against policy. These are the resource (which data), the action (read, write, approve), and the context (time, origin, tenant, risk).
 
-# The "Authorization" in OAuth Centers on Delegation
-
-OAuth calls itself an "authorization framework." In practice, it centers on issuing tokens for delegated access.
-
-The opening of RFC 6749 describes OAuth 2.0 this way. It lets a third-party application get limited access to an HTTP service. The application gets that access either on behalf of a resource owner or on its own behalf.
-
-Apart from the case where a client obtains access on its own behalf (Client Credentials), OAuth answers this question: "Which part of the user's permissions goes to this client, and for how long?" In both cases, how to decide "May this user (or this client) read this invoice?" sits outside the OAuth specification. RFC 6749 only requires (MUST) the resource server to check that the token's scope covers the requested resource.
-
-| | What OAuth decides | What OAuth does not decide |
-|---|---|---|
-| Target | The range you hand to a client (scope, audience, lifetime) | Access per resource or per row |
-| Example | Grant this app "read invoices" | Only the sales department's invoices; only managers or above can approve |
-| Result | Access token | Permit or deny |
-| Owner | Authorization server | Resource server, or the decision mechanism behind it |
-
-Even with an `invoices:read` scope, the resource server still has to decide which invoices the caller may read. If you try to decide per-resource access from the token contents alone, the token grows too large or the decision becomes too coarse. In my view, these two layers are easy to confuse, which makes them a trap when people bring OAuth into a discussion about an authorization platform.
-
-[OAuth 2.0 Explained](/posts/oauth-2-0/) summarizes the OAuth 2.0 specification, and the post on [OAuth 2.1 and the Security BCP](/posts/oauth-2-1-security-bcp/) covers those two. [A map of OAuth and related standards](/posts/oauth-standards-map-authorization-platform/) looks at OAuth from the viewpoint of an authorization platform.
-
 # Splitting IAM into DDD Subdomains
 
 ## Why use DDD vocabulary
@@ -164,7 +145,7 @@ NIST SP 800-63-4 (finalized in July 2025) treats identity proofing (63A), authen
 
 ## 3. Delegation
 
-Delegation lets a subject hand part of its permissions to another subject. It covers registering the delegate (the client), consent to delegate, the range (scopes and audience), token issuance, exchange, and revocation, and chains where a delegate delegates further. OAuth centers on this subdomain.
+Delegation lets a subject hand part of its permissions to another subject. It covers registering the delegate (the client), consent to delegate, the range (scopes and audience), token issuance, exchange, and revocation, and chains where a delegate delegates further. OAuth centers on this subdomain. Still, delegation only settles the range handed to the client. Even with a scope of `invoices:read`, the resource server decides separately which invoices the caller may read, as part of 4. Access Decision. RFC 6749 only requires (MUST) the resource server to check that the token's scope covers the requested resource, and it does not define how to decide access per resource.
 
 ## 4. Access Decision
 
