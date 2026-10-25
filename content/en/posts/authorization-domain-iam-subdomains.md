@@ -144,8 +144,8 @@ Beyond the responsibilities and contents in the table, a few points matter for e
 Some models fold delegation into authentication or access decision. This map keeps delegation separate because the core OAuth concepts (client, consent, grant) fit nowhere else.
 
 - They do not fit authentication. Consent does not verify who you are
-- They do not fit access decision. The delegated range starts from the subject's own consent, not from a per-resource decision
-- They do not fit access governance. The permission holder grants the permission, not an administrator
+- They do not fit access decision. The delegated range starts from the consent of the side that holds the permission, not from a per-resource decision
+- They do not fit access governance. In access governance, administrators and approvers decide which subject holds which permission. In delegation, the side that holds a permission (the OAuth resource owner) hands part of it to a client. When an administrator consents to an app on behalf of the whole organization (for example, admin consent in Microsoft Entra ID), that still counts as delegation, because it hands the organization's permissions to a client
 
 Consent for delegation also differs from consent under privacy laws such as the GDPR, which covers the use of personal data for a specific purpose. The first hands your permissions to another subject. The second concerns privacy. The screens may look alike, but what you record and what happens on withdrawal differ.
 
@@ -269,4 +269,5 @@ For example, a proposal to "build an authorization platform with OAuth" means so
 - [Vaughn Vernon, Implementing Domain-Driven Design, Chapter 1 excerpt: The Business Value of Using DDD (InformIT)](https://www.informit.com/articles/article.aspx?p=1944876&seqNum=4)
 - [Vaughn Vernon, IDDD_Samples](https://github.com/VaughnVernon/IDDD_Samples)
 - [Implementing Domain Driven Design Review and Interview (InfoQ)](https://www.infoq.com/articles/implmenting-domain-driven-design-vaughn-vernon/)
+- [Grant tenant-wide admin consent to an application (Microsoft Learn)](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/grant-admin-consent)
 - [What is Microsoft Entra ID Governance? (Microsoft Learn)](https://learn.microsoft.com/en-us/entra/id-governance/identity-governance-overview)
