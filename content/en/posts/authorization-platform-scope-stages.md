@@ -10,7 +10,7 @@ tags:
   - IAM
   - Architecture
   - System Design
-description: "How much authorization platform does your organization need? Why authorization spans the whole organization yet resists centralization, what to standardize centrally versus leave to domains, decision axes, pain signals, four stages, signs not to build, and whether to externalize decisions."
+description: "How much authorization platform does your organization need? Why authorization spans the whole organization and architecture yet resists centralization, what to standardize centrally versus leave to domains, decision axes, pain signals, four stages, signs not to build, and whether to externalize decisions."
 translation_key: authorization-platform-scope-stages
 draft: false
 ---
@@ -21,7 +21,7 @@ Discussions about an authorization platform sometimes collapse into two options:
 
 This article lays out the material you need to decide how much authorization platform your organization needs. You will learn:
 
-- Why an authorization platform spans the whole organization, and why you still should not gather it in one place
+- Why an authorization platform spans the whole organization and architecture, and why you still should not gather it in one place
 - How to split what you standardize across the organization and what each business domain owns
 - The decision axes and present-day pain signals that tell you which stage you need
 - Four stages, and the signs that you should not build a platform
@@ -35,7 +35,7 @@ Here is the big picture first.
 
 ```mermaid
 flowchart TB
-  Q["How much authorization<br/>platform do you need?"] --> S["Scope: spans the organization<br/>but not centralized in one place"]
+  Q["How much authorization<br/>platform do you need?"] --> S["Scope: spans the organization and architecture<br/>but not centralized in one place"]
   S --> D["Ownership: mechanisms and contracts are shared<br/>meaning stays in each domain"]
   D --> A["Decision axes and pain signals"]
   A --> L0["Stage 0: each app implements its own"]
@@ -45,27 +45,27 @@ flowchart TB
   L2 -.-> X["Whether to externalize<br/>trade-off with latency and availability"]
 ```
 
-# An Authorization Platform Spans the Whole Organization
+# An Authorization Platform Spans the Whole Organization and Architecture
 
-Authorization does not stay inside one team or one service. Six reasons explain why.
+Authorization does not stay inside one team or one service. This section looks at why from two sides: architecture and organization.
 
-## Authorization happens on every request to a protected resource
+## Architecture: every component shares the same concern
 
-You can verify authentication once at the entry point and carry the result in a token. Authorization asks, for each resource, "may this subject perform this action on this resource?" That means you need enforcement points (PEPs, Policy Enforcement Points) everywhere protected resources live: gateways, every service, and the data layer.
+Authorization happens on every request to a protected resource. You can verify authentication once at the entry point and carry the result in a token. Authorization, by contrast, asks for each resource, "may this subject perform this action on this resource?" That means you need enforcement points (PEPs, Policy Enforcement Points) everywhere protected resources live: gateways, every service, and the data layer. The OWASP Authorization Cheat Sheet also recommends checking permissions on every request. The OWASP Top 10:2025 places Broken Access Control at A01.
 
-The OWASP Authorization Cheat Sheet also recommends checking permissions on every request. The OWASP Top 10:2025 places Broken Access Control at A01.
+Delegation also chains across services. Permissions travel from a user to an agent, to an MCP server, to a business API. If token audience design, scope structure, how services get new tokens, and how you record the user and the agent are not consistent, one loose implementation anywhere becomes a hole in the whole system. One example: a service that forwards the token it received straight to the next service.
 
-[Authorization Platform Architecture and Design Decisions](/posts/authorization-platform-architecture-decisions/) covers where to place PEPs along the request path.
+Authorization is also hard to change later, and when it stops, everything stops. When each application makes its own decisions, authorization logic gets embedded in code everywhere. So when you change the permission model, you have to touch every service. Conversely, once you externalize decisions, an outage of the decision service can stop every feature. The usual rule is to deny (fail-closed) rather than allow (fail-open) when you cannot reach a decision, so the decision service's availability drives the availability of the whole system. Either way, the blast radius covers the entire architecture.
 
-## The "meaning" of a permission lives in each business domain
+Because every component shares this concern, aligning where you enforce and how you handle tokens across the system pays off. That does not mean gathering everything in one place. The next section covers what to align centrally and what to leave to each domain. [Authorization Platform Architecture and Design Decisions](/posts/authorization-platform-architecture-decisions/) covers where to place PEPs along the request path. [Standardizing Workload Identity](/posts/workload-identity-wimse-transaction-tokens/) covers context propagation between services, and [What Changes in Authorization with AI Agents](/posts/authorization-for-ai-agents/) covers agent delegation.
 
-Only the team that runs a business process knows what "may approve this invoice" means. An authorization platform can provide the decision mechanism. But what to allow requires alignment with every business domain. An authorization platform crosses not only technical boundaries but also team boundaries.
+## Organization: no single team can decide it
 
-[The Abstraction Trap in Architecture Design](/posts/abstraction-trap-in-architecture/) also touched on how authorization is a bundle of domain rules.
+The owners of authorization decisions sit in many parts of the organization.
 
-## The information a decision needs comes from across the organization
+First, the "meaning" of a permission lives in each business domain. Only the team that runs a business process knows what "may approve this invoice" means. An authorization platform can provide the decision mechanism, but what to allow requires alignment with every business domain. [The Abstraction Trap in Architecture Design](/posts/abstraction-trap-in-architecture/) also touched on how authorization is a bundle of domain rules.
 
-The inputs to a decision do not sit in one place.
+Second, the information a decision needs comes from across the organization.
 
 | Information | Main source |
 |---|---|
@@ -77,23 +77,9 @@ The inputs to a decision do not sit in one place.
 
 Authorization becomes the point where these sources meet. A single team cannot decide who holds which information and how fresh it must be when it reaches a decision.
 
-## Governance is the organization's own process
+Third, governance is the organization's own process. Who may grant permissions, separation of duties, periodic access reviews, and revoking permissions when someone leaves all tie directly to the organizational structure and internal controls. NIST SP 800-53 Rev. 5 also lists Account Management (AC-2), Separation of Duties (AC-5), and Review of User Privileges (AC-6(7)) as controls. Technology alone does not determine whether you can reliably remove a departed employee's permissions from every system. Cross-organizational processes determine it.
 
-Who may grant permissions, separation of duties, periodic access reviews, and revoking permissions when someone leaves all tie directly to the organizational structure and internal controls. NIST SP 800-53 Rev. 5 also lists Account Management (AC-2), Separation of Duties (AC-5), and Review of User Privileges (AC-6(7)) as controls.
-
-Technology alone does not determine whether you can reliably remove a departed employee's permissions from every system. Cross-organizational processes determine it.
-
-## Delegation chains across services
-
-Permissions travel across services: from a user to an agent, to an MCP server, to a business API. If token audience design, scope structure, how services get new tokens, and how you record the user and the agent are not consistent, one loose implementation anywhere becomes a hole in the whole system. One example: a service that forwards the token it received straight to the next service.
-
-[Standardizing Workload Identity](/posts/workload-identity-wimse-transaction-tokens/) covers context propagation between services, and [What Changes in Authorization with AI Agents](/posts/authorization-for-ai-agents/) covers agent delegation.
-
-## Hard to change later, and when it stops, everything stops
-
-When each application makes its own decisions, authorization logic gets embedded in code everywhere. So when you change the permission model, you have to touch every service.
-
-Conversely, once you externalize decisions, an outage of the decision service can stop every feature. The usual rule is to deny (fail-closed) rather than allow (fail-open) when you cannot reach a decision, so the decision service's availability drives the availability of the whole system. Either way, the blast radius covers the entire architecture.
+In short, you can build an authorization platform as a technical component, but that alone is not enough. What to allow, which information reaches decisions at what freshness, and who governs access all need a division of roles and agreement across several departments. An authorization platform crosses not only technical boundaries but also departmental ones.
 
 # Do Not Centralize It: What to Standardize and What Domains Own
 
@@ -307,7 +293,7 @@ If you are unsure, consider starting with an in-process library or a sidecar rat
 
 # Summary
 
-- Authorization happens wherever protected resources live, its meaning lives in each business domain, and its inputs come from across the organization. So an authorization platform spans the whole organization
+- Authorization happens wherever protected resources live, its meaning lives in each business domain, and its inputs come from across the organization. So an authorization platform spans the whole organization and architecture
 - Even so, do not gather it in one place. Standardize mechanisms and contracts (tokens, the decision API contract, audit logs, revocation, guardrails) across the organization, and keep meaning (resources and actions, policy content) in each domain
 - An authorization platform is not a yes-or-no choice. Ask which stage you need: Stage 0 (each application), Stage 1 (shared conventions and libraries), Stage 2 (externalized decisions), or Stage 3 (a platform including governance)
 - The seven decision axes are scale and cross-cutting reach, permission model complexity, change frequency, governance, diversity of subjects, consistency, and organizational capability. Present-day pain also tells you where you stand
