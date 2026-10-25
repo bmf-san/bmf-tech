@@ -11,7 +11,7 @@ tags:
   - IAM
   - OAuth
   - DDD
-description: "What is authorization? This post maps it against authentication, explains the delegation that OAuth handles, and splits IAM into five subdomains. It covers DDD Core/Supporting/Generic positioning, adjacent domains, where the business meaning of permissions lives, and why AI agents raise the weight of delegation."
+description: "What is authorization? This post maps it against authentication, explains the delegation that OAuth handles, and splits IAM into five subdomains. It covers DDD Core/Supporting/Generic positioning, adjacent domains, and where the business meaning of permissions lives."
 translation_key: authorization-domain-iam-subdomains
 draft: false
 ---
@@ -27,7 +27,6 @@ This post draws a map that lets you treat authorization as a design subject. You
 - A map that splits IAM into five subdomains: identity, authentication, delegation, access decision, and access governance
 - How IAM fits into the DDD categories Core, Supporting, and Generic
 - The adjacent domains outside IAM, and where the business meaning of permissions belongs
-- Why AI agents make the delegation boundary matter more
 
 This post opens a series on authorization. Each specification and architecture that later posts cover maps to some place on this map.
 
@@ -148,7 +147,7 @@ Beyond the responsibilities and contents in the table, a few points matter for e
 
 - 1. Identity: SCIM serves as the representative standard. Access decision uses this subdomain's attributes as input, so stale attributes can cause an authorization incident even when the decision logic is correct. For example, someone who changed departments can still read data from the old one.
 - 2. Authentication: OpenID Connect and SAML serve as the representative federation standards. NIST SP 800-63-4 (finalized in July 2025) treats identity proofing (63A), authentication (63B), and federation (63C) separately. That split helps when you think about the boundary between subdomains 1 and 2.
-- 3. Delegation: OAuth centers on this subdomain. Still, delegation only settles the range handed to the client. Even with a scope of `invoices:read`, the resource server decides separately which invoices the caller may read, as part of subdomain 4. RFC 6749 only requires (MUST) the resource server to check that the token's scope covers the requested resource, and it does not define how to decide access per resource.
+- 3. Delegation: OAuth centers on this subdomain. Still, delegation only settles the range handed to the client. Even with a scope of `invoices:read`, the resource server decides separately which invoices the caller may read, as part of subdomain 4. RFC 6749 only requires (MUST) the resource server to check that the token's scope covers the requested resource, and it does not define how to decide access per resource. [What is Authorization for AI Agents?](/posts/authorization-for-ai-agents/) covers the problems that arise when AI agents chain delegation.
 - 4. Access Decision: "Authorization" in the narrow sense refers to this subdomain. Models such as RBAC, ABAC, and ReBAC and policy engines such as OPA and Cedar belong here. Reference architectures such as XACML and NIST SP 800-162 call the component that makes the decision the PDP (Policy Decision Point). They call the component that lets a request through or blocks it based on that decision the PEP (Policy Enforcement Point). [What Are Authorization Architectures and Models?](/posts/authorization-architecture-models-engines/) covers the reference architecture and how to choose a model, and [What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers a standard API between PEP and PDP.
 - 5. Access Governance: Subdomain 4 decides "may this action happen now?" on every request. Subdomain 5 decides "should this person hold this permission at all?" over a longer period.
 
@@ -193,21 +192,6 @@ Mixing these up makes IAM absorb business knowledge. Every change to a business 
 
 [Permission Management Design](/posts/permission-management-design/) covers the elements of a permission (who, on what, may do what) and the design of feature scope and data scope.
 
-# Why AI Agents Make Delegation Heavier
-
-AI agents strengthen the reason this map keeps delegation as its own subdomain.
-
-Traditional delegation centered on a single hop: a user hands part of their permissions to an application. AI agents change this in several ways.
-
-- Delegation chains. A user delegates to an agent, and the agent delegates to tools or other agents
-- It gets harder to see whose permissions an action uses. You need to tell the agent's own permissions apart from the ones a user delegated
-- Setting the range in advance gets harder. Which tools an agent calls may not become clear until it runs
-- The subject may not be a person. Authenticating non-human subjects and delegating to them becomes routine
-
-So you need a mechanism that records the range, lifetime, and chain of delegation and narrows them along the way. Token Exchange (RFC 8693) provides a way to tell the original subject apart from the actor that works on its behalf inside a token. The MCP (Model Context Protocol) authorization specification (version 2026-07-28) also positions a protected MCP server as an OAuth 2.1 resource server and an MCP client as an OAuth 2.1 client. Note that MCP makes authorization support itself OPTIONAL, and OAuth 2.1 remains an IETF draft, not yet an RFC.
-
-Delegation alone does not cover everything, though. Within the delegated range, access decision (subdomain 4) decides whether the agent may perform each action. If you put a human approval in front of a risky action, access governance (subdomain 5) takes part. Authorization for AI agents spans subdomains 3, 4, and 5. [What changes in authorization with AI agents](/posts/authorization-for-ai-agents/) and [Key points for designing MCP authorization](/posts/mcp-authorization-design/) go into detail.
-
 # How to Use This Map
 
 When you discuss authorization or read a specification, apply the map in this order to reduce confusion.
@@ -228,7 +212,6 @@ For example, a proposal to "build an authorization platform with OAuth" means so
 - Whether IAM counts as Core, Supporting, or Generic depends on the organization's business. For business-app organizations, it usually counts as Generic
 - Adjacent domains such as risk assessment and subscription sit outside IAM and feed it input
 - The business domain owns the business meaning of permissions. IAM owns the mechanism for deciding and enforcing
-- With AI agents, delegation forms chains, so treating delegation as its own subdomain matters more. Still, authorization for AI agents spans access decision and access governance as well as delegation
 
 # Related Posts
 
@@ -251,10 +234,8 @@ For example, a proposal to "build an authorization platform with OAuth" means so
 # References
 
 - [RFC 6749 The OAuth 2.0 Authorization Framework](https://www.rfc-editor.org/rfc/rfc6749)
-- [RFC 8693 OAuth 2.0 Token Exchange](https://www.rfc-editor.org/rfc/rfc8693)
 - [RFC 7643 System for Cross-domain Identity Management: Core Schema](https://www.rfc-editor.org/rfc/rfc7643)
 - [RFC 7644 System for Cross-domain Identity Management: Protocol](https://www.rfc-editor.org/rfc/rfc7644)
-- [The OAuth 2.1 Authorization Framework (draft-ietf-oauth-v2-1)](https://datatracker.ietf.org/doc/draft-ietf-oauth-v2-1/)
 - [NIST CSRC Glossary: identity and access management](https://csrc.nist.gov/glossary/term/identity_and_access_management)
 - [NIST SP 800-63-4 Digital Identity Guidelines](https://csrc.nist.gov/pubs/sp/800/63/4/final)
 - [NIST SP 800-162 Guide to Attribute Based Access Control (ABAC) Definition and Considerations](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-162.pdf)
@@ -262,7 +243,6 @@ For example, a proposal to "build an authorization platform with OAuth" means so
 - [OpenID Shared Signals Framework Specification 1.0](https://openid.net/specs/openid-sharedsignals-framework-1_0-final.html)
 - [OpenID Continuous Access Evaluation Profile 1.0](https://openid.net/specs/openid-caep-1_0-final.html)
 - [OpenID RISC Profile Specification 1.0](https://openid.net/specs/openid-risc-1_0-final.html)
-- [Model Context Protocol Specification: Authorization](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization)
 - [Eric Evans, DDD Reference](https://www.domainlanguage.com/ddd/reference/)
 - [Vaughn Vernon, Implementing Domain-Driven Design, Chapter 1 excerpt: The Business Value of Using DDD (InformIT)](https://www.informit.com/articles/article.aspx?p=1944876&seqNum=4)
 - [Vaughn Vernon, IDDD_Samples](https://github.com/VaughnVernon/IDDD_Samples)

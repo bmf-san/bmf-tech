@@ -11,7 +11,7 @@ tags:
   - IAM
   - OAuth
   - DDD
-description: "認可とは何かを、認証との違い、OAuthが担う委譲、IAMを5つのサブドメインに分けた地図で整理する。DDDのCore/Supporting/Genericでの位置づけ、隣接ドメイン、権限の業務上の意味の置き場所、AIエージェントで委譲が重くなる理由まで扱う。"
+description: "認可とは何かを、認証との違い、OAuthが担う委譲、IAMを5つのサブドメインに分けた地図で整理する。DDDのCore/Supporting/Genericでの位置づけ、隣接ドメイン、権限の業務上の意味の置き場所まで扱う。"
 translation_key: authorization-domain-iam-subdomains
 draft: false
 ---
@@ -27,7 +27,6 @@ draft: false
 - IAMを5つのサブドメイン（アイデンティティ、認証、委譲、アクセス判定、アクセスガバナンス）に分けた地図
 - DDDのCore / Supporting / Genericで見たときのIAMの位置づけ
 - IAMの外にある隣接ドメインと、権限の業務上の意味の置き場所
-- AIエージェントが増えると委譲の区切りが重くなる理由
 
 この記事は、認可を扱うシリーズの1本目である。以降の記事で扱う個別の仕様やアーキテクチャは、この地図のどこかに対応する。
 
@@ -148,7 +147,7 @@ flowchart TB
 
 - ① アイデンティティ: 代表的な標準はSCIMである。アクセス判定はこのサブドメインの属性を入力に使うので、判定のロジックが正しくても、属性が古ければ認可の事故は起きうる。たとえば、異動した人が前の部署のデータを読めてしまう。
 - ② 認証: フェデレーションの代表的な標準はOpenID ConnectとSAMLである。NIST SP 800-63-4（2025年7月に確定）は、身元確認（63A）、認証（63B）、フェデレーション（63C）を分けて扱う。①と②の境界を考えるときの参考になる。
-- ③ 委譲: OAuthの中心はここにある。ただし、委譲で決まるのはクライアントに委ねる範囲までである。スコープが`invoices:read`であっても、どの請求書を読めるかは④として、リソースサーバー側で別に判定する。RFC 6749も、リソースサーバーがトークンのスコープが要求された資源を覆うことを確かめる（MUST）とだけ定め、資源ごとの判定のしかたは定めていない。
+- ③ 委譲: OAuthの中心はここにある。ただし、委譲で決まるのはクライアントに委ねる範囲までである。スコープが`invoices:read`であっても、どの請求書を読めるかは④として、リソースサーバー側で別に判定する。RFC 6749も、リソースサーバーがトークンのスコープが要求された資源を覆うことを確かめる（MUST）とだけ定め、資源ごとの判定のしかたは定めていない。AIエージェントで委譲が連鎖するときの課題は[AIエージェントの認可とは？](/ja/posts/authorization-for-ai-agents/)で扱う。
 - ④ アクセス判定: 狭い意味の「認可」はここを指す。RBAC、ABAC、ReBACといったモデルや、OPAやCedarのようなポリシーエンジンはここの話である。XACMLやNIST SP 800-162などの参照アーキテクチャは、判定する部品をPDP（Policy Decision Point）と呼ぶ。判定の結果に従って要求を通すか止める部品はPEP（Policy Enforcement Point）と呼ぶ。参照アーキテクチャとモデルの選び方は[認可のアーキテクチャ、モデル、エンジンの比較](/ja/posts/authorization-architecture-models-engines/)で、PEPとPDPの間の標準APIは[AuthZEN Authorization APIとは？](/ja/posts/authzen-authorization-api/)で扱う。
 - ⑤ アクセスガバナンス: ④が「今この操作をしてよいか」を要求のたびに決めるのに対し、⑤は「そもそもこの人にこの権限を持たせてよいか」を時間をかけて決める。
 
@@ -193,21 +192,6 @@ IAMの外にも、認証やアクセス判定に入力を渡すドメインが�
 
 権限を構成する要素（誰が、何に、何をしてよいか）と、機能スコープ・データスコープの設計は[権限管理の設計](/ja/posts/permission-management-design/)にまとめた。
 
-# AIエージェントで委譲が重くなる理由
-
-この地図で③委譲を独立させた理由は、AIエージェントが増えるほど重くなる。
-
-従来の委譲は、利用者がアプリケーションに権限の一部を委ねる、という1段の関係が中心だった。AIエージェントでは、これが次のように変わる。
-
-- 委譲が連鎖する。利用者がエージェントに委ね、エージェントがツールや別のエージェントに委ねる
-- 誰の権限で動いているかが見えにくくなる。エージェント自身の権限なのか、利用者から委ねられた権限なのかを区別する必要がある
-- 委ねる範囲を事前に決めにくい。エージェントがどのツールを呼ぶかは、実行するまで決まらないことがある
-- 主体が人ではない。非人間の主体を認証し、その主体に権限を委ねる場面が増える
-
-このため、委譲の範囲、期限、連鎖を記録し、途中で絞り込む仕組みが必要になる。トークン交換（RFC 8693）は、元の主体と代理で動く主体（actor）をトークンの中で区別する手段を用意している。MCP（Model Context Protocol）の認可仕様（2026-07-28版）も、保護されたMCPサーバーをOAuth 2.1のリソースサーバー、MCPクライアントをOAuth 2.1のクライアントとして位置づけている。なお、MCPでは認可への対応自体が任意（OPTIONAL）であり、OAuth 2.1もRFC化前のInternet-Draftである。
-
-一方で、委譲だけでは足りない。エージェントが委ねられた範囲の中で、個々の操作をしてよいかは④アクセス判定が決める。危険な操作の前に人の承認を挟むなら⑤アクセスガバナンスの出番になる。AIエージェントの認可は③④⑤のすべてにまたがる。詳しくは[AIエージェントで認可の何が変わるか](/ja/posts/authorization-for-ai-agents/)と[MCPの認可を設計するときの勘所](/ja/posts/mcp-authorization-design/)で扱う。
-
 # この地図の使い方
 
 認可について議論するとき、または仕様を読むとき、次の順で地図に当てはめると混乱が減る。
@@ -228,7 +212,6 @@ IAMの外にも、認証やアクセス判定に入力を渡すドメインが�
 - IAMがCore / Supporting / Genericのどれになるかは、組織の事業で決まる。業務アプリの組織では基本的にGenericである
 - リスク評価や契約のような隣接ドメインはIAMの外にあり、IAMに入力を渡す
 - 権限の業務上の意味は業務ドメインが持ち、IAMは判定と強制の仕組みを持つ
-- AIエージェントでは委譲が連鎖し、委譲を独立したサブドメインとして扱う意味が大きくなる。ただし、AIエージェントの認可は委譲だけでなく、アクセス判定とアクセスガバナンスにもまたがる
 
 # 関連記事
 
@@ -251,10 +234,8 @@ IAMの外にも、認証やアクセス判定に入力を渡すドメインが�
 # 参考リンク
 
 - [RFC 6749 The OAuth 2.0 Authorization Framework](https://www.rfc-editor.org/rfc/rfc6749)
-- [RFC 8693 OAuth 2.0 Token Exchange](https://www.rfc-editor.org/rfc/rfc8693)
 - [RFC 7643 System for Cross-domain Identity Management: Core Schema](https://www.rfc-editor.org/rfc/rfc7643)
 - [RFC 7644 System for Cross-domain Identity Management: Protocol](https://www.rfc-editor.org/rfc/rfc7644)
-- [The OAuth 2.1 Authorization Framework (draft-ietf-oauth-v2-1)](https://datatracker.ietf.org/doc/draft-ietf-oauth-v2-1/)
 - [NIST CSRC Glossary: identity and access management](https://csrc.nist.gov/glossary/term/identity_and_access_management)
 - [NIST SP 800-63-4 Digital Identity Guidelines](https://csrc.nist.gov/pubs/sp/800/63/4/final)
 - [NIST SP 800-162 Guide to Attribute Based Access Control (ABAC) Definition and Considerations](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-162.pdf)
@@ -262,7 +243,6 @@ IAMの外にも、認証やアクセス判定に入力を渡すドメインが�
 - [OpenID Shared Signals Framework Specification 1.0](https://openid.net/specs/openid-sharedsignals-framework-1_0-final.html)
 - [OpenID Continuous Access Evaluation Profile 1.0](https://openid.net/specs/openid-caep-1_0-final.html)
 - [OpenID RISC Profile Specification 1.0](https://openid.net/specs/openid-risc-1_0-final.html)
-- [Model Context Protocol Specification: Authorization](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization)
 - [Eric Evans, DDD Reference](https://www.domainlanguage.com/ddd/reference/)
 - [Vaughn Vernon, Implementing Domain-Driven Design 第1章の抜粋: The Business Value of Using DDD（InformIT）](https://www.informit.com/articles/article.aspx?p=1944876&seqNum=4)
 - [Vaughn Vernon, IDDD_Samples](https://github.com/VaughnVernon/IDDD_Samples)
