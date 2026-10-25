@@ -23,7 +23,7 @@ People use the word "authorization" for different things. One person means login
 This post draws a map that lets you treat authorization as a design subject. You will learn:
 
 - What authentication (AuthN) and authorization (AuthZ) each answer, and why you should separate them
-- Why the "authorization" in OAuth centers on delegation
+- The narrow and broad meanings of "authorization," and why the "authorization" in OAuth centers on delegation
 - A map that splits IAM into five subdomains: identity, authentication, delegation, access decision, and access governance
 - How IAM fits into the DDD categories Core, Supporting, and Generic
 - The adjacent domains outside IAM, and where the business meaning of permissions belongs
@@ -46,11 +46,24 @@ Authentication and authorization answer different questions.
 
 The result of authentication forms just one input to authorization. Authorization adds three more pieces to the verified subject and checks them against policy. These are the resource (which data), the action (read, write, approve), and the context (time, origin, tenant, risk).
 
+# Narrow and Broad Meanings of "Authorization"
+
+In the table above, "authorization" means deciding whether a subject may perform an action on a resource. In daily work, people use the word more broadly. Discussions drift when people do not distinguish the meanings.
+
+| Name | Refers to | Typical question |
+|---|---|---|
+| Authorization in the narrow sense | Access decision | May this action happen? |
+| "Authorization" in OAuth | Delegation | What do I hand to this client? |
+| Permission management | Access governance | Who holds which permission? |
+| Authorization in the broad sense | The three above together | All of the above |
+
+When someone says "let's build an authorization platform," aligning first on which row they mean speeds up the discussion. On the IAM map later in this post, these three correspond to subdomains 3 (delegation), 4 (access decision), and 5 (access governance).
+
 # Splitting IAM into DDD Subdomains
 
 ## Why use DDD vocabulary
 
-Separating authentication from authorization still gives a coarse map. Many jobs end up under the name "authorization": OAuth delegation, role requests and approvals, ID provisioning, and more. So this post splits the whole of IAM (Identity and Access Management), including authentication and authorization, by business problem.
+Separating authentication from authorization, and the three meanings of "authorization," still gives a coarse map. Some jobs, such as ID provisioning, do not appear in the table, and the table does not show what each part hands to the others. So this post splits the whole of IAM (Identity and Access Management), including authentication and authorization, by business problem.
 
 It borrows DDD (Domain-Driven Design) vocabulary for the split. The terms follow Vaughn Vernon's "Implementing Domain-Driven Design" (IDDD). The "Meaning" column below is my summary based on IDDD's terms and Evans's DDD Reference. This split serves as one example, not the only correct answer.
 
@@ -148,19 +161,6 @@ Some models fold delegation into authentication or access decision. This map kee
 - They do not fit access governance. In access governance, administrators and approvers decide which subject holds which permission. In delegation, the side that holds a permission (the OAuth resource owner) hands part of it to a client. When an administrator consents to an app on behalf of the whole organization (for example, admin consent in Microsoft Entra ID), that still counts as delegation, because it hands the organization's permissions to a client
 
 Consent for delegation also differs from consent under privacy laws such as the GDPR, which covers the use of personal data for a specific purpose. The first hands your permissions to another subject. The second concerns privacy. The screens may look alike, but what you record and what happens on withdrawal differ.
-
-## Narrow and broad meanings of "authorization"
-
-What people call "authorization" in daily work spans subdomains 3, 4, and 5. Discussions drift when people do not distinguish them.
-
-| Name | Refers to | Typical question |
-|---|---|---|
-| Authorization in the narrow sense | 4. Access Decision | May this action happen? |
-| "Authorization" in OAuth | 3. Delegation | What do I hand to this client? |
-| Permission management | 5. Access Governance | Who holds which permission? |
-| Authorization in the broad sense | 3, 4, and 5 together | All of the above |
-
-When someone says "let's build an authorization platform," aligning first on which row they mean speeds up the discussion.
 
 # Adjacent Domains
 
