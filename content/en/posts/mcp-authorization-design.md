@@ -34,7 +34,7 @@ This post refers to the 2026-07-28 revision, the current revision as of October 
 
 # The architecture this post assumes
 
-This post assumes the following architecture. In MCP, a host runs several MCP clients, and each client talks to exactly one MCP server. In the authorization specification, the MCP server acts as an OAuth 2.1 resource server and the MCP client acts as an OAuth 2.1 client.
+This post uses an example: an MCP server in front of internal business APIs, through which employees read and write business data from an AI application. In MCP, a host runs several MCP clients, and each client talks to exactly one MCP server. In the authorization specification, the MCP server acts as an OAuth 2.1 resource server and the MCP client acts as an OAuth 2.1 client.
 
 ```mermaid
 flowchart LR
@@ -62,7 +62,7 @@ To apply it to your own system, fill in three things on this diagram. Then map t
 
 # Incidents that can happen
 
-First, check what an implementation that "just works" can cause, using your own use cases.
+First, here are the incidents that can happen when you implement this setup so that it just works.
 
 | What can happen | Typical cause | Main countermeasure |
 |---|---|---|
