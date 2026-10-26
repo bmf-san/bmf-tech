@@ -29,7 +29,7 @@ This post answers the following questions.
 - What does the spec fix, and what does it leave open, for PDP discovery and security?
 - What does "swap OPA, Cedar, or OpenFGA" mean, and where does it stop?
 
-The post [Authorization architecture: models and engines](/posts/authorization-architecture-models-engines/) covers the PEP/PDP/PIP/PAP reference architecture and compares models (RBAC, ABAC, ReBAC) and engines. This post focuses on the API that connects the PEP and the PDP.
+The post [What Are Authorization Architectures and Models?](/posts/authorization-architecture-models-engines/) covers the PEP/PDP/PIP/PAP reference architecture and compares models (RBAC, ABAC, ReBAC) and engines. This post focuses on the API that connects the PEP and the PDP.
 
 # The Big Picture
 
@@ -392,7 +392,7 @@ For JSON, the spec recommends following I-JSON (RFC 7493): UTF-8 encoding, no nu
 
 This section reflects my own view rather than the spec. The assumption that "the PDP trusts the PEP" carries weight. The PDP believes whatever department or role the PEP puts in `properties`. So decide who supplies the attributes that drive decisions. If a decision depends on attributes the PEP can set freely, a bug in the PEP, or a PEP that copies user input straight into attributes, can let someone forge those attributes. A safer design lets the PDP fetch important attributes from a PIP itself, or read them from a token whose signature the PDP verifies itself.
 
-The second point concerns what happens when the PEP cannot reach the PDP. The spec makes errors in individual evaluations fail closed, but it does not say how a PEP should behave when the PDP itself goes down. The PEP side has to decide on timeouts, caching, and degraded-mode decisions. For decisions about PEP/PDP placement and non-functional requirements, see [Authorization platform architecture and design decisions](/posts/authorization-platform-architecture-decisions/).
+The second point concerns what happens when the PEP cannot reach the PDP. The spec makes errors in individual evaluations fail closed, but it does not say how a PEP should behave when the PDP itself goes down. The PEP side has to decide on timeouts, caching, and degraded-mode decisions. For decisions about PEP/PDP placement and non-functional requirements, see [What Does an Authorization Platform Architecture Look Like?](/posts/authorization-platform-architecture-decisions/).
 
 # What "Swapping OPA, Cedar, or OpenFGA" Means
 
@@ -427,7 +427,7 @@ In short, AuthZEN lets you switch PDPs without rewriting PEPs, but not without r
 
 # Profiles at a Glance
 
-On top of Authorization API 1.0, the working group builds profiles for specific uses, plus the COAZ framework and two bindings: COAZ-MCP for MCP, and one for OAuth 2.0 Token Exchange. Every one of them is a draft and may still change. [What changes in authorization for AI agents](/posts/authorization-for-ai-agents/) covers their use with AI agents in detail.
+On top of Authorization API 1.0, the working group builds profiles for specific uses, plus the COAZ framework and two bindings: COAZ-MCP for MCP, and one for OAuth 2.0 Token Exchange. Every one of them is a draft and may still change. [What is Authorization for AI Agents?](/posts/authorization-for-ai-agents/) covers their use with AI agents in detail.
 
 | Document | Status | Gap it fills |
 | --- | --- | --- |
@@ -447,7 +447,7 @@ In its June 2026 announcement, the OpenID Foundation said that authorization sys
 | Which (discovery) | Which resources can this subject read? | Search APIs |
 | What is required (preconditions) | What does a permit require? | AARP, step-up in `context` |
 
-This grouping into three questions is my own framing; the spec does not define it. For MCP, see also [Key points for designing MCP authorization](/posts/mcp-authorization-design/).
+This grouping into three questions is my own framing; the spec does not define it. For MCP, see also [How Should You Design Authorization for MCP?](/posts/mcp-authorization-design/).
 
 # Tips for Adoption
 
@@ -458,7 +458,7 @@ Finally, here are my own tips for bringing AuthZEN into a design.
 - **Document your `context` conventions.** Agree inside the organization on how to return reasons and step-up requests. Once the Obligations Profile stabilizes, move toward it.
 - **Decide where attributes come from.** Separate attributes the PEP sends from attributes the PDP fetches. The more important the attribute, the less you should rely on the PEP for it.
 - **Wrap the PEP in an SDK or middleware.** Do not hand-write HTTP calls in every service; build a shared component instead. Put metadata discovery, caching, timeouts, and fail-closed behavior there.
-- **Decide first whether to externalize decisions at all.** AuthZEN defines the line after you externalize. Whether you should externalize is a separate decision, which [How far should you build an authorization platform?](/posts/authorization-platform-scope-stages/) covers.
+- **Decide first whether to externalize decisions at all.** AuthZEN defines the line after you externalize. Whether you should externalize is a separate decision, which [How Much Authorization Platform Do You Need?](/posts/authorization-platform-scope-stages/) covers.
 
 # Summary
 

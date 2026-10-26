@@ -29,7 +29,7 @@ OpenID FoundationのAuthZENワーキンググループが策定した**Authoriza
 - PDPの発見とセキュリティで、何が決まっていて何が決まっていないのか
 - OPA・Cedar・OpenFGAを差し替えられるとは、どこまでを意味するのか
 
-PEP・PDP・PIP・PAPの参照アーキテクチャや、RBAC・ABAC・ReBACといったモデルとエンジンの比較は[認可のアーキテクチャとモデル・エンジンの選び方](/ja/posts/authorization-architecture-models-engines/)で扱う。この記事は、そのPEPとPDPをつなぐAPIに絞る。
+PEP・PDP・PIP・PAPの参照アーキテクチャや、RBAC・ABAC・ReBACといったモデルとエンジンの比較は[認可のアーキテクチャとモデルとは？](/ja/posts/authorization-architecture-models-engines/)で扱う。この記事は、そのPEPとPDPをつなぐAPIに絞る。
 
 # 全体像
 
@@ -299,7 +299,7 @@ Resource Searchの例を示す。探したい資源の`type`だけを渡す。
 
 ## どこで使うか
 
-Search APIは、一覧画面の事前フィルタ、メニューやボタンの出し分け、権限の棚卸しに使える。判定を外に出した構成では、一覧とページングの扱いが難しくなる。OPAでこの問題を検討した内容は[OPAにおけるページネーションへの影響と解決策](/ja/posts/pagination-impact-solutions-opa/)にまとめた。
+Search APIは、一覧画面の事前フィルタ、メニューやボタンの出し分け、権限の棚卸しに使える。判定を外に出した構成では、一覧とページングの扱いが難しくなる。OPAでこの問題を検討した内容は[OPAにおけるページネーションへの影響と解決策に関する検討](/ja/posts/pagination-impact-solutions-opa/)にまとめた。
 
 # 判定のcontext: 真偽値の先にあるもの
 
@@ -392,7 +392,7 @@ JSONについては、I-JSON（RFC 7493）に沿うことを推奨している�
 
 ここからは仕様の記述ではなく、筆者の見立てである。「PDPはPEPを信頼する」という前提は重い。PEPが`properties`に載せた部署やロールを、PDPはそのまま信じる。したがって、判定に効く属性を誰が供給するかを決めておく必要がある。PEPが自由に書ける属性で判定するなら、PEPの実装の誤りや、利用者の入力をそのまま属性に写す作りによって、属性が偽られうる。重要な属性は、PDPが自分でPIPから引くか、PDP自身が署名を検証したトークンから取るほうが安全である。
 
-もう1つは、PDPに届かないときのふるまいである。仕様は個々の判定の誤りをfail-closedにすると定めるが、PDPそのものが落ちたときのPEPの動きは決めていない。タイムアウト、キャッシュ、縮退時の判定は、PEPの側で決めることになる。PEPとPDPの配置や非機能の判断は[認可基盤のアーキテクチャと設計判断](/ja/posts/authorization-platform-architecture-decisions/)で扱う。
+もう1つは、PDPに届かないときのふるまいである。仕様は個々の判定の誤りをfail-closedにすると定めるが、PDPそのものが落ちたときのPEPの動きは決めていない。タイムアウト、キャッシュ、縮退時の判定は、PEPの側で決めることになる。PEPとPDPの配置や非機能の判断は[認可基盤のアーキテクチャとは？](/ja/posts/authorization-platform-architecture-decisions/)で扱う。
 
 # OPA・Cedar・OpenFGAを差し替えられるとはどういうことか
 
@@ -427,7 +427,7 @@ AuthZENで替えやすくなるのは、PEPのコードと通信の形である�
 
 # プロファイル群の概要
 
-Authorization API 1.0の上に、用途ごとのプロファイルに加えて、COAZのフレームワークと、バインディング（MCP向けのCOAZ-MCP、OAuth 2.0 Token Exchange向け）も作られている。どれもDraftであり、今後も変わりうる。AIエージェントでの使い方は[AIエージェントで認可の何が変わるか](/ja/posts/authorization-for-ai-agents/)で詳しく扱う。
+Authorization API 1.0の上に、用途ごとのプロファイルに加えて、COAZのフレームワークと、バインディング（MCP向けのCOAZ-MCP、OAuth 2.0 Token Exchange向け）も作られている。どれもDraftであり、今後も変わりうる。AIエージェントでの使い方は[AIエージェントの認可とは？](/ja/posts/authorization-for-ai-agents/)で詳しく扱う。
 
 | 文書 | 状態 | 埋める隙間 |
 | --- | --- | --- |
@@ -447,7 +447,7 @@ OpenID Foundationは2026年6月の発表で、認可システムはこれまで�
 | Which（探索） | この主体が読める資源はどれか | Search API |
 | What is required（前提） | 許可には何が必要か | AARP、`context`のステップアップ |
 
-この3つのまとまりは筆者の整理であり、仕様がそう定義しているわけではない。MCPでの使い方は[MCPの認可を設計するときの勘所](/ja/posts/mcp-authorization-design/)も参照してほしい。
+この3つのまとまりは筆者の整理であり、仕様がそう定義しているわけではない。MCPでの使い方は[MCPの認可はどう設計する？](/ja/posts/mcp-authorization-design/)も参照してほしい。
 
 # 導入するときの勘所
 
@@ -458,7 +458,7 @@ OpenID Foundationは2026年6月の発表で、認可システムはこれまで�
 - **`context`の約束事を文書にする**。理由やステップアップの返し方を、組織内の規約として決めておく。Obligationsプロファイルが固まれば、そちらに寄せる。
 - **属性の出どころを決める**。PEPが渡す属性と、PDPが自分で引く属性を分ける。重要な属性ほどPEPに任せない。
 - **PEP を SDK やミドルウェアで包む**。HTTPの呼び出しを各サービスに直書きせず、共通の部品にする。メタデータの取得、キャッシュ、タイムアウト、fail-closedをそこに集める。
-- **判定を外に出すかどうか自体を先に決める**。AuthZENが定めるのは、判定を外に出したあとの線だけである。外に出すべきかどうかの判断については、[認可基盤はどこまで作るか](/ja/posts/authorization-platform-scope-stages/)で扱う。
+- **判定を外に出すかどうか自体を先に決める**。AuthZENが定めるのは、判定を外に出したあとの線だけである。外に出すべきかどうかの判断については、[認可基盤はどこまで作るべきか？](/ja/posts/authorization-platform-scope-stages/)で扱う。
 
 # まとめ
 
