@@ -33,7 +33,7 @@ This post gives short explanations of the standards the blog has not covered yet
 
 # Which Part of an Authorization Platform Does OAuth Handle?
 
-OAuth carries delegation: who let which client access which resource. OAuth does not decide, inside a resource, "may this subject perform this action on this row?" A policy-based decision point (PDP) makes that call. [Authorization architecture, models, and engines](/posts/authorization-architecture-models-engines/) covers it.
+OAuth carries delegation: who let which client access which resource. OAuth does not decide, inside a resource, "may this subject perform this action on this row?" A policy-based decision point (PDP) makes that call. [What Are Authorization Architectures and Models?](/posts/authorization-architecture-models-engines/) covers it.
 
 Within an authorization platform, OAuth and related standards play these roles:
 
@@ -41,7 +41,7 @@ Within an authorization platform, OAuth and related standards play these roles:
 - Supply identifiers and attributes of subjects (users, clients, workloads)
 - Announce changes that happen after issuance
 
-[What is authorization? IAM subdomains](/posts/authorization-domain-iam-subdomains/) shows where this fits in IAM as a whole.
+[What is Authorization?](/posts/authorization-domain-iam-subdomains/) shows where this fits in IAM as a whole.
 
 # The Big Picture
 
@@ -61,7 +61,7 @@ flowchart LR
   RS -- "Validation<br/>JWKS, Introspection" --> AS
   RS -- "4 Step-up challenge (when needed)" --> C
   IdP -- "ID Token, SAML assertion" --> AS
-  SCIM -- "Subjects and attributes" --> AS
+  SCIM -- "Subjects and attributes" --> RS
   T["SSF / CAEP / RISC"] -. "Post-issuance events" .-> AS
   T -. "Post-issuance events" .-> RS
   AS -- "JWT authorization grant or ID-JAG<br/>via Token Exchange" --> C
@@ -72,11 +72,11 @@ The following table is the map itself. I checked each status as of October 2026 
 
 | Question | Main standards | Status (October 2026) | Deep-dive posts |
 | --- | --- | --- | --- |
-| Delegation: who delegates what | OAuth 2.0 (RFC 6749/6750), OAuth 2.1, RFC 9700, PKCE (RFC 7636), RAR (RFC 9396), CIBA, GNAP (RFC 9635) | OAuth 2.1 is a Draft; the rest are RFCs or Final | [OAuth 2.0](/posts/oauth-2-0/), [OAuth 2.1](/posts/oauth-2-1-security-bcp/) |
+| Delegation: who delegates what | OAuth 2.0 (RFC 6749/6750), OAuth 2.1, Security BCP (RFC 9700), PKCE (RFC 7636), RAR (RFC 9396), CIBA, GNAP (RFC 9635) | OAuth 2.1 is a Draft; the rest are RFCs or Final | [OAuth 2.0](/posts/oauth-2-0/), [OAuth 2.1](/posts/oauth-2-1-security-bcp/) |
 | Request integrity: prevent tampering | PAR (RFC 9126), JAR (RFC 9101), `iss` (RFC 9207), FAPI 2.0 | RFCs; FAPI 2.0 is Final | [OAuth 2.1](/posts/oauth-2-1-security-bcp/) |
-| Discovery and audience: which AS, for which resource | RFC 8414, OIDC Discovery, Resource Indicators (RFC 8707), Protected Resource Metadata (RFC 9728), DCR (RFC 7591/7592), CIMD | CIMD is a Draft; RFC 7592 is an Experimental RFC; the rest are RFCs or Final | [Discovery](/posts/oidc-discovery-metadata/), [DCR](/posts/dynamic-client-registration/) |
+| Discovery and audience: which AS, for which resource | AS Metadata (RFC 8414), OIDC Discovery, Resource Indicators (RFC 8707), Protected Resource Metadata (RFC 9728), DCR (RFC 7591/7592), CIMD | CIMD is a Draft; RFC 7592 is an Experimental RFC; the rest are RFCs or Final | [Discovery](/posts/oidc-discovery-metadata/), [DCR](/posts/dynamic-client-registration/) |
 | Cross-domain: cross trust boundaries | Token Exchange (RFC 8693), Identity Chaining, ID-JAG, Transaction Tokens | All Drafts except RFC 8693 | [Service-to-service authentication](/posts/service-to-service-authentication/) |
-| Tokens: what goes in, how to validate, how to stop | JOSE, JWT, JWT AT (RFC 9068), Introspection (RFC 7662), Revocation (RFC 7009), mTLS (RFC 8705), DPoP (RFC 9449) | RFCs | [JOSE](/posts/jose-overview/), [Validation and revocation](/posts/access-token-validation-revocation/), [Sender-constrained tokens](/posts/sender-constrained-tokens-mtls-dpop/) |
+| Tokens: what goes in, how to validate, how to stop | JOSE, JWT (RFC 7519), JWT AT (RFC 9068), Introspection (RFC 7662), Revocation (RFC 7009), mTLS (RFC 8705), DPoP (RFC 9449) | RFCs | [JOSE](/posts/jose-overview/), [Validation and revocation](/posts/access-token-validation-revocation/), [Sender-constrained tokens](/posts/sender-constrained-tokens-mtls-dpop/) |
 | Identity: establish who and supply attributes | OIDC Core, SAML 2.0, SCIM (RFC 7643/7644/9967), IPSIE | OIDC is Final, SAML 2.0 is an OASIS Standard, SCIM consists of RFCs, IPSIE is a Draft | [OIDC](/posts/openid-connect-1-0-spec-summary/), [SAML](/posts/saml-2-0/) |
 | Continuous evaluation: reflect changes after issuance | SET (RFC 8417), SSF, CAEP, RISC, Step-up (RFC 9470) | RFCs; SSF/CAEP/RISC are Final | [Logout and SET](/posts/oidc-logout-security-event-token/) |
 
@@ -180,7 +180,7 @@ Sometimes you want to carry a user's delegation between internal microservices o
 | ID-JAG (draft-ietf-oauth-identity-assertion-authz-grant) | Use an ID-JAG from the IdP to get a token at another SaaS for a user who already signed in through SSO | Draft (-04, May 2026) |
 | Transaction Tokens | Carry user and request context along a chain of internal calls | Draft |
 
-[The big picture of service-to-service authentication](/posts/service-to-service-authentication/) covers Token Exchange basics. [Standardizing workload identity](/posts/workload-identity-wimse-transaction-tokens/) covers Transaction Tokens and workload identity.
+[The big picture of service-to-service authentication](/posts/service-to-service-authentication/) covers Token Exchange basics. [What is Workload Identity?](/posts/workload-identity-wimse-transaction-tokens/) covers Transaction Tokens and workload identity.
 
 ## Identity Chaining and ID-JAG
 
@@ -211,7 +211,7 @@ An authorization platform must decide:
 - **Lifetime**: Keep access tokens short-lived, and back them up with refresh tokens and event-driven revocation.
 - **Audience**: Always check `aud` and narrow it with RFC 8707. Without audience restriction, an RS that receives the token, or anyone who steals it, can replay it at other resource servers that trust the same AS.
 - **Sender constraint**: Hand out bearer tokens as they are, or bind them to keys with DPoP or mTLS.
-- **Content**: Pack a list of permissions into the token, or leave decisions to the PDP and put only the subject and delegation in the token. [Authorization platform architecture and design decisions](/posts/authorization-platform-architecture-decisions/) covers this choice.
+- **Content**: Pack a list of permissions into the token, or leave decisions to the PDP and put only the subject and delegation in the token. [What Does an Authorization Platform Architecture Look Like?](/posts/authorization-platform-architecture-decisions/) covers this choice.
 
 [Designing secure API tokens with NIST CSF 2.0](/posts/nist-csf-api-token-design/) covers the design of long-lived tokens such as API keys.
 
@@ -286,7 +286,7 @@ This table collects the decisions from each section.
 | Identity | The source of truth for subjects and attributes, and how to distribute them | OIDC, SCIM |
 | Continuous evaluation | Which events to receive and what to stop, and which operations need step-up | SSF, CAEP, RISC, Step-up |
 
-You do not need to adopt everything from day one. Use the decision axes in [How far should you build an authorization platform?](/posts/authorization-platform-scope-stages/) and answer each question when it becomes relevant. Still, the author recommends deciding RS identifier naming and token content early. Identifiers end up in client configuration and `aud` checks, and token content ends up in RS code, so both resist later change.
+You do not need to adopt everything from day one. Use the decision axes in [How Much Authorization Platform Do You Need?](/posts/authorization-platform-scope-stages/) and answer each question when it becomes relevant. Still, the author recommends deciding RS identifier naming and token content early. Identifiers end up in client configuration and `aud` checks, and token content ends up in RS code, so both resist later change.
 
 # Summary
 
@@ -294,7 +294,7 @@ You do not need to adopt everything from day one. Use the decision axes in [How 
 - RAR adds fine-grained delegation, PAR and JAR add request integrity, and FAPI 2.0 sets a bar for high-risk use.
 - RFC 9728 and CIMD connect an RS, an AS, and a client that have never met. CIMD remains a Draft as of October 2026.
 - Token Exchange forms the base for cross-domain delegation. Identity Chaining sits in the RFC Editor queue, and ID-JAG remains a working group Draft.
-- SCIM keeps subjects and attributes in sync, and SSF, CAEP, RISC, and Step-up reflect changes after issuance. IPSIE aims to bundle SSO, lifecycle management, risk signal sharing, and more into enterprise profiles.
+- SCIM keeps subjects and attributes in sync, and SSF, CAEP, RISC, and Step-up reflect changes after issuance. IPSIE aims to bundle SSO, lifecycle management, token revocation, and more into enterprise profiles.
 - As of October 2026, OAuth 2.1 remains a Draft.
 
 # Related Posts
@@ -356,7 +356,6 @@ You do not need to adopt everything from day one. Use the decision axes in [How 
 - [RFC 9635 Grant Negotiation and Authorization Protocol (GNAP)](https://www.rfc-editor.org/rfc/rfc9635)
 - [OpenID Connect Client-Initiated Backchannel Authentication Flow - Core 1.0](https://openid.net/specs/openid-client-initiated-backchannel-authentication-core-1_0.html)
 - [FAPI 2.0 Security Profile](https://openid.net/specs/fapi-security-profile-2_0-final.html)
-- [FAPI 2.0 Message Signing](https://openid.net/specs/fapi-message-signing-2_0-final.html)
 - [OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.html)
 - [Security Assertion Markup Language (SAML) v2.0](https://www.oasis-open.org/standard/saml/)
 - [RFC 7643 System for Cross-domain Identity Management: Core Schema](https://www.rfc-editor.org/rfc/rfc7643)
@@ -366,9 +365,6 @@ You do not need to adopt everything from day one. Use the decision axes in [How 
 - [IPSIE Working Group - Specifications](https://openid.net/wg/ipsie/specifications/)
 - [RFC 8417 Security Event Token (SET)](https://www.rfc-editor.org/rfc/rfc8417)
 - [OpenID Connect Back-Channel Logout 1.0](https://openid.net/specs/openid-connect-backchannel-1_0.html)
-- [RFC 8935 Push-Based Security Event Token (SET) Delivery Using HTTP](https://www.rfc-editor.org/rfc/rfc8935)
-- [RFC 8936 Poll-Based Security Event Token (SET) Delivery Using HTTP](https://www.rfc-editor.org/rfc/rfc8936)
-- [RFC 9493 Subject Identifiers for Security Event Tokens](https://www.rfc-editor.org/rfc/rfc9493)
 - [OpenID Shared Signals Framework Specification 1.0](https://openid.net/specs/openid-sharedsignals-framework-1_0-final.html)
 - [OpenID Continuous Access Evaluation Profile 1.0](https://openid.net/specs/openid-caep-1_0-final.html)
 - [OpenID RISC Profile Specification 1.0](https://openid.net/specs/openid-risc-1_0-final.html)

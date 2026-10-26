@@ -33,7 +33,7 @@ OAuth 2.0、OAuth 2.1、PKCE、JOSE、JWT、送信者制約トークン、Intros
 
 # OAuthは認可基盤のどこを担うか
 
-OAuthは「誰が、どのクライアントに、どの資源へのアクセスを任せたか」を運ぶ委譲の仕組みである。資源の中で「この主体がこの行をこの操作で扱ってよいか」を決めるのはOAuthの仕事ではない。それはポリシーに基づく判定（PDP）の仕事で、[認可のアーキテクチャ、モデル、エンジンの比較](/ja/posts/authorization-architecture-models-engines/)で扱う。
+OAuthは「誰が、どのクライアントに、どの資源へのアクセスを任せたか」を運ぶ委譲の仕組みである。資源の中で「この主体がこの行をこの操作で扱ってよいか」を決めるのはOAuthの仕事ではない。それはポリシーに基づく判定（PDP）の仕事で、[認可のアーキテクチャとモデルとは？](/ja/posts/authorization-architecture-models-engines/)で扱う。
 
 認可基盤の中で、OAuthと周辺標準は次の役割を持つ。
 
@@ -41,7 +41,7 @@ OAuthは「誰が、どのクライアントに、どの資源へのアクセス
 - 主体（ユーザー、クライアント、ワークロード）の識別子と属性を供給する
 - 発行した後に状況が変わったとき、その変化を伝える
 
-IAM全体での位置づけは[認可とは？認証との違いとIAMのサブドメイン](/ja/posts/authorization-domain-iam-subdomains/)にまとめた。
+IAM全体での位置づけは[認可とは？](/ja/posts/authorization-domain-iam-subdomains/)にまとめた。
 
 # 地図の全体像
 
@@ -61,7 +61,7 @@ flowchart LR
   RS -- "検証<br/>JWKS・Introspection" --> AS
   RS -- "4 Step-up チャレンジ（必要時）" --> C
   IdP -- "ID Token・SAML アサーション" --> AS
-  SCIM -- "主体と属性" --> AS
+  SCIM -- "主体と属性" --> RS
   T["SSF / CAEP / RISC"] -. "発行後のイベント" .-> AS
   T -. "発行後のイベント" .-> RS
   AS -- "Token Exchange で<br/>JWT 認可グラント・ID-JAG" --> C
@@ -72,11 +72,11 @@ flowchart LR
 
 | 問い | 主な標準 | 状態（2026年10月） | 詳しい記事 |
 | --- | --- | --- | --- |
-| 委譲: 誰が何を任せるか | OAuth 2.0（RFC 6749/6750）、OAuth 2.1、RFC 9700、PKCE（RFC 7636）、RAR（RFC 9396）、CIBA、GNAP（RFC 9635） | OAuth 2.1はDraft、他はRFCまたはFinal | [OAuth 2.0](/ja/posts/oauth-2-0/)、[OAuth 2.1](/ja/posts/oauth-2-1-security-bcp/) |
+| 委譲: 誰が何を任せるか | OAuth 2.0（RFC 6749/6750）、OAuth 2.1、Security BCP（RFC 9700）、PKCE（RFC 7636）、RAR（RFC 9396）、CIBA、GNAP（RFC 9635） | OAuth 2.1はDraft、他はRFCまたはFinal | [OAuth 2.0](/ja/posts/oauth-2-0/)、[OAuth 2.1](/ja/posts/oauth-2-1-security-bcp/) |
 | 要求の完全性: 要求を改ざんさせない | PAR（RFC 9126）、JAR（RFC 9101）、`iss`（RFC 9207）、FAPI 2.0 | RFC、FAPI 2.0はFinal | [OAuth 2.1](/ja/posts/oauth-2-1-security-bcp/) |
-| 発見と宛先: どこに何向けのトークンを | RFC 8414、OIDC Discovery、Resource Indicators（RFC 8707）、Protected Resource Metadata（RFC 9728）、DCR（RFC 7591/7592）、CIMD | CIMDはDraft、RFC 7592はExperimentalのRFC、他はRFCまたはFinal | [Discovery](/ja/posts/oidc-discovery-metadata/)、[DCR](/ja/posts/dynamic-client-registration/) |
+| 発見と宛先: どこに何向けのトークンを | AS Metadata（RFC 8414）、OIDC Discovery、Resource Indicators（RFC 8707）、Protected Resource Metadata（RFC 9728）、DCR（RFC 7591/7592）、CIMD | CIMDはDraft、RFC 7592はExperimentalのRFC、他はRFCまたはFinal | [Discovery](/ja/posts/oidc-discovery-metadata/)、[DCR](/ja/posts/dynamic-client-registration/) |
 | ドメイン横断: 信頼境界を越える | Token Exchange（RFC 8693）、Identity Chaining、ID-JAG、Transaction Tokens | RFC 8693以外はDraft | [サービス間認証](/ja/posts/service-to-service-authentication/) |
-| トークン: 何を入れ、どう検証し、どう止めるか | JOSE、JWT、JWT AT（RFC 9068）、Introspection（RFC 7662）、Revocation（RFC 7009）、mTLS（RFC 8705）、DPoP（RFC 9449） | RFC | [JOSE](/ja/posts/jose-overview/)、[検証と失効](/ja/posts/access-token-validation-revocation/)、[送信者制約](/ja/posts/sender-constrained-tokens-mtls-dpop/) |
+| トークン: 何を入れ、どう検証し、どう止めるか | JOSE、JWT（RFC 7519）、JWT AT（RFC 9068）、Introspection（RFC 7662）、Revocation（RFC 7009）、mTLS（RFC 8705）、DPoP（RFC 9449） | RFC | [JOSE](/ja/posts/jose-overview/)、[検証と失効](/ja/posts/access-token-validation-revocation/)、[送信者制約](/ja/posts/sender-constrained-tokens-mtls-dpop/) |
 | アイデンティティ: 誰かを確立し属性を供給する | OIDC Core、SAML 2.0、SCIM（RFC 7643/7644/9967）、IPSIE | OIDCはFinal、SAML 2.0はOASIS標準、SCIMはRFC、IPSIEはDraft | [OIDC](/ja/posts/openid-connect-1-0-spec-summary/)、[SAML](/ja/posts/saml-2-0/) |
 | 継続評価: 発行後の変化を反映する | SET（RFC 8417）、SSF、CAEP、RISC、Step-up（RFC 9470） | RFC、SSF/CAEP/RISCはFinal | [ログアウトとSET](/ja/posts/oidc-logout-security-event-token/) |
 
@@ -180,7 +180,7 @@ ASは外部のURLを取得するので、SSRFへの対策が要る。どのド�
 | ID-JAG（draft-ietf-oauth-identity-assertion-authz-grant） | IdPが発行したID-JAGを使い、SSO済みの利用者のトークンを別のSaaSで得る | Draft（-04、2026年5月） |
 | Transaction Tokens | 社内の呼び出しの連鎖に、利用者と処理の文脈を運ぶ | Draft |
 
-Token Exchangeの基本は[サービス間認証の全体像とは？](/ja/posts/service-to-service-authentication/)で扱った。Transaction Tokensとワークロードのアイデンティティは[ワークロードアイデンティティの標準化](/ja/posts/workload-identity-wimse-transaction-tokens/)で扱う。
+Token Exchangeの基本は[サービス間認証の全体像とは？](/ja/posts/service-to-service-authentication/)で扱った。Transaction Tokensとワークロードのアイデンティティは[ワークロードアイデンティティとは？](/ja/posts/workload-identity-wimse-transaction-tokens/)で扱う。
 
 ## Identity ChainingとID-JAG
 
@@ -211,7 +211,7 @@ RFC 8725の改訂版（draft-ietf-oauth-rfc8725bis）は、2026年10月時点で
 - **寿命**: アクセストークンを短くし、リフレッシュトークンとイベントによる失効で補う。
 - **宛先**: `aud`を必ず検証し、RFC 8707で絞る。宛先を絞らないと、トークンを受け取ったRSや盗んだ者が、同じASを信頼する別のRSでそれを使い回せる。
 - **送信者制約**: Bearerのまま配るか、DPoPかmTLSで鍵に結び付けるか。
-- **中身**: トークンに権限の一覧を詰めるか、判定はPDPに任せてトークンには主体と委譲だけを入れるか。この判断は[認可基盤のアーキテクチャと設計判断](/ja/posts/authorization-platform-architecture-decisions/)で扱う。
+- **中身**: トークンに権限の一覧を詰めるか、判定はPDPに任せてトークンには主体と委譲だけを入れるか。この判断は[認可基盤のアーキテクチャとは？](/ja/posts/authorization-platform-architecture-decisions/)で扱う。
 
 APIキーのような長命のトークンの設計は[NIST CSF 2.0に学ぶ安全なAPIトークン設計](/ja/posts/nist-csf-api-token-design/)で扱った。
 
@@ -286,7 +286,7 @@ RFC 9470は、RSが「このトークンの認証では足りない」と返す�
 | アイデンティティ | 主体と属性の正本と配り方 | OIDC、SCIM |
 | 継続評価 | 受け取るイベントと止めるもの、Step-upを求める操作 | SSF、CAEP、RISC、Step-up |
 
-すべてを最初から採用する必要はない。[認可基盤はどこまで作るか](/ja/posts/authorization-platform-scope-stages/)で扱った判断の軸に照らして、必要になった問いから答えていけばよい。ただし筆者は、RSの識別子の付け方と、トークンに何を入れるかは早めに決めておくことを勧める。識別子はクライアントの設定と`aud`の検証に、トークンの中身はRSの実装に入り込み、後から変えにくいからである。
+すべてを最初から採用する必要はない。[認可基盤はどこまで作るべきか？](/ja/posts/authorization-platform-scope-stages/)で扱った判断の軸に照らして、必要になった問いから答えていけばよい。ただし筆者は、RSの識別子の付け方と、トークンに何を入れるかは早めに決めておくことを勧める。識別子はクライアントの設定と`aud`の検証に、トークンの中身はRSの実装に入り込み、後から変えにくいからである。
 
 # まとめ
 
@@ -294,7 +294,7 @@ RFC 9470は、RSが「このトークンの認証では足りない」と返す�
 - 委譲の細かさはRARで、要求の完全性はPARとJARで、高いリスクの基準はFAPI 2.0で補う。
 - 初めて会うRSとASとクライアントをつなぐのが、RFC 9728とCIMDである。CIMDは2026年10月時点でDraftである。
 - ドメイン横断の委譲はToken Exchangeが土台である。Identity ChainingはRFC Editorの待ち行列にあり、ID-JAGはWGのDraftである。
-- 主体と属性はSCIMで揃え、発行後の変化はSSF、CAEP、RISCとStep-upで反映する。IPSIEは、SSOやライフサイクル管理、リスクシグナルの共有などを企業向けのプロファイルにまとめようとしている。
+- 主体と属性はSCIMで揃え、発行後の変化はSSF、CAEP、RISCとStep-upで反映する。IPSIEは、SSOやライフサイクル管理、トークンの失効などを企業向けのプロファイルにまとめようとしている。
 - OAuth 2.1は2026年10月時点でもまだDraftである。
 
 # 関連記事
@@ -356,7 +356,6 @@ RFC 9470は、RSが「このトークンの認証では足りない」と返す�
 - [RFC 9635 Grant Negotiation and Authorization Protocol (GNAP)](https://www.rfc-editor.org/rfc/rfc9635)
 - [OpenID Connect Client-Initiated Backchannel Authentication Flow - Core 1.0](https://openid.net/specs/openid-client-initiated-backchannel-authentication-core-1_0.html)
 - [FAPI 2.0 Security Profile](https://openid.net/specs/fapi-security-profile-2_0-final.html)
-- [FAPI 2.0 Message Signing](https://openid.net/specs/fapi-message-signing-2_0-final.html)
 - [OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.html)
 - [Security Assertion Markup Language (SAML) v2.0](https://www.oasis-open.org/standard/saml/)
 - [RFC 7643 System for Cross-domain Identity Management: Core Schema](https://www.rfc-editor.org/rfc/rfc7643)
@@ -366,9 +365,6 @@ RFC 9470は、RSが「このトークンの認証では足りない」と返す�
 - [IPSIE Working Group - Specifications](https://openid.net/wg/ipsie/specifications/)
 - [RFC 8417 Security Event Token (SET)](https://www.rfc-editor.org/rfc/rfc8417)
 - [OpenID Connect Back-Channel Logout 1.0](https://openid.net/specs/openid-connect-backchannel-1_0.html)
-- [RFC 8935 Push-Based Security Event Token (SET) Delivery Using HTTP](https://www.rfc-editor.org/rfc/rfc8935)
-- [RFC 8936 Poll-Based Security Event Token (SET) Delivery Using HTTP](https://www.rfc-editor.org/rfc/rfc8936)
-- [RFC 9493 Subject Identifiers for Security Event Tokens](https://www.rfc-editor.org/rfc/rfc9493)
 - [OpenID Shared Signals Framework Specification 1.0](https://openid.net/specs/openid-sharedsignals-framework-1_0-final.html)
 - [OpenID Continuous Access Evaluation Profile 1.0](https://openid.net/specs/openid-caep-1_0-final.html)
 - [OpenID RISC Profile Specification 1.0](https://openid.net/specs/openid-risc-1_0-final.html)
