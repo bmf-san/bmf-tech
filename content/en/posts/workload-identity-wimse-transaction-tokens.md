@@ -110,81 +110,35 @@ arch-08 names Transaction Tokens as one example of this context token. Do not le
 
 # Rules for Workload Identifiers
 
-draft-ietf-wimse-identifier is the WIMSE draft that normatively defines the identifier format. It sets the requirements for the string that becomes the policy subject, the audit log key, and the PIP primary key, so it shapes your data model directly.
+draft-ietf-wimse-identifier defines the format of workload identifiers. Identifiers become the subject of authorization policies and the key of audit logs, so they shape your data model directly.
 
-The main requirements as of -04 (2026-10-23) follow.
-
-| Requirement | Strength |
-| --- | --- |
-| An absolute URI with a non-empty authority that names the trust domain | MUST |
-| A non-empty path, with no `.` or `..` segments (both added in -04) | MUST / MUST NOT |
-| No query, fragment, userinfo, or port | MUST NOT |
-| Support identifiers up to 2048 bytes; do not exceed 2048 bytes | MUST / SHOULD NOT |
-| Use an FQDN owned by the organization for the trust domain | SHOULD |
-| Do not use IP addresses for trust domains, except for legacy compatibility (changed from MUST NOT to SHOULD NOT in -04) | SHOULD NOT |
-| Compare and authorize on the complete URI, not on parts such as the path | MUST |
-| Apply RFC 3986 syntax-based normalization, then compare byte for byte (added in -04) | MUST |
-| Do not interpret identifiers with wildcard or prefix matching unless policy says so explicitly | SHOULD NOT |
-
-The scheme stays open. You can use `spiffe`, or the `wimse` scheme that the draft defines.
+A workload identifier is an absolute URI whose authority names the trust domain. The scheme is not fixed: you can use `spiffe` or the `wimse` scheme that the draft defines. A SPIFFE ID is one conforming format and works as is.
 
 ```text
 spiffe://prod.example.org/ns/prod-01/sa/payment-api
 wimse://trust.example.com/service/payment
 ```
 
-Three points matter for authorization platform design.
+Three points matter for an authorization platform.
 
-- **Write policies on the full identifier.** Matching only the path, such as `*/payments`, lets another trust domain through when it claims the same path. Combine identifier checks with an allowlist of trusted trust domains.
-- **Look up groupings as attributes, not by parsing the path.** Units such as namespaces or teams hold up better when you fetch them as attributes from a PIP such as a service catalog, instead of prefix matching.
-- **Keep a mapping from endpoints to identifiers.** Consumers MUST NOT assume they can derive an identifier from a DNS name or IP address. Hold a mapping such as "the peer at this hostname should have this identifier" in configuration or service discovery. Since -04, a WIC that carries both a DNS name and the identifier MAY also convey the mapping. Without either, the caller can only confirm "someone in the same trust domain."
-
-Keep the relationship with SPIFFE ID in mind as well. A SPIFFE ID is one format usable as a WIMSE identifier, and arch-08 cites it as a conforming example. You do not need to move SPIFFE IDs to another format to adopt WIMSE. If your data model treats the subject as a "workload identifier (URI)" without fixing the scheme to `spiffe`, principals from cloud platforms or CI/CD fit the same slot.
+- **Write policies against the full identifier.** Comparison and authorization MUST use the whole URI. Matching on the path alone lets through another trust domain that claims the same path. You SHOULD NOT interpret identifiers with wildcards or prefix matching either.
+- **Look up groupings as attributes.** Get units such as namespaces or teams from a PIP such as a service catalog, not by parsing the path.
+- **Keep a mapping from endpoints to identifiers.** You MUST NOT assume you can derive an identifier from a DNS name or IP address. Keep the mapping in configuration or service discovery.
 
 # Credentials: WIT and WIC
 
-draft-ietf-wimse-workload-creds defines two credential formats. Both bind a public key to a workload identifier, and using either requires proof of possession of the matching private key. Other drafts define how to prove it.
+draft-ietf-wimse-workload-creds defines two credentials that bind an identifier to a public key. To use one, the workload proves possession of the matching private key.
 
 | Format | Contents | Main use |
 | --- | --- | --- |
 | WIT (Workload Identity Token) | A JWT signed by the credential service. `typ` is `wit+jwt` | Application-layer authentication |
 | WIC (Workload Identity Certificate) | An X.509 certificate with exactly one identifier in a URI-type SAN | Transport-layer (mTLS) authentication |
 
-The main WIT claims follow.
+The main WIT claims are `sub` (the workload identifier), `exp` (expiry), and `cnf.jwk` (the public key). Each credential carries exactly one identifier, so the subject stays stable and policies line up with audit logs.
 
-| Claim | Required | Meaning |
-| --- | --- | --- |
-| `sub` | Required | The workload identifier. Exactly one identifier per credential |
-| `exp` | Required | Expiration. SHOULD be short-lived, typically on the order of hours |
-| `cnf.jwk` | Required | The workload's public key (RFC 7800) |
-| `cnf.jwk.alg` | Required | The algorithm for proofs. No `none` and no symmetric algorithms. General-purpose implementations MUST support ES256 |
-| `iss` | Recommended (optional) | The issuer, for audit and operations |
-| `jti` | Optional | A unique token identifier |
+Validators get the verification key from trust anchors configured out of band for the trust domain in `sub`. You MUST NOT fetch keys based only on information inside the token, such as an `iss` URL. You usually cannot revoke a WIT, so the main defense against leakage is a short lifetime, on the order of hours.
 
-```json
-{
-  "cnf": {
-    "jwk": {
-      "alg": "EdDSA",
-      "crv": "Ed25519",
-      "kty": "OKP",
-      "x": "1CXXvflN_LVVsIsYXsUvB03JmlGWeCHqQVuouCF92bg"
-    }
-  },
-  "exp": 1745512510,
-  "iat": 1745508910,
-  "jti": "x-_1CTL2cca3CSE4cwb_l",
-  "sub": "wimse://example.com/specific-workload"
-}
-```
-
-A WIT travels in the `Workload-Identity-Token` HTTP header. To verify it, use the key from the trust anchor you configured out of band for the trust domain in `sub`. You MUST NOT fetch keys based only on information inside the token, such as a URL in `iss`. If you take verification keys from a location the token itself points to, anyone can stand up an issuer.
-
-You usually cannot revoke a JWT credential such as a WIT on demand. So a short expiry is the primary defense when a WIT and its private key leak (workload-creds Section 9.2.1).
-
-"One identifier per credential" keeps the PDP side simple. The subject stays stable, which makes it easier to match policies against audit logs. Handle things like instance distinctions with `jti` or extra claims, separate from the authorization subject.
-
-SPIFFE has also started to adopt the WIT as WIT-SVID, a profile narrowed for SPIFFE (its stability level is Incubating). A JWT-SVID is a bearer token, but a WIT-SVID binds to a key. Proof of possession mitigates the JWT-SVID weaknesses of "anyone who steals it can use it" and "the receiver can impersonate the caller downstream."
+SPIFFE has started to adopt WIT-SVID, a SPIFFE profile of the WIT (stability: Incubating). Unlike the bearer JWT-SVID, a stolen WIT-SVID gives an attacker nothing without proof of possession.
 
 # Three Authentication Methods and How to Choose
 
