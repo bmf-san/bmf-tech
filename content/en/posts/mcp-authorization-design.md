@@ -89,8 +89,6 @@ Passthrough causes more harm than token theft alone. The Best Practices list the
 - When several services accept one token without proper validation, an attacker who breaks one service can reach the other connected services
 - Even if the server works as a plain proxy today, it may need security controls later. Separating audiences from the start makes the security model easier to evolve
 
-Unlike the other three, the last point concerns future evolution rather than present harm. Separating audiences protects you today and also leaves room to add controls later.
-
 ## Confused deputy
 
 The confused deputy problem can appear when an MCP server acts as a proxy to a third-party API. The Best Practices say the attack becomes possible when every one of these conditions holds:
@@ -160,7 +158,7 @@ You have three main places to put the decision:
 
 In the 2026-07-28 Streamable HTTP transport, every request REQUIRES the `Mcp-Method` header. Requests such as `tools/call` also REQUIRE the `Mcp-Name` header. A gateway learns "which method, which tool" without parsing the body and can apply per-tool controls. A server that processes the body MUST check that the header values match the body and reject mismatches. A gateway that decides on headers SHOULD confirm that `MCP-Protocol-Version` names a revision that requires this check, and reject the request otherwise.
 
-If you externalize decisions, AuthZEN's [Authorization API](/posts/authzen-authorization-api/) offers a standard between the PEP and the PDP. AuthZEN also has a draft binding, COAZ-MCP, that maps MCP requests to decision requests. COAZ-MCP still carries the label Draft 1 (dated 2026-02-13), but its editor's draft has started to pick up changes for the 2026-07-28 revision (for example, it dropped the `initialize` mapping). Before you adopt it, check which MCP revision it assumes. [Authorization architecture](/posts/authorization-architecture-models-engines/) covers how to split the PEP and the PDP.
+If you externalize decisions, AuthZEN's [Authorization API](/posts/authzen-authorization-api/) offers a standard between the PEP and the PDP. AuthZEN also has a draft binding, COAZ-MCP, that maps MCP requests to decision requests. [Authorization architecture](/posts/authorization-architecture-models-engines/) covers how to split the PEP and the PDP.
 
 ## Identifiers are not permissions
 
@@ -225,12 +223,10 @@ You do not need to do everything now. Settle the decisions that cost a lot to ch
 | Audit log fields (user, agent, tool, target, result) | Adding them later does not recover past records |
 | Token lifetime and revocation | You cannot recall long-lived tokens once you spread them |
 
-Notes on four of them follow. Earlier sections cover the decision location and the audit log fields.
+Notes on two of them follow.
 
 - Authorization server: the specification allows the authorization server to live with the MCP server. If you build one per MCP server, though, every permission change or offboarding has to reach every one of them. Inside a company, build on the corporate IdP. The authorization server you build on still has to support PKCE, publish its metadata, and issue tokens whose audience is a specific MCP server. The official Enterprise-Managed Authorization extension defines a way to manage access to MCP servers centrally through the enterprise IdP.
 - Audience: the MCP client puts the canonical URI of the MCP server in `resource`. The specification recommends the form without a trailing slash unless the slash is semantically significant. If you do not settle the format early, you end up fixing both the validator and the client configuration.
-- Scopes: the 2026-07-28 revision assumes a minimal initial scope set and step-up through `insufficient_scope`. Keep scopes coarse, around "feature kind and read or write", and put data-level decisions on the decision side. You can then change policy without adding scopes. [Authorization platform architecture and design decisions](/posts/authorization-platform-architecture-decisions/) also covers how tokens and decisions share the work.
-- Lifetime and revocation: the specification says authorization servers SHOULD issue short-lived access tokens and MUST rotate refresh tokens for public clients. [Access token validation and revocation](/posts/access-token-validation-revocation/) lays out the options. To stop the misuse of stolen tokens, [sender-constrained tokens with mTLS or DPoP](/posts/sender-constrained-tokens-mtls-dpop/) also help. The MCP authorization specification does not require sender constraints, though.
 
 # What to do now and what can wait
 
@@ -240,8 +236,6 @@ Instead of "we cannot ship until we do everything", draw a line. For anything yo
 |---|---|
 | Do now | Audience validation and no passthrough, PKCE, minimal scopes, short-lived tokens, no credentials in the LLM, audit logs that separate the user from the agent, per-request access decisions (hardcoded is fine) |
 | Can wait (but record it) | Externalized decisions (AuthZEN, COAZ-MCP), human approval flows (AuthZEN AARP, CIBA), continuous evaluation (CAEP), fine-grained per-tool policies |
-
-AARP refers to the AuthZEN Access Request and Approval Profile (Draft). AARP is the abbreviation from the OpenID Foundation announcement; the draft's header uses ARAP.
 
 Among the "do now" items, audience validation, no passthrough, and PKCE are MUSTs in the specification. Per-request access decisions also fall under the access controls that the tools specification requires servers to put in place (MUST). If you add short-lived tokens or audit logs later, they do not reach the long-lived tokens you have already handed out or the past operations you never recorded. In the author's view, most "can wait" items are easy to add or swap later as long as you have fixed the entry point for decisions (the PEP). That is why you should gather the places that call the decision into one spot, even if the logic stays hardcoded for now.
 
