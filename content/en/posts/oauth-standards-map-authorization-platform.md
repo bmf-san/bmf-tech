@@ -157,38 +157,15 @@ Sometimes the client, the AS, and the RS have no prior relationship. With MCP an
 
 ## Protected Resource Metadata (RFC 9728)
 
-RFC 8414 lets an AS describe itself. RFC 9728 does the same for an RS: the RS serves JSON at `/.well-known/oauth-protected-resource`.
+RFC 9728 is the RS counterpart of RFC 8414. The RS serves JSON at `/.well-known/oauth-protected-resource` that lists its identifier (`resource`), the authorization servers that can issue tokens for it, and the scopes and sender constraints it supports. When the RS returns 401, it can point to this URL in the `WWW-Authenticate` header. The moment a call to the RS fails, the client learns which AS it should contact. The MCP authorization specification requires MCP servers to serve this metadata.
 
-```json
-{
-  "resource": "https://api.example.com",
-  "authorization_servers": ["https://as.example.com"],
-  "scopes_supported": ["orders.read", "orders.write"],
-  "bearer_methods_supported": ["header"],
-  "dpop_bound_access_tokens_required": true
-}
-```
-
-Key fields include `resource` (required, the RS identifier), `authorization_servers` (an array of the authorization servers that can issue tokens for this RS), `scopes_supported`, and `jwks_uri`. For sender constraints, the RS can also announce whether it always requires DPoP-bound tokens (`dpop_bound_access_tokens_required`) and whether it supports mTLS-bound tokens (`tls_client_certificate_bound_access_tokens`).
-
-When the RS returns 401, it can point to this URL with the `resource_metadata` parameter of the `WWW-Authenticate` header. The moment a call to the RS fails, the client learns which AS it should contact. The MCP authorization specification requires MCP servers to serve this metadata.
-
-An authorization platform must decide how to name RS identifiers (the value of `resource`). The same value appears in the RFC 8707 `resource` parameter and in the token's `aud`. Without consistent identifiers, audience validation breaks down.
+An authorization platform must decide how to name RS identifiers. The same value appears in the RFC 8707 `resource` parameter and in the token's `aud`. Without consistent identifiers, audience validation breaks down.
 
 ## Client ID Metadata Document (CIMD)
 
-With DCR, the client registers at each AS it uses, and each AS stores the registered client information. Section 1 of the CIMD draft notes that DCR is not always practical and can create extra work managing registration data and cleaning up inactive clients.
+With DCR, the client registers at each AS it uses, and each AS stores and manages the registered client information. CIMD uses an HTTPS URL as the `client_id`, and the client hosts its metadata as JSON at that URL. The AS fetches the document from that URL, so the client does not need to register with each AS in advance.
 
-OAuth Client ID Metadata Document uses an HTTPS URL as the `client_id`. The client hosts its own metadata (`redirect_uris`, `client_name`, and so on) as JSON at that URL. The draft says the AS SHOULD fetch the document from the URL automatically. Because the contents may change, the draft also says the AS SHOULD re-fetch it periodically. The client does not need to register with each AS in advance.
-
-Main requirements as of draft-02:
-
-- The `client_id` URL uses https, contains a path, and contains no fragment
-- The `client_id` inside the document must match the document URL exactly
-- The client cannot use authentication methods based on `client_secret`. It either acts as a public client or authenticates with a key, such as `private_key_jwt`
-- An AS that supports CIMD and publishes RFC 8414 metadata MUST include `client_id_metadata_document_supported` to signal support. The draft still labels the field itself OPTIONAL
-
-Because the AS fetches external URLs, it needs SSRF countermeasures. Section 8.1 of the CIMD draft warns that, without limits on how `redirect_uris` relate to `client_id`, a client may impersonate a more well-known client. Section 8.9 lets the AS set its own policy on which domains to trust, for example with an allowlist of trusted domain patterns. The MCP authorization specification (2026-07-28) prefers CIMD over DCR and deprecates DCR. [Key points for designing MCP authorization](/posts/mcp-authorization-design/) covers the details.
+Because the AS fetches external URLs, it needs SSRF countermeasures. The AS can also set its own policy on which client domains to trust. The MCP authorization specification (2026-07-28) prefers CIMD over DCR and deprecates DCR. [How Should You Design Authorization for MCP?](/posts/mcp-authorization-design/) covers the details.
 
 An authorization platform must decide which registration methods (pre-registration, DCR, CIMD) to allow for which kinds of clients.
 

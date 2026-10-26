@@ -157,38 +157,15 @@ AS側のメタデータは[OpenID ConnectのDiscoveryとメタデータとは？
 
 ## Protected Resource Metadata（RFC 9728）
 
-RFC 8414はASが自分を説明するメタデータである。RFC 9728はそのRS版で、RSが`/.well-known/oauth-protected-resource`にJSONを置く。
+RFC 9728は、RFC 8414のRS版である。RSは`/.well-known/oauth-protected-resource`にJSONを置き、自分の識別子（`resource`）、トークンを出せるASの一覧、対応するスコープや送信者制約を公開する。RSは401を返すときに、`WWW-Authenticate`ヘッダーでこのURLを示せる。クライアントは、RSを呼んで失敗した時点で、どのASに行けばよいかがわかる。MCPの認可仕様は、MCPサーバにこのメタデータの実装を求めている。
 
-```json
-{
-  "resource": "https://api.example.com",
-  "authorization_servers": ["https://as.example.com"],
-  "scopes_supported": ["orders.read", "orders.write"],
-  "bearer_methods_supported": ["header"],
-  "dpop_bound_access_tokens_required": true
-}
-```
-
-主なフィールドは、RSの識別子の`resource`（必須）、このRS向けのトークンを出せる認可サーバの一覧`authorization_servers`、`scopes_supported`、`jwks_uri`などである。送信者制約も公開できる。`dpop_bound_access_tokens_required`はDPoPを常に要求するかを、`tls_client_certificate_bound_access_tokens`はmTLSで結び付けたトークンへの対応を示す。
-
-RSは401を返すときに、`WWW-Authenticate`ヘッダーの`resource_metadata`パラメータでこのURLを示せる。クライアントは、RSを呼んで失敗した時点で、どのASに行けばよいかがわかる。MCPの認可仕様は、MCPサーバにこのメタデータの実装を求めている。
-
-認可基盤として決めることは、RSの識別子（`resource`の値）をどう付けるかである。この値はRFC 8707の`resource`パラメータとトークンの`aud`にも使う。識別子が揃っていないと、宛先の検証が成り立たない。
+認可基盤として決めることは、RSの識別子をどう付けるかである。この値はRFC 8707の`resource`パラメータとトークンの`aud`にも使う。識別子が揃っていないと、宛先の検証が成り立たない。
 
 ## Client ID Metadata Document（CIMD）
 
-DCRでは、クライアントは使うASごとに登録し、ASは登録したクライアントの情報を保存する。CIMDの1節によると、DCRは実用的でない場合があり、登録データの管理や使われなくなったクライアントの後始末という課題も生む。
+DCRでは、クライアントは使うASごとに登録し、ASは登録したクライアントの情報を保存して管理する。CIMDは、HTTPSのURLを`client_id`にし、そのURLにクライアントのメタデータをJSONで置く仕組みである。ASがそのURLから文書を取得するので、クライアントはASごとの事前の登録をしなくてよい。
 
-OAuth Client ID Metadata Documentは、HTTPSのURLを`client_id`にする仕組みである。クライアントはそのURLに、自分のメタデータ（`redirect_uris`、`client_name`など）をJSONで置く。ASは、そのURLから文書を自動で取得することが推奨される（SHOULD）。内容は変わりうるので、定期的に取り直すことも推奨される。クライアントは、ASごとの事前の登録をしなくてよい。
-
-主な要件は次のとおりである（draft-02時点）。
-
-- `client_id`のURLはhttpsで、パスを含み、フラグメントを含まない
-- 文書の中の`client_id`は、文書のURLと完全に一致しなければならない
-- `client_secret`を使う認証方式は使えない。公開クライアントか、`private_key_jwt`などの鍵による認証になる
-- CIMDに対応し、RFC 8414のメタデータを公開するASは、`client_id_metadata_document_supported`を含めなければならない（MUST）。ただし、項目自体の定義はOPTIONALと書かれている
-
-ASは外部のURLを取得するので、SSRFへの対策が要る。CIMDの8.1節は、`redirect_uris`と`client_id`の関係を制限しないと、よく知られたクライアントを装われるおそれがあると書く。8.9節は、どのドメインを信頼するかの方針をASが独自に持てるとし、信頼するドメインの許可リストを例に挙げる。MCPの認可仕様（2026-07-28版）は、DCRよりCIMDを優先し、DCRを非推奨とした。詳しくは[MCPの認可を設計するときの勘所](/ja/posts/mcp-authorization-design/)で扱う。
+ASは外部のURLを取得するので、SSRFへの対策が要る。どのドメインのクライアントを信頼するかの方針も、ASが独自に持てる。MCPの認可仕様（2026-07-28版）は、DCRよりCIMDを優先し、DCRを非推奨とした。詳しくは[MCPの認可はどう設計する？](/ja/posts/mcp-authorization-design/)で扱う。
 
 認可基盤として決めることは、クライアントの登録方式（事前登録、DCR、CIMD）のどれを、どの種類のクライアントに許すかである。
 
