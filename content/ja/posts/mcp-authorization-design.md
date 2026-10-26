@@ -1,5 +1,5 @@
 ---
-title: "MCPの認可はどう設計する？起きうる事故と後から直せない判断"
+title: "MCPの認可はなぜ難しい？AIエージェントに社内システムを操作させるときのリスクと押さえどころ"
 slug: mcp-authorization-design
 date: 2026-10-31
 author: bmf-san
@@ -10,236 +10,119 @@ tags:
   - OAuth
   - セキュリティ
   - 生成AI
-description: "MCPの認可はOAuthを入れれば終わりではない。トークンの中継やconfused deputy、過剰なスコープといった事故、仕様が判定の方法を決めないtoolごとのアクセス判定、ホップごとの権限の整理、後から直せない判断、2026-07-28版の主な要件を整理する。"
+description: "MCPでAIエージェントに社内システムを操作させるとき、認可の何が難しく、どんな事故が起きうるのか。仕様が守る範囲と守らない範囲、最初に決めることと後でよいこと、チームに確かめる問いを、エンジニア以外にも伝わる形で整理する。"
 translation_key: mcp-authorization-design
 draft: false
 ---
 
 # 概要
 
-MCP（Model Context Protocol）は、AIアプリケーションを外部のツールやデータにつなぐためのオープンな標準である。社内の業務APIの前にMCPサーバーを置くと、エージェントがユーザーの代わりに業務データを読み書きできるようになる。便利な反面、認可の設計を誤ると、エージェントがユーザーの意図しない操作をしたり、盗まれたトークンで別のAPIまで叩かれたりする。
+MCP（Model Context Protocol）は、AIアプリケーションを社内のシステムや外部のサービスにつなぐための標準である。MCPを使うと、AIエージェントが利用者の代わりに業務データを読んだり書き換えたりできるようになる。
 
-MCPには、OAuth 2.1（IETFで策定中のDraft）を土台にした認可の仕様がある。ただし、仕様が決めているのは主に「MCPサーバー宛てのトークンを得て、検証する」部分である。「このユーザーのこのエージェントが、このtoolを、このデータに対して実行してよいか」という判定は、自分たちで設計する必要がある。
+便利な反面、AIに何をどこまで任せるかという認可の設計を誤ると、事故につながる。AIが意図しないデータを消したり、盗まれた鍵で別のシステムまで入られたりする。
 
-この記事は、MCPサーバーやMCPクライアントに認可を実装するチームに向けて、次のことを整理する。
+この記事は、MCPを使う機能を企画したり導入を判断したりする人に向けて、次の点を整理する。マネージャーやPMにも伝わるように、仕様の細部には立ち入らない。
 
-- 「動くだけの実装」で起きうる事故と、その典型的な原因
-- MCPの認可仕様が決めることと、自分たちで設計すること
-- ホップごとに「誰の権限で動いているか」の整理
-- 後から変えるとコストが大きい判断
-- 今やることと後でよいことの線の引き方
-- 仕様の主な要件の一覧
+- なぜMCPの認可は難しいのか
+- どんな事故が起きうるのか
+- 最初に決めることと、後でよいこと
+- チームに確かめる問い
 
-参照する仕様は、2026年10月時点の現行版（Current）である2026-07-28版である。MCPの仕様は改訂が続いているので、採用する版を決めて原文で確かめてほしい。AIエージェントの認可の全体像（AuthZENの新しいDraft（AARP、COAZ）や委譲の拡張など）は[AIエージェントの認可](/ja/posts/authorization-for-ai-agents/)で扱っている。
+仕様は、2026年10月時点の現行版である2026-07-28版にもとづく。実装の詳細は、原文と関連記事を参照してほしい。
 
-# 前提とする構成
+# MCPで何が起きているか
 
-この記事は、社内の業務APIの前にMCPサーバーを置き、社員がAIアプリケーションから業務データを読み書きする構成を例に話を進める。MCPの仕様では、ホストが複数のMCPクライアントを持ち、各クライアントは1つのMCPサーバーとだけ通信する。認可の仕様の上では、MCPサーバーはOAuth 2.1のリソースサーバー、MCPクライアントはOAuth 2.1のクライアントとして振る舞う。
+社内の業務システムの前にMCPサーバーを置き、社員がAIアプリケーションから業務データを扱う場面を考える。
 
 ```mermaid
 flowchart LR
-    U["ユーザー"]
-    subgraph H["ホスト（AIアプリケーション）"]
-        L["LLM"]
-        C["MCPクライアント"]
-    end
-    S["MCPサーバー<br/>（リソースサーバー）"]
-    A["業務API"]
-    AS["認可サーバー"]
-    U --> H
-    L --> C
-    C -- "MCPサーバー宛てのトークン" --> S
-    S -- "業務API宛てのトークン" --> A
-    C -. "トークンの取得" .-> AS
-    S -. "トークンの取り直し" .-> AS
+    U["利用者"]
+    AI["AIアプリケーション<br/>（エージェント）"]
+    S["MCPサーバー"]
+    A["業務システム"]
+    AS["認可サーバー<br/>（鍵の発行元）"]
+    U -- "仕事を頼む" --> AI
+    AI -- "鍵を見せて操作を頼む" --> S
+    S -- "業務システム用の鍵で呼ぶ" --> A
+    AS -. "鍵を発行する" .-> AI
+    AS -. "鍵を発行する" .-> S
 ```
 
-自分たちの構成に当てはめるときは、この図に次の3つを書き込む。そのうえで、後で述べる事故の一覧と「誰の権限か」の整理に照らし合わせると、具体的な問題が見えてくる。
+利用者がAIに仕事を頼むと、AIは利用者の代わりにMCPサーバーを呼ぶ。このとき、AIは「トークン」と呼ばれる一時的な鍵を見せる。MCPサーバーは鍵を確かめてから、業務システムを操作する。
 
-- 登場人物: ユーザー、ホスト（AIアプリケーション）とMCPクライアント、MCPサーバー、裏の業務API、認可サーバー
-- トークンの流れ: 誰が、どこから、何宛てのトークンを受け取り、どこに渡しているか
-- 権限の持ち方: どのスコープを、どの寿命で、どこに保存しているか
+認可とは、この流れの中で「誰に、何を、どこまで許すか」を決めることである。
+
+# なぜMCPの認可は難しいのか
+
+## 1. 誰の権限で動いているのかが見えにくい
+
+AIは利用者の代わりに動く。記録に利用者しか残らないと、AIの誤りと利用者の意図を見分けられない。事故が起きたときに、原因と責任を切り分けられない。
+
+## 2. AIは間違えるし、だまされる
+
+AIは指示を取り違えることがある。さらに、読んだメールやWebページに埋め込まれた指示を、そのまま実行してしまうこともある（プロンプトインジェクション）。このときの操作は正規の鍵で行われるので、ログインの仕組みでは止められない。AIは操られうるという前提で、任せる範囲を絞る必要がある。
+
+## 3. 鍵が使い回されやすい
+
+MCPサーバーが受け取った鍵を、そのまま裏の業務システムにも渡す作りは手軽である。しかし、1本の鍵で複数のシステムに入れると、盗まれたときの被害も広がる。MCPの仕様は、この使い回しを禁じている。
+
+## 4. 仕様が守ってくれる範囲は狭い
+
+MCPの認可の仕様が決めるのは、主に「MCPサーバーに入る鍵をどう受け取り、どう確かめるか」である。「このAIが、この利用者の代わりに、このデータを操作してよいか」の判断の仕方は決めていない。仕様は、サーバーがアクセス制御をしなければならない（MUST）と定めるだけで、判断の仕組みは各チームが作る。
+
+| 問い | MCPの認可の仕様で足りるか |
+|---|---|
+| 利用者は本人か | 範囲外。社内のログインの仕組みに任せる |
+| どのAIに、どのMCPサーバーへのアクセスを任せたか | 仕様の中心 |
+| このAIが、このデータを操作してよいか | 判断の方法は決めていない。各チームで作る |
+| どのAIにどの機能を使わせるかを、誰が決めて見直すか | 範囲外 |
+| 高リスクの操作に人の承認を挟むか | 専用の仕組みはない |
 
 # 起きうる事故
 
-まず、この構成を「機能が動くだけ」で実装したときに起きうる事故を挙げる。
+「動けばよい」で作ったときに起きうる事故と、その防ぎ方をまとめる。
 
-| 起きうること | 典型的な原因 | 主な対策 |
+| 起きうる事故 | 影響 | 防ぎ方 |
 |---|---|---|
-| MCPサーバーが受け取ったトークンを、そのまま裏のAPIに渡す。トークンを盗めば別のAPIも叩ける | トークンの宛先（audience）を検証しない。トークンをそのまま中継する（token passthrough） | 自分宛てのトークンだけを受け入れ、裏のAPI宛てには取り直す |
-| 第三者のAPIにつなぐMCPサーバー経由で、ユーザーの同意なしに認可コードを奪われる | 固定のclient IDで第三者の認可サーバーにつなぐプロキシが、クライアントごとの同意を取らない（confused deputy） | クライアントごとに同意を記録し、同意画面を出す |
-| エージェントが、削除や送信、他人のデータの参照など、ユーザーの意図しない操作をする | スコープが広すぎる。プロンプトインジェクションで正規の権限が悪用される | 最小のスコープと段階的な取得、toolごとのアクセス判定、人の確認 |
-| 資格情報がプロンプトや会話ログに混ざって漏れる | LLMのコンテキストにAPIキーやトークンを載せている | 資格情報はホストやMCPサーバーが持ち、LLMに見せない |
-| 後から「誰が、どのエージェント経由で、何をしたか」を追えない | ユーザーとエージェントを区別して記録していない | ユーザー、エージェント、tool、対象、結果を分けて記録する |
-| 退職や権限の変更が、エージェントの権限に反映されない | 長命のトークン、静的なAPIキー、失効の仕組みがない | 短命のトークンと失効の手段を用意する |
-| 他人の状態（カートやワークフロー）を操作される | 状態のハンドルを持っていることを認証とみなす | ハンドルを検証済みのユーザーに結び付け、要求ごとに確かめる |
+| 盗まれた鍵で、MCPサーバーの裏の業務システムにまで入られる | 1つの漏えいが、複数のシステムに広がる | MCPサーバー宛ての鍵だけを受け入れ、業務システム用には別の鍵を取り直す |
+| AIが、削除や外部への送信、他人のデータの参照をする | 情報漏えいやデータの消失 | 権限を最小にし、操作ごとに許すかを判断する。高リスクの操作は人が確認する |
+| パスワードや鍵が、AIとの会話ログに混ざって漏れる | 鍵の漏えい | 鍵はシステムの側で持ち、AIに見せない |
+| 事故の後に「誰が、どのAI経由で、何をしたか」を追えない | 原因の調査や監査ができない | 利用者とAIを分けて記録する |
+| 退職や異動が、AIの権限に反映されない | 辞めた人の権限でAIが動き続ける | 鍵の有効期限を短くし、止める手段を用意する |
 
-以下、表だけでは仕組みが分かりにくいconfused deputyを補足する。
+# 最初に決めることと、後でよいこと
 
-## confused deputy
+すべてを最初に作る必要はない。ただし、後から変えるとコストが大きいものは最初に決める。
 
-confused deputyは、MCPサーバーが第三者のAPIへのプロキシとして動く構成で起きうる。MCPの公式ドキュメントにある[Security Best Practices](https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices)（以下、Best Practices）は、次の条件がすべてそろうと攻撃が成り立つとしている。
-
-- MCPサーバーが、第三者の認可サーバーに対して1つの固定のclient IDを使う
-- MCPサーバーが、MCPクライアントに動的な登録を許す
-- 第三者の認可サーバーが、最初の認可の後に同意のcookieを設定する
-- MCPサーバーが、クライアントごとの同意を取らずに第三者の認可サーバーへ転送する
-
-このとき、攻撃者が悪意のあるクライアントを登録してユーザーにリンクを踏ませる。同意のcookieが残っているので同意画面は出ず、認可コードは攻撃者のリダイレクト先に送られる。
-
-対策として、固定のclient IDを使うMCPプロキシは、動的に登録されたクライアントごとにユーザーの同意を得てから第三者へ転送しなければならない（MUST）。
-
-# MCPの認可仕様が決めることと、決めないこと
-
-「OAuthを入れたら認可は終わり」ではない。IAMのサブドメインで見ると、責務の抜けが見える。サブドメイン（アイデンティティ、認証、委譲、アクセス判定、アクセスガバナンス）は[認可とは何か](/ja/posts/authorization-domain-iam-subdomains/)で整理した。
-
-| 問い | サブドメイン | MCPの認可仕様で足りるか |
+| 区分 | 項目 | 理由 |
 |---|---|---|
-| ユーザーは本人か | 認証 | 範囲外。既存のIdPに任せる |
-| どのクライアントに、どのMCPサーバーへのアクセスを、どこまで委ねたか | 委譲（OAuth、スコープ、宛先） | 仕様の中心 |
-| このtoolを、このデータに対して実行してよいか | アクセス判定 | アクセス制御の実装を求める（MUST）が、判定の方法は決めない。自分たちで設計する |
-| どのエージェントにどのtoolを使わせるかを誰が決め、見直すか | アクセスガバナンス | 範囲外 |
-| 高リスクの操作に人の承認を挟むか | アクセス判定とガバナンス | ホストの画面についてのSHOULDがあるだけで、承認のための専用の仕組みはない。サーバーがElicitation（クライアントを通してユーザーに入力を求める仕組み）で確認を求めることはできる |
+| 最初に決める | 鍵の発行元を、MCPサーバーごとに作らず社内の認証基盤に寄せる | 発行元が分かれると、退職や権限の変更をすべてに反映させる必要が出る |
+| 最初に決める | 鍵を使い回さず、宛先ごとに分ける | 後から分けると、すべての接続の設定を直すことになる |
+| 最初に決める | 権限を最小にし、必要になったら足す | 一度配った広い権限は、取り上げにくい |
+| 最初に決める | 利用者とAIを分けて記録する | 後から記録を足しても、過去の操作は追えない |
+| 最初に決める | 鍵の有効期限を短くし、止める手段を持つ | 長く使える鍵をばらまくと、回収できない |
+| 後でよい | 判断のルールを外部の仕組みに切り出す、人の承認の流れ、権限の継続的な見直し | 判断を呼ぶ場所を1か所にまとめておけば、後から足せる |
 
-仕様はアクセス判定を無視しているわけではない。toolsの仕様は、サーバーが適切なアクセス制御を実装しなければならない（MUST）と書く。キャッシュの仕様も、`cacheScope`だけに頼らず、プリミティブ（toolやリソースなど）ごとのアクセス制御をかけなければならないと書く。ただし、どう判定するかは決めていない。そこが自分たちの設計の範囲である。
+後回しにするものは、理由と見直す条件を記録に残す。そうすれば、前に進みつつ、残した課題も見える状態を保てる。
 
-# 誰の権限で動いているかをホップごとに整理する
+# チームに確かめる問い
 
-各ホップで「誰の権限で動いているか」をチームで共有する。ここが曖昧だと、トークンの中継や過剰な権限が起きる。
+導入を判断するときは、次の問いにチームが答えられるかを確かめる。
 
-```mermaid
-flowchart LR
-    U["ユーザー"]
-    C["エージェント<br/>（MCPクライアント）"]
-    S["MCPサーバー"]
-    A["業務API"]
-    X["外部のSaaS"]
-    AS["認可サーバー<br/>（社内のIdPと連携）"]
-    XAS["外部の認可サーバー"]
+1. AIが触れるシステムとデータは何か
+2. AIは誰の権限で動くか。利用者より広い権限を持っていないか
+3. 削除や送金のような高リスクの操作に、人の確認を挟んでいるか
+4. 後から「誰が、どのAI経由で、何をしたか」を追えるか
+5. 退職や異動のとき、AIの権限も止まるか
 
-    U -- "1. 同意（権限の一部を委ねる）" --> C
-    C -- "2. MCPサーバー宛てのトークン" --> S
-    S -- "3. 業務API宛てに取り直したトークン" --> A
-    S -- "4. 外部のトークン（MCPサーバーが保存）" --> X
-    C -. "トークンの取得" .-> AS
-    S -. "Token Exchange" .-> AS
-    U -. "URLモードで直接認可" .-> XAS
-```
-
-| ホップ | 誰の権限か | トークンの宛先 | 受け手がすること |
-|---|---|---|---|
-| 1. ユーザー → クライアント | ユーザーが、権限の一部をクライアントに委ねる | — | 認可サーバーが、同意画面でクライアントとスコープを示す |
-| 2. クライアント → MCPサーバー | ユーザーの権限を、クライアントが代わりに使う | MCPサーバー（`resource`で指定） | MCPサーバーが宛先、期限、スコープを検証し、toolとデータへの判定をする |
-| 3. MCPサーバー → 業務API | ユーザーの権限を、MCPサーバーが代わりに使う | 業務API | 業務APIが宛先を検証し、ユーザーと代理の主体を記録する |
-| 4. MCPサーバー → 外部のSaaS | ユーザーが外部のサービスで直接与えた権限 | 外部のサービス | 外部のサービスが検証する |
-
-## ホップごとにトークンを分ける
-
-MCPサーバーが裏のAPIを呼ぶときは、受け取ったトークンを中継しない。仕様は、裏のAPIにはそのAPIの認可サーバーが発行した別のトークンを使うよう求めている。社内のAPIなら、Token Exchange（RFC 8693）で裏のAPI宛てに取り直すのが素直である。Token Exchangeの基本は[サービス間認証の全体像](/ja/posts/service-to-service-authentication/)で扱った。
-
-外部のSaaSを呼ぶときは、MCPサーバーが外部のサービスのOAuthクライアントになる。Elicitationには、クライアントの画面で入力を集めるフォームモードと、ユーザーを外部のURLに案内するURLモードがある。仕様はこの場面にURLモードを用意している。ユーザーはMCPクライアントを介さずにブラウザで外部のサービスを認可し、外部の資格情報はMCPクライアントを通らない。外部のトークンはMCPサーバーが保存して管理するので、MCPサーバーは状態を持つことになる。
-
-このときサーバーは、Elicitationを始めたユーザーと、ブラウザで認可を終えたユーザーが同じかを確かめなければならない。確かめないと、攻撃者が自分の依頼で得たURLを被害者に踏ませ、被害者の外部のトークンを攻撃者のアカウントに結び付けられる。
-
-## ユーザーとエージェントを区別する
-
-トークンと記録の中で、ユーザー（`sub`）と、代わりに動いている主体（`act`）を分ける。Token Exchangeの`act`クレームは、委譲の連鎖を表すのに使える。監査ログには、少なくともユーザー、クライアント（エージェント）、tool、対象、結果を残す。
-
-ただし、MCPの仕様にはユーザーとエージェントを区別する標準の方法がない。`clientInfo`は自己申告である。CIMDの`client_id`はクライアントのソフトウェアを表すもので、エージェントのインスタンスや多段の委譲は表さない。区別をどう持つかは、認可サーバーが発行するトークンの設計として自分たちで決める。エージェント向けの委譲の拡張は[AIエージェントの認可](/ja/posts/authorization-for-ai-agents/)で紹介している。
-
-# 後から直せない判断
-
-全部を今やる必要はない。ただし、後から変えるとコストが大きい判断だけは、最初に決めておく。
-
-| 判断 | 後から直しにくい理由 |
-|---|---|
-| 認可サーバーをMCPサーバーごとに自作せず、社内の認証基盤に寄せる | 資格情報の管理元が分かれると、統合が非常に重い |
-| MCPサーバーごとの宛先（`resource`）の設計 | トークンの検証ロジックと、クライアントの設定に広がる |
-| スコープの粒度 | 一度配ったスコープは変えにくい。細かい権限をトークンに詰め込まず、細かい判定は判定側に置く |
-| 判定ロジックの置き場所 | 直書きすると、ポリシーを変えるたびにすべてのMCPサーバーを改修する |
-| 監査ログの項目（ユーザー、エージェント、tool、対象、結果） | 後から足しても、過去の分は追えない |
-| トークンの寿命と失効の手段 | 長命のトークンをばらまくと回収できない |
-
-このうち2つを補足する。
-
-- 認可サーバー: 仕様は、認可サーバーがMCPサーバーと同居してもよいとしている。ただしMCPサーバーごとに認可サーバーを作ると、権限の変更や退職をすべての認可サーバーに反映させる必要が出る。企業の中なら、社内のIdPに寄せる。その場合も、寄せる先の認可サーバーは、PKCEに対応してメタデータを公開し、MCPサーバーごとの宛先を持つトークンを発行できなければならない。公式の認可の拡張であるEnterprise-Managed Authorizationは、企業のIdPでMCPサーバーへのアクセスを一元管理する方式を定めている。
-- 宛先: MCPクライアントは`resource`にMCPサーバーの正規のURIを入れる。仕様は、末尾のスラッシュに意味がある場合を除き、付けない形にそろえるよう勧めている。表記を最初にそろえておかないと、検証側とクライアントの設定の両方を直すことになる。
-
-# 今やることと後でよいこと
-
-「全部やらないと出せない」と考えず、線を引く。後回しにするものは、理由と再検討の条件をADR（Architecture Decision Record）に残す。そうすれば、チームは前に進みつつ、中長期の負債も見える状態を保てる。
-
-| 区分 | 項目 |
-|---|---|
-| 今やる | トークンの宛先の検証と中継の禁止、PKCE、最小のスコープ、短命のトークン、LLMに資格情報を持たせない、ユーザーとエージェントを分けた監査ログ、要求ごとのアクセス判定（直書きでもよい） |
-| 後でよい（ただし記録する） | 判定の外部化（AuthZEN、COAZ-MCP）、人の承認フロー（AuthZENのAARP、CIBA）、継続的な評価（CAEP）、toolごとの細かいポリシー |
-
-「今やる」の項目のうち、宛先の検証と中継の禁止、PKCEは仕様のMUSTである。要求ごとのアクセス判定も、toolsの仕様がサーバーに求めるアクセス制御の実装（MUST）に当たる。短命のトークンや監査ログを後から足しても、すでに配った長命のトークンや、記録していない過去の操作には手が届かない。一方、筆者の見立てでは、「後でよい」の項目の多くは、判定の入口（PEP）が決まっていれば後から足したり差し替えたりしやすい。だからこそ、直書きでもよいので、判定を呼ぶ場所を1か所に集めておく。
-
-# MCPの認可仕様の主な要件
-
-最後に、2026-07-28版の認可仕様の主な要件をまとめる。詳細は原文を確かめてほしい。
-
-認可の流れは次のとおりである。MCPクライアントはトークンなしの要求で401を受け、Protected Resource Metadataから認可サーバーを見つける。そのうえで、PKCEと`resource`を付けて認可コードフローを進める。
-
-```mermaid
-sequenceDiagram
-    autonumber
-    participant C as MCPクライアント
-    participant M as MCPサーバー
-    participant A as 認可サーバー
-
-    C->>M: トークンなしでMCPの要求
-    M-->>C: 401（WWW-Authenticateにresource_metadataやscopeを含められる）
-    C->>M: Protected Resource Metadataを取得
-    M-->>C: authorization_servers
-    C->>A: 認可サーバーのメタデータを取得
-    A-->>C: issuer、PKCEの対応、CIMDの対応など
-    Note over C: クライアント登録（事前登録、CIMD、DCR）
-    C->>A: 認可要求（code_challenge、resource）
-    A-->>C: 認可コード（対応していればiss）
-    Note over C: issがあれば、記録したissuerと照合
-    C->>A: トークン要求（code_verifier、resource）
-    A-->>C: アクセストークン
-    C->>M: Authorization: Bearer付きでMCPの要求
-```
-
-| 領域 | 要件 | 対象 | 強さ |
-|---|---|---|---|
-| 適用範囲 | 認可の実装自体は任意。HTTPのトランスポートは仕様に従うべき。stdioは従うべきでなく、資格情報を環境から得る | 全体 | OPTIONAL / SHOULD / SHOULD NOT |
-| 基盤 | 公開クライアントと機密クライアントの両方に向けて、適切な対策とともにOAuth 2.1を実装する | 認可サーバー | MUST |
-| 発見 | Protected Resource Metadata（RFC 9728）を実装し、`authorization_servers`を示す | MCPサーバー | MUST |
-| 発見 | Protected Resource Metadataで認可サーバーを見つける | MCPクライアント | MUST |
-| メタデータ | RFC 8414かOpenID Connect Discoveryの少なくとも一方を提供する。クライアントは両方に対応する | 認可サーバー / MCPクライアント | MUST |
-| 登録 | 事前登録、CIMD、DCRのいずれかでclient IDを得る。優先順は事前登録、CIMD、DCR、ユーザーの入力 | MCPクライアント | MUST（優先順はSHOULD） |
-| 登録 | Client ID Metadata Documentsに対応する | 認可サーバー / MCPクライアント | SHOULD |
-| 登録 | Dynamic Client Registration（RFC 7591）は非推奨で、後方互換のために残る。使うなら`application_type`を指定する | 認可サーバー / MCPクライアント | MAY（指定はMUST） |
-| 登録 | 事前登録やDCRで得た資格情報を、発行した認可サーバーに結び付け、別の認可サーバーで使い回さない | MCPクライアント | MUST |
-| 宛先 | `resource`（RFC 8707）を認可要求とトークン要求の両方に入れ、MCPサーバーの正規のURIを指定する。認可サーバーが対応していなくても送る | MCPクライアント | MUST |
-| 送信 | `Authorization: Bearer`ヘッダで、すべてのHTTP要求に付ける。URIのクエリには入れない | MCPクライアント | MUST / MUST NOT |
-| 検証 | 自分宛てに発行されたトークンかを検証する。無効や期限切れには401を返す | MCPサーバー | MUST |
-| 中継の禁止 | 自分宛て以外のトークンを受け入れたり、通過させたりしない | MCPサーバー | MUST NOT |
-| PKCE | PKCEを実装し、可能なら`S256`を使う。メタデータに`code_challenge_methods_supported`がなければ進めない | MCPクライアント | MUST |
-| mix-up対策 | 認可応答に`iss`（RFC 9207）を含める。含めるならメタデータで宣言する | 認可サーバー | SHOULD（宣言はMUST） |
-| mix-up対策 | 選んだ認可サーバーの`issuer`を記録する。応答に`iss`があれば、認可コードを使う前に照合する。`iss`を宣言済みの認可サーバーから`iss`のない応答が来たら拒否する | MCPクライアント | MUST |
-| スコープ | 最初の401の`scope`、なければ`scopes_supported`を使う。不足は403の`insufficient_scope`で返し、クライアントは和集合で認可をやり直す | MCPサーバー / MCPクライアント | SHOULD |
-| 通信 | 認可サーバーの口はすべてHTTPSにする。リダイレクトURIはlocalhostかHTTPSにし、認可サーバーが完全一致で検証する | 認可サーバー / MCPクライアント | MUST |
-| トークンの盗難 | 短命のアクセストークンを発行する。公開クライアントのリフレッシュトークンは回転させる | 認可サーバー | SHOULD / MUST |
-| confused deputy | 固定のclient IDを使うMCPプロキシは、動的に登録されたクライアントごとにユーザーの同意を得てから転送する | MCPサーバー（プロキシ） | MUST |
-
-クライアント登録では、事前登録がなく、認可サーバーがメタデータでCIMDへの対応を示していれば、DCRより先にCIMDを使う。仕様はCIMDを、MCPで最も多い「クライアントとサーバーに事前の関係がない場面」に向く方式と位置づけている。CIMDは2025-11-25版で推奨の方式として入り、2026-07-28版ではDCRが非推奨になった。CIMDでは、クライアントがHTTPSのURLを`client_id`にし、そのURLにメタデータのJSONを置く。認可サーバーはその文書を取得し、`client_id`の一致と、`redirect_uri`が文書に載っているかを検証する。任意のURLを取得することになるので、認可サーバーの側はSSRFに注意する。
-
-DCRの仕組みは[動的クライアント登録（DCR）](/ja/posts/dynamic-client-registration/)、メタデータによる発見は[OpenID ConnectのDiscoveryとメタデータ](/ja/posts/oidc-discovery-metadata/)で扱った。PKCEやmix-up対策などOAuth 2.1の土台は[OAuth 2.1とSecurity BCP](/ja/posts/oauth-2-1-security-bcp/)にまとめている。MCPが使うOAuthの周辺標準の位置づけは[OAuthと周辺標準の地図](/ja/posts/oauth-standards-map-authorization-platform/)を参照してほしい。
-
-コアの仕様は、ユーザーが対話的に、クライアントにMCPサーバーへのアクセスを許す場面に向く。そうでない場面のために、公式の認可の拡張が2つある。人のいない機械どうしの連携にはOAuth Client Credentialsを使う。企業のIdPで一元管理する場面にはEnterprise-Managed Authorizationを使う。後者では、クライアントが企業のIdPからID-JAG（Identity Assertion JWT Authorization Grant）を受け取り、MCPの認可サーバーでアクセストークンに交換する。どちらの拡張も、MCPクライアントが明示的に対応していなければ有効にならない。
+答えられない問いがあれば、そこが設計の抜けである。
 
 # まとめ
 
-- MCPの認可仕様が決めるのは、主に委譲（トークンの取得と検証）である。toolとデータへのアクセス判定、アクセスガバナンス、人の承認は自分たちで設計する。
-- トークンの宛先の検証と中継の禁止を最初に入れる。裏のAPIにはToken Exchangeなどで取り直したトークンを使う。
-- ホップごとに誰の権限で動いているかを図にし、ユーザーとエージェントを区別して記録する。
-- 認可サーバーの置き場所、宛先、スコープの粒度、判定の置き場所、監査ログの項目、トークンの寿命と失効の手段は後から直しにくい。最初に決める。
-- 後回しにするものは、理由と再検討の条件をADRに残す。
+- MCPの認可の仕様が守るのは、主に「MCPサーバーに入る鍵の受け渡し」である。AIにどのデータの操作を許すかは、各チームで作る。
+- AIは間違えるし、だまされる。正規の鍵で動くので、ログインの仕組みでは止められない。任せる範囲を最小にする。
+- 鍵を使い回さない、利用者とAIを分けて記録する、鍵を短命にして止められるようにする。この3つは後から直しにくいので、最初に決める。
+- 導入を判断するときは、5つの問いにチームが答えられるかを確かめる。
 
 # 関連記事
 
@@ -259,33 +142,7 @@ DCRの仕組みは[動的クライアント登録（DCR）](/ja/posts/dynamic-cl
 # 参考リンク
 
 - [MCP Specification 2026-07-28](https://modelcontextprotocol.io/specification/2026-07-28)
-- [MCP Versioning](https://modelcontextprotocol.io/docs/2026-07-28/learn/versioning)
-- [MCP Key Changes（2026-07-28）](https://modelcontextprotocol.io/specification/2026-07-28/changelog)
-- [MCP Key Changes（2025-11-25）](https://modelcontextprotocol.io/specification/2025-11-25/changelog)
-- [MCP Architecture（2026-07-28）](https://modelcontextprotocol.io/specification/2026-07-28/architecture)
-- [MCP Base Protocol Overview（2026-07-28）](https://modelcontextprotocol.io/specification/2026-07-28/basic)
 - [MCP Authorization（2026-07-28）](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization)
-- [MCP Authorization Server Discovery（2026-07-28）](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization/authorization-server-discovery)
-- [MCP Client Registration（2026-07-28）](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization/client-registration)
-- [MCP Authorization Security Considerations（2026-07-28）](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization/security-considerations)
 - [MCP Tools（2026-07-28）](https://modelcontextprotocol.io/specification/2026-07-28/server/tools)
-- [MCP Caching（2026-07-28）](https://modelcontextprotocol.io/specification/2026-07-28/server/utilities/caching)
-- [MCP Elicitation（2026-07-28）](https://modelcontextprotocol.io/specification/2026-07-28/client/elicitation)
 - [MCP Security Best Practices（2026-07-28）](https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices)
-- [MCP Authorization Extensions](https://modelcontextprotocol.io/extensions/auth/overview)
-- [MCP OAuth Client Credentials](https://modelcontextprotocol.io/extensions/auth/oauth-client-credentials)
-- [MCP Enterprise-Managed Authorization](https://modelcontextprotocol.io/extensions/auth/enterprise-managed-authorization)
-- [The OAuth 2.1 Authorization Framework（draft-ietf-oauth-v2-1）](https://datatracker.ietf.org/doc/draft-ietf-oauth-v2-1/)
-- [OAuth Client ID Metadata Document（draft-ietf-oauth-client-id-metadata-document）](https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/)
-- [RFC 9728 OAuth 2.0 Protected Resource Metadata](https://www.rfc-editor.org/rfc/rfc9728)
-- [RFC 8707 Resource Indicators for OAuth 2.0](https://www.rfc-editor.org/rfc/rfc8707)
-- [RFC 8414 OAuth 2.0 Authorization Server Metadata](https://www.rfc-editor.org/rfc/rfc8414)
-- [OpenID Connect Discovery 1.0](https://openid.net/specs/openid-connect-discovery-1_0.html)
-- [RFC 9207 OAuth 2.0 Authorization Server Issuer Identification](https://www.rfc-editor.org/rfc/rfc9207)
-- [RFC 7591 OAuth 2.0 Dynamic Client Registration Protocol](https://www.rfc-editor.org/rfc/rfc7591)
-- [RFC 8693 OAuth 2.0 Token Exchange](https://www.rfc-editor.org/rfc/rfc8693)
-- [AuthZEN Authorization API 1.0](https://openid.net/specs/authorization-api-1_0.html)
-- [COAZ-MCP: COAZ Binding for the Model Context Protocol](https://openid.github.io/authzen/authzen-coaz-mcp-binding-1_0.html)
-- [AuthZEN Access Request and Approval Profile](https://openid.github.io/authzen/authzen-access-request-approval-profile-1_0.html)
-- [OpenID Foundation advances authorization for the agent era with new AuthZEN Working Group Drafts](https://openid.net/openid-foundation-advances-authorization-for-the-agent-era-with-new-authzen-working-group-drafts/)
 - [OWASP Top 10 for LLM Applications: LLM06 Excessive Agency](https://genai.owasp.org/llmrisk/llm062025-excessive-agency/)
