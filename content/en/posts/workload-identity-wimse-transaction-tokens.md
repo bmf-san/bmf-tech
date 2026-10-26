@@ -155,12 +155,6 @@ Three drafts define how workloads use WITs and WICs to authenticate each other. 
 | OAuth access token in the same request | Possible | Signature can cover `Authorization` | Not possible (WPT occupies `Authorization`) |
 | HTTP status on failure | Fails in TLS | 400 (401 NOT RECOMMENDED) | 401 with `WWW-Authenticate: WPT` |
 
-Some notes on each.
-
-- **mTLS**: You MUST check that the trust domain in the WIC matches the one you expect for that connection. When you connect by DNS name, you MUST also run RFC 9525 hostname verification. Identifier checks add to it rather than replace it: even when the identifier matches, you reject the connection if no DNS name in the certificate matches. Unless another mechanism protects and authorizes it, you MUST NOT let a self-asserted identity in an HTTP header override the identity that mTLS established.
-- **HTTP Message Signatures**: To survive proxies that end TLS and rewrite `Host`, the profile does not sign `@authority` for requests other than CONNECT. Instead it puts the target in the signature parameter `wimse-aud`, and the receiver compares it exactly against trusted configuration. The `nonce` needs at least 64 bits of entropy, and the signature lifetime (`expires`) MUST be short, on the order of minutes.
-- **WPT** (Workload Proof Token): A short-lived JWT signed with the WIT key. The http-signature draft (-08) describes WPT as the option inspired by OAuth DPoP (RFC 9449). In wpt-02, the WPT draft moved it from a dedicated header to `Authorization: WPT`. As a result, you cannot send a Bearer or DPoP access token in the same request. The WPT draft describes this exclusivity as intentional: it keeps a request from dropping to the strength of its weakest credential.
-
 The questions below settle most choices. The main forks are two: whether intermediaries end TLS, and whether you also send an OAuth access token in the same request.
 
 ```mermaid
