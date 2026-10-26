@@ -252,10 +252,6 @@ If the business database still holds relations such as owners and membership aft
 | Operations | Self-host or managed? | Amazon Verified Permissions for AWS-centric stacks; commercial offerings such as Auth0 FGA for ReBAC |
 | Replaceability | Do you want room to switch engines later? | Move the PEP-PDP line toward AuthZEN; AuthZEN does not cover writing relations or distributing policy |
 
-## Combining Engines
-
-You do not need to put everything on one engine. One example setup keeps a ReBAC engine as the authority for relations and evaluates attribute conditions in a policy engine. In that setup, the ReBAC engine acts as a PDP and also as a PIP from the policy engine's point of view. Following the role-centric idea, roles and the relations that grant access set the ceiling, and conditions in the policy engine narrow it.
-
 # Summary
 
 - Think of authorization in layers: model, expression, engine, API, and data. The safe order of choice runs model, data, engine.
