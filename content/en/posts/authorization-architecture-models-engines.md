@@ -92,8 +92,9 @@ PEP, PDP, PIP, and PAP have different owners inside an organization. Mapping the
 
 ```mermaid
 flowchart LR
+    GW["API gateway PEP<br/>Coarse checks"]
     subgraph BIZ["Business domains (each service)"]
-        PEP1["PEP<br/>Middleware / gateway"]
+        PEP1["In-service PEP<br/>Per-resource checks"]
         DATA["Business data<br/>Resource attributes, owners"]
     end
     subgraph AD["Access decision (cross-cutting)"]
@@ -105,6 +106,8 @@ flowchart LR
         GOV["Access governance<br/>Role assignments"]
         ADJ["Adjacent domains<br/>Contracts, risk signals"]
     end
+    GW -- "request" --> PEP1
+    GW -. "decision query" .-> PDP1
     PEP1 -- "decision query" --> PDP1
     PAP1 --> PDP1
     IDN -- "PIP" --> PDP1
@@ -113,17 +116,13 @@ flowchart LR
     DATA -- "PIP" --> PDP1
 ```
 
-- The PEP lives on the business domain side. The owner of a resource protects it, and a PEP outside the domain opens a bypass. Consider splitting the work: coarse checks in the gateway, per-resource checks inside the service.
+The query from the gateway to the PDP uses a dotted line because some setups handle coarse checks inside the gateway itself.
+
+- The PEP that enforces per-resource decisions lives on the business domain side. The owner of a resource protects it, and moving this PEP outside the domain opens a bypass. You can also put a PEP in the API gateway at the entry point, but keep it to coarse checks such as token validity and scopes. Leave per-resource checks to the PEP inside the service.
 - The PDP and PAP belong to the access decision subdomain. That does not mean a central team writes every rule. A central team owns tenant isolation and company-wide prohibitions, domain teams own domain rules, and the PAP ties them together through review and distribution. SP 800-162 also expects a hierarchy in which subordinate organizations keep their own local policies without conflicting with higher-level ones.
 - The PIP connects to wherever the authority for an attribute lives. Identity owns subject attributes, access governance owns role assignments, and the business domain owns resource attributes. Instead of having the PDP hold all data, decide per attribute whether to fetch it from the authority or replicate it.
 
 [How far should you build an authorization platform?](/posts/authorization-platform-scope-stages/) discusses how much to centralize. [Authorization platform architecture and design decisions](/posts/authorization-platform-architecture-decisions/) covers PEP and PDP placement in detail.
-
-## Design Points
-
-- The AuthZEN spec calls the PEP-PDP connection the most sensitive one in an ABAC architecture and requires (MUST) securing it, for example with TLS. It also says the PDP SHOULD authenticate the PEP, for example with mutual TLS, OAuth, or an API key. A PDP that answers anyone becomes an entry point for policy probing and load attacks.
-- Make the PEP fail closed: if it cannot get a decision, it denies. Decide early what happens when the PDP goes down or times out.
-- XACML also has a profile for JSON requests and responses (an OASIS Standard since 2019), yet every engine compared in this post exposes its own PEP-PDP API. The OpenID Foundation's AuthZEN Authorization API 1.0 standardizes that line across engines. As of October 2026, Cerbos implements part of the AuthZEN API, and OpenFGA implements it as an experimental feature. [What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers it in depth.
 
 # A Taxonomy of Authorization Models
 
@@ -155,23 +154,28 @@ PBAC (Policy-Based Access Control) has no single agreed definition. The NIST glo
 
 # Choosing and Combining Models
 
-## Where to Start
+## Checking Which Models You Need
+
+Work through the three questions in order and combine the models that apply.
 
 ```mermaid
 flowchart TD
     Q1{"Do organizational roles<br/>decide most permissions?"}
     Q2{"Are owners, sharing, membership,<br/>and parent-child inheritance central?"}
     Q3{"Do conditions such as time, amount,<br/>risk, or device matter?"}
-    R["Start with RBAC"]
-    B["Start with ReBAC"]
-    A["Add ABAC conditions"]
+    R["Express with RBAC"]
+    B["Express with ReBAC"]
+    A["Express with ABAC conditions"]
+    E["Combine the models that apply"]
     Q1 -- "yes" --> R
     Q1 -- "no" --> Q2
+    R --> Q2
     Q2 -- "yes" --> B
-    Q2 -- "no" --> A
-    R --> Q3
+    Q2 -- "no" --> Q3
     B --> Q3
     Q3 -- "yes" --> A
+    Q3 -- "no" --> E
+    A --> E
 ```
 
 In my view, many business SaaS products need a little of all three. Job functions such as administrator or approver fit RBAC. "Requests I created" or "data about my direct reports" fit ReBAC. "Only during business hours" or "only from managed devices" fit ABAC.
@@ -185,7 +189,7 @@ A point that model selection often misses: what kind of question must the system
 
 List questions come up often, for search result filtering in the UI and for access reviews. NIST SP 800-178 points out that logical formula-based policies, as in XACML, cannot support such a review efficiently: the review amounts to propositional satisfiability, an NP-complete problem. Asking "who can read this?" of a policy written only as attribute conditions stays hard by nature.
 
-ReBAC, which stores relations as enumerated data, handles these questions well. Attribute-centric engines work around the problem with partial evaluation or query plans that turn policy into database filters. Flag the resources that need listing while you choose the model.
+The same document says that enumerated policies such as NGAC's, which store relations, make this review simpler. ReBAC also stores relations as data, so it can answer these questions more readily. Attribute-centric engines work around the problem with partial evaluation or query plans that turn policy into database filters. Flag the resources that need listing while you choose the model.
 
 ## Roles Set the Ceiling; Conditions Narrow It
 
@@ -197,7 +201,7 @@ For combining models, the "role-centric" approach that Kuhn of NIST and his co-a
 | Attribute-centric | The role becomes one attribute among many | RBAC's administrative simplicity fades quickly as attributes grow |
 | Role-centric | Attribute conditions constrain the permissions that roles grant | Attributes can only reduce permissions, never add; you can still compute the upper bound |
 
-In the role-centric approach, the usable permissions equal the intersection of "permissions of active roles" and "permissions the rules allow". Roles set the ceiling, which preserves least privilege and keeps review simple. The paper also suggests turning static attributes (position, skills, location) into roles and dynamic attributes (such as time) into rules. With ten attributes (four static, six dynamic), pure RBAC or pure ABAC can need up to 1,024 roles or rules. Splitting them needs at most 16 roles and 64 rules.
+In the role-centric approach, the usable permissions equal the intersection of "permissions of active roles" and "permissions the rules allow". Roles set the ceiling, which preserves least privilege and keeps review simple. In return, the paper notes, the approach gives up some of ABAC's flexibility because roles still bound the permission sets. The paper also suggests turning static attributes (position, skills, location) into roles and dynamic attributes (such as time) into rules. With ten attributes (four static, six dynamic), pure RBAC or pure ABAC can need up to 1,024 roles or rules. Splitting them needs at most 16 roles and 64 rules.
 
 In authorization platform terms, it looks like this. The paper covers only roles and attributes; where relations fit is my own mapping.
 
@@ -330,7 +334,7 @@ You do not need to put everything on one engine. One example setup keeps a ReBAC
 # Summary
 
 - Think of authorization in layers: model, expression, engine, API, and data. The safe order of choice runs model, data, engine.
-- Put the PEP on the business domain side, the PDP and PAP on the access decision side, and the PIP next to attribute authorities. Protect the PEP-PDP connection and deny when no decision comes back.
+- Put the PEP that enforces per-resource decisions on the business domain side, the PDP and PAP on the access decision side, and the PIP next to attribute authorities.
 - RBAC, ABAC, and ReBAC do not exclude each other. Letting roles (and relations that grant access) set the ceiling, and conditions on attributes and relations narrow it, keeps review manageable. Treating PBAC as a writing style rather than a model keeps the discussion clear.
 - The originals still teach: RBAC's "only if", SP 800-162's attribute authorities, and XACML's combining algorithms and obligations. NGAC adds the idea of answering list questions by enumerating relations.
 - Narrow down engines by model focus, data handling, and listing needs. Standardizing the PEP-PDP line keeps the option to choose again.
@@ -338,7 +342,7 @@ You do not need to put everything on one engine. One example setup keeps a ReBAC
 # Related Posts
 
 - [What is Authorization? Mapping AuthN, AuthZ, and IAM Subdomains](/posts/authorization-domain-iam-subdomains/)
-- [How Much Authorization Platform Do You Need? Scope, Ownership, Decision Axes, and Externalized Decisions](/posts/authorization-platform-scope-stages/)
+- [How Much Authorization Platform Do You Need? Scope, Ownership, and Decision Axes](/posts/authorization-platform-scope-stages/)
 - [What is the AuthZEN Authorization API? A Standard Between PEP and PDP](/posts/authzen-authorization-api/)
 - [Which OAuth Standards Does an Authorization Platform Need? A Map of Delegation, Tokens, and Continuous Evaluation](/posts/oauth-standards-map-authorization-platform/)
 - [What is Workload Identity? WIMSE, Transaction Tokens, and SPIFFE Client Authentication for Service Identity and Context](/posts/workload-identity-wimse-transaction-tokens/)
