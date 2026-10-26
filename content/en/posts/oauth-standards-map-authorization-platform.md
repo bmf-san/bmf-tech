@@ -165,7 +165,7 @@ An authorization platform must decide how to name RS identifiers. The same value
 
 With DCR, the client registers at each AS it uses, and each AS stores and manages the registered client information. CIMD uses an HTTPS URL as the `client_id`, and the client hosts its metadata as JSON at that URL. The AS fetches the document from that URL, so the client does not need to register with each AS in advance.
 
-Because the AS fetches external URLs, it needs SSRF countermeasures. The AS can also set its own policy on which client domains to trust. The MCP authorization specification (2026-07-28) prefers CIMD over DCR and deprecates DCR. [How Should You Design Authorization for MCP?](/posts/mcp-authorization-design/) covers the details.
+Because the AS fetches external URLs, it needs SSRF countermeasures. The AS can also set its own policy on which client domains to trust. The MCP authorization specification (2026-07-28) prefers CIMD over DCR and deprecates DCR.
 
 An authorization platform must decide which registration methods (pre-registration, DCR, CIMD) to allow for which kinds of clients.
 
@@ -211,7 +211,7 @@ An authorization platform must decide:
 - **Lifetime**: Keep access tokens short-lived, and back them up with refresh tokens and event-driven revocation.
 - **Audience**: Always check `aud` and narrow it with RFC 8707. Without audience restriction, an RS that receives the token, or anyone who steals it, can replay it at other resource servers that trust the same AS.
 - **Sender constraint**: Hand out bearer tokens as they are, or bind them to keys with DPoP or mTLS.
-- **Content**: Pack a list of permissions into the token, or leave decisions to the PDP and put only the subject and delegation in the token. [What Does an Authorization Platform Architecture Look Like?](/posts/authorization-platform-architecture-decisions/) covers this choice.
+- **Content**: Pack a list of permissions into the token, or leave decisions to the PDP and put only the subject and delegation in the token.
 
 [Designing secure API tokens with NIST CSF 2.0](/posts/nist-csf-api-token-design/) covers the design of long-lived tokens such as API keys.
 
@@ -305,8 +305,7 @@ You do not need to adopt everything from day one. Use the decision axes in [How 
 - [What is the AuthZEN Authorization API? A Standard Between PEP and PDP](/posts/authzen-authorization-api/)
 - [What is Workload Identity? WIMSE, Transaction Tokens, and SPIFFE Client Authentication for Service Identity and Context](/posts/workload-identity-wimse-transaction-tokens/)
 - [What is Authorization for AI Agents? Delegation Chains, Human Approval, and Audit with MCP, AuthZEN, AIMS, and A2A/AP2](/posts/authorization-for-ai-agents/)
-- [How Should You Design Authorization for MCP? Common Incidents and Decisions That Are Hard to Reverse](/posts/mcp-authorization-design/)
-- [What Does an Authorization Platform Architecture Look Like? Containers, Key Sequences, PEP/PDP Placement, and Non-Functional Decisions](/posts/authorization-platform-architecture-decisions/)
+- [Why Is MCP Authorization Hard? Risks and Key Decisions When AI Agents Operate Internal Systems](/posts/mcp-authorization-design/)
 - [OAuth 2.0 Explained: Complete Guide to Flows, Tokens, and Implementation](/posts/oauth-2-0/)
 - [OAuth 2.1 and the Security BCP: RFC 9700 and RFC 6819 (Changes from OAuth 2.0)](/posts/oauth-2-1-security-bcp/)
 - [Summary of OpenID Connect 1.0 Specifications](/posts/openid-connect-1-0-spec-summary/)

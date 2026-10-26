@@ -165,7 +165,7 @@ RFC 9728は、RFC 8414のRS版である。RSは`/.well-known/oauth-protected-res
 
 DCRでは、クライアントは使うASごとに登録し、ASは登録したクライアントの情報を保存して管理する。CIMDは、HTTPSのURLを`client_id`にし、そのURLにクライアントのメタデータをJSONで置く仕組みである。ASがそのURLから文書を取得するので、クライアントはASごとの事前の登録をしなくてよい。
 
-ASは外部のURLを取得するので、SSRFへの対策が要る。どのドメインのクライアントを信頼するかの方針も、ASが独自に持てる。MCPの認可仕様（2026-07-28版）は、DCRよりCIMDを優先し、DCRを非推奨とした。詳しくは[MCPの認可はどう設計する？](/ja/posts/mcp-authorization-design/)で扱う。
+ASは外部のURLを取得するので、SSRFへの対策が要る。どのドメインのクライアントを信頼するかの方針も、ASが独自に持てる。MCPの認可仕様（2026-07-28版）は、DCRよりCIMDを優先し、DCRを非推奨とした。
 
 認可基盤として決めることは、クライアントの登録方式（事前登録、DCR、CIMD）のどれを、どの種類のクライアントに許すかである。
 
@@ -211,7 +211,7 @@ RFC 8725の改訂版（draft-ietf-oauth-rfc8725bis）は、2026年10月時点で
 - **寿命**: アクセストークンを短くし、リフレッシュトークンとイベントによる失効で補う。
 - **宛先**: `aud`を必ず検証し、RFC 8707で絞る。宛先を絞らないと、トークンを受け取ったRSや盗んだ者が、同じASを信頼する別のRSでそれを使い回せる。
 - **送信者制約**: Bearerのまま配るか、DPoPかmTLSで鍵に結び付けるか。
-- **中身**: トークンに権限の一覧を詰めるか、判定はPDPに任せてトークンには主体と委譲だけを入れるか。この判断は[認可基盤のアーキテクチャとは？](/ja/posts/authorization-platform-architecture-decisions/)で扱う。
+- **中身**: トークンに権限の一覧を詰めるか、判定はPDPに任せてトークンには主体と委譲だけを入れるか。
 
 APIキーのような長命のトークンの設計は[NIST CSF 2.0に学ぶ安全なAPIトークン設計](/ja/posts/nist-csf-api-token-design/)で扱った。
 
@@ -305,8 +305,7 @@ RFC 9470は、RSが「このトークンの認証では足りない」と返す�
 - [AuthZEN Authorization APIとは？PEPとPDPをつなぐ認可判定の標準](/ja/posts/authzen-authorization-api/)
 - [ワークロードアイデンティティとは？WIMSE・Transaction Tokens・SPIFFEクライアント認証で見るサービス間の身元と文脈](/ja/posts/workload-identity-wimse-transaction-tokens/)
 - [AIエージェントの認可とは？委譲の連鎖・人の承認・監査をMCP、AuthZEN、AIMS、A2A/AP2で整理する](/ja/posts/authorization-for-ai-agents/)
-- [MCPの認可はどう設計する？起きうる事故と後から直せない判断](/ja/posts/mcp-authorization-design/)
-- [認可基盤のアーキテクチャとは？コンテナ構成・代表シーケンス・PEPとPDPの配置と非機能の設計判断](/ja/posts/authorization-platform-architecture-decisions/)
+- [MCPの認可はなぜ難しい？AIエージェントに社内システムを操作させるときのリスクと押さえどころ](/ja/posts/mcp-authorization-design/)
 - [OAuth 2.0とは？フロー・トークン・実装の完全解説](/ja/posts/oauth-2-0/)
 - [OAuth 2.1とは？OAuth 2.0からの変更点とSecurity BCP（RFC 9700）](/ja/posts/oauth-2-1-security-bcp/)
 - [OpenID Connect 1.0 仕様まとめ](/ja/posts/openid-connect-1-0-spec-summary/)
