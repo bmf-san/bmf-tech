@@ -231,28 +231,13 @@ OIDCは[OpenID Connect 1.0 仕様まとめ](/ja/posts/openid-connect-1-0-spec-su
 
 ## SCIM: 認可の前提となる主体と属性を揃える
 
-SCIM（System for Cross-domain Identity Management）は、IdPや人事システムからSaaSへ、利用者とグループを配る標準である。RFC 7643がスキーマ、RFC 7644がプロトコルを定める。
+SCIM（System for Cross-domain Identity Management）は、IdPや人事システムからSaaSへ、利用者とグループを配る標準である。認可基盤から見ると、判定に使う主体と属性を各サービスへ前もって配り、PIPが参照するデータを揃える仕組みである。入社、異動、退職に合わせて、グループや属性が自動で変わる。
 
-- `/Users`と`/Groups`に対して、HTTPのGET、POST、PUT、PATCH、DELETEで操作する
-- `filter`で検索し、`/Bulk`でまとめて処理する
-- Enterprise Userの拡張で、`department`や`manager`などの組織の属性を持てる
-- `/ServiceProviderConfig`と`/Schemas`で、対応している機能とスキーマを公開する
-
-認可基盤から見ると、SCIMは判定に使う主体と属性を各サービスへ前もって配る仕組みで、PIP（属性の供給元）が参照するデータを揃える。入社、異動、退職に合わせて、グループや属性が自動で変わる。逆に、このプロビジョニングがなければ、退職者のアカウントを各SaaSで個別に消すことになり、消し忘れが起きうる。
-
-認可基盤として決めることは次のとおりである。
-
-- 主体と属性の正本をどこに置くか（人事システム、IdP、自前のディレクトリ）
-- SaaSや社内サービスへSCIMで配るか、判定のたびにPIPとして問い合わせるか
-- グループを権限の単位として使うか、属性からロールを導くか
+認可基盤として決めることは、主体と属性の正本をどこに置くかと、SCIMで前もって配るか、判定のたびにPIPとして問い合わせるかである。
 
 ## IPSIE: 企業向けの相互運用プロファイル
 
-IPSIE（Interoperability Profiling for Secure Identity in the Enterprise）は、OpenID FoundationのWorking Groupである。新しいプロトコルを作るのではなく、既存の仕様の使い方を絞ったプロファイルを作る。
-
-最初に扱う範囲は、SSO、利用者のライフサイクル管理、エンタイトルメント、リスクシグナルの共有、ログアウト、トークンの失効である。WGの憲章によると、既存の仕様の多くはフレームワークで選択肢が多く、独立に作った実装どうしが追加の調整なしに相互運用できるとは限らない。IPSIEは、その相互運用を第一の目標とし、安全な既定値も優先してプロファイルを作る。
-
-2026年10月時点で、FinalとImplementer's Draftはまだない。認可基盤として今できることは、SaaSを選ぶときにOIDC、SCIM、SSFへの対応を条件に入れ、IPSIEのプロファイルが固まったら合わせられるようにしておくことである。
+IPSIE（Interoperability Profiling for Secure Identity in the Enterprise）は、OpenID FoundationのWorking Groupである。新しいプロトコルは作らず、既存の仕様の使い方を絞ったプロファイルを作る。対象はSSO、利用者のライフサイクル管理、ログアウト、トークンの失効などである。2026年10月時点で、FinalとImplementer's Draftはまだない。
 
 # 継続評価: 発行した後に状況が変わったら
 

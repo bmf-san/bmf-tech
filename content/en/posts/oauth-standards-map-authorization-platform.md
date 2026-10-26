@@ -231,28 +231,13 @@ Authorization decisions need to know who the subject is, which groups it belongs
 
 ## SCIM: Keep Subjects and Attributes in Sync for Authorization
 
-SCIM (System for Cross-domain Identity Management) delivers users and groups from an IdP or HR system to SaaS products. RFC 7643 defines the schema, and RFC 7644 defines the protocol.
+SCIM (System for Cross-domain Identity Management) delivers users and groups from an IdP or HR system to SaaS products. For an authorization platform, SCIM keeps the subjects and attributes used in decisions in sync across services ahead of time, and this is the data a PIP reads. Groups and attributes change automatically as people join, move, and leave.
 
-- Operate on `/Users` and `/Groups` with HTTP GET, POST, PUT, PATCH, and DELETE
-- Search with `filter`, and batch operations with `/Bulk`
-- Carry organizational attributes such as `department` and `manager` through the Enterprise User extension
-- Publish supported features and schemas through `/ServiceProviderConfig` and `/Schemas`
-
-From the platform's viewpoint, SCIM delivers the subjects and attributes used in decisions to each service in advance, and keeps the data that a PIP (the source of attributes) reads in sync. Groups and attributes change automatically as people join, move, and leave. Conversely, without this provisioning, someone must remove a former employee's account in each SaaS product separately, and may forget a few.
-
-An authorization platform must decide:
-
-- Where the source of truth for subjects and attributes lives (HR system, IdP, or your own directory)
-- Whether to push data to SaaS and internal services through SCIM, or query a PIP on each decision
-- Whether to use groups as the unit of permission, or derive roles from attributes
+An authorization platform must decide where the source of truth for subjects and attributes lives, and whether to push data through SCIM in advance or query a PIP on each decision.
 
 ## IPSIE: Interoperability Profiles for the Enterprise
 
-IPSIE (Interoperability Profiling for Secure Identity in the Enterprise) is an OpenID Foundation working group. It does not create new protocols. It writes profiles that narrow how to use existing specifications.
-
-Its initial scope covers SSO, user lifecycle management, entitlements, risk signal sharing, logout, and token revocation. According to the WG charter, many existing specifications are frameworks with so much optionality that two independent implementations are not guaranteed to interoperate without further coordination. IPSIE makes that interoperability the primary goal of its profiles and also prioritizes secure defaults.
-
-As of October 2026, IPSIE has no Final specification and no Implementer's Draft. What a platform can do today: require OIDC, SCIM, and SSF support when choosing SaaS, and stay ready to align with IPSIE profiles once they settle.
+IPSIE (Interoperability Profiling for Secure Identity in the Enterprise) is an OpenID Foundation working group. It does not create new protocols. It writes profiles that narrow how to use existing specifications, covering SSO, user lifecycle management, logout, token revocation, and more. As of October 2026, IPSIE has no Final specification and no Implementer's Draft.
 
 # Continuous Evaluation: When Things Change After Issuance
 
