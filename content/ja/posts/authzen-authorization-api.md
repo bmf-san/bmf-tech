@@ -425,24 +425,6 @@ AuthZENで替えやすくなるのは、PEPのコードと通信の形である�
 
 つまり、AuthZENは「PEPを書き換えずにPDPを替えられる」状態を作るが、「ポリシーを書き換えずに替えられる」状態は作らない。それでも、PEPがサービスやゲートウェイの数だけある組織では、前者の価値は大きいと筆者は考える。
 
-## 相互運用の実績
-
-AuthZENワーキンググループは、7回の相互運用イベントを開いた。2024年5月のIdentiverse 2024から2025年12月のGartner IAM US 2025までである（authzen-interop.netとOpenID Foundationの発表による）。
-
-| 場面 | イベント | 版 | 対象 |
-| --- | --- | --- | --- |
-| アプリケーションのコード | Identiverse 2024 | draft 00 | `/evaluation` |
-| アプリケーションのコード | EIC 2024 | draft 01 | `/evaluation` |
-| アプリケーションのコード | Authenticate 2024 | draft 02 | `/evaluations`を追加 |
-| アプリケーションのコード | Gartner IAM US 2024 | draft 02 | `/evaluations`を追加 |
-| APIゲートウェイ | Gartner IAM London 2025 | draft 02 | `/evaluations`を追加 |
-| 検索 | Identiverse 2025 | draft 03 | `/search`、`/.well-known` |
-| IdP | Gartner IAM US 2025 | draft 04 | `/search` |
-
-TodoアプリをPEPにしたシナリオには、多くのPDPが結果を載せている。Aserto、Axiomatics、Cerbos、Open Policy Agent、OpenFGA、Amazon Verified Permissions、PlainID、SGNL、Topazなどである。ただし、参加したことは、その製品がAuthZENをそのまま話すことを意味しない。たとえばOPAの結果は、相互運用のサイトで動くプロキシに対して取られている。採用するときは、各製品が仕様のどの版のどのAPIに対応しているかを、製品の文書で確かめる必要がある。
-
-相互運用のサイトは、AuthZENが多層防御（defense-in-depth）の考え方に立つと述べている。そのうえで、IdPで粗く、APIゲートウェイで中くらいに、アプリケーションで細かく判定する構成を示す。筆者は、同じAPIで3つの層のPEPをつなげることが、標準のAPIを持つ意味をよく表していると考える。
-
 # プロファイル群の概要
 
 Authorization API 1.0の上に、用途ごとのプロファイルに加えて、COAZのフレームワークと、バインディング（MCP向けのCOAZ-MCP、OAuth 2.0 Token Exchange向け）も作られている。どれもDraftであり、今後も変わりうる。AIエージェントでの使い方は[AIエージェントで認可の何が変わるか](/ja/posts/authorization-for-ai-agents/)で詳しく扱う。
@@ -508,8 +490,6 @@ OpenID Foundationは2026年6月の発表で、認可システムはこれまで�
 - [Authorization API 1.0 Final Specification Approved（OpenID Foundation）](https://openid.net/authorization-api-1-0-final-specification-approved/)
 - [AuthZEN Working Group – Specifications](https://openid.net/wg/authzen/specifications/)
 - [Conformance Testing for OpenID AuthZEN Authorization API 1.0](https://openid.net/certification/authzen_testing/)
-- [OpenID AuthZEN Interop](https://authzen-interop.net/)
-- [AuthZEN Work Group Announces Authorization Interop Results（OpenID Foundation, 2024-05-29）](https://openid.net/authorization-interop-results/)
 - [openid/authzen（GitHub）](https://github.com/openid/authzen)
 - [open-policy-agent/contrib authzen-proxy（GitHub）](https://github.com/open-policy-agent/contrib/tree/main/authzen/authzen-proxy)
 - [OPA-AuthZEN（OPA Ecosystem）](https://www.openpolicyagent.org/ecosystem/entry/opa-authzen)

@@ -425,24 +425,6 @@ AuthZEN makes the PEP code and the wire format easy to swap. The following work 
 
 In short, AuthZEN lets you switch PDPs without rewriting PEPs, but not without rewriting policies. Even so, in my view, the first benefit matters a lot in an organization with as many PEPs as it has services and gateways.
 
-## Interoperability Track Record
-
-The AuthZEN Working Group ran seven interoperability events, from Identiverse 2024 in May 2024 to Gartner IAM US 2025 in December 2025 (according to authzen-interop.net and an OpenID Foundation announcement).
-
-| Scenario | Event | Draft | Endpoints |
-| --- | --- | --- | --- |
-| Application code | Identiverse 2024 | 00 | `/evaluation` |
-| Application code | EIC 2024 | 01 | `/evaluation` |
-| Application code | Authenticate 2024 | 02 | adds `/evaluations` |
-| Application code | Gartner IAM US 2024 | 02 | adds `/evaluations` |
-| API gateway | Gartner IAM London 2025 | 02 | adds `/evaluations` |
-| Search | Identiverse 2025 | 03 | `/search`, `/.well-known` |
-| IdP | Gartner IAM US 2025 | 04 | `/search` |
-
-Many PDPs posted results for the scenario that uses a todo app as the PEP, including Aserto, Axiomatics, Cerbos, Open Policy Agent, OpenFGA, Amazon Verified Permissions, PlainID, SGNL, and Topaz. Participation does not mean the product speaks AuthZEN out of the box, though. For example, the OPA results come from a proxy that runs on the interop site. Before adopting a product, check its documentation for which draft and which APIs it supports.
-
-The interop site states that AuthZEN takes a defense-in-depth approach to IAM, and shows a layered setup: coarse-grained decisions at the IdP, medium-grained ones at the API gateway, and fine-grained ones in the application. In my view, connecting PEPs at all three layers through one API shows well why a standard API matters.
-
 # Profiles at a Glance
 
 On top of Authorization API 1.0, the working group builds profiles for specific uses, plus the COAZ framework and two bindings: COAZ-MCP for MCP, and one for OAuth 2.0 Token Exchange. Every one of them is a draft and may still change. [What changes in authorization for AI agents](/posts/authorization-for-ai-agents/) covers their use with AI agents in detail.
@@ -508,8 +490,6 @@ Finally, here are my own tips for bringing AuthZEN into a design.
 - [Authorization API 1.0 Final Specification Approved (OpenID Foundation)](https://openid.net/authorization-api-1-0-final-specification-approved/)
 - [AuthZEN Working Group – Specifications](https://openid.net/wg/authzen/specifications/)
 - [Conformance Testing for OpenID AuthZEN Authorization API 1.0](https://openid.net/certification/authzen_testing/)
-- [OpenID AuthZEN Interop](https://authzen-interop.net/)
-- [AuthZEN Work Group Announces Authorization Interop Results (OpenID Foundation, 2024-05-29)](https://openid.net/authorization-interop-results/)
 - [openid/authzen (GitHub)](https://github.com/openid/authzen)
 - [open-policy-agent/contrib authzen-proxy (GitHub)](https://github.com/open-policy-agent/contrib/tree/main/authzen/authzen-proxy)
 - [OPA-AuthZEN (OPA Ecosystem)](https://www.openpolicyagent.org/ecosystem/entry/opa-authzen)
