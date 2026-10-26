@@ -92,13 +92,13 @@ The architecture rests on three elements.
 | Workload identifier | A URI that names a workload uniquely within a trust domain. A separate draft (draft-ietf-wimse-identifier) defines the format. SPIFFE ID appears as a conforming example |
 | Workload identity credential | A credential that binds the identifier to a cryptographic key. Two forms exist: the WIT (Workload Identity Token), a JWT, and the WIC (Workload Identity Certificate), an X.509 certificate |
 
-An identifier's meaning depends on the trust domain that validates it. Per arch-08, two credentials with the same identifier value represent the same workload only when a verifier validates both under the same trust domain and issuer trust configuration. The later rule against authorizing on the path alone rests on the same idea.
+An identifier's meaning depends on the trust domain that validates it. Per the architecture draft, two credentials with the same identifier value represent the same workload only when a verifier validates both under the same trust domain and issuer trust configuration. The later rule against authorizing on the path alone rests on the same idea.
 
 Deployments SHOULD use bounded credential lifetimes and automated renewal. You do not generally need a new key pair for every request.
 
 ## Three Scenarios
 
-arch-08 adds components step by step across three scenarios.
+The architecture draft adds components step by step across three scenarios.
 
 | Scenario | Added components | Key point |
 | --- | --- | --- |
@@ -106,7 +106,7 @@ arch-08 adds components step by step across three scenarios.
 | Context | Context service | The gateway exchanges the external access token for an internal context token. The gateway normally does not forward the access token inside |
 | Cross-domain | Token service, external token service | Internal identity and context get exchanged for a token usable in another domain. The steps follow Identity Chaining |
 
-arch-08 names Transaction Tokens as one example of this context token. Do not let an external bearer token flow inside; replace it with a token that has meaning only inside.
+The architecture draft names Transaction Tokens as one example of this context token. Do not let an external bearer token flow inside; replace it with a token that has meaning only inside.
 
 # Rules for Workload Identifiers
 
@@ -354,8 +354,7 @@ Within WIMSE, the practices guide sits closest to an RFC, with HTTP signatures n
 - [What is the AuthZEN Authorization API? A Standard Between PEP and PDP](/posts/authzen-authorization-api/)
 - [Which OAuth Standards Does an Authorization Platform Need? A Map of Delegation, Tokens, and Continuous Evaluation](/posts/oauth-standards-map-authorization-platform/)
 - [What is Authorization for AI Agents? Delegation Chains, Human Approval, and Audit with MCP, AuthZEN, AIMS, and A2A/AP2](/posts/authorization-for-ai-agents/)
-- [How Should You Design Authorization for MCP? Common Incidents and Decisions That Are Hard to Reverse](/posts/mcp-authorization-design/)
-- [What Does an Authorization Platform Architecture Look Like? Containers, Key Sequences, PEP/PDP Placement, and Non-Functional Decisions](/posts/authorization-platform-architecture-decisions/)
+- [Why Is MCP Authorization Hard? Risks and Key Decisions When AI Agents Operate Internal Systems](/posts/mcp-authorization-design/)
 - [What is the Big Picture of Service-to-Service Authentication? mTLS, Token Exchange, SPIFFE, and Zero Trust](/posts/service-to-service-authentication/)
 - [What are Sender-Constrained Tokens? An Introduction to mTLS (RFC 8705) and DPoP (RFC 9449)](/posts/sender-constrained-tokens-mtls-dpop/)
 

@@ -92,13 +92,13 @@ WIMSEのアーキテクチャのドラフト（draft-ietf-wimse-arch）は、そ
 | ワークロード識別子 | トラストドメインの中でワークロードを一意に表すURI。形式は別のドラフト（draft-ietf-wimse-identifier）が定める。SPIFFE IDは準拠する例として挙がっている |
 | ワークロードアイデンティティ資格情報 | 識別子を暗号鍵に結び付けた資格情報。JWTの形のWIT（Workload Identity Token）と、X.509証明書の形のWIC（Workload Identity Certificate）がある |
 
-識別子の意味は、検証したトラストドメインに依存する。arch-08によれば、同じ識別子の値を含む2つの資格情報も、同じトラストドメインと発行者の信頼設定で検証したときにだけ同じワークロードを表す。後で出てくる、pathだけで認可しないという規則も、この考え方に立っている。
+識別子の意味は、検証したトラストドメインに依存する。アーキテクチャのドラフトによれば、同じ識別子の値を含む2つの資格情報も、同じトラストドメインと発行者の信頼設定で検証したときにだけ同じワークロードを表す。後で出てくる、pathだけで認可しないという規則も、この考え方に立っている。
 
 資格情報は寿命を区切り、自動で更新すべき（SHOULD）とされる。要求ごとに鍵ペアを作り直す必要は通常ない。
 
 ## 3つのシナリオ
 
-arch-08は部品を段階的に足しながら3つのシナリオを示す。
+アーキテクチャのドラフトは、部品を段階的に足しながら3つのシナリオを示す。
 
 | シナリオ | 追加される部品 | 要点 |
 | --- | --- | --- |
@@ -106,7 +106,7 @@ arch-08は部品を段階的に足しながら3つのシナリオを示す。
 | コンテキスト | コンテキストサービス | ゲートウェイが外部のアクセストークンを内部用のコンテキストトークンに交換する。アクセストークンは通常内部に転送しない |
 | ドメインをまたぐ | トークンサービス、外部トークンサービス | 内部の身元と文脈を、別ドメインで使えるトークンに交換する。手順はIdentity Chainingに沿う |
 
-arch-08は、このコンテキストトークンの例としてTransaction Tokensを挙げている。外部向けのベアラートークンを内部に流さず、内部でだけ意味を持つトークンに置き換える。
+アーキテクチャのドラフトは、このコンテキストトークンの例としてTransaction Tokensを挙げている。外部向けのベアラートークンを内部に流さず、内部でだけ意味を持つトークンに置き換える。
 
 # ワークロード識別子の規則
 
@@ -354,8 +354,7 @@ WIMSEの中では、実践ガイドが最もRFCに近く、HTTP署名がそれ�
 - [AuthZEN Authorization APIとは？PEPとPDPをつなぐ認可判定の標準](/ja/posts/authzen-authorization-api/)
 - [認可基盤に必要なOAuth関連標準とは？委譲・トークン・継続評価の地図](/ja/posts/oauth-standards-map-authorization-platform/)
 - [AIエージェントの認可とは？委譲の連鎖・人の承認・監査をMCP、AuthZEN、AIMS、A2A/AP2で整理する](/ja/posts/authorization-for-ai-agents/)
-- [MCPの認可はどう設計する？起きうる事故と後から直せない判断](/ja/posts/mcp-authorization-design/)
-- [認可基盤のアーキテクチャとは？コンテナ構成・代表シーケンス・PEPとPDPの配置と非機能の設計判断](/ja/posts/authorization-platform-architecture-decisions/)
+- [MCPの認可はなぜ難しい？AIエージェントに社内システムを操作させるときのリスクと押さえどころ](/ja/posts/mcp-authorization-design/)
 - [サービス間認証の全体像とは？mTLS・Token Exchange・SPIFFE・ゼロトラスト](/ja/posts/service-to-service-authentication/)
 - [送信者制約トークンとは？mTLS（RFC 8705）とDPoP（RFC 9449）入門](/ja/posts/sender-constrained-tokens-mtls-dpop/)
 
