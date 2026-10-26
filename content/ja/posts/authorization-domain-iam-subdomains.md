@@ -147,20 +147,14 @@ flowchart TB
 
 ライフサイクルとプロビジョニングを①と⑤のどちらに置くかは、分け方によって違う。たとえばMicrosoft Entra ID Governanceは、アイデンティティのライフサイクル管理をガバナンスの土台と位置づけ、プロビジョニングもその機能に含めている。
 
-表に書いた責務と含むもののほかに、それぞれについて押さえておきたい点を挙げる。
-
-- ① アイデンティティ: 代表的な標準はSCIMである。アクセス判定はこのサブドメインの属性を入力に使うので、判定のロジックが正しくても、属性が古ければ認可の事故は起きうる。たとえば、異動した人が前の部署のデータを読めてしまう。
-- ② 認証: フェデレーションの代表的な標準はOpenID ConnectとSAMLである。NIST SP 800-63-4（2025年7月に確定）は、身元確認（63A）、認証（63B）、フェデレーション（63C）を分けて扱う。①と②の境界を考えるときの参考になる。
-- ③ 委譲: OAuthの中心はここにある。ただし、委譲で決まるのはクライアントに委ねる範囲までである。スコープが`invoices:read`であっても、どの請求書を読めるかは④として、リソースサーバー側で別に判定する。RFC 6749も、リソースサーバーがトークンのスコープが要求された資源を覆うことを確かめる（MUST）とだけ定め、資源ごとの判定のしかたは定めていない。AIエージェントで委譲が連鎖するときの課題は[AIエージェントの認可とは？](/ja/posts/authorization-for-ai-agents/)で扱う。
-- ④ アクセス判定: 狭い意味の「認可」はここを指す。RBAC、ABAC、ReBACといったモデルや、OPAやCedarのようなポリシーエンジンはここの話である。XACMLやNIST SP 800-162などの参照アーキテクチャは、判定する部品をPDP（Policy Decision Point）と呼ぶ。判定の結果に従って要求を通すか止める部品はPEP（Policy Enforcement Point）と呼ぶ。参照アーキテクチャとモデルの選び方は[認可のアーキテクチャ、モデル、エンジンの比較](/ja/posts/authorization-architecture-models-engines/)で、PEPとPDPの間の標準APIは[AuthZEN Authorization APIとは？](/ja/posts/authzen-authorization-api/)で扱う。
-- ⑤ アクセスガバナンス: ④が「今この操作をしてよいか」を要求のたびに決めるのに対し、⑤は「そもそもこの人にこの権限を持たせてよいか」を時間をかけて決める。
+④アクセス判定は①アイデンティティの属性を入力に使う。そのため、判定のロジックが正しくても、属性が古ければ認可の事故は起きうる。たとえば、異動した人が前の部署のデータを読めてしまう。
 
 ## 委譲を独立させる理由
 
 委譲を認証やアクセス判定の一部として扱う整理もある。それでもこの地図で③を独立させるのは、OAuthの中心概念（クライアント、同意、グラント）がどこにも収まらないためである。
 
 - ②認証には収まらない。同意は「本人であること」を確かめる行為ではない
-- ④アクセス判定には収まらない。委ねる範囲は、資源ごとの判定ではなく権限を持つ側の同意を起点に決まる
+- ④アクセス判定には収まらない。委ねる範囲は、資源ごとの判定ではなく権限を持つ側の同意を起点に決まる。スコープが`invoices:read`であっても、どの請求書を読めるかは④として、リソースサーバー側で別に判定する
 - ⑤アクセスガバナンスには収まらない。⑤は、どの主体にどの権限を持たせるかを管理者や承認者が決める。③は、権限を持つ側（OAuthのリソースオーナー）がその一部をクライアントに委ねる。管理者が組織全体に代わってアプリに同意する場合（Microsoft Entra IDの管理者の同意など）も、組織の権限をクライアントに委ねる点で③にあたる
 
 委譲の同意は、GDPRなどが定める「個人データを特定の目的で使うことへの同意」とも別物である。前者は自分の権限を別の主体に委ねる同意であり、後者はプライバシーの同意である。画面上は似ていても、記録する内容も撤回したときの影響も違う。
@@ -229,7 +223,6 @@ IAMの外にも、認証やアクセス判定に入力を渡すドメインが�
 - [RFC 7643 System for Cross-domain Identity Management: Core Schema](https://www.rfc-editor.org/rfc/rfc7643)
 - [RFC 7644 System for Cross-domain Identity Management: Protocol](https://www.rfc-editor.org/rfc/rfc7644)
 - [NIST CSRC Glossary: identity and access management](https://csrc.nist.gov/glossary/term/identity_and_access_management)
-- [NIST SP 800-63-4 Digital Identity Guidelines](https://csrc.nist.gov/pubs/sp/800/63/4/final)
 - [NIST SP 800-162 Guide to Attribute Based Access Control (ABAC) Definition and Considerations](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-162.pdf)
 - [OASIS eXtensible Access Control Markup Language (XACML) Version 3.0](https://docs.oasis-open.org/xacml/3.0/xacml-3.0-core-spec-os-en.html)
 - [OpenID Shared Signals Framework Specification 1.0](https://openid.net/specs/openid-sharedsignals-framework-1_0-final.html)
