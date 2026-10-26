@@ -145,16 +145,6 @@ flowchart TB
 | ④ | アクセス判定（Access Decision） | 主体がある資源にある操作をしてよいかを、ポリシーに基づいて決める | ポリシーの定義、評価（PDP）、判定結果の提供と強制の仕組み（PEP） |
 | ⑤ | アクセスガバナンス（Access Governance） | 誰にどの権限を持たせるかを決め、それが妥当であり続けるよう統制する | 申請・承認、割り当て、棚卸し、職務分掌、一時的な権限付与（JIT） |
 
-## 委譲を独立させる理由
-
-委譲を認証やアクセス判定の一部として扱う整理もある。それでもこの地図で③を独立させるのは、OAuthの中心概念（クライアント、同意、グラント）がどこにも収まらないためである。
-
-- ②認証には収まらない。同意は「本人であること」を確かめる行為ではない
-- ④アクセス判定には収まらない。委ねる範囲は、資源ごとの判定ではなく権限を持つ側の同意を起点に決まる。スコープが`invoices:read`であっても、どの請求書を読めるかは④として、リソースサーバー側で別に判定する
-- ⑤アクセスガバナンスには収まらない。⑤は、どの主体にどの権限を持たせるかを管理者や承認者が決める。③は、権限を持つ側（OAuthのリソースオーナー）がその一部をクライアントに委ねる。管理者が組織全体に代わってアプリに同意する場合（Microsoft Entra IDの管理者の同意など）も、組織の権限をクライアントに委ねる点で③にあたる
-
-委譲の同意は、GDPRなどが定める「個人データを特定の目的で使うことへの同意」とも別物である。前者は自分の権限を別の主体に委ねる同意であり、後者はプライバシーの同意である。画面上は似ていても、記録する内容も撤回したときの影響も違う。
-
 # 隣接ドメイン
 
 IAMの外にも、認証やアクセス判定に入力を渡すドメインがある。代表的なものが次の2つである。
@@ -228,4 +218,3 @@ IAMの外にも、認証やアクセス判定に入力を渡すドメインが�
 - [Vaughn Vernon, Implementing Domain-Driven Design 第1章の抜粋: The Business Value of Using DDD（InformIT）](https://www.informit.com/articles/article.aspx?p=1944876&seqNum=4)
 - [Vaughn Vernon, IDDD_Samples](https://github.com/VaughnVernon/IDDD_Samples)
 - [Implementing Domain Driven Design Review and Interview（InfoQ）](https://www.infoq.com/articles/implmenting-domain-driven-design-vaughn-vernon/)
-- [Grant tenant-wide admin consent to an application（Microsoft Learn）](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/grant-admin-consent)

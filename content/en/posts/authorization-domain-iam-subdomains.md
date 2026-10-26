@@ -145,16 +145,6 @@ Solid lines show data flow, and dotted lines show requests. Authentication and a
 | 4 | Access Decision | Decides, based on policy, whether a subject may perform an action on a resource | Policy definition, evaluation (PDP), providing decisions and the enforcement mechanism (PEP) |
 | 5 | Access Governance | Decides who holds which permission and keeps that appropriate over time | Requests and approvals, assignment, access reviews, separation of duties, just-in-time (JIT) access |
 
-## Why delegation stands alone
-
-Some models fold delegation into authentication or access decision. This map keeps delegation separate because the core OAuth concepts (client, consent, grant) fit nowhere else.
-
-- They do not fit authentication. Consent does not verify who you are
-- They do not fit access decision. The delegated range starts from the consent of the side that holds the permission, not from a per-resource decision. Even with a scope of `invoices:read`, the resource server decides separately which invoices the caller may read, as part of access decision
-- They do not fit access governance. In access governance, administrators and approvers decide which subject holds which permission. In delegation, the side that holds a permission (the OAuth resource owner) hands part of it to a client. When an administrator consents to an app on behalf of the whole organization (for example, admin consent in Microsoft Entra ID), that still counts as delegation, because it hands the organization's permissions to a client
-
-Consent for delegation also differs from consent under privacy laws such as the GDPR, which covers the use of personal data for a specific purpose. The first hands your permissions to another subject. The second concerns privacy. The screens may look alike, but what you record and what happens on withdrawal differ.
-
 # Adjacent Domains
 
 Some domains outside IAM also feed input into authentication and access decision. Two common ones:
@@ -228,4 +218,3 @@ Mixing these up makes IAM absorb business knowledge. Every change to a business 
 - [Vaughn Vernon, Implementing Domain-Driven Design, Chapter 1 excerpt: The Business Value of Using DDD (InformIT)](https://www.informit.com/articles/article.aspx?p=1944876&seqNum=4)
 - [Vaughn Vernon, IDDD_Samples](https://github.com/VaughnVernon/IDDD_Samples)
 - [Implementing Domain Driven Design Review and Interview (InfoQ)](https://www.infoq.com/articles/implmenting-domain-driven-design-vaughn-vernon/)
-- [Grant tenant-wide admin consent to an application (Microsoft Learn)](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/grant-admin-consent)
