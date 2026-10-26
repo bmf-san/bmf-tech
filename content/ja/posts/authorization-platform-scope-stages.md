@@ -1,5 +1,5 @@
 ---
-title: "認可基盤はどこまで作るべきか？横断と各ドメインの分担、判断の軸、判定の外部化"
+title: "認可基盤はどこまで作るべきか？横断と各ドメインの分担、判断の軸"
 slug: authorization-platform-scope-stages
 date: 2026-10-25
 author: bmf-san
@@ -10,7 +10,7 @@ tags:
   - IAM
   - アーキテクチャ
   - システム設計
-description: "認可基盤はどこまで作るべきか。認証のように一か所へ集められない認可について、組織とアーキテクチャの全体に及ぶ理由、横断で揃えるものと各ドメインに任せるもの、判断の軸と痛みのサイン、共通の規約・判定の外部化・統制の仕組みという打ち手、作らない方がよいサイン、判定を外部化するかの判断を整理する。"
+description: "認可基盤はどこまで作るべきか。認証のように一か所へ集められない認可について、組織とアーキテクチャの全体に及ぶ理由、横断で揃えるものと各ドメインに任せるもの、判断の軸と今起きている問題からの見方、共通の規約・判定の外部化・統制の仕組みという打ち手、作らない方がよいサインを整理する。"
 translation_key: authorization-platform-scope-stages
 draft: false
 ---
@@ -23,9 +23,8 @@ draft: false
 
 - 認可基盤が組織とアーキテクチャの全体に及ぶ理由と、それでも一か所に集めない理由
 - 横断で揃えるものと、各業務ドメインに任せるものの線引き
-- どこまで要るかを決める判断の軸と、今の痛みから見るサイン
+- どこまで要るかを決める判断の軸と、今起きている問題からの見方
 - 共通の規約、判定の外部化、統制の仕組みという打ち手と、作らない方がよいサイン
-- 判定をアプリの外に出す（外部化する）かどうかの判断
 
 認可とは何か、認証との違い、IAMのサブドメインの全体像は[認可とは？認証との違いとIAMのサブドメインで見る全体像](/ja/posts/authorization-domain-iam-subdomains/)が扱う。本記事はそれを前提として、組織として作る範囲に絞る。
 
@@ -37,12 +36,11 @@ draft: false
 flowchart TB
   Q["認可基盤はどこまで要るか"] --> S["範囲: 組織とアーキテクチャの全体に<br/>及ぶが一か所には集めない"]
   S --> D["分担: 仕組みと契約は横断<br/>意味は各ドメイン"]
-  D --> A["判断の軸と痛みのサイン"]
+  D --> A["判断の軸と今起きている問題"]
   A --> P1["共通の規約とライブラリ"]
   A --> P2["判定の外部化"]
   A --> P3["統制の仕組み"]
   P1 -. "前提" .-> P2
-  P2 -.-> X["外部化するかの判断<br/>遅延・可用性との交換"]
 ```
 
 # 認可基盤は組織とアーキテクチャの全体に及ぶ
@@ -130,6 +128,10 @@ flowchart TB
 
 3つは順に上る段階ではなく、必要なものを選んで加える。ただし、判定の外部化は共通の規約を前提にする。PDPは、揃えたトークンの形式や監査ログの形式を前提に動く。共通の規約なしにPDPを入れると、PEPごとに主体の表し方やログの形式が違ったままになり、外部化の利点である一貫性と監査が得にくい。
 
+判定の外部化は、凝集度と結合度の問題として見るとわかりやすい。各アプリに散らばっていた権限のルールをポリシーとして1か所に集め、凝集度を高める。アプリが依存するのは判定APIの契約だけになり、アプリとルールの結合度が下がる。そのため、ルールの変更がポリシーの中で閉じ、アプリのリリースと切り離せる。代わりに、PDPをネットワーク越しに呼ぶなら、判定の往復による遅延と、PDPの可用性への依存を負う。
+
+PEPとPDPの役割とモデルの選び方は[認可のアーキテクチャとモデル、エンジンの選び方](/ja/posts/authorization-architecture-models-engines/)で扱う。PEPとPDPの配置と非機能の設計は[認可基盤のアーキテクチャと設計判断](/ja/posts/authorization-platform-architecture-decisions/)で、PEPとPDPの間をつなぐ標準は[AuthZEN Authorization APIとは](/ja/posts/authzen-authorization-api/)で扱う。
+
 ## 判断の軸
 
 | 軸 | 基盤が必要になる方向 | 基盤がなくても回る方向 |
@@ -146,9 +148,9 @@ flowchart TB
 
 権限モデルの選び方（RBAC、ABAC、ReBACなど）は[認可のアーキテクチャとモデル、エンジンの選び方](/ja/posts/authorization-architecture-models-engines/)で扱う。アプリ単位の権限設計（機能スコープとデータスコープなど）は[権限管理の設計](/ja/posts/permission-management-design/)にまとめた。
 
-## 今の痛みから見るサイン
+## 今起きている問題から判断する
 
-軸は将来の要件を含めて考えるものだが、今起きている痛みからも判断できる。次のような状態は、打ち手を加える時期に来ているサインである。
+軸は将来の要件を含めて考えるものだが、今起きている問題からも判断できる。次のような問題が起きていれば、打ち手を加える時期に来ている。
 
 - 認可のコードが各アプリにコピーされていて、挙動がアプリごとに違う
 - 認可の欠陥（他人のデータが見えるなど）が繰り返し起きている
@@ -156,9 +158,9 @@ flowchart TB
 - 「この資源を見られるのは誰か」に答えられない。監査のたびに人手で調べている
 - 権限の申請がチケットとスプレッドシートで回っている
 
-それぞれのサインが、どの軸とどの打ち手に関係するかの目安は次のとおり。
+それぞれの問題が、どの軸とどの打ち手に関係するかの目安は次のとおり。
 
-| サイン | 関係する軸 | 効きやすい打ち手 |
+| 起きている問題 | 関係する軸 | 効きやすい打ち手 |
 |---|---|---|
 | 認可のコードがコピーされ、挙動が違う | 規模と横断性 | 共通の規約とライブラリ |
 | 認可の欠陥が繰り返し起きる | 規模と横断性、権限モデルの複雑さ | 共通の規約とライブラリ、判定の外部化 |
@@ -166,7 +168,7 @@ flowchart TB
 | 誰が見られるかに答えられない | 統制と規制の要件 | 判定の外部化、統制の仕組み |
 | 申請がチケットとスプレッドシート | 統制と規制の要件 | 統制の仕組み |
 
-打ち手を加えるときに、全ドメインを一度に移す必要はない。痛みの強いドメインから移し、横断の契約はそのつど固めていく方が、基盤が実際の要件から離れにくいと筆者は考える。
+打ち手を加えるときに、全ドメインを一度に移す必要はない。問題の大きいドメインから移し、横断の契約はそのつど固めていく方が、基盤が実際の要件から離れにくいと筆者は考える。
 
 freeeが専任のチームで権限管理基盤を開発・運用している事例（2023〜2024年公開の記事と発表資料）は、[権限管理基盤についての事例](/ja/posts/permission-management-case-study/)にまとめた。
 
@@ -188,107 +190,13 @@ freeeが専任のチームで権限管理基盤を開発・運用している事
 
 ただし、基盤を作らないことは何もしないことではない。前節のとおり、アプリやチームが複数あるなら、共通の規約は早めに揃えておく方がよい。作らない判断の対象は、主に判定の外部化と統制の仕組みである。
 
-# 判定を外部化するか
-
-ここからは、3つの打ち手のうち判定の外部化を詳しく見る。判定をアプリの外に出すかどうかの判断である。
-
-## アプリに散らばった判定の問題
-
-各アプリのコードに`if user.role == "admin"`のような判定を散りばめる方式は、アプリが少ないうちは最も単純である。しかし、アプリが増えると、同じルールが複数の場所に別々に書かれ、少しずつずれていく。
-
-AuthZEN Working Groupの共同議長であるDavid Brossardも、OpenID Foundationの発表で、サイロ化してハードコードされた脆い認可が今日のアプリですでに問題になっていると述べている。
-
-## 外部化認可とは
-
-外部化認可は、判定のロジックをアプリから切り離し、PDPに集める方式である。アプリ（PEP）は「Aliceはdoc 123をreadしてよいか」と問い合わせ、返ってきた判定を強制するだけになる。判定に必要な属性は、PEPが要求に含めて渡すこともあれば、PDPが属性の出どころ（PIP、Policy Information Point）から取得することもある。
-
-```mermaid
-sequenceDiagram
-  participant U as 利用者
-  participant PEP as アプリ（PEP）
-  participant PDP as 判定エンジン（PDP）
-  participant PIP as 属性の出どころ（PIP）
-  U->>PEP: doc 123を読みたい
-  PEP->>PDP: Aliceはdoc 123をreadしてよいか
-  opt 要求に含まれない属性が要る場合
-    PDP->>PIP: 判定に必要な属性を取得
-    PIP-->>PDP: 所属、資源の所有者など
-  end
-  PDP-->>PEP: 許可または拒否
-  PEP-->>U: 判定を強制した結果
-```
-
-外部化は、ネットワーク越しに判定サービスを呼ぶこととは限らない。PDPをアプリのプロセス内のライブラリやサイドカーとして動かしても、ロジックがアプリのコードから切り離され、ポリシーとして管理されていれば外部化である。PEP・PDP・PIP・PAPの役割は[認可のアーキテクチャとモデル、エンジンの選び方](/ja/posts/authorization-architecture-models-engines/)で、OPAを使った実装例は[OPAを使用したマイクロサービスのアクセス制御システムの実装](/ja/posts/microservices-access-control-opa/)で扱っている。
-
-## 外部化で得られるもの
-
-- **ポリシーとしての管理・監査・再利用**: ルールがコードの各所に散らばらず、ポリシーとして決まった場所で管理でき、判定ごとに記録できる
-- **アプリ横断の一貫性**: 同じルールを、同じ評価器で、複数のアプリに効かせられる
-- **変更の局所化**: ルールの変更がポリシーの変更で済み、アプリのリリースと切り離せる
-
-これらは判断の軸のうち「規模と横断性」「変更の頻度と、変える人」「統制と規制の要件」に直接効く。
-
-## 外部化で払うもの
-
-外部化には代償がある。PDPをネットワーク越しに呼ぶ場合の判定ごとの往復による遅延と、PDPの可用性が全体の可用性に直結することである。緩和策は次のとおり。
-
-| 代償 | 緩和策 |
-|---|---|
-| 判定の往復による遅延 | 判定結果のキャッシュ。PDPをサイドカーやプロセス内ライブラリとして近くで動かす |
-| PDPの障害が全体を止める | PDPを各PEPの近くに分散して置く。キャッシュで短時間の障害を吸収する。fail-closedを前提にタイムアウトを設計する |
-| 一覧表示で判定の回数が膨らむ | 部分評価でポリシーをSQLの条件などに変換する（OPAのpartial evaluation）。PDPが対応していれば、Resource Search APIで許可される資源をまとめて取得する（AuthZEN） |
-
-判定結果をキャッシュすると、無効化の仕組みがない限り、キャッシュが切れるまで権限の取り消しや変更が判定に反映されない。キャッシュの有効期間は、取り消しの遅れをどこまで許せるかで決める。
-
-PEPとPDPの配置、キャッシュや一貫性などの非機能の設計は、[認可基盤のアーキテクチャと設計判断](/ja/posts/authorization-platform-architecture-decisions/)で扱う。
-
-## PEPとPDPの間をつなぐ標準: AuthZEN
-
-外部化で気になるのは、PEPの実装が特定のPDP製品に縛られることである。OpenID FoundationのAuthZEN Working Groupは、PEPとPDPの間のインターフェースを標準化している。Authorization API 1.0は、2026年1月11日付の版がOpenID Final Specificationとして承認された（承認の発表は1月12日）。
-
-Authorization API 1.0は、主に次のAPIを定めている。
-
-- Access Evaluation API: 主体（Subject）、操作（Action）、資源（Resource）と、任意の文脈（Context）を受け取って判定を返す
-- Access Evaluations API: 複数の判定をまとめて求める
-- Search API（Subject Search、Resource Search、Action Search）: 許可される主体・資源・操作を探す
-
-仕様の中核はAccess Evaluation APIで、メタデータで必須のエンドポイントもこれだけである。Access Evaluations APIとSearch APIのエンドポイントはメタデータで任意（OPTIONAL）で、載っていなければPEPはそのPDPが対応していないと判断できる。
-
-PDPのポリシー言語、アーキテクチャ、状態の管理は仕様の範囲外である。そのため、仕様を実装したPDPであれば、中身が何であっても、PEPからは同じ形で問い合わせられる。ただし、標準になるのは問い合わせの形である。ポリシーの書き方や判定に使うデータの登録は製品ごとに異なるため、PDPを差し替えるときはそれらの移行が要る。仕様の詳細は[AuthZEN Authorization APIとは](/ja/posts/authzen-authorization-api/)で扱う。
-
-外部化認可のPDPとして使えるエンジンや製品には、OPA、Cedar（Cedarを使うマネージドサービスとしてAmazon Verified Permissions）、Cerbos、OpenFGAなどがある。ただし、どれもがAuthZENのAPIをそのまま受け付けるわけではない。対応の有無や形（本体の機能、実験的な実装、別のプラグイン）は製品ごとに異なる。
-
-## 外部化しても、ポリシーの中身は各ドメインが持つ
-
-外部化は中央集権とは違う。共通化するのは判定の仕組み（評価器、判定APIの契約、ポリシーの書き方、配布の手段）であり、ポリシーの中身は各ドメインが書き、テストし、変更する。基盤チームが持つポリシーは、全ドメイン共通のガードレールだけである。
-
-この分担は、前に示した「仕組みと契約は横断、意味は各ドメイン」の線引きを、外部化の場面に当てはめたものである。外部化したことを理由に全ドメインのポリシーを基盤チームが書き始めると、前に述べた、基盤チームがボトルネックになる問題がそのまま戻ってくる。
-
-## 外部化するかの判断
-
-外部化に向いているのは、次の条件が重なるときである。
-
-- 同じルールを複数のアプリやサービスに効かせたい
-- ポリシーの変更が多く、アプリのリリースと切り離したい
-- 「なぜ許可したか」を判定単位で説明し、監査したい
-- 条件付きの許可や、関係にもとづく許可（共有、階層、継承）が多い
-
-アプリ内の判定に残す方がよいのは、次のようなときである。
-
-- ルールが1つのアプリに閉じていて、変更も少ない
-- 判定の往復を同期の経路に入れる余裕がなく、プロセス内での評価も選べない
-- PDPを高可用に運用する体制がなく、マネージドサービスも使えない
-
-迷う場合は、ネットワーク越しの中央サービスではなく、プロセス内ライブラリやサイドカーで評価するところから始める選択肢がある。ロジックの切り離しとポリシーの管理という外部化の利点を得つつ、遅延と可用性の代償を小さくできる。ただし、ポリシーと判定に要るデータを各インスタンスに配る必要がある。ReBACの関係のデータのように判定に要るデータが大きい場合は、この方法をとりにくい。
-
 # まとめ
 
 - 認可は保護する資源のある場所すべてで起き、意味は各業務ドメインにあり、材料は組織中から集まる。そのため認可基盤は組織とアーキテクチャの全体に及ぶ
 - それでも一か所には集めない。仕組みと契約（トークン、判定APIの契約、監査ログ、失効、ガードレール）は横断で揃え、意味（資源と操作、ポリシーの中身）は各ドメインに置く
 - 認可基盤は要否の二択ではない。各アプリでの実装に、共通の規約とライブラリ、判定の外部化、統制の仕組みのうち必要なものを加える。判定の外部化は共通の規約を前提にする
-- 判断の軸は規模と横断性、権限モデルの複雑さ、変更の頻度、統制、主体の多様さ、一貫性、組織の能力の7つで、今の痛みからも判断できる
+- 判断の軸は規模と横断性、権限モデルの複雑さ、変更の頻度、統制、主体の多様さ、一貫性、組織の能力の7つで、今起きている問題からも判断できる
 - アプリやチームが複数あるなら、共通の規約は早めに揃える方がよいと筆者は考える。プロダクトが1つでロールも少なく安定している、遅延と可用性のリスクの方が大きい、使われる見込みがない、といったサインがあれば判定の外部化や統制の仕組みは作らない方がよい
-- 判定の外部化はポリシーとしての管理・一貫性・変更の局所化と引き換えに、遅延（ネットワーク越しにPDPを呼ぶ場合）と可用性の代償を払う。AuthZEN Authorization API 1.0がPEPとPDPの間を標準化しており、外部化してもポリシーの中身は各ドメインが持つ
 
 # 関連記事
 
@@ -309,15 +217,7 @@ PDPのポリシー言語、アーキテクチャ、状態の管理は仕様の�
 # 参考リンク
 
 - [OpenID Foundation - Authorization API 1.0](https://openid.net/specs/authorization-api-1_0.html)
-- [OpenID Foundation - Authorization API 1.0 Final Specification Approved](https://openid.net/authorization-api-1-0-final-specification-approved/)
-- [OpenID Foundation - AuthZEN Working Group](https://openid.net/wg/authzen/)
-- [OpenID Foundation - OpenID Foundation advances authorization for the agent era with new AuthZEN Working Group Drafts](https://openid.net/openid-foundation-advances-authorization-for-the-agent-era-with-new-authzen-working-group-drafts/)
-- [AuthZEN Interop](https://authzen-interop.net/)
 - [OWASP Cheat Sheet Series - Authorization Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html)
 - [OWASP Top 10:2025 - A01 Broken Access Control](https://owasp.org/Top10/2025/A01_2025-Broken_Access_Control/)
 - [NIST SP 800-53 Rev. 5 - Security and Privacy Controls for Information Systems and Organizations](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final)
 - [NIST SP 800-162 - Guide to Attribute Based Access Control (ABAC) Definition and Considerations](https://csrc.nist.gov/pubs/sp/800/162/upd2/final)
-- [Open Policy Agent - Data Filtering with OPA（partial evaluation）](https://www.openpolicyagent.org/docs/filtering)
-- [Amazon Verified Permissions User Guide - What is Amazon Verified Permissions?](https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/what-is-avp.html)
-- [Cerbos - The Cerbos API（AuthZEN Authorization API）](https://docs.cerbos.dev/cerbos/latest/api/index.html#authzen)
-- [OpenFGA - AuthZEN Implementation and Interop Scenarios](https://github.com/openfga/openfga/blob/main/docs/authzen/README.md)
