@@ -30,7 +30,7 @@ What you will learn:
 
 The diagrams follow two levels of the C4 model: Context (the system and the outside world) and Container (applications and data stores that must be running for the system to work). See [the C4 model](https://c4model.com/) for the approach. For general advice on documenting architecture, see [Things to Consider When Writing Architecture Documents](/posts/writing-architecture-documentation/).
 
-The architecture here works as a reference: it lists every element an organization might need. You do not need to build everything on day one. How far to go, and whether to move decisions out of applications at all, belongs to [How Much Authorization Platform Do You Need?](/posts/authorization-platform-scope-stages/).
+The architecture here works as a reference: it lists every element an organization might need. You do not need to build everything on day one. [How Much Authorization Platform Do You Need?](/posts/authorization-platform-scope-stages/) covers the decision axes for how far to go and whether to move decisions out of applications at all.
 
 # Premise: Align Boundaries with IAM Subdomains
 
@@ -292,11 +292,7 @@ The architectural point: **approval alone does not grant access; the PDP makes a
 
 # Design Decisions
 
-The rest of this post covers how to choose each part of the diagrams.
-
-## Whether to Externalize Decisions
-
-[How Much Authorization Platform Do You Need?](/posts/authorization-platform-scope-stages/) covers whether to pull decision logic out of applications into a PDP. The decisions below assume you have chosen to externalize.
+The rest of this post assumes you have chosen to externalize decisions and covers how to choose each part of the diagrams.
 
 ## PEP and PDP Placement
 
@@ -342,7 +338,7 @@ Guidelines for choosing:
 - **Two tiers are the default.** Do coarse authorization at the edge and fine-grained authorization inside the service or at the data layer. Reject clearly invalid requests early, and leave per-resource decisions to the side that has the context.
 - **Central management and execution location are separate concerns.** Even if the PDP runs as a library or sidecar, distributing policies from a central PAP keeps management in one place.
 - **Keep the API independent of placement.** A PDP that complies with AuthZEN MUST support the HTTPS binding, so a PEP can ask a sidecar PDP or a central PDP in the same shape. A standard interface between PEP and PDP makes later placement changes easier.
-- **Design list retrieval separately.** If you fetch one page from the database and then filter it item by item with "may I read this resource?", the page size and page boundaries break. Fetching more rows to fill the gap raises load. [Considerations and Solutions for Pagination Impact in OPA](/posts/pagination-impact-solutions-opa/) examines this problem and its solutions with OPA. [Access Control Patterns Using OPA](/posts/access-control-patterns-using-opa/) compares returning database conditions through partial evaluation with returning structured conditions. If the PDP supports it, the AuthZEN 1.0 Resource Search API also answers "which resources may this subject see?" The Search API endpoints are OPTIONAL in the PDP metadata, and if they are absent, the PEP can determine that the PDP does not support those APIs. Pagination is also something a PDP MAY support.
+- **Design list retrieval separately.** If you fetch one page from the database and then filter it item by item with "may I read this resource?", the page size and page boundaries break. Fetching more rows to fill the gap raises load. [Considerations and Solutions for Pagination Impact in OPA](/posts/pagination-impact-solutions-opa/) examines this problem and its solutions with OPA. [Access Control Patterns Using OPA](/posts/access-control-patterns-using-opa/) compares returning database conditions through partial evaluation with returning structured conditions. If the PDP supports it, the AuthZEN 1.0 Resource Search API also answers "which resources may this subject see?" Pagination is also something a PDP MAY support.
 
 ## Coarse vs Fine-Grained Authorization, and the Role of Tokens
 
@@ -370,7 +366,7 @@ Externalizing decisions puts a decision round trip on the request path. That is 
 If decisions sit on the synchronous path, decide how to keep the round trip short.
 
 - **Run the PDP close by.** An in-process library or a sidecar cuts network round trips.
-- **Batch your questions.** The AuthZEN Access Evaluations API sends many decisions in one request (boxcarring). You choose the evaluation semantics: `execute_all`, `deny_on_first_deny`, or `permit_on_first_permit`. Its endpoint is OPTIONAL in the PDP metadata, and when the metadata omits it, the PEP can determine that the PDP does not support the API.
+- **Batch your questions.** If the PDP supports it, the AuthZEN Access Evaluations API sends many decisions in one request (boxcarring).
 - **Cache decisions.** A short-TTL cache keyed on Subject, Action, Resource, and Context helps, but it delays revocation. Set the TTL by how late a revocation may take effect.
 - **Filter lists up front.** As the previous section explains, use partial evaluation or, if the PDP supports it, the Search API to compute lists in one pass.
 
@@ -398,12 +394,6 @@ Make every decision reconstructible after the fact.
 - **Record execution at the PEP.** PDP decision logs alone do not tell you whether the operation actually ran. Record the outcome at the PEP and give it an identifier that links it to the decision.
 - **Keep secrets out.** Never log tokens or credentials themselves.
 
-### Least Privilege and Credential Protection
-
-- **Narrow at every boundary.** Apply the downscoping from the previous section each time a request crosses a boundary.
-- **Use short-lived credentials.** Rotate workload credentials automatically, as SPIFFE / SPIRE does.
-- **Make stolen tokens useless.** On paths that need high assurance, bind tokens to the sender (DPoP in RFC 9449, mTLS in RFC 8705).
-
 ### Testing and Continuous Evaluation
 
 - **Test policies as code.** Treat policies as code and run unit and regression tests. OPA provides `opa test`. Build a way to check, before production, "whose decisions change with this policy change?"
@@ -416,7 +406,7 @@ The table below covers the remaining choices.
 | Decision | Options | Guideline |
 |---|---|---|
 | Token validation | Self-contained JWT (RFC 9068), introspection (RFC 7662) | JWT for low latency, introspection for immediate revocation (if you do not cache results for long); you can combine both |
-| Token theft protection | Bearer, DPoP, mTLS binding | Bind tokens to the sender when you need high assurance |
+| Token theft protection | Bearer, DPoP (RFC 9449), mTLS (RFC 8705) binding | Bind tokens to the sender when you need high assurance |
 | Adopt ReBAC? | Are relationships central to decisions? | Adopt it when ownership, sharing, and inheritance drive access |
 | Agent support | Recording delegation (act), COAZ-MCP, AARP | In the author's view, platforms that serve AI agents cannot do without recording delegation. COAZ-MCP and AARP remain Drafts, so adopt them only where you can keep up with spec changes |
 | Decision API | Product-specific API, AuthZEN | Standardize on one API when many languages and teams write PEPs |
