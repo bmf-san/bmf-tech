@@ -108,15 +108,6 @@ arch-08 adds components step by step across three scenarios.
 
 arch-08 names Transaction Tokens as one example of this context token. Do not let an external bearer token flow inside; replace it with a token that has meaning only inside.
 
-## Layered Authentication and "Authentication Is Not Authorization"
-
-In some deployments, a workload authenticates to a sidecar or gateway over mTLS and to the destination workload with an application-layer WIT. arch-08 notes that this pattern is common when infrastructure components end connections on behalf of workloads, calls it layered authentication, and sets these rules.
-
-- The destination MUST NOT assume that the transport-layer identity an intermediary authenticated equals the application-layer caller, unless protocol or deployment policy establishes that relationship explicitly.
-- When identities from both layers are available and relevant, audit records SHOULD include both.
-
-The security considerations also state that a valid credential does not give a workload access to every resource in the trust domain. An "allow if mTLS succeeds" setup contradicts this principle. State allowed identifiers explicitly, and treat authorization as a separate decision.
-
 # Rules for Workload Identifiers
 
 draft-ietf-wimse-identifier is the WIMSE draft that normatively defines the identifier format. It sets the requirements for the string that becomes the policy subject, the audit log key, and the PIP primary key, so it shapes your data model directly.
