@@ -82,7 +82,7 @@ The table lists what the spec defines and what it leaves out.
 
 ## Every Engine Asks the Question Differently
 
-When you move authorization decisions out of the application, application code turns into calls to the PDP. If the shape of that call differs per engine, three problems follow.
+When you move authorization decisions out of the application, the decision code inside the application turns into calls to the PDP. If the shape of that call differs per engine, three problems follow.
 
 - PEP code and middleware become tied to one engine's API and vocabulary.
 - Products such as API gateways and IdPs must build a separate integration for each engine.
@@ -92,9 +92,9 @@ The spec's introduction observes that PDP-PEP communication follows similar patt
 
 ## What OAuth and OIDC Standardized, and What They Did Not
 
-OAuth standardized delegation, and OpenID Connect standardized how to convey authentication results. The AuthZEN Authorization API standardizes the neighboring step: asking for a decision. For example, scopes and claims in a token can narrow things down coarsely, and the application can then ask a PDP for fine-grained, per-resource decisions. As far as I know, apart from the XACML profiles covered later, that second part had no widely used common shape.
+OAuth standardized delegation, and OpenID Connect standardized how to convey authentication results. The AuthZEN Authorization API standardizes the neighboring step: asking for a decision. For example, scopes and claims in a token can narrow things down coarsely, and the application can then ask a PDP for fine-grained, per-resource decisions. XACML and its JSON and REST profiles (covered later) defined that second part, but they never spread beyond XACML engines.
 
-For a map of the OAuth-related standards, see [A map of OAuth and related standards for an authorization platform](/posts/oauth-standards-map-authorization-platform/).
+For a map of the OAuth-related standards, see [Which OAuth Standards Does an Authorization Platform Need?](/posts/oauth-standards-map-authorization-platform/).
 
 ## Specification Status
 
