@@ -60,9 +60,13 @@ When someone says "let's build an authorization platform," aligning first on whi
 
 # Splitting IAM into DDD Subdomains
 
-## Why use DDD vocabulary
+## Why draw a map
 
-Separating authentication from authorization, and the three meanings of "authorization," still gives a coarse map. Some jobs, such as ID provisioning, do not appear in the table, and the table does not show what each part hands to the others. So this post splits the whole of IAM (Identity and Access Management), including authentication and authorization, by business problem.
+Separating authentication from authorization, and the three meanings of "authorization," still gives a coarse map. Some jobs, such as ID provisioning, do not appear in the table, and the table does not show what each part hands to the others. So this post draws a map that splits the whole of IAM (Identity and Access Management), including authentication and authorization, by business problem.
+
+The map exists to sort discussions and specifications about authorization by the problem they address. For example, a proposal to "build an authorization platform with OAuth" means something completely different depending on whether it targets delegation (3) or access decision (4). With a map, you can draw that line early in the discussion. Once you know which subdomain a problem belongs to, you can also see where its inputs come from. It then becomes easier to settle which business domain owns the business meaning of a permission, and which specification or product solves the problem.
+
+## Why use DDD vocabulary
 
 It borrows DDD (Domain-Driven Design) vocabulary for the split. The terms follow Vaughn Vernon's "Implementing Domain-Driven Design" (IDDD). The "Meaning" column below is my summary based on IDDD's terms and Evans's DDD Reference. This split serves as one example, not the only correct answer.
 
@@ -192,18 +196,6 @@ Mixing these up makes IAM absorb business knowledge. Every change to a business 
 
 [Permission Management Design](/posts/permission-management-design/) covers the elements of a permission (who, on what, may do what) and the design of feature scope and data scope.
 
-# How to Use This Map
-
-When you discuss authorization or read a specification, apply the map in this order to reduce confusion.
-
-1. Which of the five subdomains does the problem belong to? If it spans several, which one leads?
-2. For your organization, does that subdomain count as Core, Supporting, or Generic?
-3. Where do the inputs come from: identity attributes, or signals and subscription status from adjacent domains?
-4. Which business domain owns the business meaning of the permission?
-5. Which subdomain's problem does the specification or product solve?
-
-For example, a proposal to "build an authorization platform with OAuth" means something completely different depending on whether it targets delegation (3) or access decision (4). This map helps you draw that line early.
-
 # Summary
 
 - Authentication answers "who are you?" Authorization answers "may this subject perform this action on this resource in this context?"
@@ -222,7 +214,7 @@ For example, a proposal to "build an authorization platform with OAuth" means so
 - [What is the Big Picture of Service-to-Service Authentication? mTLS, Token Exchange, SPIFFE, and Zero Trust](/posts/service-to-service-authentication/)
 - [Introduction to Digital Identity: Essential Authentication, Authorization, and ID Management for Web Services](/posts/introduction-digital-identity/)
 - [Everything About Digital Identity: Knowledge for Realizing a Secure and User-Centric Identity System](/posts/digital-identity-overview/)
-- [How Much Authorization Platform Do You Need? Scope, Ownership, Decision Axes, and Externalized Decisions](/posts/authorization-platform-scope-stages/)
+- [How Much Authorization Platform Do You Need? Scope, Ownership, and Decision Axes](/posts/authorization-platform-scope-stages/)
 - [What Are Authorization Architectures and Models? PEP/PDP, RBAC/ABAC/ReBAC, and Choosing a Policy Engine](/posts/authorization-architecture-models-engines/)
 - [What is the AuthZEN Authorization API? A Standard Between PEP and PDP](/posts/authzen-authorization-api/)
 - [Which OAuth Standards Does an Authorization Platform Need? A Map of Delegation, Tokens, and Continuous Evaluation](/posts/oauth-standards-map-authorization-platform/)
