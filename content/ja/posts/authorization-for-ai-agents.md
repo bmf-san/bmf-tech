@@ -132,7 +132,7 @@ MCP（Model Context Protocol）は、AIアプリをツールやデータにつ�
 - クライアントは`resource`（RFC 8707）で、トークンの宛先を特定のMCPサーバーに絞る。サーバーは**受け取ったトークンを裏のAPIに中継してはならない**（MUST NOT）。
 - 権限が足りなければ、サーバーは`insufficient_scope`で必要なスコープを示し、クライアントは段階的に取り直す（step-up）。
 
-MCPの認可が受け持つのは、トークンの取得と検証までである。「このツールを、このデータに対して、この利用者の代わりに実行してよいか」の判定、利用者とエージェントの区別、人の承認は仕様の外にある。toolsの仕様はサーバーにアクセス制御を求める（MUST）が、判定の方法は決めていない。設計の勘所は[MCPの認可の設計の記事](/ja/posts/mcp-authorization-design/)で扱う。
+MCPの認可が受け持つのは、トークンの取得と検証までである。「このツールを、このデータに対して、この利用者の代わりに実行してよいか」の判定、利用者とエージェントの区別、人の承認は仕様の外にある。toolsの仕様はサーバーにアクセス制御を求める（MUST）が、判定の方法は決めていない。MCPの認可の難しさとリスクは[MCPの認可はなぜ難しい？](/ja/posts/mcp-authorization-design/)で扱う。
 
 # AuthZENの新しいDraft：判定の前と後を埋める
 
@@ -252,7 +252,7 @@ OAuthでは認可サーバーがトークンを発行するが、AP2ではエー
 | A2Aの`TASK_STATE_AUTH_REQUIRED` | タスクを止め、追加の認可が要ることを伝える | プロトコルの外 |
 | AuthZEN AARP | 申請し、承認を得て、PDPに判定し直させる | 承認者（人、または自動化されたガバナンスの仕組み）と、最後はPDP |
 
-トークンの範囲が足りないならstep-up、本人の同意を別の経路で得るならCIBA、上長や管理者の承認が要るならAARP、と問いに応じて使い分ける。これらをつなぐ仕様はまだないので、今は組み合わせ方を自分で決める必要がある。
+トークンの範囲が足りないならstep-up、本人の同意を別の経路で得るならCIBA、上長や管理者の承認が要るならAARP、と問いに応じて使い分ける。AARPは、OAuthのトークン発行とのつなぎ方を別のプロファイルに委ね、エージェントのプロトコルとの接点も定めていない。今は組み合わせ方を自分で決める必要がある。
 
 # 設計の地図
 
@@ -303,8 +303,7 @@ OAuthでは認可サーバーがトークンを発行するが、AP2ではエー
 - [AuthZEN Authorization APIとは？PEPとPDPをつなぐ認可判定の標準](/ja/posts/authzen-authorization-api/)
 - [認可基盤に必要なOAuth関連標準とは？委譲・トークン・継続評価の地図](/ja/posts/oauth-standards-map-authorization-platform/)
 - [ワークロードアイデンティティとは？WIMSE・Transaction Tokens・SPIFFEクライアント認証で見るサービス間の身元と文脈](/ja/posts/workload-identity-wimse-transaction-tokens/)
-- [MCPの認可はどう設計する？起きうる事故と後から直せない判断](/ja/posts/mcp-authorization-design/)
-- [認可基盤のアーキテクチャとは？コンテナ構成・代表シーケンス・PEPとPDPの配置と非機能の設計判断](/ja/posts/authorization-platform-architecture-decisions/)
+- [MCPの認可はなぜ難しい？AIエージェントに社内システムを操作させるときのリスクと押さえどころ](/ja/posts/mcp-authorization-design/)
 - [サービス間認証の全体像とは？mTLS・Token Exchange・SPIFFE・ゼロトラスト](/ja/posts/service-to-service-authentication/)
 - [送信者制約トークンとは？mTLS（RFC 8705）とDPoP（RFC 9449）入門](/ja/posts/sender-constrained-tokens-mtls-dpop/)
 - [AI時代のエンジニアリング：プロンプトから自律型システムへの進化](/ja/posts/engineering-in-ai-evolution-to-autonomous-systems/)

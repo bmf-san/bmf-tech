@@ -132,7 +132,7 @@ MCP (Model Context Protocol) connects AI applications to tools and data. In the 
 - The client restricts the token's audience to a specific MCP server with `resource` (RFC 8707). The server **MUST NOT pass a received token through to upstream APIs**.
 - When permissions fall short, the server indicates the required scopes with `insufficient_scope`, and the client requests them incrementally (step-up).
 
-MCP authorization covers only obtaining and validating tokens. Deciding "may this tool run on this data on behalf of this user", separating the user from the agent, and human approval all sit outside the authorization spec. The tools spec says servers MUST put access controls in place, but it does not define how to decide. [The post on MCP authorization design](/posts/mcp-authorization-design/) covers the design points.
+MCP authorization covers only obtaining and validating tokens. Deciding "may this tool run on this data on behalf of this user", separating the user from the agent, and human approval all sit outside the authorization spec. The tools spec says servers MUST put access controls in place, but it does not define how to decide. [Why Is MCP Authorization Hard?](/posts/mcp-authorization-design/) covers its difficulties and risks.
 
 # New AuthZEN drafts: filling the gaps before and after a decision
 
@@ -252,7 +252,7 @@ One of the newer issues in agent authorization concerns what happens when permis
 | A2A `TASK_STATE_AUTH_REQUIRED` | Pauses the task and reports that more authorization is needed | Outside the protocol |
 | AuthZEN AARP | Submits a request, obtains approval, and has the PDP decide again | Approvers (a person or an automated governance system), and finally the PDP |
 
-Pick by the question: step-up when the token's scope falls short, CIBA when you need the user's consent through a separate channel, and AARP when a manager or administrator must approve. No spec connects these yet, so for now you must decide how to combine them yourself.
+Pick by the question: step-up when the token's scope falls short, CIBA when you need the user's consent through a separate channel, and AARP when a manager or administrator must approve. AARP leaves binding approval to OAuth token issuance to a separate profile, and it defines no surface for agent protocols. For now you must decide how to combine them yourself.
 
 # A design map
 
@@ -303,8 +303,7 @@ What you can defer is argument-level decisions at a gateway. Access control in t
 - [What is the AuthZEN Authorization API? A Standard Between PEP and PDP](/posts/authzen-authorization-api/)
 - [Which OAuth Standards Does an Authorization Platform Need? A Map of Delegation, Tokens, and Continuous Evaluation](/posts/oauth-standards-map-authorization-platform/)
 - [What is Workload Identity? WIMSE, Transaction Tokens, and SPIFFE Client Authentication for Service Identity and Context](/posts/workload-identity-wimse-transaction-tokens/)
-- [How Should You Design Authorization for MCP? Common Incidents and Decisions That Are Hard to Reverse](/posts/mcp-authorization-design/)
-- [What Does an Authorization Platform Architecture Look Like? Containers, Key Sequences, PEP/PDP Placement, and Non-Functional Decisions](/posts/authorization-platform-architecture-decisions/)
+- [Why Is MCP Authorization Hard? Risks and Key Decisions When AI Agents Operate Internal Systems](/posts/mcp-authorization-design/)
 - [What is the Big Picture of Service-to-Service Authentication? mTLS, Token Exchange, SPIFFE, and Zero Trust](/posts/service-to-service-authentication/)
 - [What are Sender-Constrained Tokens? An Introduction to mTLS (RFC 8705) and DPoP (RFC 9449)](/posts/sender-constrained-tokens-mtls-dpop/)
 - [Engineering in the AI Era: Evolution from Prompts to Autonomous Systems](/posts/engineering-in-ai-evolution-to-autonomous-systems/)
