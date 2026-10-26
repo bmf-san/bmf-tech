@@ -125,7 +125,7 @@ flowchart LR
 
 The sections below go through them in this order.
 
-# MCP authorization (overview)
+# MCP authorization
 
 MCP (Model Context Protocol) connects AI applications to tools and data. In the 2026-07-28 version, authorization is a profile of OAuth 2.1 for the HTTP transport. The MCP server acts as the resource server, and the MCP client acts as the client.
 
