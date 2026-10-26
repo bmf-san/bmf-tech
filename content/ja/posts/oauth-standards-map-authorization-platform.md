@@ -102,56 +102,19 @@ OAuth 2.0の全体は[OAuth 2.0とは？](/ja/posts/oauth-2-0/)に、OAuth 2.1�
 
 ## RAR（RFC 9396）: スコープでは表せない委譲を表す
 
-RFC 9396の1節によると、スコープは静的で粗い粒度の要求には足りるが、「Merchant Aへ45ユーロを送金させてほしい」のような細かい要求を表すには足りない。RAR（OAuth 2.0 Rich Authorization Requests）は、認可要求に`authorization_details`というJSONの配列を加えて、これを構造化して表す。
+RAR（OAuth 2.0 Rich Authorization Requests）は、スコープでは表せない細かい委譲を表す。たとえば「Merchant Aへ45ユーロを送金させてほしい」のような要求を、認可要求の`authorization_details`（型付きのJSONの配列）に書く。許可した内容はトークンレスポンスで返り、RSもJWTのアクセストークンやIntrospectionの結果で読める。
 
-各要素は必須の`type`を持ち、その型ごとに中身をAPI側が決める。共通のフィールドとして`locations`、`actions`、`datatypes`、`identifier`、`privileges`が用意されている。
-
-```json
-[
-  {
-    "type": "payment_initiation",
-    "locations": ["https://example.com/payments"],
-    "instructedAmount": { "currency": "EUR", "amount": "123.50" },
-    "creditorName": "Merchant A"
-  }
-]
-```
-
-認可サーバは、同意画面でこの内容を利用者に示す。RFC 9396では、許可した内容をトークンレスポンスで返し、RSからも参照できるようにしなければならない（MUST）。RS向けには、JWTのアクセストークンやIntrospectionの結果に入れられる。対応する型はASメタデータの`authorization_details_types_supported`で公開する。
-
-認可基盤として決めることは次の2つである。
-
-- どの操作をスコープで表し、どの操作を`authorization_details`で表すか。金額や対象の資源など、値を伴う委譲はRARに向く。
-- `type`ごとのスキーマを誰が定義し、どこで検証するか。RSがトークンやIntrospectionの結果の中の`authorization_details`を読んで、実際の要求と突き合わせる必要がある。
-
-RARは「何を委譲したか」を運ぶだけで、資源の中での判定は別に要る。筆者は、PDPの入力として使う形が自然だと考える。
+認可基盤として決めることは、スコープとRARの使い分けと、`type`ごとのスキーマを誰が定義してどこで検証するかである。RARは「何を委譲したか」を運ぶだけなので、資源の中での判定は別に要る。
 
 ## CIBA: 利用者の手元の端末で承認を得る
 
-OpenID Connect Client-Initiated Backchannel Authentication（CIBA）Core 1.0は、OpenID FoundationのFinal仕様である（2021年9月）。リダイレクトを使わず、クライアントはバックチャネルを通じてOPへ認証と同意を求める。利用者は自分のスマートフォンなど、別の端末で承認する。
+CIBA（OpenID Connect Client-Initiated Backchannel Authentication）は、OpenID FoundationのFinal仕様である（2021年9月）。クライアントはリダイレクトを使わず、バックチャネルでOPに認証と同意を求める。利用者は自分のスマートフォンなど、別の端末で承認する。操作する人と承認する人の端末が分かれる場面に向き、AIエージェントが人の承認を求める場面でも候補の1つになる。これは[AIエージェントの認可とは？](/ja/posts/authorization-for-ai-agents/)で扱う。
 
-流れは次のとおりである。
-
-1. クライアントがBackchannel Authentication Endpointに、`login_hint`などで利用者を示して要求を送る。
-2. OPは`auth_req_id`を返し、利用者の端末に承認を求める。
-3. クライアントは結果を受け取る。受け取り方はPoll、Ping、Pushの3つのモードから登録時に選ぶ。
-
-`binding_message`を使うと、要求した側と承認する側の両方の画面に同じ文字列を出せる。コールセンターや店頭端末のように、操作する人と承認する人の端末が分かれる場面に向く。AIエージェントが人の承認を求める場面でも、CIBAは候補の1つになる。これは[AIエージェントで認可の何が変わるか](/ja/posts/authorization-for-ai-agents/)で扱う。
-
-認可基盤として決めることは、利用者をどう指定するか（`login_hint`の形式）と、承認の通知をどの端末に送るかである。利用者を取り違えると、別人に承認を求めることになる。
+認可基盤として決めることは、利用者をどう指定するか（`login_hint`の形式）と、承認の通知をどの端末に送るかである。
 
 ## GNAP（RFC 9635）: OAuthを作り直した別のプロトコル
 
-GNAP（Grant Negotiation and Authorization Protocol）は、OAuthの拡張ではなく、委譲を最初から設計し直したプロトコルである。2024年10月、RFC 9635として発行された。RSとの連携は2025年4月のRFC 9767が定める。
-
-OAuthとの主な違いは次のとおりである。
-
-- クライアントは1つのグラントエンドポイントにJSONで要求を送る。グラントタイプの種類で分岐しない。
-- クライアントは鍵を持つことが前提で、要求のたびに鍵の所有を証明する。
-- 利用者とのやりとり（リダイレクト、ユーザーコードなど）を要求の中で交渉する。
-- 発行後も、継続用のURLでグラントを更新したり取り消したりできる。
-
-筆者の知る範囲では、2026年10月時点でGNAPを採用した大きなエコシステムは少ない。そのため筆者は、認可基盤が今GNAPを実装する必要は薄いと考える。ただし「鍵に結び付いたクライアント」「継続するグラント」という考え方は、OAuthの送信者制約やエージェントの委譲を設計する際の参考になる。
+GNAP（Grant Negotiation and Authorization Protocol）は、OAuthの拡張ではなく、委譲を最初から設計し直したプロトコルである。OAuth 2.0との直接の互換性は目指していない。それでも、鍵に結び付いたクライアントや、発行後に更新や取り消しができるグラントという考え方は、OAuthの送信者制約やエージェントの委譲を設計する際の参考になる。
 
 # 要求の完全性: 認可要求を改ざんさせない
 
@@ -497,7 +460,6 @@ WWW-Authenticate: Bearer error="insufficient_user_authentication",
 - [Transaction Tokens（draft-ietf-oauth-transaction-tokens）](https://datatracker.ietf.org/doc/draft-ietf-oauth-transaction-tokens/)
 - [JSON Web Token Best Current Practices（draft-ietf-oauth-rfc8725bis）](https://datatracker.ietf.org/doc/draft-ietf-oauth-rfc8725bis/)
 - [RFC 9635 Grant Negotiation and Authorization Protocol (GNAP)](https://www.rfc-editor.org/rfc/rfc9635)
-- [RFC 9767 Grant Negotiation and Authorization Protocol Resource Server Connections](https://www.rfc-editor.org/rfc/rfc9767)
 - [OpenID Connect Client-Initiated Backchannel Authentication Flow - Core 1.0](https://openid.net/specs/openid-client-initiated-backchannel-authentication-core-1_0.html)
 - [FAPI 2.0 Security Profile](https://openid.net/specs/fapi-security-profile-2_0-final.html)
 - [FAPI 2.0 Message Signing](https://openid.net/specs/fapi-message-signing-2_0-final.html)

@@ -102,56 +102,19 @@ An authorization platform must decide which grant types and which client types (
 
 ## RAR (RFC 9396): Delegation That Scopes Cannot Express
 
-Section 1 of RFC 9396 says a scope works for static, coarse-grained requests but cannot express a fine-grained request such as "please let me transfer an amount of 45 Euros to Merchant A." RAR (OAuth 2.0 Rich Authorization Requests) adds a JSON array named `authorization_details` to the authorization request and expresses such requests as structured data.
+RAR (OAuth 2.0 Rich Authorization Requests) expresses fine-grained delegation that scopes cannot, such as "let me send 45 euros to Merchant A." The client puts it in the `authorization_details` parameter, a JSON array of typed objects. The AS returns the granted details in the token response, and the RS can read them from a JWT access token or an introspection response.
 
-Each element carries a required `type`, and the API defines the content for each type. RAR also offers common fields: `locations`, `actions`, `datatypes`, `identifier`, and `privileges`.
-
-```json
-[
-  {
-    "type": "payment_initiation",
-    "locations": ["https://example.com/payments"],
-    "instructedAmount": { "currency": "EUR", "amount": "123.50" },
-    "creditorName": "Merchant A"
-  }
-]
-```
-
-The AS shows this content to the user on the consent screen. RFC 9396 says the AS MUST return what the user granted in the token response and MUST make it available to the RS. For the RS, the AS can put it inside a JWT access token or in the Introspection response. The AS lists the types it supports in the `authorization_details_types_supported` metadata.
-
-An authorization platform must decide two things:
-
-- Which operations to express as scopes and which as `authorization_details`. Delegations that carry values, such as an amount or a target resource, suit RAR.
-- Who defines the schema for each `type` and where validation happens. The RS needs to read `authorization_details` in the token or the Introspection response and compare it with the actual request.
-
-RAR only carries what the user delegated. Decisions inside the resource still need a separate mechanism. In the author's view, feeding RAR into the PDP as input fits well.
+An authorization platform has to decide which operations to express as scopes and which as RAR, and who defines and validates the schema for each `type`. RAR carries what someone delegated; decisions inside the resource still need a separate check.
 
 ## CIBA: Approval on the User's Own Device
 
-OpenID Connect Client-Initiated Backchannel Authentication (CIBA) Core 1.0 is a Final OpenID Foundation specification (September 2021). Instead of a redirect, the client asks the OP for authentication and consent over a back channel. The user approves on a separate device, such as their mobile phone.
+CIBA (OpenID Connect Client-Initiated Backchannel Authentication) became an OpenID Foundation Final specification in September 2021. Without a redirect, the client asks the OP for authentication and consent over a back channel, and the user approves on a separate device such as a phone. It suits cases where the person operating and the person approving use different devices, and AI agents that need human approval can use it too. [What is Authorization for AI Agents?](/posts/authorization-for-ai-agents/) covers that case.
 
-The flow works like this:
-
-1. The client sends a request to the Backchannel Authentication Endpoint and identifies the user with a hint such as `login_hint`.
-2. The OP returns an `auth_req_id` and asks the user's device for approval.
-3. The client receives the result. It picks one of three modes at registration: Poll, Ping, or Push.
-
-With `binding_message`, both the requesting screen and the approving screen show the same string. CIBA suits cases where the person operating and the person approving use different devices, such as call centers and store terminals. CIBA is also one candidate when AI agents need to ask humans for approval. [How authorization changes with AI agents](/posts/authorization-for-ai-agents/) covers that.
-
-An authorization platform must decide how to identify the user (the `login_hint` format) and which device receives the approval notice. Identifying the wrong user means asking the wrong person for approval.
+An authorization platform has to decide how to identify the user (the `login_hint` format) and which device receives the approval request.
 
 ## GNAP (RFC 9635): A Separate Protocol That Rebuilds OAuth
 
-GNAP (Grant Negotiation and Authorization Protocol) does not extend OAuth. It redesigns delegation from scratch. The IETF published it as RFC 9635 in October 2024. RFC 9767 (April 2025) defines how it connects to resource servers.
-
-The main differences from OAuth:
-
-- The client sends a JSON request to a single grant endpoint. No branching by grant type.
-- GNAP assumes the client holds a key, and the client proves possession of that key on each request.
-- The request itself negotiates how to interact with the user (redirect, user code, and so on).
-- After issuance, the client can update or revoke the grant through a continuation URL.
-
-As far as I know, few large ecosystems had adopted GNAP as of October 2026. So, in my view, an authorization platform has little reason to build it today. Still, its ideas of "key-bound clients" and "continuing grants" help when you design OAuth sender constraints or agent delegation.
+GNAP (Grant Negotiation and Authorization Protocol) does not extend OAuth. It redesigns delegation from scratch and does not aim for direct compatibility with OAuth 2.0. Its ideas of key-bound clients and grants you can update or revoke after issuance still help when you design OAuth sender constraints or agent delegation.
 
 # Request Integrity: Keep Authorization Requests Tamper-Proof
 
@@ -497,7 +460,6 @@ You do not need to adopt everything from day one. Use the decision axes in [How 
 - [Transaction Tokens (draft-ietf-oauth-transaction-tokens)](https://datatracker.ietf.org/doc/draft-ietf-oauth-transaction-tokens/)
 - [JSON Web Token Best Current Practices (draft-ietf-oauth-rfc8725bis)](https://datatracker.ietf.org/doc/draft-ietf-oauth-rfc8725bis/)
 - [RFC 9635 Grant Negotiation and Authorization Protocol (GNAP)](https://www.rfc-editor.org/rfc/rfc9635)
-- [RFC 9767 Grant Negotiation and Authorization Protocol Resource Server Connections](https://www.rfc-editor.org/rfc/rfc9767)
 - [OpenID Connect Client-Initiated Backchannel Authentication Flow - Core 1.0](https://openid.net/specs/openid-client-initiated-backchannel-authentication-core-1_0.html)
 - [FAPI 2.0 Security Profile](https://openid.net/specs/fapi-security-profile-2_0-final.html)
 - [FAPI 2.0 Message Signing](https://openid.net/specs/fapi-message-signing-2_0-final.html)
