@@ -176,8 +176,6 @@ flowchart TD
     A --> E
 ```
 
-In my view, many business SaaS products need a little of all three. Job functions such as administrator or approver fit RBAC. "Requests I created" or "data about my direct reports" fit ReBAC. "Only during business hours" or "only from managed devices" fit ABAC.
-
 ## "Check" and "List" Are Different Questions
 
 A point that model selection often misses: what kind of question must the system answer?
