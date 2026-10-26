@@ -220,11 +220,11 @@ Three drafts define how workloads use WITs and WICs to authenticate each other. 
 
 Some notes on each.
 
-- **mTLS**: You MUST check that the trust domain in the WIC matches the one you expect for that connection. When you connect by DNS name, you also run RFC 9525 hostname verification: Section 3.2.1 makes this a MUST, while the Security Considerations section says SHOULD. Identifier checks add to it rather than replace it. Unless another mechanism protects and authorizes it, you MUST NOT let a self-asserted identity in an HTTP header override the identity that mTLS established.
+- **mTLS**: You MUST check that the trust domain in the WIC matches the one you expect for that connection. When you connect by DNS name, you MUST also run RFC 9525 hostname verification. Identifier checks add to it rather than replace it: even when the identifier matches, you reject the connection if no DNS name in the certificate matches. Unless another mechanism protects and authorizes it, you MUST NOT let a self-asserted identity in an HTTP header override the identity that mTLS established.
 - **HTTP Message Signatures**: To survive proxies that end TLS and rewrite `Host`, the profile does not sign `@authority` for requests other than CONNECT. Instead it puts the target in the signature parameter `wimse-aud`, and the receiver compares it exactly against trusted configuration. The `nonce` needs at least 64 bits of entropy, and the signature lifetime (`expires`) MUST be short, on the order of minutes.
 - **WPT** (Workload Proof Token): A short-lived JWT signed with the WIT key. The http-signature draft (-08) describes WPT as the option inspired by OAuth DPoP (RFC 9449). In wpt-02, the WPT draft moved it from a dedicated header to `Authorization: WPT`. As a result, you cannot send a Bearer or DPoP access token in the same request. The WPT draft describes this exclusivity as intentional: it keeps a request from dropping to the strength of its weakest credential.
 
-In my framing, the questions below settle most choices. The main forks are two: whether intermediaries end TLS, and whether you also send an OAuth access token in the same request.
+The questions below settle most choices. The main forks are two: whether intermediaries end TLS, and whether you also send an OAuth access token in the same request.
 
 ```mermaid
 flowchart TD
@@ -429,7 +429,7 @@ Key points follow.
 
 The design caveat: mapping SPIFFE IDs to `client_id` values is itself an authorization decision. Which workload may act as which OAuth client sets the upper bound on the scopes that client gets. SPIRE registration entries decide which workload gets which SPIFFE ID, so anyone who can create them can, in effect, decide which workload acts as which OAuth client. Govern who can create registration entries as strictly as you govern client registration at the authorization server.
 
-In my view, a practical default is `spiffe_x509` with proof of possession on paths that connect to the AS directly over TLS, and a short-lived `spiffe_jwt` on paths where something terminates TLS. A `spiffe_jwt` is a bearer token, so this assumes you trust the intermediary that terminates TLS. `spiffe_wit` depends on drafts that still change, so I consider it too early to make it the production default.
+A practical default is `spiffe_x509` with proof of possession on paths that connect to the AS directly over TLS, and a short-lived `spiffe_jwt` on paths where something terminates TLS. A `spiffe_jwt` is a bearer token, so this assumes you trust the intermediary that terminates TLS. `spiffe_wit` depends on drafts that still change, so wait before you make it the production default.
 
 # How the Pieces Fit Together
 
@@ -478,7 +478,7 @@ Binding has limits, though. It stops an intermediary from swapping or stripping 
 - **Write subjects as full identifiers.** Treat trust domain and path together, and avoid path-only or prefix matching.
 - **Do not treat successful authentication as authorization.** Passing mTLS does not decide which resources a workload may access.
 - **Pass transport-layer and application-layer identities to the PDP separately, and record both for audit when both are available.**
-- **Choose the authentication method mainly by asking "do intermediaries terminate TLS?" and "do you send an OAuth token in the same request?"** For east-west HTTP traffic, I consider a safe default to be mTLS, plus an end-to-end HTTP signature on paths where an intermediary terminates TLS.
+- **Choose the authentication method mainly by asking "do intermediaries terminate TLS?" and "do you send an OAuth token in the same request?"** For east-west HTTP traffic, a safe default is mTLS, plus an end-to-end HTTP signature on paths where an intermediary terminates TLS.
 - **Do not reuse external access tokens inside.** Exchange them for Txn-Tokens at the gateway and narrow the scope to the transaction's purpose.
 - **Give credentials a distinct audience per use, keep them short-lived, and in production avoid environment variables when another delivery pattern exists.**
 - **If you already run SPIFFE and your AS supports it, replace `client_secret` with SPIFFE client authentication,** then manage the SPIFFE ID to `client_id` mapping as an authorization decision.
@@ -486,7 +486,7 @@ Binding has limits, though. It stops an intermediary from swapping or stripping 
 
 # Status of the Specifications (October 2026)
 
-I checked these on the IETF Datatracker on October 24, 2026. Drafts change between revisions, so pin the revision you build against.
+I checked these on the IETF Datatracker on October 26, 2026. Drafts change between revisions, so pin the revision you build against.
 
 | Draft | Latest revision (date) | Status |
 | --- | --- | --- |
@@ -494,7 +494,7 @@ I checked these on the IETF Datatracker on October 24, 2026. Drafts change betwe
 | draft-ietf-wimse-identifier | -04 (2026-10-23) | WG Document. The text says Standards Track |
 | draft-ietf-wimse-workload-identity-practices | -07 (2026-09-22) | Submitted to IESG (AD Evaluation). Informational |
 | draft-ietf-wimse-workload-creds | -02 (2026-07-02) | WG Document |
-| draft-ietf-wimse-mutual-tls | -02 (2026-07-06) | WG Document |
+| draft-ietf-wimse-mutual-tls | -03 (2026-10-24) | WG Document |
 | draft-ietf-wimse-http-signature | -08 (2026-10-20) | WG Document. Doc Shepherd Follow-up Underway. Intended as Proposed Standard |
 | draft-ietf-wimse-wpt | -02 (2026-08-27) | WG Document |
 | draft-ietf-oauth-transaction-tokens | -11 (2026-07-30) | WG Consensus: Waiting for Write-Up. The text says Standards Track |
@@ -507,7 +507,7 @@ Within WIMSE, the practices guide sits closest to an RFC, with HTTP signatures n
 # Summary
 
 - WIMSE expresses workload identity through three elements: trust domain, workload identifier, and credentials (WIT/WIC). A SPIFFE ID is a conforming example and works as is.
-- WIMSE offers three authentication methods: mTLS, HTTP Message Signatures, and WPT. In my framing, the choice turns mainly on whether TLS terminates midway and whether you send an OAuth token in the same request.
+- WIMSE offers three authentication methods: mTLS, HTTP Message Signatures, and WPT. The choice turns mainly on whether TLS terminates midway and whether you send an OAuth token in the same request.
 - Deliver credentials based on attestation, as short-lived credentials with a distinct audience per use. In production, avoid environment variables when another delivery pattern exists.
 - Transaction Tokens exchange an external access token (or, when no inbound token exists, something like a self-signed JWT) for an internal token bound to one transaction and pass it unchanged along the call chain. Treat it as different from both access tokens and authentication credentials.
 - SPIFFE client authentication removes `client_secret`, but you must manage the SPIFFE ID to `client_id` mapping as an authorization decision.
