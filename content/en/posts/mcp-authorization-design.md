@@ -99,7 +99,7 @@ Adding OAuth does not finish authorization. Viewed through the IAM subdomains, t
 | Which client may access which MCP server, and how far? | Delegation (OAuth, scopes, audience) | The core of the specification |
 | May the caller run this tool on this data? | Access decision | Requires access controls (MUST) but does not say how to decide. Design it yourself |
 | Who decides and reviews which agent may use which tool? | Access governance | Out of scope |
-| Do high-risk operations need human approval? | Access decision and governance | Only a SHOULD about the host UI; no mechanism dedicated to approval. A server can ask the user to confirm through Elicitation |
+| Do high-risk operations need human approval? | Access decision and governance | Only a SHOULD about the host UI; no mechanism dedicated to approval. A server can ask the user to confirm through Elicitation (the way a server asks the user for input through the client) |
 
 The specification does not ignore access decisions. The tools specification says servers MUST put proper access controls in place. The caching specification says servers MUST NOT rely on `cacheScope` alone and MUST apply access controls per primitive (tools, resources, and so on). It does not say how to decide, though. That part belongs to your design.
 
@@ -166,7 +166,7 @@ flowchart LR
 
 When the MCP server calls a backend API, it does not relay the token it received. The specification requires a separate token issued by the authorization server of that backend API. For internal APIs, Token Exchange (RFC 8693) offers a natural way to get a token for the backend API. [The big picture of service-to-service authentication](/posts/service-to-service-authentication/) covers the basics of Token Exchange.
 
-When the MCP server calls an external SaaS, it becomes an OAuth client of that service. The specification provides URL mode in Elicitation for this case. The user authorizes the external service in a browser without going through the MCP client, and the external credentials never pass through the MCP client. The MCP server stores and manages the external token, so the MCP server becomes stateful.
+When the MCP server calls an external SaaS, it becomes an OAuth client of that service. Elicitation has a form mode, which collects input in the client UI, and a URL mode, which sends the user to an external URL. The specification provides URL mode for this case. The user authorizes the external service in a browser without going through the MCP client, and the external credentials never pass through the MCP client. The MCP server stores and manages the external token, so the MCP server becomes stateful.
 
 In this flow, the server MUST confirm that the user who started the Elicitation and the user who finished authorization in the browser match. Without this check, an attacker can send the URL from their own request to a victim. The victim's external token then ends up bound to the attacker's account.
 
