@@ -75,7 +75,7 @@ flowchart TB
 
 認可は、これらが合流する地点になる。どの情報を誰が持ち、どの鮮度で判定に届けるかは、1つのチームでは決めきれない。
 
-最後に、統制は組織のプロセスそのものである。誰が権限を与えられるか、職務分掌、定期的な棚卸し、退職時の権限の剥奪は、組織構造や内部統制に直結する。NIST SP 800-53 Rev. 5も、アカウント管理（AC-2）、職務の分離（AC-5）、ユーザー権限のレビュー（AC-6(7)）を統制として挙げている。退職者の権限を全システムから確実に消せるかは、技術だけでは決まらない。組織横断の仕組みで決まる。
+最後に、統制は組織のプロセスそのものである。誰が権限を与えられるか、職務分掌、定期的な棚卸し、退職時の権限の剥奪は、組織構造や内部統制に直結する。退職者の権限を全システムから確実に消せるかは、技術だけでは決まらない。組織横断の仕組みで決まる。
 
 つまり、認可基盤は技術の部品としては作れても、それだけでは足りない。何を許すか、どの情報をどの鮮度で届けるか、誰が統制するかは、複数の部門の役割分担と合意がないと決まらない。認可基盤は技術の境界だけでなく、部門の境界もまたぐ。
 
@@ -217,5 +217,3 @@ freeeが専任のチームで権限管理基盤を開発・運用している事
 # 参考リンク
 
 - [OpenID Foundation - Authorization API 1.0](https://openid.net/specs/authorization-api-1_0.html)
-- [NIST SP 800-53 Rev. 5 - Security and Privacy Controls for Information Systems and Organizations](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final)
-- [NIST SP 800-162 - Guide to Attribute Based Access Control (ABAC) Definition and Considerations](https://csrc.nist.gov/pubs/sp/800/162/upd2/final)

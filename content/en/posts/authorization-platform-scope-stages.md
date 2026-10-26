@@ -75,7 +75,7 @@ Second, the information a decision needs comes from across the organization.
 
 Authorization becomes the point where these sources meet. A single team cannot decide who holds which information and how fresh it must be when it reaches a decision.
 
-Third, governance is the organization's own process. Who may grant permissions, separation of duties, periodic access reviews, and revoking permissions when someone leaves all tie directly to the organizational structure and internal controls. NIST SP 800-53 Rev. 5 also lists Account Management (AC-2), Separation of Duties (AC-5), and Review of User Privileges (AC-6(7)) as controls. Technology alone does not determine whether you can reliably remove a departed employee's permissions from every system. Cross-organizational processes determine it.
+Third, governance is the organization's own process. Who may grant permissions, separation of duties, periodic access reviews, and revoking permissions when someone leaves all tie directly to the organizational structure and internal controls. Technology alone does not determine whether you can reliably remove a departed employee's permissions from every system. Cross-organizational processes determine it.
 
 In short, you can build an authorization platform as a technical component, but that alone is not enough. What to allow, which information reaches decisions at what freshness, and who governs access all need a division of roles and agreement across several departments. An authorization platform crosses not only technical boundaries but also departmental ones.
 
@@ -217,5 +217,3 @@ Not building a platform does not mean doing nothing, though. As the previous sec
 # References
 
 - [OpenID Foundation - Authorization API 1.0](https://openid.net/specs/authorization-api-1_0.html)
-- [NIST SP 800-53 Rev. 5 - Security and Privacy Controls for Information Systems and Organizations](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final)
-- [NIST SP 800-162 - Guide to Attribute Based Access Control (ABAC) Definition and Considerations](https://csrc.nist.gov/pubs/sp/800/162/upd2/final)
