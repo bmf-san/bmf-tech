@@ -256,42 +256,18 @@ A token reflects a decision at the moment of issuance. After that, a user may le
 
 ## SSF, CAEP, and RISC
 
-SSF (OpenID Shared Signals Framework) sets the rules between a Transmitter that sends events and a Receiver that receives them. The Receiver configures a stream and requests the events and subjects it wants. The Transmitter then decides which of the requested events it actually delivers. Delivery uses push (RFC 8935) or poll (RFC 8936). Subjects use the Subject Identifiers of RFC 9493.
+SSF (OpenID Shared Signals Framework) sets the rules between a Transmitter that sends events and a Receiver that receives them. CAEP (Continuous Access Evaluation Profile) defines event types for continuous access evaluation, such as session revocation and claim changes. RISC (Risk Incident Sharing and Coordination) defines event types about account risk, such as account disablement and credential compromise.
 
-CAEP (Continuous Access Evaluation Profile) defines event types for continuous access evaluation:
-
-- `session-revoked`: a session ended by revocation
-- `token-claims-change`: token claims changed
-- `credential-change`: a credential changed
-- `assurance-level-change`: the authentication assurance level changed
-- `device-compliance-change`: a device stopped or started complying with policy
-- `risk-level-change`: the risk level changed
-- `session-established` / `session-presented`: the Transmitter established a new session, or observed that a session is present at the Transmitter
-
-RISC (Risk Incident Sharing and Coordination) defines event types about account risk, for example `account-disabled`, `credential-compromise`, and `identifier-recycled`. Providers use it to share signs of account takeover with each other.
-
-With these standards, you can run "short-lived access tokens, plus instant notification of important changes through events." This approach stands opposite to handing out long-lived bearer tokens and leaving them alone.
+With these standards, you can run "short-lived access tokens, plus instant notification of important changes through events."
 
 ## Step-up (RFC 9470): The RS Asks for Stronger Authentication
 
-The OAuth 2.0 Step Up Authentication Challenge Protocol lets the RS say "the authentication behind this token falls short." The RS returns 401 with a header like this:
-
-```http
-HTTP/1.1 401 Unauthorized
-WWW-Authenticate: Bearer error="insufficient_user_authentication",
-  error_description="A different authentication level is required",
-  acr_values="myACR"
-```
-
-`acr_values` names the required authentication strength, and `max_age` sets the upper limit on time since authentication. The client sends an authorization request with these values, has the user authenticate again, and retries with the new token. The RS decides by reading `acr` and `auth_time` from the JWT access token or the Introspection response.
-
-Use it when you want strong authentication only for operations such as payments or permission changes. Compared with always demanding the strongest authentication at first login, it puts less burden on users. [What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) shows an example of turning a PDP decision into a step-up.
+RFC 9470 lets the RS say "the authentication behind this token falls short." In the `WWW-Authenticate` header of a 401 response, the RS names the required authentication strength (`acr_values`) or the upper limit on time since authentication (`max_age`). The client has the user authenticate again and retries with the new token. Use it when you want strong authentication only for operations such as payments or permission changes. [What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) shows an example of turning a PDP decision into a step-up.
 
 For continuous evaluation, an authorization platform must decide:
 
-- Which events to receive, and what to stop when one arrives (sessions, refresh tokens, cached decisions)
-- Which `acr` to require for which operations. Agree on the meaning of each `acr` value across the organization
-- Who sends events (IdP, MDM, risk engine)
+- Which events to receive, and what to stop when one arrives
+- Which `acr` to require for which operations
 
 # What an Authorization Platform Must Decide
 

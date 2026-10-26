@@ -256,42 +256,18 @@ SETとOIDCのログアウトは[OIDCのログアウトとSecurity Event Token（
 
 ## SSF、CAEP、RISC
 
-SSF（OpenID Shared Signals Framework）は、イベントを送るTransmitterと受け取るReceiverの間の取り決めである。Receiverはストリームを設定し、受け取りたいイベントと主体を指定する。実際に配るイベントは、その要求の範囲でTransmitterが決める。配信はRFC 8935のPushか、RFC 8936のPollを使う。主体の識別にはRFC 9493のSubject Identifiersを使う。
+SSF（OpenID Shared Signals Framework）は、イベントを送るTransmitterと受け取るReceiverの間の取り決めである。CAEP（Continuous Access Evaluation Profile）は、セッションの失効やクレームの変更など、継続的なアクセス評価のためのイベント型を定める。RISC（Risk Incident Sharing and Coordination）は、アカウントの無効化や資格情報の漏えいなど、アカウントのリスクに関わるイベント型を定める。
 
-CAEP（Continuous Access Evaluation Profile）は、継続的なアクセス評価のためのイベント型を定める。
-
-- `session-revoked`: セッションを失効させた
-- `token-claims-change`: トークンのクレームが変わった
-- `credential-change`: 資格情報が変わった
-- `assurance-level-change`: 認証の保証レベルが変わった
-- `device-compliance-change`: 端末がポリシーに適合しなくなった、または適合した
-- `risk-level-change`: リスクのレベルが変わった
-- `session-established` / `session-presented`: Transmitterがセッションを作った、Transmitterでセッションが存在することを観測した
-
-RISC（Risk Incident Sharing and Coordination）は、アカウントのリスクに関わるイベント型を定める。例は`account-disabled`、`credential-compromise`、`identifier-recycled`である。事業者の間でアカウント乗っ取りの兆候を共有するために使う。
-
-こうした標準を使うと、「アクセストークンは短命にし、重要な変化はイベントで即座に伝える」という運用ができる。長命のBearerを配って放置するのとは逆の考え方である。
+こうした標準を使うと、「アクセストークンは短命にし、重要な変化はイベントで即座に伝える」という運用ができる。
 
 ## Step-up（RFC 9470）: RSからより強い認証を求める
 
-OAuth 2.0 Step Up Authentication Challenge Protocolは、RSが「このトークンの認証では足りない」と返すための仕組みである。RSは401と次のヘッダーを返す。
-
-```http
-HTTP/1.1 401 Unauthorized
-WWW-Authenticate: Bearer error="insufficient_user_authentication",
-  error_description="A different authentication level is required",
-  acr_values="myACR"
-```
-
-`acr_values`は求める認証の強さ、`max_age`は認証からの経過時間の上限である。クライアントは、これらを付けた認可要求で利用者に再認証してもらい、新しいトークンで呼び直す。RSは、JWTアクセストークンやIntrospectionの結果に含まれる`acr`と`auth_time`を見て判断する。
-
-送金や権限の変更のような操作だけで強い認証を求めたいときに使う。最初のログインで常に最も強い認証を求めるより、利用者の負担が小さい。PDPの判定結果からStep-upにつなげる例は[AuthZEN Authorization APIとは？](/ja/posts/authzen-authorization-api/)で扱う。
+RFC 9470は、RSが「このトークンの認証では足りない」と返すための仕組みである。RSは401の`WWW-Authenticate`ヘッダーで、求める認証の強さ（`acr_values`）や認証からの経過時間の上限（`max_age`）を示す。クライアントは利用者に再認証してもらい、新しいトークンで呼び直す。送金や権限の変更のような操作だけで、強い認証を求めたいときに使う。PDPの判定結果からStep-upにつなげる例は[AuthZEN Authorization APIとは？](/ja/posts/authzen-authorization-api/)で扱う。
 
 継続評価について、認可基盤として決めることは次のとおりである。
 
-- どのイベントを受け取り、受け取ったら何を止めるか（セッション、リフレッシュトークン、キャッシュした判定）
-- どの操作で、どの`acr`を要求するか。`acr`の値の意味を組織で揃える
-- イベントの送り手（IdP、MDM、リスクエンジン）を何にするか
+- どのイベントを受け取り、受け取ったら何を止めるか
+- どの操作で、どの`acr`を要求するか
 
 # 認可基盤が決めることの一覧
 
