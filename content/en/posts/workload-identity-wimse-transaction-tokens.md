@@ -108,14 +108,6 @@ arch-08 adds components step by step across three scenarios.
 
 arch-08 names Transaction Tokens as one example of this context token. Do not let an external bearer token flow inside; replace it with a token that has meaning only inside.
 
-## Placing the PEP and PDP
-
-arch-08 splits one call into stages: get credentials, set up transport, authenticate at the application layer, make the access decision, and respond. The PEP enforces authorization and may delegate decisions to a PDP. The PEP is a logical function on the callee's request path; you can place it inside the workload, in a sidecar, or in a gateway.
-
-The architecture defines neither a policy language nor a PEP-PDP protocol. As a reference architecture, this matches the split in "[What Are Authorization Architectures and Models?](/posts/authorization-architecture-models-engines/)," and AuthZEN ("[What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/)") can fill the PEP-PDP gap.
-
-As a rule, the callee makes the decision. When the decision gets too fine-grained, as with a database, the caller MAY decide instead, but only if it has enough context and policy information to decide correctly.
-
 ## Layered Authentication and "Authentication Is Not Authorization"
 
 In some deployments, a workload authenticates to a sidecar or gateway over mTLS and to the destination workload with an application-layer WIT. arch-08 notes that this pattern is common when infrastructure components end connections on behalf of workloads, calls it layered authentication, and sets these rules.
