@@ -142,18 +142,14 @@ SPIFFE has started to adopt WIT-SVID, a SPIFFE profile of the WIT (stability: In
 
 # Three Authentication Methods and How to Choose
 
-Three drafts define how workloads use WITs and WICs to authenticate each other. They started as one draft, draft-ietf-wimse-s2s-protocol, which the WG split in November 2025 into four: one for credentials and three for methods.
+Three drafts define how workloads use WITs and WICs to authenticate each other.
 
 | Aspect | mTLS (mutual-tls) | HTTP Message Signatures (http-signature) | WPT (wpt) |
 | --- | --- | --- | --- |
 | Layer | Transport | Application (HTTP only) | Application (format independent of protocol) |
 | Credential | WIC | WIT | WIT |
-| Proof of possession | TLS handshake | RFC 9421 signature | Signed JWT (`Authorization: WPT`) |
-| What the proof covers | The whole connection on that hop | Method, path, query, body digest, `Authorization`, `Txn-Token`, WIT, and more | Target (`aud`), WIT hash (`wth`), Txn-Token hash (`tth`), hashes of other context tokens (`oth`). Not the method or body |
 | Intermediaries that terminate TLS | Authentication stops there | Survives them and detects changes to signed parts | Survives them, but cannot defend against an actively malicious intermediary |
-| Response protection | TLS handles it | Can sign responses too | None |
 | OAuth access token in the same request | Possible | Signature can cover `Authorization` | Not possible (WPT occupies `Authorization`) |
-| HTTP status on failure | Fails in TLS | 400 (401 NOT RECOMMENDED) | 401 with `WWW-Authenticate: WPT` |
 
 The questions below settle most choices. The main forks are two: whether intermediaries end TLS, and whether you also send an OAuth access token in the same request.
 
@@ -173,17 +169,13 @@ flowchart TD
     Q3 -- "No" --> H
 ```
 
-You can combine layers. The mutual-tls draft says that when you need end-to-end workload authentication across intermediaries that end TLS, you SHOULD use an application-layer WIMSE method as well as TLS-layer server authentication. Hop-by-hop mTLS with an end-to-end HTTP signature on top is one example.
+You can combine layers. Hop-by-hop mTLS plus an end-to-end HTTP signature is one example.
 
-WIMSE methods and OAuth sender-constrained tokens (RFC 8705 mTLS, RFC 9449 DPoP) protect different things. WIMSE proves "which workload is calling," while sender constraint proves "who may use this access token." See "[What are Sender-Constrained Tokens?](/posts/sender-constrained-tokens-mtls-dpop/)" for the latter. If you use an X.509-SVID or WIC for RFC 8705 client authentication and certificate binding, one certificate covers both.
+WIMSE methods prove "which workload is calling." OAuth sender-constrained tokens ("[What are Sender-Constrained Tokens?](/posts/sender-constrained-tokens-mtls-dpop/)") prove "who may use this access token." They protect different things.
 
 # How to Deliver Credentials
 
-draft-ietf-wimse-workload-identity-practices records how workloads get credentials on today's platforms, without assuming WIMSE protocols. It has progressed furthest among the WIMSE drafts: the WG has submitted it to the IESG, and its current state is AD Evaluation.
-
-## The General Pattern
-
-Instead of pre-distributing secrets, the platform checks the workload's runtime environment and then issues a credential. The workload uses that credential directly for internal resources. For external resources, it federates with an external IdP or STS and uses the token it receives.
+draft-ietf-wimse-workload-identity-practices records how workloads get credentials on today's platforms. Instead of pre-distributing secrets, the platform checks the runtime environment and then issues credentials. For outside resources, the workload federates to an external IdP or STS and uses the token it gets back.
 
 ```mermaid
 sequenceDiagram
@@ -201,42 +193,19 @@ sequenceDiagram
     W->>R2: Access with the access token
 ```
 
-The practices draft covers Kubernetes service account tokens, the SPIFFE Workload API, cloud instance metadata, CI/CD workflow identities, and service mesh sidecars. For overviews of Kubernetes, cloud platforms, and SPIFFE, see the identity foundation section of "[What is the Big Picture of Service-to-Service Authentication?](/posts/service-to-service-authentication/)."
+"[What is the Big Picture of Service-to-Service Authentication?](/posts/service-to-service-authentication/)" covers concrete examples on Kubernetes, cloud platforms, and SPIFFE. The requirements that shape design are these.
 
-## Three Delivery Patterns
-
-| Pattern | Strengths | Cautions |
-| --- | --- | --- |
-| File system | Runs independently of updates; the workload just reads | Never expose a partially written file (write to a temp file and rename atomically). Keep it on in-memory storage |
-| Local API (Unix domain socket, metadata service, and so on) | Can redeliver short-lived credentials | Needs SSRF defenses. Without per-process identification, any process on the host can get the identity |
-| Environment variables | Simple | Leak through logs and process inspection. In production, MUST NOT pass credentials this way when another pattern exists |
-
-## Requirements to Keep
-
-These normative rules in the practices draft matter most for design.
-
-- **Use credentials with distinct audiences per purpose** (MUST). If you use the same bearer token for internal resources and an external IdP, the IdP can present it to internal resources and impersonate the workload.
-- **Put a single value in a JWT's `aud`** (two or more audiences MUST NOT). The exceptions are cases where you cannot get several credentials or cannot choose the audience. Otherwise any recipient listed in `aud` can present the token to the others.
-- **Do not let a token outlive its instance** (MUST NOT). If the platform cannot know the instance lifetime, keep the token as short-lived as possible.
-- **Invalidate credentials when the instance stops, pauses, or ceases to exist** (MUST). The exception is a lifetime short enough that the remaining validity is acceptable.
-- **Use proof of possession** (SHOULD). When you cannot, compensate with short lifetimes, strict audiences, and network controls (MUST).
-- **Assume application vulnerabilities can leak credentials** (MUST). Untrusted input MUST NOT influence credential file paths or connections to the local API.
-- **Evaluate the values of custom claims** (MUST). In CI/CD, allowing federation only from the protected `main` branch requires checking the branch claim's value.
-- **Do not trust `iss` alone in multi-tenant platforms.** Where each tenant can configure the same issuer identifier, `iss` does not uniquely identify a trusted authority.
-
-To turn a platform credential into an access token, the draft discourages Token Exchange or proprietary APIs because they hurt interoperability. As the standards for this pattern, it names the RFC 7521 assertion framework and the JWT authorization grant in draft-ietf-oauth-rfc7523bis.
+- **Use credentials with a different audience for each purpose, and put only one value in `aud`** (MUST). If you show the same bearer token to an internal resource and an external IdP, the IdP can impersonate the workload.
+- **Keep token lifetimes within the instance lifetime, and invalidate credentials when an instance stops** (MUST).
+- **Use proof of possession** (SHOULD). Where you cannot, compensate with short lifetimes, strict audiences, and network controls (MUST).
+- **Evaluate the values of custom claims** (MUST). In CI/CD, allowing federation only from a protected `main` branch requires looking at the branch claim.
+- **Do not deliver credentials through environment variables.** If the platform offers another delivery pattern, you MUST NOT use environment variables in production.
 
 # Carrying Transaction Context with Transaction Tokens
 
-WIMSE credentials carry "which workload," not "on whose behalf and for which transaction." draft-ietf-oauth-transaction-tokens (Txn-Token) fills that gap.
+WIMSE credentials carry "which workload" but not "on whose behalf, for which transaction." draft-ietf-oauth-transaction-tokens (Txn-Token) fills that gap.
 
-## The Problem It Solves
-
-One external API call triggers many internal workload calls. If supply chain attacks or insiders compromise an internal workload, it can call other workloads without a legitimate transaction, tamper with parameters, or steal access tokens.
-
-A Txn-Token holds the user or workload identity plus authorization and request context in a short-lived, signed JWT bound to one transaction. That JWT flows along the whole call chain within the trust domain. Downstream workloads use it to make authorization decisions within that transaction, and the signature reveals tampering along the way.
-
-## Issuance and Propagation
+A compromised internal workload can call other workloads without a legitimate transaction or tamper with parameters. A Txn-Token turns the identity of the user or workload and the transaction context into a short-lived signed JWT and carries it through the whole call chain in the trust domain. Downstream workloads make authorization decisions from it and detect tampering through the signature.
 
 ```mermaid
 sequenceDiagram
@@ -255,36 +224,9 @@ sequenceDiagram
     W1->>W2: Forward the received Txn-Token unchanged
 ```
 
-The Transaction Token Service (TTS) issues the token, and each trust domain MUST have exactly one logical TTS. A request over HTTP to a remote TTS MUST use RFC 8693 token exchange. The main parameters follow.
+A single Transaction Token Service (TTS) per trust domain issues Txn-Tokens. Requests use RFC 8693 token exchange, with the external access token as `subject_token`. An internal job with no inbound token to pass may start a transaction with a self-signed JWT.
 
-| Parameter | Description |
-| --- | --- |
-| `requested_token_type` | `urn:ietf:params:oauth:token-type:txn_token` |
-| `audience` | The trust domain name |
-| `scope` | The purpose of the transaction, as narrow as possible |
-| `subject_token` | A token for the subject: an external access token, a self-signed JWT, unsigned JSON, and so on. Refresh tokens are not allowed |
-| `request_context` | Environmental context such as the original request IP (recommended) |
-| `request_details` | Request details such as API parameters (recommended) |
-
-When the workload has no inbound token to send to the TTS, it MAY generate a self-signed JWT and present it as `subject_token` to start a transaction. This covers external authentication that does not use an access token and scheduled internal jobs. The TTS and the workload MUST authenticate each other. Examples for workload authentication include RFC 8705, WIMSE mTLS, HTTP signatures, WPT, and signed JWTs from RFC 7523.
-
-## Token Format
-
-A Txn-Token is a JWT with `typ` set to `txntoken+jwt`.
-
-| Claim | Required | Description |
-| --- | --- | --- |
-| `aud` | Required | The trust domain where the token is valid. Outside it, recipients MUST NOT accept it |
-| `iat`, `exp` | Required | Expect a lifetime of a few minutes or less |
-| `txn` | Required | A unique transaction identifier (RFC 8417) |
-| `sub` | Required | The subject of the transaction, unique within the trust domain |
-| `scope` | Required | The purpose the TTS decides. It need not match the external scope |
-| `req_wl` | Required | The workload that requested the Txn-Token |
-| `tctx` | Recommended | Authorization details that stay fixed for the whole transaction, decided by the TTS |
-| `rctx` | Recommended | Environmental context of the original request |
-| `iss` | Optional | Helps identify the signer when the signing keys are not predetermined |
-
-The draft's example represents a stock trade like this (trimmed).
+A Txn-Token is a JWT. Its main contents are the transaction identifier `txn`, the subject `sub`, the purpose `scope`, the immutable authorization details `tctx`, and the request environment `rctx`. The draft's example represents a stock trade like this (abridged).
 
 ```jsonc
 {
@@ -298,69 +240,32 @@ The draft's example represents a stock trade like this (trimmed).
 }
 ```
 
-With quantity and ticker in `tctx`, downstream workloads get those parameters as trustworthy values. If an intermediate workload changes the quantity in the request, comparing it with the signed `tctx` reveals the change.
+With quantity and ticker in `tctx`, downstream workloads can detect an intermediate workload that rewrites the quantity in the request.
 
-## Propagation Rules
+The handling rules are these.
 
-- Over HTTP, send the token in the `Txn-Token` header (MUST). You MUST NOT use the `Authorization` header; keep it free for authenticating the call itself, such as an access token.
-- A receiving workload MUST verify the signature, `aud`, and `exp` before using the token for authorization.
-- Outbound calls MUST carry the received Txn-Token unchanged.
+- Over HTTP, send it in the `Txn-Token` header, not in `Authorization`. Receivers verify the signature, `aud`, and `exp`, and forward it downstream unmodified.
+- You MUST NOT use it as an OAuth access token or to authenticate yourself. Do not put the external access token inside it.
+- The TTS MUST NOT widen the scope beyond that of the `subject_token`.
+- It does not resist replay, so keep its lifetime to minutes or less and reject a `txn` you have already seen.
 
-## Treat It as Different from an Access Token
-
-Besides prohibitions that keep Txn-Tokens distinct from other tokens, the draft sets rules on scope and logging.
-
-| Rule | Reason |
-| --- | --- |
-| Do not use a Txn-Token as an OAuth access token (MUST NOT) | An access token grants rights to a client; a Txn-Token describes transaction context. Keeping them apart preserves least privilege |
-| Do not use a Txn-Token to authenticate yourself (MUST NOT) | Proving identity belongs to WIMSE credentials and similar mechanisms |
-| Do not embed the external access token in a Txn-Token (MUST NOT) | Someone could extract it and replay the access token after the Txn-Token expires |
-| The TTS must not widen scope beyond the `subject_token` (MUST) | Prevents privileges from growing inside. Reject a `subject_token` whose scope is unknown |
-| Do not log entire Txn-Tokens as-is (MUST NOT) | Prevents replay and personal data leaks. Log a hash or the payload without the signature |
-
-Txn-Tokens do not resist replay. The defenses are short lifetimes and recording `txn` to reject repeated values. This single-use check can be hard when several instances without shared state receive the token. The TTS should be selective about which workloads it issues to and need not issue to every workload that asks. For example, a policy can limit Txn-Tokens that include a trade amount to the gateway that handles user requests.
-
-## Replacement
-
-A workload can also present a Txn-Token as `subject_token` to get a new one, which becomes a replacement Txn-Token. Revision -07 removed the dedicated section, and only these rules remain as a note in the security considerations.
-
-| Rule | Strength |
-| --- | --- |
-| Changes that narrow the allowed operations, and added values | MAY |
-| Changes that widen the allowed operations | MUST NOT |
-| Changing `txn`, `sub`, or `aud` | MUST NOT |
-| Issuing when the original has expired | MUST NOT |
-| If the TTS can extend lifetimes, limit the number of replacements | SHOULD |
-| Preserve the call chain of the workload that requested the original (method out of scope) | MUST |
-
-The draft leaves the method for preserving the call chain out of scope, so if you use replacement, you must decide yourself how to carry the original call chain into the new Txn-Token.
-
-## Crossing Trust Domains
-
-A Txn-Token is valid only within the trust domain in `aud`. When you need resources in another domain and must preserve the identity and authorization context from the Txn-Token, you SHOULD use Identity Chaining (draft-ietf-oauth-identity-chaining).
-
-The individual draft draft-fletcher-oauth-txn-token-chaining-profile defines the concrete steps. In this profile, the workload presents a Txn-Token as `subject_token` in a token exchange with the authorization server of its own domain and gets a JWT authorization grant for crossing the boundary. It then presents that grant to the authorization server of the other domain to get an access token. The `subject_token_type` is `urn:ietf:params:oauth:token-type:txn_token`. This carries transaction context to the other domain without exposing internal credentials or token formats. "[Which OAuth Standards Does an Authorization Platform Need?](/posts/oauth-standards-map-authorization-platform/)" covers Identity Chaining itself.
+A Txn-Token works only inside the trust domain in `aud`. To carry its context into another domain, you SHOULD use Identity Chaining. The individual draft draft-fletcher-oauth-txn-token-chaining-profile defines how to get a JWT authorization grant from a Txn-Token. "[Which OAuth Standards Does an Authorization Platform Need?](/posts/oauth-standards-map-authorization-platform/)" covers Identity Chaining itself.
 
 # Using SPIFFE for OAuth Client Authentication
 
-Using `client_secret` for service-to-service OAuth (client_credentials, token exchange, requests to the TTS) means distributing and managing that secret out of band. draft-ietf-oauth-spiffe-client-auth turns SPIFFE SVIDs into OAuth client credentials and removes that secret.
+Using `client_secret` for service-to-service OAuth means you must distribute and manage that secret. draft-ietf-oauth-spiffe-client-auth removes it by using SPIFFE SVIDs directly as OAuth client credentials.
 
-| Method | Credential | How to send | Proof of possession | Name in AS metadata |
-| --- | --- | --- | --- | --- |
-| JWT-SVID | A JWT with the SPIFFE ID in `sub` | `client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-spiffe` | None (bearer) | `spiffe_jwt` |
-| X.509-SVID | A certificate with the SPIFFE ID in the URI SAN | Connect over mTLS and put the SPIFFE ID in `client_id` | TLS handshake | `spiffe_x509` |
-| WIT-SVID | A WIMSE WIT | Attestation-Based Client Authentication headers | PoP JWT | `spiffe_wit` |
+| Method | Credential | Proof of possession |
+| --- | --- | --- |
+| JWT-SVID | A JWT with the SPIFFE ID in `sub` | None (bearer) |
+| X.509-SVID | A certificate with the SPIFFE ID in a URI SAN | TLS handshake |
+| WIT-SVID | A WIMSE WIT | PoP JWT |
 
-Key points follow.
+The AS gets verification keys from SPIFFE bundles configured per trust domain. It MUST NOT use the system trust store to check X.509-SVIDs. It also MUST NOT accept a token as a JWT-SVID just because its signature checks out under keys discovered from `iss`. Either mistake lets an unrelated CA or issuer claim any SPIFFE ID.
 
-- The AS MUST verify that a JWT-SVID's `aud` contains only the AS issuer identifier (following rfc7523bis). Unlike RFC 7523, the draft does not require `iss`; the AS maps the SPIFFE ID in `sub` to a registered client.
-- The recommended source of verification keys is a SPIFFE bundle endpoint tied to each trust domain. The AS MUST NOT verify X.509-SVIDs against the system trust store. Otherwise any CA in that store could issue a certificate for any SPIFFE ID.
-- The AS MUST NOT accept a token just because a key discovered via `iss` verifies its signature and `sub` looks like a SPIFFE ID. That invites token confusion, where an OIDC token meant for something else poses as a JWT-SVID.
-- With a Client ID Metadata Document (CIMD), the metadata's `spiffe_id` can end with a `/*` wildcard. Matching works as a prefix match on whole path segments.
+The design caveat: mapping SPIFFE IDs to `client_id` values is itself an authorization decision. Anyone who can create SPIRE registration entries can decide which workload acts as which OAuth client. Govern registration entries as strictly as client registration at the AS.
 
-The design caveat: mapping SPIFFE IDs to `client_id` values is itself an authorization decision. Which workload may act as which OAuth client sets the upper bound on the scopes that client gets. SPIRE registration entries decide which workload gets which SPIFFE ID, so anyone who can create them can, in effect, decide which workload acts as which OAuth client. Govern who can create registration entries as strictly as you govern client registration at the authorization server.
-
-A practical default is `spiffe_x509` with proof of possession on paths that connect to the AS directly over TLS, and a short-lived `spiffe_jwt` on paths where something terminates TLS. A `spiffe_jwt` is a bearer token, so this assumes you trust the intermediary that terminates TLS. `spiffe_wit` depends on drafts that still change, so wait before you make it the production default.
+A practical default is an X.509-SVID on paths that reach the AS directly over TLS, and a short-lived JWT-SVID where something terminates TLS. A JWT-SVID is a bearer token, so this assumes you trust that intermediary.
 
 # How the Pieces Fit Together
 
@@ -398,22 +303,19 @@ sequenceDiagram
     PDP-->>B: Permit / Deny
 ```
 
-The workload-creds and wpt drafts give an example of the role split: the WIT identity decides which APIs a caller can invoke, and the context token decides which resources it can access. As PDP input, the subject comes from the WIT `sub` and the context from the Txn-Token claims.
+In PDP input, the subject is the WIT `sub` and the context is the Txn-Token claims. The key point is to **pass the PDP only values bound to proof of possession**. HTTP signatures cover the `Txn-Token` header, and WPT binds the Txn-Token hash in `tth`.
 
-The important rule: **pass only values bound to the proof to the PDP.** HTTP signatures MUST cover the `Txn-Token` header when present, and WPT binds the Txn-Token hash in `tth`. The wpt draft says that when `oth` is present, the receiver MUST NOT use other tokens that `oth` does not cover for authorization decisions. You can adopt that directly as a PEP implementation rule.
-
-Binding has limits, though. It stops an intermediary from swapping or stripping the Txn-Token on a legitimate request. It does not stop another legitimate workload that stole a Txn-Token from wrapping it in its own WIT and proof. An authorization policy of the form "may this workload present a Txn-Token for this transaction?" and the TTS issuance policy handle that case.
+The binding stops an intermediary from swapping or stripping the Txn-Token on a legitimate request. It does not stop another legitimate workload that stole the Txn-Token from covering it with its own proof. Block that with an authorization policy on "may this workload present this transaction's Txn-Token?" and with the TTS issuance policy.
 
 # Design Guidelines
 
-- **Write subjects as full identifiers.** Treat trust domain and path together, and avoid path-only or prefix matching.
+- **Write subjects as full identifiers.** Avoid path-only matching and prefix matching.
 - **Do not treat successful authentication as authorization.** Passing mTLS does not decide which resources a workload may access.
-- **Pass transport-layer and application-layer identities to the PDP separately, and record both for audit when both are available.**
-- **Choose the authentication method mainly by asking "do intermediaries terminate TLS?" and "do you send an OAuth token in the same request?"** For east-west HTTP traffic, a safe default is mTLS, plus an end-to-end HTTP signature on paths where an intermediary terminates TLS.
-- **Do not reuse external access tokens inside.** Exchange them for Txn-Tokens at the gateway and narrow the scope to the transaction's purpose.
-- **Give credentials a distinct audience per use, keep them short-lived, and in production avoid environment variables when another delivery pattern exists.**
-- **If you already run SPIFFE and your AS supports it, replace `client_secret` with SPIFFE client authentication,** then manage the SPIFFE ID to `client_id` mapping as an authorization decision.
-- **For immediate revocation, do not rely on credential revocation alone; enforce it through policy as well.** You cannot revoke a JWT credential such as a WIT on demand in most deployments, so pair short-lived credentials with PDP policies that take effect at once. Invalidating credentials when an instance stops (a MUST in the practices draft) remains a separate task.
+- **Choose the authentication method mainly by asking "do intermediaries terminate TLS?" and "do you send an OAuth token in the same request?"** For east-west HTTP traffic, a safe default is mTLS, plus an HTTP signature on paths where TLS terminates midway.
+- **Do not reuse external access tokens internally.** Exchange them for Txn-Tokens at the gateway and narrow the scope to the transaction's purpose.
+- **Give credentials a separate audience per purpose and keep them short-lived.**
+- **Replace `client_secret` with SPIFFE client authentication, and govern the SPIFFE ID to `client_id` mapping as an authorization decision.**
+- **Make immediate revocation work through policy as well.** You usually cannot revoke JWT credentials such as WITs, so combine short-lived credentials with PDP policies that take effect at once.
 
 # Status of the Specifications (October 2026)
 
@@ -433,7 +335,7 @@ I checked these on the IETF Datatracker on October 26, 2026. Drafts change betwe
 | draft-ietf-oauth-identity-chaining | -17 (2026-07-19) | Approved by the IESG, in the RFC Editor Queue |
 | draft-fletcher-oauth-txn-token-chaining-profile | -00 (2026-09-10) | Individual draft. Replaced draft-fletcher-transaction-token-chaining-profile |
 
-Within WIMSE, the practices guide sits closest to an RFC, with HTTP signatures next. The credentials, mTLS, and WPT drafts remain WG Documents, and WPT changed how it travels in -02. Transaction Tokens has WG consensus and awaits submission to the IESG.
+Within WIMSE, the practices guide sits closest to an RFC, with HTTP signatures next. The credentials, mTLS, and WPT drafts remain WG Documents. Transaction Tokens has WG consensus and awaits submission to the IESG.
 
 # Summary
 
