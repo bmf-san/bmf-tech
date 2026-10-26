@@ -78,7 +78,7 @@ flowchart LR
 
 ## トークンの中継（token passthrough）
 
-MCPのSecurity Best Practicesは、token passthroughを次のように定義している。MCPサーバーが、自分宛てに発行されたかを検証せずにトークンを受け入れ、そのまま裏のAPIに渡すアンチパターンである。認可仕様もこれを明示的に禁じている。
+MCPの公式ドキュメントには、認可の仕様を補う[Security Best Practices](https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices)（以下、Best Practices）がある。Best Practicesは、token passthroughを次のように定義している。MCPサーバーが、自分宛てに発行されたかを検証せずにトークンを受け入れ、そのまま裏のAPIに渡すアンチパターンである。認可仕様もこれを明示的に禁じている。
 
 中継が危ないのは、トークンが盗まれたときの被害だけではない。Best Practicesは次のリスクを挙げている。
 

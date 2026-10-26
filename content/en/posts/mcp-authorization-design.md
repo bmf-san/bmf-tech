@@ -78,7 +78,7 @@ The following subsections expand on the items with MCP-specific concerns.
 
 ## Token passthrough
 
-The MCP Security Best Practices define token passthrough as an antipattern. In it, an MCP server accepts tokens without checking that the authorization server issued them for this MCP server, and passes them to a downstream API. The authorization specification explicitly forbids it.
+The official MCP documentation includes [Security Best Practices](https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices) ("the Best Practices" below), which complements the authorization specification. The Best Practices define token passthrough as an antipattern. In it, an MCP server accepts tokens without checking that the authorization server issued them for this MCP server, and passes them to a downstream API. The authorization specification explicitly forbids it.
 
 Passthrough causes more harm than token theft alone. The Best Practices list these risks:
 
