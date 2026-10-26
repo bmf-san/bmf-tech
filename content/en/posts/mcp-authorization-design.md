@@ -32,15 +32,9 @@ This post targets teams that add authorization to MCP servers or MCP clients. It
 
 This post refers to the 2026-07-28 revision, the current revision as of October 2026. The MCP specification keeps evolving, so pick the revision you adopt and check the original text. For the broader picture of authorization for AI agents, including the new AuthZEN drafts (AARP, COAZ) and delegation extensions, see [Authorization for AI agents](/posts/authorization-for-ai-agents/).
 
-# Start by drawing your architecture on one page
+# The architecture this post assumes
 
-Before you discuss the design, draw what you build (or plan to build) on a single page. Include these three things:
-
-- Actors: the user, the host (the AI application) and its MCP clients, the MCP servers, the business APIs behind them, and the authorization server
-- Token flow: who receives a token, from where, for which audience, and where they pass it
-- How you hold authority: which scopes, with what lifetime, stored where
-
-In MCP, a host runs several MCP clients, and each client talks to exactly one MCP server. In the authorization specification, the MCP server acts as an OAuth 2.1 resource server and the MCP client acts as an OAuth 2.1 client.
+This post assumes the following architecture. In MCP, a host runs several MCP clients, and each client talks to exactly one MCP server. In the authorization specification, the MCP server acts as an OAuth 2.1 resource server and the MCP client acts as an OAuth 2.1 client.
 
 ```mermaid
 flowchart LR
@@ -60,7 +54,11 @@ flowchart LR
     S -. "Obtain a new token" .-> AS
 ```
 
-Map the incident list and the "whose authority" analysis below onto this diagram. Concrete problems in your own architecture will show up.
+To apply it to your own system, fill in three things on this diagram. Then map the incident list and the "whose authority" analysis below onto it, and concrete problems in your architecture will show up.
+
+- Actors: the user, the host (the AI application) and its MCP clients, the MCP servers, the business APIs behind them, and the authorization server
+- Token flow: who receives a token, from where, for which audience, and where they pass it
+- How you hold authority: which scopes, with what lifetime, stored where
 
 # Incidents that can happen
 
