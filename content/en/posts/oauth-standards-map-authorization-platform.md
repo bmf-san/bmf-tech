@@ -96,7 +96,7 @@ The rest of this post walks through each question: the role of each standard and
 | RFC 8628 | Device grant: approve on a second device when the first one has poor input | RFC |
 | RFC 7523 | Client authentication with a JWT (the basis of OIDC's `private_key_jwt`), and JWTs as authorization grants | RFC |
 
-[What is OAuth 2.0?](/posts/oauth-2-0/) covers OAuth 2.0 as a whole, and [What is OAuth 2.1?](/posts/oauth-2-1-security-bcp/) covers OAuth 2.1 and the RFC 9700 recommendations. As of October 2026, OAuth 2.1 still has no RFC number. The BCP for browser-based apps came out as RFC 10017 in August 2026. [Where should you store SPA tokens?](/posts/spa-token-storage-bff/) covers token storage in SPAs.
+[What is OAuth 2.0?](/posts/oauth-2-0/) covers OAuth 2.0 as a whole, and [What is OAuth 2.1?](/posts/oauth-2-1-security-bcp/) covers OAuth 2.1 and the RFC 9700 recommendations. [Where should you store SPA tokens?](/posts/spa-token-storage-bff/) covers token storage in SPAs.
 
 An authorization platform must decide which grant types and which client types (public or confidential) to allow.
 
@@ -343,8 +343,6 @@ SCIM (System for Cross-domain Identity Management) delivers users and groups fro
 - Publish supported features and schemas through `/ServiceProviderConfig` and `/Schemas`
 
 From the platform's viewpoint, SCIM delivers the subjects and attributes used in decisions to each service in advance, and keeps the data that a PIP (the source of attributes) reads in sync. Groups and attributes change automatically as people join, move, and leave. Conversely, without this provisioning, someone must remove a former employee's account in each SaaS product separately, and may forget a few.
-
-RFC 9967 (May 2026) defines a profile that announces SCIM changes as SETs (RFC 8417). It makes provisioning asynchronous and tells receivers about changes.
 
 An authorization platform must decide:
 

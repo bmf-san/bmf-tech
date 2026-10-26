@@ -96,7 +96,7 @@ flowchart LR
 | RFC 8628 | 入力しにくい端末で、別の端末から承認するデバイスグラント | RFC |
 | RFC 7523 | JWTでクライアントを認証する（OIDCの`private_key_jwt`もこれを使う）。JWTを認可グラントとしても使う | RFC |
 
-OAuth 2.0の全体は[OAuth 2.0とは？](/ja/posts/oauth-2-0/)に、OAuth 2.1とRFC 9700の推奨は[OAuth 2.1とは？](/ja/posts/oauth-2-1-security-bcp/)にまとめた。OAuth 2.1は2026年10月時点でもまだRFCではない。ブラウザで動くアプリのBCPは2026年8月にRFC 10017として出た。SPAでのトークンの置き場所は[SPAのトークンをどこに置く？](/ja/posts/spa-token-storage-bff/)で扱った。
+OAuth 2.0の全体は[OAuth 2.0とは？](/ja/posts/oauth-2-0/)に、OAuth 2.1とRFC 9700の推奨は[OAuth 2.1とは？](/ja/posts/oauth-2-1-security-bcp/)にまとめた。SPAでのトークンの置き場所は[SPAのトークンをどこに置く？](/ja/posts/spa-token-storage-bff/)で扱った。
 
 認可基盤として決めることは、許すグラントタイプとクライアントの種類（公開クライアント、機密クライアント）である。
 
@@ -343,8 +343,6 @@ SCIM（System for Cross-domain Identity Management）は、IdPや人事システ
 - `/ServiceProviderConfig`と`/Schemas`で、対応している機能とスキーマを公開する
 
 認可基盤から見ると、SCIMは判定に使う主体と属性を各サービスへ前もって配る仕組みで、PIP（属性の供給元）が参照するデータを揃える。入社、異動、退職に合わせて、グループや属性が自動で変わる。逆に、このプロビジョニングがなければ、退職者のアカウントを各SaaSで個別に消すことになり、消し忘れが起きうる。
-
-2026年5月のRFC 9967は、SCIMの変更をSET（RFC 8417）で通知するプロファイルである。プロビジョニングを非同期にし、変更を受け手に知らせられる。
 
 認可基盤として決めることは次のとおりである。
 
