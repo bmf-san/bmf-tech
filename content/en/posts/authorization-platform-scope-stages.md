@@ -17,8 +17,6 @@ draft: false
 
 # Overview
 
-Discussions about an authorization platform sometimes collapse into two options: "build one platform that manages every permission in the company" or "leave it to each application." In practice, other options exist between those two. For example, you can keep decisions in each application and still standardize only the conventions for tokens and audit logs.
-
 This article lays out the material you need to decide how much authorization platform your organization needs. You will learn:
 
 - Why an authorization platform spans the whole organization and architecture, and why you still should not gather it in one place
