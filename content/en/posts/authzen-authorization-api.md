@@ -392,7 +392,7 @@ For JSON, the spec recommends following I-JSON (RFC 7493): UTF-8 encoding, no nu
 
 This section reflects my own view rather than the spec. The assumption that "the PDP trusts the PEP" carries weight. The PDP believes whatever department or role the PEP puts in `properties`. So decide who supplies the attributes that drive decisions. If a decision depends on attributes the PEP can set freely, a bug in the PEP, or a PEP that copies user input straight into attributes, can let someone forge those attributes. A safer design lets the PDP fetch important attributes from a PIP itself, or read them from a token whose signature the PDP verifies itself.
 
-The second point concerns what happens when the PEP cannot reach the PDP. The spec makes errors in individual evaluations fail closed, but it does not say how a PEP should behave when the PDP itself goes down. The PEP side has to decide on timeouts, caching, and degraded-mode decisions. For decisions about PEP/PDP placement and non-functional requirements, see [What Does an Authorization Platform Architecture Look Like?](/posts/authorization-platform-architecture-decisions/).
+The second point concerns what happens when the PEP cannot reach the PDP. The spec makes errors in individual evaluations fail closed, but it does not say how a PEP should behave when the PDP itself goes down. The PEP side has to decide on timeouts, caching, and degraded-mode decisions.
 
 # What "Swapping OPA, Cedar, or OpenFGA" Means
 
@@ -447,7 +447,7 @@ In its June 2026 announcement, the OpenID Foundation said that authorization sys
 | Which (discovery) | Which resources can this subject read? | Search APIs |
 | What is required (preconditions) | What does a permit require? | AARP, step-up in `context` |
 
-This grouping into three questions is my own framing; the spec does not define it. For MCP, see also [How Should You Design Authorization for MCP?](/posts/mcp-authorization-design/).
+This grouping into three questions is my own framing; the spec does not define it.
 
 # Tips for Adoption
 
@@ -477,8 +477,7 @@ Finally, here are my own tips for bringing AuthZEN into a design.
 - [What Are Authorization Architectures and Models? PEP/PDP, RBAC/ABAC/ReBAC, and Choosing a Policy Engine](/posts/authorization-architecture-models-engines/)
 - [Which OAuth Standards Does an Authorization Platform Need? A Map of Delegation, Tokens, and Continuous Evaluation](/posts/oauth-standards-map-authorization-platform/)
 - [What is Authorization for AI Agents? Delegation Chains, Human Approval, and Audit with MCP, AuthZEN, AIMS, and A2A/AP2](/posts/authorization-for-ai-agents/)
-- [How Should You Design Authorization for MCP? Common Incidents and Decisions That Are Hard to Reverse](/posts/mcp-authorization-design/)
-- [What Does an Authorization Platform Architecture Look Like? Containers, Key Sequences, PEP/PDP Placement, and Non-Functional Decisions](/posts/authorization-platform-architecture-decisions/)
+- [Why Is MCP Authorization Hard? Risks and Key Decisions When AI Agents Operate Internal Systems](/posts/mcp-authorization-design/)
 - [What is Open Policy Agent (OPA)? A Practical Guide to Policy as Code](/posts/open-policy-agent/)
 - [Implementation of Access Control System for Microservices Using OPA](/posts/microservices-access-control-opa/)
 - [Considerations and Solutions for Pagination Impact in OPA](/posts/pagination-impact-solutions-opa/)

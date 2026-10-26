@@ -392,7 +392,7 @@ JSONについては、I-JSON（RFC 7493）に沿うことを推奨している�
 
 ここからは仕様の記述ではなく、筆者の見立てである。「PDPはPEPを信頼する」という前提は重い。PEPが`properties`に載せた部署やロールを、PDPはそのまま信じる。したがって、判定に効く属性を誰が供給するかを決めておく必要がある。PEPが自由に書ける属性で判定するなら、PEPの実装の誤りや、利用者の入力をそのまま属性に写す作りによって、属性が偽られうる。重要な属性は、PDPが自分でPIPから引くか、PDP自身が署名を検証したトークンから取るほうが安全である。
 
-もう1つは、PDPに届かないときのふるまいである。仕様は個々の判定の誤りをfail-closedにすると定めるが、PDPそのものが落ちたときのPEPの動きは決めていない。タイムアウト、キャッシュ、縮退時の判定は、PEPの側で決めることになる。PEPとPDPの配置や非機能の判断は[認可基盤のアーキテクチャとは？](/ja/posts/authorization-platform-architecture-decisions/)で扱う。
+もう1つは、PDPに届かないときのふるまいである。仕様は個々の判定の誤りをfail-closedにすると定めるが、PDPそのものが落ちたときのPEPの動きは決めていない。タイムアウト、キャッシュ、縮退時の判定は、PEPの側で決めることになる。
 
 # OPA・Cedar・OpenFGAを差し替えられるとはどういうことか
 
@@ -447,7 +447,7 @@ OpenID Foundationは2026年6月の発表で、認可システムはこれまで�
 | Which（探索） | この主体が読める資源はどれか | Search API |
 | What is required（前提） | 許可には何が必要か | AARP、`context`のステップアップ |
 
-この3つのまとまりは筆者の整理であり、仕様がそう定義しているわけではない。MCPでの使い方は[MCPの認可はどう設計する？](/ja/posts/mcp-authorization-design/)も参照してほしい。
+この3つのまとまりは筆者の整理であり、仕様がそう定義しているわけではない。
 
 # 導入するときの勘所
 
@@ -477,8 +477,7 @@ OpenID Foundationは2026年6月の発表で、認可システムはこれまで�
 - [認可のアーキテクチャとモデルとは？PEP/PDP・RBAC/ABAC/ReBAC・ポリシーエンジンの選び方](/ja/posts/authorization-architecture-models-engines/)
 - [認可基盤に必要なOAuth関連標準とは？委譲・トークン・継続評価の地図](/ja/posts/oauth-standards-map-authorization-platform/)
 - [AIエージェントの認可とは？委譲の連鎖・人の承認・監査をMCP、AuthZEN、AIMS、A2A/AP2で整理する](/ja/posts/authorization-for-ai-agents/)
-- [MCPの認可はどう設計する？起きうる事故と後から直せない判断](/ja/posts/mcp-authorization-design/)
-- [認可基盤のアーキテクチャとは？コンテナ構成・代表シーケンス・PEPとPDPの配置と非機能の設計判断](/ja/posts/authorization-platform-architecture-decisions/)
+- [MCPの認可はなぜ難しい？AIエージェントに社内システムを操作させるときのリスクと押さえどころ](/ja/posts/mcp-authorization-design/)
 - [Open Policy Agent (OPA)とは？ポリシー・アズ・コードの実践ガイド](/ja/posts/open-policy-agent/)
 - [OPAを使用したマイクロサービスのアクセス制御システムの実装](/ja/posts/microservices-access-control-opa/)
 - [OPAにおけるページネーションへの影響と解決策に関する検討](/ja/posts/pagination-impact-solutions-opa/)
