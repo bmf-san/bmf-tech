@@ -53,7 +53,7 @@ flowchart TB
 
 さらに、認可は後から変えにくく、止まると全体が止まる。判定を各アプリの中で行うと、認可のロジックは各所のコードに埋め込まれていく。そのため、権限のモデルを変えるときは、すべてのサービスに手が入る。逆に判定を外部化すると、判定サービスの障害がすべての機能を止めうる。判定できないときは通す（fail-open）のではなく止める（fail-closed）のが原則なので、判定サービスの可用性が全体の可用性を左右する。どちらに倒しても、影響範囲はアーキテクチャ全体になる。
 
-どのコンポーネントも同じ関心事を持つので、強制の置き方やトークンの扱いを横断で揃える価値は大きい。ただし、すべてを1か所に集めるわけではない。何を揃え、何を各ドメインに任せるかは後の節で扱う。PEPを要求の経路のどこに置くかは[認可基盤のアーキテクチャと設計判断](/ja/posts/authorization-platform-architecture-decisions/)で扱う。サービス間の文脈の伝播は[ワークロードアイデンティティの標準化](/ja/posts/workload-identity-wimse-transaction-tokens/)、エージェントの委譲は[AIエージェントで認可の何が変わるか](/ja/posts/authorization-for-ai-agents/)で扱う。
+どのコンポーネントも同じ関心事を持つので、強制の置き方やトークンの扱いを横断で揃える価値は大きい。ただし、すべてを1か所に集めるわけではない。何を揃え、何を各ドメインに任せるかは後の節で扱う。サービス間の文脈の伝播は[ワークロードアイデンティティの標準化](/ja/posts/workload-identity-wimse-transaction-tokens/)、エージェントの委譲は[AIエージェントで認可の何が変わるか](/ja/posts/authorization-for-ai-agents/)で扱う。
 
 ## 組織: 1つのチームでは決めきれない
 
@@ -128,7 +128,7 @@ flowchart TB
 
 判定の外部化は、凝集度と結合度の問題として見るとわかりやすい。各アプリに散らばっていた権限のルールをポリシーとして1か所に集め、凝集度を高める。アプリが依存するのは判定APIの契約だけになり、アプリとルールの結合度が下がる。そのため、ルールの変更がポリシーの中で閉じ、アプリのリリースと切り離せる。代わりに、PDPをネットワーク越しに呼ぶなら、判定の往復による遅延と、PDPの可用性への依存を負う。
 
-PEPとPDPの役割とモデルの選び方は[認可のアーキテクチャとモデル、エンジンの選び方](/ja/posts/authorization-architecture-models-engines/)で扱う。PEPとPDPの配置と非機能の設計は[認可基盤のアーキテクチャと設計判断](/ja/posts/authorization-platform-architecture-decisions/)で、PEPとPDPの間をつなぐ標準は[AuthZEN Authorization APIとは](/ja/posts/authzen-authorization-api/)で扱う。
+PEPとPDPの役割とモデルの選び方は[認可のアーキテクチャとモデル、エンジンの選び方](/ja/posts/authorization-architecture-models-engines/)で、PEPとPDPの間をつなぐ標準は[AuthZEN Authorization APIとは](/ja/posts/authzen-authorization-api/)で扱う。
 
 ## 判断の軸
 
@@ -204,8 +204,7 @@ freeeが専任のチームで権限管理基盤を開発・運用している事
 - [認可基盤に必要なOAuth関連標準とは？委譲・トークン・継続評価の地図](/ja/posts/oauth-standards-map-authorization-platform/)
 - [ワークロードアイデンティティとは？WIMSE・Transaction Tokens・SPIFFEクライアント認証で見るサービス間の身元と文脈](/ja/posts/workload-identity-wimse-transaction-tokens/)
 - [AIエージェントの認可とは？委譲の連鎖・人の承認・監査をMCP、AuthZEN、AIMS、A2A/AP2で整理する](/ja/posts/authorization-for-ai-agents/)
-- [MCPの認可はどう設計する？起きうる事故と後から直せない判断](/ja/posts/mcp-authorization-design/)
-- [認可基盤のアーキテクチャとは？コンテナ構成・代表シーケンス・PEPとPDPの配置と非機能の設計判断](/ja/posts/authorization-platform-architecture-decisions/)
+- [MCPの認可はなぜ難しい？AIエージェントに社内システムを操作させるときのリスクと押さえどころ](/ja/posts/mcp-authorization-design/)
 - [権限管理の設計｜アクセス制御の考え方を整理する](/ja/posts/permission-management-design/)
 - [権限管理基盤についての事例](/ja/posts/permission-management-case-study/)
 - [プラットフォームの成立条件](/ja/posts/platform-viability-conditions/)

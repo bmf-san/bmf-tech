@@ -53,7 +53,7 @@ Delegation also chains across services. Permissions travel from a user to an age
 
 Authorization is also hard to change later, and when it stops, everything stops. When each application makes its own decisions, authorization logic gets embedded in code everywhere. So when you change the permission model, you have to touch every service. Conversely, once you externalize decisions, an outage of the decision service can stop every feature. The usual rule is to deny (fail-closed) rather than allow (fail-open) when you cannot reach a decision, so the decision service's availability drives the availability of the whole system. Either way, the blast radius covers the entire architecture.
 
-Because every component shares this concern, aligning where you enforce and how you handle tokens across the system pays off. That does not mean gathering everything in one place. A later section covers what to align centrally and what to leave to each domain. [Authorization Platform Architecture and Design Decisions](/posts/authorization-platform-architecture-decisions/) covers where to place PEPs along the request path. [Standardizing Workload Identity](/posts/workload-identity-wimse-transaction-tokens/) covers context propagation between services, and [What Changes in Authorization with AI Agents](/posts/authorization-for-ai-agents/) covers agent delegation.
+Because every component shares this concern, aligning where you enforce and how you handle tokens across the system pays off. That does not mean gathering everything in one place. A later section covers what to align centrally and what to leave to each domain. [Standardizing Workload Identity](/posts/workload-identity-wimse-transaction-tokens/) covers context propagation between services, and [What Changes in Authorization with AI Agents](/posts/authorization-for-ai-agents/) covers agent delegation.
 
 ## Organization: no single team can decide it
 
@@ -128,7 +128,7 @@ The three do not form steps you climb in order. You pick the ones you need. Exte
 
 Cohesion and coupling offer a useful way to see externalized decisions. You take the permission rules scattered across applications and gather them into one place as policy, which raises cohesion. Applications then depend only on the decision API contract, which lowers the coupling between applications and rules. As a result, a rule change stays within the policy, separate from application releases. In return, if you call the PDP over the network, you take on the latency of a decision round trip and a dependency on the PDP's availability.
 
-[Authorization Architecture, Models, and Engines](/posts/authorization-architecture-models-engines/) covers the roles of the PEP and PDP and how to choose a model. [Authorization Platform Architecture and Design Decisions](/posts/authorization-platform-architecture-decisions/) covers PEP and PDP placement and non-functional design, and [What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers the standard between the PEP and PDP.
+[Authorization Architecture, Models, and Engines](/posts/authorization-architecture-models-engines/) covers the roles of the PEP and PDP and how to choose a model, and [What is the AuthZEN Authorization API?](/posts/authzen-authorization-api/) covers the standard between the PEP and PDP.
 
 ## Decision axes
 
@@ -204,8 +204,7 @@ Not building a platform does not mean doing nothing, though. As the previous sec
 - [Which OAuth Standards Does an Authorization Platform Need? A Map of Delegation, Tokens, and Continuous Evaluation](/posts/oauth-standards-map-authorization-platform/)
 - [What is Workload Identity? WIMSE, Transaction Tokens, and SPIFFE Client Authentication for Service Identity and Context](/posts/workload-identity-wimse-transaction-tokens/)
 - [What is Authorization for AI Agents? Delegation Chains, Human Approval, and Audit with MCP, AuthZEN, AIMS, and A2A/AP2](/posts/authorization-for-ai-agents/)
-- [How Should You Design Authorization for MCP? Common Incidents and Decisions That Are Hard to Reverse](/posts/mcp-authorization-design/)
-- [What Does an Authorization Platform Architecture Look Like? Containers, Key Sequences, PEP/PDP Placement, and Non-Functional Decisions](/posts/authorization-platform-architecture-decisions/)
+- [Why Is MCP Authorization Hard? Risks and Key Decisions When AI Agents Operate Internal Systems](/posts/mcp-authorization-design/)
 - [Exploring Permission Management Design](/posts/permission-management-design/)
 - [Case Study on Authorization Management Infrastructure](/posts/permission-management-case-study/)
 - [Viability Conditions for Building a Platform](/posts/platform-viability-conditions/)
