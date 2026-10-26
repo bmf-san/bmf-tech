@@ -49,7 +49,7 @@ flowchart TB
 
 ## アーキテクチャ: すべてのコンポーネントが同じ関心事を持つ
 
-認可は、保護する資源へのすべてのリクエストで起きる。認証は入口で一度確かめれば、その結果をトークンに載せて運べる。一方、認可は「この主体が、この資源に、この操作をしてよいか」を資源ごとに問う。そのため、ゲートウェイから各サービス、データ層まで、保護する資源のある場所すべてに強制点（PEP、Policy Enforcement Point）が要る。OWASPのAuthorization Cheat Sheetも、権限の検証をリクエストごとに行うこと（Validate the Permissions on Every Request）を推奨している。OWASP Top 10:2025でも、アクセス制御の不備（Broken Access Control）はA01に置かれている。
+認可は、保護する資源へのすべてのリクエストで起きる。認証は入口で一度確かめれば、その結果をトークンに載せて運べる。一方、認可は「この主体が、この資源に、この操作をしてよいか」を資源ごとに問う。そのため、ゲートウェイから各サービス、データ層まで、保護する資源のある場所すべてに強制点（PEP、Policy Enforcement Point）が要る。
 
 委譲もサービスをまたいで連鎖する。ユーザーからエージェント、MCPサーバ、業務APIへと、権限はサービスをまたいで運ばれる。トークンの宛先の設計、スコープの体系、トークンの取り直し方、ユーザーとエージェントの記録の仕方が揃っていないと、どこか1か所の緩い実装が全体の穴になる。受け取ったトークンをそのまま次のサービスへ中継する実装は、その一例である。
 
@@ -217,7 +217,5 @@ freeeが専任のチームで権限管理基盤を開発・運用している事
 # 参考リンク
 
 - [OpenID Foundation - Authorization API 1.0](https://openid.net/specs/authorization-api-1_0.html)
-- [OWASP Cheat Sheet Series - Authorization Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html)
-- [OWASP Top 10:2025 - A01 Broken Access Control](https://owasp.org/Top10/2025/A01_2025-Broken_Access_Control/)
 - [NIST SP 800-53 Rev. 5 - Security and Privacy Controls for Information Systems and Organizations](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final)
 - [NIST SP 800-162 - Guide to Attribute Based Access Control (ABAC) Definition and Considerations](https://csrc.nist.gov/pubs/sp/800/162/upd2/final)

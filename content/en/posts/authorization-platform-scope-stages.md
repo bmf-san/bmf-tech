@@ -49,7 +49,7 @@ Authorization does not stay inside one team or one service. This section looks a
 
 ## Architecture: every component shares the same concern
 
-Authorization happens on every request to a protected resource. You can verify authentication once at the entry point and carry the result in a token. Authorization, by contrast, asks for each resource, "may this subject perform this action on this resource?" That means you need enforcement points (PEPs, Policy Enforcement Points) everywhere protected resources live: gateways, every service, and the data layer. The OWASP Authorization Cheat Sheet also recommends checking permissions on every request. The OWASP Top 10:2025 places Broken Access Control at A01.
+Authorization happens on every request to a protected resource. You can verify authentication once at the entry point and carry the result in a token. Authorization, by contrast, asks for each resource, "may this subject perform this action on this resource?" That means you need enforcement points (PEPs, Policy Enforcement Points) everywhere protected resources live: gateways, every service, and the data layer.
 
 Delegation also chains across services. Permissions travel from a user to an agent, to an MCP server, to a business API. If token audience design, scope structure, how services get new tokens, and how you record the user and the agent are not consistent, one loose implementation anywhere becomes a hole in the whole system. One example: a service that forwards the token it received straight to the next service.
 
@@ -217,7 +217,5 @@ Not building a platform does not mean doing nothing, though. As the previous sec
 # References
 
 - [OpenID Foundation - Authorization API 1.0](https://openid.net/specs/authorization-api-1_0.html)
-- [OWASP Cheat Sheet Series - Authorization Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html)
-- [OWASP Top 10:2025 - A01 Broken Access Control](https://owasp.org/Top10/2025/A01_2025-Broken_Access_Control/)
 - [NIST SP 800-53 Rev. 5 - Security and Privacy Controls for Information Systems and Organizations](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final)
 - [NIST SP 800-162 - Guide to Attribute Based Access Control (ABAC) Definition and Considerations](https://csrc.nist.gov/pubs/sp/800/162/upd2/final)
