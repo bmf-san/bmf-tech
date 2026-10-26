@@ -55,7 +55,7 @@ Delegation also chains across services. Permissions travel from a user to an age
 
 Authorization is also hard to change later, and when it stops, everything stops. When each application makes its own decisions, authorization logic gets embedded in code everywhere. So when you change the permission model, you have to touch every service. Conversely, once you externalize decisions, an outage of the decision service can stop every feature. The usual rule is to deny (fail-closed) rather than allow (fail-open) when you cannot reach a decision, so the decision service's availability drives the availability of the whole system. Either way, the blast radius covers the entire architecture.
 
-Because every component shares this concern, aligning where you enforce and how you handle tokens across the system pays off. That does not mean gathering everything in one place. The next section covers what to align centrally and what to leave to each domain. [Authorization Platform Architecture and Design Decisions](/posts/authorization-platform-architecture-decisions/) covers where to place PEPs along the request path. [Standardizing Workload Identity](/posts/workload-identity-wimse-transaction-tokens/) covers context propagation between services, and [What Changes in Authorization with AI Agents](/posts/authorization-for-ai-agents/) covers agent delegation.
+Because every component shares this concern, aligning where you enforce and how you handle tokens across the system pays off. That does not mean gathering everything in one place. A later section covers what to align centrally and what to leave to each domain. [Authorization Platform Architecture and Design Decisions](/posts/authorization-platform-architecture-decisions/) covers where to place PEPs along the request path. [Standardizing Workload Identity](/posts/workload-identity-wimse-transaction-tokens/) covers context propagation between services, and [What Changes in Authorization with AI Agents](/posts/authorization-for-ai-agents/) covers agent delegation.
 
 ## Organization: no single team can decide it
 
@@ -81,7 +81,7 @@ In short, you can build an authorization platform as a technical component, but 
 
 # Do Not Centralize It: What to Standardize and What Domains Own
 
-The reasons above make it tempting to say "manage all authorization centrally." But that collides with the second reason: the meaning of permissions lives in each domain. If a central platform team takes on the meaning of every business's permissions, the platform team tends to become a bottleneck, and its business knowledge tends to go stale.
+The reasons above make it tempting to say "manage all authorization centrally." But that collides with the fact that the meaning of permissions lives in each domain. If a central platform team takes on the meaning of every business's permissions, the platform team tends to become a bottleneck, and its business knowledge tends to go stale.
 
 So **standardize the mechanisms and contracts across the organization, and keep the meaning in each domain**.
 
