@@ -11,19 +11,18 @@ tags:
   - ABAC
   - Open Policy Agent
   - システム設計
-description: "認可を「どこで・どう判定するか」を整理する。PEP/PDP/PIP/PAPの参照アーキテクチャと業務ドメインとの位置関係、RBAC/ABAC/ReBACの選び方と組み合わせ方、RBAC標準・NIST SP 800-162・XACML・NGACの教訓、OPA・Cedar・Cerbos・OpenFGA・SpiceDBの比較をまとめる。"
+description: "認可を「どこで・どう判定するか」を整理する。PEP/PDP/PIP/PAPの参照アーキテクチャと業務ドメインとの位置関係、RBAC/ABAC/ReBACの選び方と組み合わせ方、OPA・Cedar・Cerbos・OpenFGA・SpiceDBの比較をまとめる。"
 translation_key: authorization-architecture-models-engines
 draft: false
 ---
 
 # 概要
 
-認可基盤の心臓部は「権限をどう表現し、どこで・どう判定するか」である。この記事では、その答えを次の4つの問いに分けて整理する。
+認可基盤の心臓部は「権限をどう表現し、どこで・どう判定するか」である。この記事では、その答えを次の3つの問いに分けて整理する。
 
 1. 判定に関わる部品は何で、業務ドメインに対してどこに置くのか（PEP/PDP/PIP/PAP）
 2. 権限を何にもとづいて決めるのか（RBAC/ABAC/ReBACと、PBACの位置づけ）
-3. 古典的な標準（RBAC標準、NIST SP 800-162、XACML、NGAC）から今も何を学べるのか
-4. ポリシーエンジン（OPA、Cedar、Cerbos、OpenFGA、SpiceDB）をどう選ぶのか
+3. ポリシーエンジン（OPA、Cedar、Cerbos、OpenFGA、SpiceDB）をどう選ぶのか
 
 認可とは何か、IAMのどのサブドメインが関わるかは[認可とは何か](/ja/posts/authorization-domain-iam-subdomains/)で、認可基盤をどこまで作るかは[認可基盤はどこまで作るか](/ja/posts/authorization-platform-scope-stages/)で扱った。本記事はその続きで、アクセス判定の中身に踏み込む。ACL・RBAC・ABACの基本は[権限管理の設計](/ja/posts/permission-management-design/)にまとめたので、ここでは繰り返さない。
 
@@ -205,69 +204,6 @@ flowchart TD
 - 関係（担当、所有、所属）と属性（時間帯、端末、リスク）の条件で絞る。たとえば、承認者のロールを、自分が担当する部署の申請だけに限る。
 - 属性に権限を「足す」ルールは書かない。足したいならロールか、権限を与える関係として表す。
 
-# 原典から今も学べること
-
-古い標準を今そのまま採用する理由は薄い。それでも、その設計判断は新しいエンジンを評価する物差しになる。
-
-## RBAC標準（FK92、NISTモデル、INCITS 359）
-
-RBACは1992年にFerraioloとKuhnが形式化し、NISTのモデルが2004年にANSI/INCITS 359-2004として米国の国家標準になった。2012年に改訂され、359-2012は2022年に再確認されている。NISTのRBACプロジェクトのページは現在アーカイブ扱いで、更新されない。
-
-今も効く要点は次のとおりである。
-
-- すべてのアクセスはロールを通る。NISTのFAQによれば、グループ方式で利用者に直接権限を付けられる点は「抜け穴（loophole）」になりうる。例外の付与も、例外用のロールとして表すほうが見直しやすい。
-- 1992年のモデルは「only if」でアクセスを認める。有効なロールに認められたトランザクションしか実行できないが、認められていれば必ず実行できるわけではない。追加の制約をかける余地を最初から残しており、前節のロール中心の方式はこの設計の延長にある。
-- セッションでは、割り当てられたロールの一部だけを有効にできる。これは、OAuthのアクセストークンに載せるスコープを要求が必要とする分だけに絞る設計と同じ考え方である。
-- 職務分離は2種類ある。静的な職務分離は割り当てのときに効き、動的な職務分離はロールを有効にする時点で効く。「自分の起票を自分で承認しない」のような取引単位の分離は、PDPのルールで扱う。
-- 2004年版の承認前のドラフト（2003年、NISTが公開）は、ロール階層の意味（上位を有効にすると下位も自動で有効か）と、ロールを外したときの既存セッションの扱いを実装に委ねている。2012年版の本文は有償で、この扱いが変わったかは公開資料では確かめられない。自分たちの基盤では明文化しておく。
-
-## NIST SP 800-162（ABAC）
-
-SP 800-162は2014年に出たABACのガイドで、2019年の更新で信頼の連鎖の図に環境条件が加わった。ABACの判定の入力を「主体の属性、対象の属性、環境条件、ポリシー」の4つと定義している。
-
-この文書の後半の多くは、ポリシー言語ではなく属性の話に割かれている。扱うのは、属性の権威、共有の方法、鮮度、改ざんの防止、組織間での名前の対応付けである。ここから得られる教訓は、エンジンを選ぶ前に「判定に使う属性の表」を作ることである。属性ごとに、権威（人事、契約、テナント設定など）、PIPへの経路、許容できる古さを書く。
-
-ほかにも次の指摘がある。
-
-- 自然言語のポリシー（NLP）、機械で実行できるポリシー（DP）、ポリシーについてのポリシー（MP）を分ける。NLPからDPへの追跡は、ポリシーのコードに元の規程へのリンクとテストを持たせれば実現できる。
-- 属性で判定していても、要求と判定を主体の識別子に結び付けて記録しないと、誰が何にアクセスしたかを追えない。
-- 人以外の主体（NPE）の資格情報だけで判定すると、誰のための操作かを追えない。この問題はAIエージェントでそのまま再燃している（[AIエージェントで認可の何が変わるか](/ja/posts/authorization-for-ai-agents/)）。
-
-## XACML 3.0
-
-XACML 3.0は2013年にOASIS Standardとして承認された。2017年には正誤を取り込んだ版が出ている。XMLで書く負担は大きいが、判定の4値、結合アルゴリズム、義務の扱いまで評価の意味論を細かく定めている点は、今も他の方式を比べる物差しになる。
-
-判定は許可・拒否だけでなく、NotApplicable（該当ポリシーなし）とIndeterminate（評価エラー）を加えた4値で返る。複数のルールやポリシーの結果は結合アルゴリズムでまとめる。主なものを次の表に示す。ほかに、評価の順序を固定する変種（ordered-deny-overrides、ordered-permit-overrides）と、ポリシーの結合だけに使うonly-one-applicableがある。
-
-| 結合アルゴリズム | 規則の要点 |
-|---|---|
-| deny-overrides | 拒否が1つでもあれば拒否 |
-| permit-overrides | 許可が1つでもあれば許可 |
-| first-applicable | 記載順に評価し、NotApplicable以外になった最初の結果を採る |
-| deny-unless-permit | 許可が1つでもあれば許可、それ以外はすべて拒否 |
-| permit-unless-deny | 拒否が1つでもあれば拒否、それ以外はすべて許可 |
-
-ここから持ち帰れる設計は次のとおりである。
-
-- fail-closedの作り方。最上位をdeny-unless-permitにし、PEPを「許可で、かつ義務をすべて履行できる場合だけ許可」する拒否寄りの動作にすれば、該当なしとエラーがどちらも拒否になる。
-- 義務と助言の区別。PEPは義務を必ず実行し、助言は無視してよい。PEPが理解できない義務や履行できない義務を受けたら、PEPは自分のバイアスに従う。拒否寄りのPEPなら許可しない。AuthZENは、応答の任意（MAY）のcontextに載せる情報の例として義務と助言を挙げるだけで、contextの意味は実装に委ねている。contextを理解できないPEPについても、許可（true）の判定を拒否してよい（MAY）とするにとどまり、XACMLの拒否寄りのPEPのように拒否を求めはしない。AuthZENで義務を返すなら、この取り決めを自分たちで決めておく。順序を決めない結合アルゴリズムでは、どの義務が返るかが決まらない点にも注意する。
-- 否定のルールはできるだけ避ける。XACMLの仕様も、慎重に使い、可能なら避けることを勧めている。「〜でなければ許可」は、属性が届かないと許可に倒れることがある。
-- 主体の種類を分ける。XACMLは要求を始めた主体、経由した主体、結果を受け取る主体を別のカテゴリで表せる。「ユーザー → エージェント → API」の多段の呼び出しを判定に入れるときの語彙になる。
-
-後継として、XACML TCはXMLに依存しない中核モデルのACAL 1.0を策定している。表現はXML（XACML 4.0）、JSON（JACAL）、YAML（YACAL）に分ける構成である。2026年2月にCommittee Specification Draft 01（中核、XML版、JSON版）が出た段階で、採用を判断するには早い。XACMLを人が書きやすくした記法のALFAもある。2015年にXACML TCで作業草案（Working Draft 01）が出たが、OASISの標準にはなっていない。
-
-## NGAC
-
-NGAC（Next Generation Access Control）は、NISTの研究（Policy Machine）から生まれたABACの標準である。ANSI/INCITSでINCITS 499-2018（機能アーキテクチャ）とINCITS 526-2016（操作とデータ構造）として規格になっている。NIST SP 800-178（2016年）がXACMLと比べている。
-
-違いはポリシーの持ち方にある。XACMLは属性の値を使った論理式でポリシーを書く。NGACは利用者、利用者の属性、対象、対象の属性を節にした割り当てと関連の構成として、ポリシーを列挙する。SP 800-178によれば、NGACは利用者ごと・対象ごとの見直しを効率よくこなせる。一方、論理式の方式ではこの見直しが難しい。その代わり、属性の値ごとに関係を作る必要が生じうるため、関係の数は膨らみやすい。
-
-関係を列挙してグラフとして持ち、そこから「誰が何にアクセスできるか」を引くという考え方は、後のZanzibar系のReBACと通じる。判定と一覧の両方を重視するならグラフで持つ、という選択の根拠として読める。
-
-## SP 800-207（ゼロトラスト）
-
-SP 800-207は、Policy EngineとPolicy AdministratorをまとめてPDPとし、PEPとともにすべてのアクセスを動的に判定するゼロトラストの構成を示した。認可基盤のPDPは、ゼロトラストの文脈では同じ役割を担う。
-
 # ポリシーエンジンの比較
 
 ## 一覧
@@ -331,7 +267,6 @@ ReBACのエンジンを入れた後も業務DBに所有者や所属などの関�
 - 認可は「モデル」「表現」「エンジン」「API」「データ」の層に分けて考える。選ぶ順序は、モデル、データ、エンジンが安全である。
 - 資源単位の判定を強制するPEPは業務ドメインの側、PDPとPAPはアクセス判定の側、PIPは属性の権威の側に置く。
 - RBAC・ABAC・ReBACは排他ではない。ロール（と権限を与える関係）で上限を決め、属性や関係の条件で絞る構成が見直しやすい。PBACは、モデルではなく書き方の名前として捉えると整理しやすい。
-- 原典の教訓は今も使える。例はRBACの「only if」、SP 800-162の属性の権威、XACMLの結合アルゴリズムと義務である。NGACからは、一覧の問いに関係の列挙で答えるという考え方を学べる。
 - エンジンは、モデルの中心、データの持ち方、一覧の要件で絞り込む。PEPとPDPの間を標準に寄せておけば、選び直しの余地が残る。
 
 # 関連記事
@@ -352,19 +287,13 @@ ReBACのエンジンを入れた後も業務DBに所有者や所属などの関�
 
 # 参考リンク
 
-- [NIST: Role Based Access Control（プロジェクトページ）](https://csrc.nist.gov/projects/role-based-access-control) / [RBAC FAQ](https://csrc.nist.gov/projects/role-based-access-control/faqs)
 - [NIST CSRC Glossary: policy-based access control](https://csrc.nist.gov/glossary/term/policy_based_access_control)
-- [D. Ferraiolo, R. Kuhn: Role-Based Access Controls (1992)](https://csrc.nist.gov/pubs/conference/1992/10/13/rolebased-access-controls/final)
 - [R. Kuhn, E. Coyne, T. Weil: Adding Attributes to Role-Based Access Control (2010)](https://csrc.nist.gov/pubs/journal/2010/06/adding-attributes-to-rolebased-access-control/final)
-- [INCITS 359-2012 (R2022)](https://webstore.ansi.org/standards/incits/incits3592012r2022) / [BSR INCITS 359 ドラフト（2003-04-04、NIST）](https://csrc.nist.gov/CSRC/media/Projects/Role-Based-Access-Control/documents/rbac-std-ncits.pdf)
 - [RFC 2753: A Framework for Policy-based Admission Control](https://www.rfc-editor.org/rfc/rfc2753) / [RFC 3198: Terminology for Policy-Based Management](https://www.rfc-editor.org/rfc/rfc3198)
 - [NIST SP 800-162: Guide to Attribute Based Access Control (ABAC) Definition and Considerations](https://csrc.nist.gov/pubs/sp/800/162/upd2/final)
 - [NIST SP 800-178: A Comparison of Attribute Based Access Control (ABAC) Standards for Data Service Applications](https://csrc.nist.gov/pubs/sp/800/178/final)
-- [INCITS 499-2018: Next Generation Access Control - Functional Architecture (NGAC-FA)](https://webstore.ansi.org/standards/incits/incits4992018)
-- [INCITS 526-2016: Next Generation Access Control - Generic Operations and Data Structures (NGAC-GOADS)](https://webstore.ansi.org/standards/incits/incits5262016)
 - [NIST SP 800-207: Zero Trust Architecture](https://csrc.nist.gov/pubs/sp/800/207/final)
 - [OASIS: XACML Version 3.0 Plus Errata 01](https://docs.oasis-open.org/xacml/3.0/errata01/os/xacml-3.0-core-spec-errata01-os-complete.html)
-- [OASIS: ACALの成果物](https://docs.oasis-open.org/xacml/acal/)
 - [OASIS XACML TC: alfa-for-xacml-v1.0-wd01.doc uploaded（2015-03-10）](https://groups.oasis-open.org/communities/community-home/digestviewer/viewthread?GroupId=19&MessageKey=4d628175-5a72-4e71-9f75-1bd70a4309d1&CommunityKey=67afe552-0921-49b7-9a85-018dc7d3ef1d)
 - [B. Lampson: Protection (1971)](https://bwlampson.site/08-Protection/WebPage.html)
 - [S. Osborn, R. Sandhu, Q. Munawer: Configuring role-based access control to enforce mandatory and discretionary access control policies (2000)](https://doi.org/10.1145/354876.354878)

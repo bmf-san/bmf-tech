@@ -11,19 +11,18 @@ tags:
   - ABAC
   - Open Policy Agent
   - System Design
-description: "Where and how should you make authorization decisions? This post covers the PEP/PDP/PIP/PAP reference architecture and its place next to business domains, how to choose and combine RBAC/ABAC/ReBAC, lessons from the RBAC standard, NIST SP 800-162, XACML, and NGAC, and a comparison of OPA, Cedar, Cerbos, OpenFGA, and SpiceDB."
+description: "Where and how should you make authorization decisions? This post covers the PEP/PDP/PIP/PAP reference architecture and its place next to business domains, how to choose and combine RBAC/ABAC/ReBAC, and a comparison of OPA, Cedar, Cerbos, OpenFGA, and SpiceDB."
 translation_key: authorization-architecture-models-engines
 draft: false
 ---
 
 # Overview
 
-The heart of an authorization platform answers one question: how do you express permissions, and where and how do you decide? This post splits that question into four parts.
+The heart of an authorization platform answers one question: how do you express permissions, and where and how do you decide? This post splits that question into three parts.
 
 1. Which components take part in a decision, and where do they sit relative to business domains (PEP/PDP/PIP/PAP)?
 2. What do you base permissions on (RBAC/ABAC/ReBAC, and where PBAC fits)?
-3. What can the classic standards (the RBAC standard, NIST SP 800-162, XACML, NGAC) still teach us?
-4. How do you choose a policy engine (OPA, Cedar, Cerbos, OpenFGA, SpiceDB)?
+3. How do you choose a policy engine (OPA, Cedar, Cerbos, OpenFGA, SpiceDB)?
 
 [What is authorization?](/posts/authorization-domain-iam-subdomains/) covered what authorization means and which IAM subdomains it touches. [How far should you build an authorization platform?](/posts/authorization-platform-scope-stages/) covered scope. This post continues from there and looks inside the access decision itself. [Permission management design](/posts/permission-management-design/) already covers the basics of ACL, RBAC, and ABAC, so this post does not repeat them.
 
@@ -205,69 +204,6 @@ In authorization platform terms, it looks like this. The paper covers only roles
 - Narrow with conditions on relations (assignment, ownership, membership) and attributes (time window, device, risk). For example, limit an approver role to requests from the departments the person handles.
 - Do not write rules where attributes add permissions; if you need more, express it as a role or as a relation that grants access.
 
-# What the Originals Still Teach
-
-You have little reason to adopt the old standards as-is today. Their design decisions still give you a yardstick for evaluating new engines.
-
-## The RBAC Standard (FK92, the NIST Model, INCITS 359)
-
-Ferraiolo and Kuhn formalized RBAC in 1992, and the NIST model became the US national standard ANSI/INCITS 359-2004 in 2004. A revision followed in 2012, and INCITS reaffirmed 359-2012 in 2022. NIST now marks its RBAC project page as archived, with no further updates.
-
-These points still apply:
-
-- All access goes through roles. The NIST FAQ describes the ability of group-based schemes to tie permissions directly to users as a possible "loophole". Even exceptional grants stay easier to review when you model them as exception roles.
-- The 1992 model grants access "only if" a condition holds. A subject can only run transactions authorized for its active roles, but authorization does not guarantee execution. The model leaves room for extra constraints from the start, and the role-centric approach above extends this design.
-- A session can activate just a subset of the assigned roles. The same idea applies when you limit the scopes in an OAuth access token to what the request needs.
-- Separation of duty comes in two forms. Static separation applies at assignment time; dynamic separation applies when a session activates roles. Transaction-level separation, such as "do not approve your own request", belongs in PDP rules.
-- The pre-approval draft of the 2004 standard (2003, published by NIST) leaves two things to implementations: what a role hierarchy means (does activating a senior role activate the junior roles automatically?) and what happens to existing sessions when you remove a role assignment. The 2012 text sits behind a paywall, so public sources do not show whether it changed this. Write these down for your own platform.
-
-## NIST SP 800-162 (ABAC)
-
-SP 800-162 appeared in 2014, and a 2019 update added environment conditions to its trust chain figure. It defines four inputs to an ABAC decision: subject attributes, object attributes, environment conditions, and policy.
-
-Much of the second half of the document deals with attributes rather than policy languages: attribute authority, sharing, freshness, tamper protection, and mapping names across organizations. The lesson: before choosing an engine, build a table of the attributes your decisions use. For each attribute, record its authority (HR, contracts, tenant settings, and so on), its path to the PIP, and how stale it may get.
-
-The guide makes a few more points:
-
-- Separate natural language policy (NLP), digital policy (DP) that machines can run, and metapolicy (MP), policy about policy. You can trace NLP to DP by giving policy code links back to the original rules and tests.
-- Even with attribute-based decisions, you lose track of who accessed what unless you log requests and decisions against the subject's identifier.
-- Deciding on the credentials of a non-person entity (NPE) alone hides whose behalf the action serves. AI agents revive this exact problem ([How AI agents change authorization](/posts/authorization-for-ai-agents/)).
-
-## XACML 3.0
-
-XACML 3.0 became an OASIS Standard in 2013, and a version with errata followed in 2017. Writing it in XML takes effort, but it defines its evaluation semantics in detail, from the four decision values to combining algorithms and obligations, so it still works as a yardstick for comparing other approaches.
-
-Decisions take four values: Permit and Deny, plus NotApplicable (no matching policy) and Indeterminate (evaluation error). Combining algorithms merge the results of many rules or policies. The table lists the main ones. XACML also defines ordered variants that fix the evaluation order (ordered-deny-overrides and ordered-permit-overrides), and only-one-applicable, which combines policies only.
-
-| Combining algorithm | Rule of thumb |
-|---|---|
-| deny-overrides | Any Deny wins |
-| permit-overrides | Any Permit wins |
-| first-applicable | Evaluate in order and take the first result other than NotApplicable |
-| deny-unless-permit | Permit if any rule permits; otherwise Deny |
-| permit-unless-deny | Deny if any rule denies; otherwise Permit |
-
-Designs worth taking home:
-
-- How to fail closed. Put deny-unless-permit at the top and use a deny-biased PEP that allows only on Permit with every obligation fulfilled. Both NotApplicable and errors then become Deny.
-- Obligations versus advice. The PEP must carry out obligations and may ignore advice. If the PEP does not understand or cannot fulfill an obligation, it acts according to its bias; a deny-biased PEP does not allow access. AuthZEN only lists obligations and advice as examples of what the optional (MAY) context field of a response can carry, and leaves the meaning of that field to implementations. It only says a PEP MAY reject a `true` decision whose context it does not understand; unlike a deny-biased XACML PEP, it does not require denial. If you return obligations through AuthZEN, define this contract yourself. Also note that unordered combining algorithms can make the returned set of obligations nondeterministic.
-- Avoid negative rules where you can. The XACML spec also recommends using them with care and avoiding them if possible. "Allow unless X" can fall open when the attribute fails to arrive.
-- Distinguish kinds of subjects. XACML has separate categories for the subject that started the request, intermediaries, and the recipient of the result. That vocabulary helps when decisions must account for multi-hop calls such as "user, then agent, then API".
-
-As a successor, the XACML TC is drafting ACAL 1.0, an XML-agnostic core model with separate representations: XML (XACML 4.0), JSON (JACAL), and YAML (YACAL). Committee Specification Draft 01 of the core and of the XML and JSON representations came out in February 2026, so adoption decisions would come too early. ALFA, a friendlier notation for XACML, also exists. A Working Draft 01 of it appeared in the XACML TC in 2015, but it never became an OASIS standard.
-
-## NGAC
-
-NGAC (Next Generation Access Control) is an ABAC standard that grew out of NIST research (the Policy Machine). ANSI/INCITS published it as INCITS 499-2018 (functional architecture) and INCITS 526-2016 (operations and data structures). NIST SP 800-178 (2016) compares it with XACML.
-
-The difference lies in how each represents policy. XACML writes policy as logical formulas over attribute values. NGAC enumerates policy as a configuration of assignments and associations among users, user attributes, objects, and object attributes. According to SP 800-178, NGAC supports efficient per-user and per-object review, while the logical formula approach struggles with it. In exchange, NGAC may need an explicit relation for each attribute value, so the number of relations can multiply.
-
-Enumerating relations as a graph and reading "who can access what" from it has much in common with the later Zanzibar-style ReBAC. Read it as a rationale: if you care about both check and list, store a graph.
-
-## SP 800-207 (Zero Trust)
-
-SP 800-207 groups the Policy Engine and Policy Administrator into a PDP, and pairs it with a PEP to decide every access dynamically. In a Zero Trust context, the PDP of an authorization platform plays the same part.
-
 # Comparing Policy Engines
 
 ## Overview Table
@@ -331,7 +267,6 @@ You do not need to put everything on one engine. One example setup keeps a ReBAC
 - Think of authorization in layers: model, expression, engine, API, and data. The safe order of choice runs model, data, engine.
 - Put the PEP that enforces per-resource decisions on the business domain side, the PDP and PAP on the access decision side, and the PIP next to attribute authorities.
 - RBAC, ABAC, and ReBAC do not exclude each other. Letting roles (and relations that grant access) set the ceiling, and conditions on attributes and relations narrow it, keeps review manageable. Treating PBAC as a writing style rather than a model keeps the discussion clear.
-- The originals still teach: RBAC's "only if", SP 800-162's attribute authorities, and XACML's combining algorithms and obligations. NGAC adds the idea of answering list questions by enumerating relations.
 - Narrow down engines by model focus, data handling, and listing needs. Standardizing the PEP-PDP line keeps the option to choose again.
 
 # Related Posts
@@ -352,19 +287,13 @@ You do not need to put everything on one engine. One example setup keeps a ReBAC
 
 # References
 
-- [NIST: Role Based Access Control (project page)](https://csrc.nist.gov/projects/role-based-access-control) / [RBAC FAQ](https://csrc.nist.gov/projects/role-based-access-control/faqs)
 - [NIST CSRC Glossary: policy-based access control](https://csrc.nist.gov/glossary/term/policy_based_access_control)
-- [D. Ferraiolo, R. Kuhn: Role-Based Access Controls (1992)](https://csrc.nist.gov/pubs/conference/1992/10/13/rolebased-access-controls/final)
 - [R. Kuhn, E. Coyne, T. Weil: Adding Attributes to Role-Based Access Control (2010)](https://csrc.nist.gov/pubs/journal/2010/06/adding-attributes-to-rolebased-access-control/final)
-- [INCITS 359-2012 (R2022)](https://webstore.ansi.org/standards/incits/incits3592012r2022) / [BSR INCITS 359 draft (2003-04-04, NIST)](https://csrc.nist.gov/CSRC/media/Projects/Role-Based-Access-Control/documents/rbac-std-ncits.pdf)
 - [RFC 2753: A Framework for Policy-based Admission Control](https://www.rfc-editor.org/rfc/rfc2753) / [RFC 3198: Terminology for Policy-Based Management](https://www.rfc-editor.org/rfc/rfc3198)
 - [NIST SP 800-162: Guide to Attribute Based Access Control (ABAC) Definition and Considerations](https://csrc.nist.gov/pubs/sp/800/162/upd2/final)
 - [NIST SP 800-178: A Comparison of Attribute Based Access Control (ABAC) Standards for Data Service Applications](https://csrc.nist.gov/pubs/sp/800/178/final)
-- [INCITS 499-2018: Next Generation Access Control - Functional Architecture (NGAC-FA)](https://webstore.ansi.org/standards/incits/incits4992018)
-- [INCITS 526-2016: Next Generation Access Control - Generic Operations and Data Structures (NGAC-GOADS)](https://webstore.ansi.org/standards/incits/incits5262016)
 - [NIST SP 800-207: Zero Trust Architecture](https://csrc.nist.gov/pubs/sp/800/207/final)
 - [OASIS: XACML Version 3.0 Plus Errata 01](https://docs.oasis-open.org/xacml/3.0/errata01/os/xacml-3.0-core-spec-errata01-os-complete.html)
-- [OASIS: ACAL work products](https://docs.oasis-open.org/xacml/acal/)
 - [OASIS XACML TC: alfa-for-xacml-v1.0-wd01.doc uploaded (2015-03-10)](https://groups.oasis-open.org/communities/community-home/digestviewer/viewthread?GroupId=19&MessageKey=4d628175-5a72-4e71-9f75-1bd70a4309d1&CommunityKey=67afe552-0921-49b7-9a85-018dc7d3ef1d)
 - [B. Lampson: Protection (1971)](https://bwlampson.site/08-Protection/WebPage.html)
 - [S. Osborn, R. Sandhu, Q. Munawer: Configuring role-based access control to enforce mandatory and discretionary access control policies (2000)](https://doi.org/10.1145/354876.354878)
