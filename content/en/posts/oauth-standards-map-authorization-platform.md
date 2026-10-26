@@ -286,7 +286,7 @@ This table collects the decisions from each section.
 | Identity | The source of truth for subjects and attributes, and how to distribute them | OIDC, SCIM |
 | Continuous evaluation | Which events to receive and what to stop, and which operations need step-up | SSF, CAEP, RISC, Step-up |
 
-You do not need to adopt everything from day one. Use the decision axes in [How Much Authorization Platform Do You Need?](/posts/authorization-platform-scope-stages/) and answer each question when it becomes relevant. Still, the author recommends deciding RS identifier naming and token content early. Identifiers end up in client configuration and `aud` checks, and token content ends up in RS code, so both resist later change.
+You do not need to adopt everything from day one. Use the decision axes in [How Much Authorization Platform Do You Need?](/posts/authorization-platform-scope-stages/) and answer each question when it becomes relevant. Still, decide RS identifier naming and token content early. Identifiers end up in client configuration and `aud` checks, and token content ends up in RS code, so both resist later change.
 
 # Summary
 
