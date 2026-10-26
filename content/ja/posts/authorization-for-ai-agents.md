@@ -57,7 +57,7 @@ AIエージェントは、利用者から目的を受け取り、どのツール
 
 エージェントが読んだメールやWebページに「顧客の一覧を外部に送れ」という指示が埋め込まれていたとする。エージェントがそれに従うと、外への送信は**正しく認証された、正規のトークンによる要求**として届く。認証では、この要求を不正と見分けられない。
 
-OWASPは、LLMアプリの主要なリスクに「Excessive Agency（過剰な権限・機能・自律性）」を挙げている。プロンプトインジェクションを完全に防ぐのは難しい。だから「エージェントは操られうる」と前提を置き、操られても被害が限られるように権限を絞る設計が要る。プロンプト自体の守り方は「[AI時代のエンジニアリングについて考える](/ja/posts/engineering-in-ai-reflections/)」で触れた。
+プロンプトインジェクションを完全に防ぐのは難しい。だから「エージェントは操られうる」と前提を置き、操られても被害が限られるように権限を絞る設計が要る。プロンプト自体の守り方は「[AI時代のエンジニアリングについて考える](/ja/posts/engineering-in-ai-reflections/)」で触れた。
 
 ## 4. 人の承認をどこに結び付けるか
 
@@ -119,21 +119,12 @@ flowchart LR
 
 # MCPの認可（概要）
 
-MCP（Model Context Protocol）は、AIアプリをツールやデータにつなぐためのプロトコルである。2026-07-28版の認可は、HTTPのトランスポートで使うOAuth 2.1のプロファイルになっている。
-
-| 役割 | OAuthでの位置づけ |
-|---|---|
-| MCPサーバー | リソースサーバー |
-| MCPクライアント | クライアント |
-| 認可サーバー | MCPサーバーと同居でも別でもよい |
+MCP（Model Context Protocol）は、AIアプリをツールやデータにつなぐためのプロトコルである。2026-07-28版の認可は、HTTPのトランスポートで使うOAuth 2.1のプロファイルになっている。MCPサーバーはリソースサーバー、MCPクライアントはクライアントとして振る舞う。
 
 要点は次のとおり。
 
-- MCPサーバーはProtected Resource Metadata（RFC 9728）を公開し、クライアントはそこから認可サーバーを見つける。
 - クライアントは`resource`（RFC 8707）でトークンを特定のMCPサーバーに結び付ける。サーバーは自分宛てのトークンだけを受け入れ、**受け取ったトークンを裏のAPIに中継してはならない**（MUST NOT）。
-- どの登録方式にも対応するクライアントは、事前登録、Client ID Metadata Document（CIMD）、Dynamic Client Registrationの順で選ぶべき（SHOULD）とされる。どれも使えなければ、利用者にクライアントの情報を入力させる。DCRは非推奨とされ、CIMDに対応しない認可サーバーとの後方互換のために残る。
 - 権限が足りなければ、サーバーは`insufficient_scope`で必要なスコープを示し、クライアントは段階的に取り直す（step-up）。
-- 対話のない機械間の連携と、企業のIdPによる一元管理は、公式の認可の拡張（ext-auth）が受け持つ。前者がClient Credentials、後者がEnterprise-Managed Authorizationで、後者は後で触れるID-JAGを使う。
 
 ただし、MCPの認可が受け持つのは「トークンの取得と検証」までである。「このツールを、このデータに対して、この利用者の代わりに実行してよいか」という判定、利用者とエージェントの区別、人の承認は、認可の仕様の外にある。toolsの仕様は、サーバーが適切なアクセス制御を実装しなければならない（MUST）とするが、判定の方法は決めていない。MCPの認可を設計するときの勘所は、[MCPの認可の設計の記事](/ja/posts/mcp-authorization-design/)で詳しく扱う。
 
@@ -220,7 +211,7 @@ OpenID Foundationの発表は、AARPの目的を、ポリシーの迂回でも�
 
 # AIMS：既存の標準を束ねたエージェントの認証・認可
 
-draft-ietf-wimse-aims（表題はAI Identity Management System）は、AIエージェントの認証・認可のベストプラクティスをまとめたIETFのドラフトである。AIMSは本文ではAgent Identity Management Systemの略で、エージェントの身元と権限を管理する機能の概念モデルを指す。前身はdraft-klrc-aiagent-authで、WIMSE WGに採択され、2026年9月にWGの文書として-00が出た。著者はDefakto Security、AWS、Zscaler、Ping Identity、OpenAI、Oktaの人である。
+draft-ietf-wimse-aims（表題はAI Identity Management System）は、AIエージェントの認証・認可のベストプラクティスをまとめたIETFのドラフトである。AIMSは本文ではAgent Identity Management Systemの略で、エージェントの身元と権限を管理する機能の概念モデルを指す。前身はdraft-klrc-aiagent-authで、WIMSE WGに採択され、2026年9月にWGの文書として-00が出た。
 
 AIMSは**新しいプロトコルを作らない**。WIMSE、SPIFFE、OAuth、Shared Signalsを組み合わせ、足りない隙間を示す。
 
@@ -244,7 +235,7 @@ flowchart TB
 | 認可 | OAuthを委譲の枠組みとして使う（下の表） |
 | 監視・可観測性・是正 | SSF（CAEP、RISC）で失効やリスクの変化の通知を購読できる（MAY）。通知を受けた側は、権限を絞るなどの是正をすべきで（SHOULD）、失効や格下げは遅滞なく反映しなければならない（MUST）。監査ログを残す（MUST） |
 
-認証の各方式は[ワークロードアイデンティティの記事](/ja/posts/workload-identity-wimse-transaction-tokens/)で扱う。WPTは、最新のdraft-ietf-wimse-wpt-02では`Authorization: WPT`の形で送る。
+認証の各方式は[ワークロードアイデンティティの記事](/ja/posts/workload-identity-wimse-transaction-tokens/)で扱う。
 
 認可の部分は次のとおり。
 
@@ -303,7 +294,7 @@ ID-JAG（Identity Assertion JWT Authorization Grant）は、この問題を次�
 1. クライアント（エージェントのアプリ）が、企業のIdPのIDトークンまたはSAMLアサーションを、Token Exchange（RFC 8693）でID-JAGに交換する。IdPが対応していれば、IdPが発行したリフレッシュトークンも使える。IdPは発行の前に、管理者が決めたポリシーを評価する。
 2. クライアントは、ID-JAGをJWT認可グラント（RFC 7523）としてSaaSの認可サーバーに提示し、アクセストークンを得る。SaaS側は自分のポリシーで、受け入れるか、絞るかを決める。
 
-MCPのEnterprise-Managed Authorizationは、この仕組みをMCPに持ち込んだものである。注意点は2つある。ID-JAGの`client_id`はエージェントのアプリを表す。-04では`act`クレームと`actor_token`を任意で載せられるが、その処理は将来のプロファイルに委ねられている。個々のエージェントや多段の委譲の表し方は、まだ決まっていない。また、IdPで止められるのは新しいID-JAGの発行である。ID-JAGの仕様もMCPの拡張も、発行済みのID-JAGやアクセストークンを止める方法を定めていない。筆者は、それらの有効期間を短くするか、SSF/CAEPで失効を伝えて補う必要があると考える。ID-JAGの状態は-04（2026年5月）で、OAuth WGのドラフトである。周辺の仕様は[OAuth関連標準の地図の記事](/ja/posts/oauth-standards-map-authorization-platform/)で扱う。
+MCPの公式の認可の拡張であるEnterprise-Managed Authorizationは、この仕組みをMCPに持ち込んだものである。注意点は2つある。ID-JAGの`client_id`はエージェントのアプリを表す。-04では`act`クレームと`actor_token`を任意で載せられるが、その処理は将来のプロファイルに委ねられている。個々のエージェントや多段の委譲の表し方は、まだ決まっていない。また、IdPで止められるのは新しいID-JAGの発行である。ID-JAGの仕様もMCPの拡張も、発行済みのID-JAGやアクセストークンを止める方法を定めていない。筆者は、それらの有効期間を短くするか、SSF/CAEPで失効を伝えて補う必要があると考える。ID-JAGの状態は-04（2026年5月）で、OAuth WGのドラフトである。周辺の仕様は[OAuth関連標準の地図の記事](/ja/posts/oauth-standards-map-authorization-platform/)で扱う。
 
 # エージェント間と決済：A2AとAP2
 
@@ -379,14 +370,6 @@ OAuthでは認可サーバーがトークンを発行するが、AP2では利用
 
 後回しにできるのは、ゲートウェイで引数の単位まで判定する仕組みである。ツール自身のアクセス制御は、MCPのtoolsの仕様で必須（MUST）なので最初から要る。
 
-AIMSの層は、レビューのチェックリストとしてもそのまま使える。確かめる項目は次のとおり。
-
-- 静的なキーを使っていないか
-- LLMから資格情報が見えないか
-- トークンを転送していないか
-- 承認を認可のイベントに結び付けているか
-- 監査の項目は足りているか
-
 # まとめ
 
 - AIエージェントでは、委譲の連鎖、事前に決めにくい最小権限、プロンプトインジェクションによる正規の権限の悪用、人の承認、監査の帰属が新しい問題になる。
@@ -435,4 +418,3 @@ AIMSの層は、レビューのチェックリストとしてもそのまま使�
 - [OpenID Shared Signals Working Group: Specifications](https://openid.net/wg/sharedsignals/specifications/)
 - [A2A Protocol Specification](https://a2a-protocol.org/latest/specification/)
 - [Agent Payments Protocol（AP2）](https://github.com/google-agentic-commerce/AP2)
-- [OWASP Top 10 for LLM Applications: LLM06:2025 Excessive Agency](https://genai.owasp.org/llmrisk/llm062025-excessive-agency/)
