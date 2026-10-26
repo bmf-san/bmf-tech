@@ -125,8 +125,6 @@ arch-08では、1つの呼び出しを「資格情報の取得 → トランス�
 
 また、セキュリティ上の考慮の節は、有効な資格情報を持つワークロードでもトラストドメインのすべての資源を認可されたわけではない、と明記している。「mTLSが通れば許可」という構成は、この原則に反する。識別子ごとに許可を明示し、認可は別の判定として行う。
 
-arch-08はAIエージェントも扱っている。エージェントは委譲されたワークロードの特別な場合で、エージェント同士が呼び合う多段の連鎖では各ホップでセキュリティコンテキストの範囲を明示し直し、結び付け直さなければならない（MUST）。エージェントの認可は「[AIエージェントの認可とは？](/ja/posts/authorization-for-ai-agents/)」で詳しく扱う。
-
 # ワークロード識別子の規則
 
 draft-ietf-wimse-identifierは、WIMSEのドラフトの中で識別子の形式を規範として定める文書である。認可ポリシーの主体、監査ログのキー、PIPの主キーになる文字列の要件を決めるので、データモデルに直接効く。
@@ -410,7 +408,7 @@ Call Chainを保持する方法は仕様の範囲外なので、置き換えを�
 
 Txn-Tokenは`aud`のトラストドメインの中でだけ有効である。別ドメインの資源が必要で、Txn-Tokenの身元と認可の文脈を引き継ぐなら、Identity Chaining（draft-ietf-oauth-identity-chaining）を使うべき（SHOULD）とされる。
 
-その具体的な手順を定めるのが個人ドラフトのdraft-fletcher-oauth-txn-token-chaining-profileである。以前はdraft-fletcher-transaction-token-chaining-profileという名前だったが、2026年9月、現在の名前の-00に置き換えられた。このプロファイルでは、Txn-Tokenを`subject_token`として自ドメインのASとトークン交換し、境界を越えるJWT認可グラントを得る。そのグラントを相手ドメインのASに示して、アクセストークンを得る。`subject_token_type`は`urn:ietf:params:oauth:token-type:txn_token`である。内部の資格情報やトークンの形式を外に出さず、取引の文脈を相手のドメインへ渡せる。Identity Chainingそのものは「[認可基盤に必要なOAuth関連標準とは？](/ja/posts/oauth-standards-map-authorization-platform/)」で扱う。
+その具体的な手順を定めるのが個人ドラフトのdraft-fletcher-oauth-txn-token-chaining-profileである。このプロファイルでは、Txn-Tokenを`subject_token`として自ドメインのASとトークン交換し、境界を越えるJWT認可グラントを得る。そのグラントを相手ドメインのASに示して、アクセストークンを得る。`subject_token_type`は`urn:ietf:params:oauth:token-type:txn_token`である。内部の資格情報やトークンの形式を外に出さず、取引の文脈を相手のドメインへ渡せる。Identity Chainingそのものは「[認可基盤に必要なOAuth関連標準とは？](/ja/posts/oauth-standards-map-authorization-platform/)」で扱う。
 
 # SPIFFEをOAuthのクライアント認証に使う
 

@@ -125,8 +125,6 @@ In some deployments, a workload authenticates to a sidecar or gateway over mTLS 
 
 The security considerations also state that a valid credential does not give a workload access to every resource in the trust domain. An "allow if mTLS succeeds" setup contradicts this principle. State allowed identifiers explicitly, and treat authorization as a separate decision.
 
-arch-08 also covers AI agents. An agent is a special case of a delegated workload, and in a multi-hop chain where agents call other agents, each hop MUST explicitly scope and re-bind the security context. "[What is Authorization for AI Agents?](/posts/authorization-for-ai-agents/)" covers agent authorization in depth.
-
 # Rules for Workload Identifiers
 
 draft-ietf-wimse-identifier is the WIMSE draft that normatively defines the identifier format. It sets the requirements for the string that becomes the policy subject, the audit log key, and the PIP primary key, so it shapes your data model directly.
@@ -410,7 +408,7 @@ The draft leaves the method for preserving the call chain out of scope, so if yo
 
 A Txn-Token is valid only within the trust domain in `aud`. When you need resources in another domain and must preserve the identity and authorization context from the Txn-Token, you SHOULD use Identity Chaining (draft-ietf-oauth-identity-chaining).
 
-The individual draft draft-fletcher-oauth-txn-token-chaining-profile defines the concrete steps. Its earlier name was draft-fletcher-transaction-token-chaining-profile, and in September 2026 the -00 under the current name replaced it. In this profile, the workload presents a Txn-Token as `subject_token` in a token exchange with the authorization server of its own domain and gets a JWT authorization grant for crossing the boundary. It then presents that grant to the authorization server of the other domain to get an access token. The `subject_token_type` is `urn:ietf:params:oauth:token-type:txn_token`. This carries transaction context to the other domain without exposing internal credentials or token formats. "[Which OAuth Standards Does an Authorization Platform Need?](/posts/oauth-standards-map-authorization-platform/)" covers Identity Chaining itself.
+The individual draft draft-fletcher-oauth-txn-token-chaining-profile defines the concrete steps. In this profile, the workload presents a Txn-Token as `subject_token` in a token exchange with the authorization server of its own domain and gets a JWT authorization grant for crossing the boundary. It then presents that grant to the authorization server of the other domain to get an access token. The `subject_token_type` is `urn:ietf:params:oauth:token-type:txn_token`. This carries transaction context to the other domain without exposing internal credentials or token formats. "[Which OAuth Standards Does an Authorization Platform Need?](/posts/oauth-standards-map-authorization-platform/)" covers Identity Chaining itself.
 
 # Using SPIFFE for OAuth Client Authentication
 
