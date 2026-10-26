@@ -91,7 +91,7 @@ The spec's introduction observes that PDP-PEP communication follows similar patt
 
 ## What OAuth and OIDC Standardized, and What They Did Not
 
-OAuth standardized delegation, and OpenID Connect standardized how to convey authentication results. The AuthZEN Authorization API standardizes the neighboring step: asking for a decision. For example, scopes and claims in a token can narrow things down coarsely, and the application can then ask a PDP for fine-grained, per-resource decisions. XACML and its JSON and REST profiles defined that second part, but they never spread beyond XACML engines.
+OAuth standardized delegation, and OpenID Connect standardized how to convey authentication results. The AuthZEN Authorization API standardizes the neighboring step: asking for a decision. For example, scopes and claims in a token can narrow things down coarsely, and the application can then ask a PDP for fine-grained, per-resource decisions. XACML and its JSON and REST profiles defined that second part, but they rarely spread beyond XACML engines.
 
 For a map of the OAuth-related standards, see [Which OAuth Standards Does an Authorization Platform Need?](/posts/oauth-standards-map-authorization-platform/).
 
@@ -242,7 +242,7 @@ If the `evaluations` array is missing or empty, the API behaves like a single Ac
 | `deny_on_first_deny` | Stops at the first denial (or error) and returns the results so far | `&&` |
 | `permit_on_first_permit` | Stops at the first permit and returns the results so far | `\|\|` |
 
-`deny_on_first_deny` fits cases where you proceed only if every precondition holds. `permit_on_first_permit` fits cases where any one path to a permit suffices.
+`deny_on_first_deny` fits cases where you proceed only if every precondition holds. `permit_on_first_permit` fits cases where any one path to a permit suffices. The OpenID Foundation conformance tests do not require a PDP to support the two values other than `execute_all`. Check that your PDP supports them before you rely on them.
 
 ## Errors
 
@@ -388,9 +388,9 @@ For JSON, the spec recommends following I-JSON (RFC 7493): UTF-8 encoding, no nu
 | Response integrity | The PDP MAY sign its response | TLS does not cover the full path when proxies or gateways sit in between |
 | Availability | The PDP SHOULD protect against large payloads, request floods, invalid or deeply nested JSON, and memory exhaustion | Rate limiting and similar measures prevent DoS |
 
-## Design Notes (My Take)
+## Design Notes
 
-The assumption that "the PDP trusts the PEP" carries weight. The PDP believes whatever department or role the PEP puts in `properties`. So decide who supplies the attributes that drive decisions. If a decision depends on attributes the PEP can set freely, a bug in the PEP, or a PEP that copies user input straight into attributes, can let someone forge those attributes. A safer design lets the PDP fetch important attributes from a PIP itself, or read them from a token whose signature the PDP verifies itself.
+This section reflects my own view rather than the spec. The assumption that "the PDP trusts the PEP" carries weight. The PDP believes whatever department or role the PEP puts in `properties`. So decide who supplies the attributes that drive decisions. If a decision depends on attributes the PEP can set freely, a bug in the PEP, or a PEP that copies user input straight into attributes, can let someone forge those attributes. A safer design lets the PDP fetch important attributes from a PIP itself, or read them from a token whose signature the PDP verifies itself.
 
 The second point concerns what happens when the PEP cannot reach the PDP. The spec makes errors in individual evaluations fail closed, but it does not say how a PEP should behave when the PDP itself goes down. The PEP side has to decide on timeouts, caching, and degraded-mode decisions. For decisions about PEP/PDP placement and non-functional requirements, see [Authorization platform architecture and design decisions](/posts/authorization-platform-architecture-decisions/).
 
@@ -445,7 +445,7 @@ In its June 2026 announcement, the OpenID Foundation said that authorization sys
 | --- | --- | --- |
 | Can (decision) | Is this action allowed right now? | Access Evaluation, Access Evaluations |
 | Which (discovery) | Which resources can this subject read? | Search APIs |
-| What is required (preconditions) | What does a permit require? | AARP, Obligations, step-up in `context` |
+| What is required (preconditions) | What does a permit require? | AARP, step-up in `context` |
 
 This grouping into three questions is my own framing; the spec does not define it. For MCP, see also [Key points for designing MCP authorization](/posts/mcp-authorization-design/).
 

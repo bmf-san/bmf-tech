@@ -91,7 +91,7 @@ flowchart LR
 
 ## OAuthとOIDCが標準化したものとの対比
 
-OAuthは権限の委譲を、OpenID Connectは認証の結果の受け渡しを、それぞれ標準にした。AuthZENのAuthorization APIは、その隣にある「判定の問い合わせ」を標準にする。たとえば、トークンに入っているスコープやクレームで粗く絞り、資源ごとの細かい判定をPDPに問う、という分担ができる。この後半の部分は、XACMLとそのJSON・RESTプロファイルが定めていたが、XACMLのエンジン以外には広がらなかった。
+OAuthは権限の委譲を、OpenID Connectは認証の結果の受け渡しを、それぞれ標準にした。AuthZENのAuthorization APIは、その隣にある「判定の問い合わせ」を標準にする。たとえば、トークンに入っているスコープやクレームで粗く絞り、資源ごとの細かい判定をPDPに問う、という分担ができる。この後半の部分は、XACMLとそのJSON・RESTプロファイルが定めていたが、XACMLのエンジン以外にはほとんど広がらなかった。
 
 OAuthまわりの標準の地図は[認可基盤に必要なOAuth関連標準とは？](/ja/posts/oauth-standards-map-authorization-platform/)にまとめた。
 
@@ -242,7 +242,7 @@ X-Request-ID: bfe9eb29-ab87-4ca3-be83-a1d5d8305716
 | `deny_on_first_deny` | 最初の拒否（または誤り）で打ち切り、そこまでの結果を返す | `&&` |
 | `permit_on_first_permit` | 最初の許可で打ち切り、そこまでの結果を返す | `\|\|` |
 
-`deny_on_first_deny`は、複数の前提をすべて満たしたときだけ進めたい場面に向く。`permit_on_first_permit`は、いずれかの経路で許可されればよい場面に向く。
+`deny_on_first_deny`は、複数の前提をすべて満たしたときだけ進めたい場面に向く。`permit_on_first_permit`は、いずれかの経路で許可されればよい場面に向く。ただし、OpenID Foundationの適合性テストは、`execute_all`以外の2つへの対応をPDPに求めていない。使う前に、PDPが対応しているかを確かめる。
 
 ## 誤りの扱い
 
@@ -388,9 +388,9 @@ JSONについては、I-JSON（RFC 7493）に沿うことを推奨している�
 | 応答の完全性 | PDPは応答に署名してよい（MAY） | プロキシやゲートウェイを挟むと、TLSだけでは経路全体を守れない |
 | 可用性 | 要求の大きさ、件数、不正なJSON、深い入れ子、メモリ消費に対策すべき（SHOULD） | レート制限などでDoSを防ぐ |
 
-## 設計で気をつけること（筆者の見立て）
+## 設計で気をつけること
 
-「PDPはPEPを信頼する」という前提は重い。PEPが`properties`に載せた部署やロールを、PDPはそのまま信じる。したがって、判定に効く属性を誰が供給するかを決めておく必要がある。PEPが自由に書ける属性で判定するなら、PEPの実装の誤りや、利用者の入力をそのまま属性に写す作りによって、属性が偽られうる。重要な属性は、PDPが自分でPIPから引くか、PDP自身が署名を検証したトークンから取るほうが安全である。
+ここからは仕様の記述ではなく、筆者の見立てである。「PDPはPEPを信頼する」という前提は重い。PEPが`properties`に載せた部署やロールを、PDPはそのまま信じる。したがって、判定に効く属性を誰が供給するかを決めておく必要がある。PEPが自由に書ける属性で判定するなら、PEPの実装の誤りや、利用者の入力をそのまま属性に写す作りによって、属性が偽られうる。重要な属性は、PDPが自分でPIPから引くか、PDP自身が署名を検証したトークンから取るほうが安全である。
 
 もう1つは、PDPに届かないときのふるまいである。仕様は個々の判定の誤りをfail-closedにすると定めるが、PDPそのものが落ちたときのPEPの動きは決めていない。タイムアウト、キャッシュ、縮退時の判定は、PEPの側で決めることになる。PEPとPDPの配置や非機能の判断は[認可基盤のアーキテクチャと設計判断](/ja/posts/authorization-platform-architecture-decisions/)で扱う。
 
@@ -445,7 +445,7 @@ OpenID Foundationは2026年6月の発表で、認可システムはこれまで�
 | --- | --- | --- |
 | Can（判定） | 今この操作は許可されるか | Access Evaluation、Access Evaluations |
 | Which（探索） | この主体が読める資源はどれか | Search API |
-| What is required（前提） | 許可には何が必要か | AARP、Obligations、`context`のステップアップ |
+| What is required（前提） | 許可には何が必要か | AARP、`context`のステップアップ |
 
 この3つのまとまりは筆者の整理であり、仕様がそう定義しているわけではない。MCPでの使い方は[MCPの認可を設計するときの勘所](/ja/posts/mcp-authorization-design/)も参照してほしい。
 
