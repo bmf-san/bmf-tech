@@ -145,10 +145,6 @@ flowchart TB
 | ④ | アクセス判定（Access Decision） | 主体がある資源にある操作をしてよいかを、ポリシーに基づいて決める | ポリシーの定義、評価（PDP）、判定結果の提供と強制の仕組み（PEP） |
 | ⑤ | アクセスガバナンス（Access Governance） | 誰にどの権限を持たせるかを決め、それが妥当であり続けるよう統制する | 申請・承認、割り当て、棚卸し、職務分掌、一時的な権限付与（JIT） |
 
-ライフサイクルとプロビジョニングを①と⑤のどちらに置くかは、分け方によって違う。たとえばMicrosoft Entra ID Governanceは、アイデンティティのライフサイクル管理をガバナンスの土台と位置づけ、プロビジョニングもその機能に含めている。
-
-④アクセス判定は①アイデンティティの属性を入力に使う。そのため、判定のロジックが正しくても、属性が古ければ認可の事故は起きうる。たとえば、異動した人が前の部署のデータを読めてしまう。
-
 ## 委譲を独立させる理由
 
 委譲を認証やアクセス判定の一部として扱う整理もある。それでもこの地図で③を独立させるのは、OAuthの中心概念（クライアント、同意、グラント）がどこにも収まらないためである。
@@ -233,4 +229,3 @@ IAMの外にも、認証やアクセス判定に入力を渡すドメインが�
 - [Vaughn Vernon, IDDD_Samples](https://github.com/VaughnVernon/IDDD_Samples)
 - [Implementing Domain Driven Design Review and Interview（InfoQ）](https://www.infoq.com/articles/implmenting-domain-driven-design-vaughn-vernon/)
 - [Grant tenant-wide admin consent to an application（Microsoft Learn）](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/grant-admin-consent)
-- [What is Microsoft Entra ID Governance?（Microsoft Learn）](https://learn.microsoft.com/en-us/entra/id-governance/identity-governance-overview)

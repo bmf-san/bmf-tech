@@ -145,10 +145,6 @@ Solid lines show data flow, and dotted lines show requests. Authentication and a
 | 4 | Access Decision | Decides, based on policy, whether a subject may perform an action on a resource | Policy definition, evaluation (PDP), providing decisions and the enforcement mechanism (PEP) |
 | 5 | Access Governance | Decides who holds which permission and keeps that appropriate over time | Requests and approvals, assignment, access reviews, separation of duties, just-in-time (JIT) access |
 
-Where lifecycle management and provisioning belong, under 1 or under 5, depends on how you split IAM. For example, Microsoft Entra ID Governance calls identity lifecycle management the foundation for identity governance and includes provisioning among its features.
-
-Access decision (4) uses the attributes of identity (1) as input. So stale attributes can cause an authorization incident even when the decision logic is correct. For example, someone who changed departments can still read data from the old one.
-
 ## Why delegation stands alone
 
 Some models fold delegation into authentication or access decision. This map keeps delegation separate because the core OAuth concepts (client, consent, grant) fit nowhere else.
@@ -233,4 +229,3 @@ Mixing these up makes IAM absorb business knowledge. Every change to a business 
 - [Vaughn Vernon, IDDD_Samples](https://github.com/VaughnVernon/IDDD_Samples)
 - [Implementing Domain Driven Design Review and Interview (InfoQ)](https://www.infoq.com/articles/implmenting-domain-driven-design-vaughn-vernon/)
 - [Grant tenant-wide admin consent to an application (Microsoft Learn)](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/grant-admin-consent)
-- [What is Microsoft Entra ID Governance? (Microsoft Learn)](https://learn.microsoft.com/en-us/entra/id-governance/identity-governance-overview)
