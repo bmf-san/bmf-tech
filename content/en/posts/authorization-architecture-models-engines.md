@@ -119,7 +119,7 @@ The query from the gateway to the PDP uses a dotted line because some setups han
 - The PDP and PAP belong to the access decision subdomain. That does not mean a central team writes every rule. A central team owns tenant isolation and company-wide prohibitions, domain teams own domain rules, and the PAP ties them together through review and distribution. SP 800-162 also expects a hierarchy in which subordinate organizations keep their own local policies without conflicting with higher-level ones.
 - The PIP connects to wherever the authority for an attribute lives. Identity owns subject attributes, access governance owns role assignments, and the business domain owns resource attributes. Instead of having the PDP hold all data, decide per attribute whether to fetch it from the authority or replicate it.
 
-[How far should you build an authorization platform?](/posts/authorization-platform-scope-stages/) discusses how much to centralize. [Authorization platform architecture and design decisions](/posts/authorization-platform-architecture-decisions/) covers PEP and PDP placement in detail.
+[How far should you build an authorization platform?](/posts/authorization-platform-scope-stages/) discusses how much to centralize.
 
 # A Taxonomy of Authorization Models
 
@@ -261,8 +261,7 @@ If the business database still holds relations such as owners and membership aft
 - [Which OAuth Standards Does an Authorization Platform Need? A Map of Delegation, Tokens, and Continuous Evaluation](/posts/oauth-standards-map-authorization-platform/)
 - [What is Workload Identity? WIMSE, Transaction Tokens, and SPIFFE Client Authentication for Service Identity and Context](/posts/workload-identity-wimse-transaction-tokens/)
 - [What is Authorization for AI Agents? Delegation Chains, Human Approval, and Audit with MCP, AuthZEN, AIMS, and A2A/AP2](/posts/authorization-for-ai-agents/)
-- [How Should You Design Authorization for MCP? Common Incidents and Decisions That Are Hard to Reverse](/posts/mcp-authorization-design/)
-- [What Does an Authorization Platform Architecture Look Like? Containers, Key Sequences, PEP/PDP Placement, and Non-Functional Decisions](/posts/authorization-platform-architecture-decisions/)
+- [Why Is MCP Authorization Hard? Risks and Key Decisions When AI Agents Operate Internal Systems](/posts/mcp-authorization-design/)
 - [Exploring Permission Management Design](/posts/permission-management-design/)
 - [What is Open Policy Agent (OPA)? A Practical Guide to Policy as Code](/posts/open-policy-agent/)
 - [Access Control Patterns Using OPA](/posts/access-control-patterns-using-opa/)

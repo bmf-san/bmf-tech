@@ -119,7 +119,7 @@ flowchart LR
 - PDPとPAPはアクセス判定のサブドメインに属する。ただし、ポリシーの中身をすべて中央で書く必要はない。テナント分離や全社の禁止事項は中央、業務固有のルールは各ドメインのチーム、と書き手を分け、PAPのレビューと配布で束ねる。SP 800-162も、下位組織が上位のポリシーと矛盾しない範囲で独自のポリシーを持つ階層を想定している。
 - PIPは「属性の権威」がいる場所につながる。主体の属性はアイデンティティ、ロールの割り当てはアクセスガバナンス、資源の属性は業務ドメインが持つ。PDPが全データを抱えるのではなく、権威から引くか、権威から複製するかを属性ごとに決める。
 
-どこまでを横断の基盤にするかを[認可基盤はどこまで作るか](/ja/posts/authorization-platform-scope-stages/)で、PEPとPDPの配置の詳細を[認可基盤のアーキテクチャと設計判断](/ja/posts/authorization-platform-architecture-decisions/)で扱う。
+どこまでを横断の基盤にするかは[認可基盤はどこまで作るか](/ja/posts/authorization-platform-scope-stages/)で扱う。
 
 # 認可モデルの分類
 
@@ -261,8 +261,7 @@ ReBACのエンジンを入れた後も業務DBに所有者や所属などの関�
 - [認可基盤に必要なOAuth関連標準とは？委譲・トークン・継続評価の地図](/ja/posts/oauth-standards-map-authorization-platform/)
 - [ワークロードアイデンティティとは？WIMSE・Transaction Tokens・SPIFFEクライアント認証で見るサービス間の身元と文脈](/ja/posts/workload-identity-wimse-transaction-tokens/)
 - [AIエージェントの認可とは？委譲の連鎖・人の承認・監査をMCP、AuthZEN、AIMS、A2A/AP2で整理する](/ja/posts/authorization-for-ai-agents/)
-- [MCPの認可はどう設計する？起きうる事故と後から直せない判断](/ja/posts/mcp-authorization-design/)
-- [認可基盤のアーキテクチャとは？コンテナ構成・代表シーケンス・PEPとPDPの配置と非機能の設計判断](/ja/posts/authorization-platform-architecture-decisions/)
+- [MCPの認可はなぜ難しい？AIエージェントに社内システムを操作させるときのリスクと押さえどころ](/ja/posts/mcp-authorization-design/)
 - [権限管理の設計｜アクセス制御の考え方を整理する](/ja/posts/permission-management-design/)
 - [Open Policy Agent (OPA)とは？ポリシー・アズ・コードの実践ガイド](/ja/posts/open-policy-agent/)
 - [OPAを利用したアクセス制御のパターン](/ja/posts/access-control-patterns-using-opa/)
