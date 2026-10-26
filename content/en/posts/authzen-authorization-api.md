@@ -302,8 +302,6 @@ Here is a Resource Search. The PEP sends only the `type` of the resource it want
 
 The Search APIs help with pre-filtering list pages, deciding which menus and buttons to show, and reviewing access. Once you externalize decisions, lists and pagination get hard. I explored that problem with OPA in [Considerations and Solutions for Pagination Impact in OPA](/posts/pagination-impact-solutions-opa/).
 
-Reverse lookups such as "who can access what" are not new. Zanzibar's Expand API takes an object#relation pair and returns the effective userset as a tree. OpenFGA's ListObjects and ListUsers return lists of permitted objects and users. What AuthZEN adds is a common API for them across PDPs. The metadata endpoints for all Search APIs are OPTIONAL, and if the metadata does not list one, the PEP can conclude that the PDP does not support it.
-
 # Decision Context: Beyond a Boolean
 
 The core of a Decision is just `true` or `false`. Everything else goes into the optional `context` object. The spec lists examples of what `context` can carry:
@@ -395,7 +393,7 @@ For JSON, the spec recommends following I-JSON (RFC 7493): UTF-8 encoding, no nu
 
 The assumption that "the PDP trusts the PEP" carries weight. The PDP believes whatever department or role the PEP puts in `properties`. So decide who supplies the attributes that drive decisions. If a decision depends on attributes the PEP can set freely, a bug in the PEP, or a PEP that copies user input straight into attributes, can let someone forge those attributes. A safer design lets the PDP fetch important attributes from a PIP itself, or read them from a token whose signature the PDP verifies itself.
 
-The second point concerns what happens when the PEP cannot reach the PDP. The spec makes errors in individual evaluations fail closed, but it does not say how a PEP should behave when the PDP itself goes down. The PEP side has to decide on timeouts, caching, and degraded-mode decisions. In my view, the safe default is to deny when the PDP is unreachable. If you cache decisions, an old permit can outlive a revoked permission, so keep the cache lifetime within what you can tolerate. For decisions about PEP/PDP placement and non-functional requirements, see [Authorization platform architecture and design decisions](/posts/authorization-platform-architecture-decisions/).
+The second point concerns what happens when the PEP cannot reach the PDP. The spec makes errors in individual evaluations fail closed, but it does not say how a PEP should behave when the PDP itself goes down. The PEP side has to decide on timeouts, caching, and degraded-mode decisions. For decisions about PEP/PDP placement and non-functional requirements, see [Authorization platform architecture and design decisions](/posts/authorization-platform-architecture-decisions/).
 
 # Relation to XACML and NIST ABAC
 
@@ -533,7 +531,6 @@ Finally, here are my own tips for bringing AuthZEN into a design.
 - [openid/authzen (GitHub)](https://github.com/openid/authzen)
 - [open-policy-agent/contrib authzen-proxy (GitHub)](https://github.com/open-policy-agent/contrib/tree/main/authzen/authzen-proxy)
 - [OPA-AuthZEN (OPA Ecosystem)](https://www.openpolicyagent.org/ecosystem/entry/opa-authzen)
-- [Zanzibar: Google's Consistent, Global Authorization System (USENIX ATC 2019)](https://www.usenix.org/conference/atc19/presentation/pang)
 - [Perform a list objects call (OpenFGA)](https://openfga.dev/docs/getting-started/perform-list-objects)
 - [Perform a List Users call (OpenFGA)](https://openfga.dev/docs/getting-started/perform-list-users)
 - [Conditions (OpenFGA)](https://openfga.dev/docs/modeling/conditions)

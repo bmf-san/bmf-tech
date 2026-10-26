@@ -302,8 +302,6 @@ Resource Searchの例を示す。探したい資源の`type`だけを渡す。
 
 Search APIは、一覧画面の事前フィルタ、メニューやボタンの出し分け、権限の棚卸しに使える。判定を外に出した構成では、一覧とページングの扱いが難しくなる。OPAでこの問題を検討した内容は[OPAにおけるページネーションへの影響と解決策](/ja/posts/pagination-impact-solutions-opa/)にまとめた。
 
-「誰が・何に」を逆に引く問い自体は新しくない。ZanzibarのExpand APIは、オブジェクトと関係の組に対する実効的なユーザーセットを木の形で返す。OpenFGAのListObjectsとListUsersは、許される資源と主体を一覧で返す。AuthZENで新しいのは、それがPDPをまたいだ共通のAPIになった点である。なお、メタデータでのSearch APIのエンドポイントはどれも任意（OPTIONAL）で、載っていなければPEPはそのPDPが対応していないと判断できる。
-
 # 判定のcontext: 真偽値の先にあるもの
 
 Decisionの本体は`true`か`false`だけである。それ以外の情報は、任意の`context`オブジェクトに入れる。仕様は、`context`で伝えられるものの例として次を挙げる。
@@ -395,7 +393,7 @@ JSONについては、I-JSON（RFC 7493）に沿うことを推奨している�
 
 「PDPはPEPを信頼する」という前提は重い。PEPが`properties`に載せた部署やロールを、PDPはそのまま信じる。したがって、判定に効く属性を誰が供給するかを決めておく必要がある。PEPが自由に書ける属性で判定するなら、PEPの実装の誤りや、利用者の入力をそのまま属性に写す作りによって、属性が偽られうる。重要な属性は、PDPが自分でPIPから引くか、PDP自身が署名を検証したトークンから取るほうが安全である。
 
-もう1つは、PDPに届かないときのふるまいである。仕様は個々の判定の誤りをfail-closedにすると定めるが、PDPそのものが落ちたときのPEPの動きは決めていない。タイムアウト、キャッシュ、縮退時の判定は、PEPの側で決めることになる。筆者は、届かないときも既定では拒否に倒すのが無難だと考える。判定をキャッシュするなら、権限を取り消したあとも古い許可が残るので、その期間を許容できる長さに有効期限を抑える。PEPとPDPの配置や非機能の判断は[認可基盤のアーキテクチャと設計判断](/ja/posts/authorization-platform-architecture-decisions/)で扱う。
+もう1つは、PDPに届かないときのふるまいである。仕様は個々の判定の誤りをfail-closedにすると定めるが、PDPそのものが落ちたときのPEPの動きは決めていない。タイムアウト、キャッシュ、縮退時の判定は、PEPの側で決めることになる。PEPとPDPの配置や非機能の判断は[認可基盤のアーキテクチャと設計判断](/ja/posts/authorization-platform-architecture-decisions/)で扱う。
 
 # XACMLとNIST ABACとの関係
 
@@ -533,7 +531,6 @@ OpenID Foundationは2026年6月の発表で、認可システムはこれまで�
 - [openid/authzen（GitHub）](https://github.com/openid/authzen)
 - [open-policy-agent/contrib authzen-proxy（GitHub）](https://github.com/open-policy-agent/contrib/tree/main/authzen/authzen-proxy)
 - [OPA-AuthZEN（OPA Ecosystem）](https://www.openpolicyagent.org/ecosystem/entry/opa-authzen)
-- [Zanzibar: Google's Consistent, Global Authorization System（USENIX ATC 2019）](https://www.usenix.org/conference/atc19/presentation/pang)
 - [Perform a list objects call（OpenFGA）](https://openfga.dev/docs/getting-started/perform-list-objects)
 - [Perform a List Users call（OpenFGA）](https://openfga.dev/docs/getting-started/perform-list-users)
 - [Conditions（OpenFGA）](https://openfga.dev/docs/modeling/conditions)
