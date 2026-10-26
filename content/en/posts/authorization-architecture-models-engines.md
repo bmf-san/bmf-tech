@@ -183,7 +183,7 @@ A point that model selection often misses: what kind of question must the system
 - Check: "Can this user read this resource?"
 - List: "Which resources can this user read?" or "Who can read this resource?"
 
-List questions come up often, for search result filtering in the UI and for access reviews. NIST SP 800-178 points out that logical formula-based policies, as in XACML, cannot support such a review efficiently: the review amounts to propositional satisfiability, an NP-complete problem. Asking "who can read this?" of a policy written only as attribute conditions stays hard by nature.
+List questions come up often, for search result filtering in the UI and for access reviews. NIST SP 800-178 points out that logical formula-based policies, as in XACML, cannot support such a review efficiently. Asking "who can read this?" of a policy written only as attribute conditions stays hard by nature.
 
 The same document says that enumerated policies such as NGAC's, which store relations, make this review simpler. ReBAC also stores relations as data, so it can answer these questions more readily. Attribute-centric engines work around the problem with partial evaluation or query plans that turn policy into database filters. Flag the resources that need listing while you choose the model.
 
