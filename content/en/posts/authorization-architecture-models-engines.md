@@ -57,7 +57,7 @@ Picking a model does not fix the expression or the engine. Picking an engine, by
 
 ## The Four Roles
 
-The IETF Policy Framework defined the terms PEP and PDP first (RFC 2753 in 2000, with the terminology in RFC 3198). OASIS XACML adopted them and added PAP and PIP to form the four roles. NIST SP 800-162 (the ABAC guide) uses the same vocabulary for its reference architecture, and NIST SP 800-207 (Zero Trust) uses the same PDP and PEP terms. AuthZEN builds on this vocabulary as well.
+The terms PEP and PDP first appeared in IETF RFC 2753 (2000), a framework for policy-based admission control. The Policy Framework WG later collected the terminology in RFC 3198. OASIS XACML adopted them and added PAP and PIP to form the four roles. NIST SP 800-162 (the ABAC guide) uses the same vocabulary for its reference architecture, and NIST SP 800-207 (Zero Trust) uses the same PDP and PEP terms. AuthZEN builds on this vocabulary as well.
 
 ```mermaid
 flowchart LR

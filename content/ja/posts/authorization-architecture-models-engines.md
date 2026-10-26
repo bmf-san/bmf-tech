@@ -57,7 +57,7 @@ flowchart TB
 
 ## 4つの役割
 
-PEPとPDPという呼び名は、IETFのPolicy Framework（RFC 2753、2000年。用語はRFC 3198）が先に定めたものである。OASISのXACMLはこの2つを取り込み、PAPとPIPを加えて4つの役割にまとめた。NIST SP 800-162（ABACのガイド）もこの語彙で参照アーキテクチャを示し、NIST SP 800-207（ゼロトラスト）も同じPDPとPEPの語を使う。AuthZENもこの語彙を前提にしている。
+PEPとPDPという呼び名は、IETFのRFC 2753（2000年、ポリシーベースのアドミッション制御の枠組み）が先に定めたものである。用語はPolicy Framework WGのRFC 3198にまとめられた。OASISのXACMLはこの2つを取り込み、PAPとPIPを加えて4つの役割にまとめた。NIST SP 800-162（ABACのガイド）もこの語彙で参照アーキテクチャを示し、NIST SP 800-207（ゼロトラスト）も同じPDPとPEPの語を使う。AuthZENもこの語彙を前提にしている。
 
 ```mermaid
 flowchart LR
