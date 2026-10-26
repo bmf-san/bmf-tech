@@ -184,27 +184,11 @@ Token Exchangeの基本は[サービス間認証の全体像とは？](/ja/posts
 
 ## Identity ChainingとID-JAG
 
-Identity Chainingは、ドメインをまたぐ一般的な仕組みである。クライアントはまず自分のドメインのASでToken Exchangeを行い、相手のドメイン向けのJWT認可グラントを得る。次に、そのグラントを相手のドメインのASにRFC 7523のJWT Bearerグラントとして出し、アクセストークンを得る。
+Identity Chainingは、ドメインをまたぐ一般的な仕組みである。クライアントは、自分のドメインのASからToken Exchangeで相手のドメイン向けのグラントを得る。そのグラントを相手のドメインのASに出し、アクセストークンを得る。
 
-ID-JAG（Identity Assertion JWT Authorization Grant）は、この形を、SSOで同じIdPを信頼するアプリの間に当てはめたものである。代表例は企業の従業員向けのIdPだが、それに限らない。この仕様が定めるパターンは、非公式にCross-App Access（XAA）と呼ばれる。
+ID-JAG（Identity Assertion JWT Authorization Grant）は、この形をSSOで同じIdPを信頼するアプリの間に当てはめたものである。利用者はもう一度ログインしたり同意したりしなくてよい。どのアプリにどのSaaSへのアクセスを許すかは、IdPが一か所で決められる。ただし、SaaSの認可サーバも自分のポリシーで、ID-JAGを受け入れるかと、どの範囲のトークンを出すかを決める。
 
-```mermaid
-sequenceDiagram
-  participant App as アプリ（クライアント）
-  participant IdP as 企業の IdP
-  participant RAS as SaaS の認可サーバ
-  participant API as SaaS の API
-  App->>IdP: Token Exchange（subject_token = ID Token か SAML アサーション）
-  IdP->>IdP: 企業のポリシーで可否を判断
-  IdP-->>App: ID-JAG（aud = SaaS の認可サーバ）
-  App->>RAS: JWT Bearer グラント（assertion = ID-JAG）
-  RAS-->>App: アクセストークン
-  App->>API: API 呼び出し
-```
-
-利用者はもう一度ログインしたり同意したりしなくてよい。企業のIdPが、どのアプリがどのSaaSにアクセスしてよいかを一か所で決められる。これが企業にとっての利点である。ただし、SaaSの認可サーバも自分のポリシーで、ID-JAGを受け入れるかと、どの範囲のトークンを出すかを決める。
-
-認可基盤として決めることは、ドメインをまたぐときに、誰の権限をどこまで引き継ぐかである。交換のたびに`aud`とスコープを絞り、`act`で誰が代理しているかを残す。AIエージェントでの使い方は[AIエージェントで認可の何が変わるか](/ja/posts/authorization-for-ai-agents/)で扱う。
+認可基盤として決めることは、ドメインをまたぐときに、誰の権限をどこまで引き継ぐかである。交換のたびに`aud`とスコープを絞り、`act`で誰が代理しているかを残す。AIエージェントでの使い方は[AIエージェントの認可とは？](/ja/posts/authorization-for-ai-agents/)で扱う。
 
 # トークン: 何を入れ、どう検証し、どう止めるか
 

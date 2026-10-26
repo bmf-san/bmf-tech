@@ -184,27 +184,11 @@ Sometimes you want to carry a user's delegation between internal microservices o
 
 ## Identity Chaining and ID-JAG
 
-Identity Chaining offers a general mechanism for crossing domains. The client first runs Token Exchange at the AS in its own domain and obtains a JWT authorization grant aimed at the other domain. It then presents that grant, in the form of an RFC 7523 JWT Bearer grant, to the other domain's AS and receives an access token.
+Identity Chaining offers a general mechanism for crossing domains. The client obtains a grant for the other domain through Token Exchange at the AS in its own domain. It then presents that grant to the other domain's AS and receives an access token.
 
-ID-JAG (Identity Assertion JWT Authorization Grant) applies this pattern to apps that trust the same IdP for SSO. Enterprise workforce IdPs are a common example, but not the only one. People informally call the pattern it defines Cross-App Access (XAA).
+ID-JAG (Identity Assertion JWT Authorization Grant) applies this pattern to apps that trust the same IdP for SSO. The user does not need to sign in or consent again. The IdP decides in one place which app may access which SaaS. The SaaS authorization server still applies its own policy to decide whether to honor the ID-JAG and what access token to issue.
 
-```mermaid
-sequenceDiagram
-  participant App as App (client)
-  participant IdP as Enterprise IdP
-  participant RAS as SaaS authorization server
-  participant API as SaaS API
-  App->>IdP: Token Exchange (subject_token = ID Token or SAML assertion)
-  IdP->>IdP: Decide by enterprise policy
-  IdP-->>App: ID-JAG (aud = SaaS authorization server)
-  App->>RAS: JWT Bearer grant (assertion = ID-JAG)
-  RAS-->>App: Access token
-  App->>API: API call
-```
-
-The user does not need to sign in or consent again. The enterprise IdP decides in one place which app may access which SaaS. That central control gives the enterprise its main benefit. The SaaS authorization server still applies its own policy to decide whether to honor the ID-JAG and what access token to issue.
-
-An authorization platform must decide whose permissions to carry across a domain boundary, and how far. Narrow `aud` and scopes at each exchange, and record who acts on whose behalf in `act`. [How authorization changes with AI agents](/posts/authorization-for-ai-agents/) covers the use with AI agents.
+An authorization platform must decide whose permissions to carry across a domain boundary, and how far. Narrow `aud` and scopes at each exchange, and record who acts on whose behalf in `act`. [What is Authorization for AI Agents?](/posts/authorization-for-ai-agents/) covers the use with AI agents.
 
 # Tokens: What Goes In, How to Validate, How to Stop
 
