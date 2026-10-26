@@ -74,22 +74,11 @@ First, here are the incidents that can happen when you build this setup so that 
 | Offboarding or permission changes do not reach the agent | Long-lived tokens, static API keys, and no revocation mechanism | Short-lived tokens and a way to revoke them |
 | Someone manipulates another user's state (a cart or a workflow) | The server treats possession of a state handle as authentication | Bind handles to the verified user and check them on every request |
 
-The following subsections expand on the items with MCP-specific concerns.
-
-## Token passthrough
-
-The official MCP documentation includes [Security Best Practices](https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices) ("the Best Practices" below), which complements the authorization specification. The Best Practices define token passthrough as an antipattern. In it, an MCP server accepts tokens without checking that the authorization server issued them for this MCP server, and passes them to a downstream API. The authorization specification explicitly forbids it.
-
-Passthrough causes more harm than token theft alone. The Best Practices list these risks:
-
-- Clients bypass rate limits and checks that the MCP server or downstream API built around the token audience
-- When clients call with a token issued for the downstream API, the MCP server cannot tell clients apart, and the downstream API logs show a different sender from the real one. Incident investigation and auditing get harder
-- When several services accept one token without proper validation, an attacker who breaks one service can reach the other connected services
-- Even if the server works as a plain proxy today, it may need security controls later. Separating audiences from the start makes the security model easier to evolve
+The following subsection explains the confused deputy problem, whose mechanism the table alone does not make clear.
 
 ## Confused deputy
 
-The confused deputy problem can appear when an MCP server acts as a proxy to a third-party API. The Best Practices say the attack becomes possible when every one of these conditions holds:
+The confused deputy problem can appear when an MCP server acts as a proxy to a third-party API. The official MCP documentation includes [Security Best Practices](https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices) ("the Best Practices" below). They say the attack becomes possible when every one of these conditions holds:
 
 - The MCP server uses one static client ID with the third-party authorization server
 - The MCP server lets MCP clients register dynamically
@@ -98,28 +87,7 @@ The confused deputy problem can appear when an MCP server acts as a proxy to a t
 
 An attacker then registers a malicious client and gets the user to click a link. The consent cookie remains, so the consent screen never appears, and the authorization code goes to the attacker's redirect URI.
 
-As a countermeasure, an MCP proxy that uses a static client ID MUST get user consent for each dynamically registered client before it forwards the request to the third party. The Best Practices also require (MUST) the proxy to keep a per-user registry of approved `client_id` values, to show the client name, scopes, and redirect URI on the consent screen, and to check `redirect_uri` by exact match.
-
-## Over-broad scopes and decisions that rely on scopes alone
-
-The Scope Minimization section of the Best Practices describes a leaked token that carries broad scopes such as `files:*` or `admin:*`. It lists these common mistakes:
-
-- Publishing every possible scope in `scopes_supported`
-- Using wildcard or omnibus scopes such as `*`, `all`, or `full-access`
-- Bundling unrelated privileges to avoid future prompts
-- Treating the scopes in the token as enough, with no server-side authorization logic
-
-The last mistake leads straight to the next section: what the specification does not decide.
-
-## Credentials in the LLM context
-
-If you put API keys or tokens into the LLM context, they can leak through conversation logs and prompts. A prompt injection can also make the model print credentials. Let the MCP client (the host) or the MCP server hold credentials, and never show them to the model.
-
-The MCP specification reflects the same idea. Servers MUST NOT use the form mode of Elicitation (the way a server asks the user for input) to request passwords, API keys, or access tokens. For OAuth with an external service, the server uses URL mode so that external credentials never pass through the MCP client.
-
-## Nobody can trace who did what
-
-If your records only contain the user ID, you cannot tell the user's own operations apart from the agent's operations. The MCP tools specification says clients SHOULD log tool usage for audit purposes. It defines no standard way to distinguish the user from the agent, though. A later section covers this point.
+As a countermeasure, an MCP proxy that uses a static client ID MUST get user consent for each dynamically registered client before it forwards the request to the third party.
 
 # What the MCP authorization specification decides, and what it does not
 
