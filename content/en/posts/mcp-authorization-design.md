@@ -271,7 +271,6 @@ The core specification fits the case where a user interactively grants a client 
 - [MCP Tools (2026-07-28)](https://modelcontextprotocol.io/specification/2026-07-28/server/tools)
 - [MCP Caching (2026-07-28)](https://modelcontextprotocol.io/specification/2026-07-28/server/utilities/caching)
 - [MCP Elicitation (2026-07-28)](https://modelcontextprotocol.io/specification/2026-07-28/client/elicitation)
-- [MCP Streamable HTTP (2026-07-28)](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/streamable-http)
 - [MCP Security Best Practices (2026-07-28)](https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices)
 - [MCP Authorization Extensions](https://modelcontextprotocol.io/extensions/auth/overview)
 - [MCP OAuth Client Credentials](https://modelcontextprotocol.io/extensions/auth/oauth-client-credentials)
