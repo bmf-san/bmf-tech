@@ -103,35 +103,6 @@ Adding OAuth does not finish authorization. Viewed through the IAM subdomains, t
 
 The specification does not ignore access decisions. The tools specification says servers MUST put proper access controls in place. The caching specification says servers MUST NOT rely on `cacheScope` alone and MUST apply access controls per primitive (tools, resources, and so on). It does not say how to decide, though. That part belongs to your design.
 
-## Designing access decisions for tools and data
-
-An access decision uses at least these inputs:
-
-- Subject: the user (`sub`) and the client (`client_id`) taken from the verified token
-- Action: the MCP method and tool name (for example, `execute_sql` in `tools/call`)
-- Resource: the data that the tool arguments point to (tenant, record, file)
-- Context: scopes, time, and the risk of the operation
-
-Use scopes as a coarse upper bound such as "may use this kind of feature on this MCP server", and make decisions about individual data in the server. The 2026-07-28 revision explicitly allows the result of `tools/list` to vary by the authorization attached to the request. For example, a server can return only the tools that the granted scopes permit. Showing fewer tools also lowers the chance that the LLM picks a dangerous tool by mistake. Hiding a tool from the list does not replace a decision, though. Decide on every `tools/call`.
-
-You have three main places to put the decision:
-
-| Location | Good fit | Caveat |
-|---|---|---|
-| Directly in the MCP server code | Few MCP servers and simple policies | Every policy change means modifying every MCP server |
-| A gateway (PEP) in front of the MCP servers | You want per-tool permissions or per-tenant controls in one place | To inspect argument values, it must parse the body or use the arguments that the server marks with `x-mcp-header` and the client mirrors into headers |
-| An external decision service (PDP) | Many MCP servers, and you want to manage policy across them | You need to design the decision API and the attributes it uses |
-
-In the 2026-07-28 Streamable HTTP transport, every request REQUIRES the `Mcp-Method` header. Requests such as `tools/call` also REQUIRE the `Mcp-Name` header. A gateway learns "which method, which tool" without parsing the body and can apply per-tool controls. A server that processes the body MUST check that the header values match the body and reject mismatches. A gateway that decides on headers SHOULD confirm that `MCP-Protocol-Version` names a revision that requires this check, and reject the request otherwise.
-
-If you externalize decisions, AuthZEN's [Authorization API](/posts/authzen-authorization-api/) offers a standard between the PEP and the PDP. AuthZEN also has a draft binding, COAZ-MCP, that maps MCP requests to decision requests. [Authorization architecture](/posts/authorization-architecture-models-engines/) covers how to split the PEP and the PDP.
-
-## Identifiers are not permissions
-
-The 2026-07-28 revision removed protocol-level sessions. A server that needs state across calls mints a handle and receives it back as an ordinary tool argument. The specification says that, for authenticated servers, a handle is a name, not a capability. The Best Practices say servers MUST NOT treat possession of a state handle as authentication. They also recommend binding each handle to the verified user in the server-side store. For example, key the stored state as `<user_id>:<handle>` and take the user ID from the verified token.
-
-The same idea applies to other values. `clientInfo` (in 2026-07-28, the `io.modelcontextprotocol/clientInfo` field in the request `_meta`) is self-reported, and the specification says implementations SHOULD NOT rely on it for security decisions. Clients MUST treat tool annotations as untrusted unless they come from trusted servers. Take the subject information for access decisions only from verified tokens.
-
 # Who holds whose authority at each hop
 
 Share within the team, for each hop, whose authority the caller uses. When this stays vague, token passthrough and excessive permissions follow.
@@ -267,7 +238,6 @@ The core specification fits the case where a user interactively grants a client 
 - The MCP authorization specification mainly covers delegation: obtaining and validating tokens. Design access decisions for tools and data, access governance, and human approval yourself.
 - Put audience validation and the ban on passthrough in place first. For backend APIs, use a new token obtained through Token Exchange or a similar method.
 - Draw whose authority each hop uses, and record the user and the agent separately.
-- Do not treat identifiers such as handles or `clientInfo` as permissions. Take the subject information for decisions from verified tokens.
 - The authorization server placement, audience, scope granularity, decision location, audit log fields, and token lifetime and revocation resist change later. Decide them first.
 - For anything you postpone, record the reason and the conditions for revisiting it in an ADR.
 
