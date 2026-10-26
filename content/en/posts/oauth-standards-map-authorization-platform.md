@@ -131,43 +131,15 @@ Authorization request parameters usually travel in the browser URL. The user's d
 
 ## PAR (RFC 9126) and JAR (RFC 9101)
 
-With PAR, the client POSTs the authorization request parameters to the AS's `pushed_authorization_request_endpoint`. The AS authenticates the client by the same rules as at the token endpoint and returns a short-lived `request_uri`.
+With PAR, the client first sends the authorization request parameters to the AS over a back channel, and gives the browser only a reference, `request_uri`. The parameters never pass through the browser, which makes tampering and leakage harder.
 
-```http
-POST /as/par HTTP/1.1
-Host: as.example.com
-Content-Type: application/x-www-form-urlencoded
+JAR packs the authorization request into a signed JWT (Request Object). The signature shows that the client created the request and that nobody changed it on the way.
 
-response_type=code&client_id=s6BhdRkqt3&redirect_uri=...
-&code_challenge=...&code_challenge_method=S256
-&client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer
-&client_assertion=...
-```
-
-```json
-{ "request_uri": "urn:example:bwc4JK-ESC0w8acc191e-Y1LTC2", "expires_in": 90 }
-```
-
-The browser goes to the authorization endpoint with only `client_id` and `request_uri`. The parameters never pass through the browser, which makes tampering and leakage harder. Another benefit: the AS authenticates the client already at the authorization request stage.
-
-JAR packs the authorization request parameters into a signed JWT (Request Object) and sends it as `request` or `request_uri`. The signature shows that the client really created the request and that nobody changed it on the way. Under RFC 9101, the AS must use only the parameters inside the Request Object, even if the same parameter also appears outside it.
-
-You can combine the two. PAR keeps the request out of the browser; JAR signs the request itself. They protect different things.
-
-An authorization platform must decide whether to require PAR for every client. The AS can announce this through the `require_pushed_authorization_requests` metadata. To require PAR per client, use the client metadata parameter of the same name. For a new platform, the author recommends requiring PAR from confidential clients. The parameters stay out of the URL, so adding RAR later will not make URLs too long.
+The two protect different things, and you can combine them. An authorization platform must decide whether to require PAR for every client. The AS can announce this through the `require_pushed_authorization_requests` metadata.
 
 ## FAPI 2.0: A High-Assurance Profile
 
-FAPI 2.0 is an OpenID Foundation profile that narrows how to use OAuth for high-risk APIs such as those in finance. The Security Profile reached Final in February 2025, and Message Signing in September 2025.
-
-Examples of Security Profile requirements:
-
-- Limit authorization requests to the authorization code flow (`response_type=code`) and support only confidential clients
-- Use PAR and require PKCE with S256
-- Issue only sender-constrained access tokens (mTLS or DPoP)
-- Limit authorization code lifetime to 60 seconds at most
-
-Even if you do not build financial APIs, FAPI 2.0 serves as a reference for how far to tighten controls on high-risk operations.
+FAPI 2.0 is an OpenID Foundation profile that narrows how to use OAuth for high-risk APIs such as those in finance. The Security Profile reached Final in February 2025. It requires PAR, PKCE, and sender-constrained access tokens, among other things. Even if you do not build financial APIs, FAPI 2.0 serves as a reference for how far to tighten controls on high-risk operations.
 
 # Discovery and Audience: Which AS, and Tokens for Which Resource
 

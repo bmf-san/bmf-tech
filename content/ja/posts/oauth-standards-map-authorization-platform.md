@@ -131,43 +131,15 @@ GNAP（Grant Negotiation and Authorization Protocol）は、OAuthの拡張では
 
 ## PAR（RFC 9126）とJAR（RFC 9101）
 
-PARでは、クライアントが認可要求のパラメータをASの`pushed_authorization_request_endpoint`にPOSTする。ASは、トークンエンドポイントと同じ規則でクライアントを認証し、短い有効期限の`request_uri`を返す。
+PARでは、クライアントが認可要求のパラメータを先にバックチャネルでASに送り、ブラウザには`request_uri`という参照だけを渡す。パラメータがブラウザを通らないので、改ざんや漏えいが起きにくい。
 
-```http
-POST /as/par HTTP/1.1
-Host: as.example.com
-Content-Type: application/x-www-form-urlencoded
+JARは、認可要求を署名付きのJWT（Request Object）にまとめる。要求を作ったのがそのクライアントであることと、途中で変わっていないことを示せる。
 
-response_type=code&client_id=s6BhdRkqt3&redirect_uri=...
-&code_challenge=...&code_challenge_method=S256
-&client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer
-&client_assertion=...
-```
-
-```json
-{ "request_uri": "urn:example:bwc4JK-ESC0w8acc191e-Y1LTC2", "expires_in": 90 }
-```
-
-ブラウザは`client_id`と`request_uri`だけを持って認可エンドポイントへ行く。パラメータはブラウザを通らないので、改ざんや漏えいが起きにくい。クライアント認証を認可要求の段階で済ませられるのも利点である。
-
-JARは、認可要求のパラメータを署名付きのJWT（Request Object）にまとめ、`request`または`request_uri`で渡す。署名によって、要求を作ったのが確かにそのクライアントであることと、途中で変わっていないことを示せる。RFC 9101では、同じパラメータが外にも置かれていても、ASはRequest Objectの中のパラメータだけを使わなければならない。
-
-2つは組み合わせられる。PARは「要求をブラウザに通さない」、JARは「要求そのものに署名する」で、守る対象が違う。
-
-認可基盤として決めることは、PARをすべてのクライアントに要求するかどうかである。ASメタデータの`require_pushed_authorization_requests`で公開できる。クライアントごとに要求するときは、同じ名前のクライアントメタデータを使う。筆者は、新しく作る基盤なら機密クライアントにPARを要求しておくことを勧める。パラメータをURLに載せないので、後からRARを足してもURLは長くならない。
+2つは守る対象が違い、組み合わせて使える。認可基盤として決めることは、PARをすべてのクライアントで必須にするかどうかである。ASメタデータの`require_pushed_authorization_requests`で公開できる。
 
 ## FAPI 2.0: 高保証のプロファイル
 
-FAPI 2.0は、金融などの高リスクなAPI向けにOAuthの使い方を絞り込んだOpenID Foundationのプロファイルである。Finalの公開は、Security Profileが2025年2月、Message Signingが2025年9月である。
-
-Security Profileの要求の例は次のとおりである。
-
-- 認可要求は認可コードフロー（`response_type=code`）に限り、機密クライアントだけをサポートする
-- PARを使い、PKCEはS256を必須にする
-- アクセストークンは送信者制約（mTLSかDPoP）付きだけを発行する
-- 認可コードの有効期限は最長60秒にする
-
-金融のAPIを作らない場合でも、「高いリスクの操作ではどこまで締めるか」の基準として参照できる。
+FAPI 2.0は、金融などの高リスクなAPI向けにOAuthの使い方を絞り込んだOpenID Foundationのプロファイルである。Security ProfileのFinalは2025年2月に公開された。PAR、PKCE、送信者制約付きのアクセストークンなどを必須にしている。金融のAPIを作らない場合でも、高いリスクの操作でどこまで締めるかの基準として参照できる。
 
 # 発見と宛先: どのASに、どの資源向けのトークンを求めるか
 
