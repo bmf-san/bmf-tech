@@ -222,25 +222,19 @@ Zanzibar is not a product. Google described the internal system in a paper at US
 
 ## General-Purpose Policy Engines
 
-OPA (Open Policy Agent) is a general-purpose policy engine for everything from Kubernetes admission control to microservice authorization and IaC checks. It evaluates policies written in Rego against JSON input. It offers bundles for policy distribution, partial evaluation, and decision logs. It reached CNCF Graduated status in 2021. In August 2025, the creators of OPA announced on the project blog that they and many Styra team members had joined Apple; the announcement states that governance and licensing stay unchanged under the CNCF. For OPA itself, see [What is Open Policy Agent (OPA)?](/posts/open-policy-agent/). For usage patterns, see [Access control patterns using OPA](/posts/access-control-patterns-using-opa/) and [Implementing microservice access control with OPA](/posts/microservices-access-control-opa/).
+OPA covers not only application authorization but also Kubernetes admission control and IaC checks with a single language, Rego. For OPA itself, see [What is Open Policy Agent (OPA)?](/posts/open-policy-agent/). For usage patterns, see [Access control patterns using OPA](/posts/access-control-patterns-using-opa/) and [Implementing microservice access control with OPA](/posts/microservices-access-control-opa/).
 
-Cedar is an authorization-specific policy language that AWS released as open source. You write permit and forbid policies over principal, action, resource, and context (PARC). Cedar denies by default, and forbid overrides permit. You can check policies against a schema, the Cedar team formalized the language in Lean and published proofs of its properties, and tooling exists for symbolic analysis of policies. Compared with general-purpose Rego, Cedar narrows its scope to authorization, which constrains how you write policy and makes analysis easier. The CNCF accepted Cedar as a Sandbox project. Amazon Verified Permissions provides a managed PDP built on Cedar.
-
-Cerbos is a stateless PDP with policies in YAML. It runs as a service or sidecar and offers a decision API plus a query plan API that returns filter conditions. You can also manage policy distribution and testing in the commercial Cerbos Hub.
+Cedar is a language built only for authorization. It denies by default, and forbid overrides permit. Because it constrains how you write policy, schema validation and symbolic analysis get easier, and the Cedar team formalized the language in Lean.
 
 ## Relationship-Based Engines (Zanzibar-Style)
 
-Zanzibar is the authorization system that many Google products share. It stores permissions as tuples of the form "this user (or set of users) holds this relation on this object", and rewrite rules such as "every editor is also a viewer" let relations inherit from each other. The paper describes the "new enemy" problem: if a check ignores the order of ACL updates, or applies an old ACL to new content, a user you removed can still see the new content. Zanzibar prevents it with timestamps that respect the causal order of updates (external consistency) and with snapshot reads whose freshness a consistency token called a zookie bounds. An index called Leopard speeds up deeply nested groups.
+The issue specific to Zanzibar-style engines is consistency. If a check ignores the order of ACL updates, a user you removed can still see new content. The Zanzibar paper calls this the "new enemy" problem and prevents it with a consistency token called a zookie, which sets a lower bound on read freshness. SpiceDB avoids the same problem with ZedTokens and per-request consistency settings.
 
-OpenFGA is a Zanzibar-style open source project that Okta (Auth0) engineers started. It joined the CNCF Sandbox in 2022 and moved to Incubating in 2025. You define an authorization model in a DSL, write relationship tuples, and query with Check, ListObjects, and ListUsers. Conditional relationship tuples let it cover some attribute conditions too.
-
-SpiceDB is a Zanzibar-style open source project that AuthZed develops. You define relations and permissions in its schema language, and ZedTokens plus per-request consistency settings avoid the new enemy problem. Its caveats feature expresses conditional relations.
+When you combine a ReBAC engine with a policy engine, the ReBAC engine acts as a PDP and also as a PIP from the policy engine's point of view.
 
 If the business database still holds relations such as owners and membership after you adopt a ReBAC engine, you keep the same relation data in two places. Then how you sync business updates with relation updates, and which side holds the source of truth, becomes one of the heaviest decisions in the rollout.
 
 # How to Choose an Engine
-
-## Decision Axes
 
 | Axis | Question | Leaning |
 |---|---|---|
@@ -289,7 +283,6 @@ If the business database still holds relations such as owners and membership aft
 - [S. Osborn, R. Sandhu, Q. Munawer: Configuring role-based access control to enforce mandatory and discretionary access control policies (2000)](https://doi.org/10.1145/354876.354878)
 - [Zanzibar: Google's Consistent, Global Authorization System (USENIX ATC 2019)](https://research.google/pubs/pub48190/)
 - [Open Policy Agent documentation](https://www.openpolicyagent.org/docs/)
-- [Note from Teemu, Tim, and Torin to the Open Policy Agent community](https://www.openpolicyagent.org/blog/note-from-teemu-tim-and-torin-to-the-open-policy-agent-community-2dbbfe494371)
 - [Cedar](https://www.cedarpolicy.com/) / [cedar-policy/cedar-spec (Lean formalization)](https://github.com/cedar-policy/cedar-spec)
 - [Amazon Verified Permissions](https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/what-is-avp.html)
 - [Cerbos documentation](https://docs.cerbos.dev/)

@@ -222,25 +222,19 @@ Zanzibarは製品ではなく、Googleが2019年にUSENIX ATCで発表した論�
 
 ## 汎用のポリシーエンジン
 
-OPA（Open Policy Agent）は、Kubernetesのアドミッション制御からマイクロサービスの認可、IaCの検査まで使える汎用のポリシーエンジンである。Regoで書いたポリシーをJSONの入力に対して評価する。バンドルによるポリシーの配布、部分評価、判定ログを備える。2021年にCNCFのGraduatedになった。2025年8月には、OPAの作者たちが、自分たちとStyraの多くのメンバーがAppleに移ったとプロジェクトのブログで公表した。CNCFのプロジェクトとしての統治とライセンスは変わらない、と説明されている。OPA自体の解説は[Open Policy Agent（OPA）とは](/ja/posts/open-policy-agent/)、使い方のパターンは[OPAを利用したアクセス制御のパターン](/ja/posts/access-control-patterns-using-opa/)と[OPAを使用したマイクロサービスのアクセス制御システムの実装](/ja/posts/microservices-access-control-opa/)にまとめた。
+OPAは、アプリの認可だけでなく、Kubernetesのアドミッション制御やIaCの検査まで、Regoという1つの言語で扱える。OPA自体の解説は[Open Policy Agent（OPA）とは](/ja/posts/open-policy-agent/)、使い方のパターンは[OPAを利用したアクセス制御のパターン](/ja/posts/access-control-patterns-using-opa/)と[OPAを使用したマイクロサービスのアクセス制御システムの実装](/ja/posts/microservices-access-control-opa/)にまとめた。
 
-Cedarは、AWSが公開した認可専用のポリシー言語である。主体・操作・資源・文脈（PARC）に対してpermitとforbidを書く。既定は拒否で、forbidがpermitに優先する。スキーマでポリシーを検証でき、言語の仕様はLeanで形式化され、性質の証明が公開されている。ポリシーを記号的に解析するツールもある。汎用のRegoに対し、Cedarは認可に絞った分だけ書き方が制約され、解析しやすい。CNCFのSandboxに採択されている。Amazon Verified Permissionsは、Cedarを使うマネージドのPDPである。
-
-Cerbosは、YAMLでポリシーを書くステートレスなPDPである。サービスやサイドカーとして動かし、判定のAPIと、検索条件を返すクエリプランのAPIを持つ。ポリシーの配布やテストは商用のCerbos Hubでも管理できる。
+Cedarは認可に絞った言語で、既定は拒否、forbidがpermitに優先する。書き方が制約される分、スキーマでの検証や記号的な解析がしやすく、言語の仕様はLeanで形式化されている。
 
 ## 関係ベースのエンジン（Zanzibar系）
 
-Zanzibarは、Googleの多くの製品が共有する認可システムである。権限を「オブジェクトのある関係に、あるユーザー（またはユーザーの集合）がいる」というタプルで表し、「editorはすべてviewerでもある」のような書き換え規則で関係を継承する。ACLの更新の順序を無視したり、古いACLを新しい内容に当てはめたりすると、外したはずの利用者に新しい内容が見えてしまう。論文はこれを「new enemy」問題と呼ぶ。更新の因果順を保つタイムスタンプ（外部一貫性）と、zookieという一貫性のトークンで鮮度の下限を決めた読み取りで防ぐ。深いグループの入れ子はLeopardという索引で高速化する。
+Zanzibar系のエンジンに固有の論点は一貫性である。ACLの更新の順序を無視すると、外したはずの利用者に新しい内容が見えてしまう。Zanzibarの論文はこれを「new enemy」問題と呼び、zookieという一貫性のトークンで読み取りの鮮度の下限を決めて防ぐ。SpiceDBは、ZedTokenと要求ごとの一貫性の指定で同じ問題を避ける。
 
-OpenFGAは、Okta（Auth0）の開発者が始めたZanzibar系のOSSで、2022年にCNCFのSandboxに入り、2025年にIncubatingへ移った。DSLで認可モデルを定義し、関係タプルを書き込み、Check、ListObjects、ListUsersで問い合わせる。条件付きの関係タプルで、属性の条件も一部扱える。
-
-SpiceDBは、AuthZedが開発するZanzibar系のOSSである。スキーマ言語で関係と権限を定義し、ZedTokenと要求ごとの一貫性の指定でnew enemy problemを避ける。caveatという仕組みで、条件付きの関係も表せる。
+ReBACのエンジンをポリシーエンジンと組み合わせる場合、ReBACのエンジンはPDPであると同時に、ポリシーエンジンから見たPIPにもなる。
 
 ReBACのエンジンを入れた後も業務DBに所有者や所属などの関係が残るなら、同じ関係データを2か所で持つことになる。その場合、業務の更新と関係の更新をどう同期するか、どちらを正とするかが、導入で特に重い判断になる。
 
 # エンジンの選び方
-
-## 判断の軸
 
 | 軸 | 問い | 傾き |
 |---|---|---|
@@ -289,7 +283,6 @@ ReBACのエンジンを入れた後も業務DBに所有者や所属などの関�
 - [S. Osborn, R. Sandhu, Q. Munawer: Configuring role-based access control to enforce mandatory and discretionary access control policies (2000)](https://doi.org/10.1145/354876.354878)
 - [Zanzibar: Google's Consistent, Global Authorization System (USENIX ATC 2019)](https://research.google/pubs/pub48190/)
 - [Open Policy Agent ドキュメント](https://www.openpolicyagent.org/docs/)
-- [Note from Teemu, Tim, and Torin to the Open Policy Agent community](https://www.openpolicyagent.org/blog/note-from-teemu-tim-and-torin-to-the-open-policy-agent-community-2dbbfe494371)
 - [Cedar](https://www.cedarpolicy.com/) / [cedar-policy/cedar-spec（Leanによる形式化）](https://github.com/cedar-policy/cedar-spec)
 - [Amazon Verified Permissions](https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/what-is-avp.html)
 - [Cerbos ドキュメント](https://docs.cerbos.dev/)
