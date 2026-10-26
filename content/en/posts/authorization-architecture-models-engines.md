@@ -84,8 +84,6 @@ flowchart LR
 | PIP (Policy Information Point) | Supplies the attributes and relations the PDP needs | Directory, HR database, contract database, business database, relation store |
 | PAP (Policy Administration Point) | Handles authoring, testing, review, versioning, and distribution of policy | Git repository, CI, admin console |
 
-SP 800-162 makes the PAP responsible for testing policies thoroughly before enforcement. In today's terms, that means CI for Policy-as-Code. The guide also names an optional Context Handler that decides the order of fetching policies and attributes. Latency measures such as prefetching or caching attributes belong here.
-
 ## Where Each Role Sits Relative to Business Domains
 
 PEP, PDP, PIP, and PAP have different owners inside an organization. Mapping them onto the IAM subdomains from [What is authorization?](/posts/authorization-domain-iam-subdomains/) gives the following picture.
@@ -328,7 +326,6 @@ You do not need to put everything on one engine. One example setup keeps a ReBAC
 
 - Picking an engine before sorting out attribute authority and freshness. Any engine makes wrong decisions on stale or wrong attributes.
 - Copying all business data into the PDP or the ReBAC store. Every sync failure turns into a permission error.
-- Rolling out without deciding what happens when no decision comes back. Settle fail-closed behavior and the blast radius of a PDP outage first.
 - Calling an engine-specific API from all over the business code. Keep the PEP layer in one place so you can swap engines.
 
 # Summary
@@ -368,7 +365,7 @@ You do not need to put everything on one engine. One example setup keeps a ReBAC
 - [INCITS 499-2018: Next Generation Access Control - Functional Architecture (NGAC-FA)](https://webstore.ansi.org/standards/incits/incits4992018)
 - [INCITS 526-2016: Next Generation Access Control - Generic Operations and Data Structures (NGAC-GOADS)](https://webstore.ansi.org/standards/incits/incits5262016)
 - [NIST SP 800-207: Zero Trust Architecture](https://csrc.nist.gov/pubs/sp/800/207/final)
-- [OASIS: XACML Version 3.0 Plus Errata 01](https://docs.oasis-open.org/xacml/3.0/errata01/os/xacml-3.0-core-spec-errata01-os-complete.html) / [JSON Profile of XACML 3.0 Version 1.1](https://docs.oasis-open.org/xacml/xacml-json-http/v1.1/os/xacml-json-http-v1.1-os.html)
+- [OASIS: XACML Version 3.0 Plus Errata 01](https://docs.oasis-open.org/xacml/3.0/errata01/os/xacml-3.0-core-spec-errata01-os-complete.html)
 - [OASIS: ACAL work products](https://docs.oasis-open.org/xacml/acal/)
 - [OASIS XACML TC: alfa-for-xacml-v1.0-wd01.doc uploaded (2015-03-10)](https://groups.oasis-open.org/communities/community-home/digestviewer/viewthread?GroupId=19&MessageKey=4d628175-5a72-4e71-9f75-1bd70a4309d1&CommunityKey=67afe552-0921-49b7-9a85-018dc7d3ef1d)
 - [B. Lampson: Protection (1971)](https://bwlampson.site/08-Protection/WebPage.html)

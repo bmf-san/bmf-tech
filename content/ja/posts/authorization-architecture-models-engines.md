@@ -84,8 +84,6 @@ flowchart LR
 | PIP（Policy Information Point） | 判定に必要な属性や関係をPDPに渡す | ディレクトリ、人事DB、契約DB、業務DB、関係ストア |
 | PAP（Policy Administration Point） | ポリシーの作成、テスト、レビュー、版管理、配布を担う | Gitリポジトリ、CI、管理画面 |
 
-SP 800-162はPAPの責務に「ポリシーを強制する前に十分テストすること」を含めている。今の言葉でいえばPolicy-as-CodeのCIである。また、ポリシーと属性を取りに行く順序を決めるContext Handlerという任意の部品も挙げている。属性を先に取っておく、キャッシュする、といった遅延対策はここで考える。
-
 ## 業務ドメインに対してどこに置くか
 
 PEP/PDP/PIP/PAPは、組織の中で持ち主が違う。[認可とは何か](/ja/posts/authorization-domain-iam-subdomains/)で示したIAMのサブドメインに当てはめると、次のようになる。
@@ -328,7 +326,6 @@ ReBACのエンジンを入れた後も業務DBに所有者や所属などの関�
 
 - 属性の権威と鮮度を整理する前にエンジンを決める。どのエンジンでも、属性が古いか誤っていれば判定も誤る。
 - 業務データをすべてPDPやReBACのストアに複製する。同期の失敗が、そのまま権限の誤りになる。
-- 判定できないときの挙動を決めずに導入する。fail-closedと、PDPが落ちたときの影響範囲を先に決める。
 - エンジン独自のAPIを業務コードのあちこちから直接呼ぶ。PEPの層を1か所にまとめ、エンジンを替えられる形にしておく。
 
 # まとめ
@@ -368,7 +365,7 @@ ReBACのエンジンを入れた後も業務DBに所有者や所属などの関�
 - [INCITS 499-2018: Next Generation Access Control - Functional Architecture (NGAC-FA)](https://webstore.ansi.org/standards/incits/incits4992018)
 - [INCITS 526-2016: Next Generation Access Control - Generic Operations and Data Structures (NGAC-GOADS)](https://webstore.ansi.org/standards/incits/incits5262016)
 - [NIST SP 800-207: Zero Trust Architecture](https://csrc.nist.gov/pubs/sp/800/207/final)
-- [OASIS: XACML Version 3.0 Plus Errata 01](https://docs.oasis-open.org/xacml/3.0/errata01/os/xacml-3.0-core-spec-errata01-os-complete.html) / [JSON Profile of XACML 3.0 Version 1.1](https://docs.oasis-open.org/xacml/xacml-json-http/v1.1/os/xacml-json-http-v1.1-os.html)
+- [OASIS: XACML Version 3.0 Plus Errata 01](https://docs.oasis-open.org/xacml/3.0/errata01/os/xacml-3.0-core-spec-errata01-os-complete.html)
 - [OASIS: ACALの成果物](https://docs.oasis-open.org/xacml/acal/)
 - [OASIS XACML TC: alfa-for-xacml-v1.0-wd01.doc uploaded（2015-03-10）](https://groups.oasis-open.org/communities/community-home/digestviewer/viewthread?GroupId=19&MessageKey=4d628175-5a72-4e71-9f75-1bd70a4309d1&CommunityKey=67afe552-0921-49b7-9a85-018dc7d3ef1d)
 - [B. Lampson: Protection (1971)](https://bwlampson.site/08-Protection/WebPage.html)
