@@ -222,7 +222,7 @@ IAMの外にも、認証やアクセス判定に入力を渡すドメインが�
 - [サービス間認証の全体像とは？mTLS・Token Exchange・SPIFFE・ゼロトラスト](/ja/posts/service-to-service-authentication/)
 - [はじめてのデジタルアイデンティティ―Webサービスに欠かせない認証・認可・ID管理](/ja/posts/introduction-digital-identity/)
 - [デジタルアイデンティティのすべて―安全かつユーザー中心のアイデンティティシステムを実現するための知識](/ja/posts/digital-identity-overview/)
-- [認可基盤はどこまで作るべきか？横断と各ドメインの分担、必要な段階、判定の外部化](/ja/posts/authorization-platform-scope-stages/)
+- [認可基盤はどこまで作るべきか？横断と各ドメインの分担、判断の軸、判定の外部化](/ja/posts/authorization-platform-scope-stages/)
 - [認可のアーキテクチャとモデルとは？PEP/PDP・RBAC/ABAC/ReBAC・ポリシーエンジンの選び方](/ja/posts/authorization-architecture-models-engines/)
 - [AuthZEN Authorization APIとは？PEPとPDPをつなぐ認可判定の標準](/ja/posts/authzen-authorization-api/)
 - [認可基盤に必要なOAuth関連標準とは？委譲・トークン・継続評価の地図](/ja/posts/oauth-standards-map-authorization-platform/)

@@ -222,7 +222,7 @@ For example, a proposal to "build an authorization platform with OAuth" means so
 - [What is the Big Picture of Service-to-Service Authentication? mTLS, Token Exchange, SPIFFE, and Zero Trust](/posts/service-to-service-authentication/)
 - [Introduction to Digital Identity: Essential Authentication, Authorization, and ID Management for Web Services](/posts/introduction-digital-identity/)
 - [Everything About Digital Identity: Knowledge for Realizing a Secure and User-Centric Identity System](/posts/digital-identity-overview/)
-- [How Much Authorization Platform Do You Need? Scope, Ownership, Stages, and Externalized Decisions](/posts/authorization-platform-scope-stages/)
+- [How Much Authorization Platform Do You Need? Scope, Ownership, Decision Axes, and Externalized Decisions](/posts/authorization-platform-scope-stages/)
 - [What Are Authorization Architectures and Models? PEP/PDP, RBAC/ABAC/ReBAC, and Choosing a Policy Engine](/posts/authorization-architecture-models-engines/)
 - [What is the AuthZEN Authorization API? A Standard Between PEP and PDP](/posts/authzen-authorization-api/)
 - [Which OAuth Standards Does an Authorization Platform Need? A Map of Delegation, Tokens, and Continuous Evaluation](/posts/oauth-standards-map-authorization-platform/)
