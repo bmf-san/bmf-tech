@@ -256,12 +256,6 @@ If the business database still holds relations such as owners and membership aft
 
 You do not need to put everything on one engine. One example setup keeps a ReBAC engine as the authority for relations and evaluates attribute conditions in a policy engine. In that setup, the ReBAC engine acts as a PDP and also as a PIP from the policy engine's point of view. Following the role-centric idea, roles and the relations that grant access set the ceiling, and conditions in the policy engine narrow it.
 
-## Choices to Avoid
-
-- Picking an engine before sorting out attribute authority and freshness. Any engine makes wrong decisions on stale or wrong attributes.
-- Copying all business data into the PDP or the ReBAC store. Every sync failure turns into a permission error.
-- Calling an engine-specific API from all over the business code. Keep the PEP layer in one place so you can swap engines.
-
 # Summary
 
 - Think of authorization in layers: model, expression, engine, API, and data. The safe order of choice runs model, data, engine.
