@@ -122,8 +122,8 @@ Authorization request parameters usually travel in the browser URL. The user's d
 
 | Standard | One-line role | Status |
 | --- | --- | --- |
-| PAR (RFC 9126) | Push the authorization request to the AS over a back channel first, and give the browser only a reference | RFC (September 2021) |
-| JAR (RFC 9101) | Turn the authorization request into a signed JWT (Request Object) | RFC (August 2021) |
+| RFC 9126 (PAR) | Push the authorization request to the AS over a back channel first, and give the browser only a reference | RFC (September 2021) |
+| RFC 9101 (JAR) | Turn the authorization request into a signed JWT (Request Object) | RFC (August 2021) |
 | RFC 9207 | Put `iss` in the authorization response to stop mix-up attacks | RFC |
 | FAPI 2.0 Security Profile | A high-assurance profile that requires PAR and sender constraints | Final (February 2025) |
 
@@ -263,7 +263,7 @@ This blog has covered this area in the most depth. Here are only the key points 
 
 | Standard | One-line role | Deep-dive posts |
 | --- | --- | --- |
-| JOSE (RFC 7515–7518), JWT (RFC 7519), JWT BCP (RFC 8725) | Containers for signatures, encryption, keys, algorithms, and claims, and how to use them safely | [What is JOSE?](/posts/jose-overview/), [What is JWT?](/posts/jwt-introduction/) |
+| RFC 7515–7518 (JOSE), RFC 7519 (JWT), RFC 8725 (JWT BCP) | Containers for signatures, encryption, keys, algorithms, and claims, and how to use them safely | [What is JOSE?](/posts/jose-overview/), [What is JWT?](/posts/jwt-introduction/) |
 | RFC 9068 (JWT access tokens) | Claims and validation steps for access tokens in JWT form | [Access token validation and revocation](/posts/access-token-validation-revocation/) |
 | RFC 7662 (Introspection) | Ask the AS whether an opaque token is valid and what attributes it has | Same as above |
 | RFC 7009 (Revocation) | Revoke access tokens and refresh tokens | Same as above |
@@ -290,8 +290,8 @@ Authorization decisions need to know who the subject is, which groups it belongs
 | --- | --- | --- |
 | OpenID Connect Core 1.0 | Carries the authentication result as an ID Token on top of OAuth | Final |
 | SAML 2.0 | SSO with XML assertions. OASIS approved it as a standard in March 2005 | OASIS Standard |
-| SCIM (RFC 7643 / 7644) | REST API and schema to create, update, and delete users and groups across organizations | RFC (September 2015) |
-| SCIM profile for SETs (RFC 9967) | Notifies SCIM changes asynchronously through Security Event Tokens | RFC (May 2026) |
+| RFC 7643 / RFC 7644 (SCIM) | REST API and schema to create, update, and delete users and groups across organizations | RFC (September 2015) |
+| RFC 9967 (SCIM profile for SETs) | Notifies SCIM changes asynchronously through Security Event Tokens | RFC (May 2026) |
 | IPSIE | Interoperability profiles for enterprise SSO, lifecycle, revocation, and more | Draft (in progress in the WG) |
 
 [Summary of OpenID Connect 1.0](/posts/openid-connect-1-0-spec-summary/) covers OIDC, and [What is SAML 2.0?](/posts/saml-2-0/) covers SAML. Keep authentication and authorization in separate layers. An ID Token tells the RP who authenticated; it does not serve as a token for calling APIs.

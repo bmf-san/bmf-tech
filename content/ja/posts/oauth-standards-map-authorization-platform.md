@@ -122,8 +122,8 @@ GNAP（Grant Negotiation and Authorization Protocol）は、OAuthの拡張では
 
 | 標準 | 1行の役割 | 状態 |
 | --- | --- | --- |
-| PAR（RFC 9126） | 認可要求をバックチャネルで先にASに送り、ブラウザには参照だけを渡す | RFC（2021年9月） |
-| JAR（RFC 9101） | 認可要求を署名付きのJWT（Request Object）にする | RFC（2021年8月） |
+| RFC 9126（PAR） | 認可要求をバックチャネルで先にASに送り、ブラウザには参照だけを渡す | RFC（2021年9月） |
+| RFC 9101（JAR） | 認可要求を署名付きのJWT（Request Object）にする | RFC（2021年8月） |
 | RFC 9207 | 認可レスポンスに`iss`を入れて、Mix-Up攻撃を防ぐ | RFC |
 | FAPI 2.0 Security Profile | PARや送信者制約を必須にした高保証のプロファイル | Final（2025年2月） |
 
@@ -263,7 +263,7 @@ sequenceDiagram
 
 | 標準 | 1行の役割 | 詳しい記事 |
 | --- | --- | --- |
-| JOSE（RFC 7515〜7518）、JWT（RFC 7519）、JWT BCP（RFC 8725） | 署名、暗号化、鍵、アルゴリズム、クレームの器と安全な使い方 | [JOSEとは？](/ja/posts/jose-overview/)、[JWTとは？](/ja/posts/jwt-introduction/) |
+| RFC 7515〜7518（JOSE）、RFC 7519（JWT）、RFC 8725（JWT BCP） | 署名、暗号化、鍵、アルゴリズム、クレームの器と安全な使い方 | [JOSEとは？](/ja/posts/jose-overview/)、[JWTとは？](/ja/posts/jwt-introduction/) |
 | RFC 9068（JWTアクセストークン） | アクセストークンをJWTにするときのクレームと検証の手順 | [アクセストークンの検証と失効](/ja/posts/access-token-validation-revocation/) |
 | RFC 7662（Introspection） | 不透明なトークンの有効性と属性をASに問い合わせる | 同上 |
 | RFC 7009（Revocation） | アクセストークンやリフレッシュトークンを失効させる | 同上 |
@@ -290,8 +290,8 @@ APIキーのような長命のトークンの設計は[NIST CSF 2.0に学ぶ安�
 | --- | --- | --- |
 | OpenID Connect Core 1.0 | OAuthの上で認証の結果をID Tokenとして運ぶ | Final |
 | SAML 2.0 | XMLのアサーションでSSOを行う。2005年3月にOASIS標準になった | OASIS標準 |
-| SCIM（RFC 7643 / 7644） | 利用者とグループを組織の間で作成、更新、削除するREST APIとスキーマ | RFC（2015年9月） |
-| SCIMのSETプロファイル（RFC 9967） | SCIMの変更をSecurity Event Tokenで非同期に通知する | RFC（2026年5月） |
+| RFC 7643 / RFC 7644（SCIM） | 利用者とグループを組織の間で作成、更新、削除するREST APIとスキーマ | RFC（2015年9月） |
+| RFC 9967（SCIMのSETプロファイル） | SCIMの変更をSecurity Event Tokenで非同期に通知する | RFC（2026年5月） |
 | IPSIE | 企業のSSO、ライフサイクル、失効などの相互運用プロファイル | Draft（WGで策定中） |
 
 OIDCは[OpenID Connect 1.0 仕様まとめ](/ja/posts/openid-connect-1-0-spec-summary/)で、SAMLは[SAML 2.0とは？](/ja/posts/saml-2-0/)で扱った。認証と認可は層として分けておく。ID Tokenは「誰が認証されたか」をRPに伝えるもので、APIを呼ぶためのトークンではない。
