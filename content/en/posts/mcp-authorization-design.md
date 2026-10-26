@@ -62,7 +62,7 @@ To apply it to your own system, fill in three things on this diagram. Then map t
 
 # Incidents that can happen
 
-First, here are the incidents that can happen when you implement this setup so that it just works.
+First, here are the incidents that can happen when you build this setup so that it just works.
 
 | What can happen | Typical cause | Main countermeasure |
 |---|---|---|
