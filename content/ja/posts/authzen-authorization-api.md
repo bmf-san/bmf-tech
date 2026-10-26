@@ -10,7 +10,7 @@ tags:
   - ABAC
   - Open Policy Agent
   - アーキテクチャ
-description: "AuthZEN Authorization APIとは何か。2026年1月にFinalとなったPEPとPDPの間の標準APIを、SARCの情報モデル、Evaluation・Search API、メタデータ、セキュリティ、XACMLとの関係、OPA・Cedar・OpenFGAの差し替えの観点で解説する。"
+description: "AuthZEN Authorization APIとは何か。2026年1月にFinalとなったPEPとPDPの間の標準APIを、SARCの情報モデル、Evaluation・Search API、メタデータ、セキュリティ、OPA・Cedar・OpenFGAの差し替えの観点で解説する。"
 translation_key: authzen-authorization-api
 draft: false
 ---
@@ -27,7 +27,6 @@ OpenID FoundationのAuthZENワーキンググループが策定した**Authoriza
 - 何を送り、何が返るのか（SARCの情報モデルと5つのエンドポイント）
 - 判定の理由やステップアップの要求は、どう返せるのか
 - PDPの発見とセキュリティで、何が決まっていて何が決まっていないのか
-- XACMLやNISTのABACとどういう関係にあるのか
 - OPA・Cedar・OpenFGAを差し替えられるとは、どこまでを意味するのか
 
 PEP・PDP・PIP・PAPの参照アーキテクチャや、RBAC・ABAC・ReBACといったモデルとエンジンの比較は[認可のアーキテクチャとモデル・エンジンの選び方](/ja/posts/authorization-architecture-models-engines/)で扱う。この記事は、そのPEPとPDPをつなぐAPIに絞る。
@@ -92,7 +91,7 @@ flowchart LR
 
 ## OAuthとOIDCが標準化したものとの対比
 
-OAuthは権限の委譲を、OpenID Connectは認証の結果の受け渡しを、それぞれ標準にした。AuthZENのAuthorization APIは、その隣にある「判定の問い合わせ」を標準にする。たとえば、トークンに入っているスコープやクレームで粗く絞り、資源ごとの細かい判定をPDPに問う、という分担ができる。この後半の部分は、XACMLとそのJSON・RESTプロファイル（後述）が定めていたが、XACMLのエンジン以外には広がらなかった。
+OAuthは権限の委譲を、OpenID Connectは認証の結果の受け渡しを、それぞれ標準にした。AuthZENのAuthorization APIは、その隣にある「判定の問い合わせ」を標準にする。たとえば、トークンに入っているスコープやクレームで粗く絞り、資源ごとの細かい判定をPDPに問う、という分担ができる。この後半の部分は、XACMLとそのJSON・RESTプロファイルが定めていたが、XACMLのエンジン以外には広がらなかった。
 
 OAuthまわりの標準の地図は[認可基盤に必要なOAuth関連標準とは？](/ja/posts/oauth-standards-map-authorization-platform/)にまとめた。
 
@@ -395,23 +394,6 @@ JSONについては、I-JSON（RFC 7493）に沿うことを推奨している�
 
 もう1つは、PDPに届かないときのふるまいである。仕様は個々の判定の誤りをfail-closedにすると定めるが、PDPそのものが落ちたときのPEPの動きは決めていない。タイムアウト、キャッシュ、縮退時の判定は、PEPの側で決めることになる。PEPとPDPの配置や非機能の判断は[認可基盤のアーキテクチャと設計判断](/ja/posts/authorization-platform-architecture-decisions/)で扱う。
 
-# XACMLとNIST ABACとの関係
-
-AuthZENは新しい概念を発明したわけではない。仕様は冒頭で、PDPとPEPはXACMLとNIST SP 800-162（ABACのガイド）で定義されていると書いている。
-
-| 観点 | XACML 3.0 | AuthZEN Authorization API 1.0 |
-| --- | --- | --- |
-| 範囲 | ポリシー言語、要求と応答の形式、処理モデル | PEPとPDPの間の要求と応答だけ |
-| 形式 | XML（JSONとRESTのプロファイルは2019年にOASIS Standard） | JSON（HTTPSバインディングが必須） |
-| 要求の構造 | 属性カテゴリ（主体、資源、操作、環境）に属性を並べる | Subject・Action・Resource・Contextのオブジェクト |
-| 判定の値 | Permit・Deny・NotApplicable・Indeterminate | `true`か`false` |
-| 義務と助言 | ObligationとAdviceを言語で定義する | `context`に入れる（形式は本体の範囲外で、Obligationsプロファイルはまだドラフト） |
-| 一覧の問い | 中核にはない | Search APIとして定義する |
-
-XACMLは判定の結果を4値で返し、ポリシー言語と処理モデルまで含めて定めた。AuthZENはポリシー言語に一切踏み込まず、線の形だけを決める。内部はRego、Cedar、関係タプルのいずれでもよい。次の2点は筆者の見方である。XACMLの要求を受け付けるPDPがほぼXACMLのエンジンに限られたのは、ポリシー言語と処理モデルまで定めたためだろう。判定を`true`と`false`に絞り、ほかの情報を`context`に逃がしたのも、異なるエンジンが同じ口を持てるようにするためだろう。
-
-NIST SP 800-162は、ABACを主体の属性、対象の属性、操作、環境条件で説明する。SARCはこの語彙とほぼ対応している。モデルの原典の詳細は[認可のアーキテクチャとモデル・エンジンの選び方](/ja/posts/authorization-architecture-models-engines/)に譲る。
-
 # OPA・Cedar・OpenFGAを差し替えられるとはどういうことか
 
 ## SARCと各エンジンの対応
@@ -503,7 +485,7 @@ OpenID Foundationは2026年6月の発表で、認可システムはこれまで�
 - APIは、1件の判定、評価方式を選べる一括判定、主体・資源・操作の検索、`/.well-known/authzen-configuration`のメタデータからなる。メタデータの公開は推奨で、メタデータでの一括判定と検索のエンドポイントは任意（OPTIONAL）である。載っていなければ、PEPはそのPDPが対応していないと判断できる。
 - 拒否は`200`と`false`で返り、HTTPのエラーとは区別する。個々の判定の誤りはfail-closedになる。
 - セキュリティでは、PEPとPDPの接続の保護（HTTPならTLSなど）が必須で、PEPの認証、応答の署名、DoS対策が推奨または許可されている。PDPはPEPを信頼する前提に立つので、属性の出どころが設計の要になる。
-- PEPとPDPの定義はXACMLとNIST ABACに拠り、SARCもその語彙とほぼ対応するが、ポリシー言語には踏み込まない。そのため、OPA・Cedar・OpenFGAなどを、変換層を挟むなどして同じAPIの後ろに置ける。
+- 仕様はポリシー言語に踏み込まない。そのため、OPA・Cedar・OpenFGAなどを、変換層を挟むなどして同じAPIの後ろに置ける。
 - 替えやすくなるのはPEPの側であり、ポリシー、データ、語彙、`context`の読み方などは残る作業である。
 
 # 関連記事
@@ -540,7 +522,6 @@ OpenID Foundationは2026年6月の発表で、認可システムはこれまで�
 - [eXtensible Access Control Markup Language (XACML) Version 3.0（OASIS Standard）](https://docs.oasis-open.org/xacml/3.0/xacml-3.0-core-spec-os-en.html)
 - [JSON Profile of XACML 3.0 Version 1.1](https://docs.oasis-open.org/xacml/xacml-json-http/v1.1/xacml-json-http-v1.1.html)
 - [XACML REST Profile Version 1.1](https://docs.oasis-open.org/xacml/xacml-rest/v1.1/xacml-rest-v1.1.html)
-- [NIST SP 800-162 Guide to Attribute Based Access Control (ABAC) Definition and Considerations](https://csrc.nist.gov/pubs/sp/800/162/upd2/final)
 - [RFC 7493 The I-JSON Message Format](https://www.rfc-editor.org/rfc/rfc7493)
 - [RFC 8414 OAuth 2.0 Authorization Server Metadata](https://www.rfc-editor.org/rfc/rfc8414)
 - [RFC 9728 OAuth 2.0 Protected Resource Metadata](https://www.rfc-editor.org/rfc/rfc9728)

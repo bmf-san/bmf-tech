@@ -27,7 +27,6 @@ This post answers the following questions.
 - What goes in and what comes back (the SARC information model and the five endpoints)?
 - How can a PDP return reasons for a decision or ask for step-up authentication?
 - What does the spec fix, and what does it leave open, for PDP discovery and security?
-- How does it relate to XACML and NIST ABAC?
 - What does "swap OPA, Cedar, or OpenFGA" mean, and where does it stop?
 
 The post [Authorization architecture: models and engines](/posts/authorization-architecture-models-engines/) covers the PEP/PDP/PIP/PAP reference architecture and compares models (RBAC, ABAC, ReBAC) and engines. This post focuses on the API that connects the PEP and the PDP.
@@ -92,7 +91,7 @@ The spec's introduction observes that PDP-PEP communication follows similar patt
 
 ## What OAuth and OIDC Standardized, and What They Did Not
 
-OAuth standardized delegation, and OpenID Connect standardized how to convey authentication results. The AuthZEN Authorization API standardizes the neighboring step: asking for a decision. For example, scopes and claims in a token can narrow things down coarsely, and the application can then ask a PDP for fine-grained, per-resource decisions. XACML and its JSON and REST profiles (covered later) defined that second part, but they never spread beyond XACML engines.
+OAuth standardized delegation, and OpenID Connect standardized how to convey authentication results. The AuthZEN Authorization API standardizes the neighboring step: asking for a decision. For example, scopes and claims in a token can narrow things down coarsely, and the application can then ask a PDP for fine-grained, per-resource decisions. XACML and its JSON and REST profiles defined that second part, but they never spread beyond XACML engines.
 
 For a map of the OAuth-related standards, see [Which OAuth Standards Does an Authorization Platform Need?](/posts/oauth-standards-map-authorization-platform/).
 
@@ -395,23 +394,6 @@ The assumption that "the PDP trusts the PEP" carries weight. The PDP believes wh
 
 The second point concerns what happens when the PEP cannot reach the PDP. The spec makes errors in individual evaluations fail closed, but it does not say how a PEP should behave when the PDP itself goes down. The PEP side has to decide on timeouts, caching, and degraded-mode decisions. For decisions about PEP/PDP placement and non-functional requirements, see [Authorization platform architecture and design decisions](/posts/authorization-platform-architecture-decisions/).
 
-# Relation to XACML and NIST ABAC
-
-AuthZEN did not invent new concepts. The spec opens by noting that XACML and NIST SP 800-162 (the ABAC guide) define PDPs and PEPs.
-
-| Aspect | XACML 3.0 | AuthZEN Authorization API 1.0 |
-| --- | --- | --- |
-| Scope | Policy language, request/response format, processing model | Only the request and response between PEP and PDP |
-| Format | XML (JSON and REST profiles became OASIS Standards in 2019) | JSON (HTTPS binding mandatory) |
-| Request structure | Attributes grouped into categories (subject, resource, action, environment) | Subject, Action, Resource, and Context objects |
-| Decision values | Permit, Deny, NotApplicable, Indeterminate | `true` or `false` |
-| Obligations and advice | Defined in the policy language | Carried in `context` (format outside the core spec; the Obligations Profile is still a draft) |
-| Listing questions | Not in the core | Search APIs |
-
-XACML returns four decision values and defines everything down to the policy language and processing model. AuthZEN stays out of policy languages and defines only the shape of the line. Inside, the PDP can use Rego, Cedar, or relationship tuples. The next two points are my own reading. PDPs that accept XACML requests were almost always XACML engines, probably because XACML defines the policy language and processing model too. In the same way, AuthZEN reduces the decision to a boolean and moves everything else into `context`, probably so that different engines can expose the same interface.
-
-NIST SP 800-162 describes ABAC through subject attributes, object attributes, operations, and environment conditions. SARC maps closely to that vocabulary. For the original sources behind the models, see [Authorization architecture: models and engines](/posts/authorization-architecture-models-engines/).
-
 # What "Swapping OPA, Cedar, or OpenFGA" Means
 
 ## Mapping SARC to Each Engine
@@ -503,7 +485,7 @@ Finally, here are my own tips for bringing AuthZEN into a design.
 - The API consists of single evaluation, batch evaluation with selectable semantics, subject/resource/action search, and metadata at `/.well-known/authzen-configuration`. The spec recommends publishing metadata, in which the batch evaluation and search endpoints are OPTIONAL; if one is missing, the PEP can conclude that the PDP does not support that API.
 - A denial comes back as `200` with `false`, separate from HTTP errors. Errors in individual evaluations fail closed.
 - On security, protecting the PEP-PDP connection (for example with TLS for HTTP) is mandatory, and the spec recommends or permits PEP authentication, signed responses, and DoS protections. The PDP trusts the PEP, so the source of attributes becomes a central design question.
-- It takes its PEP and PDP definitions from XACML and NIST ABAC, and SARC maps closely to their vocabulary, but it stays out of policy languages. So OPA, Cedar, OpenFGA, and others can sit behind the same API, sometimes through a translation layer.
+- It stays out of policy languages. So OPA, Cedar, OpenFGA, and others can sit behind the same API, sometimes through a translation layer.
 - The PEP side becomes easy to swap; policies, data, vocabulary, the reading of `context`, and more remain your work.
 
 # Related Posts
@@ -540,7 +522,6 @@ Finally, here are my own tips for bringing AuthZEN into a design.
 - [eXtensible Access Control Markup Language (XACML) Version 3.0 (OASIS Standard)](https://docs.oasis-open.org/xacml/3.0/xacml-3.0-core-spec-os-en.html)
 - [JSON Profile of XACML 3.0 Version 1.1](https://docs.oasis-open.org/xacml/xacml-json-http/v1.1/xacml-json-http-v1.1.html)
 - [XACML REST Profile Version 1.1](https://docs.oasis-open.org/xacml/xacml-rest/v1.1/xacml-rest-v1.1.html)
-- [NIST SP 800-162 Guide to Attribute Based Access Control (ABAC) Definition and Considerations](https://csrc.nist.gov/pubs/sp/800/162/upd2/final)
 - [RFC 7493 The I-JSON Message Format](https://www.rfc-editor.org/rfc/rfc7493)
 - [RFC 8414 OAuth 2.0 Authorization Server Metadata](https://www.rfc-editor.org/rfc/rfc8414)
 - [RFC 9728 OAuth 2.0 Protected Resource Metadata](https://www.rfc-editor.org/rfc/rfc9728)
