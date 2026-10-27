@@ -96,7 +96,7 @@ You do not need to build everything at the start. Decide first on what costs a l
 
 | When | Item | Why |
 |---|---|---|
-| Decide first | Issue keys from your company's central authentication platform, not from a separate issuer per MCP server | With several issuers, every departure and role change must reach all of them |
+| Decide first | Do not set up a key issuer (authorization server) per MCP server; consolidate on your company's login system | With several issuers, you must revoke permissions at every issuer whenever someone leaves or changes roles. Miss one, and the AI keeps acting with that person's permissions |
 | Decide first | Do not reuse keys; use a separate key for each destination | Splitting them later means changing the settings of every connection |
 | Decide first | Grant minimal permissions and add more when needed | Broad permissions are hard to take back once granted |
 | Decide first | Record the user and the AI separately | Records you add later cannot cover past operations |
