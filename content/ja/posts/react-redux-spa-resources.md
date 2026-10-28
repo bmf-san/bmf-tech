@@ -43,7 +43,7 @@ React-Redux をわかりやすく解説しつつ実践的に一部実装して�
 http://ma3tk.hateblo.jp/entry/2016/06/20/182232
 
 React + ReduxのプロジェクトでRedux Formを使ったので使い方のまとめと注意点
-http://ichimaruni-design.com/2016/10/react-redux-form/
+https://web.archive.org/web/20170826092445/http://ichimaruni-design.com/2016/10/react-redux-form/
 
 Reduxでコンポーネントを再利用する
 http://qiita.com/kuy/items/869aeb7b403ea7a8fd8a

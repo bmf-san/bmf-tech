@@ -132,4 +132,4 @@ If you insert a BFF from the start, the frontend's peer is always the BFF (cooki
 
 - [What is BFF (Backend For Frontend)?](/posts/bff-explained/)
 - [Session-based and Token-based Authentication Methods](/posts/session-token-authentication/)
-- [OWASP: JSON Web Token for Java Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/JSON_Web_Token_for_Java_Cheat_Sheet.html)
+- [OWASP: JSON Web Token Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/JSON_Web_Token_Cheat_Sheet.html)

@@ -53,6 +53,8 @@ jobs:
             --exclude '^https?://fi\.ort\.edu\.uy/'
             --exclude '^https?://www\.ncad\.co\.jp/'
             --exclude '^https?://www\.sakimura\.org/'
+            --exclude '^https?://to-developer\.com/'
+            --exclude '^https?://db-engines\.com/'
             'public/**/*.html'
           # Don't block PRs on link errors. The repo currently has many
           # pre-existing broken links (mostly cross-locale tag links and

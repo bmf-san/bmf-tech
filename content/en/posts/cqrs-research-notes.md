@@ -61,7 +61,7 @@ It seems there are many examples overseas, but I found that there are still few 
 - [logmi.jp - Chatwork's Tech Lead Discusses How to Use CQRS Effectively](https://logmi.jp/tech/articles/322972)
 - [logmi.jp - "Doing CQRS" is Almost Synonymous with "Doing Event Sourcing": Design Philosophy Reflecting Reactive Systems and CQRS](https://logmi.jp/tech/articles/324798)
 - [little-hands.hatenablog.com - Introduction to Practicing CQRS [Domain-Driven Design]](https://little-hands.hatenablog.com/entry/2019/12/02/cqrs)
-- [hireoo.io - Creating a Microservice to Process Statistical Data Using the CQRS Pattern](https://hireroo.io/journal/tech/statistics-service-using-cqrs)
+- [hireoo.io - Creating a Microservice to Process Statistical Data Using the CQRS Pattern (archived)](https://web.archive.org/web/20240618114037/https://hireroo.io/journal/tech/statistics-service-using-cqrs)
 - [speakerdeck.com - Explaining CQRS/Event Sourcing in a Nutshell](https://speakerdeck.com/j5ik2o/event-sourcingwojie-shuo-suru)
 - [blog.j5ik2o.me - Why Does CQRS Become Event Sourcing?](https://blog.j5ik2o.me/entry/2020/09/18/172612)
 - [note.com - Can CQRS Be Achieved Without Event Sourcing?](https://note.com/j5ik2o/n/n20aadb440a9b)

@@ -6,6 +6,8 @@ on:
     paths:
       - 'content/ja/posts/**'
       - 'content/en/posts/**'
+      - 'scripts/lint-changed-lines.py'
+      - '.github/workflows/lint.yml'
 
 jobs:
   lint:

@@ -110,7 +110,7 @@ Atomのプラグイン開発とかもやってみたいです。
 
 # 参考
 * [Chrome extension: open link in new tab?](http://stackoverflow.com/questions/16503879/chrome-extension-open-link-in-new-tab)
-* [Chromeのオリジナル拡張機能を開発しよう（ソースコードあり）](https://liginc.co.jp/web/tool/browser/163575)
+* [Chromeのオリジナル拡張機能を開発しよう（ソースコードあり）（アーカイブ）](https://web.archive.org/web/20260310011740/https://liginc.co.jp/web/tool/browser/163575)
 * [Chrome拡張開発: 拡張からページにJavaScriptを送り込みたい](http://qiita.com/suin/items/5e1aa942e654bce442f7)
 * [google chrome extention 実装メモ (Browser Actionだけ)](http://qiita.com/dorachan1029/items/683a11d6f208e13f5b77)
 

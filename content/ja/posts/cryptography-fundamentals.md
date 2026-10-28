@@ -200,6 +200,6 @@ Q = k * G   (G はベースポイント、k は秘密のスカラー)
 - FIPS 180-4: Secure Hash Standard (SHS). https://csrc.nist.gov/pubs/fips/180-4/upd1/final
 - FIPS 202: SHA-3 Standard: Permutation-Based Hash and Extendable-Output Functions. https://csrc.nist.gov/pubs/fips/202/final
 - FIPS 197: Advanced Encryption Standard (AES). https://csrc.nist.gov/pubs/fips/197/final
-- FIPS 186-5: Digital Signature Standard (DSS). https://csrc.nist.gov/pubs/fips/186/5/final
+- FIPS 186-5: Digital Signature Standard (DSS). https://csrc.nist.gov/pubs/fips/186-5/final
 - RFC 8032: Edwards-Curve Digital Signature Algorithm (EdDSA). https://www.rfc-editor.org/rfc/rfc8032
 

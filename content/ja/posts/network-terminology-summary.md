@@ -27,7 +27,7 @@ draft: false
 
 cf.
 - [wikipedia -IPv4](https://ja.wikipedia.org/wiki/IPv4)
-- [jprs.jp - 用語辞典 IPv4](https://jprs.jp/glossary/index.php?ID=0034)
+- [jprs.jp - 用語辞典 IPv4](https://jprs.jp/glossary/dic.html#0034)
 
 ## IPv6
 - Internet Protocol version 6
@@ -40,7 +40,7 @@ cf.
 
 cf.
 - [wikipedia -IPv6](https://ja.wikipedia.org/wiki/IPv6)
-- [jprs.jp - 用語辞典 IPv6](https://jprs.jp/glossary/index.php?ID=0035)
+- [jprs.jp - 用語辞典 IPv6](https://jprs.jp/glossary/dic.html#0035)
 - [www.nic.ad.jp - IPv6](https://www.nic.ad.jp/ja/newsletter/No20/sec0700.html)
 
 ## NAT

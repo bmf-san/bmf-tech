@@ -60,7 +60,7 @@ CQRSについて調べたことをメモ。
 - [logmi.jp - Chatworkのテックリードが語る、CQRSを上手に使うため方法](https://logmi.jp/tech/articles/322972)
 - [logmi.jp - 「CQRSをやる」は「Event Sourcingをやる」とほぼ同義 リアクティブシステムとCQRSを反映した新アーキテクチャの設計思想](https://logmi.jp/tech/articles/324798)
 - [little-hands.hatenablog.com - CQRS実践入門 [ドメイン駆動設計]](https://little-hands.hatenablog.com/entry/2019/12/02/cqrs)
-- [hireoo.io -CQRSパターンを用いて統計データを処理するマイクロサービスを作成したお話](https://hireroo.io/journal/tech/statistics-service-using-cqrs)
+- [hireoo.io -CQRSパターンを用いて統計データを処理するマイクロサービスを作成したお話（アーカイブ）](https://web.archive.org/web/20240618114037/https://hireroo.io/journal/tech/statistics-service-using-cqrs)
 - [speakerdeck.com - ざっくりCQRS/Event Sourcingを解説する](https://speakerdeck.com/j5ik2o/event-sourcingwojie-shuo-suru)
 - [blog.j5ik2o.me - CQRSはなぜEvent Sourcingになってしまうのか](https://blog.j5ik2o.me/entry/2020/09/18/172612)
 - [note.com - CQRSはEvent Sourcingなしで実現できるのか？](https://note.com/j5ik2o/n/n20aadb440a9b)

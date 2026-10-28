@@ -56,9 +56,9 @@ draft: false
 プロキシサーバー（フォワードプロキシサーバー）・リバースプロキシサーバー・ゲートウェイサーバーは、配置される場所が異なり、通信を代理するのか、制御するのかといった違いがある。
 
 # 参考
-- [【図解】リバースプロキシとフォワードプロキシの違いって何？](https://laplace-daemon.com/reverse-forward-proxy/)
-- [【図解】プロキシとゲートウェイの違いは？](https://laplace-daemon.com/difference-between-proxy-and-gateway/)
-- [【図解】リバースプロキシとフォワードプロキシの違いって何？](https://laplace-daemon.com/reverse-forward-proxy/)
+- [【図解】リバースプロキシとフォワードプロキシの違いって何？（アーカイブ）](https://web.archive.org/web/20260611190134/https://laplace-daemon.com/reverse-forward-proxy/)
+- [【図解】プロキシとゲートウェイの違いは？（アーカイブ）](https://web.archive.org/web/20260611184739/https://laplace-daemon.com/difference-between-proxy-and-gateway/)
+- [【図解】リバースプロキシとフォワードプロキシの違いって何？（アーカイブ）](https://web.archive.org/web/20260611190134/https://laplace-daemon.com/reverse-forward-proxy/)
 - [リバースプロキシとプロキシの違いとは？それぞれのサーバーの仕組みは？
 ](https://eset-info.canon-its.jp/malware_info/special/detail/201021.html)
 - [プロキシとは？フォワードプロキシやリバースプロキシの

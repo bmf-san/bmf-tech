@@ -107,7 +107,7 @@ I have the impression that Bazel, Nx, and Pants are strong candidates.
 - [circleci.com - Advantages vs Disadvantages of Monorepo Development](https://circleci.com/ja/blog/monorepo-dev-practices/)
 - [www.graat.co.jp - Misconceptions about Monorepos: Translated Monorepo != Monolith](https://www.graat.co.jp/blogs/ck1099bcoeud60830rf0ej0ix)
 - [zenn.dev - What is a Monorepo? Summarizing its relationship with related architectures](https://zenn.dev/burizae/articles/c811cae767965a)
-- [hireroo.io - Strategies and Operations for Developing Microservices with Monorepos](https://hireroo.io/journal/tech/mono-repo-for-microservices)
+- [hireroo.io - Strategies and Operations for Developing Microservices with Monorepos (archived)](https://web.archive.org/web/20251010142703/https://hireroo.io/journal/tech/mono-repo-for-microservices)
 - [gist.github.com - About Monorepos](https://gist.github.com/pipopotamasu/efe7097454d9668f80cd8b43068afafc)
 - [blog.ojisan.io - Should You Use a Monorepo or Split Repositories?](https://blog.ojisan.io/monorepo-vs-polyrepo/)
 - [note.com - Development and Operations of Microservices Using Monorepos](https://note.com/tinkermodejapan/n/nb14009fe837f)

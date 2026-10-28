@@ -32,7 +32,7 @@
 ## コンテンツ lint
 
 - `make lint-content`: 全記事を textlint (JA + EN)
-- `make lint-content-diff`: PR 差分の本文修正分のみ
+- `make lint-content-diff`: PR 差分で追加・変更した行のみ（新規記事は全行）。古い記事を直しても、触っていない行の既存の指摘では失敗しない。コミット済みの差分を見るので、ローカルではコミット後に実行する
 - `npm run spell:en`: 英語記事のスペルチェック (cspell)
 - `make check-parity`: 日英記事の `translation_key` 対応チェック
 

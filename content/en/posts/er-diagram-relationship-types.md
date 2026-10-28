@@ -79,4 +79,4 @@ I want to read more books and delve deeper into this topic.
 
 # References
 - [Let's Properly Differentiate ER Diagram Relationships](https://products.sint.co.jp/siob/blog/relationship)
-- [A Must-Read for Young Programmers! 5 Steps to Understand How to Draw ER Diagrams in 5 Minutes](https://it-koala.com/entity-relationship-diagram-1897)
+- [A Must-Read for Young Programmers! 5 Steps to Understand How to Draw ER Diagrams in 5 Minutes (archived)](https://web.archive.org/web/20260419153128/https://it-koala.com/entity-relationship-diagram-1897)

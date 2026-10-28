@@ -152,7 +152,7 @@ cf. [user-first.ikyu.co.jp - あなたのプロダクトに Apollo Client は必
 
 # 参考
 - [graphql.org](https://graphql.org/)
-- [zenn.dev - GraphQLを徹底解説する記事s](https://zenn.dev/nameless_sn/articles/graphql_tutorial)
+- [zenn.dev - GraphQLを徹底解説する記事（アーカイブ）](https://web.archive.org/web/20260517022229/https://zenn.dev/nameless_sn/articles/graphql_tutorial)
 - [kinsta.com - GraphQLとRESTの比較─知っておきたい両者の違い](https://kinsta.com/jp/blog/graphql-vs-rest/#:~:text=GraphQL%E3%81%AE%E6%9C%80%E5%A4%A7%E3%81%AE%E5%88%A9%E7%82%B9,%E3%81%8C%E5%A4%9A%E3%81%99%E3%81%8E%E3%82%8B%E3%81%93%E3%81%A8%E3%81%A7%E3%81%99%E3%80%82)
 - [panda-program.com - 「初めてのGraphQL」を読んでGraphQLの概要を学んだ](https://panda-program.com/posts/book-learning-graphql)
 - [qiita.com - GraphQLのスキーマと型定義](https://qiita.com/NagaokaKenichi/items/d341dc092012e05d6606)

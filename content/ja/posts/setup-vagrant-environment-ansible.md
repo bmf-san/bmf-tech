@@ -125,7 +125,7 @@ nginxでphp7を使うにはphp-fpmとかいうCGIをかます必要があるら�
 （vagrant1.9.0のバグを踏んでしまっていたのが原因だったみたいです。）
 
 + [[Vagrant]Vagrantfileで指定したipアドレスでアクセスができない場合の対応](http://to-developer.com/blog/?p=1827)
-+ [Vagrantでpingが通らない！ゆえにVagrantネットワークを学び直したよ](http://www.kaasan.info/archives/3665)
++ [Vagrantでpingが通らない！ゆえにVagrantネットワークを学び直したよ（アーカイブ）](https://web.archive.org/web/20260517121221/http://www.kaasan.info/archives/3665)
 + [vagrant + centos7 でprivate_networkで設定したIPに接続ができない](http://qiita.com/junqiq/items/a19d3ea48b072a1b28d3)
 + ~~Vagrant で CentOS7 + PHP + MySQL の仮想環境を構築する~~
 

@@ -17,7 +17,7 @@ draft: false
 
 Recently, an update has made it possible for the Docker CLI to support Docker Compose.
 
-cf. [docs.docker.com - Compose CLI Tech Preview](https://docs.docker.com/compose/cli-command/)
+cf. [docs.docker.com - Compose CLI Tech Preview (archived)](https://web.archive.org/web/20210415094614/https://docs.docker.com/compose/cli-command/)
 
 Since it's a Tech Preview, it's not yet recommended for production use.
 

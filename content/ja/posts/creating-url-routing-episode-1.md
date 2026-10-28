@@ -193,7 +193,7 @@ Makuake LT Party（社内LT大会）にてLTをした。
 - [404 Blog Not Found - algorithm - Patricia Trie (Radix Trie) を JavaScript で](http://blog.livedoor.jp/dankogai/archives/51766842.html)
 - [http request multiplexerと文字列マッチング](http://web.archive.org/web/20201109013417/https://persol-pt.github.io/posts/tech-workshop1222/)
 - [@IT - データ構造の選択次第で天国と地獄の差 (3/3)](http://www.atmarkit.co.jp/ait/articles/0809/01/news163_3.html)
-- [基本データ構造：木構造のたどり方](http://www.sb.ecei.tohoku.ac.jp/lab/wp-content/uploads/2012/11/2012_d12.pdf)
+- [基本データ構造：木構造のたどり方（アーカイブ）](https://web.archive.org/web/20250811134848/http://www.sb.ecei.tohoku.ac.jp/lab/wp-content/uploads/2012/11/2012_d12.pdf)
 - [pixiv inside - PHPで高速に動作するURLルーティングを自作してみた](https://devpixiv.hatenablog.com/entry/2015/12/13/145741)
 - [PHPでフレームワークを使わずURLのルーティングをいい感じにやる](http://noranuk0.hatenablog.com/entry/2018/01/20/114933)
 - [gist - neo-nanikaka/CommonPrefixTrieRouter.php](https://gist.github.com/neo-nanikaka/c2e2f7742b311696d50b)

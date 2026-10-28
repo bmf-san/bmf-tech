@@ -53,7 +53,7 @@ PHPで高速に動作するURLルーティングを自作してみた](https://d
 - [dankogai.livedoor.blog - algorithm - Patricia Trie (Radix Trie) を JavaScript で](https://dankogai.livedoor.blog/archives/51766842.html)
 - [persol-pt.github.io - 勉強会[http request multiplexerと文字列マッチング]](http://web.archive.org/web/20201109013417/https://persol-pt.github.io/posts/tech-workshop1222/)
 - [atmarkit.itmedia.co.jp - データ構造の選択次第で天国と地獄の差](https://atmarkit.itmedia.co.jp/ait/articles/0809/01/news163_3.html)
-- [www.sb.ecei.tohoku.ac.jp - 基本データ構造：木構造のたどり方](http://www.sb.ecei.tohoku.ac.jp/lab/wp-content/uploads/2012/11/2012_d12.pdf)
+- [www.sb.ecei.tohoku.ac.jp - 基本データ構造：木構造のたどり方（アーカイブ）](https://web.archive.org/web/20250811134848/http://www.sb.ecei.tohoku.ac.jp/lab/wp-content/uploads/2012/11/2012_d12.pdf)
 - [noranuk0.hatenablog.com - PHPでフレームワークを使わずURLのルーティングをいい感じにやる](https://noranuk0.hatenablog.com/entry/2018/01/20/114933)
 - [reiki4040.hatenablog.com - golangのHTTPサーバを構成しているもの](https://reiki4040.hatenablog.com/entry/2017/03/01/212647)
 - [qiita.com/immrshc - 【Go】net/httpパッケージを読んでhttp.HandleFuncが実行される仕組み](https://qiita.com/immrshc/items/1d1c64d05f7e72e31a98)

@@ -150,7 +150,7 @@ cf. [user-first.ikyu.co.jp - Apollo Client May Not Be Necessary for Your Product
 
 # References
 - [graphql.org](https://graphql.org/)
-- [zenn.dev - Comprehensive Articles on GraphQL](https://zenn.dev/nameless_sn/articles/graphql_tutorial)
+- [zenn.dev - Comprehensive Articles on GraphQL (archived)](https://web.archive.org/web/20260517022229/https://zenn.dev/nameless_sn/articles/graphql_tutorial)
 - [kinsta.com - Comparison of GraphQL and REST: Key Differences to Know](https://kinsta.com/jp/blog/graphql-vs-rest/#:~:text=GraphQL%E3%81%AE%E6%9C%80%E5%A4%A7%E3%81%AE%E5%88%A9%E7%82%B9,%E3%81%8C%E5%A4%9A%E3%81%99%E3%81%8E%E3%82%8B%E3%81%93%E3%81%A8%E3%81%A7%E3%81%99%E3%80%82)
 - [panda-program.com - Learned GraphQL Overview from "First GraphQL"](https://panda-program.com/posts/book-learning-graphql)
 - [qiita.com - GraphQL Schema and Type Definitions](https://qiita.com/NagaokaKenichi/items/d341dc092012e05d6606)

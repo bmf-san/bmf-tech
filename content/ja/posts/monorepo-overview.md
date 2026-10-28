@@ -110,7 +110,7 @@ Bazel、Nx、Pants辺りが有力候補なのかなといった印象。
 - [circleci.com - Monorepo開発のメリット vs デメリット](https://circleci.com/ja/blog/monorepo-dev-practices/)
 - [www.graat.co.jp - モノレポについての誤解 - Misconceptions about Monorepos: Monorepo != Monolith を翻訳しました](https://www.graat.co.jp/blogs/ck1099bcoeud60830rf0ej0ix)
 - [zenn.dev - Monorepoって何なのか？と関連アーキテクチャとの関係をまとめてみた](https://zenn.dev/burizae/articles/c811cae767965a)
-- [hireroo.io - モノレポでマイクロサービスを開発するための戦略と運用](https://hireroo.io/journal/tech/mono-repo-for-microservices)
+- [hireroo.io - モノレポでマイクロサービスを開発するための戦略と運用（アーカイブ）](https://web.archive.org/web/20251010142703/https://hireroo.io/journal/tech/mono-repo-for-microservices)
 - [gist.github.com - モノレポについて](https://gist.github.com/pipopotamasu/efe7097454d9668f80cd8b43068afafc)
 - [blog.ojisan.io - モノレポにすべきか、レポジトリを分割すべきか](https://blog.ojisan.io/monorepo-vs-polyrepo/)
 - [note.com - モノレポによるマイクロサービスの開発運用](https://note.com/tinkermodejapan/n/nb14009fe837f)
