@@ -367,11 +367,11 @@ For detailed configuration options and template usage, see the documentation.
 
 | Guide | Description |
 |---|---|
-| [Getting Started](https://github.com/bmf-san/gohan/blob/main/docs/guide/getting-started.md) | Installation, first site, build & preview |
-| [Configuration](https://github.com/bmf-san/gohan/blob/main/docs/guide/configuration.md) | All `config.yaml` fields and Front Matter |
-| [Templates](https://github.com/bmf-san/gohan/blob/main/docs/guide/templates.md) | Theme templates, variables, built-in functions |
-| [Taxonomy](https://github.com/bmf-san/gohan/blob/main/docs/guide/taxonomy.md) | Tags, categories, and archive pages |
-| [CLI Reference](https://github.com/bmf-san/gohan/blob/main/docs/guide/cli.md) | All commands and flags |
+| [Getting Started](https://github.com/bmf-san/gohan/blob/main/docs/content/en/guide/getting-started.md) | Installation, first site, build & preview |
+| [Configuration](https://github.com/bmf-san/gohan/blob/main/docs/content/en/guide/configuration.md) | All `config.yaml` fields and Front Matter |
+| [Templates](https://github.com/bmf-san/gohan/blob/main/docs/content/en/guide/templates.md) | Theme templates, variables, built-in functions |
+| [Taxonomy](https://github.com/bmf-san/gohan/blob/main/docs/content/en/guide/taxonomy.md) | Tags, categories, and archive pages |
+| [CLI Reference](https://github.com/bmf-san/gohan/blob/main/docs/content/en/guide/cli.md) | All commands and flags |
 
 ## Closing
 

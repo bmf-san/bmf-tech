@@ -144,7 +144,7 @@ EventStorming pairs especially well with domain-driven design (DDD).
 * **Building a ubiquitous language**: Through discussion, words that meant different things to different people get organized, and a shared team vocabulary grows
 * **A gateway to event-driven architecture**: Because you design starting from domain events, it extends naturally into event-driven and microservice design
 
-For bounded contexts, see also the separate article "[Bounded Contexts](/en/posts/bounded-context-explanation/)".
+For bounded contexts, see also the separate article "[Bounded Contexts](/posts/bounded-context-explanation/)".
 
 # Pitfalls
 

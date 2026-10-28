@@ -18,7 +18,7 @@ draft: false
 
 When implementing authentication in an SPA (single-page application), you always run into the question of "where to store the access token". localStorage is convenient but weak to XSS. So where should you put it?
 
-This post organizes the comparison of token storage locations, a BFF (Backend For Frontend) design that keeps tokens out of the browser, and the practical judgment that "starting token-less is enough". For the concept of BFF itself, see "[What is BFF (Backend For Frontend)?](/en/posts/bff-explained/)".
+This post organizes the comparison of token storage locations, a BFF (Backend For Frontend) design that keeps tokens out of the browser, and the practical judgment that "starting token-less is enough". For the concept of BFF itself, see "[What is BFF (Backend For Frontend)?](/posts/bff-explained/)".
 
 # The token storage problem
 
@@ -130,6 +130,6 @@ If you insert a BFF from the start, the frontend's peer is always the BFF (cooki
 
 # References
 
-- [What is BFF (Backend For Frontend)?](/en/posts/bff-explained/)
-- [Session-based and Token-based Authentication Methods](/en/posts/session-token-authentication/)
+- [What is BFF (Backend For Frontend)?](/posts/bff-explained/)
+- [Session-based and Token-based Authentication Methods](/posts/session-token-authentication/)
 - [OWASP: JSON Web Token for Java Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/JSON_Web_Token_for_Java_Cheat_Sheet.html)

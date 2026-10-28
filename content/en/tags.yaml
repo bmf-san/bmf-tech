@@ -416,6 +416,8 @@
   translation_key: join
 - name: jq
   translation_key: jq
+- name: JOSE
+  translation_key: jose
 - name: JWT
   translation_key: jwt
 - name: k3s
