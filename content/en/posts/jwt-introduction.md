@@ -260,4 +260,4 @@ func main() {
 - [assets.ctfassets.net - jwt-handbook-jp.pdf](https://assets.ctfassets.net/2ntc334xpx65/5HColfm15cUhMmDQnupNzd/30d5913d94e79462043f6d8e3f557351/jwt-handbook-jp.pdf)
 - [techblog.yahoo.co.jp - Introduction to JSON Web Token (JWT) and its use at Yahoo! JAPAN](https://techblog.yahoo.co.jp/advent-calendar-2017/jwt/)
 - [hiyosi.tumblr.com - A Simple Summary of JWT](https://hiyosi.tumblr.com/post/70073770678/jwt%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E7%B0%A1%E5%8D%98%E3%81%AB%E3%81%BE%E3%81%A8%E3%82%81%E3%81%A6%E3%81%BF%E3%81%9F)
-- [www.wakuwakubank.com - JWT(JSON Web Token) Mechanism and Cautions](https://www.wakuwakubank.com/posts/523-it-jwt/)
+- [www.wakuwakubank.com - JWT(JSON Web Token) Mechanism and Cautions (archived)](https://web.archive.org/web/20260422110107/https://www.wakuwakubank.com/posts/523-it-jwt/)

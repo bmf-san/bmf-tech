@@ -97,6 +97,6 @@ I would also like to try developing plugins for Atom.
 
 # References
 * [Chrome extension: open link in new tab?](http://stackoverflow.com/questions/16503879/chrome-extension-open-link-in-new-tab)
-* [Let's develop original Chrome extensions (with source code)](https://liginc.co.jp/web/tool/browser/163575)
+* [Let's develop original Chrome extensions (with source code) (archived)](https://web.archive.org/web/20260310011740/https://liginc.co.jp/web/tool/browser/163575)
 * [Chrome extension development: Sending JavaScript from the extension to the page](http://qiita.com/suin/items/5e1aa942e654bce442f7)
 * [Google Chrome extension implementation notes (Browser Action only)](http://qiita.com/dorachan1029/items/683a11d6f208e13f5b77)

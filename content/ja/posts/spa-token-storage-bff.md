@@ -132,4 +132,4 @@ BFFを最初から挟んでおけば、フロントから見た通信相手は�
 
 - [BFF（Backend For Frontend）とは？](/posts/bff-explained/)
 - [セッションベースとトークンベースの認証方式について](/posts/session-token-authentication/)
-- [OWASP: JSON Web Token for Java Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/JSON_Web_Token_for_Java_Cheat_Sheet.html)
+- [OWASP: JSON Web Token Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/JSON_Web_Token_Cheat_Sheet.html)

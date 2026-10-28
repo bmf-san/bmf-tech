@@ -122,7 +122,7 @@ To use PHP 7 with Nginx, it seems necessary to use something called php-fpm as a
 Although I was able to build it, I struggled to access the IP specified in the Vagrantfile. After reviewing the IP settings and adjusting the firewalld configuration based on the following articles, I managed to resolve the issue. (It seems I encountered a bug in vagrant 1.9.0.)
 
 + [[Vagrant] How to deal with not being able to access the IP address specified in the Vagrantfile](http://to-developer.com/blog/?p=1827)
-+ [Vagrant cannot ping! Therefore, I had to relearn Vagrant networking](http://www.kaasan.info/archives/3665)
++ [Vagrant cannot ping! Therefore, I had to relearn Vagrant networking (archived)](https://web.archive.org/web/20260517121221/http://www.kaasan.info/archives/3665)
 + [Cannot connect to the IP set in private_network with vagrant + centos7](http://qiita.com/junqiq/items/a19d3ea48b072a1b28d3)
 + ~~Building a virtual environment with CentOS 7 + PHP + MySQL using Vagrant~~
 

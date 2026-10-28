@@ -49,7 +49,7 @@ A list of materials referenced in the development of the HTTP Router.
 - [dankogai.livedoor.blog - algorithm - Patricia Trie (Radix Trie) in JavaScript](https://dankogai.livedoor.blog/archives/51766842.html)
 - [persol-pt.github.io - Study Group [http request multiplexer and string matching]](http://web.archive.org/web/20201109013417/https://persol-pt.github.io/posts/tech-workshop1222/)
 - [atmarkit.itmedia.co.jp - The difference between heaven and hell depends on the choice of data structure](https://atmarkit.itmedia.co.jp/ait/articles/0809/01/news163_3.html)
-- [www.sb.ecei.tohoku.ac.jp - Basic Data Structures: Traversing Tree Structures](http://www.sb.ecei.tohoku.ac.jp/lab/wp-content/uploads/2012/11/2012_d12.pdf)
+- [www.sb.ecei.tohoku.ac.jp - Basic Data Structures: Traversing Tree Structures (archived)](https://web.archive.org/web/20250811134848/http://www.sb.ecei.tohoku.ac.jp/lab/wp-content/uploads/2012/11/2012_d12.pdf)
 - [noranuk0.hatenablog.com - Doing URL routing nicely without using a framework in PHP](https://noranuk0.hatenablog.com/entry/2018/01/20/114933)
 - [reiki4040.hatenablog.com - Components of a golang HTTP server](https://reiki4040.hatenablog.com/entry/2017/03/01/212647)
 - [qiita.com/immrshc - [Go] Understanding how http.HandleFunc is executed by reading the net/http package](https://qiita.com/immrshc/items/1d1c64d05f7e72e31a98)

@@ -44,7 +44,7 @@ React-Redux explained clearly and partially implemented practically
 http://ma3tk.hateblo.jp/entry/2016/06/20/182232
 
 Using Redux Form in a React + Redux project: summary and points to note
-http://ichimaruni-design.com/2016/10/react-redux-form/
+https://web.archive.org/web/20170826092445/http://ichimaruni-design.com/2016/10/react-redux-form/
 
 Reusing components with Redux
 http://qiita.com/kuy/items/869aeb7b403ea7a8fd8a

@@ -174,7 +174,7 @@ I gave a talk at the Makuake LT Party (internal LT competition).
 - [404 Blog Not Found - algorithm - Patricia Trie (Radix Trie) in JavaScript](http://blog.livedoor.jp/dankogai/archives/51766842.html)
 - [http request multiplexer and string matching](http://web.archive.org/web/20201109013417/https://persol-pt.github.io/posts/tech-workshop1222/)
 - [@IT - The difference between heaven and hell depends on the choice of data structure (3/3)](http://www.atmarkit.co.jp/ait/articles/0809/01/news163_3.html)
-- [Basic Data Structures: How to Traverse Tree Structures](http://www.sb.ecei.tohoku.ac.jp/lab/wp-content/uploads/2012/11/2012_d12.pdf)
+- [Basic Data Structures: How to Traverse Tree Structures (archived)](https://web.archive.org/web/20250811134848/http://www.sb.ecei.tohoku.ac.jp/lab/wp-content/uploads/2012/11/2012_d12.pdf)
 - [pixiv inside - Trying to create a fast URL routing system in PHP](https://devpixiv.hatenablog.com/entry/2015/12/13/145741)
 - [Doing URL routing nicely in PHP without using a framework](http://noranuk0.hatenablog.com/entry/2018/01/20/114933)
 - [gist - neo-nanikaka/CommonPrefixTrieRouter.php](https://gist.github.com/neo-nanikaka/c2e2f7742b311696d50b)

@@ -16,7 +16,7 @@ draft: false
 
 最近のアップデートでDocker CLIがDocker Composeをサポートするようになったらしい。
 
-cf. [docs.docker.com - Compose CLI Tech Preview](https://docs.docker.com/compose/cli-command/)
+cf. [docs.docker.com - Compose CLI Tech Preview（アーカイブ）](https://web.archive.org/web/20210415094614/https://docs.docker.com/compose/cli-command/)
 
 Tech Previewなのでまだプロダクションでの利用推奨されていないとのこと。
 

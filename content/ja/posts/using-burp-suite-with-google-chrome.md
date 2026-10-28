@@ -61,4 +61,4 @@ Chromeだとlocalhostをinterceptするには、proxy switchsharpのProfile Deta
 [Burp InterceptionがChromeのローカルホストで機能しない](https://stackoverflow.com/questions/55616614/burp-interception-does-not-work-for-localhost-in-chrome)
 
 # 参考
-- [Burp Suiteを使うためのGoogle Chromeでの設定の仕方](https://taiyakon.com/2018/05/burp-suite-macosgoogle-chrome.html)
+- [Burp Suiteを使うためのGoogle Chromeでの設定の仕方（アーカイブ）](https://web.archive.org/web/20260516104509/https://taiyakon.com/2018/05/burp-suite-macosgoogle-chrome.html)

@@ -29,7 +29,7 @@ A summary of container technology. Experimenting with creating and interacting w
 
 2000: [FreeBSD jails](https://www.freebsd.org/doc/handbook/jails.html) appeared in FreeBSD 4.0, an evolution of chroot.
 
-2001: Technology forming the basis of Linux containers appeared in Linux through the [VServer Project](http://linux-vserver.org/Welcome_to_Linux-VServer.org).
+2001: Technology forming the basis of Linux containers appeared in Linux through the [VServer Project](https://web.archive.org/web/20201226182024/http://linux-vserver.org/Welcome_to_Linux-VServer.org).
 
 2004: LXC 1.0 released. [Linux Containers](https://linuxcontainers.org/)
 

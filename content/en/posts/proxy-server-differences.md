@@ -53,9 +53,9 @@ The difference from Forward Proxy and Reverse Proxy is that a proxy acts as an i
 Forward Proxy, Reverse Proxy, and Gateway servers differ in their placement and whether they act as intermediaries or controllers of communication.
 
 # References
-- [What are the differences between Reverse Proxy and Forward Proxy?](https://laplace-daemon.com/reverse-forward-proxy/)
-- [What are the differences between Proxy and Gateway?](https://laplace-daemon.com/difference-between-proxy-and-gateway/)
-- [What are the differences between Reverse Proxy and Forward Proxy?](https://laplace-daemon.com/reverse-forward-proxy/)
+- [What are the differences between Reverse Proxy and Forward Proxy? (archived)](https://web.archive.org/web/20260611190134/https://laplace-daemon.com/reverse-forward-proxy/)
+- [What are the differences between Proxy and Gateway? (archived)](https://web.archive.org/web/20260611184739/https://laplace-daemon.com/difference-between-proxy-and-gateway/)
+- [What are the differences between Reverse Proxy and Forward Proxy? (archived)](https://web.archive.org/web/20260611190134/https://laplace-daemon.com/reverse-forward-proxy/)
 - [What are the differences between Reverse Proxy and Proxy? How do each server work?](https://eset-info.canon-its.jp/malware_info/special/detail/201021.html)
 - [What is a Proxy? Explanation of Forward Proxy and Reverse Proxy mechanisms](https://siteguard.jp-secure.com/blog/reverse-proxy)
 - [A simple explanation of the differences between Reverse Proxy and Forward Proxy](https://log.dot-co.co.jp/reverseproxy-apache/)

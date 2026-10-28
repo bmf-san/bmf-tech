@@ -55,4 +55,4 @@ To intercept localhost with Chrome, add `<-loopback>` in proxy switchsharp's Pro
 [Burp Interception does not work for localhost in Chrome](https://stackoverflow.com/questions/55616614/burp-interception-does-not-work-for-localhost-in-chrome)
 
 # References
-- [How to configure Google Chrome to use Burp Suite](https://taiyakon.com/2018/05/burp-suite-macosgoogle-chrome.html)
+- [How to configure Google Chrome to use Burp Suite (archived)](https://web.archive.org/web/20260516104509/https://taiyakon.com/2018/05/burp-suite-macosgoogle-chrome.html)
