@@ -118,7 +118,7 @@ sequenceDiagram
 
 ## Sender constraints and Resource Indicators
 
-Even between services, binding a bearer to its sender with **sender constraints (mTLS / DPoP)** and narrowing the audience (`aud`) with **Resource Indicators** works well. For details, see "[What are Sender-Constrained Tokens?](/en/posts/sender-constrained-tokens-mtls-dpop/)". Because mTLS is easy to run in the infrastructure between services, it becomes the first choice there.
+Even between services, binding a bearer to its sender with **sender constraints (mTLS / DPoP)** and narrowing the audience (`aud`) with **Resource Indicators** works well. For details, see "[What are Sender-Constrained Tokens?](/posts/sender-constrained-tokens-mtls-dpop/)". Because mTLS is easy to run in the infrastructure between services, it becomes the first choice there.
 
 # Layer C: the identity foundation
 

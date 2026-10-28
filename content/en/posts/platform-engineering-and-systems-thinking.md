@@ -17,7 +17,7 @@ draft: false
 
 Platform engineering and systems thinking seem to share a lot of ground. This post is my attempt to put that hunch into words.
 
-The core vocabulary of systems thinking lives in [Systems Thinking Basics](/en/posts/systems-thinking-basics). For the definition of platform engineering itself and the shape of an Internal Developer Platform (IDP), see [What is Platform Engineering? Building Internal Developer Platforms](/en/posts/platform-engineering-explained). This post applies the systems-thinking vocabulary — stocks, flows, delays, archetypes, leverage points — to platform engineering.
+The core vocabulary of systems thinking lives in [Systems Thinking Basics](/posts/systems-thinking-basics/). For the definition of platform engineering itself and the shape of an Internal Developer Platform (IDP), see [What is Platform Engineering? Building Internal Developer Platforms](/posts/platform-engineering-explained/). This post applies the systems-thinking vocabulary — stocks, flows, delays, archetypes, leverage points — to platform engineering.
 
 ## Outline of the Affinity
 

@@ -63,7 +63,7 @@ DCR is convenient, but "anyone can register" can itself be a risk.
 
 - **Open registration**: if anyone can register a client without authentication, attackers can create clients freely. Registration is often restricted with an initial access token.
 - **redirect_uri validation**: treating the `redirect_uri` of dynamically registered clients loosely becomes an entry point for token hijacking. Require exact matching (RFC 9700).
-- **Relationship to the Mix-Up attack**: an attacker may register a client dynamically at their own AS, gaining a foothold for a Mix-Up attack. Clients that handle several ASes need the `iss` countermeasure (see "[What is OAuth 2.1?](/en/posts/oauth-2-1-security-bcp/)").
+- **Relationship to the Mix-Up attack**: an attacker may register a client dynamically at their own AS, gaining a foothold for a Mix-Up attack. Clients that handle several ASes need the `iss` countermeasure (see "[What is OAuth 2.1?](/posts/oauth-2-1-security-bcp/)").
 
 # Summary
 

@@ -8,7 +8,7 @@ categories:
 tags:
   - Book Review
   - DB
-  - sql
+  - SQL
 description: "A staged reading list of 10 books for learning databases, from SQL basics to design and operations: SQL basics, deeper SQL, design, PostgreSQL, and distributed data. Each entry links to its full review."
 translation_key: database-recommended-books
 recommended_books:

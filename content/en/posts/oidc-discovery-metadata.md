@@ -92,7 +92,7 @@ graph LR
     RS -->|select key by kid and verify signature| Verify[JWT verification]
 ```
 
-Each key has a `kid` (Key ID), which the verifier matches against the JWT header's `kid` to select the right key. This lets the AS rotate keys without downtime by publishing old and new keys in parallel. For details on JWK/JWKS, see "[What is JOSE? An Overview of JWT, JWS, JWE, JWK, and JWA](/en/posts/jose-overview/)".
+Each key has a `kid` (Key ID), which the verifier matches against the JWT header's `kid` to select the right key. This lets the AS rotate keys without downtime by publishing old and new keys in parallel. For details on JWK/JWKS, see "[What is JOSE? An Overview of JWT, JWS, JWE, JWK, and JWA](/posts/jose-overview/)".
 
 # Security benefits of metadata
 

@@ -162,7 +162,7 @@ func (g *GitDiffEngine) Detect(manifest *model.BuildManifest) (*model.ChangeSet,
 
 `config.yaml`自体もビルドごとにハッシュされており、変更を検知すると自動的にキャッシュをクリアしてフルビルドに切り替わる。`--full`フラグで明示的に強制できる。
 
-キャッシュは `.gohan/cache/manifest.json` に保存される。
+キャッシュは`.gohan/cache/manifest.json`に保存される。
 
 ```text
 .gohan/
@@ -250,8 +250,8 @@ sequenceDiagram
 
 - **Markdown + Front Matter** — GFM (GitHub Flavored Markdown) + YAMLメタデータ対応。
 - **タクソノミー** — タグ・カテゴリーページを自動生成。
-- **Atomフィード / サイトマップ** — `atom.xml`・`sitemap.xml` を自動生成。
-- **カスタマイズ可能なテーマ** — Go `html/template` による完全制御。
+- **Atomフィード / サイトマップ** — `atom.xml`・`sitemap.xml`を自動生成。
+- **カスタマイズ可能なテーマ** — Go `html/template`による完全制御。
 - **i18n** — `content/en/`と`content/ja/`のようなロケールミラーディレクトリ構造。ロケール切り替えリンクを自動生成。
 - **シンタックスハイライト** — Chromaによるサーバーサイドレンダリング。クライアントサイドJavaScript不要。
 - **Mermaid図** — ビルド時にSVG変換またはクライアントサイドレンダリング用の`<pre class="mermaid">`として出力。
@@ -367,11 +367,11 @@ gohan serve
 
 | ガイド | 内容 |
 |---|---|
-| [Getting Started](https://github.com/bmf-san/gohan/blob/main/docs/guide/getting-started.ja.md) | インストール、最初のサイト作成、ビルド、プレビュー |
-| [Configuration](https://github.com/bmf-san/gohan/blob/main/docs/guide/configuration.ja.md) | `config.yaml` の全フィールドと Front Matter |
-| [Templates](https://github.com/bmf-san/gohan/blob/main/docs/guide/templates.ja.md) | テーマテンプレート・変数・組み込み関数 |
-| [Taxonomy](https://github.com/bmf-san/gohan/blob/main/docs/guide/taxonomy.ja.md) | タグ・カテゴリー・アーカイブページ |
-| [CLI リファレンス](https://github.com/bmf-san/gohan/blob/main/docs/guide/cli.ja.md) | 全コマンドとフラグ |
+| [Getting Started](https://github.com/bmf-san/gohan/blob/main/docs/content/ja/guide/getting-started.md) | インストール、最初のサイト作成、ビルド、プレビュー |
+| [Configuration](https://github.com/bmf-san/gohan/blob/main/docs/content/ja/guide/configuration.md) | `config.yaml`の全フィールドと Front Matter |
+| [Templates](https://github.com/bmf-san/gohan/blob/main/docs/content/ja/guide/templates.md) | テーマテンプレート・変数・組み込み関数 |
+| [Taxonomy](https://github.com/bmf-san/gohan/blob/main/docs/content/ja/guide/taxonomy.md) | タグ・カテゴリー・アーカイブページ |
+| [CLI リファレンス](https://github.com/bmf-san/gohan/blob/main/docs/content/ja/guide/cli.md) | 全コマンドとフラグ |
 
 ## まとめ
 
