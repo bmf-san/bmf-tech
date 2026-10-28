@@ -29,7 +29,7 @@ Dockerを使わずにコンテナをつくって触ってみる。
 
 2000年 [FreeBSD jails](https://www.freebsd.org/doc/handbook/jails.html)がFreeBSD 4.0に登場。chrootの発展系。
 
-2001年 [VServer Project](https://web.archive.org/web/20201226182024/http://linux-vserver.org/Welcome_to_Linux-VServer.org)を通じてLinuxにもLinuxコンテナのベースとなる技術が登場。
+2001年[VServer Project](https://web.archive.org/web/20201226182024/http://linux-vserver.org/Welcome_to_Linux-VServer.org)を通じてLinuxにもLinuxコンテナのベースとなる技術が登場。
 
 2004年、LXC1.0がリリース。
 [Linux Containers](https://linuxcontainers.org/)
