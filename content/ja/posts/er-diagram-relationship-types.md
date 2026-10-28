@@ -80,5 +80,5 @@ ER図のリレーションシップには3つの種類がある。
 書籍を読み漁ってもう少し深掘りしたい。
 
 # 参考
-- [ER図　リレーションシップを正しく使い分けよう](https://products.sint.co.jp/siob/blog/relationship)
+- [ER図　リレーションシップを正しく使い分けよう](https://products.sint.co.jp/ober/blog/relationship)
 - [若手プログラマー必読！５分で理解できるER図の書き方５ステップ（アーカイブ）](https://web.archive.org/web/20260419153128/https://it-koala.com/entity-relationship-diagram-1897)
