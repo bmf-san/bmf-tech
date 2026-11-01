@@ -8,75 +8,64 @@ categories:
 tags:
   - Lure Fishing
   - Rockfish
-description: "How to choose soft plastic worm size for horse mackerel (aji) light game, scorpionfish (kasago), and grouper, based on official product descriptions from Ecogear, Daiwa, and Jackall plus data on fish growth and diet. It covers the gap between inch labels and real length, matching worms to hooks, and adjusting size by how the fish bite."
+description: "How to choose soft plastic worm size for horse mackerel (aji) light game, scorpionfish (kasago), and grouper, based on tackle makers' official descriptions plus data on fish growth and diet. It covers the gap between inch labels and real length, matching worms to hooks, and adjusting size by how the fish bite."
 translation_key: worm-size-selection-guide
 draft: false
 ---
 
 # Introduction
-Worm size affects your catch, yet the guidelines feel vague. This post sorts out how to choose worm size for horse mackerel (*aji*) light game, scorpionfish (*kasago*, called *gashira* in the Kansai region), and groupers, using official product descriptions from tackle makers and data on fish growth and diet.
+Worm size affects your catch, yet the guidelines feel vague. This post sorts out how to choose worm size for horse mackerel (*aji*) light game, scorpionfish (*kasago*, called *gashira* in the Kansai region), and groupers, using tackle makers' official descriptions and data on fish growth and diet.
 
 The [Rockfish Field Guide](/posts/rockfish-worm-field-guide/) covers worm types such as shads and craws. This post focuses on size.
 
 # The Short Answer
-- For aji and kasago light game, build around worms of about 2 inches. Ecogear calls its 2-inch aji worm "the basic" and its 2-inch kasago worm a "pilot lure."
-- An inch label works more like a product name than a measurement. Two worms labeled "2 inches" can measure 41 mm and 65 mm.
+- For aji and kasago light game, build around worms of about 2 inches. Makers' descriptions also treat 2 inches as the base size for aji and as the first size to throw for kasago.
+- An inch label does not always match the real length. Two worms labeled "2 inches" can measure 41 mm and 65 mm.
 - Size up or down based on three factors: the fish's size and food, the hook size, and how you want the worm to sink and fly.
 - Large worms do not belong to rockfish alone. Makers sell aji worms of 3 inches and up for aji over 30 cm. Grouper worms mostly run 3 to 4.5 inches.
 - When nothing bites at all, change where you cast before changing size. Adjust size once you know fish are there.
 
 # Inch Labels and Real Length
-One inch equals 25.4 mm, so 2 inches works out to 50.8 mm. A maker's inch label, though, works more like a product name and can differ from the published length.
+One inch equals 25.4 mm, so 2 inches works out to 50.8 mm. A maker's inch label, though, can differ from the published length. The table shows inch labels and published lengths from a single maker.
 
-| Product | Label | Published length |
+| Label | Calculated length | Published lengths |
 | --- | --- | --- |
-| Ecogear Aji Shokunin Aji Must | 2 in | 49 mm |
-| Ecogear Aji Shokunin Aji Must | 2.4 in | 62 mm |
-| Ecogear Aji Shokunin Aji Must LB | 3.3 in | 84 mm |
-| Ecogear Kasago Shokunin Rock Max | 2 in | 41 mm |
-| Ecogear Kasago Shokunin Rock Claw | 2 in | 65 mm |
-| Ecogear Kasago Shokunin Mini Tank | 1-1/2 in | 37 mm |
-| Ecogear Kijihata Grub | 3 in | 56 mm |
-| Ecogear Kijihata Grub | 4.5 in | 88 mm |
+| 1.5 in | 38.1 mm | 37 mm |
+| 2 in | 50.8 mm | 41 mm, 49 mm, 60 mm, 65 mm |
+| 3 in | 76.2 mm | 56 mm, 74 mm |
+| 4 in | 101.6 mm | 76 mm, 110 mm |
 
-Within the Kasago Shokunin series, the 2-inch Rock Max measures 41 mm and the 2-inch Rock Claw measures 65 mm, a difference of more than 1.5 times. Shapes with arms or legs, such as craws and hogs, tend to stretch the gap between label and length.
+From the same maker, a 2-inch worm can measure 41 mm or 65 mm, a difference of more than 1.5 times. Shapes with arms or legs, such as craws and hogs, tend to stretch the gap between label and length.
 
 When you compare sizes, look at the published length and the shape rather than the inch label. Many makers do not publish a length; in that case, read the label as small or large within the same series.
 
 # Size Guidelines by Target Fish
 ## Aji (Horse Mackerel)
-Makers describe each aji worm size as follows.
+Makers' descriptions place each aji worm size as follows.
 
-| Size range | Products and descriptions |
+| Size range | Role in makers' descriptions |
 | --- | --- |
-| About 1.5 in | Jackall suggests 1.5 inches if the fish you catch run up to 15 cm. Daiwa's 1.5-inch Aji Hunter Worm Ring imitates plankton, and Ecogear's 1.6-inch Aji Must suits small aji and active fish |
-| About 2 in | Ecogear calls the 2-inch Aji Must "the basic" and the core of a rotation. Jackall suggests 2 inches for fish over 15 cm. Daiwa's 2-inch version imitates small baitfish |
-| 2.4 to 2.5 in | Ecogear's 2.4-inch Aji Must uses its length to slow the fall and show the worm slowly to inactive fish. Jackall's Pekering line pitches 2 inches for numbers of small aji and 2.5 inches as "a basic size for any use" |
-| 3 in and up | Ecogear's Aji Must LB (3.3 in) targets aji over 30 cm. Jackall's 3.0-inch Pekering targets medium to large aji, though Jackall says it also works on 20 cm fish |
+| About 1.5 in | When the aji you catch run up to 15 cm. When you imitate plankton. For small aji and active fish |
+| About 2 in | The base size and the core of a rotation. For aji over 15 cm. When you imitate small baitfish |
+| 2.4 to 2.5 in | The length slows the fall to show the worm slowly to inactive fish. Some describe it as an all-purpose size |
+| 3 in and up | For aji over 30 cm. Some say it also works on 20 cm fish |
 
 Aji eat bigger food as they grow. Juveniles of about 1 to 5 cm feed almost entirely on copepods and shift to wider prey as they grow (Hirota et al. 2004). In the East China Sea, fish made up a larger share of the diet in bigger aji (Xu et al. 2024). The idea of small worms for small aji and larger worms for large aji fits this shift in diet.
 
 ## Kasago (Scorpionfish)
-Ecogear's Kasago Shokunin series consists of four worms from 1-1/2 to 2 inches.
+Worms made for kasago mostly carry 1.5- to 2-inch labels. Within that range, makers split roles by shape and real length.
 
-| Product | Label and length | Maker's description |
-| --- | --- | --- |
-| Rock Max | 2 in (41 mm) | Versatile, the pilot lure for kasago |
-| Bug Ants | 2 in (60 mm) | For inactive fish holding deep inside structure |
-| Rock Claw | 2 in (65 mm) | The strongest appeal in the series |
-| Mini Tank | 1-1/2 in (37 mm) | The smallest in the series, for pressured kasago |
+| Shape and size | Role in makers' descriptions |
+| --- | --- |
+| Shorter, all-round shapes such as a curly tail | The first worm to throw to check for fish |
+| Shapes that slip through cover | Inactive fish holding deep in structure |
+| Longer craws with large parts | Stronger appeal |
+| The smallest, 1.5-inch label | Pressured fish |
 
 Kasago grow slowly. According to the Tokyo Metropolitan Islands Area Research and Development Center of Agriculture, Forestry and Fisheries, they reach about 6 cm at one year, 13 cm at two, and 18 cm at three. Males pass 20 cm at four years, and females at six. With a top size of around 30 cm, light game for kasago centers on worms of about 2 inches.
 
 ## Groupers
-Grouper worms run a size or more above kasago worms.
-
-| Product | Size | Maker's description |
-| --- | --- | --- |
-| Daiwa HRF GR Craw | 3.5 in | Built for groupers. Recommended hook: offset #1/0 |
-| Ecogear Kijihata Hog | 3 in (74 mm) | Shaped after crustaceans, a main food of groupers |
-| Ecogear Kijihata Grub | 3, 4, and 4.5 in | 4 inches for finesse, 4.5 inches for heavy sinkers and searching far and deep |
-| Ecogear Katakuchi Minnow | 4 in (110 mm) | "A new attacking move" against groupers |
+Grouper worms mostly run 3 to 4.5 inches, a size or more above kasago worms. In makers' descriptions, 4 inches suits finesse, and 4.5 inches suits heavy sinkers and searching far and deep. Most imitate crustaceans or small fish, the main food of groupers.
 
 # Three Factors That Decide Size
 ## 1. Fish Size and Food
@@ -87,7 +76,7 @@ Match the size of the fish you catch and the size of what they eat.
 - The baseline shifts with the species. The same 2-inch worm counts as standard for aji and small for groupers.
 
 ## 2. Hook Size
-Pair worm length with hook size rather than jig head weight. Daiwa lists these recommended worm sizes for its Gekka Bijin aji jig heads.
+Pair worm length with hook size rather than jig head weight. One maker lists these recommended worm sizes for its aji jig heads.
 
 | Hook size | Recommended worm size |
 | --- | --- |
@@ -95,15 +84,15 @@ Pair worm length with hook size rather than jig head weight. Daiwa lists these r
 | #10 | 1.5–2.0 in |
 | #8 | 1.8–2.2 in |
 
-Daiwa sells every hook size of this jig head in the same 0.5 to 2.5 g weights. Let the hook decide the worm length, and let depth and current decide the weight. Ecogear likewise recommends a #1 hook for the 3-inch Kijihata Grub, #1/0 for the 4-inch, and #2/0 for the 4.5-inch.
+The maker sells every hook size of this jig head in the same 0.5 to 2.5 g weights. Let the hook decide the worm length, and let depth and current decide the weight. For grouper worms too, one maker recommends a #1 hook for 3 inches, #1/0 for 4 inches, and #2/0 for 4.5 inches, scaling the hook with the worm.
 
 ## 3. How It Sinks and Flies
 Worm size also changes sink speed and casting distance.
 
-- A long worm sinks slowly because water resists it. Ecogear says the 2.4-inch Aji Must "uses its length to hold down the fall speed."
-- Pair a worm with high water resistance with a heavier sinker. Jackall recommends fairly heavy sinkers for its Chunk Craw 2.8 inch, which has large parts.
-- To search far and deep with a heavy sinker, a larger worm fits. Ecogear says the 4.5-inch Kijihata Grub works well with heavier weights and for searching farther and deeper.
-- For long casts with a light rig, a smaller worm with less air drag helps. In a Daiwa column, the angler picks a smaller worm for long free rig casts to cut air drag.
+- A long worm sinks slowly because water resists it. Makers also describe using length to hold down the fall speed.
+- Pair a worm with high water resistance with a heavier sinker. Makers recommend fairly heavy sinkers for worms with large parts.
+- To search far and deep with a heavy sinker, a larger worm fits. Makers describe the larger grouper sizes as effective with heavier weights and for searching farther and deeper.
+- For long casts with a light rig, a smaller worm with less air drag helps. Some anglers pick a smaller worm for long free rig casts to cut air drag.
 
 Deep water or fast current often calls for a heavy rig with a larger worm. Distance favors smaller worms, though, so a heavy rig does not always mean a large worm.
 
@@ -118,7 +107,7 @@ flowchart TD
     A -->|"Weak chases, or you want a slow show"| E["Go longer to slow the fall"]
 ```
 
-- Makers do describe sizing down for picky fish. For a rockfish worm, Jackall suggests building around 3 inches, sizing down when fish bite reluctantly, and sizing up to 3.8 inches when the fish stay small. Ecogear also recommends its smallest worm, the Mini Tank, for pressured kasago.
+- Makers do describe sizing down for picky fish. One suggests building rockfish worms around 3 inches, sizing down when fish bite reluctantly and sizing up when the fish stay small. Another recommends its smallest size for pressured kasago.
 - Going smaller when you get bites but no hookups works as a common rule of thumb on the water. Before you shrink the worm, check that its length falls within the recommended range for your hook size.
 - Change one thing at a time. If you change size and color together, you cannot tell which one worked.
 
@@ -144,21 +133,20 @@ Pick the smaller, core, and larger worms so that they differ in real length and 
 - [Spinning Reel Casting Guide](/posts/spinning-reel-casting-guide/)
 
 # References
-- [ecogear.jp - Aji Shokunin Aji Must (Japanese)](https://ecogear.jp/ecogear/aji_shokunin_aji_must/)
-- [ecogear.jp - Aji Shokunin Aji Must LB (Japanese)](https://ecogear.jp/ecogear/aji_shokunin_aji_must-lb/)
-- [ecogear.jp - Kasago Shokunin Rock Max (Japanese)](https://ecogear.jp/ecogear/kasago_shokunin_rock_max/)
-- [ecogear.jp - Kasago Shokunin Bug Ants (Japanese)](https://ecogear.jp/ecogear/kasago_shokunin_bug_ants/)
-- [ecogear.jp - Kasago Shokunin Rock Claw (Japanese)](https://ecogear.jp/ecogear/kasago_shokunin_rock_claw/)
-- [ecogear.jp - Kasago Shokunin Mini Tank (Japanese)](https://ecogear.jp/ecogear/kasago_shokunin_mini_tank/)
-- [ecogear.jp - Kijihata Hog (Japanese)](https://ecogear.jp/ecogear/kijihata_hog/)
-- [ecogear.jp - Kijihata Grub (Japanese)](https://ecogear.jp/ecogear/kijihata_grub/)
-- [ecogear.jp - Katakuchi Minnow (Japanese)](https://ecogear.jp/ecogear/katakuchi_minnow/)
-- [daiwa.com - Aji Hunter Worm Ring (Japanese)](https://www.daiwa.com/jp/product/u2rumzj)
-- [daiwa.com - Gekka Bijin Ajing Jig Head (Japanese)](https://www.daiwa.com/jp/product/w4snpkq)
-- [daiwa.com - HRF GR Craw (Japanese)](https://www.daiwa.com/jp/product/i0fm4z5)
-- [daiwa.com - HRF AGS column part 3, harbor greenling (Japanese)](https://www.daiwa.com/jp/column/hrf/d003)
-- [jackall.co.jp - Pekering (Japanese)](https://www.jackall.co.jp/saltwater/shore-casting/products/lure/azi/pekering/)
-- [jackall.co.jp - Pekering 3.0 inch in detail (Japanese)](https://www.jackall.co.jp/saltwater/shore-casting/column/p-3868/)
+- [ecogear.jp - Aji worms, 1.6 to 2.4 inches (Japanese)](https://ecogear.jp/ecogear/aji_shokunin_aji_must/)
+- [ecogear.jp - Worm for big aji, 3.3 inches (Japanese)](https://ecogear.jp/ecogear/aji_shokunin_aji_must-lb/)
+- [ecogear.jp - Kasago worm, 2 inches, 41 mm (Japanese)](https://ecogear.jp/ecogear/kasago_shokunin_rock_max/)
+- [ecogear.jp - Kasago worm, 2 inches, 60 mm (Japanese)](https://ecogear.jp/ecogear/kasago_shokunin_bug_ants/)
+- [ecogear.jp - Kasago worm, 2 inches, 65 mm (Japanese)](https://ecogear.jp/ecogear/kasago_shokunin_rock_claw/)
+- [ecogear.jp - Kasago worm, 1.5 inches, 37 mm (Japanese)](https://ecogear.jp/ecogear/kasago_shokunin_mini_tank/)
+- [ecogear.jp - Grouper worm, 3 inches, 74 mm (Japanese)](https://ecogear.jp/ecogear/kijihata_hog/)
+- [ecogear.jp - Grouper worms, 3, 4, and 4.5 inches (Japanese)](https://ecogear.jp/ecogear/kijihata_grub/)
+- [ecogear.jp - Grouper worm, 4 inches, 110 mm (Japanese)](https://ecogear.jp/ecogear/katakuchi_minnow/)
+- [daiwa.com - Aji worms, 1.5 and 2 inches (Japanese)](https://www.daiwa.com/jp/product/u2rumzj)
+- [daiwa.com - Recommended worm sizes for aji jig heads (Japanese)](https://www.daiwa.com/jp/product/w4snpkq)
+- [daiwa.com - Choosing a smaller worm for free rig casts (Japanese)](https://www.daiwa.com/jp/column/hrf/d003)
+- [jackall.co.jp - Aji worms, 2, 2.5, and 3 inches (Japanese)](https://www.jackall.co.jp/saltwater/shore-casting/products/lure/azi/pekering/)
+- [jackall.co.jp - A 3-inch aji worm explained (Japanese)](https://www.jackall.co.jp/saltwater/shore-casting/column/p-3868/)
 - [jackall.co.jp - Recommended worms for autumn rockfish (Japanese)](https://www.jackall.co.jp/saltwater/shore-casting/column/2022_11_kai/)
 - [begood-funegg.jackall.co.jp - Spring aji and mackerel lure guide (Japanese)](https://begood-funegg.jackall.co.jp/tsuri-report/article-052/)
 - [ifarc.metro.tokyo.lg.jp - Kasago, Tokyo Metropolitan Islands Area Research and Development Center (Japanese)](https://www.ifarc.metro.tokyo.lg.jp/archive/27,1065,55,227.html)
