@@ -172,27 +172,50 @@ The buoyancy itself stays small, though. Size 1 PE weighs about 0.022 g per mete
 When you fish a light lure on thick PE, drag rather than buoyancy causes the trouble: the lure flies short, sinks slowly, and makes the bottom hard to feel. Sinking PE lines also exist, with a dense core fiber that raises the specific gravity to 1.48.
 
 # How to Choose a Line
+## Order of Decisions
 Choose a line in this order.
 
 ```mermaid
 flowchart TD
     A["Decide the method and target fish"] --> B["Pick a rod whose rated lure weight covers your lures"]
-    B --> C["Choose material and size within the rod's rated line range"]
-    C --> D{"PE line?"}
-    D -->|"Yes"| E["Tie a leader suited to rocks and fish teeth"]
-    D -->|"No"| F["Check the knot strength"]
-    E --> F
+    B --> C["Choose a material that suits the method"]
+    C --> D["Choose a size within the rod's rated line range"]
+    D --> E{"Does the material need its weakness covered?"}
+    E -->|"Yes"| F["Tie a leader"]
+    E -->|"No"| G["Tie the main line straight to the lure"]
 ```
 
+## Material
+The four main line materials are nylon, fluorocarbon, ester (polyester), and PE. Line makers' published figures and explanations come down to the following.
+
+| Material | Specific gravity | Stretch | Abrasion resistance | Strengths | Weaknesses | Typical uses |
+| --- | --- | --- | --- | --- | --- | --- |
+| Nylon | 1.14 | 20–40% | Average | Supple and easy to handle; stretch absorbs shock | Absorbs water and degrades; stretch lowers sensitivity | Stream trout, rock-shore fishing, and most other fishing |
+| Fluorocarbon | 1.78 | 23–30% | High | Resists abrasion; sinks | Stiff; holds coil memory | Bass around cover, rockfish, leaders |
+| Ester | 1.35–1.38 | 17–20% | High | Low stretch and high sensitivity; sinks light lures | Breaks under sudden force; stiff and takes practice | Horse mackerel with light jig heads, area trout with light spoons |
+| PE | 0.97 | 3–8% | Low | Strongest at a given size; low stretch and high sensitivity | Weak against abrasion; floats and catches wind and current | Long casts and big fish, such as sea bass and shore jigging |
+
+From this table, pick a material as follows.
+
+- Around rocks and cover, pick fluorocarbon for its abrasion resistance.
+- To sink a light lure and hold it at a depth, pick fluorocarbon or ester for their higher specific gravity.
+- For long casts or big fish that call for a thin, strong line, pick PE.
+- When ease of handling and fewer lost fish come first, pick nylon for its suppleness and stretch.
+
+Each material also has a weakness. PE is weak against abrasion, and ester breaks under sudden force. A leader covers for this: tie fluorocarbon for abrasion resistance or nylon for its shock-absorbing stretch to the end.
+
+## Size
 When you settle on a size:
 
 - Around rocks or when targeting big fish, choose the thicker end of the rated range.
 - When distance or light lures come first, choose the thinner end.
 - PE strength differs between products at the same size, so compare the lb or kg ratings rather than the size.
+- Ester is a little weaker than nylon at the same size, so do not expect nylon strength from the size alone.
 
 # Summary
 - The size number defines thickness (weight for PE), so check strength on each maker's label. "Size 1 = 4 lb" for nylon and fluorocarbon serves as a rule of thumb.
 - The rod's rated lure weight decides how heavy a lure you can cast. Choose the line within the rod's rated line range.
+- Choose the material for the method by its abrasion resistance, specific gravity, and stretch, and cover its weakness with a leader.
 - "lb rating = heaviest lure in grams" roughly fits trout and bass rods, and "PE size × 25 to 30" roughly fits metal jigs on shore jigging rods. The ratios differ for other fishing styles.
 - A normal cast loads the line with a few to a few dozen times the lure's weight. The strength margin covers failed releases, knots, damage, and fighting fish.
 - Light lures on thick PE suffer mainly from wind and current drag on the thicker line, not from buoyancy.
