@@ -36,10 +36,10 @@ Two principles run through my setup:
 # Tackle at a Glance
 | Fishing | Rod | Reel | Line |
 | --- | --- | --- | --- |
-| Light game | 23 Soare BB S76UL-S | 23 Sedona C2000S | Dangan Braid Light Game X4 |
+| Light game | 23 Soare BB S76UL-S | 23 Sedona C2000S | Dangan Braid Light Game X4, size 0.3 |
 | Hard rockfish | 25 Salty Advance Shore Model Rockfish S83MH | 16 Aernos C3000 | Super X-wire 4, size 1.2 |
 
-I also own a telescopic rod, the 23 Freegame S76UL.
+Neither setup uses a leader; I tie the PE line straight to the lure. I also own a telescopic rod, the 23 Freegame S76UL.
 
 # Light Game Tackle
 ## Rod: Shimano 23 Soare BB S76UL-S
@@ -69,7 +69,7 @@ I bought it for light game.
 ## Line: Major Craft Dangan Braid Light Game X4
 [Major Craft Dangan Braid Light Game X4 (150 m)](https://link.amazon/B0iq8Ocij)
 
-A 4-strand PE line made for light game. I spool it on the Sedona.
+A 4-strand PE line made for light game. I spool size 0.3 (6 lb) on the Sedona, which fits within the rod's rated line (PE 0.1 to 0.4).
 
 ## Jig Heads: Daiwa Gekkabijin Jighead SS
 I use three weight and hook combinations. To catch more fish, I stick to small hooks, #10 and #8.
@@ -168,11 +168,13 @@ I also wanted a 21 g option, so I buy the Slim Sinker CB, a long, thin sinker fo
 | Lure weight | 1–7 g |
 | Line | PE 0.3–0.8 |
 
-A telescopic all-round rod that packs down short.
+A telescopic all-round rod that packs down short. I take it along for a quick bit of fishing when I go out without the car.
 
 # Related Posts
 - [Rockfish Field Guide](/posts/rockfish-worm-field-guide/)
 - [Spinning Reel Casting Guide](/posts/spinning-reel-casting-guide/)
+- [Line Size and Castable Lure Weight](/posts/fishing-line-size-lure-weight/)
+- [How to Choose Soft Plastic Worm Size](/posts/worm-size-selection-guide/)
 
 # References
 - [fish.shimano.com - Soare BB (Japanese)](https://fish.shimano.com/ja-JP/product/rod/lightsalt/a075f00003xgh7lqaq.html)
