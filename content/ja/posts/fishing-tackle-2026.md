@@ -173,7 +173,7 @@ draft: false
 # 関連記事
 - [ロックフィッシュ実釣ガイド](/ja/posts/rockfish-worm-field-guide/)
 - [スピニングリールのキャスティング入門](/ja/posts/spinning-reel-casting-guide/)
-- [ライン号数と投げられるルアー重量の関係](/ja/posts/fishing-line-size-lure-weight/)
+- [釣りラインの選び方](/ja/posts/fishing-line-selection-guide
 - [ワームサイズの選び方](/ja/posts/worm-size-selection-guide/)
 
 # 参考
