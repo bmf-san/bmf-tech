@@ -1,5 +1,5 @@
 ---
-title: "釣りラインの選び方｜素材（ナイロン・フロロ・エステル・PE）と号数の決め方"
+title: "ラインの選び方ガイド｜ナイロン・フロロ・エステル・PEの特徴と号数の決め方"
 slug: fishing-line-selection-guide
 date: 2026-11-01
 author: bmf-san

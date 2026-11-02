@@ -1,5 +1,5 @@
 ---
-title: "How to Choose Fishing Line: Material (Nylon, Fluorocarbon, Ester, PE) and Size"
+title: "Fishing Line Selection Guide: Nylon, Fluorocarbon, Ester, and PE Traits and How to Choose a Size"
 slug: fishing-line-selection-guide
 date: 2026-11-01
 author: bmf-san
