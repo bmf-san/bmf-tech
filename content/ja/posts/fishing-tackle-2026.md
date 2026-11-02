@@ -173,8 +173,8 @@ draft: false
 # 関連記事
 - [ロックフィッシュ実釣ガイド](/ja/posts/rockfish-worm-field-guide/)
 - [スピニングリールのキャスティング入門](/ja/posts/spinning-reel-casting-guide/)
-- [釣りラインの選び方](/ja/posts/fishing-line-selection-guide/)
-- [ワームサイズの選び方](/ja/posts/worm-size-selection-guide/)
+- [ラインの選び方ガイド](/ja/posts/fishing-line-selection-guide/)
+- [ワームサイズの選び方ガイド](/ja/posts/worm-size-selection-guide/)
 
 # 参考
 - [fish.shimano.com - ソアレBB](https://fish.shimano.com/ja-JP/product/rod/lightsalt/a075f00003xgh7lqaq.html)

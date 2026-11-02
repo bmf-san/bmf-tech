@@ -173,8 +173,8 @@ A telescopic all-round rod that packs down short. I take it along for a quick bi
 # Related Posts
 - [Rockfish Field Guide](/posts/rockfish-worm-field-guide/)
 - [Spinning Reel Casting Guide](/posts/spinning-reel-casting-guide/)
-- [How to Choose Fishing Line](/posts/fishing-line-selection-guide/)
-- [How to Choose Soft Plastic Worm Size](/posts/worm-size-selection-guide/)
+- [Fishing Line Selection Guide](/posts/fishing-line-selection-guide/)
+- [Soft Plastic Worm Size Guide](/posts/worm-size-selection-guide/)
 
 # References
 - [fish.shimano.com - Soare BB (Japanese)](https://fish.shimano.com/ja-JP/product/rod/lightsalt/a075f00003xgh7lqaq.html)
