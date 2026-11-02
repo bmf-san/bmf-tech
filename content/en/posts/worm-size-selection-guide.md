@@ -21,7 +21,7 @@ The [Rockfish Field Guide](/posts/rockfish-worm-field-guide/) covers worm types 
 - An inch label does not always match the real length. Two worms labeled "2 inches" can measure 41 mm and 65 mm.
 - Decide size by three factors: the fish's size and food, the hook size, and how you want the worm to sink and fly.
 - Match worm length to hook size, and let depth and current decide the rig weight.
-- Bring a base size plus one smaller and one larger size, and adjust among them.
+- Settle on one base size, and adjust with one smaller and one larger size.
 - When nothing bites at all, change where you cast before changing size. Adjust size once you know fish are there.
 
 # Inch Labels and Real Length
@@ -85,21 +85,27 @@ flowchart TD
 - Change one thing at a time. If you change size and color together, you cannot tell which one worked.
 
 # Sizes to Bring
-Bring the base size for your fishing as the core, plus one smaller and one larger size. With those three, you can try the adjustments above on the water.
+Settle on one base size, then bring one smaller and one larger size as well. With those three, you can try the adjustments above on the water.
+
+The base size is the worm you throw first and the starting point you size up or down from as you watch how fish respond. Use the three factors above to pick one that meets these conditions:
+
+- Its size comes close to the target fish and the food they eat.
+- It falls within the recommended range for your hook.
+- It suits your rig weight and how far you need to cast.
+
+If these conditions still leave several candidates, pick the size that the maker positions as its basic or standard size among worms for your target fish.
 
 | Role | When to use |
 | --- | --- |
 | Smaller | Picky fish. Bites but no hookups. Fish feeding on small food |
-| Core | The first worm to throw |
+| Base | The first worm to throw, and the starting point for sizing up or down |
 | Larger | Fish stay small. Targeting big fish. Searching far and deep with a heavy rig. Slowing the fall |
 
-Pick the core size from the size that the package or the maker's description treats as the base.
-
-Pick the smaller, core, and larger worms so that they differ in real length and shape, not just in their labels. Two worms labeled 2 inches can differ a lot in real length.
+Pick the smaller, base, and larger worms so that they differ in real length and shape, not just in their labels. Two worms labeled 2 inches can differ a lot in real length.
 
 # Summary
 - Inch labels can differ from real length. Compare sizes by real length and shape.
-- Bring a base size plus one smaller and one larger size.
+- Settle on one base size, and bring one smaller and one larger size.
 - Decide size by fish size and food, hook size, and how the worm sinks and flies. Match worm length to hook size.
 - When nothing bites, move first. Once you know fish are there, go smaller for picky fish and larger when the fish stay small.
 
