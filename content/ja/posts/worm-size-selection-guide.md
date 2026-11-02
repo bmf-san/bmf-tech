@@ -1,5 +1,5 @@
 ---
-title: "ワームサイズの選び方｜インチ表記の注意点とサイズを決める3つの軸"
+title: "ワームサイズの選び方ガイド｜インチ表記の注意点とサイズを決める3つの軸"
 slug: worm-size-selection-guide
 date: 2026-11-01
 author: bmf-san

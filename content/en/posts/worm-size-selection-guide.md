@@ -1,5 +1,5 @@
 ---
-title: "How to Choose Soft Plastic Worm Size: The Inch Label Trap and Three Factors That Decide Size"
+title: "Soft Plastic Worm Size Guide: Inch Labels and Three Factors That Decide Size"
 slug: worm-size-selection-guide
 date: 2026-11-01
 author: bmf-san
