@@ -49,15 +49,35 @@ Match the size of the fish you catch and the size of what they eat.
 What fish eat can change as they grow. Juvenile horse mackerel of about 1 to 5 cm, for example, feed almost entirely on copepods and shift to wider prey as they grow (Hirota et al. 2004). In the East China Sea, fish made up a larger share of the diet in bigger horse mackerel (Xu et al. 2024).
 
 ## 2. Hook Size
-Pair worm length with hook size rather than jig head weight. One maker lists these recommended worm sizes for its light game jig heads.
+Pair worm length with hook size rather than jig head weight. Putting together the pairings that tackle makers publish gives the following rule of thumb.
 
-| Hook size | Recommended worm size |
+### Jig Heads
+| Hook size | Worm length (guide) |
 | --- | --- |
-| #12 | 0.9–1.5 in |
-| #10 | 1.5–2.0 in |
-| #8 | 1.8–2.2 in |
+| #14–#12 | 1.5 in or less |
+| #10–#8 | 1–2 in |
+| #6–#5 | About 2 in |
+| #4–#2 | 2.5–3 in |
+| #1–#1/0 | 3–4 in |
+| #2/0–#3/0 | 4–5 in |
 
-The maker sells every hook size of this jig head in the same 0.5 to 2.5 g weights. Let the hook decide the worm length, and let depth and current decide the weight. For larger worms too, one maker recommends a #1 hook for 3 inches, #1/0 for 4 inches, and #2/0 for 4.5 inches, scaling the hook with the worm.
+### Offset Hooks (Texas Rigs, Free Rigs, and Similar)
+| Hook size | Worm length (guide) |
+| --- | --- |
+| #2–#1 | About 3 in |
+| #1/0 | 3–4 in |
+| #2/0–#3/0 | 3.5–4.5 in |
+| #4/0–#5/0 | 4–5 in |
+
+Treat these tables as a rough guide. Depending on the maker or product, the advice can differ by one or two hook sizes.
+
+- For the same length, some makers recommend a hook one or two sizes larger for thick worms or worms with many parts.
+- Some jig heads move up one hook size as the head gets heavier, for the same worm length.
+- The offset hook guide includes recommendations for bass worms.
+
+If your worm or hook lists a recommended size, follow that first.
+
+As for weight, one light game jig head comes in the same 0.5 to 2.5 g weights at every hook size. Let the hook decide the worm length, and let depth and current decide the weight.
 
 ## 3. How It Sinks and Flies
 Worm size also changes sink speed and casting distance.
@@ -125,6 +145,15 @@ Pick the smaller, base, and larger worms so that they differ in real length and 
 - [ecogear.jp - Grouper worm, 4 inches, 110 mm (Japanese)](https://ecogear.jp/ecogear/katakuchi_minnow/)
 - [daiwa.com - Aji worms, 1.5 and 2 inches (Japanese)](https://www.daiwa.com/jp/product/u2rumzj)
 - [daiwa.com - Recommended worm sizes for aji jig heads (Japanese)](https://www.daiwa.com/jp/product/w4snpkq)
+- [daiwa.com - Jig head for worms of 1.5 inches or less (Japanese)](https://www.daiwa.com/jp/product/ctgo6m8)
+- [daiwa.com - Jig head with a #2 hook for 2.5-inch worms (Japanese)](https://www.daiwa.com/jp/product/2pepejt)
+- [owner.co.jp - Jig head for 1-inch worms (Japanese)](https://www.owner.co.jp/search/33476/)
+- [owner.co.jp - Jig head for 2-inch worms (Japanese)](https://www.owner.co.jp/search/33482/)
+- [owner.co.jp - Jig head for 3-inch worms (Japanese)](https://www.owner.co.jp/search/33483/)
+- [ecogear.jp - Jig head matched to 4- to 5-inch worms (Japanese)](https://ecogear.jp/ecogear/surf_head/)
+- [hayabusa.co.jp - Offset hook sizes for craw and hog worms (Japanese)](https://www.hayabusa.co.jp/bass/column/worm-guide/)
+- [hayabusa.co.jp - Offset hook sizes for shad worms (Japanese)](https://www.hayabusa.co.jp/bass/column/worm-guide2/)
+- [hayabusa.co.jp - Offset hook sizes for straight worms (Japanese)](https://www.hayabusa.co.jp/bass/column/worm-guide3/)
 - [daiwa.com - Choosing a smaller worm for free rig casts (Japanese)](https://www.daiwa.com/jp/column/hrf/d003)
 - [jackall.co.jp - Aji worms, 2, 2.5, and 3 inches (Japanese)](https://www.jackall.co.jp/saltwater/shore-casting/products/lure/azi/pekering/)
 - [jackall.co.jp - Recommended worms for autumn rockfish (Japanese)](https://www.jackall.co.jp/saltwater/shore-casting/column/2022_11_kai/)
