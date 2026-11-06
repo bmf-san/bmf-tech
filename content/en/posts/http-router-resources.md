@@ -66,18 +66,18 @@ A list of materials referenced in the development of the HTTP Router.
 # Articles Written
 Articles posted on [bmf-tech.com](https://bmf-tech.com/).
 
-- [Creating URL Routing Episode 1](https://bmf-tech.com/posts/URL%e3%83%ab%e3%83%bc%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0%e3%82%92%e3%81%a4%e3%81%8f%e3%82%8b%e3%80%80%e3%82%a8%e3%83%94%e3%82%bd%e3%83%bc%e3%83%891)
-- [Creating URL Routing Episode 2](https://bmf-tech.com/posts/URL%e3%83%ab%e3%83%bc%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0%e3%82%92%e3%81%a4%e3%81%8f%e3%82%8b%e3%80%80%e3%82%a8%e3%83%94%e3%82%bd%e3%83%bc%e3%83%892)
-- [Introduction to Building Custom URL Routing Episode 1](https://bmf-tech.com/posts/URL%e3%83%ab%e3%83%bc%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0%e3%82%92%e3%81%a4%e3%81%8f%e3%82%8b%e3%80%80%e3%82%a8%e3%83%94%e3%82%bd%e3%83%bc%e3%83%893%ef%bc%88%e5%ae%8c%e7%b5%90%e7%b7%a8%ef%bc%89)
-- [Introduction to Building Custom URL Routing Episode 2](https://bmf-tech.com/posts/URL%e3%83%ab%e3%83%bc%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0%e8%87%aa%e4%bd%9c%e5%85%a5%e9%96%80%e3%80%80%e3%82%a8%e3%83%94%e3%82%bd%e3%83%bc%e3%83%89%ef%bc%92)
-- [Built a URL Router called goblin in Golang](https://bmf-tech.com/posts/Golang%e3%81%a7goblin%e3%81%a8%e3%81%84%e3%81%86URL%e3%83%ab%e3%83%bc%e3%82%bf%e3%83%bc%e3%82%92%e8%87%aa%e4%bd%9c%e3%81%97%e3%81%9f)
-- [Implemented a benchmark to compare Go HTTP Routers](https://bmf-tech.com/posts/Go%e3%81%aeHTTP%20Router%e3%82%92%e6%af%94%e8%bc%83%e3%81%99%e3%82%8b%e3%83%99%e3%83%b3%e3%83%81%e3%83%9e%e3%83%bc%e3%82%ab%e3%83%bc%e3%82%92%e5%ae%9f%e8%a3%85%e3%81%97%e3%81%9f)
-- [Improving Code Performance in Go](https://bmf-tech.com/posts/Go%e3%81%a7%e5%a7%8b%e3%82%81%e3%82%8b%e3%82%b3%e3%83%bc%e3%83%89%e3%81%ae%e3%83%91%e3%83%95%e3%82%a9%e3%83%bc%e3%83%9e%e3%83%b3%e3%82%b9%e6%94%b9%e5%96%84)
-- [Introduction to Building an HTTP Router with net/http](https://bmf-tech.com/posts/net%ef%bc%8fhttp%e3%81%a7%e3%81%a4%e3%81%8f%e3%82%8bHTTP%e3%83%ab%e3%83%bc%e3%82%bf%e3%83%bc%e8%87%aa%e4%bd%9c%e5%85%a5%e9%96%80)
-- [Updated Custom Routing](https://bmf-tech.com/posts/%e8%87%aa%e4%bd%9c%e3%83%ab%e3%83%bc%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0%e3%82%92%e3%82%a2%e3%83%83%e3%83%97%e3%83%87%e3%83%bc%e3%83%88%e3%81%97%e3%81%9f)
-- [Built a URL Router called goblin in Golang](https://bmf-tech.com/posts/Golang%e3%81%a7goblin%e3%81%a8%e3%81%84%e3%81%86URL%e3%83%ab%e3%83%bc%e3%82%bf%e3%83%bc%e3%82%92%e8%87%aa%e4%bd%9c%e3%81%97%e3%81%9f)
-- [Code Reading of Golang's HTTP Server](https://bmf-tech.com/posts/Golang%e3%81%aeHTTP%e3%82%b5%e3%83%bc%e3%83%90%e3%83%bc%e3%81%ae%e3%82%b3%e3%83%bc%e3%83%89%e3%83%aa%e3%83%87%e3%82%a3%e3%83%b3%e3%82%b0)
-- [Implementing a Trie in Golang](https://bmf-tech.com/posts/Golang%e3%81%a7%e3%83%88%e3%83%a9%e3%82%a4%e6%9c%a8%e3%82%92%e5%ae%9f%e8%a3%85%e3%81%99%e3%82%8b)
+- [Creating URL Routing Episode 1](/posts/creating-url-routing-episode-1/)
+- [Creating URL Routing Episode 2](/posts/creating-url-routing-episode-2/)
+- [Introduction to Building Custom URL Routing Episode 1](/posts/creating-url-routing-episode-3/)
+- [Introduction to Building Custom URL Routing Episode 2](/posts/url-routing-introduction-episode-2/)
+- [Built a URL Router called goblin in Go](/posts/goblin-url-router-in-golang/)
+- [Implemented a benchmark to compare Go HTTP Routers](/posts/http-router-benchmark-go/)
+- [Improving Code Performance in Go](/posts/go-performance-improvement/)
+- [Introduction to Building an HTTP Router with net/http](/posts/building-http-router-with-net-http/)
+- [Updated Custom Routing](/posts/update-custom-routing/)
+- [Built a URL Router called goblin in Go](/posts/goblin-url-router-in-golang/)
+- [Code Reading of Golang's HTTP Server](/posts/golang-http-server-code-reading-2019/)
+- [Implementing a Trie in Go](/posts/golang-tries-implementation/)
 
 # Books Written
 - [Introduction to Building an HTTP Router with net/http](https://zenn.dev/bmf_san/books/3f41c5cd34ec3f)

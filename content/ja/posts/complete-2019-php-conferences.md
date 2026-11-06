@@ -21,18 +21,18 @@ draft: false
 仙台に始まり、東京で終わるまでの道のり。
 東京以外のカンファレンスは全て初参加。
 
-- [PHPカンファレンス仙台2019に参加した](https://bmf-tech.com/posts/PHP%E3%82%AB%E3%83%B3%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9%E4%BB%99%E5%8F%B02019%E3%81%AB%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%9F)
+- [PHPカンファレンス仙台2019に参加した](/ja/posts/php-conference-sendai-2019/)
 - [Laravel JP Conference](http://web.archive.org/web/20260117100821/https://conference2019.laravel.jp/)
 国内初開催のLaravelカンファレンス。
 スタッフ兼スピーカーとして参加した。
 来年度もスタッフとして参加予定。
 cf. [Laravel JP Conference 2020](http://web.archive.org/web/20250126161113/http://conference2020.laravel.jp/)
-- [PHPerKaigi2019に参加・登壇してきました](https://bmf-tech.com/posts/PHPerKaigi2019%E3%81%AB%E5%8F%82%E5%8A%A0%E3%83%BB%E7%99%BB%E5%A3%87%E3%81%97%E3%81%A6%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F)
--  [PHPカンファレンス福岡2019に参加・登壇してきました](https://bmf-tech.com/posts/PHP%E3%82%AB%E3%83%B3%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9%E7%A6%8F%E5%B2%A12019%E3%81%AB%E5%8F%82%E5%8A%A0%E3%83%BB%E7%99%BB%E5%A3%87%E3%81%97%E3%81%A6%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F)
+- [PHPerKaigi2019に参加・登壇してきました](/ja/posts/phperkaigi-2019-participation/)
+-  [PHPカンファレンス福岡2019に参加・登壇してきました](/ja/posts/php-conference-fukuoka-2019-participation/)
 過去2回くらいCFPを提出していたが、落選続きだった福岡。
 例年参加者からの良い声が聞こえていて、今年こそはCFPを通して参加しようと思っていたので、無事参加・登壇できて良かった。
-- [PHPカンファレンス北海道2019に参加してきた](https://bmf-tech.com/posts/PHP%E3%82%AB%E3%83%B3%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9%E5%8C%97%E6%B5%B7%E9%81%932019%E3%81%AB%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%A6%E3%81%8D%E3%81%9F)
-- [PHPカンファレンス沖縄2019に参加してきた](https://bmf-tech.com/posts/PHP%E3%82%AB%E3%83%B3%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9%E6%B2%96%E7%B8%842019%E3%81%AB%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%A6%E3%81%8D%E3%81%9F)
+- [PHPカンファレンス北海道2019に参加してきた](/ja/posts/php-conference-hokkaido-2019-participation/)
+- [PHPカンファレンス沖縄2019に参加してきた](/ja/posts/php-conference-okinawa-2019-participation/)
 初開催。沖縄ということで県外からは参加ハードルが高そうだが、県外からの参加者もそこそこいて大盛況だったと思う。
 台湾からの参加者もいて国際色もあったように思う。
 -  [CakeFest](https://cakefest.org/)

@@ -14,7 +14,7 @@ draft: false
 ---
 
 
-以前、[GoReleaserを使ってのGoのアプリケーションを配布する](https://bmf-tech.com/posts/GoReleaser%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%AEGo%E3%81%AE%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E9%85%8D%E5%B8%83%E3%81%99%E3%82%8B)というタイトルの記事でGoReleaserを使ったバイナリ配布の方法について書いたが、Dockerhubへのイメージプッシュもやってみたのでまとめておく。
+以前、[GoReleaserを使ってのGoのアプリケーションを配布する](/ja/posts/goreleaser-go-distribution/)というタイトルの記事でGoReleaserを使ったバイナリ配布の方法について書いたが、Dockerhubへのイメージプッシュもやってみたのでまとめておく。
 
 ソースコードの全体像は[bmf-san/gondola](https://github.com/bmf-san/gondola)を参照。
 

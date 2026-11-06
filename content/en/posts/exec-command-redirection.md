@@ -17,7 +17,7 @@ draft: false
 # Overview
 The exec command replaces the current process with a command, but when used without arguments, it allows for dynamic changes to redirection.
 
-This was prompted by the code that appeared when confirming at the prompt during [direct push to master](https://bmf-tech.com/posts/master%E7%9B%B4%E3%83%97%E3%83%83%E3%82%B7%E3%83%A5%E3%81%AE%E9%9A%9B%E3%81%AB%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88%E3%81%A7%E7%A2%BA%E8%AA%8D%E3%81%99%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B):
+The trigger was the code that appeared when confirming at the prompt during [direct push to master](/posts/master-push-prompt-confirmation/):
 
 ```sh
 #!/bin/sh
@@ -35,7 +35,7 @@ exec > redirect.txt // Change file descriptor
 echo "Output to file" // Output to file
 ```
 
-The code that appeared during [direct push to master](https://bmf-tech.com/posts/master%E7%9B%B4%E3%83%97%E3%83%83%E3%82%B7%E3%83%A5%E3%81%AE%E9%9A%9B%E3%81%AB%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88%E3%81%A7%E7%A2%BA%E8%AA%8D%E3%81%99%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B) is:
+The code that appeared during [direct push to master](/posts/master-push-prompt-confirmation/) is:
 
 ```sh
 #!/bin/sh

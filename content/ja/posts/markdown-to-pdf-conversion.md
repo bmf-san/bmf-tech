@@ -29,7 +29,7 @@ draft: false
 単にマークダウン形式のファイルをPDFファイルに変換するだけであれば、[md-to-pdf](https://github.com/simonhaenisch/md-to-pdf)というライブラリを使うだけで良い。
 
 このライブラリは、レジュメで管理でもお世話になっている。
-cf. [Githubでレジュメを管理するようにした](https://bmf-tech.com/posts/Github%e3%81%a7%e3%83%ac%e3%82%b8%e3%83%a5%e3%83%a1%e3%82%92%e7%ae%a1%e7%90%86%e3%81%99%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%97%e3%81%9f)
+cf. [Githubでレジュメを管理するようにした](/ja/posts/github-resume-management/)
 
 mermaid記法の対応やunicodeに登録されている絵文字以外の絵文字を使いたかったりという希望があったので、それに対応する形のものを作りたかった。
 

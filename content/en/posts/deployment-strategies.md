@@ -31,7 +31,7 @@ Let's look at some representative strategies.
 A method of deploying a new version directly to the existing environment.
 
 As a side note, bmf-tech.com uses docker-compose, and the deployment is in-place deployment...
-cf. [Technology Supporting bmf-tech](https://bmf-tech.com/posts/bmf-tech%e3%82%92%e6%94%af%e3%81%88%e3%82%8b%e6%8a%80%e8%a1%93#5-%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4)
+cf. [Technology Supporting bmf-tech](/posts/bmf-tech-supporting-technologies/)
 
 ## Symbolic Link Deployment
 A method of switching between old and new versions using symbolic links.

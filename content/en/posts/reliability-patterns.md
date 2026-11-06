@@ -51,7 +51,7 @@ A pattern that ensures other parts of the system are not affected even if one pa
 ## Cache-Aside
 A pattern that uses caching to avoid putting load on resources like databases or APIs.
 
-cf. [Cache Writing Methods](https://bmf-tech.com/posts/%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%81%AE%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%81%BF%E6%96%B9%E5%BC%8F)
+cf. [Cache Writing Methods](/posts/cache-write-methods/)
 
 ## Circuit Breaker
 A pattern that rejects requests for a certain period until a fault is resolved when a fault occurs.

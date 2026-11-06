@@ -45,7 +45,7 @@ PHP 7.3 reached EOL in December 2021, and security updates have ended, necessita
 
 In this project, it was necessary to consider whether simply updating was optimal. Unlike previous update projects, the development of FuelPHP had stagnated, and it was necessary to evaluate whether continuing to use FuelPHP was appropriate from a technical strategy perspective.
 
-*For the current status of FuelPHP, please refer to the previous summary in [FuelPHP's Status as of March 2023](https://bmf-tech.com/posts/FuelPHP%E3%81%AE2023%E5%B9%B43%E6%9C%88%E7%8F%BE%E5%9C%A8%E3%81%AE%E7%8F%BE%E6%B3%81).*  
+*For the current status of FuelPHP, please refer to the previous summary in [FuelPHP's Status as of March 2023](/posts/fuelphp-status-march-2023/).*  
 
 # Planning
 ## Preliminary Research

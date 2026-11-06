@@ -109,7 +109,7 @@ auth:
 ## pprof
 Pyroscope側の話ではなく、Goのアプリケーション側の話だが、pprofの設定でハマった。
 
-それについては[DefaultServeMux以外でpprofを使う方法](https://bmf-tech.com/posts/DefaultServeMux%e4%bb%a5%e5%a4%96%e3%81%a7pprof%e3%82%92%e4%bd%bf%e3%81%86%e6%96%b9%e6%b3%95)に記事を書いたのでそちらを参照。
+それについては[DefaultServeMux以外でpprofを使う方法](/ja/posts/using-pprof-without-defaultmux/)に記事を書いたのでそちらを参照。
 
 # 所感
 OSSで利用できるプロファイルングツールを以前から探し求めていたのだが、Pyroscopeは導入がしやすく、使いやすいUIが用意されていて良さそう。GoならPull型も対応していて良い。

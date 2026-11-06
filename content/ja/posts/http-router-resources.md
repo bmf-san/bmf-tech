@@ -70,18 +70,18 @@ PHPで高速に動作するURLルーティングを自作してみた](https://d
 # 執筆した記事
 [bmf-tech.com](https://bmf-tech.com/)に投稿している記事。
 
-- [URLルーティングをつくる　エピソード1](https://bmf-tech.com/posts/URL%e3%83%ab%e3%83%bc%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0%e3%82%92%e3%81%a4%e3%81%8f%e3%82%8b%e3%80%80%e3%82%a8%e3%83%94%e3%82%bd%e3%83%bc%e3%83%891)
-- [URLルーティングをつくる　エピソード2](https://bmf-tech.com/posts/URL%e3%83%ab%e3%83%bc%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0%e3%82%92%e3%81%a4%e3%81%8f%e3%82%8b%e3%80%80%e3%82%a8%e3%83%94%e3%82%bd%e3%83%bc%e3%83%892)
-- [URLルーティング自作入門　エピソード１](https://bmf-tech.com/posts/URL%e3%83%ab%e3%83%bc%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0%e3%82%92%e3%81%a4%e3%81%8f%e3%82%8b%e3%80%80%e3%82%a8%e3%83%94%e3%82%bd%e3%83%bc%e3%83%893%ef%bc%88%e5%ae%8c%e7%b5%90%e7%b7%a8%ef%bc%89)
-- [URLルーティング自作入門　エピソード２](https://bmf-tech.com/posts/URL%e3%83%ab%e3%83%bc%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0%e8%87%aa%e4%bd%9c%e5%85%a5%e9%96%80%e3%80%80%e3%82%a8%e3%83%94%e3%82%bd%e3%83%bc%e3%83%89%ef%bc%92)
-- [GolangでgoblinというURLルーターを自作した](https://bmf-tech.com/posts/Golang%e3%81%a7goblin%e3%81%a8%e3%81%84%e3%81%86URL%e3%83%ab%e3%83%bc%e3%82%bf%e3%83%bc%e3%82%92%e8%87%aa%e4%bd%9c%e3%81%97%e3%81%9f)
-- [GoのHTTP Routerを比較するベンチマーカーを実装した](https://bmf-tech.com/posts/Go%e3%81%aeHTTP%20Router%e3%82%92%e6%af%94%e8%bc%83%e3%81%99%e3%82%8b%e3%83%99%e3%83%b3%e3%83%81%e3%83%9e%e3%83%bc%e3%82%ab%e3%83%bc%e3%82%92%e5%ae%9f%e8%a3%85%e3%81%97%e3%81%9f)
-- [Goで始めるコードのパフォーマンス改善](https://bmf-tech.com/posts/Go%e3%81%a7%e5%a7%8b%e3%82%81%e3%82%8b%e3%82%b3%e3%83%bc%e3%83%89%e3%81%ae%e3%83%91%e3%83%95%e3%82%a9%e3%83%bc%e3%83%9e%e3%83%b3%e3%82%b9%e6%94%b9%e5%96%84)
-- [net／httpでつくるHTTPルーター自作入門](https://bmf-tech.com/posts/net%ef%bc%8fhttp%e3%81%a7%e3%81%a4%e3%81%8f%e3%82%8bHTTP%e3%83%ab%e3%83%bc%e3%82%bf%e3%83%bc%e8%87%aa%e4%bd%9c%e5%85%a5%e9%96%80)
-- [自作ルーティングをアップデートした](https://bmf-tech.com/posts/%e8%87%aa%e4%bd%9c%e3%83%ab%e3%83%bc%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0%e3%82%92%e3%82%a2%e3%83%83%e3%83%97%e3%83%87%e3%83%bc%e3%83%88%e3%81%97%e3%81%9f)
-- [GolangでgoblinというURLルーターを自作した](https://bmf-tech.com/posts/Golang%e3%81%a7goblin%e3%81%a8%e3%81%84%e3%81%86URL%e3%83%ab%e3%83%bc%e3%82%bf%e3%83%bc%e3%82%92%e8%87%aa%e4%bd%9c%e3%81%97%e3%81%9f)
-- [GolangのHTTPサーバーのコードリーディング](https://bmf-tech.com/posts/Golang%e3%81%aeHTTP%e3%82%b5%e3%83%bc%e3%83%90%e3%83%bc%e3%81%ae%e3%82%b3%e3%83%bc%e3%83%89%e3%83%aa%e3%83%bc%e3%83%87%e3%82%a3%e3%83%b3%e3%82%b0)
-- [Golangでトライ木を実装する](https://bmf-tech.com/posts/Golang%e3%81%a7%e3%83%88%e3%83%a9%e3%82%a4%e6%9c%a8%e3%82%92%e5%ae%9f%e8%a3%85%e3%81%99%e3%82%8b)
+- [URLルーティングをつくる　エピソード1](/ja/posts/creating-url-routing-episode-1/)
+- [URLルーティングをつくる　エピソード2](/ja/posts/creating-url-routing-episode-2/)
+- [URLルーティング自作入門　エピソード１](/ja/posts/creating-url-routing-episode-3/)
+- [URLルーティング自作入門　エピソード２](/ja/posts/url-routing-introduction-episode-2/)
+- [GolangでgoblinというURLルーターを自作した](/ja/posts/goblin-url-router-in-golang/)
+- [GoのHTTP Routerを比較するベンチマーカーを実装した](/ja/posts/http-router-benchmark-go/)
+- [Goで始めるコードのパフォーマンス改善](/ja/posts/go-performance-improvement/)
+- [net／httpでつくるHTTPルーター自作入門](/ja/posts/building-http-router-with-net-http/)
+- [自作ルーティングをアップデートした](/ja/posts/update-custom-routing/)
+- [GolangでgoblinというURLルーターを自作した](/ja/posts/goblin-url-router-in-golang/)
+- [GolangのHTTPサーバーのコードリーディング](/ja/posts/golang-http-server-code-reading-2019/)
+- [Golangでトライ木を実装する](/ja/posts/golang-tries-implementation/)
 
 # 執筆した本
 - [net／httpでつくるHTTPルーター 自作入門

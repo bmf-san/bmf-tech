@@ -140,7 +140,7 @@ The benchmark results can be interpreted as follows:
   - Number of memory allocations per function execution
   - Fewer allocations indicate better performance
 
-cf. [bmf-tech.com - Improving Code Performance with Go](https://bmf-tech.com/posts/Go%e3%81%a7%e5%a7%8b%e3%82%81%e3%82%8b%e3%82%b3%e3%83%bc%e3%83%89%e3%81%ae%e3%83%91%e3%83%95%e3%82%a9%e3%83%bc%e3%83%9e%e3%83%b3%e3%82%b9%e6%94%b9%e5%96%84)
+cf. [bmf-tech.com - Improving Code Performance with Go](/posts/go-performance-improvement/)
 
 Results for each test case are detailed below.
 

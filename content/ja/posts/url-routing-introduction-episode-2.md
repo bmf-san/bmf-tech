@@ -16,7 +16,7 @@ draft: false
 
 
 # 概要
-この記事は[URLルーティング自作入門　エピソード１](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E8%87%AA%E4%BD%9C%E5%85%A5%E9%96%80%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%EF%BC%91)の続きで、[Makuake Development Team Advent Calendar 2019](https://adventar.org/calendars/4716)の15日目である。
+この記事は[URLルーティング自作入門　エピソード１](/ja/posts/url-routing-introduction-episode-1/)の続きで、[Makuake Development Team Advent Calendar 2019](https://adventar.org/calendars/4716)の15日目である。
 
 # URLルーティングを自作する
 前回の続きである。
@@ -40,7 +40,7 @@ URLのパス部分をInputとして受け取り、パスとマッチするデー
 ![Screen Shot 2019-12-15 at 20 55 26](/assets/images/posts/url-routing-introduction-episode-2/70862253-3e9bea80-1f7d-11ea-9856-1da4906c316a.png)
 
 木構造とは、根（Root）や枝（Edge）、節点（Node）や葉（Leaf、終端の節点のこと）を持つデータ構造のことである。データの格納方法や探索方法のパターンにより、様々な種類の木構造がある。URLルーティングでは文字列を主に扱いたいので、文字列探索に特化したトライ木というデータ構造を採用する。
-トライ木については[bmf-tech.com - A Trie implementation in Golang](https://bmf-tech.com/posts/A%20Trie%20implementation%20in%20Golang)を参照してください。
+トライ木については[Golangでトライ木（Trie）を実装する](/ja/posts/golang-tries-implementation/)を参照してください。
 
 トライ木をカスタマイズして、URLのパスマッチングのためのデータを以下のように格納する。
 

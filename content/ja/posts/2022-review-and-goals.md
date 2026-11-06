@@ -16,16 +16,16 @@ draft: false
 # 2022年の振り返りと来年の抱負
 毎年恒例の振り返りと抱負について書く。
 
-- [2021年の振り返りと来年の抱負](https://bmf-tech.com/posts/2021%e5%b9%b4%e3%81%ae%e6%8c%af%e3%82%8a%e8%bf%94%e3%82%8a%e3%81%a8%e6%9d%a5%e5%b9%b4%e3%81%ae%e6%8a%b1%e8%b2%a0)
-- [2020年の振り返りと来年の抱負](https://bmf-tech.com/posts/2020%e5%b9%b4%e3%81%ae%e6%8c%af%e3%82%8a%e8%bf%94%e3%82%8a%e3%81%a8%e6%9d%a5%e5%b9%b4%e3%81%ae%e6%8a%b1%e8%b2%a0)
-- [2019年の振り返りと来年の抱負](https://bmf-tech.com/posts/2019%e5%b9%b4%e3%81%ae%e6%8c%af%e3%82%8a%e8%bf%94%e3%82%8a%e3%81%a8%e6%9d%a5%e5%b9%b4%e3%81%ae%e6%8a%b1%e8%b2%a0)
-- [2018年の振り返りと2019年の目標](https://bmf-tech.com/posts/2018%e5%b9%b4%e3%81%ae%e6%8c%af%e3%82%8a%e8%bf%94%e3%82%8a%e3%81%a82019%e5%b9%b4%e3%81%ae%e7%9b%ae%e6%a8%99)
+- [2021年の振り返りと来年の抱負](/ja/posts/2021-review-and-2022-goals/)
+- [2020年の振り返りと来年の抱負](/ja/posts/2020-reflection-and-goals/)
+- [2019年の振り返りと来年の抱負](/ja/posts/2019-review-and-resolutions/)
+- [2018年の振り返りと2019年の目標](/ja/posts/2018-review-2019-goals/)
 
 # プライベート
 ## やれたこと
 自分の中で大きめの課題であった、このbmf-techのリプレースを完了したことが一番達成感があったことかもしれない。ソフトウェアエンジニアリング総合格闘技みたいな楽しさも享受できた。
 
-[bmf-techを支える技術](https://bmf-tech.com/posts/bmf-tech%e3%82%92%e6%94%af%e3%81%88%e3%82%8b%e6%8a%80%e8%a1%93)
+[bmf-techを支える技術](/ja/posts/bmf-tech-supporting-technologies/)
 
 これは長々と取り組んできていたことだったので、ようやく区切りがついたのは良かった。
 

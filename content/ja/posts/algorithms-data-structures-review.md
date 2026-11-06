@@ -181,7 +181,7 @@ func main() {
 - 階層構造を表すデータ構造
 - 無向の非循環グラフ
 - 二分探索木
-  - cf. [アルゴリズムとデータ構造 - 二分探索木](https://bmf-tech.com/posts/%e3%82%a2%e3%83%ab%e3%82%b4%e3%83%aa%e3%82%ba%e3%83%a0%e3%81%a8%e3%83%87%e3%83%bc%e3%82%bf%e6%a7%8b%e9%80%a0%20-%20%e4%ba%8c%e5%88%86%e6%8e%a2%e7%b4%a2%e6%9c%a8)
+  - cf. [アルゴリズムとデータ構造 - 二分探索木](/ja/posts/algorithms-data-structures-binary-search-tree/)
 
 # グラフ
 - ノード間の関係性を表したデータ構造
@@ -207,7 +207,7 @@ Vは頂点、Eはエッジの数とする。
 
 # トライ
 - 文字列の検索と保存の効率に特化した木構造
-- cf. [Golangでトライ木を実装する](https://bmf-tech.com/posts/Golang%e3%81%a7%e3%83%88%e3%83%a9%e3%82%a4%e6%9c%a8%e3%82%92%e5%ae%9f%e8%a3%85%e3%81%99%e3%82%8b)
+- cf. [Golangでトライ木を実装する](/ja/posts/golang-tries-implementation/)
 
 ## 時間計算量
 mは文字列の長さとする。

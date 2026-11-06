@@ -27,9 +27,9 @@ draft: false
 見るに耐えないものではあるが、色々試行錯誤した過程を晒しておきます。
 
 - 記事
-    - [URLルーティングをつくる　エピソード1](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%891)
-    - [URLルーティングをつくる　エピソード2](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%892)
-    - [URLルーティングをつくる　エピソード3（完結編）](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%893%EF%BC%88%E5%AE%8C%E7%B5%90%E7%B7%A8%EF%BC%89)
+    - [URLルーティングをつくる　エピソード1](/ja/posts/creating-url-routing-episode-1/)
+    - [URLルーティングをつくる　エピソード2](/ja/posts/creating-url-routing-episode-2/)
+    - [URLルーティングをつくる　エピソード3（完結編）](/ja/posts/creating-url-routing-episode-3/)
 
 - スライド
     - [URLルーティングをつくるエピソード１](https://speakerdeck.com/bmf_san/urlruteinguwotukuruepisodo1)

@@ -82,7 +82,7 @@ Separating the stored configuration values and policies in the DB is likely unne
 ## Premise
 - In RBAC, there are roles and constraint information (data stored in the DB representing the conditions for access control that roles possess).
 - Assuming a large amount of data, we will base our approach on SQL filtering (having OPA return conditions for SQL generation).
-  - cf. [Considerations on the Impact of Pagination in OPA and Solutions](https://bmf-tech.com/posts/OPA%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E3%83%9A%E3%83%BC%E3%82%B8%E3%83%8D%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%B8%E3%81%AE%E5%BD%B1%E9%9F%BF%E3%81%A8%E8%A7%A3%E6%B1%BA%E7%AD%96%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%A4%9C%E8%A8%8E)
+  - cf. [Considerations on the Impact of Pagination in OPA and Solutions](/posts/pagination-impact-solutions-opa/)
 
 ### When Balancing Role + Constraint Information and Policies
 ```mermaid

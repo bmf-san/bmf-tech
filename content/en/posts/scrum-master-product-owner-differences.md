@@ -17,7 +17,7 @@ draft: false
 # Overview
 Recently, I attended a Certified Scrum Master training, and I felt the need to organize my thoughts on the differences between a Scrum Master and a Product Owner, so I decided to write this article.
 
-cf. [Became a Certified Scrum Master (LSM)](https://bmf-tech.com/posts/%e8%aa%8d%e5%ae%9a%e3%82%b9%e3%82%af%e3%83%a9%e3%83%a0%e3%83%9e%e3%82%b9%e3%82%bf%e3%83%bc%ef%bc%88LSM%ef%bc%89%e3%81%ab%e3%81%aa%e3%81%a3%e3%81%9f)
+cf. [Became a Certified Scrum Master (LSM)](/posts/certified-scrum-master-lsm/)
 
 # What is a Scrum Master?
 ## Responsibilities

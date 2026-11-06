@@ -59,7 +59,7 @@ I believe health is the foundation that supports such things.
 # Health and Evidence
 For thoughts on evidence, refer to [The Complete Guide to Health Technology](https://amzn.to/4eKtn3N).
 
-cf. [bmf-tech.com - The Complete Guide to Health Technology](https://bmf-tech.com/posts/%e5%81%a5%e5%ba%b7%e3%81%ab%e3%81%aa%e3%82%8b%e6%8a%80%e8%a1%93%e3%80%80%e5%a4%a7%e5%85%a8)
+cf. [bmf-tech.com - The Complete Guide to Health Technology](/posts/health-technology-guide/)
 
 It's not easy to conclude what is good or bad for health.
 

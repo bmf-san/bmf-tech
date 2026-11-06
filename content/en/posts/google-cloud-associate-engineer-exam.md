@@ -24,7 +24,7 @@ I am a software engineer with about 7-8 years of experience. I have around 2 yea
 I had opportunities to work with both AWS and GCP in my job. I had already obtained the Associate level certification for AWS but not for GCP, so I decided to study for it.
 
 I obtained the AWS certification about two years ago. 
-cf. [Took the AWS Certified Solutions Architect Associate Exam](https://bmf-tech.com/posts/AWS%e8%aa%8d%e5%ae%9a%e3%82%bd%e3%83%aa%e3%83%a5%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%82%a2%e3%83%bc%e3%82%ad%e3%83%86%e3%82%af%e3%83%88%e3%82%a2%e3%82%bd%e3%82%b7%e3%82%a8%e3%82%a4%e3%83%88%e3%82%92%e5%8f%97%e9%a8%93%e3%81%97%e3%81%9f)
+cf. [Took the AWS Certified Solutions Architect Associate Exam](/posts/took-aws-certified-solutions-architect-associate/)
 
 Originally, I planned to take the GCP exam after the AWS one, but various things happened, and it ended up being at this timing.
 
@@ -52,7 +52,7 @@ I studied during gaps in my parental leave, but since I had been studying a bit 
 I planned to pass within 3 months, but I was able to move up the schedule by about 2 weeks, which was good.
 
 # What I Studied
-I summarized my study notes in [Notes on GCP](https://bmf-tech.com/posts/GCP%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%e3%81%ae%e8%a6%9a%e3%81%88%e6%9b%b8%e3%81%8d). I wrote them roughly to input key points into my head, and they were quite helpful.
+I summarized my study notes in [Notes on GCP](/posts/gcp-notes-and-resources/). I wrote them roughly to input key points into my head, and they were quite helpful.
 
 The official information is comprehensive, but there are fewer practice test collections (reference books) compared to AWS, which made me anxious about the fewer practice opportunities.
 

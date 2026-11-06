@@ -109,7 +109,7 @@ If you read carefully, it's mentioned in [configuring-built-in-admin-user](https
 ## pprof
 This is not about Pyroscope, but about Go applications. I encountered issues with pprof settings.
 
-I wrote an article about it, so refer to [Using pprof with something other than DefaultServeMux](https://bmf-tech.com/posts/DefaultServeMux%e4%bb%a5%e5%a4%96%e3%81%a7pprof%e3%82%92%e4%bd%bf%e3%81%86%e6%96%b9%e6%b3%95).
+I wrote an article about it, so refer to [Using pprof with something other than DefaultServeMux](/posts/using-pprof-without-defaultmux/).
 
 # Impressions
 I've been searching for a profiling tool available as OSS, and Pyroscope seems easy to implement with a user-friendly UI. It's also great that it supports pull mode for Go.

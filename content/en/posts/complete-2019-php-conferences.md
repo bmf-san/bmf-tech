@@ -22,18 +22,18 @@ I participated in all official PHP conferences held in Japan in 2019, so I have 
 The journey from starting in Sendai to ending in Tokyo.
 All conferences outside of Tokyo were my first time attending.
 
-- [Participated in PHP Conference Sendai 2019](https://bmf-tech.com/posts/PHP%E3%82%AB%E3%83%B3%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9%E4%BB%99%E5%8F%B02019%E3%81%AB%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%9F)
+- [Participated in PHP Conference Sendai 2019](/posts/php-conference-sendai-2019/)
 - [Laravel JP Conference](http://web.archive.org/web/20260117100821/https://conference2019.laravel.jp/)
 The first Laravel conference held in Japan.
 I participated as both staff and speaker.
 I plan to participate as staff next year as well.
 cf. [Laravel JP Conference 2020](http://web.archive.org/web/20250126161113/http://conference2020.laravel.jp/)
-- [Participated and Spoke at PHPerKaigi 2019](https://bmf-tech.com/posts/PHPerKaigi2019%E3%81%AB%E5%8F%82%E5%8A%A0%E3%83%BB%E7%99%BB%E5%A3%87%E3%81%97%E3%81%A6%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F)
-- [Participated and Spoke at PHP Conference Fukuoka 2019](https://bmf-tech.com/posts/PHP%E3%82%AB%E3%83%B3%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9%E7%A6%8F%E5%B2%A12019%E3%81%AB%E5%8F%82%E5%8A%A0%E3%83%BB%E7%99%BB%E5%A3%87%E3%81%97%E3%81%A6%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F)
+- [Participated and Spoke at PHPerKaigi 2019](/posts/phperkaigi-2019-participation/)
+- [Participated and Spoke at PHP Conference Fukuoka 2019](/posts/php-conference-fukuoka-2019-participation/)
 I had submitted CFPs about twice before but was not selected for Fukuoka.
 I had heard good things from participants every year, so I was determined to participate through a CFP this year, and I was glad to successfully participate and speak.
-- [Participated in PHP Conference Hokkaido 2019](https://bmf-tech.com/posts/PHP%E3%82%AB%E3%83%B3%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9%E5%8C%97%E6%B5%B7%E9%81%932019%E3%81%AB%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%A6%E3%81%8D%E3%81%9F)
-- [Participated in PHP Conference Okinawa 2019](https://bmf-tech.com/posts/PHP%E3%82%AB%E3%83%B3%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9%E6%B2%96%E7%B8%842019%E3%81%AB%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%A6%E3%81%8D%E3%81%9F)
+- [Participated in PHP Conference Hokkaido 2019](/posts/php-conference-hokkaido-2019-participation/)
+- [Participated in PHP Conference Okinawa 2019](/posts/php-conference-okinawa-2019-participation/)
 First time held. Being in Okinawa, it seemed like a high hurdle for participants from outside the prefecture, but there were a fair number of participants from outside, and it seemed to be a great success.
 There were also participants from Taiwan, giving it an international feel.
 - [CakeFest](https://cakefest.org/)

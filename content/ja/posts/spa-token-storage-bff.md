@@ -18,7 +18,7 @@ draft: false
 
 SPA（シングルページアプリケーション）で認証を実装するとき、必ずぶつかるのが「アクセストークンをどこに保存するか」という問題である。localStorageは手軽だがXSSに弱い。かといってどこに置けばいいのか。
 
-この記事では、トークンの置き場所の比較から、BFF（Backend For Frontend）でトークンをブラウザに渡さない構成、そして「最初はトークンレスで十分」という現実的な判断までを整理する。BFFという概念そのものについては「[BFF（Backend For Frontend）とは？](/posts/bff-explained/)」も参照。
+この記事では、トークンの置き場所の比較から、BFF（Backend For Frontend）でトークンをブラウザに渡さない構成、そして「最初はトークンレスで十分」という現実的な判断までを整理する。BFFという概念そのものについては「[BFF（Backend For Frontend）とは？](/ja/posts/bff-explained/)」も参照。
 
 # トークンの置き場所問題
 
@@ -130,6 +130,6 @@ BFFを最初から挟んでおけば、フロントから見た通信相手は�
 
 # 参考リンク
 
-- [BFF（Backend For Frontend）とは？](/posts/bff-explained/)
-- [セッションベースとトークンベースの認証方式について](/posts/session-token-authentication/)
+- [BFF（Backend For Frontend）とは？](/ja/posts/bff-explained/)
+- [セッションベース認証とトークンベース認証の違いとは？仕組みと選び方](/ja/posts/session-token-authentication/)
 - [OWASP: JSON Web Token Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/JSON_Web_Token_Cheat_Sheet.html)

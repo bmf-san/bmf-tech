@@ -47,7 +47,7 @@ Dockerを使わずにコンテナをつくって触ってみる。
 - 仮想化
     - ホスト型とハイパーバイザ型で構成が異なるが、仮想化は複数OSを用意できるような構成で、ゲストOS上でアプリケーションを実行する。
 
-[bmf-tech - Dockerとは](https://bmf-tech.com/posts/Docker%E3%81%A8%E3%81%AF)にもざっくりまとめている。
+[bmf-tech - Dockerとは](/ja/posts/what-is-docker/)にもざっくりまとめている。
 
 ## コンテナ技術を実現するためのLinuxカーネルの機能
 ### Kernel namespaces
@@ -109,7 +109,7 @@ Makuake LT Party（社内LT大会）にてLTをした。
 [speaker-deck - コンテナ完全に理解した](https://speakerdeck.com/bmf_san/kontenawan-quan-nili-jie-sita)
 
 # 参考
-- [bmf-tech - Dockerとは](https://bmf-tech.com/posts/Docker%E3%81%A8%E3%81%AF)
+- [bmf-tech - Dockerとは](/ja/posts/what-is-docker/)
 - [[コンテナの歴史]Dockerができるまで 第二回 〜集合知を集めて歴史を知ろう〜](https://hackmd.io/s/ryPfDLU77)
 - [redhat - Linux コンテナとは](https://www.redhat.com/ja/topics/containers/whats-a-linux-container)
 - [redhat - Linuxコンテナとは何か](https://www.redhat.com/ja/topics/containers)

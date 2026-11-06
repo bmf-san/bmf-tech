@@ -17,7 +17,7 @@ Although the new year has begun, I wanted to write this down. I had been doing a
 
 # Reflection on This Year
 Last year's post.
-[bmf-tech.com - Reflection on 2019 and Resolutions for Next Year](https://bmf-tech.com/posts/2019%E5%B9%B4%E3%81%AE%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A%E3%81%A8%E6%9D%A5%E5%B9%B4%E3%81%AE%E6%8A%B1%E8%B2%A0)
+[bmf-tech.com - Reflection on 2019 and Resolutions for Next Year](/posts/2019-review-and-resolutions/)
 
 The content is quite vague, and I can't come up with any comments just by looking at it, but I had documented everything I planned last year in Trello, so the reflection has been completed there.
 

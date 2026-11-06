@@ -20,7 +20,7 @@ The reason for this significant delay is that I decided to fill in the only unoc
 Since last year, there have been proposals to extend the functionality of ServeMux included in Go's net/http, and I have been watching these developments, but it seems they have recently been closed.
 
 cf. [net/http: enhanced ServeMux routing #61410](https://github.com/golang/go/issues/61410)
-cf. [Proposal to extend ServeMux functionality in Go has been Accepted](https://bmf-tech.com/posts/Go%e3%81%a7ServeMux%e3%81%ae%e6%a9%9f%e8%83%bd%e6%8b%a1%e5%bc%b5%e3%82%92%e6%8f%90%e6%a1%88%e3%81%99%e3%82%8bProposal%e3%81%8cAccepted%e3%81%ab%e3%81%aa%e3%81%a3%e3%81%9f)
+cf. [Proposal to extend ServeMux functionality in Go has been Accepted](/posts/go-servemux-extension-proposal-accepted/)
 
 This extension is expected to be included in Go 1.22, and since Go 1.22rc2 has been released, I decided to give it a try. (It seems to have been included since Go 1.22rc1, but I had overlooked it.)
 

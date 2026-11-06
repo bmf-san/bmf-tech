@@ -174,4 +174,4 @@ Goalが曖昧だと後続の問いや指標もぶれる。Basiliらの目標テ�
 - ITIL 4 — 監視とイベント管理（Monitoring and Event Management）プラクティス（イベント・アラートの定義）
 - ISO/IEC 27002:2022 — 8.15ログ取得（Logging）／8.16監視活動（Monitoring activities）
 - GQM（Goal-Question-Metric）— Basili・Caldiera・Rombach「The Goal Question Metric Approach」（1994）
-- [SLOを始めるためのスタートガイド](/posts/slo-start-guide/)（本記事がスコープ外としたSLOの始め方）
+- [SLOを始めるためのスタートガイド](/ja/posts/slo-start-guide/)（本記事がスコープ外としたSLOの始め方）

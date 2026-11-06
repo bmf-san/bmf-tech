@@ -16,7 +16,7 @@ draft: false
 ---
 
 # Overview
-Continuing from [Creating URL Routing Episode 1](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%891).
+Continuing from [Creating URL Routing Episode 1](/posts/creating-url-routing-episode-1/).
 
 I finished a working version and published it as a package named [packagist - ahi-router](https://packagist.org/packages/bmf-san/ahi-router#v1.0).
 

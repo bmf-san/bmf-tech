@@ -16,7 +16,7 @@ draft: false
 
 ## Introduction
 
-Previously, I wrote an article about [managing resumes on GitHub](https://bmf-tech.com/posts/Github%E3%81%A7%E3%83%AC%E3%82%B8%E3%83%A5%E3%83%A1%E3%82%92%E7%AE%A1%E7%90%86%E3%81%99%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%97%E3%81%9F).
+I wrote an earlier article about [managing resumes on GitHub](/posts/github-resume-management/).
 
 I have prepared a repository for resume management as a template so that anyone can use it.
 

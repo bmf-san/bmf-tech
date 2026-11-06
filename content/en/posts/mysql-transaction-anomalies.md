@@ -74,7 +74,7 @@ MySQL's InnoDB provides four transaction isolation levels as defined by the ANSI
 
 The transaction isolation level ranges from READ UNCOMMITTED, the lowest, to SERIALIZABLE, the highest. The above table is ordered from lowest to highest. Generally, the higher the isolation, the lower the performance tends to be.
 
-For more on transactions, see [Transaction Overview](https://bmf-tech.com/posts/%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B6%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E6%A6%82%E8%A6%B3).
+For more on transactions, see [Transaction Overview](/posts/transaction-overview/).
 
 # Anomalies
 Let's reproduce transaction anomalies in MySQL.

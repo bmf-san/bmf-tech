@@ -15,7 +15,7 @@ draft: false
 
 # 概要
 以前書いた[ソフトウェア開発の法則
-](https://bmf-tech.com/posts/%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2%E9%96%8B%E7%99%BA%E3%81%AE%E6%B3%95%E5%89%87)の雑メモをベースにLTをしたのでスライド内容を補足する形でまとめる。
+](/ja/posts/software-development-principles/)の雑メモをベースにLTをしたのでスライド内容を補足する形でまとめる。
 
 スライドは↓
 [ゴリラで学ぶソフトウェアの法則10選](https://speakerdeck.com/bmf_san/koriratexue-husohutoueafalsefa-ze-10xuan)

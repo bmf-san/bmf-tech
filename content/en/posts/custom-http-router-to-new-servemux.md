@@ -22,7 +22,7 @@ In this article, I will summarize the features and performance of ServeMux added
 # Features of ServeMux Added in Go 1.22
 When the Go 1.22rc was released, I researched the new features of ServeMux, and I thought I would delve into a bit more detail.
 
-cf. [Changes to ServeMux in Go 1.22rc](https://bmf-tech.com/posts/Go1.22rc%e3%81%a7%e5%a4%89%e6%9b%b4%e3%81%95%e3%82%8c%e3%82%8bServeMux%e3%81%ae4%bb%95%e6%a7%98)
+cf. [Changes to ServeMux in Go 1.22rc](/posts/go1-22rc-changes-servemux-spec/)
 
 Based on the following reference information, I will organize the new features of ServeMux.
 
@@ -195,7 +195,7 @@ The index and patterns are used for conflict detection of patterns.
 
 If you are not used to reading, it might be good to read the code of the HTTP server as a prerequisite.
 
-cf. [Reading the Code of Golang's HTTP Server](https://bmf-tech.com/posts/Golang%E3%81%AEHTTP%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%AE%E3%82%B3%E3%83%BC%E3%83%89%E3%83%AA%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0)
+cf. [Reading the Code of Golang's HTTP Server](/posts/golang-http-server-code-reading-2019/)
 
 # Comparison of ServeMux and Third-Party Routers
 I conducted a comparison between ServeMux and third-party routers using my custom benchmarker.
@@ -203,7 +203,7 @@ I conducted a comparison between ServeMux and third-party routers using my custo
 I utilized a previously implemented custom benchmarker. For details, please refer to the following links.
 
 - [bmf-san/go-router-benchmark](https://github.com/bmf-san/go-router-benchmark)
-- [Implemented a Benchmarking Tool to Compare Go's HTTP Routers](https://bmf-tech.com/posts/Go%e3%81%aeHTTP%20Router%e3%82%92%e6%af%94%e8%bc%83%e3%81%99%e3%82%8b%e3%83%99%e3%83%b3%e3%83%81%e3%83%9e%e3%83%bc%e3%82%ab%e3%83%bc%e3%82%92%e5%ae%9f%e8%a3%85%e3%81%97%e3%81%9f)
+- [Implemented a Benchmarking Tool to Compare Go's HTTP Routers](/posts/http-router-benchmark-go/)
 
 The benchmark results are published at [<Public>go-router-benchmark](https://docs.google.com/spreadsheets/d/1DrDNGJXfquw_PED3-eMqWqh7qbCTVBWZtqaKPXtngxg/edit#gid=1913830192).
 
@@ -303,7 +303,7 @@ I presented at [Go Conference 2024](https://gocon.jp/2024/).
 [speadkerdeck.com - From Custom HTTP Router to New ServeMux](https://speakerdeck.com/bmf_san/zi-zuo-httprutakaraxin-siiservemuxhe)
 
 # References
-- [bmf-tech.com/posts/tags/router](https://bmf-tech.com/posts/tags/router)
+- [Articles tagged “router”](/tags/router/)
   - All past articles related to routers
 - [net/http: add methods and path variables to ServeMux patterns](https://github.com/golang/go/discussions/60227)
 - [net/http: enhanced ServeMux routing](https://github.com/golang/go/issues/61410)

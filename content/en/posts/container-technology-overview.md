@@ -46,7 +46,7 @@ Besides the above, container technologies like Virtuozzo, OpenVZ, HP-UX Containe
 - **Virtualization**
   - Configuration differs between host-based and hypervisor-based, but virtualization allows multiple OS setups, running applications on guest OS.
 
-A rough summary is also available at [bmf-tech - What is Docker](https://bmf-tech.com/posts/Docker%E3%81%A8%E3%81%AF).
+A rough summary is also available at [bmf-tech - What is Docker](/posts/what-is-docker/).
 
 ## Linux Kernel Features for Realizing Container Technology
 ### Kernel namespaces
@@ -108,7 +108,7 @@ Gave a lightning talk at Makuake LT Party (an internal LT event).
 [speaker-deck - Fully Understanding Containers](https://speakerdeck.com/bmf_san/kontenawan-quan-nili-jie-sita)
 
 # References
-- [bmf-tech - What is Docker](https://bmf-tech.com/posts/Docker%E3%81%A8%E3%81%AF)
+- [bmf-tech - What is Docker](/posts/what-is-docker/)
 - [[History of Containers] Until Docker was Created Part 2 ~Let's Gather Collective Knowledge and Learn History~](https://hackmd.io/s/ryPfDLU77)
 - [redhat - What is a Linux Container](https://www.redhat.com/ja/topics/containers/whats-a-linux-container)
 - [redhat - What is a Linux Container](https://www.redhat.com/ja/topics/containers)

@@ -19,7 +19,7 @@ draft: false
 
 [戦略の要諦](https://amzn.to/4eaGfTa)を読んだ。
 
-[良い戦略、悪い戦略](/posts/good-strategy-bad-strategy/)の著者リチャード・P・ルメルトによる続編にあたる本。
+[良い戦略、悪い戦略](/ja/posts/good-strategy-bad-strategy/)の著者リチャード・P・ルメルトによる続編にあたる本。
 
 前作で示された「診断・基本方針・行動」という戦略の枠組みのうち、特に診断——複雑に絡み合う問題のなかから「要諦(crux)」を見抜くこと——に踏み込んでいる。
 

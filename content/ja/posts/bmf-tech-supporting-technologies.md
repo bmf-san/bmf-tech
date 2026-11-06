@@ -105,13 +105,13 @@ bmf-tech.comのドメイン年齢を確認してみたら2015年11月2日が取�
 - サーバーの構成管理はAnsibleを使っている
 - SSLはLet's Encryptを使っている
   - 証明書取得・更新は[go-acme/lego](https://github.com/go-acme/lego)を使っている
-    - cf. [legoでLet's encryptのSSL証明書をDNS-01方式で取得する](https://bmf-tech.com/posts/lego%E3%81%A7Let%27s%20encrypt%E3%81%AESSL%E8%A8%BC%E6%98%8E%E6%9B%B8%E3%82%92DNS-01%E6%96%B9%E5%BC%8F%E3%81%A7%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B)
+    - cf. [legoでLet's encryptのSSL証明書をDNS-01方式で取得する](/ja/posts/lego-lets-encrypt-dns-01-ssl/)
   - 最初はlegoを使わず自前スクリプトでDNS-01方式の証明書取得を試みていたが、たまに上手く取得できないことがあったので断念した
     - cf. [k2snow/letsencrypt-dns-conoha](https://github.com/k2snow/letsencrypt-dns-conoha)
 - 仮想化でDockerを採用
   - Docker Composeを使って複数コンテナを管理している
   - Kubernetesを使ってみようと検証したこともあった
-    - [TerraformとAnsibleを使ってKubernetes環境構築](https://bmf-tech.com/posts/Terraform%E3%81%A8Ansible%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6Kubernetes%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89) 
+    - [TerraformとAnsibleを使ってKubernetes環境構築](/ja/posts/kubernetes-setup-with-terraform-ansible/) 
 	- 自前Kubernetesクラスタで運用してみたかったが、ベアメタルなロードバランサーを上手く扱えず断念
 - Nginxは管理画面（SPA）、API（ヘッドレスCMS。Go）、Client（ユーザー側画面。Go）画面を配信するWebサーバー
   - Nginxのイメージはマルチステージビルドで管理画面のイメージを含むようにカスタマイズしているので、管理画面のビルド済みソースコードが内包されている形になっている

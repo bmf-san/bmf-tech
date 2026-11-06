@@ -183,4 +183,4 @@ func main() {
   - Referenced as it was an easy-to-understand code implementing array with slice.
 
 # Related
-- [bmf-tech.com - O Notation and How to Calculate Algorithm Complexity](https://bmf-tech.com/posts/O（オーダー）記法とアルゴリズムの計算量の求め方)
+- [bmf-tech.com - O Notation and How to Calculate Algorithm Complexity](/posts/big-o-notation-algorithms/)

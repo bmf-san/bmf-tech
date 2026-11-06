@@ -104,13 +104,13 @@ The architecture configuration built based on the design policy is as follows.
 - I use Ansible for server configuration management.
 - SSL is provided by Let's Encrypt.
   - Certificate acquisition and renewal are handled by [go-acme/lego](https://github.com/go-acme/lego).
-    - cf. [Obtaining Let's Encrypt SSL Certificates via DNS-01 with lego](https://bmf-tech.com/posts/lego%E3%81%A7Let%27s%20encrypt%E3%81%AESSL%E8%A8%BC%E6%98%8E%E6%9B%B8%E3%82%92DNS-01%E6%96%B9%E5%BC%8F%E3%81%A7%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B)
+    - cf. [Obtaining Let's Encrypt SSL Certificates via DNS-01 with lego](/posts/lego-lets-encrypt-dns-01-ssl/)
   - Initially, I attempted to obtain DNS-01 certificates with my own script without using lego, but I gave up because it occasionally failed to acquire them.
     - cf. [k2snow/letsencrypt-dns-conoha](https://github.com/k2snow/letsencrypt-dns-conoha)
 - I adopted Docker for virtualization.
   - I manage multiple containers using Docker Compose.
   - I also experimented with Kubernetes.
-    - [Building a Kubernetes Environment with Terraform and Ansible](https://bmf-tech.com/posts/Terraform%E3%81%A8Ansible%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6Kubernetes%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89)
+    - [Building a Kubernetes Environment with Terraform and Ansible](/posts/kubernetes-setup-with-terraform-ansible/)
     - I wanted to operate my own Kubernetes cluster, but I gave up because I couldn't handle a bare-metal load balancer.
 - Nginx serves as the web server for the admin panel (SPA), API (headless CMS, Go), and Client (user-side screen, Go).
   - The Nginx image is customized to include the admin panel image through multi-stage builds, so the built source code for the admin panel is included.
