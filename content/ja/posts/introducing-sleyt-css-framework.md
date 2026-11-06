@@ -3,6 +3,7 @@ title: "sleyt — グラスモーフィズムを活用したミニマルCSSフ�
 description: '純粋CSS実装のミニマルフレームワーク『sleyt』の紹介。グラスモーフィズムデザイン、データ可視化コンポーネント（棒グラフ・折れ線グラフ・ドーナツチャート）、豊富なコンポーネントライブラリ、完全なダークモード対応をJavaScriptランタイム不要で提供。'
 slug: introducing-sleyt-css-framework
 date: 2026-03-20T00:00:00Z
+lastmod: 2026-03-28
 author: bmf-san
 categories:
   - ツール

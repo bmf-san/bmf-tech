@@ -3,6 +3,7 @@ title: "OAuth 2.1 and the Security BCP: RFC 9700 and RFC 6819 (Changes from OAut
 description: "An overview of the changes from OAuth 2.0 to 2.1 and the security measures shown by RFC 9700 Security BCP and RFC 6819 threat model. Covers mandatory PKCE, deprecation of the Implicit grant, Mix-Up defenses, and more."
 slug: oauth-2-1-security-bcp
 date: 2026-07-09T00:00:00Z
+lastmod: 2026-09-23
 author: bmf-san
 categories:
   - Application

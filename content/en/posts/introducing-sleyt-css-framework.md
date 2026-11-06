@@ -3,6 +3,7 @@ title: Introducing sleyt — A Minimal CSS Framework with Glass Morphism
 description: 'An introduction to sleyt, a pure-CSS minimal framework featuring glass morphism design, built-in data visualisation components (bar, line, donut charts), a comprehensive component library, and full dark-mode support — with zero JavaScript runtime dependency.'
 slug: introducing-sleyt-css-framework
 date: 2026-03-20T00:00:00Z
+lastmod: 2026-03-28
 author: bmf-san
 categories:
   - Tools

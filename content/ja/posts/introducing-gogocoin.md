@@ -3,6 +3,7 @@ title: "gogocoin — セルフホスティング暗号資産の自動取引ボ�
 description: 'Go製セルフホスティング型ビットコイン自動取引ボット「gogocoin」の詳細解説。プラガブル戦略アーキテクチャ、レイヤー構成と依存ルール、取引フロー・データモデル・残高キャッシュの詳解。'
 slug: introducing-gogocoin
 date: 2026-03-20T00:00:00Z
+lastmod: 2026-04-04
 author: bmf-san
 categories:
   - ツール

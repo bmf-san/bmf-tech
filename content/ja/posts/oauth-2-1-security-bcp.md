@@ -3,6 +3,7 @@ title: "OAuth 2.1とは？OAuth 2.0からの変更点とSecurity BCP（RFC 9700�
 description: "OAuth 2.0から2.1への変更点と、RFC 9700 Security BCP・RFC 6819 脅威モデルが示すセキュリティ対策を整理する。PKCE必須・Implicit非推奨・Mix-Up対策など、現在のOAuthで守るべき点をまとめる。"
 slug: oauth-2-1-security-bcp
 date: 2026-07-09T00:00:00Z
+lastmod: 2026-09-23
 author: bmf-san
 categories:
   - アプリケーション

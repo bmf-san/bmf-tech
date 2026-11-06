@@ -3,6 +3,7 @@ title: Note on Volumes Not Being Deleted Even After Removing Docker Images and C
 description: 'Learn why Docker volumes persist after removing containers and images, how to inspect and remove orphaned volumes with docker volume ls/rm, and the shortcut docker-compose down --rmi all -v.'
 slug: docker-image-container-volume-issue
 date: 2019-04-28T00:00:00Z
+lastmod: 2026-09-23
 author: bmf-san
 categories:
   - Infrastructure
