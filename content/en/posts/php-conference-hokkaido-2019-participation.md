@@ -16,7 +16,7 @@ draft: false
 
 
 # Attended PHP Conference Hokkaido 2019
-I attended the PHP Conference for the first time in two months. (The last time was [Attended and Presented at PHP Conference Fukuoka 2019](https://bmf-tech.com/posts/PHPカンファレンス福岡2019に参加・登壇してきました))
+I attended the PHP Conference for the first time in two months. (The last time was [Attended and Presented at PHP Conference Fukuoka 2019](/posts/php-conference-fukuoka-2019-participation/))
 
 Hokkaido is a place I have ties to, having lived there for a few years as a child and with my grandparents residing there. This gave me a different feeling compared to other conferences, making me feel poetic and emotional while spending time there. (I also visited the house I used to live in and the park I often played at.)
 

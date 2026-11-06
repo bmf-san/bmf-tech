@@ -27,9 +27,9 @@ As a hobbyist beginner in building my own URL routing, I hope this article will 
 Although it may be unbearable to look at, I will expose the process of trial and error.
 
 - Articles
-    - [Building URL Routing - Episode 1](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%891)
-    - [Building URL Routing - Episode 2](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%892)
-    - [Building URL Routing - Episode 3 (Final)](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%893%EF%BC%88%E5%AE%8C%E7%B5%90%E7%B7%A8%EF%BC%89)
+    - [Building URL Routing - Episode 1](/posts/creating-url-routing-episode-1/)
+    - [Building URL Routing - Episode 2](/posts/creating-url-routing-episode-2/)
+    - [Building URL Routing - Episode 3 (Final)](/posts/creating-url-routing-episode-3/)
 
 - Slides
     - [Building URL Routing Episode 1](https://speakerdeck.com/bmf_san/urlruteinguwotukuruepisodo1)

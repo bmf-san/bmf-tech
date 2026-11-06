@@ -20,9 +20,9 @@ Following last year, we participated with the same members again this year.
 
 This marks our third time participating in ISUCON.
 
-[bmf-tech.com - Road to ISUcon](https://bmf-tech.com/posts/Road%20to%20ISUcon)
+[bmf-tech.com - Road to ISUcon](/posts/road-to-isucon/)
 
-[bmf-tech.com - Participated in ISUCON10](https://bmf-tech.com/posts/ISUCON10%E3%81%AB%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%A6%E3%81%8D%E3%81%9F)
+[bmf-tech.com - Participated in ISUCON10](/posts/isucon10-participation/)
 
 Over the past year, based on last year's KPT with the team, we focused on practicing the flow and operations up to bottleneck investigation, studying all past ISUCON problems to understand the trends and solution patterns, but ended up being eliminated in the preliminaries...
 

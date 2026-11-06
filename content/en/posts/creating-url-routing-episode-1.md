@@ -18,7 +18,7 @@ draft: false
 # Creating URL Routing Episode 1
 
 ## Overview
-Previously, I created a very basic routing system using React (cf. [Creating a Custom Router with React and History API](https://bmf-tech.com/posts/React%E3%81%A8History%20API%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6router%E3%82%92%E8%87%AA%E4%BD%9C%E3%81%99%E3%82%8B)), but I wanted to challenge myself to create a more proper routing system. The trigger for this was my recent experience with Golang. It seems that by utilizing the standard library in Golang, applications can be implemented quite thinly, but the routing aspect often lacks power in the standard library, leading to a reliance on external libraries. Because of this, I felt that being able to create my own routing system would expand my capabilities in Golang and beyond, so I decided to take the plunge.
+I once created a very basic routing system using React (cf. [Creating a Custom Router with React and History API](/posts/react-history-api-router/)), but I wanted to challenge myself to create a more proper routing system. The trigger for this was my recent experience with Go. With the Go standard library, you can build applications quite thinly, but its routing support often lacks power, which leads to a reliance on external libraries. Because of this, I felt that being able to create my own routing system would expand my capabilities in Go and beyond, so I decided to try it.
 
 ## What Does URL Routing Do?
 It determines what processing should be executed in response to a requested URL. If necessary, it allows handling of path parameters and query parameters during the execution of the processing.

@@ -14,7 +14,7 @@ draft: false
 
 # Reflection on 2021 and Goals for Next Year
 Last year's post.
-[Reflection on 2020 and Goals for Next Year](https://bmf-tech.com/posts/2020%E5%B9%B4%E3%81%AE%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A%E3%81%A8%E6%9D%A5%E5%B9%B4%E3%81%AE%E6%8A%B1%E8%B2%A0)
+[Reflection on 2020 and Goals for Next Year](/posts/2020-reflection-and-goals/)
 
 I think I’ll write a reflection this year as well, but it’s becoming more tedious each year, so I’ll keep it brief.
 

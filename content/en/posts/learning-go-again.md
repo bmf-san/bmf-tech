@@ -64,7 +64,7 @@ I picked up and read about three books. There are other books I considered readi
 
 All are good books, but I particularly recommend Practical Go. I think it’s a great book for someone like me who has some experience with Go but wants to organize their knowledge.
 
-cf. https://bmf-tech.com/posts/%e5%ae%9f%e7%94%a8Go%e8%a8%80%e8%aa%9e%e3%82%92%e8%aa%ad%e3%82%93%e3%81%a0
+cf. [Practical Go Language](/posts/practical-go-language/)
 
 # Thoughts
 I’ve stored various things in my memory, so it should be useful when I need to retrieve them at some point. There are still many things I don’t fully understand, so I plan to relearn them at another milestone.

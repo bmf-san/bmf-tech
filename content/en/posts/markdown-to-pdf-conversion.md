@@ -28,7 +28,7 @@ I used existing libraries without much thought, so the structure doesn't feel ve
 If you just want to convert Markdown files to PDF, you can simply use a library called [md-to-pdf](https://github.com/simonhaenisch/md-to-pdf).
 
 This library is also helpful for managing resumes.
-cf. [Managing Resumes on Github](https://bmf-tech.com/posts/Github%e3%81%a7%e3%83%ac%e3%82%b8%e3%83%a5%e3%83%a1%e3%82%92%e7%ae%a1%e7%90%86%e3%81%99%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%97%e3%81%9f)
+cf. [Managing Resumes on GitHub](/posts/github-resume-management/)
 
 I wanted to create something that supports mermaid notation and emojis not registered in unicode.
 

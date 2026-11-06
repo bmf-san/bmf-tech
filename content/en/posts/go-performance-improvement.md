@@ -597,7 +597,7 @@ I want to study the implementations of other routers and improve my understandin
 
 ## Related Articles
 
-- [Implementing a Load Balancer in Golang](/ja/posts/golang-load-balancer-implementation/)
-- [How to Use pprof without DefaultServeMux](/ja/posts/using-pprof-without-defaultmux/)
-- [Continuous Profiling with Pyroscope](/ja/posts/continuous-profiling-with-pyroscope/)
-- [Go's Concurrency and Parallelism Models and Goroutine Scheduling](/ja/posts/go-concurrency-parallelism-models/)
+- [Implementing a Load Balancer in Go](/posts/golang-load-balancer-implementation/)
+- [How to Use pprof without DefaultServeMux](/posts/using-pprof-without-defaultmux/)
+- [Continuous Profiling with Pyroscope](/posts/continuous-profiling-with-pyroscope/)
+- [Go's Concurrency and Parallelism Models and Goroutine Scheduling](/posts/go-concurrency-parallelism-models/)

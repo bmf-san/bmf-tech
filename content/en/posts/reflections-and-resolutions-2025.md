@@ -17,13 +17,13 @@ draft: false
 # Reflections on 2025 and Aspirations for the Coming Year
 As this year comes to a close, I reflect on the past year and set aspirations for the next. This marks the eighth time I've written a reflection blog.
 
-- [Reflections on 2024 and Aspirations for the Coming Year](https://bmf-tech.com/posts/2024%e5%b9%b4%e3%81%ae%e6%8c%af%e3%82%8a%e8%bf%94%e3%82%8a%e3%81%a8%e6%9d%a5%e5%b9%b4%e3%81%ae%e6%8a%b1%e8%b2%a0)
-- [Reflections on 2023 and Aspirations for the Coming Year](https://bmf-tech.com/posts/2023%e5%b9%b4%e3%81%ae%e6%8c%af%e3%82%8a%e8%bf%94%e3%82%8a%e3%81%a8%e6%9d%a5%e5%b9%b4%e3%81%ae%e6%8a%b1%e8%b2%a0)
-- [Reflections on 2022 and Aspirations for the Coming Year](https://bmf-tech.com/posts/2022%e5%b9%b4%e3%81%ae%e6%8c%af%e3%82%8a%e8%bf%94%e3%82%8a%e3%81%a8%e6%9d%a5%e5%b9%b4%e3%81%ae%e6%8a%b1%e8%b2%a0#2-%E3%82%84%E3%82%8C%E3%81%9F%E3%81%93%E3%81%A8)
-- [Reflections on 2021 and Aspirations for the Coming Year](https://bmf-tech.com/posts/2021%e5%b9%b4%e3%81%ae%e6%8c%af%e3%82%8a%e8%bf%94%e3%82%8a%e3%81%a8%e6%9d%a5%e5%b9%b4%e3%81%ae%e6%8a%b1%e8%b2%a0)
-- [Reflections on 2020 and Aspirations for the Coming Year](https://bmf-tech.com/posts/2020%e5%b9%b4%e3%81%ae%e6%8c%af%e3%82%8a%e8%bf%94%e3%82%8a%e3%81%a8%e6%9d%a5%e5%b9%b4%e3%81%ae%e6%8a%b1%e8%b2%a0)
-- [Reflections on 2019 and Aspirations for the Coming Year](https://bmf-tech.com/posts/2019%e5%b9%b4%e3%81%ae%e6%8c%af%e3%82%8a%e8%bf%94%e3%82%8a%e3%81%a8%e6%9d%a5%e5%b9%b4%e3%81%ae%e6%8a%b1%e8%b2%a0)
-- [Reflections on 2018 and Goals for 2019](https://bmf-tech.com/posts/2018%e5%b9%b4%e3%81%ae%e6%8c%af%e3%82%8a%e8%bf%94%e3%82%8a%e3%81%a82019%e5%b9%b4%e3%81%ae%e7%9b%ae%e6%a8%99)
+- [Reflections on 2024 and Aspirations for the Coming Year](/posts/2024-reflections-goals/)
+- [Reflections on 2023 and Aspirations for the Coming Year](/posts/2023-review-and-2024-goals/)
+- [Reflections on 2022 and Aspirations for the Coming Year](/posts/2022-review-and-goals/)
+- [Reflections on 2021 and Aspirations for the Coming Year](/posts/2021-review-and-2022-goals/)
+- [Reflections on 2020 and Aspirations for the Coming Year](/posts/2020-reflection-and-goals/)
+- [Reflections on 2019 and Aspirations for the Coming Year](/posts/2019-review-and-resolutions/)
+- [Reflections on 2018 and Goals for 2019](/posts/2018-review-2019-goals/)
 
 # Personal
 I spent most of my time catching up on design-related topics. I devoured books on architecture and coding.

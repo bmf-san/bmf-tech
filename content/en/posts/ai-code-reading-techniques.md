@@ -48,4 +48,4 @@ Efficiently perform the following using AI:
   - Code reading notes
   - Improvement notes
 
-If a deeper understanding is required, it’s also good to create documents like [the structure of my system's specification](https://bmf-tech.com/posts/%e8%87%aa%e5%88%86%e7%9a%84%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e3%81%ae%e4%bb%95%e6%a7%98%e6%9b%b8%e3%81%ae%e6%a7%8b%e6%88%90).
+If you need a deeper understanding, it’s also good to create documents like [the structure of my system's specification](/posts/system-specification-structure/).

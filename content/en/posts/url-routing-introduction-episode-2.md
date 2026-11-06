@@ -17,7 +17,7 @@ draft: false
 
 
 # Overview
-This article is a continuation of [Introduction to Custom URL Routing: Episode 1](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E8%87%AA%E4%BD%9C%E5%85%A5%E9%96%80%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%EF%BC%91) and is the 15th day of the [Makuake Development Team Advent Calendar 2019](https://adventar.org/calendars/4716).
+This article is a continuation of [Introduction to Custom URL Routing: Episode 1](/posts/url-routing-introduction-episode-1/) and is the 15th day of the [Makuake Development Team Advent Calendar 2019](https://adventar.org/calendars/4716).
 
 # Creating Custom URL Routing
 Continuing from the previous article.
@@ -40,7 +40,7 @@ Now, let's briefly explain tree structures.
 
 ![Screen Shot 2019-12-15 at 20 55 26](/assets/images/posts/url-routing-introduction-episode-2/70862253-3e9bea80-1f7d-11ea-9856-1da4906c316a.png)
 
-A tree structure is a data structure that has a root, edges, nodes, and leaves (terminal nodes). There are various types of tree structures depending on the pattern of data storage and search methods. Since URL routing mainly deals with strings, we will adopt a trie tree, which is specialized for string search. For more on trie trees, refer to [bmf-tech.com - A Trie implementation in Golang](https://bmf-tech.com/posts/A%20Trie%20implementation%20in%20Golang).
+A tree structure is a data structure that has a root, edges, nodes, and leaves (terminal nodes). Tree structures come in various types depending on the pattern of data storage and search methods. Since URL routing mainly deals with strings, we will adopt a trie tree, which specializes in string search. For more on trie trees, refer to [Implementing a Trie in Go](/posts/golang-tries-implementation/).
 
 We will customize the trie tree to store data for URL path matching as follows.
 

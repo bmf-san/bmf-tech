@@ -39,12 +39,12 @@ Picked up some classic ones.
 
 - [Fun with Ruby 6th Edition](https://amzn.to/3JZamMX)
 - [Ruby for Professionals](https://amzn.to/4dG4ciA)
-  - cf. [Ruby for Professionals](https://bmf-tech.com/posts/%e3%83%97%e3%83%ad%e3%82%92%e7%9b%ae%e6%8c%87%e3%81%99%e4%ba%ba%e3%81%ae%e3%81%9f%e3%82%81%e3%81%aeRuby%e5%85%a5%e9%96%80)
+  - cf. [Ruby for Professionals](/posts/ruby-introduction-for-beginners/)
 - [Perfect Ruby](https://amzn.to/3K0wLcR)
-  - cf. [Perfect Ruby](https://bmf-tech.com/posts/%E3%83%91%E3%83%BC%E3%83%95%E3%82%A7%E3%82%AF%E3%83%88Ruby)
+  - cf. [Perfect Ruby](/posts/perfect-ruby/)
 - [Perfect Ruby on Rails](https://amzn.to/3yfO0nL)
   - Although it's a framework, if you're doing Ruby, you'll likely have opportunities to work with Rails.
-  - cf. [Perfect Ruby on Rails](https://bmf-tech.com/posts/%e3%83%91%e3%83%bc%e3%83%95%e3%82%a7%e3%82%af%e3%83%88Ruby%20on%20Rails)
+  - cf. [Perfect Ruby on Rails](/posts/perfect-ruby-on-rails/)
 
 I also picked up some books related to object-oriented programming, but haven't had the time to read them.
 
@@ -70,11 +70,11 @@ Read through articles related to tips.
 ## Blog
 Learned about language specifications that caught my interest and summarized them in a blog.
 
-- [About Ruby Symbols](https://bmf-tech.com/posts/Ruby%e3%81%ae%e3%82%b7%e3%83%b3%e3%83%9c%e3%83%ab%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6)
-- [About Ruby Block Syntax](https://bmf-tech.com/posts/Ruby%e3%81%ae%e3%83%96%e3%83%ad%e3%83%83%e3%82%af%e6%a7%8b%e6%96%87%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6)
-- [About Ruby Proc and Lambda](https://bmf-tech.com/posts/Ruby%e3%81%aeProc%e3%81%a8lamda%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6)
-- [About Ruby Singleton Classes and Methods](https://bmf-tech.com/posts/Ruby%e3%81%ae%e7%89%b9%e7%95%b0%e3%82%af%e3%83%a9%e3%82%b9%e3%83%bb%e7%89%b9%e7%95%b0%e3%83%a1%e3%82%bd%e3%83%83%e3%83%89%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6)
-- [About Ruby Modules](https://bmf-tech.com/posts/Ruby%e3%81%aeModule%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6)
+- [About Ruby Symbols](/posts/ruby-symbols/)
+- [About Ruby Block Syntax](/posts/ruby-block-syntax/)
+- [About Ruby Proc and Lambda](/posts/ruby-proc-lambda/)
+- [About Ruby Singleton Classes and Methods](/posts/ruby-singleton-class-methods/)
+- [About Ruby Modules](/posts/ruby-modules/)
 
 ## Coding Quizzes
 Solved coding quizzes for practice.

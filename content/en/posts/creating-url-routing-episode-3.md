@@ -17,20 +17,20 @@ draft: false
 ---
 
 # Overview
-I have documented the trial and error process of creating URL routing in [Creating URL Routing Episode 1](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%891) and [Creating URL Routing Episode 2](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%892), and I can finally wrap it up, so I want to conclude it in this final episode.
+I have documented my experiments in creating URL routing in [Creating URL Routing Episode 1](/posts/creating-url-routing-episode-1/) and [Creating URL Routing Episode 2](/posts/creating-url-routing-episode-2/), and I can finally wrap it up, so I want to conclude it in this final episode.
 
 That said, there are always challenges, and I understand that if I delve deeper, I could spend a lot of time on this alone...
 
 # Previous Discussions
-In [Episode 1](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%891), I thought about the data structure for routing and tried to implement it to get a grasp of the concept. (I couldn't get it to work...)
+In [Episode 1](/posts/creating-url-routing-episode-1/), I thought about the data structure for routing and tried to build it to get a grasp of the concept. (I couldn't get it to work...)
 
-In [Episode 2](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%892), I reviewed the data structure and searched for potentially useful repositories to bring it to a working state.
+In [Episode 2](/posts/creating-url-routing-episode-2/), I reviewed the data structure and searched for potentially useful repositories to bring it to a working state.
 
-In this Episode 3, I completed the implementation of the parts I left unfinished in [Creating URL Routing Episode 2](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%892).
+In this Episode 3, I completed the implementation of the parts I left unfinished in [Creating URL Routing Episode 2](/posts/creating-url-routing-episode-2/).
 
-Specifically, in [Episode 2](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%892), I implemented routing without generating a routing map, relying on the client side to prepare the routing map in advance. This time, I implemented that part.
+Specifically, in [Episode 2](/posts/creating-url-routing-episode-2/), I implemented routing without generating a routing map, relying on client-side code to prepare the routing map in advance. This time, I implemented that part.
 
-The content of this article also serves as a summary for my presentation at [phperkaigi2019](https://phperkaigi.jp/2019/), so it includes the contents of [Episode 1](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%891) and [Creating URL Routing Episode 2](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%892).
+The content of this article also serves as a summary for my presentation at [phperkaigi2019](https://phperkaigi.jp/2019/), so it includes the contents of [Episode 1](/posts/creating-url-routing-episode-1/) and [Creating URL Routing Episode 2](/posts/creating-url-routing-episode-2/).
 
 Proposal↓
 [fortee - Creating URL Routing in PHP by bmf_san](https://fortee.jp/phperkaigi-2019/proposal/08d951da-29cb-4ee5-bf08-c88129c0bb3f)

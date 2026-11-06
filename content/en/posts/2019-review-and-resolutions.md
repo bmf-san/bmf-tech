@@ -33,7 +33,7 @@ I want to pick out individual matters to write about, but there are so many that
 ## Private Aspects
 
 - I conquered all PHP conferences nationwide.
-  - This was something I wanted to do at least once. cf. [I completed all PHP conferences in 2019](https://bmf-tech.com/posts/2019%E5%B9%B4%E3%81%AE%E5%85%A8PHP%E3%82%AB%E3%83%B3%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9%E3%82%92%E3%82%B3%E3%83%B3%E3%83%97%E3%83%AA%E3%83%BC%E3%83%88%E3%81%97%E3%81%9F)
+  - This was something I wanted to do at least once. cf. [I completed all PHP conferences in 2019](/posts/complete-2019-php-conferences/)
 - I absorbed various inputs.
   - I aimed to increase my input this year, so I spent a lot of time digesting unread books, doing various research, and writing blog posts bit by bit.
     - Originally, I am output-oriented, so I feel like I can return to focusing on output next year.

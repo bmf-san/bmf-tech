@@ -13,7 +13,7 @@ draft: false
 ---
 
 # Overview
-[Golang Pointers Basics](https://bmf-tech.com/posts/Golang%E3%81%AE%E3%83%9D%E3%82%A4%E3%83%B3%E3%82%BF%E3%81%AE%E5%9F%BA%E6%9C%AC) discussed pointers from the perspective of reference passing and value passing. However, I became confused while handling pointers, so I will summarize the overview of pointers.
+[Go Pointers Basics](/posts/golang-pointers-basics/) discussed pointers from the perspective of reference passing and value passing. Still, I became confused while handling pointers, so I will summarize the overview of pointers.
 
 # Pointer Type
 - A variable type that stores an address in memory.

@@ -14,7 +14,7 @@ draft: false
 ---
 
 # Overview
-Previously, I wrote an article titled [Directory Structure and nginx conf File Considerations When Integrating SPA into Laravel](https://bmf-tech.com/posts/Laravel%E3%81%ABSPA%E3%82%92%E7%B5%84%E3%81%BF%E8%BE%BC%E3%82%80%E6%99%82%E3%81%AB%E8%80%83%E3%81%88%E3%81%9F%E3%83%86%E3%82%99%E3%82%A3%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E6%A7%8B%E6%88%90%E3%81%A8nginx%E3%81%AEconf%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB), but the nginx conf described there was insufficient, so I revisited and resolved the issues.
+I wrote an earlier article titled [Directory Structure and nginx conf File Considerations When Integrating SPA into Laravel](/posts/laravel-spa-directory-structure-nginx-config/), but the nginx conf described there was insufficient, so I revisited and resolved the issues.
 
 # Prerequisites
 - History API

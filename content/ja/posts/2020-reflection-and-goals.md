@@ -19,8 +19,7 @@ draft: false
 
 # 今年の振り返り
 去年のやつ。
-[bmf-tech.com - 2019年の振り返りと来年の抱負](https://bmf-tech.com/posts/
-2019%E5%B9%B4%E3%81%AE%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A%E3%81%A8%E6%9D%A5%E5%B9%B4%E3%81%AE%E6%8A%B1%E8%B2%A0)
+[bmf-tech.com - 2019年の振り返りと来年の抱負](/ja/posts/2019-review-and-resolutions/)
 
 結構ざっくりした内容でこれを見ても何のコメントも浮かばないが、去年計画していたことはTrelloにすべて落としこんでいたので、振り返りはTrelloで完結するようになっている。
 

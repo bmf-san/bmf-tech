@@ -15,16 +15,16 @@ draft: false
 # Reflection on 2022 and Goals for Next Year
 Every year, I write about my reflections and goals.
 
-- [Reflection on 2021 and Goals for Next Year](https://bmf-tech.com/posts/2021%e5%b9%b4%e3%81%ae%e6%8c%af%e3%82%8a%e8%bf%94%e3%82%8a%e3%81%a8%e6%9d%a5%e5%b9%b4%e3%81%ae%e6%8a%b1%e8%b2%a0)
-- [Reflection on 2020 and Goals for Next Year](https://bmf-tech.com/posts/2020%e5%b9%b4%e3%81%ae%e6%8c%af%e3%82%8a%e8%bf%94%e3%82%8a%e3%81%a8%e6%9d%a5%e5%b9%b4%e3%81%ae%e6%8a%b1%e8%b2%a0)
-- [Reflection on 2019 and Goals for Next Year](https://bmf-tech.com/posts/2019%e5%b9%b4%e3%81%ae%e6%8c%af%e3%82%8a%e8%bf%94%e3%82%8a%e3%81%a8%e6%9d%a5%e5%b9%b4%e3%81%ae%e6%8a%b1%e8%b2%a0)
-- [Reflection on 2018 and Goals for 2019](https://bmf-tech.com/posts/2018%e5%b9%b4%e3%81%ae%e6%8c%af%e3%82%8a%e8%bf%94%e3%82%8a%e3%81%a82019%e5%b9%b4%e3%81%ae%e7%9b%ae%e6%a8%99)
+- [Reflection on 2021 and Goals for Next Year](/posts/2021-review-and-2022-goals/)
+- [Reflection on 2020 and Goals for Next Year](/posts/2020-reflection-and-goals/)
+- [Reflection on 2019 and Goals for Next Year](/posts/2019-review-and-resolutions/)
+- [Reflection on 2018 and Goals for 2019](/posts/2018-review-2019-goals/)
 
 # Personal
 ## Achievements
 One of my greatest achievements this year might be completing the replacement of bmf-tech, which was a significant challenge for me. I also enjoyed the fun of software engineering as a comprehensive martial art.
 
-[Technologies Supporting bmf-tech](https://bmf-tech.com/posts/bmf-tech%e3%82%92%e6%94%af%e3%81%88%e3%82%8b%e6%8a%80%e8%a1%93)
+[Technologies Supporting bmf-tech](/posts/bmf-tech-supporting-technologies/)
 
 This had been a long-term project, so it was great to finally reach a milestone.
 

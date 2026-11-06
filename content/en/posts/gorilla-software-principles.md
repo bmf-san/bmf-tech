@@ -15,7 +15,7 @@ draft: false
 
 
 # Overview
-I gave a lightning talk based on a rough memo I wrote earlier about [software development laws](https://bmf-tech.com/posts/%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2%E9%96%8B%E7%99%BA%E3%81%AE%E6%B3%95%E5%89%87), so I will summarize it by supplementing the slide content.
+I gave a lightning talk based on a rough memo I wrote earlier about [software development laws](/posts/software-development-principles/), so I will summarize it by supplementing the slide content.
 
 Slides are here ↓
 [10 Software Laws Learned from Gorillas](https://speakerdeck.com/bmf_san/koriratexue-husohutoueafalsefa-ze-10xuan)

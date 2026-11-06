@@ -144,4 +144,4 @@ func main() {
     - The implementation was easy to understand
 
 # Related
-- [bmf-tech.com - O Notation and How to Determine Algorithm Complexity](https://bmf-tech.com/posts/O（オーダー）記法とアルゴリズムの計算量の求め方)
+- [bmf-tech.com - O Notation and How to Determine Algorithm Complexity](/posts/big-o-notation-algorithms/)

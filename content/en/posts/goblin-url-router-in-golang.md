@@ -32,7 +32,7 @@ I decided to use a trie tree for something a bit more familiar and simpler.
 ## Reading `net/http` Code
 To implement it as an extension of the multiplexer in `net/http`, it is necessary to have a certain understanding of its internal mechanisms.
 
-Refer to [Reading Golang's HTTP Server Code](https://bmf-tech.com/posts/Golang%E3%81%AEHTTP%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%AE%E3%82%B3%E3%83%BC%E3%83%89%E3%83%AA%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0).
+Refer to [Reading Golang's HTTP Server Code](/posts/golang-http-server-code-reading-2019/).
 
 ## Reading Various Router Implementations
 Reference > See the repository.
@@ -40,7 +40,7 @@ Reference > See the repository.
 ## Others
 An article summarizing past URL routing.
 
-[URL Routing Articles](https://bmf-tech.com/posts/tags/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0)
+[URL Routing Articles](/tags/url-routing/)
 
 # Implementation
 

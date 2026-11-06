@@ -77,7 +77,7 @@ func main() {
 
 ```
 
-- cf. [Algorithms and Data Structures - Heap](https://bmf-tech.com/posts/%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0%E3%81%A8%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0%20-%20%E3%83%92%E3%83%BC%E3%83%97)
+- cf. [Algorithms and Data Structures - Heap](/posts/algorithms-data-structures-heap/)
 
 # References
 - ~~Algorithms and Data Structures~~

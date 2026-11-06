@@ -198,7 +198,7 @@ The data obtained from the operation of SLO and the discussions that arise are a
   - The content is well organized and easy to understand
 - [newrelic.com - What are SLOs, SLIs, and SLAs?](https://newrelic.com/jp/blog/best-practices/what-are-slos-slis-slas)
 - [newrelic.com - Best Practices for Setting SLI/SLO in Modern Systems](https://newrelic.com/jp/blog/best-practices/best-practices-for-setting-slos-and-slis-for-modern-complex-systems)
-- [bmf-tech.com - About SLI, SLO, and SLA](https://bmf-tech.com/posts/SLI%E3%83%BBSLO%E3%83%BBSLA%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
+- [bmf-tech.com - About SLI, SLO, and SLA](/posts/sli-slo-sla-explained/)
 - [sreake.com - What You Should Know Before Implementing SLI, SLO, and Error Budgets](https://sreake.com/blog/sli-slo-good-practices/)
   - Detailed writing from design to operation, which is helpful
   - Released on the same day as this article

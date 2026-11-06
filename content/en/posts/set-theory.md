@@ -28,7 +28,7 @@ For software engineers, sets are a fundamental concept in data structures and al
 
 In RDB, set theory is a very important concept, and relations, tuples, and SQL can be considered as sets themselves.
 
-cf. [bmf-tech.com - Practical Database Introduction from Theory ~ Efficient SQL with Relational Model](https://bmf-tech.com/posts/%e7%90%86%e8%ab%96%e3%81%8b%e3%82%89%e5%ad%a6%e3%81%b6%e3%83%87%e3%83%bc%e3%82%bf%e3%83%99%e3%83%bc%e3%82%b9%e5%ae%9f%e8%b7%b5%e5%85%a5%e9%96%80%20~%e3%83%aa%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%8a%e3%83%ab%e3%83%a2%e3%83%87%e3%83%ab%e3%81%ab%e3%82%88%e3%82%8b%e5%8a%b9%e7%8e%87%e7%9a%84%e3%81%aaSQL)
+cf. [bmf-tech.com - Practical Database Introduction from Theory ~ Efficient SQL with Relational Model](/posts/database-practical-introduction-relational-model/)
 
 Set theory is also related to logic, and sets are sometimes used as expressions of logic.
 

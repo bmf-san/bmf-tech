@@ -13,7 +13,7 @@ translation_key: goreleaser-docker-image-build-push
 draft: false
 ---
 
-Previously, in the article titled [Distributing Go Applications with GoReleaser](https://bmf-tech.com/posts/GoReleaser%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%AEGo%E3%81%AE%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E9%85%8D%E5%B8%83%E3%81%99%E3%82%8B), I wrote about distributing binaries using GoReleaser. This time, I've tried pushing images to Dockerhub, so I'll summarize it here.
+In the earlier article titled [Distributing Go Applications with GoReleaser](/posts/goreleaser-go-distribution/), I wrote about distributing binaries using GoReleaser. This time, I've tried pushing images to DockerHub, so I'll summarize it here.
 
 Refer to the overall source code at [bmf-san/gondola](https://github.com/bmf-san/gondola).
 
