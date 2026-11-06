@@ -153,7 +153,7 @@ FAPI 2.0は、金融などの高リスクなAPI向けにOAuthの使い方を絞�
 | RFC 7591 / RFC 7592（DCR） | クライアントをASに動的に登録し、管理する | RFC（管理用の7592はExperimental） |
 | CIMD（draft-ietf-oauth-client-id-metadata-document） | URLを`client_id`にし、そのURLにクライアントのメタデータを置く | Draft（-02、2026年7月） |
 
-AS側のメタデータは[OpenID ConnectのDiscoveryとメタデータとは？](/ja/posts/oidc-discovery-metadata/)で、Resource Indicatorsは[送信者制約トークンとは？](/ja/posts/sender-constrained-tokens-mtls-dpop/)で、DCRは[動的クライアント登録（DCR）とは？](/ja/posts/dynamic-client-registration/)で扱った。
+AS側のメタデータは[OIDC Discoveryとは？](/ja/posts/oidc-discovery-metadata/)で、Resource Indicatorsは[送信者制約トークンとは？](/ja/posts/sender-constrained-tokens-mtls-dpop/)で、DCRは[動的クライアント登録（DCR）とは？](/ja/posts/dynamic-client-registration/)で扱った。
 
 ## Protected Resource Metadata（RFC 9728）
 
@@ -309,7 +309,7 @@ RFC 9470は、RSが「このトークンの認証では足りない」と返す�
 - [OAuth 2.0とは？フロー・トークン・実装の完全解説](/ja/posts/oauth-2-0/)
 - [OAuth 2.1とは？OAuth 2.0からの変更点とSecurity BCP（RFC 9700）](/ja/posts/oauth-2-1-security-bcp/)
 - [OpenID Connect 1.0 仕様まとめ](/ja/posts/openid-connect-1-0-spec-summary/)
-- [OpenID ConnectのDiscoveryとメタデータとは？自動設定と鍵取得の仕組み](/ja/posts/oidc-discovery-metadata/)
+- [OIDC Discoveryとは？RFC 8414のメタデータと鍵取得の仕組み](/ja/posts/oidc-discovery-metadata/)
 - [動的クライアント登録（DCR）とは？RFC 7591・7592入門](/ja/posts/dynamic-client-registration/)
 - [JOSEとは？JWT・JWS・JWE・JWK・JWAの全体像と安全な使い方](/ja/posts/jose-overview/)
 - [JWTとは？安全なAPI認証のためのJSON Web Token解説](/ja/posts/jwt-introduction/)

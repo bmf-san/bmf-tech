@@ -57,7 +57,7 @@ ICUを使うには、PostgreSQLがICU対応でビルドされている必要が�
 
 ## 関連記事
 
-- [PostgreSQLにおけるCOLLATE（照合順序）について](/ja/posts/postgresql-collate-explained/)
+- [PostgreSQLのCOLLATE（照合順序）とは？設定と確認方法](/ja/posts/postgresql-collate-explained/)
 - [PostgreSQLのメモリ設定](/ja/posts/postgresql-memory-settings/)
 - [PostgreSQLのRow Level Security（RLS）について](/ja/posts/postgresql-row-level-security/)
 - [内部構造から学ぶPostgreSQL―設計・運用計画の鉄則](/ja/posts/postgresql-internal-structure/)

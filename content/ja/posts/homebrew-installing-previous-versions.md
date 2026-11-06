@@ -1,5 +1,5 @@
 ---
-title: homebrewで過去バージョンをインストールする
+title: "Homebrewで過去バージョンに戻す方法｜brew extractでダウングレード"
 description: "Homebrewでインストールするパッケージについて、過去のバージョンを指定してインストール・ダウングレードする方法を解説した記事です。Homebrewが最新版のみを保持する方針になったことで必要になったひと手間を、vimを例にとって具体的に紹介します。"
 slug: homebrew-installing-previous-versions
 date: 2022-10-30T00:00:00Z

@@ -1,5 +1,5 @@
 ---
-title: PostgreSQLにおけるCOLLATE（照合順序）について
+title: "PostgreSQLのCOLLATE（照合順序）とは？設定と確認方法"
 description: 'PostgreSQLのCOLLATE（照合順序）の仕組みを解説。LC_COLLATEの設定・列単位の指定・pg_databaseで照合順序を確認するクエリ・日本語ロケール環境での注意点を詳しく紹介します。'
 slug: postgresql-collate-explained
 date: 2025-03-05T00:00:00Z

@@ -1,5 +1,5 @@
 ---
-title: Rego入門
+title: "Regoとは？OPAのポリシー言語を基本構文からテストまで学ぶ入門"
 description: "OPA（Open Policy Agent）のポリシー記述言語であるRegoを、入門から実践までひと通り学べるようにまとめた記事です。Regoとは何かという基礎から、宣言型の基本構文とデータ構造、ルールの種類と書き方、制御構造や組み込み関数、内包表記、テストやデバッグの方法までを網羅的に解説します。"
 slug: introduction-to-rego
 date: 2025-07-31T00:00:00Z
