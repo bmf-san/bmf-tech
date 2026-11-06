@@ -9,7 +9,7 @@ tags:
   -
 description: ""
 translation_key: {{.Slug}}
-books:
+recommended_books:
   - asin: ""
     title: ""
   - asin: ""
@@ -21,7 +21,7 @@ draft: true
 
 <!--
 まとめ（ロードアップ）記事の雛形。「◯◯ おすすめ本」等の検索意図を狙うピラーページ。
-- books: に紹介する本の ASIN とタイトルを列挙 → 記事末尾に書影カードと無料体験CTAが自動表示される。
+- recommended_books: に紹介する本の ASIN とタイトルを列挙 → 記事末尾に書影カードと ItemList の構造化データが出力される（books: は書評1冊用で、本棚ウィジェットに載るため使わない）。
 - 記事上部にも書影を並べたい場合は tags に「書評」を追加（$isReview 判定で表示）。
 - 個別レビュー記事がある本は本文から内部リンクを貼る（回遊・内部SEO）。
 - description は120字前後で対象読者と選書の観点を要約。

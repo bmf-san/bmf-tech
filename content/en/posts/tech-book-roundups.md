@@ -19,6 +19,7 @@ An index of this blog's tech book roundups, organized by topic. It spans design,
 - [Software architecture books](/posts/software-architecture-recommended-books/) — 12 books, from design basics to microservices and API design.
 - [Good code books](/posts/clean-code-recommended-books/) — 9 books centered on readability and refactoring.
 - [System design and architect books](/posts/system-design-recommended-books/) — 8 books, from design interviews to the design process and trade-offs.
+- [Microservices books](/posts/microservices-recommended-books/) — 8 books, from concepts and migration to design patterns and production operations.
 - [Books to learn about API design](/posts/books-on-api-design/) — from API design basics to testing and design patterns.
 
 ## Programming languages
