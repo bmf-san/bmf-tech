@@ -1,5 +1,5 @@
 ---
-title: "Unit Testing Best Practices: A Practical Guide for Developers"
+title: "Unit Testing Principles, Practices, and Patterns"
 slug: unit-testing-concepts-usage
 date: 2024-05-21T00:00:00Z
 author: bmf-san
@@ -8,7 +8,7 @@ categories:
 tags:
   - Design
   - Book Review
-description: "A review of Unit Testing Best Practices. A book that compiles the thinking and approaches needed for high-quality test design. Centered on what good tests should have, such as protection against regressions, resistance to refactoring, and maintainability, it shows with many examples how to design tests with cost-effectiveness in mind."
+description: "A review of Unit Testing Principles, Practices, and Patterns (Japanese edition). A book that compiles the thinking and approaches needed for high-quality test design. Centered on what good tests should have, such as protection against regressions, resistance to refactoring, and maintainability, it shows with many examples how to design tests with cost-effectiveness in mind."
 translation_key: unit-testing-concepts-usage
 books:
   - asin: "4839981728"

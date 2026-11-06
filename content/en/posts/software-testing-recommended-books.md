@@ -1,5 +1,5 @@
 ---
-title: '7 Books for Learning Software Testing, from Basics to TDD and Quality'
+title: "7 Japanese Books for Learning Software Testing, from Basics to TDD and Quality"
 slug: software-testing-recommended-books
 date: 2026-09-22T00:00:00Z
 author: bmf-san
@@ -7,7 +7,7 @@ categories:
   - Testing
 tags:
   - Book Review
-description: "A staged reading list of 7 books for learning software testing, from the basics to TDD and quality assurance: fundamentals, TDD and unit testing, practice and improvement, and the quality body of knowledge. Each entry links to its full review."
+description: "A staged reading list of 7 Japanese books for learning software testing, from the basics to TDD and quality assurance: fundamentals, TDD and unit testing, practice and improvement, and the quality body of knowledge. Each entry links to its full review."
 translation_key: software-testing-recommended-books
 recommended_books:
   - asin: "4822282511"
@@ -28,6 +28,8 @@ draft: false
 ---
 
 A staged reading list for anyone learning software testing, from the basics to TDD and quality assurance. Each pick has its own review on this blog, and every entry links to it. The order follows a learning path: fundamentals, then practice, improvement, and a body of knowledge.
+
+The books in this list are Japanese editions, and the store links go to Amazon Japan.
 
 ## Why learn software testing
 

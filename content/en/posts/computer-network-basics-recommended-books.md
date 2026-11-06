@@ -1,5 +1,5 @@
 ---
-title: '8 Books on Computer and Network Fundamentals (CS, OS, and TCP/IP)'
+title: "8 Japanese Books on Computer and Network Fundamentals (CS, OS, and TCP/IP)"
 slug: computer-network-basics-recommended-books
 date: 2026-10-16T00:00:00Z
 author: bmf-san
@@ -8,7 +8,7 @@ categories:
 tags:
   - Book Review
   - TCP
-description: "A reading list of 8 books for relearning computer and network fundamentals: how computers and programs work, an overview of computer science, the OS and UNIX, and TCP/IP and email. Each entry links to its full review."
+description: "A reading list of 8 Japanese books for relearning computer and network fundamentals: how computers and programs work, an overview of computer science, the OS and UNIX, and TCP/IP and email. Each entry links to its full review."
 translation_key: computer-network-basics-recommended-books
 recommended_books:
   - asin: "429600123X"
@@ -31,6 +31,8 @@ draft: false
 ---
 
 A reading list for anyone who wants to relearn the fundamentals of computers and networks. Each pick has its own review on this blog, and every entry links to it. The list starts with how hardware and programs work, then moves through an overview of computer science, the OS, and networking.
+
+The books in this list are Japanese editions, and the store links go to Amazon Japan.
 
 ## Why learn the fundamentals
 

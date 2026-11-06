@@ -1,5 +1,5 @@
 ---
-title: '12 Books for Learning Engineering Management (Organization, Leadership, PdM)'
+title: "12 Japanese Books for Learning Engineering Management (Organization, Leadership, PdM)"
 slug: engineering-management-recommended-books
 date: 2026-09-22T00:00:00Z
 author: bmf-san
@@ -10,7 +10,7 @@ tags:
   - Leadership
   - Organization Design
   - Managers
-description: "A staged reading list of 12 books for learning engineering management, from building organizations to leadership and product management: organization and team design, the manager's role, technical strategy, and product. Each entry links to its full review."
+description: "A staged reading list of 12 Japanese books for learning engineering management, from building organizations to leadership and product management: organization and team design, the manager's role, technical strategy, and product. Each entry links to its full review."
 translation_key: engineering-management-recommended-books
 recommended_books:
   - asin: "4774196053"
@@ -41,6 +41,8 @@ draft: false
 ---
 
 A staged reading list for anyone learning engineering management, from building organizations to leadership and product management. Each pick has its own review on this blog, and every entry links to it. The order moves from organization and team design to the manager's role, technical strategy, and product.
+
+The books in this list are Japanese editions, and the store links go to Amazon Japan.
 
 ## Why learn engineering management
 

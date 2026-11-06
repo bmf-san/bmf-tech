@@ -1,5 +1,5 @@
 ---
-title: '4 Books on Software Engineering Careers (From the Fundamentals to Staff Engineer)'
+title: "4 Japanese Books on Software Engineering Careers (From the Fundamentals to Staff Engineer)"
 slug: engineer-career-recommended-books
 date: 2026-10-16T00:00:00Z
 author: bmf-san
@@ -7,7 +7,7 @@ categories:
   - Career
 tags:
   - Book Review
-description: "A reading list of 4 books for thinking about a software engineering career: the fundamentals of the job, how to approach your career, and the staff engineer path to technical leadership. Each entry links to its full review."
+description: "A reading list of 4 Japanese books for thinking about a software engineering career: the fundamentals of the job, how to approach your career, and the staff engineer path to technical leadership. Each entry links to its full review."
 translation_key: engineer-career-recommended-books
 recommended_books:
   - asin: "4814401787"
@@ -22,6 +22,8 @@ draft: false
 ---
 
 A reading list for anyone thinking about their career as a software engineer. Each pick has its own review on this blog, and every entry links to it. The list starts with the fundamentals of the job, then moves to how to approach your career and the path to technical leadership.
+
+The books in this list are Japanese editions, and the store links go to Amazon Japan.
 
 ## Why read about your career
 

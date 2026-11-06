@@ -1,5 +1,5 @@
 ---
-title: 'Recommended Tech Books for Engineers: An Index by Topic'
+title: "Recommended Japanese Tech Books for Engineers: An Index by Topic"
 slug: tech-book-roundups
 date: 2026-09-22T00:00:00Z
 author: bmf-san
@@ -7,12 +7,14 @@ categories:
   - Career
 tags:
   - Book Review
-description: "An index of this blog's tech book roundups by topic: design, languages, data, quality, security, fundamentals and operations, generative AI, management, and careers. Pick by goal, and reach the individual reviews from each roundup."
+description: "An index of this blog's roundups of Japanese tech books by topic: design, languages, data, quality, security, fundamentals and operations, generative AI, management, and careers. Pick by goal, and reach the individual reviews from each roundup."
 translation_key: tech-book-roundups
 draft: false
 ---
 
 An index of this blog's tech book roundups, organized by topic. It spans design, languages, data, quality, security, fundamentals and operations, generative AI, management, and careers, so you can pick by goal. From each roundup, you can also reach the individual review of every book.
+
+Each roundup lists Japanese editions, and the store links go to Amazon Japan.
 
 ## Design and code
 

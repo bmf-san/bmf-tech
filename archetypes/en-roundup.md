@@ -25,10 +25,13 @@ Roundup (pillar) post scaffold. Targets "best books for X" search intent.
 - To also show covers at the top, add the "Book Review" tag (gated on $isReview).
 - Link to individual review posts from the body where they exist (internal SEO / navigation).
 - Keep description ~120 chars: who it is for + how the books were chosen.
+- The picks are Japanese editions, so say so in the title and description (e.g. "8 Japanese Books for ...") and keep the note below; English "best books" searchers otherwise expect English editions.
 - Create the JA version with the same SLUG via make new-ja-roundup so translation_key matches.
 -->
 
 (Two or three sentences: who this is for and how these books were chosen. Answer the search intent.)
+
+The books in this list are Japanese editions, and the store links go to Amazon Japan.
 
 ## Why read about this topic
 

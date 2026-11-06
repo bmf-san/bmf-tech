@@ -1,5 +1,5 @@
 ---
-title: '6 Books on SaaS and Building a Business (Launch, Architecture, Sales, and Customers)'
+title: "6 Japanese Books on SaaS and Building a Business (Launch, Architecture, Sales, and Customers)"
 slug: saas-business-recommended-books
 date: 2026-10-16T00:00:00Z
 author: bmf-san
@@ -8,7 +8,7 @@ categories:
 tags:
   - Book Review
   - SaaS
-description: "A reading list of 6 books for engineers who want to understand SaaS and new businesses: launching a SaaS, multi-tenant architecture, how sales and customer success work, and understanding customers with Lean Startup and Jobs Theory. Each entry links to its full review."
+description: "A reading list of 6 Japanese books for engineers who want to understand SaaS and new businesses: launching a SaaS, multi-tenant architecture, how sales and customer success work, and understanding customers with Lean Startup and Jobs Theory. Each entry links to its full review."
 translation_key: saas-business-recommended-books
 recommended_books:
   - asin: "4798167355"
@@ -27,6 +27,8 @@ draft: false
 ---
 
 A reading list for engineers who want to understand how SaaS products and new businesses get built and how they grow. Each pick has its own review on this blog, and every entry links to it. The list starts with launching a SaaS and its architecture, then moves to sales and customer success, and finally to understanding customers.
+
+The books in this list are Japanese editions, and the store links go to Amazon Japan.
 
 ## Why engineers should learn the business side
 

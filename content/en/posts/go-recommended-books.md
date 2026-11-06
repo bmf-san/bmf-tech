@@ -1,5 +1,5 @@
 ---
-title: '9 Books for Learning Go (Beginner to Advanced)'
+title: "9 Japanese Books for Learning Go (Beginner to Advanced)"
 slug: go-recommended-books
 date: 2026-09-22T00:00:00Z
 author: bmf-san
@@ -8,7 +8,7 @@ categories:
 tags:
   - Book Review
   - Golang
-description: "A staged reading list of 9 books for learning Go, from beginner to advanced: language basics, a deeper understanding of the language, and web, systems, and distributed implementation. Each entry links to its full review."
+description: "A staged reading list of 9 Japanese books for learning Go, from beginner to advanced: language basics, a deeper understanding of the language, and web, systems, and distributed implementation. Each entry links to its full review."
 translation_key: go-recommended-books
 recommended_books:
   - asin: "B01FH3KRTI"
@@ -33,6 +33,8 @@ draft: false
 ---
 
 A staged reading list for anyone learning Go, from the basics to real practice. Each pick has its own review on this blog, and every entry links to it. The order follows a learning path: language basics, a deeper understanding of the language, and web, systems, and distributed implementation.
+
+The books in this list are Japanese editions, and the store links go to Amazon Japan.
 
 ## Why learn Go
 

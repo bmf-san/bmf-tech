@@ -1,5 +1,5 @@
 ---
-title: '5 Books for Engineers on the Basics of Business Systems'
+title: "5 Japanese Books for Engineers on the Basics of Business Systems"
 slug: business-systems-recommended-books
 date: 2026-09-22T00:00:00Z
 author: bmf-san
@@ -7,7 +7,7 @@ categories:
   - Business
 tags:
   - Book Review
-description: "A reading list of 5 books for learning the basics of business systems from an engineer's view: accounting, finance, inventory, production, and logistics. It groups the 'Knowledge and Skills of X Systems for Engineers' series by domain, and each entry links to its full review."
+description: "A reading list of 5 Japanese books for learning the basics of business systems from an engineer's view: accounting, finance, inventory, production, and logistics. It groups the 'Knowledge and Skills of X Systems for Engineers' series by domain, and each entry links to its full review."
 translation_key: business-systems-recommended-books
 recommended_books:
   - asin: "4798162949"
@@ -24,6 +24,8 @@ draft: false
 ---
 
 A reading list for anyone who wants to learn the basics of business systems from an engineer's view, covering accounting, inventory, and logistics. Each pick has its own review on this blog, and every entry links to it. All belong to the "Knowledge and Skills of X Systems for Engineers" series, which pairs the background of the work with how the system supports it.
+
+The books in this list are Japanese editions, and the store links go to Amazon Japan.
 
 ## Why learn about business systems
 

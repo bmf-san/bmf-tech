@@ -1,5 +1,5 @@
 ---
-title: '7 Books for Learning Ruby and Rails (Beginner to Advanced)'
+title: "7 Japanese Books for Learning Ruby and Rails (Beginner to Advanced)"
 slug: ruby-recommended-books
 date: 2026-09-22T00:00:00Z
 author: bmf-san
@@ -8,7 +8,7 @@ categories:
 tags:
   - Book Review
   - Ruby
-description: "A staged reading list of 7 books for learning Ruby and Ruby on Rails: getting started, deepening the language, and Rails in practice. Each entry links to its full review."
+description: "A staged reading list of 7 Japanese books for learning Ruby and Ruby on Rails: getting started, deepening the language, and Rails in practice. Each entry links to its full review."
 translation_key: ruby-recommended-books
 recommended_books:
   - asin: "4797399848"
@@ -29,6 +29,8 @@ draft: false
 ---
 
 A staged reading list for anyone learning Ruby and Ruby on Rails, from the basics to real practice. Each pick has its own review on this blog, and every entry links to it. The order follows a learning path: the language basics, deepening Ruby, and Rails in practice.
+
+The books in this list are Japanese editions, and the store links go to Amazon Japan.
 
 ## Why learn Ruby
 

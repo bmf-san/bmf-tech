@@ -1,5 +1,5 @@
 ---
-title: '12 Books for Learning Software Architecture, from Fundamentals to Practice'
+title: "12 Japanese Books for Learning Software Architecture, from Fundamentals to Practice"
 slug: software-architecture-recommended-books
 date: 2026-09-22T00:00:00Z
 author: bmf-san
@@ -11,7 +11,7 @@ tags:
   - Design
   - Microservices
   - DDD
-description: "A staged reading list of 12 books for learning software architecture, from fundamentals to practice: design basics, trade-offs, domain-driven design, microservices, and API design. Each entry links to its full review."
+description: "A staged reading list of 12 Japanese books for learning software architecture, from fundamentals to practice: design basics, trade-offs, domain-driven design, microservices, and API design. Each entry links to its full review."
 translation_key: software-architecture-recommended-books
 recommended_books:
   - asin: "4814401558"
@@ -42,6 +42,8 @@ draft: false
 ---
 
 This is a staged reading list for anyone learning software architecture, from the fundamentals to real practice. Each pick has its own review on this blog, and every entry links to it. The order follows a learning path: fundamentals, trade-offs, domain-driven design, microservices, and API design.
+
+The books in this list are Japanese editions, and the store links go to Amazon Japan.
 
 ## Why learn software architecture
 
