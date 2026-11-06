@@ -84,5 +84,6 @@ draft: false
 
 - [📚 すべての技術書まとめ（一覧）](/ja/posts/tech-book-roundups/)
 - [ソフトウェアアーキテクチャのおすすめ本](/ja/posts/software-architecture-recommended-books/)
+- [マイクロサービスのおすすめ本](/ja/posts/microservices-recommended-books/)
 - [監視・SRE・運用のおすすめ本](/ja/posts/sre-operations-recommended-books/)
 - [Webパフォーマンスのおすすめ本](/ja/posts/web-performance-recommended-books/)

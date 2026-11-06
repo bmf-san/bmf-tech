@@ -19,6 +19,7 @@ draft: false
 - [ソフトウェアアーキテクチャのおすすめ本](/ja/posts/software-architecture-recommended-books/) — 設計の基礎からマイクロサービス、API設計まで12冊。
 - [良いコードを書くためのおすすめ本](/ja/posts/clean-code-recommended-books/) — 読みやすさとリファクタリングを中心に9冊。
 - [システム設計とアーキテクトのおすすめ本](/ja/posts/system-design-recommended-books/) — 設計面接から設計プロセス、トレードオフまで8冊。
+- [マイクロサービスのおすすめ本](/ja/posts/microservices-recommended-books/) — 概念と移行から設計パターン、本番運用まで8冊。
 - [API設計について学べるおすすめ本](/ja/posts/books-on-api-design/) — API設計の基礎からテスト、デザインパターンまで。
 
 ## プログラミング言語

@@ -86,5 +86,6 @@ Start with the two interview books to pick up design templates, then learn the p
 
 - [📚 All tech book roundups](/posts/tech-book-roundups/)
 - [Software architecture books](/posts/software-architecture-recommended-books/)
+- [Microservices books](/posts/microservices-recommended-books/)
 - [Monitoring, SRE, and operations books](/posts/sre-operations-recommended-books/)
 - [Web performance books](/posts/web-performance-recommended-books/)

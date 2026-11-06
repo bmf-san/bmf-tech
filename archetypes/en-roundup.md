@@ -9,7 +9,7 @@ tags:
   -
 description: ""
 translation_key: {{.Slug}}
-books:
+recommended_books:
   - asin: ""
     title: ""
   - asin: ""
@@ -21,7 +21,7 @@ draft: true
 
 <!--
 Roundup (pillar) post scaffold. Targets "best books for X" search intent.
-- List each book's ASIN + title under books: -> cover cards and the free-trial CTA render at the end.
+- List each book's ASIN + title under recommended_books: -> cover cards and ItemList structured data render at the end (books: is for single-book reviews and feeds the bookshelf widgets, so do not use it here).
 - To also show covers at the top, add the "Book Review" tag (gated on $isReview).
 - Link to individual review posts from the body where they exist (internal SEO / navigation).
 - Keep description ~120 chars: who it is for + how the books were chosen.
