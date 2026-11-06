@@ -23,7 +23,7 @@ draft: false
 # Go1.22で追加されたServeMuxの機能
 Go1.22rcの公開時にServeMuxの新機能について調べていたが、もう少し詳細を追ってみようと思う。
 
-cf. [Go1.22rcで変更されるServeMuxの仕様](https://bmf-tech.com/posts/Go1.22rc%e3%81%a7%e5%a4%89%e6%9b%b4%e3%81%95%e3%82%8c%e3%82%8bServeMux%e3%81%ae%e4%bb%95%e6%a7%98)
+cf. [Go1.22rcで変更されるServeMuxの仕様](/ja/posts/go1-22rc-changes-servemux-spec/)
 
 以下の参考情報を元にServeMuxの新機能について整理する。
 
@@ -196,7 +196,7 @@ indexとpatternsはパターンの競合検知に使われるデータとなっ�
 
 読み慣れていない場合は、前提としてHTTPサーバーのコードリーディングをしておくと良いかもしれない。
 
-cf. [GolangのHTTPサーバーのコードリーディング](https://bmf-tech.com/posts/Golang%E3%81%AEHTTP%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%AE%E3%82%B3%E3%83%BC%E3%83%89%E3%83%AA%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0)
+cf. [GolangのHTTPサーバーのコードリーディング](/ja/posts/golang-http-server-code-reading-2019/)
 
 # ServeMuxとサードパーティとの比較
 ServeMuxとサードパーティとの比較を自作ベンチマーカーにて行った。
@@ -204,7 +204,7 @@ ServeMuxとサードパーティとの比較を自作ベンチマーカーにて
 自作ベンチマーカーは以前実装したものを利用している。詳細については以下のリンクを参照されたい。
 
 - [bmf-san/go-router-benchmark](https://github.com/bmf-san/go-router-benchmark)
-- [GoのHTTP Routerを比較するベンチマーカーを実装した](https://bmf-tech.com/posts/Go%e3%81%aeHTTP%20Router%e3%82%92%e6%af%94%e8%bc%83%e3%81%99%e3%82%8b%e3%83%99%e3%83%b3%e3%83%81%e3%83%9e%e3%83%bc%e3%82%ab%e3%83%bc%e3%82%92%e5%ae%9f%e8%a3%85%e3%81%97%e3%81%9f)
+- [GoのHTTP Routerを比較するベンチマーカーを実装した](/ja/posts/http-router-benchmark-go/)
 
 ベンチマーク結果は、[<Public>go-router-benchmark](https://docs.google.com/spreadsheets/d/1DrDNGJXfquw_PED3-eMqWqh7qbCTVBWZtqaKPXtngxg/edit#gid=1913830192)にて公開している。
 
@@ -304,7 +304,7 @@ ServeMuxを使うか、サードパーティを使うか簡易的なフローチ
 [speadkerdeck.com - 自作HTTPルーターから新しいServeMuxへ](https://speakerdeck.com/bmf_san/zi-zuo-httprutakaraxin-siiservemuxhe)
 
 # 参考
-- [bmf-tech.com/posts/tags/router](https://bmf-tech.com/posts/tags/router)
+- [タグ「router」の記事一覧](/ja/tags/router/)
   - 過去投稿したrouter関連の全ての記事
 - [net/http: add methods and path variables to ServeMux patterns](https://github.com/golang/go/discussions/60227)
 - [net/http: enhanced ServeMux routing](https://github.com/golang/go/issues/61410)

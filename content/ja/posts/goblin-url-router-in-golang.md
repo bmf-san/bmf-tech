@@ -33,7 +33,7 @@ URLをどのようにマッチングさせるか、というロジックにつ�
 ## `net/http`のコードリーディング
 `net/http`が持つマルチプレクサの拡張として実装を行うため、内部の仕組みについてある程度理解しておく必要がある。
 
-[GolangのHTTPサーバーのコードリーディング](https://bmf-tech.com/posts/Golang%E3%81%AEHTTP%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%AE%E3%82%B3%E3%83%BC%E3%83%89%E3%83%AA%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0)を参照。
+[GolangのHTTPサーバーのコードリーディング](/ja/posts/golang-http-server-code-reading-2019/)を参照。
 
 ## 色んなrouterの実装を読む
 参考>リポジトリ参照。
@@ -41,7 +41,7 @@ URLをどのようにマッチングさせるか、というロジックにつ�
 ## その他
 過去URLルーティングについてまとめた記事。
 
-[bmf-tech.com/posts/tags/URLルーティング](https://bmf-tech.com/posts/tags/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0)
+[タグ「URLルーティング」の記事一覧](/ja/tags/url%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0/)
 
 # 実装
 

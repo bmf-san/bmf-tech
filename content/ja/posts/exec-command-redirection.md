@@ -18,7 +18,7 @@ draft: false
 # 概要
 execコマンドは現在のプロセスを実行するコマンドで置き換えるコマンドだが、引数無しで使うとリダイレクトの動的変更ができる。
 
-ちょうど[master直プッシュの際にプロンプトで確認するようにする](https://bmf-tech.com/posts/master%E7%9B%B4%E3%83%97%E3%83%83%E3%82%B7%E3%83%A5%E3%81%AE%E9%9A%9B%E3%81%AB%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88%E3%81%A7%E7%A2%BA%E8%AA%8D%E3%81%99%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B)で
+ちょうど[master直プッシュの際にプロンプトで確認するようにする](/ja/posts/master-push-prompt-confirmation/)で、次のコードが出てきた。
 
 ```sh
 #!/bin/sh
@@ -26,7 +26,7 @@ exec < /dev/tty
 read ANSWER
 ```
 
-というコードが出てきてよくわからなかったので調べてみたのがきっかけ。
+このコードがよくわからなかったので、調べてみたのがきっかけ。
 
 #  使い方
 ```sh
@@ -36,7 +36,7 @@ exec > redirect.txt // ファイルディスクリプタを変更
 echo "Output to file" // ファイルに出力される
 ```
 
-[master直プッシュの際にプロンプトで確認するようにする](https://bmf-tech.com/posts/master%E7%9B%B4%E3%83%97%E3%83%83%E3%82%B7%E3%83%A5%E3%81%AE%E9%9A%9B%E3%81%AB%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88%E3%81%A7%E7%A2%BA%E8%AA%8D%E3%81%99%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B)に出てきたコードは、
+[master直プッシュの際にプロンプトで確認するようにする](/ja/posts/master-push-prompt-confirmation/)で使われていたコードは次のとおり。
 
 ```sh
 #!/bin/sh

@@ -118,7 +118,7 @@ sequenceDiagram
 
 ## 送信者制約とResource Indicators
 
-サービス間でも、bearerを送信者に束縛する**送信者制約（mTLS / DPoP）**や、`resource`でaudを絞る**Resource Indicators**が有効である。詳細は「[送信者制約トークンとは？](/posts/sender-constrained-tokens-mtls-dpop/)」を参照。サービス間はインフラでmTLSを張りやすいため、mTLSが第一候補になる。
+サービス間でも、bearerを送信者に束縛する**送信者制約（mTLS / DPoP）**や、`resource`でaudを絞る**Resource Indicators**が有効である。詳細は「[送信者制約トークンとは？](/ja/posts/sender-constrained-tokens-mtls-dpop/)」を参照。サービス間はインフラでmTLSを張りやすいため、mTLSが第一候補になる。
 
 # レイヤC：アイデンティティ基盤
 

@@ -17,7 +17,7 @@ draft: false
 
 
 # 概要
-[URLルーティングをつくる　エピソード1](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%891)の続き。
+[URLルーティングをつくる　エピソード1](/ja/posts/creating-url-routing-episode-1/)の続き。
 
 とりあえず動く形のものを仕上げて[packagist - ahi-router](https://packagist.org/packages/bmf-san/ahi-router#v1.0)という名前でパッケージ公開した。
 

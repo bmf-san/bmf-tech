@@ -33,7 +33,7 @@ draft: false
   - [Web API: The Good Parts](https://amzn.to/3X3TjPY)や[Web APIの設計](https://amzn.to/4e16qIJ)を読んだ上で読むのが良いと思われる
 
 # 参考
-- [bmf-tech.com - Web API: The Good Parts](https://bmf-tech.com/posts/Web%20API:%20The%20Good%20Parts)
-- [bmf-tech.com - Web APIの設計](https://bmf-tech.com/posts/Web%20API%e3%81%ae%e8%a8%ad%e8%a8%88)
-- [bmf-tech.com - APIデザイン・パターン](https://bmf-tech.com/posts/API%e3%83%87%e3%82%b6%e3%82%a4%e3%83%b3%e3%83%bb%e3%83%91%e3%82%bf%e3%83%bc%e3%83%b3)
-- [bmf-tech.com - Web APIテスト技法](https://bmf-tech.com/posts/Web%20API%e3%83%86%e3%82%b9%e3%83%88%e6%8a%80%e6%b3%95)
+- [bmf-tech.com - Web API: The Good Parts](/ja/posts/web-api-good-parts/)
+- [bmf-tech.com - Web APIの設計](/ja/posts/web-api-design/)
+- [bmf-tech.com - APIデザイン・パターン](/ja/posts/api-design-patterns/)
+- [bmf-tech.com - Web APIテスト技法](/ja/posts/web-api-testing-techniques/)

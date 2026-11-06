@@ -60,7 +60,7 @@ draft: false
 # 健康とエビデンス
 エビデンスについての考え方は[健康になる技術　大全](https://amzn.to/4eKtn3N)を参照されたい。
 
-cf. [bmf-tech.com - 健康になる技術　大全](https://bmf-tech.com/posts/%e5%81%a5%e5%ba%b7%e3%81%ab%e3%81%aa%e3%82%8b%e6%8a%80%e8%a1%93%e3%80%80%e5%a4%a7%e5%85%a8)
+cf. [bmf-tech.com - 健康になる技術　大全](/ja/posts/health-technology-guide/)
 
 何が健康に良いか？悪いか？というのは簡単に結論づけることができない。
 

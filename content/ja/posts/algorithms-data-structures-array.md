@@ -184,7 +184,7 @@ func main() {
   - sliceでarrayを実装したわかりやすいコードだったので参考させて頂いた。
 
 # 関連
-- [bmf-tech.com - O（オーダー）記法とアルゴリズムの計算量の求め方](https://bmf-tech.com/posts/O（オーダー）記法とアルゴリズムの計算量の求め方)
+- [bmf-tech.com - O（オーダー）記法とアルゴリズムの計算量の求め方](/ja/posts/big-o-notation-algorithms/)
 
 
 

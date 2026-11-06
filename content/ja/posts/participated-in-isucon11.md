@@ -20,9 +20,9 @@ draft: false
 ISUCON参加はこれで3度目になる。
 
 [bmf-tech.com - Road to ISUcon
-](https://bmf-tech.com/posts/Road%20to%20ISUcon)
+](/ja/posts/road-to-isucon/)
 
-[bmf-tech.com - ISUCON10に参加してきた](https://bmf-tech.com/posts/ISUCON10%E3%81%AB%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%A6%E3%81%8D%E3%81%9F)
+[bmf-tech.com - ISUCON10に参加してきた](/ja/posts/isucon10-participation/)
 
 この1年間はメンバーと去年のKPTを元に、ボトルネックの調査までのフローやオペレーションの練習、全ISUCON過去問を見て出題傾向や解法のパターンなどの勉強に専念してきたが、予選敗退という結果に・・
 

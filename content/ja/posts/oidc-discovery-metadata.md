@@ -92,7 +92,7 @@ graph LR
     RS -->|kid で該当鍵を選び署名検証| Verify[JWT検証]
 ```
 
-鍵には`kid`（Key ID）が付いており、JWTのヘッダの`kid`と突き合わせて該当する鍵を選ぶ。この仕組みにより、ASは古い鍵と新しい鍵を並行して公開しながら、無停止で鍵をローテーションできる。JWK/JWKSの詳細は「[JOSEとは？JWT・JWS・JWE・JWK・JWAの全体像](/posts/jose-overview/)」を参照。
+鍵には`kid`（Key ID）が付いており、JWTのヘッダの`kid`と突き合わせて該当する鍵を選ぶ。この仕組みにより、ASは古い鍵と新しい鍵を並行して公開しながら、無停止で鍵をローテーションできる。JWK/JWKSの詳細は「[JOSEとは？JWT・JWS・JWE・JWK・JWAの全体像](/ja/posts/jose-overview/)」を参照。
 
 # メタデータのセキュリティ上の利点
 

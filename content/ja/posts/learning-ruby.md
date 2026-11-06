@@ -38,12 +38,12 @@ PHPやGoを触ってきた人間はRubyを学ぶ際に取り組んだことを�
 
 - [たのしいRuby 第6版](https://amzn.to/3JZamMX)
 - [プロを目指す人のためのRuby入門](https://amzn.to/4dG4ciA)
-  - cf. [プロを目指す人のためのRuby入門](https://bmf-tech.com/posts/%e3%83%97%e3%83%ad%e3%82%92%e7%9b%ae%e6%8c%87%e3%81%99%e4%ba%ba%e3%81%ae%e3%81%9f%e3%82%81%e3%81%aeRuby%e5%85%a5%e9%96%80)
+  - cf. [プロを目指す人のためのRuby入門](/ja/posts/ruby-introduction-for-beginners/)
 - [パーフェクトRuby](https://amzn.to/3K0wLcR)
-  - cf. [パーフェクトRuby](https://bmf-tech.com/posts/%E3%83%91%E3%83%BC%E3%83%95%E3%82%A7%E3%82%AF%E3%83%88Ruby)
+  - cf. [パーフェクトRuby](/ja/posts/perfect-ruby/)
 - [パーフェクトRuby on Rails](https://amzn.to/3yfO0nL)
   - Rubyではなくフレームワークだが、RubyやるならRailsも触る機会があるだろう
-  - cf. [パーフェクトRuby on Rails](https://bmf-tech.com/posts/%e3%83%91%e3%83%bc%e3%83%95%e3%82%a7%e3%82%af%e3%83%88Ruby%20on%20Rails)
+  - cf. [パーフェクトRuby on Rails](/ja/posts/perfect-ruby-on-rails/)
 
 オブジェクト指向関連の本もピックアップしてはいたが、時間的都合で読めていない。
 
@@ -69,11 +69,11 @@ Tips関連の記事を読み漁った。
 ## ブログ
 気になった言語仕様について学んでブログにまとめておいた。
 
-- [Rubyのシンボルについて](https://bmf-tech.com/posts/Ruby%e3%81%ae%e3%82%b7%e3%83%b3%e3%83%9c%e3%83%ab%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6)
-- [Rubyのブロック構文について](https://bmf-tech.com/posts/Ruby%e3%81%ae%e3%83%96%e3%83%ad%e3%83%83%e3%82%af%e6%a7%8b%e6%96%87%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6)
-- [RubyのProcとlamdaについて](https://bmf-tech.com/posts/Ruby%e3%81%aeProc%e3%81%a8lamda%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6)
-- [Rubyの特異クラス・特異メソッドについて](https://bmf-tech.com/posts/Ruby%e3%81%ae%e7%89%b9%e7%95%b0%e3%82%af%e3%83%a9%e3%82%b9%e3%83%bb%e7%89%b9%e7%95%b0%e3%83%a1%e3%82%bd%e3%83%83%e3%83%89%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6)
-- [RubyのModuleについて](https://bmf-tech.com/posts/Ruby%e3%81%aeModule%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6)
+- [Rubyのシンボルについて](/ja/posts/ruby-symbols/)
+- [Rubyのブロック構文について](/ja/posts/ruby-block-syntax/)
+- [RubyのProcとlamdaについて](/ja/posts/ruby-proc-lambda/)
+- [Rubyの特異クラス・特異メソッドについて](/ja/posts/ruby-singleton-class-methods/)
+- [RubyのModuleについて](/ja/posts/ruby-modules/)
 
 ## コーディングクイズ
 肩慣らしにコーディングクイズを解いておく。

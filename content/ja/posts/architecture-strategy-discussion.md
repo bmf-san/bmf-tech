@@ -352,7 +352,7 @@ draft: false
   - チーム再編をどう進めるか、実践的なパターンを紹介
 
 ### ブログ・サイト
-- [bmf-tech.com - システム設計関連の資料を読み漁った](https://bmf-tech.com/posts/%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e8%a8%ad%e8%a8%88%e9%96%a2%e9%80%a3%e3%81%ae%e8%b3%87%e6%96%99%e3%82%92%e8%aa%ad%e3%81%bf%e6%bc%81%e3%81%a3%e3%81%9f)
+- [bmf-tech.com - システム設計関連の資料を読み漁った](/ja/posts/system-design-resources-review/)
   - システム設計やアーキテクチャに関する参考資料をまとめている
 - [jlhood.com - How to Set the Technical Direction for Your Team](https://jlhood.com/how-to-set-team-technical-direction/)
   - チーム単位での技術方針設定の実践例

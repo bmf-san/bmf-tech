@@ -202,9 +202,9 @@ Goの標準パッケージであるnet/httpを使ってHTTPルーターを自作
 - [github.com - bmf-san/goblin](https://github.com/bmf-san/goblin)
 
 ## ブログ
-- [GolangのHTTPサーバーのコードリーディング](https://bmf-tech.com/posts/Golang%E3%81%AEHTTP%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%AE%E3%82%B3%E3%83%BC%E3%83%89%E3%83%AA%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0)
-- [URLルーティング自作入門 エピソード1](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E8%87%AA%E4%BD%9C%E5%85%A5%E9%96%80%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%EF%BC%91)
-- [URLルーティング自作入門 エピソード2](https://bmf-tech.com/posts/URL%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E8%87%AA%E4%BD%9C%E5%85%A5%E9%96%80%E3%80%80%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%EF%BC%92)
+- [GolangのHTTPサーバーのコードリーディング](/ja/posts/golang-http-server-code-reading-2019/)
+- [URLルーティング自作入門 エピソード1](/ja/posts/url-routing-introduction-episode-1/)
+- [URLルーティング自作入門 エピソード2](/ja/posts/url-routing-introduction-episode-2/)
 - [Introduction to URL router from scratch with Golang](http://web.archive.org/web/20251207231313/https://dev.to/bmf_san/introduction-to-url-router-from-scratch-with-golang-3p8j)
 
 

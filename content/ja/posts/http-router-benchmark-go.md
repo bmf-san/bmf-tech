@@ -145,7 +145,7 @@ ex. [pathparam.go#L15](https://github.com/bmf-san/go-router-benchmark/blob/main/
   - 関数の1回あたりの実行で行われたメモリアロケーションの回数
   - 少なければ少ないほどパフォーマンスが良いと考えられる
 
-cf. [bmf-tech.com - Goで始めるコードのパフォーマンス改善](https://bmf-tech.com/posts/Go%e3%81%a7%e5%a7%8b%e3%82%81%e3%82%8b%e3%82%b3%e3%83%bc%e3%83%89%e3%81%ae%e3%83%91%e3%83%95%e3%82%a9%e3%83%bc%e3%83%9e%e3%83%b3%e3%82%b9%e6%94%b9%e5%96%84)
+cf. [bmf-tech.com - Goで始めるコードのパフォーマンス改善](/ja/posts/go-performance-improvement/)
 
 それぞれのテストケースの結果について記載する。
 

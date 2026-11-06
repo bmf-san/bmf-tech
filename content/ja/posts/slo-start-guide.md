@@ -199,7 +199,7 @@ SLOの運用によって得られるデータ及び生じる議論は、サー�
   - 内容が整理されていて分かりやすい
 - [newrelic.com - SLO、SLI、SLAとは何か?](https://newrelic.com/jp/blog/best-practices/what-are-slos-slis-slas)
 - [newrelic.com - モダンなシステムにSLI/SLOを設定するときのベストプラクティス](https://newrelic.com/jp/blog/best-practices/best-practices-for-setting-slos-and-slis-for-modern-complex-systems)
-- [bmf-tech.com - SLI・SLO・SLAについて](https://bmf-tech.com/posts/SLI%E3%83%BBSLO%E3%83%BBSLA%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
+- [bmf-tech.com - SLI・SLO・SLAについて](/ja/posts/sli-slo-sla-explained/)
 - [sreake.com - SLI、SLO、エラーバジェット導入の前に知っておきたいこと](https://sreake.com/blog/sli-slo-good-practices/)
   - 設計から運用に至るまで詳細に書かれていて参考になる
   - ちょうど当記事の公開日と同じ日にリリースされていた

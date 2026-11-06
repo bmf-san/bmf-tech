@@ -17,7 +17,7 @@ draft: false
 先日認定スクラムマスターの研修を受けたのだが、スクラムマスターとプロダクトオーナーの違いについて改めて整理しておく必要があると感じたので、記事にする。
 
 cf. [認定スクラムマスター（LSM）になった
-](https://bmf-tech.com/posts/%e8%aa%8d%e5%ae%9a%e3%82%b9%e3%82%af%e3%83%a9%e3%83%a0%e3%83%9e%e3%82%b9%e3%82%bf%e3%83%bc%ef%bc%88LSM%ef%bc%89%e3%81%ab%e3%81%aa%e3%81%a3%e3%81%9f)
+](/ja/posts/certified-scrum-master-lsm/)
 
 # スクラムマスターとは
 ## 責任

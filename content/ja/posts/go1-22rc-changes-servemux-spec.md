@@ -22,7 +22,7 @@ draft: false
 
 cf. [net/http: enhanced ServeMux routing #61410](https://github.com/golang/go/issues/61410)
 cf. [GoでServeMuxの機能拡張を提案するProposalがAcceptedになった
-アプリケーション](https://bmf-tech.com/posts/Go%e3%81%a7ServeMux%e3%81%ae%e6%a9%9f%e8%83%bd%e6%8b%a1%e5%bc%b5%e3%82%92%e6%8f%90%e6%a1%88%e3%81%99%e3%82%8bProposal%e3%81%8cAccepted%e3%81%ab%e3%81%aa%e3%81%a3%e3%81%9f)
+アプリケーション](/ja/posts/go-servemux-extension-proposal-accepted/)
 
 この機能拡張はGo1.22に含まれる想定らしく、Go1.22rc2がリリースされたので試してみた。（Go1.22rc1から含まれているようだが、スルーしていた。）
 

@@ -22,7 +22,7 @@ draft: false
 自分がこのProposalを気にしている理由は、ルーティングのライブラリを個人的に開発しているである。
 
 cf. [bmf-san/goblin](https://github.com/bmf-san/goblin)
-cf. [bmf-tech.comの関連記事](https://bmf-tech.com/posts/HTTP%20Router%e3%81%ae%e8%87%aa%e4%bd%9c%e3%81%a7%e5%8f%82%e8%80%83%e3%81%ab%e3%81%97%e3%81%9f%e8%b3%87%e6%96%99#4-%E5%9F%B7%E7%AD%86%E3%81%97%E3%81%9F%E8%A8%98%E4%BA%8B)
+cf. [bmf-tech.comの関連記事](/ja/posts/http-router-resources/)
 
 goblinは有名所のルーティングライブラリと同じく、ServeMuxの機能を拡張するライブラリで、静的・動的なルーティングに対応している。動的なルーティングのパスパラメータは正規表現もサポートしている。
 
