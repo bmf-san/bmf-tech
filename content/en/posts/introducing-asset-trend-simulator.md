@@ -3,6 +3,7 @@ title: Introducing Asset Trend Simulator — An iPhone App for Compound Interest
 description: 'A deep dive into Asset Trend Simulator, an iPhone app built with Flutter and Riverpod that simulates future net worth trends using compound interest calculations based on your household finances.'
 slug: introducing-asset-trend-simulator
 date: 2026-03-20T00:00:00Z
+lastmod: 2026-03-28
 author: bmf-san
 categories:
   - Application

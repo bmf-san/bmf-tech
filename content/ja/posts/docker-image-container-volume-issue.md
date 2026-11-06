@@ -3,6 +3,7 @@ title: "Dockerボリュームの削除方法｜docker volume rm・prune・compos
 description: "Dockerボリューム削除問題を解説。イメージ・コンテナ削除でもボリューム残存する理由、docker volume rm、docker-compose down -v オプション活用を紹介します。"
 slug: docker-image-container-volume-issue
 date: 2019-04-28T00:00:00Z
+lastmod: 2026-09-23
 author: bmf-san
 categories:
   - インフラストラクチャ

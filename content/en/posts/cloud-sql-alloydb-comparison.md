@@ -2,6 +2,7 @@
 title: "AlloyDB vs Cloud SQL: Performance, Features, and Cost"
 slug: cloud-sql-alloydb-comparison
 date: 2024-11-17T00:00:00Z
+lastmod: 2026-09-23
 author: bmf-san
 categories:
   - Database

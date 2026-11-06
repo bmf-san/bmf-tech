@@ -3,6 +3,7 @@ title: iPhoneアプリ「Asset Trend Simulator」の紹介
 description: 'Flutter と Riverpod で構築した複利計算型の資産推移シミュレーター iPhone アプリ「Asset Trend Simulator」の設計と実装を解説する。'
 slug: introducing-asset-trend-simulator
 date: 2026-03-20T00:00:00Z
+lastmod: 2026-03-28
 author: bmf-san
 categories:
   - アプリケーション

@@ -3,6 +3,7 @@ title: Introducing gogocoin — A Self-Hosted Crypto Trading Bot
 description: 'A deep dive into gogocoin, a Go-based self-hosted Bitcoin trading bot for bitFlyer. Covers the pluggable strategy architecture, layered design and dependency rules, trading flow, data model, and balance cache.'
 slug: introducing-gogocoin
 date: 2026-03-20T00:00:00Z
+lastmod: 2026-04-04
 author: bmf-san
 categories:
   - Tools

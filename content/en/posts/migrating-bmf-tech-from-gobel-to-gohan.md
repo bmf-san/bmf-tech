@@ -3,6 +3,7 @@ title: "Migrating bmf-tech.com from gobel to gohan — A Full Static Site Transi
 description: 'The complete process of migrating bmf-tech.com from a self-built headless CMS (gobel) with MySQL and Vue.js to a fully static site on gohan, hosted on Cloudflare Pages. Covers 700+ articles, English slug generation, image migration, redirects, and a Go-based preflight checker.'
 slug: migrating-bmf-tech-from-gobel-to-gohan
 date: 2026-03-20T00:00:00Z
+lastmod: 2026-04-05
 author: bmf-san
 categories:
   - Architecture

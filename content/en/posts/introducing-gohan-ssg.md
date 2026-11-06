@@ -3,6 +3,7 @@ title: "Introducing gohan — A Go Static Site Generator with Incremental Builds
 description: 'A deep dive into gohan, a Go-based static site generator powering bmf-tech.com. Features SHA-256 manifest-driven incremental builds, i18n, Mermaid diagrams, OGP image generation, and a compiled plugin system (Amazon book cards, bookshelf page).'
 slug: introducing-gohan-ssg
 date: 2026-03-20T00:00:00Z
+lastmod: 2026-04-04
 author: bmf-san
 categories:
   - Tools

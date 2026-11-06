@@ -3,6 +3,7 @@ title: "bmf-tech.comの gobel → gohan 移行記—完全静的サイト化の�
 description: '自作ヘッドレスCMS（gobel）+ MySQL + Vue.js構成から、gohanによる完全静的サイトへ移行しCloudflare Pagesでホスティングするまでの全工程。700件超の記事、英語スラッグ生成、画像移行、リダイレクト、Go製プリフライトチェッカーまで。'
 slug: migrating-bmf-tech-from-gobel-to-gohan
 date: 2026-03-20T00:00:00Z
+lastmod: 2026-04-05
 author: bmf-san
 categories:
   - アーキテクチャ

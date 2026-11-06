@@ -3,6 +3,7 @@ title: "Sharding vs Partitioning: Key Differences and When to Use Each"
 description: 'Understand the difference between database sharding and partitioning. Learn horizontal and vertical strategies, sharding trade-offs, and when each approach makes sense.'
 slug: sharding-vs-partitioning
 date: 2023-06-03T00:00:00Z
+lastmod: 2026-09-23
 author: bmf-san
 categories:
   - Database

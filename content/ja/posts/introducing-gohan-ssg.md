@@ -3,6 +3,7 @@ title: "gohan — インクリメンタルビルド対応のGo製静的サイト
 description: 'SHA-256マニフェストによる差分ビルド、i18n、Mermaid図、OGP、シンタックスハイライト、コンパイル済プラグインシステム（Amazon本カード、本棚ページ）を備えたGo製静的サイトジェネレータ『gohan』の紹介。'
 slug: introducing-gohan-ssg
 date: 2026-03-20T00:00:00Z
+lastmod: 2026-04-04
 author: bmf-san
 categories:
   - ツール
