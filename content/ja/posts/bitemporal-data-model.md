@@ -1,5 +1,5 @@
 ---
-title: Bitemporal Data Modelについて
+title: "バイテンポラル（Bitemporal）データモデルとは？2つの時間軸で履歴を管理する"
 description: "バイテンポラルデータモデルを解説。トランザクション時間と有効時間の2軸管理、履歴追跡、監査要件対応、PostgreSQL実装のEXCLUDE制約での一貫性保証を紹介します。"
 slug: bitemporal-data-model
 date: 2024-05-27T00:00:00Z

@@ -1,5 +1,5 @@
 ---
-title: "OpenID ConnectのDiscoveryとメタデータとは？自動設定と鍵取得の仕組み"
+title: "OIDC Discoveryとは？RFC 8414のメタデータと鍵取得の仕組み"
 description: "OpenID ConnectのID Tokenの役割と、Discovery（OpenID Connect Discovery / RFC 8414 AS Metadata）による自動設定・公開鍵取得の仕組みを解説する。jwks_uriによる鍵ローテーションまで整理する。"
 slug: oidc-discovery-metadata
 date: 2026-07-10T00:00:00Z

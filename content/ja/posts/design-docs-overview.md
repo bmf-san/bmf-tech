@@ -1,5 +1,5 @@
 ---
-title: Design Docsについて
+title: "Design Docs（設計ドキュメント）とは？目的とライフサイクル"
 description: "Design Docsを解説。設計課題の early detection、ステークホルダ合意形成、知見共有、ライフサイクル管理でアジャイル開発に適した設計ドキュメント方法を紹介します。"
 slug: design-docs-overview
 date: 2022-10-07T00:00:00Z

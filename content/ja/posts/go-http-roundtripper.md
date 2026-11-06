@@ -1,5 +1,5 @@
 ---
-title: Goのhttp.RoundTripperについて
+title: "Goのhttp.RoundTripperとは？HTTPクライアントのミドルウェアを実装する"
 description: "http.RoundTripperインターフェースを実装してHTTPクライアント側のミドルウェア的処理を実装し、ログ・認証・キャッシュ・リトライの例を示す。"
 slug: go-http-roundtripper
 date: 2023-08-22T00:00:00Z
