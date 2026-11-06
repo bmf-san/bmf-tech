@@ -1,5 +1,5 @@
 ---
-title: '10 Books for Learning Databases (SQL, Design, and Operations)'
+title: "10 Japanese Books for Learning Databases (SQL, Design, and Operations)"
 slug: database-recommended-books
 date: 2026-09-22T00:00:00Z
 author: bmf-san
@@ -9,7 +9,7 @@ tags:
   - Book Review
   - DB
   - SQL
-description: "A staged reading list of 10 books for learning databases, from SQL basics to design and operations: SQL basics, deeper SQL, design, PostgreSQL, and distributed data. Each entry links to its full review."
+description: "A staged reading list of 10 Japanese books for learning databases, from SQL basics to design and operations: SQL basics, deeper SQL, design, PostgreSQL, and distributed data. Each entry links to its full review."
 translation_key: database-recommended-books
 recommended_books:
   - asin: "4873119588"
@@ -36,6 +36,8 @@ draft: false
 ---
 
 A staged reading list for anyone learning databases, from SQL basics to design and operations. Each pick has its own review on this blog, and every entry links to it. The order follows a learning path: SQL basics, deeper SQL, design, PostgreSQL, and distributed data.
+
+The books in this list are Japanese editions, and the store links go to Amazon Japan.
 
 ## Why learn databases
 

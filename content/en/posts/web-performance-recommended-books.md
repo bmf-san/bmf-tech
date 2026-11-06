@@ -1,5 +1,5 @@
 ---
-title: '4 Books for Learning Web Performance (From Fundamentals to Tuning and CDNs)'
+title: "4 Japanese Books for Learning Web Performance (From Fundamentals to Tuning and CDNs)"
 slug: web-performance-recommended-books
 date: 2026-10-16T00:00:00Z
 author: bmf-san
@@ -8,7 +8,7 @@ categories:
 tags:
   - Book Review
   - System Performance
-description: "A reading list of 4 books for making web systems faster: how system performance works, server-side tuning learned from ISUCON, frontend tuning, and delivery with HTTP caching and CDNs. Each entry links to its full review."
+description: "A reading list of 4 Japanese books for making web systems faster: how system performance works, server-side tuning learned from ISUCON, frontend tuning, and delivery with HTTP caching and CDNs. Each entry links to its full review."
 translation_key: web-performance-recommended-books
 recommended_books:
   - asin: "B00LHFOTF4"
@@ -23,6 +23,8 @@ draft: false
 ---
 
 A reading list for anyone who wants to improve the performance of web systems. Each pick has its own review on this blog, and every entry links to it. The list starts with how performance works, then moves through backend tuning, frontend tuning, and delivery.
+
+The books in this list are Japanese editions, and the store links go to Amazon Japan.
 
 ## Why learn performance
 

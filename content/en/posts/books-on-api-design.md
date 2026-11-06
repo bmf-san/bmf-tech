@@ -1,6 +1,6 @@
 ---
-title: Books to Learn About API Design
-description: 'Discover recommended books on API design: fundamentals, design phases, testing strategies, and practical design patterns.'
+title: "Japanese Books to Learn About API Design"
+description: 'Discover recommended Japanese books on API design: fundamentals, design phases, testing strategies, and practical design patterns.'
 slug: books-on-api-design
 date: 2024-08-26T00:00:00Z
 author: bmf-san
@@ -14,6 +14,8 @@ draft: false
 ---
 
 Recently, I decided to revisit API design and picked up a few books to read, so I will list the books I've read.
+
+The books in this list are Japanese editions, and the store links go to Amazon Japan.
 
 # List of API Design Books
 I will list them in recommended reading order.

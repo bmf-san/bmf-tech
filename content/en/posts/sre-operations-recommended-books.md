@@ -1,5 +1,5 @@
 ---
-title: '7 Books on Monitoring, SRE, and Operations (From Monitoring Basics to SLOs and Capacity)'
+title: "7 Japanese Books on Monitoring, SRE, and Operations (From Monitoring Basics to SLOs and Capacity)"
 slug: sre-operations-recommended-books
 date: 2026-10-16T00:00:00Z
 author: bmf-san
@@ -8,7 +8,7 @@ categories:
 tags:
   - Book Review
   - SLO
-description: "A reading list of 7 books on monitoring, SRE, and operations: monitoring basics, reliability targets with SLOs, logging and observability, backups, and production readiness and capacity planning. Each entry links to its full review."
+description: "A reading list of 7 Japanese books on monitoring, SRE, and operations: monitoring basics, reliability targets with SLOs, logging and observability, backups, and production readiness and capacity planning. Each entry links to its full review."
 translation_key: sre-operations-recommended-books
 recommended_books:
   - asin: "4873118646"
@@ -29,6 +29,8 @@ draft: false
 ---
 
 A reading list for anyone who wants to keep systems running reliably, not just build them. Each pick has its own review on this blog, and every entry links to it. The list starts with monitoring basics, then moves through reliability targets, logging and observability, data protection, and production readiness.
+
+The books in this list are Japanese editions, and the store links go to Amazon Japan.
 
 ## Why learn operations
 

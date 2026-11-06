@@ -1,5 +1,5 @@
 ---
-title: '10 Books on Thinking and Intellectual Productivity for Engineers'
+title: "10 Japanese Books on Thinking and Intellectual Productivity for Engineers"
 slug: engineer-thinking-recommended-books
 date: 2026-09-22T00:00:00Z
 author: bmf-san
@@ -9,7 +9,7 @@ tags:
   - Book Review
   - Thinking Methods
   - Logical Thinking
-description: "A reading list of 10 books to sharpen an engineer's thinking and intellectual productivity: problem solving, logical thinking and communication, abstraction, and how to learn. Each entry links to its full review."
+description: "A reading list of 10 Japanese books to sharpen an engineer's thinking and intellectual productivity: problem solving, logical thinking and communication, abstraction, and how to learn. Each entry links to its full review."
 translation_key: engineer-thinking-recommended-books
 recommended_books:
   - asin: "4621045938"
@@ -36,6 +36,8 @@ draft: false
 ---
 
 A reading list for anyone who wants to sharpen their thinking and intellectual productivity as an engineer. Each pick has its own review on this blog, and every entry links to it. The books span problem solving, logical thinking and communication, abstraction, and how to learn.
+
+The books in this list are Japanese editions, and the store links go to Amazon Japan.
 
 ## Why learn how to think
 

@@ -1,5 +1,5 @@
 ---
-title: '9 Books for Writing Good Code (Readability and Refactoring)'
+title: "9 Japanese Books for Writing Good Code (Readability and Refactoring)"
 slug: clean-code-recommended-books
 date: 2026-09-22T00:00:00Z
 author: bmf-san
@@ -9,7 +9,7 @@ tags:
   - Book Review
   - Design
   - Coding
-description: "A reading list of 9 books for writing readable, change-tolerant code: the basics of readability, improvement through refactoring, facing complexity, and a couple of titles to widen your view. Each entry links to its full review."
+description: "A reading list of 9 Japanese books for writing readable, change-tolerant code: the basics of readability, improvement through refactoring, facing complexity, and a couple of titles to widen your view. Each entry links to its full review."
 translation_key: clean-code-recommended-books
 recommended_books:
   - asin: "4873115655"
@@ -34,6 +34,8 @@ draft: false
 ---
 
 A reading list for anyone who wants to write readable, change-tolerant code. Each pick has its own review on this blog, and every entry links to it. The order follows a learning path: the basics of readability, improvement through refactoring, and facing complexity.
+
+The books in this list are Japanese editions, and the store links go to Amazon Japan.
 
 ## Why learn to write good code
 

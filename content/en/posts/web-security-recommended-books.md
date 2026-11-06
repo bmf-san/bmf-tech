@@ -1,5 +1,5 @@
 ---
-title: '8 Books for Learning Web Application Security (Auth and Secure Design)'
+title: "8 Japanese Books for Learning Web Application Security (Auth and Secure Design)"
 slug: web-security-recommended-books
 date: 2026-09-22T00:00:00Z
 author: bmf-san
@@ -10,7 +10,7 @@ tags:
   - Authentication
   - Authorization
   - OAuth
-description: "A staged reading list of 8 books for learning web application security, from authentication and authorization to secure design: OAuth-based authorization, digital identity, and secure design and implementation. Each entry links to its full review."
+description: "A staged reading list of 8 Japanese books for learning web application security, from authentication and authorization to secure design: OAuth-based authorization, digital identity, and secure design and implementation. Each entry links to its full review."
 translation_key: web-security-recommended-books
 recommended_books:
   - asin: "B07L5M7DXS"
@@ -33,6 +33,8 @@ draft: false
 ---
 
 A staged reading list for anyone learning web application security, from authentication and authorization to secure design. Each pick has its own review on this blog, and every entry links to it. The order follows a learning path: OAuth-based authorization, digital identity, and secure design and implementation.
+
+The books in this list are Japanese editions, and the store links go to Amazon Japan.
 
 ## Why learn security
 

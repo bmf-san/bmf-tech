@@ -1,5 +1,5 @@
 ---
-title: '4 Books on Software Development in the Generative AI Era (Prompts, Context, and AI Coding)'
+title: "4 Japanese Books on Software Development in the Generative AI Era (Prompts, Context, and AI Coding)"
 slug: generative-ai-development-recommended-books
 date: 2026-10-16T00:00:00Z
 author: bmf-san
@@ -8,7 +8,7 @@ categories:
 tags:
   - Book Review
   - Generative AI
-description: "A reading list of 4 books for putting generative AI to work in development: prompt engineering, context engineering, AI coding in practice, and how to create value with generative AI. Each entry links to its full review."
+description: "A reading list of 4 Japanese books for putting generative AI to work in development: prompt engineering, context engineering, AI coding in practice, and how to create value with generative AI. Each entry links to its full review."
 translation_key: generative-ai-development-recommended-books
 recommended_books:
   - asin: "4814401132"
@@ -23,6 +23,8 @@ draft: false
 ---
 
 A reading list for anyone who wants to use generative AI well in day-to-day development. Each pick has its own review on this blog, and every entry links to it. The list starts with how to instruct an LLM, then moves through context design, AI coding in practice, and how to create value.
+
+The books in this list are Japanese editions, and the store links go to Amazon Japan.
 
 ## Why learn to use generative AI
 

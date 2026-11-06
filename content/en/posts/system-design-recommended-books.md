@@ -1,5 +1,5 @@
 ---
-title: '8 Books for Learning System Design and the Architect Role'
+title: "8 Japanese Books for Learning System Design and the Architect Role"
 slug: system-design-recommended-books
 date: 2026-10-16T00:00:00Z
 author: bmf-san
@@ -8,7 +8,7 @@ categories:
 tags:
   - Book Review
   - System Design
-description: "A reading list of 8 books on system design and the work of an architect: design patterns through interview problems, the architecture design process, the architect's role, and trade-offs and non-functional requirements. Each entry links to its full review."
+description: "A reading list of 8 Japanese books on system design and the work of an architect: design patterns through interview problems, the architecture design process, the architect's role, and trade-offs and non-functional requirements. Each entry links to its full review."
 translation_key: system-design-recommended-books
 recommended_books:
   - asin: "4802614063"
@@ -31,6 +31,8 @@ draft: false
 ---
 
 A reading list for anyone who wants to learn how to approach system design and how to work as an architect. Each pick has its own review on this blog, and every entry links to it. The list starts with concrete design patterns, then moves through the design process, the architect's role, and trade-offs.
+
+The books in this list are Japanese editions, and the store links go to Amazon Japan.
 
 ## Why learn system design
 

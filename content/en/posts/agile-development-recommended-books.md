@@ -1,5 +1,5 @@
 ---
-title: '9 Books for Learning Agile Development (Scrum, Lean, and Kaizen)'
+title: "9 Japanese Books for Learning Agile Development (Scrum, Lean, and Kaizen)"
 slug: agile-development-recommended-books
 date: 2026-09-22T00:00:00Z
 author: bmf-san
@@ -10,7 +10,7 @@ tags:
   - Agile
   - Scrum
   - Lean
-description: "A staged reading list of 9 books for learning agile and lean development, from the basics to practice: agile fundamentals, practice and improvement, and lean validation of value. Each entry links to its full review."
+description: "A staged reading list of 9 Japanese books for learning agile and lean development, from the basics to practice: agile fundamentals, practice and improvement, and lean validation of value. Each entry links to its full review."
 translation_key: agile-development-recommended-books
 recommended_books:
   - asin: "4274068560"
@@ -35,6 +35,8 @@ draft: false
 ---
 
 A staged reading list for anyone learning agile and lean development, from the basics to real practice. Each pick has its own review on this blog, and every entry links to it. The order follows a learning path: agile basics, then practice and improvement, and lean validation of value.
+
+The books in this list are Japanese editions, and the store links go to Amazon Japan.
 
 ## Why learn agile development
 
