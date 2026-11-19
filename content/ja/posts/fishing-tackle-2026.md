@@ -84,10 +84,11 @@ draft: false
 ### エコギア アジ職人 アジマスト 2インチ
 [エコギア アジ職人 アジマスト](https://link.amazon/B0b8KNRzF)
 
-実寸は49mmで、メーカーは「ザ・ベーシック」と説明している。使っているカラーは次の2色である。
+実寸は49mmで、メーカーは「ザ・ベーシック」と説明している。使っているカラーは次の3色である。
 
 - [#010 パールグロウ（夜光）](https://link.amazon/B02TWp7pD)
 - [#407 アミエビ](https://link.amazon/B0118iZEq)
+- [#318 UVクリア](https://link.amazon/B00MtrQHT)
 
 ### 釣りgoo アジング ワーム セット
 [釣りgoo アジング ワーム セット（4cm、5色、40本、ケース付き）](https://link.amazon/B0ceKx3xj)
