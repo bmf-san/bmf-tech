@@ -84,10 +84,11 @@ I use three weight and hook combinations. To catch more fish, I stick to small h
 ### Ecogear Aji Shokunin Aji Must 2"
 [Ecogear Aji Shokunin Aji Must](https://link.amazon/B0b8KNRzF)
 
-It measures 49 mm, and the maker calls it "the basic." I use two colors:
+It measures 49 mm, and the maker calls it "the basic." I use three colors:
 
 - [#010 Pearl Glow](https://link.amazon/B02TWp7pD)
 - [#407 Ami Ebi (krill)](https://link.amazon/B0118iZEq)
+- [#318 UV Clear](https://link.amazon/B00MtrQHT)
 
 ### Tsuri goo Ajing Worm Set
 [Tsuri goo ajing worm set (4 cm, 5 colors, 40 pieces, with case)](https://link.amazon/B0ceKx3xj)
