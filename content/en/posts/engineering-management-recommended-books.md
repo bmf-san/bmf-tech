@@ -1,5 +1,5 @@
 ---
-title: "12 Japanese Books for Learning Engineering Management (Organization, Leadership, PdM)"
+title: "13 Japanese Books for Learning Engineering Management (Organization, Leadership, PdM)"
 slug: engineering-management-recommended-books
 date: 2026-09-22T00:00:00Z
 author: bmf-san
@@ -10,13 +10,15 @@ tags:
   - Leadership
   - Organization Design
   - Managers
-description: "A staged reading list of 12 Japanese books for learning engineering management, from building organizations to leadership and product management: organization and team design, the manager's role, technical strategy, and product. Each entry links to its full review."
+description: "A staged reading list of 13 Japanese books for learning engineering management, from building organizations to leadership and product management: organization and team design, the manager's role, technical strategy, and product. Each entry links to its full review."
 translation_key: engineering-management-recommended-books
 recommended_books:
   - asin: "4774196053"
     title: "An Invitation to Engineering Organization Theory"
   - asin: "4820729632"
     title: "Team Topologies"
+  - asin: "4814401418"
+    title: "Platform Engineering"
   - asin: "4814401078"
     title: "Dynamic Reteaming, 2nd Edition"
   - asin: "4873119944"
@@ -57,6 +59,10 @@ It unpacks the link between thinking and organizations through the lens of uncer
 ### Team Topologies
 
 It organizes team boundaries and relationships into four types and three interaction modes. You come to see organization structure alongside software design. I wrote it up in the [review](/posts/team-topologies-adaptive-organization-design/).
+
+### Platform Engineering
+
+It treats an internal platform as a product and covers building the team, running the platform, and even migrations and sunsetting. It works as a guide when you set up and lead the platform team that Team Topologies describes. See the [review](/posts/platform-engineering-guide/).
 
 ### Dynamic Reteaming, 2nd Edition
 

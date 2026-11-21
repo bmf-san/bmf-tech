@@ -21,7 +21,7 @@ Each roundup lists Japanese editions, and the store links go to Amazon Japan.
 - [Software architecture books](/posts/software-architecture-recommended-books/) — 12 books, from design basics to microservices and API design.
 - [Good code books](/posts/clean-code-recommended-books/) — 9 books centered on readability and refactoring.
 - [System design and architect books](/posts/system-design-recommended-books/) — 8 books, from design interviews to the design process and trade-offs.
-- [Microservices books](/posts/microservices-recommended-books/) — 8 books, from concepts and migration to design patterns and production operations.
+- [Microservices books](/posts/microservices-recommended-books/) — 9 books, from concepts and migration to design patterns and production operations.
 - [Books to learn about API design](/posts/books-on-api-design/) — from API design basics to testing and design patterns.
 
 ## Programming languages
@@ -41,21 +41,21 @@ Each roundup lists Japanese editions, and the store links go to Amazon Japan.
 
 ## Security
 
-- [Web application security books](/posts/web-security-recommended-books/) — 8 books, from auth to secure design.
+- [Web application security books](/posts/web-security-recommended-books/) — 10 books, from auth to secure design.
 
 ## Fundamentals, infrastructure, and operations
 
-- [Computer and network fundamentals books](/posts/computer-network-basics-recommended-books/) — 8 books on CS, the OS, and TCP/IP.
+- [Computer and network fundamentals books](/posts/computer-network-basics-recommended-books/) — 9 books on CS, the OS, and TCP/IP.
 - [Monitoring, SRE, and operations books](/posts/sre-operations-recommended-books/) — 7 books, from monitoring basics to SLOs, logging, and capacity.
 - [Web performance books](/posts/web-performance-recommended-books/) — 4 books, from the fundamentals to tuning and CDNs.
 
 ## Generative AI
 
-- [Generative AI development books](/posts/generative-ai-development-recommended-books/) — 4 books on prompts, context, and AI coding.
+- [Generative AI development books](/posts/generative-ai-development-recommended-books/) — 5 books on prompts, context, AI apps, and AI coding.
 
 ## Management and thinking
 
-- [Engineering management books](/posts/engineering-management-recommended-books/) — 12 books on organization, leadership, and product management.
+- [Engineering management books](/posts/engineering-management-recommended-books/) — 13 books on organization, leadership, and product management.
 - [Thinking and productivity books](/posts/engineer-thinking-recommended-books/) — 10 books, from problem solving to how to learn.
 - [Engineer career books](/posts/engineer-career-recommended-books/) — 4 books, from the fundamentals to staff engineer.
 - [SaaS and business books](/posts/saas-business-recommended-books/) — 6 books on launch, architecture, sales, and customers.

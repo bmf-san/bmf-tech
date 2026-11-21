@@ -1,5 +1,5 @@
 ---
-title: "8 Japanese Books for Learning Microservices (Concepts, Migration, Patterns, and Operations)"
+title: "9 Japanese Books for Learning Microservices (Concepts, Migration, Patterns, and Operations)"
 slug: microservices-recommended-books
 date: 2026-11-06T00:00:00Z
 author: bmf-san
@@ -8,13 +8,15 @@ categories:
 tags:
   - Book Review
   - Microservices
-description: "A staged reading list of 8 Japanese books for learning microservices: the big picture, migrating from a monolith, design patterns, API and data design, and running services in production. Each entry links to its own review."
+description: "A staged reading list of 9 Japanese books for learning microservices: the big picture, migrating from a monolith, design patterns, API and data design, and running services in production. Each entry links to its own review."
 translation_key: microservices-recommended-books
 recommended_books:
   - asin: "4814400012"
     title: "Building Microservices, 2nd Edition"
   - asin: "4873119316"
     title: "Monolith to Microservices"
+  - asin: "4814401728"
+    title: "Domain-Driven Transformation"
   - asin: "4295008583"
     title: "Microservices Patterns"
   - asin: "4873118751"
@@ -50,6 +52,10 @@ The Japanese edition of Sam Newman's book. Read it first if you work on microser
 
 Also by Sam Newman, this book focuses on how to move from a monolith to microservices. The longest chapter deals with splitting the database, the hardest part of most migrations. The author does not treat microservices as the default answer, which helps you step back before you commit. See the [review](/posts/monolith-to-microservices-migration-guide/).
 
+### Domain-Driven Transformation
+
+Carola Lilienthal and Henning Schwentner show how to rebuild aging legacy systems as microservices or modular monoliths step by step, with domain-driven design at the center. It covers strategy, technology, and organization, so you can plan a low-risk migration. I cover it in the [review](/posts/domain-driven-transformation/).
+
 ## 3. Learn design patterns
 
 ### Microservices Patterns
@@ -82,7 +88,7 @@ The Japanese edition of Travis Jeffery's book on building distributed services i
 
 ## Wrap-up
 
-Start with Building Microservices for the concepts, and read Monolith to Microservices if you plan a migration. Microservices Patterns is the book to reach for when a design call gets hard. Keep the API, data, and operations books for the stage when you design and run real services. Each book has its own review, so start with whichever one interests you.
+Start with Building Microservices for the concepts, and read Monolith to Microservices if you plan a migration. To modernize a legacy system with DDD, turn to Domain-Driven Transformation. Microservices Patterns is the book to reach for when a design call gets hard. Keep the API, data, and operations books for the stage when you design and run real services. Each book has its own review, so start with whichever one interests you.
 
 ## Related roundups
 
