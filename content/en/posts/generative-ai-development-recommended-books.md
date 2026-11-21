@@ -1,5 +1,5 @@
 ---
-title: "4 Japanese Books on Software Development in the Generative AI Era (Prompts, Context, and AI Coding)"
+title: "5 Japanese Books on Software Development in the Generative AI Era (Prompts, Context, AI Apps, and AI Coding)"
 slug: generative-ai-development-recommended-books
 date: 2026-10-16T00:00:00Z
 author: bmf-san
@@ -8,13 +8,15 @@ categories:
 tags:
   - Book Review
   - Generative AI
-description: "A reading list of 4 Japanese books for putting generative AI to work in development: prompt engineering, context engineering, AI coding in practice, and how to create value with generative AI. Each entry links to its full review."
+description: "A reading list of 5 Japanese books for putting generative AI to work in development: prompt engineering, context engineering, building AI applications, AI coding in practice, and how to create value with generative AI. Each entry links to its full review."
 translation_key: generative-ai-development-recommended-books
 recommended_books:
   - asin: "4814401132"
     title: "Prompt Engineering for LLMs"
   - asin: "4297154196"
     title: "Context Engineering"
+  - asin: "4814401388"
+    title: "AI Engineering"
   - asin: "4814401426"
     title: "Beyond Vibe Coding"
   - asin: "4814401299"
@@ -22,7 +24,7 @@ recommended_books:
 draft: false
 ---
 
-A reading list for anyone who wants to use generative AI well in day-to-day development. Each pick has its own review on this blog, and every entry links to it. The list starts with how to instruct an LLM, then moves through context design, AI coding in practice, and how to create value.
+A reading list for anyone who wants to use generative AI well in day-to-day development. Each pick has its own review on this blog, and every entry links to it. The list starts with how to instruct an LLM, then moves through context design, building AI applications, AI coding in practice, and how to create value.
 
 The books in this list are Japanese editions, and the store links go to Amazon Japan.
 
@@ -40,13 +42,19 @@ An O'Reilly book that organizes prompt engineering into a system. Through tokeni
 
 It covers how to choose and structure the information you pass to an LLM, and how to combine it with retrieval and memory. It connects directly to the problems you hit when you build RAG systems or agents, so it works as an implementation guide. See the [review](/posts/context-engineering/).
 
-## 2. Develop alongside AI
+## 2. Build AI applications
+
+### AI Engineering
+
+Chip Huyen's systematic guide to designing, building, and running AI applications on foundation models. It gives two chapters to evaluation and also surveys RAG and agents, fine-tuning, and inference optimization. My notes are in the [review](/posts/ai-engineering/).
+
+## 3. Develop alongside AI
 
 ### Beyond Vibe Coding
 
 It looks past "vibe coding," where you let AI write code by feel, and shows practices for building AI into the whole development workflow. It maps out how review, testing, and refactoring change in the AI era. I wrote it up in the [review](/posts/beyond-vibe-coding/).
 
-## 3. Create value with generative AI
+## 4. Create value with generative AI
 
 ### Creating Value in the Age of Generative AI
 
@@ -54,7 +62,7 @@ It frames how to turn generative AI into business and organizational results thr
 
 ## Wrap-up
 
-Start with the prompt and context books to learn the principles of what you give an LLM, then widen your view to the development process with Beyond Vibe Coding. If you plan products or make decisions, add Creating Value in the Age of Generative AI. Every book has a full review here, so start with whichever one interests you most.
+Start with the prompt and context books to learn the principles of what you give an LLM, then widen your view to the development process with Beyond Vibe Coding. When you build AI into a product, AI Engineering covers its evaluation and design. If you plan products or make decisions, add Creating Value in the Age of Generative AI. Every book has a full review here, so start with whichever one interests you most.
 
 ## Related roundups
 

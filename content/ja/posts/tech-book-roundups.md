@@ -19,7 +19,7 @@ draft: false
 - [ソフトウェアアーキテクチャのおすすめ本](/ja/posts/software-architecture-recommended-books/) — 設計の基礎からマイクロサービス、API設計まで12冊。
 - [良いコードを書くためのおすすめ本](/ja/posts/clean-code-recommended-books/) — 読みやすさとリファクタリングを中心に9冊。
 - [システム設計とアーキテクトのおすすめ本](/ja/posts/system-design-recommended-books/) — 設計面接から設計プロセス、トレードオフまで8冊。
-- [マイクロサービスのおすすめ本](/ja/posts/microservices-recommended-books/) — 概念と移行から設計パターン、本番運用まで8冊。
+- [マイクロサービスのおすすめ本](/ja/posts/microservices-recommended-books/) — 概念と移行から設計パターン、本番運用まで9冊。
 - [API設計について学べるおすすめ本](/ja/posts/books-on-api-design/) — API設計の基礎からテスト、デザインパターンまで。
 
 ## プログラミング言語
@@ -39,21 +39,21 @@ draft: false
 
 ## セキュリティ
 
-- [Webアプリのセキュリティのおすすめ本](/ja/posts/web-security-recommended-books/) — 認証・認可からセキュア設計まで8冊。
+- [Webアプリのセキュリティのおすすめ本](/ja/posts/web-security-recommended-books/) — 認証・認可からセキュア設計まで10冊。
 
 ## 基礎・インフラ・運用
 
-- [コンピュータとネットワークの基礎のおすすめ本](/ja/posts/computer-network-basics-recommended-books/) — CS・OS・TCP/IPの8冊。
+- [コンピュータとネットワークの基礎のおすすめ本](/ja/posts/computer-network-basics-recommended-books/) — CS・OS・TCP/IPの9冊。
 - [監視・SRE・運用のおすすめ本](/ja/posts/sre-operations-recommended-books/) — 監視入門からSLO、ログ、キャパシティまで7冊。
 - [Webパフォーマンスのおすすめ本](/ja/posts/web-performance-recommended-books/) — 仕組みからチューニング、CDNまで4冊。
 
 ## 生成AI
 
-- [生成AI時代の開発のおすすめ本](/ja/posts/generative-ai-development-recommended-books/) — プロンプト・コンテキスト・AIコーディングの4冊。
+- [生成AI時代の開発のおすすめ本](/ja/posts/generative-ai-development-recommended-books/) — プロンプト・コンテキスト・AIアプリ開発・AIコーディングの5冊。
 
 ## マネジメント・思考
 
-- [エンジニアリングマネジメントのおすすめ本](/ja/posts/engineering-management-recommended-books/) — 組織・リーダーシップ・PdMの12冊。
+- [エンジニアリングマネジメントのおすすめ本](/ja/posts/engineering-management-recommended-books/) — 組織・リーダーシップ・PdMの13冊。
 - [エンジニアの思考法・知的生産のおすすめ本](/ja/posts/engineer-thinking-recommended-books/) — 問題解決から学び方まで10冊。
 - [エンジニアのキャリアのおすすめ本](/ja/posts/engineer-career-recommended-books/) — 基礎力からスタッフエンジニアまで4冊。
 - [SaaSと事業づくりのおすすめ本](/ja/posts/saas-business-recommended-books/) — 立ち上げ・アーキテクチャ・営業・顧客理解の6冊。

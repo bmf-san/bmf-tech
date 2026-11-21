@@ -1,5 +1,5 @@
 ---
-title: "8 Japanese Books on Computer and Network Fundamentals (CS, OS, and TCP/IP)"
+title: "9 Japanese Books on Computer and Network Fundamentals (CS, OS, and TCP/IP)"
 slug: computer-network-basics-recommended-books
 date: 2026-10-16T00:00:00Z
 author: bmf-san
@@ -8,7 +8,7 @@ categories:
 tags:
   - Book Review
   - TCP
-description: "A reading list of 8 Japanese books for relearning computer and network fundamentals: how computers and programs work, an overview of computer science, the OS and UNIX, and TCP/IP and email. Each entry links to its full review."
+description: "A reading list of 9 Japanese books for relearning computer and network fundamentals: how computers and programs work, an overview of computer science, building a computer from scratch, the OS and UNIX, and TCP/IP and email. Each entry links to its full review."
 translation_key: computer-network-basics-recommended-books
 recommended_books:
   - asin: "429600123X"
@@ -17,6 +17,8 @@ recommended_books:
     title: "Why Programs Work, 3rd Edition"
   - asin: "4798154814"
     title: "Computer Science Distilled"
+  - asin: "481440087X"
+    title: "The Elements of Computing Systems, Second Edition"
   - asin: "4798177849"
     title: "Understanding the Linux Kernel through Illustrations"
   - asin: "4274064069"
@@ -30,7 +32,7 @@ recommended_books:
 draft: false
 ---
 
-A reading list for anyone who wants to relearn the fundamentals of computers and networks. Each pick has its own review on this blog, and every entry links to it. The list starts with how hardware and programs work, then moves through an overview of computer science, the OS, and networking.
+A reading list for anyone who wants to relearn the fundamentals of computers and networks. Each pick has its own review on this blog, and every entry links to it. The list starts with how hardware and programs work, then moves through an overview of computer science, building a computer from scratch, the OS, and networking.
 
 The books in this list are Japanese editions, and the store links go to Amazon Japan.
 
@@ -51,6 +53,10 @@ It covers the basics of how programs run, including the CPU and memory. You pick
 ### Computer Science Distilled
 
 A good book for getting the big picture of computer science. Use it as a map to decide which area to study next. I wrote it up in the [review](/posts/everyone-computer-science/).
+
+### The Elements of Computing Systems, Second Edition
+
+Known as Nand to Tetris, it has you design logic gates and a CPU from NAND, then write an assembler, a virtual machine, a compiler, and an OS. Because you build each layer yourself, you see how hardware and software connect. My notes are in the [review](/posts/elements-of-computing-systems-second-edition/).
 
 ## 2. The OS and the Unix mindset
 
@@ -78,7 +84,7 @@ It covers email from the basic mechanics through protocols, sender domain authen
 
 ## Wrap-up
 
-Build a foundation with Why Computers Work and Why Programs Work, and check the big picture with Computer Science Distilled. For networking, Mastering TCP/IP: Introduction is the easiest way in. Every book has a full review here, so start with whichever one interests you most.
+Build a foundation with Why Computers Work and Why Programs Work, and check the big picture with Computer Science Distilled. To deepen your understanding with your own hands, take on The Elements of Computing Systems. For networking, Mastering TCP/IP: Introduction is the easiest way in. Every book has a full review here, so start with whichever one interests you most.
 
 ## Related roundups
 

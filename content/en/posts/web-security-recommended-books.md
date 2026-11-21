@@ -1,5 +1,5 @@
 ---
-title: "8 Japanese Books for Learning Web Application Security (Auth and Secure Design)"
+title: "10 Japanese Books for Learning Web Application Security (Auth and Secure Design)"
 slug: web-security-recommended-books
 date: 2026-09-22T00:00:00Z
 author: bmf-san
@@ -10,7 +10,7 @@ tags:
   - Authentication
   - Authorization
   - OAuth
-description: "A staged reading list of 8 Japanese books for learning web application security, from authentication and authorization to secure design: OAuth-based authorization, digital identity, and secure design and implementation. Each entry links to its full review."
+description: "A staged reading list of 10 Japanese books for learning web application security, from authentication and authorization to secure design: OAuth-based authorization, digital identity, and secure design and implementation. Each entry links to its full review."
 translation_key: web-security-recommended-books
 recommended_books:
   - asin: "B07L5M7DXS"
@@ -21,6 +21,8 @@ recommended_books:
     title: "Getting Started with Digital Identity"
   - asin: "4814400985"
     title: "Digital Identity: A Complete Guide"
+  - asin: "4296109901"
+    title: "Digital Identity: The Core of Cyber Business That Executives Don't Know"
   - asin: "4297146533"
     title: "Passkeys: A Complete Guide"
   - asin: "B09F697K2V"
@@ -29,6 +31,8 @@ recommended_books:
     title: "Secure API: Principles Across Design, Build, and Implementation"
   - asin: "481440025X"
     title: "Building Secure and Reliable Systems"
+  - asin: "481440123X"
+    title: "Zero Trust Networks, 2nd Edition"
 draft: false
 ---
 
@@ -60,6 +64,10 @@ A gentle take on the basics of authentication, authorization, and ID management 
 
 A broad, systematic tour of safe, user-centered identity systems. It helps when you want the whole design picture. See the [review](/posts/digital-identity-overview/).
 
+### Digital Identity: The Core of Cyber Business That Executives Don't Know
+
+A book for executives that traces the strength of GAFA to digital identity and covers identity management, OpenID Connect, and privacy. It helps you explain why authentication and authorization matter to the business. I cover it in the [review](/posts/digital-identity-cyber-business/).
+
 ### Passkeys: A Complete Guide
 
 It covers passkeys, a replacement for passwords, from adoption to UX design and implementation. It shows the next options for authentication in concrete terms. I cover it in the [review](/posts/passkeys-adoption-ux-implementation/).
@@ -77,6 +85,10 @@ It gathers security principles that run from API design through implementation. 
 ### Building Secure and Reliable Systems
 
 A hefty volume on designing, building, and maintaining safe systems, drawn from Google SRE. You gain a view that holds reliability and security together. See the [review](/posts/secure-reliable-system-design-google-sre/).
+
+### Zero Trust Networks, 2nd Edition
+
+It explains zero trust, which verifies every access instead of trusting a network perimeter, in a systematic way. You learn how to establish trust in devices, identities, applications, and traffic. I wrote it up in the [review](/posts/zero-trust-networks-second-edition/).
 
 ## Wrap-up
 
