@@ -11,6 +11,9 @@ tags:
   - Authorization
 description: "OAuth 2.0 explained from the specs (RFC 6749 and RFC 6750): the four roles, the four grant types, access and refresh tokens, endpoints, scopes, Bearer tokens, security considerations, and what OAuth 2.1 changes."
 translation_key: oauth-2-0-spec-summary
+glossary:
+  - term: "OAuth 2.0"
+    definition: "An authorization framework that lets a client access protected resources with an access token under the resource owner's approval. Defined in RFC 6749."
 draft: false
 ---
 

@@ -10,6 +10,11 @@ tags:
   - Data Structures
   - Swiss Table
 translation_key: open-address-hash-table-swizzle-table
+glossary:
+  - term: "Open Addressing"
+    definition: "A collision resolution method that stores an element in another empty slot found by probing within the table when a hash collision occurs."
+  - term: "Swiss Table"
+    definition: "A cache-efficient open-addressing hash table that uses metadata to quickly match keys a group at a time. Go now uses it for its map type."
 draft: false
 ---
 

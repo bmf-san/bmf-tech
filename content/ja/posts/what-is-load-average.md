@@ -10,6 +10,10 @@ tags:
   - システムパフォーマンス
   - Load Average
 translation_key: what-is-load-average
+glossary:
+  - term: "ロードアベレージ"
+    reading: "ロードアベレージ"
+    definition: "実行中または実行待ちのプロセス数などの平均値で、システムの混雑度合いを示すLinuxの指標。1分・5分・15分の3つの値で表示される。"
 draft: false
 ---
 

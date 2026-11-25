@@ -12,6 +12,9 @@ tags:
   - LLM as Judge
 description: "Running AI agents for long, reliable sessions takes more than a good model: it takes a well-designed harness around it. Based on primary sources from Anthropic, OpenAI, and martinfowler.com, this post covers guides and sensors, context, state, task decomposition, human involvement, and evals."
 translation_key: harness-engineering
+glossary:
+  - term: "Harness Engineering"
+    definition: "Designing the mechanisms outside the model, such as context, state management, and evaluation, so that AI agents can run reliably for long periods."
 draft: false
 ---
 

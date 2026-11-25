@@ -10,6 +10,9 @@ tags:
   - Big O Notation
 description: An overview of the basics of calculating algorithm performance using Big O notation and complexity.
 translation_key: big-o-notation-algorithms
+glossary:
+  - term: "Big O Notation"
+    definition: "A notation that describes how the cost of an algorithm grows as the input size increases. Also called order notation."
 draft: false
 ---
 

@@ -13,6 +13,13 @@ tags:
   - System Design
 description: "Where and how should you make authorization decisions? This post covers the PEP/PDP/PIP/PAP reference architecture and its place next to business domains, how to choose and combine RBAC/ABAC/ReBAC, and a comparison of OPA, Cedar, Cerbos, OpenFGA, and SpiceDB."
 translation_key: authorization-architecture-models-engines
+glossary:
+  - term: "PEP"
+    definition: "The component that requests an authorization decision and enforces access according to the result. Short for Policy Enforcement Point."
+  - term: "PDP"
+    definition: "The component that evaluates policies and attributes and returns an authorization decision such as permit or deny. Short for Policy Decision Point."
+  - term: "ReBAC"
+    definition: "An authorization model that decides access based on relationships between subjects and resources. Short for Relationship-Based Access Control."
 draft: false
 ---
 

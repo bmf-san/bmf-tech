@@ -9,6 +9,9 @@ categories:
 tags:
   - OAuth
 translation_key: dynamic-client-registration
+glossary:
+  - term: "Dynamic Client Registration"
+    definition: "A mechanism that lets an OAuth client register itself with an authorization server through a registration endpoint API. Abbreviated as DCR and defined in RFC 7591."
 draft: false
 ---
 

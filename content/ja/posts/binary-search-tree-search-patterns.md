@@ -14,6 +14,16 @@ translation_key: binary-search-tree-search-patterns
 recommended_books:
   - asin: "479817243X"
     title: "アルゴリズム図鑑（増補改訂版）"
+glossary:
+  - term: "行きがけ順"
+    reading: "いきがけじゅん"
+    definition: "根、左の部分木、右の部分木の順にノードを訪れる深さ優先の走査順。先行順とも呼ばれる。"
+  - term: "通りがけ順"
+    reading: "とおりがけじゅん"
+    definition: "左の部分木、根、右の部分木の順にノードを訪れる深さ優先の走査順。中間順とも呼ばれ、二分探索木では値の昇順になる。"
+  - term: "帰りがけ順"
+    reading: "かえりがけじゅん"
+    definition: "左の部分木、右の部分木、根の順にノードを訪れる深さ優先の走査順。後行順とも呼ばれる。"
 draft: false
 ---
 

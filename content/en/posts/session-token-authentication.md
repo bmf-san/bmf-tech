@@ -10,6 +10,11 @@ tags:
   - Authorization
 description: A comprehensive comparison and explanation of session-based and token-based authentication methods, covering technical details and implementation considerations.
 translation_key: session-token-authentication
+glossary:
+  - term: "Session-Based Authentication"
+    definition: "An authentication method in which the server keeps session state and the client holds a session ID, typically in a cookie."
+  - term: "Token-Based Authentication"
+    definition: "An authentication method in which the client sends a token issued after login with each request and the server verifies it. The server does not need to keep session state."
 draft: false
 ---
 

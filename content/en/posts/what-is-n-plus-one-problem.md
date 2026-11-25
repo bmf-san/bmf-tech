@@ -10,6 +10,9 @@ categories:
 tags:
   - N+1
 translation_key: what-is-n-plus-one-problem
+glossary:
+  - term: "N+1 Problem"
+    definition: "A performance problem in which one query fetches a list and then N more queries fetch related data for each record."
 draft: false
 ---
 

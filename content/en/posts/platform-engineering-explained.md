@@ -9,6 +9,11 @@ categories:
 tags:
   - Platform Engineering
 translation_key: platform-engineering-explained
+glossary:
+  - term: "Platform Engineering"
+    definition: "The practice of building and operating a self-service internal developer platform to reduce developers' cognitive load and improve productivity."
+  - term: "Internal Developer Platform"
+    definition: "A shared foundation provided within an organization so developers can use infrastructure and tools in a self-service manner. Abbreviated as IDP."
 draft: false
 ---
 

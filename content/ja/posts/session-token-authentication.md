@@ -10,6 +10,13 @@ tags:
   - 認証
   - 認可
 translation_key: session-token-authentication
+glossary:
+  - term: "セッションベース認証"
+    reading: "セッションベースにんしょう"
+    definition: "サーバー側でセッション状態を保持し、クライアントにはセッションIDをCookieなどで持たせて認証する方式。"
+  - term: "トークンベース認証"
+    reading: "トークンベースにんしょう"
+    definition: "認証後に発行したトークンをクライアントが各リクエストで送り、サーバーはトークンを検証して認証する方式。サーバー側で状態を持たずに済む。"
 draft: false
 ---
 

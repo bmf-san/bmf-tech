@@ -10,6 +10,13 @@ tags:
   - データ構造
   - スイステーブル
 translation_key: open-address-hash-table-swizzle-table
+glossary:
+  - term: "オープンアドレス法"
+    reading: "オープンアドレスほう"
+    definition: "ハッシュの衝突が起きたとき、テーブル内の別の空きスロットを探索して要素を格納する衝突解決法。"
+  - term: "Swiss Table"
+    reading: "スイステーブル"
+    definition: "メタデータを用いてグループ単位で一致を高速に判定する、キャッシュ効率の高いオープンアドレス法のハッシュテーブル。Goのmapの実装にも採用された。"
 draft: false
 ---
 

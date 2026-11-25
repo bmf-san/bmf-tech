@@ -11,6 +11,9 @@ tags:
   - OAuth
   - Authorization
 translation_key: oauth-2-1-security-bcp
+glossary:
+  - term: "OAuth 2.1"
+    definition: "A revised specification that consolidates OAuth 2.0 with later security best practices. It includes mandatory PKCE and removal of the implicit flow."
 draft: false
 ---
 

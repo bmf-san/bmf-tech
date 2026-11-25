@@ -11,6 +11,11 @@ tags:
   - PACELC
   - Distributed Systems
 translation_key: cap-theorem-pacelc-theorem
+glossary:
+  - term: "CAP Theorem"
+    definition: "A theorem stating that a distributed system cannot simultaneously guarantee consistency, availability, and partition tolerance; it can guarantee at most two."
+  - term: "PACELC Theorem"
+    definition: "An extension of the CAP theorem stating that during a partition there is a trade-off between availability and consistency, and otherwise between latency and consistency."
 draft: false
 ---
 

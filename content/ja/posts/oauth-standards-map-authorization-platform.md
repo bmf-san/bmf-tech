@@ -13,6 +13,13 @@ tags:
   - セキュリティ
 description: "認可基盤に必要なOAuthと周辺標準を、委譲・要求の完全性・発見と宛先・ドメイン横断・トークン・アイデンティティ・継続評価の7つの問いで整理する。RAR、PAR、Step-up、RFC 9728、CIMD、ID-JAG、SCIM、SSF/CAEPの役割と2026年10月時点の状態、基盤が決めることを示す。"
 translation_key: oauth-standards-map-authorization-platform
+glossary:
+  - term: "RAR"
+    reading: "アールエーアール"
+    definition: "スコープより細かい認可要求を、構造化されたJSONで表現するOAuthの拡張。Rich Authorization Requestsの略で、RFC 9396で定義される。"
+  - term: "PAR"
+    reading: "ピーエーアール"
+    definition: "認可リクエストのパラメータを事前にバックチャネルで認可サーバーへ送り、参照用のURIで認可を開始するOAuthの拡張。Pushed Authorization Requestsの略で、RFC 9126で定義される。"
 draft: false
 ---
 

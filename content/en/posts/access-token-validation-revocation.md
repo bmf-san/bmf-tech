@@ -10,6 +10,11 @@ tags:
   - OAuth
   - Authorization
 translation_key: access-token-validation-revocation
+glossary:
+  - term: "Token Introspection"
+    definition: "A mechanism by which a resource server asks the authorization server whether a token is active and what it represents. Defined in RFC 7662."
+  - term: "Token Revocation"
+    definition: "A mechanism by which a client notifies the authorization server to invalidate a token it no longer needs. Defined in RFC 7009."
 draft: false
 ---
 

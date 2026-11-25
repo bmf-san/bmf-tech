@@ -13,6 +13,11 @@ tags:
   - Security
 description: "A map of OAuth and related standards for an authorization platform, grouped by seven questions: delegation, request integrity, discovery and audience, cross-domain, tokens, identity, and continuous evaluation. Covers RAR, PAR, Step-up, RFC 9728, CIMD, ID-JAG, SCIM, and SSF/CAEP, with status as of October 2026 and what the platform must decide."
 translation_key: oauth-standards-map-authorization-platform
+glossary:
+  - term: "RAR"
+    definition: "An OAuth extension that expresses fine-grained authorization requests as structured JSON instead of scopes. Short for Rich Authorization Requests, defined in RFC 9396."
+  - term: "PAR"
+    definition: "An OAuth extension that sends authorization request parameters to the authorization server over a back channel in advance and starts authorization with a reference URI. Short for Pushed Authorization Requests, defined in RFC 9126."
 draft: false
 ---
 

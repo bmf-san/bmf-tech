@@ -11,6 +11,9 @@ tags:
   - OAuth
   - SSO
 translation_key: oidc-discovery-metadata
+glossary:
+  - term: "OpenID Connect Discovery"
+    definition: "A mechanism that lets clients configure themselves automatically by fetching an OpenID Provider's metadata, such as endpoints and key locations, from a well-known URL."
 draft: false
 ---
 

@@ -14,6 +14,13 @@ translation_key: jose-overview
 recommended_books:
   - asin: "4814400985"
     title: "デジタルアイデンティティのすべて"
+glossary:
+  - term: "JOSE"
+    definition: "JSON Object Signing and Encryption, a family of specifications for representing signatures, encryption, and keys in JSON. It consists of JWS, JWE, JWK, JWA, and JWT."
+  - term: "JWS"
+    definition: "A specification for signing JSON-based content so recipients can verify its integrity. Short for JSON Web Signature."
+  - term: "JWE"
+    definition: "A specification for encrypting JSON-based content to keep it confidential. Short for JSON Web Encryption."
 draft: false
 ---
 

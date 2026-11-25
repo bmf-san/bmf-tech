@@ -11,6 +11,10 @@ tags:
   - OAuth
   - 認可
 translation_key: oauth-2-1-security-bcp
+glossary:
+  - term: "OAuth 2.1"
+    reading: "オーオース"
+    definition: "OAuth 2.0とその後のセキュリティのベストプラクティスを統合した改訂仕様。PKCEの必須化やImplicitフローの削除などを含む。"
 draft: false
 ---
 

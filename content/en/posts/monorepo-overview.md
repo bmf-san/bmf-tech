@@ -9,6 +9,9 @@ categories:
 tags:
   - Monorepo
 translation_key: monorepo-overview
+glossary:
+  - term: "Monorepo"
+    definition: "An approach that manages the code of many projects or services in a single repository. It contrasts with a polyrepo, which uses one repository per project."
 draft: false
 ---
 

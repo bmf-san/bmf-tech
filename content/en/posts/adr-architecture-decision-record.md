@@ -9,6 +9,9 @@ categories:
 tags:
   - Architecture Decision Record
 translation_key: adr-architecture-decision-record
+glossary:
+  - term: "ADR"
+    definition: "A short document that records a significant architectural decision along with its context and consequences. Short for Architecture Decision Record."
 draft: false
 ---
 

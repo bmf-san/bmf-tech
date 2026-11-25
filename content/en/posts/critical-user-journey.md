@@ -10,6 +10,9 @@ tags:
   - Critical User Journey
   - SLO
 translation_key: critical-user-journey
+glossary:
+  - term: "Critical User Journey"
+    definition: "A sequence of interactions that users follow to achieve an important goal in a service. Abbreviated as CUJ, it serves as a unit for defining SLOs."
 draft: false
 ---
 

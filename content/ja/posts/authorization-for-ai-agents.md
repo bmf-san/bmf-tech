@@ -13,6 +13,10 @@ tags:
   - AI
 description: "AIエージェントで認可の何が変わるのかを、委譲の連鎖、最小権限、プロンプトインジェクション、人の承認、監査の帰属から整理する。MCPの認可、AuthZENのAARPとCOAZ、AIMS、OBO・AAuth、ID-JAG、A2A/AP2の役割と状態（2026年10月時点）を設計の地図にまとめる。"
 translation_key: authorization-for-ai-agents
+glossary:
+  - term: "委譲の連鎖"
+    reading: "いじょうのれんさ"
+    definition: "人からAIエージェント、さらに別のエージェントやツールへと権限が段階的に渡されていく構造。各段で権限を絞り、誰の代理かを追えることが求められる。"
 draft: false
 ---
 

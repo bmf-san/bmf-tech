@@ -11,6 +11,10 @@ tags:
   - CQRS
   - マイクロサービス
 translation_key: cqrs-research-notes
+glossary:
+  - term: "CQRS"
+    reading: "シーキューアールエス"
+    definition: "データを更新するコマンドと参照するクエリの責務を分離し、それぞれに適したモデルを用いる設計パターン。Command Query Responsibility Segregationの略。"
 draft: false
 ---
 

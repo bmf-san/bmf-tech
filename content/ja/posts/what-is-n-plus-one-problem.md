@@ -10,6 +10,10 @@ categories:
 tags:
   - N+1
 translation_key: what-is-n-plus-one-problem
+glossary:
+  - term: "N+1問題"
+    reading: "エヌプラスワンもんだい"
+    definition: "一覧を取得する1回のクエリに加え、各レコードの関連データを取得するクエリがN回発行されてしまう性能問題。"
 draft: false
 ---
 

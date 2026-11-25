@@ -9,6 +9,10 @@ categories:
 tags:
   - Design Docs
 translation_key: design-docs-overview
+glossary:
+  - term: "Design Docs"
+    reading: "デザインドックス"
+    definition: "実装の前に、ソフトウェアの設計方針や検討したトレードオフを記述する非形式的なドキュメント。設計上の問題の早期発見や合意形成に役立つ。"
 draft: false
 ---
 

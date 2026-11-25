@@ -13,6 +13,11 @@ tags:
   - lxd
   - Container
 translation_key: container-technology-overview
+glossary:
+  - term: "Container"
+    definition: "A mechanism that isolates processes while sharing the host OS kernel through namespaces and cgroups, running an application together with its dependencies."
+  - term: "OCI"
+    definition: "The Open Container Initiative and its standards, which define specifications for container image formats and runtimes."
 draft: false
 ---
 

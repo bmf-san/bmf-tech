@@ -10,6 +10,10 @@ categories:
 tags:
   - BFF
 translation_key: bff-explained
+glossary:
+  - term: "BFF"
+    reading: "ビーエフエフ"
+    definition: "特定のフロントエンド専用に用意し、バックエンドとの間でAPIの集約や変換を担うサーバー層。Backend For Frontendの略。"
 draft: false
 ---
 

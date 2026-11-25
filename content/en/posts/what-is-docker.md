@@ -10,6 +10,9 @@ tags:
   - Docker
   - Virtual Environment
 translation_key: what-is-docker
+glossary:
+  - term: "Docker"
+    definition: "A platform for building and distributing container images and running containers. You build images from a Dockerfile."
 draft: false
 ---
 

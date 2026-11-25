@@ -15,6 +15,9 @@ translation_key: saml-2-0-spec-summary
 recommended_books:
   - asin: "4814400985"
     title: "デジタルアイデンティティのすべて"
+glossary:
+  - term: "SAML 2.0"
+    definition: "An OASIS standard that exchanges authentication information through XML-based assertions to enable single sign-on across organizations."
 draft: false
 ---
 

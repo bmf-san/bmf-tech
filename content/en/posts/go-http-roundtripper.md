@@ -9,6 +9,9 @@ categories:
 tags:
   - Golang
 translation_key: go-http-roundtripper
+glossary:
+  - term: "http.RoundTripper"
+    definition: "An interface in Go's net/http package that represents executing a single HTTP request and returning its response. Custom implementations act as client-side middleware."
 draft: false
 ---
 

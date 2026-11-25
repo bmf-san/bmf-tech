@@ -9,6 +9,9 @@ categories:
 tags:
   - Golang
 translation_key: go-http-roundtripper
+glossary:
+  - term: "http.RoundTripper"
+    definition: "Goのnet/httpパッケージで、1回のHTTPリクエストを送ってレスポンスを受け取る処理を表すインターフェース。実装を差し替えてクライアント側のミドルウェアを作れる。"
 draft: false
 ---
 

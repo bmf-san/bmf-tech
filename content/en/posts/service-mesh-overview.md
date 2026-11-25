@@ -9,6 +9,9 @@ categories:
 tags:
   - Service Mesh
 translation_key: service-mesh-overview
+glossary:
+  - term: "Service Mesh"
+    definition: "An infrastructure layer that handles traffic management, observability, and security for communication between microservices outside the application, typically using sidecar proxies."
 draft: false
 ---
 

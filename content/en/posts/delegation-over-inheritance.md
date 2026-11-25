@@ -13,6 +13,9 @@ tags:
   - Inheritance
   - Golang
 translation_key: delegation-over-inheritance
+glossary:
+  - term: "Delegation over Inheritance"
+    definition: "A design principle that favors delegating work to a contained object over reusing behavior through inheritance."
 draft: false
 ---
 

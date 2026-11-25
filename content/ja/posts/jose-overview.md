@@ -14,6 +14,16 @@ translation_key: jose-overview
 recommended_books:
   - asin: "4814400985"
     title: "デジタルアイデンティティのすべて"
+glossary:
+  - term: "JOSE"
+    reading: "ジョーズ"
+    definition: "JSONを用いて署名や暗号化、鍵を表現するための一連の仕様群。JWS・JWE・JWK・JWA・JWTから構成される。"
+  - term: "JWS"
+    reading: "ジェイダブリューエス"
+    definition: "JSONベースのデータに署名し、改ざんされていないことを検証できるようにする仕様。JSON Web Signatureの略。"
+  - term: "JWE"
+    reading: "ジェイダブリューイー"
+    definition: "JSONベースのデータを暗号化し、内容を秘匿するための仕様。JSON Web Encryptionの略。"
 draft: false
 ---
 

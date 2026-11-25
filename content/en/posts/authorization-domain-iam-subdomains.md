@@ -13,6 +13,9 @@ tags:
   - DDD
 description: "What is authorization? This post maps it against authentication, explains the delegation that OAuth handles, and splits IAM into five subdomains. It covers DDD Core/Supporting/Generic positioning, adjacent domains, and where the business meaning of permissions lives."
 translation_key: authorization-domain-iam-subdomains
+glossary:
+  - term: "Authorization"
+    definition: "Deciding whether an authenticated subject may perform a given action on a given resource. Authentication, by contrast, verifies identity."
 draft: false
 ---
 

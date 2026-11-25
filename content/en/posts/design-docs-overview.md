@@ -9,6 +9,9 @@ categories:
 tags:
   - Design Docs
 translation_key: design-docs-overview
+glossary:
+  - term: "Design Docs"
+    definition: "Informal documents that describe a software design and the trade-offs considered before implementation. They help detect design issues early and build consensus."
 draft: false
 ---
 

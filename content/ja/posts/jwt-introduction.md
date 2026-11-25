@@ -9,6 +9,10 @@ categories:
 tags:
   - JWT
 translation_key: jwt-introduction
+glossary:
+  - term: "JWT"
+    reading: "ジョット"
+    definition: "クレームをJSONで表現し、署名などで保護して当事者間で安全に受け渡すためのコンパクトなトークン形式。JSON Web Tokenの略。"
 draft: false
 ---
 

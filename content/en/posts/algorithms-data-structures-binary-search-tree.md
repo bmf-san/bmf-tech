@@ -10,6 +10,9 @@ categories:
 tags:
   - Data Structures
 translation_key: algorithms-data-structures-binary-search-tree
+glossary:
+  - term: "Binary Search Tree"
+    definition: "A binary tree in which each node's left subtree holds smaller values and its right subtree holds larger values. Abbreviated as BST, it supports search and insertion in O(log n) on average."
 draft: false
 ---
 

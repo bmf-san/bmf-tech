@@ -10,6 +10,9 @@ tags:
   - Microservices
   - Distributed Transactions
 translation_key: saga-pattern-research-notes
+glossary:
+  - term: "Saga Pattern"
+    definition: "A pattern that runs a distributed transaction as a sequence of local transactions in each service and undoes them with compensating transactions on failure. It comes in choreography and orchestration styles."
 draft: false
 ---
 

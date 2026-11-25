@@ -11,6 +11,9 @@ tags:
   - C4 Model
   - Architecture
 translation_key: c4-model
+glossary:
+  - term: "C4 Model"
+    definition: "An approach for visualizing software architecture step by step with diagrams at four levels: system context, container, component, and code."
 draft: false
 ---
 

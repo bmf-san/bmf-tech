@@ -11,6 +11,10 @@ tags:
   - インデックス
   - MySQL
 translation_key: what-is-index
+glossary:
+  - term: "インデックス"
+    reading: "インデックス"
+    definition: "テーブルのレコードを素早く検索するため、列の値と行の位置の対応を保持するデータ構造。B-Treeやハッシュなどの種類がある。"
 draft: false
 ---
 

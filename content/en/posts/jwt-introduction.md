@@ -9,6 +9,9 @@ categories:
 tags:
   - JWT
 translation_key: jwt-introduction
+glossary:
+  - term: "JWT"
+    definition: "A compact token format that represents claims in JSON and protects them with a signature or encryption for secure exchange between parties. Short for JSON Web Token."
 draft: false
 ---
 

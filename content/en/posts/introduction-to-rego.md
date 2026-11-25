@@ -10,6 +10,9 @@ tags:
   - Open Policy Agent
   - Rego
 translation_key: introduction-to-rego
+glossary:
+  - term: "Rego"
+    definition: "A declarative language for writing policies in Open Policy Agent. It defines rules over input data to derive decisions."
 draft: false
 ---
 

@@ -10,6 +10,10 @@ tags:
   - Docker
   - 仮想環境
 translation_key: what-is-docker
+glossary:
+  - term: "Docker"
+    reading: "ドッカー"
+    definition: "コンテナイメージの作成や配布、コンテナの実行のためのプラットフォーム。Dockerfileからイメージをビルドして利用する。"
 draft: false
 ---
 

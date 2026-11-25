@@ -12,6 +12,10 @@ tags:
   - アーキテクチャ
 description: "AuthZEN Authorization APIとは何か。2026年1月にFinalとなったPEPとPDPの間の標準APIを、SARCの情報モデル、Evaluation・Search API、メタデータ、セキュリティ、OPA・Cedar・OpenFGAの差し替えの観点で解説する。"
 translation_key: authzen-authorization-api
+glossary:
+  - term: "AuthZEN Authorization API"
+    reading: "オースゼンオーソリゼーションエーピーアイ"
+    definition: "OpenID FoundationのAuthZENが策定した、PEPとPDPの間の認可判定を標準化するAPI。Subject・Action・Resource・Contextの情報モデルで判定を要求する。"
 draft: false
 ---
 

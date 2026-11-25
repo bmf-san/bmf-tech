@@ -12,6 +12,9 @@ tags:
   - Generative AI
   - SDLC
 translation_key: ai-driven-development-life-cycle
+glossary:
+  - term: "AI-DLC"
+    definition: "An AI-driven development lifecycle proposed by AWS that places AI as a central collaborator in development. AI executes while humans oversee, iterating rapidly from planning to implementation."
 draft: false
 ---
 

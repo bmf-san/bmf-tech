@@ -11,6 +11,11 @@ tags:
   - Microservices
   - Security
 translation_key: service-to-service-authentication
+glossary:
+  - term: "SPIFFE"
+    definition: "A standard for giving workloads verifiable identities. It defines SPIFFE IDs and the SVIDs that prove them."
+  - term: "Token Exchange"
+    definition: "An OAuth mechanism for presenting a token to the authorization server and exchanging it for another token with a different audience or permissions. Defined in RFC 8693."
 draft: false
 ---
 

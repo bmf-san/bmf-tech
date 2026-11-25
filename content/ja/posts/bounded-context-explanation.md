@@ -9,6 +9,10 @@ categories:
 tags:
   - DDD
 translation_key: bounded-context-explanation
+glossary:
+  - term: "境界付けられたコンテキスト"
+    reading: "きょうかいづけられたコンテキスト"
+    definition: "ドメイン駆動設計において、特定のモデルと言葉の意味が一貫して通用する範囲。この境界ごとに責務とモデルを分けて設計する。"
 draft: false
 ---
 

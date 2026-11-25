@@ -10,6 +10,9 @@ tags:
   - Load Average
 description: "A practical explanation of what Load Average means on Linux, the metric you often see in commands like top and uptime. Since it represents processes waiting to run and indicates how congested a system is, the article covers how to read its three values, how to diagnose high load, and how it differs from CPU utilization."
 translation_key: what-is-load-average
+glossary:
+  - term: "Load Average"
+    definition: "A Linux metric that shows how busy a system is as the average number of running or waiting processes. Tools show it as three values over 1, 5, and 15 minutes."
 draft: false
 ---
 

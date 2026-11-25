@@ -9,6 +9,13 @@ categories:
 tags:
   - プラットフォーム・エンジニアリング
 translation_key: platform-engineering-explained
+glossary:
+  - term: "プラットフォームエンジニアリング"
+    reading: "プラットフォームエンジニアリング"
+    definition: "開発者の認知負荷を下げて生産性を高めるために、セルフサービスで使える内部開発者プラットフォームを構築・運用する取り組み。"
+  - term: "内部開発者プラットフォーム"
+    reading: "ないぶかいはつしゃプラットフォーム"
+    definition: "開発者がインフラやツールをセルフサービスで利用できるよう、組織内で提供される共通基盤。略称はIDP。"
 draft: false
 ---
 

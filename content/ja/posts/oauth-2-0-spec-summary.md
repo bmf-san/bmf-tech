@@ -11,6 +11,10 @@ tags:
   - 認証
   - 認可
 translation_key: oauth-2-0-spec-summary
+glossary:
+  - term: "OAuth 2.0"
+    reading: "オーオース"
+    definition: "リソースオーナーの許可のもと、クライアントがアクセストークンを使って保護されたリソースへアクセスするための認可フレームワーク。RFC 6749で定義される。"
 draft: false
 ---
 

@@ -13,6 +13,11 @@ tags:
   - Security
 description: "How do standards carry workload identity and call context? Covers IETF WIMSE (identifiers, WIT/WIC, mTLS vs HTTP signatures vs WPT), Transaction Tokens, SPIFFE OAuth client auth, and draft status as of October 2026."
 translation_key: workload-identity-wimse-transaction-tokens
+glossary:
+  - term: "Workload Identity"
+    definition: "A verifiable identity assigned to a workload, such as a service or job, rather than to a person."
+  - term: "Transaction Tokens"
+    definition: "Short-lived tokens that propagate the context of an external call across internal services without tampering."
 draft: false
 ---
 

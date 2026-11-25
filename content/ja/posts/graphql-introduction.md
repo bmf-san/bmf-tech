@@ -9,6 +9,9 @@ categories:
 tags:
   - GraphQL
 translation_key: graphql-introduction
+glossary:
+  - term: "GraphQL"
+    definition: "Facebookが開発したAPI向けのクエリ言語とその実行環境。クライアントが必要なデータを指定して、単一のエンドポイントから取得できる。"
 draft: false
 ---
 

@@ -9,6 +9,9 @@ categories:
 tags:
   - Duck Typing
 translation_key: what-is-duck-typing
+glossary:
+  - term: "Duck Typing"
+    definition: "An approach that treats an object according to the methods and behavior it has rather than its type."
 draft: false
 ---
 

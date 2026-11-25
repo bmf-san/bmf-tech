@@ -10,6 +10,9 @@ tags:
   - GraphQL
   - GraphQL Federation
 translation_key: graphql-federation-introduction
+glossary:
+  - term: "GraphQL Federation"
+    definition: "複数のサブグラフのスキーマを合成し、ゲートウェイを通じて単一のGraphQL APIとして公開する仕組み。"
 draft: false
 ---
 

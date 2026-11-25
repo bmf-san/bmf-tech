@@ -10,6 +10,10 @@ categories:
 tags:
   - データ構造
 translation_key: algorithms-data-structures-binary-search-tree
+glossary:
+  - term: "二分探索木"
+    reading: "にぶんたんさくぎ"
+    definition: "各ノードの左の部分木に小さい値、右の部分木に大きい値を置く二分木。略称はBSTで、平均O(log n)で探索や挿入ができる。"
 draft: false
 ---
 

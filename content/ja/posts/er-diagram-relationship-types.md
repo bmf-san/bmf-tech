@@ -9,6 +9,13 @@ categories:
 tags:
   - ER
 translation_key: er-diagram-relationship-types
+glossary:
+  - term: "依存リレーションシップ"
+    reading: "いぞんリレーションシップ"
+    definition: "ER図において、子エンティティが親エンティティの主キーを自身の主キーの一部として持つ関係。親がなければ子を識別できない。"
+  - term: "非依存リレーションシップ"
+    reading: "ひいぞんリレーションシップ"
+    definition: "ER図において、子エンティティが親エンティティの主キーを外部キーとしてのみ持つ関係。子は親とは独立に識別できる。"
 draft: false
 ---
 

@@ -10,6 +10,13 @@ tags:
   - 契約テスト
   - Pact
 translation_key: contract-testing-pact
+glossary:
+  - term: "契約テスト"
+    reading: "けいやくテスト"
+    definition: "サービス間でやり取りするリクエストとレスポンスの取り決めを契約として定義し、双方がそれを守っているかを検証するテスト手法。"
+  - term: "Pact"
+    reading: "パクト"
+    definition: "コンシューマー駆動の契約テストを実現するツール。コンシューマー側のテストから契約を生成し、プロバイダー側で検証する。"
 draft: false
 ---
 

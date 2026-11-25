@@ -11,6 +11,13 @@ tags:
   - PACELC
   - 分散システム
 translation_key: cap-theorem-pacelc-theorem
+glossary:
+  - term: "CAP定理"
+    reading: "キャップていり"
+    definition: "分散システムでは一貫性・可用性・分断耐性の3つを同時にすべて満たすことはできず、最大2つまでしか保証できないとする定理。"
+  - term: "PACELC定理"
+    reading: "パセルクていり"
+    definition: "ネットワーク分断時は可用性と一貫性、平常時はレイテンシと一貫性のトレードオフがあるとして、CAP定理を拡張した定理。"
 draft: false
 ---
 
