@@ -9,6 +9,10 @@ categories:
 tags:
   - キャパシティプランニング
 translation_key: capacity-planning
+glossary:
+  - term: "キャパシティプランニング"
+    reading: "キャパシティプランニング"
+    definition: "性能要件と現在のリソース使用状況、将来の需要予測をもとに、必要なインフラの量を見積もり計画する活動。"
 draft: false
 ---
 

@@ -9,6 +9,10 @@ categories:
 tags:
   - アーキテクチャ
 translation_key: what-is-architecture-advice-process
+glossary:
+  - term: "アーキテクチャアドバイスプロセス"
+    reading: "アーキテクチャアドバイスプロセス"
+    definition: "誰でもアーキテクチャ上の決定を下せるが、影響を受ける人や専門家から事前に助言を求めることを条件とする分散型の意思決定プロセス。略称はAAP。"
 draft: false
 ---
 

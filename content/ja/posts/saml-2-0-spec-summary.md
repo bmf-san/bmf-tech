@@ -15,6 +15,10 @@ translation_key: saml-2-0-spec-summary
 recommended_books:
   - asin: "4814400985"
     title: "デジタルアイデンティティのすべて"
+glossary:
+  - term: "SAML 2.0"
+    reading: "サムル"
+    definition: "XMLベースのアサーションで認証情報を受け渡し、組織をまたぐシングルサインオンを実現するOASISの標準。"
 draft: false
 ---
 

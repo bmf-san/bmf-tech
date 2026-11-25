@@ -12,6 +12,10 @@ translation_key: sliding-window-technique
 recommended_books:
   - asin: "479817243X"
     title: "アルゴリズム図鑑（増補改訂版）"
+glossary:
+  - term: "尺取り法"
+    reading: "しゃくとりほう"
+    definition: "配列上の区間の左端と右端を表す2つのインデックスを条件に応じて進め、区間を伸縮させながら探索するアルゴリズム。全区間を調べる場合より計算量を減らせる。"
 draft: false
 ---
 

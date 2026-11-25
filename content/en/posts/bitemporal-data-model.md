@@ -17,6 +17,9 @@ translation_key: bitemporal-data-model
 recommended_books:
   - asin: "4297140101"
     title: "データモデリングでドメインを駆動する"
+glossary:
+  - term: "Bitemporal Data Model"
+    definition: "A data model that manages history along two time axes: valid time, when a fact held true, and transaction time, when the database recorded it."
 draft: false
 ---
 

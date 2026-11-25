@@ -12,6 +12,9 @@ translation_key: sliding-window-technique
 recommended_books:
   - asin: "479817243X"
     title: "アルゴリズム図鑑（増補改訂版）"
+glossary:
+  - term: "Two Pointer Technique"
+    definition: "An algorithm that advances two indices marking the left and right ends of a range over an array, expanding and shrinking the range as it searches. It reduces complexity compared with checking every range."
 draft: false
 ---
 

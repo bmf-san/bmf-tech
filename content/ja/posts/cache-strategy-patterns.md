@@ -10,6 +10,13 @@ tags:
   - キャッシュ
   - システムパフォーマンス
 translation_key: cache-strategy-patterns
+glossary:
+  - term: "Cache Aside"
+    reading: "キャッシュアサイド"
+    definition: "アプリケーションがまずキャッシュを参照し、なければデータストアから読み込んでキャッシュに格納するパターン。Lazy Loadingとも呼ばれる。"
+  - term: "Write Back"
+    reading: "ライトバック"
+    definition: "書き込みをまずキャッシュに行い、データストアへは後から非同期にまとめて反映するパターン。書き込みは速いが、障害時にデータを失う恐れがある。"
 draft: false
 ---
 

@@ -11,6 +11,10 @@ tags:
   - C4モデル
   - アーキテクチャ
 translation_key: c4-model
+glossary:
+  - term: "C4モデル"
+    reading: "シーフォーモデル"
+    definition: "システムコンテキスト・コンテナ・コンポーネント・コードの4階層の図で、ソフトウェアアーキテクチャを段階的に可視化する手法。"
 draft: false
 ---
 

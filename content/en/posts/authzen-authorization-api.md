@@ -12,6 +12,9 @@ tags:
   - Architecture
 description: "What is the AuthZEN Authorization API? The PEP-to-PDP standard, final since January 2026: SARC, evaluation and search APIs, metadata, security, and swapping OPA, Cedar, or OpenFGA."
 translation_key: authzen-authorization-api
+glossary:
+  - term: "AuthZEN Authorization API"
+    definition: "An API standardized by the OpenID Foundation's AuthZEN working group for authorization decisions between a PEP and a PDP. Requests use a Subject, Action, Resource, and Context information model."
 draft: false
 ---
 

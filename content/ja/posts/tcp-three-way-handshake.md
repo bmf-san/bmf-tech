@@ -10,6 +10,10 @@ tags:
   - TCP
   - IP
 translation_key: tcp-three-way-handshake
+glossary:
+  - term: "3ウェイハンドシェイク"
+    reading: "スリーウェイハンドシェイク"
+    definition: "TCPで接続を確立するために、SYN、SYN/ACK、ACKの3つのセグメントをやり取りする手順。"
 draft: false
 ---
 

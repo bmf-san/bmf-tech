@@ -9,6 +9,11 @@ categories:
 tags:
   - Ruby
 translation_key: ruby-singleton-class-methods
+glossary:
+  - term: "Singleton Class"
+    definition: "In Ruby, an implicitly created class that belongs to a single object. It holds methods specific to that object."
+  - term: "Singleton Method"
+    definition: "In Ruby, a method defined only for a specific object. It belongs to that object's singleton class."
 draft: false
 ---
 

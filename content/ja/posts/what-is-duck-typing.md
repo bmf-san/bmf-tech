@@ -9,6 +9,10 @@ categories:
 tags:
   - ダック・タイピング
 translation_key: what-is-duck-typing
+glossary:
+  - term: "ダックタイピング"
+    reading: "ダックタイピング"
+    definition: "オブジェクトの型ではなく、持っているメソッドや振る舞いによって扱い方を決める考え方。"
 draft: false
 ---
 

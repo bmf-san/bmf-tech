@@ -10,6 +10,11 @@ tags:
   - OAuth
   - Authorization
 translation_key: sender-constrained-tokens-mtls-dpop
+glossary:
+  - term: "Sender-Constrained Token"
+    definition: "A token bound to the legitimate sender's key so that no one else can use it. It prevents misuse of stolen bearer tokens."
+  - term: "DPoP"
+    definition: "An OAuth mechanism in which the client sends a proof signed with its private key on each request, binding the access token to that key. Defined in RFC 9449."
 draft: false
 ---
 

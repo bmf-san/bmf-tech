@@ -10,6 +10,11 @@ tags:
   - Cache
   - System Performance
 translation_key: cache-strategy-patterns
+glossary:
+  - term: "Cache Aside"
+    definition: "A pattern in which the application first checks the cache and, on a miss, reads from the data store and populates the cache. Also called lazy loading."
+  - term: "Write Back"
+    definition: "A pattern that writes to the cache first and asynchronously flushes changes to the data store later. Writes are fast, but a failure may lose data."
 draft: false
 ---
 

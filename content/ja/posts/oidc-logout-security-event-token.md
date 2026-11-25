@@ -10,6 +10,13 @@ tags:
   - OpenIDConnect
   - 認証
 translation_key: oidc-logout-security-event-token
+glossary:
+  - term: "Back-Channel Logout"
+    reading: "バックチャネルログアウト"
+    definition: "OpenIDプロバイダーがブラウザを介さずに各クライアントへログアウトトークンを直接送り、セッションを終了させる仕組み。"
+  - term: "Security Event Token"
+    reading: "セキュリティイベントトークン"
+    definition: "セキュリティ上のイベントを受信者に伝えるための、JWT形式のトークン。略称はSETで、RFC 8417で定義される。"
 draft: false
 ---
 

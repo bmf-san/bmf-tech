@@ -11,6 +11,9 @@ tags:
   - CQRS
   - Microservices
 translation_key: cqrs-research-notes
+glossary:
+  - term: "CQRS"
+    definition: "A design pattern that separates the responsibilities of commands that update data and queries that read it, using a suitable model for each. Short for Command Query Responsibility Segregation."
 draft: false
 ---
 

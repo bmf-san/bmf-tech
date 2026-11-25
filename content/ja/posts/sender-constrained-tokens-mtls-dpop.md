@@ -10,6 +10,13 @@ tags:
   - OAuth
   - 認可
 translation_key: sender-constrained-tokens-mtls-dpop
+glossary:
+  - term: "送信者制約トークン"
+    reading: "そうしんしゃせいやくトークン"
+    definition: "正当な送信者の鍵に束縛され、その送信者以外は使えないようにしたトークン。盗まれたbearerトークンの悪用を防ぐ。"
+  - term: "DPoP"
+    reading: "ディーポップ"
+    definition: "クライアントがリクエストごとに秘密鍵で署名した証明を送り、アクセストークンをその鍵に束縛するOAuthの仕組み。RFC 9449で定義される。"
 draft: false
 ---
 

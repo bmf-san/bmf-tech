@@ -14,6 +14,13 @@ translation_key: binary-search-tree-search-patterns
 recommended_books:
   - asin: "479817243X"
     title: "アルゴリズム図鑑（増補改訂版）"
+glossary:
+  - term: "Pre-order Traversal"
+    definition: "A depth-first traversal that visits the root, then the left subtree, then the right subtree."
+  - term: "In-order Traversal"
+    definition: "A depth-first traversal that visits the left subtree, then the root, then the right subtree. On a binary search tree it yields values in ascending order."
+  - term: "Post-order Traversal"
+    definition: "A depth-first traversal that visits the left subtree, then the right subtree, then the root."
 draft: false
 ---
 

@@ -9,6 +9,9 @@ categories:
 tags:
   - Polymorphism
 translation_key: what-is-polymorphism
+glossary:
+  - term: "Polymorphism"
+    definition: "A mechanism that provides a common interface to objects of different types so the same call runs behavior specific to each type."
 draft: false
 ---
 

@@ -10,6 +10,13 @@ tags:
   - 設計
   - システム設計
 translation_key: cohesion-coupling
+glossary:
+  - term: "凝集度"
+    reading: "ぎょうしゅうど"
+    definition: "モジュール内の要素がどれだけ一つの目的に向けて関連し合っているかを表す指標。高いほど良い設計とされる。"
+  - term: "結合度"
+    reading: "けつごうど"
+    definition: "モジュール同士がどれだけ互いに依存しているかを表す指標。低いほど良い設計とされる。"
 draft: false
 ---
 

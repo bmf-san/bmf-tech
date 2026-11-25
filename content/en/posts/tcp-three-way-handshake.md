@@ -10,6 +10,9 @@ tags:
   - TCP
   - IP
 translation_key: tcp-three-way-handshake
+glossary:
+  - term: "Three-Way Handshake"
+    definition: "The procedure for establishing a TCP connection by exchanging three segments: SYN, SYN/ACK, and ACK."
 draft: false
 ---
 

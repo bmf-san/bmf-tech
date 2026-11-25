@@ -11,6 +11,9 @@ tags:
   - Index
   - MySQL
 translation_key: what-is-index
+glossary:
+  - term: "Index"
+    definition: "A data structure that maps column values to row locations to speed up finding records in a table. Types include B-tree and hash."
 draft: false
 ---
 

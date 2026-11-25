@@ -10,6 +10,9 @@ tags:
   - BFF
 description: "A summary of what I researched about BFF (Backends For Frontends). It covers what a BFF is and why it is needed, and how placing a BFF layer between the frontend and backend can simplify the API contract for each client."
 translation_key: bff-explained
+glossary:
+  - term: "BFF"
+    definition: "A server layer dedicated to a specific frontend that aggregates and adapts backend APIs for it. Short for Backend For Frontend."
 draft: false
 ---
 

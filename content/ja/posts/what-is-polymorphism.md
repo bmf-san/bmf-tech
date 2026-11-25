@@ -9,6 +9,10 @@ categories:
 tags:
   - ポリモーフィズム
 translation_key: what-is-polymorphism
+glossary:
+  - term: "ポリモーフィズム"
+    reading: "ポリモーフィズム"
+    definition: "異なる型のオブジェクトに共通のインターフェースを提供し、同じ呼び出しで型ごとの振る舞いを実行できるようにする仕組み。"
 draft: false
 ---
 

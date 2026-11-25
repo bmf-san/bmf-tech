@@ -9,6 +9,10 @@ categories:
 tags:
   - OAuth
 translation_key: dynamic-client-registration
+glossary:
+  - term: "動的クライアント登録"
+    reading: "どうてきクライアントとうろく"
+    definition: "OAuthクライアントが登録エンドポイントを通じて、認可サーバーへ自身をAPIで登録する仕組み。略称はDCRで、RFC 7591で定義される。"
 draft: false
 ---
 

@@ -13,6 +13,10 @@ tags:
   - 継承
   - Golang
 translation_key: delegation-over-inheritance
+glossary:
+  - term: "継承より委譲"
+    reading: "けいしょうよりいじょう"
+    definition: "機能の再利用に継承を使うのではなく、他のオブジェクトを保持して処理を任せる委譲を優先すべきだという設計原則。"
 draft: false
 ---
 

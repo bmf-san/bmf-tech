@@ -9,6 +9,9 @@ categories:
 tags:
   - Architecture
 translation_key: what-is-architecture-advice-process
+glossary:
+  - term: "Architecture Advice Process"
+    definition: "A decentralized decision-making process in which anyone may make an architectural decision, provided they first seek advice from those affected and from experts. Abbreviated as AAP."
 draft: false
 ---
 

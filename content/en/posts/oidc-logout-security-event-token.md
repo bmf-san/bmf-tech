@@ -10,6 +10,11 @@ tags:
   - OpenID Connect
   - Authentication
 translation_key: oidc-logout-security-event-token
+glossary:
+  - term: "Back-Channel Logout"
+    definition: "A mechanism in which the OpenID Provider sends a logout token directly to each client, without going through the browser, to end sessions."
+  - term: "Security Event Token"
+    definition: "A JWT-based token for conveying security events to recipients. Abbreviated as SET and defined in RFC 8417."
 draft: false
 ---
 

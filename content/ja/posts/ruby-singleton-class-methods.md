@@ -9,6 +9,13 @@ categories:
 tags:
   - Ruby
 translation_key: ruby-singleton-class-methods
+glossary:
+  - term: "特異クラス"
+    reading: "とくいクラス"
+    definition: "Rubyで特定のオブジェクトだけに属する、暗黙に作られるクラス。そのオブジェクト固有のメソッドを保持する。"
+  - term: "特異メソッド"
+    reading: "とくいメソッド"
+    definition: "Rubyで特定のオブジェクトだけに定義されたメソッド。そのオブジェクトの特異クラスに属する。"
 draft: false
 ---
 

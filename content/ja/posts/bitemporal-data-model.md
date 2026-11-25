@@ -17,6 +17,10 @@ translation_key: bitemporal-data-model
 recommended_books:
   - asin: "4297140101"
     title: "データモデリングでドメインを駆動する"
+glossary:
+  - term: "バイテンポラルデータモデル"
+    reading: "バイテンポラルデータモデル"
+    definition: "事実が有効だった期間を表す有効時間と、データベースに記録された期間を表すトランザクション時間の2つの時間軸で履歴を管理するデータモデル。"
 draft: false
 ---
 

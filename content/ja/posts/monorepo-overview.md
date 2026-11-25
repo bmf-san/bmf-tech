@@ -9,6 +9,10 @@ categories:
 tags:
   - モノレポ
 translation_key: monorepo-overview
+glossary:
+  - term: "モノレポ"
+    reading: "モノレポ"
+    definition: "複数のプロジェクトやサービスのコードを単一のリポジトリで管理する手法。プロジェクトごとにリポジトリを分けるポリレポと対比される。"
 draft: false
 ---
 

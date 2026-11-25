@@ -13,6 +13,16 @@ tags:
   - システム設計
 description: "認可を「どこで・どう判定するか」を整理する。PEP/PDP/PIP/PAPの参照アーキテクチャと業務ドメインとの位置関係、RBAC/ABAC/ReBACの選び方と組み合わせ方、OPA・Cedar・Cerbos・OpenFGA・SpiceDBの比較をまとめる。"
 translation_key: authorization-architecture-models-engines
+glossary:
+  - term: "PEP"
+    reading: "ペップ"
+    definition: "認可の判定を要求し、その結果に従ってアクセスを強制する構成要素。Policy Enforcement Pointの略。"
+  - term: "PDP"
+    reading: "ピーディーピー"
+    definition: "ポリシーと属性を評価し、許可か拒否かの認可判定を返す構成要素。Policy Decision Pointの略。"
+  - term: "ReBAC"
+    reading: "リバック"
+    definition: "主体とリソースの関係をもとにアクセス可否を判定する認可モデル。Relationship-Based Access Controlの略。"
 draft: false
 ---
 

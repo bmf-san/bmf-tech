@@ -13,6 +13,13 @@ tags:
   - セキュリティ
 description: "ワークロードの身元と呼び出しの文脈をどう標準で運ぶか。IETF WIMSEのアーキテクチャ・識別子・WIT/WIC・mTLS/HTTP署名/WPTの使い分け、Transaction Tokensによる内部伝播、SPIFFEによるOAuthクライアント認証と、2026年10月時点の各ドラフトの状態を整理する。"
 translation_key: workload-identity-wimse-transaction-tokens
+glossary:
+  - term: "ワークロードアイデンティティ"
+    reading: "ワークロードアイデンティティ"
+    definition: "人ではなくサービスやジョブなどのワークロードに与えられる、検証可能な身元。"
+  - term: "Transaction Tokens"
+    reading: "トランザクショントークン"
+    definition: "外部からの呼び出しの文脈を、内部のサービス間で改ざんされずに伝播させるための短命なトークン。"
 draft: false
 ---
 

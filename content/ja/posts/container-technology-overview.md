@@ -13,6 +13,13 @@ tags:
   - lxd
   - コンテナ
 translation_key: container-technology-overview
+glossary:
+  - term: "コンテナ"
+    reading: "コンテナ"
+    definition: "namespaceやcgroupによってホストOSのカーネルを共有しつつプロセスを隔離し、アプリケーションと依存関係をまとめて実行する仕組み。"
+  - term: "OCI"
+    reading: "オーシーアイ"
+    definition: "コンテナのイメージ形式やランタイムの仕様を定める標準化団体およびその標準。Open Container Initiativeの略。"
 draft: false
 ---
 

@@ -11,6 +11,10 @@ tags:
   - チームマネジメント
   - 組織設計
 translation_key: team-topologies-introduction
+glossary:
+  - term: "チームトポロジー"
+    reading: "チームトポロジー"
+    definition: "4つのチームタイプと3つのインタラクションモードを用いて、コンウェイの法則と認知負荷を踏まえたチーム構成を設計する手法。"
 draft: false
 ---
 

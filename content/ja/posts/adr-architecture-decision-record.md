@@ -9,6 +9,10 @@ categories:
 tags:
   - Architecture Decision Record
 translation_key: adr-architecture-decision-record
+glossary:
+  - term: "ADR"
+    reading: "エーディーアール"
+    definition: "アーキテクチャ上の重要な決定を、背景や結果とともに記録する短いドキュメント。Architecture Decision Recordの略。"
 draft: false
 ---
 

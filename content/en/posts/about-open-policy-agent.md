@@ -10,6 +10,11 @@ tags:
   - Open Policy Agent
   - Authorization
 translation_key: about-open-policy-agent
+glossary:
+  - term: "Open Policy Agent"
+    definition: "An open-source, general-purpose policy engine for enforcing policies, abbreviated as OPA. It expresses policies as code and decouples policy decisions from applications."
+  - term: "Policy as Code"
+    definition: "The practice of writing policies as code so they can be version-controlled and tested."
 draft: false
 ---
 

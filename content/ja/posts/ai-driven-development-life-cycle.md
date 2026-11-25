@@ -12,6 +12,10 @@ tags:
   - 生成AI
   - SDLC
 translation_key: ai-driven-development-life-cycle
+glossary:
+  - term: "AI-DLC"
+    reading: "エーアイディーエルシー"
+    definition: "AWSが提唱する、AIを開発プロセスの中心的な協力者と位置づける開発ライフサイクル。AIの実行を人間が監視しながら、計画から実装までを高速に繰り返す。"
 draft: false
 ---
 

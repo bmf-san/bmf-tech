@@ -13,6 +13,10 @@ tags:
   - DDD
 description: "認可とは何かを、認証との違い、OAuthが担う委譲、IAMを5つのサブドメインに分けた地図で整理する。DDDのCore/Supporting/Genericでの位置づけ、隣接ドメイン、権限の業務上の意味の置き場所まで扱う。"
 translation_key: authorization-domain-iam-subdomains
+glossary:
+  - term: "認可"
+    reading: "にんか"
+    definition: "認証済みの主体が、あるリソースに対してある操作をしてよいかを判定すること。本人確認である認証とは区別される。"
 draft: false
 ---
 

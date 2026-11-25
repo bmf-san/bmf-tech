@@ -10,6 +10,10 @@ tags:
   - クリティカルユーザージャーニー
   - SLO
 translation_key: critical-user-journey
+glossary:
+  - term: "クリティカルユーザージャーニー"
+    reading: "クリティカルユーザージャーニー"
+    definition: "ユーザーが目的を達成するために辿る、サービスにとって特に重要な一連の操作の流れ。略称はCUJで、SLOを定める単位として使われる。"
 draft: false
 ---
 

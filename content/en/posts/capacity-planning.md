@@ -9,6 +9,9 @@ categories:
 tags:
   - Capacity Planning
 translation_key: capacity-planning
+glossary:
+  - term: "Capacity Planning"
+    definition: "The practice of estimating and planning the required infrastructure based on performance requirements, current resource usage, and forecasts of future demand."
 draft: false
 ---
 

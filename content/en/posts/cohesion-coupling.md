@@ -10,6 +10,11 @@ tags:
   - Design
   - System Design
 translation_key: cohesion-coupling
+glossary:
+  - term: "Cohesion"
+    definition: "A measure of how closely the elements within a module relate to a single purpose. Higher cohesion indicates better design."
+  - term: "Coupling"
+    definition: "A measure of how much modules depend on one another. Lower coupling indicates better design."
 draft: false
 ---
 

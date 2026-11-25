@@ -10,6 +10,10 @@ categories:
 tags:
   - O記法
 translation_key: big-o-notation-algorithms
+glossary:
+  - term: "O記法"
+    reading: "オーきほう"
+    definition: "入力サイズの増加に対して、計算量がどの程度の割合で増えるかを表す記法。オーダー記法とも呼ばれる。"
 draft: false
 ---
 

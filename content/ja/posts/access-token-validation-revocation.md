@@ -10,6 +10,13 @@ tags:
   - OAuth
   - 認可
 translation_key: access-token-validation-revocation
+glossary:
+  - term: "Token Introspection"
+    reading: "トークンイントロスペクション"
+    definition: "リソースサーバーが認可サーバーに問い合わせ、トークンの有効性と属性を確認する仕組み。RFC 7662で定義される。"
+  - term: "Token Revocation"
+    reading: "トークンリボケーション"
+    definition: "クライアントが不要になったトークンを認可サーバーに通知して失効させる仕組み。RFC 7009で定義される。"
 draft: false
 ---
 

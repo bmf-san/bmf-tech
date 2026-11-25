@@ -11,6 +11,9 @@ tags:
   - Team Management
   - Organizational Design
 translation_key: team-topologies-introduction
+glossary:
+  - term: "Team Topologies"
+    definition: "An approach to designing team structures with four team types and three interaction modes, grounded in Conway's law and cognitive load."
 draft: false
 ---
 

@@ -11,6 +11,13 @@ tags:
   - マイクロサービス
   - セキュリティ
 translation_key: service-to-service-authentication
+glossary:
+  - term: "SPIFFE"
+    reading: "スピッフィー"
+    definition: "ワークロードに検証可能な身元を与えるための標準。SPIFFE IDと、それを証明するSVIDを定める。"
+  - term: "Token Exchange"
+    reading: "トークンエクスチェンジ"
+    definition: "手元のトークンを認可サーバーに提示し、別の宛先や権限を持つトークンと交換するOAuthの仕組み。RFC 8693で定義される。"
 draft: false
 ---
 

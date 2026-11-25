@@ -10,6 +10,10 @@ tags:
   - マイクロサービス
   - 分散トランザクション
 translation_key: saga-pattern-research-notes
+glossary:
+  - term: "Sagaパターン"
+    reading: "サーガパターン"
+    definition: "分散トランザクションを各サービスのローカルトランザクションの連続として実行し、失敗時は補償トランザクションで取り消すパターン。コレオグラフィ型とオーケストレーション型がある。"
 draft: false
 ---
 

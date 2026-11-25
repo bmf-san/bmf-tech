@@ -12,6 +12,10 @@ tags:
   - LLM as Judge
 description: "AIエージェントを長く確実に動かすには、モデルの外側の仕組み（ハーネス）の設計が要る。AnthropicとOpenAI、martinfowler.comの一次資料をもとに、ガイドとセンサー、コンテキスト、状態の持ち方、作業の分け方、人の関わり、評価の型を整理する。"
 translation_key: harness-engineering
+glossary:
+  - term: "ハーネスエンジニアリング"
+    reading: "ハーネスエンジニアリング"
+    definition: "AIエージェントを長時間確実に動かすために、モデルの外側にあるコンテキストや状態管理、評価などの仕組みを設計すること。"
 draft: false
 ---
 

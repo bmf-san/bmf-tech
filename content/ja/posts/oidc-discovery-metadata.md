@@ -11,6 +11,10 @@ tags:
   - OAuth
   - SSO
 translation_key: oidc-discovery-metadata
+glossary:
+  - term: "OpenID Connect Discovery"
+    reading: "オープンアイディーコネクトディスカバリー"
+    definition: "OpenIDプロバイダーのエンドポイントや公開鍵の場所などのメタデータを、既知のURLから取得してクライアントを自動設定する仕組み。"
 draft: false
 ---
 

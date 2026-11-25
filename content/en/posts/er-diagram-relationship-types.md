@@ -9,6 +9,11 @@ categories:
 tags:
   - ER
 translation_key: er-diagram-relationship-types
+glossary:
+  - term: "Identifying Relationship"
+    definition: "In an ER diagram, a relationship in which the child entity includes the parent's primary key as part of its own primary key. Identifying the child requires the parent."
+  - term: "Non-Identifying Relationship"
+    definition: "In an ER diagram, a relationship in which the child entity holds the parent's primary key only as a foreign key. The child has an identity independent of the parent."
 draft: false
 ---
 

@@ -13,6 +13,9 @@ tags:
   - AI
 description: "What changes in authorization when AI agents act for users? This post covers delegation chains, least privilege, prompt injection, human approval, and audit attribution, then maps MCP authorization, AuthZEN AARP and COAZ, AIMS, OBO/AAuth, ID-JAG, and A2A/AP2 with their status as of October 2026."
 translation_key: authorization-for-ai-agents
+glossary:
+  - term: "Delegation Chain"
+    definition: "A structure that passes authority step by step from a human to an AI agent and on to other agents or tools. Each hop should narrow permissions and keep track of on whose behalf it acts."
 draft: false
 ---
 

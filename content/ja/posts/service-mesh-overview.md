@@ -9,6 +9,10 @@ categories:
 tags:
   - サービスメッシュ
 translation_key: service-mesh-overview
+glossary:
+  - term: "サービスメッシュ"
+    reading: "サービスメッシュ"
+    definition: "サイドカープロキシなどを用いて、マイクロサービス間の通信のトラフィック管理や可観測性、セキュリティをアプリケーションの外で担うインフラ層。"
 draft: false
 ---
 

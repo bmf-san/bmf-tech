@@ -9,6 +9,10 @@ categories:
 tags:
   - PostgreSQL
 translation_key: postgresql-collate-explained
+glossary:
+  - term: "COLLATE"
+    reading: "コレート"
+    definition: "文字列の並び順や比較の規則である照合順序を指定するための句。PostgreSQLではデータベースや列、式の単位で指定できる。"
 draft: false
 ---
 

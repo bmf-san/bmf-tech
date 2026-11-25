@@ -10,6 +10,10 @@ tags:
   - Open Policy Agent
   - Rego
 translation_key: introduction-to-rego
+glossary:
+  - term: "Rego"
+    reading: "レゴ"
+    definition: "Open Policy Agentでポリシーを記述するための宣言型言語。入力データに対するルールを定義して判定結果を導く。"
 draft: false
 ---
 

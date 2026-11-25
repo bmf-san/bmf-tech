@@ -13,6 +13,9 @@ tags:
   - HTTP/2
   - RPC
 translation_key: grpc-introduction-golang
+glossary:
+  - term: "gRPC"
+    definition: "Googleが開発したRPCフレームワーク。HTTP/2上でProtocol Buffersを使って通信し、ストリーミングにも対応する。"
 draft: false
 ---
 

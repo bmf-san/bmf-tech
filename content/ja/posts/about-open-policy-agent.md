@@ -10,6 +10,13 @@ tags:
   - Open Policy Agent
   - 認可
 translation_key: about-open-policy-agent
+glossary:
+  - term: "Open Policy Agent"
+    reading: "オープンポリシーエージェント"
+    definition: "ポリシーの適用を担うOSSの汎用ポリシーエンジン。略称はOPAで、ポリシーをコードとして記述し判定をアプリケーションから切り離す。"
+  - term: "ポリシー・アズ・コード"
+    reading: "ポリシーアズコード"
+    definition: "ポリシーをコードとして記述し、バージョン管理やテストの対象にする考え方。"
 draft: false
 ---
 

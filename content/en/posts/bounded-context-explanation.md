@@ -9,6 +9,9 @@ categories:
 tags:
   - DDD
 translation_key: bounded-context-explanation
+glossary:
+  - term: "Bounded Context"
+    definition: "In domain-driven design, the boundary within which a particular model and its terms have a consistent meaning. Teams separate responsibilities and models along these boundaries."
 draft: false
 ---
 
