@@ -19,6 +19,12 @@
 {{- if eq .CurrentLocale "ja"}}{{- $homeURL = "/ja/"}}{{- end}}
 {{- $siteDesc := .Config.Site.Description}}
 {{- if eq .CurrentLocale "ja"}}{{- with index .Config.Theme.Params "description_ja"}}{{$siteDesc = .}}{{end}}{{- end}}
+{{- /* Glossary page (gohan glossary plugin). Its data carries "terms", the page "url", and
+     "translations" (glossary URLs of the other locales), so URLs follow plugins.glossary.path. */}}
+{{- $isGlossary := and .VirtualPageData (index .VirtualPageData "terms")}}
+{{- $glossaryTitle := "Glossary"}}
+{{- $glossaryDesc := printf "A glossary of technical terms used in %s articles, with short definitions and links to the articles that explain them in depth." .Config.Site.Title}}
+{{- if eq .CurrentLocale "ja"}}{{$glossaryTitle = "用語集"}}{{$glossaryDesc = printf "%sの記事に出てくる技術用語を、読み方と短い定義でまとめた用語集です。各用語から詳しく解説した記事へ移動できます。" .Config.Site.Title}}{{end}}
 {{- $altURLHead := "/ja/"}}
 {{- if eq .CurrentLocale "ja"}}{{$altURLHead = "/"}}{{end}}
 {{- if .CurrentTaxonomy}}
@@ -45,6 +51,10 @@
   {{- if and .Pagination (gt .Pagination.CurrentPage 1)}}
     {{- if eq .CurrentLocale "ja"}}{{$altURLHead = printf "%s/page/%d/" (slice .Pagination.BaseURL 3) .Pagination.CurrentPage}}{{else}}{{$altURLHead = printf "/ja%s/page/%d/" .Pagination.BaseURL .Pagination.CurrentPage}}{{end}}
   {{- end}}
+{{- else if $isGlossary}}
+  {{- /* the other locale's glossary when it exists; otherwise keep its home page */}}
+  {{- $glossaryAltLoc := "ja"}}{{if eq .CurrentLocale "ja"}}{{$glossaryAltLoc = "en"}}{{end}}
+  {{- with index (index .VirtualPageData "translations") $glossaryAltLoc}}{{$altURLHead = .}}{{end}}
 {{- else if .VirtualPageData}}
   {{- if eq .CurrentLocale "ja"}}{{$altURLHead = "/bookshelf/"}}{{else}}{{$altURLHead = "/ja/bookshelf/"}}{{end}}
 {{- else if and .Pagination (gt .Pagination.CurrentPage 1)}}
@@ -56,9 +66,9 @@
 <meta name="color-scheme" content="light dark">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {{- $pageTitle := .Config.Site.Title}}
-{{- if $isSingle}}{{$pageTitle = printf "%s | %s" $article.FrontMatter.Title .Config.Site.Title}}{{else if .CurrentTaxonomy}}{{$pageTitle = printf "%s | %s" .CurrentTaxonomy.Name .Config.Site.Title}}{{else if and .CurrentArchivePath $article}}{{- $ad := formatDate "2006" $article.FrontMatter.Date}}{{if .CurrentArchiveIsMonth}}{{$ad = formatDate "2006/01" $article.FrontMatter.Date}}{{end}}{{$pageTitle = printf "%s | %s" $ad .Config.Site.Title}}{{else if and .Pagination (gt .Pagination.CurrentPage 1)}}{{if eq .CurrentLocale "ja"}}{{$pageTitle = printf "%dページ目 | %s" .Pagination.CurrentPage .Config.Site.Title}}{{else}}{{$pageTitle = printf "Page %d | %s" .Pagination.CurrentPage .Config.Site.Title}}{{end}}{{else if and .VirtualPageData (index .VirtualPageData "page_title")}}{{$pageTitle = printf "%s | %s" (index .VirtualPageData "page_title") .Config.Site.Title}}{{end}}
+{{- if $isSingle}}{{$pageTitle = printf "%s | %s" $article.FrontMatter.Title .Config.Site.Title}}{{else if .CurrentTaxonomy}}{{$pageTitle = printf "%s | %s" .CurrentTaxonomy.Name .Config.Site.Title}}{{else if and .CurrentArchivePath $article}}{{- $ad := formatDate "2006" $article.FrontMatter.Date}}{{if .CurrentArchiveIsMonth}}{{$ad = formatDate "2006/01" $article.FrontMatter.Date}}{{end}}{{$pageTitle = printf "%s | %s" $ad .Config.Site.Title}}{{else if and .Pagination (gt .Pagination.CurrentPage 1)}}{{if eq .CurrentLocale "ja"}}{{$pageTitle = printf "%dページ目 | %s" .Pagination.CurrentPage .Config.Site.Title}}{{else}}{{$pageTitle = printf "Page %d | %s" .Pagination.CurrentPage .Config.Site.Title}}{{end}}{{else if $isGlossary}}{{$pageTitle = printf "%s | %s" $glossaryTitle .Config.Site.Title}}{{else if and .VirtualPageData (index .VirtualPageData "page_title")}}{{$pageTitle = printf "%s | %s" (index .VirtualPageData "page_title") .Config.Site.Title}}{{end}}
 <title>{{$pageTitle}}</title>
-<meta name="description" content="{{if and $isSingle $article.FrontMatter.Description}}{{$article.FrontMatter.Description}}{{else if and .CurrentTaxonomy .CurrentTaxonomy.Description}}{{.CurrentTaxonomy.Description}}{{else}}{{$siteDesc}}{{end}}">
+<meta name="description" content="{{if and $isSingle $article.FrontMatter.Description}}{{$article.FrontMatter.Description}}{{else if and .CurrentTaxonomy .CurrentTaxonomy.Description}}{{.CurrentTaxonomy.Description}}{{else if $isGlossary}}{{$glossaryDesc}}{{else}}{{$siteDesc}}{{end}}">
 {{- /* noindex thin taxonomy pages (single-article tag/category); follow keeps internal links crawlable. Self-correcting: a tag re-enters the index once it reaches 2+ articles. */}}
 {{- if .CurrentTaxonomy}}{{$taxTotal := len .Articles}}{{if .Pagination}}{{$taxTotal = .Pagination.TotalItems}}{{end}}{{if lt $taxTotal 2}}
 <meta name="robots" content="noindex,follow">
@@ -162,6 +172,9 @@
   {{- end}}
 {{- else if and .Pagination (gt .Pagination.CurrentPage 1)}}
   {{- $ogURL = printf "%s%s/page/%d/" .Config.Site.BaseURL .Pagination.BaseURL .Pagination.CurrentPage}}
+{{- else if $isGlossary}}
+  {{- $ogTitle = printf "%s | %s" $glossaryTitle .Config.Site.Title}}
+  {{- $ogURL = printf "%s%s" .Config.Site.BaseURL (index .VirtualPageData "url")}}
 {{- else if .VirtualPageData}}
   {{- if eq .CurrentLocale "ja"}}
     {{- $ogTitle = printf "%s | %s" "本棚" .Config.Site.Title}}
@@ -180,7 +193,7 @@
 <meta property="og:title" content="{{$ogTitle}}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{$ogURL}}">
-<meta property="og:description" content="{{if and .CurrentTaxonomy .CurrentTaxonomy.Description}}{{.CurrentTaxonomy.Description}}{{else if and .VirtualPageData (index .VirtualPageData "page_desc")}}{{index .VirtualPageData "page_desc"}}{{else}}{{$siteDesc}}{{end}}">
+<meta property="og:description" content="{{if and .CurrentTaxonomy .CurrentTaxonomy.Description}}{{.CurrentTaxonomy.Description}}{{else if $isGlossary}}{{$glossaryDesc}}{{else if and .VirtualPageData (index .VirtualPageData "page_desc")}}{{index .VirtualPageData "page_desc"}}{{else}}{{$siteDesc}}{{end}}">
 <meta property="og:image" content="{{.Config.Site.BaseURL}}/assets/images/ogp-default.png">
 <meta property="og:image:alt" content="{{$ogTitle}}">
 <meta property="og:image:width" content="1200">
@@ -321,6 +334,10 @@
       {{- $altURL = printf "/ja%s/page/%d/" .Pagination.BaseURL .Pagination.CurrentPage}}
     {{- end}}
   {{- end}}
+{{- else if and .VirtualPageData (index .VirtualPageData "terms")}}
+  {{- /* Glossary: the other locale's glossary when it exists; otherwise keep its home page */}}
+  {{- $glossaryAltLoc := "ja"}}{{if eq .CurrentLocale "ja"}}{{$glossaryAltLoc = "en"}}{{end}}
+  {{- with index (index .VirtualPageData "translations") $glossaryAltLoc}}{{$altURL = .}}{{end}}
 {{- else if .VirtualPageData}}
   {{- /* Virtual pages (e.g. bookshelf): toggle the locale prefix */}}
   {{- if eq .CurrentLocale "ja"}}
@@ -391,6 +408,10 @@
       {{- end}}
     </div>
     <p class="flex justify-center gap-4">
+      {{- /* Glossary link only for locales that have a glossary (gohan glossary plugin SiteData) */}}
+      {{- with index .SiteData "glossary"}}{{with index (index . "urls") $.CurrentLocale}}
+      <a href="{{.}}" class="text-slate-400 text-xs hover:text-slate-200">{{if eq $.CurrentLocale "ja"}}用語集{{else}}Glossary{{end}}</a>
+      {{- end}}{{end}}
       <a href="/sitemap.xml" class="text-slate-400 text-xs hover:text-slate-200">{{if eq .CurrentLocale "ja"}}サイトマップ{{else}}Sitemap{{end}}</a>
       {{if eq .CurrentLocale "ja"}}
       <a href="/ja/privacy-policy/" class="text-slate-400 text-xs hover:text-slate-200">プライバシーポリシー</a>

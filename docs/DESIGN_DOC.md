@@ -19,6 +19,7 @@
 | `/about/` | `page.html` | プロフィール |
 | `/privacy-policy/` | `page.html` | プライバシーポリシー |
 | `/bookshelf/` | `bookshelf.html` | 書籍一覧（本棚・gohan bookshelf SitePlugin が自動生成） |
+| `/glossary/` | `glossary.html` | 用語集（gohan glossary SitePlugin が記事の `glossary:` から自動生成。用語がない間は生成されない） |
 | `/sitemap.xml` | gohan 自動生成 | XML サイトマップ |
 | `/atom.xml` | gohan 自動生成 | Atom フィード |
 
@@ -38,7 +39,7 @@ bmf-tech | 日本語 | About | Feed
 
 ヘッダー: `themes/default/templates/_partials.html` の `{{define "header"}}` ブロック。
 
-フッター: About / Privacy Policy / Contact リンク + copyright。
+フッター: copyright、GitHub / X のアイコン、用語集（用語がある言語のみ）/ サイトマップ / プライバシーポリシー / お問い合わせのリンク。
 
 ---
 
@@ -234,7 +235,7 @@ description: "Kenta Takeuchi のプロフィールページ"
 | hreflang | 日英ペア記事に `hreflang="ja"` / `hreflang="en"` / `hreflang="x-default"` を出力（gohan が `translation_key` で自動処理） |
 | JSON-LD (Article) | 実装済み。`_partials.html` の `{{define "seo"}}` 内で `@type: BlogPosting`（headline / datePublished / dateModified / url / image / author / publisher / description）を出力 |
 | JSON-LD (BreadcrumbList) | **未実装** |
-| sitemap.xml | gohan が自動生成。記事・固定ページ・ロケール別インデックス（`/`・`/ja/`）・本棚（`/bookshelf/`・`/ja/bookshelf/`）・タグ・カテゴリー・アーカイブ個別ページを収録する。記事が1件だけのタグ・カテゴリーページなど、テンプレートが `<meta name="robots" content="noindex">` を出すページは除外される（v1.8.0 以降、合計 2,100+ URL） |
+| sitemap.xml | gohan が自動生成。記事・固定ページ・ロケール別インデックス（`/`・`/ja/`）・本棚（`/bookshelf/`・`/ja/bookshelf/`）・用語集（`/glossary/`・`/ja/glossary/`、用語がある言語のみ）・タグ・カテゴリー・アーカイブ個別ページを収録する。記事が1件だけのタグ・カテゴリーページなど、テンプレートが `<meta name="robots" content="noindex">` を出すページは除外される（v1.8.0 以降、合計 2,100+ URL） |
 | robots.txt | `assets/robots.txt` に配置済み。`Allow: /` + sitemap 参照 |
 | Atom フィード | gohan が自動生成 (`/atom.xml`) |
 | noindex | DNS 移管完了後に削除済み。本番公開中（`config.yaml` から `noindex` 設定を除去した）|
@@ -282,6 +283,7 @@ description: "Kenta Takeuchi のプロフィールページ"
 | `article.html` | 記事詳細。canonical / hreflang / GitHub ソースリンク / 関連記事（2カラムグリッド、OGP 画像・カテゴリ・タグ・説明文付き）を出力 |
 | `page.html` | 固定ページ（about, privacy-policy, picks）。`{{define "htmllang"}}` で locale を設定 |
 | `bookshelf.html` | 書籍一覧（本棚）。gohan `bookshelf` SitePlugin が自動生成する書籍データを表示 |
+| `glossary.html` | 用語集。gohan `glossary` SitePlugin が記事の `glossary:` から集めた用語を、頭文字のグループごとに定義と解説記事へのリンク付きで表示。JSON-LD は `DefinedTermSet` |
 | `tag.html` | タグ別記事一覧 |
 | `category.html` | カテゴリー別記事一覧 |
 | `archive.html` | 年月別アーカイブ |

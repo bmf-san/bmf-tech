@@ -1,0 +1,75 @@
+{{template "head" .}}
+<body class="bg-body">
+{{template "header" .}}
+<main class="container mx-auto py-8 max-w-4xl">
+  {{- $isJA := eq .CurrentLocale "ja"}}
+  {{- $homeURL := "/"}}
+  {{- if $isJA}}{{$homeURL = "/ja/"}}{{end}}
+  {{- $terms := index .VirtualPageData "terms"}}
+  {{- $groups := index .VirtualPageData "groups"}}
+  {{- $pageURL := printf "%s%s" .Config.Site.BaseURL (index .VirtualPageData "url")}}
+
+  <header class="mb-8">
+    <ol class="breadcrumbs mb-4">
+      <li class="breadcrumbs-item">
+        <a href="{{$homeURL}}" class="breadcrumbs-link">{{if $isJA}}ホーム{{else}}Home{{end}}</a>
+        <span class="breadcrumbs-separator">/</span>
+      </li>
+      <li class="breadcrumbs-item active">
+        <span class="breadcrumbs-link">{{if $isJA}}用語集{{else}}Glossary{{end}}</span>
+      </li>
+    </ol>
+    <h1 class="text-4xl font-bold mb-2">{{if $isJA}}用語集{{else}}Glossary{{end}}</h1>
+    <p class="text-secondary">
+      {{if $isJA}}
+        記事に出てくる技術用語を、読み方と短い定義でまとめました。各用語の「解説記事」から、詳しく説明した記事へ移動できます（{{len $terms}}語）。
+      {{else}}
+        Technical terms used in the articles on this blog, with short definitions. Follow the links under each term to the articles that explain it in depth ({{len $terms}} terms).
+      {{end}}
+    </p>
+  </header>
+
+  <nav class="mb-10 flex flex-wrap gap-2" aria-label="{{if $isJA}}索引{{else}}Index{{end}}">
+    {{- range $groups}}
+    <a href="#{{.ID}}" class="badge badge-light text-secondary">{{if eq .Key "#"}}{{if $isJA}}その他{{else}}Other{{end}}{{else}}{{.Key}}{{end}}</a>
+    {{- end}}
+  </nav>
+
+  {{- range $groups}}
+  <section class="mb-12" aria-labelledby="{{.ID}}">
+    <h2 id="{{.ID}}" class="text-2xl font-semibold mb-6 pb-2 border-b border-border">{{if eq .Key "#"}}{{if $isJA}}その他{{else}}Other{{end}}{{else}}{{.Key}}{{end}}</h2>
+    <dl>
+      {{- range .Terms}}
+      <div class="mb-6">
+        <dt id="{{.ID}}" class="text-lg font-semibold">
+          <a href="#{{.ID}}" class="hover:underline">{{.Term}}</a>
+          {{- if .Reading}}<span class="text-sm font-normal text-secondary ml-2">{{if $isJA}}読み: {{else}}Pronunciation: {{end}}{{.Reading}}</span>{{end}}
+        </dt>
+        <dd class="mt-1">
+          <p>{{.Definition}}</p>
+          {{- if .Articles}}
+          <p class="text-sm text-secondary mt-1">{{if $isJA}}解説記事: {{else}}Read more: {{end}}
+            {{- range $i, $a := .Articles}}{{if $i}} / {{end}}<a href="{{$a.URL}}" class="text-primary hover:underline">{{$a.Title}}</a>{{end}}
+          </p>
+          {{- end}}
+        </dd>
+      </div>
+      {{- end}}
+    </dl>
+  </section>
+  {{- end}}
+</main>
+{{template "footer" .}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  "name": "{{if $isJA}}用語集{{else}}Glossary{{end}} | {{.Config.Site.Title}}",
+  "url": "{{$pageURL}}",
+  "hasDefinedTerm": [{{range $i, $t := $terms}}{{if $i}},{{end}}
+    {"@type": "DefinedTerm", "name": "{{$t.Term}}", "description": "{{$t.Definition}}", "url": "{{$pageURL}}#{{$t.ID}}", "inDefinedTermSet": "{{$pageURL}}"}{{end}}
+  ]
+}
+</script>
+</body>
+</html>
