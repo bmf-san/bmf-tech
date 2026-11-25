@@ -86,6 +86,10 @@ plugins:
     enabled: true
     tag: "bmf035-22"
     recent_limit: 6
+  # Glossary page (/glossary/, /ja/glossary/) built from the `glossary:` front-matter
+  # of articles. Nothing is generated until an article declares an entry.
+  glossary:
+    enabled: true
   ogp:
     enabled: true
     logo_file: ""
