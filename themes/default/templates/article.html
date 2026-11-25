@@ -133,6 +133,17 @@
 
   {{template "ad-unit-article-bottom" $}}
 
+  {{/* Glossary terms this article defines (gohan glossary plugin SiteData) */}}
+  {{- $articleURL := .URL}}
+  {{- with index $.SiteData "glossary"}}{{with index (index . "articles") $articleURL}}
+  <div class="flex flex-wrap items-center gap-2 mb-6">
+    <span class="text-sm font-medium text-secondary mr-2">{{if eq $locale "ja"}}用語集:{{else}}Glossary:{{end}}</span>
+    {{- range .}}
+    <a href="{{.URL}}" class="badge badge-light text-secondary">{{.Term}}</a>
+    {{- end}}
+  </div>
+  {{- end}}{{end}}
+
   {{/* Tags */}}
   {{if .FrontMatter.Tags}}
   <div class="flex flex-wrap gap-2 mb-10">

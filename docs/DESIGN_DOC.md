@@ -34,10 +34,10 @@
 ### ナビゲーション
 
 ```
-bmf-tech | 日本語 | About | Feed
+bmf-tech | ホーム | プロフィール | ピックアップ記事 | 本棚 | 用語集 | bmf as a Service | フィード | 検索 | EN
 ```
 
-ヘッダー: `themes/default/templates/_partials.html` の `{{define "header"}}` ブロック。
+ヘッダー: `themes/default/templates/_partials.html` の `{{define "header"}}` ブロック。用語集は用語がある言語だけ表示する。769〜1,280px では項目の余白と検索欄を詰めて1行に収める（`head` 内の `<style>`）。
 
 フッター: copyright、GitHub / X のアイコン、用語集（用語がある言語のみ）/ サイトマップ / プライバシーポリシー / お問い合わせのリンク。
 
